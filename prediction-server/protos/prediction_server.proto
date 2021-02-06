@@ -1,0 +1,168 @@
+syntax = "proto3";
+
+package io.modeld.api;
+
+import "protoc-gen-swagger/options/annotations.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/struct.proto";
+
+option go_package = "predictorsdk";
+
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+  info: {
+    title: "PredictionServer"
+    version: "1.0"
+    contact: {
+      name: "modeld authors"
+      url: "https://modeld.io"
+      email: "modeld-discuss@googlegroups.com"
+    }
+  }
+  external_docs: {
+    url: "https://modeld.io/site/docs/"
+    description: "modeld.io documentation"
+  }
+  schemes: HTTP
+  schemes: HTTPS
+  consumes: "application/json"
+  produces: "application/json"
+  responses: {
+    key: "404"
+    value: {
+      description: "Returned when the resource does not exist."
+      schema: { json_schema: { type: STRING } }
+    }
+  }
+};
+
+
+message PredictorInfo {
+    string             name   = 1; // the name of the predictor
+    string             task   = 2; // the machine learning task (binary classification / multi classification / regression)
+    repeated ModelInfo models = 3; // the models in the predictor
+    SchemaInfo         schema = 4; // the predictor schema.
+}
+
+message ModelInfo {
+    string name               = 1; // the model name
+    string namespace          = 2; // the model name space
+    string task               = 3; // the model task (binary classification / multi classification / regression)
+    float  rmse               = 4; // for regression models rmse score from training
+    float  auc                = 5; // for classification model the auc score from training
+    string status             = 6; // model status
+    bool   canary             = 7; // true if this is a canary model
+    bool   shadow             = 8; // is this a shadow model
+    int32  traffic            = 9; // how much traffic is allocated to this model (0 -100)
+    string filter             = 10; // the filter (a boolean expression involving the model)
+    int64  rank               = 11; // the model rank when making a prediction.
+    string logPath            = 12; // the location of the model prediction log file
+	string imageName          = 13; // The model image name
+	string deploymentName     = 14; // The deployment name that serves this model
+	string serviceName        = 15; // The service name that serves this model
+	string hpaName            = 16; // the name of the horizontal pod autoscaler, if autoscaling is true
+	float  p95                = 17; // The 95 percent latency
+	float  p99                = 18; // The 99 percent latency
+	int64  lastPrediction     = 19; // The last prediction time
+	int32  dailyPredictionAvg = 20;
+}
+
+// Represent the predictor schema. Used for prediction validation
+message SchemaInfo {
+    repeated ColumnInfo columns = 1; // the schema column
+}
+
+// a information about each column
+message ColumnInfo {
+    string name      = 1; // column name
+    int32  type      = 2; // column type
+    int32  min       = 3; // for int column, min value allowed
+    int32  max       = 4; // for int column, max value allowed
+    int32  minLength = 5; // for string column, min length
+    int32  maxLength = 6; // for string column, max length
+    repeated string enum = 7; // list of allowed enum values.
+    bool nullable    = 8;
+}
+
+/// request / response
+message GetPredictorRequest {
+    string name = 1;
+}
+
+message GetPredictorResponse {
+    PredictorInfo item = 1;
+}
+
+message GetModelRequest {
+    string predictorName = 1;
+    string name          = 2;
+}
+
+message GetModelResponse {
+    ModelInfo item       = 1;
+}
+
+enum PredictFormat {
+  PREDICT_FORMAT_CSV  = 0;
+  PREDICT_FORMAT_JSON = 1;
+}
+
+message PredictRequest {
+     string                          name             = 1;  // model name
+     bool                            validate         = 2;  // use the schema to validate the request
+     bool                            explain          = 3;  // if true, explain the prediction using shap.
+     PredictFormat                   format           = 5;  // can be csv,json.
+     string                          payload          = 6;  // json or csv array of rows.
+}
+
+message PredictResponse {
+     repeated PredictResultLineItem items = 1;
+}
+
+message PredictResultLineItem {
+    bool                       success         = 1; // success or failure
+    float                      score           = 2; // the predicted value
+    string                     label           = 3; // the predictor label in case of classification
+    repeated ProbabilityValue  probabilities   = 4; // the proba predictions
+    repeated string            missingColumns  = 5; // list of missing columns
+    repeated string            outOfBound      = 6; // list of out of bounds columns
+    float                      baseShapValue   = 7;
+    repeated ShapValue         shapValues      = 8;
+}
+
+// return the proba value for each label
+message ProbabilityValue {
+    string label         = 1;
+    float  probability   = 2;
+}
+
+
+message ShapValue {
+    string feature = 1;
+    float  value   = 2;
+}
+
+
+// On any input that is documented to expect a string parameter in
+// snake_case or kebab-case, either of those cases is accepted.
+service PredictionServer {
+    rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
+        option (google.api.http) = {
+              get: "/v1/predictors/{name}"
+              body: "*"
+        };
+    }
+    rpc GetModel(GetModelRequest) returns (GetModelRequest) {
+        option (google.api.http) = {
+              get: "/v1/predictors/{predictor}/models/{name}"
+              body: "*"
+        };
+    }
+
+    rpc Predict(PredictRequest) returns (PredictResponse) {
+        option (google.api.http) = {
+              post: "/v1/predictors/{name}"
+              body: "*"
+        };
+    }
+}
