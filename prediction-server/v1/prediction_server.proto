@@ -88,6 +88,8 @@ message ColumnInfo {
     bool nullable    = 8;
 }
 
+
+
 /// request / response
 message GetPredictorRequest {
     string name = 1;
@@ -146,24 +148,329 @@ message ShapValue {
     float  value   = 2;
 }
 
+// The following are the grpc struct from the kf serving sepcification
+// https://github.com/kubeflow/kfserving/blob/master/docs/predict-api/v2/required_api.md
+
+message ServerLiveRequest {}
+
+message ServerLiveResponse
+{
+  // True if the inference server is live, false if not live.
+  bool live = 1;
+}
+
+message ServerReadyRequest {}
+
+message ServerReadyResponse
+{
+  // True if the inference server is ready, false if not ready.
+  bool ready = 1;
+}
+
+message ModelReadyRequest
+{
+  // The name of the model to check for readiness.
+  string name = 1;
+
+  // The version of the model to check for readiness. If not given the
+  // server will choose a version based on the model and internal policy.
+  string version = 2;
+}
+
+message ModelReadyResponse
+{
+  // True if the model is ready, false if not ready.
+  bool ready = 1;
+}
+
+message ServerMetadataRequest {}
+
+message ServerMetadataResponse
+{
+  // The server name.
+  string name = 1;
+
+  // The server version.
+  string version = 2;
+
+  // The extensions supported by the server.
+  repeated string extensions = 3;
+}
+
+message ModelMetadataRequest
+{
+  // The name of the model.
+  string name = 1;
+
+  // The version of the model to check for readiness. If not given the
+  // server will choose a version based on the model and internal policy.
+  string version = 2;
+}
+
+message ModelMetadataResponse
+{
+  // Metadata for a tensor.
+  message TensorMetadata
+  {
+    // The tensor name.
+    string name = 1;
+
+    // The tensor data type.
+    string datatype = 2;
+
+    // The tensor shape. A variable-size dimension is represented
+    // by a -1 value.
+    repeated int64 shape = 3;
+  }
+
+  // The model name.
+  string name = 1;
+
+  // The versions of the model available on the server.
+  repeated string versions = 2;
+
+  // The model's platform. See Platforms.
+  string platform = 3;
+
+  // The model's inputs.
+  repeated TensorMetadata inputs = 4;
+
+  // The model's outputs.
+  repeated TensorMetadata outputs = 5;
+}
+
+
+message ModelInferRequest
+{
+  // An input tensor for an inference request.
+  message InferInputTensor
+  {
+    // The tensor name.
+    string name = 1;
+
+    // The tensor data type.
+    string datatype = 2;
+
+    // The tensor shape.
+    repeated int64 shape = 3;
+
+    // Optional inference input tensor parameters.
+    map<string, InferParameter> parameters = 4;
+
+    // The tensor contents using a data-type format. This field must
+    // not be specified if "raw" tensor contents are being used for
+    // the inference request.
+    InferTensorContents contents = 5;
+  }
+
+  // An output tensor requested for an inference request.
+  message InferRequestedOutputTensor
+  {
+    // The tensor name.
+    string name = 1;
+
+    // Optional requested output tensor parameters.
+    map<string, InferParameter> parameters = 2;
+  }
+
+  // The name of the model to use for inferencing.
+  string model_name = 1;
+
+  // The version of the model to use for inference. If not given the
+  // server will choose a version based on the model and internal policy.
+  string model_version = 2;
+
+  // Optional identifier for the request. If specified will be
+  // returned in the response.
+  string id = 3;
+
+  // Optional inference parameters.
+  map<string, InferParameter> parameters = 4;
+
+  // The input tensors for the inference.
+  repeated InferInputTensor inputs = 5;
+
+  // The requested output tensors for the inference. Optional, if not
+  // specified all outputs produced by the model will be returned.
+  repeated InferRequestedOutputTensor outputs = 6;
+
+  // The data contained in an input tensor can be represented in "raw"
+  // bytes form or in the repeated type that matches the tensor's data
+  // type. To use the raw representation 'raw_input_contents' must be
+  // initialized with data for each tensor in the same order as
+  // 'inputs'. For each tensor, the size of this content must match
+  // what is expected by the tensor's shape and data type. The raw
+  // data must be the flattened, one-dimensional, row-major order of
+  // the tensor elements without any stride or padding between the
+  // elements. Note that the FP16 data type must be represented as raw
+  // content as there is no specific data type for a 16-bit float
+  // type.
+  //
+  // If this field is specified then InferInputTensor::contents must
+  // not be specified for any input tensor.
+  repeated bytes raw_input_contents = 7;
+}
+
+//
+// An inference parameter value.
+//
+message InferParameter
+{
+  // The parameter value can be a string, an int64, a boolean
+  // or a message specific to a predefined parameter.
+  oneof parameter_choice
+  {
+    // A boolean parameter value.
+    bool bool_param = 1;
+
+    // An int64 parameter value.
+    int64 int64_param = 2;
+
+    // A string parameter value.
+    string string_param = 3;
+  }
+}
+
+//
+// The data contained in a tensor represented by the repeated type
+// that matches the tensor's data type. Protobuf oneof is not used
+// because oneofs cannot contain repeated fields.
+//
+message InferTensorContents
+{
+  // Representation for BOOL data type. The size must match what is
+  // expected by the tensor's shape. The contents must be the flattened,
+  // one-dimensional, row-major order of the tensor elements.
+  repeated bool bool_contents = 1;
+
+  // Representation for INT8, INT16, and INT32 data types. The size
+  // must match what is expected by the tensor's shape. The contents
+  // must be the flattened, one-dimensional, row-major order of the
+  // tensor elements.
+  repeated int32 int_contents = 2;
+
+  // Representation for INT64 data types. The size must match what
+  // is expected by the tensor's shape. The contents must be the
+  // flattened, one-dimensional, row-major order of the tensor elements.
+  repeated int64 int64_contents = 3;
+
+  // Representation for UINT8, UINT16, and UINT32 data types. The size
+  // must match what is expected by the tensor's shape. The contents
+  // must be the flattened, one-dimensional, row-major order of the
+  // tensor elements.
+  repeated uint32 uint_contents = 4;
+
+  // Representation for UINT64 data types. The size must match what
+  // is expected by the tensor's shape. The contents must be the
+  // flattened, one-dimensional, row-major order of the tensor elements.
+  repeated uint64 uint64_contents = 5;
+
+  // Representation for FP32 data type. The size must match what is
+  // expected by the tensor's shape. The contents must be the flattened,
+  // one-dimensional, row-major order of the tensor elements.
+  repeated float fp32_contents = 6;
+
+  // Representation for FP64 data type. The size must match what is
+  // expected by the tensor's shape. The contents must be the flattened,
+  // one-dimensional, row-major order of the tensor elements.
+  repeated double fp64_contents = 7;
+
+  // Representation for BYTES data type. The size must match what is
+  // expected by the tensor's shape. The contents must be the flattened,
+  // one-dimensional, row-major order of the tensor elements.
+  repeated bytes bytes_contents = 8;
+}
+
+message ModelInferResponse
+{
+  // An output tensor returned for an inference request.
+  message InferOutputTensor
+  {
+    // The tensor name.
+    string name = 1;
+
+    // The tensor data type.
+    string datatype = 2;
+
+    // The tensor shape.
+    repeated int64 shape = 3;
+
+    // Optional output tensor parameters.
+    map<string, InferParameter> parameters = 4;
+
+    // The tensor contents using a data-type format. This field must
+    // not be specified if "raw" tensor contents are being used for
+    // the inference response.
+    InferTensorContents contents = 5;
+  }
+
+  // The name of the model used for inference.
+  string model_name = 1;
+
+  // The version of the model used for inference.
+  string model_version = 2;
+
+  // The id of the inference request if one was specified.
+  string id = 3;
+
+  // Optional inference response parameters.
+  map<string, InferParameter> parameters = 4;
+
+  // The output tensors holding inference results.
+  repeated InferOutputTensor outputs = 5;
+
+  // The data contained in an output tensor can be represented in
+  // "raw" bytes form or in the repeated type that matches the
+  // tensor's data type. To use the raw representation 'raw_output_contents'
+  // must be initialized with data for each tensor in the same order as
+  // 'outputs'. For each tensor, the size of this content must match
+  // what is expected by the tensor's shape and data type. The raw
+  // data must be the flattened, one-dimensional, row-major order of
+  // the tensor elements without any stride or padding between the
+  // elements. Note that the FP16 data type must be represented as raw
+  // content as there is no specific data type for a 16-bit float
+  // type.
+  //
+  // If this field is specified then InferOutputTensor::contents must
+  // not be specified for any output tensor.
+  repeated bytes raw_output_contents = 6;
+}
+
+
 
 // On any input that is documented to expect a string parameter in
 // snake_case or kebab-case, either of those cases is accepted.
 service PredictionServer {
-    rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
+  // Check liveness of the inference server.
+  rpc ServerLive(ServerLiveRequest) returns (ServerLiveResponse) {}
+
+  // Check readiness of the inference server.
+  rpc ServerReady(ServerReadyRequest) returns (ServerReadyResponse) {}
+
+  // Check readiness of a model in the inference server.
+  rpc ModelReady(ModelReadyRequest) returns (ModelReadyResponse) {}
+
+  // Get server metadata.
+  rpc ServerMetadata(ServerMetadataRequest) returns (ServerMetadataResponse) {}
+
+  // Get model metadata.
+  rpc ModelMetadata(ModelMetadataRequest) returns (ModelMetadataResponse) {}
+
+  rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
         option (google.api.http) = {
               get: "/v1/predictors/{name}"
               body: "*"
         };
     }
-    rpc GetModel(GetModelRequest) returns (GetModelRequest) {
+
+  rpc GetModel(GetModelRequest) returns (GetModelRequest) {
         option (google.api.http) = {
               get: "/v1/predictors/{predictor}/models/{name}"
               body: "*"
         };
-    }
+  }
 
-    rpc Predict(PredictRequest) returns (PredictResponse) {
+  rpc Predict(PredictRequest) returns (PredictResponse) {
         option (google.api.http) = {
               post: "/v1/predictors/{name}"
               body: "*"
