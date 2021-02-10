@@ -1,0 +1,147 @@
+package v1alpha1
+
+import (
+	catalog "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
+	v1 "k8s.io/api/core/v1"
+
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+type AccountRoleBinding struct {
+	// Entity is the name of the entity, can be a product name,lab name or serving site name
+	Entity string `json:"entity,omitempty" protobuf:"bytes,1,opt,name=entity"`
+	// The role in relation to the entity.
+	Role catalog.RoleName `json:"role,omitempty" protobuf:"bytes,2,opt,name=role"`
+}
+
+//=======
+// Account
+//========
+// +kubebuilder:validation:Enum="user";"group"
+type AccountType string
+
+const (
+	User  AccountType = "user"
+	Group AccountType = "group"
+)
+
+// AccountCondition represents the state of the account
+type AccountConditionType string
+
+/// Account Condition
+const (
+	AccountReady     AccountConditionType = "Ready"
+	AccountLoggedIn  AccountConditionType = "LoggedIn"
+	PasswordEmailed  AccountConditionType = "PasswordEmailed"
+	PasswordWasReset AccountConditionType = "PasswordWasReset"
+	AccountArchived  AccountConditionType = "Archived"
+	AccountInGit     AccountConditionType = "SavedInGit"
+)
+
+// AccountCondition describes the state of a account at a certain point.
+type AccountCondition struct {
+	// Type of account condition.
+	Type AccountConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=AccountConditionType"`
+	// Status of the condition, one of True, False, Unknown.
+	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
+	// Last time the condition transitioned from one status to another.
+	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
+	// The reason for the condition's last transition.
+	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
+	// A human readable message indicating details about the transition.
+	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
+}
+
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +k8s:openapi-gen=true
+// +genclient
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
+// +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
+// +kubebuilder:printcolumn:name="Smtp",type="string",JSONPath=".spec.email",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=accounts,shortName=act,singular=account,categories={infra,modeld}
+// Account represents a user or team in the system
+type Account struct {
+	// Standard object's metadata.
+	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	Spec              AccountSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status AccountStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+}
+
+// +kubebuilder:object:root=true
+// AccountList represent list of accounts.
+type AccountList struct {
+	metav1.TypeMeta `json:",inline"`
+	//+optional
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	// ListAccounts of Accounts
+	Items []Account `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+// AccountSpec defines the desired state of Account
+type AccountSpec struct {
+	// The account tenant.
+	// Default to default tenant.
+	// +optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
+	// A reference to the group account of this account
+	// +optional
+	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
+	// Type is the type of account - user, group. default is user
+	// Required.
+	Type *AccountType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type,casttype=AccountType"`
+	// UserName specifies the name of the account
+	// Required.
+	// +kubebuilder:validation:MinLength=4
+	// +kubebuilder:validation:MaxLength=64
+	UserName string `json:"userName" protobuf:"bytes,4,opt,name=username"`
+	// First FileName is the user first name
+	// +optional
+	// +kubebuilder:validation:MaxLength=64
+	FirstName *string `json:"firstName,omitempty" protobuf:"bytes,5,opt,name=firstName"`
+	// LastName is the user last name
+	// +optional
+	// +kubebuilder:validation:MaxLength=64
+	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
+	// Email specify the email of the user
+	// +optional
+	// +kubebuilder:validation:MaxLength=64
+	Email *string `json:"email,omitempty" protobuf:"bytes,7,opt,name=email"`
+	// Phone specify the phone of the user
+	// +optional
+	// +kubebuilder:validation:MaxLength=64
+	Phone *string `json:"phone,omitempty" protobuf:"bytes,8,opt,name=phone"`
+	// User is admin. Admin have full control on other accounts.
+	// Default to false.
+	// +optional
+	Admin *bool `json:"admin,omitempty" protobuf:"bytes,9,opt,name=admin"`
+	// Email account creation event to user (using the user email)
+	// Default to false.
+	// +optional
+	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,10,opt,name=emailPassword"`
+	// User need to reset password upon login
+	// +optional
+	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,11,opt,name=resetPassword"`
+	// Entity Binding
+	// +optional
+	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,12,rep,name=productBindings"`
+	// Lab Binding
+	// +optional
+	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,13,rep,name=labBindings"`
+	// ServingSite Binding
+	// +optional
+	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,14,rep,name=siteBindings"`
+}
+
+// AccountStatus defines the actual state of the api object
+type AccountStatus struct {
+	// Represents the latest available observations of a account state.
+	//+optional
+	Conditions []AccountCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+}

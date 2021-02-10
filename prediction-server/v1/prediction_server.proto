@@ -10,7 +10,7 @@ import "google/protobuf/struct.proto";
 option csharp_namespace = "Modeld.Client.Autogen.Grpc.v1";
 option java_outer_classname = "ModeldProtos";
 option java_package = "io.modeld.v1";
-option go_package = "github.com/metaprov/modeld/pkg/proto/predictionserver/v1";
+option go_package = "github.com/metaprov/modeld-api/pkg/proto/predictionserver/v1";
 
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
