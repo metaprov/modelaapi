@@ -65,7 +65,7 @@ service EntityService {
     rpc CreateEntity(CreateEntityRequest) returns (CreateEntityResponse) {
         option (google.api.http) = {
 			post: "/v1/entities"
-			body: "entity"
+			body: "spec"
 		};
     }
     rpc GetEntity(GetEntityRequest) returns (GetEntityResponse) {
@@ -73,8 +73,8 @@ service EntityService {
     }
     rpc UpdateEntity(UpdateEntityRequest) returns (UpdateEntityResponse) {
         option (google.api.http) = {
-			put: "/v1/entities/{entity.metadata.name}"
-			body: "entity"
+			put: "/v1/entities/{name}"
+			body: "spec"
 		};
     }
 

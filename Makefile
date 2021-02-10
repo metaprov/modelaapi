@@ -8,9 +8,21 @@ generate-proto:
 generate-go:
 	hack/generate-go.sh
 
-.PHONY: generate-codegen
-update-codegen:
+.PHONY: generate-client-go
+generate-client-go:
 	hack/update-codegen.sh
+
+.PHONY: generate-gateway
+generate-gateway:
+	hack/generate-gw.sh
+
+.PHONY: generate-swagger
+generate-swagger:
+	hack/generate-swagger.sh
+
+.PHONY: generate-api-docs
+generate-api-docs:
+	hack/generate-api-docs.sh
 
 generate-deepcopy:
 	$(CONTROLLER_GEN) object:headerFile=./hack/custom-boilerplate.go.txt paths=./pkg/apis/...
@@ -22,6 +34,9 @@ generate-crd:
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+
+generate: generate-proto generate-go generate-crd generate-client-go generate-gateaway generate-swagger generate-api-docs
+
 
 controller-gen:
 ifeq (, $(shell which controller-gen))
