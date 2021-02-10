@@ -1,0 +1,178 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: clouds.catalog.modeld.io
+spec:
+  group: catalog.modeld.io
+  names:
+    categories:
+    - catalog
+    - modeld
+    - all
+    kind: Cloud
+    listKind: CloudList
+    plural: clouds
+    singular: cloud
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ==============================================================================
+          CloudName ==============================================================================
+          Cloud represent a cloud provider. A cloud contains RegionName, machines
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              defaultGpuClassRef:
+                type: string
+              defaultMachineClassRef:
+                type: string
+              defaultRegionRef:
+                type: string
+              gpuClasses:
+                items:
+                  properties:
+                    cloudName:
+                      type: string
+                    gpumem:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    mem:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    regionName:
+                      type: string
+                    storage:
+                      type: string
+                    vcpu:
+                      format: int32
+                      minimum: 0
+                      type: integer
+                  required:
+                  - cloudName
+                  - regionName
+                  type: object
+                type: array
+              machineClasses:
+                items:
+                  properties:
+                    cloudName:
+                      type: string
+                    mem:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    regionName:
+                      type: string
+                    storage:
+                      type: string
+                    vcpu:
+                      format: int32
+                      type: integer
+                  type: object
+                type: array
+              regions:
+                items:
+                  properties:
+                    billingCode:
+                      description: The billing code of the region
+                      type: string
+                    cloudName:
+                      type: string
+                    datacenters:
+                      items:
+                        properties:
+                          code:
+                            type: string
+                          name:
+                            type: string
+                        type: object
+                      type: array
+                    defaultDatacenterName:
+                      description: The default datacenter for a region
+                      type: string
+                    location:
+                      description: The location of the region
+                      type: string
+                  type: object
+                type: array
+            type: object
+          status:
+            description: CloudStatus defines the observed state of Cloud.
+            properties:
+              gpuCosts:
+                items:
+                  properties:
+                    costPerMinute:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    costSpot:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    region:
+                      type: string
+                  type: object
+                type: array
+              machineCosts:
+                items:
+                  properties:
+                    costPerMinute:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    costSpot:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    region:
+                      type: string
+                  type: object
+                type: array
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

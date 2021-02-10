@@ -11,14 +11,14 @@ message ListRunBooksRequest {
 }
 
 message ListRunBooksResponse {
-    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBookList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.RunBookList items = 1;
 }
 
 message CreateRunBookRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBookSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.RunBookSpec spec = 4;
 }
 
 message CreateRunBookResponse {
@@ -29,7 +29,7 @@ message UpdateRunBookRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBookSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.RunBookSpec spec = 5;
 }
 
 message UpdateRunBookResponse {
@@ -43,7 +43,7 @@ message GetRunBookRequest {
 
 
 message GetRunBookResponse {
-    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.RunBook item = 1;
     string yaml = 2;
 }
 

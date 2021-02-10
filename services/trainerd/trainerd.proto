@@ -25,19 +25,19 @@ service TrainerdService {
 // Transform a dataset based on a prep
 
 message TrainRequest {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct        product   = 1;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version   = 2;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket        = 3;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model          model   = 5;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study          study   = 6;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource  = 7;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProduct        product   = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductVersion version   = 2;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucket     bucket        = 3;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model          model   = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Study          study   = 6;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSource             datasource  = 7;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
     k8s.io.api.core.v1.Secret     secret     = 10;
 }
 
 message TrainResponse {
-    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Measurement result = 1;
+    repeated github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Measurement result = 1;
     // The location in the bucket of the trained bin model
     string weightsCloudUri = 2;
     // The location in the bucket of the cloud manifest.
@@ -54,23 +54,23 @@ message TrainResponse {
 // Do a full training on the testing set, and validate on the test set.
 
 message TestRequest {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model          model         = 5;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study          study      = 6;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource     = 7;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset            dataset    = 8;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection = 9;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model          model         = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Study          study      = 6;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSource             datasource     = 7;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset            dataset    = 8;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection        connection = 9;
     k8s.io.api.core.v1.Secret     secret     = 10;
 
 }
 
 message TestResponse {
     // measurements on the training set
-    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Measurement train_result = 1;
+    repeated github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Measurement train_result = 1;
     // measurements on the testing set
-    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Measurement test_result = 2;
+    repeated github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Measurement test_result = 2;
     // The location in the bucket of the trained bin model
     string modelWeightsCloudUri = 3;
     // The location in the bucket of the cloud manifest.
@@ -91,43 +91,43 @@ message TestResponse {
 }
 // used for ensable training
 message TrainEnsembleRequest  {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
     // the spec for the base models
-    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model   base     = 5;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model          model      = 6;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study          study      = 7;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection = 10;
+    repeated github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model   base     = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model          model      = 6;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Study          study      = 7;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection        connection = 10;
     k8s.io.api.core.v1.Secret     secret     = 11;
 }
 
 
 message TestEnsembleRequest  {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProduct        product    = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
     // the spec for the base models
-    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model   base     = 5;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model          model      = 6;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study          study      = 7;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection = 10;
+    repeated github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model   base     = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model          model      = 6;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Study          study      = 7;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection        connection = 10;
     k8s.io.api.core.v1.Secret     secret     = 11;
 }
 
 message ForecastRequest {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct        product   = 1;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version   = 2;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket        = 3;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model          model   = 5;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study          study   = 6;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource         datasource  = 7;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProduct        product   = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductVersion version   = 2;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucket     bucket        = 3;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model          model   = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Study          study   = 6;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSource         datasource  = 7;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
     k8s.io.api.core.v1.Secret     secret     = 10;
 }
 

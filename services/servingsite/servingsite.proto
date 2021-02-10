@@ -13,14 +13,14 @@ message ListServingSitesRequest {
 }
 
 message ListServingSitesResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ServingSiteList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ServingSiteList items = 1;
 }
 
 message CreateServingSiteRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ServingSiteSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ServingSiteSpec spec = 4;
 }
 
 message CreateServingSiteResponse {
@@ -31,7 +31,7 @@ message UpdateServingSiteRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ServingSiteSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ServingSiteSpec spec = 5;
 }
 
 message UpdateServingSiteResponse {
@@ -45,7 +45,7 @@ message GetServingSiteRequest {
 
 
 message GetServingSiteResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ServingSite item = 1;
     string yaml = 2;
 }
 

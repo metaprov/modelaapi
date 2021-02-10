@@ -11,14 +11,14 @@ message ListFeaturesRequest {
 }
 
 message ListFeaturesResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureList items = 1;
 }
 
 message CreateFeatureRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
 }
 
 message CreateFeatureResponse {
@@ -29,7 +29,7 @@ message UpdateFeatureRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureSpec spec = 5;
 }
 
 message UpdateFeatureResponse {
@@ -43,7 +43,7 @@ message GetFeatureRequest {
 
 
 message GetFeatureResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Feature item = 1;
     string yaml = 2;
 }
 

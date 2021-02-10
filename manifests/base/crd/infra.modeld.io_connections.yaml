@@ -1,0 +1,568 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: connections.infra.modeld.io
+spec:
+  group: infra.modeld.io
+  names:
+    categories:
+    - infra
+    - modeld
+    kind: Connection
+    listKind: ConnectionList
+    plural: connections
+    shortNames:
+    - cred
+    singular: connection
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.provider
+      name: Provider
+      type: string
+    - jsonPath: .spec.secretName
+      name: StorageSecret
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ConnectionSpec defines the desired state of Connection
+            properties:
+              aliCloud:
+                properties:
+                  accessKey:
+                    type: string
+                  host:
+                    type: string
+                  region:
+                    type: string
+                  secretKey:
+                    type: string
+                type: object
+              athena:
+                properties:
+                  accessKey:
+                    type: string
+                  hostName:
+                    type: string
+                  s3OutputLocation:
+                    type: string
+                  secretKey:
+                    type: string
+                type: object
+              aws:
+                description: ////////////////////////// Cloud connection //////////////////////////
+                properties:
+                  accessKey:
+                    description: Aws Access key. This is an hidden fields which are
+                      stored in the secret
+                    type: string
+                  defaultRegion:
+                    description: Default zone.
+                    type: string
+                  secretKey:
+                    description: Aws StorageSecret key. This is an hidden fields which
+                      are stored in the secret
+                    type: string
+                type: object
+              azureStorage:
+                properties:
+                  accessKey:
+                    description: This is an hidden field which is stored in a p
+                    type: string
+                  storageAccount:
+                    type: string
+                type: object
+              bigQuery:
+                properties:
+                  serviceAccount:
+                    type: string
+                type: object
+              bitbuckt:
+                properties:
+                  ssh:
+                    type: string
+                  token:
+                    type: string
+                  userName:
+                    type: string
+                type: object
+              cassandra:
+                properties:
+                  database:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: default 9042
+                    format: int32
+                    type: integer
+                  username:
+                    type: string
+                type: object
+              category:
+                description: The connection category default for general
+                enum:
+                - general
+                - cloud
+                - docker-image-registry
+                - database
+                - git
+                - messaging
+                type: string
+              digitalocean:
+                properties:
+                  accessKey:
+                    description: Access Key for digital ocean spaces
+                    type: string
+                  defaultRegion:
+                    description: Default digital ocean
+                    type: string
+                  host:
+                    description: url or connection string
+                    type: string
+                  secretKey:
+                    description: StorageSecret Key for digital ocean spaces
+                    type: string
+                  token:
+                    description: Token for digital ocean
+                    type: string
+                type: object
+              flock:
+                properties:
+                  url:
+                    type: string
+                type: object
+              gcpstorage:
+                properties:
+                  keyFile:
+                    type: string
+                  project:
+                    type: string
+                type: object
+              github:
+                properties:
+                  ssh:
+                    type: string
+                  token:
+                    type: string
+                  userName:
+                    type: string
+                type: object
+              gitlab:
+                properties:
+                  ssh:
+                    type: string
+                  token:
+                    type: string
+                type: object
+              hetzner:
+                properties:
+                  ssh:
+                    type: string
+                  token:
+                    type: string
+                type: object
+              hipchat:
+                properties:
+                  room:
+                    type: string
+                  token:
+                    type: string
+                  url:
+                    type: string
+                type: object
+              imageRegistry:
+                properties:
+                  host:
+                    description: Hostname for the image registry
+                    type: string
+                  password:
+                    type: string
+                  username:
+                    description: Username for image registry
+                    type: string
+                type: object
+              linode:
+                properties:
+                  apikey:
+                    type: string
+                type: object
+              matterMost:
+                properties:
+                  channel:
+                    type: string
+                  url:
+                    type: string
+                  username:
+                    type: string
+                type: object
+              minio:
+                properties:
+                  accessKey:
+                    description: Access key for minio
+                    type: string
+                  host:
+                    description: Minio url connection.
+                    type: string
+                  secretKey:
+                    description: StorageSecret key for minio
+                    type: string
+                type: object
+              mongodb:
+                properties:
+                  database:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: default 27017
+                    format: int32
+                    type: integer
+                  username:
+                    type: string
+                type: object
+              mssqlserver:
+                properties:
+                  database:
+                    type: string
+                  domain:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: Default 1433
+                    format: int32
+                    type: integer
+                  username:
+                    type: string
+                type: object
+              msteam:
+                properties:
+                  webhook:
+                    type: string
+                type: object
+              mysql:
+                properties:
+                  database:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: default 3306
+                    format: int32
+                    type: integer
+                  username:
+                    type: string
+                type: object
+              odbc:
+                properties:
+                  connectionString:
+                    type: string
+                type: object
+              openstack:
+                properties:
+                  authUrl:
+                    type: string
+                  password:
+                    type: string
+                  region:
+                    type: string
+                  tenantName:
+                    type: string
+                  userName:
+                    type: string
+                type: object
+              oracle:
+                properties:
+                  database:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: Default 1521
+                    format: int32
+                    type: integer
+                  role:
+                    type: string
+                  serviceName:
+                    type: string
+                  username:
+                    type: string
+                type: object
+              ovh:
+                properties:
+                  application:
+                    type: string
+                  consumerkey:
+                    type: string
+                  endpoint:
+                    type: string
+                  secret:
+                    type: string
+                type: object
+              owner:
+                description: Owner
+                type: string
+              postgres:
+                properties:
+                  database:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: "5432"
+                    format: int32
+                    type: integer
+                  username:
+                    type: string
+                type: object
+              presto:
+                properties:
+                  catalog:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: Default 8080
+                    format: int32
+                    type: integer
+                  schema:
+                    type: string
+                  username:
+                    type: string
+                type: object
+              provider:
+                description: Provider specifies the name api provider (E.g. aws) required
+                enum:
+                - alicloud
+                - athena
+                - azure
+                - big-query
+                - bitbucket
+                - cassandra
+                - digitalocean
+                - smtp
+                - gcp
+                - github
+                - hetzner
+                - linode
+                - mysql
+                - minio
+                - mongo-db
+                - ms-sql-server
+                - odbc
+                - oracle
+                - ovh
+                - postgres
+                - presto
+                - redshift
+                - aws
+                - slack
+                - snowflake
+                - sqlite
+                - image-registry
+                - license
+                - gitlab
+                - lm
+                - openstack
+                - hipchat
+                - pagerduty
+                - pushover
+                - opengenie
+                - webook
+                - victorops
+                - wechat
+                - flock
+                - msteam
+                - mattermost
+                - docker-hub
+                - unknown
+                type: string
+              redshift:
+                properties:
+                  database:
+                    type: string
+                  hostName:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    description: Default 5439
+                    format: int32
+                    type: integer
+                  username:
+                    type: string
+                type: object
+              secretName:
+                type: string
+              slack:
+                properties:
+                  channel:
+                    type: string
+                  token:
+                    type: string
+                  userName:
+                    type: string
+                  webhookUrl:
+                    type: string
+                type: object
+              smtp:
+                properties:
+                  host:
+                    type: string
+                  password:
+                    type: string
+                  port:
+                    format: int32
+                    type: integer
+                  userName:
+                    type: string
+                type: object
+              snowflake:
+                properties:
+                  account:
+                    type: string
+                  database:
+                    type: string
+                  password:
+                    type: string
+                  username:
+                    type: string
+                  warehouse:
+                    type: string
+                type: object
+              sqlLight:
+                properties:
+                  fileName:
+                    type: string
+                type: object
+              tenantRef:
+                description: The owner of the connection default to the default tenant
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              webhook:
+                properties:
+                  url:
+                    type: string
+                type: object
+            required:
+            - provider
+            - secretName
+            type: object
+          status:
+            description: ConnectionStatus is the observed state of a Connection
+            properties:
+              conditions:
+                items:
+                  description: ConnectionCondition describes the state of a connection
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

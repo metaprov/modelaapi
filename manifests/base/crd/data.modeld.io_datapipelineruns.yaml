@@ -1,0 +1,148 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: datapipelineruns.data.modeld.io
+spec:
+  group: data.modeld.io
+  names:
+    categories:
+    - data
+    - modeld
+    - all
+    kind: DataPipelineRun
+    listKind: DataPipelineRunList
+    plural: datapipelineruns
+    singular: datapipelinerun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DataPipelineRun represent the joiner of dataset into the system
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DataPipelineRunSpec defines the desired state of a schema
+            properties:
+              dataLocation:
+                description: The location of data artifacts that are generated during
+                  the run
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
+              datapipelineName:
+                description: The data product
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              description:
+                description: User provided description
+                type: string
+              owner:
+                default: ""
+                description: The owner account name
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              versionName:
+                description: The product of the rejoiner
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+            type: object
+          status:
+            description: DataPipelineRunStatus defines the observed state of DataPipelineRun
+            properties:
+              completionTime:
+                description: CompletionTime is the time that this pipeline finishes
+                format: date-time
+                type: string
+              conditions:
+                items:
+                  description: DataPipelineRunCondition describes the state of a data
+                    processor run at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              inputs:
+                description: Pointers to the done datasets
+                items:
+                  type: string
+                type: array
+              output:
+                description: the resulting dataset from the flow
+                type: string
+              phase:
+                description: the phase of the run
+                type: string
+              startTime:
+                description: StartTime is the times that this data pipeline started
+                format: date-time
+                type: string
+            required:
+            - inputs
+            - output
+            - phase
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

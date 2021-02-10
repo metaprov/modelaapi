@@ -20,9 +20,9 @@ message CreateFeatureRequest {
     string name = 1;
     string ns   = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
     string connectionName = 5;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
     map<string,bytes>  secret    = 7;
 }
 message CreateFeatureResponse {}
@@ -39,9 +39,9 @@ message UpdateFeatureRequest {
     string name = 1;
     string ns   = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
     string connectionName = 5;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
     map<string,bytes>  secret    = 7;
 }
 message UpdateFeatureResponse {}
@@ -51,7 +51,7 @@ message ListFeaturesRequest {
     string ns   = 1;
 }
 message ListFeaturesResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureList items = 3;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureList items = 3;
 }
 
 message GetFeatureRequest {
@@ -60,13 +60,13 @@ message GetFeatureRequest {
 }
 
 message GetFeatureResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message GenerateTrainingDatasetRequest {
     string name = 1;
     string ns   = 2;
-    repeated github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature items = 3;
+    repeated github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Feature items = 3;
 }
 
 message GenerateTrainingDatasetResponse {}

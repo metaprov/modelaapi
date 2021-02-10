@@ -11,14 +11,14 @@ message ListEntitiesRequest {
 }
 
 message ListEntitiesResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.EntityList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.EntityList items = 1;
 }
 
 message CreateEntityRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.EntitySpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.EntitySpec spec = 4;
 }
 
 message CreateEntityResponse {
@@ -29,7 +29,7 @@ message UpdateEntityRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.EntitySpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.EntitySpec spec = 5;
 }
 
 message UpdateEntityResponse {
@@ -43,7 +43,7 @@ message GetEntityRequest {
 
 
 message GetEntityResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Entity item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Entity item = 1;
     string yaml = 2;
 }
 

@@ -7,7 +7,7 @@ import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 message LabelCreateRequest {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Account account = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Account account = 1;
     bool upsert = 2;
 }
 
@@ -15,7 +15,7 @@ message LabelCreateResponse{}
 
 message NotificationRequest {
     // one or more notifiers might be involved
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Notifier notifiers = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Notifier notifiers = 1;
     // the msg to send
     string msg = 2;
     // Any attachments.

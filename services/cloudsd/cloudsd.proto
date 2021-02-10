@@ -22,7 +22,7 @@ message VirtualBucketExistRequest {
     string name = 1;
     string credNamespace = 2;
     string credName = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
     map<string,bytes>  secret    = 5;
 }
 
@@ -36,7 +36,7 @@ message KeyExistInVirtualBucketRequest {
     string key    = 3;
     string credNamespace = 4;
     string credName = 5;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
     map<string,bytes>  secret    = 7;
 
 }
@@ -53,7 +53,7 @@ message FileDownloadRequest {
     string path   = 3; // local path
     string credNamespace = 4;
     string credName = 5;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
     map<string,bytes>  secret    = 7;
 }
 
@@ -65,7 +65,7 @@ message FileUploadRequest {
     string path   = 3; // local path
     string credNamespace = 4;
     string credName = 5;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
     map<string,bytes>  secret    = 7;
 }
 
@@ -74,10 +74,10 @@ message FileUploadResponse {}
 
 message CreateVirtualBucketRequest {
     string bucketName  = 1;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 2;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 2;
     string credNamespace = 3;
     string credName = 4;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 5;
     map<string,bytes>  secret    = 7;
 
 }

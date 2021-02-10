@@ -21,7 +21,7 @@ message CreateFeatureRequest {
     string name = 1;
     string ns   = 2;
     string connectionName = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
     map<string,bytes>  secret    = 5;
 
 }
@@ -40,16 +40,16 @@ message ListFeaturesRequest {
 
 }
 message ListFeaturesResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureList items = 1;
 }
 
 message GetFeatureRequest {
     string name = 1;
     string ns   = 2;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature item = 3;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Feature item = 3;
 }
 message GetFeatureResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message EnrichRequest {
@@ -66,9 +66,9 @@ message UpdateFeatureRequest {
     string name = 1;
     string ns   = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
     string connectionName = 5;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
     map<string,bytes>  secret    = 7;
 }
 message UpdateFeatureResponse {}

@@ -11,14 +11,14 @@ message ListLabelingPipelineRequest {
 }
 
 message ListLabelingPipelineResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.LabelingPipelineList items = 1;
 }
 
 message CreateLabelingPipelineRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.LabelingPipelineSpec spec = 4;
 }
 
 message CreateLabelingPipelineResponse {
@@ -29,7 +29,7 @@ message UpdateLabelingPipelineRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.LabelingPipelineSpec spec = 5;
 }
 
 message UpdateLabelingPipelineResponse {
@@ -43,7 +43,7 @@ message GetLabelingPipelineRequest {
 
 
 message GetLabelingPipelineResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
     string yaml = 2;
 }
 

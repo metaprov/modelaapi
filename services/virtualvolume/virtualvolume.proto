@@ -19,19 +19,19 @@ message VirtualVolumeCreateRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 5;
 }
 
 message VirtualVolumeUpdateRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 5;
 }
 
 
 message VirtualVolumeGetResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
     string yaml = 2;
 
 }
@@ -39,7 +39,7 @@ message VirtualVolumeGetResponse {
 
 
 service VirtualVolumeService {
-    rpc List(VirtualVolumeQuery) returns (github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualVolumeList) {
+    rpc List(VirtualVolumeQuery) returns (github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualVolumeList) {
         option (google.api.http).get = "/api/v1alpha1/virtualvolumes";
     }
     rpc Create(VirtualVolumeCreateRequest) returns (google.protobuf.Empty) {

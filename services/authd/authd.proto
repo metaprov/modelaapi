@@ -62,7 +62,7 @@ message ResetPasswordReponse {
 message AccountCreateRequest {
     string namespace = 1;
     string name      = 2;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
     string  password = 4;
 }
 

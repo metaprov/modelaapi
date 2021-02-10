@@ -1,0 +1,220 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: modelpipelineruns.training.modeld.io
+spec:
+  group: training.modeld.io
+  names:
+    categories:
+    - train
+    - modeld
+    - all
+    kind: ModelPipelineRun
+    listKind: ModelPipelineRunList
+    plural: modelpipelineruns
+    shortNames:
+    - pr
+    singular: modelpipelinerun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .status.pipelineName
+      name: ModelPipeline
+      type: string
+    - jsonPath: .status.versionName
+      name: Version
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ModelPipelineRun represent a execution of a pipeline
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ModelPipelineRunSpec is the desired state of the ModelPipelineRun
+              resource
+            properties:
+              description:
+                description: User provided description
+                type: string
+              owner:
+                description: The owner account name
+                type: string
+              pipelineName:
+                description: PipelineName is the name of the pipeline specification
+                  for this pipeline
+                type: string
+              triggerName:
+                description: TriggerName denote the trigger that fired this pipeline
+                  run
+                type: string
+              versionName:
+                description: User provided description
+                type: string
+            type: object
+          status:
+            description: ModelPipelineRunStatus is the observed state of the ModelPipelineRun
+              resource .
+            properties:
+              acceptance:
+                description: Staging is status for each qa stage.
+                properties:
+                  approved:
+                    type: boolean
+                  approvedBy:
+                    type: string
+                  endTime:
+                    format: date-time
+                    type: string
+                  score:
+                    type: number
+                  startTime:
+                    format: date-time
+                    type: string
+                type: object
+              capacity:
+                description: ReleaseStage is the status for the production stage.
+                properties:
+                  approved:
+                    type: boolean
+                  approvedBy:
+                    type: string
+                  endTime:
+                    format: date-time
+                    type: string
+                  score:
+                    type: number
+                  startTime:
+                    format: date-time
+                    type: string
+                type: object
+              completionTime:
+                format: date-time
+                type: string
+              conditions:
+                items:
+                  description: ModelPipelineRunCondition describes the state of a
+                    ModelPipelineRun at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of  condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              data:
+                description: data is the status for the data stage.
+                properties:
+                  approved:
+                    type: boolean
+                  approvedBy:
+                    type: string
+                  endTime:
+                    format: date-time
+                    type: string
+                  score:
+                    type: number
+                  startTime:
+                    format: date-time
+                    type: string
+                type: object
+              folder:
+                description: Folder for pipeline run artifacts. This is assigned by
+                  the system The folder contains all the pipeline artifacts - metadata,
+                  logs
+                type: string
+              phase:
+                description: The phase of the pipeline run
+                type: string
+              prod:
+                description: ReleaseStage is the status for the production stage.
+                properties:
+                  approved:
+                    type: boolean
+                  approvedBy:
+                    type: string
+                  endTime:
+                    format: date-time
+                    type: string
+                  score:
+                    type: number
+                  startTime:
+                    format: date-time
+                    type: string
+                type: object
+              startTime:
+                format: date-time
+                type: string
+              studyName:
+                type: string
+              training:
+                description: dev is the status for the dev stage.
+                properties:
+                  approved:
+                    type: boolean
+                  approvedBy:
+                    type: string
+                  endTime:
+                    format: date-time
+                    type: string
+                  score:
+                    type: number
+                  startTime:
+                    format: date-time
+                    type: string
+                type: object
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

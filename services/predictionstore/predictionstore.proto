@@ -10,9 +10,9 @@ import "k8s.io/api/core/v1/generated.proto";
 
 
 message PredictionsIngestRequest {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset dataset = 1;
     string key = 2; // the location to put the prediction db in.
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 3;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection connection = 3;
     k8s.io.api.core.v1.Secret     secret     = 4;
 }
 

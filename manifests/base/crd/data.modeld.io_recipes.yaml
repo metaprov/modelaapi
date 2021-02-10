@@ -1,0 +1,224 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: recipes.data.modeld.io
+spec:
+  group: data.modeld.io
+  names:
+    categories:
+    - data
+    - modeld
+    - all
+    kind: Recipe
+    listKind: RecipeList
+    plural: recipes
+    shortNames:
+    - rc
+    singular: recipe
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .status.statistics.rows
+      name: Rows
+      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Recipe represents a single batch of data
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: RecipeSpec defines the desired state of a dataset
+            properties:
+              description:
+                description: User provided description
+                maxLength: 512
+                type: string
+              input:
+                description: The recipe input spec.
+                properties:
+                  datasetName:
+                    type: string
+                  format:
+                    description: dataset name format
+                    enum:
+                    - url
+                    - path
+                    - password
+                    - time
+                    - count
+                    - interval
+                    - nominal
+                    - email
+                    - creditCard
+                    - uuid
+                    - uuid5
+                    - uuid
+                    - base64
+                    - latitude
+                    - longtitude
+                    - dns
+                    - ip4
+                    - ip6
+                    - ssn
+                    - alpha
+                    - alphanumeric
+                    - none
+                    - unknown
+                    type: string
+                  location:
+                    description: Folder of the actual data resides.
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        description: Path to the full data file (e.g. csv file).
+                        type: string
+                    required:
+                    - bucketName
+                    - path
+                    type: object
+                type: object
+              output:
+                description: Use this as the output dataset name
+                properties:
+                  createDataset:
+                    description: If true, create a new dataset when the recipe is
+                      done.
+                    type: boolean
+                  datasetName:
+                    type: string
+                  location:
+                    description: Folder of the actual data resides.
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        description: Path to the full data file (e.g. csv file).
+                        type: string
+                    required:
+                    - bucketName
+                    - path
+                    type: object
+                type: object
+              owner:
+                default: no-one
+                description: The account name of the owner of this dataset
+                type: string
+              sample:
+                description: Specify the sampling paramters when viewing the recipe
+                properties:
+                  rows:
+                    description: The number of rows. Default is 500
+                    format: int32
+                    type: integer
+                  string:
+                    description: filter formula. Valid only if the sample is a filter.
+                    type: string
+                  type:
+                    description: Define how the recipe file is sampled.
+                    type: string
+                type: object
+              steps:
+                description: The reciepe steps
+                items:
+                  properties:
+                    op:
+                      type: string
+                    parameters:
+                      items:
+                        properties:
+                          name:
+                            type: string
+                          value:
+                            type: string
+                        type: object
+                      type: array
+                  type: object
+                type: array
+              versionName:
+                description: VersionName is the data product version of the dataset
+                  required.
+                maxLength: 63
+                type: string
+              workloadClassName:
+                description: Specify the sampling paramters when viewing the recipe.
+                  By default the recipe controller use the product workload class.
+                type: string
+            type: object
+          status:
+            description: RecipeStatus defines the observed state of Recipe
+            properties:
+              conditions:
+                description: Represents the latest available observations of a dataset
+                  state.
+                items:
+                  description: RecipeCondition describes the state of a dataset at
+                    a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Condition on the dataset
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

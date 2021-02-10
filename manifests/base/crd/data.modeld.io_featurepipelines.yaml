@@ -1,0 +1,178 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: featurepipelines.data.modeld.io
+spec:
+  group: data.modeld.io
+  names:
+    categories:
+    - data
+    - modeld
+    kind: FeaturePipeline
+    listKind: FeaturePipelineList
+    plural: featurepipelines
+    singular: featurepipeline
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: FeaturePipeline represent a feature set object in the feature
+          store.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FeatureSpec contain the desired state of a Feature
+            properties:
+              aggregation:
+                description: Aggregation
+                properties:
+                  aggregations:
+                    items:
+                      properties:
+                        column:
+                          description: The column
+                          type: string
+                        functions:
+                          description: The aggregation function
+                          items:
+                            type: string
+                          type: array
+                        windows:
+                          description: List of windows functions
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
+                  slidePeriod:
+                    type: string
+                type: object
+              description:
+                description: Comments is a description of the feature
+                maxLength: 512
+                type: string
+              entityName:
+                description: Reference to the entity name
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              family:
+                description: Feature Family name
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              materialization:
+                description: Materialization
+                properties:
+                  backfill:
+                    description: Number of days to store information from the past
+                      in the feature store.
+                    format: int32
+                    type: integer
+                  offline:
+                    description: If true update the offline store.
+                    type: boolean
+                  online:
+                    description: If true, update the online store
+                    type: boolean
+                  scheduleInterval:
+                    type: string
+                  startDate:
+                    format: date-time
+                    type: string
+                  ttl:
+                    format: int32
+                    type: integer
+                type: object
+              name:
+                description: FileName specify the name of the attribute
+                maxLength: 64
+                minLength: 1
+                type: string
+              owner:
+                default: no-one
+                description: The feature owner
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              versionName:
+                description: The product version for the feature.
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+            required:
+            - materialization
+            - name
+            type: object
+          status:
+            description: FeatureStatus defines the observed state of Feature
+            properties:
+              averageCost:
+                description: Store the avg cost of running this pipeline
+                type: number
+              conditions:
+                items:
+                  description: DeploymentCondition describes the state of a deployment
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

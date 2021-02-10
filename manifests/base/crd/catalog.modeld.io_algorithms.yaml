@@ -1,0 +1,174 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: algorithms.catalog.modeld.io
+spec:
+  group: catalog.modeld.io
+  names:
+    categories:
+    - catalog
+    - modeld
+    - all
+    kind: Algorithm
+    listKind: AlgorithmList
+    plural: algorithms
+    singular: algorithm
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.frameworkName
+      name: Framework
+      type: string
+    - jsonPath: .spec.url
+      name: Repository
+      type: string
+    - jsonPath: .spec.task
+      name: Task
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: Algorithm is the spec for a machine learning algorithm All
+              of the fields are real only
+            properties:
+              categoricalParameters:
+                description: Categorical hyper parameters
+                items:
+                  properties:
+                    defaultValue:
+                      description: Default value
+                      type: string
+                    enums:
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      description: FileName is the name of the hyper parameter
+                      type: string
+                  type: object
+                type: array
+              description:
+                description: The Algorithm description
+                type: string
+              floatParameters:
+                description: Integer hyper parameters
+                items:
+                  properties:
+                    defaultValue:
+                      description: Default float value
+                      type: number
+                    maximum:
+                      description: Max is the maximum value
+                      type: number
+                    minimum:
+                      description: Min is the minimum value
+                      type: number
+                    name:
+                      description: FileName is the name of the hyper parameter
+                      type: string
+                  type: object
+                type: array
+              frameworkName:
+                description: FrameworkRef is a reference to library
+                type: string
+              integerParameters:
+                description: Integer hyper parameters
+                items:
+                  description: IntParameter contain the specification of an integer
+                    hyper parameter
+                  properties:
+                    defaultValue:
+                      description: Default float value
+                      format: int32
+                      type: integer
+                    maximum:
+                      description: Max is the maximum value
+                      format: int32
+                      type: integer
+                    minimum:
+                      description: Min is the minimum value
+                      format: int32
+                      type: integer
+                    name:
+                      description: FileName is the name of the hyper parameter
+                      type: string
+                    type:
+                      description: Type is the datatype of the parameter
+                      enum:
+                      - numeric
+                      - numeric-list
+                      - categorical
+                      - categorical-list
+                      - datetime
+                      - string
+                      - string-list
+                      - url
+                      - path
+                      - file
+                      - useless
+                      - image
+                      - video
+                      - audio
+                      - boolean
+                      - json
+                      type: string
+                  type: object
+                type: array
+              sparse:
+                description: The Algorithm Task (binary classification / regression)
+                type: boolean
+              task:
+                description: The Algorithm Task (binary classification / regression)
+                enum:
+                - binary-classification
+                - multi-classification
+                - multi-label-classification
+                - text-classification
+                - regression
+                - forecasting
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - topic-modeling
+                - auto
+                - unknown
+                type: string
+              url:
+                description: The Algorithm Url
+                type: string
+            type: object
+          status:
+            description: AlgorithmStatus defines the observed state of Datacenter.
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

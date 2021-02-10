@@ -1,0 +1,454 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: datasources.data.modeld.io
+spec:
+  group: data.modeld.io
+  names:
+    categories:
+    - data
+    - modeld
+    - all
+    kind: DataSource
+    listKind: DataSourceList
+    plural: datasources
+    singular: datasource
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .spec.type
+      name: Type
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Datasource represent source of the data in the system. The spec
+          consist of schema
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              description:
+                description: User provided description of the data source
+                maxLength: 512
+                type: string
+              file:
+                description: If the data source is flat file
+                properties:
+                  commentChars:
+                    description: CommentCharacter(s) to split comments off the end
+                      of lines.
+                    type: string
+                  delimiter:
+                    description: Refers to the character used to separate fields.
+                      Default to comma
+                    enum:
+                    - crlf
+                    - cr
+                    - lf
+                    - semicolon
+                    - colon
+                    - comma
+                    - tab
+                    - space
+                    - pipe
+                    type: string
+                  encoding:
+                    description: Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded
+                      text).
+                    type: string
+                  escapeChar:
+                    description: the char used to escape the delimiter when quoting
+                    type: string
+                  fileType:
+                    description: 'The text file type Default: csv'
+                    enum:
+                    - csv
+                    - tsv
+                    - excel
+                    - fwf
+                    - hdf
+                    - html
+                    - json
+                    - pickle
+                    - sas
+                    - stata
+                    - feather
+                    type: string
+                  header:
+                    description: Check if there is an header
+                    type: boolean
+                  maxRows:
+                    description: The maximum number of rows to read.
+                    format: int32
+                    type: integer
+                  nullValues:
+                    description: "NullValue\tis a sequence of values to replace with
+                      NA."
+                    type: string
+                  quote:
+                    description: The quata char.
+                    enum:
+                    - double-quote
+                    - single-quote
+                    type: string
+                  skipRows:
+                    description: The number of rows to skip
+                    format: int32
+                    type: integer
+                  strict:
+                    description: If true, the import will fail if there is an error
+                    type: boolean
+                type: object
+              owner:
+                default: no-one
+                description: The owner account name
+                type: string
+              ownerName:
+                default: no-one
+                description: The account name of the owner of this dataset
+                type: string
+              schema:
+                description: The data source schema
+                properties:
+                  columns:
+                    description: Columns
+                    items:
+                      properties:
+                        datatype:
+                          description: Type specify the data type of the attribute
+                            required
+                          enum:
+                          - numeric
+                          - numeric-list
+                          - categorical
+                          - categorical-list
+                          - datetime
+                          - string
+                          - string-list
+                          - url
+                          - path
+                          - file
+                          - useless
+                          - image
+                          - video
+                          - audio
+                          - boolean
+                          - json
+                          type: string
+                        description:
+                          description: Description is a description of the feature
+                          maxLength: 63
+                          type: string
+                        enum:
+                          description: Enum
+                          items:
+                            type: string
+                          type: array
+                        example:
+                          description: Example
+                          type: string
+                        exclusiveMaximum:
+                          description: ExclusiveMaximum
+                          type: boolean
+                        exclusiveMinimum:
+                          description: ExclusiveMinimum
+                          type: boolean
+                        externalDocs:
+                          description: External Docs
+                          type: string
+                        featureName:
+                          description: FileName specify the name of the feature, if
+                            this attribute comes from a feature
+                          maxLength: 63
+                          type: string
+                        format:
+                          description: DataFormat is the domain of the column. A domain
+                            constrain the set of values.
+                          enum:
+                          - url
+                          - path
+                          - password
+                          - time
+                          - count
+                          - interval
+                          - nominal
+                          - email
+                          - creditCard
+                          - uuid
+                          - uuid5
+                          - uuid
+                          - base64
+                          - latitude
+                          - longtitude
+                          - dns
+                          - ip4
+                          - ip6
+                          - ssn
+                          - alpha
+                          - alphanumeric
+                          - none
+                          - unknown
+                          type: string
+                        ignore:
+                          description: Ignore specify if the attribute should be ignored
+                            when building the model default is false
+                          type: boolean
+                        label:
+                          description: Label should be true if this attribute is the
+                            predictable target Default is false
+                          type: boolean
+                        maxItems:
+                          description: Max Items in the data in case of a list
+                          format: int32
+                          type: integer
+                        maxLength:
+                          description: MaxLength
+                          format: int32
+                          type: integer
+                        maximum:
+                          description: MaximumFloat
+                          type: number
+                        minItems:
+                          description: Min Items in the data in case of a list.
+                          format: int32
+                          type: integer
+                        minLength:
+                          description: MinLength
+                          format: int32
+                          type: integer
+                        minimum:
+                          description: MinimumFloat
+                          type: number
+                        multipleOf:
+                          description: MultipleOf
+                          format: int32
+                          type: integer
+                        name:
+                          description: FileName specify the name of the attribute
+                            required
+                          maxLength: 63
+                          minLength: 1
+                          type: string
+                        nullable:
+                          description: Nullable indicates if a column can contain
+                            string Default is false
+                          type: boolean
+                        pattern:
+                          description: Pattern Default is empty
+                          type: string
+                        pk:
+                          description: PrimaryKey denotes if this column is part of
+                            the file key.
+                          type: boolean
+                        required:
+                          description: Required
+                          type: boolean
+                        timeColumn:
+                          description: True if this column is used as the time axis
+                            in time series foreacst Default is false.
+                          type: boolean
+                        title:
+                          description: Title
+                          maxLength: 63
+                          type: string
+                        transformerHint:
+                          description: Preprocessor hint constrain the transformer
+                            Default is empty
+                          type: string
+                        uniqueItems:
+                          description: Enforce that all the items in the list are
+                            unique
+                          type: boolean
+                      required:
+                      - datatype
+                      - name
+                      type: object
+                    type: array
+                  tsSchema:
+                    description: Time series schema. Set time series specific parameters.
+                    properties:
+                      country:
+                        description: take holiday into account required default is
+                          US
+                        enum:
+                        - US
+                        - BR
+                        - ID
+                        - IN
+                        - MY
+                        - VN
+                        - TH
+                        - PH
+                        - PK
+                        - BD
+                        - EG
+                        - CN
+                        - RU
+                        - KR
+                        - BY
+                        - AE
+                        - none
+                        type: string
+                      freq:
+                        description: The time series frequency required
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                    type: object
+                type: object
+              table:
+                description: If the data source is a table
+                properties:
+                  connectionRef:
+                    description: Connection refer to a connection object that point
+                      to secret
+                    properties:
+                      apiVersion:
+                        description: API version of the referent.
+                        type: string
+                      fieldPath:
+                        description: 'If referring to a piece of an object instead
+                          of an entire object, this string should contain a valid
+                          JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                          For example, if the object reference is to a container within
+                          a pod, this would take on a value like: "spec.containers{name}"
+                          (where "name" refers to the name of the container that triggered
+                          the event) or if no container name is specified "spec.containers[2]"
+                          (container with index 2 in this pod). This syntax is chosen
+                          only to have some well-defined way of referencing a part
+                          of an object. TODO: this design is not final and this field
+                          is subject to change in the future.'
+                        type: string
+                      kind:
+                        description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                        type: string
+                      name:
+                        description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                        type: string
+                      namespace:
+                        description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                        type: string
+                      resourceVersion:
+                        description: 'Specific resourceVersion to which this reference
+                          is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                        type: string
+                      uid:
+                        description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                        type: string
+                    type: object
+                  connectionString:
+                    description: ConnectionString to connect to the database server
+                    maxLength: 128
+                    type: string
+                  description:
+                    description: User provided description
+                    type: string
+                  query:
+                    description: The actual query. this is required.
+                    type: string
+                  serverType:
+                    description: Type of server
+                    enum:
+                    - sqlserver
+                    - mysql
+                    - postgress
+                    - sqlite
+                    type: string
+                  serverVersion:
+                    description: The version of the server.
+                    type: string
+                  versionName:
+                    maxLength: 64
+                    pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                    type: string
+                type: object
+              type:
+                description: The data source type.
+                enum:
+                - flatfile
+                - table
+                type: string
+              versionName:
+                description: The version of the flat file.
+                maxLength: 63
+                type: string
+            type: object
+          status:
+            description: FlatFileStatus defines the observed state of FlatFileSpec
+            properties:
+              conditions:
+                items:
+                  description: DataSourceCondition describes the state of a datasource
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

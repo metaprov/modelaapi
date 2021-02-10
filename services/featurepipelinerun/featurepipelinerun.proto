@@ -11,14 +11,14 @@ message ListFeaturePipelineRunRequest {
 }
 
 message ListFeaturePipelineRunResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeaturePipelineRunList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturePipelineRunList items = 1;
 }
 
 message CreateFeaturePipelineRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec spec = 4;
 }
 
 message CreateFeaturePipelineRunResponse {
@@ -29,7 +29,7 @@ message UpdateFeaturePipelineRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec spec = 5;
 }
 
 message UpdateFeaturePipelineRunResponse {
@@ -43,7 +43,7 @@ message GetFeaturePipelineRunRequest {
 
 
 message GetFeaturePipelineRunResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
     string yaml = 2;
 }
 

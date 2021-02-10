@@ -16,14 +16,14 @@ message ListReportsRequest {
 }
 
 message ListReportsResponse {
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.ReportList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.ReportList items = 1;
 }
 
 message CreateReportRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.ReportSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.ReportSpec spec = 5;
 }
 
 message CreateReportResponse {}
@@ -33,7 +33,7 @@ message UpdateReportRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.ReportSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.ReportSpec spec = 5;
 }
 
 message UpdateReportResponse {
@@ -46,7 +46,7 @@ message GetReportRequest {
 }
 
 message GetReportResponse {
-    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Report item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Report item = 1;
     string yaml = 2;
 
 }

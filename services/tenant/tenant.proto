@@ -11,14 +11,14 @@ message ListTenantsRequest {
 }
 
 message ListTenantsResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.TenantList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.TenantList items = 1;
 }
 
 message CreateTenantRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.TenantSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.TenantSpec spec = 4;
 }
 
 message CreateTenantResponse {
@@ -29,7 +29,7 @@ message UpdateTenantRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.TenantSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.TenantSpec spec = 5;
 }
 
 message UpdateTenantResponse {
@@ -43,7 +43,7 @@ message GetTenantRequest {
 
 
 message GetTenantResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Tenant item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Tenant item = 1;
     string yaml = 2;
 }
 

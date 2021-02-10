@@ -13,7 +13,7 @@ message ListNotifiersRequest {
 }
 
 message ListNotifiersResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.NotifierList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.NotifierList items = 1;
 }
 
 message NotifierResponse {}
@@ -22,7 +22,7 @@ message CreateNotifierRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.NotifierSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.NotifierSpec spec = 4;
 }
 
 message CreateNotifierResponse {
@@ -33,7 +33,7 @@ message UpdateNotifierRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.NotifierSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.NotifierSpec spec = 5;
 }
 
 message UpdateNotifierResponse {
@@ -47,7 +47,7 @@ message GetNotifierRequest {
 
 
 message GetNotifierResponse {
-    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Notifier item = 1;
     string yaml = 2;
 }
 

@@ -1,0 +1,198 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+  creationTimestamp: null
+  name: licenses.infra.modeld.io
+spec:
+  group: infra.modeld.io
+  names:
+    categories:
+    - infra
+    - modeld
+    kind: License
+    listKind: LicenseList
+    plural: licenses
+    singular: license
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.type
+      name: Type
+      type: string
+    - jsonPath: .status.expireAt
+      name: Expire At
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: License is an abstraction that represent the cluster wide license
+          as obtained from Modeld. The license is store inside a a secret
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: LicenseSpec defines the desired state of License
+            properties:
+              email:
+                type: string
+              expireAt:
+                description: When the license expire
+                format: date-time
+                type: string
+              forecast:
+                description: Is forecast feature supported
+                type: boolean
+              maxDataPlanes:
+                description: max data planes
+                format: int32
+                type: integer
+              maxProducts:
+                format: int32
+                type: integer
+              maxServers:
+                description: the max number of servers.
+                format: int32
+                type: integer
+              maxTrainers:
+                description: max number of trainers
+                format: int32
+                type: integer
+              maxUsers:
+                description: max users
+                format: int32
+                type: integer
+              nlp:
+                description: Is nlp feature supported
+                type: boolean
+              notifierName:
+                description: a notifier to receive the license expiration notification
+                type: string
+              owner:
+                type: string
+              priceName:
+                description: The price name
+                type: string
+              productName:
+                description: The product name
+                type: string
+              secretName:
+                description: The secret containing the license token Required.
+                maxLength: 63
+                minLength: 1
+                type: string
+              tenantRef:
+                description: Reference to the tenant owning this license Default to
+                  default tenant.
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              trialEnd:
+                description: when free trial end
+                format: date-time
+                type: string
+              trialStart:
+                description: Start date for free trial
+                format: date-time
+                type: string
+              vision:
+                description: Is vision feature supported
+                type: boolean
+            type: object
+          status:
+            description: LicenseStatus is the observed state of a License
+            properties:
+              conditions:
+                description: Represents the latest available observations of a license
+                  state.
+                items:
+                  description: LicenseCondition describes the state of the license
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

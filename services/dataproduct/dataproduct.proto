@@ -12,14 +12,14 @@ message ListDataProductsRequest {
 }
 
 message ListDataProductsResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductList items = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductList items = 1;
 }
 
 message CreateDataProductRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductSpec spec = 4;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductSpec spec = 4;
 }
 
 message CreateDataProductResponse {
@@ -30,7 +30,7 @@ message UpdateDataProductRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductSpec spec = 5;
 }
 
 message UpdateDataProductResponse {
@@ -44,7 +44,7 @@ message GetDataProductRequest {
 
 
 message GetDataProductResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProduct item = 1;
     string yaml = 2;
 }
 

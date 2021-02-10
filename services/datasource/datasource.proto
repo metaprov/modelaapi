@@ -14,7 +14,7 @@ message ListDataSourceRequest {
 }
 
 message ListDataSourceResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSourceList list = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSourceList list = 1;
 
 }
 
@@ -24,7 +24,7 @@ message GetDataSourceRequest {
 }
 
 message GetDataSourceResponse {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSource item = 1;
     string yaml = 2;
 }
 
@@ -33,7 +33,7 @@ message UpdateDataSourceRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSourceSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSourceSpec spec = 5;
 }
 
 message UpdateDataSourceResponse {}
@@ -43,7 +43,7 @@ message CreateDataSourceRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSourceSpec spec = 5;
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSourceSpec spec = 5;
 }
 
 message CreateDataSourceResponse {}
@@ -71,7 +71,7 @@ message InferSchemaResponse {
 }
 
 message GetTableViewRequest {
-    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSourceSpec spec = 1; // contain the csv or table definition
+    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSourceSpec spec = 1; // contain the csv or table definition
     string bucket    = 2; // the bucket holding the file
     string key       = 3; // the key holding the file.
 }
