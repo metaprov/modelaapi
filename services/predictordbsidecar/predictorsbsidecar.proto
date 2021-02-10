@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/predictordbsidecar";
+
+
+package github.com.metaprov.modeld.services.predictordbsidecar;
+
+
+import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+
+service PredictorDbSidecarService {
+}
+
+

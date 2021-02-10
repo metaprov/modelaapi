@@ -1,0 +1,26 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/predictionstore";
+
+package github.com.metaprov.modeld.services.predictionstore;
+
+
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "k8s.io/api/core/v1/generated.proto";
+
+
+message PredictionsIngestRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 1;
+    string key = 2; // the location to put the prediction db in.
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 3;
+    k8s.io.api.core.v1.Secret     secret     = 4;
+}
+
+message PredictionIngestResponse {}
+
+
+service PredictionStoreService {
+    // upload the current prediction database to the cloud.
+    // The archived prediction will turn into a predicted dataset.
+    rpc Ingest(PredictionsIngestRequest) returns (PredictionIngestResponse) {}
+}

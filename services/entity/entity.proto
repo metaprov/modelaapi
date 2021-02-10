@@ -1,0 +1,85 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/entity";
+
+package github.com.metaprov.modeld.services.entity;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListEntitiesRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListEntitiesResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.EntityList items = 1;
+}
+
+message CreateEntityRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.EntitySpec spec = 4;
+}
+
+message CreateEntityResponse {
+
+}
+
+message UpdateEntityRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.EntitySpec spec = 5;
+}
+
+message UpdateEntityResponse {
+
+}
+
+message GetEntityRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetEntityResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Entity item = 1;
+    string yaml = 2;
+}
+
+
+message DeleteEntityRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteEntityResponse {
+
+}
+
+
+service EntityService {
+    rpc ListEntities(ListEntitiesRequest) returns (ListEntitiesResponse) {
+        option (google.api.http).get = "/v1/entities";
+    }
+    rpc CreateEntity(CreateEntityRequest) returns (CreateEntityResponse) {
+        option (google.api.http) = {
+			post: "/v1/entities"
+			body: "entity"
+		};
+    }
+    rpc GetEntity(GetEntityRequest) returns (GetEntityResponse) {
+        option (google.api.http).get = "/v1/entities/{name}";
+    }
+    rpc UpdateEntity(UpdateEntityRequest) returns (UpdateEntityResponse) {
+        option (google.api.http) = {
+			put: "/v1/entities/{entity.metadata.name}"
+			body: "entity"
+		};
+    }
+
+    rpc DeleteEntity(DeleteEntityRequest) returns (DeleteEntityResponse) {}
+
+
+
+}

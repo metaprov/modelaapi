@@ -1,0 +1,105 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/notebookrun";
+
+package github.com.metaprov.modeld.services.notebookrun;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld/services/common/common.proto";
+
+message ListNotebookRunsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListNotebookRunsResponse {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookRunList items = 1;
+}
+
+message NotebookRunResponse {}
+
+message CreateNotebookRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 4;
+}
+
+message CreateNotebookRunResponse {
+
+}
+
+message UpdateNotebookRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 5;
+}
+
+message UpdateNotebookRunResponse {
+
+}
+
+message GetNotebookRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetNotebookRunResponse {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetNotebookRunNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetNotebookRunNamespacesResponse {
+    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+}
+
+message DeleteNotebookRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteNotebookRunResponse {
+
+}
+
+
+
+
+service NotebookRunService {
+    rpc ListNotebookRuns(ListNotebookRunsRequest) returns (ListNotebookRunsResponse) {
+        option (google.api.http).get = "/api/v1alpha1/notebookruns";
+    }
+    rpc CreateNotebookRun(CreateNotebookRunRequest) returns (CreateNotebookRunResponse) {
+        option (google.api.http) = {
+			post: "/api/v1alpha1/notebookruns"
+			body: "notebookrun"
+		};
+    }
+    rpc GetNotebookRun(GetNotebookRunRequest) returns (GetNotebookRunResponse) {
+        option (google.api.http).get = "/api/v1alpha1/notebookruns/{name}";
+    }
+    rpc UpdateNotebookRun(UpdateNotebookRunRequest) returns (UpdateNotebookRunResponse) {
+        option (google.api.http) = {
+			put: "/api/v1alpha1/notebookruns/{notebookrun.metadata.name}"
+			body: "notebookrun"
+		};
+    }
+
+    rpc DeleteNotebookRun(DeleteNotebookRunRequest) returns (DeleteNotebookRunResponse) {
+        option (google.api.http) = {
+			delete: "/api/v1alpha1/notebookruns/{notebookrun.metadata.name}"
+		};
+    }
+
+
+}

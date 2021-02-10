@@ -1,0 +1,108 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/virtualcluster";
+
+package github.com.metaprov.modeld.services.virtualcluster;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld/services/common/common.proto";
+
+message ListVirtualClustersRequest {
+    string namespace = 1;
+    map<string,string> virtualclusterels =3;
+}
+
+message ListVirtualClustersResponse {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualClusterList items = 1;
+}
+
+message VirtualClusterResponse {}
+
+message CreateVirtualClusterRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
+}
+
+message CreateVirtualClusterResponse {
+
+}
+
+message UpdateVirtualClusterRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
+}
+
+message UpdateVirtualClusterResponse {
+
+}
+
+message GetVirtualClusterRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetVirtualClusterResponse {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetVirtualClusterNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetVirtualClusterNamespacesResponse {
+    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+}
+
+message DeleteVirtualClusterRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteVirtualClusterResponse {
+
+}
+
+
+
+
+service VirtualClusterService {
+    rpc ListVirtualClusters(ListVirtualClustersRequest) returns (ListVirtualClustersResponse) {
+        option (google.api.http).get = "/api/v1/virtualclusters";
+    }
+
+    rpc CreateVirtualCluster(CreateVirtualClusterRequest) returns (CreateVirtualClusterResponse) {
+        option (google.api.http) = {
+			post: "/v1/virtualclusters"
+			body: "virtualcluster"
+		};
+    }
+
+    rpc GetVirtualCluster(GetVirtualClusterRequest) returns (GetVirtualClusterResponse) {
+        option (google.api.http).get = "/api/v1/virtualclusters/{virtualcluster.metadata.name}";
+    }
+
+    rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (UpdateVirtualClusterResponse) {
+        option (google.api.http) = {
+			put: "/v1/virtualclusters/{virtualcluster_name}"
+			body: "virtualcluster"
+		};
+    }
+
+    rpc DeleteVirtualCluster(DeleteVirtualClusterRequest) returns (DeleteVirtualClusterResponse) {
+        option (google.api.http) = {
+			delete: "/v1/virtualclusters/{virtualcluster_name}"
+		};
+    }
+
+
+}

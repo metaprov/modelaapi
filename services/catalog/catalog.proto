@@ -1,0 +1,174 @@
+
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/catalog";
+
+package github.com.metaprov.modeld.services.catalog;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1/generated.proto";
+
+message ListAlgorithmsRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListAlgorithmsResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.AlgorithmList items = 1;
+}
+
+message GetAlgorithmRequest {
+    string namespace   = 1;
+    string name = 2;
+}
+
+message GetAlgorithmResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.Algorithm item = 1;
+}
+
+//////////////////////////////////////////////////// ML Framewrok ///////////////////////////////////
+
+message ListMLFrameworksRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListMLFrameworksResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.MLFrameworkList items = 1;
+}
+
+message GetMLFrameworkRequest {
+    string namespace   = 1;
+    string name        = 2;
+}
+
+message GetMLFrameworkResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.MLFramework item = 1;
+}
+
+//////////////////////////////////////////////////// Clouds ///////////////////////////////////
+
+
+message ListCloudsRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListCloudsResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.CloudList items = 1;
+}
+
+message GetCloudRequest {
+    string namespace   = 1;
+    string name        = 2;
+}
+
+message GetCloudResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.Cloud item = 1;
+}
+
+
+
+//////////////////////////////////////////////////// PublicDatasets ///////////////////////////////////
+
+
+message ListPublicDatasetsRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListPublicDatasetsResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.PublicDatasetList items = 1;
+}
+
+message GetPublicDatasetRequest {
+    string namespace   = 1;
+    string name = 2;
+}
+
+message GetPublicDatasetResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.PublicDataset item = 1;
+}
+
+
+
+
+
+//////////////////////////////////////////////////// PretrainedModel Image ///////////////////////////////////
+
+message ListPretrainedModelsRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListPretrainedModelsResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.PretrainedModelList items = 1;
+}
+
+message GetPretrainedModelRequest {
+    string namespace   = 1;
+    string name        = 2;
+}
+
+message GetPretrainedModelResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.PretrainedModel item = 1;
+}
+
+
+//////////////////////////////////////////////////// WorkloadClass ///////////////////////////////////
+
+message ListWorkloadClassesRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListWorkloadClassesResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.WorkloadClassList items = 1;
+}
+
+message GetWorkloadClassRequest {
+    string name        = 1;
+    string namespace   = 2;
+}
+
+message GetWorkloadClassResponse {
+    github.com.metaprov.modeld.pkg.apis.catalog.v1alpha1.WorkloadClass item = 1;
+}
+
+//////////////////////////////////////////////////// Service ///////////////////////////////////
+
+service CatalogService {
+    rpc ListAlgorithm(ListAlgorithmsRequest) returns (ListAlgorithmsResponse) {
+        option (google.api.http).get = "v1/algorithms";
+    }
+
+    rpc GetAlgorithm(GetAlgorithmRequest) returns (GetAlgorithmResponse) {
+        option (google.api.http).get = "/v1/algorithms/{name}";
+    }
+
+    rpc ListMLFrameworks(ListMLFrameworksRequest) returns (ListMLFrameworksResponse) {
+        option (google.api.http).get = "/v1/mlframeworks";
+    }
+
+    rpc GetMLFramework(GetMLFrameworkRequest) returns (GetMLFrameworkResponse) {
+        option (google.api.http).get = "/v1/mlframeworks/{name}";
+    }
+
+
+    rpc ListClouds(ListCloudsRequest) returns (ListCloudsResponse) {
+        option (google.api.http).get = "/v1/clouds";
+    }
+
+    rpc GetCloud(GetCloudRequest) returns (GetCloudResponse) {
+        option (google.api.http).get = "/v1/clouds/{name}";
+    }
+
+    rpc ListWorkloadClasses(ListWorkloadClassesRequest) returns (ListWorkloadClassesResponse) {
+        option (google.api.http).get = "/v1/trainerclasses";
+    }
+
+    rpc GetWorkloadClass(GetWorkloadClassRequest) returns (GetWorkloadClassResponse) {
+        option (google.api.http).get = "/v1/trainerclasses/{name}";
+    }
+
+}

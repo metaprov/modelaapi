@@ -1,0 +1,489 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/data";
+
+package github.com.metaprov.modeld.services.data;
+
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld/services/common/common.proto";
+import "k8s.io/api/core/v1/generated.proto";
+
+
+message DsReadFileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    k8s.io.api.core.v1.Secret secret = 6;
+}
+
+message DsReadFeatureRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    k8s.io.api.core.v1.Secret secret = 6;
+}
+
+
+message DsWriteFileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset content = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 6;
+    k8s.io.api.core.v1.Secret secret = 7;
+
+}
+
+
+
+message DsReadAudioRequest {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 3;
+    k8s.io.api.core.v1.Secret secret = 4;
+
+}
+
+
+message DsReadTextCorpusRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    k8s.io.api.core.v1.Secret secret = 6;
+
+}
+
+
+
+message DsReadFromStoreResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset result = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    k8s.io.api.core.v1.Secret secret = 6;
+
+}
+
+
+message DsRunDataPipelineRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
+}
+
+message DsRunDataPipelineResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset result = 1;
+}
+
+message DsRunRecipeRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct            product       = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion     version       = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource    = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection            connection    = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 6;
+    k8s.io.api.core.v1.Secret                                                secret        = 7;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Recipe                 recipe        = 8;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.RecipeRun              reciperun     = 9;
+}
+
+message DsRunRecipeResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Recipe                 result       = 1;
+}
+
+message DsCreateRecipeProfileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct            product       = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion     version       = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource    = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection            connection    = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 6;
+    k8s.io.api.core.v1.Secret                                                secret        = 7;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Recipe                 recipe        = 8;
+}
+
+message DsCreateRecipeProfileResponse {
+    github.com.metaprov.modeld.services.common.TableView result = 1;
+}
+
+
+
+
+message DataSourceResponse {}
+message DatasetResponse {}
+
+// Create dataset profile
+message DsCreateDatasetProfileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+    k8s.io.api.core.v1.Secret secret = 7;
+}
+
+message DsCreateDatasetProfileResponse {
+    string uri = 1;
+    github.com.metaprov.modeld.services.common.DatasetProfile profile = 2;
+}
+
+
+///////////////////////////////// Model profile
+
+message DsCreateModelProfileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model model = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 8;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+    k8s.io.api.core.v1.Secret secret = 10;
+}
+
+message DsCreateModelProfileResponse {
+    string uri = 1;
+}
+
+
+
+///////////////////////////////// Partition Forecast Files
+
+message DsCreateForecastPartitionFilesRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model model = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 8;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+    k8s.io.api.core.v1.Secret secret = 10;
+    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.ForecastObj forecasts= 11;
+}
+
+message DsCreateForecastPartitionFilesResponse {
+    repeated PartitionValues partitions = 1;
+}
+
+// a distinct set of the values in the partition
+message PartitionValues {
+    string name            = 1; // the name of the partition
+    repeated string values = 2; // the partition values.
+}
+
+
+
+
+
+///////////////////////////////// Merge Forecast Files
+
+// Send the forecast
+message DsMergeForecastFileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study study = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model model = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 8;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
+    k8s.io.api.core.v1.Secret secret = 10;
+}
+
+message DsMergeForecastFileResponse {
+    string uri = 1;
+}
+
+
+///////////////////////////////////  Study profile
+
+message DsCreateStudyProfileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study study = 4;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
+    repeated github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model models = 8;
+    k8s.io.api.core.v1.Secret secret = 9;
+}
+
+message DsCreateStudyProfileResponse {
+   string uri = 1;
+}
+
+
+
+// Validate a dataset
+message DsValidateDatasetRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
+    k8s.io.api.core.v1.Secret secret = 7;
+}
+
+message DsValidateDatasetResponse {
+    repeated string errors = 1;
+}
+
+message DsGenerateDatasetRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    k8s.io.api.core.v1.Secret secret = 6;
+    int32 rows = 7;
+}
+
+message DsGenerateDatasetResponse {
+    string key = 1;
+}
+
+message DsSplitDatasetRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study study   = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 7;
+    k8s.io.api.core.v1.Secret secret = 8;
+}
+
+message DsSplitDatasetToRungsRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 6;
+    k8s.io.api.core.v1.Secret secret = 7;
+    int32 rungs = 8;
+}
+
+message DsSplitDatasetToRungsResponse {}
+message DsSplitDatasetResponse {}
+
+// Used to create a profile before the dataset object exist
+message DsCreateColumnProfileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 6;
+    k8s.io.api.core.v1.Secret secret = 7;
+    string columnType     = 8;
+    string columnName     = 9;
+}
+
+message DsCreateColumnProfileResponse {
+    string name = 1;
+    github.com.metaprov.modeld.services.common.Plot    plot   = 2;
+
+}
+
+message DsDatasetProfileRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource  datasource        = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset     dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 6;
+    k8s.io.api.core.v1.Secret secret = 7;
+    bool    quick         = 8;
+}
+
+message DsDatasetProfileResponse {
+    github.com.metaprov.modeld.services.common.DatasetProfile profile = 1;
+}
+
+message DsInferSchemaRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection = 3;
+    k8s.io.api.core.v1.Secret secret =4;
+    string key = 5;
+}
+
+message DsInferSchemaResponse {
+    github.com.metaprov.modeld.services.common.DatasetProfile profile = 1;
+}
+
+
+message DsGetTableViewRequest {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 1;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSourceSpec     datasource = 3;
+    k8s.io.api.core.v1.Secret secret =4;
+    string key = 5;
+}
+
+message DsGetTableViewResponse {
+    github.com.metaprov.modeld.services.common.TableView tableview = 1;
+}
+
+message DsGetMisclassTableViewRequest {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 1;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection        connection = 2;
+    k8s.io.api.core.v1.Secret                                            secret =3;
+    string                                                               key = 4;
+}
+
+message DsGetMisclassTableViewResponse {
+    github.com.metaprov.modeld.services.common.TableView tableview = 1;
+}
+
+
+
+message CreateModelReportRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct            product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study              study   = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset                dataset = 4;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource        = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model              model   = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection         = 7;
+    k8s.io.api.core.v1.Secret     secret     = 8;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Report              report = 10;
+}
+
+
+message CreateForecastReportRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct            product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study              study   = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset                dataset    = 4;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model           forecast   = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection            = 7;
+    k8s.io.api.core.v1.Secret     secret     = 8;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Report              report = 10;
+}
+
+message CreateReportResponse {
+    bytes pdf = 1;
+}
+
+message CreateDatasetReportRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct            product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset     dataset     = 4;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection  = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket   = 6;
+    k8s.io.api.core.v1.Secret     secret     = 7;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Report              report = 8;
+}
+
+
+message CreateStudyReportRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct            product = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study   study             = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset     dataset           = 4;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSource  datasource        = 5;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.ModelList   models   = 6;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.VirtualBucket bucket   = 7;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Connection connection        = 8;
+    k8s.io.api.core.v1.Secret     secret     = 9;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Report              report = 10;
+}
+
+
+
+message AskModelRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct  product     = 1;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
+    string studyName        = 3;
+    string studyNamespace   = 4;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.StudySpec  studySpec     = 5;
+    string datasourceName      = 6;
+    string datasourceNamespace = 7;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataSourceSpec    datasourceSpec    = 8;
+    string datasetName      = 9;
+    string datasetNamespace = 10;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DatasetSpec    datasetSpec   = 11;
+    int32  budget = 12;
+}
+
+
+message AskModelResponse {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.ModelSpec spec = 1;
+}
+
+message TellModelRequest{
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model model = 1;
+}
+message TellModelResponse {}
+
+
+message DsShutdownRequest {}
+message DsShutdownResponse {}
+
+service DataService {
+    // Read from a flat file and create a dataset
+    rpc ReadFile(DsReadFileRequest) returns (DsReadFromStoreResponse) {}
+    // Read from a feature and create a dataset
+    rpc ReadFeature(DsReadFeatureRequest) returns (DsReadFromStoreResponse) {}
+    // Read from audio and create an audio dataset
+    rpc ReadAudio(DsReadAudioRequest) returns (DsReadFromStoreResponse) {}
+    // Run the data flow
+    rpc RunDataPipeline(DsRunDataPipelineRequest) returns (DsRunDataPipelineResponse) {}
+    // Run recipe
+    rpc RunRecipe(DsRunRecipeRequest) returns (DsRunRecipeResponse) {}
+    // Read from a flat file and create a dataset
+    rpc WriteFile(DsWriteFileRequest) returns (DsReadFromStoreResponse) {}
+    // Based on the datasource business rules, validate a dataset.
+    rpc ValidateDataset(DsValidateDatasetRequest) returns(DsValidateDatasetResponse) {}
+    // Based on the datasource, generate test dataset
+    rpc GenerateDataset(DsGenerateDatasetRequest) returns (DsGenerateDatasetResponse) {}
+    // Preform the split. The dataset is assumed to be in the live area after validation
+    rpc SplitDataset(DsSplitDatasetRequest) returns (DsSplitDatasetResponse) {}
+    // Visualize a specific column
+    rpc CreateColumnProfile(DsCreateColumnProfileRequest) returns (DsCreateColumnProfileResponse) {}
+    // Just infer the datasource, do no plots
+    rpc InferSchema(DsInferSchemaRequest) returns (DsInferSchemaResponse) {}
+    // Just infer the datasource, do no plots
+    rpc GetTableView(DsGetTableViewRequest) returns (DsGetTableViewResponse) {}
+    // Just infer the datasource, do no plots
+    rpc GetMisclassTableView(DsGetMisclassTableViewRequest) returns (DsGetMisclassTableViewResponse) {}
+    // split the dataset to rungs
+    rpc SplitDatasetToRungs(DsSplitDatasetToRungsRequest) returns (DsSplitDatasetToRungsResponse) {}
+    // create dataset profile
+    rpc CreateDatasetProfile(DsCreateDatasetProfileRequest) returns (DsCreateDatasetProfileResponse) {}
+    // create model profile
+    rpc CreateModelProfile(DsCreateModelProfileRequest) returns (DsCreateModelProfileResponse) {}
+    // create study profile
+    rpc CreateStudyProfile(DsCreateStudyProfileRequest) returns (DsCreateStudyProfileResponse) {}
+
+    rpc CreateRecipeProfile(DsCreateRecipeProfileRequest) returns (DsCreateRecipeProfileResponse) {}
+    // report services
+    rpc CreateModelReport(CreateModelReportRequest) returns (CreateReportResponse) {}
+    rpc CreateStudyReport(CreateStudyReportRequest) returns (CreateReportResponse) {}
+    rpc CreateDatasetReport(CreateDatasetReportRequest) returns (CreateReportResponse) {}
+    rpc CreateForecastReport(CreateForecastReportRequest) returns (CreateReportResponse) {}
+    // sample model randomly for a given budget
+    rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
+    // for bayaisn optimization, we tell the planner the result of the model evaluation
+    rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
+    // Partition the class
+    rpc PartitionForecastFile(DsCreateForecastPartitionFilesRequest) returns (DsCreateForecastPartitionFilesResponse) {}
+    // Merge the forecast back to one file.
+    rpc MergeForecastFile(DsMergeForecastFileRequest) returns (DsMergeForecastFileResponse) {}
+
+    rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}
+
+}

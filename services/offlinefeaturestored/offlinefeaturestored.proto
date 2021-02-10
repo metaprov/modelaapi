@@ -1,0 +1,73 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/offlinefeaturestored";
+
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+
+package github.com.metaprov.modeld.services.offlinefeaturestored;
+
+
+service OfflineFeatureStoreService {
+    rpc CreateFeature(CreateFeatureRequest)  returns (CreateFeatureResponse)     {}
+    rpc DeleteFeature(DeleteFeatureRequest)  returns (DeleteFeatureResponse)     {}
+    rpc UpdateFeature(UpdateFeatureRequest)  returns (UpdateFeatureResponse)     {}
+    rpc ListFeatures(ListFeaturesRequest) returns (ListFeaturesResponse)     {}
+    rpc GetFeature(GetFeatureRequest) returns (GetFeatureResponse)     {}
+    rpc GenerateTrainingDataset(GenerateTrainingDatasetRequest) returns (GenerateTrainingDatasetResponse)     {}
+}
+
+message CreateFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    string connectionName = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    map<string,bytes>  secret    = 7;
+}
+message CreateFeatureResponse {}
+
+
+message DeleteFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+}
+message DeleteFeatureResponse {}
+
+
+message UpdateFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    string connectionName = 5;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    map<string,bytes>  secret    = 7;
+}
+message UpdateFeatureResponse {}
+
+
+message ListFeaturesRequest {
+    string ns   = 1;
+}
+message ListFeaturesResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.FeatureList items = 3;
+}
+
+message GetFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+}
+
+message GetFeatureResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature item = 1;
+}
+
+message GenerateTrainingDatasetRequest {
+    string name = 1;
+    string ns   = 2;
+    repeated github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Feature items = 3;
+}
+
+message GenerateTrainingDatasetResponse {}
+

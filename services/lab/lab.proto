@@ -1,0 +1,108 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/lab";
+
+package github.com.metaprov.modeld.services.lab;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld/services/common/common.proto";
+
+message ListLabsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListLabsResponse {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.LabList items = 1;
+}
+
+message LabResponse {}
+
+message CreateLabRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.LabSpec spec = 4;
+}
+
+message CreateLabResponse {
+
+}
+
+message UpdateLabRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.LabSpec spec = 5;
+}
+
+message UpdateLabResponse {
+
+}
+
+message GetLabRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetLabResponse {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Lab item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetLabNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetLabNamespacesResponse {
+    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+}
+
+message DeleteLabRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteLabResponse {
+
+}
+
+
+
+
+service LabService {
+    rpc ListLabs(ListLabsRequest) returns (ListLabsResponse) {
+        option (google.api.http).get = "/api/v1/labs";
+    }
+
+    rpc CreateLab(CreateLabRequest) returns (CreateLabResponse) {
+        option (google.api.http) = {
+			post: "/v1/labs"
+			body: "lab"
+		};
+    }
+
+    rpc GetLab(GetLabRequest) returns (GetLabResponse) {
+        option (google.api.http).get = "/api/v1/labs/{lab.metadata.name}";
+    }
+
+    rpc UpdateLab(UpdateLabRequest) returns (UpdateLabResponse) {
+        option (google.api.http) = {
+			put: "/v1/labs/{lab_name}"
+			body: "lab"
+		};
+    }
+
+    rpc DeleteLab(DeleteLabRequest) returns (DeleteLabResponse) {
+        option (google.api.http) = {
+			delete: "/v1/labs/{lab_name}"
+		};
+    }
+
+
+}

@@ -1,0 +1,85 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/runbook";
+
+package github.com.metaprov.modeld.services.runbook;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/team/v1alpha1/generated.proto";
+
+message ListRunBooksRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListRunBooksResponse {
+    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBookList items = 1;
+}
+
+message CreateRunBookRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBookSpec spec = 4;
+}
+
+message CreateRunBookResponse {
+
+}
+
+message UpdateRunBookRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBookSpec spec = 5;
+}
+
+message UpdateRunBookResponse {
+
+}
+
+message GetRunBookRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetRunBookResponse {
+    github.com.metaprov.modeld.pkg.apis.team.v1alpha1.RunBook item = 1;
+    string yaml = 2;
+}
+
+
+message DeleteRunBookRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteRunBookResponse {
+
+}
+
+
+service RunBookService {
+    rpc ListRunBooks(ListRunBooksRequest) returns (ListRunBooksResponse) {
+        option (google.api.http).get = "/v1/runbooks";
+    }
+    rpc CreateRunBook(CreateRunBookRequest) returns (CreateRunBookResponse) {
+        option (google.api.http) = {
+			post: "/v1/runbooks"
+			body: "runbook"
+		};
+    }
+    rpc GetRunBook(GetRunBookRequest) returns (GetRunBookResponse) {
+        option (google.api.http).get = "/v1/runbooks/{name}";
+    }
+    rpc UpdateRunBook(UpdateRunBookRequest) returns (UpdateRunBookResponse) {
+        option (google.api.http) = {
+			put: "/v1/runbooks/{runbook.metadata.name}"
+			body: "runbook"
+		};
+    }
+
+    rpc DeleteRunBook(DeleteRunBookRequest) returns (DeleteRunBookResponse) {}
+
+
+
+}

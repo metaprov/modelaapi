@@ -1,0 +1,101 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/archived";
+
+package github.com.metaprov.modeld.services.archived;
+
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
+
+
+
+message RecordModelRequest {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Model model = 1;
+}
+
+message RecordModelResponse {
+
+}
+
+message RecordStudyRequest {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Study study = 1;
+}
+
+message RecordStudyResponse {
+
+}
+
+
+message RecordDatasetRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.Dataset dataset = 1;
+}
+
+message RecordDatasetResponse {
+
+}
+
+message RecordPredictionPipelineRequest {
+    github.com.metaprov.modeld.pkg.apis.inference.v1alpha1.PredictionPipeline prediction = 1;
+}
+
+message RecordPredictionPipelineResponse {
+
+}
+
+message RecordPredictorRequest {
+    github.com.metaprov.modeld.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
+}
+
+message RecordPredictorResponse {
+
+}
+
+
+message RecordDataProductRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProduct product = 1;
+}
+
+message RecordDataProductResponse {
+
+}
+
+message RecordDataProductVersionRequest {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.DataProductVersion version = 1;
+}
+
+message RecordDataProductVersionResponse {
+
+}
+
+message RecordAccountRequest {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.Account account = 1;
+}
+
+message RecordAccountResponse {
+
+}
+
+
+message RecordForecastResponse {
+
+}
+
+
+// Used for delete resultponse
+message DeleteResponse {}
+
+service ArchivedService {
+    // Models
+    rpc RecordModel(RecordModelRequest)  returns (RecordModelResponse)   {}
+    rpc RecordStudy(RecordStudyRequest)  returns (RecordStudyResponse)   {}
+    rpc RecordDataset(RecordDatasetRequest)  returns (RecordDatasetResponse)   {}
+    rpc RecordPredictionPipeline(RecordPredictionPipelineRequest)  returns (RecordPredictionPipelineResponse)   {}
+    rpc RecordPredictor(RecordPredictorRequest)  returns (RecordPredictorResponse)   {}
+    rpc RecordProduct(RecordDataProductRequest)  returns (RecordDataProductResponse)   {}
+    rpc RecordProductVersion(RecordDataProductVersionRequest)  returns (RecordDataProductVersionResponse)   {}
+    rpc RecordAccount(RecordAccountRequest)  returns (RecordAccountResponse)   {}
+}
+
+
+

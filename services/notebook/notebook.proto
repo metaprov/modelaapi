@@ -1,0 +1,100 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/notebook";
+
+package github.com.metaprov.modeld.services.notebook;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld/services/common/common.proto";
+
+message ListNotebooksRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListNotebooksResponse {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookList items = 1;
+}
+
+message NotebookResponse {}
+
+message CreateNotebookRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookSpec spec = 4;
+}
+
+message CreateNotebookResponse {
+
+}
+
+message UpdateNotebookRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.NotebookSpec spec = 5;
+}
+
+message UpdateNotebookResponse {
+
+}
+
+message GetNotebookRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetNotebookResponse {
+    github.com.metaprov.modeld.pkg.apis.training.v1alpha1.Notebook item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetNotebookNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetNotebookNamespacesResponse {
+    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+}
+
+message DeleteNotebookRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteNotebookResponse {
+
+}
+
+
+
+
+service NotebookService {
+    rpc ListNotebooks(ListNotebooksRequest) returns (ListNotebooksResponse) {
+        option (google.api.http).get = "/api/v1alpha1/notebooks";
+    }
+    rpc CreateNotebook(CreateNotebookRequest) returns (CreateNotebookResponse) {
+        option (google.api.http) = {
+			post: "/api/v1alpha1/notebooks"
+			body: "notebook"
+		};
+    }
+    rpc GetNotebook(GetNotebookRequest) returns (GetNotebookResponse) {
+        option (google.api.http).get = "/api/v1alpha1/notebooks/{name}";
+    }
+    rpc UpdateNotebook(UpdateNotebookRequest) returns (UpdateNotebookResponse) {
+        option (google.api.http) = {
+			put: "/api/v1alpha1/notebooks/{notebook.metadata.name}"
+			body: "notebook"
+		};
+    }
+
+    rpc DeleteNotebook(DeleteNotebookRequest) returns (DeleteNotebookResponse) {}
+
+}

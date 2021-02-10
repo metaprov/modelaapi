@@ -1,0 +1,83 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/labelingpipelinerun";
+
+package github.com.metaprov.modeld.services.labelingpipelinerun;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListLabelingPipelineRunRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListLabelingPipelineRunResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineRunList items = 1;
+}
+
+message CreateLabelingPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec spec = 4;
+}
+
+message CreateLabelingPipelineRunResponse {
+
+}
+
+message UpdateLabelingPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec spec = 5;
+}
+
+message UpdateLabelingPipelineRunResponse {
+
+}
+
+message GetLabelingPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetLabelingPipelineRunResponse {
+    github.com.metaprov.modeld.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
+    string yaml = 2;
+}
+
+message DeleteLabelingPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteLabelingPipelineRunResponse {
+
+}
+
+service LabelingPipelineRunService {
+    rpc ListLabelingPipelineRuns(ListLabelingPipelineRunRequest) returns (ListLabelingPipelineRunResponse) {
+        option (google.api.http).get = "/v1/labelingpipelineruns";
+    }
+    rpc CreateLabelingPipelineRun(CreateLabelingPipelineRunRequest) returns (CreateLabelingPipelineRunResponse) {
+        option (google.api.http) = {
+			post: "/v1/labelingpipelineruns"
+			body: "labelingpipelinerun"
+		};
+    }
+    rpc GetLabelingPipelineRun(GetLabelingPipelineRunRequest) returns (GetLabelingPipelineRunResponse) {
+        option (google.api.http).get = "/v1/labelingpipelineruns/{name}";
+    }
+    rpc UpdateLabelingPipelineRun(UpdateLabelingPipelineRunRequest) returns (UpdateLabelingPipelineRunResponse) {
+        option (google.api.http) = {
+			put: "/v1/labelingpipelines/{label.metadata.name}"
+			body: "labelingpipelinerun"
+		};
+    }
+
+    rpc DeleteLabelingPipelineRun(DeleteLabelingPipelineRunRequest) returns (DeleteLabelingPipelineRunResponse) {}
+
+
+
+}

@@ -1,0 +1,120 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/license";
+
+package github.com.metaprov.modeld.services.license;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeld/services/common/common.proto";
+
+message ListLicensesRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListLicensesResponse {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.LicenseList items = 1;
+}
+
+message LicenseResponse {}
+
+message CreateLicenseRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.LicenseSpec spec = 4;
+}
+
+
+message CreateLicenseFromKeyRequest {
+    string key = 1;
+}
+
+
+message CreateLicenseResponse {
+
+}
+
+message UpdateLicenseRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.LicenseSpec spec = 5;
+}
+
+message UpdateLicenseResponse {
+
+}
+
+message GetLicenseRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetLicenseResponse {
+    github.com.metaprov.modeld.pkg.apis.infra.v1alpha1.License license = 1;
+    string yaml = 2;
+}
+
+
+
+message GetLicenseNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetLicenseNamespacesResponse {
+    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+}
+
+message DeleteLicenseRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteLicenseResponse {
+
+}
+
+
+service LicenseService {
+    rpc ListLicenses(ListLicensesRequest) returns (ListLicensesResponse) {
+        option (google.api.http).get = "v1/licenses";
+    }
+
+    rpc CreateLicense(CreateLicenseRequest) returns (CreateLicenseResponse) {
+        option (google.api.http) = {
+			post: "/v1/licenses"
+			body: "license"
+		};
+    }
+
+    rpc CreateLicenseFromKey(CreateLicenseFromKeyRequest) returns (CreateLicenseResponse) {
+        option (google.api.http) = {
+			post: "/v1/licenses"
+			body: "license"
+		};
+    }
+
+
+    rpc GetLicense(GetLicenseRequest) returns (GetLicenseResponse) {
+        option (google.api.http).get = "v1/licenses/{license.metadata.name}";
+    }
+
+    rpc UpdateLicense(UpdateLicenseRequest) returns (UpdateLicenseResponse) {
+        option (google.api.http) = {
+			put: "/v1/licenses/{license_name}"
+			body: "license"
+		};
+    }
+
+    rpc DeleteLicense(DeleteLicenseRequest) returns (DeleteLicenseResponse) {
+        option (google.api.http) = {
+			delete: "/v1/licenses/{license_name}"
+		};
+    }
+
+
+}

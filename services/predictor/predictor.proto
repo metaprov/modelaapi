@@ -1,0 +1,108 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/predictor";
+
+package github.com.metaprov.modeld.services.predictor;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListPredictorsRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListPredictorsResponse {
+    github.com.metaprov.modeld.pkg.apis.inference.v1alpha1.PredictorList items = 1;
+}
+
+
+message CreatePredictorResponse {}
+
+message CreatePredictorRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
+}
+
+message UpdatePredictorRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeld.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
+}
+
+message UpdatePredictorResponse {
+
+}
+
+message GetPredictorRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetPredictorResponse {
+    github.com.metaprov.modeld.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    string yaml = 2;
+
+}
+
+message DeletePredictorRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeletePredictorResponse {
+
+}
+
+message PredictOneRequest {
+    string namespace = 1;
+    string name      = 2;
+    string fields    = 3;
+    string values    = 4;
+}
+
+message PredictOneResponse {
+    string namespace = 1;
+    string name      = 2;
+    string label     = 3; // for classification
+    float  score     = 4; // for regression
+    map<string,float> proba = 5; // proba response
+}
+
+service PredictorService {
+
+    rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {
+        option (google.api.http).get = "/v1/predictors";
+    }
+
+    rpc CreatePredictor(CreatePredictorRequest) returns (CreatePredictorResponse) {
+        option (google.api.http) = {
+			post: "/v1/predictors"
+			body: "predictor"
+		};
+    }
+
+    rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
+        option (google.api.http).get = "/v1/predictors/{name}";
+    }
+
+    rpc UpdatePredictor(UpdatePredictorRequest) returns (UpdatePredictorResponse) {
+        option (google.api.http) = {
+			put: "/v1/predictors/{predictor.metadata.name}"
+			body: "predictor"
+		};
+    }
+
+    rpc DeletePredictor(DeletePredictorRequest) returns (DeletePredictorResponse) {
+        option (google.api.http).delete = "/v1/predictors/{name}";
+    }
+
+    rpc PredictOne(PredictOneRequest) returns (PredictOneResponse) {
+        option (google.api.http).post = "/v1/predictors/{name}:predictone";
+    }
+
+}

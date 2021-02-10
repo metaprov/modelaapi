@@ -1,0 +1,131 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeld/services/common";
+
+package github.com.metaprov.modeld.services.common;
+
+message DatasetProfile {
+    int32    cols                      = 1;
+    int32    rows                      = 2;
+    int32    filesize                  = 3;
+    // return true if this dataset is imbalance.
+    bool     imbalance                 = 4;
+    repeated Plot plots                = 5;
+    repeated ColumnProfile   columns   = 6;
+    TableView    table                     = 7;
+}
+
+/////////////////////////////////////////////////////////////////////////
+///// Model profile
+////////////////////////////////////////////////////////////////////////
+message ModelProfile {
+    string name                            = 1;
+    repeated Plot plots                    = 2;
+}
+
+/////////////////////////////////////////////////////////////////////////
+///// Forecast profile
+////////////////////////////////////////////////////////////////////////
+message ForecastProfile {
+    string name                            = 1;
+    repeated Plot plots                    = 2;
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+///// Study profile
+////////////////////////////////////////////////////////////////////////
+message StudyProfile {
+    repeated Plot plots          = 1;
+    repeated ModelProfile models = 2;
+}
+
+message Plot {
+    string name = 1;
+    // The visualization title
+    string title = 2;
+    // image as bin
+    bytes  img        = 3;
+    // image file name
+    string fname      = 4;
+    // The url in the bucket
+    string url        = 5;
+}
+
+
+message ColumnProfile {
+    string name       = 1;
+    int32  n          = 2;
+    string type       = 3;
+    int32  missing    = 4;
+    int32  distinct   = 5;
+    double mean        = 6;
+    double std         = 7;
+    double variance    = 8;
+    double min         = 9;
+    double max         = 10;
+    double kurtosis    = 11;
+    double skewness    = 12;
+    double sum         = 13;
+    double mad         = 14;
+    double zeros       = 15;
+    double p25         = 16;
+    double p50         = 17;
+    double p75         = 18;
+    double p100        = 20;
+    double iqr         = 21;
+    double cv          = 22;
+    double p_missing   = 23;
+    int32  top        = 24;
+    int32  freq       = 25;
+    bool  ignore      = 26;
+    bool  label       = 27;
+    // return true if this cols is corrlated to another cols
+    bool  corr        = 28;
+    // histogram
+    Histogram histogram = 29;
+}
+
+message HistogramValue {
+    string name = 1;
+    float  v    = 2;
+}
+
+message Histogram {
+    repeated HistogramValue values = 1;
+}
+
+
+/////////////////////////////////////////////////////////////////////
+//// Namespace Info
+////////////////////////////////////////////////////////////////////
+
+message NamespaceInfo {
+    enum NamespaceType {
+        TENANT = 0;
+        DATAPRODUCT = 1;
+        LAB   = 2;
+        SERVINGSITE = 3;
+        MODELDSYSTEM = 4;
+        MODELDCATALOG = 5;
+    }
+    NamespaceType type = 1;
+    string Name        = 2;
+    int32 accounts     = 3;
+    int32 buckets      = 4;
+    int32 labs         = 5;
+    int32 servingsites = 6;
+    int32 datasets     = 7;
+    int32 datasources  = 8;
+    int32 studies      = 9;
+    int32 models       = 10;
+}
+
+message TableView {
+    repeated string        cols = 1;
+    repeated TableViewRow  rows = 2;
+    repeated ColumnProfile profiles = 3;
+}
+
+message TableViewRow {
+    repeated string values = 1;
+}
