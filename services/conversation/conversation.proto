@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/conversation";
+option go_package = "github.com/metaprov/modeldapi/services/conversation";
 
 package github.com.metaprov.modeld.services.conversation;
 import "google/protobuf/empty.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/team/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 import "google/api/annotations.proto";
 
 message ConversationQuery {
@@ -19,7 +19,7 @@ message ConversationCreateRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
     string password = 6;
     bool upsert = 7;
 }
@@ -28,11 +28,11 @@ message ConversationUpdateRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
 }
 
 message ConversationGetResponse {
-    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.Conversation item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
     string yaml = 2;
 }
 
@@ -48,7 +48,7 @@ message ConversationGetNamespacesResponse {
 
 
 service ConversationService {
-    rpc List(ConversationQuery) returns (github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.ConversationList) {
+    rpc List(ConversationQuery) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList) {
         option (google.api.http).get = "/api/v1alpha1/conversations";
     }
     rpc Create(ConversationCreateRequest) returns (google.protobuf.Empty) {

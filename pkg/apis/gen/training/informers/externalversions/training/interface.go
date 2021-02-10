@@ -8,8 +8,8 @@
 package training
 
 import (
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/training/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/training/informers/externalversions/training/v1alpha1"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/training/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/training/informers/externalversions/training/v1alpha1"
 )
 
 // Interface provides access to each of this group's versions.

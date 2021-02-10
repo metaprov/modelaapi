@@ -7,9 +7,10 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_Trained(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	context "context"
 	fmt "fmt"
 	proto "github.com/gogo/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"

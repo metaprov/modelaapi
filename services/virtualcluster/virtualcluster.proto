@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/virtualcluster";
+option go_package = "github.com/metaprov/modeldapi/services/virtualcluster";
 
 package github.com.metaprov.modeld.services.virtualcluster;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 message ListVirtualClustersRequest {
     string namespace = 1;
@@ -13,7 +13,7 @@ message ListVirtualClustersRequest {
 }
 
 message ListVirtualClustersResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualClusterList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList items = 1;
 }
 
 message VirtualClusterResponse {}
@@ -22,7 +22,7 @@ message CreateVirtualClusterRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
 }
 
 message CreateVirtualClusterResponse {
@@ -33,7 +33,7 @@ message UpdateVirtualClusterRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
 }
 
 message UpdateVirtualClusterResponse {
@@ -47,7 +47,7 @@ message GetVirtualClusterRequest {
 
 
 message GetVirtualClusterResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
     string yaml = 2;
 }
 

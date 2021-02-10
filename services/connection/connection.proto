@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/connection";
+option go_package = "github.com/metaprov/modeldapi/services/connection";
 
 package github.com.metaprov.modeld.services.connection;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message ListConnectionsRequest {
     string namespace = 1;
@@ -11,14 +11,14 @@ message ListConnectionsRequest {
 }
 
 message ListConnectionsResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionList items = 1;
 }
 
 message CreateConnectionRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec spec = 4;
     map<string,string> secret = 5;
 }
 
@@ -29,7 +29,7 @@ message UpdateConnectionRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec spec = 4;
     map<string,string> secret = 5;
 }
 
@@ -44,7 +44,7 @@ message GetConnectionRequest {
 
 
 message GetConnectionResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Connection item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 1;
     string yaml = 2;
 }
 

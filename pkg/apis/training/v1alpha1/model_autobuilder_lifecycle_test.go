@@ -7,12 +7,13 @@
 package v1alpha1
 
 import (
-	data "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1"
+	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 
-	"github.com/metaprov/modeld-api/pkg/util"
+	"testing"
+
+	"github.com/metaprov/modeldapi/pkg/util"
 	"gotest.tools/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"testing"
 )
 
 func autoBuilder() *ModelAutobuilder {

@@ -7,8 +7,8 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modeld-api/pkg/apis/common"
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modeldapi/pkg/apis/common"
 	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"

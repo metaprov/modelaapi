@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/k8score";
+option go_package = "github.com/metaprov/modeldapi/services/k8score";
 
 package github.com.metaprov.modeld.services.k8score;
 

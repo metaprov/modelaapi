@@ -7,9 +7,10 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeld-api/pkg/util"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"testing"
+
+	"github.com/metaprov/modeldapi/pkg/util"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func TestDataPipelineRunValidate(t *testing.T) {

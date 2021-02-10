@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/study";
+option go_package = "github.com/metaprov/modeldapi/services/study";
 
 package github.com.metaprov.modeld.services.study;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 message GetStudyRequest {
     string namespace = 1;
@@ -13,7 +13,7 @@ message GetStudyRequest {
 }
 
 message GetStudyResponse {
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
     string yaml = 2;
 }
 
@@ -24,7 +24,7 @@ message ListStudyRequest {
 }
 
 message ListStudyResponse {
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.StudyList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyList items = 1;
 }
 
 
@@ -32,7 +32,7 @@ message CreateStudyRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.StudySpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec spec = 5;
 }
 
 message CreateStudyResponse {}
@@ -42,14 +42,14 @@ message UpdateStudyRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.StudySpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec spec = 5;
 }
 
 
 message CreateStudyProfileRequest {
     string namespace = 1;
     string name      = 2;
-    repeated github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.Model models   = 3;
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model models   = 3;
 }
 
 message CreateStudyProfileResponse {

@@ -8,16 +8,17 @@ package v1alpha1
 
 import (
 	"fmt"
-	catalog "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modeld-api/pkg/apis/training"
-	"github.com/metaprov/modeld-api/pkg/util"
+	"time"
+
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modeldapi/pkg/apis/training"
+	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
-	"time"
 )
 
 //Set up the webhook with the manager.

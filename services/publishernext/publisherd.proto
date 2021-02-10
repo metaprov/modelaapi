@@ -1,44 +1,44 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/publishernext";
+option go_package = "github.com/metaprov/modeldapi/services/publishernext";
 
 
 package github.com.metaprov.modeld.services.publishernext;
 
 
-import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 message PublishModelRequest {
     string dataproductName = 1;
     string dataproductNamespace = 2;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductSpec    dataproductSpec    = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec    dataproductSpec    = 3;
     string dataproductversionName = 4;
     string dataproductversionNamespace = 5;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataProductVersionSpec    dataproductversionSpec    = 6;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec    dataproductversionSpec    = 6;
     string modelName = 7;
     string modelNamespace = 8;
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.ModelSpec      modelSpec    = 9;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec      modelSpec    = 9;
     string studyName = 13;
     string studyNamespace = 14;
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.StudySpec      studySpec    = 15;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec      studySpec    = 15;
     string datasourceName = 16;
     string datasourceNamespace = 17;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataSourceSpec     datasourceSpec   = 18;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec     datasourceSpec   = 18;
     string datasetName = 19;
     string datasetNamespace = 20;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DatasetSpec         datasetSpec   = 21;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec         datasetSpec   = 21;
     string   provider            = 22; // the image registry provider
     map<string,bytes>  imageRegistrySecret    = 23; // the image registry login details.
     string   imagename           = 24;
     bool     push                = 25;
     string bucketName            = 26;
     string bucketNamespace       = 27;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucketSpec         bucketSpec   = 28;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec         bucketSpec   = 28;
     string cloudConnectionName = 29;
     string cloudsConnectionNamespace = 30;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec         cloudConnectionSpec   = 31;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec         cloudConnectionSpec   = 31;
     map<string,bytes>  cloudSecret   = 32; // the image registry login details.
     string    modelWeightsUri        = 33;
     string    preprocessorWeightsUri = 34;

@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/predictor";
+option go_package = "github.com/metaprov/modeldapi/services/predictor";
 
 package github.com.metaprov.modeld.services.predictor;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
 
 
 message ListPredictorsRequest {
@@ -14,7 +14,7 @@ message ListPredictorsRequest {
 }
 
 message ListPredictorsResponse {
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictorList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorList items = 1;
 }
 
 
@@ -24,14 +24,14 @@ message CreatePredictorRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
 }
 
 message UpdatePredictorRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
 }
 
 message UpdatePredictorResponse {
@@ -44,7 +44,7 @@ message GetPredictorRequest {
 }
 
 message GetPredictorResponse {
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
     string yaml = 2;
 
 }

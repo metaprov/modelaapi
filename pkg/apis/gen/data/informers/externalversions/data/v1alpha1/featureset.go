@@ -10,10 +10,10 @@ package v1alpha1
 import (
 	time "time"
 
-	datav1alpha1 "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1"
-	versioned "github.com/metaprov/modeld-api/pkg/apis/gen/data/clientset/versioned"
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/data/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/data/listers/data/v1alpha1"
+	datav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	versioned "github.com/metaprov/modeldapi/pkg/apis/gen/data/clientset/versioned"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/data/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/data/listers/data/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

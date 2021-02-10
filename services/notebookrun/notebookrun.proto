@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/notebookrun";
+option go_package = "github.com/metaprov/modeldapi/services/notebookrun";
 
 package github.com.metaprov.modeld.services.notebookrun;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 message ListNotebookRunsRequest {
     string namespace = 1;
@@ -13,7 +13,7 @@ message ListNotebookRunsRequest {
 }
 
 message ListNotebookRunsResponse {
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.NotebookRunList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunList items = 1;
 }
 
 message NotebookRunResponse {}
@@ -22,7 +22,7 @@ message CreateNotebookRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 4;
 }
 
 message CreateNotebookRunResponse {
@@ -33,7 +33,7 @@ message UpdateNotebookRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 5;
 }
 
 message UpdateNotebookRunResponse {
@@ -47,7 +47,7 @@ message GetNotebookRunRequest {
 
 
 message GetNotebookRunResponse {
-    github.com.metaprov.modeld-api.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
     string yaml = 2;
 }
 

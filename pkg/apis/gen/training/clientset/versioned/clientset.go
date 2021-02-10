@@ -10,7 +10,7 @@ package versioned
 import (
 	"fmt"
 
-	trainingv1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/training/clientset/versioned/typed/training/v1alpha1"
+	trainingv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/training/clientset/versioned/typed/training/v1alpha1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

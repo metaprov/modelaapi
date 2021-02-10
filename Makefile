@@ -6,20 +6,16 @@ generate-proto:
 
 .PHONY: generate-go
 generate-go:
-	cd hack && ./generate-go.sh
+	hack/generate-go.sh
 
 .PHONY: generate-codegen
 update-codegen:
 	hack/update-codegen.sh
 
-.PHONY: generate-crd
-generate-crd:
-	cd hack && ./update_crd.sh
-
 generate-deepcopy:
 	$(CONTROLLER_GEN) object:headerFile=./hack/custom-boilerplate.go.txt paths=./pkg/apis/...
 
-gen-crd:
+generate-crd:
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/base/crd

@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/objectstored";
+option go_package = "github.com/metaprov/modeldapi/services/objectstored";
 
 package github.com.metaprov.modeld.services.objectstored;
 
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 // Schema request and response
@@ -19,10 +19,10 @@ message ObjectResponse {
 // A request to recover archived object from the archive into the depot.
 message ObjectRequest {
     string bucketName = 1;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 2;
     string credNamespace = 3;
     string credName = 4;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 5;
     map<string,bytes>  secret    = 6;
     string key                   = 7; // the depot location of the object
 }

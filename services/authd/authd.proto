@@ -1,6 +1,6 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/authd";
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
+option go_package = "github.com/metaprov/modeldapi/services/authd";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 package github.com.metaprov.modeld.services.authd.v1alpha1;
 
 service AuthdService {
@@ -62,7 +62,7 @@ message ResetPasswordReponse {
 message AccountCreateRequest {
     string namespace = 1;
     string name      = 2;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
     string  password = 4;
 }
 

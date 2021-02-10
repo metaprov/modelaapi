@@ -11,7 +11,7 @@
 package v1alpha1
 
 import (
-	catalogv1alpha1 "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
+	catalogv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )

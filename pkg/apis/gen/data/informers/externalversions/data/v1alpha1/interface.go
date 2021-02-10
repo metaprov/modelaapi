@@ -8,7 +8,7 @@
 package v1alpha1
 
 import (
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/data/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/data/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

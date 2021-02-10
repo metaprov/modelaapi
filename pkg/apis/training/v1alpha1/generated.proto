@@ -7,11 +7,11 @@
 
 syntax = 'proto2';
 
-package github.com.metaprov.modeld_api.pkg.apis.training.v1alpha1;
+package github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1;
 
-import "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -531,7 +531,7 @@ message ModelAutobuilderSpec {
 
   // The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
   // +optional
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataSourceSpec dataSourceSpec = 13;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec dataSourceSpec = 13;
 
   // Specify the number of trainers.
   // Default 1 trainer.
@@ -1079,7 +1079,7 @@ message ModelSpec {
 
   // The location of the model artifacts (metadata, reports and estimators).
   // +optional
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation location = 21;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 21;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +optional
@@ -1381,7 +1381,7 @@ message NotebookSpec {
   repeated string vars = 8;
 
   // The location of the notebook
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation location = 9;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 9;
 
   // The owner account name
   // +optional
@@ -1538,7 +1538,7 @@ message ReportSpec {
 
   // The report location
   // +optional
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation location = 4;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
 
   // ReportType specify the report type (e.g. classification / regression)
   optional string reportType = 5;
@@ -1721,7 +1721,7 @@ message StudySpec {
   // The location of the study artifacts
   // By default the bucket is the data product bucket.
   // +optional
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation location = 19;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 19;
 
   // The group hierarchy
   // +optional

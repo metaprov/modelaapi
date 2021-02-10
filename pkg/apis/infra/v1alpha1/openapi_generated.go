@@ -18,89 +18,89 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Account":                  schema_pkg_apis_infra_v1alpha1_Account(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountCondition":         schema_pkg_apis_infra_v1alpha1_AccountCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountDefaults":          schema_pkg_apis_infra_v1alpha1_AccountDefaults(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountList":              schema_pkg_apis_infra_v1alpha1_AccountList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountSpec":              schema_pkg_apis_infra_v1alpha1_AccountSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountStatus":            schema_pkg_apis_infra_v1alpha1_AccountStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Conversation":             schema_pkg_apis_infra_v1alpha1_Comment(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationCondition":    schema_pkg_apis_infra_v1alpha1_CommentCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationList":         schema_pkg_apis_infra_v1alpha1_CommentList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationSpec":         schema_pkg_apis_infra_v1alpha1_CommentSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationStatus":       schema_pkg_apis_infra_v1alpha1_CommentStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.StorageConnection":        schema_pkg_apis_infra_v1alpha1_Connection(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionCondition":      schema_pkg_apis_infra_v1alpha1_ConnectionCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionList":           schema_pkg_apis_infra_v1alpha1_ConnectionList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionSpec":           schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionStatus":         schema_pkg_apis_infra_v1alpha1_ConnectionStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.SmtpSpec":                 schema_pkg_apis_infra_v1alpha1_EmailConfig(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepository":            schema_pkg_apis_infra_v1alpha1_GitRepository(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryCondition":   schema_pkg_apis_infra_v1alpha1_GitRepositoryCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryList":        schema_pkg_apis_infra_v1alpha1_GitRepositoryList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositorySpec":        schema_pkg_apis_infra_v1alpha1_GitRepositorySpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryStatus":      schema_pkg_apis_infra_v1alpha1_GitRepositoryStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepository":          schema_pkg_apis_infra_v1alpha1_ImageRepository(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryCondition": schema_pkg_apis_infra_v1alpha1_ImageRepositoryCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryList":      schema_pkg_apis_infra_v1alpha1_ImageRepositoryList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositorySpec":      schema_pkg_apis_infra_v1alpha1_ImageRepositorySpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryStatus":    schema_pkg_apis_infra_v1alpha1_ImageRepositoryStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Lab":                      schema_pkg_apis_infra_v1alpha1_Lab(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabCondition":             schema_pkg_apis_infra_v1alpha1_LabCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabList":                  schema_pkg_apis_infra_v1alpha1_LabList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabSpec":                  schema_pkg_apis_infra_v1alpha1_LabSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabStatus":                schema_pkg_apis_infra_v1alpha1_LabStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.License":                  schema_pkg_apis_infra_v1alpha1_License(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseCondition":         schema_pkg_apis_infra_v1alpha1_LicenseCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseList":              schema_pkg_apis_infra_v1alpha1_LicenseList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseSpec":              schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseStatus":            schema_pkg_apis_infra_v1alpha1_LicenseStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImage":             schema_pkg_apis_infra_v1alpha1_MachineImage(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageCondition":    schema_pkg_apis_infra_v1alpha1_MachineImageCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageList":         schema_pkg_apis_infra_v1alpha1_MachineImageList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageSpec":         schema_pkg_apis_infra_v1alpha1_MachineImageSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageStatus":       schema_pkg_apis_infra_v1alpha1_MachineImageStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Notifier":                 schema_pkg_apis_infra_v1alpha1_Notifier(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierCondition":        schema_pkg_apis_infra_v1alpha1_NotifierCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierList":             schema_pkg_apis_infra_v1alpha1_NotifierList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierSpec":             schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierStatus":           schema_pkg_apis_infra_v1alpha1_NotifierStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortem":               schema_pkg_apis_infra_v1alpha1_PostMortem(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemCondition":      schema_pkg_apis_infra_v1alpha1_PostMortemCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemList":           schema_pkg_apis_infra_v1alpha1_PostMortemList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemSpec":           schema_pkg_apis_infra_v1alpha1_PostMortemSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemStatus":         schema_pkg_apis_infra_v1alpha1_PostMortemStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBook":                  schema_pkg_apis_infra_v1alpha1_RunBook(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookCondition":         schema_pkg_apis_infra_v1alpha1_RunBookCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookList":              schema_pkg_apis_infra_v1alpha1_RunBookList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookSpec":              schema_pkg_apis_infra_v1alpha1_RunBookSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookStatus":            schema_pkg_apis_infra_v1alpha1_RunBookStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSite":              schema_pkg_apis_infra_v1alpha1_ServingSite(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteCondition":     schema_pkg_apis_infra_v1alpha1_ServingSiteCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteList":          schema_pkg_apis_infra_v1alpha1_ServingSiteList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteSpec":          schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteStatus":        schema_pkg_apis_infra_v1alpha1_ServingSiteStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.SlackSpec":                schema_pkg_apis_infra_v1alpha1_SlackConfig(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Tenant":                   schema_pkg_apis_infra_v1alpha1_Tenant(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantCondition":          schema_pkg_apis_infra_v1alpha1_TenantCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantList":               schema_pkg_apis_infra_v1alpha1_TenantList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantSpec":               schema_pkg_apis_infra_v1alpha1_TenantSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantStatus":             schema_pkg_apis_infra_v1alpha1_TenantStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucket":            schema_pkg_apis_infra_v1alpha1_VirtualBucket(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketCondition":   schema_pkg_apis_infra_v1alpha1_VirtualBucketCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketList":        schema_pkg_apis_infra_v1alpha1_VirtualBucketList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketSpec":        schema_pkg_apis_infra_v1alpha1_VirtualBucketSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketStatus":      schema_pkg_apis_infra_v1alpha1_VirtualBucketStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualCluster":           schema_pkg_apis_infra_v1alpha1_VirtualCluster(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterCondition":  schema_pkg_apis_infra_v1alpha1_VirtualClusterCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterList":       schema_pkg_apis_infra_v1alpha1_VirtualClusterList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterSpec":       schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterStatus":     schema_pkg_apis_infra_v1alpha1_VirtualClusterStatus(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolume":            schema_pkg_apis_infra_v1alpha1_VirtualVolume(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeCondition":   schema_pkg_apis_infra_v1alpha1_VirtualVolumeCondition(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeList":        schema_pkg_apis_infra_v1alpha1_VirtualVolumeList(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeSpec":        schema_pkg_apis_infra_v1alpha1_VirtualVolumeSpec(ref),
-		"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeStatus":      schema_pkg_apis_infra_v1alpha1_VirtualVolumeStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Account":                  schema_pkg_apis_infra_v1alpha1_Account(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountCondition":         schema_pkg_apis_infra_v1alpha1_AccountCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountDefaults":          schema_pkg_apis_infra_v1alpha1_AccountDefaults(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountList":              schema_pkg_apis_infra_v1alpha1_AccountList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountSpec":              schema_pkg_apis_infra_v1alpha1_AccountSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountStatus":            schema_pkg_apis_infra_v1alpha1_AccountStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Conversation":             schema_pkg_apis_infra_v1alpha1_Comment(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationCondition":    schema_pkg_apis_infra_v1alpha1_CommentCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationList":         schema_pkg_apis_infra_v1alpha1_CommentList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationSpec":         schema_pkg_apis_infra_v1alpha1_CommentSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationStatus":       schema_pkg_apis_infra_v1alpha1_CommentStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.StorageConnection":        schema_pkg_apis_infra_v1alpha1_Connection(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionCondition":      schema_pkg_apis_infra_v1alpha1_ConnectionCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionList":           schema_pkg_apis_infra_v1alpha1_ConnectionList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionSpec":           schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionStatus":         schema_pkg_apis_infra_v1alpha1_ConnectionStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.SmtpSpec":                 schema_pkg_apis_infra_v1alpha1_EmailConfig(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepository":            schema_pkg_apis_infra_v1alpha1_GitRepository(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryCondition":   schema_pkg_apis_infra_v1alpha1_GitRepositoryCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryList":        schema_pkg_apis_infra_v1alpha1_GitRepositoryList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositorySpec":        schema_pkg_apis_infra_v1alpha1_GitRepositorySpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryStatus":      schema_pkg_apis_infra_v1alpha1_GitRepositoryStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepository":          schema_pkg_apis_infra_v1alpha1_ImageRepository(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryCondition": schema_pkg_apis_infra_v1alpha1_ImageRepositoryCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryList":      schema_pkg_apis_infra_v1alpha1_ImageRepositoryList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositorySpec":      schema_pkg_apis_infra_v1alpha1_ImageRepositorySpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryStatus":    schema_pkg_apis_infra_v1alpha1_ImageRepositoryStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Lab":                      schema_pkg_apis_infra_v1alpha1_Lab(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabCondition":             schema_pkg_apis_infra_v1alpha1_LabCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabList":                  schema_pkg_apis_infra_v1alpha1_LabList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabSpec":                  schema_pkg_apis_infra_v1alpha1_LabSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabStatus":                schema_pkg_apis_infra_v1alpha1_LabStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.License":                  schema_pkg_apis_infra_v1alpha1_License(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseCondition":         schema_pkg_apis_infra_v1alpha1_LicenseCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseList":              schema_pkg_apis_infra_v1alpha1_LicenseList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseSpec":              schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseStatus":            schema_pkg_apis_infra_v1alpha1_LicenseStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImage":             schema_pkg_apis_infra_v1alpha1_MachineImage(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageCondition":    schema_pkg_apis_infra_v1alpha1_MachineImageCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageList":         schema_pkg_apis_infra_v1alpha1_MachineImageList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageSpec":         schema_pkg_apis_infra_v1alpha1_MachineImageSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageStatus":       schema_pkg_apis_infra_v1alpha1_MachineImageStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Notifier":                 schema_pkg_apis_infra_v1alpha1_Notifier(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierCondition":        schema_pkg_apis_infra_v1alpha1_NotifierCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierList":             schema_pkg_apis_infra_v1alpha1_NotifierList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierSpec":             schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierStatus":           schema_pkg_apis_infra_v1alpha1_NotifierStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortem":               schema_pkg_apis_infra_v1alpha1_PostMortem(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemCondition":      schema_pkg_apis_infra_v1alpha1_PostMortemCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemList":           schema_pkg_apis_infra_v1alpha1_PostMortemList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemSpec":           schema_pkg_apis_infra_v1alpha1_PostMortemSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemStatus":         schema_pkg_apis_infra_v1alpha1_PostMortemStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBook":                  schema_pkg_apis_infra_v1alpha1_RunBook(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookCondition":         schema_pkg_apis_infra_v1alpha1_RunBookCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookList":              schema_pkg_apis_infra_v1alpha1_RunBookList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookSpec":              schema_pkg_apis_infra_v1alpha1_RunBookSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookStatus":            schema_pkg_apis_infra_v1alpha1_RunBookStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSite":              schema_pkg_apis_infra_v1alpha1_ServingSite(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteCondition":     schema_pkg_apis_infra_v1alpha1_ServingSiteCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteList":          schema_pkg_apis_infra_v1alpha1_ServingSiteList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteSpec":          schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteStatus":        schema_pkg_apis_infra_v1alpha1_ServingSiteStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.SlackSpec":                schema_pkg_apis_infra_v1alpha1_SlackConfig(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Tenant":                   schema_pkg_apis_infra_v1alpha1_Tenant(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantCondition":          schema_pkg_apis_infra_v1alpha1_TenantCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantList":               schema_pkg_apis_infra_v1alpha1_TenantList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantSpec":               schema_pkg_apis_infra_v1alpha1_TenantSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantStatus":             schema_pkg_apis_infra_v1alpha1_TenantStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucket":            schema_pkg_apis_infra_v1alpha1_VirtualBucket(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketCondition":   schema_pkg_apis_infra_v1alpha1_VirtualBucketCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketList":        schema_pkg_apis_infra_v1alpha1_VirtualBucketList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketSpec":        schema_pkg_apis_infra_v1alpha1_VirtualBucketSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketStatus":      schema_pkg_apis_infra_v1alpha1_VirtualBucketStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualCluster":           schema_pkg_apis_infra_v1alpha1_VirtualCluster(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterCondition":  schema_pkg_apis_infra_v1alpha1_VirtualClusterCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterList":       schema_pkg_apis_infra_v1alpha1_VirtualClusterList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterSpec":       schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterStatus":     schema_pkg_apis_infra_v1alpha1_VirtualClusterStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolume":            schema_pkg_apis_infra_v1alpha1_VirtualVolume(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeCondition":   schema_pkg_apis_infra_v1alpha1_VirtualVolumeCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeList":        schema_pkg_apis_infra_v1alpha1_VirtualVolumeList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeSpec":        schema_pkg_apis_infra_v1alpha1_VirtualVolumeSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeStatus":      schema_pkg_apis_infra_v1alpha1_VirtualVolumeStatus(ref),
 	}
 }
 
@@ -132,12 +132,12 @@ func schema_pkg_apis_infra_v1alpha1_Account(ref common.ReferenceCallback) common
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountStatus"),
 						},
 					},
 				},
@@ -145,7 +145,7 @@ func schema_pkg_apis_infra_v1alpha1_Account(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -287,7 +287,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountList(ref common.ReferenceCallback) co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Account"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Account"),
 									},
 								},
 							},
@@ -298,7 +298,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Account", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Account", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -365,7 +365,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					"defaults": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The account defaults",
-							Ref:         ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountDefaults"),
+							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountDefaults"),
 						},
 					},
 				},
@@ -373,7 +373,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountDefaults", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.ObjectReference"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountDefaults", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.ObjectReference"},
 	}
 }
 
@@ -403,7 +403,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountStatus(ref common.ReferenceCallback) 
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountCondition"),
 									},
 								},
 							},
@@ -413,7 +413,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.AccountCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountCondition"},
 	}
 }
 
@@ -445,12 +445,12 @@ func schema_pkg_apis_infra_v1alpha1_Comment(ref common.ReferenceCallback) common
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationStatus"),
 						},
 					},
 				},
@@ -458,7 +458,7 @@ func schema_pkg_apis_infra_v1alpha1_Comment(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -550,7 +550,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentList(ref common.ReferenceCallback) co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Conversation"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Conversation"),
 									},
 								},
 							},
@@ -561,7 +561,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Conversation", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Conversation", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -631,7 +631,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentStatus(ref common.ReferenceCallback) 
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationCondition"),
 									},
 								},
 							},
@@ -641,7 +641,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConversationCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationCondition"},
 	}
 }
 
@@ -672,12 +672,12 @@ func schema_pkg_apis_infra_v1alpha1_Connection(ref common.ReferenceCallback) com
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionStatus"),
 						},
 					},
 				},
@@ -685,7 +685,7 @@ func schema_pkg_apis_infra_v1alpha1_Connection(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -777,7 +777,7 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionList(ref common.ReferenceCallback)
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.StorageConnection"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.StorageConnection"),
 									},
 								},
 							},
@@ -788,7 +788,7 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.StorageConnection", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.StorageConnection", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -852,7 +852,7 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionStatus(ref common.ReferenceCallbac
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionCondition"),
 									},
 								},
 							},
@@ -862,7 +862,7 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionStatus(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ConnectionCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionCondition"},
 	}
 }
 
@@ -946,12 +946,12 @@ func schema_pkg_apis_infra_v1alpha1_GitRepository(ref common.ReferenceCallback) 
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositorySpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositorySpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryStatus"),
 						},
 					},
 				},
@@ -959,7 +959,7 @@ func schema_pkg_apis_infra_v1alpha1_GitRepository(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositorySpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositorySpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1051,7 +1051,7 @@ func schema_pkg_apis_infra_v1alpha1_GitRepositoryList(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepository"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepository"),
 									},
 								},
 							},
@@ -1062,7 +1062,7 @@ func schema_pkg_apis_infra_v1alpha1_GitRepositoryList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepository", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepository", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -1133,7 +1133,7 @@ func schema_pkg_apis_infra_v1alpha1_GitRepositoryStatus(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryCondition"),
 									},
 								},
 							},
@@ -1143,7 +1143,7 @@ func schema_pkg_apis_infra_v1alpha1_GitRepositoryStatus(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.GitRepositoryCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.GitRepositoryCondition"},
 	}
 }
 
@@ -1175,12 +1175,12 @@ func schema_pkg_apis_infra_v1alpha1_ImageRepository(ref common.ReferenceCallback
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositorySpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositorySpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryStatus"),
 						},
 					},
 				},
@@ -1188,7 +1188,7 @@ func schema_pkg_apis_infra_v1alpha1_ImageRepository(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositorySpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositorySpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1280,7 +1280,7 @@ func schema_pkg_apis_infra_v1alpha1_ImageRepositoryList(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepository"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepository"),
 									},
 								},
 							},
@@ -1291,7 +1291,7 @@ func schema_pkg_apis_infra_v1alpha1_ImageRepositoryList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepository", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepository", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -1362,7 +1362,7 @@ func schema_pkg_apis_infra_v1alpha1_ImageRepositoryStatus(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryCondition"),
 									},
 								},
 							},
@@ -1372,7 +1372,7 @@ func schema_pkg_apis_infra_v1alpha1_ImageRepositoryStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ImageRepositoryCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ImageRepositoryCondition"},
 	}
 }
 
@@ -1403,12 +1403,12 @@ func schema_pkg_apis_infra_v1alpha1_Lab(ref common.ReferenceCallback) common.Ope
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabStatus"),
 						},
 					},
 				},
@@ -1416,7 +1416,7 @@ func schema_pkg_apis_infra_v1alpha1_Lab(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1508,7 +1508,7 @@ func schema_pkg_apis_infra_v1alpha1_LabList(ref common.ReferenceCallback) common
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Lab"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Lab"),
 									},
 								},
 							},
@@ -1519,7 +1519,7 @@ func schema_pkg_apis_infra_v1alpha1_LabList(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Lab", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Lab", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -1593,7 +1593,7 @@ func schema_pkg_apis_infra_v1alpha1_LabStatus(ref common.ReferenceCallback) comm
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabCondition"),
 									},
 								},
 							},
@@ -1603,7 +1603,7 @@ func schema_pkg_apis_infra_v1alpha1_LabStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LabCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LabCondition"},
 	}
 }
 
@@ -1635,12 +1635,12 @@ func schema_pkg_apis_infra_v1alpha1_License(ref common.ReferenceCallback) common
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseStatus"),
 						},
 					},
 				},
@@ -1648,7 +1648,7 @@ func schema_pkg_apis_infra_v1alpha1_License(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1740,7 +1740,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseList(ref common.ReferenceCallback) co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.License"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.License"),
 									},
 								},
 							},
@@ -1751,7 +1751,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.License", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.License", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -1827,7 +1827,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseStatus(ref common.ReferenceCallback) 
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseCondition"),
 									},
 								},
 							},
@@ -1837,7 +1837,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.LicenseCondition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LicenseCondition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
 	}
 }
 
@@ -1870,13 +1870,13 @@ func schema_pkg_apis_infra_v1alpha1_MachineImage(ref common.ReferenceCallback) c
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec holds the desired state of the machine image.",
-							Ref:         ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageSpec"),
+							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Status holds the desired state of the machine image.",
-							Ref:         ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageStatus"),
+							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageStatus"),
 						},
 					},
 				},
@@ -1884,7 +1884,7 @@ func schema_pkg_apis_infra_v1alpha1_MachineImage(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1975,7 +1975,7 @@ func schema_pkg_apis_infra_v1alpha1_MachineImageList(ref common.ReferenceCallbac
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImage"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImage"),
 									},
 								},
 							},
@@ -1986,7 +1986,7 @@ func schema_pkg_apis_infra_v1alpha1_MachineImageList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImage", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImage", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2036,7 +2036,7 @@ func schema_pkg_apis_infra_v1alpha1_MachineImageStatus(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageCondition"),
 									},
 								},
 							},
@@ -2046,7 +2046,7 @@ func schema_pkg_apis_infra_v1alpha1_MachineImageStatus(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.MachineImageCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageCondition"},
 	}
 }
 
@@ -2077,12 +2077,12 @@ func schema_pkg_apis_infra_v1alpha1_Notifier(ref common.ReferenceCallback) commo
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierStatus"),
 						},
 					},
 				},
@@ -2090,7 +2090,7 @@ func schema_pkg_apis_infra_v1alpha1_Notifier(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2181,7 +2181,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierList(ref common.ReferenceCallback) c
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Notifier"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Notifier"),
 									},
 								},
 							},
@@ -2192,7 +2192,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierList(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Notifier", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Notifier", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2219,13 +2219,13 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 					"email": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Smtp configuration. Relevant if the notifier is an email notifier",
-							Ref:         ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.SmtpSpec"),
+							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.SmtpSpec"),
 						},
 					},
 					"slack": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Slack configuration. Relevant if the notifier is an slack notifier",
-							Ref:         ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.SlackSpec"),
+							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.SlackSpec"),
 						},
 					},
 					"description": {
@@ -2240,7 +2240,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.SmtpSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.SlackSpec", "k8s.io/api/core/v1.ObjectReference"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.SmtpSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.SlackSpec", "k8s.io/api/core/v1.ObjectReference"},
 	}
 }
 
@@ -2269,7 +2269,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierStatus(ref common.ReferenceCallback)
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierCondition"),
 									},
 								},
 							},
@@ -2279,7 +2279,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierStatus(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.NotifierCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.NotifierCondition"},
 	}
 }
 
@@ -2311,12 +2311,12 @@ func schema_pkg_apis_infra_v1alpha1_PostMortem(ref common.ReferenceCallback) com
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemStatus"),
 						},
 					},
 				},
@@ -2324,7 +2324,7 @@ func schema_pkg_apis_infra_v1alpha1_PostMortem(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2416,7 +2416,7 @@ func schema_pkg_apis_infra_v1alpha1_PostMortemList(ref common.ReferenceCallback)
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortem"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortem"),
 									},
 								},
 							},
@@ -2427,7 +2427,7 @@ func schema_pkg_apis_infra_v1alpha1_PostMortemList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortem", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortem", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2497,7 +2497,7 @@ func schema_pkg_apis_infra_v1alpha1_PostMortemStatus(ref common.ReferenceCallbac
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemCondition"),
 									},
 								},
 							},
@@ -2507,7 +2507,7 @@ func schema_pkg_apis_infra_v1alpha1_PostMortemStatus(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.PostMortemCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.PostMortemCondition"},
 	}
 }
 
@@ -2539,12 +2539,12 @@ func schema_pkg_apis_infra_v1alpha1_RunBook(ref common.ReferenceCallback) common
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookStatus"),
 						},
 					},
 				},
@@ -2552,7 +2552,7 @@ func schema_pkg_apis_infra_v1alpha1_RunBook(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2644,7 +2644,7 @@ func schema_pkg_apis_infra_v1alpha1_RunBookList(ref common.ReferenceCallback) co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBook"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBook"),
 									},
 								},
 							},
@@ -2655,7 +2655,7 @@ func schema_pkg_apis_infra_v1alpha1_RunBookList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBook", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBook", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2719,7 +2719,7 @@ func schema_pkg_apis_infra_v1alpha1_RunBookStatus(ref common.ReferenceCallback) 
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookCondition"),
 									},
 								},
 							},
@@ -2729,7 +2729,7 @@ func schema_pkg_apis_infra_v1alpha1_RunBookStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.RunBookCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.RunBookCondition"},
 	}
 }
 
@@ -2760,12 +2760,12 @@ func schema_pkg_apis_infra_v1alpha1_ServingSite(ref common.ReferenceCallback) co
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteStatus"),
 						},
 					},
 				},
@@ -2773,7 +2773,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSite(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2864,7 +2864,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteList(ref common.ReferenceCallback
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSite"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSite"),
 									},
 								},
 							},
@@ -2875,7 +2875,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSite", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSite", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2955,7 +2955,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteStatus(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteCondition"),
 									},
 								},
 							},
@@ -2965,7 +2965,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.ServingSiteCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ServingSiteCondition"},
 	}
 }
 
@@ -3016,12 +3016,12 @@ func schema_pkg_apis_infra_v1alpha1_Tenant(ref common.ReferenceCallback) common.
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantStatus"),
 						},
 					},
 				},
@@ -3029,7 +3029,7 @@ func schema_pkg_apis_infra_v1alpha1_Tenant(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3121,7 +3121,7 @@ func schema_pkg_apis_infra_v1alpha1_TenantList(ref common.ReferenceCallback) com
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Tenant"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Tenant"),
 									},
 								},
 							},
@@ -3132,7 +3132,7 @@ func schema_pkg_apis_infra_v1alpha1_TenantList(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.Tenant", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Tenant", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3202,7 +3202,7 @@ func schema_pkg_apis_infra_v1alpha1_TenantStatus(ref common.ReferenceCallback) c
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantCondition"),
 									},
 								},
 							},
@@ -3212,7 +3212,7 @@ func schema_pkg_apis_infra_v1alpha1_TenantStatus(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.TenantCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.TenantCondition"},
 	}
 }
 
@@ -3244,12 +3244,12 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucket(ref common.ReferenceCallback) 
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketStatus"),
 						},
 					},
 				},
@@ -3257,7 +3257,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucket(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3349,7 +3349,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucketList(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucket"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucket"),
 									},
 								},
 							},
@@ -3360,7 +3360,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucketList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucket", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucket", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3423,7 +3423,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucketStatus(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketCondition"),
 									},
 								},
 							},
@@ -3433,7 +3433,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucketStatus(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualBucketCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualBucketCondition"},
 	}
 }
 
@@ -3464,12 +3464,12 @@ func schema_pkg_apis_infra_v1alpha1_VirtualCluster(ref common.ReferenceCallback)
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterStatus"),
 						},
 					},
 				},
@@ -3477,7 +3477,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualCluster(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3541,7 +3541,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterCondition(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterCondition"),
 									},
 								},
 							},
@@ -3552,7 +3552,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterCondition(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterCondition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterCondition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
 	}
 }
 
@@ -3587,7 +3587,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterList(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualCluster"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualCluster"),
 									},
 								},
 							},
@@ -3598,7 +3598,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualCluster", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualCluster", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3709,7 +3709,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterCondition"),
 									},
 								},
 							},
@@ -3720,7 +3720,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterStatus(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualClusterCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualClusterCondition"},
 	}
 }
 
@@ -3752,12 +3752,12 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolume(ref common.ReferenceCallback) 
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeStatus"),
 						},
 					},
 				},
@@ -3765,7 +3765,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolume(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeSpec", "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3857,7 +3857,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolumeList(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolume"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolume"),
 									},
 								},
 							},
@@ -3868,7 +3868,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolumeList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolume", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolume", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3925,7 +3925,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolumeStatus(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeCondition"),
 									},
 								},
 							},
@@ -3935,6 +3935,6 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolumeStatus(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1.VirtualVolumeCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.VirtualVolumeCondition"},
 	}
 }

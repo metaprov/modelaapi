@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	team "github.com/metaprov/modeld-api/pkg/apis/team"
+	team "github.com/metaprov/modeldapi/pkg/apis/team"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	k8sruntime "k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"

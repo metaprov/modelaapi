@@ -7,10 +7,10 @@
 
 syntax = 'proto2';
 
-package github.com.metaprov.modeld_api.pkg.apis.inference.v1alpha1;
+package github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1;
 
-import "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -366,11 +366,11 @@ message PredictionPipelineRunSpec {
   optional string datasetName = 4;
 
   // DataLocation of the input if using direct input file
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation input = 5;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
   // The key in the bucket for storing all the prediction output
   // +optional
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation output = 6;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
   // The owner account name
   // +optional
@@ -418,11 +418,11 @@ message PredictionPipelineSpec {
   optional string datasetName = 4;
 
   // DataLocation of the input if using direct input file
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation input = 5;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
   // The key in the bucket for storing all the prediction output
   // +optional
-  optional github.com.metaprov.modeld_api.pkg.apis.data.v1alpha1.DataLocation output = 6;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
   // The owner account name
   // +optional

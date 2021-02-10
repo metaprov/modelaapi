@@ -7,10 +7,11 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeld-api/pkg/util"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestTimeConstraints_Ended(t *testing.T) {

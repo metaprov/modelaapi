@@ -10,7 +10,7 @@ package versioned
 import (
 	"fmt"
 
-	infrav1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/infra/clientset/versioned/typed/infra/v1alpha1"
+	infrav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/infra/clientset/versioned/typed/infra/v1alpha1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

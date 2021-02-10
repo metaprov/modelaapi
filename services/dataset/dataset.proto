@@ -1,12 +1,12 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/dataset";
+option go_package = "github.com/metaprov/modeldapi/services/dataset";
 
 package github.com.metaprov.modeld.services.dataset;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 
 
@@ -17,7 +17,7 @@ message ListDatasetsRequest {
 }
 
 message ListDatasetsResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
 }
 
 
@@ -29,7 +29,7 @@ message GetDatasetRequest {
 }
 
 message GetDatasetResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
     string yaml = 2;
 }
 
@@ -38,7 +38,7 @@ message CreateDatasetRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
 }
 
 message CreateDatasetResponse {
@@ -50,7 +50,7 @@ message UpdateDatasetRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
 }
 
 message UpdateDatasetResponse {
@@ -92,7 +92,7 @@ message UploadChunkResponse {
 message CreateDatasetProfileRequest {
     string namespace   = 1;
     string name        = 2;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DatasetSpec spec = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 3;
 }
 
 message CreateDatasetProfileResponse {
@@ -105,7 +105,7 @@ message CreateColumnProfileRequest {
     string namespace   = 1;
     string name        = 2;
     string col         = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DatasetSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 4;
 }
 
 message CreateColumnProfileResponse {

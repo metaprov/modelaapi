@@ -1,4 +1,4 @@
-module github.com/metaprov/modeld-api
+module github.com/metaprov/modeldapi
 
 go 1.13
 

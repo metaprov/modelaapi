@@ -3,9 +3,10 @@ package v1alpha1
 import (
 	"encoding/json"
 	"fmt"
-	catalog "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modeld-api/pkg/apis/data"
-	"github.com/metaprov/modeld-api/pkg/util"
+
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modeldapi/pkg/apis/data"
+	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

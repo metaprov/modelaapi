@@ -12,10 +12,11 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/dustin/go-humanize"
-	"github.com/metaprov/modeld-api/pkg/apis/common"
-	"github.com/metaprov/modeld-api/pkg/apis/data"
-	"github.com/metaprov/modeld-api/pkg/util"
+	"github.com/metaprov/modeldapi/pkg/apis/common"
+	"github.com/metaprov/modeldapi/pkg/apis/data"
+	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

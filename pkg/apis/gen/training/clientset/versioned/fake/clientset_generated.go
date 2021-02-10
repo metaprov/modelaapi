@@ -8,9 +8,9 @@
 package fake
 
 import (
-	clientset "github.com/metaprov/modeld-api/pkg/apis/gen/training/clientset/versioned"
-	trainingv1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/training/clientset/versioned/typed/training/v1alpha1"
-	faketrainingv1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/training/clientset/versioned/typed/training/v1alpha1/fake"
+	clientset "github.com/metaprov/modeldapi/pkg/apis/gen/training/clientset/versioned"
+	trainingv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/training/clientset/versioned/typed/training/v1alpha1"
+	faketrainingv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/training/clientset/versioned/typed/training/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

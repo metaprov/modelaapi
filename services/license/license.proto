@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/license";
+option go_package = "github.com/metaprov/modeldapi/services/license";
 
 package github.com.metaprov.modeld.services.license;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 message ListLicensesRequest {
     string namespace = 1;
@@ -13,7 +13,7 @@ message ListLicensesRequest {
 }
 
 message ListLicensesResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.LicenseList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseList items = 1;
 }
 
 message LicenseResponse {}
@@ -22,7 +22,7 @@ message CreateLicenseRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.LicenseSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec spec = 4;
 }
 
 
@@ -39,7 +39,7 @@ message UpdateLicenseRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.LicenseSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec spec = 5;
 }
 
 message UpdateLicenseResponse {
@@ -53,7 +53,7 @@ message GetLicenseRequest {
 
 
 message GetLicenseResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.License license = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License license = 1;
     string yaml = 2;
 }
 

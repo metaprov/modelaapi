@@ -1,12 +1,12 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/postmortem";
+option go_package = "github.com/metaprov/modeldapi/services/postmortem";
 
 package github.com.metaprov.modeld.services.postmortem;
 
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/team/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 message PostMortemQuery {
     string namespace = 1;
@@ -20,7 +20,7 @@ message PostMortemCreateRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.PostMortemSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec spec = 5;
     string password = 6;
     bool upsert = 7;
 }
@@ -29,11 +29,11 @@ message PostMortemUpdateRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.PostMortemSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec spec = 5;
 }
 
 message PostMortemGetResponse {
-    github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
     string yaml = 2;
 }
 
@@ -49,7 +49,7 @@ message PostMortemGetNamespacesResponse {
 
 
 service PostMortemService {
-    rpc List(PostMortemQuery) returns (github.com.metaprov.modeld-api.pkg.apis.team.v1alpha1.PostMortemList) {
+    rpc List(PostMortemQuery) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList) {
         option (google.api.http).get = "/api/v1alpha1/postmortems";
     }
     rpc Create(PostMortemCreateRequest) returns (google.protobuf.Empty) {

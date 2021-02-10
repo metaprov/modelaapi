@@ -10,7 +10,7 @@ package externalversions
 import (
 	"fmt"
 
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )

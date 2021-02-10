@@ -11,9 +11,9 @@
 package v1alpha1
 
 import (
-	catalogv1alpha1 "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
-	datav1alpha1 "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1"
-	inferencev1alpha1 "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1"
+	catalogv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	datav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	inferencev1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

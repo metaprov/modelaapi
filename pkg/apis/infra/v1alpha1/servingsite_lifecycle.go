@@ -8,9 +8,10 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/dustin/go-humanize"
-	"github.com/metaprov/modeld-api/pkg/apis/infra"
-	"github.com/metaprov/modeld-api/pkg/util"
+	"github.com/metaprov/modeldapi/pkg/apis/infra"
+	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	nwv1beta1 "k8s.io/api/networking/v1beta1"

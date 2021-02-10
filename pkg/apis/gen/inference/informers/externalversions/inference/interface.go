@@ -8,8 +8,8 @@
 package inference
 
 import (
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/inference/informers/externalversions/inference/v1alpha1"
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/inference/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/inference/informers/externalversions/inference/v1alpha1"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/inference/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

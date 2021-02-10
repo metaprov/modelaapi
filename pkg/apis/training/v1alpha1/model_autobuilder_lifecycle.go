@@ -8,13 +8,14 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
-	catalog "github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1"
-	"github.com/metaprov/modeld-api/pkg/apis/training"
-	"github.com/metaprov/modeld-api/pkg/util"
-	v1 "k8s.io/api/core/v1"
 	"path/filepath"
+
+	"github.com/dustin/go-humanize"
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	"github.com/metaprov/modeldapi/pkg/apis/training"
+	"github.com/metaprov/modeldapi/pkg/util"
+	v1 "k8s.io/api/core/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

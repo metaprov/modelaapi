@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/predictionpipelinerun";
+option go_package = "github.com/metaprov/modeldapi/services/predictionpipelinerun";
 
 package github.com.metaprov.modeld.services.predictionpipelinerun;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
 
 
 message ListPredictionPipelineRunsRequest {
@@ -15,7 +15,7 @@ message ListPredictionPipelineRunsRequest {
 }
 
 message ListPredictionPipelineRunsResponse {
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictionPipelineRunList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList items = 1;
 }
 
 message CreatePredictionPipelineRunResponse {}
@@ -24,14 +24,14 @@ message CreatePredictionPipelineRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
 }
 
 message UpdatePredictionPipelineRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
 }
 
 message UpdatePredictionPipelineRunResponse {
@@ -44,7 +44,7 @@ message GetPredictionPipelineRunRequest {
 }
 
 message GetPredictionPipelineRunResponse {
-    github.com.metaprov.modeld-api.pkg.apis.inference.v1alpha1.PredictionPipelineRun item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun item = 1;
     string yaml = 2;
 
 }

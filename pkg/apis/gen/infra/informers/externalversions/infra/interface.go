@@ -8,8 +8,8 @@
 package infra
 
 import (
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/infra/informers/externalversions/infra/v1alpha1"
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/infra/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/infra/informers/externalversions/infra/v1alpha1"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/infra/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

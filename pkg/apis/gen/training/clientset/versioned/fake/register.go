@@ -8,7 +8,7 @@
 package fake
 
 import (
-	trainingv1alpha1 "github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1"
+	trainingv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

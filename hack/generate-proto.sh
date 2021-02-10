@@ -16,12 +16,12 @@ PATH="${PROJECT_ROOT}/dist:${PATH}"
 #go build -o dist/protoc-gen-gogo ./vendor/k8s.io/code-generator/cmd/go-to-protobuf/protoc-gen-gogo
 
 PACKAGES=(
-    github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1
-    github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1
-    github.com/metaprov/modeld-api/pkg/apis/training/v1alpha1
-    github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1
-    github.com/metaprov/modeld-api/pkg/apis/catalog/v1alpha1
-    github.com/metaprov/modeld-api/pkg/apis/team/v1alpha1
+    github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1
+    github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1
+    github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1
+    github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1
+    github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1
+    github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1
     )
 
 APIMACHINERY_PKGS=(

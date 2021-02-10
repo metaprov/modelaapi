@@ -10,10 +10,10 @@ package v1alpha1
 import (
 	time "time"
 
-	versioned "github.com/metaprov/modeld-api/pkg/apis/gen/inference/clientset/versioned"
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/inference/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/inference/listers/inference/v1alpha1"
-	inferencev1alpha1 "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1"
+	versioned "github.com/metaprov/modeldapi/pkg/apis/gen/inference/clientset/versioned"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/inference/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/inference/listers/inference/v1alpha1"
+	inferencev1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

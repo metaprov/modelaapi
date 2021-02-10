@@ -8,8 +8,8 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeld-api/pkg/apis/gen/inference/clientset/versioned/scheme"
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1"
+	"github.com/metaprov/modeldapi/pkg/apis/gen/inference/clientset/versioned/scheme"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
 	rest "k8s.io/client-go/rest"
 )
 

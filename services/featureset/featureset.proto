@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/featureset";
+option go_package = "github.com/metaprov/modeldapi/services/featureset";
 
 package github.com.metaprov.modeld.services.featureset;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListFeaturesetRequest {
     string namespace = 1;
@@ -11,14 +11,14 @@ message ListFeaturesetRequest {
 }
 
 message ListFeaturesetResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturesetList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetList items = 1;
 }
 
 message CreateFeaturesetRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturesetSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetSpec spec = 4;
 }
 
 message CreateFeaturesetResponse {
@@ -29,7 +29,7 @@ message UpdateFeaturesetRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.FeaturesetSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetSpec spec = 5;
 }
 
 message UpdateFeaturesetResponse {
@@ -43,7 +43,7 @@ message GetFeaturesetRequest {
 
 
 message GetFeaturesetResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.Featureset item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset item = 1;
     string yaml = 2;
 }
 

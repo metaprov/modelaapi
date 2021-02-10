@@ -6,7 +6,7 @@
 
 package v1alpha1
 
-import "github.com/metaprov/modeld-api/pkg/util"
+import "github.com/metaprov/modeldapi/pkg/util"
 
 func (pl *ModelPipeline) Default() {
 	pl.Spec.Folder = util.StrPtr("modeld/live/tenants/default-tenant/dataproducts/" + pl.Namespace +

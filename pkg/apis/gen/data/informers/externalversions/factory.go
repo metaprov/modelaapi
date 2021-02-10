@@ -12,9 +12,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/metaprov/modeld-api/pkg/apis/gen/data/clientset/versioned"
-	data "github.com/metaprov/modeld-api/pkg/apis/gen/data/informers/externalversions/data"
-	internalinterfaces "github.com/metaprov/modeld-api/pkg/apis/gen/data/informers/externalversions/internalinterfaces"
+	versioned "github.com/metaprov/modeldapi/pkg/apis/gen/data/clientset/versioned"
+	data "github.com/metaprov/modeldapi/pkg/apis/gen/data/informers/externalversions/data"
+	internalinterfaces "github.com/metaprov/modeldapi/pkg/apis/gen/data/informers/externalversions/internalinterfaces"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/lab";
+option go_package = "github.com/metaprov/modeldapi/services/lab";
 
 package github.com.metaprov.modeld.services.lab;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeld/services/common/common.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/common.proto";
 
 message ListLabsRequest {
     string namespace = 1;
@@ -13,7 +13,7 @@ message ListLabsRequest {
 }
 
 message ListLabsResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.LabList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabList items = 1;
 }
 
 message LabResponse {}
@@ -22,7 +22,7 @@ message CreateLabRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.LabSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec spec = 4;
 }
 
 message CreateLabResponse {
@@ -33,7 +33,7 @@ message UpdateLabRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.LabSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec spec = 5;
 }
 
 message UpdateLabResponse {
@@ -47,7 +47,7 @@ message GetLabRequest {
 
 
 message GetLabResponse {
-    github.com.metaprov.modeld-api.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
     string yaml = 2;
 }
 

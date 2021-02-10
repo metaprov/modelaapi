@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/common";
+option go_package = "github.com/metaprov/modeldapi/services/common";
 
 package github.com.metaprov.modeld.services.common;
 

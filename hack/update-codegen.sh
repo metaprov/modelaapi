@@ -22,8 +22,8 @@ go install -mod vendor ./${CODEGEN_PKG}/cmd/{defaulter-gen,client-gen,lister-gen
 
 for group in training infra data catalog inference ; do
   bash ${CODEGEN_PKG}/generate-groups.sh "client,lister,informer" \
-    github.com/metaprov/modeld-api/pkg/apis/gen/${group} \
-    github.com/metaprov/modeld-api/pkg/apis \
+    github.com/metaprov/modeldapi/pkg/apis/gen/${group} \
+    github.com/metaprov/modeldapi/pkg/apis \
     "${group}:v1alpha1" \
     --go-header-file ${SCRIPT_ROOT}/hack/custom-boilerplate.go.txt \
     ${verify}

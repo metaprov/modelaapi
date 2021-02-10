@@ -1,4 +1,4 @@
-# modeld-api
+# modeldapi
 API repo for modeld
 
 ### Todo

@@ -10,8 +10,8 @@ package v1alpha1
 import (
 	"time"
 
-	scheme "github.com/metaprov/modeld-api/pkg/apis/gen/inference/clientset/versioned/scheme"
-	v1alpha1 "github.com/metaprov/modeld-api/pkg/apis/inference/v1alpha1"
+	scheme "github.com/metaprov/modeldapi/pkg/apis/gen/inference/clientset/versioned/scheme"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

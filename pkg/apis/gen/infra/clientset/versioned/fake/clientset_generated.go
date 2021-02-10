@@ -8,9 +8,9 @@
 package fake
 
 import (
-	clientset "github.com/metaprov/modeld-api/pkg/apis/gen/infra/clientset/versioned"
-	infrav1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/infra/clientset/versioned/typed/infra/v1alpha1"
-	fakeinfrav1alpha1 "github.com/metaprov/modeld-api/pkg/apis/gen/infra/clientset/versioned/typed/infra/v1alpha1/fake"
+	clientset "github.com/metaprov/modeldapi/pkg/apis/gen/infra/clientset/versioned"
+	infrav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/infra/clientset/versioned/typed/infra/v1alpha1"
+	fakeinfrav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/gen/infra/clientset/versioned/typed/infra/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

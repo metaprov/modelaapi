@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	data "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1"
+	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

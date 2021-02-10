@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/datapipelinerun";
+option go_package = "github.com/metaprov/modeldapi/services/datapipelinerun";
 
 package github.com.metaprov.modeld.services.datapipelinerun;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListDataPipelineRunRequest {
     string namespace = 1;
@@ -11,14 +11,14 @@ message ListDataPipelineRunRequest {
 }
 
 message ListDataPipelineRunResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineRunList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunList items = 1;
 }
 
 message CreateDataPipelineRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineRunSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec spec = 4;
     map<string,string> secret = 5;
 }
 
@@ -29,7 +29,7 @@ message UpdateDataPipelineRunRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineRunSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec spec = 4;
     map<string,string> secret = 5;
 }
 
@@ -43,7 +43,7 @@ message GetDataPipelineRunRequest {
 
 
 message GetDataPipelineRunResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
     string yaml = 2;
 }
 

@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeld/services/datapipeline";
+option go_package = "github.com/metaprov/modeldapi/services/datapipeline";
 
 package github.com.metaprov.modeld.services.datapipeline;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeld-api/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListDataPipelinesRequest {
     string namespace = 1;
@@ -11,14 +11,14 @@ message ListDataPipelinesRequest {
 }
 
 message ListDataPipelinesResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineList items = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineList items = 1;
 }
 
 message CreateDataPipelineRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec spec = 4;
     map<string,string> secret = 5;
 }
 
@@ -29,7 +29,7 @@ message UpdateDataPipelineRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipelineSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec spec = 4;
     map<string,string> secret = 5;
 }
 
@@ -43,7 +43,7 @@ message GetDataPipelineRequest {
 
 
 message GetDataPipelineResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
     string yaml = 2;
 }
 
@@ -54,7 +54,7 @@ message RunDataPipelineRequest {
 
 
 message RunDataPipelineResponse {
-    github.com.metaprov.modeld-api.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
     string yaml = 2;
 }
 
