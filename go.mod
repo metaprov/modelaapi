@@ -1,6 +1,6 @@
 module github.com/metaprov/modeldapi
 
-go 1.13
+go 1.15
 
 require (
 	github.com/appscode/jsonpatch v1.0.1 // indirect
