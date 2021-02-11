@@ -17,6 +17,7 @@ import (
 
 // +genclient
 // +genclient:noStatus
+// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type PretrainedModel struct {

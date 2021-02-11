@@ -64,7 +64,7 @@ type PredictorCondition struct {
 	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,7,opt,name=lastTransitionTime"`
+	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
 	// The reason for the condition's last transition.
 	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
 	// A human readable message indicating details about the transition.
@@ -110,7 +110,7 @@ type DriftCheckSpec struct {
 	// The notifier to invoke in case of
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
 	// Tested dataset
-	TestDatasetName string `json:"testDataset,omitempty" protobuf:"bytes,7,opt,name=testDataset"`
+	TestDatasetName string `json:"testDataset,omitempty" protobuf:"bytes,4,opt,name=testDataset"`
 }
 
 // The desired state of the model.
@@ -147,7 +147,7 @@ type ModelDeploymentSpec struct {
 	// If the deployment is canary, the metric define how to evaluate the canary.
 	// Default: none
 	// +optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,8,opt,name=canaryMetrics"`
+	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,8,rep,name=canaryMetrics"`
 }
 
 type ModelDeploymentStatus struct {
@@ -175,16 +175,16 @@ type ProgressiveSpec struct {
 	// +optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
-	Warmup *int32 `json:"warmup,omitempty" protobuf:"varint,12,opt,name=warmup"`
+	Warmup *int32 `json:"warmup,omitempty" protobuf:"varint,1,opt,name=warmup"`
 	// How much do we increment the warm up traffic
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	// Default : 10
 	// +optional
-	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,14,opt,name=trafficIncrement"`
+	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,2,opt,name=trafficIncrement"`
 	// What metric to use when comparing the candidate to the current
 	// +optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,13,opt,name=canaryMetrics"`
+	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,opt,name=canaryMetrics"`
 }
 
 // PredictorSpec define the desired state of the predictor
@@ -251,17 +251,17 @@ type PredictorStatus struct {
 	// +optional
 	ModelStatuses []ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,opt,name=modelStatus"`
 
-	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 	// When was the last check attempt
-	MonitorLastAttemptAt metav1.Timestamp `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,6,opt,name=monitorLastAttemptAt"`
+	MonitorLastAttemptAt metav1.Timestamp `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
 	// What was the last score
-	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,7,opt,name=monitorLastScore"`
+	MonitorLastScore float64 `json:"monitorLastScore,omitempty" protobuf:"bytes,4,opt,name=monitorLastScore"`
 	// What was the last latency
-	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,8,opt,name=monitorLastLatency"`
+	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,5,opt,name=monitorLastLatency"`
 	// The Health of the predictor
-	Health PredictorHealth `json:"health,omitempty" protobuf:"bytes,9,opt,name=health"`
+	Health PredictorHealth `json:"health,omitempty" protobuf:"bytes,6,opt,name=health"`
 	// The channels
-	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,10,opt,name=statuses"`
+	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,7,opt,name=statuses"`
 }
 
 type PredictorHealth struct {

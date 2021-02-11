@@ -4,27 +4,83 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-SCRIPT_ROOT=$(dirname ${BASH_SOURCE})/..
-CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${SCRIPT_ROOT}; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../../../k8s.io/code-generator)}
+PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
+ROOT_PKG=github.com/metaprov/modeldapi
 
 verify="${VERIFY:-}"
 
 set -x
-# Because go mod sux, we have to fake the vendor for generator in order to be able to build it...
-#mv ${CODEGEN_PKG}/generate-groups.sh ${CODEGEN_PKG}/generate-groups.sh.orig
-#sed 's/ go install/#go install/g' ${CODEGEN_PKG}/generate-groups.sh.orig > ${CODEGEN_PKG}/generate-groups.sh
-#function cleanup {
-#  mv ${CODEGEN_PKG}/generate-groups.sh.orig ${CODEGEN_PKG}/generate-groups.sh
-#}
-#trap cleanup EXIT
 
-go install -mod vendor ./${CODEGEN_PKG}/cmd/{defaulter-gen,client-gen,lister-gen,informer-gen,deepcopy-gen}
+#Gen client
+$GOPATH/bin/client-gen \
+  --clientset-name versioned \
+  --input-base "${ROOT_PKG}/pkg/apis/" \
+  --input "catalog/v1alpha1" \
+  --input "data/v1alpha1" \
+  --input "inference/v1alpha1" \
+  --input "infra/v1alpha1" \
+  --input "team/v1alpha1" \
+  --input "training/v1alpha1" \
+  --output-package "${ROOT_PKG}/pkg/client/clientset" \
+  --go-header-file hack/custom-boilerplate.go.txt
 
-for group in training infra data catalog inference ; do
-  bash ${CODEGEN_PKG}/generate-groups.sh "client,lister,informer" \
-    github.com/metaprov/modeldapi/pkg/apis/gen/${group} \
-    github.com/metaprov/modeldapi/pkg/apis \
-    "${group}:v1alpha1" \
-    --go-header-file ${SCRIPT_ROOT}/hack/custom-boilerplate.go.txt \
-    ${verify}
-done
+# Gen lister
+$GOPATH/bin/lister-gen \
+  --input-dirs "${ROOT_PKG}/pkg/apis/catalog/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/data/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/inference/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/infra/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/team/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/training/v1alpha1" \
+  --output-package "${ROOT_PKG}/pkg/client/listers" \
+  --go-header-file hack/custom-boilerplate.go.txt
+
+# Gen informer
+$GOPATH/bin/informer-gen \
+  --input-dirs "${ROOT_PKG}/pkg/apis/catalog/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/data/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/inference/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/infra/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/team/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/training/v1alpha1" \
+  --versioned-clientset-package "${ROOT_PKG}/pkg/client/clientset/versioned" \
+  --listers-package "${ROOT_PKG}/pkg/client/listers" \
+  --output-package "${ROOT_PKG}/pkg/client/informers" \
+  --go-header-file hack/custom-boilerplate.go.txt
+
+
+$GOPATH/bin/deepcopy-gen \
+  --input-dirs "${ROOT_PKG}/pkg/apis/catalog/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/data/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/inference/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/infra/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/team/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/training/v1alpha1" \
+  -O zz_generated.deepcopy \
+  --go-header-file hack/custom-boilerplate.go.txt
+
+# Generate conversation
+$GOPATH/bin/conversion-gen  \
+  --input-dirs "${ROOT_PKG}/pkg/apis/catalog/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/data/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/inference/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/infra/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/team/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/training/v1alpha1" \
+  -O zz_generated.conversion \
+  --go-header-file hack/custom-boilerplate.go.txt
+
+$GOPATH/bin/openapi-gen  \
+  --input-dirs "${ROOT_PKG}/pkg/apis/catalog/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/data/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/inference/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/infra/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/team/v1alpha1" \
+  --input-dirs "${ROOT_PKG}/pkg/apis/training/v1alpha1" \
+  --input-dirs "k8s.io/apimachinery/pkg/apis/meta/v1,k8s.io/apimachinery/pkg/runtime,k8s.io/apimachinery/pkg/util/intstr" \
+  --input-dirs "k8s.io/api/core/v1" \
+  --output-package "${ROOT_PKG}/pkg/apiserver/openapi" \
+  -O zz_generated.openapi \
+  --go-header-file hack/custom-boilerplate.go.txt
+
+  

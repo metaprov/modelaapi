@@ -99,7 +99,7 @@ type DataPipelineRunSpec struct {
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
 type DataPipelineRunStatus struct {
 	// Pointers to the done datasets
-	Inputs []string `json:"inputs" protobuf:"bytes,1,opt,name=inputs"`
+	Inputs []string `json:"inputs" protobuf:"bytes,1,rep,name=inputs"`
 	// the resulting dataset from the flow
 	Output string `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run

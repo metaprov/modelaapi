@@ -10,6 +10,7 @@ import (
 // +genclient
 // +genclient:noStatus
 
+//+k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description=""

@@ -284,7 +284,7 @@ type ModelStatus struct {
 	// The URI of the log file
 	// +optional
 	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,19,opt,name=logsUri"`
-	// A reference to the visualization uri which were produce during processing
+	// ProfileUri is a reference to the visualization uri which were produce during processing
 	// +optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,20,opt,name=profileUri"`
 	// A reference to the mis-classification file which were produce during processing

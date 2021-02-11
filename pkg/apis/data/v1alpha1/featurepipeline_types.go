@@ -127,14 +127,14 @@ type MaterializationSpec struct {
 // Define the aggregation period
 type AggregationSpec struct {
 	SlidePeriod  string            `json:"slidePeriod,omitempty" protobuf:"bytes,1,opt,name=slidePeriod"`
-	Aggregations []FeatureAggrSpec `json:"aggregations,omitempty" protobuf:"bytes,2,opt,name=aggregations"`
+	Aggregations []FeatureAggrSpec `json:"aggregations,omitempty" protobuf:"bytes,2,rep,name=aggregations"`
 }
 
 type FeatureAggrSpec struct {
 	// The column
 	Column string `json:"column,omitempty" protobuf:"bytes,1,opt,name=column"`
 	// The aggregation function
-	Functions []string `json:"functions,omitempty" protobuf:"bytes,2,opt,name=functions"`
+	Functions []string `json:"functions,omitempty" protobuf:"bytes,2,rep,name=functions"`
 	// List of windows functions
-	Windows []string `json:"windows,omitempty" protobuf:"bytes,3,opt,name=windows"`
+	Windows []string `json:"windows,omitempty" protobuf:"bytes,3,rep,name=windows"`
 }

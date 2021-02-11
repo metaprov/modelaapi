@@ -32,11 +32,11 @@ type TenantCondition struct {
 	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
+	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
 	// The reason for the condition's last transition.
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
+	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
 	// A human readable message indicating details about the transition.
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
+	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
 // +genclient
@@ -80,10 +80,10 @@ type TenantSpec struct {
 	// User provided description
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
-	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The owner account name
 	// +optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 
 // TenantStatus defines the actual state of a Tenant

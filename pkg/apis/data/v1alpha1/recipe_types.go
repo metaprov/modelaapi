@@ -28,13 +28,13 @@ type RecipeCondition struct {
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
 	// +optional
-	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
+	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
 	// The reason for the condition's last transition.
 	// +optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
+	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
 	// A human readable message indicating details about the transition.
 	// +optional
-	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
+	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
 // +genclient
@@ -83,7 +83,7 @@ type RecipeSpec struct {
 	// The recipe input spec.
 	Input RecipeInputSpec `json:"input,omitempty" protobuf:"bytes,4,opt,name=input"`
 	// The reciepe steps
-	Steps []RecipeStep `json:"steps,omitempty" protobuf:"bytes,5,opt,name=steps"`
+	Steps []RecipeStep `json:"steps,omitempty" protobuf:"bytes,5,rep,name=steps"`
 	// Use this as the output dataset name
 	Output RecipeOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Specify the sampling paramters when viewing the recipe

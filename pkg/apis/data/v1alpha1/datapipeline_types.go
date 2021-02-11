@@ -70,7 +70,7 @@ type DataPipelineSpec struct {
 	// The datasets objects which are used for this pipeline. Each datafile can be from a bucket
 	InputDatasets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputDatasets"`
 	// The recipe for this pipeline.
-	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,opt,name=recipeNames"`
+	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// The output file of the pipeline
 	OutputDatasetName string `json:"outputDataset,omitempty" protobuf:"bytes,5,opt,name=outputDataset"`

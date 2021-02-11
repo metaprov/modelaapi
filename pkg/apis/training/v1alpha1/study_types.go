@@ -240,7 +240,7 @@ type ModelSearchSpec struct {
 	// +optional
 	Resources *TrainingResourceRequest `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
 	// Contain the list of algorithms that should be tested as part of the search.
-	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,opt,name=allowlist"`
+	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
 	// If true, create a voting ensemble of the top 3 models.
 	// +optional
 	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"bytes,13,opt,name=votingEnsemble"`
@@ -456,9 +456,9 @@ type Level struct {
 
 type Hierarchy struct {
 	// The columns in the data frame that belongs to the hierarchy. By default, all the item level column is the last one. The default aggregate function is sum.
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// The group level columns. For each group level column specify the horizon and the aggregate function
-	GroupLevels []Level `json:"groupLevels,omitempty" protobuf:"bytes,2,opt,name=groupLevels"`
+	GroupLevels []Level `json:"groupLevels,omitempty" protobuf:"bytes,2,rep,name=groupLevels"`
 	// Item level column.
 	ItemLevel Level `json:"itemLevel,omitempty" protobuf:"bytes,3,opt,name=itemLevel"`
 	// Optional notifier to use when the forecast is complete.

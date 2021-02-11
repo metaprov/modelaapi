@@ -1,6 +1,6 @@
 
 
-.PHONY: generate-crds
+.PHONY: generate-proto
 generate-proto:
 	cd hack && ./generate-proto.sh
 
@@ -8,8 +8,8 @@ generate-proto:
 generate-go:
 	hack/generate-go.sh
 
-.PHONY: generate-client-go
-generate-client-go:
+.PHONY: update-codegen
+update-codegen:
 	hack/update-codegen.sh
 
 .PHONY: generate-gateway
@@ -24,6 +24,24 @@ generate-swagger:
 generate-api-docs:
 	hack/generate-api-docs.sh
 
+release: build
+
+
+.PHONY: test
+test:
+	go test ./pkg/... $(COVERAGE_OPTS)
+	go test ./tests/...
+
+.PHONY: lint
+lint:
+	$(GOLANGCI_LINT) run --timeout=20m	
+
+.PHONY: modtidy
+modtidy:
+	go mod tidy
+
+
+
 generate-deepcopy:
 	$(CONTROLLER_GEN) object:headerFile=./hack/custom-boilerplate.go.txt paths=./pkg/apis/...
 
@@ -35,7 +53,6 @@ generate-crd:
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 
-generate: generate-proto generate-go generate-crd generate-client-go generate-gateaway generate-swagger generate-api-docs
 
 
 controller-gen:
@@ -52,3 +69,20 @@ CONTROLLER_GEN=$(GOBIN)/controller-gen
 else
 CONTROLLER_GEN=$(shell which controller-gen)
 endif	
+
+
+install-gen: 
+	go install k8s.io/code-generator/cmd/deepcopy-gen	
+	go install k8s.io/code-generator/cmd/client-gen      
+	go install k8s.io/code-generator/cmd/deepcopy-gen   
+	go install k8s.io/code-generator/cmd/go-to-protobuf  
+	go install k8s.io/code-generator/cmd/informer-gen  
+	go install k8s.io/code-generator/cmd/openapi-gen   
+	go install k8s.io/code-generator/cmd/set-gen
+	go install k8s.io/code-generator/cmd/conversion-gen  
+	go install k8s.io/code-generator/cmd/defaulter-gen  
+	go install k8s.io/code-generator/cmd/import-boss     
+	go install k8s.io/code-generator/cmd/lister-gen    
+	go install k8s.io/code-generator/cmd/register-gen
+
+generate: install-gen generate-proto generate-go generate-crd update-codegen

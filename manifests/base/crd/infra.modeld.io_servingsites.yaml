@@ -126,6 +126,8 @@ spec:
                         type:
                           description: Type of resource that this limit applies to.
                           type: string
+                      required:
+                      - type
                       type: object
                     type: array
                 required:

@@ -28,6 +28,7 @@ const (
 // +genclient:noStatus
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
+// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""
 // +kubebuilder:printcolumn:priority=0,name="Task",type=string,JSONPath=".spc.task",description="machine learning task",format=""
 type UserRoleClass struct {
@@ -47,5 +48,5 @@ type UserRoleClassList struct {
 
 // UserRoleClassSpec is the spec for UserRoleClass
 type UserRoleClassSpec struct {
-	Rules []rbacv1.PolicyRule `json:"rules,omitempty" protobuf:"bytes,1,opt,name=rules"`
+	Rules []rbacv1.PolicyRule `json:"rules,omitempty" protobuf:"bytes,1,rep,name=rules"`
 }

@@ -28,7 +28,7 @@ GIT_ROOT=$(cd $(dirname ${BASH_SOURCE})/../../../../; pwd)
 echo $PROJECT_ROOT
 echo $GIT_ROOT
 # Generate server/<service>/(<service>.pb.go|<service>.pb.gw.go)
-PROTO_FILES=$(find $PROJECT_ROOT \( -name "*.proto" -and -path '*/services/*' -or -path '*/pkg/apis/*' -and -name "*.proto" \))
+PROTO_FILES=$(find $PROJECT_ROOT \( -name "*.proto" -and -path '*/services/*' -or -path '*/modeldapi/pkg/apis/*' -and -name "*.proto" \))
 
 # generate the api objects
 GOOGLE_PROTO_API_PATH=${PROJECT_ROOT}/common-protos

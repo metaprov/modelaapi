@@ -41,9 +41,9 @@ type CloudSpec struct {
 	DefaultRegionName       string         `json:"defaultRegionRef,omitempty" protobuf:"bytes,1,opt,name=defaultRegionName"`
 	DefaultMachineClassName string         `json:"defaultMachineClassRef,omitempty" protobuf:"bytes,2,opt,name=defaultMachineClassName"`
 	DefaultGpuClassName     string         `json:"defaultGpuClassRef,omitempty" protobuf:"bytes,3,opt,name=defaultGpuClassName"`
-	MachineClasses          []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,opt,name=machineClasses"`
-	GpuClasses              []GpuClass     `json:"gpuClasses,omitempty" protobuf:"bytes,5,opt,name=gpuClasses"`
-	Regions                 []Region       `json:"regions,omitempty" protobuf:"bytes,6,opt,name=regions"`
+	MachineClasses          []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,rep,name=machineClasses"`
+	GpuClasses              []GpuClass     `json:"gpuClasses,omitempty" protobuf:"bytes,5,rep,name=gpuClasses"`
+	Regions                 []Region       `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions"`
 }
 
 type MachineClass struct {
@@ -82,7 +82,7 @@ type Region struct {
 	// The billing code of the region
 	BillingCode string `json:"billingCode,omitempty" protobuf:"bytes,4,opt,name=billingCode"`
 
-	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,5,opt,name=datacenters"`
+	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,5,rep,name=datacenters"`
 }
 
 type DataCenter struct {
@@ -104,6 +104,6 @@ type GpuClassCost struct {
 
 // CloudStatus defines the observed state of Cloud.
 type CloudStatus struct {
-	MachineCosts []MachineClassCost `json:"machineCosts,omitempty" protobuf:"bytes,1,opt,name=machineCosts"`
-	GpuCosts     []GpuClassCost     `json:"gpuCosts,omitempty" protobuf:"bytes,2,opt,name=gpuCosts"`
+	MachineCosts []MachineClassCost `json:"machineCosts,omitempty" protobuf:"bytes,1,rep,name=machineCosts"`
+	GpuCosts     []GpuClassCost     `json:"gpuCosts,omitempty" protobuf:"bytes,2,rep,name=gpuCosts"`
 }
