@@ -22,3 +22,20 @@ debug.test
 coverage.out
 ui/node_modules/
 /vendor/
+
+bin
+.mockgen
+.cache
+.golangci-bin
+.coverage/
+
+.DS_Store
+
+# VIM
+.*.swp
+
+# Emacs
+*~
+
+.idea/
+.vscode/
