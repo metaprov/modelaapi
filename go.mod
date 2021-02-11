@@ -2,8 +2,6 @@ module github.com/metaprov/modeldapi
 
 go 1.15
 
-replace github.com/golang/protobuf => github.com/golang/protobuf v1.3.5
-
 require (
 	github.com/dustin/go-humanize v1.0.0
 	github.com/emicklei/go-restful v2.15.0+incompatible // indirect
@@ -27,11 +25,10 @@ require (
 	gotest.tools v2.2.0+incompatible
 	k8s.io/api v0.20.2
 	k8s.io/apimachinery v0.20.2
-	k8s.io/client-go v11.0.0+incompatible
-	k8s.io/code-generator v0.20.2
+	k8s.io/client-go v0.20.2
+	k8s.io/code-generator v0.20.1
 	k8s.io/gengo v0.0.0-20210203185629-de9496dff47b // indirect
-	k8s.io/klog v1.0.0 // indirect
 	k8s.io/klog/v2 v2.5.0 // indirect
-	k8s.io/kube-openapi v0.0.0-20210211043216-66d8d84e87dd
+	k8s.io/kube-openapi v0.0.0-20201113171705-d219536bb9fd
 	sigs.k8s.io/controller-runtime v0.8.2
 )
