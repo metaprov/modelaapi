@@ -679,13 +679,13 @@ message ModelPipelineCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1172,7 +1172,7 @@ message ModelStatus {
   // +optional
   optional string logsUri = 19;
 
-  // A reference to the visualization uri which were produce during processing
+  // ProfileUri is a reference to the visualization uri which were produce during processing
   // +optional
   optional string profileUri = 20;
 
@@ -1370,22 +1370,22 @@ message NotebookSpec {
 
   // python req file
   // +optional
-  optional string requirements = 6;
+  optional string requirements = 5;
 
   // list of deb package
   // +optional
-  optional string debPackages = 7;
+  optional string debPackages = 6;
 
   // vars to pass to the notebook
   // +optional
-  repeated string vars = 8;
+  repeated string vars = 7;
 
   // The location of the notebook
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 9;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 8;
 
   // The owner account name
   // +optional
-  optional string owner = 10;
+  optional string owner = 9;
 }
 
 // NotebookStatus is the observed state of the notebook resource

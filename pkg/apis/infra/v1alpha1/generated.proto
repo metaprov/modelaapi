@@ -47,13 +47,13 @@ message AccountCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -482,13 +482,13 @@ message LabCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -565,13 +565,13 @@ message LicenseCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -822,13 +822,13 @@ message NotifierCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -979,13 +979,13 @@ message ServingSiteCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1120,13 +1120,13 @@ message TenantCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1154,11 +1154,11 @@ message TenantSpec {
   // User provided description
   // +optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 4;
+  optional string description = 3;
 
   // The owner account name
   // +optional
-  optional string owner = 5;
+  optional string owner = 4;
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -1194,13 +1194,13 @@ message VirtualBucketCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1257,13 +1257,13 @@ message VirtualClusterCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

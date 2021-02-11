@@ -16,8 +16,8 @@ import (
 //==============================================================================
 // +genclient
 // +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
 // Cloud represent a cloud provider. A cloud contains RegionName, machines
 type Cloud struct {

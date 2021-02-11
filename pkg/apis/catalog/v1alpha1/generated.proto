@@ -19,6 +19,12 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+// ==============================================================================
+// Algorithm
+// ==============================================================================
+// +genclient
+// +genclient:noStatus
+// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description=""
@@ -34,6 +40,7 @@ message Algorithm {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AlgorithmList contains a list of Algorithm
 message AlgorithmList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -286,6 +293,7 @@ message MachineClassCost {
 
 // +genclient
 // +genclient:noStatus
+// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 message PretrainedModel {
@@ -368,6 +376,7 @@ message Region {
 // +genclient:noStatus
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
+// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""
 // +kubebuilder:printcolumn:priority=0,name="Task",type=string,JSONPath=".spc.task",description="machine learning task",format=""
 message UserRoleClass {

@@ -76,13 +76,13 @@ message ConversationCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -147,13 +147,13 @@ message PostMortemCondition {
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 5;
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

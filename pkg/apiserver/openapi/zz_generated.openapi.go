@@ -641,7 +641,8 @@ func schema_pkg_apis_catalog_v1alpha1_Algorithm(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "============================================================================== Algorithm ==============================================================================",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -16395,7 +16396,7 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"profileUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the visualization uri which were produce during processing",
+							Description: "ProfileUri is a reference to the visualization uri which were produce during processing",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",

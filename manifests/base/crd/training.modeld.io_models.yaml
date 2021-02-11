@@ -972,8 +972,8 @@ spec:
                 description: The phase of the model
                 type: string
               profileUri:
-                description: A reference to the visualization uri which were produce
-                  during processing
+                description: ProfileUri is a reference to the visualization uri which
+                  were produce during processing
                 type: string
               reportName:
                 description: Reference to the model report
