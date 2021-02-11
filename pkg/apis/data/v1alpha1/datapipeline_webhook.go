@@ -11,7 +11,7 @@ import (
 )
 
 func (wr *DataPipeline) SetupWebhookWithManager(mgr ctrl.Manager) error {
-	return ctrl.NewControllerManagedBy(mgr).
+	return ctrl.NewWebhookManagedBy(mgr).
 		For(wr).
-		Complete(wr)
+		Complete()
 }

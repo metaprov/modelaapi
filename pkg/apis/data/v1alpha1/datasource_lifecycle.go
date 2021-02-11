@@ -64,13 +64,6 @@ func (sc *DataSource) MarkFieldAsTarget(target string) {
 
 func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
 	var causes []metav1.StatusCause
-	if err := util.CheckNotEmpty(sc.ObjectMeta.Name, "name"); err != nil {
-		causes = append(causes, metav1.StatusCause{
-			Type:    metav1.CauseTypeFieldValueInvalid,
-			Field:   "FileName",
-			Message: "DataSourceName require non empty name",
-		})
-	}
 
 	// must have one target attribute
 	if sc.CountTargetAttributes() == 0 {
