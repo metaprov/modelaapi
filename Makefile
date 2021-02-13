@@ -24,6 +24,14 @@ generate-swagger:
 generate-api-docs:
 	hack/generate-api-docs.sh
 
+.PHONY: generate-js
+generate-js:
+	hack/generate-js.sh
+
+.PHONY: generate-py
+generate-py:
+	hack/generate-py.sh
+
 release: build
 
 
