@@ -9,26 +9,24 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="realpython-reader",
-    version="1.0.0",
-    description="Read the latest Real Python tutorials",
+    name="modeldapi",
+    version="0.1.6",
+    description="modeld api for python",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/realpython/reader",
-    author="Real Python",
-    author_email="office@realpython.com",
-    license="MIT",
+    url="https://github.com/metaprov/modeldapi",
+    author="Metaprov",
+    author_email="tsagi@modeld.io",
+    license="Apache",
     classifiers=[
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
-    packages=["reader"],
+    packages=["github.com.metaprov.modeldapi.pkg.apis.catalog",
+              "github.com.metaprov.modeldapi.pkg.apis.data",
+              "github.com.metaprov.modeldapi.pkg.apis.inference",
+              "github.com.metaprov.modeldapi.pkg.apis.infra",
+              "github.com.metaprov.modeldapi.pkg.apis.training"],
     include_package_data=True,
-    install_requires=["feedparser", "html2text"],
-    entry_points={
-        "console_scripts": [
-            "realpython=reader.__main__:main",
-        ]
-    },
 )

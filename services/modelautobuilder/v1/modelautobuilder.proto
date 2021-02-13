@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/modelautobuilder/v1";
+package github.com.metaprov.modeld.services.modelautobuilder.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+
+message ListModelAutobuildersRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListModelAutobuildersResponse {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderList items = 1;
+}
+
+message CreateModelAutobuilderRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec spec = 4;
+}
+
+message CreateModelAutobuilderResponse {
+
+}
+
+message UpdateModelAutobuilderRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec spec = 5;
+}
+
+message UpdateModelAutobuilderResponse {
+
+}
+
+message GetModelAutobuilderRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetModelAutobuilderResponse {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    string yaml = 2;
+}
+
+
+message DeleteModelAutobuilderRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteModelAutobuilderResponse {
+
+}
+
+
+service ModelAutobuilderService {
+    rpc ListModelAutobuilders(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {
+        option (google.api.http).get = "/v1/modelautobuilders";
+    }
+    rpc CreateModelAutobuilder(CreateModelAutobuilderRequest) returns (CreateModelAutobuilderResponse) {
+        option (google.api.http) = {
+			post: "/v1/modelautobuilders"
+			body: "modelautobuilder"
+		};
+    }
+    rpc GetModelAutobuilder(GetModelAutobuilderRequest) returns (GetModelAutobuilderResponse) {
+        option (google.api.http).get = "/v1/modelautobuilders/{name}";
+    }
+    rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (UpdateModelAutobuilderResponse) {
+        option (google.api.http) = {
+			put: "/v1/modelautobuilders/{corpus.metadata.name}"
+			body: "modelautobuilder"
+		};
+    }
+
+    rpc DeleteModelAutobuilder(DeleteModelAutobuilderRequest) returns (DeleteModelAutobuilderResponse) {}
+
+
+
+}

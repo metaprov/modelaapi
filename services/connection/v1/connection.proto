@@ -1,0 +1,88 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/connection/v1";
+package github.com.metaprov.modeld.services.connection.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+
+message ListConnectionsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListConnectionsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionList items = 1;
+}
+
+message CreateConnectionRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec spec = 4;
+    map<string,string> secret = 5;
+}
+
+message CreateConnectionResponse {
+}
+
+message UpdateConnectionRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec spec = 4;
+    map<string,string> secret = 5;
+}
+
+message UpdateConnectionResponse {
+
+}
+
+message GetConnectionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetConnectionResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 1;
+    string yaml = 2;
+}
+
+
+
+
+message DeleteConnectionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteConnectionResponse {
+
+}
+
+
+
+
+service ConnectionService {
+    rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {
+        option (google.api.http).get = "/v1/credentials";
+    }
+    rpc CreateConnection(CreateConnectionRequest) returns (CreateConnectionResponse) {
+        option (google.api.http) = {
+			post: "/v1/credentials"
+			body: "connection"
+		};
+    }
+    rpc GetConnection(GetConnectionRequest) returns (GetConnectionResponse) {
+        option (google.api.http).get = "/v1/credentials/{name}";
+    }
+    rpc UpdateConnection(UpdateConnectionRequest) returns (UpdateConnectionResponse) {
+        option (google.api.http) = {
+			put: "/v1/credentials/{connection.metadata.name}"
+			body: "connection"
+		};
+    }
+
+    rpc DeleteConnection(DeleteConnectionRequest) returns (DeleteConnectionResponse) {}
+
+}

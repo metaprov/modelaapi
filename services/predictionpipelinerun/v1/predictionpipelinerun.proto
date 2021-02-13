@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/predictionpipelinerun/v1";
+package github.com.metaprov.modeld.services.predictionpipelinerun.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListPredictionPipelineRunsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListPredictionPipelineRunsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList items = 1;
+}
+
+message CreatePredictionPipelineRunResponse {}
+
+message CreatePredictionPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
+}
+
+message UpdatePredictionPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
+}
+
+message UpdatePredictionPipelineRunResponse {
+
+}
+
+message GetPredictionPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetPredictionPipelineRunResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun item = 1;
+    string yaml = 2;
+
+}
+
+message DeletePredictionPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeletePredictionPipelineRunResponse {
+
+}
+
+message DownloadPredictionPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message DownloadPredictionPipelineRunResponse {
+    bytes raw = 1;
+
+}
+
+
+service PredictionPipelineRunService {
+
+    rpc ListPredictionPipelineRuns(ListPredictionPipelineRunsRequest) returns (ListPredictionPipelineRunsResponse) {
+        option (google.api.http).get = "/v1/predictionpipelines";
+    }
+
+    rpc CreatePredictionPipelineRun(CreatePredictionPipelineRunRequest) returns (CreatePredictionPipelineRunResponse) {
+        option (google.api.http) = {
+			post: "/v1/predictionpipelines"
+			body: "predictionpipeline"
+		};
+    }
+
+    rpc GetPredictionPipelineRun(GetPredictionPipelineRunRequest) returns (GetPredictionPipelineRunResponse) {
+        option (google.api.http).get = "/v1/predictionpipelines/{name}";
+    }
+
+    rpc UpdatePredictionPipelineRun(UpdatePredictionPipelineRunRequest) returns (UpdatePredictionPipelineRunResponse) {
+        option (google.api.http) = {
+			put: "/v1/predictions/{prediction.metadata.name}"
+			body: "prediction"
+		};
+    }
+
+    rpc DeletePredictionPipelineRun(DeletePredictionPipelineRunRequest) returns (DeletePredictionPipelineRunResponse) {
+        option (google.api.http).delete = "/v1/predictions/{name}";
+    }
+
+    rpc Download(DownloadPredictionPipelineRunRequest) returns (DownloadPredictionPipelineRunResponse) {
+        option (google.api.http).get = "/api/v1alpha1/predictions/{name}:download";
+    }
+
+
+}

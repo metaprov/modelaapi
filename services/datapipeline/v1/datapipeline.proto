@@ -1,0 +1,96 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/datapipeline/v1";
+package github.com.metaprov.modeld.services.datapipeline.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListDataPipelinesRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListDataPipelinesResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineList items = 1;
+}
+
+message CreateDataPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec spec = 4;
+    map<string,string> secret = 5;
+}
+
+message CreateDataPipelineResponse {
+}
+
+message UpdateDataPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec spec = 4;
+    map<string,string> secret = 5;
+}
+
+message UpdateDataPipelineResponse {
+}
+
+message GetDataPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetDataPipelineResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+    string yaml = 2;
+}
+
+message RunDataPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message RunDataPipelineResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline pipeline = 1;
+    string yaml = 2;
+}
+
+
+message DeleteDataPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteDataPipelineResponse {
+}
+
+
+service DataPipelineService {
+    rpc ListDataPipelines(ListDataPipelinesRequest) returns (ListDataPipelinesResponse) {
+        option (google.api.http).get = "/v1/datapipelines";
+    }
+    rpc CreateDataPipeline(CreateDataPipelineRequest) returns (CreateDataPipelineResponse) {
+        option (google.api.http) = {
+			post: "/v1/datapipelines"
+			body: "datapipeline"
+		};
+    }
+
+    rpc GetDataPipeline(GetDataPipelineRequest) returns (GetDataPipelineResponse) {
+        option (google.api.http).get = "/v1/datapipelines/{name}";
+    }
+
+    rpc UpdateDataPipeline(UpdateDataPipelineRequest) returns (UpdateDataPipelineResponse) {
+        option (google.api.http) = {
+			put: "/v1/datapipelines/{datapipeline.metadata.name}"
+			body: "datapipeline"
+		};
+    }
+
+    rpc DeleteDataPipeline(DeleteDataPipelineRequest) returns (DeleteDataPipelineResponse) {}
+
+    rpc Run(RunDataPipelineRequest) returns (RunDataPipelineResponse) {}
+}

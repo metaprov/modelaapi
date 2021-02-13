@@ -1,0 +1,224 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/dataset/v1";
+package github.com.metaprov.modeld.services.dataset.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+
+
+// list datasets req/response
+message ListDatasetsRequest {
+    string namespace = 1;
+    map<string,string> labels = 3;
+}
+
+message ListDatasetsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
+}
+
+
+// Get Dataset
+message GetDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message GetDatasetResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    string yaml = 2;
+}
+
+// Create Dataset
+message CreateDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
+}
+
+message CreateDatasetResponse {
+
+}
+
+// update dataset
+message UpdateDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
+}
+
+message UpdateDatasetResponse {
+
+}
+
+message DeleteDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteDatasetResponse {
+
+}
+
+// Chunk is used to send
+message UploadChunkRequest  {
+    string fname   = 1;  // the file name
+    bytes  content = 2; // the chunk content
+    int32  index   = 3; // the chunk index
+    bool   last    = 4; // this is the last chunk
+}
+
+// return the result
+message UploadChunkResponse {
+    string fname = 1;
+    bool   ok    = 2;
+}
+
+
+
+
+///////////////////////////////////////////////////////
+/// Profile
+///////////////////////////////////////////////////////
+
+
+// create profile
+message CreateDatasetProfileRequest {
+    string namespace   = 1;
+    string name        = 2;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 3;
+}
+
+message CreateDatasetProfileResponse {
+    string uri = 1; // the profile uri
+    github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profile = 2;
+}
+
+
+message CreateColumnProfileRequest {
+    string namespace   = 1;
+    string name        = 2;
+    string col         = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 4;
+}
+
+message CreateColumnProfileResponse {
+    string name = 1;
+    github.com.metaprov.modeldapi.services.common.v1.Plot plot = 2;
+}
+
+message GetDatasetProfileRequest {
+    string namespace = 1;
+    string name      = 2;
+    string uri       = 3; // this is optional. used when we do the analysis from the ui (vs in batch mode)
+}
+
+message GetDatasetProfileResponse {
+    string namespace = 1;
+    string name      = 2;
+    github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profile = 3;
+}
+
+// compare the profile of one or more datasets
+message CompareDatasetsRequest {
+    string namespace       = 1;
+    repeated string names  = 2;
+}
+// return the profile of one or more datasets
+message CompareDatasetsResponse {
+    string namespace       = 1;
+    repeated string names  = 2;
+    repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
+}
+
+// compare the profile of one or more datasets
+message GenerateDatasetRequest {
+    string namespace       = 1;
+    repeated string names  = 2;
+}
+// return the profile of one or more datasets
+message GenerateDatasetResponse {
+    string namespace       = 1;
+    repeated string names  = 2;
+    repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
+}
+
+
+// compare the profile of one or more datasets
+message ValidateDatasetRequest {
+    string namespace       = 1;
+    repeated string names  = 2;
+}
+// return the profile of one or more datasets
+message ValidateDatasetResponse {
+    string namespace       = 1;
+    repeated string names  = 2;
+    repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
+}
+
+
+service DatasetService {
+    // Datasets
+    rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse) {
+        option (google.api.http).get = "/api/v1/datasets";
+    }
+
+    rpc GetDataset(GetDatasetRequest) returns (GetDatasetResponse) {
+        option (google.api.http).get = "/api/v1/datasets/{name}";
+    }
+
+    rpc CreateDataset(CreateDatasetRequest) returns (CreateDatasetResponse) {
+        option (google.api.http) = {
+			post: "/api/v1/datasets"
+			body: "dataset"
+		};
+    }
+
+    rpc UpdateDataset(UpdateDatasetRequest) returns (UpdateDatasetResponse) {
+        option (google.api.http) = {
+			put: "/api/v1/datasets/{dataset.metadata.name}"
+			body: "dataset"
+		};
+    }
+
+    rpc DeleteDataset(DeleteDatasetRequest) returns (DeleteDatasetResponse) {
+        option (google.api.http).delete = "/api/v1/datasets/{name}";
+    }
+
+    // compare one or more datasets
+    rpc CompareDatasets(CompareDatasetsRequest) returns (CompareDatasetsResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:compare";
+    }
+
+    rpc GetDatasetProfile(GetDatasetProfileRequest) returns (GetDatasetProfileResponse) {
+        option (google.api.http).get = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile";
+    }
+
+    rpc CreateDatasetProfile(CreateDatasetProfileRequest) returns (CreateDatasetProfileResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile";
+    }
+
+    // Get a single column viz, we do that since we want to parallelize the computation of the viz
+    rpc CreateColumnProfile(CreateColumnProfileRequest) returns (CreateColumnProfileResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}/columnplot";
+    }
+
+    // generate a syntatic dataset
+    rpc GenerateDataset(GenerateDatasetRequest) returns (GenerateDatasetResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:generate";
+    }
+
+    rpc ValidateDataset(ValidateDatasetRequest) returns (ValidateDatasetResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate";
+    }
+
+    rpc UploadChunk(UploadChunkRequest) returns (UploadChunkResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate";
+    }
+
+}

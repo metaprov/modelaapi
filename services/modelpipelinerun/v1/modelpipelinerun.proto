@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/modelpipelinerun/v1";
+package github.com.metaprov.modeld.services.modelpipelinerun.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+
+
+message ListModelPipelineRunsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListModelPipelineRunsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunList items = 1;
+}
+
+message ModelPipelineRunResponse {}
+
+message CreateModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec spec = 4;
+}
+
+message CreateModelPipelineRunResponse {
+
+}
+
+message UpdateModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec spec = 5;
+}
+
+message UpdateModelPipelineRunResponse {
+
+}
+
+message GetModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetModelPipelineRunResponse {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+    string yaml = 2;
+}
+
+
+
+message DeleteModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteModelPipelineRunResponse {
+
+}
+
+
+service ModelPipelineRunService {
+    rpc ListModelPipelineRuns(ListModelPipelineRunsRequest) returns (ListModelPipelineRunsResponse) {
+        option (google.api.http).get = "/api/v1alpha1/modelpipelineruns";
+    }
+    rpc CreateModelPipelineRun(CreateModelPipelineRunRequest) returns (CreateModelPipelineRunResponse) {
+        option (google.api.http) = {
+			post: "/api/v1alpha1/modelpipelineruns"
+			body: "modelpipelinerun"
+		};
+    }
+    rpc GetModelPipelineRun(GetModelPipelineRunRequest) returns (GetModelPipelineRunResponse) {
+        option (google.api.http).get = "/api/v1alpha1/modelpipelineruns/{name}";
+    }
+    rpc UpdateModelPipelineRun(UpdateModelPipelineRunRequest) returns (UpdateModelPipelineRunResponse) {
+        option (google.api.http) = {
+			put: "/api/v1alpha1/modelpipelineruns/{modelpipelinerun.metadata.name}"
+			body: "modelpipelinerun"
+		};
+    }
+
+    rpc DeleteModelPipelineRun(DeleteModelPipelineRunRequest) returns (DeleteModelPipelineRunResponse) {}
+
+}

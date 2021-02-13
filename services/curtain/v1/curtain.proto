@@ -1,0 +1,91 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/curtain/v1";
+
+package github.com.metaprov.modeld.services.curtain.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListCurtainsRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListCurtainsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList items = 1;
+}
+
+
+message CreateCurtainResponse {}
+
+message CreateCurtainRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec spec = 5;
+}
+
+message UpdateCurtainRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec spec = 5;
+}
+
+message UpdateCurtainResponse {
+
+}
+
+message GetCurtainRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetCurtainResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteCurtainRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteCurtainResponse {
+
+}
+
+
+
+service CurtainService {
+
+    rpc ListCurtains(ListCurtainsRequest) returns (ListCurtainsResponse) {
+        option (google.api.http).get = "/v1/curtains";
+    }
+
+    rpc CreateCurtain(CreateCurtainRequest) returns (CreateCurtainResponse) {
+        option (google.api.http) = {
+			post: "/v1/curtains"
+			body: "curtain"
+		};
+    }
+
+    rpc GetCurtain(GetCurtainRequest) returns (GetCurtainResponse) {
+        option (google.api.http).get = "/v1/curtains/{name}";
+    }
+
+    rpc UpdateCurtain(UpdateCurtainRequest) returns (UpdateCurtainResponse) {
+        option (google.api.http) = {
+			put: "/v1/curtains/{curtain.metadata.name}"
+			body: "curtain"
+		};
+    }
+
+    rpc DeleteCurtain(DeleteCurtainRequest) returns (DeleteCurtainResponse) {
+        option (google.api.http).delete = "/v1/curtains/{name}";
+    }
+
+}

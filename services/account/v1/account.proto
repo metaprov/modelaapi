@@ -1,0 +1,158 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/account/v1";
+
+package github.com.metaprov.modeld.services.account.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+
+
+message ListAccountsRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListAccountsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList items = 1;
+}
+
+message AccountResponse {}
+
+message CreateAccountRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 4;
+    string password = 5;
+    bool upsert = 6;
+}
+
+message CreateAccountResponse {
+
+}
+
+message UpdateAccountRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 5;
+}
+
+message UpdateAccountResponse {
+
+}
+
+message GetAccountRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetAccountResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
+    string yaml = 2;
+}
+
+
+
+
+message DeleteAccountRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteAccountResponse {}
+
+
+message AccountCreateResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message AccountLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message AccountGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message AccountLoginResponse {
+    string token = 1; // jwt token
+}
+message AccountLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+message AccountCreateRequest {
+    string namespace = 1;
+    string name      = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
+    string  password = 4;
+}
+
+message AccountDeleteRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+
+
+
+service AccountService {
+    rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {
+        option (google.api.http).get = "/v1/accounts";
+    }
+    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {
+        option (google.api.http) = {
+			post: "/v1/accounts"
+			body: "account"
+		};
+    }
+    rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
+        option (google.api.http).get = "/v1/accounts/{name}";
+    }
+    rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
+        option (google.api.http) = {
+			put: "/v1/accounts/{account.metadata.name}"
+			body: "account"
+		};
+    }
+
+    rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {}
+
+
+
+    rpc Login  (AccountLoginRequest)                returns (AccountLoginResponse) {}
+    rpc Logout         (AccountLogoutRequest)       returns (LogoutResponse)   {}
+    rpc ChangePassword (ChangePasswordRequest)      returns (ChangePasswordResponse)   {}
+    rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}
+
+
+
+}

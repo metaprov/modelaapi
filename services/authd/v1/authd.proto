@@ -1,0 +1,76 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/authd/v1";
+package github.com.metaprov.modeld.services.authd.v1;
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+
+
+service AuthdService {
+    rpc Login  (AccountLoginRequest)                returns (AccountLoginResponse) {}
+    rpc CreateAccount  (AccountCreateRequest)       returns (AccountCreateResponse)   {}
+    rpc DeleteAccount  (AccountDeleteRequest)       returns (DeleteAccountResponse)   {}
+    rpc Logout         (AccountLogoutRequest)       returns (LogoutResponse)   {}
+    rpc ChangePassword (ChangePasswordRequest)      returns (ChangePasswordResponse)   {}
+    rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}
+    // message ResetPasswordResponse
+}
+
+message AccountCreateResponse {}
+message DeleteAccountResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message AccountLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message AccountGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message AccountLoginResponse {
+    string token = 1; // jwt token
+}
+message AccountLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+message AccountCreateRequest {
+    string namespace = 1;
+    string name      = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
+    string  password = 4;
+}
+
+message AccountDeleteRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+

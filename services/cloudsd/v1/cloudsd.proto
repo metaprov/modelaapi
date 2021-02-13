@@ -1,0 +1,88 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/cloudsd/v1";
+package github.com.metaprov.modeld.services.cloudsd.v1;
+
+
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+
+
+
+service CloudsService {
+    rpc Download(FileDownloadRequest)  returns (FileDownloadResponse)     {}
+    rpc Upload  (FileUploadRequest)  returns (FileUploadResponse)     {}
+    rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest) returns (KeyExistInVirtualBucketResponse)     {}
+    rpc VirtualBucketExist(VirtualBucketExistRequest) returns (VirtualBucketExistResponse)     {}
+    rpc CreateVirtualBucketIfNotExist(CreateVirtualBucketRequest) returns (CreateVirtualBucketResponse)     {}
+    rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {} // used when job ends in order to exist the side car.
+}
+
+message ShutdownRequest {}
+message ShutdownResponse {}
+
+message VirtualBucketExistRequest {
+    string name = 1;
+    string credNamespace = 2;
+    string credName = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
+    map<string,bytes>  secret    = 5;
+}
+
+message VirtualBucketExistResponse {
+    bool exist = 1;
+}
+
+message KeyExistInVirtualBucketRequest {
+    string region = 1;
+    string name   = 2;
+    string key    = 3;
+    string credNamespace = 4;
+    string credName = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    map<string,bytes>  secret    = 7;
+
+}
+
+message KeyExistInVirtualBucketResponse {
+    bool exist = 1;
+}
+message CloudVirtualBucketResponse {}
+
+// Ask the bucket to download a file
+message FileDownloadRequest {
+    string bucket = 1; // the storage bucket
+    string key    = 2; // key on the cloud storage
+    string path   = 3; // local path
+    string credNamespace = 4;
+    string credName = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    map<string,bytes>  secret    = 7;
+}
+
+message FileDownloadResponse {}
+
+message FileUploadRequest {
+    string bucket = 1; // the storage bucket
+    string key    = 2; // key on the cloud storage
+    string path   = 3; // local path
+    string credNamespace = 4;
+    string credName = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    map<string,bytes>  secret    = 7;
+}
+
+message FileUploadResponse {}
+
+
+message CreateVirtualBucketRequest {
+    string bucketName  = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 2;
+    string credNamespace = 3;
+    string credName = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 5;
+    map<string,bytes>  secret    = 7;
+
+}
+
+message CreateVirtualBucketResponse {
+
+}

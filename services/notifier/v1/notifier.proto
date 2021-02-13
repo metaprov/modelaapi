@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/notifier/v1";
+package github.com.metaprov.modeld.services.notifier.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListNotifiersRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListNotifiersResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierList items = 1;
+}
+
+message NotifierResponse {}
+
+message CreateNotifierRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierSpec spec = 4;
+}
+
+message CreateNotifierResponse {
+
+}
+
+message UpdateNotifierRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierSpec spec = 5;
+}
+
+message UpdateNotifierResponse {
+
+}
+
+message GetNotifierRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetNotifierResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    string yaml = 2;
+}
+
+
+
+
+message DeleteNotifierRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteNotifierResponse {
+
+}
+
+
+
+
+service NotifierService {
+    rpc ListNotifiers(ListNotifiersRequest) returns (ListNotifiersResponse) {
+        option (google.api.http).get = "/api/v1alpha1/notifiers";
+    }
+    rpc CreateNotifier(CreateNotifierRequest) returns (CreateNotifierResponse) {
+        option (google.api.http) = {
+			post: "/api/v1alpha1/notifiers"
+			body: "notifier"
+		};
+    }
+    rpc GetNotifier(GetNotifierRequest) returns (GetNotifierResponse) {
+        option (google.api.http).get = "/api/v1alpha1/notifiers/{name}";
+    }
+    rpc UpdateNotifier(UpdateNotifierRequest) returns (UpdateNotifierResponse) {
+        option (google.api.http) = {
+			put: "/api/v1alpha1/notifiers/{notifier.metadata.name}"
+			body: "notifier"
+		};
+    }
+
+    rpc DeleteNotifier(DeleteNotifierRequest) returns (DeleteNotifierResponse) {
+        option (google.api.http) = {
+			delete: "/api/v1alpha1/notifiers/{notifier.metadata.name}"
+		};
+    }
+
+
+}

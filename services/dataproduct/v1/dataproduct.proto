@@ -1,0 +1,85 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/dataproduct/v1";
+package github.com.metaprov.modeld.services.dataproduct.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListDataProductsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListDataProductsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductList items = 1;
+}
+
+message CreateDataProductRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec spec = 4;
+}
+
+message CreateDataProductResponse {
+
+}
+
+message UpdateDataProductRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec spec = 5;
+}
+
+message UpdateDataProductResponse {
+
+}
+
+message GetDataProductRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetDataProductResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    string yaml = 2;
+}
+
+message DeleteDataProductRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteDataProductResponse {
+
+}
+
+
+service DataProductService {
+    rpc ListDataProducts(ListDataProductsRequest) returns (ListDataProductsResponse) {
+        option (google.api.http).get = "/v1/dataproducts";
+    }
+    rpc CreateDataProduct(CreateDataProductRequest) returns (CreateDataProductResponse) {
+        option (google.api.http) = {
+			post: "/v1/dataproducts"
+			body: "dataproduct"
+		};
+    }
+    rpc GetDataProduct(GetDataProductRequest) returns (GetDataProductResponse) {
+        option (google.api.http).get = "/v1/dataproducts/{name}";
+    }
+    rpc UpdateDataProduct(UpdateDataProductRequest) returns (UpdateDataProductResponse) {
+        option (google.api.http) = {
+			put: "/v1/dataproducts/{dataproduct.metadata.name}"
+			body: "dataproduct"
+		};
+    }
+
+    rpc DeleteDataProduct(DeleteDataProductRequest) returns (DeleteDataProductResponse) {}
+
+
+
+}

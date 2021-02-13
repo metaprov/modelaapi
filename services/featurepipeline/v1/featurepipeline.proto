@@ -1,0 +1,88 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/featurepipeline/v1";
+package github.com.metaprov.modeld.services.featurepipeline.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListFeaturePipelineRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListFeaturePipelineResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineList items = 1;
+}
+
+message CreateFeaturePipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec spec = 4;
+}
+
+message CreateFeaturePipelineResponse {
+
+}
+
+message UpdateFeaturePipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec spec = 5;
+}
+
+message UpdateFeaturePipelineResponse {
+
+}
+
+message GetFeaturePipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetFeaturePipelineResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    string yaml = 2;
+}
+
+
+message DeleteFeaturePipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteFeaturePipelineResponse {
+
+}
+
+
+service FeaturePipelineService {
+    rpc ListFeaturePipelines(ListFeaturePipelineRequest) returns (ListFeaturePipelineResponse) {
+        option (google.api.http).get = "/v1/featurepipelines";
+    }
+
+    rpc CreateFeaturePipeline(CreateFeaturePipelineRequest) returns (CreateFeaturePipelineResponse) {
+        option (google.api.http) = {
+			post: "/v1/featurepipelines"
+			body: "featurepipeline"
+		};
+    }
+
+    rpc GetFeaturePipeline(GetFeaturePipelineRequest) returns (GetFeaturePipelineResponse) {
+        option (google.api.http).get = "/v1/featurepipelines/{name}";
+    }
+
+    rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (UpdateFeaturePipelineResponse) {
+        option (google.api.http) = {
+			put: "/v1/featurepipelines/{feature.metadata.name}"
+			body: "featurepipeline"
+		};
+    }
+
+    rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (DeleteFeaturePipelineResponse) {}
+
+
+
+}

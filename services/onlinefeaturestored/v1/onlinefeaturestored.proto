@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/onlinefeaturestored/v1";
+package github.com.metaprov.modeld.services.onlinefeaturestored.v1;
+
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+
+service OnlineFeatureStoreService {
+    rpc CreateFeature(CreateFeatureRequest)  returns (CreateFeatureResponse)     {}
+    rpc DeleteFeature(DeleteFeatureRequest)  returns (DeleteFeatureResponse)     {}
+    rpc ListFeatures(ListFeaturesRequest) returns (ListFeaturesResponse)     {}
+    rpc GetFeature(GetFeatureRequest) returns (GetFeatureResponse)     {}
+    rpc UpdateFeature(UpdateFeatureRequest) returns (UpdateFeatureResponse)     {}
+    rpc Enrich(EnrichRequest) returns (EnrichResponse)     {}
+
+}
+
+message CreateFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+    string connectionName = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
+    map<string,bytes>  secret    = 5;
+
+}
+message CreateFeatureResponse {}
+
+
+message DeleteFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+}
+message DeleteFeatureResponse {}
+
+
+message ListFeaturesRequest {
+    string ns   = 1;
+
+}
+message ListFeaturesResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList items = 1;
+}
+
+message GetFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 3;
+}
+message GetFeatureResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+}
+
+message EnrichRequest {
+    string id     = 1;
+    string record = 2;
+}
+
+message EnrichResponse {
+    string id     = 1;
+    string record = 2;
+}
+
+message UpdateFeatureRequest {
+    string name = 1;
+    string ns   = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    string connectionName = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
+    map<string,bytes>  secret    = 7;
+}
+message UpdateFeatureResponse {}
+
