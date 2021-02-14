@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modeld-api.iml" filepath="$PROJECT_DIR$/.idea/modeld-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modeldapi.iml" filepath="$PROJECT_DIR$/.idea/modeldapi.iml" />
     </modules>
   </component>
 </project>
