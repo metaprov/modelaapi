@@ -39,6 +39,7 @@ type PublicDatasetSpec struct {
 //==============================================================================
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PublicDatasetList contains a list of PublicDataset
 type PublicDatasetList struct {
 	metav1.TypeMeta `json:",inline"`
