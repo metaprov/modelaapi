@@ -21,6 +21,7 @@ option go_package = "v1alpha1";
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +genclient
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
@@ -459,6 +460,7 @@ message ImageRegistrySpec {
 // +genclient
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Git SecretRepo",type="string",JSONPath=".spec.gitrepoName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -540,6 +542,7 @@ message LabStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
@@ -798,6 +801,7 @@ message MySqlSpec {
 
 // +genclient
 // +kubebuilder:subresource:status
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
@@ -956,6 +960,7 @@ message RedShiftSpec {
 
 // +genclient
 // +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
@@ -1096,6 +1101,7 @@ message SqlLightSpec {
 
 // +genclient
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -1169,6 +1175,7 @@ message TenantStatus {
 
 // +genclient
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
@@ -1340,6 +1347,7 @@ message VirtualClusterStatus {
 
 // +genclient
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
