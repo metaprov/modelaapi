@@ -25,6 +25,7 @@ option go_package = "v1alpha1";
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description=""
@@ -104,8 +105,8 @@ message CategoricalParameter {
 // ==============================================================================
 // +genclient
 // +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
 // Cloud represent a cloud provider. A cloud contains RegionName, machines
 message Cloud {
