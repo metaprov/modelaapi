@@ -39,6 +39,7 @@ type DataProductCondition struct {
 // +genclient
 // +genclient:noStatus
 // DataProduct represent a single data product in the system
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status

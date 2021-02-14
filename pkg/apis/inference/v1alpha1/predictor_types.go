@@ -73,6 +73,7 @@ type PredictorCondition struct {
 
 // +k8s:openapi-gen=true
 // +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.port",description=""
 // +kubebuilder:printcolumn:name="Production",type="string",JSONPath=".spec.prod.modelName",description=""

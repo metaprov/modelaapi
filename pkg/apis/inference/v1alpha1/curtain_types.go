@@ -48,6 +48,7 @@ type CurtainCondition struct {
 // Curtain represent a Curtain API object
 // +genclient
 // +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetRef.name"

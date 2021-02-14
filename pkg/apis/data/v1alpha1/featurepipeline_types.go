@@ -42,6 +42,7 @@ type FeaturePipelineCondition struct {
 // +genclient:noStatus
 
 // FeaturePipeline represent a feature set object in the feature store.
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""

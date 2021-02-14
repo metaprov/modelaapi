@@ -41,6 +41,7 @@ type VirtualClusterCondition struct {
 
 // +genclient
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modeld}
 //A VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
