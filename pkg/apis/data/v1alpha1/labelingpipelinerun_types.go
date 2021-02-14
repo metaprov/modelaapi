@@ -59,7 +59,7 @@ type LabelingPipelineRun struct {
 }
 
 // +kubebuilder:object:root=true
-// LabelList contain a list of feature objects
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type LabelingPipelineRunList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

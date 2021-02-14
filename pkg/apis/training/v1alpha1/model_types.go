@@ -124,6 +124,7 @@ type Model struct {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // ModelList is a list of models.
 type ModelList struct {
 	metav1.TypeMeta `json:",inline"`

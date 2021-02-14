@@ -71,6 +71,7 @@ type PredictionPipelineRun struct {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineRunList is a list of PredictionPipelineRun
 type PredictionPipelineRunList struct {
 	metav1.TypeMeta `json:",inline" `

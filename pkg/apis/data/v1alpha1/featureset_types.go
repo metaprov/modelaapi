@@ -75,6 +75,7 @@ type FeaturesetSpec struct {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // FeaturesetList contains a list of Featureset
 type FeaturesetList struct {
 	metav1.TypeMeta `json:",inline"`
