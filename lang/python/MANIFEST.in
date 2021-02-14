@@ -1,0 +1,29 @@
+include *.md
+include *.rst
+include *.txt
+include *.yml
+include *.cfg
+include Makefile
+include MANIFEST.in
+
+include examples/*.ipynb
+include examples/*.md
+
+include LICENSE.txt
+
+graft docs
+prune docs/_build
+
+graft tests
+prune tests/fixtures
+prune tests/actual_images
+
+graft modeld
+
+
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .ipynb_checkpoints
+global-exclude .DS_Store
+global-exclude .env
+global-exclude .coverage.*
