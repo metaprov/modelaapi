@@ -335,6 +335,7 @@ type DataSourceStatus struct {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // DataSourceList contain a list of DataSource objects
 type DataSourceList struct {
 	metav1.TypeMeta `json:",inline"`

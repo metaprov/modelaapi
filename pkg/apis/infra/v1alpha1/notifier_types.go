@@ -46,6 +46,7 @@ type Notifier struct {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // NotifierList is a list of Notifiers
 type NotifierList struct {
 	metav1.TypeMeta `json:",inline"`

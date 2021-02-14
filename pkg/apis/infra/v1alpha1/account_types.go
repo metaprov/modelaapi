@@ -76,6 +76,7 @@ type Account struct {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AccountList represent list of accounts.
 type AccountList struct {
 	metav1.TypeMeta `json:",inline"`

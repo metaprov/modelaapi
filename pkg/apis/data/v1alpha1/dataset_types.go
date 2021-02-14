@@ -88,6 +88,7 @@ func (r *Dataset) MarkInjested() {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // DatasetList contains a list of Datasets
 type DatasetList struct {
 	metav1.TypeMeta `json:",inline"`
