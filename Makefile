@@ -94,3 +94,6 @@ install-gen:
 	go install k8s.io/code-generator/cmd/register-gen
 
 generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy update-codegen
+
+install-crd:
+	

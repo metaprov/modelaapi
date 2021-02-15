@@ -1,0 +1,52 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - catalog.modeld.io_algorithms.yaml
+  - catalog.modeld.io_clouds.yaml
+  - catalog.modeld.io_mlframeworks.yaml
+  - catalog.modeld.io_pretrainedmodels.yaml
+  - catalog.modeld.io_workloadclasses.yaml
+  - catalog.modeld.io_userroleclasses.yaml
+  - catalog.modeld.io_publicdatasets.yaml
+  - data.modeld.io_datapipelines.yaml
+  - data.modeld.io_datapipelineruns.yaml
+  - data.modeld.io_dataproducts.yaml
+  - data.modeld.io_dataproductversions.yaml
+  - data.modeld.io_datasets.yaml
+  - data.modeld.io_datasources.yaml
+  - data.modeld.io_entities.yaml
+  - data.modeld.io_features.yaml
+  - data.modeld.io_featuresets.yaml
+  - data.modeld.io_featurepipelineruns.yaml
+  - data.modeld.io_featurepipelines.yaml
+  - data.modeld.io_labelingpipelineruns.yaml
+  - data.modeld.io_labelingpipelines.yaml
+  - data.modeld.io_recipes.yaml
+  - data.modeld.io_reciperuns.yaml
+  - inference.modeld.io_curtains.yaml
+  - inference.modeld.io_predictionpipelines.yaml
+  - inference.modeld.io_predictionpipelineruns.yaml
+  - inference.modeld.io_predictors.yaml
+  - infra.modeld.io_accounts.yaml
+  - infra.modeld.io_connections.yaml
+  - infra.modeld.io_labs.yaml
+  - infra.modeld.io_licenses.yaml
+  - infra.modeld.io_machineimages.yaml
+  - infra.modeld.io_notifiers.yaml
+  - infra.modeld.io_servingsites.yaml
+  - infra.modeld.io_tenants.yaml
+  - infra.modeld.io_virtualbuckets.yaml
+  - infra.modeld.io_virtualclusters.yaml
+  - infra.modeld.io_virtualvolumes.yaml
+  - team.modeld.io_conversations.yaml
+  - team.modeld.io_postmortems.yaml
+  - team.modeld.io_runbooks.yaml
+  - training.modeld.io_modelautobuilders.yaml
+  - training.modeld.io_modelpipelineruns.yaml
+  - training.modeld.io_modelpipelines.yaml
+  - training.modeld.io_models.yaml
+  - training.modeld.io_notebookruns.yaml
+  - training.modeld.io_notebooks.yaml
+  - training.modeld.io_reports.yaml
+  - training.modeld.io_studies.yaml
