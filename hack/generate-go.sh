@@ -24,16 +24,15 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
 # generate the api objects
 for i in ${PROTO_FILES}; do
      protoc \
-        --experimental_allow_proto3_optional \
         -I${PROJECT_ROOT}/../../.. \
         -I${PROJECT_ROOT} \
         -I/usr/local/include \
         -I$GOPATH/src \
         -I${GOOGLE_PROTO_API_PATH} \
         -I${GOGO_PROTOBUF_PATH} \
-        --gogo_out=plugins=grpc:$GIT_ROOT \
+        --go_out=plugins=grpc:$GIT_ROOT \
         $i
         #--go_out=plugins=grpc:$GOPATH/src \
-
+        #--experimental_allow_proto3_optional \
 done
 

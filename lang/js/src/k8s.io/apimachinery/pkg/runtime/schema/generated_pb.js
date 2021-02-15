@@ -1,3 +1,4 @@
+// source: k8s.io/apimachinery/pkg/runtime/schema/generated.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -6,9 +7,10 @@
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-goog.object.extend(exports, proto.k8s.io.apimachinery.pkg.runtime.schema);

@@ -170,6 +170,46 @@ export namespace APIVersions {
   }
 }
 
+export class Condition extends jspb.Message {
+  getType(): string;
+  setType(value: string): Condition;
+
+  getStatus(): string;
+  setStatus(value: string): Condition;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): Condition;
+
+  getLasttransitiontime(): Time | undefined;
+  setLasttransitiontime(value?: Time): Condition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): Condition;
+
+  getReason(): string;
+  setReason(value: string): Condition;
+
+  getMessage(): string;
+  setMessage(value: string): Condition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Condition.AsObject;
+  static toObject(includeInstance: boolean, msg: Condition): Condition.AsObject;
+  static serializeBinaryToWriter(message: Condition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Condition;
+  static deserializeBinaryFromReader(message: Condition, reader: jspb.BinaryReader): Condition;
+}
+
+export namespace Condition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    observedgeneration: number,
+    lasttransitiontime?: Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
 export class CreateOptions extends jspb.Message {
   getDryrunList(): Array<string>;
   setDryrunList(value: Array<string>): CreateOptions;
@@ -574,6 +614,9 @@ export class ListOptions extends jspb.Message {
   getResourceversion(): string;
   setResourceversion(value: string): ListOptions;
 
+  getResourceversionmatch(): string;
+  setResourceversionmatch(value: string): ListOptions;
+
   getTimeoutseconds(): number;
   setTimeoutseconds(value: number): ListOptions;
 
@@ -598,6 +641,7 @@ export namespace ListOptions {
     watch: boolean,
     allowwatchbookmarks: boolean,
     resourceversion: string,
+    resourceversionmatch: string,
     timeoutseconds: number,
     limit: number,
     pb_continue: string,

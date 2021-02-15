@@ -605,6 +605,9 @@ export class ConfigMap extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): ConfigMap;
 
+  getImmutable(): boolean;
+  setImmutable(value: boolean): ConfigMap;
+
   getDataMap(): jspb.Map<string, string>;
   clearDataMap(): ConfigMap;
 
@@ -622,6 +625,7 @@ export class ConfigMap extends jspb.Message {
 export namespace ConfigMap {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    immutable: boolean,
     dataMap: Array<[string, string]>,
     binarydataMap: Array<[string, Uint8Array | string]>,
   }
@@ -863,6 +867,11 @@ export class Container extends jspb.Message {
   hasReadinessprobe(): boolean;
   clearReadinessprobe(): Container;
 
+  getStartupprobe(): Probe | undefined;
+  setStartupprobe(value?: Probe): Container;
+  hasStartupprobe(): boolean;
+  clearStartupprobe(): Container;
+
   getLifecycle(): Lifecycle | undefined;
   setLifecycle(value?: Lifecycle): Container;
   hasLifecycle(): boolean;
@@ -914,6 +923,7 @@ export namespace Container {
     volumedevicesList: Array<VolumeDevice.AsObject>,
     livenessprobe?: Probe.AsObject,
     readinessprobe?: Probe.AsObject,
+    startupprobe?: Probe.AsObject,
     lifecycle?: Lifecycle.AsObject,
     terminationmessagepath: string,
     terminationmessagepolicy: string,
@@ -1132,6 +1142,9 @@ export class ContainerStatus extends jspb.Message {
   getContainerid(): string;
   setContainerid(value: string): ContainerStatus;
 
+  getStarted(): boolean;
+  setStarted(value: boolean): ContainerStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContainerStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ContainerStatus): ContainerStatus.AsObject;
@@ -1150,6 +1163,7 @@ export namespace ContainerStatus {
     image: string,
     imageid: string,
     containerid: string,
+    started: boolean,
   }
 }
 
@@ -1315,6 +1329,9 @@ export class EndpointPort extends jspb.Message {
   getProtocol(): string;
   setProtocol(value: string): EndpointPort;
 
+  getAppprotocol(): string;
+  setAppprotocol(value: string): EndpointPort;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EndpointPort.AsObject;
   static toObject(includeInstance: boolean, msg: EndpointPort): EndpointPort.AsObject;
@@ -1328,6 +1345,7 @@ export namespace EndpointPort {
     name: string,
     port: number,
     protocol: string,
+    appprotocol: string,
   }
 }
 
@@ -1595,6 +1613,11 @@ export class EphemeralContainerCommon extends jspb.Message {
   hasReadinessprobe(): boolean;
   clearReadinessprobe(): EphemeralContainerCommon;
 
+  getStartupprobe(): Probe | undefined;
+  setStartupprobe(value?: Probe): EphemeralContainerCommon;
+  hasStartupprobe(): boolean;
+  clearStartupprobe(): EphemeralContainerCommon;
+
   getLifecycle(): Lifecycle | undefined;
   setLifecycle(value?: Lifecycle): EphemeralContainerCommon;
   hasLifecycle(): boolean;
@@ -1646,6 +1669,7 @@ export namespace EphemeralContainerCommon {
     volumedevicesList: Array<VolumeDevice.AsObject>,
     livenessprobe?: Probe.AsObject,
     readinessprobe?: Probe.AsObject,
+    startupprobe?: Probe.AsObject,
     lifecycle?: Lifecycle.AsObject,
     terminationmessagepath: string,
     terminationmessagepolicy: string,
@@ -1680,6 +1704,30 @@ export namespace EphemeralContainers {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     ephemeralcontainersList: Array<EphemeralContainer.AsObject>,
+  }
+}
+
+export class EphemeralVolumeSource extends jspb.Message {
+  getVolumeclaimtemplate(): PersistentVolumeClaimTemplate | undefined;
+  setVolumeclaimtemplate(value?: PersistentVolumeClaimTemplate): EphemeralVolumeSource;
+  hasVolumeclaimtemplate(): boolean;
+  clearVolumeclaimtemplate(): EphemeralVolumeSource;
+
+  getReadonly(): boolean;
+  setReadonly(value: boolean): EphemeralVolumeSource;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EphemeralVolumeSource.AsObject;
+  static toObject(includeInstance: boolean, msg: EphemeralVolumeSource): EphemeralVolumeSource.AsObject;
+  static serializeBinaryToWriter(message: EphemeralVolumeSource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EphemeralVolumeSource;
+  static deserializeBinaryFromReader(message: EphemeralVolumeSource, reader: jspb.BinaryReader): EphemeralVolumeSource;
+}
+
+export namespace EphemeralVolumeSource {
+  export type AsObject = {
+    volumeclaimtemplate?: PersistentVolumeClaimTemplate.AsObject,
+    readonly: boolean,
   }
 }
 
@@ -1808,9 +1856,6 @@ export class EventSeries extends jspb.Message {
   hasLastobservedtime(): boolean;
   clearLastobservedtime(): EventSeries;
 
-  getState(): string;
-  setState(value: string): EventSeries;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EventSeries.AsObject;
   static toObject(includeInstance: boolean, msg: EventSeries): EventSeries.AsObject;
@@ -1823,7 +1868,6 @@ export namespace EventSeries {
   export type AsObject = {
     count: number,
     lastobservedtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.MicroTime.AsObject,
-    state: string,
   }
 }
 
@@ -2570,6 +2614,11 @@ export class LoadBalancerIngress extends jspb.Message {
   getHostname(): string;
   setHostname(value: string): LoadBalancerIngress;
 
+  getPortsList(): Array<PortStatus>;
+  setPortsList(value: Array<PortStatus>): LoadBalancerIngress;
+  clearPortsList(): LoadBalancerIngress;
+  addPorts(value?: PortStatus, index?: number): PortStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoadBalancerIngress.AsObject;
   static toObject(includeInstance: boolean, msg: LoadBalancerIngress): LoadBalancerIngress.AsObject;
@@ -2582,6 +2631,7 @@ export namespace LoadBalancerIngress {
   export type AsObject = {
     ip: string,
     hostname: string,
+    portsList: Array<PortStatus.AsObject>,
   }
 }
 
@@ -2703,6 +2753,42 @@ export namespace Namespace {
   }
 }
 
+export class NamespaceCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): NamespaceCondition;
+
+  getStatus(): string;
+  setStatus(value: string): NamespaceCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NamespaceCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): NamespaceCondition;
+
+  getReason(): string;
+  setReason(value: string): NamespaceCondition;
+
+  getMessage(): string;
+  setMessage(value: string): NamespaceCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NamespaceCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: NamespaceCondition): NamespaceCondition.AsObject;
+  static serializeBinaryToWriter(message: NamespaceCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NamespaceCondition;
+  static deserializeBinaryFromReader(message: NamespaceCondition, reader: jspb.BinaryReader): NamespaceCondition;
+}
+
+export namespace NamespaceCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
 export class NamespaceList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): NamespaceList;
@@ -2753,6 +2839,11 @@ export class NamespaceStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): NamespaceStatus;
 
+  getConditionsList(): Array<NamespaceCondition>;
+  setConditionsList(value: Array<NamespaceCondition>): NamespaceStatus;
+  clearConditionsList(): NamespaceStatus;
+  addConditions(value?: NamespaceCondition, index?: number): NamespaceCondition;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NamespaceStatus.AsObject;
   static toObject(includeInstance: boolean, msg: NamespaceStatus): NamespaceStatus.AsObject;
@@ -2764,6 +2855,7 @@ export class NamespaceStatus extends jspb.Message {
 export namespace NamespaceStatus {
   export type AsObject = {
     phase: string,
+    conditionsList: Array<NamespaceCondition.AsObject>,
   }
 }
 
@@ -3557,6 +3649,32 @@ export namespace PersistentVolumeClaimStatus {
   }
 }
 
+export class PersistentVolumeClaimTemplate extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PersistentVolumeClaimTemplate;
+  hasMetadata(): boolean;
+  clearMetadata(): PersistentVolumeClaimTemplate;
+
+  getSpec(): PersistentVolumeClaimSpec | undefined;
+  setSpec(value?: PersistentVolumeClaimSpec): PersistentVolumeClaimTemplate;
+  hasSpec(): boolean;
+  clearSpec(): PersistentVolumeClaimTemplate;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PersistentVolumeClaimTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: PersistentVolumeClaimTemplate): PersistentVolumeClaimTemplate.AsObject;
+  static serializeBinaryToWriter(message: PersistentVolumeClaimTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PersistentVolumeClaimTemplate;
+  static deserializeBinaryFromReader(message: PersistentVolumeClaimTemplate, reader: jspb.BinaryReader): PersistentVolumeClaimTemplate;
+}
+
+export namespace PersistentVolumeClaimTemplate {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: PersistentVolumeClaimSpec.AsObject,
+  }
+}
+
 export class PersistentVolumeClaimVolumeSource extends jspb.Message {
   getClaimname(): string;
   setClaimname(value: string): PersistentVolumeClaimVolumeSource;
@@ -4214,6 +4332,9 @@ export class PodLogOptions extends jspb.Message {
   getLimitbytes(): number;
   setLimitbytes(value: number): PodLogOptions;
 
+  getInsecureskiptlsverifybackend(): boolean;
+  setInsecureskiptlsverifybackend(value: boolean): PodLogOptions;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodLogOptions.AsObject;
   static toObject(includeInstance: boolean, msg: PodLogOptions): PodLogOptions.AsObject;
@@ -4232,6 +4353,7 @@ export namespace PodLogOptions {
     timestamps: boolean,
     taillines: number,
     limitbytes: number,
+    insecureskiptlsverifybackend: boolean,
   }
 }
 
@@ -4324,6 +4446,14 @@ export class PodSecurityContext extends jspb.Message {
   clearSysctlsList(): PodSecurityContext;
   addSysctls(value?: Sysctl, index?: number): Sysctl;
 
+  getFsgroupchangepolicy(): string;
+  setFsgroupchangepolicy(value: string): PodSecurityContext;
+
+  getSeccompprofile(): SeccompProfile | undefined;
+  setSeccompprofile(value?: SeccompProfile): PodSecurityContext;
+  hasSeccompprofile(): boolean;
+  clearSeccompprofile(): PodSecurityContext;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodSecurityContext.AsObject;
   static toObject(includeInstance: boolean, msg: PodSecurityContext): PodSecurityContext.AsObject;
@@ -4342,6 +4472,8 @@ export namespace PodSecurityContext {
     supplementalgroupsList: Array<number>,
     fsgroup: number,
     sysctlsList: Array<Sysctl.AsObject>,
+    fsgroupchangepolicy: string,
+    seccompprofile?: SeccompProfile.AsObject,
   }
 }
 
@@ -4492,6 +4624,9 @@ export class PodSpec extends jspb.Message {
   clearTopologyspreadconstraintsList(): PodSpec;
   addTopologyspreadconstraints(value?: TopologySpreadConstraint, index?: number): TopologySpreadConstraint;
 
+  getSethostnameasfqdn(): boolean;
+  setSethostnameasfqdn(value: boolean): PodSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PodSpec): PodSpec.AsObject;
@@ -4536,6 +4671,7 @@ export namespace PodSpec {
     preemptionpolicy: string,
     overheadMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     topologyspreadconstraintsList: Array<TopologySpreadConstraint.AsObject>,
+    sethostnameasfqdn: boolean,
   }
 }
 
@@ -4718,6 +4854,32 @@ export namespace PodTemplateSpec {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: PodSpec.AsObject,
+  }
+}
+
+export class PortStatus extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): PortStatus;
+
+  getProtocol(): string;
+  setProtocol(value: string): PortStatus;
+
+  getError(): string;
+  setError(value: string): PortStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PortStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PortStatus): PortStatus.AsObject;
+  static serializeBinaryToWriter(message: PortStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PortStatus;
+  static deserializeBinaryFromReader(message: PortStatus, reader: jspb.BinaryReader): PortStatus;
+}
+
+export namespace PortStatus {
+  export type AsObject = {
+    port: number,
+    protocol: string,
+    error: string,
   }
 }
 
@@ -5571,11 +5733,36 @@ export namespace ScopedResourceSelectorRequirement {
   }
 }
 
+export class SeccompProfile extends jspb.Message {
+  getType(): string;
+  setType(value: string): SeccompProfile;
+
+  getLocalhostprofile(): string;
+  setLocalhostprofile(value: string): SeccompProfile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SeccompProfile.AsObject;
+  static toObject(includeInstance: boolean, msg: SeccompProfile): SeccompProfile.AsObject;
+  static serializeBinaryToWriter(message: SeccompProfile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SeccompProfile;
+  static deserializeBinaryFromReader(message: SeccompProfile, reader: jspb.BinaryReader): SeccompProfile;
+}
+
+export namespace SeccompProfile {
+  export type AsObject = {
+    type: string,
+    localhostprofile: string,
+  }
+}
+
 export class Secret extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Secret;
   hasMetadata(): boolean;
   clearMetadata(): Secret;
+
+  getImmutable(): boolean;
+  setImmutable(value: boolean): Secret;
 
   getDataMap(): jspb.Map<string, Uint8Array | string>;
   clearDataMap(): Secret;
@@ -5597,6 +5784,7 @@ export class Secret extends jspb.Message {
 export namespace Secret {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    immutable: boolean,
     dataMap: Array<[string, Uint8Array | string]>,
     stringdataMap: Array<[string, string]>,
     type: string,
@@ -5802,6 +5990,11 @@ export class SecurityContext extends jspb.Message {
   getProcmount(): string;
   setProcmount(value: string): SecurityContext;
 
+  getSeccompprofile(): SeccompProfile | undefined;
+  setSeccompprofile(value?: SeccompProfile): SecurityContext;
+  hasSeccompprofile(): boolean;
+  clearSeccompprofile(): SecurityContext;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SecurityContext.AsObject;
   static toObject(includeInstance: boolean, msg: SecurityContext): SecurityContext.AsObject;
@@ -5822,6 +6015,7 @@ export namespace SecurityContext {
     readonlyrootfilesystem: boolean,
     allowprivilegeescalation: boolean,
     procmount: string,
+    seccompprofile?: SeccompProfile.AsObject,
   }
 }
 
@@ -5998,6 +6192,9 @@ export class ServicePort extends jspb.Message {
   getProtocol(): string;
   setProtocol(value: string): ServicePort;
 
+  getAppprotocol(): string;
+  setAppprotocol(value: string): ServicePort;
+
   getPort(): number;
   setPort(value: number): ServicePort;
 
@@ -6021,6 +6218,7 @@ export namespace ServicePort {
   export type AsObject = {
     name: string,
     protocol: string,
+    appprotocol: string,
     port: number,
     targetport?: k8s_io_apimachinery_pkg_util_intstr_generated_pb.IntOrString.AsObject,
     nodeport: number,
@@ -6056,6 +6254,11 @@ export class ServiceSpec extends jspb.Message {
 
   getClusterip(): string;
   setClusterip(value: string): ServiceSpec;
+
+  getClusteripsList(): Array<string>;
+  setClusteripsList(value: Array<string>): ServiceSpec;
+  clearClusteripsList(): ServiceSpec;
+  addClusterips(value: string, index?: number): ServiceSpec;
 
   getType(): string;
   setType(value: string): ServiceSpec;
@@ -6093,8 +6296,21 @@ export class ServiceSpec extends jspb.Message {
   hasSessionaffinityconfig(): boolean;
   clearSessionaffinityconfig(): ServiceSpec;
 
-  getIpfamily(): string;
-  setIpfamily(value: string): ServiceSpec;
+  getTopologykeysList(): Array<string>;
+  setTopologykeysList(value: Array<string>): ServiceSpec;
+  clearTopologykeysList(): ServiceSpec;
+  addTopologykeys(value: string, index?: number): ServiceSpec;
+
+  getIpfamiliesList(): Array<string>;
+  setIpfamiliesList(value: Array<string>): ServiceSpec;
+  clearIpfamiliesList(): ServiceSpec;
+  addIpfamilies(value: string, index?: number): ServiceSpec;
+
+  getIpfamilypolicy(): string;
+  setIpfamilypolicy(value: string): ServiceSpec;
+
+  getAllocateloadbalancernodeports(): boolean;
+  setAllocateloadbalancernodeports(value: boolean): ServiceSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceSpec.AsObject;
@@ -6109,6 +6325,7 @@ export namespace ServiceSpec {
     portsList: Array<ServicePort.AsObject>,
     selectorMap: Array<[string, string]>,
     clusterip: string,
+    clusteripsList: Array<string>,
     type: string,
     externalipsList: Array<string>,
     sessionaffinity: string,
@@ -6119,7 +6336,10 @@ export namespace ServiceSpec {
     healthchecknodeport: number,
     publishnotreadyaddresses: boolean,
     sessionaffinityconfig?: SessionAffinityConfig.AsObject,
-    ipfamily: string,
+    topologykeysList: Array<string>,
+    ipfamiliesList: Array<string>,
+    ipfamilypolicy: string,
+    allocateloadbalancernodeports: boolean,
   }
 }
 
@@ -6128,6 +6348,11 @@ export class ServiceStatus extends jspb.Message {
   setLoadbalancer(value?: LoadBalancerStatus): ServiceStatus;
   hasLoadbalancer(): boolean;
   clearLoadbalancer(): ServiceStatus;
+
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ServiceStatus;
+  clearConditionsList(): ServiceStatus;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceStatus.AsObject;
@@ -6140,6 +6365,7 @@ export class ServiceStatus extends jspb.Message {
 export namespace ServiceStatus {
   export type AsObject = {
     loadbalancer?: LoadBalancerStatus.AsObject,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
@@ -6732,6 +6958,11 @@ export class VolumeSource extends jspb.Message {
   hasCsi(): boolean;
   clearCsi(): VolumeSource;
 
+  getEphemeral(): EphemeralVolumeSource | undefined;
+  setEphemeral(value?: EphemeralVolumeSource): VolumeSource;
+  hasEphemeral(): boolean;
+  clearEphemeral(): VolumeSource;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VolumeSource.AsObject;
   static toObject(includeInstance: boolean, msg: VolumeSource): VolumeSource.AsObject;
@@ -6770,6 +7001,7 @@ export namespace VolumeSource {
     scaleio?: ScaleIOVolumeSource.AsObject,
     storageos?: StorageOSVolumeSource.AsObject,
     csi?: CSIVolumeSource.AsObject,
+    ephemeral?: EphemeralVolumeSource.AsObject,
   }
 }
 

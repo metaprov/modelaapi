@@ -93,4 +93,4 @@ install-gen:
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
 
-generate: install-gen generate-proto generate-go generate-crd generate-deepcopy update-codegen
+generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy update-codegen
