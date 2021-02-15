@@ -1,115 +1,75 @@
 import * as jspb from 'google-protobuf'
 
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
 
 
-export class PostMortemQuery extends jspb.Message {
+export class ListPostMortemsRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): PostMortemQuery;
-
-  getName(): string;
-  setName(value: string): PostMortemQuery;
+  setNamespace(value: string): ListPostMortemsRequest;
 
   getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): PostMortemQuery;
+  clearLabelsMap(): ListPostMortemsRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemQuery.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemQuery): PostMortemQuery.AsObject;
-  static serializeBinaryToWriter(message: PostMortemQuery, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemQuery;
-  static deserializeBinaryFromReader(message: PostMortemQuery, reader: jspb.BinaryReader): PostMortemQuery;
+  toObject(includeInstance?: boolean): ListPostMortemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPostMortemsRequest): ListPostMortemsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListPostMortemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPostMortemsRequest;
+  static deserializeBinaryFromReader(message: ListPostMortemsRequest, reader: jspb.BinaryReader): ListPostMortemsRequest;
 }
 
-export namespace PostMortemQuery {
+export namespace ListPostMortemsRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
     labelsMap: Array<[string, string]>,
   }
 }
 
-export class PostMortemResponse extends jspb.Message {
+export class ListPostMortemsResponse extends jspb.Message {
+  getItems(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList | undefined;
+  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList): ListPostMortemsResponse;
+  hasItems(): boolean;
+  clearItems(): ListPostMortemsResponse;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemResponse): PostMortemResponse.AsObject;
-  static serializeBinaryToWriter(message: PostMortemResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemResponse;
-  static deserializeBinaryFromReader(message: PostMortemResponse, reader: jspb.BinaryReader): PostMortemResponse;
+  toObject(includeInstance?: boolean): ListPostMortemsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPostMortemsResponse): ListPostMortemsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListPostMortemsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPostMortemsResponse;
+  static deserializeBinaryFromReader(message: ListPostMortemsResponse, reader: jspb.BinaryReader): ListPostMortemsResponse;
 }
 
-export namespace PostMortemResponse {
+export namespace ListPostMortemsResponse {
   export type AsObject = {
+    items?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.AsObject,
   }
 }
 
-export class PostMortemCreateRequest extends jspb.Message {
+export class CreatePostMortemRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): PostMortemCreateRequest;
+  setNamespace(value: string): CreatePostMortemRequest;
 
   getName(): string;
-  setName(value: string): PostMortemCreateRequest;
+  setName(value: string): CreatePostMortemRequest;
 
   getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): PostMortemCreateRequest;
+  clearLabelsMap(): CreatePostMortemRequest;
 
   getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec): PostMortemCreateRequest;
+  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec): CreatePostMortemRequest;
   hasSpec(): boolean;
-  clearSpec(): PostMortemCreateRequest;
-
-  getPassword(): string;
-  setPassword(value: string): PostMortemCreateRequest;
-
-  getUpsert(): boolean;
-  setUpsert(value: boolean): PostMortemCreateRequest;
+  clearSpec(): CreatePostMortemRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemCreateRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemCreateRequest): PostMortemCreateRequest.AsObject;
-  static serializeBinaryToWriter(message: PostMortemCreateRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemCreateRequest;
-  static deserializeBinaryFromReader(message: PostMortemCreateRequest, reader: jspb.BinaryReader): PostMortemCreateRequest;
+  toObject(includeInstance?: boolean): CreatePostMortemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePostMortemRequest): CreatePostMortemRequest.AsObject;
+  static serializeBinaryToWriter(message: CreatePostMortemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePostMortemRequest;
+  static deserializeBinaryFromReader(message: CreatePostMortemRequest, reader: jspb.BinaryReader): CreatePostMortemRequest;
 }
 
-export namespace PostMortemCreateRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec.AsObject,
-    password: string,
-    upsert: boolean,
-  }
-}
-
-export class PostMortemUpdateRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): PostMortemUpdateRequest;
-
-  getName(): string;
-  setName(value: string): PostMortemUpdateRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): PostMortemUpdateRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec): PostMortemUpdateRequest;
-  hasSpec(): boolean;
-  clearSpec(): PostMortemUpdateRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemUpdateRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemUpdateRequest): PostMortemUpdateRequest.AsObject;
-  static serializeBinaryToWriter(message: PostMortemUpdateRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemUpdateRequest;
-  static deserializeBinaryFromReader(message: PostMortemUpdateRequest, reader: jspb.BinaryReader): PostMortemUpdateRequest;
-}
-
-export namespace PostMortemUpdateRequest {
+export namespace CreatePostMortemRequest {
   export type AsObject = {
     namespace: string,
     name: string,
@@ -118,69 +78,145 @@ export namespace PostMortemUpdateRequest {
   }
 }
 
-export class PostMortemGetResponse extends jspb.Message {
-  getPostmortem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
-  setPostmortem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): PostMortemGetResponse;
-  hasPostmortem(): boolean;
-  clearPostmortem(): PostMortemGetResponse;
+export class CreatePostMortemResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePostMortemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePostMortemResponse): CreatePostMortemResponse.AsObject;
+  static serializeBinaryToWriter(message: CreatePostMortemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePostMortemResponse;
+  static deserializeBinaryFromReader(message: CreatePostMortemResponse, reader: jspb.BinaryReader): CreatePostMortemResponse;
+}
+
+export namespace CreatePostMortemResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdatePostMortemRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): UpdatePostMortemRequest;
+
+  getName(): string;
+  setName(value: string): UpdatePostMortemRequest;
+
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): UpdatePostMortemRequest;
+
+  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec | undefined;
+  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec): UpdatePostMortemRequest;
+  hasSpec(): boolean;
+  clearSpec(): UpdatePostMortemRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePostMortemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePostMortemRequest): UpdatePostMortemRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdatePostMortemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePostMortemRequest;
+  static deserializeBinaryFromReader(message: UpdatePostMortemRequest, reader: jspb.BinaryReader): UpdatePostMortemRequest;
+}
+
+export namespace UpdatePostMortemRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    labelsMap: Array<[string, string]>,
+    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec.AsObject,
+  }
+}
+
+export class UpdatePostMortemResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePostMortemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePostMortemResponse): UpdatePostMortemResponse.AsObject;
+  static serializeBinaryToWriter(message: UpdatePostMortemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePostMortemResponse;
+  static deserializeBinaryFromReader(message: UpdatePostMortemResponse, reader: jspb.BinaryReader): UpdatePostMortemResponse;
+}
+
+export namespace UpdatePostMortemResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetPostMortemRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetPostMortemRequest;
+
+  getName(): string;
+  setName(value: string): GetPostMortemRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPostMortemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPostMortemRequest): GetPostMortemRequest.AsObject;
+  static serializeBinaryToWriter(message: GetPostMortemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPostMortemRequest;
+  static deserializeBinaryFromReader(message: GetPostMortemRequest, reader: jspb.BinaryReader): GetPostMortemRequest;
+}
+
+export namespace GetPostMortemRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetPostMortemResponse extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): GetPostMortemResponse;
+  hasItem(): boolean;
+  clearItem(): GetPostMortemResponse;
 
   getYaml(): string;
-  setYaml(value: string): PostMortemGetResponse;
+  setYaml(value: string): GetPostMortemResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemGetResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemGetResponse): PostMortemGetResponse.AsObject;
-  static serializeBinaryToWriter(message: PostMortemGetResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemGetResponse;
-  static deserializeBinaryFromReader(message: PostMortemGetResponse, reader: jspb.BinaryReader): PostMortemGetResponse;
+  toObject(includeInstance?: boolean): GetPostMortemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPostMortemResponse): GetPostMortemResponse.AsObject;
+  static serializeBinaryToWriter(message: GetPostMortemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPostMortemResponse;
+  static deserializeBinaryFromReader(message: GetPostMortemResponse, reader: jspb.BinaryReader): GetPostMortemResponse;
 }
 
-export namespace PostMortemGetResponse {
+export namespace GetPostMortemResponse {
   export type AsObject = {
-    postmortem?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
     yaml: string,
   }
 }
 
-export class PostMortemGetNamespacesRequest extends jspb.Message {
+export class DeletePostMortemRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): PostMortemGetNamespacesRequest;
+  setNamespace(value: string): DeletePostMortemRequest;
 
   getName(): string;
-  setName(value: string): PostMortemGetNamespacesRequest;
+  setName(value: string): DeletePostMortemRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemGetNamespacesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemGetNamespacesRequest): PostMortemGetNamespacesRequest.AsObject;
-  static serializeBinaryToWriter(message: PostMortemGetNamespacesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemGetNamespacesRequest;
-  static deserializeBinaryFromReader(message: PostMortemGetNamespacesRequest, reader: jspb.BinaryReader): PostMortemGetNamespacesRequest;
+  toObject(includeInstance?: boolean): DeletePostMortemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePostMortemRequest): DeletePostMortemRequest.AsObject;
+  static serializeBinaryToWriter(message: DeletePostMortemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePostMortemRequest;
+  static deserializeBinaryFromReader(message: DeletePostMortemRequest, reader: jspb.BinaryReader): DeletePostMortemRequest;
 }
 
-export namespace PostMortemGetNamespacesRequest {
+export namespace DeletePostMortemRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class PostMortemGetNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): PostMortemGetNamespacesResponse;
-  clearNamespacesList(): PostMortemGetNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
-
+export class DeletePostMortemResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostMortemGetNamespacesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PostMortemGetNamespacesResponse): PostMortemGetNamespacesResponse.AsObject;
-  static serializeBinaryToWriter(message: PostMortemGetNamespacesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostMortemGetNamespacesResponse;
-  static deserializeBinaryFromReader(message: PostMortemGetNamespacesResponse, reader: jspb.BinaryReader): PostMortemGetNamespacesResponse;
+  toObject(includeInstance?: boolean): DeletePostMortemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePostMortemResponse): DeletePostMortemResponse.AsObject;
+  static serializeBinaryToWriter(message: DeletePostMortemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePostMortemResponse;
+  static deserializeBinaryFromReader(message: DeletePostMortemResponse, reader: jspb.BinaryReader): DeletePostMortemResponse;
 }
 
-export namespace PostMortemGetNamespacesResponse {
+export namespace DeletePostMortemResponse {
   export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

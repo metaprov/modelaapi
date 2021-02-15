@@ -6,7 +6,9 @@ from github.com.metaprov.modeldapi.services.k8score.v1 import k8score_pb2 as git
 
 
 class CoreK8sServiceStub(object):
-    """The Core K8s service is used to list and get a kubernetes object
+    """///////////////////////////// Jobs
+
+    The Core K8s service is used to list and get a kubernetes object
     """
 
     def __init__(self, channel):
@@ -17,53 +19,55 @@ class CoreK8sServiceStub(object):
         """
         self.ListK8sSecrets = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sSecrets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.SecretQuery.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListSecretsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListSecretResponse.FromString,
                 )
         self.GetK8sSecret = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sSecret',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.SecretQuery.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetSecretRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetSecretResponse.FromString,
                 )
         self.ListK8sServices = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sServices',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ServiceQuery.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServiceResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServicesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServicesResponse.FromString,
                 )
         self.GetK8sService = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sService',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ServiceQuery.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetServiceRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetServiceResponse.FromString,
                 )
         self.ListK8sDeployments = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sDeployments',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.DeploymentQuery.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentsResponse.FromString,
                 )
         self.GetK8sDeployment = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sDeployment',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.DeploymentQuery.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetDeploymentRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetDeploymentResponse.FromString,
                 )
         self.ListK8sPods = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sPods',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.PodQuery.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodsResponse.FromString,
                 )
         self.GetK8sPod = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sPod',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.PodQuery.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodResponse.FromString,
                 )
         self.ListEvents = channel.unary_unary(
                 '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListEvents',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.EventQuery.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsResponse.FromString,
                 )
 
 
 class CoreK8sServiceServicer(object):
-    """The Core K8s service is used to list and get a kubernetes object
+    """///////////////////////////// Jobs
+
+    The Core K8s service is used to list and get a kubernetes object
     """
 
     def ListK8sSecrets(self, request, context):
@@ -129,48 +133,48 @@ def add_CoreK8sServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListK8sSecrets': grpc.unary_unary_rpc_method_handler(
                     servicer.ListK8sSecrets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.SecretQuery.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListSecretsRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListSecretResponse.SerializeToString,
             ),
             'GetK8sSecret': grpc.unary_unary_rpc_method_handler(
                     servicer.GetK8sSecret,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.SecretQuery.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetSecretRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetSecretResponse.SerializeToString,
             ),
             'ListK8sServices': grpc.unary_unary_rpc_method_handler(
                     servicer.ListK8sServices,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ServiceQuery.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServiceResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServicesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServicesResponse.SerializeToString,
             ),
             'GetK8sService': grpc.unary_unary_rpc_method_handler(
                     servicer.GetK8sService,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ServiceQuery.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetServiceRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetServiceResponse.SerializeToString,
             ),
             'ListK8sDeployments': grpc.unary_unary_rpc_method_handler(
                     servicer.ListK8sDeployments,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.DeploymentQuery.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentsResponse.SerializeToString,
             ),
             'GetK8sDeployment': grpc.unary_unary_rpc_method_handler(
                     servicer.GetK8sDeployment,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.DeploymentQuery.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetDeploymentRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetDeploymentResponse.SerializeToString,
             ),
             'ListK8sPods': grpc.unary_unary_rpc_method_handler(
                     servicer.ListK8sPods,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.PodQuery.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodsResponse.SerializeToString,
             ),
             'GetK8sPod': grpc.unary_unary_rpc_method_handler(
                     servicer.GetK8sPod,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.PodQuery.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodResponse.SerializeToString,
             ),
             'ListEvents': grpc.unary_unary_rpc_method_handler(
                     servicer.ListEvents,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.EventQuery.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -180,7 +184,9 @@ def add_CoreK8sServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class CoreK8sService(object):
-    """The Core K8s service is used to list and get a kubernetes object
+    """///////////////////////////// Jobs
+
+    The Core K8s service is used to list and get a kubernetes object
     """
 
     @staticmethod
@@ -195,7 +201,7 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sSecrets',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.SecretQuery.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListSecretsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListSecretResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -212,7 +218,7 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sSecret',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.SecretQuery.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetSecretRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetSecretResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -229,8 +235,8 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sServices',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ServiceQuery.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServiceResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServicesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListServicesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -246,7 +252,7 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sService',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ServiceQuery.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetServiceRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetServiceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -263,8 +269,8 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sDeployments',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.DeploymentQuery.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListDeploymentsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -280,7 +286,7 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sDeployment',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.DeploymentQuery.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetDeploymentRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetDeploymentResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -297,8 +303,8 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sPods',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.PodQuery.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListPodsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -314,7 +320,7 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sPod',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.PodQuery.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -331,7 +337,7 @@ class CoreK8sService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListEvents',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.EventQuery.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

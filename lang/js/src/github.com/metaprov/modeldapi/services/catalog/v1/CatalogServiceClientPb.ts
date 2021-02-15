@@ -355,5 +355,85 @@ export class CatalogServiceClient {
     this.methodInfoGetWorkloadClass);
   }
 
+  methodInfoListUserRoleClasses = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse.deserializeBinary
+  );
+
+  listUserRoleClasses(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse>;
+
+  listUserRoleClasses(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse>;
+
+  listUserRoleClasses(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+        request,
+        metadata || {},
+        this.methodInfoListUserRoleClasses,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+    request,
+    metadata || {},
+    this.methodInfoListUserRoleClasses);
+  }
+
+  methodInfoGetUserRoleClass = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse.deserializeBinary
+  );
+
+  getUserRoleClass(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse>;
+
+  getUserRoleClass(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse>;
+
+  getUserRoleClass(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+        request,
+        metadata || {},
+        this.methodInfoGetUserRoleClass,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+    request,
+    metadata || {},
+    this.methodInfoGetUserRoleClass);
+  }
+
 }
 

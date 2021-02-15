@@ -199,48 +199,6 @@ export namespace GetVirtualClusterResponse {
   }
 }
 
-export class GetVirtualClusterNamespacesRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): GetVirtualClusterNamespacesRequest;
-
-  getName(): string;
-  setName(value: string): GetVirtualClusterNamespacesRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetVirtualClusterNamespacesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetVirtualClusterNamespacesRequest): GetVirtualClusterNamespacesRequest.AsObject;
-  static serializeBinaryToWriter(message: GetVirtualClusterNamespacesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetVirtualClusterNamespacesRequest;
-  static deserializeBinaryFromReader(message: GetVirtualClusterNamespacesRequest, reader: jspb.BinaryReader): GetVirtualClusterNamespacesRequest;
-}
-
-export namespace GetVirtualClusterNamespacesRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class GetVirtualClusterNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetVirtualClusterNamespacesResponse;
-  clearNamespacesList(): GetVirtualClusterNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetVirtualClusterNamespacesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetVirtualClusterNamespacesResponse): GetVirtualClusterNamespacesResponse.AsObject;
-  static serializeBinaryToWriter(message: GetVirtualClusterNamespacesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetVirtualClusterNamespacesResponse;
-  static deserializeBinaryFromReader(message: GetVirtualClusterNamespacesResponse, reader: jspb.BinaryReader): GetVirtualClusterNamespacesResponse;
-}
-
-export namespace GetVirtualClusterNamespacesResponse {
-  export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
-  }
-}
-
 export class DeleteVirtualClusterRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeleteVirtualClusterRequest;

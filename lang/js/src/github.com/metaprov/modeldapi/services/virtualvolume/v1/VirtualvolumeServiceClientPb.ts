@@ -13,8 +13,6 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb from '../../../../../../github.com/metaprov/modeldapi/services/virtualvolume/v1/virtualvolume_pb';
 
 
@@ -37,204 +35,204 @@ export class VirtualVolumeServiceClient {
     this.options_ = options;
   }
 
-  methodInfoList = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList,
-    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery) => {
+  methodInfoListVirtualVolumes = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesResponse,
+    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.deserializeBinary
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesResponse.deserializeBinary
   );
 
-  list(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList>;
+  listVirtualVolumes(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesResponse>;
 
-  list(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
+  listVirtualVolumes(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList>;
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesResponse>;
 
-  list(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
+  listVirtualVolumes(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList) => void) {
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.ListVirtualVolumesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/List',
+          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
         request,
         metadata || {},
-        this.methodInfoList,
+        this.methodInfoListVirtualVolumes,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/List',
+      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
     request,
     metadata || {},
-    this.methodInfoList);
+    this.methodInfoListVirtualVolumes);
   }
 
-  methodInfoCreate = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeCreateRequest) => {
+  methodInfoCreateVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeResponse,
+    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeResponse.deserializeBinary
   );
 
-  create(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeCreateRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+  createVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeResponse>;
 
-  create(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeCreateRequest,
+  createVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeResponse>;
 
-  create(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeCreateRequest,
+  createVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.CreateVirtualVolumeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Create',
+          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
         request,
         metadata || {},
-        this.methodInfoCreate,
+        this.methodInfoCreateVirtualVolume,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Create',
+      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
     request,
     metadata || {},
-    this.methodInfoCreate);
+    this.methodInfoCreateVirtualVolume);
   }
 
-  methodInfoGet = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeGetResponse,
-    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery) => {
+  methodInfoGetVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeResponse,
+    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeGetResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeResponse.deserializeBinary
   );
 
-  get(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeGetResponse>;
+  getVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeResponse>;
 
-  get(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
+  getVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeGetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeGetResponse>;
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeResponse>;
 
-  get(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
+  getVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeGetResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.GetVirtualVolumeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Get',
+          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
         request,
         metadata || {},
-        this.methodInfoGet,
+        this.methodInfoGetVirtualVolume,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Get',
+      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
     request,
     metadata || {},
-    this.methodInfoGet);
+    this.methodInfoGetVirtualVolume);
   }
 
-  methodInfoUpdate = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeUpdateRequest) => {
+  methodInfoUpdateVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeResponse,
+    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeResponse.deserializeBinary
   );
 
-  update(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeUpdateRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+  updateVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeResponse>;
 
-  update(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeUpdateRequest,
+  updateVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeResponse>;
 
-  update(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeUpdateRequest,
+  updateVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.UpdateVirtualVolumeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Update',
+          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
         request,
         metadata || {},
-        this.methodInfoUpdate,
+        this.methodInfoUpdateVirtualVolume,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Update',
+      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
     request,
     metadata || {},
-    this.methodInfoUpdate);
+    this.methodInfoUpdateVirtualVolume);
   }
 
-  methodInfoDelete = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery) => {
+  methodInfoDeleteVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeResponse,
+    (request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeResponse.deserializeBinary
   );
 
-  delete(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+  deleteVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeResponse>;
 
-  delete(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
+  deleteVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeResponse>;
 
-  delete(
-    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.VirtualVolumeQuery,
+  deleteVirtualVolume(
+    request: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_pb.DeleteVirtualVolumeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Delete',
+          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
         request,
         metadata || {},
-        this.methodInfoDelete,
+        this.methodInfoDeleteVirtualVolume,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/Delete',
+      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
     request,
     metadata || {},
-    this.methodInfoDelete);
+    this.methodInfoDeleteVirtualVolume);
   }
 
 }

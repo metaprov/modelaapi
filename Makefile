@@ -1,5 +1,3 @@
-
-
 .PHONY: generate-proto
 generate-proto:
 	cd hack && ./generate-proto.sh
@@ -49,10 +47,11 @@ modtidy:
 	go mod tidy
 
 
-
+.PHONY: generate-deepcopy
 generate-deepcopy:
 	$(CONTROLLER_GEN) object:headerFile=./hack/custom-boilerplate.go.txt paths=./pkg/apis/...
 
+.PHONY: generate-crd
 generate-crd:
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
@@ -62,7 +61,7 @@ generate-crd:
 	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 
 
-
+.PHONY: controller-gen
 controller-gen:
 ifeq (, $(shell which controller-gen))
 	@{ \
@@ -79,6 +78,7 @@ CONTROLLER_GEN=$(shell which controller-gen)
 endif	
 
 
+.PHONY: install-gen
 install-gen: 
 	go install k8s.io/code-generator/cmd/deepcopy-gen	
 	go install k8s.io/code-generator/cmd/client-gen      
@@ -93,7 +93,11 @@ install-gen:
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
 
+.PHONY: generate
 generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy update-codegen
 
+
+.PHONY: install-crd
 install-crd:
 	
+

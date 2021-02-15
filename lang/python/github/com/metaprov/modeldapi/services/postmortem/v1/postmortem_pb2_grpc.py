@@ -2,9 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.services.postmortem.v1 import postmortem_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class PostMortemServiceStub(object):
@@ -16,61 +14,61 @@ class PostMortemServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.List = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/List',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortemList.FromString,
+        self.ListPostMortems = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/ListPostMortems',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.ListPostMortemsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.ListPostMortemsResponse.FromString,
                 )
-        self.Create = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Create',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemCreateRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        self.CreatePostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/CreatePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.CreatePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.CreatePostMortemResponse.FromString,
                 )
-        self.Get = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Get',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemGetResponse.FromString,
+        self.GetPostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/GetPostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.GetPostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.GetPostMortemResponse.FromString,
                 )
-        self.Update = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Update',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemUpdateRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        self.UpdatePostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/UpdatePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.UpdatePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.UpdatePostMortemResponse.FromString,
                 )
-        self.Delete = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Delete',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        self.DeletePostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/DeletePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.DeletePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.DeletePostMortemResponse.FromString,
                 )
 
 
 class PostMortemServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def List(self, request, context):
+    def ListPostMortems(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Create(self, request, context):
+    def CreatePostMortem(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Get(self, request, context):
+    def GetPostMortem(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Update(self, request, context):
+    def UpdatePostMortem(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
+    def DeletePostMortem(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -79,30 +77,30 @@ class PostMortemServiceServicer(object):
 
 def add_PostMortemServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortemList.SerializeToString,
+            'ListPostMortems': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPostMortems,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.ListPostMortemsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.ListPostMortemsResponse.SerializeToString,
             ),
-            'Create': grpc.unary_unary_rpc_method_handler(
-                    servicer.Create,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemCreateRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            'CreatePostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreatePostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.CreatePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.CreatePostMortemResponse.SerializeToString,
             ),
-            'Get': grpc.unary_unary_rpc_method_handler(
-                    servicer.Get,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemGetResponse.SerializeToString,
+            'GetPostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.GetPostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.GetPostMortemResponse.SerializeToString,
             ),
-            'Update': grpc.unary_unary_rpc_method_handler(
-                    servicer.Update,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemUpdateRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            'UpdatePostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.UpdatePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.UpdatePostMortemResponse.SerializeToString,
             ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            'DeletePostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeletePostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.DeletePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.DeletePostMortemResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -115,7 +113,7 @@ class PostMortemService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def List(request,
+    def ListPostMortems(request,
             target,
             options=(),
             channel_credentials=None,
@@ -125,14 +123,14 @@ class PostMortemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/List',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortemList.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/ListPostMortems',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.ListPostMortemsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.ListPostMortemsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Create(request,
+    def CreatePostMortem(request,
             target,
             options=(),
             channel_credentials=None,
@@ -142,14 +140,14 @@ class PostMortemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Create',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemCreateRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/CreatePostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.CreatePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.CreatePostMortemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Get(request,
+    def GetPostMortem(request,
             target,
             options=(),
             channel_credentials=None,
@@ -159,14 +157,14 @@ class PostMortemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Get',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemGetResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/GetPostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.GetPostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.GetPostMortemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Update(request,
+    def UpdatePostMortem(request,
             target,
             options=(),
             channel_credentials=None,
@@ -176,14 +174,14 @@ class PostMortemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Update',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemUpdateRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/UpdatePostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.UpdatePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.UpdatePostMortemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Delete(request,
+    def DeletePostMortem(request,
             target,
             options=(),
             channel_credentials=None,
@@ -193,8 +191,8 @@ class PostMortemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Delete',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.PostMortemQuery.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/DeletePostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.DeletePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_postmortem_dot_v1_dot_postmortem__pb2.DeletePostMortemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

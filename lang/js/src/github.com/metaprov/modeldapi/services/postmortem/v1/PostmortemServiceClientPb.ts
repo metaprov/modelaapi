@@ -13,8 +13,6 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb from '../../../../../../github.com/metaprov/modeldapi/services/postmortem/v1/postmortem_pb';
 
 
@@ -37,204 +35,204 @@ export class PostMortemServiceClient {
     this.options_ = options;
   }
 
-  methodInfoList = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList,
-    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery) => {
+  methodInfoListPostMortems = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse,
+    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.deserializeBinary
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse.deserializeBinary
   );
 
-  list(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList>;
+  listPostMortems(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse>;
 
-  list(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
+  listPostMortems(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList>;
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse>;
 
-  list(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
+  listPostMortems(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList) => void) {
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/List',
+          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/ListPostMortems',
         request,
         metadata || {},
-        this.methodInfoList,
+        this.methodInfoListPostMortems,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/List',
+      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/ListPostMortems',
     request,
     metadata || {},
-    this.methodInfoList);
+    this.methodInfoListPostMortems);
   }
 
-  methodInfoCreate = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemCreateRequest) => {
+  methodInfoCreatePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse,
+    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse.deserializeBinary
   );
 
-  create(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemCreateRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+  createPostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse>;
 
-  create(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemCreateRequest,
+  createPostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse>;
 
-  create(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemCreateRequest,
+  createPostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Create',
+          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/CreatePostMortem',
         request,
         metadata || {},
-        this.methodInfoCreate,
+        this.methodInfoCreatePostMortem,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Create',
+      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/CreatePostMortem',
     request,
     metadata || {},
-    this.methodInfoCreate);
+    this.methodInfoCreatePostMortem);
   }
 
-  methodInfoGet = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemGetResponse,
-    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery) => {
+  methodInfoGetPostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse,
+    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemGetResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse.deserializeBinary
   );
 
-  get(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemGetResponse>;
+  getPostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse>;
 
-  get(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
+  getPostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemGetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemGetResponse>;
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse>;
 
-  get(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
+  getPostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemGetResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Get',
+          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/GetPostMortem',
         request,
         metadata || {},
-        this.methodInfoGet,
+        this.methodInfoGetPostMortem,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Get',
+      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/GetPostMortem',
     request,
     metadata || {},
-    this.methodInfoGet);
+    this.methodInfoGetPostMortem);
   }
 
-  methodInfoUpdate = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemUpdateRequest) => {
+  methodInfoUpdatePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse,
+    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse.deserializeBinary
   );
 
-  update(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemUpdateRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+  updatePostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse>;
 
-  update(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemUpdateRequest,
+  updatePostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse>;
 
-  update(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemUpdateRequest,
+  updatePostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Update',
+          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/UpdatePostMortem',
         request,
         metadata || {},
-        this.methodInfoUpdate,
+        this.methodInfoUpdatePostMortem,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Update',
+      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/UpdatePostMortem',
     request,
     metadata || {},
-    this.methodInfoUpdate);
+    this.methodInfoUpdatePostMortem);
   }
 
-  methodInfoDelete = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery) => {
+  methodInfoDeletePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse,
+    (request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse.deserializeBinary
   );
 
-  delete(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+  deletePostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse>;
 
-  delete(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
+  deletePostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse>;
 
-  delete(
-    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.PostMortemQuery,
+  deletePostMortem(
+    request: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Delete',
+          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/DeletePostMortem',
         request,
         metadata || {},
-        this.methodInfoDelete,
+        this.methodInfoDeletePostMortem,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/Delete',
+      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/DeletePostMortem',
     request,
     metadata || {},
-    this.methodInfoDelete);
+    this.methodInfoDeletePostMortem);
   }
 
 }

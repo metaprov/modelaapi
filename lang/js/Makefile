@@ -2,11 +2,11 @@
 SHELL := /bin/bash
 
 # Set important Paths
-PROJECT := modeld
+PROJECT := modeldapi
 LOCALPATH := $(CURDIR)/$(PROJECT)
 
 # Export targets not associated with files
-.PHONY: test coverage pip clean publish uml build deploy install upload
+.PHONY: clean publish
 
 # Clean build files
 clean:
@@ -24,19 +24,15 @@ clean:
 	-rm -rf packages_$(PROJECT).png
 	-rm -rf docs/_build
 
-# Targets for testing
-test:
-	python setup.py test
-
 # Build the universal wheel and source distribution
 build:
-	python3 setup.py sdist bdist_wheel
+	npm run build
 
 # Install the package from source
 install:
-	python3 setup.py install
+	npm install
 
 # Deploy to PyPI
 upload:
-	twine upload -r pypitest dist/*.tar.gz
+	npm publish --access public
 	

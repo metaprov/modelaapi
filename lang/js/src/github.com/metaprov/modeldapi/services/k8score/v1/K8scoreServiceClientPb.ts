@@ -37,24 +37,24 @@ export class CoreK8sServiceClient {
 
   methodInfoListK8sSecrets = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery) => {
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretsRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretResponse.deserializeBinary
   );
 
   listK8sSecrets(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretsRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretResponse>;
 
   listK8sSecrets(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretResponse>;
 
   listK8sSecrets(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListSecretResponse) => void) {
@@ -77,24 +77,24 @@ export class CoreK8sServiceClient {
 
   methodInfoGetK8sSecret = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery) => {
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretResponse.deserializeBinary
   );
 
   getK8sSecret(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretResponse>;
 
   getK8sSecret(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretResponse>;
 
   getK8sSecret(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.SecretQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetSecretResponse) => void) {
@@ -116,28 +116,28 @@ export class CoreK8sServiceClient {
   }
 
   methodInfoListK8sServices = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServiceResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery) => {
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesResponse,
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServiceResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesResponse.deserializeBinary
   );
 
   listK8sServices(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServiceResponse>;
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesResponse>;
 
   listK8sServices(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServiceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServiceResponse>;
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesResponse>;
 
   listK8sServices(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServiceResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListServicesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -157,24 +157,24 @@ export class CoreK8sServiceClient {
 
   methodInfoGetK8sService = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery) => {
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceResponse.deserializeBinary
   );
 
   getK8sService(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceResponse>;
 
   getK8sService(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceResponse>;
 
   getK8sService(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ServiceQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetServiceResponse) => void) {
@@ -196,28 +196,28 @@ export class CoreK8sServiceClient {
   }
 
   methodInfoListK8sDeployments = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery) => {
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsResponse,
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsResponse.deserializeBinary
   );
 
   listK8sDeployments(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentResponse>;
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsResponse>;
 
   listK8sDeployments(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentResponse>;
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsResponse>;
 
   listK8sDeployments(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListDeploymentsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -237,24 +237,24 @@ export class CoreK8sServiceClient {
 
   methodInfoGetK8sDeployment = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery) => {
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentResponse.deserializeBinary
   );
 
   getK8sDeployment(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentResponse>;
 
   getK8sDeployment(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentResponse>;
 
   getK8sDeployment(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.DeploymentQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetDeploymentResponse) => void) {
@@ -276,28 +276,28 @@ export class CoreK8sServiceClient {
   }
 
   methodInfoListK8sPods = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery) => {
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsResponse,
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsResponse.deserializeBinary
   );
 
   listK8sPods(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodResponse>;
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsResponse>;
 
   listK8sPods(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodResponse>;
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsResponse>;
 
   listK8sPods(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListPodsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -317,24 +317,24 @@ export class CoreK8sServiceClient {
 
   methodInfoGetK8sPod = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery) => {
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodResponse.deserializeBinary
   );
 
   getK8sPod(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodResponse>;
 
   getK8sPod(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodResponse>;
 
   getK8sPod(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.PodQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetPodResponse) => void) {
@@ -356,28 +356,28 @@ export class CoreK8sServiceClient {
   }
 
   methodInfoListEvents = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventResponse,
-    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.EventQuery) => {
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse,
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse.deserializeBinary
   );
 
   listEvents(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.EventQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventResponse>;
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse>;
 
   listEvents(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.EventQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventResponse>;
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse>;
 
   listEvents(
-    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.EventQuery,
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

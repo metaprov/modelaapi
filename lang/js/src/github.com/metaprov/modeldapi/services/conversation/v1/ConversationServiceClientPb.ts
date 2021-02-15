@@ -13,8 +13,6 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb from '../../../../../../github.com/metaprov/modeldapi/services/conversation/v1/conversation_pb';
 
 
@@ -38,28 +36,28 @@ export class ConversationServiceClient {
   }
 
   methodInfoList = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList,
-    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery) => {
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse,
+    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList.deserializeBinary
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse.deserializeBinary
   );
 
   list(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList>;
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse>;
 
   list(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList>;
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse>;
 
   list(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList) => void) {
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -78,28 +76,28 @@ export class ConversationServiceClient {
   }
 
   methodInfoCreate = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationCreateRequest) => {
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse,
+    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse.deserializeBinary
   );
 
   create(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationCreateRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse>;
 
   create(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationCreateRequest,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse>;
 
   create(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationCreateRequest,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -118,28 +116,28 @@ export class ConversationServiceClient {
   }
 
   methodInfoGet = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationGetResponse,
-    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery) => {
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse,
+    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationGetResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse.deserializeBinary
   );
 
   get(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationGetResponse>;
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse>;
 
   get(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationGetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationGetResponse>;
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse>;
 
   get(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationGetResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -158,28 +156,28 @@ export class ConversationServiceClient {
   }
 
   methodInfoUpdate = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationUpdateRequest) => {
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse,
+    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse.deserializeBinary
   );
 
   update(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationUpdateRequest,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse>;
 
   update(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationUpdateRequest,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse>;
 
   update(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationUpdateRequest,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -198,28 +196,28 @@ export class ConversationServiceClient {
   }
 
   methodInfoDelete = new grpcWeb.AbstractClientBase.MethodInfo(
-    google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery) => {
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse,
+    (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest) => {
       return request.serializeBinary();
     },
-    google_protobuf_empty_pb.Empty.deserializeBinary
+    github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse.deserializeBinary
   );
 
   delete(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
-    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse>;
 
   delete(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse>;
 
   delete(
-    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ConversationQuery,
+    request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: google_protobuf_empty_pb.Empty) => void) {
+               response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

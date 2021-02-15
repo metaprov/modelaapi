@@ -6,15 +6,18 @@ import "google/protobuf/empty.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
 import "google/api/annotations.proto";
 
-message ConversationQuery {
+message GetConversationRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels =3;
 }
 
-message ConversationResponse {}
+message GetConversationResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+    string yaml = 2;
+}
 
-message ConversationCreateRequest {
+message CreateConversationRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
@@ -23,40 +26,63 @@ message ConversationCreateRequest {
     bool upsert = 7;
 }
 
-message ConversationUpdateRequest {
+message CreateConversationResponse {
+}
+
+
+
+message UpdateConversationRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
     github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
 }
 
-message ConversationGetResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
-    string yaml = 2;
+message UpdateConversationResponse {
 }
 
 
+message DeleteConversationRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message DeleteConversationResponse {
+}
+
+message ListConversationRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListConversationResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList items = 1;
+}
+
+
+
 service ConversationService {
-    rpc List(ConversationQuery) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList) {
+    rpc List(ListConversationRequest) returns (ListConversationResponse) {
         option (google.api.http).get = "/api/v1alpha1/conversations";
     }
-    rpc Create(ConversationCreateRequest) returns (google.protobuf.Empty) {
+    rpc Create(CreateConversationRequest) returns (CreateConversationResponse) {
         option (google.api.http) = {
 			post: "/api/v1alpha1/conversations"
 			body: "conversation"
 		};
     }
-    rpc Get(ConversationQuery) returns (ConversationGetResponse) {
+    rpc Get(GetConversationRequest) returns (GetConversationResponse) {
         option (google.api.http).get = "/api/v1alpha1/conversations/{name}";
     }
-    rpc Update(ConversationUpdateRequest) returns (google.protobuf.Empty) {
+    rpc Update(UpdateConversationRequest) returns (UpdateConversationResponse) {
         option (google.api.http) = {
 			put: "/api/v1alpha1/conversations/{conversation.metadata.name}"
 			body: "conversation"
 		};
     }
 
-    rpc Delete(ConversationQuery) returns (google.protobuf.Empty) {}
+    rpc Delete(DeleteConversationRequest) returns (DeleteConversationResponse) {}
 
 
 

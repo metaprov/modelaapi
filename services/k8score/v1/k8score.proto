@@ -6,30 +6,122 @@ package github.com.metaprov.modeld.services.k8score.v1;
 import "google/api/annotations.proto";
 import "k8s.io/api/core/v1/generated.proto";
 
-/////////////////////////////// Query
+/////////////////////////////// Secrets
 
-message SecretQuery {
+message GetSecretRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels =3;
 }
 
-message DeploymentQuery {
-    string namespace = 1;
-    string name = 2;
-    map<string, string> labels = 3;
+message GetSecretResponse {
+    SecretInfo item = 1;
 }
 
-message ServiceQuery {
+message ListSecretsRequest {
     string namespace = 1;
-    string name = 2;
-    map<string, string> labels = 3;
+    map<string,string> labels =3;
 }
 
-message PodQuery {
+message ListSecretResponse {
+    repeated SecretInfo item = 1;
+}
+
+
+/////////////////////////////// Deployment
+
+message GetDeploymentRequest {
     string namespace = 1;
-    string name = 2;
-    map<string, string> labels = 3;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message GetDeploymentResponse {
+    DeploymentInfo item = 1;
+}
+
+message ListDeploymentsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListDeploymentsResponse {
+    repeated DeploymentInfo item = 1;
+}
+
+/////////////////////////////// Services
+
+message GetServiceRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message GetServiceResponse {
+    ServiceInfo item = 1;
+}
+
+message ListServicesRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListServicesResponse {
+    repeated ServiceInfo item = 1;
+}
+
+
+/////////////////////////////// Pods
+
+message GetPodRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message GetPodResponse {
+    PodInfo item = 1;
+}
+
+message ListPodsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListPodsResponse {
+    repeated PodInfo item = 1;
+}
+
+/////////////////////////////// Jobs
+
+message GetJobRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message GetJobResponse {
+    PodInfo item = 1;
+}
+
+message ListJobsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListJobsResponse {
+    repeated JobInfo item = 1;
+}
+
+//////////////////////////////////// Events
+
+message ListEventsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListEventsResponse {
+    repeated JobInfo item = 1;
 }
 
 
@@ -55,118 +147,53 @@ message PodInfo {
     string namespace = 2;
 }
 
-///////////////////////////////////////////////
-//// Secret
-///////////////////////////////////////////////
-
-message ListSecretResponse {
-    repeated SecretInfo items = 1;
+message JobInfo {
+    string name      = 1;
+    string namespace = 2;
 }
 
-message GetSecretResponse {
-    SecretInfo item = 1;
-}
-
-
-message SecretResponse {}
-
-///////////////////////////////////////////////
-//// Service
-///////////////////////////////////////////////
-
-message ListServiceResponse {
-    repeated ServiceInfo items = 1;
-}
-
-message GetServiceResponse {
-    ServiceInfo item = 1;
-}
-
-
-message ServiceResponse {}
-
-
-///////////////////////////////////////////////
-//// Deployment
-///////////////////////////////////////////////
-
-message ListDeploymentResponse {
-    repeated DeploymentInfo items = 1;
-}
-
-message GetDeploymentResponse {
-    DeploymentInfo item = 1;
-}
-
-message DeploymentResponse {}
-
-
-///////////////////////////////////////////////
-//// Pod
-///////////////////////////////////////////////
-
-message ListPodResponse {
-    repeated PodInfo items = 1;
-}
-
-message GetPodResponse {
-    PodInfo item = 1;
-}
-
-message PodResponse {}
-
-
-message EventQuery {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message ListEventResponse {
-   k8s.io.api.core.v1.EventList events = 1;
-}
-
+/////////////////////////////// Jobs
 
 
 // The Core K8s service is used to list and get a kubernetes object
 service CoreK8sService {
 
     ////////////////// secret
-    rpc ListK8sSecrets(SecretQuery) returns (ListSecretResponse) {
+    rpc ListK8sSecrets(ListSecretsRequest) returns (ListSecretResponse) {
         option (google.api.http).get = "/api/v1alpha1/secrets";
     }
-    rpc GetK8sSecret(SecretQuery) returns (GetSecretResponse) {
+    rpc GetK8sSecret(GetSecretRequest) returns (GetSecretResponse) {
         option (google.api.http).get = "/api/v1alpha1/secrets/{name}";
     }
 
     ////////////////// service
-    rpc ListK8sServices(ServiceQuery) returns (ListServiceResponse) {
+    rpc ListK8sServices(ListServicesRequest) returns (ListServicesResponse) {
         option (google.api.http).get = "/api/v1alpha1/services";
     }
-    rpc GetK8sService(ServiceQuery) returns (GetServiceResponse) {
+    rpc GetK8sService(GetServiceRequest) returns (GetServiceResponse) {
         option (google.api.http).get = "/api/v1alpha1/services/{name}";
     }
 
     ////////////////// deployment
-    rpc ListK8sDeployments(DeploymentQuery) returns (ListDeploymentResponse) {
+    rpc ListK8sDeployments(ListDeploymentsRequest) returns (ListDeploymentsResponse) {
         option (google.api.http).get = "/api/v1alpha1/deployments";
     }
 
-    rpc GetK8sDeployment(DeploymentQuery) returns (GetDeploymentResponse) {
+    rpc GetK8sDeployment(GetDeploymentRequest) returns (GetDeploymentResponse) {
         option (google.api.http).get = "/api/v1alpha1/deployments/{name}";
     }
 
     ////////////////// pod
-    rpc ListK8sPods(PodQuery) returns (ListPodResponse) {
+    rpc ListK8sPods(ListPodsRequest) returns (ListPodsResponse) {
         option (google.api.http).get = "/api/v1alpha1/pods";
     }
 
-    rpc GetK8sPod(PodQuery) returns (GetPodResponse) {
+    rpc GetK8sPod(GetPodRequest) returns (GetPodResponse) {
         option (google.api.http).get = "/api/v1alpha1/pods/{name}";
     }
 
 
-
-    rpc ListEvents(EventQuery) returns (ListEventResponse) {
+    rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
         option (google.api.http).get = "/api/v1alpha1/events";
     }
 

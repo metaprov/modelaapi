@@ -508,3 +508,87 @@ export namespace GetWorkloadClassResponse {
   }
 }
 
+export class ListUserRoleClassesRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListUserRoleClassesRequest;
+
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ListUserRoleClassesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUserRoleClassesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserRoleClassesRequest): ListUserRoleClassesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListUserRoleClassesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserRoleClassesRequest;
+  static deserializeBinaryFromReader(message: ListUserRoleClassesRequest, reader: jspb.BinaryReader): ListUserRoleClassesRequest;
+}
+
+export namespace ListUserRoleClassesRequest {
+  export type AsObject = {
+    namespace: string,
+    labelsMap: Array<[string, string]>,
+  }
+}
+
+export class ListUserRoleClassesResponse extends jspb.Message {
+  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList | undefined;
+  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClassesResponse;
+  hasItems(): boolean;
+  clearItems(): ListUserRoleClassesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUserRoleClassesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUserRoleClassesResponse): ListUserRoleClassesResponse.AsObject;
+  static serializeBinaryToWriter(message: ListUserRoleClassesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUserRoleClassesResponse;
+  static deserializeBinaryFromReader(message: ListUserRoleClassesResponse, reader: jspb.BinaryReader): ListUserRoleClassesResponse;
+}
+
+export namespace ListUserRoleClassesResponse {
+  export type AsObject = {
+    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList.AsObject,
+  }
+}
+
+export class GetUserRoleClassRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetUserRoleClassRequest;
+
+  getNamespace(): string;
+  setNamespace(value: string): GetUserRoleClassRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserRoleClassRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserRoleClassRequest): GetUserRoleClassRequest.AsObject;
+  static serializeBinaryToWriter(message: GetUserRoleClassRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserRoleClassRequest;
+  static deserializeBinaryFromReader(message: GetUserRoleClassRequest, reader: jspb.BinaryReader): GetUserRoleClassRequest;
+}
+
+export namespace GetUserRoleClassRequest {
+  export type AsObject = {
+    name: string,
+    namespace: string,
+  }
+}
+
+export class GetUserRoleClassResponse extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass): GetUserRoleClassResponse;
+  hasItem(): boolean;
+  clearItem(): GetUserRoleClassResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserRoleClassResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserRoleClassResponse): GetUserRoleClassResponse.AsObject;
+  static serializeBinaryToWriter(message: GetUserRoleClassResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserRoleClassResponse;
+  static deserializeBinaryFromReader(message: GetUserRoleClassResponse, reader: jspb.BinaryReader): GetUserRoleClassResponse;
+}
+
+export namespace GetUserRoleClassResponse {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass.AsObject,
+  }
+}
+

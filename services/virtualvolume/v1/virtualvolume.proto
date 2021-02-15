@@ -2,63 +2,96 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/virtualvolume/v1";
 package github.com.metaprov.modeld.services.virtualvolume.v1;
 
-import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
-message VirtualVolumeQuery {
+message ListVirtualVolumesRequest {
     string namespace = 1;
-    string name      = 2;
-    map<string,string> labels =3;
+    map<string,string> virtualvolumeels =3;
+}
+
+message ListVirtualVolumesResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeList items = 1;
 }
 
 message VirtualVolumeResponse {}
 
-message VirtualVolumeCreateRequest {
+message CreateVirtualVolumeRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 4;
 }
 
-message VirtualVolumeUpdateRequest {
+message CreateVirtualVolumeResponse {
+
+}
+
+message UpdateVirtualVolumeRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeSpec spec = 4;
+}
+
+message UpdateVirtualVolumeResponse {
+
+}
+
+message GetVirtualVolumeRequest {
+    string namespace = 1;
+    string name      = 2;
 }
 
 
-message VirtualVolumeGetResponse {
+message GetVirtualVolumeResponse {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
     string yaml = 2;
+}
+
+
+
+message DeleteVirtualVolumeRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteVirtualVolumeResponse {
 
 }
+
 
 
 
 service VirtualVolumeService {
-    rpc List(VirtualVolumeQuery) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeList) {
-        option (google.api.http).get = "/api/v1alpha1/virtualvolumes";
+    rpc ListVirtualVolumes(ListVirtualVolumesRequest) returns (ListVirtualVolumesResponse) {
+        option (google.api.http).get = "/api/v1/virtualvolumes";
     }
-    rpc Create(VirtualVolumeCreateRequest) returns (google.protobuf.Empty) {
+
+    rpc CreateVirtualVolume(CreateVirtualVolumeRequest) returns (CreateVirtualVolumeResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/virtualvolumes"
+			post: "/v1/virtualvolumes"
 			body: "virtualvolume"
 		};
     }
 
-    rpc Get(VirtualVolumeQuery) returns (VirtualVolumeGetResponse) {
-        option (google.api.http).get = "/api/v1alpha1/virtualvolumes/{name}";
+    rpc GetVirtualVolume(GetVirtualVolumeRequest) returns (GetVirtualVolumeResponse) {
+        option (google.api.http).get = "/api/v1/virtualvolumes/{virtualvolume.metadata.name}";
     }
 
-    rpc Update(VirtualVolumeUpdateRequest) returns (google.protobuf.Empty) {
+    rpc UpdateVirtualVolume(UpdateVirtualVolumeRequest) returns (UpdateVirtualVolumeResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/virtualvolumes/{virtualvolumes.metadata.name}"
+			put: "/v1/virtualvolumes/{virtualvolume_name}"
 			body: "virtualvolume"
 		};
     }
-    rpc Delete(VirtualVolumeQuery) returns (google.protobuf.Empty) {
-        option (google.api.http).delete = "/api/v1alpha1/virtualvolumes/{name}";
+
+    rpc DeleteVirtualVolume(DeleteVirtualVolumeRequest) returns (DeleteVirtualVolumeResponse) {
+        option (google.api.http) = {
+			delete: "/v1/virtualvolumes/{virtualvolume_name}"
+		};
     }
+
+
 }

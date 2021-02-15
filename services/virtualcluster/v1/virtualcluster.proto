@@ -52,16 +52,6 @@ message GetVirtualClusterResponse {
 
 
 
-message GetVirtualClusterNamespacesRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-
-message GetVirtualClusterNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
-}
-
 message DeleteVirtualClusterRequest {
     string namespace = 1;
     string name      = 2;

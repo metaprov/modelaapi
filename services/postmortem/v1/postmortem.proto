@@ -2,72 +2,83 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/postmortem/v1";
 package github.com.metaprov.modeld.services.postmortem.v1;
 
-import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
-message PostMortemQuery {
+message ListPostMortemsRequest {
     string namespace = 1;
-    string name      = 2;
     map<string,string> labels =3;
 }
 
-message PostMortemResponse {}
+message ListPostMortemsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList items = 1;
+}
 
-message PostMortemCreateRequest {
+message CreatePostMortemRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels = 3;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec spec = 4;
+}
+
+message CreatePostMortemResponse {
+
+}
+
+message UpdatePostMortemRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels = 3;
     github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec spec = 5;
-    string password = 6;
-    bool upsert = 7;
 }
 
-message PostMortemUpdateRequest {
+message UpdatePostMortemResponse {
+
+}
+
+message GetPostMortemRequest {
     string namespace = 1;
     string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec spec = 5;
 }
 
-message PostMortemGetResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
+
+message GetPostMortemResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
     string yaml = 2;
 }
 
-message PostMortemGetNamespacesRequest {
+
+message DeletePostMortemRequest {
     string namespace = 1;
     string name      = 2;
 }
 
+message DeletePostMortemResponse {
 
-message PostMortemGetNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 
 service PostMortemService {
-    rpc List(PostMortemQuery) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList) {
-        option (google.api.http).get = "/api/v1alpha1/postmortems";
+    rpc ListPostMortems(ListPostMortemsRequest) returns (ListPostMortemsResponse) {
+        option (google.api.http).get = "/v1/postmortems";
     }
-    rpc Create(PostMortemCreateRequest) returns (google.protobuf.Empty) {
+    rpc CreatePostMortem(CreatePostMortemRequest) returns (CreatePostMortemResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/postmortems"
+			post: "/v1/postmortems"
 			body: "postmortem"
 		};
     }
-    rpc Get(PostMortemQuery) returns (PostMortemGetResponse) {
-        option (google.api.http).get = "/api/v1alpha1/postmortems/{name}";
+    rpc GetPostMortem(GetPostMortemRequest) returns (GetPostMortemResponse) {
+        option (google.api.http).get = "/v1/postmortems/{name}";
     }
-    rpc Update(PostMortemUpdateRequest) returns (google.protobuf.Empty) {
+    rpc UpdatePostMortem(UpdatePostMortemRequest) returns (UpdatePostMortemResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/postmortems/{postmortem.metadata.name}"
+			put: "/v1/postmortems/{postmortem.metadata.name}"
 			body: "postmortem"
 		};
     }
 
-    rpc Delete(PostMortemQuery) returns (google.protobuf.Empty) {}
+    rpc DeletePostMortem(DeletePostMortemRequest) returns (DeletePostMortemResponse) {}
 
 
 
