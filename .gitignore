@@ -39,3 +39,4 @@ bin
 
 .idea/
 .vscode/
+lang/python/modeldapi.egg-info/
