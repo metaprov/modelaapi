@@ -638,6 +638,7 @@ message ModelCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // ModelList is a list of models.
 message ModelList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;

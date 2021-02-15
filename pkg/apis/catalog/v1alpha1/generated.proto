@@ -340,6 +340,7 @@ message PublicDataset {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PublicDatasetList contains a list of PublicDataset
 message PublicDatasetList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;

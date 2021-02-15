@@ -663,6 +663,7 @@ message DataSourceCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // DataSourceList contain a list of DataSource objects
 message DataSourceList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -754,6 +755,7 @@ message DatasetCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // DatasetList contains a list of Datasets
 message DatasetList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -905,6 +907,7 @@ message EntityCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // EntityList contains a list of Entity
 message EntityList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -987,6 +990,7 @@ message FeatureCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // FeatureList contain a list of feature objects
 message FeatureList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -1031,6 +1035,7 @@ message FeaturePipelineCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // FeatureList contain a list of feature objects
 message FeaturePipelineList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -1076,6 +1081,7 @@ message FeaturePipelineRunCondition {
 
 // +kubebuilder:object:root=true
 // FeatureList contain a list of feature objects
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 message FeaturePipelineRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -1284,6 +1290,7 @@ message FeaturesetCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // FeaturesetList contains a list of Featureset
 message FeaturesetList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -1470,7 +1477,7 @@ message LabelingPipelineRunCondition {
 }
 
 // +kubebuilder:object:root=true
-// LabelList contain a list of feature objects
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 message LabelingPipelineRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -1614,6 +1621,7 @@ message RecipeInputSpec {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // RecipeList contains a list of Recipes
 message RecipeList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -1637,6 +1645,7 @@ message RecipeOutputSpec {
 
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -1674,6 +1683,7 @@ message RecipeRunCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // RecipeRunList contains a list of Recipes
 message RecipeRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;

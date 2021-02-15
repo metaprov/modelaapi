@@ -58,6 +58,7 @@ message AccountCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AccountList represent list of accounts.
 message AccountList {
   // +optional
@@ -836,6 +837,7 @@ message NotifierCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // NotifierList is a list of Notifiers
 message NotifierList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;

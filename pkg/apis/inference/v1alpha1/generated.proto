@@ -293,6 +293,7 @@ message PredictionPipelineCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineList is a list of PredictionPipeline
 message PredictionPipelineList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -343,6 +344,7 @@ message PredictionPipelineRunCondition {
 }
 
 // +kubebuilder:object:root=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineRunList is a list of PredictionPipelineRun
 message PredictionPipelineRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
