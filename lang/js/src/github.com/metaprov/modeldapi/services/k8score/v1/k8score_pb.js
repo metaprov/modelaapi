@@ -1180,7 +1180,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.proto
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemList: jspb.Message.toObjectList(msg.getItemList(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.toObject, includeInstance)
   };
 
@@ -1221,7 +1221,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.deser
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
-      msg.addItem(value);
+      msg.addItems(value);
       break;
     default:
       reader.skipField();
@@ -1252,7 +1252,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.proto
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemList();
+  f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1264,10 +1264,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.seria
 
 
 /**
- * repeated SecretInfo item = 1;
+ * repeated SecretInfo items = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo>}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.getItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo, 1));
 };
@@ -1277,7 +1277,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.proto
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1287,7 +1287,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.proto
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.addItem = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.addItems = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo, opt_index);
 };
 
@@ -1296,8 +1296,8 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.proto
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.clearItemList = function() {
-  return this.setItemList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
 };
 
 
@@ -1847,7 +1847,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemList: jspb.Message.toObjectList(msg.getItemList(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.toObject, includeInstance)
   };
 
@@ -1888,7 +1888,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
-      msg.addItem(value);
+      msg.addItems(value);
       break;
     default:
       reader.skipField();
@@ -1919,7 +1919,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemList();
+  f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1931,10 +1931,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
 
 
 /**
- * repeated DeploymentInfo item = 1;
+ * repeated DeploymentInfo items = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo>}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.getItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo, 1));
 };
@@ -1944,7 +1944,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1954,7 +1954,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.addItem = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.addItems = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo, opt_index);
 };
 
@@ -1963,8 +1963,8 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.clearItemList = function() {
-  return this.setItemList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
 };
 
 
@@ -2514,7 +2514,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.pro
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemList: jspb.Message.toObjectList(msg.getItemList(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.toObject, includeInstance)
   };
 
@@ -2555,7 +2555,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.des
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
-      msg.addItem(value);
+      msg.addItems(value);
       break;
     default:
       reader.skipField();
@@ -2586,7 +2586,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.pro
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemList();
+  f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2598,10 +2598,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.ser
 
 
 /**
- * repeated ServiceInfo item = 1;
+ * repeated ServiceInfo items = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo>}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.getItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo, 1));
 };
@@ -2611,7 +2611,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.pro
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -2621,7 +2621,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.pro
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.addItem = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.addItems = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo, opt_index);
 };
 
@@ -2630,8 +2630,8 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.pro
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.clearItemList = function() {
-  return this.setItemList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
 };
 
 
@@ -3181,7 +3181,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototy
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemList: jspb.Message.toObjectList(msg.getItemList(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.toObject, includeInstance)
   };
 
@@ -3222,7 +3222,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.deseria
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
-      msg.addItem(value);
+      msg.addItems(value);
       break;
     default:
       reader.skipField();
@@ -3253,7 +3253,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototy
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemList();
+  f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3265,10 +3265,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.seriali
 
 
 /**
- * repeated PodInfo item = 1;
+ * repeated PodInfo items = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo>}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.getItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, 1));
 };
@@ -3278,7 +3278,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototy
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -3288,7 +3288,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototy
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.addItem = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.addItems = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, opt_index);
 };
 
@@ -3297,8 +3297,8 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototy
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.clearItemList = function() {
-  return this.setItemList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
 };
 
 
@@ -3848,7 +3848,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototy
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemList: jspb.Message.toObjectList(msg.getItemList(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.toObject, includeInstance)
   };
 
@@ -3889,7 +3889,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.deseria
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
-      msg.addItem(value);
+      msg.addItems(value);
       break;
     default:
       reader.skipField();
@@ -3920,7 +3920,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototy
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemList();
+  f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3932,10 +3932,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.seriali
 
 
 /**
- * repeated JobInfo item = 1;
+ * repeated JobInfo items = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo>}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.getItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo, 1));
 };
@@ -3945,7 +3945,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototy
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -3955,7 +3955,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototy
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.addItem = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.addItems = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo, opt_index);
 };
 
@@ -3964,8 +3964,8 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototy
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.clearItemList = function() {
-  return this.setItemList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
 };
 
 
@@ -4171,7 +4171,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemList: jspb.Message.toObjectList(msg.getItemList(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.toObject, includeInstance)
   };
 
@@ -4212,7 +4212,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.deser
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.deserializeBinaryFromReader);
-      msg.addItem(value);
+      msg.addItems(value);
       break;
     default:
       reader.skipField();
@@ -4243,7 +4243,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemList();
+  f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -4255,10 +4255,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.seria
 
 
 /**
- * repeated EventInfo item = 1;
+ * repeated EventInfo items = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo>}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.getItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.getItemsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo, 1));
 };
@@ -4268,7 +4268,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -4278,7 +4278,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.addItem = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.addItems = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo, opt_index);
 };
 
@@ -4287,8 +4287,8 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.clearItemList = function() {
-  return this.setItemList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
 };
 
 

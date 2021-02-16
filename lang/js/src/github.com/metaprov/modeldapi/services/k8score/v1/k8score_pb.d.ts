@@ -73,10 +73,10 @@ export namespace ListSecretsRequest {
 }
 
 export class ListSecretResponse extends jspb.Message {
-  getItemList(): Array<SecretInfo>;
-  setItemList(value: Array<SecretInfo>): ListSecretResponse;
-  clearItemList(): ListSecretResponse;
-  addItem(value?: SecretInfo, index?: number): SecretInfo;
+  getItemsList(): Array<SecretInfo>;
+  setItemsList(value: Array<SecretInfo>): ListSecretResponse;
+  clearItemsList(): ListSecretResponse;
+  addItems(value?: SecretInfo, index?: number): SecretInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSecretResponse.AsObject;
@@ -88,7 +88,7 @@ export class ListSecretResponse extends jspb.Message {
 
 export namespace ListSecretResponse {
   export type AsObject = {
-    itemList: Array<SecretInfo.AsObject>,
+    itemsList: Array<SecretInfo.AsObject>,
   }
 }
 
@@ -161,10 +161,10 @@ export namespace ListDeploymentsRequest {
 }
 
 export class ListDeploymentsResponse extends jspb.Message {
-  getItemList(): Array<DeploymentInfo>;
-  setItemList(value: Array<DeploymentInfo>): ListDeploymentsResponse;
-  clearItemList(): ListDeploymentsResponse;
-  addItem(value?: DeploymentInfo, index?: number): DeploymentInfo;
+  getItemsList(): Array<DeploymentInfo>;
+  setItemsList(value: Array<DeploymentInfo>): ListDeploymentsResponse;
+  clearItemsList(): ListDeploymentsResponse;
+  addItems(value?: DeploymentInfo, index?: number): DeploymentInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDeploymentsResponse.AsObject;
@@ -176,7 +176,7 @@ export class ListDeploymentsResponse extends jspb.Message {
 
 export namespace ListDeploymentsResponse {
   export type AsObject = {
-    itemList: Array<DeploymentInfo.AsObject>,
+    itemsList: Array<DeploymentInfo.AsObject>,
   }
 }
 
@@ -249,10 +249,10 @@ export namespace ListServicesRequest {
 }
 
 export class ListServicesResponse extends jspb.Message {
-  getItemList(): Array<ServiceInfo>;
-  setItemList(value: Array<ServiceInfo>): ListServicesResponse;
-  clearItemList(): ListServicesResponse;
-  addItem(value?: ServiceInfo, index?: number): ServiceInfo;
+  getItemsList(): Array<ServiceInfo>;
+  setItemsList(value: Array<ServiceInfo>): ListServicesResponse;
+  clearItemsList(): ListServicesResponse;
+  addItems(value?: ServiceInfo, index?: number): ServiceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListServicesResponse.AsObject;
@@ -264,7 +264,7 @@ export class ListServicesResponse extends jspb.Message {
 
 export namespace ListServicesResponse {
   export type AsObject = {
-    itemList: Array<ServiceInfo.AsObject>,
+    itemsList: Array<ServiceInfo.AsObject>,
   }
 }
 
@@ -337,10 +337,10 @@ export namespace ListPodsRequest {
 }
 
 export class ListPodsResponse extends jspb.Message {
-  getItemList(): Array<PodInfo>;
-  setItemList(value: Array<PodInfo>): ListPodsResponse;
-  clearItemList(): ListPodsResponse;
-  addItem(value?: PodInfo, index?: number): PodInfo;
+  getItemsList(): Array<PodInfo>;
+  setItemsList(value: Array<PodInfo>): ListPodsResponse;
+  clearItemsList(): ListPodsResponse;
+  addItems(value?: PodInfo, index?: number): PodInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPodsResponse.AsObject;
@@ -352,7 +352,7 @@ export class ListPodsResponse extends jspb.Message {
 
 export namespace ListPodsResponse {
   export type AsObject = {
-    itemList: Array<PodInfo.AsObject>,
+    itemsList: Array<PodInfo.AsObject>,
   }
 }
 
@@ -425,10 +425,10 @@ export namespace ListJobsRequest {
 }
 
 export class ListJobsResponse extends jspb.Message {
-  getItemList(): Array<JobInfo>;
-  setItemList(value: Array<JobInfo>): ListJobsResponse;
-  clearItemList(): ListJobsResponse;
-  addItem(value?: JobInfo, index?: number): JobInfo;
+  getItemsList(): Array<JobInfo>;
+  setItemsList(value: Array<JobInfo>): ListJobsResponse;
+  clearItemsList(): ListJobsResponse;
+  addItems(value?: JobInfo, index?: number): JobInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListJobsResponse.AsObject;
@@ -440,7 +440,7 @@ export class ListJobsResponse extends jspb.Message {
 
 export namespace ListJobsResponse {
   export type AsObject = {
-    itemList: Array<JobInfo.AsObject>,
+    itemsList: Array<JobInfo.AsObject>,
   }
 }
 
@@ -467,10 +467,10 @@ export namespace ListEventsRequest {
 }
 
 export class ListEventsResponse extends jspb.Message {
-  getItemList(): Array<EventInfo>;
-  setItemList(value: Array<EventInfo>): ListEventsResponse;
-  clearItemList(): ListEventsResponse;
-  addItem(value?: EventInfo, index?: number): EventInfo;
+  getItemsList(): Array<EventInfo>;
+  setItemsList(value: Array<EventInfo>): ListEventsResponse;
+  clearItemsList(): ListEventsResponse;
+  addItems(value?: EventInfo, index?: number): EventInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEventsResponse.AsObject;
@@ -482,7 +482,7 @@ export class ListEventsResponse extends jspb.Message {
 
 export namespace ListEventsResponse {
   export type AsObject = {
-    itemList: Array<EventInfo.AsObject>,
+    itemsList: Array<EventInfo.AsObject>,
   }
 }
 

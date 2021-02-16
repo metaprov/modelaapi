@@ -355,6 +355,86 @@ export class CoreK8sServiceClient {
     this.methodInfoGetK8sPod);
   }
 
+  methodInfoListK8sJobs = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsResponse,
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsResponse.deserializeBinary
+  );
+
+  listK8sJobs(
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsResponse>;
+
+  listK8sJobs(
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsResponse>;
+
+  listK8sJobs(
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListJobsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sJobs',
+        request,
+        metadata || {},
+        this.methodInfoListK8sJobs,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sJobs',
+    request,
+    metadata || {},
+    this.methodInfoListK8sJobs);
+  }
+
+  methodInfoGetK8sJob = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobResponse,
+    (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobResponse.deserializeBinary
+  );
+
+  getK8sJob(
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobResponse>;
+
+  getK8sJob(
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobResponse>;
+
+  getK8sJob(
+    request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.GetJobResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sJob',
+        request,
+        metadata || {},
+        this.methodInfoGetK8sJob,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sJob',
+    request,
+    metadata || {},
+    this.methodInfoGetK8sJob);
+  }
+
   methodInfoListEvents = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsResponse,
     (request: github_com_metaprov_modeldapi_services_k8score_v1_k8score_pb.ListEventsRequest) => {
