@@ -8,7 +8,7 @@ import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
 message ListVirtualVolumesRequest {
     string namespace = 1;
-    map<string,string> virtualvolumeels =3;
+    map<string,string> labels =3;
 }
 
 message ListVirtualVolumesResponse {

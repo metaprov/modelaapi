@@ -121,7 +121,7 @@ message ListEventsRequest {
 }
 
 message ListEventsResponse {
-    repeated EventInfo items = 1;
+    repeated k8s.io.api.core.v1.EventList items = 1;
 }
 
 
@@ -152,9 +152,6 @@ message JobInfo {
     string namespace = 2;
 }
 
-message EventInfo {
-
-}
 
 /////////////////////////////// Jobs
 

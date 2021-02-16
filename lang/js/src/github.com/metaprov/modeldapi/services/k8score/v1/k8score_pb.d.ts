@@ -467,10 +467,10 @@ export namespace ListEventsRequest {
 }
 
 export class ListEventsResponse extends jspb.Message {
-  getItemsList(): Array<EventInfo>;
-  setItemsList(value: Array<EventInfo>): ListEventsResponse;
+  getItemsList(): Array<k8s_io_api_core_v1_generated_pb.EventList>;
+  setItemsList(value: Array<k8s_io_api_core_v1_generated_pb.EventList>): ListEventsResponse;
   clearItemsList(): ListEventsResponse;
-  addItems(value?: EventInfo, index?: number): EventInfo;
+  addItems(value?: k8s_io_api_core_v1_generated_pb.EventList, index?: number): k8s_io_api_core_v1_generated_pb.EventList;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEventsResponse.AsObject;
@@ -482,7 +482,7 @@ export class ListEventsResponse extends jspb.Message {
 
 export namespace ListEventsResponse {
   export type AsObject = {
-    itemsList: Array<EventInfo.AsObject>,
+    itemsList: Array<k8s_io_api_core_v1_generated_pb.EventList.AsObject>,
   }
 }
 
@@ -593,20 +593,6 @@ export namespace JobInfo {
   export type AsObject = {
     name: string,
     namespace: string,
-  }
-}
-
-export class EventInfo extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EventInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: EventInfo): EventInfo.AsObject;
-  static serializeBinaryToWriter(message: EventInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EventInfo;
-  static deserializeBinaryFromReader(message: EventInfo, reader: jspb.BinaryReader): EventInfo;
-}
-
-export namespace EventInfo {
-  export type AsObject = {
   }
 }
 

@@ -295,7 +295,7 @@ proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumes
 proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    virtualvolumeelsMap: (f = msg.getVirtualvolumeelsMap()) ? f.toObject(includeInstance, undefined) : []
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -337,7 +337,7 @@ proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumes
       msg.setNamespace(value);
       break;
     case 3:
-      var value = msg.getVirtualvolumeelsMap();
+      var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
@@ -378,7 +378,7 @@ proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumes
       f
     );
   }
-  f = message.getVirtualvolumeelsMap(true);
+  f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
@@ -404,12 +404,12 @@ proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumes
 
 
 /**
- * map<string, string> virtualvolumeels = 3;
+ * map<string, string> labels = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.prototype.getVirtualvolumeelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -420,8 +420,8 @@ proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumes
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.prototype.clearVirtualvolumeelsMap = function() {
-  this.getVirtualvolumeelsMap().clear();
+proto.github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.prototype.clearLabelsMap = function() {
+  this.getLabelsMap().clear();
   return this;};
 
 

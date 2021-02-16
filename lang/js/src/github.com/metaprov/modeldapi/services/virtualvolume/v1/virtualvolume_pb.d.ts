@@ -9,8 +9,8 @@ export class ListVirtualVolumesRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListVirtualVolumesRequest;
 
-  getVirtualvolumeelsMap(): jspb.Map<string, string>;
-  clearVirtualvolumeelsMap(): ListVirtualVolumesRequest;
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ListVirtualVolumesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListVirtualVolumesRequest.AsObject;
@@ -23,7 +23,7 @@ export class ListVirtualVolumesRequest extends jspb.Message {
 export namespace ListVirtualVolumesRequest {
   export type AsObject = {
     namespace: string,
-    virtualvolumeelsMap: Array<[string, string]>,
+    labelsMap: Array<[string, string]>,
   }
 }
 
