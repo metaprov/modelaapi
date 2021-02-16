@@ -18,11 +18,11 @@ from github.com.metaprov.modeldapi.services.common.v1 import common_pb2 as githu
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/datasource/v1/datasource.proto',
-  package='github.com.metaprov.modeld.services.datasource.v1',
+  package='github.com.metaprov.modeldapi.services.datasource.v1',
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/datasource/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/datasource/v1/datasource.proto\x12\x31github.com.metaprov.modeld.services.datasource.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbf\x01\n\x15ListDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"l\n\x16ListDataSourceResponse\x12R\n\x04list\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList\"7\n\x14GetDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetDataSourceResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\xa5\x02\n\x17UpdateDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x66\n\x06labels\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateDataSourceResponse\"\xa5\x02\n\x17\x43reateDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x66\n\x06labels\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateDataSourceResponse\":\n\x17\x44\x65leteDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteDataSourceResponse\"b\n\x12InferSchemaRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0e\n\x06tenant\x18\x03 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x04 \x01(\t\x12\x0b\n\x03key\x18\x05 \x01(\t\"g\n\x13InferSchemaResponse\x12P\n\x07\x63olumns\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile\"\x86\x01\n\x13GetTableViewRequest\x12R\n\x04spec\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x0e\n\x06\x62ucket\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"b\n\x14GetTableViewResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView2\xfc\x0b\n\x11\x44\x61taSourceService\x12\xc3\x01\n\x0fListDataSources\x12H.github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest\x1aI.github.com.metaprov.modeld.services.datasource.v1.ListDataSourceResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/api/v1/datasources\x12\xcf\x01\n\x10\x43reateDataSource\x12J.github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest\x1aK.github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x0ev1/datasources:\ndatasource\x12\xd5\x01\n\rGetDataSource\x12G.github.com.metaprov.modeld.services.datasource.v1.GetDataSourceRequest\x1aH.github.com.metaprov.modeld.services.datasource.v1.GetDataSourceResponse\"1\x82\xd3\xe4\x93\x02+\x12)v1/datasources/{datasource.metadata.name}\x12\xe2\x01\n\x10UpdateDataSource\x12J.github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest\x1aK.github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceResponse\"5\x82\xd3\xe4\x93\x02/\x1a!/v1/datasources/{datasource_name}:\ndatasource\x12\xde\x01\n\x10\x44\x65leteDataSource\x12J.github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceRequest\x1aK.github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceResponse\"1\x82\xd3\xe4\x93\x02+*)v1/datasources/{datasource.metadata.name}\x12\xd5\x01\n\x0bInferSchema\x12\x45.github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest\x1a\x46.github.com.metaprov.modeld.services.datasource.v1.InferSchemaResponse\"7\x82\xd3\xe4\x93\x02\x31\"/v1/datasources/{datasource.metadata.name}:infer\x12\xd8\x01\n\x0cGetTableView\x12\x46.github.com.metaprov.modeld.services.datasource.v1.GetTableViewRequest\x1aG.github.com.metaprov.modeld.services.datasource.v1.GetTableViewResponse\"7\x82\xd3\xe4\x93\x02\x31\x12/v1/datasources/{datasource.metadata.name}:tableB6Z4github.com/metaprov/modeldapi/services/datasource/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/datasource/v1/datasource.proto\x12\x34github.com.metaprov.modeldapi.services.datasource.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xc2\x01\n\x15ListDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12g\n\x06labels\x18\x02 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"l\n\x16ListDataSourceResponse\x12R\n\x04list\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList\"7\n\x14GetDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetDataSourceResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"\xa8\x02\n\x17UpdateDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12i\n\x06labels\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateDataSourceResponse\"\xa8\x02\n\x17\x43reateDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12i\n\x06labels\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateDataSourceResponse\":\n\x17\x44\x65leteDataSourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteDataSourceResponse\"b\n\x12InferSchemaRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0e\n\x06tenant\x18\x03 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x04 \x01(\t\x12\x0b\n\x03key\x18\x05 \x01(\t\"g\n\x13InferSchemaResponse\x12P\n\x07\x63olumns\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile\"\x86\x01\n\x13GetTableViewRequest\x12R\n\x04spec\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x0e\n\x06\x62ucket\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"b\n\x14GetTableViewResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView2\xa6\x0c\n\x11\x44\x61taSourceService\x12\xc9\x01\n\x0fListDataSources\x12K.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest\x1aL.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/api/v1/datasources\x12\xd5\x01\n\x10\x43reateDataSource\x12M.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest\x1aN.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x0ev1/datasources:\ndatasource\x12\xdb\x01\n\rGetDataSource\x12J.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest\x1aK.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse\"1\x82\xd3\xe4\x93\x02+\x12)v1/datasources/{datasource.metadata.name}\x12\xe8\x01\n\x10UpdateDataSource\x12M.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest\x1aN.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse\"5\x82\xd3\xe4\x93\x02/\x1a!/v1/datasources/{datasource_name}:\ndatasource\x12\xe4\x01\n\x10\x44\x65leteDataSource\x12M.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest\x1aN.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse\"1\x82\xd3\xe4\x93\x02+*)v1/datasources/{datasource.metadata.name}\x12\xdb\x01\n\x0bInferSchema\x12H.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest\x1aI.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse\"7\x82\xd3\xe4\x93\x02\x31\"/v1/datasources/{datasource.metadata.name}:infer\x12\xde\x01\n\x0cGetTableView\x12I.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest\x1aJ.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse\"7\x82\xd3\xe4\x93\x02\x31\x12/v1/datasources/{datasource.metadata.name}:tableB6Z4github.com/metaprov/modeldapi/services/datasource/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -31,21 +31,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTDATASOURCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -63,27 +63,27 @@ _LISTDATASOURCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=479,
+  serialized_start=440,
+  serialized_end=485,
 )
 
 _LISTDATASOURCEREQUEST = _descriptor.Descriptor(
   name='ListDataSourceRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -101,21 +101,21 @@ _LISTDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=479,
+  serialized_start=291,
+  serialized_end=485,
 )
 
 
 _LISTDATASOURCERESPONSE = _descriptor.Descriptor(
   name='ListDataSourceResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='list', full_name='github.com.metaprov.modeld.services.datasource.v1.ListDataSourceResponse.list', index=0,
+      name='list', full_name='github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.list', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -133,28 +133,28 @@ _LISTDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=481,
-  serialized_end=589,
+  serialized_start=487,
+  serialized_end=595,
 )
 
 
 _GETDATASOURCEREQUEST = _descriptor.Descriptor(
   name='GetDataSourceRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.GetDataSourceRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.datasource.v1.GetDataSourceRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.datasource.v1.GetDataSourceRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -172,28 +172,28 @@ _GETDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=591,
-  serialized_end=646,
+  serialized_start=597,
+  serialized_end=652,
 )
 
 
 _GETDATASOURCERESPONSE = _descriptor.Descriptor(
   name='GetDataSourceResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.GetDataSourceResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.datasource.v1.GetDataSourceResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.datasource.v1.GetDataSourceResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -211,28 +211,28 @@ _GETDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=648,
-  serialized_end=765,
+  serialized_start=654,
+  serialized_end=771,
 )
 
 
 _UPDATEDATASOURCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -250,41 +250,41 @@ _UPDATEDATASOURCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=479,
+  serialized_start=440,
+  serialized_end=485,
 )
 
 _UPDATEDATASOURCEREQUEST = _descriptor.Descriptor(
   name='UpdateDataSourceRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -302,14 +302,14 @@ _UPDATEDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=1061,
+  serialized_start=774,
+  serialized_end=1070,
 )
 
 
 _UPDATEDATASOURCERESPONSE = _descriptor.Descriptor(
   name='UpdateDataSourceResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -327,28 +327,28 @@ _UPDATEDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1089,
+  serialized_start=1072,
+  serialized_end=1098,
 )
 
 
 _CREATEDATASOURCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -366,41 +366,41 @@ _CREATEDATASOURCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=479,
+  serialized_start=440,
+  serialized_end=485,
 )
 
 _CREATEDATASOURCEREQUEST = _descriptor.Descriptor(
   name='CreateDataSourceRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -418,14 +418,14 @@ _CREATEDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1092,
-  serialized_end=1385,
+  serialized_start=1101,
+  serialized_end=1397,
 )
 
 
 _CREATEDATASOURCERESPONSE = _descriptor.Descriptor(
   name='CreateDataSourceResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -443,28 +443,28 @@ _CREATEDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1387,
-  serialized_end=1413,
+  serialized_start=1399,
+  serialized_end=1425,
 )
 
 
 _DELETEDATASOURCEREQUEST = _descriptor.Descriptor(
   name='DeleteDataSourceRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -482,14 +482,14 @@ _DELETEDATASOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1415,
-  serialized_end=1473,
+  serialized_start=1427,
+  serialized_end=1485,
 )
 
 
 _DELETEDATASOURCERESPONSE = _descriptor.Descriptor(
   name='DeleteDataSourceResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -507,49 +507,49 @@ _DELETEDATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1475,
-  serialized_end=1501,
+  serialized_start=1487,
+  serialized_end=1513,
 )
 
 
 _INFERSCHEMAREQUEST = _descriptor.Descriptor(
   name='InferSchemaRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest.namespace', index=1,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tenant', full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest.tenant', index=2,
+      name='tenant', full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.tenant', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest.bucket', index=3,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.bucket', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest.key', index=4,
+      name='key', full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.key', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -567,21 +567,21 @@ _INFERSCHEMAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1503,
-  serialized_end=1601,
+  serialized_start=1515,
+  serialized_end=1613,
 )
 
 
 _INFERSCHEMARESPONSE = _descriptor.Descriptor(
   name='InferSchemaResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='columns', full_name='github.com.metaprov.modeld.services.datasource.v1.InferSchemaResponse.columns', index=0,
+      name='columns', full_name='github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.columns', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -599,35 +599,35 @@ _INFERSCHEMARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1603,
-  serialized_end=1706,
+  serialized_start=1615,
+  serialized_end=1718,
 )
 
 
 _GETTABLEVIEWREQUEST = _descriptor.Descriptor(
   name='GetTableViewRequest',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.GetTableViewRequest',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.datasource.v1.GetTableViewRequest.spec', index=0,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.spec', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.datasource.v1.GetTableViewRequest.bucket', index=1,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.bucket', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.datasource.v1.GetTableViewRequest.key', index=2,
+      name='key', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -645,21 +645,21 @@ _GETTABLEVIEWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1843,
+  serialized_start=1721,
+  serialized_end=1855,
 )
 
 
 _GETTABLEVIEWRESPONSE = _descriptor.Descriptor(
   name='GetTableViewResponse',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.GetTableViewResponse',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='table', full_name='github.com.metaprov.modeld.services.datasource.v1.GetTableViewResponse.table', index=0,
+      name='table', full_name='github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.table', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -677,8 +677,8 @@ _GETTABLEVIEWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1845,
-  serialized_end=1943,
+  serialized_start=1857,
+  serialized_end=1955,
 )
 
 _LISTDATASOURCEREQUEST_LABELSENTRY.containing_type = _LISTDATASOURCEREQUEST
@@ -715,12 +715,12 @@ ListDataSourceRequest = _reflection.GeneratedProtocolMessageType('ListDataSource
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTDATASOURCEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTDATASOURCEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.ListDataSourceRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest)
   })
 _sym_db.RegisterMessage(ListDataSourceRequest)
 _sym_db.RegisterMessage(ListDataSourceRequest.LabelsEntry)
@@ -728,21 +728,21 @@ _sym_db.RegisterMessage(ListDataSourceRequest.LabelsEntry)
 ListDataSourceResponse = _reflection.GeneratedProtocolMessageType('ListDataSourceResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTDATASOURCERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.ListDataSourceResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse)
   })
 _sym_db.RegisterMessage(ListDataSourceResponse)
 
 GetDataSourceRequest = _reflection.GeneratedProtocolMessageType('GetDataSourceRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETDATASOURCEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.GetDataSourceRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest)
   })
 _sym_db.RegisterMessage(GetDataSourceRequest)
 
 GetDataSourceResponse = _reflection.GeneratedProtocolMessageType('GetDataSourceResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETDATASOURCERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.GetDataSourceResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse)
   })
 _sym_db.RegisterMessage(GetDataSourceResponse)
 
@@ -751,12 +751,12 @@ UpdateDataSourceRequest = _reflection.GeneratedProtocolMessageType('UpdateDataSo
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEDATASOURCEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEDATASOURCEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest)
   })
 _sym_db.RegisterMessage(UpdateDataSourceRequest)
 _sym_db.RegisterMessage(UpdateDataSourceRequest.LabelsEntry)
@@ -764,7 +764,7 @@ _sym_db.RegisterMessage(UpdateDataSourceRequest.LabelsEntry)
 UpdateDataSourceResponse = _reflection.GeneratedProtocolMessageType('UpdateDataSourceResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEDATASOURCERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.UpdateDataSourceResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse)
   })
 _sym_db.RegisterMessage(UpdateDataSourceResponse)
 
@@ -773,12 +773,12 @@ CreateDataSourceRequest = _reflection.GeneratedProtocolMessageType('CreateDataSo
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEDATASOURCEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEDATASOURCEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest)
   })
 _sym_db.RegisterMessage(CreateDataSourceRequest)
 _sym_db.RegisterMessage(CreateDataSourceRequest.LabelsEntry)
@@ -786,49 +786,49 @@ _sym_db.RegisterMessage(CreateDataSourceRequest.LabelsEntry)
 CreateDataSourceResponse = _reflection.GeneratedProtocolMessageType('CreateDataSourceResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEDATASOURCERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.CreateDataSourceResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse)
   })
 _sym_db.RegisterMessage(CreateDataSourceResponse)
 
 DeleteDataSourceRequest = _reflection.GeneratedProtocolMessageType('DeleteDataSourceRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATASOURCEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest)
   })
 _sym_db.RegisterMessage(DeleteDataSourceRequest)
 
 DeleteDataSourceResponse = _reflection.GeneratedProtocolMessageType('DeleteDataSourceResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATASOURCERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.DeleteDataSourceResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse)
   })
 _sym_db.RegisterMessage(DeleteDataSourceResponse)
 
 InferSchemaRequest = _reflection.GeneratedProtocolMessageType('InferSchemaRequest', (_message.Message,), {
   'DESCRIPTOR' : _INFERSCHEMAREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.InferSchemaRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest)
   })
 _sym_db.RegisterMessage(InferSchemaRequest)
 
 InferSchemaResponse = _reflection.GeneratedProtocolMessageType('InferSchemaResponse', (_message.Message,), {
   'DESCRIPTOR' : _INFERSCHEMARESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.InferSchemaResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse)
   })
 _sym_db.RegisterMessage(InferSchemaResponse)
 
 GetTableViewRequest = _reflection.GeneratedProtocolMessageType('GetTableViewRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETTABLEVIEWREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.GetTableViewRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest)
   })
 _sym_db.RegisterMessage(GetTableViewRequest)
 
 GetTableViewResponse = _reflection.GeneratedProtocolMessageType('GetTableViewResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETTABLEVIEWRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.datasource.v1.datasource_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.datasource.v1.GetTableViewResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse)
   })
 _sym_db.RegisterMessage(GetTableViewResponse)
 
@@ -840,17 +840,17 @@ _CREATEDATASOURCEREQUEST_LABELSENTRY._options = None
 
 _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   name='DataSourceService',
-  full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService',
+  full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1946,
-  serialized_end=3478,
+  serialized_start=1958,
+  serialized_end=3532,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataSources',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.ListDataSources',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.ListDataSources',
     index=0,
     containing_service=None,
     input_type=_LISTDATASOURCEREQUEST,
@@ -860,7 +860,7 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateDataSource',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.CreateDataSource',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.CreateDataSource',
     index=1,
     containing_service=None,
     input_type=_CREATEDATASOURCEREQUEST,
@@ -870,7 +870,7 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetDataSource',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.GetDataSource',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.GetDataSource',
     index=2,
     containing_service=None,
     input_type=_GETDATASOURCEREQUEST,
@@ -880,7 +880,7 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateDataSource',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.UpdateDataSource',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.UpdateDataSource',
     index=3,
     containing_service=None,
     input_type=_UPDATEDATASOURCEREQUEST,
@@ -890,7 +890,7 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteDataSource',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.DeleteDataSource',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.DeleteDataSource',
     index=4,
     containing_service=None,
     input_type=_DELETEDATASOURCEREQUEST,
@@ -900,7 +900,7 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='InferSchema',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.InferSchema',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.InferSchema',
     index=5,
     containing_service=None,
     input_type=_INFERSCHEMAREQUEST,
@@ -910,7 +910,7 @@ _DATASOURCESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetTableView',
-    full_name='github.com.metaprov.modeld.services.datasource.v1.DataSourceService.GetTableView',
+    full_name='github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.GetTableView',
     index=6,
     containing_service=None,
     input_type=_GETTABLEVIEWREQUEST,

@@ -15,17 +15,17 @@ class PublisherdServiceStub(object):
             channel: A grpc.Channel.
         """
         self.PublishCombined = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishCombined',
+                '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishCombined',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
                 )
         self.PublishNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishNotebook',
+                '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishNotebook',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/Shutdown',
+                '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Shutdown',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.ShutdownRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.ShutdownResponse.FromString,
                 )
@@ -73,7 +73,7 @@ def add_PublisherdServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.publisherd.v1.PublisherdService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -92,7 +92,7 @@ class PublisherdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishCombined',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishCombined',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
             options, channel_credentials,
@@ -109,7 +109,7 @@ class PublisherdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishNotebook',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishNotebook',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishNotebookResponse.FromString,
             options, channel_credentials,
@@ -126,7 +126,7 @@ class PublisherdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/Shutdown',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Shutdown',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.ShutdownRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.ShutdownResponse.FromString,
             options, channel_credentials,

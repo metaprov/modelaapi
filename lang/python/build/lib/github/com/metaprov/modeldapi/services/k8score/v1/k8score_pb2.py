@@ -17,11 +17,11 @@ from k8s.io.api.core.v1 import generated_pb2 as k8s_dot_io_dot_api_dot_core_dot_
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto',
-  package='github.com.metaprov.modeld.services.k8score.v1',
+  package='github.com.metaprov.modeldapi.services.k8score.v1',
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/k8score/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto\x12.github.com.metaprov.modeld.services.k8score.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xc0\x01\n\x10GetSecretRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"]\n\x11GetSecretResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeld.services.k8score.v1.SecretInfo\"\xb6\x01\n\x12ListSecretsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"^\n\x12ListSecretResponse\x12H\n\x04item\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeld.services.k8score.v1.SecretInfo\"\xc8\x01\n\x14GetDeploymentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x15GetDeploymentResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo\"\xbe\x01\n\x16ListDeploymentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x17ListDeploymentsResponse\x12L\n\x04item\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo\"\xc2\x01\n\x11GetServiceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"_\n\x12GetServiceResponse\x12I\n\x04item\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo\"\xb8\x01\n\x13ListServicesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x14ListServicesResponse\x12I\n\x04item\x18\x01 \x03(\x0b\x32;.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo\"\xba\x01\n\rGetPodRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12Y\n\x06labels\x18\x03 \x03(\x0b\x32I.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x0eGetPodResponse\x12\x45\n\x04item\x18\x01 \x01(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\xb0\x01\n\x0fListPodsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x10ListPodsResponse\x12\x45\n\x04item\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\xba\x01\n\rGetJobRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12Y\n\x06labels\x18\x03 \x03(\x0b\x32I.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x0eGetJobResponse\x12\x45\n\x04item\x18\x01 \x01(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\xb0\x01\n\x0fListJobsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x10ListJobsResponse\x12\x45\n\x04item\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.JobInfo\"\xb4\x01\n\x11ListEventsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"[\n\x12ListEventsResponse\x12\x45\n\x04item\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.JobInfo\"-\n\nSecretInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\".\n\x0bServiceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"1\n\x0e\x44\x65ploymentInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07PodInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07JobInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t2\xaf\r\n\x0e\x43oreK8sService\x12\xb7\x01\n\x0eListK8sSecrets\x12\x42.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1alpha1/secrets\x12\xb9\x01\n\x0cGetK8sSecret\x12@.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest\x1a\x41.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1alpha1/secrets/{name}\x12\xbc\x01\n\x0fListK8sServices\x12\x43.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest\x1a\x44.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/v1alpha1/services\x12\xbd\x01\n\rGetK8sService\x12\x41.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1alpha1/services/{name}\x12\xc8\x01\n\x12ListK8sDeployments\x12\x46.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest\x1aG.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/deployments\x12\xc9\x01\n\x10GetK8sDeployment\x12\x44.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest\x1a\x45.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1alpha1/deployments/{name}\x12\xac\x01\n\x0bListK8sPods\x12?.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest\x1a@.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1alpha1/pods\x12\xad\x01\n\tGetK8sPod\x12=.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest\x1a>.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/pods/{name}\x12\xb1\x01\n\nListEvents\x12\x41.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1alpha1/eventsB3Z1github.com/metaprov/modeldapi/services/k8score/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto\x12\x31github.com.metaprov.modeldapi.services.k8score.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xc3\x01\n\x10GetSecretRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"`\n\x11GetSecretResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo\"\xb9\x01\n\x12ListSecretsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x12ListSecretResponse\x12K\n\x04item\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo\"\xcb\x01\n\x14GetDeploymentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x15GetDeploymentResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo\"\xc1\x01\n\x16ListDeploymentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x06labels\x18\x03 \x03(\x0b\x32U.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"j\n\x17ListDeploymentsResponse\x12O\n\x04item\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo\"\xc5\x01\n\x11GetServiceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x12GetServiceResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo\"\xbb\x01\n\x13ListServicesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"d\n\x14ListServicesResponse\x12L\n\x04item\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo\"\xbd\x01\n\rGetPodRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Z\n\x0eGetPodResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo\"\xb3\x01\n\x0fListPodsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x10ListPodsResponse\x12H\n\x04item\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo\"\xbd\x01\n\rGetJobRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Z\n\x0eGetJobResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo\"\xb3\x01\n\x0fListJobsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x10ListJobsResponse\x12H\n\x04item\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo\"\xb7\x01\n\x11ListEventsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"`\n\x12ListEventsResponse\x12J\n\x04item\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo\"-\n\nSecretInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\".\n\x0bServiceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"1\n\x0e\x44\x65ploymentInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07PodInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07JobInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"\x0b\n\tEventInfo2\xe5\r\n\x0e\x43oreK8sService\x12\xbd\x01\n\x0eListK8sSecrets\x12\x45.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest\x1a\x45.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1alpha1/secrets\x12\xbf\x01\n\x0cGetK8sSecret\x12\x43.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest\x1a\x44.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1alpha1/secrets/{name}\x12\xc2\x01\n\x0fListK8sServices\x12\x46.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest\x1aG.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/v1alpha1/services\x12\xc3\x01\n\rGetK8sService\x12\x44.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest\x1a\x45.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1alpha1/services/{name}\x12\xce\x01\n\x12ListK8sDeployments\x12I.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest\x1aJ.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/deployments\x12\xcf\x01\n\x10GetK8sDeployment\x12G.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest\x1aH.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1alpha1/deployments/{name}\x12\xb2\x01\n\x0bListK8sPods\x12\x42.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest\x1a\x43.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1alpha1/pods\x12\xb3\x01\n\tGetK8sPod\x12@.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest\x1a\x41.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/pods/{name}\x12\xb7\x01\n\nListEvents\x12\x44.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest\x1a\x45.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1alpha1/eventsB3Z1github.com/metaprov/modeldapi/services/k8score/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _GETSECRETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,34 +62,34 @@ _GETSECRETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _GETSECRETREQUEST = _descriptor.Descriptor(
   name='GetSecretRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -107,21 +107,21 @@ _GETSECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=182,
-  serialized_end=374,
+  serialized_start=185,
+  serialized_end=380,
 )
 
 
 _GETSECRETRESPONSE = _descriptor.Descriptor(
   name='GetSecretResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -139,28 +139,28 @@ _GETSECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=376,
-  serialized_end=469,
+  serialized_start=382,
+  serialized_end=478,
 )
 
 
 _LISTSECRETSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -178,27 +178,27 @@ _LISTSECRETSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _LISTSECRETSREQUEST = _descriptor.Descriptor(
   name='ListSecretsRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -216,21 +216,21 @@ _LISTSECRETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=472,
-  serialized_end=654,
+  serialized_start=481,
+  serialized_end=666,
 )
 
 
 _LISTSECRETRESPONSE = _descriptor.Descriptor(
   name='ListSecretResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -248,28 +248,28 @@ _LISTSECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=656,
-  serialized_end=750,
+  serialized_start=668,
+  serialized_end=765,
 )
 
 
 _GETDEPLOYMENTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,34 +287,34 @@ _GETDEPLOYMENTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _GETDEPLOYMENTREQUEST = _descriptor.Descriptor(
   name='GetDeploymentRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -332,21 +332,21 @@ _GETDEPLOYMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=753,
-  serialized_end=953,
+  serialized_start=768,
+  serialized_end=971,
 )
 
 
 _GETDEPLOYMENTRESPONSE = _descriptor.Descriptor(
   name='GetDeploymentResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -364,28 +364,28 @@ _GETDEPLOYMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
-  serialized_end=1056,
+  serialized_start=973,
+  serialized_end=1077,
 )
 
 
 _LISTDEPLOYMENTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,27 +403,27 @@ _LISTDEPLOYMENTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _LISTDEPLOYMENTSREQUEST = _descriptor.Descriptor(
   name='ListDeploymentsRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -441,21 +441,21 @@ _LISTDEPLOYMENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1059,
-  serialized_end=1249,
+  serialized_start=1080,
+  serialized_end=1273,
 )
 
 
 _LISTDEPLOYMENTSRESPONSE = _descriptor.Descriptor(
   name='ListDeploymentsResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -473,28 +473,28 @@ _LISTDEPLOYMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1251,
-  serialized_end=1354,
+  serialized_start=1275,
+  serialized_end=1381,
 )
 
 
 _GETSERVICEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -512,34 +512,34 @@ _GETSERVICEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _GETSERVICEREQUEST = _descriptor.Descriptor(
   name='GetServiceRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -557,21 +557,21 @@ _GETSERVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1357,
-  serialized_end=1551,
+  serialized_start=1384,
+  serialized_end=1581,
 )
 
 
 _GETSERVICERESPONSE = _descriptor.Descriptor(
   name='GetServiceResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -589,28 +589,28 @@ _GETSERVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1553,
-  serialized_end=1648,
+  serialized_start=1583,
+  serialized_end=1681,
 )
 
 
 _LISTSERVICESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -628,27 +628,27 @@ _LISTSERVICESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _LISTSERVICESREQUEST = _descriptor.Descriptor(
   name='ListServicesRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -666,21 +666,21 @@ _LISTSERVICESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1651,
-  serialized_end=1835,
+  serialized_start=1684,
+  serialized_end=1871,
 )
 
 
 _LISTSERVICESRESPONSE = _descriptor.Descriptor(
   name='ListServicesResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -698,28 +698,28 @@ _LISTSERVICESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1837,
-  serialized_end=1934,
+  serialized_start=1873,
+  serialized_end=1973,
 )
 
 
 _GETPODREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -737,34 +737,34 @@ _GETPODREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _GETPODREQUEST = _descriptor.Descriptor(
   name='GetPodRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -782,21 +782,21 @@ _GETPODREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1937,
-  serialized_end=2123,
+  serialized_start=1976,
+  serialized_end=2165,
 )
 
 
 _GETPODRESPONSE = _descriptor.Descriptor(
   name='GetPodResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -814,28 +814,28 @@ _GETPODRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2125,
-  serialized_end=2212,
+  serialized_start=2167,
+  serialized_end=2257,
 )
 
 
 _LISTPODSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -853,27 +853,27 @@ _LISTPODSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _LISTPODSREQUEST = _descriptor.Descriptor(
   name='ListPodsRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -891,21 +891,21 @@ _LISTPODSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2215,
-  serialized_end=2391,
+  serialized_start=2260,
+  serialized_end=2439,
 )
 
 
 _LISTPODSRESPONSE = _descriptor.Descriptor(
   name='ListPodsResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -923,28 +923,28 @@ _LISTPODSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2393,
-  serialized_end=2482,
+  serialized_start=2441,
+  serialized_end=2533,
 )
 
 
 _GETJOBREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -962,34 +962,34 @@ _GETJOBREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _GETJOBREQUEST = _descriptor.Descriptor(
   name='GetJobRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1007,21 +1007,21 @@ _GETJOBREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2485,
-  serialized_end=2671,
+  serialized_start=2536,
+  serialized_end=2725,
 )
 
 
 _GETJOBRESPONSE = _descriptor.Descriptor(
   name='GetJobResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1039,28 +1039,28 @@ _GETJOBRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2673,
-  serialized_end=2760,
+  serialized_start=2727,
+  serialized_end=2817,
 )
 
 
 _LISTJOBSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1078,27 +1078,27 @@ _LISTJOBSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _LISTJOBSREQUEST = _descriptor.Descriptor(
   name='ListJobsRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1116,21 +1116,21 @@ _LISTJOBSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2763,
-  serialized_end=2939,
+  serialized_start=2820,
+  serialized_end=2999,
 )
 
 
 _LISTJOBSRESPONSE = _descriptor.Descriptor(
   name='ListJobsResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1148,28 +1148,28 @@ _LISTJOBSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2941,
-  serialized_end=3030,
+  serialized_start=3001,
+  serialized_end=3093,
 )
 
 
 _LISTEVENTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1187,27 +1187,27 @@ _LISTEVENTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=374,
+  serialized_start=335,
+  serialized_end=380,
 )
 
 _LISTEVENTSREQUEST = _descriptor.Descriptor(
   name='ListEventsRequest',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1225,21 +1225,21 @@ _LISTEVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3033,
-  serialized_end=3213,
+  serialized_start=3096,
+  serialized_end=3279,
 )
 
 
 _LISTEVENTSRESPONSE = _descriptor.Descriptor(
   name='ListEventsResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1257,28 +1257,28 @@ _LISTEVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3215,
-  serialized_end=3306,
+  serialized_start=3281,
+  serialized_end=3377,
 )
 
 
 _SECRETINFO = _descriptor.Descriptor(
   name='SecretInfo',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.SecretInfo',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretInfo.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretInfo.namespace', index=1,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1296,28 +1296,28 @@ _SECRETINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3308,
-  serialized_end=3353,
+  serialized_start=3379,
+  serialized_end=3424,
 )
 
 
 _SERVICEINFO = _descriptor.Descriptor(
   name='ServiceInfo',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceInfo',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.namespace', index=1,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1335,28 +1335,28 @@ _SERVICEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3355,
-  serialized_end=3401,
+  serialized_start=3426,
+  serialized_end=3472,
 )
 
 
 _DEPLOYMENTINFO = _descriptor.Descriptor(
   name='DeploymentInfo',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.namespace', index=1,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1374,28 +1374,28 @@ _DEPLOYMENTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3403,
-  serialized_end=3452,
+  serialized_start=3474,
+  serialized_end=3523,
 )
 
 
 _PODINFO = _descriptor.Descriptor(
   name='PodInfo',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.PodInfo',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.PodInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.PodInfo.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.PodInfo.namespace', index=1,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1413,28 +1413,28 @@ _PODINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3454,
-  serialized_end=3496,
+  serialized_start=3525,
+  serialized_end=3567,
 )
 
 
 _JOBINFO = _descriptor.Descriptor(
   name='JobInfo',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.JobInfo',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.JobInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.JobInfo.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.JobInfo.namespace', index=1,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1452,8 +1452,33 @@ _JOBINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3498,
-  serialized_end=3540,
+  serialized_start=3569,
+  serialized_end=3611,
+)
+
+
+_EVENTINFO = _descriptor.Descriptor(
+  name='EventInfo',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.EventInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3613,
+  serialized_end=3624,
 )
 
 _GETSECRETREQUEST_LABELSENTRY.containing_type = _GETSECRETREQUEST
@@ -1488,7 +1513,7 @@ _LISTJOBSREQUEST.fields_by_name['labels'].message_type = _LISTJOBSREQUEST_LABELS
 _LISTJOBSRESPONSE.fields_by_name['item'].message_type = _JOBINFO
 _LISTEVENTSREQUEST_LABELSENTRY.containing_type = _LISTEVENTSREQUEST
 _LISTEVENTSREQUEST.fields_by_name['labels'].message_type = _LISTEVENTSREQUEST_LABELSENTRY
-_LISTEVENTSRESPONSE.fields_by_name['item'].message_type = _JOBINFO
+_LISTEVENTSRESPONSE.fields_by_name['item'].message_type = _EVENTINFO
 DESCRIPTOR.message_types_by_name['GetSecretRequest'] = _GETSECRETREQUEST
 DESCRIPTOR.message_types_by_name['GetSecretResponse'] = _GETSECRETRESPONSE
 DESCRIPTOR.message_types_by_name['ListSecretsRequest'] = _LISTSECRETSREQUEST
@@ -1516,6 +1541,7 @@ DESCRIPTOR.message_types_by_name['ServiceInfo'] = _SERVICEINFO
 DESCRIPTOR.message_types_by_name['DeploymentInfo'] = _DEPLOYMENTINFO
 DESCRIPTOR.message_types_by_name['PodInfo'] = _PODINFO
 DESCRIPTOR.message_types_by_name['JobInfo'] = _JOBINFO
+DESCRIPTOR.message_types_by_name['EventInfo'] = _EVENTINFO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetSecretRequest = _reflection.GeneratedProtocolMessageType('GetSecretRequest', (_message.Message,), {
@@ -1523,12 +1549,12 @@ GetSecretRequest = _reflection.GeneratedProtocolMessageType('GetSecretRequest', 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _GETSECRETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _GETSECRETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest)
   })
 _sym_db.RegisterMessage(GetSecretRequest)
 _sym_db.RegisterMessage(GetSecretRequest.LabelsEntry)
@@ -1536,7 +1562,7 @@ _sym_db.RegisterMessage(GetSecretRequest.LabelsEntry)
 GetSecretResponse = _reflection.GeneratedProtocolMessageType('GetSecretResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETSECRETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse)
   })
 _sym_db.RegisterMessage(GetSecretResponse)
 
@@ -1545,12 +1571,12 @@ ListSecretsRequest = _reflection.GeneratedProtocolMessageType('ListSecretsReques
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTSECRETSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTSECRETSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest)
   })
 _sym_db.RegisterMessage(ListSecretsRequest)
 _sym_db.RegisterMessage(ListSecretsRequest.LabelsEntry)
@@ -1558,7 +1584,7 @@ _sym_db.RegisterMessage(ListSecretsRequest.LabelsEntry)
 ListSecretResponse = _reflection.GeneratedProtocolMessageType('ListSecretResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTSECRETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse)
   })
 _sym_db.RegisterMessage(ListSecretResponse)
 
@@ -1567,12 +1593,12 @@ GetDeploymentRequest = _reflection.GeneratedProtocolMessageType('GetDeploymentRe
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _GETDEPLOYMENTREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _GETDEPLOYMENTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest)
   })
 _sym_db.RegisterMessage(GetDeploymentRequest)
 _sym_db.RegisterMessage(GetDeploymentRequest.LabelsEntry)
@@ -1580,7 +1606,7 @@ _sym_db.RegisterMessage(GetDeploymentRequest.LabelsEntry)
 GetDeploymentResponse = _reflection.GeneratedProtocolMessageType('GetDeploymentResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETDEPLOYMENTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse)
   })
 _sym_db.RegisterMessage(GetDeploymentResponse)
 
@@ -1589,12 +1615,12 @@ ListDeploymentsRequest = _reflection.GeneratedProtocolMessageType('ListDeploymen
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTDEPLOYMENTSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTDEPLOYMENTSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest)
   })
 _sym_db.RegisterMessage(ListDeploymentsRequest)
 _sym_db.RegisterMessage(ListDeploymentsRequest.LabelsEntry)
@@ -1602,7 +1628,7 @@ _sym_db.RegisterMessage(ListDeploymentsRequest.LabelsEntry)
 ListDeploymentsResponse = _reflection.GeneratedProtocolMessageType('ListDeploymentsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTDEPLOYMENTSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse)
   })
 _sym_db.RegisterMessage(ListDeploymentsResponse)
 
@@ -1611,12 +1637,12 @@ GetServiceRequest = _reflection.GeneratedProtocolMessageType('GetServiceRequest'
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _GETSERVICEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _GETSERVICEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest)
   })
 _sym_db.RegisterMessage(GetServiceRequest)
 _sym_db.RegisterMessage(GetServiceRequest.LabelsEntry)
@@ -1624,7 +1650,7 @@ _sym_db.RegisterMessage(GetServiceRequest.LabelsEntry)
 GetServiceResponse = _reflection.GeneratedProtocolMessageType('GetServiceResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETSERVICERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse)
   })
 _sym_db.RegisterMessage(GetServiceResponse)
 
@@ -1633,12 +1659,12 @@ ListServicesRequest = _reflection.GeneratedProtocolMessageType('ListServicesRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTSERVICESREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTSERVICESREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest)
   })
 _sym_db.RegisterMessage(ListServicesRequest)
 _sym_db.RegisterMessage(ListServicesRequest.LabelsEntry)
@@ -1646,7 +1672,7 @@ _sym_db.RegisterMessage(ListServicesRequest.LabelsEntry)
 ListServicesResponse = _reflection.GeneratedProtocolMessageType('ListServicesResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTSERVICESRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse)
   })
 _sym_db.RegisterMessage(ListServicesResponse)
 
@@ -1655,12 +1681,12 @@ GetPodRequest = _reflection.GeneratedProtocolMessageType('GetPodRequest', (_mess
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _GETPODREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _GETPODREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest)
   })
 _sym_db.RegisterMessage(GetPodRequest)
 _sym_db.RegisterMessage(GetPodRequest.LabelsEntry)
@@ -1668,7 +1694,7 @@ _sym_db.RegisterMessage(GetPodRequest.LabelsEntry)
 GetPodResponse = _reflection.GeneratedProtocolMessageType('GetPodResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETPODRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse)
   })
 _sym_db.RegisterMessage(GetPodResponse)
 
@@ -1677,12 +1703,12 @@ ListPodsRequest = _reflection.GeneratedProtocolMessageType('ListPodsRequest', (_
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTPODSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTPODSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest)
   })
 _sym_db.RegisterMessage(ListPodsRequest)
 _sym_db.RegisterMessage(ListPodsRequest.LabelsEntry)
@@ -1690,7 +1716,7 @@ _sym_db.RegisterMessage(ListPodsRequest.LabelsEntry)
 ListPodsResponse = _reflection.GeneratedProtocolMessageType('ListPodsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTPODSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse)
   })
 _sym_db.RegisterMessage(ListPodsResponse)
 
@@ -1699,12 +1725,12 @@ GetJobRequest = _reflection.GeneratedProtocolMessageType('GetJobRequest', (_mess
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _GETJOBREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _GETJOBREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetJobRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest)
   })
 _sym_db.RegisterMessage(GetJobRequest)
 _sym_db.RegisterMessage(GetJobRequest.LabelsEntry)
@@ -1712,7 +1738,7 @@ _sym_db.RegisterMessage(GetJobRequest.LabelsEntry)
 GetJobResponse = _reflection.GeneratedProtocolMessageType('GetJobResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETJOBRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetJobResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse)
   })
 _sym_db.RegisterMessage(GetJobResponse)
 
@@ -1721,12 +1747,12 @@ ListJobsRequest = _reflection.GeneratedProtocolMessageType('ListJobsRequest', (_
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTJOBSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTJOBSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest)
   })
 _sym_db.RegisterMessage(ListJobsRequest)
 _sym_db.RegisterMessage(ListJobsRequest.LabelsEntry)
@@ -1734,7 +1760,7 @@ _sym_db.RegisterMessage(ListJobsRequest.LabelsEntry)
 ListJobsResponse = _reflection.GeneratedProtocolMessageType('ListJobsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTJOBSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse)
   })
 _sym_db.RegisterMessage(ListJobsResponse)
 
@@ -1743,12 +1769,12 @@ ListEventsRequest = _reflection.GeneratedProtocolMessageType('ListEventsRequest'
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTEVENTSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTEVENTSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest)
   })
 _sym_db.RegisterMessage(ListEventsRequest)
 _sym_db.RegisterMessage(ListEventsRequest.LabelsEntry)
@@ -1756,44 +1782,51 @@ _sym_db.RegisterMessage(ListEventsRequest.LabelsEntry)
 ListEventsResponse = _reflection.GeneratedProtocolMessageType('ListEventsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTEVENTSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse)
   })
 _sym_db.RegisterMessage(ListEventsResponse)
 
 SecretInfo = _reflection.GeneratedProtocolMessageType('SecretInfo', (_message.Message,), {
   'DESCRIPTOR' : _SECRETINFO,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.SecretInfo)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo)
   })
 _sym_db.RegisterMessage(SecretInfo)
 
 ServiceInfo = _reflection.GeneratedProtocolMessageType('ServiceInfo', (_message.Message,), {
   'DESCRIPTOR' : _SERVICEINFO,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ServiceInfo)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo)
   })
 _sym_db.RegisterMessage(ServiceInfo)
 
 DeploymentInfo = _reflection.GeneratedProtocolMessageType('DeploymentInfo', (_message.Message,), {
   'DESCRIPTOR' : _DEPLOYMENTINFO,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo)
   })
 _sym_db.RegisterMessage(DeploymentInfo)
 
 PodInfo = _reflection.GeneratedProtocolMessageType('PodInfo', (_message.Message,), {
   'DESCRIPTOR' : _PODINFO,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.PodInfo)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.PodInfo)
   })
 _sym_db.RegisterMessage(PodInfo)
 
 JobInfo = _reflection.GeneratedProtocolMessageType('JobInfo', (_message.Message,), {
   'DESCRIPTOR' : _JOBINFO,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.JobInfo)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.JobInfo)
   })
 _sym_db.RegisterMessage(JobInfo)
+
+EventInfo = _reflection.GeneratedProtocolMessageType('EventInfo', (_message.Message,), {
+  'DESCRIPTOR' : _EVENTINFO,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.k8score.v1.EventInfo)
+  })
+_sym_db.RegisterMessage(EventInfo)
 
 
 DESCRIPTOR._options = None
@@ -1811,17 +1844,17 @@ _LISTEVENTSREQUEST_LABELSENTRY._options = None
 
 _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   name='CoreK8sService',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService',
+  full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3543,
-  serialized_end=5254,
+  serialized_start=3627,
+  serialized_end=5392,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListK8sSecrets',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sSecrets',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sSecrets',
     index=0,
     containing_service=None,
     input_type=_LISTSECRETSREQUEST,
@@ -1831,7 +1864,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetK8sSecret',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sSecret',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sSecret',
     index=1,
     containing_service=None,
     input_type=_GETSECRETREQUEST,
@@ -1841,7 +1874,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListK8sServices',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sServices',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sServices',
     index=2,
     containing_service=None,
     input_type=_LISTSERVICESREQUEST,
@@ -1851,7 +1884,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetK8sService',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sService',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sService',
     index=3,
     containing_service=None,
     input_type=_GETSERVICEREQUEST,
@@ -1861,7 +1894,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListK8sDeployments',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sDeployments',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sDeployments',
     index=4,
     containing_service=None,
     input_type=_LISTDEPLOYMENTSREQUEST,
@@ -1871,7 +1904,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetK8sDeployment',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sDeployment',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sDeployment',
     index=5,
     containing_service=None,
     input_type=_GETDEPLOYMENTREQUEST,
@@ -1881,7 +1914,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListK8sPods',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sPods',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sPods',
     index=6,
     containing_service=None,
     input_type=_LISTPODSREQUEST,
@@ -1891,7 +1924,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetK8sPod',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sPod',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sPod',
     index=7,
     containing_service=None,
     input_type=_GETPODREQUEST,
@@ -1901,7 +1934,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListEvents',
-    full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListEvents',
+    full_name='github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListEvents',
     index=8,
     containing_service=None,
     input_type=_LISTEVENTSREQUEST,

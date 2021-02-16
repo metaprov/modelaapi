@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1 import generated_pb2 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket.proto',
-  package='github.com.metaprov.modeld.services.virtualbucket.v1',
+  package='github.com.metaprov.modeldapi.services.virtualbucket.v1',
   syntax='proto3',
   serialized_options=b'Z7github.com/metaprov/modeldapi/services/virtualbucket/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nKgithub.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket.proto\x12\x34github.com.metaprov.modeld.services.virtualbucket.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xca\x01\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12k\n\x06labels\x18\x02 \x03(\x0b\x32[.github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"u\n\x1aListVirtualBucketsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketList\"\xb2\x02\n\x1a\x43reateVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12l\n\x06labels\x18\x03 \x03(\x0b\x32\\.github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry\x12V\n\x04spec\x18\x04 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1d\n\x1b\x43reateVirtualBucketResponse\"\xb2\x02\n\x1aUpdateVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12l\n\x06labels\x18\x03 \x03(\x0b\x32\\.github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry\x12V\n\x04spec\x18\x04 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1d\n\x1bUpdateVirtualBucketResponse\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x18GetVirtualBucketResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteVirtualBucketResponse2\xa8\t\n\x14VirtualBucketService\x12\xd3\x01\n\x12ListVirtualBuckets\x12O.github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest\x1aP.github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/virtualbuckets\x12\xe5\x01\n\x13\x43reateVirtualBucket\x12P.github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest\x1aQ.github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketResponse\")\x82\xd3\xe4\x93\x02#\"\x12/v1/virtualbuckets:\rvirtualbucket\x12\xd4\x01\n\x10GetVirtualBucket\x12M.github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketRequest\x1aN.github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/virtualbuckets/{name}\x12\x83\x02\n\x13UpdateVirtualBucket\x12P.github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest\x1aQ.github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a\x30/v1/virtualbuckets/{virtualbucket.metadata.name}:\rvirtualbucket\x12\xf4\x01\n\x13\x44\x65leteVirtualBucket\x12P.github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketRequest\x1aQ.github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketResponse\"8\x82\xd3\xe4\x93\x02\x32*0/v1/virtualbuckets/{virtualbucket.metadata.name}B9Z7github.com/metaprov/modeldapi/services/virtualbucket/v1b\x06proto3'
+  serialized_pb=b'\nKgithub.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket.proto\x12\x37github.com.metaprov.modeldapi.services.virtualbucket.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xcd\x01\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x02 \x03(\x0b\x32^.github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"u\n\x1aListVirtualBucketsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketList\"\xb5\x02\n\x1a\x43reateVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12o\n\x06labels\x18\x03 \x03(\x0b\x32_.github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry\x12V\n\x04spec\x18\x04 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1d\n\x1b\x43reateVirtualBucketResponse\"\xb5\x02\n\x1aUpdateVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12o\n\x06labels\x18\x03 \x03(\x0b\x32_.github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry\x12V\n\x04spec\x18\x04 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1d\n\x1bUpdateVirtualBucketResponse\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x18GetVirtualBucketResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteVirtualBucketResponse2\xc6\t\n\x14VirtualBucketService\x12\xd9\x01\n\x12ListVirtualBuckets\x12R.github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest\x1aS.github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/virtualbuckets\x12\xeb\x01\n\x13\x43reateVirtualBucket\x12S.github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest\x1aT.github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketResponse\")\x82\xd3\xe4\x93\x02#\"\x12/v1/virtualbuckets:\rvirtualbucket\x12\xda\x01\n\x10GetVirtualBucket\x12P.github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest\x1aQ.github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/virtualbuckets/{name}\x12\x89\x02\n\x13UpdateVirtualBucket\x12S.github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest\x1aT.github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a\x30/v1/virtualbuckets/{virtualbucket.metadata.name}:\rvirtualbucket\x12\xfa\x01\n\x13\x44\x65leteVirtualBucket\x12S.github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest\x1aT.github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketResponse\"8\x82\xd3\xe4\x93\x02\x32*0/v1/virtualbuckets/{virtualbucket.metadata.name}B9Z7github.com/metaprov/modeldapi/services/virtualbucket/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTVIRTUALBUCKETSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTVIRTUALBUCKETSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=437,
+  serialized_start=398,
+  serialized_end=443,
 )
 
 _LISTVIRTUALBUCKETSREQUEST = _descriptor.Descriptor(
   name='ListVirtualBucketsRequest',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTVIRTUALBUCKETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=235,
-  serialized_end=437,
+  serialized_start=238,
+  serialized_end=443,
 )
 
 
 _LISTVIRTUALBUCKETSRESPONSE = _descriptor.Descriptor(
   name='ListVirtualBucketsResponse',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTVIRTUALBUCKETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=439,
-  serialized_end=556,
+  serialized_start=445,
+  serialized_end=562,
 )
 
 
 _CREATEVIRTUALBUCKETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATEVIRTUALBUCKETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=437,
+  serialized_start=398,
+  serialized_end=443,
 )
 
 _CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   name='CreateVirtualBucketRequest',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=559,
-  serialized_end=865,
+  serialized_start=565,
+  serialized_end=874,
 )
 
 
 _CREATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   name='CreateVirtualBucketResponse',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=867,
-  serialized_end=896,
+  serialized_start=876,
+  serialized_end=905,
 )
 
 
 _UPDATEVIRTUALBUCKETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATEVIRTUALBUCKETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=437,
+  serialized_start=398,
+  serialized_end=443,
 )
 
 _UPDATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   name='UpdateVirtualBucketRequest',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=1205,
+  serialized_start=908,
+  serialized_end=1217,
 )
 
 
 _UPDATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   name='UpdateVirtualBucketResponse',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1207,
-  serialized_end=1236,
+  serialized_start=1219,
+  serialized_end=1248,
 )
 
 
 _GETVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   name='GetVirtualBucketRequest',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1238,
-  serialized_end=1296,
+  serialized_start=1250,
+  serialized_end=1308,
 )
 
 
 _GETVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   name='GetVirtualBucketResponse',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1298,
-  serialized_end=1422,
+  serialized_start=1310,
+  serialized_end=1434,
 )
 
 
 _DELETEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   name='DeleteVirtualBucketRequest',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1424,
-  serialized_end=1485,
+  serialized_start=1436,
+  serialized_end=1497,
 )
 
 
 _DELETEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   name='DeleteVirtualBucketResponse',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1487,
-  serialized_end=1516,
+  serialized_start=1499,
+  serialized_end=1528,
 )
 
 _LISTVIRTUALBUCKETSREQUEST_LABELSENTRY.containing_type = _LISTVIRTUALBUCKETSREQUEST
@@ -537,12 +537,12 @@ ListVirtualBucketsRequest = _reflection.GeneratedProtocolMessageType('ListVirtua
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTVIRTUALBUCKETSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTVIRTUALBUCKETSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest)
   })
 _sym_db.RegisterMessage(ListVirtualBucketsRequest)
 _sym_db.RegisterMessage(ListVirtualBucketsRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListVirtualBucketsRequest.LabelsEntry)
 ListVirtualBucketsResponse = _reflection.GeneratedProtocolMessageType('ListVirtualBucketsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTVIRTUALBUCKETSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.ListVirtualBucketsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse)
   })
 _sym_db.RegisterMessage(ListVirtualBucketsResponse)
 
@@ -559,12 +559,12 @@ CreateVirtualBucketRequest = _reflection.GeneratedProtocolMessageType('CreateVir
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEVIRTUALBUCKETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEVIRTUALBUCKETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest)
   })
 _sym_db.RegisterMessage(CreateVirtualBucketRequest)
 _sym_db.RegisterMessage(CreateVirtualBucketRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateVirtualBucketRequest.LabelsEntry)
 CreateVirtualBucketResponse = _reflection.GeneratedProtocolMessageType('CreateVirtualBucketResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEVIRTUALBUCKETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.CreateVirtualBucketResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketResponse)
   })
 _sym_db.RegisterMessage(CreateVirtualBucketResponse)
 
@@ -581,12 +581,12 @@ UpdateVirtualBucketRequest = _reflection.GeneratedProtocolMessageType('UpdateVir
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEVIRTUALBUCKETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEVIRTUALBUCKETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest)
   })
 _sym_db.RegisterMessage(UpdateVirtualBucketRequest)
 _sym_db.RegisterMessage(UpdateVirtualBucketRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateVirtualBucketRequest.LabelsEntry)
 UpdateVirtualBucketResponse = _reflection.GeneratedProtocolMessageType('UpdateVirtualBucketResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEVIRTUALBUCKETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.UpdateVirtualBucketResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketResponse)
   })
 _sym_db.RegisterMessage(UpdateVirtualBucketResponse)
 
 GetVirtualBucketRequest = _reflection.GeneratedProtocolMessageType('GetVirtualBucketRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETVIRTUALBUCKETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest)
   })
 _sym_db.RegisterMessage(GetVirtualBucketRequest)
 
 GetVirtualBucketResponse = _reflection.GeneratedProtocolMessageType('GetVirtualBucketResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETVIRTUALBUCKETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.GetVirtualBucketResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse)
   })
 _sym_db.RegisterMessage(GetVirtualBucketResponse)
 
 DeleteVirtualBucketRequest = _reflection.GeneratedProtocolMessageType('DeleteVirtualBucketRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEVIRTUALBUCKETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest)
   })
 _sym_db.RegisterMessage(DeleteVirtualBucketRequest)
 
 DeleteVirtualBucketResponse = _reflection.GeneratedProtocolMessageType('DeleteVirtualBucketResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEVIRTUALBUCKETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualbucket.v1.virtualbucket_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualbucket.v1.DeleteVirtualBucketResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketResponse)
   })
 _sym_db.RegisterMessage(DeleteVirtualBucketResponse)
 
@@ -634,17 +634,17 @@ _UPDATEVIRTUALBUCKETREQUEST_LABELSENTRY._options = None
 
 _VIRTUALBUCKETSERVICE = _descriptor.ServiceDescriptor(
   name='VirtualBucketService',
-  full_name='github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService',
+  full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1519,
-  serialized_end=2711,
+  serialized_start=1531,
+  serialized_end=2753,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVirtualBuckets',
-    full_name='github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService.ListVirtualBuckets',
+    full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.ListVirtualBuckets',
     index=0,
     containing_service=None,
     input_type=_LISTVIRTUALBUCKETSREQUEST,
@@ -654,7 +654,7 @@ _VIRTUALBUCKETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateVirtualBucket',
-    full_name='github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService.CreateVirtualBucket',
+    full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.CreateVirtualBucket',
     index=1,
     containing_service=None,
     input_type=_CREATEVIRTUALBUCKETREQUEST,
@@ -664,7 +664,7 @@ _VIRTUALBUCKETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetVirtualBucket',
-    full_name='github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService.GetVirtualBucket',
+    full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.GetVirtualBucket',
     index=2,
     containing_service=None,
     input_type=_GETVIRTUALBUCKETREQUEST,
@@ -674,7 +674,7 @@ _VIRTUALBUCKETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateVirtualBucket',
-    full_name='github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService.UpdateVirtualBucket',
+    full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.UpdateVirtualBucket',
     index=3,
     containing_service=None,
     input_type=_UPDATEVIRTUALBUCKETREQUEST,
@@ -684,7 +684,7 @@ _VIRTUALBUCKETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteVirtualBucket',
-    full_name='github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService.DeleteVirtualBucket',
+    full_name='github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.DeleteVirtualBucket',
     index=4,
     containing_service=None,
     input_type=_DELETEVIRTUALBUCKETREQUEST,

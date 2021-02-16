@@ -15,27 +15,27 @@ class VirtualClusterServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListVirtualClusters = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
+                '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.ListVirtualClustersRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.ListVirtualClustersResponse.FromString,
                 )
         self.CreateVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
+                '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.CreateVirtualClusterRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.CreateVirtualClusterResponse.FromString,
                 )
         self.GetVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
+                '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.GetVirtualClusterRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.GetVirtualClusterResponse.FromString,
                 )
         self.UpdateVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
+                '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.UpdateVirtualClusterRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.UpdateVirtualClusterResponse.FromString,
                 )
         self.DeleteVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
+                '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.DeleteVirtualClusterRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.DeleteVirtualClusterResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_VirtualClusterServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class VirtualClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.ListVirtualClustersRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.ListVirtualClustersResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class VirtualClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.CreateVirtualClusterRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.CreateVirtualClusterResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class VirtualClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.GetVirtualClusterRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.GetVirtualClusterResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class VirtualClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.UpdateVirtualClusterRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.UpdateVirtualClusterResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class VirtualClusterService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.DeleteVirtualClusterRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualcluster_dot_v1_dot_virtualcluster__pb2.DeleteVirtualClusterResponse.FromString,
             options, channel_credentials,

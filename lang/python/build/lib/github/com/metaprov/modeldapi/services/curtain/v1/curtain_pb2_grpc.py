@@ -15,27 +15,27 @@ class CurtainServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListCurtains = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/ListCurtains',
+                '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.ListCurtainsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.ListCurtainsResponse.FromString,
                 )
         self.CreateCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/CreateCurtain',
+                '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.CreateCurtainRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.CreateCurtainResponse.FromString,
                 )
         self.GetCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/GetCurtain',
+                '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.GetCurtainRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.GetCurtainResponse.FromString,
                 )
         self.UpdateCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/UpdateCurtain',
+                '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.UpdateCurtainRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.UpdateCurtainResponse.FromString,
                 )
         self.DeleteCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/DeleteCurtain',
+                '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.DeleteCurtainRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.DeleteCurtainResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_CurtainServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.curtain.v1.CurtainService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.curtain.v1.CurtainService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class CurtainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/ListCurtains',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.ListCurtainsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.ListCurtainsResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class CurtainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/CreateCurtain',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.CreateCurtainRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.CreateCurtainResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class CurtainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/GetCurtain',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.GetCurtainRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.GetCurtainResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class CurtainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/UpdateCurtain',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.UpdateCurtainRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.UpdateCurtainResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class CurtainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/DeleteCurtain',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.DeleteCurtainRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_curtain_dot_v1_dot_curtain__pb2.DeleteCurtainResponse.FromString,
             options, channel_credentials,

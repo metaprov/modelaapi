@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/entity/v1/entity.proto',
-  package='github.com.metaprov.modeld.services.entity.v1',
+  package='github.com.metaprov.modeldapi.services.entity.v1',
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modeldapi/services/entity/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/entity/v1/entity.proto\x12-github.com.metaprov.modeld.services.entity.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xb7\x01\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x14ListEntitiesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList\"\x95\x02\n\x13\x43reateEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.LabelsEntry\x12N\n\x04spec\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntitySpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x43reateEntityResponse\"\x95\x02\n\x13UpdateEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.LabelsEntry\x12N\n\x04spec\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntitySpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14UpdateEntityResponse\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x11GetEntityResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteEntityResponse2\xfc\x06\n\rEntityService\x12\xad\x01\n\x0cListEntities\x12\x42.github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest\x1a\x43.github.com.metaprov.modeld.services.entity.v1.ListEntitiesResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/entities\x12\xb3\x01\n\x0c\x43reateEntity\x12\x42.github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest\x1a\x43.github.com.metaprov.modeld.services.entity.v1.CreateEntityResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0c/v1/entities:\x04spec\x12\xab\x01\n\tGetEntity\x12?.github.com.metaprov.modeld.services.entity.v1.GetEntityRequest\x1a@.github.com.metaprov.modeld.services.entity.v1.GetEntityResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/entities/{name}\x12\xba\x01\n\x0cUpdateEntity\x12\x42.github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest\x1a\x43.github.com.metaprov.modeld.services.entity.v1.UpdateEntityResponse\"!\x82\xd3\xe4\x93\x02\x1b\x1a\x13/v1/entities/{name}:\x04spec\x12\x99\x01\n\x0c\x44\x65leteEntity\x12\x42.github.com.metaprov.modeld.services.entity.v1.DeleteEntityRequest\x1a\x43.github.com.metaprov.modeld.services.entity.v1.DeleteEntityResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/entity/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/entity/v1/entity.proto\x12\x30github.com.metaprov.modeldapi.services.entity.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xba\x01\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x14ListEntitiesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList\"\x98\x02\n\x13\x43reateEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.LabelsEntry\x12N\n\x04spec\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntitySpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x43reateEntityResponse\"\x98\x02\n\x13UpdateEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.LabelsEntry\x12N\n\x04spec\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntitySpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14UpdateEntityResponse\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x11GetEntityResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteEntityResponse2\x9a\x07\n\rEntityService\x12\xb3\x01\n\x0cListEntities\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/entities\x12\xb9\x01\n\x0c\x43reateEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0c/v1/entities:\x04spec\x12\xb1\x01\n\tGetEntity\x12\x42.github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest\x1a\x43.github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/entities/{name}\x12\xc0\x01\n\x0cUpdateEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse\"!\x82\xd3\xe4\x93\x02\x1b\x1a\x13/v1/entities/{name}:\x04spec\x12\x9f\x01\n\x0c\x44\x65leteEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/entity/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTENTITIESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTENTITIESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=396,
+  serialized_start=357,
+  serialized_end=402,
 )
 
 _LISTENTITIESREQUEST = _descriptor.Descriptor(
   name='ListEntitiesRequest',
-  full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTENTITIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=213,
-  serialized_end=396,
+  serialized_start=216,
+  serialized_end=402,
 )
 
 
 _LISTENTITIESRESPONSE = _descriptor.Descriptor(
   name='ListEntitiesResponse',
-  full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesResponse',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.entity.v1.ListEntitiesResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTENTITIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=398,
-  serialized_end=501,
+  serialized_start=404,
+  serialized_end=507,
 )
 
 
 _CREATEENTITYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATEENTITYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=396,
+  serialized_start=357,
+  serialized_end=402,
 )
 
 _CREATEENTITYREQUEST = _descriptor.Descriptor(
   name='CreateEntityRequest',
-  full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATEENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=504,
-  serialized_end=781,
+  serialized_start=510,
+  serialized_end=790,
 )
 
 
 _CREATEENTITYRESPONSE = _descriptor.Descriptor(
   name='CreateEntityResponse',
-  full_name='github.com.metaprov.modeld.services.entity.v1.CreateEntityResponse',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATEENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=783,
-  serialized_end=805,
+  serialized_start=792,
+  serialized_end=814,
 )
 
 
 _UPDATEENTITYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATEENTITYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=396,
+  serialized_start=357,
+  serialized_end=402,
 )
 
 _UPDATEENTITYREQUEST = _descriptor.Descriptor(
   name='UpdateEntityRequest',
-  full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATEENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=808,
-  serialized_end=1085,
+  serialized_start=817,
+  serialized_end=1097,
 )
 
 
 _UPDATEENTITYRESPONSE = _descriptor.Descriptor(
   name='UpdateEntityResponse',
-  full_name='github.com.metaprov.modeld.services.entity.v1.UpdateEntityResponse',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATEENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1087,
-  serialized_end=1109,
+  serialized_start=1099,
+  serialized_end=1121,
 )
 
 
 _GETENTITYREQUEST = _descriptor.Descriptor(
   name='GetEntityRequest',
-  full_name='github.com.metaprov.modeld.services.entity.v1.GetEntityRequest',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.entity.v1.GetEntityRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.entity.v1.GetEntityRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1111,
-  serialized_end=1162,
+  serialized_start=1123,
+  serialized_end=1174,
 )
 
 
 _GETENTITYRESPONSE = _descriptor.Descriptor(
   name='GetEntityResponse',
-  full_name='github.com.metaprov.modeld.services.entity.v1.GetEntityResponse',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.entity.v1.GetEntityResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.entity.v1.GetEntityResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1164,
-  serialized_end=1273,
+  serialized_start=1176,
+  serialized_end=1285,
 )
 
 
 _DELETEENTITYREQUEST = _descriptor.Descriptor(
   name='DeleteEntityRequest',
-  full_name='github.com.metaprov.modeld.services.entity.v1.DeleteEntityRequest',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.entity.v1.DeleteEntityRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.entity.v1.DeleteEntityRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETEENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1275,
-  serialized_end=1329,
+  serialized_start=1287,
+  serialized_end=1341,
 )
 
 
 _DELETEENTITYRESPONSE = _descriptor.Descriptor(
   name='DeleteEntityResponse',
-  full_name='github.com.metaprov.modeld.services.entity.v1.DeleteEntityResponse',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETEENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1331,
-  serialized_end=1353,
+  serialized_start=1343,
+  serialized_end=1365,
 )
 
 _LISTENTITIESREQUEST_LABELSENTRY.containing_type = _LISTENTITIESREQUEST
@@ -537,12 +537,12 @@ ListEntitiesRequest = _reflection.GeneratedProtocolMessageType('ListEntitiesRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTENTITIESREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTENTITIESREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.ListEntitiesRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest)
   })
 _sym_db.RegisterMessage(ListEntitiesRequest)
 _sym_db.RegisterMessage(ListEntitiesRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListEntitiesRequest.LabelsEntry)
 ListEntitiesResponse = _reflection.GeneratedProtocolMessageType('ListEntitiesResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTENTITIESRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.ListEntitiesResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse)
   })
 _sym_db.RegisterMessage(ListEntitiesResponse)
 
@@ -559,12 +559,12 @@ CreateEntityRequest = _reflection.GeneratedProtocolMessageType('CreateEntityRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEENTITYREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEENTITYREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.CreateEntityRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest)
   })
 _sym_db.RegisterMessage(CreateEntityRequest)
 _sym_db.RegisterMessage(CreateEntityRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateEntityRequest.LabelsEntry)
 CreateEntityResponse = _reflection.GeneratedProtocolMessageType('CreateEntityResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEENTITYRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.CreateEntityResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse)
   })
 _sym_db.RegisterMessage(CreateEntityResponse)
 
@@ -581,12 +581,12 @@ UpdateEntityRequest = _reflection.GeneratedProtocolMessageType('UpdateEntityRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEENTITYREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEENTITYREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.UpdateEntityRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest)
   })
 _sym_db.RegisterMessage(UpdateEntityRequest)
 _sym_db.RegisterMessage(UpdateEntityRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateEntityRequest.LabelsEntry)
 UpdateEntityResponse = _reflection.GeneratedProtocolMessageType('UpdateEntityResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEENTITYRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.UpdateEntityResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse)
   })
 _sym_db.RegisterMessage(UpdateEntityResponse)
 
 GetEntityRequest = _reflection.GeneratedProtocolMessageType('GetEntityRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETENTITYREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.GetEntityRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest)
   })
 _sym_db.RegisterMessage(GetEntityRequest)
 
 GetEntityResponse = _reflection.GeneratedProtocolMessageType('GetEntityResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETENTITYRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.GetEntityResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse)
   })
 _sym_db.RegisterMessage(GetEntityResponse)
 
 DeleteEntityRequest = _reflection.GeneratedProtocolMessageType('DeleteEntityRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEENTITYREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.DeleteEntityRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest)
   })
 _sym_db.RegisterMessage(DeleteEntityRequest)
 
 DeleteEntityResponse = _reflection.GeneratedProtocolMessageType('DeleteEntityResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEENTITYRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.entity.v1.entity_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.entity.v1.DeleteEntityResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse)
   })
 _sym_db.RegisterMessage(DeleteEntityResponse)
 
@@ -634,17 +634,17 @@ _UPDATEENTITYREQUEST_LABELSENTRY._options = None
 
 _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   name='EntityService',
-  full_name='github.com.metaprov.modeld.services.entity.v1.EntityService',
+  full_name='github.com.metaprov.modeldapi.services.entity.v1.EntityService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1356,
-  serialized_end=2248,
+  serialized_start=1368,
+  serialized_end=2290,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListEntities',
-    full_name='github.com.metaprov.modeld.services.entity.v1.EntityService.ListEntities',
+    full_name='github.com.metaprov.modeldapi.services.entity.v1.EntityService.ListEntities',
     index=0,
     containing_service=None,
     input_type=_LISTENTITIESREQUEST,
@@ -654,7 +654,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateEntity',
-    full_name='github.com.metaprov.modeld.services.entity.v1.EntityService.CreateEntity',
+    full_name='github.com.metaprov.modeldapi.services.entity.v1.EntityService.CreateEntity',
     index=1,
     containing_service=None,
     input_type=_CREATEENTITYREQUEST,
@@ -664,7 +664,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetEntity',
-    full_name='github.com.metaprov.modeld.services.entity.v1.EntityService.GetEntity',
+    full_name='github.com.metaprov.modeldapi.services.entity.v1.EntityService.GetEntity',
     index=2,
     containing_service=None,
     input_type=_GETENTITYREQUEST,
@@ -674,7 +674,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateEntity',
-    full_name='github.com.metaprov.modeld.services.entity.v1.EntityService.UpdateEntity',
+    full_name='github.com.metaprov.modeldapi.services.entity.v1.EntityService.UpdateEntity',
     index=3,
     containing_service=None,
     input_type=_UPDATEENTITYREQUEST,
@@ -684,7 +684,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteEntity',
-    full_name='github.com.metaprov.modeld.services.entity.v1.EntityService.DeleteEntity',
+    full_name='github.com.metaprov.modeldapi.services.entity.v1.EntityService.DeleteEntity',
     index=4,
     containing_service=None,
     input_type=_DELETEENTITYREQUEST,

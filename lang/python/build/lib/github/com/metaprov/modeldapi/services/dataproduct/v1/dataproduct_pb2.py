@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/dataproduct/v1/dataproduct.proto',
-  package='github.com.metaprov.modeld.services.dataproduct.v1',
+  package='github.com.metaprov.modeldapi.services.dataproduct.v1',
   syntax='proto3',
   serialized_options=b'Z5github.com/metaprov/modeldapi/services/dataproduct/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modeldapi/services/dataproduct/v1/dataproduct.proto\x12\x32github.com.metaprov.modeld.services.dataproduct.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc4\x01\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12g\n\x06labels\x18\x03 \x03(\x0b\x32W.github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"p\n\x18ListDataProductsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductList\"\xa9\x02\n\x18\x43reateDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry\x12S\n\x04spec\x18\x04 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1b\n\x19\x43reateDataProductResponse\"\xa9\x02\n\x18UpdateDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry\x12S\n\x04spec\x18\x05 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1b\n\x19UpdateDataProductResponse\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x16GetDataProductResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteDataProductResponse2\xae\x08\n\x12\x44\x61taProductService\x12\xc7\x01\n\x10ListDataProducts\x12K.github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest\x1aL.github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/dataproducts\x12\xd7\x01\n\x11\x43reateDataProduct\x12L.github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest\x1aM.github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x10/v1/dataproducts:\x0b\x64\x61taproduct\x12\xc8\x01\n\x0eGetDataProduct\x12I.github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductRequest\x1aJ.github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/dataproducts/{name}\x12\xf3\x01\n\x11UpdateDataProduct\x12L.github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest\x1aM.github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductResponse\"A\x82\xd3\xe4\x93\x02;\x1a,/v1/dataproducts/{dataproduct.metadata.name}:\x0b\x64\x61taproduct\x12\xb2\x01\n\x11\x44\x65leteDataProduct\x12L.github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductRequest\x1aM.github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductResponse\"\x00\x42\x37Z5github.com/metaprov/modeldapi/services/dataproduct/v1b\x06proto3'
+  serialized_pb=b'\nGgithub.com/metaprov/modeldapi/services/dataproduct/v1/dataproduct.proto\x12\x35github.com.metaprov.modeldapi.services.dataproduct.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc7\x01\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"p\n\x18ListDataProductsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductList\"\xac\x02\n\x18\x43reateDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12k\n\x06labels\x18\x03 \x03(\x0b\x32[.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry\x12S\n\x04spec\x18\x04 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1b\n\x19\x43reateDataProductResponse\"\xac\x02\n\x18UpdateDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12k\n\x06labels\x18\x03 \x03(\x0b\x32[.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry\x12S\n\x04spec\x18\x05 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1b\n\x19UpdateDataProductResponse\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x16GetDataProductResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteDataProductResponse2\xcc\x08\n\x12\x44\x61taProductService\x12\xcd\x01\n\x10ListDataProducts\x12N.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest\x1aO.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/dataproducts\x12\xdd\x01\n\x11\x43reateDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x10/v1/dataproducts:\x0b\x64\x61taproduct\x12\xce\x01\n\x0eGetDataProduct\x12L.github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest\x1aM.github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/dataproducts/{name}\x12\xf9\x01\n\x11UpdateDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductResponse\"A\x82\xd3\xe4\x93\x02;\x1a,/v1/dataproducts/{dataproduct.metadata.name}:\x0b\x64\x61taproduct\x12\xb8\x01\n\x11\x44\x65leteDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductResponse\"\x00\x42\x37Z5github.com/metaprov/modeldapi/services/dataproduct/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTDATAPRODUCTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTDATAPRODUCTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=379,
-  serialized_end=424,
+  serialized_start=385,
+  serialized_end=430,
 )
 
 _LISTDATAPRODUCTSREQUEST = _descriptor.Descriptor(
   name='ListDataProductsRequest',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTDATAPRODUCTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=228,
-  serialized_end=424,
+  serialized_start=231,
+  serialized_end=430,
 )
 
 
 _LISTDATAPRODUCTSRESPONSE = _descriptor.Descriptor(
   name='ListDataProductsResponse',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsResponse',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTDATAPRODUCTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=538,
+  serialized_start=432,
+  serialized_end=544,
 )
 
 
 _CREATEDATAPRODUCTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATEDATAPRODUCTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=379,
-  serialized_end=424,
+  serialized_start=385,
+  serialized_end=430,
 )
 
 _CREATEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   name='CreateDataProductRequest',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=541,
-  serialized_end=838,
+  serialized_start=547,
+  serialized_end=847,
 )
 
 
 _CREATEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   name='CreateDataProductResponse',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductResponse',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=867,
+  serialized_start=849,
+  serialized_end=876,
 )
 
 
 _UPDATEDATAPRODUCTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATEDATAPRODUCTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=379,
-  serialized_end=424,
+  serialized_start=385,
+  serialized_end=430,
 )
 
 _UPDATEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   name='UpdateDataProductRequest',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=870,
-  serialized_end=1167,
+  serialized_start=879,
+  serialized_end=1179,
 )
 
 
 _UPDATEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   name='UpdateDataProductResponse',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductResponse',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1169,
-  serialized_end=1196,
+  serialized_start=1181,
+  serialized_end=1208,
 )
 
 
 _GETDATAPRODUCTREQUEST = _descriptor.Descriptor(
   name='GetDataProductRequest',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductRequest',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1198,
-  serialized_end=1254,
+  serialized_start=1210,
+  serialized_end=1266,
 )
 
 
 _GETDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   name='GetDataProductResponse',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductResponse',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1375,
+  serialized_start=1268,
+  serialized_end=1387,
 )
 
 
 _DELETEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   name='DeleteDataProductRequest',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductRequest',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1377,
-  serialized_end=1436,
+  serialized_start=1389,
+  serialized_end=1448,
 )
 
 
 _DELETEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   name='DeleteDataProductResponse',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductResponse',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1438,
-  serialized_end=1465,
+  serialized_start=1450,
+  serialized_end=1477,
 )
 
 _LISTDATAPRODUCTSREQUEST_LABELSENTRY.containing_type = _LISTDATAPRODUCTSREQUEST
@@ -537,12 +537,12 @@ ListDataProductsRequest = _reflection.GeneratedProtocolMessageType('ListDataProd
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTDATAPRODUCTSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTDATAPRODUCTSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest)
   })
 _sym_db.RegisterMessage(ListDataProductsRequest)
 _sym_db.RegisterMessage(ListDataProductsRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListDataProductsRequest.LabelsEntry)
 ListDataProductsResponse = _reflection.GeneratedProtocolMessageType('ListDataProductsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTDATAPRODUCTSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.ListDataProductsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsResponse)
   })
 _sym_db.RegisterMessage(ListDataProductsResponse)
 
@@ -559,12 +559,12 @@ CreateDataProductRequest = _reflection.GeneratedProtocolMessageType('CreateDataP
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEDATAPRODUCTREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEDATAPRODUCTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest)
   })
 _sym_db.RegisterMessage(CreateDataProductRequest)
 _sym_db.RegisterMessage(CreateDataProductRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateDataProductRequest.LabelsEntry)
 CreateDataProductResponse = _reflection.GeneratedProtocolMessageType('CreateDataProductResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEDATAPRODUCTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.CreateDataProductResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductResponse)
   })
 _sym_db.RegisterMessage(CreateDataProductResponse)
 
@@ -581,12 +581,12 @@ UpdateDataProductRequest = _reflection.GeneratedProtocolMessageType('UpdateDataP
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEDATAPRODUCTREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEDATAPRODUCTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest)
   })
 _sym_db.RegisterMessage(UpdateDataProductRequest)
 _sym_db.RegisterMessage(UpdateDataProductRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateDataProductRequest.LabelsEntry)
 UpdateDataProductResponse = _reflection.GeneratedProtocolMessageType('UpdateDataProductResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEDATAPRODUCTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.UpdateDataProductResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductResponse)
   })
 _sym_db.RegisterMessage(UpdateDataProductResponse)
 
 GetDataProductRequest = _reflection.GeneratedProtocolMessageType('GetDataProductRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETDATAPRODUCTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest)
   })
 _sym_db.RegisterMessage(GetDataProductRequest)
 
 GetDataProductResponse = _reflection.GeneratedProtocolMessageType('GetDataProductResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETDATAPRODUCTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.GetDataProductResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse)
   })
 _sym_db.RegisterMessage(GetDataProductResponse)
 
 DeleteDataProductRequest = _reflection.GeneratedProtocolMessageType('DeleteDataProductRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATAPRODUCTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest)
   })
 _sym_db.RegisterMessage(DeleteDataProductRequest)
 
 DeleteDataProductResponse = _reflection.GeneratedProtocolMessageType('DeleteDataProductResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATAPRODUCTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.dataproduct.v1.dataproduct_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.dataproduct.v1.DeleteDataProductResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductResponse)
   })
 _sym_db.RegisterMessage(DeleteDataProductResponse)
 
@@ -634,17 +634,17 @@ _UPDATEDATAPRODUCTREQUEST_LABELSENTRY._options = None
 
 _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   name='DataProductService',
-  full_name='github.com.metaprov.modeld.services.dataproduct.v1.DataProductService',
+  full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1468,
-  serialized_end=2538,
+  serialized_start=1480,
+  serialized_end=2580,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataProducts',
-    full_name='github.com.metaprov.modeld.services.dataproduct.v1.DataProductService.ListDataProducts',
+    full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService.ListDataProducts',
     index=0,
     containing_service=None,
     input_type=_LISTDATAPRODUCTSREQUEST,
@@ -654,7 +654,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateDataProduct',
-    full_name='github.com.metaprov.modeld.services.dataproduct.v1.DataProductService.CreateDataProduct',
+    full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService.CreateDataProduct',
     index=1,
     containing_service=None,
     input_type=_CREATEDATAPRODUCTREQUEST,
@@ -664,7 +664,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetDataProduct',
-    full_name='github.com.metaprov.modeld.services.dataproduct.v1.DataProductService.GetDataProduct',
+    full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService.GetDataProduct',
     index=2,
     containing_service=None,
     input_type=_GETDATAPRODUCTREQUEST,
@@ -674,7 +674,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateDataProduct',
-    full_name='github.com.metaprov.modeld.services.dataproduct.v1.DataProductService.UpdateDataProduct',
+    full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService.UpdateDataProduct',
     index=3,
     containing_service=None,
     input_type=_UPDATEDATAPRODUCTREQUEST,
@@ -684,7 +684,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteDataProduct',
-    full_name='github.com.metaprov.modeld.services.dataproduct.v1.DataProductService.DeleteDataProduct',
+    full_name='github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService.DeleteDataProduct',
     index=4,
     containing_service=None,
     input_type=_DELETEDATAPRODUCTREQUEST,

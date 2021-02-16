@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto',
-  package='github.com.metaprov.modeld.services.runbook.v1',
+  package='github.com.metaprov.modeldapi.services.runbook.v1',
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/runbook/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto\x12.github.com.metaprov.modeld.services.runbook.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\"\xb8\x01\n\x13ListRunBooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListRunBooksResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList\"\x99\x02\n\x14\x43reateRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15\x43reateRunBookResponse\"\x99\x02\n\x14UpdateRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.LabelsEntry\x12O\n\x04spec\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15UpdateRunBookResponse\"4\n\x11GetRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetRunBookResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteRunBookResponse2\xaa\x07\n\x0eRunBookService\x12\xaf\x01\n\x0cListRunBooks\x12\x43.github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest\x1a\x44.github.com.metaprov.modeld.services.runbook.v1.ListRunBooksResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/runbooks\x12\xbb\x01\n\rCreateRunBook\x12\x44.github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest\x1a\x45.github.com.metaprov.modeld.services.runbook.v1.CreateRunBookResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0c/v1/runbooks:\x07runbook\x12\xb0\x01\n\nGetRunBook\x12\x41.github.com.metaprov.modeld.services.runbook.v1.GetRunBookRequest\x1a\x42.github.com.metaprov.modeld.services.runbook.v1.GetRunBookResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/runbooks/{name}\x12\xd3\x01\n\rUpdateRunBook\x12\x44.github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest\x1a\x45.github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookResponse\"5\x82\xd3\xe4\x93\x02/\x1a$/v1/runbooks/{runbook.metadata.name}:\x07runbook\x12\x9e\x01\n\rDeleteRunBook\x12\x44.github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookRequest\x1a\x45.github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/runbook/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto\x12\x31github.com.metaprov.modeldapi.services.runbook.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\"\xbb\x01\n\x13ListRunBooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListRunBooksResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList\"\x9c\x02\n\x14\x43reateRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15\x43reateRunBookResponse\"\x9c\x02\n\x14UpdateRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.LabelsEntry\x12O\n\x04spec\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15UpdateRunBookResponse\"4\n\x11GetRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetRunBookResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteRunBookResponse2\xc8\x07\n\x0eRunBookService\x12\xb5\x01\n\x0cListRunBooks\x12\x46.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest\x1aG.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/runbooks\x12\xc1\x01\n\rCreateRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0c/v1/runbooks:\x07runbook\x12\xb6\x01\n\nGetRunBook\x12\x44.github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest\x1a\x45.github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/runbooks/{name}\x12\xd9\x01\n\rUpdateRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse\"5\x82\xd3\xe4\x93\x02/\x1a$/v1/runbooks/{runbook.metadata.name}:\x07runbook\x12\xa4\x01\n\rDeleteRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/runbook/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTRUNBOOKSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTRUNBOOKSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=400,
+  serialized_start=361,
+  serialized_end=406,
 )
 
 _LISTRUNBOOKSREQUEST = _descriptor.Descriptor(
   name='ListRunBooksRequest',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTRUNBOOKSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=400,
+  serialized_start=219,
+  serialized_end=406,
 )
 
 
 _LISTRUNBOOKSRESPONSE = _descriptor.Descriptor(
   name='ListRunBooksResponse',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksResponse',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.runbook.v1.ListRunBooksResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTRUNBOOKSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=402,
-  serialized_end=506,
+  serialized_start=408,
+  serialized_end=512,
 )
 
 
 _CREATERUNBOOKREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATERUNBOOKREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=400,
+  serialized_start=361,
+  serialized_end=406,
 )
 
 _CREATERUNBOOKREQUEST = _descriptor.Descriptor(
   name='CreateRunBookRequest',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATERUNBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=509,
-  serialized_end=790,
+  serialized_start=515,
+  serialized_end=799,
 )
 
 
 _CREATERUNBOOKRESPONSE = _descriptor.Descriptor(
   name='CreateRunBookResponse',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.CreateRunBookResponse',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATERUNBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=792,
-  serialized_end=815,
+  serialized_start=801,
+  serialized_end=824,
 )
 
 
 _UPDATERUNBOOKREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATERUNBOOKREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=400,
+  serialized_start=361,
+  serialized_end=406,
 )
 
 _UPDATERUNBOOKREQUEST = _descriptor.Descriptor(
   name='UpdateRunBookRequest',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATERUNBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=818,
-  serialized_end=1099,
+  serialized_start=827,
+  serialized_end=1111,
 )
 
 
 _UPDATERUNBOOKRESPONSE = _descriptor.Descriptor(
   name='UpdateRunBookResponse',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookResponse',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATERUNBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1101,
-  serialized_end=1124,
+  serialized_start=1113,
+  serialized_end=1136,
 )
 
 
 _GETRUNBOOKREQUEST = _descriptor.Descriptor(
   name='GetRunBookRequest',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.GetRunBookRequest',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.runbook.v1.GetRunBookRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.runbook.v1.GetRunBookRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETRUNBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1126,
-  serialized_end=1178,
+  serialized_start=1138,
+  serialized_end=1190,
 )
 
 
 _GETRUNBOOKRESPONSE = _descriptor.Descriptor(
   name='GetRunBookResponse',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.GetRunBookResponse',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.runbook.v1.GetRunBookResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.runbook.v1.GetRunBookResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETRUNBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1291,
+  serialized_start=1192,
+  serialized_end=1303,
 )
 
 
 _DELETERUNBOOKREQUEST = _descriptor.Descriptor(
   name='DeleteRunBookRequest',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookRequest',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETERUNBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1293,
-  serialized_end=1348,
+  serialized_start=1305,
+  serialized_end=1360,
 )
 
 
 _DELETERUNBOOKRESPONSE = _descriptor.Descriptor(
   name='DeleteRunBookResponse',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookResponse',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETERUNBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1350,
-  serialized_end=1373,
+  serialized_start=1362,
+  serialized_end=1385,
 )
 
 _LISTRUNBOOKSREQUEST_LABELSENTRY.containing_type = _LISTRUNBOOKSREQUEST
@@ -537,12 +537,12 @@ ListRunBooksRequest = _reflection.GeneratedProtocolMessageType('ListRunBooksRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTRUNBOOKSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTRUNBOOKSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.ListRunBooksRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest)
   })
 _sym_db.RegisterMessage(ListRunBooksRequest)
 _sym_db.RegisterMessage(ListRunBooksRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListRunBooksRequest.LabelsEntry)
 ListRunBooksResponse = _reflection.GeneratedProtocolMessageType('ListRunBooksResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTRUNBOOKSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.ListRunBooksResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse)
   })
 _sym_db.RegisterMessage(ListRunBooksResponse)
 
@@ -559,12 +559,12 @@ CreateRunBookRequest = _reflection.GeneratedProtocolMessageType('CreateRunBookRe
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATERUNBOOKREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATERUNBOOKREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.CreateRunBookRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest)
   })
 _sym_db.RegisterMessage(CreateRunBookRequest)
 _sym_db.RegisterMessage(CreateRunBookRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateRunBookRequest.LabelsEntry)
 CreateRunBookResponse = _reflection.GeneratedProtocolMessageType('CreateRunBookResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATERUNBOOKRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.CreateRunBookResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse)
   })
 _sym_db.RegisterMessage(CreateRunBookResponse)
 
@@ -581,12 +581,12 @@ UpdateRunBookRequest = _reflection.GeneratedProtocolMessageType('UpdateRunBookRe
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATERUNBOOKREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATERUNBOOKREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest)
   })
 _sym_db.RegisterMessage(UpdateRunBookRequest)
 _sym_db.RegisterMessage(UpdateRunBookRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateRunBookRequest.LabelsEntry)
 UpdateRunBookResponse = _reflection.GeneratedProtocolMessageType('UpdateRunBookResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATERUNBOOKRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.UpdateRunBookResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse)
   })
 _sym_db.RegisterMessage(UpdateRunBookResponse)
 
 GetRunBookRequest = _reflection.GeneratedProtocolMessageType('GetRunBookRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETRUNBOOKREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.GetRunBookRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest)
   })
 _sym_db.RegisterMessage(GetRunBookRequest)
 
 GetRunBookResponse = _reflection.GeneratedProtocolMessageType('GetRunBookResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETRUNBOOKRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.GetRunBookResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse)
   })
 _sym_db.RegisterMessage(GetRunBookResponse)
 
 DeleteRunBookRequest = _reflection.GeneratedProtocolMessageType('DeleteRunBookRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETERUNBOOKREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest)
   })
 _sym_db.RegisterMessage(DeleteRunBookRequest)
 
 DeleteRunBookResponse = _reflection.GeneratedProtocolMessageType('DeleteRunBookResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETERUNBOOKRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.runbook.v1.runbook_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.runbook.v1.DeleteRunBookResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse)
   })
 _sym_db.RegisterMessage(DeleteRunBookResponse)
 
@@ -634,17 +634,17 @@ _UPDATERUNBOOKREQUEST_LABELSENTRY._options = None
 
 _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
   name='RunBookService',
-  full_name='github.com.metaprov.modeld.services.runbook.v1.RunBookService',
+  full_name='github.com.metaprov.modeldapi.services.runbook.v1.RunBookService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1376,
-  serialized_end=2314,
+  serialized_start=1388,
+  serialized_end=2356,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListRunBooks',
-    full_name='github.com.metaprov.modeld.services.runbook.v1.RunBookService.ListRunBooks',
+    full_name='github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.ListRunBooks',
     index=0,
     containing_service=None,
     input_type=_LISTRUNBOOKSREQUEST,
@@ -654,7 +654,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateRunBook',
-    full_name='github.com.metaprov.modeld.services.runbook.v1.RunBookService.CreateRunBook',
+    full_name='github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.CreateRunBook',
     index=1,
     containing_service=None,
     input_type=_CREATERUNBOOKREQUEST,
@@ -664,7 +664,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetRunBook',
-    full_name='github.com.metaprov.modeld.services.runbook.v1.RunBookService.GetRunBook',
+    full_name='github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.GetRunBook',
     index=2,
     containing_service=None,
     input_type=_GETRUNBOOKREQUEST,
@@ -674,7 +674,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateRunBook',
-    full_name='github.com.metaprov.modeld.services.runbook.v1.RunBookService.UpdateRunBook',
+    full_name='github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.UpdateRunBook',
     index=3,
     containing_service=None,
     input_type=_UPDATERUNBOOKREQUEST,
@@ -684,7 +684,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteRunBook',
-    full_name='github.com.metaprov.modeld.services.runbook.v1.RunBookService.DeleteRunBook',
+    full_name='github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.DeleteRunBook',
     index=4,
     containing_service=None,
     input_type=_DELETERUNBOOKREQUEST,

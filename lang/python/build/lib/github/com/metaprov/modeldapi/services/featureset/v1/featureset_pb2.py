@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/featureset/v1/featureset.proto',
-  package='github.com.metaprov.modeld.services.featureset.v1',
+  package='github.com.metaprov.modeldapi.services.featureset.v1',
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/featureset/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/featureset/v1/featureset.proto\x12\x31github.com.metaprov.modeld.services.featureset.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xbf\x01\n\x15ListFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x16ListFeaturesetResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetList\"\xa5\x02\n\x17\x43reateFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x66\n\x06labels\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry\x12R\n\x04spec\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateFeaturesetResponse\"\xa5\x02\n\x17UpdateFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x66\n\x06labels\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateFeaturesetResponse\"7\n\x14GetFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetFeaturesetResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteFeaturesetResponse2\x8b\x08\n\x11\x46\x65\x61turesetService\x12\xbf\x01\n\x0fListFeaturesets\x12H.github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest\x1aI.github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/featuresets\x12\xd0\x01\n\x10\x43reateFeatureset\x12J.github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest\x1aK.github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/featuresets:\nfeatureset\x12\xc2\x01\n\rGetFeatureset\x12G.github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetRequest\x1aH.github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/featuresets/{name}\x12\xeb\x01\n\x10UpdateFeatureset\x12J.github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest\x1aK.github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/featuresets/{featureset.metadata.name}:\nfeatureset\x12\xad\x01\n\x10\x44\x65leteFeatureset\x12J.github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetRequest\x1aK.github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/featureset/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/featureset/v1/featureset.proto\x12\x34github.com.metaprov.modeldapi.services.featureset.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc2\x01\n\x15ListFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12g\n\x06labels\x18\x02 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x16ListFeaturesetResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetList\"\xa8\x02\n\x17\x43reateFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12i\n\x06labels\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry\x12R\n\x04spec\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateFeaturesetResponse\"\xa8\x02\n\x17UpdateFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12i\n\x06labels\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturesetSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateFeaturesetResponse\"7\n\x14GetFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetFeaturesetResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteFeaturesetResponse2\xa9\x08\n\x11\x46\x65\x61turesetService\x12\xc5\x01\n\x0fListFeaturesets\x12K.github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest\x1aL.github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/featuresets\x12\xd6\x01\n\x10\x43reateFeatureset\x12M.github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest\x1aN.github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/featuresets:\nfeatureset\x12\xc8\x01\n\rGetFeatureset\x12J.github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetRequest\x1aK.github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/featuresets/{name}\x12\xf1\x01\n\x10UpdateFeatureset\x12M.github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest\x1aN.github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/featuresets/{featureset.metadata.name}:\nfeatureset\x12\xb3\x01\n\x10\x44\x65leteFeatureset\x12M.github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetRequest\x1aN.github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/featureset/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTFEATURESETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTFEATURESETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=416,
+  serialized_start=377,
+  serialized_end=422,
 )
 
 _LISTFEATURESETREQUEST = _descriptor.Descriptor(
   name='ListFeaturesetRequest',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTFEATURESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=225,
-  serialized_end=416,
+  serialized_start=228,
+  serialized_end=422,
 )
 
 
 _LISTFEATURESETRESPONSE = _descriptor.Descriptor(
   name='ListFeaturesetResponse',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetResponse',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTFEATURESETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=418,
-  serialized_end=527,
+  serialized_start=424,
+  serialized_end=533,
 )
 
 
 _CREATEFEATURESETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATEFEATURESETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=416,
+  serialized_start=377,
+  serialized_end=422,
 )
 
 _CREATEFEATURESETREQUEST = _descriptor.Descriptor(
   name='CreateFeaturesetRequest',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATEFEATURESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=530,
-  serialized_end=823,
+  serialized_start=536,
+  serialized_end=832,
 )
 
 
 _CREATEFEATURESETRESPONSE = _descriptor.Descriptor(
   name='CreateFeaturesetResponse',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetResponse',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATEFEATURESETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=825,
-  serialized_end=851,
+  serialized_start=834,
+  serialized_end=860,
 )
 
 
 _UPDATEFEATURESETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATEFEATURESETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=416,
+  serialized_start=377,
+  serialized_end=422,
 )
 
 _UPDATEFEATURESETREQUEST = _descriptor.Descriptor(
   name='UpdateFeaturesetRequest',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATEFEATURESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=854,
-  serialized_end=1147,
+  serialized_start=863,
+  serialized_end=1159,
 )
 
 
 _UPDATEFEATURESETRESPONSE = _descriptor.Descriptor(
   name='UpdateFeaturesetResponse',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetResponse',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATEFEATURESETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1149,
-  serialized_end=1175,
+  serialized_start=1161,
+  serialized_end=1187,
 )
 
 
 _GETFEATURESETREQUEST = _descriptor.Descriptor(
   name='GetFeaturesetRequest',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetRequest',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETFEATURESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1177,
-  serialized_end=1232,
+  serialized_start=1189,
+  serialized_end=1244,
 )
 
 
 _GETFEATURESETRESPONSE = _descriptor.Descriptor(
   name='GetFeaturesetResponse',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetResponse',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETFEATURESETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1234,
-  serialized_end=1351,
+  serialized_start=1246,
+  serialized_end=1363,
 )
 
 
 _DELETEFEATURESETREQUEST = _descriptor.Descriptor(
   name='DeleteFeaturesetRequest',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetRequest',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETEFEATURESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1353,
-  serialized_end=1411,
+  serialized_start=1365,
+  serialized_end=1423,
 )
 
 
 _DELETEFEATURESETRESPONSE = _descriptor.Descriptor(
   name='DeleteFeaturesetResponse',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetResponse',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETEFEATURESETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1413,
-  serialized_end=1439,
+  serialized_start=1425,
+  serialized_end=1451,
 )
 
 _LISTFEATURESETREQUEST_LABELSENTRY.containing_type = _LISTFEATURESETREQUEST
@@ -537,12 +537,12 @@ ListFeaturesetRequest = _reflection.GeneratedProtocolMessageType('ListFeatureset
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTFEATURESETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTFEATURESETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetRequest)
   })
 _sym_db.RegisterMessage(ListFeaturesetRequest)
 _sym_db.RegisterMessage(ListFeaturesetRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListFeaturesetRequest.LabelsEntry)
 ListFeaturesetResponse = _reflection.GeneratedProtocolMessageType('ListFeaturesetResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTFEATURESETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.ListFeaturesetResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.ListFeaturesetResponse)
   })
 _sym_db.RegisterMessage(ListFeaturesetResponse)
 
@@ -559,12 +559,12 @@ CreateFeaturesetRequest = _reflection.GeneratedProtocolMessageType('CreateFeatur
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEFEATURESETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEFEATURESETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetRequest)
   })
 _sym_db.RegisterMessage(CreateFeaturesetRequest)
 _sym_db.RegisterMessage(CreateFeaturesetRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateFeaturesetRequest.LabelsEntry)
 CreateFeaturesetResponse = _reflection.GeneratedProtocolMessageType('CreateFeaturesetResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEFEATURESETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.CreateFeaturesetResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.CreateFeaturesetResponse)
   })
 _sym_db.RegisterMessage(CreateFeaturesetResponse)
 
@@ -581,12 +581,12 @@ UpdateFeaturesetRequest = _reflection.GeneratedProtocolMessageType('UpdateFeatur
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEFEATURESETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEFEATURESETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetRequest)
   })
 _sym_db.RegisterMessage(UpdateFeaturesetRequest)
 _sym_db.RegisterMessage(UpdateFeaturesetRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateFeaturesetRequest.LabelsEntry)
 UpdateFeaturesetResponse = _reflection.GeneratedProtocolMessageType('UpdateFeaturesetResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEFEATURESETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.UpdateFeaturesetResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.UpdateFeaturesetResponse)
   })
 _sym_db.RegisterMessage(UpdateFeaturesetResponse)
 
 GetFeaturesetRequest = _reflection.GeneratedProtocolMessageType('GetFeaturesetRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETFEATURESETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetRequest)
   })
 _sym_db.RegisterMessage(GetFeaturesetRequest)
 
 GetFeaturesetResponse = _reflection.GeneratedProtocolMessageType('GetFeaturesetResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETFEATURESETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.GetFeaturesetResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.GetFeaturesetResponse)
   })
 _sym_db.RegisterMessage(GetFeaturesetResponse)
 
 DeleteFeaturesetRequest = _reflection.GeneratedProtocolMessageType('DeleteFeaturesetRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEFEATURESETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetRequest)
   })
 _sym_db.RegisterMessage(DeleteFeaturesetRequest)
 
 DeleteFeaturesetResponse = _reflection.GeneratedProtocolMessageType('DeleteFeaturesetResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEFEATURESETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featureset.v1.featureset_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featureset.v1.DeleteFeaturesetResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featureset.v1.DeleteFeaturesetResponse)
   })
 _sym_db.RegisterMessage(DeleteFeaturesetResponse)
 
@@ -634,17 +634,17 @@ _UPDATEFEATURESETREQUEST_LABELSENTRY._options = None
 
 _FEATURESETSERVICE = _descriptor.ServiceDescriptor(
   name='FeaturesetService',
-  full_name='github.com.metaprov.modeld.services.featureset.v1.FeaturesetService',
+  full_name='github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1442,
-  serialized_end=2477,
+  serialized_start=1454,
+  serialized_end=2519,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListFeaturesets',
-    full_name='github.com.metaprov.modeld.services.featureset.v1.FeaturesetService.ListFeaturesets',
+    full_name='github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService.ListFeaturesets',
     index=0,
     containing_service=None,
     input_type=_LISTFEATURESETREQUEST,
@@ -654,7 +654,7 @@ _FEATURESETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateFeatureset',
-    full_name='github.com.metaprov.modeld.services.featureset.v1.FeaturesetService.CreateFeatureset',
+    full_name='github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService.CreateFeatureset',
     index=1,
     containing_service=None,
     input_type=_CREATEFEATURESETREQUEST,
@@ -664,7 +664,7 @@ _FEATURESETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetFeatureset',
-    full_name='github.com.metaprov.modeld.services.featureset.v1.FeaturesetService.GetFeatureset',
+    full_name='github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService.GetFeatureset',
     index=2,
     containing_service=None,
     input_type=_GETFEATURESETREQUEST,
@@ -674,7 +674,7 @@ _FEATURESETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateFeatureset',
-    full_name='github.com.metaprov.modeld.services.featureset.v1.FeaturesetService.UpdateFeatureset',
+    full_name='github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService.UpdateFeatureset',
     index=3,
     containing_service=None,
     input_type=_UPDATEFEATURESETREQUEST,
@@ -684,7 +684,7 @@ _FEATURESETSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteFeatureset',
-    full_name='github.com.metaprov.modeld.services.featureset.v1.FeaturesetService.DeleteFeatureset',
+    full_name='github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService.DeleteFeatureset',
     index=4,
     containing_service=None,
     input_type=_DELETEFEATURESETREQUEST,

@@ -15,27 +15,27 @@ class ConnectionServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListConnections = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/ListConnections',
+                '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/ListConnections',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.ListConnectionsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.ListConnectionsResponse.FromString,
                 )
         self.CreateConnection = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/CreateConnection',
+                '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/CreateConnection',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.CreateConnectionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.CreateConnectionResponse.FromString,
                 )
         self.GetConnection = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/GetConnection',
+                '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/GetConnection',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.GetConnectionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.GetConnectionResponse.FromString,
                 )
         self.UpdateConnection = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/UpdateConnection',
+                '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/UpdateConnection',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.UpdateConnectionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.UpdateConnectionResponse.FromString,
                 )
         self.DeleteConnection = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/DeleteConnection',
+                '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/DeleteConnection',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.DeleteConnectionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.DeleteConnectionResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.connection.v1.ConnectionService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.connection.v1.ConnectionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class ConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/ListConnections',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/ListConnections',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.ListConnectionsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.ListConnectionsResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class ConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/CreateConnection',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/CreateConnection',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.CreateConnectionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.CreateConnectionResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class ConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/GetConnection',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/GetConnection',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.GetConnectionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.GetConnectionResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class ConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/UpdateConnection',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/UpdateConnection',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.UpdateConnectionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.UpdateConnectionResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class ConnectionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/DeleteConnection',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/DeleteConnection',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.DeleteConnectionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_connection_dot_v1_dot_connection__pb2.DeleteConnectionResponse.FromString,
             options, channel_credentials,

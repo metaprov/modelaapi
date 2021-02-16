@@ -15,32 +15,32 @@ class ReportServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListReports = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.report.v1.ReportService/ListReports',
+                '/github.com.metaprov.modeldapi.services.report.v1.ReportService/ListReports',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.ListReportsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.ListReportsResponse.FromString,
                 )
         self.CreateReport = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.report.v1.ReportService/CreateReport',
+                '/github.com.metaprov.modeldapi.services.report.v1.ReportService/CreateReport',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.CreateReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.CreateReportResponse.FromString,
                 )
         self.GetReport = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.report.v1.ReportService/GetReport',
+                '/github.com.metaprov.modeldapi.services.report.v1.ReportService/GetReport',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.GetReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.GetReportResponse.FromString,
                 )
         self.UpdateReport = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.report.v1.ReportService/UpdateReport',
+                '/github.com.metaprov.modeldapi.services.report.v1.ReportService/UpdateReport',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.UpdateReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.UpdateReportResponse.FromString,
                 )
         self.DeleteReport = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.report.v1.ReportService/DeleteReport',
+                '/github.com.metaprov.modeldapi.services.report.v1.ReportService/DeleteReport',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DeleteReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DeleteReportResponse.FromString,
                 )
         self.Download = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.report.v1.ReportService/Download',
+                '/github.com.metaprov.modeldapi.services.report.v1.ReportService/Download',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DownloadReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DownloadReportResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_ReportServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.report.v1.ReportService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.report.v1.ReportService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class ReportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.report.v1.ReportService/ListReports',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.report.v1.ReportService/ListReports',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.ListReportsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.ListReportsResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class ReportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.report.v1.ReportService/CreateReport',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.report.v1.ReportService/CreateReport',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.CreateReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.CreateReportResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class ReportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.report.v1.ReportService/GetReport',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.report.v1.ReportService/GetReport',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.GetReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.GetReportResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class ReportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.report.v1.ReportService/UpdateReport',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.report.v1.ReportService/UpdateReport',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.UpdateReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.UpdateReportResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class ReportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.report.v1.ReportService/DeleteReport',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.report.v1.ReportService/DeleteReport',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DeleteReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DeleteReportResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class ReportService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.report.v1.ReportService/Download',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.report.v1.ReportService/Download',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DownloadReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_report_dot_v1_dot_report__pb2.DownloadReportResponse.FromString,
             options, channel_credentials,

@@ -15,32 +15,32 @@ class TrainerdServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Train = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Train',
+                '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
                 )
         self.Forecast = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Forecast',
+                '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ForecastRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ForecastResponse.FromString,
                 )
         self.Test = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Test',
+                '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestResponse.FromString,
                 )
         self.TrainEnsemble = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TrainEnsemble',
+                '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainEnsembleRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
                 )
         self.TestEnsemble = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TestEnsemble',
+                '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestEnsembleRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Shutdown',
+                '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ShutdownRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ShutdownResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_TrainerdServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.trainerd.v1.TrainerdService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class TrainerdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Train',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class TrainerdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Forecast',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ForecastRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ForecastResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class TrainerdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Test',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class TrainerdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TrainEnsemble',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainEnsembleRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class TrainerdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TestEnsemble',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestEnsembleRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TestResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class TrainerdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Shutdown',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ShutdownRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ShutdownResponse.FromString,
             options, channel_credentials,

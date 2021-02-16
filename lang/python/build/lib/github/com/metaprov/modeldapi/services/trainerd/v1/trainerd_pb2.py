@@ -19,11 +19,11 @@ from k8s.io.api.core.v1 import generated_pb2 as k8s_dot_io_dot_api_dot_core_dot_
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto',
-  package='github.com.metaprov.modeld.services.trainerd.v1',
+  package='github.com.metaprov.modeldapi.services.trainerd.v1',
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/trainerd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto\x12/github.com.metaprov.modeld.services.trainerd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xdc\x05\n\x0cTrainRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xc5\x01\n\rTrainResponse\x12U\n\x06result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x17\n\x0fweightsCloudUri\x18\x02 \x01(\t\x12\x18\n\x10manifestCloudUri\x18\x03 \x01(\t\x12\x14\n\x0clogsCloudUri\x18\x04 \x01(\t\x12\x14\n\x0clabelEncoder\x18\x05 \x01(\t\"\xdb\x05\n\x0bTestRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\x9c\x03\n\x0cTestResponse\x12[\n\x0ctrain_result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12Z\n\x0btest_result\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x1c\n\x14modelWeightsCloudUri\x18\x03 \x01(\t\x12\x1d\n\x15modelManifestCloudUri\x18\x04 \x01(\t\x12\x19\n\x11modelLogsCloudUri\x18\x05 \x01(\t\x12\x1a\n\x12preWeightsCloudUri\x18\x06 \x01(\t\x12\x1b\n\x13preManifestCloudUri\x18\x07 \x01(\t\x12\x17\n\x0fpreLogsCloudUri\x18\x08 \x01(\t\x12\x14\n\x0clabelEncoder\x18\t \x01(\t\x12\x13\n\x0bmisclassUri\x18\n \x01(\t\"\xb3\x06\n\x14TrainEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\x0b \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xb2\x06\n\x13TestEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\x0b \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xdf\x05\n\x0f\x46orecastRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\",\n\x10\x46orecastResponse\x12\x18\n\x10\x66orecastCloudUri\x18\x02 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xff\x06\n\x0fTrainerdService\x12\x88\x01\n\x05Train\x12=.github.com.metaprov.modeld.services.trainerd.v1.TrainRequest\x1a>.github.com.metaprov.modeld.services.trainerd.v1.TrainResponse\"\x00\x12\x91\x01\n\x08\x46orecast\x12@.github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest\x1a\x41.github.com.metaprov.modeld.services.trainerd.v1.ForecastResponse\"\x00\x12\x85\x01\n\x04Test\x12<.github.com.metaprov.modeld.services.trainerd.v1.TestRequest\x1a=.github.com.metaprov.modeld.services.trainerd.v1.TestResponse\"\x00\x12\x98\x01\n\rTrainEnsemble\x12\x45.github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest\x1a>.github.com.metaprov.modeld.services.trainerd.v1.TrainResponse\"\x00\x12\x95\x01\n\x0cTestEnsemble\x12\x44.github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest\x1a=.github.com.metaprov.modeld.services.trainerd.v1.TestResponse\"\x00\x12\x91\x01\n\x08Shutdown\x12@.github.com.metaprov.modeld.services.trainerd.v1.ShutdownRequest\x1a\x41.github.com.metaprov.modeld.services.trainerd.v1.ShutdownResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/trainerd/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto\x12\x32github.com.metaprov.modeldapi.services.trainerd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xdc\x05\n\x0cTrainRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xc5\x01\n\rTrainResponse\x12U\n\x06result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x17\n\x0fweightsCloudUri\x18\x02 \x01(\t\x12\x18\n\x10manifestCloudUri\x18\x03 \x01(\t\x12\x14\n\x0clogsCloudUri\x18\x04 \x01(\t\x12\x14\n\x0clabelEncoder\x18\x05 \x01(\t\"\xdb\x05\n\x0bTestRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\x9c\x03\n\x0cTestResponse\x12[\n\x0ctrain_result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12Z\n\x0btest_result\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x1c\n\x14modelWeightsCloudUri\x18\x03 \x01(\t\x12\x1d\n\x15modelManifestCloudUri\x18\x04 \x01(\t\x12\x19\n\x11modelLogsCloudUri\x18\x05 \x01(\t\x12\x1a\n\x12preWeightsCloudUri\x18\x06 \x01(\t\x12\x1b\n\x13preManifestCloudUri\x18\x07 \x01(\t\x12\x17\n\x0fpreLogsCloudUri\x18\x08 \x01(\t\x12\x14\n\x0clabelEncoder\x18\t \x01(\t\x12\x13\n\x0bmisclassUri\x18\n \x01(\t\"\xb3\x06\n\x14TrainEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\x0b \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xb2\x06\n\x13TestEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\x0b \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xdf\x05\n\x0f\x46orecastRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\",\n\x10\x46orecastResponse\x12\x18\n\x10\x66orecastCloudUri\x18\x02 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa3\x07\n\x0fTrainerdService\x12\x8e\x01\n\x05Train\x12@.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest\x1a\x41.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse\"\x00\x12\x97\x01\n\x08\x46orecast\x12\x43.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest\x1a\x44.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse\"\x00\x12\x8b\x01\n\x04Test\x12?.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest\x1a@.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse\"\x00\x12\x9e\x01\n\rTrainEnsemble\x12H.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest\x1a\x41.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse\"\x00\x12\x9b\x01\n\x0cTestEnsemble\x12G.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest\x1a@.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse\"\x00\x12\x97\x01\n\x08Shutdown\x12\x43.github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest\x1a\x44.github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/trainerd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -32,70 +32,70 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _TRAINREQUEST = _descriptor.Descriptor(
   name='TrainRequest',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.product', index=0,
+      name='product', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.product', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.version', index=1,
+      name='version', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.version', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.bucket', index=2,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.bucket', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.model', index=3,
+      name='model', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.model', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.study', index=4,
+      name='study', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.study', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.datasource', index=5,
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.datasource', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.dataset', index=6,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.dataset', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.connection', index=7,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.connection', index=7,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainRequest.secret', index=8,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.secret', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -113,49 +113,49 @@ _TRAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=370,
-  serialized_end=1102,
+  serialized_start=373,
+  serialized_end=1105,
 )
 
 
 _TRAINRESPONSE = _descriptor.Descriptor(
   name='TrainResponse',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainResponse',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='result', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainResponse.result', index=0,
+      name='result', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.result', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='weightsCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainResponse.weightsCloudUri', index=1,
+      name='weightsCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.weightsCloudUri', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='manifestCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainResponse.manifestCloudUri', index=2,
+      name='manifestCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.manifestCloudUri', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='logsCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainResponse.logsCloudUri', index=3,
+      name='logsCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.logsCloudUri', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labelEncoder', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainResponse.labelEncoder', index=4,
+      name='labelEncoder', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.labelEncoder', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -173,77 +173,77 @@ _TRAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1105,
-  serialized_end=1302,
+  serialized_start=1108,
+  serialized_end=1305,
 )
 
 
 _TESTREQUEST = _descriptor.Descriptor(
   name='TestRequest',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.product', index=0,
+      name='product', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.product', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.version', index=1,
+      name='version', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.version', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.bucket', index=2,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.bucket', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.model', index=3,
+      name='model', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.model', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.study', index=4,
+      name='study', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.study', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.datasource', index=5,
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.datasource', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.dataset', index=6,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.dataset', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.connection', index=7,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.connection', index=7,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestRequest.secret', index=8,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.secret', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -261,84 +261,84 @@ _TESTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1305,
-  serialized_end=2036,
+  serialized_start=1308,
+  serialized_end=2039,
 )
 
 
 _TESTRESPONSE = _descriptor.Descriptor(
   name='TestResponse',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='train_result', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.train_result', index=0,
+      name='train_result', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.train_result', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='test_result', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.test_result', index=1,
+      name='test_result', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.test_result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelWeightsCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.modelWeightsCloudUri', index=2,
+      name='modelWeightsCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.modelWeightsCloudUri', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelManifestCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.modelManifestCloudUri', index=3,
+      name='modelManifestCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.modelManifestCloudUri', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelLogsCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.modelLogsCloudUri', index=4,
+      name='modelLogsCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.modelLogsCloudUri', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='preWeightsCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.preWeightsCloudUri', index=5,
+      name='preWeightsCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.preWeightsCloudUri', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='preManifestCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.preManifestCloudUri', index=6,
+      name='preManifestCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.preManifestCloudUri', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='preLogsCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.preLogsCloudUri', index=7,
+      name='preLogsCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.preLogsCloudUri', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labelEncoder', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.labelEncoder', index=8,
+      name='labelEncoder', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.labelEncoder', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='misclassUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestResponse.misclassUri', index=9,
+      name='misclassUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.misclassUri', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -356,84 +356,84 @@ _TESTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2039,
-  serialized_end=2451,
+  serialized_start=2042,
+  serialized_end=2454,
 )
 
 
 _TRAINENSEMBLEREQUEST = _descriptor.Descriptor(
   name='TrainEnsembleRequest',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.product', index=0,
+      name='product', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.product', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.version', index=1,
+      name='version', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.version', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.bucket', index=2,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.bucket', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='base', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.base', index=3,
+      name='base', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.base', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.model', index=4,
+      name='model', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.model', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.study', index=5,
+      name='study', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.study', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.datasource', index=6,
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.datasource', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.dataset', index=7,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.dataset', index=7,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.connection', index=8,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.connection', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest.secret', index=9,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.secret', index=9,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -451,84 +451,84 @@ _TRAINENSEMBLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2454,
-  serialized_end=3273,
+  serialized_start=2457,
+  serialized_end=3276,
 )
 
 
 _TESTENSEMBLEREQUEST = _descriptor.Descriptor(
   name='TestEnsembleRequest',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.product', index=0,
+      name='product', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.product', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.version', index=1,
+      name='version', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.version', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.bucket', index=2,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.bucket', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='base', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.base', index=3,
+      name='base', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.base', index=3,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.model', index=4,
+      name='model', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.model', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.study', index=5,
+      name='study', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.study', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.datasource', index=6,
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.datasource', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.dataset', index=7,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.dataset', index=7,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.connection', index=8,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.connection', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest.secret', index=9,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.secret', index=9,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -546,77 +546,77 @@ _TESTENSEMBLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3276,
-  serialized_end=4094,
+  serialized_start=3279,
+  serialized_end=4097,
 )
 
 
 _FORECASTREQUEST = _descriptor.Descriptor(
   name='ForecastRequest',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.product', index=0,
+      name='product', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.product', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.version', index=1,
+      name='version', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.version', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.bucket', index=2,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.bucket', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.model', index=3,
+      name='model', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.model', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.study', index=4,
+      name='study', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.study', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.datasource', index=5,
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.datasource', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.dataset', index=6,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.dataset', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.connection', index=7,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.connection', index=7,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest.secret', index=8,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.secret', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -634,21 +634,21 @@ _FORECASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4097,
-  serialized_end=4832,
+  serialized_start=4100,
+  serialized_end=4835,
 )
 
 
 _FORECASTRESPONSE = _descriptor.Descriptor(
   name='ForecastResponse',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastResponse',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='forecastCloudUri', full_name='github.com.metaprov.modeld.services.trainerd.v1.ForecastResponse.forecastCloudUri', index=0,
+      name='forecastCloudUri', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse.forecastCloudUri', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -666,14 +666,14 @@ _FORECASTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4834,
-  serialized_end=4878,
+  serialized_start=4837,
+  serialized_end=4881,
 )
 
 
 _SHUTDOWNREQUEST = _descriptor.Descriptor(
   name='ShutdownRequest',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.ShutdownRequest',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -691,14 +691,14 @@ _SHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4880,
-  serialized_end=4897,
+  serialized_start=4883,
+  serialized_end=4900,
 )
 
 
 _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   name='ShutdownResponse',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.ShutdownResponse',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -716,8 +716,8 @@ _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4899,
-  serialized_end=4917,
+  serialized_start=4902,
+  serialized_end=4920,
 )
 
 _TRAINREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
@@ -785,70 +785,70 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 TrainRequest = _reflection.GeneratedProtocolMessageType('TrainRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRAINREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.TrainRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest)
   })
 _sym_db.RegisterMessage(TrainRequest)
 
 TrainResponse = _reflection.GeneratedProtocolMessageType('TrainResponse', (_message.Message,), {
   'DESCRIPTOR' : _TRAINRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.TrainResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse)
   })
 _sym_db.RegisterMessage(TrainResponse)
 
 TestRequest = _reflection.GeneratedProtocolMessageType('TestRequest', (_message.Message,), {
   'DESCRIPTOR' : _TESTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.TestRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest)
   })
 _sym_db.RegisterMessage(TestRequest)
 
 TestResponse = _reflection.GeneratedProtocolMessageType('TestResponse', (_message.Message,), {
   'DESCRIPTOR' : _TESTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.TestResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse)
   })
 _sym_db.RegisterMessage(TestResponse)
 
 TrainEnsembleRequest = _reflection.GeneratedProtocolMessageType('TrainEnsembleRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRAINENSEMBLEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.TrainEnsembleRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest)
   })
 _sym_db.RegisterMessage(TrainEnsembleRequest)
 
 TestEnsembleRequest = _reflection.GeneratedProtocolMessageType('TestEnsembleRequest', (_message.Message,), {
   'DESCRIPTOR' : _TESTENSEMBLEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.TestEnsembleRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest)
   })
 _sym_db.RegisterMessage(TestEnsembleRequest)
 
 ForecastRequest = _reflection.GeneratedProtocolMessageType('ForecastRequest', (_message.Message,), {
   'DESCRIPTOR' : _FORECASTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.ForecastRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest)
   })
 _sym_db.RegisterMessage(ForecastRequest)
 
 ForecastResponse = _reflection.GeneratedProtocolMessageType('ForecastResponse', (_message.Message,), {
   'DESCRIPTOR' : _FORECASTRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.ForecastResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse)
   })
 _sym_db.RegisterMessage(ForecastResponse)
 
 ShutdownRequest = _reflection.GeneratedProtocolMessageType('ShutdownRequest', (_message.Message,), {
   'DESCRIPTOR' : _SHUTDOWNREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.ShutdownRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest)
   })
 _sym_db.RegisterMessage(ShutdownRequest)
 
 ShutdownResponse = _reflection.GeneratedProtocolMessageType('ShutdownResponse', (_message.Message,), {
   'DESCRIPTOR' : _SHUTDOWNRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.trainerd.v1.ShutdownResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse)
   })
 _sym_db.RegisterMessage(ShutdownResponse)
 
@@ -857,17 +857,17 @@ DESCRIPTOR._options = None
 
 _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   name='TrainerdService',
-  full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4920,
-  serialized_end=5815,
+  serialized_start=4923,
+  serialized_end=5854,
   methods=[
   _descriptor.MethodDescriptor(
     name='Train',
-    full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService.Train',
+    full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Train',
     index=0,
     containing_service=None,
     input_type=_TRAINREQUEST,
@@ -877,7 +877,7 @@ _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Forecast',
-    full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService.Forecast',
+    full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Forecast',
     index=1,
     containing_service=None,
     input_type=_FORECASTREQUEST,
@@ -887,7 +887,7 @@ _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Test',
-    full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService.Test',
+    full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Test',
     index=2,
     containing_service=None,
     input_type=_TESTREQUEST,
@@ -897,7 +897,7 @@ _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='TrainEnsemble',
-    full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService.TrainEnsemble',
+    full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.TrainEnsemble',
     index=3,
     containing_service=None,
     input_type=_TRAINENSEMBLEREQUEST,
@@ -907,7 +907,7 @@ _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='TestEnsemble',
-    full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService.TestEnsemble',
+    full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.TestEnsemble',
     index=4,
     containing_service=None,
     input_type=_TESTENSEMBLEREQUEST,
@@ -917,7 +917,7 @@ _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Shutdown',
-    full_name='github.com.metaprov.modeld.services.trainerd.v1.TrainerdService.Shutdown',
+    full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Shutdown',
     index=5,
     containing_service=None,
     input_type=_SHUTDOWNREQUEST,
