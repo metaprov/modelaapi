@@ -497,7 +497,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4111,13 +4111,6 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.protot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4149,8 +4142,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    k8s_io_api_core_v1_generated_pb.EventList.toObject, includeInstance)
+    items: (f = msg.getItems()) && k8s_io_api_core_v1_generated_pb.EventList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4190,7 +4182,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.deser
     case 1:
       var value = new k8s_io_api_core_v1_generated_pb.EventList;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.EventList.deserializeBinaryFromReader);
-      msg.addItems(value);
+      msg.setItems(value);
       break;
     default:
       reader.skipField();
@@ -4221,9 +4213,9 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.proto
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItemsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getItems();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
       k8s_io_api_core_v1_generated_pb.EventList.serializeBinaryToWriter
@@ -4233,40 +4225,39 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.seria
 
 
 /**
- * repeated k8s.io.api.core.v1.EventList items = 1;
- * @return {!Array<!proto.k8s.io.api.core.v1.EventList>}
+ * optional k8s.io.api.core.v1.EventList items = 1;
+ * @return {?proto.k8s.io.api.core.v1.EventList}
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.k8s.io.api.core.v1.EventList>} */ (
-    jspb.Message.getRepeatedWrapperField(this, k8s_io_api_core_v1_generated_pb.EventList, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.getItems = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.EventList} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.EventList, 1));
 };
 
 
 /**
- * @param {!Array<!proto.k8s.io.api.core.v1.EventList>} value
+ * @param {?proto.k8s.io.api.core.v1.EventList|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.setItemsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.setItems = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.k8s.io.api.core.v1.EventList=} opt_value
- * @param {number=} opt_index
- * @return {!proto.k8s.io.api.core.v1.EventList}
- */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.k8s.io.api.core.v1.EventList, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.clearItems = function() {
+  return this.setItems(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.hasItems = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

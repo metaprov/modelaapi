@@ -467,10 +467,10 @@ export namespace ListEventsRequest {
 }
 
 export class ListEventsResponse extends jspb.Message {
-  getItemsList(): Array<k8s_io_api_core_v1_generated_pb.EventList>;
-  setItemsList(value: Array<k8s_io_api_core_v1_generated_pb.EventList>): ListEventsResponse;
-  clearItemsList(): ListEventsResponse;
-  addItems(value?: k8s_io_api_core_v1_generated_pb.EventList, index?: number): k8s_io_api_core_v1_generated_pb.EventList;
+  getItems(): k8s_io_api_core_v1_generated_pb.EventList | undefined;
+  setItems(value?: k8s_io_api_core_v1_generated_pb.EventList): ListEventsResponse;
+  hasItems(): boolean;
+  clearItems(): ListEventsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEventsResponse.AsObject;
@@ -482,7 +482,7 @@ export class ListEventsResponse extends jspb.Message {
 
 export namespace ListEventsResponse {
   export type AsObject = {
-    itemsList: Array<k8s_io_api_core_v1_generated_pb.EventList.AsObject>,
+    items?: k8s_io_api_core_v1_generated_pb.EventList.AsObject,
   }
 }
 
