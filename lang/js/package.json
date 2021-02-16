@@ -1,30 +1,10 @@
 {
   "name": "modeldapi",
-  "version": "0.2.0",
+  "description": "Automatic machine learning for kubernetes",
+  "version": "0.1.0",
   "dependencies": {
     "google-protobuf": "^3.14.0",
-    "grpc-web": "~1.2.1",
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "babel-loader": "^8.0.6",
-    "commitizen": "^4.0.3",
-    "compression-webpack-plugin": "^3.0.0",
-    "cz-conventional-changelog": "^3.0.2",
-    "jest": "^24.9.0",
-    "semantic-release": "^15.13.30",
-    "terser-webpack-plugin": "^2.2.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
-  },
-  "description": "Automatic machine learning for kubernetes",
-  "main": "index.js",
-  "scripts": {
-    "commit": "git-cz",
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch",
-    "test": "jest",
-    "prepublish": "webpack --mode production",
-    "semantic-release": "semantic-release"
+    "grpc-web": "~1.2.1"
   },
   "repository": {
     "type": "git",

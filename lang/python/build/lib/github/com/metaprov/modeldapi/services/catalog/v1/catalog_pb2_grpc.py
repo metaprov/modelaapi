@@ -56,6 +56,16 @@ class CatalogServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassResponse.FromString,
                 )
+        self.ListUserRoleClasses = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesResponse.FromString,
+                )
+        self.GetUserRoleClass = channel.unary_unary(
+                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassResponse.FromString,
+                )
 
 
 class CatalogServiceServicer(object):
@@ -111,6 +121,18 @@ class CatalogServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListUserRoleClasses(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetUserRoleClass(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CatalogServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -153,6 +175,16 @@ def add_CatalogServiceServicer_to_server(servicer, server):
                     servicer.GetWorkloadClass,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassResponse.SerializeToString,
+            ),
+            'ListUserRoleClasses': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUserRoleClasses,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesResponse.SerializeToString,
+            ),
+            'GetUserRoleClass': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUserRoleClass,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -299,5 +331,39 @@ class CatalogService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetWorkloadClass',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListUserRoleClasses(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetUserRoleClass(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

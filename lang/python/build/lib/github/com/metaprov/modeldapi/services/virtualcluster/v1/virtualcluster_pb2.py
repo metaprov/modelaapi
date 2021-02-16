@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z8github.com/metaprov/modeldapi/services/virtualcluster/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nMgithub.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto\x12\x35github.com.metaprov.modeld.services.virtualcluster.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xef\x01\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x83\x01\n\x11virtualclusterels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry\x1a\x38\n\x16VirtualclusterelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListVirtualClustersResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList\"\x18\n\x16VirtualClusterResponse\"\xb6\x02\n\x1b\x43reateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1c\x43reateVirtualClusterResponse\"\xb6\x02\n\x1bUpdateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1cUpdateVirtualClusterResponse\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x19GetVirtualClusterResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"E\n\"GetVirtualClusterNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n#GetVirtualClusterNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteVirtualClusterResponse2\xd9\t\n\x15VirtualClusterService\x12\xdd\x01\n\x13ListVirtualClusters\x12Q.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest\x1aR.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/virtualclusters\x12\xec\x01\n\x14\x43reateVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterResponse\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtualclusters:\x0evirtualcluster\x12\xf6\x01\n\x11GetVirtualCluster\x12O.github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest\x1aP.github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/virtualclusters/{virtualcluster.metadata.name}\x12\x82\x02\n\x14UpdateVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterResponse\"A\x82\xd3\xe4\x93\x02;\x1a)/v1/virtualclusters/{virtualcluster_name}:\x0evirtualcluster\x12\xf2\x01\n\x14\x44\x65leteVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterResponse\"1\x82\xd3\xe4\x93\x02+*)/v1/virtualclusters/{virtualcluster_name}B:Z8github.com/metaprov/modeldapi/services/virtualcluster/v1b\x06proto3'
+  serialized_pb=b'\nMgithub.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto\x12\x35github.com.metaprov.modeld.services.virtualcluster.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xef\x01\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x83\x01\n\x11virtualclusterels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry\x1a\x38\n\x16VirtualclusterelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListVirtualClustersResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList\"\x18\n\x16VirtualClusterResponse\"\xb6\x02\n\x1b\x43reateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1c\x43reateVirtualClusterResponse\"\xb6\x02\n\x1bUpdateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1cUpdateVirtualClusterResponse\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x19GetVirtualClusterResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteVirtualClusterResponse2\xd9\t\n\x15VirtualClusterService\x12\xdd\x01\n\x13ListVirtualClusters\x12Q.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest\x1aR.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/virtualclusters\x12\xec\x01\n\x14\x43reateVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterResponse\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtualclusters:\x0evirtualcluster\x12\xf6\x01\n\x11GetVirtualCluster\x12O.github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest\x1aP.github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/virtualclusters/{virtualcluster.metadata.name}\x12\x82\x02\n\x14UpdateVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterResponse\"A\x82\xd3\xe4\x93\x02;\x1a)/v1/virtualclusters/{virtualcluster_name}:\x0evirtualcluster\x12\xf2\x01\n\x14\x44\x65leteVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterResponse\"1\x82\xd3\xe4\x93\x02+*)/v1/virtualclusters/{virtualcluster_name}B:Z8github.com/metaprov/modeldapi/services/virtualcluster/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -473,77 +473,6 @@ _GETVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
 )
 
 
-_GETVIRTUALCLUSTERNAMESPACESREQUEST = _descriptor.Descriptor(
-  name='GetVirtualClusterNamespacesRequest',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1568,
-  serialized_end=1637,
-)
-
-
-_GETVIRTUALCLUSTERNAMESPACESRESPONSE = _descriptor.Descriptor(
-  name='GetVirtualClusterNamespacesResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespaces', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesResponse.namespaces', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1639,
-  serialized_end=1761,
-)
-
-
 _DELETEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   name='DeleteVirtualClusterRequest',
   full_name='github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest',
@@ -578,8 +507,8 @@ _DELETEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1763,
-  serialized_end=1825,
+  serialized_start=1568,
+  serialized_end=1630,
 )
 
 
@@ -603,8 +532,8 @@ _DELETEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1827,
-  serialized_end=1857,
+  serialized_start=1632,
+  serialized_end=1662,
 )
 
 _LISTVIRTUALCLUSTERSREQUEST_VIRTUALCLUSTERELSENTRY.containing_type = _LISTVIRTUALCLUSTERSREQUEST
@@ -617,7 +546,6 @@ _UPDATEVIRTUALCLUSTERREQUEST_LABELSENTRY.containing_type = _UPDATEVIRTUALCLUSTER
 _UPDATEVIRTUALCLUSTERREQUEST.fields_by_name['labels'].message_type = _UPDATEVIRTUALCLUSTERREQUEST_LABELSENTRY
 _UPDATEVIRTUALCLUSTERREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALCLUSTERSPEC
 _GETVIRTUALCLUSTERRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALCLUSTER
-_GETVIRTUALCLUSTERNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListVirtualClustersRequest'] = _LISTVIRTUALCLUSTERSREQUEST
 DESCRIPTOR.message_types_by_name['ListVirtualClustersResponse'] = _LISTVIRTUALCLUSTERSRESPONSE
 DESCRIPTOR.message_types_by_name['VirtualClusterResponse'] = _VIRTUALCLUSTERRESPONSE
@@ -627,8 +555,6 @@ DESCRIPTOR.message_types_by_name['UpdateVirtualClusterRequest'] = _UPDATEVIRTUAL
 DESCRIPTOR.message_types_by_name['UpdateVirtualClusterResponse'] = _UPDATEVIRTUALCLUSTERRESPONSE
 DESCRIPTOR.message_types_by_name['GetVirtualClusterRequest'] = _GETVIRTUALCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['GetVirtualClusterResponse'] = _GETVIRTUALCLUSTERRESPONSE
-DESCRIPTOR.message_types_by_name['GetVirtualClusterNamespacesRequest'] = _GETVIRTUALCLUSTERNAMESPACESREQUEST
-DESCRIPTOR.message_types_by_name['GetVirtualClusterNamespacesResponse'] = _GETVIRTUALCLUSTERNAMESPACESRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteVirtualClusterRequest'] = _DELETEVIRTUALCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['DeleteVirtualClusterResponse'] = _DELETEVIRTUALCLUSTERRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -720,20 +646,6 @@ GetVirtualClusterResponse = _reflection.GeneratedProtocolMessageType('GetVirtual
   })
 _sym_db.RegisterMessage(GetVirtualClusterResponse)
 
-GetVirtualClusterNamespacesRequest = _reflection.GeneratedProtocolMessageType('GetVirtualClusterNamespacesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETVIRTUALCLUSTERNAMESPACESREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesRequest)
-  })
-_sym_db.RegisterMessage(GetVirtualClusterNamespacesRequest)
-
-GetVirtualClusterNamespacesResponse = _reflection.GeneratedProtocolMessageType('GetVirtualClusterNamespacesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETVIRTUALCLUSTERNAMESPACESRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterNamespacesResponse)
-  })
-_sym_db.RegisterMessage(GetVirtualClusterNamespacesResponse)
-
 DeleteVirtualClusterRequest = _reflection.GeneratedProtocolMessageType('DeleteVirtualClusterRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEVIRTUALCLUSTERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
@@ -761,8 +673,8 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1860,
-  serialized_end=3101,
+  serialized_start=1665,
+  serialized_end=2906,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVirtualClusters',

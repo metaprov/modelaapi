@@ -21,30 +21,30 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/k8score/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto\x12.github.com.metaprov.modeld.services.k8score.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xb6\x01\n\x0bSecretQuery\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12W\n\x06labels\x18\x03 \x03(\x0b\x32G.github.com.metaprov.modeld.services.k8score.v1.SecretQuery.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbe\x01\n\x0f\x44\x65ploymentQuery\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb8\x01\n\x0cServiceQuery\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12X\n\x06labels\x18\x03 \x03(\x0b\x32H.github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb0\x01\n\x08PodQuery\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12T\n\x06labels\x18\x03 \x03(\x0b\x32\x44.github.com.metaprov.modeld.services.k8score.v1.PodQuery.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\nSecretInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\".\n\x0bServiceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"1\n\x0e\x44\x65ploymentInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07PodInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"_\n\x12ListSecretResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeld.services.k8score.v1.SecretInfo\"]\n\x11GetSecretResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeld.services.k8score.v1.SecretInfo\"\x10\n\x0eSecretResponse\"a\n\x13ListServiceResponse\x12J\n\x05items\x18\x01 \x03(\x0b\x32;.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo\"_\n\x12GetServiceResponse\x12I\n\x04item\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo\"\x11\n\x0fServiceResponse\"g\n\x16ListDeploymentResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo\"e\n\x15GetDeploymentResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo\"\x14\n\x12\x44\x65ploymentResponse\"Y\n\x0fListPodResponse\x12\x46\n\x05items\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"W\n\x0eGetPodResponse\x12\x45\n\x04item\x18\x01 \x01(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\r\n\x0bPodResponse\"-\n\nEventQuery\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"B\n\x11ListEventResponse\x12-\n\x06\x65vents\x18\x01 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.EventList2\xf4\x0c\n\x0e\x43oreK8sService\x12\xb0\x01\n\x0eListK8sSecrets\x12;.github.com.metaprov.modeld.services.k8score.v1.SecretQuery\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1alpha1/secrets\x12\xb4\x01\n\x0cGetK8sSecret\x12;.github.com.metaprov.modeld.services.k8score.v1.SecretQuery\x1a\x41.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1alpha1/secrets/{name}\x12\xb4\x01\n\x0fListK8sServices\x12<.github.com.metaprov.modeld.services.k8score.v1.ServiceQuery\x1a\x43.github.com.metaprov.modeld.services.k8score.v1.ListServiceResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/v1alpha1/services\x12\xb8\x01\n\rGetK8sService\x12<.github.com.metaprov.modeld.services.k8score.v1.ServiceQuery\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1alpha1/services/{name}\x12\xc0\x01\n\x12ListK8sDeployments\x12?.github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery\x1a\x46.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/deployments\x12\xc4\x01\n\x10GetK8sDeployment\x12?.github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery\x1a\x45.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1alpha1/deployments/{name}\x12\xa4\x01\n\x0bListK8sPods\x12\x38.github.com.metaprov.modeld.services.k8score.v1.PodQuery\x1a?.github.com.metaprov.modeld.services.k8score.v1.ListPodResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1alpha1/pods\x12\xa8\x01\n\tGetK8sPod\x12\x38.github.com.metaprov.modeld.services.k8score.v1.PodQuery\x1a>.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/pods/{name}\x12\xa9\x01\n\nListEvents\x12:.github.com.metaprov.modeld.services.k8score.v1.EventQuery\x1a\x41.github.com.metaprov.modeld.services.k8score.v1.ListEventResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1alpha1/eventsB3Z1github.com/metaprov/modeldapi/services/k8score/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto\x12.github.com.metaprov.modeld.services.k8score.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xc0\x01\n\x10GetSecretRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\\\n\x06labels\x18\x03 \x03(\x0b\x32L.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"]\n\x11GetSecretResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeld.services.k8score.v1.SecretInfo\"\xb6\x01\n\x12ListSecretsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"^\n\x12ListSecretResponse\x12H\n\x04item\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeld.services.k8score.v1.SecretInfo\"\xc8\x01\n\x14GetDeploymentRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x15GetDeploymentResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo\"\xbe\x01\n\x16ListDeploymentsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x17ListDeploymentsResponse\x12L\n\x04item\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo\"\xc2\x01\n\x11GetServiceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"_\n\x12GetServiceResponse\x12I\n\x04item\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo\"\xb8\x01\n\x13ListServicesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x14ListServicesResponse\x12I\n\x04item\x18\x01 \x03(\x0b\x32;.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo\"\xba\x01\n\rGetPodRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12Y\n\x06labels\x18\x03 \x03(\x0b\x32I.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x0eGetPodResponse\x12\x45\n\x04item\x18\x01 \x01(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\xb0\x01\n\x0fListPodsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x10ListPodsResponse\x12\x45\n\x04item\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\xba\x01\n\rGetJobRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12Y\n\x06labels\x18\x03 \x03(\x0b\x32I.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x0eGetJobResponse\x12\x45\n\x04item\x18\x01 \x01(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.PodInfo\"\xb0\x01\n\x0fListJobsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Y\n\x10ListJobsResponse\x12\x45\n\x04item\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.JobInfo\"\xb4\x01\n\x11ListEventsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"[\n\x12ListEventsResponse\x12\x45\n\x04item\x18\x01 \x03(\x0b\x32\x37.github.com.metaprov.modeld.services.k8score.v1.JobInfo\"-\n\nSecretInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\".\n\x0bServiceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"1\n\x0e\x44\x65ploymentInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07PodInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"*\n\x07JobInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t2\xaf\r\n\x0e\x43oreK8sService\x12\xb7\x01\n\x0eListK8sSecrets\x12\x42.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1alpha1/secrets\x12\xb9\x01\n\x0cGetK8sSecret\x12@.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest\x1a\x41.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1alpha1/secrets/{name}\x12\xbc\x01\n\x0fListK8sServices\x12\x43.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest\x1a\x44.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/v1alpha1/services\x12\xbd\x01\n\rGetK8sService\x12\x41.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1alpha1/services/{name}\x12\xc8\x01\n\x12ListK8sDeployments\x12\x46.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest\x1aG.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/deployments\x12\xc9\x01\n\x10GetK8sDeployment\x12\x44.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest\x1a\x45.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1alpha1/deployments/{name}\x12\xac\x01\n\x0bListK8sPods\x12?.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest\x1a@.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1alpha1/pods\x12\xad\x01\n\tGetK8sPod\x12=.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest\x1a>.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/v1alpha1/pods/{name}\x12\xb1\x01\n\nListEvents\x12\x41.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest\x1a\x42.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1alpha1/eventsB3Z1github.com/metaprov/modeldapi/services/k8score/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
 
-_SECRETQUERY_LABELSENTRY = _descriptor.Descriptor(
+_GETSECRETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery.LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,34 +62,34 @@ _SECRETQUERY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=364,
+  serialized_start=329,
+  serialized_end=374,
 )
 
-_SECRETQUERY = _descriptor.Descriptor(
-  name='SecretQuery',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery',
+_GETSECRETREQUEST = _descriptor.Descriptor(
+  name='GetSecretRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery.name', index=1,
+      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.SecretQuery.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -98,7 +98,7 @@ _SECRETQUERY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_SECRETQUERY_LABELSENTRY, ],
+  nested_types=[_GETSECRETREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -108,27 +108,59 @@ _SECRETQUERY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=182,
-  serialized_end=364,
+  serialized_end=374,
 )
 
 
-_DEPLOYMENTQUERY_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.LabelsEntry',
+_GETSECRETRESPONSE = _descriptor.Descriptor(
+  name='GetSecretResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.LabelsEntry.key', index=0,
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=376,
+  serialized_end=469,
+)
+
+
+_LISTSECRETSREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -146,34 +178,27 @@ _DEPLOYMENTQUERY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=364,
+  serialized_start=329,
+  serialized_end=374,
 )
 
-_DEPLOYMENTQUERY = _descriptor.Descriptor(
-  name='DeploymentQuery',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery',
+_LISTSECRETSREQUEST = _descriptor.Descriptor(
+  name='ListSecretsRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -182,7 +207,7 @@ _DEPLOYMENTQUERY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_DEPLOYMENTQUERY_LABELSENTRY, ],
+  nested_types=[_LISTSECRETSREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -191,28 +216,60 @@ _DEPLOYMENTQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=367,
-  serialized_end=557,
+  serialized_start=472,
+  serialized_end=654,
 )
 
 
-_SERVICEQUERY_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.LabelsEntry',
+_LISTSECRETRESPONSE = _descriptor.Descriptor(
+  name='ListSecretResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.LabelsEntry.key', index=0,
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=656,
+  serialized_end=750,
+)
+
+
+_GETDEPLOYMENTREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -230,34 +287,34 @@ _SERVICEQUERY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=364,
+  serialized_start=329,
+  serialized_end=374,
 )
 
-_SERVICEQUERY = _descriptor.Descriptor(
-  name='ServiceQuery',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery',
+_GETDEPLOYMENTREQUEST = _descriptor.Descriptor(
+  name='GetDeploymentRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.name', index=1,
+      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -266,7 +323,7 @@ _SERVICEQUERY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_SERVICEQUERY_LABELSENTRY, ],
+  nested_types=[_GETDEPLOYMENTREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -275,28 +332,60 @@ _SERVICEQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=560,
-  serialized_end=744,
+  serialized_start=753,
+  serialized_end=953,
 )
 
 
-_PODQUERY_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery.LabelsEntry',
+_GETDEPLOYMENTRESPONSE = _descriptor.Descriptor(
+  name='GetDeploymentResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery.LabelsEntry.key', index=0,
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=955,
+  serialized_end=1056,
+)
+
+
+_LISTDEPLOYMENTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -314,34 +403,27 @@ _PODQUERY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=364,
+  serialized_start=329,
+  serialized_end=374,
 )
 
-_PODQUERY = _descriptor.Descriptor(
-  name='PodQuery',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery',
+_LISTDEPLOYMENTSREQUEST = _descriptor.Descriptor(
+  name='ListDeploymentsRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.PodQuery.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -350,7 +432,7 @@ _PODQUERY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_PODQUERY_LABELSENTRY, ],
+  nested_types=[_LISTDEPLOYMENTSREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -359,8 +441,824 @@ _PODQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=747,
-  serialized_end=923,
+  serialized_start=1059,
+  serialized_end=1249,
+)
+
+
+_LISTDEPLOYMENTSRESPONSE = _descriptor.Descriptor(
+  name='ListDeploymentsResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1251,
+  serialized_end=1354,
+)
+
+
+_GETSERVICEREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_GETSERVICEREQUEST = _descriptor.Descriptor(
+  name='GetServiceRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.labels', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_GETSERVICEREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1357,
+  serialized_end=1551,
+)
+
+
+_GETSERVICERESPONSE = _descriptor.Descriptor(
+  name='GetServiceResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1553,
+  serialized_end=1648,
+)
+
+
+_LISTSERVICESREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_LISTSERVICESREQUEST = _descriptor.Descriptor(
+  name='ListServicesRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.labels', index=1,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LISTSERVICESREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1651,
+  serialized_end=1835,
+)
+
+
+_LISTSERVICESRESPONSE = _descriptor.Descriptor(
+  name='ListServicesResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1837,
+  serialized_end=1934,
+)
+
+
+_GETPODREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_GETPODREQUEST = _descriptor.Descriptor(
+  name='GetPodRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.labels', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_GETPODREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1937,
+  serialized_end=2123,
+)
+
+
+_GETPODRESPONSE = _descriptor.Descriptor(
+  name='GetPodResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2125,
+  serialized_end=2212,
+)
+
+
+_LISTPODSREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_LISTPODSREQUEST = _descriptor.Descriptor(
+  name='ListPodsRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.labels', index=1,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LISTPODSREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2215,
+  serialized_end=2391,
+)
+
+
+_LISTPODSRESPONSE = _descriptor.Descriptor(
+  name='ListPodsResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2393,
+  serialized_end=2482,
+)
+
+
+_GETJOBREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_GETJOBREQUEST = _descriptor.Descriptor(
+  name='GetJobRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.labels', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_GETJOBREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2485,
+  serialized_end=2671,
+)
+
+
+_GETJOBRESPONSE = _descriptor.Descriptor(
+  name='GetJobResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2673,
+  serialized_end=2760,
+)
+
+
+_LISTJOBSREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_LISTJOBSREQUEST = _descriptor.Descriptor(
+  name='ListJobsRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.labels', index=1,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LISTJOBSREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2763,
+  serialized_end=2939,
+)
+
+
+_LISTJOBSRESPONSE = _descriptor.Descriptor(
+  name='ListJobsResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2941,
+  serialized_end=3030,
+)
+
+
+_LISTEVENTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=329,
+  serialized_end=374,
+)
+
+_LISTEVENTSREQUEST = _descriptor.Descriptor(
+  name='ListEventsRequest',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.labels', index=1,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LISTEVENTSREQUEST_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3033,
+  serialized_end=3213,
+)
+
+
+_LISTEVENTSRESPONSE = _descriptor.Descriptor(
+  name='ListEventsResponse',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.item', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3215,
+  serialized_end=3306,
 )
 
 
@@ -398,8 +1296,8 @@ _SECRETINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=925,
-  serialized_end=970,
+  serialized_start=3308,
+  serialized_end=3353,
 )
 
 
@@ -437,8 +1335,8 @@ _SERVICEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=972,
-  serialized_end=1018,
+  serialized_start=3355,
+  serialized_end=3401,
 )
 
 
@@ -476,8 +1374,8 @@ _DEPLOYMENTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1020,
-  serialized_end=1069,
+  serialized_start=3403,
+  serialized_end=3452,
 )
 
 
@@ -515,384 +1413,28 @@ _PODINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1071,
-  serialized_end=1113,
+  serialized_start=3454,
+  serialized_end=3496,
 )
 
 
-_LISTSECRETRESPONSE = _descriptor.Descriptor(
-  name='ListSecretResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse',
+_JOBINFO = _descriptor.Descriptor(
+  name='JobInfo',
+  full_name='github.com.metaprov.modeld.services.k8score.v1.JobInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.items', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1115,
-  serialized_end=1210,
-)
-
-
-_GETSECRETRESPONSE = _descriptor.Descriptor(
-  name='GetSecretResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.item', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1212,
-  serialized_end=1305,
-)
-
-
-_SECRETRESPONSE = _descriptor.Descriptor(
-  name='SecretResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.SecretResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1307,
-  serialized_end=1323,
-)
-
-
-_LISTSERVICERESPONSE = _descriptor.Descriptor(
-  name='ListServiceResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListServiceResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.k8score.v1.ListServiceResponse.items', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1325,
-  serialized_end=1422,
-)
-
-
-_GETSERVICERESPONSE = _descriptor.Descriptor(
-  name='GetServiceResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.item', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1424,
-  serialized_end=1519,
-)
-
-
-_SERVICERESPONSE = _descriptor.Descriptor(
-  name='ServiceResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ServiceResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1521,
-  serialized_end=1538,
-)
-
-
-_LISTDEPLOYMENTRESPONSE = _descriptor.Descriptor(
-  name='ListDeploymentResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.k8score.v1.ListDeploymentResponse.items', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1540,
-  serialized_end=1643,
-)
-
-
-_GETDEPLOYMENTRESPONSE = _descriptor.Descriptor(
-  name='GetDeploymentResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.item', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1645,
-  serialized_end=1746,
-)
-
-
-_DEPLOYMENTRESPONSE = _descriptor.Descriptor(
-  name='DeploymentResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.DeploymentResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1748,
-  serialized_end=1768,
-)
-
-
-_LISTPODRESPONSE = _descriptor.Descriptor(
-  name='ListPodResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.k8score.v1.ListPodResponse.items', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1770,
-  serialized_end=1859,
-)
-
-
-_GETPODRESPONSE = _descriptor.Descriptor(
-  name='GetPodResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.item', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1861,
-  serialized_end=1948,
-)
-
-
-_PODRESPONSE = _descriptor.Descriptor(
-  name='PodResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.PodResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1950,
-  serialized_end=1963,
-)
-
-
-_EVENTQUERY = _descriptor.Descriptor(
-  name='EventQuery',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.EventQuery',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.EventQuery.namespace', index=0,
+      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.JobInfo.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.k8score.v1.EventQuery.name', index=1,
+      name='namespace', full_name='github.com.metaprov.modeld.services.k8score.v1.JobInfo.namespace', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -910,142 +1452,313 @@ _EVENTQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1965,
-  serialized_end=2010,
+  serialized_start=3498,
+  serialized_end=3540,
 )
 
-
-_LISTEVENTRESPONSE = _descriptor.Descriptor(
-  name='ListEventResponse',
-  full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='events', full_name='github.com.metaprov.modeld.services.k8score.v1.ListEventResponse.events', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2012,
-  serialized_end=2078,
-)
-
-_SECRETQUERY_LABELSENTRY.containing_type = _SECRETQUERY
-_SECRETQUERY.fields_by_name['labels'].message_type = _SECRETQUERY_LABELSENTRY
-_DEPLOYMENTQUERY_LABELSENTRY.containing_type = _DEPLOYMENTQUERY
-_DEPLOYMENTQUERY.fields_by_name['labels'].message_type = _DEPLOYMENTQUERY_LABELSENTRY
-_SERVICEQUERY_LABELSENTRY.containing_type = _SERVICEQUERY
-_SERVICEQUERY.fields_by_name['labels'].message_type = _SERVICEQUERY_LABELSENTRY
-_PODQUERY_LABELSENTRY.containing_type = _PODQUERY
-_PODQUERY.fields_by_name['labels'].message_type = _PODQUERY_LABELSENTRY
-_LISTSECRETRESPONSE.fields_by_name['items'].message_type = _SECRETINFO
+_GETSECRETREQUEST_LABELSENTRY.containing_type = _GETSECRETREQUEST
+_GETSECRETREQUEST.fields_by_name['labels'].message_type = _GETSECRETREQUEST_LABELSENTRY
 _GETSECRETRESPONSE.fields_by_name['item'].message_type = _SECRETINFO
-_LISTSERVICERESPONSE.fields_by_name['items'].message_type = _SERVICEINFO
-_GETSERVICERESPONSE.fields_by_name['item'].message_type = _SERVICEINFO
-_LISTDEPLOYMENTRESPONSE.fields_by_name['items'].message_type = _DEPLOYMENTINFO
+_LISTSECRETSREQUEST_LABELSENTRY.containing_type = _LISTSECRETSREQUEST
+_LISTSECRETSREQUEST.fields_by_name['labels'].message_type = _LISTSECRETSREQUEST_LABELSENTRY
+_LISTSECRETRESPONSE.fields_by_name['item'].message_type = _SECRETINFO
+_GETDEPLOYMENTREQUEST_LABELSENTRY.containing_type = _GETDEPLOYMENTREQUEST
+_GETDEPLOYMENTREQUEST.fields_by_name['labels'].message_type = _GETDEPLOYMENTREQUEST_LABELSENTRY
 _GETDEPLOYMENTRESPONSE.fields_by_name['item'].message_type = _DEPLOYMENTINFO
-_LISTPODRESPONSE.fields_by_name['items'].message_type = _PODINFO
+_LISTDEPLOYMENTSREQUEST_LABELSENTRY.containing_type = _LISTDEPLOYMENTSREQUEST
+_LISTDEPLOYMENTSREQUEST.fields_by_name['labels'].message_type = _LISTDEPLOYMENTSREQUEST_LABELSENTRY
+_LISTDEPLOYMENTSRESPONSE.fields_by_name['item'].message_type = _DEPLOYMENTINFO
+_GETSERVICEREQUEST_LABELSENTRY.containing_type = _GETSERVICEREQUEST
+_GETSERVICEREQUEST.fields_by_name['labels'].message_type = _GETSERVICEREQUEST_LABELSENTRY
+_GETSERVICERESPONSE.fields_by_name['item'].message_type = _SERVICEINFO
+_LISTSERVICESREQUEST_LABELSENTRY.containing_type = _LISTSERVICESREQUEST
+_LISTSERVICESREQUEST.fields_by_name['labels'].message_type = _LISTSERVICESREQUEST_LABELSENTRY
+_LISTSERVICESRESPONSE.fields_by_name['item'].message_type = _SERVICEINFO
+_GETPODREQUEST_LABELSENTRY.containing_type = _GETPODREQUEST
+_GETPODREQUEST.fields_by_name['labels'].message_type = _GETPODREQUEST_LABELSENTRY
 _GETPODRESPONSE.fields_by_name['item'].message_type = _PODINFO
-_LISTEVENTRESPONSE.fields_by_name['events'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._EVENTLIST
-DESCRIPTOR.message_types_by_name['SecretQuery'] = _SECRETQUERY
-DESCRIPTOR.message_types_by_name['DeploymentQuery'] = _DEPLOYMENTQUERY
-DESCRIPTOR.message_types_by_name['ServiceQuery'] = _SERVICEQUERY
-DESCRIPTOR.message_types_by_name['PodQuery'] = _PODQUERY
+_LISTPODSREQUEST_LABELSENTRY.containing_type = _LISTPODSREQUEST
+_LISTPODSREQUEST.fields_by_name['labels'].message_type = _LISTPODSREQUEST_LABELSENTRY
+_LISTPODSRESPONSE.fields_by_name['item'].message_type = _PODINFO
+_GETJOBREQUEST_LABELSENTRY.containing_type = _GETJOBREQUEST
+_GETJOBREQUEST.fields_by_name['labels'].message_type = _GETJOBREQUEST_LABELSENTRY
+_GETJOBRESPONSE.fields_by_name['item'].message_type = _PODINFO
+_LISTJOBSREQUEST_LABELSENTRY.containing_type = _LISTJOBSREQUEST
+_LISTJOBSREQUEST.fields_by_name['labels'].message_type = _LISTJOBSREQUEST_LABELSENTRY
+_LISTJOBSRESPONSE.fields_by_name['item'].message_type = _JOBINFO
+_LISTEVENTSREQUEST_LABELSENTRY.containing_type = _LISTEVENTSREQUEST
+_LISTEVENTSREQUEST.fields_by_name['labels'].message_type = _LISTEVENTSREQUEST_LABELSENTRY
+_LISTEVENTSRESPONSE.fields_by_name['item'].message_type = _JOBINFO
+DESCRIPTOR.message_types_by_name['GetSecretRequest'] = _GETSECRETREQUEST
+DESCRIPTOR.message_types_by_name['GetSecretResponse'] = _GETSECRETRESPONSE
+DESCRIPTOR.message_types_by_name['ListSecretsRequest'] = _LISTSECRETSREQUEST
+DESCRIPTOR.message_types_by_name['ListSecretResponse'] = _LISTSECRETRESPONSE
+DESCRIPTOR.message_types_by_name['GetDeploymentRequest'] = _GETDEPLOYMENTREQUEST
+DESCRIPTOR.message_types_by_name['GetDeploymentResponse'] = _GETDEPLOYMENTRESPONSE
+DESCRIPTOR.message_types_by_name['ListDeploymentsRequest'] = _LISTDEPLOYMENTSREQUEST
+DESCRIPTOR.message_types_by_name['ListDeploymentsResponse'] = _LISTDEPLOYMENTSRESPONSE
+DESCRIPTOR.message_types_by_name['GetServiceRequest'] = _GETSERVICEREQUEST
+DESCRIPTOR.message_types_by_name['GetServiceResponse'] = _GETSERVICERESPONSE
+DESCRIPTOR.message_types_by_name['ListServicesRequest'] = _LISTSERVICESREQUEST
+DESCRIPTOR.message_types_by_name['ListServicesResponse'] = _LISTSERVICESRESPONSE
+DESCRIPTOR.message_types_by_name['GetPodRequest'] = _GETPODREQUEST
+DESCRIPTOR.message_types_by_name['GetPodResponse'] = _GETPODRESPONSE
+DESCRIPTOR.message_types_by_name['ListPodsRequest'] = _LISTPODSREQUEST
+DESCRIPTOR.message_types_by_name['ListPodsResponse'] = _LISTPODSRESPONSE
+DESCRIPTOR.message_types_by_name['GetJobRequest'] = _GETJOBREQUEST
+DESCRIPTOR.message_types_by_name['GetJobResponse'] = _GETJOBRESPONSE
+DESCRIPTOR.message_types_by_name['ListJobsRequest'] = _LISTJOBSREQUEST
+DESCRIPTOR.message_types_by_name['ListJobsResponse'] = _LISTJOBSRESPONSE
+DESCRIPTOR.message_types_by_name['ListEventsRequest'] = _LISTEVENTSREQUEST
+DESCRIPTOR.message_types_by_name['ListEventsResponse'] = _LISTEVENTSRESPONSE
 DESCRIPTOR.message_types_by_name['SecretInfo'] = _SECRETINFO
 DESCRIPTOR.message_types_by_name['ServiceInfo'] = _SERVICEINFO
 DESCRIPTOR.message_types_by_name['DeploymentInfo'] = _DEPLOYMENTINFO
 DESCRIPTOR.message_types_by_name['PodInfo'] = _PODINFO
-DESCRIPTOR.message_types_by_name['ListSecretResponse'] = _LISTSECRETRESPONSE
-DESCRIPTOR.message_types_by_name['GetSecretResponse'] = _GETSECRETRESPONSE
-DESCRIPTOR.message_types_by_name['SecretResponse'] = _SECRETRESPONSE
-DESCRIPTOR.message_types_by_name['ListServiceResponse'] = _LISTSERVICERESPONSE
-DESCRIPTOR.message_types_by_name['GetServiceResponse'] = _GETSERVICERESPONSE
-DESCRIPTOR.message_types_by_name['ServiceResponse'] = _SERVICERESPONSE
-DESCRIPTOR.message_types_by_name['ListDeploymentResponse'] = _LISTDEPLOYMENTRESPONSE
-DESCRIPTOR.message_types_by_name['GetDeploymentResponse'] = _GETDEPLOYMENTRESPONSE
-DESCRIPTOR.message_types_by_name['DeploymentResponse'] = _DEPLOYMENTRESPONSE
-DESCRIPTOR.message_types_by_name['ListPodResponse'] = _LISTPODRESPONSE
-DESCRIPTOR.message_types_by_name['GetPodResponse'] = _GETPODRESPONSE
-DESCRIPTOR.message_types_by_name['PodResponse'] = _PODRESPONSE
-DESCRIPTOR.message_types_by_name['EventQuery'] = _EVENTQUERY
-DESCRIPTOR.message_types_by_name['ListEventResponse'] = _LISTEVENTRESPONSE
+DESCRIPTOR.message_types_by_name['JobInfo'] = _JOBINFO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-SecretQuery = _reflection.GeneratedProtocolMessageType('SecretQuery', (_message.Message,), {
+GetSecretRequest = _reflection.GeneratedProtocolMessageType('GetSecretRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _SECRETQUERY_LABELSENTRY,
+    'DESCRIPTOR' : _GETSECRETREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.SecretQuery.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.LabelsEntry)
     })
   ,
-  'DESCRIPTOR' : _SECRETQUERY,
+  'DESCRIPTOR' : _GETSECRETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.SecretQuery)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest)
   })
-_sym_db.RegisterMessage(SecretQuery)
-_sym_db.RegisterMessage(SecretQuery.LabelsEntry)
+_sym_db.RegisterMessage(GetSecretRequest)
+_sym_db.RegisterMessage(GetSecretRequest.LabelsEntry)
 
-DeploymentQuery = _reflection.GeneratedProtocolMessageType('DeploymentQuery', (_message.Message,), {
+GetSecretResponse = _reflection.GeneratedProtocolMessageType('GetSecretResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETSECRETRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse)
+  })
+_sym_db.RegisterMessage(GetSecretResponse)
+
+ListSecretsRequest = _reflection.GeneratedProtocolMessageType('ListSecretsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DEPLOYMENTQUERY_LABELSENTRY,
+    'DESCRIPTOR' : _LISTSECRETSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.LabelsEntry)
     })
   ,
-  'DESCRIPTOR' : _DEPLOYMENTQUERY,
+  'DESCRIPTOR' : _LISTSECRETSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.DeploymentQuery)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest)
   })
-_sym_db.RegisterMessage(DeploymentQuery)
-_sym_db.RegisterMessage(DeploymentQuery.LabelsEntry)
+_sym_db.RegisterMessage(ListSecretsRequest)
+_sym_db.RegisterMessage(ListSecretsRequest.LabelsEntry)
 
-ServiceQuery = _reflection.GeneratedProtocolMessageType('ServiceQuery', (_message.Message,), {
+ListSecretResponse = _reflection.GeneratedProtocolMessageType('ListSecretResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTSECRETRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse)
+  })
+_sym_db.RegisterMessage(ListSecretResponse)
+
+GetDeploymentRequest = _reflection.GeneratedProtocolMessageType('GetDeploymentRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _SERVICEQUERY_LABELSENTRY,
+    'DESCRIPTOR' : _GETDEPLOYMENTREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ServiceQuery.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.LabelsEntry)
     })
   ,
-  'DESCRIPTOR' : _SERVICEQUERY,
+  'DESCRIPTOR' : _GETDEPLOYMENTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ServiceQuery)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest)
   })
-_sym_db.RegisterMessage(ServiceQuery)
-_sym_db.RegisterMessage(ServiceQuery.LabelsEntry)
+_sym_db.RegisterMessage(GetDeploymentRequest)
+_sym_db.RegisterMessage(GetDeploymentRequest.LabelsEntry)
 
-PodQuery = _reflection.GeneratedProtocolMessageType('PodQuery', (_message.Message,), {
+GetDeploymentResponse = _reflection.GeneratedProtocolMessageType('GetDeploymentResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEPLOYMENTRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse)
+  })
+_sym_db.RegisterMessage(GetDeploymentResponse)
+
+ListDeploymentsRequest = _reflection.GeneratedProtocolMessageType('ListDeploymentsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PODQUERY_LABELSENTRY,
+    'DESCRIPTOR' : _LISTDEPLOYMENTSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.PodQuery.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.LabelsEntry)
     })
   ,
-  'DESCRIPTOR' : _PODQUERY,
+  'DESCRIPTOR' : _LISTDEPLOYMENTSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.PodQuery)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest)
   })
-_sym_db.RegisterMessage(PodQuery)
-_sym_db.RegisterMessage(PodQuery.LabelsEntry)
+_sym_db.RegisterMessage(ListDeploymentsRequest)
+_sym_db.RegisterMessage(ListDeploymentsRequest.LabelsEntry)
+
+ListDeploymentsResponse = _reflection.GeneratedProtocolMessageType('ListDeploymentsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDEPLOYMENTSRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse)
+  })
+_sym_db.RegisterMessage(ListDeploymentsResponse)
+
+GetServiceRequest = _reflection.GeneratedProtocolMessageType('GetServiceRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GETSERVICEREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _GETSERVICEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest)
+  })
+_sym_db.RegisterMessage(GetServiceRequest)
+_sym_db.RegisterMessage(GetServiceRequest.LabelsEntry)
+
+GetServiceResponse = _reflection.GeneratedProtocolMessageType('GetServiceResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETSERVICERESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse)
+  })
+_sym_db.RegisterMessage(GetServiceResponse)
+
+ListServicesRequest = _reflection.GeneratedProtocolMessageType('ListServicesRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _LISTSERVICESREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _LISTSERVICESREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest)
+  })
+_sym_db.RegisterMessage(ListServicesRequest)
+_sym_db.RegisterMessage(ListServicesRequest.LabelsEntry)
+
+ListServicesResponse = _reflection.GeneratedProtocolMessageType('ListServicesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTSERVICESRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse)
+  })
+_sym_db.RegisterMessage(ListServicesResponse)
+
+GetPodRequest = _reflection.GeneratedProtocolMessageType('GetPodRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GETPODREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _GETPODREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodRequest)
+  })
+_sym_db.RegisterMessage(GetPodRequest)
+_sym_db.RegisterMessage(GetPodRequest.LabelsEntry)
+
+GetPodResponse = _reflection.GeneratedProtocolMessageType('GetPodResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETPODRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodResponse)
+  })
+_sym_db.RegisterMessage(GetPodResponse)
+
+ListPodsRequest = _reflection.GeneratedProtocolMessageType('ListPodsRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _LISTPODSREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _LISTPODSREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest)
+  })
+_sym_db.RegisterMessage(ListPodsRequest)
+_sym_db.RegisterMessage(ListPodsRequest.LabelsEntry)
+
+ListPodsResponse = _reflection.GeneratedProtocolMessageType('ListPodsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTPODSRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse)
+  })
+_sym_db.RegisterMessage(ListPodsResponse)
+
+GetJobRequest = _reflection.GeneratedProtocolMessageType('GetJobRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GETJOBREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _GETJOBREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetJobRequest)
+  })
+_sym_db.RegisterMessage(GetJobRequest)
+_sym_db.RegisterMessage(GetJobRequest.LabelsEntry)
+
+GetJobResponse = _reflection.GeneratedProtocolMessageType('GetJobResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETJOBRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetJobResponse)
+  })
+_sym_db.RegisterMessage(GetJobResponse)
+
+ListJobsRequest = _reflection.GeneratedProtocolMessageType('ListJobsRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _LISTJOBSREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _LISTJOBSREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest)
+  })
+_sym_db.RegisterMessage(ListJobsRequest)
+_sym_db.RegisterMessage(ListJobsRequest.LabelsEntry)
+
+ListJobsResponse = _reflection.GeneratedProtocolMessageType('ListJobsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTJOBSRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse)
+  })
+_sym_db.RegisterMessage(ListJobsResponse)
+
+ListEventsRequest = _reflection.GeneratedProtocolMessageType('ListEventsRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _LISTEVENTSREQUEST_LABELSENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _LISTEVENTSREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest)
+  })
+_sym_db.RegisterMessage(ListEventsRequest)
+_sym_db.RegisterMessage(ListEventsRequest.LabelsEntry)
+
+ListEventsResponse = _reflection.GeneratedProtocolMessageType('ListEventsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTEVENTSRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse)
+  })
+_sym_db.RegisterMessage(ListEventsResponse)
 
 SecretInfo = _reflection.GeneratedProtocolMessageType('SecretInfo', (_message.Message,), {
   'DESCRIPTOR' : _SECRETINFO,
@@ -1075,110 +1788,26 @@ PodInfo = _reflection.GeneratedProtocolMessageType('PodInfo', (_message.Message,
   })
 _sym_db.RegisterMessage(PodInfo)
 
-ListSecretResponse = _reflection.GeneratedProtocolMessageType('ListSecretResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTSECRETRESPONSE,
+JobInfo = _reflection.GeneratedProtocolMessageType('JobInfo', (_message.Message,), {
+  'DESCRIPTOR' : _JOBINFO,
   '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.JobInfo)
   })
-_sym_db.RegisterMessage(ListSecretResponse)
-
-GetSecretResponse = _reflection.GeneratedProtocolMessageType('GetSecretResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETSECRETRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse)
-  })
-_sym_db.RegisterMessage(GetSecretResponse)
-
-SecretResponse = _reflection.GeneratedProtocolMessageType('SecretResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SECRETRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.SecretResponse)
-  })
-_sym_db.RegisterMessage(SecretResponse)
-
-ListServiceResponse = _reflection.GeneratedProtocolMessageType('ListServiceResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTSERVICERESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListServiceResponse)
-  })
-_sym_db.RegisterMessage(ListServiceResponse)
-
-GetServiceResponse = _reflection.GeneratedProtocolMessageType('GetServiceResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETSERVICERESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse)
-  })
-_sym_db.RegisterMessage(GetServiceResponse)
-
-ServiceResponse = _reflection.GeneratedProtocolMessageType('ServiceResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SERVICERESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ServiceResponse)
-  })
-_sym_db.RegisterMessage(ServiceResponse)
-
-ListDeploymentResponse = _reflection.GeneratedProtocolMessageType('ListDeploymentResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDEPLOYMENTRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListDeploymentResponse)
-  })
-_sym_db.RegisterMessage(ListDeploymentResponse)
-
-GetDeploymentResponse = _reflection.GeneratedProtocolMessageType('GetDeploymentResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETDEPLOYMENTRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse)
-  })
-_sym_db.RegisterMessage(GetDeploymentResponse)
-
-DeploymentResponse = _reflection.GeneratedProtocolMessageType('DeploymentResponse', (_message.Message,), {
-  'DESCRIPTOR' : _DEPLOYMENTRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.DeploymentResponse)
-  })
-_sym_db.RegisterMessage(DeploymentResponse)
-
-ListPodResponse = _reflection.GeneratedProtocolMessageType('ListPodResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTPODRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListPodResponse)
-  })
-_sym_db.RegisterMessage(ListPodResponse)
-
-GetPodResponse = _reflection.GeneratedProtocolMessageType('GetPodResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETPODRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.GetPodResponse)
-  })
-_sym_db.RegisterMessage(GetPodResponse)
-
-PodResponse = _reflection.GeneratedProtocolMessageType('PodResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PODRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.PodResponse)
-  })
-_sym_db.RegisterMessage(PodResponse)
-
-EventQuery = _reflection.GeneratedProtocolMessageType('EventQuery', (_message.Message,), {
-  'DESCRIPTOR' : _EVENTQUERY,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.EventQuery)
-  })
-_sym_db.RegisterMessage(EventQuery)
-
-ListEventResponse = _reflection.GeneratedProtocolMessageType('ListEventResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTEVENTRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.k8score.v1.k8score_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.k8score.v1.ListEventResponse)
-  })
-_sym_db.RegisterMessage(ListEventResponse)
+_sym_db.RegisterMessage(JobInfo)
 
 
 DESCRIPTOR._options = None
-_SECRETQUERY_LABELSENTRY._options = None
-_DEPLOYMENTQUERY_LABELSENTRY._options = None
-_SERVICEQUERY_LABELSENTRY._options = None
-_PODQUERY_LABELSENTRY._options = None
+_GETSECRETREQUEST_LABELSENTRY._options = None
+_LISTSECRETSREQUEST_LABELSENTRY._options = None
+_GETDEPLOYMENTREQUEST_LABELSENTRY._options = None
+_LISTDEPLOYMENTSREQUEST_LABELSENTRY._options = None
+_GETSERVICEREQUEST_LABELSENTRY._options = None
+_LISTSERVICESREQUEST_LABELSENTRY._options = None
+_GETPODREQUEST_LABELSENTRY._options = None
+_LISTPODSREQUEST_LABELSENTRY._options = None
+_GETJOBREQUEST_LABELSENTRY._options = None
+_LISTJOBSREQUEST_LABELSENTRY._options = None
+_LISTEVENTSREQUEST_LABELSENTRY._options = None
 
 _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   name='CoreK8sService',
@@ -1187,15 +1816,15 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2081,
-  serialized_end=3733,
+  serialized_start=3543,
+  serialized_end=5254,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListK8sSecrets',
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sSecrets',
     index=0,
     containing_service=None,
-    input_type=_SECRETQUERY,
+    input_type=_LISTSECRETSREQUEST,
     output_type=_LISTSECRETRESPONSE,
     serialized_options=b'\202\323\344\223\002\027\022\025/api/v1alpha1/secrets',
     create_key=_descriptor._internal_create_key,
@@ -1205,7 +1834,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sSecret',
     index=1,
     containing_service=None,
-    input_type=_SECRETQUERY,
+    input_type=_GETSECRETREQUEST,
     output_type=_GETSECRETRESPONSE,
     serialized_options=b'\202\323\344\223\002\036\022\034/api/v1alpha1/secrets/{name}',
     create_key=_descriptor._internal_create_key,
@@ -1215,8 +1844,8 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sServices',
     index=2,
     containing_service=None,
-    input_type=_SERVICEQUERY,
-    output_type=_LISTSERVICERESPONSE,
+    input_type=_LISTSERVICESREQUEST,
+    output_type=_LISTSERVICESRESPONSE,
     serialized_options=b'\202\323\344\223\002\030\022\026/api/v1alpha1/services',
     create_key=_descriptor._internal_create_key,
   ),
@@ -1225,7 +1854,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sService',
     index=3,
     containing_service=None,
-    input_type=_SERVICEQUERY,
+    input_type=_GETSERVICEREQUEST,
     output_type=_GETSERVICERESPONSE,
     serialized_options=b'\202\323\344\223\002\037\022\035/api/v1alpha1/services/{name}',
     create_key=_descriptor._internal_create_key,
@@ -1235,8 +1864,8 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sDeployments',
     index=4,
     containing_service=None,
-    input_type=_DEPLOYMENTQUERY,
-    output_type=_LISTDEPLOYMENTRESPONSE,
+    input_type=_LISTDEPLOYMENTSREQUEST,
+    output_type=_LISTDEPLOYMENTSRESPONSE,
     serialized_options=b'\202\323\344\223\002\033\022\031/api/v1alpha1/deployments',
     create_key=_descriptor._internal_create_key,
   ),
@@ -1245,7 +1874,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sDeployment',
     index=5,
     containing_service=None,
-    input_type=_DEPLOYMENTQUERY,
+    input_type=_GETDEPLOYMENTREQUEST,
     output_type=_GETDEPLOYMENTRESPONSE,
     serialized_options=b'\202\323\344\223\002\"\022 /api/v1alpha1/deployments/{name}',
     create_key=_descriptor._internal_create_key,
@@ -1255,8 +1884,8 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListK8sPods',
     index=6,
     containing_service=None,
-    input_type=_PODQUERY,
-    output_type=_LISTPODRESPONSE,
+    input_type=_LISTPODSREQUEST,
+    output_type=_LISTPODSRESPONSE,
     serialized_options=b'\202\323\344\223\002\024\022\022/api/v1alpha1/pods',
     create_key=_descriptor._internal_create_key,
   ),
@@ -1265,7 +1894,7 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.GetK8sPod',
     index=7,
     containing_service=None,
-    input_type=_PODQUERY,
+    input_type=_GETPODREQUEST,
     output_type=_GETPODRESPONSE,
     serialized_options=b'\202\323\344\223\002\033\022\031/api/v1alpha1/pods/{name}',
     create_key=_descriptor._internal_create_key,
@@ -1275,8 +1904,8 @@ _COREK8SSERVICE = _descriptor.ServiceDescriptor(
     full_name='github.com.metaprov.modeld.services.k8score.v1.CoreK8sService.ListEvents',
     index=8,
     containing_service=None,
-    input_type=_EVENTQUERY,
-    output_type=_LISTEVENTRESPONSE,
+    input_type=_LISTEVENTSREQUEST,
+    output_type=_LISTEVENTSRESPONSE,
     serialized_options=b'\202\323\344\223\002\026\022\024/api/v1alpha1/events',
     create_key=_descriptor._internal_create_key,
   ),
