@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.account.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.account.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/ListAccounts',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts',
         request,
         metadata || {},
         this.methodInfoListAccounts,
@@ -69,7 +69,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/ListAccounts',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts',
     request,
     metadata || {},
     this.methodInfoListAccounts);
@@ -101,7 +101,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/CreateAccount',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount',
         request,
         metadata || {},
         this.methodInfoCreateAccount,
@@ -109,7 +109,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/CreateAccount',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount',
     request,
     metadata || {},
     this.methodInfoCreateAccount);
@@ -141,7 +141,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/GetAccount',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount',
         request,
         metadata || {},
         this.methodInfoGetAccount,
@@ -149,7 +149,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/GetAccount',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount',
     request,
     metadata || {},
     this.methodInfoGetAccount);
@@ -181,7 +181,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/UpdateAccount',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount',
         request,
         metadata || {},
         this.methodInfoUpdateAccount,
@@ -189,7 +189,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/UpdateAccount',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount',
     request,
     metadata || {},
     this.methodInfoUpdateAccount);
@@ -221,7 +221,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/DeleteAccount',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount',
         request,
         metadata || {},
         this.methodInfoDeleteAccount,
@@ -229,10 +229,50 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/DeleteAccount',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount',
     request,
     metadata || {},
     this.methodInfoDeleteAccount);
+  }
+
+  methodInfoGetAccountNamespaces = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse,
+    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse.deserializeBinary
+  );
+
+  getAccountNamespaces(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
+
+  getAccountNamespaces(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
+
+  getAccountNamespaces(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces',
+        request,
+        metadata || {},
+        this.methodInfoGetAccountNamespaces,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces',
+    request,
+    metadata || {},
+    this.methodInfoGetAccountNamespaces);
   }
 
   methodInfoLogin = new grpcWeb.AbstractClientBase.MethodInfo(
@@ -261,7 +301,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/Login',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login',
         request,
         metadata || {},
         this.methodInfoLogin,
@@ -269,7 +309,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/Login',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login',
     request,
     metadata || {},
     this.methodInfoLogin);
@@ -301,7 +341,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/Logout',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout',
         request,
         metadata || {},
         this.methodInfoLogout,
@@ -309,7 +349,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/Logout',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout',
     request,
     metadata || {},
     this.methodInfoLogout);
@@ -341,7 +381,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/ChangePassword',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword',
         request,
         metadata || {},
         this.methodInfoChangePassword,
@@ -349,7 +389,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/ChangePassword',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword',
     request,
     metadata || {},
     this.methodInfoChangePassword);
@@ -381,7 +421,7 @@ export class AccountServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.account.v1.AccountService/ResetPassword',
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
         request,
         metadata || {},
         this.methodInfoResetPassword,
@@ -389,7 +429,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.account.v1.AccountService/ResetPassword',
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
     request,
     metadata || {},
     this.methodInfoResetPassword);

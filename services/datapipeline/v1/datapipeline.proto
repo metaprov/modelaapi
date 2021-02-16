@@ -1,6 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/datapipeline/v1";
-package github.com.metaprov.modeld.services.datapipeline.v1;
+package github.com.metaprov.modeldapi.services.datapipeline.v1;
 
 import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";

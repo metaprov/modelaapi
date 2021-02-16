@@ -15,32 +15,32 @@ class AuthdServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Login = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Login',
+                '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Login',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountLoginRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountLoginResponse.FromString,
                 )
         self.CreateAccount = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.authd.v1.AuthdService/CreateAccount',
+                '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/CreateAccount',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountCreateRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountCreateResponse.FromString,
                 )
         self.DeleteAccount = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.authd.v1.AuthdService/DeleteAccount',
+                '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/DeleteAccount',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountDeleteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.DeleteAccountResponse.FromString,
                 )
         self.Logout = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Logout',
+                '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Logout',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountLogoutRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.LogoutResponse.FromString,
                 )
         self.ChangePassword = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ChangePassword',
+                '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ChangePassword',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ChangePasswordRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ChangePasswordResponse.FromString,
                 )
         self.ResetPassword = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ResetPassword',
+                '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ResetPassword',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ResetPasswordRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ResetPasswordResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_AuthdServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.authd.v1.AuthdService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.authd.v1.AuthdService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class AuthdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Login',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Login',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountLoginRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountLoginResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class AuthdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.authd.v1.AuthdService/CreateAccount',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/CreateAccount',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountCreateRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountCreateResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class AuthdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.authd.v1.AuthdService/DeleteAccount',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/DeleteAccount',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountDeleteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.DeleteAccountResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class AuthdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Logout',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Logout',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.AccountLogoutRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.LogoutResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class AuthdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ChangePassword',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ChangePassword',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ChangePasswordRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ChangePasswordResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class AuthdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ResetPassword',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ResetPassword',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ResetPasswordRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_authd_dot_v1_dot_authd__pb2.ResetPasswordResponse.FromString,
             options, channel_credentials,

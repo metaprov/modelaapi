@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.feature.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.feature.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class FeatureServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.feature.v1.FeatureService/ListFeatures',
+          '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/ListFeatures',
         request,
         metadata || {},
         this.methodInfoListFeatures,
@@ -69,7 +69,7 @@ export class FeatureServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.feature.v1.FeatureService/ListFeatures',
+      '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/ListFeatures',
     request,
     metadata || {},
     this.methodInfoListFeatures);
@@ -101,7 +101,7 @@ export class FeatureServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.feature.v1.FeatureService/CreateFeature',
+          '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/CreateFeature',
         request,
         metadata || {},
         this.methodInfoCreateFeature,
@@ -109,7 +109,7 @@ export class FeatureServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.feature.v1.FeatureService/CreateFeature',
+      '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/CreateFeature',
     request,
     metadata || {},
     this.methodInfoCreateFeature);
@@ -141,7 +141,7 @@ export class FeatureServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.feature.v1.FeatureService/GetFeature',
+          '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/GetFeature',
         request,
         metadata || {},
         this.methodInfoGetFeature,
@@ -149,7 +149,7 @@ export class FeatureServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.feature.v1.FeatureService/GetFeature',
+      '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/GetFeature',
     request,
     metadata || {},
     this.methodInfoGetFeature);
@@ -181,7 +181,7 @@ export class FeatureServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.feature.v1.FeatureService/UpdateFeature',
+          '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/UpdateFeature',
         request,
         metadata || {},
         this.methodInfoUpdateFeature,
@@ -189,7 +189,7 @@ export class FeatureServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.feature.v1.FeatureService/UpdateFeature',
+      '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/UpdateFeature',
     request,
     metadata || {},
     this.methodInfoUpdateFeature);
@@ -221,7 +221,7 @@ export class FeatureServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.feature.v1.FeatureService/DeleteFeature',
+          '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/DeleteFeature',
         request,
         metadata || {},
         this.methodInfoDeleteFeature,
@@ -229,7 +229,7 @@ export class FeatureServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.feature.v1.FeatureService/DeleteFeature',
+      '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/DeleteFeature',
     request,
     metadata || {},
     this.methodInfoDeleteFeature);

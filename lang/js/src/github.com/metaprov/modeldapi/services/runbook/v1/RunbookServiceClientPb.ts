@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.runbook.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.runbook.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class RunBookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/ListRunBooks',
+          '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/ListRunBooks',
         request,
         metadata || {},
         this.methodInfoListRunBooks,
@@ -69,7 +69,7 @@ export class RunBookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/ListRunBooks',
+      '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/ListRunBooks',
     request,
     metadata || {},
     this.methodInfoListRunBooks);
@@ -101,7 +101,7 @@ export class RunBookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/CreateRunBook',
+          '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/CreateRunBook',
         request,
         metadata || {},
         this.methodInfoCreateRunBook,
@@ -109,7 +109,7 @@ export class RunBookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/CreateRunBook',
+      '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/CreateRunBook',
     request,
     metadata || {},
     this.methodInfoCreateRunBook);
@@ -141,7 +141,7 @@ export class RunBookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/GetRunBook',
+          '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/GetRunBook',
         request,
         metadata || {},
         this.methodInfoGetRunBook,
@@ -149,7 +149,7 @@ export class RunBookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/GetRunBook',
+      '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/GetRunBook',
     request,
     metadata || {},
     this.methodInfoGetRunBook);
@@ -181,7 +181,7 @@ export class RunBookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/UpdateRunBook',
+          '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/UpdateRunBook',
         request,
         metadata || {},
         this.methodInfoUpdateRunBook,
@@ -189,7 +189,7 @@ export class RunBookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/UpdateRunBook',
+      '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/UpdateRunBook',
     request,
     metadata || {},
     this.methodInfoUpdateRunBook);
@@ -221,7 +221,7 @@ export class RunBookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/DeleteRunBook',
+          '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/DeleteRunBook',
         request,
         metadata || {},
         this.methodInfoDeleteRunBook,
@@ -229,7 +229,7 @@ export class RunBookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.runbook.v1.RunBookService/DeleteRunBook',
+      '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/DeleteRunBook',
     request,
     metadata || {},
     this.methodInfoDeleteRunBook);

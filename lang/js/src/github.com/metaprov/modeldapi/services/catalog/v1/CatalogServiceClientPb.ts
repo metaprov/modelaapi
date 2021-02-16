@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.catalog.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.catalog.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListAlgorithm',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListAlgorithm',
         request,
         metadata || {},
         this.methodInfoListAlgorithm,
@@ -69,7 +69,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListAlgorithm',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListAlgorithm',
     request,
     metadata || {},
     this.methodInfoListAlgorithm);
@@ -101,7 +101,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetAlgorithm',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetAlgorithm',
         request,
         metadata || {},
         this.methodInfoGetAlgorithm,
@@ -109,7 +109,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetAlgorithm',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetAlgorithm',
     request,
     metadata || {},
     this.methodInfoGetAlgorithm);
@@ -141,7 +141,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListMLFrameworks',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListMLFrameworks',
         request,
         metadata || {},
         this.methodInfoListMLFrameworks,
@@ -149,7 +149,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListMLFrameworks',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListMLFrameworks',
     request,
     metadata || {},
     this.methodInfoListMLFrameworks);
@@ -181,7 +181,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetMLFramework',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetMLFramework',
         request,
         metadata || {},
         this.methodInfoGetMLFramework,
@@ -189,7 +189,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetMLFramework',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetMLFramework',
     request,
     metadata || {},
     this.methodInfoGetMLFramework);
@@ -221,7 +221,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListClouds',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListClouds',
         request,
         metadata || {},
         this.methodInfoListClouds,
@@ -229,7 +229,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListClouds',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListClouds',
     request,
     metadata || {},
     this.methodInfoListClouds);
@@ -261,7 +261,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetCloud',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetCloud',
         request,
         metadata || {},
         this.methodInfoGetCloud,
@@ -269,7 +269,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetCloud',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetCloud',
     request,
     metadata || {},
     this.methodInfoGetCloud);
@@ -301,7 +301,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListWorkloadClasses',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListWorkloadClasses',
         request,
         metadata || {},
         this.methodInfoListWorkloadClasses,
@@ -309,7 +309,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListWorkloadClasses',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListWorkloadClasses',
     request,
     metadata || {},
     this.methodInfoListWorkloadClasses);
@@ -341,7 +341,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetWorkloadClass',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetWorkloadClass',
         request,
         metadata || {},
         this.methodInfoGetWorkloadClass,
@@ -349,7 +349,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetWorkloadClass',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetWorkloadClass',
     request,
     metadata || {},
     this.methodInfoGetWorkloadClass);
@@ -381,7 +381,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListUserRoleClasses',
         request,
         metadata || {},
         this.methodInfoListUserRoleClasses,
@@ -389,7 +389,7 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListUserRoleClasses',
     request,
     metadata || {},
     this.methodInfoListUserRoleClasses);
@@ -421,7 +421,7 @@ export class CatalogServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetUserRoleClass',
         request,
         metadata || {},
         this.methodInfoGetUserRoleClass,
@@ -429,10 +429,90 @@ export class CatalogServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetUserRoleClass',
     request,
     metadata || {},
     this.methodInfoGetUserRoleClass);
+  }
+
+  methodInfoListPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse.deserializeBinary
+  );
+
+  listPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse>;
+
+  listPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse>;
+
+  listPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListPublicDataset',
+        request,
+        metadata || {},
+        this.methodInfoListPublicDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListPublicDataset',
+    request,
+    metadata || {},
+    this.methodInfoListPublicDataset);
+  }
+
+  methodInfoGetPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse.deserializeBinary
+  );
+
+  getPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse>;
+
+  getPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse>;
+
+  getPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset',
+        request,
+        metadata || {},
+        this.methodInfoGetPublicDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset',
+    request,
+    metadata || {},
+    this.methodInfoGetPublicDataset);
   }
 
 }

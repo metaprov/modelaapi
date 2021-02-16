@@ -15,27 +15,27 @@ class ModelAutobuilderServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListModelAutobuilders = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
+                '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.ListModelAutobuildersRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.ListModelAutobuildersResponse.FromString,
                 )
         self.CreateModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
+                '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.CreateModelAutobuilderRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.CreateModelAutobuilderResponse.FromString,
                 )
         self.GetModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
+                '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.GetModelAutobuilderRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.GetModelAutobuilderResponse.FromString,
                 )
         self.UpdateModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
+                '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.UpdateModelAutobuilderRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.UpdateModelAutobuilderResponse.FromString,
                 )
         self.DeleteModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
+                '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.DeleteModelAutobuilderRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.DeleteModelAutobuilderResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_ModelAutobuilderServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class ModelAutobuilderService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.ListModelAutobuildersRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.ListModelAutobuildersResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class ModelAutobuilderService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.CreateModelAutobuilderRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.CreateModelAutobuilderResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class ModelAutobuilderService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.GetModelAutobuilderRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.GetModelAutobuilderResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class ModelAutobuilderService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.UpdateModelAutobuilderRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.UpdateModelAutobuilderResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class ModelAutobuilderService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.DeleteModelAutobuilderRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelautobuilder_dot_v1_dot_modelautobuilder__pb2.DeleteModelAutobuilderResponse.FromString,
             options, channel_credentials,

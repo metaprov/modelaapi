@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.study.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.study.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/ListStudies',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies',
         request,
         metadata || {},
         this.methodInfoListStudies,
@@ -69,7 +69,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/ListStudies',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies',
     request,
     metadata || {},
     this.methodInfoListStudies);
@@ -101,7 +101,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/CreateStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy',
         request,
         metadata || {},
         this.methodInfoCreateStudy,
@@ -109,7 +109,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/CreateStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy',
     request,
     metadata || {},
     this.methodInfoCreateStudy);
@@ -141,7 +141,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/GetStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy',
         request,
         metadata || {},
         this.methodInfoGetStudy,
@@ -149,7 +149,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/GetStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy',
     request,
     metadata || {},
     this.methodInfoGetStudy);
@@ -181,7 +181,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/UpdateStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy',
         request,
         metadata || {},
         this.methodInfoUpdateStudy,
@@ -189,7 +189,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/UpdateStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy',
     request,
     metadata || {},
     this.methodInfoUpdateStudy);
@@ -221,7 +221,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/DeleteStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy',
         request,
         metadata || {},
         this.methodInfoDeleteStudy,
@@ -229,7 +229,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/DeleteStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy',
     request,
     metadata || {},
     this.methodInfoDeleteStudy);
@@ -261,7 +261,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/CreateStudyProfile',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile',
         request,
         metadata || {},
         this.methodInfoCreateStudyProfile,
@@ -269,7 +269,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/CreateStudyProfile',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile',
     request,
     metadata || {},
     this.methodInfoCreateStudyProfile);
@@ -301,7 +301,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/GetStudyProfile',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile',
         request,
         metadata || {},
         this.methodInfoGetStudyProfile,
@@ -309,7 +309,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/GetStudyProfile',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile',
     request,
     metadata || {},
     this.methodInfoGetStudyProfile);
@@ -341,7 +341,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/AbortStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy',
         request,
         metadata || {},
         this.methodInfoAbortStudy,
@@ -349,7 +349,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/AbortStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy',
     request,
     metadata || {},
     this.methodInfoAbortStudy);
@@ -381,7 +381,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/PauseStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy',
         request,
         metadata || {},
         this.methodInfoPauseStudy,
@@ -389,7 +389,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/PauseStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy',
     request,
     metadata || {},
     this.methodInfoPauseStudy);
@@ -421,7 +421,7 @@ export class StudyServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.study.v1.StudyService/ResumeStudy',
+          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
         request,
         metadata || {},
         this.methodInfoResumeStudy,
@@ -429,7 +429,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.study.v1.StudyService/ResumeStudy',
+      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
     request,
     metadata || {},
     this.methodInfoResumeStudy);

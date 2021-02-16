@@ -15,37 +15,37 @@ class RecipeServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListRecipes = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ListRecipes',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ListRecipes',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ListRecipesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ListRecipesResponse.FromString,
                 )
         self.CreateRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/CreateRecipe',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/CreateRecipe',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.CreateRecipeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.CreateRecipeResponse.FromString,
                 )
         self.GetRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/GetRecipe',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/GetRecipe',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.GetRecipeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.GetRecipeResponse.FromString,
                 )
         self.RunRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/RunRecipe',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/RunRecipe',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.RunRecipeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.RunRecipeResponse.FromString,
                 )
         self.ProfileRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ProfileRecipe',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ProfileRecipe',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ProfileRecipeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ProfileRecipeResponse.FromString,
                 )
         self.UpdateRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/UpdateRecipe',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/UpdateRecipe',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.UpdateRecipeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.UpdateRecipeResponse.FromString,
                 )
         self.DeleteRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/DeleteRecipe',
+                '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/DeleteRecipe',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.DeleteRecipeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.DeleteRecipeResponse.FromString,
                 )
@@ -137,7 +137,7 @@ def add_RecipeServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.recipe.v1.RecipeService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.recipe.v1.RecipeService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -156,7 +156,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ListRecipes',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ListRecipes',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ListRecipesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ListRecipesResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/CreateRecipe',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/CreateRecipe',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.CreateRecipeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.CreateRecipeResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/GetRecipe',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/GetRecipe',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.GetRecipeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.GetRecipeResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/RunRecipe',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/RunRecipe',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.RunRecipeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.RunRecipeResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ProfileRecipe',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ProfileRecipe',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ProfileRecipeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.ProfileRecipeResponse.FromString,
             options, channel_credentials,
@@ -241,7 +241,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/UpdateRecipe',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/UpdateRecipe',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.UpdateRecipeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.UpdateRecipeResponse.FromString,
             options, channel_credentials,
@@ -258,7 +258,7 @@ class RecipeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/DeleteRecipe',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/DeleteRecipe',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.DeleteRecipeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_recipe_dot_v1_dot_recipe__pb2.DeleteRecipeResponse.FromString,
             options, channel_credentials,

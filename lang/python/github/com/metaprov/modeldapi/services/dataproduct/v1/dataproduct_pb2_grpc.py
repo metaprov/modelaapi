@@ -15,27 +15,27 @@ class DataProductServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListDataProducts = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/ListDataProducts',
+                '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/ListDataProducts',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.ListDataProductsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.ListDataProductsResponse.FromString,
                 )
         self.CreateDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/CreateDataProduct',
+                '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/CreateDataProduct',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.CreateDataProductRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.CreateDataProductResponse.FromString,
                 )
         self.GetDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/GetDataProduct',
+                '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/GetDataProduct',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.GetDataProductRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.GetDataProductResponse.FromString,
                 )
         self.UpdateDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/UpdateDataProduct',
+                '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/UpdateDataProduct',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.UpdateDataProductRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.UpdateDataProductResponse.FromString,
                 )
         self.DeleteDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/DeleteDataProduct',
+                '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/DeleteDataProduct',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.DeleteDataProductRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.DeleteDataProductResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_DataProductServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.dataproduct.v1.DataProductService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class DataProductService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/ListDataProducts',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/ListDataProducts',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.ListDataProductsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.ListDataProductsResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class DataProductService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/CreateDataProduct',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/CreateDataProduct',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.CreateDataProductRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.CreateDataProductResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class DataProductService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/GetDataProduct',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/GetDataProduct',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.GetDataProductRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.GetDataProductResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class DataProductService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/UpdateDataProduct',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/UpdateDataProduct',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.UpdateDataProductRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.UpdateDataProductResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class DataProductService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/DeleteDataProduct',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/DeleteDataProduct',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.DeleteDataProductRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproduct_dot_v1_dot_dataproduct__pb2.DeleteDataProductResponse.FromString,
             options, channel_credentials,

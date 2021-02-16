@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.trainerd.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.trainerd.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class TrainerdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Train',
+          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train',
         request,
         metadata || {},
         this.methodInfoTrain,
@@ -69,7 +69,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Train',
+      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train',
     request,
     metadata || {},
     this.methodInfoTrain);
@@ -101,7 +101,7 @@ export class TrainerdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Forecast',
+          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast',
         request,
         metadata || {},
         this.methodInfoForecast,
@@ -109,7 +109,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Forecast',
+      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast',
     request,
     metadata || {},
     this.methodInfoForecast);
@@ -141,7 +141,7 @@ export class TrainerdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Test',
+          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test',
         request,
         metadata || {},
         this.methodInfoTest,
@@ -149,7 +149,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Test',
+      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test',
     request,
     metadata || {},
     this.methodInfoTest);
@@ -181,7 +181,7 @@ export class TrainerdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TrainEnsemble',
+          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
         request,
         metadata || {},
         this.methodInfoTrainEnsemble,
@@ -189,7 +189,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TrainEnsemble',
+      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
     request,
     metadata || {},
     this.methodInfoTrainEnsemble);
@@ -221,7 +221,7 @@ export class TrainerdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TestEnsemble',
+          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble',
         request,
         metadata || {},
         this.methodInfoTestEnsemble,
@@ -229,7 +229,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/TestEnsemble',
+      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble',
     request,
     metadata || {},
     this.methodInfoTestEnsemble);
@@ -261,7 +261,7 @@ export class TrainerdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Shutdown',
+          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown',
         request,
         metadata || {},
         this.methodInfoShutdown,
@@ -269,7 +269,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.trainerd.v1.TrainerdService/Shutdown',
+      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown',
     request,
     metadata || {},
     this.methodInfoShutdown);

@@ -18,11 +18,11 @@ from github.com.metaprov.modeldapi.services.common.v1 import common_pb2 as githu
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto',
-  package='github.com.metaprov.modeld.services.virtualcluster.v1',
+  package='github.com.metaprov.modeldapi.services.virtualcluster.v1',
   syntax='proto3',
   serialized_options=b'Z8github.com/metaprov/modeldapi/services/virtualcluster/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nMgithub.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto\x12\x35github.com.metaprov.modeld.services.virtualcluster.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xef\x01\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x83\x01\n\x11virtualclusterels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry\x1a\x38\n\x16VirtualclusterelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListVirtualClustersResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList\"\x18\n\x16VirtualClusterResponse\"\xb6\x02\n\x1b\x43reateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1c\x43reateVirtualClusterResponse\"\xb6\x02\n\x1bUpdateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1cUpdateVirtualClusterResponse\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x19GetVirtualClusterResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteVirtualClusterResponse2\xd9\t\n\x15VirtualClusterService\x12\xdd\x01\n\x13ListVirtualClusters\x12Q.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest\x1aR.github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/virtualclusters\x12\xec\x01\n\x14\x43reateVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterResponse\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtualclusters:\x0evirtualcluster\x12\xf6\x01\n\x11GetVirtualCluster\x12O.github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest\x1aP.github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/virtualclusters/{virtualcluster.metadata.name}\x12\x82\x02\n\x14UpdateVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterResponse\"A\x82\xd3\xe4\x93\x02;\x1a)/v1/virtualclusters/{virtualcluster_name}:\x0evirtualcluster\x12\xf2\x01\n\x14\x44\x65leteVirtualCluster\x12R.github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest\x1aS.github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterResponse\"1\x82\xd3\xe4\x93\x02+*)/v1/virtualclusters/{virtualcluster_name}B:Z8github.com/metaprov/modeldapi/services/virtualcluster/v1b\x06proto3'
+  serialized_pb=b'\nMgithub.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto\x12\x38github.com.metaprov.modeldapi.services.virtualcluster.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xf2\x01\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x86\x01\n\x11virtualclusterels\x18\x03 \x03(\x0b\x32k.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry\x1a\x38\n\x16VirtualclusterelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListVirtualClustersResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList\"\x18\n\x16VirtualClusterResponse\"\xb9\x02\n\x1b\x43reateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12q\n\x06labels\x18\x03 \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1c\x43reateVirtualClusterResponse\"\xb9\x02\n\x1bUpdateVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12q\n\x06labels\x18\x03 \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\x1cUpdateVirtualClusterResponse\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x19GetVirtualClusterResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteVirtualClusterResponse2\xf7\t\n\x15VirtualClusterService\x12\xe3\x01\n\x13ListVirtualClusters\x12T.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest\x1aU.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/virtualclusters\x12\xf2\x01\n\x14\x43reateVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtualclusters:\x0evirtualcluster\x12\xfc\x01\n\x11GetVirtualCluster\x12R.github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest\x1aS.github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/virtualclusters/{virtualcluster.metadata.name}\x12\x88\x02\n\x14UpdateVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse\"A\x82\xd3\xe4\x93\x02;\x1a)/v1/virtualclusters/{virtualcluster_name}:\x0evirtualcluster\x12\xf8\x01\n\x14\x44\x65leteVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse\"1\x82\xd3\xe4\x93\x02+*)/v1/virtualclusters/{virtualcluster_name}B:Z8github.com/metaprov/modeldapi/services/virtualcluster/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -31,21 +31,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTVIRTUALCLUSTERSREQUEST_VIRTUALCLUSTERELSENTRY = _descriptor.Descriptor(
   name='VirtualclusterelsEntry',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -63,27 +63,27 @@ _LISTVIRTUALCLUSTERSREQUEST_VIRTUALCLUSTERELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=540,
+  serialized_start=490,
+  serialized_end=546,
 )
 
 _LISTVIRTUALCLUSTERSREQUEST = _descriptor.Descriptor(
   name='ListVirtualClustersRequest',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='virtualclusterels', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.virtualclusterels', index=1,
+      name='virtualclusterels', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.virtualclusterels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -101,21 +101,21 @@ _LISTVIRTUALCLUSTERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=301,
-  serialized_end=540,
+  serialized_start=304,
+  serialized_end=546,
 )
 
 
 _LISTVIRTUALCLUSTERSRESPONSE = _descriptor.Descriptor(
   name='ListVirtualClustersResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -133,14 +133,14 @@ _LISTVIRTUALCLUSTERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=542,
-  serialized_end=661,
+  serialized_start=548,
+  serialized_end=667,
 )
 
 
 _VIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   name='VirtualClusterResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -158,28 +158,28 @@ _VIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=663,
-  serialized_end=687,
+  serialized_start=669,
+  serialized_end=693,
 )
 
 
 _CREATEVIRTUALCLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -197,41 +197,41 @@ _CREATEVIRTUALCLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
-  serialized_end=1000,
+  serialized_start=964,
+  serialized_end=1009,
 )
 
 _CREATEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   name='CreateVirtualClusterRequest',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -249,14 +249,14 @@ _CREATEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=690,
-  serialized_end=1000,
+  serialized_start=696,
+  serialized_end=1009,
 )
 
 
 _CREATEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   name='CreateVirtualClusterResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -274,28 +274,28 @@ _CREATEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1002,
-  serialized_end=1032,
+  serialized_start=1011,
+  serialized_end=1041,
 )
 
 
 _UPDATEVIRTUALCLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -313,41 +313,41 @@ _UPDATEVIRTUALCLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
-  serialized_end=1000,
+  serialized_start=964,
+  serialized_end=1009,
 )
 
 _UPDATEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   name='UpdateVirtualClusterRequest',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -365,14 +365,14 @@ _UPDATEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1035,
-  serialized_end=1345,
+  serialized_start=1044,
+  serialized_end=1357,
 )
 
 
 _UPDATEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   name='UpdateVirtualClusterResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -390,28 +390,28 @@ _UPDATEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1347,
-  serialized_end=1377,
+  serialized_start=1359,
+  serialized_end=1389,
 )
 
 
 _GETVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   name='GetVirtualClusterRequest',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -429,28 +429,28 @@ _GETVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1379,
-  serialized_end=1438,
+  serialized_start=1391,
+  serialized_end=1450,
 )
 
 
 _GETVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   name='GetVirtualClusterResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -468,28 +468,28 @@ _GETVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1440,
-  serialized_end=1566,
+  serialized_start=1452,
+  serialized_end=1578,
 )
 
 
 _DELETEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   name='DeleteVirtualClusterRequest',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -507,14 +507,14 @@ _DELETEVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1568,
-  serialized_end=1630,
+  serialized_start=1580,
+  serialized_end=1642,
 )
 
 
 _DELETEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   name='DeleteVirtualClusterResponse',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterResponse',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -532,8 +532,8 @@ _DELETEVIRTUALCLUSTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1632,
-  serialized_end=1662,
+  serialized_start=1644,
+  serialized_end=1674,
 )
 
 _LISTVIRTUALCLUSTERSREQUEST_VIRTUALCLUSTERELSENTRY.containing_type = _LISTVIRTUALCLUSTERSREQUEST
@@ -564,12 +564,12 @@ ListVirtualClustersRequest = _reflection.GeneratedProtocolMessageType('ListVirtu
   'VirtualclusterelsEntry' : _reflection.GeneratedProtocolMessageType('VirtualclusterelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTVIRTUALCLUSTERSREQUEST_VIRTUALCLUSTERELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTVIRTUALCLUSTERSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest)
   })
 _sym_db.RegisterMessage(ListVirtualClustersRequest)
 _sym_db.RegisterMessage(ListVirtualClustersRequest.VirtualclusterelsEntry)
@@ -577,14 +577,14 @@ _sym_db.RegisterMessage(ListVirtualClustersRequest.VirtualclusterelsEntry)
 ListVirtualClustersResponse = _reflection.GeneratedProtocolMessageType('ListVirtualClustersResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTVIRTUALCLUSTERSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.ListVirtualClustersResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse)
   })
 _sym_db.RegisterMessage(ListVirtualClustersResponse)
 
 VirtualClusterResponse = _reflection.GeneratedProtocolMessageType('VirtualClusterResponse', (_message.Message,), {
   'DESCRIPTOR' : _VIRTUALCLUSTERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterResponse)
   })
 _sym_db.RegisterMessage(VirtualClusterResponse)
 
@@ -593,12 +593,12 @@ CreateVirtualClusterRequest = _reflection.GeneratedProtocolMessageType('CreateVi
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEVIRTUALCLUSTERREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEVIRTUALCLUSTERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest)
   })
 _sym_db.RegisterMessage(CreateVirtualClusterRequest)
 _sym_db.RegisterMessage(CreateVirtualClusterRequest.LabelsEntry)
@@ -606,7 +606,7 @@ _sym_db.RegisterMessage(CreateVirtualClusterRequest.LabelsEntry)
 CreateVirtualClusterResponse = _reflection.GeneratedProtocolMessageType('CreateVirtualClusterResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEVIRTUALCLUSTERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.CreateVirtualClusterResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse)
   })
 _sym_db.RegisterMessage(CreateVirtualClusterResponse)
 
@@ -615,12 +615,12 @@ UpdateVirtualClusterRequest = _reflection.GeneratedProtocolMessageType('UpdateVi
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEVIRTUALCLUSTERREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEVIRTUALCLUSTERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest)
   })
 _sym_db.RegisterMessage(UpdateVirtualClusterRequest)
 _sym_db.RegisterMessage(UpdateVirtualClusterRequest.LabelsEntry)
@@ -628,35 +628,35 @@ _sym_db.RegisterMessage(UpdateVirtualClusterRequest.LabelsEntry)
 UpdateVirtualClusterResponse = _reflection.GeneratedProtocolMessageType('UpdateVirtualClusterResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEVIRTUALCLUSTERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.UpdateVirtualClusterResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse)
   })
 _sym_db.RegisterMessage(UpdateVirtualClusterResponse)
 
 GetVirtualClusterRequest = _reflection.GeneratedProtocolMessageType('GetVirtualClusterRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETVIRTUALCLUSTERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest)
   })
 _sym_db.RegisterMessage(GetVirtualClusterRequest)
 
 GetVirtualClusterResponse = _reflection.GeneratedProtocolMessageType('GetVirtualClusterResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETVIRTUALCLUSTERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.GetVirtualClusterResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse)
   })
 _sym_db.RegisterMessage(GetVirtualClusterResponse)
 
 DeleteVirtualClusterRequest = _reflection.GeneratedProtocolMessageType('DeleteVirtualClusterRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEVIRTUALCLUSTERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest)
   })
 _sym_db.RegisterMessage(DeleteVirtualClusterRequest)
 
 DeleteVirtualClusterResponse = _reflection.GeneratedProtocolMessageType('DeleteVirtualClusterResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEVIRTUALCLUSTERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.virtualcluster.v1.virtualcluster_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.virtualcluster.v1.DeleteVirtualClusterResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse)
   })
 _sym_db.RegisterMessage(DeleteVirtualClusterResponse)
 
@@ -668,17 +668,17 @@ _UPDATEVIRTUALCLUSTERREQUEST_LABELSENTRY._options = None
 
 _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   name='VirtualClusterService',
-  full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService',
+  full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1665,
-  serialized_end=2906,
+  serialized_start=1677,
+  serialized_end=2948,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVirtualClusters',
-    full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService.ListVirtualClusters',
+    full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.ListVirtualClusters',
     index=0,
     containing_service=None,
     input_type=_LISTVIRTUALCLUSTERSREQUEST,
@@ -688,7 +688,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateVirtualCluster',
-    full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService.CreateVirtualCluster',
+    full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.CreateVirtualCluster',
     index=1,
     containing_service=None,
     input_type=_CREATEVIRTUALCLUSTERREQUEST,
@@ -698,7 +698,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetVirtualCluster',
-    full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService.GetVirtualCluster',
+    full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.GetVirtualCluster',
     index=2,
     containing_service=None,
     input_type=_GETVIRTUALCLUSTERREQUEST,
@@ -708,7 +708,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateVirtualCluster',
-    full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService.UpdateVirtualCluster',
+    full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.UpdateVirtualCluster',
     index=3,
     containing_service=None,
     input_type=_UPDATEVIRTUALCLUSTERREQUEST,
@@ -718,7 +718,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteVirtualCluster',
-    full_name='github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService.DeleteVirtualCluster',
+    full_name='github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.DeleteVirtualCluster',
     index=4,
     containing_service=None,
     input_type=_DELETEVIRTUALCLUSTERREQUEST,

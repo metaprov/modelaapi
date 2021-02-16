@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.modelautobuilder.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.modelautobuilder.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ModelAutobuilderServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
+          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
         request,
         metadata || {},
         this.methodInfoListModelAutobuilders,
@@ -69,7 +69,7 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
+      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
     request,
     metadata || {},
     this.methodInfoListModelAutobuilders);
@@ -101,7 +101,7 @@ export class ModelAutobuilderServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
+          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoCreateModelAutobuilder,
@@ -109,7 +109,7 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
+      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoCreateModelAutobuilder);
@@ -141,7 +141,7 @@ export class ModelAutobuilderServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
+          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoGetModelAutobuilder,
@@ -149,7 +149,7 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
+      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoGetModelAutobuilder);
@@ -181,7 +181,7 @@ export class ModelAutobuilderServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
+          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoUpdateModelAutobuilder,
@@ -189,7 +189,7 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
+      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoUpdateModelAutobuilder);
@@ -221,7 +221,7 @@ export class ModelAutobuilderServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
+          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoDeleteModelAutobuilder,
@@ -229,7 +229,7 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
+      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoDeleteModelAutobuilder);

@@ -15,27 +15,27 @@ class LabServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListLabs = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.lab.v1.LabService/ListLabs',
+                '/github.com.metaprov.modeldapi.services.lab.v1.LabService/ListLabs',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.ListLabsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.ListLabsResponse.FromString,
                 )
         self.CreateLab = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.lab.v1.LabService/CreateLab',
+                '/github.com.metaprov.modeldapi.services.lab.v1.LabService/CreateLab',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.CreateLabRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.CreateLabResponse.FromString,
                 )
         self.GetLab = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.lab.v1.LabService/GetLab',
+                '/github.com.metaprov.modeldapi.services.lab.v1.LabService/GetLab',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.GetLabRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.GetLabResponse.FromString,
                 )
         self.UpdateLab = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.lab.v1.LabService/UpdateLab',
+                '/github.com.metaprov.modeldapi.services.lab.v1.LabService/UpdateLab',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.UpdateLabRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.UpdateLabResponse.FromString,
                 )
         self.DeleteLab = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.lab.v1.LabService/DeleteLab',
+                '/github.com.metaprov.modeldapi.services.lab.v1.LabService/DeleteLab',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.DeleteLabRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.DeleteLabResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_LabServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.lab.v1.LabService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.lab.v1.LabService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class LabService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.lab.v1.LabService/ListLabs',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.lab.v1.LabService/ListLabs',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.ListLabsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.ListLabsResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class LabService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.lab.v1.LabService/CreateLab',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.lab.v1.LabService/CreateLab',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.CreateLabRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.CreateLabResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class LabService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.lab.v1.LabService/GetLab',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.lab.v1.LabService/GetLab',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.GetLabRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.GetLabResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class LabService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.lab.v1.LabService/UpdateLab',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.lab.v1.LabService/UpdateLab',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.UpdateLabRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.UpdateLabResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class LabService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.lab.v1.LabService/DeleteLab',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.lab.v1.LabService/DeleteLab',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.DeleteLabRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_lab_dot_v1_dot_lab__pb2.DeleteLabResponse.FromString,
             options, channel_credentials,

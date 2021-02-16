@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.k8score.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.k8score.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sSecrets',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sSecrets',
         request,
         metadata || {},
         this.methodInfoListK8sSecrets,
@@ -69,7 +69,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sSecrets',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sSecrets',
     request,
     metadata || {},
     this.methodInfoListK8sSecrets);
@@ -101,7 +101,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sSecret',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sSecret',
         request,
         metadata || {},
         this.methodInfoGetK8sSecret,
@@ -109,7 +109,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sSecret',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sSecret',
     request,
     metadata || {},
     this.methodInfoGetK8sSecret);
@@ -141,7 +141,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sServices',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sServices',
         request,
         metadata || {},
         this.methodInfoListK8sServices,
@@ -149,7 +149,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sServices',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sServices',
     request,
     metadata || {},
     this.methodInfoListK8sServices);
@@ -181,7 +181,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sService',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sService',
         request,
         metadata || {},
         this.methodInfoGetK8sService,
@@ -189,7 +189,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sService',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sService',
     request,
     metadata || {},
     this.methodInfoGetK8sService);
@@ -221,7 +221,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sDeployments',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sDeployments',
         request,
         metadata || {},
         this.methodInfoListK8sDeployments,
@@ -229,7 +229,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sDeployments',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sDeployments',
     request,
     metadata || {},
     this.methodInfoListK8sDeployments);
@@ -261,7 +261,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sDeployment',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sDeployment',
         request,
         metadata || {},
         this.methodInfoGetK8sDeployment,
@@ -269,7 +269,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sDeployment',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sDeployment',
     request,
     metadata || {},
     this.methodInfoGetK8sDeployment);
@@ -301,7 +301,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sPods',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sPods',
         request,
         metadata || {},
         this.methodInfoListK8sPods,
@@ -309,7 +309,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListK8sPods',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sPods',
     request,
     metadata || {},
     this.methodInfoListK8sPods);
@@ -341,7 +341,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sPod',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sPod',
         request,
         metadata || {},
         this.methodInfoGetK8sPod,
@@ -349,7 +349,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/GetK8sPod',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sPod',
     request,
     metadata || {},
     this.methodInfoGetK8sPod);
@@ -381,7 +381,7 @@ export class CoreK8sServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListEvents',
+          '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListEvents',
         request,
         metadata || {},
         this.methodInfoListEvents,
@@ -389,7 +389,7 @@ export class CoreK8sServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.k8score.v1.CoreK8sService/ListEvents',
+      '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListEvents',
     request,
     metadata || {},
     this.methodInfoListEvents);

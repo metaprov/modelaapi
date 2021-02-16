@@ -18,11 +18,11 @@ from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto',
-  package='github.com.metaprov.modeld.services.recipe.v1',
+  package='github.com.metaprov.modeldapi.services.recipe.v1',
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modeldapi/services/recipe/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto\x12-github.com.metaprov.modeld.services.recipe.v1\x1a\x1cgoogle/api/annotations.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xb5\x01\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"f\n\x13ListRecipesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeList\"\x95\x02\n\x13\x43reateRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.LabelsEntry\x12N\n\x04spec\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x43reateRecipeResponse\"\x95\x02\n\x13UpdateRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.LabelsEntry\x12N\n\x04spec\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14UpdateRecipeResponse\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x87\x01\n\x14ProfileRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\"c\n\x15ProfileRecipeResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\x83\x01\n\x10RunRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\"o\n\x11RunRecipeResponse\x12L\n\x06recipe\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"m\n\x11GetRecipeResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteRecipeResponse2\xfb\t\n\rRecipeService\x12\xa9\x01\n\x0bListRecipes\x12\x41.github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest\x1a\x42.github.com.metaprov.modeld.services.recipe.v1.ListRecipesResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/recipes\x12\xb4\x01\n\x0c\x43reateRecipe\x12\x42.github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest\x1a\x43.github.com.metaprov.modeld.services.recipe.v1.CreateRecipeResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/recipes:\x06recipe\x12\xaa\x01\n\tGetRecipe\x12?.github.com.metaprov.modeld.services.recipe.v1.GetRecipeRequest\x1a@.github.com.metaprov.modeld.services.recipe.v1.GetRecipeResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/recipes/{name}\x12\xae\x01\n\tRunRecipe\x12?.github.com.metaprov.modeld.services.recipe.v1.RunRecipeRequest\x1a@.github.com.metaprov.modeld.services.recipe.v1.RunRecipeResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/recipes/{name}:run\x12\xbe\x01\n\rProfileRecipe\x12\x43.github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeRequest\x1a\x44.github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/recipes/{name}:profile\x12\xcb\x01\n\x0cUpdateRecipe\x12\x42.github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest\x1a\x43.github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeResponse\"2\x82\xd3\xe4\x93\x02,\x1a\"/v1/recipes/{recipe.metadata.name}:\x06recipe\x12\x99\x01\n\x0c\x44\x65leteRecipe\x12\x42.github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeRequest\x1a\x43.github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/recipe/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto\x12\x30github.com.metaprov.modeldapi.services.recipe.v1\x1a\x1cgoogle/api/annotations.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xb8\x01\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"f\n\x13ListRecipesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeList\"\x98\x02\n\x13\x43reateRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.LabelsEntry\x12N\n\x04spec\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x43reateRecipeResponse\"\x98\x02\n\x13UpdateRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.LabelsEntry\x12N\n\x04spec\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14UpdateRecipeResponse\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x87\x01\n\x14ProfileRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\"c\n\x15ProfileRecipeResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\x83\x01\n\x10RunRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec\"o\n\x11RunRecipeResponse\x12L\n\x06recipe\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"m\n\x11GetRecipeResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteRecipeResponse2\xa5\n\n\rRecipeService\x12\xaf\x01\n\x0bListRecipes\x12\x44.github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest\x1a\x45.github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/recipes\x12\xba\x01\n\x0c\x43reateRecipe\x12\x45.github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest\x1a\x46.github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/recipes:\x06recipe\x12\xb0\x01\n\tGetRecipe\x12\x42.github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest\x1a\x43.github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/recipes/{name}\x12\xb4\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest\x1a\x43.github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/recipes/{name}:run\x12\xc4\x01\n\rProfileRecipe\x12\x46.github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest\x1aG.github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/recipes/{name}:profile\x12\xd1\x01\n\x0cUpdateRecipe\x12\x45.github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest\x1a\x46.github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeResponse\"2\x82\xd3\xe4\x93\x02,\x1a\"/v1/recipes/{recipe.metadata.name}:\x06recipe\x12\x9f\x01\n\x0c\x44\x65leteRecipe\x12\x45.github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest\x1a\x46.github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/recipe/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -31,21 +31,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTRECIPESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -63,27 +63,27 @@ _LISTRECIPESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=412,
-  serialized_end=457,
+  serialized_start=418,
+  serialized_end=463,
 )
 
 _LISTRECIPESREQUEST = _descriptor.Descriptor(
   name='ListRecipesRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.labels', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -101,21 +101,21 @@ _LISTRECIPESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=457,
+  serialized_start=279,
+  serialized_end=463,
 )
 
 
 _LISTRECIPESRESPONSE = _descriptor.Descriptor(
   name='ListRecipesResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.recipe.v1.ListRecipesResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -133,28 +133,28 @@ _LISTRECIPESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=561,
+  serialized_start=465,
+  serialized_end=567,
 )
 
 
 _CREATERECIPEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -172,41 +172,41 @@ _CREATERECIPEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=412,
-  serialized_end=457,
+  serialized_start=418,
+  serialized_end=463,
 )
 
 _CREATERECIPEREQUEST = _descriptor.Descriptor(
   name='CreateRecipeRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -224,14 +224,14 @@ _CREATERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=564,
-  serialized_end=841,
+  serialized_start=570,
+  serialized_end=850,
 )
 
 
 _CREATERECIPERESPONSE = _descriptor.Descriptor(
   name='CreateRecipeResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.CreateRecipeResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -249,28 +249,28 @@ _CREATERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=843,
-  serialized_end=865,
+  serialized_start=852,
+  serialized_end=874,
 )
 
 
 _UPDATERECIPEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -288,41 +288,41 @@ _UPDATERECIPEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=412,
-  serialized_end=457,
+  serialized_start=418,
+  serialized_end=463,
 )
 
 _UPDATERECIPEREQUEST = _descriptor.Descriptor(
   name='UpdateRecipeRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -340,14 +340,14 @@ _UPDATERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=868,
-  serialized_end=1145,
+  serialized_start=877,
+  serialized_end=1157,
 )
 
 
 _UPDATERECIPERESPONSE = _descriptor.Descriptor(
   name='UpdateRecipeResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -365,28 +365,28 @@ _UPDATERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1147,
-  serialized_end=1169,
+  serialized_start=1159,
+  serialized_end=1181,
 )
 
 
 _GETRECIPEREQUEST = _descriptor.Descriptor(
   name='GetRecipeRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.GetRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.GetRecipeRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.recipe.v1.GetRecipeRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -404,35 +404,35 @@ _GETRECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1171,
-  serialized_end=1222,
+  serialized_start=1183,
+  serialized_end=1234,
 )
 
 
 _PROFILERECIPEREQUEST = _descriptor.Descriptor(
   name='ProfileRecipeRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeRequest.spec', index=2,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest.spec', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -450,21 +450,21 @@ _PROFILERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1225,
-  serialized_end=1360,
+  serialized_start=1237,
+  serialized_end=1372,
 )
 
 
 _PROFILERECIPERESPONSE = _descriptor.Descriptor(
   name='ProfileRecipeResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='table', full_name='github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeResponse.table', index=0,
+      name='table', full_name='github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse.table', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -482,35 +482,35 @@ _PROFILERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1362,
-  serialized_end=1461,
+  serialized_start=1374,
+  serialized_end=1473,
 )
 
 
 _RUNRECIPEREQUEST = _descriptor.Descriptor(
   name='RunRecipeRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeRequest.spec', index=2,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest.spec', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -528,28 +528,28 @@ _RUNRECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1464,
-  serialized_end=1595,
+  serialized_start=1476,
+  serialized_end=1607,
 )
 
 
 _RUNRECIPERESPONSE = _descriptor.Descriptor(
   name='RunRecipeResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='recipe', full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeResponse.recipe', index=0,
+      name='recipe', full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse.recipe', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.recipe.v1.RunRecipeResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -567,28 +567,28 @@ _RUNRECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1597,
-  serialized_end=1708,
+  serialized_start=1609,
+  serialized_end=1720,
 )
 
 
 _GETRECIPERESPONSE = _descriptor.Descriptor(
   name='GetRecipeResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.GetRecipeResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.recipe.v1.GetRecipeResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.recipe.v1.GetRecipeResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -606,28 +606,28 @@ _GETRECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1710,
-  serialized_end=1819,
+  serialized_start=1722,
+  serialized_end=1831,
 )
 
 
 _DELETERECIPEREQUEST = _descriptor.Descriptor(
   name='DeleteRecipeRequest',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -645,14 +645,14 @@ _DELETERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1821,
-  serialized_end=1875,
+  serialized_start=1833,
+  serialized_end=1887,
 )
 
 
 _DELETERECIPERESPONSE = _descriptor.Descriptor(
   name='DeleteRecipeResponse',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeResponse',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -670,8 +670,8 @@ _DELETERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1877,
-  serialized_end=1899,
+  serialized_start=1889,
+  serialized_end=1911,
 )
 
 _LISTRECIPESREQUEST_LABELSENTRY.containing_type = _LISTRECIPESREQUEST
@@ -709,12 +709,12 @@ ListRecipesRequest = _reflection.GeneratedProtocolMessageType('ListRecipesReques
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTRECIPESREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTRECIPESREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.ListRecipesRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest)
   })
 _sym_db.RegisterMessage(ListRecipesRequest)
 _sym_db.RegisterMessage(ListRecipesRequest.LabelsEntry)
@@ -722,7 +722,7 @@ _sym_db.RegisterMessage(ListRecipesRequest.LabelsEntry)
 ListRecipesResponse = _reflection.GeneratedProtocolMessageType('ListRecipesResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTRECIPESRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.ListRecipesResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse)
   })
 _sym_db.RegisterMessage(ListRecipesResponse)
 
@@ -731,12 +731,12 @@ CreateRecipeRequest = _reflection.GeneratedProtocolMessageType('CreateRecipeRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATERECIPEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATERECIPEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.CreateRecipeRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest)
   })
 _sym_db.RegisterMessage(CreateRecipeRequest)
 _sym_db.RegisterMessage(CreateRecipeRequest.LabelsEntry)
@@ -744,7 +744,7 @@ _sym_db.RegisterMessage(CreateRecipeRequest.LabelsEntry)
 CreateRecipeResponse = _reflection.GeneratedProtocolMessageType('CreateRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATERECIPERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.CreateRecipeResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeResponse)
   })
 _sym_db.RegisterMessage(CreateRecipeResponse)
 
@@ -753,12 +753,12 @@ UpdateRecipeRequest = _reflection.GeneratedProtocolMessageType('UpdateRecipeRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATERECIPEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATERECIPEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest)
   })
 _sym_db.RegisterMessage(UpdateRecipeRequest)
 _sym_db.RegisterMessage(UpdateRecipeRequest.LabelsEntry)
@@ -766,63 +766,63 @@ _sym_db.RegisterMessage(UpdateRecipeRequest.LabelsEntry)
 UpdateRecipeResponse = _reflection.GeneratedProtocolMessageType('UpdateRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATERECIPERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.UpdateRecipeResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeResponse)
   })
 _sym_db.RegisterMessage(UpdateRecipeResponse)
 
 GetRecipeRequest = _reflection.GeneratedProtocolMessageType('GetRecipeRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETRECIPEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.GetRecipeRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest)
   })
 _sym_db.RegisterMessage(GetRecipeRequest)
 
 ProfileRecipeRequest = _reflection.GeneratedProtocolMessageType('ProfileRecipeRequest', (_message.Message,), {
   'DESCRIPTOR' : _PROFILERECIPEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest)
   })
 _sym_db.RegisterMessage(ProfileRecipeRequest)
 
 ProfileRecipeResponse = _reflection.GeneratedProtocolMessageType('ProfileRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _PROFILERECIPERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.ProfileRecipeResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse)
   })
 _sym_db.RegisterMessage(ProfileRecipeResponse)
 
 RunRecipeRequest = _reflection.GeneratedProtocolMessageType('RunRecipeRequest', (_message.Message,), {
   'DESCRIPTOR' : _RUNRECIPEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.RunRecipeRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest)
   })
 _sym_db.RegisterMessage(RunRecipeRequest)
 
 RunRecipeResponse = _reflection.GeneratedProtocolMessageType('RunRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _RUNRECIPERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.RunRecipeResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse)
   })
 _sym_db.RegisterMessage(RunRecipeResponse)
 
 GetRecipeResponse = _reflection.GeneratedProtocolMessageType('GetRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETRECIPERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.GetRecipeResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse)
   })
 _sym_db.RegisterMessage(GetRecipeResponse)
 
 DeleteRecipeRequest = _reflection.GeneratedProtocolMessageType('DeleteRecipeRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETERECIPEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest)
   })
 _sym_db.RegisterMessage(DeleteRecipeRequest)
 
 DeleteRecipeResponse = _reflection.GeneratedProtocolMessageType('DeleteRecipeResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETERECIPERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.recipe.v1.recipe_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.recipe.v1.DeleteRecipeResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeResponse)
   })
 _sym_db.RegisterMessage(DeleteRecipeResponse)
 
@@ -834,17 +834,17 @@ _UPDATERECIPEREQUEST_LABELSENTRY._options = None
 
 _RECIPESERVICE = _descriptor.ServiceDescriptor(
   name='RecipeService',
-  full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService',
+  full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1902,
-  serialized_end=3177,
+  serialized_start=1914,
+  serialized_end=3231,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListRecipes',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.ListRecipes',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.ListRecipes',
     index=0,
     containing_service=None,
     input_type=_LISTRECIPESREQUEST,
@@ -854,7 +854,7 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateRecipe',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.CreateRecipe',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.CreateRecipe',
     index=1,
     containing_service=None,
     input_type=_CREATERECIPEREQUEST,
@@ -864,7 +864,7 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetRecipe',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.GetRecipe',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.GetRecipe',
     index=2,
     containing_service=None,
     input_type=_GETRECIPEREQUEST,
@@ -874,7 +874,7 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RunRecipe',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.RunRecipe',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.RunRecipe',
     index=3,
     containing_service=None,
     input_type=_RUNRECIPEREQUEST,
@@ -884,7 +884,7 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ProfileRecipe',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.ProfileRecipe',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.ProfileRecipe',
     index=4,
     containing_service=None,
     input_type=_PROFILERECIPEREQUEST,
@@ -894,7 +894,7 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateRecipe',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.UpdateRecipe',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.UpdateRecipe',
     index=5,
     containing_service=None,
     input_type=_UPDATERECIPEREQUEST,
@@ -904,7 +904,7 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteRecipe',
-    full_name='github.com.metaprov.modeld.services.recipe.v1.RecipeService.DeleteRecipe',
+    full_name='github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.DeleteRecipe',
     index=6,
     containing_service=None,
     input_type=_DELETERECIPEREQUEST,

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.predictor.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictor.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PredictorServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/ListPredictors',
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/ListPredictors',
         request,
         metadata || {},
         this.methodInfoListPredictors,
@@ -69,7 +69,7 @@ export class PredictorServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/ListPredictors',
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/ListPredictors',
     request,
     metadata || {},
     this.methodInfoListPredictors);
@@ -101,7 +101,7 @@ export class PredictorServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/CreatePredictor',
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/CreatePredictor',
         request,
         metadata || {},
         this.methodInfoCreatePredictor,
@@ -109,7 +109,7 @@ export class PredictorServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/CreatePredictor',
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/CreatePredictor',
     request,
     metadata || {},
     this.methodInfoCreatePredictor);
@@ -141,7 +141,7 @@ export class PredictorServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/GetPredictor',
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/GetPredictor',
         request,
         metadata || {},
         this.methodInfoGetPredictor,
@@ -149,7 +149,7 @@ export class PredictorServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/GetPredictor',
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/GetPredictor',
     request,
     metadata || {},
     this.methodInfoGetPredictor);
@@ -181,7 +181,7 @@ export class PredictorServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/UpdatePredictor',
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor',
         request,
         metadata || {},
         this.methodInfoUpdatePredictor,
@@ -189,7 +189,7 @@ export class PredictorServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/UpdatePredictor',
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor',
     request,
     metadata || {},
     this.methodInfoUpdatePredictor);
@@ -221,7 +221,7 @@ export class PredictorServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/DeletePredictor',
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor',
         request,
         metadata || {},
         this.methodInfoDeletePredictor,
@@ -229,7 +229,7 @@ export class PredictorServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/DeletePredictor',
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor',
     request,
     metadata || {},
     this.methodInfoDeletePredictor);
@@ -261,7 +261,7 @@ export class PredictorServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/PredictOne',
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/PredictOne',
         request,
         metadata || {},
         this.methodInfoPredictOne,
@@ -269,7 +269,7 @@ export class PredictorServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictor.v1.PredictorService/PredictOne',
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/PredictOne',
     request,
     metadata || {},
     this.methodInfoPredictOne);

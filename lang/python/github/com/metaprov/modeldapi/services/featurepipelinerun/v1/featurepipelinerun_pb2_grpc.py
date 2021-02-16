@@ -15,27 +15,27 @@ class FeaturePipelineRunServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListFeaturePipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
+                '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.ListFeaturePipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.ListFeaturePipelineRunResponse.FromString,
                 )
         self.CreateFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
+                '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.CreateFeaturePipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.CreateFeaturePipelineRunResponse.FromString,
                 )
         self.GetFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
+                '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.GetFeaturePipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.GetFeaturePipelineRunResponse.FromString,
                 )
         self.UpdateFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
+                '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.UpdateFeaturePipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.UpdateFeaturePipelineRunResponse.FromString,
                 )
         self.DeleteFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
+                '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.DeleteFeaturePipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.DeleteFeaturePipelineRunResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_FeaturePipelineRunServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class FeaturePipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.ListFeaturePipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.ListFeaturePipelineRunResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class FeaturePipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.CreateFeaturePipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.CreateFeaturePipelineRunResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class FeaturePipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.GetFeaturePipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.GetFeaturePipelineRunResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class FeaturePipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.UpdateFeaturePipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.UpdateFeaturePipelineRunResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class FeaturePipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.DeleteFeaturePipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipelinerun_dot_v1_dot_featurepipelinerun__pb2.DeleteFeaturePipelineRunResponse.FromString,
             options, channel_credentials,

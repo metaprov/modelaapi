@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.connection.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.connection.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ConnectionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/ListConnections',
+          '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/ListConnections',
         request,
         metadata || {},
         this.methodInfoListConnections,
@@ -69,7 +69,7 @@ export class ConnectionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/ListConnections',
+      '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/ListConnections',
     request,
     metadata || {},
     this.methodInfoListConnections);
@@ -101,7 +101,7 @@ export class ConnectionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/CreateConnection',
+          '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/CreateConnection',
         request,
         metadata || {},
         this.methodInfoCreateConnection,
@@ -109,7 +109,7 @@ export class ConnectionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/CreateConnection',
+      '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/CreateConnection',
     request,
     metadata || {},
     this.methodInfoCreateConnection);
@@ -141,7 +141,7 @@ export class ConnectionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/GetConnection',
+          '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/GetConnection',
         request,
         metadata || {},
         this.methodInfoGetConnection,
@@ -149,7 +149,7 @@ export class ConnectionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/GetConnection',
+      '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/GetConnection',
     request,
     metadata || {},
     this.methodInfoGetConnection);
@@ -181,7 +181,7 @@ export class ConnectionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/UpdateConnection',
+          '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/UpdateConnection',
         request,
         metadata || {},
         this.methodInfoUpdateConnection,
@@ -189,7 +189,7 @@ export class ConnectionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/UpdateConnection',
+      '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/UpdateConnection',
     request,
     metadata || {},
     this.methodInfoUpdateConnection);
@@ -221,7 +221,7 @@ export class ConnectionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/DeleteConnection',
+          '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/DeleteConnection',
         request,
         metadata || {},
         this.methodInfoDeleteConnection,
@@ -229,7 +229,7 @@ export class ConnectionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.connection.v1.ConnectionService/DeleteConnection',
+      '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/DeleteConnection',
     request,
     metadata || {},
     this.methodInfoDeleteConnection);

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.recipe.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.recipe.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ListRecipes',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ListRecipes',
         request,
         metadata || {},
         this.methodInfoListRecipes,
@@ -69,7 +69,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ListRecipes',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ListRecipes',
     request,
     metadata || {},
     this.methodInfoListRecipes);
@@ -101,7 +101,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/CreateRecipe',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/CreateRecipe',
         request,
         metadata || {},
         this.methodInfoCreateRecipe,
@@ -109,7 +109,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/CreateRecipe',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/CreateRecipe',
     request,
     metadata || {},
     this.methodInfoCreateRecipe);
@@ -141,7 +141,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/GetRecipe',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/GetRecipe',
         request,
         metadata || {},
         this.methodInfoGetRecipe,
@@ -149,7 +149,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/GetRecipe',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/GetRecipe',
     request,
     metadata || {},
     this.methodInfoGetRecipe);
@@ -181,7 +181,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/RunRecipe',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/RunRecipe',
         request,
         metadata || {},
         this.methodInfoRunRecipe,
@@ -189,7 +189,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/RunRecipe',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/RunRecipe',
     request,
     metadata || {},
     this.methodInfoRunRecipe);
@@ -221,7 +221,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ProfileRecipe',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ProfileRecipe',
         request,
         metadata || {},
         this.methodInfoProfileRecipe,
@@ -229,7 +229,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/ProfileRecipe',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ProfileRecipe',
     request,
     metadata || {},
     this.methodInfoProfileRecipe);
@@ -261,7 +261,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/UpdateRecipe',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/UpdateRecipe',
         request,
         metadata || {},
         this.methodInfoUpdateRecipe,
@@ -269,7 +269,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/UpdateRecipe',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/UpdateRecipe',
     request,
     metadata || {},
     this.methodInfoUpdateRecipe);
@@ -301,7 +301,7 @@ export class RecipeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/DeleteRecipe',
+          '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/DeleteRecipe',
         request,
         metadata || {},
         this.methodInfoDeleteRecipe,
@@ -309,7 +309,7 @@ export class RecipeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.recipe.v1.RecipeService/DeleteRecipe',
+      '/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/DeleteRecipe',
     request,
     metadata || {},
     this.methodInfoDeleteRecipe);

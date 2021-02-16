@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1 import generated_p
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder.proto',
-  package='github.com.metaprov.modeld.services.modelautobuilder.v1',
+  package='github.com.metaprov.modeldapi.services.modelautobuilder.v1',
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modeldapi/services/modelautobuilder/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder.proto\x12\x37github.com.metaprov.modeld.services.modelautobuilder.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"\xd3\x01\n\x1cListModelAutobuildersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12q\n\x06labels\x18\x02 \x03(\x0b\x32\x61.github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelAutobuildersResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderList\"\xc1\x02\n\x1d\x43reateModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12r\n\x06labels\x18\x03 \x03(\x0b\x32\x62.github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry\x12\\\n\x04spec\x18\x04 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\" \n\x1e\x43reateModelAutobuilderResponse\"\xc1\x02\n\x1dUpdateModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12r\n\x06labels\x18\x03 \x03(\x0b\x32\x62.github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry\x12\\\n\x04spec\x18\x05 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\" \n\x1eUpdateModelAutobuilderResponse\"=\n\x1aGetModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelAutobuilderResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelAutobuilderResponse2\xc9\t\n\x17ModelAutobuilderService\x12\xe5\x01\n\x15ListModelAutobuilders\x12U.github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest\x1aV.github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/modelautobuilders\x12\xfa\x01\n\x16\x43reateModelAutobuilder\x12V.github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest\x1aW.github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderResponse\"/\x82\xd3\xe4\x93\x02)\"\x15/v1/modelautobuilders:\x10modelautobuilder\x12\xe6\x01\n\x13GetModelAutobuilder\x12S.github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderRequest\x1aT.github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/modelautobuilders/{name}\x12\x91\x02\n\x16UpdateModelAutobuilder\x12V.github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest\x1aW.github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderResponse\"F\x82\xd3\xe4\x93\x02@\x1a,/v1/modelautobuilders/{corpus.metadata.name}:\x10modelautobuilder\x12\xcb\x01\n\x16\x44\x65leteModelAutobuilder\x12V.github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderRequest\x1aW.github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderResponse\"\x00\x42<Z:github.com/metaprov/modeldapi/services/modelautobuilder/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder.proto\x12:github.com.metaprov.modeldapi.services.modelautobuilder.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"\xd6\x01\n\x1cListModelAutobuildersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelAutobuildersResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderList\"\xc4\x02\n\x1d\x43reateModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12u\n\x06labels\x18\x03 \x03(\x0b\x32\x65.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry\x12\\\n\x04spec\x18\x04 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\" \n\x1e\x43reateModelAutobuilderResponse\"\xc4\x02\n\x1dUpdateModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12u\n\x06labels\x18\x03 \x03(\x0b\x32\x65.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry\x12\\\n\x04spec\x18\x05 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\" \n\x1eUpdateModelAutobuilderResponse\"=\n\x1aGetModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelAutobuilderResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelAutobuilderResponse2\xe7\t\n\x17ModelAutobuilderService\x12\xeb\x01\n\x15ListModelAutobuilders\x12X.github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest\x1aY.github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/modelautobuilders\x12\x80\x02\n\x16\x43reateModelAutobuilder\x12Y.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest\x1aZ.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse\"/\x82\xd3\xe4\x93\x02)\"\x15/v1/modelautobuilders:\x10modelautobuilder\x12\xec\x01\n\x13GetModelAutobuilder\x12V.github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest\x1aW.github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/modelautobuilders/{name}\x12\x97\x02\n\x16UpdateModelAutobuilder\x12Y.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest\x1aZ.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse\"F\x82\xd3\xe4\x93\x02@\x1a,/v1/modelautobuilders/{corpus.metadata.name}:\x10modelautobuilder\x12\xd1\x01\n\x16\x44\x65leteModelAutobuilder\x12Y.github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest\x1aZ.github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse\"\x00\x42<Z:github.com/metaprov/modeldapi/services/modelautobuilder/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTMODELAUTOBUILDERSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTMODELAUTOBUILDERSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=458,
+  serialized_start=419,
+  serialized_end=464,
 )
 
 _LISTMODELAUTOBUILDERSREQUEST = _descriptor.Descriptor(
   name='ListModelAutobuildersRequest',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTMODELAUTOBUILDERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=247,
-  serialized_end=458,
+  serialized_start=250,
+  serialized_end=464,
 )
 
 
 _LISTMODELAUTOBUILDERSRESPONSE = _descriptor.Descriptor(
   name='ListModelAutobuildersResponse',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersResponse',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTMODELAUTOBUILDERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=460,
-  serialized_end=586,
+  serialized_start=466,
+  serialized_end=592,
 )
 
 
 _CREATEMODELAUTOBUILDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATEMODELAUTOBUILDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=458,
+  serialized_start=419,
+  serialized_end=464,
 )
 
 _CREATEMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   name='CreateModelAutobuilderRequest',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATEMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=589,
-  serialized_end=910,
+  serialized_start=595,
+  serialized_end=919,
 )
 
 
 _CREATEMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   name='CreateModelAutobuilderResponse',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderResponse',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATEMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=912,
-  serialized_end=944,
+  serialized_start=921,
+  serialized_end=953,
 )
 
 
 _UPDATEMODELAUTOBUILDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATEMODELAUTOBUILDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=458,
+  serialized_start=419,
+  serialized_end=464,
 )
 
 _UPDATEMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   name='UpdateModelAutobuilderRequest',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATEMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=947,
-  serialized_end=1268,
+  serialized_start=956,
+  serialized_end=1280,
 )
 
 
 _UPDATEMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   name='UpdateModelAutobuilderResponse',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderResponse',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATEMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1270,
-  serialized_end=1302,
+  serialized_start=1282,
+  serialized_end=1314,
 )
 
 
 _GETMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   name='GetModelAutobuilderRequest',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderRequest',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1304,
-  serialized_end=1365,
+  serialized_start=1316,
+  serialized_end=1377,
 )
 
 
 _GETMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   name='GetModelAutobuilderResponse',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderResponse',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1368,
-  serialized_end=1501,
+  serialized_start=1380,
+  serialized_end=1513,
 )
 
 
 _DELETEMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   name='DeleteModelAutobuilderRequest',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderRequest',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETEMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1503,
-  serialized_end=1567,
+  serialized_start=1515,
+  serialized_end=1579,
 )
 
 
 _DELETEMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   name='DeleteModelAutobuilderResponse',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderResponse',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETEMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1569,
-  serialized_end=1601,
+  serialized_start=1581,
+  serialized_end=1613,
 )
 
 _LISTMODELAUTOBUILDERSREQUEST_LABELSENTRY.containing_type = _LISTMODELAUTOBUILDERSREQUEST
@@ -537,12 +537,12 @@ ListModelAutobuildersRequest = _reflection.GeneratedProtocolMessageType('ListMod
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTMODELAUTOBUILDERSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTMODELAUTOBUILDERSREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest)
   })
 _sym_db.RegisterMessage(ListModelAutobuildersRequest)
 _sym_db.RegisterMessage(ListModelAutobuildersRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListModelAutobuildersRequest.LabelsEntry)
 ListModelAutobuildersResponse = _reflection.GeneratedProtocolMessageType('ListModelAutobuildersResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTMODELAUTOBUILDERSRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.ListModelAutobuildersResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse)
   })
 _sym_db.RegisterMessage(ListModelAutobuildersResponse)
 
@@ -559,12 +559,12 @@ CreateModelAutobuilderRequest = _reflection.GeneratedProtocolMessageType('Create
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEMODELAUTOBUILDERREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEMODELAUTOBUILDERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest)
   })
 _sym_db.RegisterMessage(CreateModelAutobuilderRequest)
 _sym_db.RegisterMessage(CreateModelAutobuilderRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateModelAutobuilderRequest.LabelsEntry)
 CreateModelAutobuilderResponse = _reflection.GeneratedProtocolMessageType('CreateModelAutobuilderResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEMODELAUTOBUILDERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.CreateModelAutobuilderResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse)
   })
 _sym_db.RegisterMessage(CreateModelAutobuilderResponse)
 
@@ -581,12 +581,12 @@ UpdateModelAutobuilderRequest = _reflection.GeneratedProtocolMessageType('Update
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEMODELAUTOBUILDERREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEMODELAUTOBUILDERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest)
   })
 _sym_db.RegisterMessage(UpdateModelAutobuilderRequest)
 _sym_db.RegisterMessage(UpdateModelAutobuilderRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateModelAutobuilderRequest.LabelsEntry)
 UpdateModelAutobuilderResponse = _reflection.GeneratedProtocolMessageType('UpdateModelAutobuilderResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEMODELAUTOBUILDERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.UpdateModelAutobuilderResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse)
   })
 _sym_db.RegisterMessage(UpdateModelAutobuilderResponse)
 
 GetModelAutobuilderRequest = _reflection.GeneratedProtocolMessageType('GetModelAutobuilderRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELAUTOBUILDERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest)
   })
 _sym_db.RegisterMessage(GetModelAutobuilderRequest)
 
 GetModelAutobuilderResponse = _reflection.GeneratedProtocolMessageType('GetModelAutobuilderResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELAUTOBUILDERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.GetModelAutobuilderResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse)
   })
 _sym_db.RegisterMessage(GetModelAutobuilderResponse)
 
 DeleteModelAutobuilderRequest = _reflection.GeneratedProtocolMessageType('DeleteModelAutobuilderRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEMODELAUTOBUILDERREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest)
   })
 _sym_db.RegisterMessage(DeleteModelAutobuilderRequest)
 
 DeleteModelAutobuilderResponse = _reflection.GeneratedProtocolMessageType('DeleteModelAutobuilderResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEMODELAUTOBUILDERRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.modelautobuilder.v1.modelautobuilder_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.modelautobuilder.v1.DeleteModelAutobuilderResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse)
   })
 _sym_db.RegisterMessage(DeleteModelAutobuilderResponse)
 
@@ -634,17 +634,17 @@ _UPDATEMODELAUTOBUILDERREQUEST_LABELSENTRY._options = None
 
 _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
   name='ModelAutobuilderService',
-  full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService',
+  full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1604,
-  serialized_end=2829,
+  serialized_start=1616,
+  serialized_end=2871,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModelAutobuilders',
-    full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService.ListModelAutobuilders',
+    full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.ListModelAutobuilders',
     index=0,
     containing_service=None,
     input_type=_LISTMODELAUTOBUILDERSREQUEST,
@@ -654,7 +654,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateModelAutobuilder',
-    full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService.CreateModelAutobuilder',
+    full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.CreateModelAutobuilder',
     index=1,
     containing_service=None,
     input_type=_CREATEMODELAUTOBUILDERREQUEST,
@@ -664,7 +664,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetModelAutobuilder',
-    full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService.GetModelAutobuilder',
+    full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.GetModelAutobuilder',
     index=2,
     containing_service=None,
     input_type=_GETMODELAUTOBUILDERREQUEST,
@@ -674,7 +674,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateModelAutobuilder',
-    full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService.UpdateModelAutobuilder',
+    full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.UpdateModelAutobuilder',
     index=3,
     containing_service=None,
     input_type=_UPDATEMODELAUTOBUILDERREQUEST,
@@ -684,7 +684,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteModelAutobuilder',
-    full_name='github.com.metaprov.modeld.services.modelautobuilder.v1.ModelAutobuilderService.DeleteModelAutobuilder',
+    full_name='github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.DeleteModelAutobuilder',
     index=4,
     containing_service=None,
     input_type=_DELETEMODELAUTOBUILDERREQUEST,

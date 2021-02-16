@@ -467,10 +467,10 @@ export namespace ListEventsRequest {
 }
 
 export class ListEventsResponse extends jspb.Message {
-  getItemList(): Array<JobInfo>;
-  setItemList(value: Array<JobInfo>): ListEventsResponse;
+  getItemList(): Array<EventInfo>;
+  setItemList(value: Array<EventInfo>): ListEventsResponse;
   clearItemList(): ListEventsResponse;
-  addItem(value?: JobInfo, index?: number): JobInfo;
+  addItem(value?: EventInfo, index?: number): EventInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEventsResponse.AsObject;
@@ -482,7 +482,7 @@ export class ListEventsResponse extends jspb.Message {
 
 export namespace ListEventsResponse {
   export type AsObject = {
-    itemList: Array<JobInfo.AsObject>,
+    itemList: Array<EventInfo.AsObject>,
   }
 }
 
@@ -593,6 +593,20 @@ export namespace JobInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+  }
+}
+
+export class EventInfo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EventInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: EventInfo): EventInfo.AsObject;
+  static serializeBinaryToWriter(message: EventInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EventInfo;
+  static deserializeBinaryFromReader(message: EventInfo, reader: jspb.BinaryReader): EventInfo;
+}
+
+export namespace EventInfo {
+  export type AsObject = {
   }
 }
 

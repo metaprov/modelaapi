@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.predictionstore.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictionstore.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PredictionStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionstore.v1.PredictionStoreService/Ingest',
+          '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
         request,
         metadata || {},
         this.methodInfoIngest,
@@ -69,7 +69,7 @@ export class PredictionStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionstore.v1.PredictionStoreService/Ingest',
+      '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
     request,
     metadata || {},
     this.methodInfoIngest);

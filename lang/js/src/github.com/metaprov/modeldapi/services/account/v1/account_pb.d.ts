@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
 
 
 export class ListAccountsRequest extends jspb.Message {
@@ -203,6 +204,48 @@ export namespace GetAccountResponse {
   export type AsObject = {
     item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
     yaml: string,
+  }
+}
+
+export class GetAccountNamespacesRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetAccountNamespacesRequest;
+
+  getName(): string;
+  setName(value: string): GetAccountNamespacesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAccountNamespacesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAccountNamespacesRequest): GetAccountNamespacesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetAccountNamespacesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAccountNamespacesRequest;
+  static deserializeBinaryFromReader(message: GetAccountNamespacesRequest, reader: jspb.BinaryReader): GetAccountNamespacesRequest;
+}
+
+export namespace GetAccountNamespacesRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetAccountNamespacesResponse extends jspb.Message {
+  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
+  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetAccountNamespacesResponse;
+  clearNamespacesList(): GetAccountNamespacesResponse;
+  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAccountNamespacesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAccountNamespacesResponse): GetAccountNamespacesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetAccountNamespacesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAccountNamespacesResponse;
+  static deserializeBinaryFromReader(message: GetAccountNamespacesResponse, reader: jspb.BinaryReader): GetAccountNamespacesResponse;
+}
+
+export namespace GetAccountNamespacesResponse {
+  export type AsObject = {
+    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

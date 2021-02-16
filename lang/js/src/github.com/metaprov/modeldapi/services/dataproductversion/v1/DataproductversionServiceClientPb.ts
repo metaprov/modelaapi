@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.dataproductversion.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.dataproductversion.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DataProductVersionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
         request,
         metadata || {},
         this.methodInfoListDataProductVersions,
@@ -69,7 +69,7 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
     request,
     metadata || {},
     this.methodInfoListDataProductVersions);
@@ -101,7 +101,7 @@ export class DataProductVersionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
         request,
         metadata || {},
         this.methodInfoCreateDataProductVersion,
@@ -109,7 +109,7 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
     request,
     metadata || {},
     this.methodInfoCreateDataProductVersion);
@@ -141,7 +141,7 @@ export class DataProductVersionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
         request,
         metadata || {},
         this.methodInfoGetDataProductVersion,
@@ -149,7 +149,7 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
     request,
     metadata || {},
     this.methodInfoGetDataProductVersion);
@@ -181,7 +181,7 @@ export class DataProductVersionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
         request,
         metadata || {},
         this.methodInfoUpdateDataProductVersion,
@@ -189,7 +189,7 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
     request,
     metadata || {},
     this.methodInfoUpdateDataProductVersion);
@@ -221,7 +221,7 @@ export class DataProductVersionServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
         request,
         metadata || {},
         this.methodInfoDeleteDataProductVersion,
@@ -229,7 +229,7 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
     request,
     metadata || {},
     this.methodInfoDeleteDataProductVersion);

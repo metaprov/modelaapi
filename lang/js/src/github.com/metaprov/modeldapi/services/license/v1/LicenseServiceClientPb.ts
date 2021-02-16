@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.license.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.license.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class LicenseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.license.v1.LicenseService/ListLicenses',
+          '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/ListLicenses',
         request,
         metadata || {},
         this.methodInfoListLicenses,
@@ -69,7 +69,7 @@ export class LicenseServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.license.v1.LicenseService/ListLicenses',
+      '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/ListLicenses',
     request,
     metadata || {},
     this.methodInfoListLicenses);
@@ -101,7 +101,7 @@ export class LicenseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicense',
+          '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicense',
         request,
         metadata || {},
         this.methodInfoCreateLicense,
@@ -109,7 +109,7 @@ export class LicenseServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicense',
+      '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicense',
     request,
     metadata || {},
     this.methodInfoCreateLicense);
@@ -141,7 +141,7 @@ export class LicenseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicenseFromKey',
+          '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicenseFromKey',
         request,
         metadata || {},
         this.methodInfoCreateLicenseFromKey,
@@ -149,7 +149,7 @@ export class LicenseServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicenseFromKey',
+      '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicenseFromKey',
     request,
     metadata || {},
     this.methodInfoCreateLicenseFromKey);
@@ -181,7 +181,7 @@ export class LicenseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.license.v1.LicenseService/GetLicense',
+          '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/GetLicense',
         request,
         metadata || {},
         this.methodInfoGetLicense,
@@ -189,7 +189,7 @@ export class LicenseServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.license.v1.LicenseService/GetLicense',
+      '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/GetLicense',
     request,
     metadata || {},
     this.methodInfoGetLicense);
@@ -221,7 +221,7 @@ export class LicenseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.license.v1.LicenseService/UpdateLicense',
+          '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/UpdateLicense',
         request,
         metadata || {},
         this.methodInfoUpdateLicense,
@@ -229,7 +229,7 @@ export class LicenseServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.license.v1.LicenseService/UpdateLicense',
+      '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/UpdateLicense',
     request,
     metadata || {},
     this.methodInfoUpdateLicense);
@@ -261,7 +261,7 @@ export class LicenseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.license.v1.LicenseService/DeleteLicense',
+          '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/DeleteLicense',
         request,
         metadata || {},
         this.methodInfoDeleteLicense,
@@ -269,7 +269,7 @@ export class LicenseServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.license.v1.LicenseService/DeleteLicense',
+      '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/DeleteLicense',
     request,
     metadata || {},
     this.methodInfoDeleteLicense);

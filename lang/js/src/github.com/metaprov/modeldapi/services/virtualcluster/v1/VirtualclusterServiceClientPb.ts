@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.virtualcluster.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.virtualcluster.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class VirtualClusterServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
+          '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
         request,
         metadata || {},
         this.methodInfoListVirtualClusters,
@@ -69,7 +69,7 @@ export class VirtualClusterServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
+      '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
     request,
     metadata || {},
     this.methodInfoListVirtualClusters);
@@ -101,7 +101,7 @@ export class VirtualClusterServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
+          '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
         request,
         metadata || {},
         this.methodInfoCreateVirtualCluster,
@@ -109,7 +109,7 @@ export class VirtualClusterServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
+      '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
     request,
     metadata || {},
     this.methodInfoCreateVirtualCluster);
@@ -141,7 +141,7 @@ export class VirtualClusterServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
+          '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
         request,
         metadata || {},
         this.methodInfoGetVirtualCluster,
@@ -149,7 +149,7 @@ export class VirtualClusterServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
+      '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
     request,
     metadata || {},
     this.methodInfoGetVirtualCluster);
@@ -181,7 +181,7 @@ export class VirtualClusterServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
+          '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
         request,
         metadata || {},
         this.methodInfoUpdateVirtualCluster,
@@ -189,7 +189,7 @@ export class VirtualClusterServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
+      '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
     request,
     metadata || {},
     this.methodInfoUpdateVirtualCluster);
@@ -221,7 +221,7 @@ export class VirtualClusterServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
+          '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
         request,
         metadata || {},
         this.methodInfoDeleteVirtualCluster,
@@ -229,7 +229,7 @@ export class VirtualClusterServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
+      '/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
     request,
     metadata || {},
     this.methodInfoDeleteVirtualCluster);

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.datapipelinerun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.datapipelinerun.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DataPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
+          '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
         request,
         metadata || {},
         this.methodInfoListDataPipelineRuns,
@@ -69,7 +69,7 @@ export class DataPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
+      '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
     request,
     metadata || {},
     this.methodInfoListDataPipelineRuns);
@@ -101,7 +101,7 @@ export class DataPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
+          '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
         request,
         metadata || {},
         this.methodInfoCreateDataPipelineRun,
@@ -109,7 +109,7 @@ export class DataPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
+      '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
     request,
     metadata || {},
     this.methodInfoCreateDataPipelineRun);
@@ -141,7 +141,7 @@ export class DataPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
+          '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
         request,
         metadata || {},
         this.methodInfoGetDataPipelineRun,
@@ -149,7 +149,7 @@ export class DataPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
+      '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
     request,
     metadata || {},
     this.methodInfoGetDataPipelineRun);
@@ -181,7 +181,7 @@ export class DataPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
+          '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
         request,
         metadata || {},
         this.methodInfoUpdateDataPipelineRun,
@@ -189,7 +189,7 @@ export class DataPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
+      '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
     request,
     metadata || {},
     this.methodInfoUpdateDataPipelineRun);
@@ -221,7 +221,7 @@ export class DataPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
+          '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
         request,
         metadata || {},
         this.methodInfoDeleteDataPipelineRun,
@@ -229,7 +229,7 @@ export class DataPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
+      '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
     request,
     metadata || {},
     this.methodInfoDeleteDataPipelineRun);

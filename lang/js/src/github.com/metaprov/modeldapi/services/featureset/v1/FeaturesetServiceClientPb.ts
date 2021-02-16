@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.featureset.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.featureset.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class FeaturesetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/ListFeaturesets',
+          '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/ListFeaturesets',
         request,
         metadata || {},
         this.methodInfoListFeaturesets,
@@ -69,7 +69,7 @@ export class FeaturesetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/ListFeaturesets',
+      '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/ListFeaturesets',
     request,
     metadata || {},
     this.methodInfoListFeaturesets);
@@ -101,7 +101,7 @@ export class FeaturesetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/CreateFeatureset',
+          '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/CreateFeatureset',
         request,
         metadata || {},
         this.methodInfoCreateFeatureset,
@@ -109,7 +109,7 @@ export class FeaturesetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/CreateFeatureset',
+      '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/CreateFeatureset',
     request,
     metadata || {},
     this.methodInfoCreateFeatureset);
@@ -141,7 +141,7 @@ export class FeaturesetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/GetFeatureset',
+          '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/GetFeatureset',
         request,
         metadata || {},
         this.methodInfoGetFeatureset,
@@ -149,7 +149,7 @@ export class FeaturesetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/GetFeatureset',
+      '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/GetFeatureset',
     request,
     metadata || {},
     this.methodInfoGetFeatureset);
@@ -181,7 +181,7 @@ export class FeaturesetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/UpdateFeatureset',
+          '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/UpdateFeatureset',
         request,
         metadata || {},
         this.methodInfoUpdateFeatureset,
@@ -189,7 +189,7 @@ export class FeaturesetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/UpdateFeatureset',
+      '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/UpdateFeatureset',
     request,
     metadata || {},
     this.methodInfoUpdateFeatureset);
@@ -221,7 +221,7 @@ export class FeaturesetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/DeleteFeatureset',
+          '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/DeleteFeatureset',
         request,
         metadata || {},
         this.methodInfoDeleteFeatureset,
@@ -229,7 +229,7 @@ export class FeaturesetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.featureset.v1.FeaturesetService/DeleteFeatureset',
+      '/github.com.metaprov.modeldapi.services.featureset.v1.FeaturesetService/DeleteFeatureset',
     request,
     metadata || {},
     this.methodInfoDeleteFeatureset);

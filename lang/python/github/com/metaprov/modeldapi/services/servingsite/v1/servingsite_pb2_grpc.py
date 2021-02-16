@@ -15,27 +15,27 @@ class ServingSiteServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListServingSites = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/ListServingSites',
+                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.FromString,
                 )
         self.CreateServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/CreateServingSite',
+                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.FromString,
                 )
         self.GetServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/GetServingSite',
+                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.FromString,
                 )
         self.UpdateServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.FromString,
                 )
         self.DeleteServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_ServingSiteServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/ListServingSites',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/CreateServingSite',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/GetServingSite',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
             options, channel_credentials,

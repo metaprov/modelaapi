@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.labelingpipeline.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.labelingpipeline.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class LabelingPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
         request,
         metadata || {},
         this.methodInfoListLabelingPipelines,
@@ -69,7 +69,7 @@ export class LabelingPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
     request,
     metadata || {},
     this.methodInfoListLabelingPipelines);
@@ -101,7 +101,7 @@ export class LabelingPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
         request,
         metadata || {},
         this.methodInfoCreateLabelingPipeline,
@@ -109,7 +109,7 @@ export class LabelingPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
     request,
     metadata || {},
     this.methodInfoCreateLabelingPipeline);
@@ -141,7 +141,7 @@ export class LabelingPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
         request,
         metadata || {},
         this.methodInfoGetLabelingPipeline,
@@ -149,7 +149,7 @@ export class LabelingPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
     request,
     metadata || {},
     this.methodInfoGetLabelingPipeline);
@@ -181,7 +181,7 @@ export class LabelingPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
         request,
         metadata || {},
         this.methodInfoUpdateLabelingPipeline,
@@ -189,7 +189,7 @@ export class LabelingPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
     request,
     metadata || {},
     this.methodInfoUpdateLabelingPipeline);
@@ -221,7 +221,7 @@ export class LabelingPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
         request,
         metadata || {},
         this.methodInfoDeleteLabelingPipeline,
@@ -229,7 +229,7 @@ export class LabelingPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
     request,
     metadata || {},
     this.methodInfoDeleteLabelingPipeline);

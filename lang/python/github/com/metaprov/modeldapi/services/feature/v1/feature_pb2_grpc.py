@@ -15,27 +15,27 @@ class FeatureServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListFeatures = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.feature.v1.FeatureService/ListFeatures',
+                '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/ListFeatures',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.ListFeaturesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.ListFeaturesResponse.FromString,
                 )
         self.CreateFeature = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.feature.v1.FeatureService/CreateFeature',
+                '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/CreateFeature',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.CreateFeatureRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.CreateFeatureResponse.FromString,
                 )
         self.GetFeature = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.feature.v1.FeatureService/GetFeature',
+                '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/GetFeature',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.GetFeatureRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.GetFeatureResponse.FromString,
                 )
         self.UpdateFeature = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.feature.v1.FeatureService/UpdateFeature',
+                '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/UpdateFeature',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.UpdateFeatureRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.UpdateFeatureResponse.FromString,
                 )
         self.DeleteFeature = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.feature.v1.FeatureService/DeleteFeature',
+                '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/DeleteFeature',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.DeleteFeatureRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.DeleteFeatureResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_FeatureServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.feature.v1.FeatureService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.feature.v1.FeatureService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class FeatureService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.feature.v1.FeatureService/ListFeatures',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/ListFeatures',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.ListFeaturesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.ListFeaturesResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class FeatureService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.feature.v1.FeatureService/CreateFeature',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/CreateFeature',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.CreateFeatureRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.CreateFeatureResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class FeatureService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.feature.v1.FeatureService/GetFeature',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/GetFeature',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.GetFeatureRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.GetFeatureResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class FeatureService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.feature.v1.FeatureService/UpdateFeature',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/UpdateFeature',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.UpdateFeatureRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.UpdateFeatureResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class FeatureService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.feature.v1.FeatureService/DeleteFeature',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/DeleteFeature',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.DeleteFeatureRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_feature_dot_v1_dot_feature__pb2.DeleteFeatureResponse.FromString,
             options, channel_credentials,

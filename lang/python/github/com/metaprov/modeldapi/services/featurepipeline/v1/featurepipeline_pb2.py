@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/featurepipeline/v1/featurepipeline.proto',
-  package='github.com.metaprov.modeld.services.featurepipeline.v1',
+  package='github.com.metaprov.modeldapi.services.featurepipeline.v1',
   syntax='proto3',
   serialized_options=b'Z9github.com/metaprov/modeldapi/services/featurepipeline/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nOgithub.com/metaprov/modeldapi/services/featurepipeline/v1/featurepipeline.proto\x12\x36github.com.metaprov.modeld.services.featurepipeline.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xce\x01\n\x1aListFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x02 \x03(\x0b\x32^.github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListFeaturePipelineResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineList\"\xb9\x02\n\x1c\x43reateFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12p\n\x06labels\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1f\n\x1d\x43reateFeaturePipelineResponse\"\xb9\x02\n\x1cUpdateFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12p\n\x06labels\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry\x12W\n\x04spec\x18\x05 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1f\n\x1dUpdateFeaturePipelineResponse\"<\n\x19GetFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x1aGetFeaturePipelineResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1c\x44\x65leteFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x44\x65leteFeaturePipelineResponse2\xa8\t\n\x16\x46\x65\x61turePipelineService\x12\xdd\x01\n\x14ListFeaturePipelines\x12R.github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest\x1aS.github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/featurepipelines\x12\xf3\x01\n\x15\x43reateFeaturePipeline\x12T.github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest\x1aU.github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineResponse\"-\x82\xd3\xe4\x93\x02\'\"\x14/v1/featurepipelines:\x0f\x66\x65\x61turepipeline\x12\xe0\x01\n\x12GetFeaturePipeline\x12Q.github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineRequest\x1aR.github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/featurepipelines/{name}\x12\x8b\x02\n\x15UpdateFeaturePipeline\x12T.github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest\x1aU.github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineResponse\"E\x82\xd3\xe4\x93\x02?\x1a,/v1/featurepipelines/{feature.metadata.name}:\x0f\x66\x65\x61turepipeline\x12\xc6\x01\n\x15\x44\x65leteFeaturePipeline\x12T.github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineRequest\x1aU.github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineResponse\"\x00\x42;Z9github.com/metaprov/modeldapi/services/featurepipeline/v1b\x06proto3'
+  serialized_pb=b'\nOgithub.com/metaprov/modeldapi/services/featurepipeline/v1/featurepipeline.proto\x12\x39github.com.metaprov.modeldapi.services.featurepipeline.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xd1\x01\n\x1aListFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12q\n\x06labels\x18\x02 \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListFeaturePipelineResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineList\"\xbc\x02\n\x1c\x43reateFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12s\n\x06labels\x18\x03 \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry\x12W\n\x04spec\x18\x04 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1f\n\x1d\x43reateFeaturePipelineResponse\"\xbc\x02\n\x1cUpdateFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12s\n\x06labels\x18\x03 \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry\x12W\n\x04spec\x18\x05 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1f\n\x1dUpdateFeaturePipelineResponse\"<\n\x19GetFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x1aGetFeaturePipelineResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1c\x44\x65leteFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x44\x65leteFeaturePipelineResponse2\xc6\t\n\x16\x46\x65\x61turePipelineService\x12\xe3\x01\n\x14ListFeaturePipelines\x12U.github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest\x1aV.github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/featurepipelines\x12\xf9\x01\n\x15\x43reateFeaturePipeline\x12W.github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest\x1aX.github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineResponse\"-\x82\xd3\xe4\x93\x02\'\"\x14/v1/featurepipelines:\x0f\x66\x65\x61turepipeline\x12\xe6\x01\n\x12GetFeaturePipeline\x12T.github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineRequest\x1aU.github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/featurepipelines/{name}\x12\x91\x02\n\x15UpdateFeaturePipeline\x12W.github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest\x1aX.github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineResponse\"E\x82\xd3\xe4\x93\x02?\x1a,/v1/featurepipelines/{feature.metadata.name}:\x0f\x66\x65\x61turepipeline\x12\xcc\x01\n\x15\x44\x65leteFeaturePipeline\x12W.github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest\x1aX.github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineResponse\"\x00\x42;Z9github.com/metaprov/modeldapi/services/featurepipeline/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTFEATUREPIPELINEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _LISTFEATUREPIPELINEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=401,
-  serialized_end=446,
+  serialized_start=407,
+  serialized_end=452,
 )
 
 _LISTFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   name='ListFeaturePipelineRequest',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -100,21 +100,21 @@ _LISTFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=240,
-  serialized_end=446,
+  serialized_start=243,
+  serialized_end=452,
 )
 
 
 _LISTFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   name='ListFeaturePipelineResponse',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,28 +132,28 @@ _LISTFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=448,
-  serialized_end=567,
+  serialized_start=454,
+  serialized_end=573,
 )
 
 
 _CREATEFEATUREPIPELINEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -171,41 +171,41 @@ _CREATEFEATUREPIPELINEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=401,
-  serialized_end=446,
+  serialized_start=407,
+  serialized_end=452,
 )
 
 _CREATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   name='CreateFeaturePipelineRequest',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -223,14 +223,14 @@ _CREATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=570,
-  serialized_end=883,
+  serialized_start=576,
+  serialized_end=892,
 )
 
 
 _CREATEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   name='CreateFeaturePipelineResponse',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -248,28 +248,28 @@ _CREATEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=885,
-  serialized_end=916,
+  serialized_start=894,
+  serialized_end=925,
 )
 
 
 _UPDATEFEATUREPIPELINEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -287,41 +287,41 @@ _UPDATEFEATUREPIPELINEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=401,
-  serialized_end=446,
+  serialized_start=407,
+  serialized_end=452,
 )
 
 _UPDATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   name='UpdateFeaturePipelineRequest',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -339,14 +339,14 @@ _UPDATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=919,
-  serialized_end=1232,
+  serialized_start=928,
+  serialized_end=1244,
 )
 
 
 _UPDATEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   name='UpdateFeaturePipelineResponse',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -364,28 +364,28 @@ _UPDATEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1234,
-  serialized_end=1265,
+  serialized_start=1246,
+  serialized_end=1277,
 )
 
 
 _GETFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   name='GetFeaturePipelineRequest',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,28 +403,28 @@ _GETFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1267,
-  serialized_end=1327,
+  serialized_start=1279,
+  serialized_end=1339,
 )
 
 
 _GETFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   name='GetFeaturePipelineResponse',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -442,28 +442,28 @@ _GETFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1329,
-  serialized_end=1456,
+  serialized_start=1341,
+  serialized_end=1468,
 )
 
 
 _DELETEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   name='DeleteFeaturePipelineRequest',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -481,14 +481,14 @@ _DELETEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1458,
-  serialized_end=1521,
+  serialized_start=1470,
+  serialized_end=1533,
 )
 
 
 _DELETEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   name='DeleteFeaturePipelineResponse',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -506,8 +506,8 @@ _DELETEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1523,
-  serialized_end=1554,
+  serialized_start=1535,
+  serialized_end=1566,
 )
 
 _LISTFEATUREPIPELINEREQUEST_LABELSENTRY.containing_type = _LISTFEATUREPIPELINEREQUEST
@@ -537,12 +537,12 @@ ListFeaturePipelineRequest = _reflection.GeneratedProtocolMessageType('ListFeatu
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTFEATUREPIPELINEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTFEATUREPIPELINEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineRequest)
   })
 _sym_db.RegisterMessage(ListFeaturePipelineRequest)
 _sym_db.RegisterMessage(ListFeaturePipelineRequest.LabelsEntry)
@@ -550,7 +550,7 @@ _sym_db.RegisterMessage(ListFeaturePipelineRequest.LabelsEntry)
 ListFeaturePipelineResponse = _reflection.GeneratedProtocolMessageType('ListFeaturePipelineResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTFEATUREPIPELINERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.ListFeaturePipelineResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.ListFeaturePipelineResponse)
   })
 _sym_db.RegisterMessage(ListFeaturePipelineResponse)
 
@@ -559,12 +559,12 @@ CreateFeaturePipelineRequest = _reflection.GeneratedProtocolMessageType('CreateF
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEFEATUREPIPELINEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEFEATUREPIPELINEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineRequest)
   })
 _sym_db.RegisterMessage(CreateFeaturePipelineRequest)
 _sym_db.RegisterMessage(CreateFeaturePipelineRequest.LabelsEntry)
@@ -572,7 +572,7 @@ _sym_db.RegisterMessage(CreateFeaturePipelineRequest.LabelsEntry)
 CreateFeaturePipelineResponse = _reflection.GeneratedProtocolMessageType('CreateFeaturePipelineResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEFEATUREPIPELINERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.CreateFeaturePipelineResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.CreateFeaturePipelineResponse)
   })
 _sym_db.RegisterMessage(CreateFeaturePipelineResponse)
 
@@ -581,12 +581,12 @@ UpdateFeaturePipelineRequest = _reflection.GeneratedProtocolMessageType('UpdateF
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEFEATUREPIPELINEREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEFEATUREPIPELINEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest)
   })
 _sym_db.RegisterMessage(UpdateFeaturePipelineRequest)
 _sym_db.RegisterMessage(UpdateFeaturePipelineRequest.LabelsEntry)
@@ -594,35 +594,35 @@ _sym_db.RegisterMessage(UpdateFeaturePipelineRequest.LabelsEntry)
 UpdateFeaturePipelineResponse = _reflection.GeneratedProtocolMessageType('UpdateFeaturePipelineResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEFEATUREPIPELINERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.UpdateFeaturePipelineResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.UpdateFeaturePipelineResponse)
   })
 _sym_db.RegisterMessage(UpdateFeaturePipelineResponse)
 
 GetFeaturePipelineRequest = _reflection.GeneratedProtocolMessageType('GetFeaturePipelineRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETFEATUREPIPELINEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineRequest)
   })
 _sym_db.RegisterMessage(GetFeaturePipelineRequest)
 
 GetFeaturePipelineResponse = _reflection.GeneratedProtocolMessageType('GetFeaturePipelineResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETFEATUREPIPELINERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.GetFeaturePipelineResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.GetFeaturePipelineResponse)
   })
 _sym_db.RegisterMessage(GetFeaturePipelineResponse)
 
 DeleteFeaturePipelineRequest = _reflection.GeneratedProtocolMessageType('DeleteFeaturePipelineRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEFEATUREPIPELINEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest)
   })
 _sym_db.RegisterMessage(DeleteFeaturePipelineRequest)
 
 DeleteFeaturePipelineResponse = _reflection.GeneratedProtocolMessageType('DeleteFeaturePipelineResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEFEATUREPIPELINERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.featurepipeline.v1.featurepipeline_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.featurepipeline.v1.DeleteFeaturePipelineResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.featurepipeline.v1.DeleteFeaturePipelineResponse)
   })
 _sym_db.RegisterMessage(DeleteFeaturePipelineResponse)
 
@@ -634,17 +634,17 @@ _UPDATEFEATUREPIPELINEREQUEST_LABELSENTRY._options = None
 
 _FEATUREPIPELINESERVICE = _descriptor.ServiceDescriptor(
   name='FeaturePipelineService',
-  full_name='github.com.metaprov.modeld.services.featurepipeline.v1.FeaturePipelineService',
+  full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1557,
-  serialized_end=2749,
+  serialized_start=1569,
+  serialized_end=2791,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListFeaturePipelines',
-    full_name='github.com.metaprov.modeld.services.featurepipeline.v1.FeaturePipelineService.ListFeaturePipelines',
+    full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService.ListFeaturePipelines',
     index=0,
     containing_service=None,
     input_type=_LISTFEATUREPIPELINEREQUEST,
@@ -654,7 +654,7 @@ _FEATUREPIPELINESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateFeaturePipeline',
-    full_name='github.com.metaprov.modeld.services.featurepipeline.v1.FeaturePipelineService.CreateFeaturePipeline',
+    full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService.CreateFeaturePipeline',
     index=1,
     containing_service=None,
     input_type=_CREATEFEATUREPIPELINEREQUEST,
@@ -664,7 +664,7 @@ _FEATUREPIPELINESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetFeaturePipeline',
-    full_name='github.com.metaprov.modeld.services.featurepipeline.v1.FeaturePipelineService.GetFeaturePipeline',
+    full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService.GetFeaturePipeline',
     index=2,
     containing_service=None,
     input_type=_GETFEATUREPIPELINEREQUEST,
@@ -674,7 +674,7 @@ _FEATUREPIPELINESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateFeaturePipeline',
-    full_name='github.com.metaprov.modeld.services.featurepipeline.v1.FeaturePipelineService.UpdateFeaturePipeline',
+    full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService.UpdateFeaturePipeline',
     index=3,
     containing_service=None,
     input_type=_UPDATEFEATUREPIPELINEREQUEST,
@@ -684,7 +684,7 @@ _FEATUREPIPELINESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteFeaturePipeline',
-    full_name='github.com.metaprov.modeld.services.featurepipeline.v1.FeaturePipelineService.DeleteFeaturePipeline',
+    full_name='github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService.DeleteFeaturePipeline',
     index=4,
     containing_service=None,
     input_type=_DELETEFEATUREPIPELINEREQUEST,

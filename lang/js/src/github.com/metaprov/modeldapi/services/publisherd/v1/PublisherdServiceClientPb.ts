@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.publisherd.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.publisherd.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PublisherdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishCombined',
+          '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishCombined',
         request,
         metadata || {},
         this.methodInfoPublishCombined,
@@ -69,7 +69,7 @@ export class PublisherdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishCombined',
+      '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishCombined',
     request,
     metadata || {},
     this.methodInfoPublishCombined);
@@ -101,7 +101,7 @@ export class PublisherdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishNotebook',
+          '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishNotebook',
         request,
         metadata || {},
         this.methodInfoPublishNotebook,
@@ -109,7 +109,7 @@ export class PublisherdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/PublishNotebook',
+      '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishNotebook',
     request,
     metadata || {},
     this.methodInfoPublishNotebook);
@@ -141,7 +141,7 @@ export class PublisherdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/Shutdown',
+          '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Shutdown',
         request,
         metadata || {},
         this.methodInfoShutdown,
@@ -149,7 +149,7 @@ export class PublisherdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.publisherd.v1.PublisherdService/Shutdown',
+      '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Shutdown',
     request,
     metadata || {},
     this.methodInfoShutdown);

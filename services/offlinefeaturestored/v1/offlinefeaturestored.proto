@@ -1,6 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/offlinefeaturestored/v1";
-package github.com.metaprov.modeld.services.offlinefeaturestored.v1;
+package github.com.metaprov.modeldapi.services.offlinefeaturestored.v1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";

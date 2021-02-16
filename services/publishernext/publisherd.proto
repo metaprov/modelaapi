@@ -2,7 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/publishernext";
 
 
-package github.com.metaprov.modeld.services.publishernext;
+package github.com.metaprov.modeldapi.services.publishernext;
 
 
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";

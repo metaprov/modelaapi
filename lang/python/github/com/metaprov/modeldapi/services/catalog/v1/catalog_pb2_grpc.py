@@ -17,54 +17,64 @@ class CatalogServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListAlgorithm = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListAlgorithm',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListAlgorithm',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListAlgorithmsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListAlgorithmsResponse.FromString,
                 )
         self.GetAlgorithm = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetAlgorithm',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetAlgorithm',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmResponse.FromString,
                 )
         self.ListMLFrameworks = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListMLFrameworks',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListMLFrameworks',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListMLFrameworksRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListMLFrameworksResponse.FromString,
                 )
         self.GetMLFramework = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetMLFramework',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetMLFramework',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetMLFrameworkRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetMLFrameworkResponse.FromString,
                 )
         self.ListClouds = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListClouds',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListClouds',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListCloudsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListCloudsResponse.FromString,
                 )
         self.GetCloud = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetCloud',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetCloud',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetCloudRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetCloudResponse.FromString,
                 )
         self.ListWorkloadClasses = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListWorkloadClasses',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListWorkloadClasses',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListWorkloadClassesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListWorkloadClassesResponse.FromString,
                 )
         self.GetWorkloadClass = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetWorkloadClass',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetWorkloadClass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassResponse.FromString,
                 )
         self.ListUserRoleClasses = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListUserRoleClasses',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesResponse.FromString,
                 )
         self.GetUserRoleClass = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetUserRoleClass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassResponse.FromString,
+                )
+        self.ListPublicDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListPublicDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListPublicDatasetsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListPublicDatasetsResponse.FromString,
+                )
+        self.GetPublicDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetResponse.FromString,
                 )
 
 
@@ -133,6 +143,18 @@ class CatalogServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListPublicDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPublicDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CatalogServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -186,9 +208,19 @@ def add_CatalogServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassResponse.SerializeToString,
             ),
+            'ListPublicDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPublicDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListPublicDatasetsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListPublicDatasetsResponse.SerializeToString,
+            ),
+            'GetPublicDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPublicDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.catalog.v1.CatalogService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.catalog.v1.CatalogService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -209,7 +241,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListAlgorithm',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListAlgorithm',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListAlgorithmsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListAlgorithmsResponse.FromString,
             options, channel_credentials,
@@ -226,7 +258,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetAlgorithm',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetAlgorithm',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmResponse.FromString,
             options, channel_credentials,
@@ -243,7 +275,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListMLFrameworks',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListMLFrameworks',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListMLFrameworksRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListMLFrameworksResponse.FromString,
             options, channel_credentials,
@@ -260,7 +292,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetMLFramework',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetMLFramework',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetMLFrameworkRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetMLFrameworkResponse.FromString,
             options, channel_credentials,
@@ -277,7 +309,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListClouds',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListClouds',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListCloudsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListCloudsResponse.FromString,
             options, channel_credentials,
@@ -294,7 +326,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetCloud',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetCloud',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetCloudRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetCloudResponse.FromString,
             options, channel_credentials,
@@ -311,7 +343,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListWorkloadClasses',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListWorkloadClasses',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListWorkloadClassesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListWorkloadClassesResponse.FromString,
             options, channel_credentials,
@@ -328,7 +360,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetWorkloadClass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetWorkloadClass',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetWorkloadClassResponse.FromString,
             options, channel_credentials,
@@ -345,7 +377,7 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/ListUserRoleClasses',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListUserRoleClasses',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListUserRoleClassesResponse.FromString,
             options, channel_credentials,
@@ -362,8 +394,42 @@ class CatalogService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.catalog.v1.CatalogService/GetUserRoleClass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetUserRoleClass',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetUserRoleClassResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListPublicDataset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListPublicDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListPublicDatasetsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListPublicDatasetsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPublicDataset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

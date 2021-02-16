@@ -1,10 +1,10 @@
 syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/account/v1";
 
-package github.com.metaprov.modeld.services.account.v1;
+package github.com.metaprov.modeldapi.services.account.v1;
 import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
 message ListAccountsRequest {
     string namespace = 1;
@@ -61,7 +61,7 @@ message GetAccountNamespacesRequest {
 
 
 message GetAccountNamespacesResponse {
-    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 

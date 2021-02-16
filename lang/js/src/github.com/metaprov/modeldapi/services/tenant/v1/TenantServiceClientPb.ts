@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.tenant.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.tenant.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class TenantServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.tenant.v1.TenantService/ListTenants',
+          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants',
         request,
         metadata || {},
         this.methodInfoListTenants,
@@ -69,7 +69,7 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.tenant.v1.TenantService/ListTenants',
+      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants',
     request,
     metadata || {},
     this.methodInfoListTenants);
@@ -101,7 +101,7 @@ export class TenantServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.tenant.v1.TenantService/CreateTenant',
+          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant',
         request,
         metadata || {},
         this.methodInfoCreateTenant,
@@ -109,7 +109,7 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.tenant.v1.TenantService/CreateTenant',
+      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant',
     request,
     metadata || {},
     this.methodInfoCreateTenant);
@@ -141,7 +141,7 @@ export class TenantServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.tenant.v1.TenantService/GetTenant',
+          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant',
         request,
         metadata || {},
         this.methodInfoGetTenant,
@@ -149,7 +149,7 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.tenant.v1.TenantService/GetTenant',
+      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant',
     request,
     metadata || {},
     this.methodInfoGetTenant);
@@ -181,7 +181,7 @@ export class TenantServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.tenant.v1.TenantService/UpdateTenant',
+          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant',
         request,
         metadata || {},
         this.methodInfoUpdateTenant,
@@ -189,7 +189,7 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.tenant.v1.TenantService/UpdateTenant',
+      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant',
     request,
     metadata || {},
     this.methodInfoUpdateTenant);
@@ -221,7 +221,7 @@ export class TenantServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.tenant.v1.TenantService/DeleteTenant',
+          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant',
         request,
         metadata || {},
         this.methodInfoDeleteTenant,
@@ -229,7 +229,7 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.tenant.v1.TenantService/DeleteTenant',
+      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant',
     request,
     metadata || {},
     this.methodInfoDeleteTenant);

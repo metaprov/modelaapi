@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.objectstored.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.objectstored.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ObjectstoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Ingest',
+          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest',
         request,
         metadata || {},
         this.methodInfoIngest,
@@ -69,7 +69,7 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Ingest',
+      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest',
     request,
     metadata || {},
     this.methodInfoIngest);
@@ -101,7 +101,7 @@ export class ObjectstoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Archive',
+          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive',
         request,
         metadata || {},
         this.methodInfoArchive,
@@ -109,7 +109,7 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Archive',
+      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive',
     request,
     metadata || {},
     this.methodInfoArchive);
@@ -141,7 +141,7 @@ export class ObjectstoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Recover',
+          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover',
         request,
         metadata || {},
         this.methodInfoRecover,
@@ -149,7 +149,7 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Recover',
+      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover',
     request,
     metadata || {},
     this.methodInfoRecover);
@@ -181,7 +181,7 @@ export class ObjectstoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
         request,
         metadata || {},
         this.methodInfoExistInVirtualBucket,
@@ -189,7 +189,7 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
     request,
     metadata || {},
     this.methodInfoExistInVirtualBucket);

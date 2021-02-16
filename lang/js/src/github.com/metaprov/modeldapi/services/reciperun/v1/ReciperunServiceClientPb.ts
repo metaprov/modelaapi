@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.reciperun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.reciperun.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class RecipeRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
+          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
         request,
         metadata || {},
         this.methodInfoListRecipeRuns,
@@ -69,7 +69,7 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
+      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
     request,
     metadata || {},
     this.methodInfoListRecipeRuns);
@@ -101,7 +101,7 @@ export class RecipeRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
+          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
         request,
         metadata || {},
         this.methodInfoCreateRecipeRun,
@@ -109,7 +109,7 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
+      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
     request,
     metadata || {},
     this.methodInfoCreateRecipeRun);
@@ -141,7 +141,7 @@ export class RecipeRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/GetRecipeRun',
+          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/GetRecipeRun',
         request,
         metadata || {},
         this.methodInfoGetRecipeRun,
@@ -149,7 +149,7 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/GetRecipeRun',
+      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/GetRecipeRun',
     request,
     metadata || {},
     this.methodInfoGetRecipeRun);
@@ -181,7 +181,7 @@ export class RecipeRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
+          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
         request,
         metadata || {},
         this.methodInfoUpdateRecipeRun,
@@ -189,7 +189,7 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
+      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
     request,
     metadata || {},
     this.methodInfoUpdateRecipeRun);
@@ -221,7 +221,7 @@ export class RecipeRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
+          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
         request,
         metadata || {},
         this.methodInfoDeleteRecipeRun,
@@ -229,7 +229,7 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
+      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
     request,
     metadata || {},
     this.methodInfoDeleteRecipeRun);

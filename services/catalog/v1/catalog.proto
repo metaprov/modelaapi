@@ -1,7 +1,7 @@
 
 syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/catalog/v1";
-package github.com.metaprov.modeld.services.catalog.v1;
+package github.com.metaprov.modeldapi.services.catalog.v1;
 
 
 import "google/api/annotations.proto";
@@ -153,28 +153,6 @@ message GetUserRoleClassRequest {
 message GetUserRoleClassResponse {
     github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClass item = 1;
 }
-
-//////////////////////////////////////////////////// PublicDataset ///////////////////////////////////
-
-message ListPublicDatasetsRequest {
-    string namespace   = 1;
-    map<string,string> labels =2;
-}
-
-message ListPublicDatasetsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetList items = 1;
-}
-
-message GetPublicDatasetRequest {
-    string name        = 1;
-    string namespace   = 2;
-}
-
-message GetPublicDatasetResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDataset item = 1;
-}
-
-
 
 //////////////////////////////////////////////////// Service ///////////////////////////////////
 

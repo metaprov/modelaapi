@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.dataproduct.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.dataproduct.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DataProductServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/ListDataProducts',
+          '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/ListDataProducts',
         request,
         metadata || {},
         this.methodInfoListDataProducts,
@@ -69,7 +69,7 @@ export class DataProductServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/ListDataProducts',
+      '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/ListDataProducts',
     request,
     metadata || {},
     this.methodInfoListDataProducts);
@@ -101,7 +101,7 @@ export class DataProductServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/CreateDataProduct',
+          '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/CreateDataProduct',
         request,
         metadata || {},
         this.methodInfoCreateDataProduct,
@@ -109,7 +109,7 @@ export class DataProductServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/CreateDataProduct',
+      '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/CreateDataProduct',
     request,
     metadata || {},
     this.methodInfoCreateDataProduct);
@@ -141,7 +141,7 @@ export class DataProductServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/GetDataProduct',
+          '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/GetDataProduct',
         request,
         metadata || {},
         this.methodInfoGetDataProduct,
@@ -149,7 +149,7 @@ export class DataProductServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/GetDataProduct',
+      '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/GetDataProduct',
     request,
     metadata || {},
     this.methodInfoGetDataProduct);
@@ -181,7 +181,7 @@ export class DataProductServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/UpdateDataProduct',
+          '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/UpdateDataProduct',
         request,
         metadata || {},
         this.methodInfoUpdateDataProduct,
@@ -189,7 +189,7 @@ export class DataProductServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/UpdateDataProduct',
+      '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/UpdateDataProduct',
     request,
     metadata || {},
     this.methodInfoUpdateDataProduct);
@@ -221,7 +221,7 @@ export class DataProductServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/DeleteDataProduct',
+          '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/DeleteDataProduct',
         request,
         metadata || {},
         this.methodInfoDeleteDataProduct,
@@ -229,7 +229,7 @@ export class DataProductServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataproduct.v1.DataProductService/DeleteDataProduct',
+      '/github.com.metaprov.modeldapi.services.dataproduct.v1.DataProductService/DeleteDataProduct',
     request,
     metadata || {},
     this.methodInfoDeleteDataProduct);

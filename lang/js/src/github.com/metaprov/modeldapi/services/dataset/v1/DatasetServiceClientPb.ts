@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.dataset.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.dataset.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/ListDatasets',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ListDatasets',
         request,
         metadata || {},
         this.methodInfoListDatasets,
@@ -69,7 +69,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/ListDatasets',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ListDatasets',
     request,
     metadata || {},
     this.methodInfoListDatasets);
@@ -101,7 +101,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/GetDataset',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDataset',
         request,
         metadata || {},
         this.methodInfoGetDataset,
@@ -109,7 +109,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/GetDataset',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDataset',
     request,
     metadata || {},
     this.methodInfoGetDataset);
@@ -141,7 +141,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CreateDataset',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDataset',
         request,
         metadata || {},
         this.methodInfoCreateDataset,
@@ -149,7 +149,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CreateDataset',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDataset',
     request,
     metadata || {},
     this.methodInfoCreateDataset);
@@ -181,7 +181,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/UpdateDataset',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UpdateDataset',
         request,
         metadata || {},
         this.methodInfoUpdateDataset,
@@ -189,7 +189,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/UpdateDataset',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UpdateDataset',
     request,
     metadata || {},
     this.methodInfoUpdateDataset);
@@ -221,7 +221,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/DeleteDataset',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DeleteDataset',
         request,
         metadata || {},
         this.methodInfoDeleteDataset,
@@ -229,7 +229,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/DeleteDataset',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DeleteDataset',
     request,
     metadata || {},
     this.methodInfoDeleteDataset);
@@ -261,7 +261,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CompareDatasets',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CompareDatasets',
         request,
         metadata || {},
         this.methodInfoCompareDatasets,
@@ -269,7 +269,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CompareDatasets',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CompareDatasets',
     request,
     metadata || {},
     this.methodInfoCompareDatasets);
@@ -301,7 +301,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/GetDatasetProfile',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatasetProfile',
         request,
         metadata || {},
         this.methodInfoGetDatasetProfile,
@@ -309,7 +309,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/GetDatasetProfile',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatasetProfile',
     request,
     metadata || {},
     this.methodInfoGetDatasetProfile);
@@ -341,7 +341,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CreateDatasetProfile',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
         request,
         metadata || {},
         this.methodInfoCreateDatasetProfile,
@@ -349,7 +349,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CreateDatasetProfile',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
     request,
     metadata || {},
     this.methodInfoCreateDatasetProfile);
@@ -381,7 +381,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CreateColumnProfile',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateColumnProfile',
         request,
         metadata || {},
         this.methodInfoCreateColumnProfile,
@@ -389,7 +389,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/CreateColumnProfile',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateColumnProfile',
     request,
     metadata || {},
     this.methodInfoCreateColumnProfile);
@@ -421,7 +421,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/GenerateDataset',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GenerateDataset',
         request,
         metadata || {},
         this.methodInfoGenerateDataset,
@@ -429,7 +429,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/GenerateDataset',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GenerateDataset',
     request,
     metadata || {},
     this.methodInfoGenerateDataset);
@@ -461,7 +461,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/ValidateDataset',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ValidateDataset',
         request,
         metadata || {},
         this.methodInfoValidateDataset,
@@ -469,7 +469,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/ValidateDataset',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ValidateDataset',
     request,
     metadata || {},
     this.methodInfoValidateDataset);
@@ -501,7 +501,7 @@ export class DatasetServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/UploadChunk',
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UploadChunk',
         request,
         metadata || {},
         this.methodInfoUploadChunk,
@@ -509,7 +509,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.dataset.v1.DatasetService/UploadChunk',
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UploadChunk',
     request,
     metadata || {},
     this.methodInfoUploadChunk);

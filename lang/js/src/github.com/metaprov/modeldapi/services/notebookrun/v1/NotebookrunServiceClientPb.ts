@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.notebookrun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.notebookrun.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class NotebookRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
+          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
         request,
         metadata || {},
         this.methodInfoListNotebookRuns,
@@ -69,7 +69,7 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
+      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
     request,
     metadata || {},
     this.methodInfoListNotebookRuns);
@@ -101,7 +101,7 @@ export class NotebookRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
+          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
         request,
         metadata || {},
         this.methodInfoCreateNotebookRun,
@@ -109,7 +109,7 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
+      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
     request,
     metadata || {},
     this.methodInfoCreateNotebookRun);
@@ -141,7 +141,7 @@ export class NotebookRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
+          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
         request,
         metadata || {},
         this.methodInfoGetNotebookRun,
@@ -149,7 +149,7 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
+      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
     request,
     metadata || {},
     this.methodInfoGetNotebookRun);
@@ -181,7 +181,7 @@ export class NotebookRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
+          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
         request,
         metadata || {},
         this.methodInfoUpdateNotebookRun,
@@ -189,7 +189,7 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
+      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
     request,
     metadata || {},
     this.methodInfoUpdateNotebookRun);
@@ -221,7 +221,7 @@ export class NotebookRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
+          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
         request,
         metadata || {},
         this.methodInfoDeleteNotebookRun,
@@ -229,7 +229,7 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
+      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
     request,
     metadata || {},
     this.methodInfoDeleteNotebookRun);

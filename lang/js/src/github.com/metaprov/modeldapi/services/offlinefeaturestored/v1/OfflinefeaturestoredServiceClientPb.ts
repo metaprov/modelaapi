@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.offlinefeaturestored.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.offlinefeaturestored.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class OfflineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
+          '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
         request,
         metadata || {},
         this.methodInfoCreateFeature,
@@ -69,7 +69,7 @@ export class OfflineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
+      '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
     request,
     metadata || {},
     this.methodInfoCreateFeature);
@@ -101,7 +101,7 @@ export class OfflineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
+          '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
         request,
         metadata || {},
         this.methodInfoDeleteFeature,
@@ -109,7 +109,7 @@ export class OfflineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
+      '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
     request,
     metadata || {},
     this.methodInfoDeleteFeature);
@@ -141,7 +141,7 @@ export class OfflineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
+          '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
         request,
         metadata || {},
         this.methodInfoUpdateFeature,
@@ -149,7 +149,7 @@ export class OfflineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
+      '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
     request,
     metadata || {},
     this.methodInfoUpdateFeature);
@@ -181,7 +181,7 @@ export class OfflineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
+          '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
         request,
         metadata || {},
         this.methodInfoListFeatures,
@@ -189,7 +189,7 @@ export class OfflineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
+      '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
     request,
     metadata || {},
     this.methodInfoListFeatures);
@@ -221,7 +221,7 @@ export class OfflineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
+          '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
         request,
         metadata || {},
         this.methodInfoGetFeature,
@@ -229,7 +229,7 @@ export class OfflineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
+      '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
     request,
     metadata || {},
     this.methodInfoGetFeature);
@@ -261,7 +261,7 @@ export class OfflineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GenerateTrainingDataset',
+          '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GenerateTrainingDataset',
         request,
         metadata || {},
         this.methodInfoGenerateTrainingDataset,
@@ -269,7 +269,7 @@ export class OfflineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GenerateTrainingDataset',
+      '/github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GenerateTrainingDataset',
     request,
     metadata || {},
     this.methodInfoGenerateTrainingDataset);

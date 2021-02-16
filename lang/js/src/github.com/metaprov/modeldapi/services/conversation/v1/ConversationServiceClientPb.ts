@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.conversation.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.conversation.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/List',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/List',
         request,
         metadata || {},
         this.methodInfoList,
@@ -69,7 +69,7 @@ export class ConversationServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/List',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/List',
     request,
     metadata || {},
     this.methodInfoList);
@@ -101,7 +101,7 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Create',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Create',
         request,
         metadata || {},
         this.methodInfoCreate,
@@ -109,7 +109,7 @@ export class ConversationServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Create',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Create',
     request,
     metadata || {},
     this.methodInfoCreate);
@@ -141,7 +141,7 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Get',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Get',
         request,
         metadata || {},
         this.methodInfoGet,
@@ -149,7 +149,7 @@ export class ConversationServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Get',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Get',
     request,
     metadata || {},
     this.methodInfoGet);
@@ -181,7 +181,7 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Update',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Update',
         request,
         metadata || {},
         this.methodInfoUpdate,
@@ -189,7 +189,7 @@ export class ConversationServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Update',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Update',
     request,
     metadata || {},
     this.methodInfoUpdate);
@@ -221,7 +221,7 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Delete',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Delete',
         request,
         metadata || {},
         this.methodInfoDelete,
@@ -229,7 +229,7 @@ export class ConversationServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.conversation.v1.ConversationService/Delete',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Delete',
     request,
     metadata || {},
     this.methodInfoDelete);

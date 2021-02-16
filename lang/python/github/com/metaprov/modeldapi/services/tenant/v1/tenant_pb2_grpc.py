@@ -15,27 +15,27 @@ class TenantServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListTenants = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.tenant.v1.TenantService/ListTenants',
+                '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsResponse.FromString,
                 )
         self.CreateTenant = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.tenant.v1.TenantService/CreateTenant',
+                '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.CreateTenantRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.CreateTenantResponse.FromString,
                 )
         self.GetTenant = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.tenant.v1.TenantService/GetTenant',
+                '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.GetTenantRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.GetTenantResponse.FromString,
                 )
         self.UpdateTenant = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.tenant.v1.TenantService/UpdateTenant',
+                '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.UpdateTenantRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.UpdateTenantResponse.FromString,
                 )
         self.DeleteTenant = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.tenant.v1.TenantService/DeleteTenant',
+                '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.DeleteTenantRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.DeleteTenantResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_TenantServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.tenant.v1.TenantService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.tenant.v1.TenantService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class TenantService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.tenant.v1.TenantService/ListTenants',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.ListTenantsResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class TenantService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.tenant.v1.TenantService/CreateTenant',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.CreateTenantRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.CreateTenantResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class TenantService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.tenant.v1.TenantService/GetTenant',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.GetTenantRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.GetTenantResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class TenantService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.tenant.v1.TenantService/UpdateTenant',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.UpdateTenantRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.UpdateTenantResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class TenantService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.tenant.v1.TenantService/DeleteTenant',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.DeleteTenantRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_tenant_dot_v1_dot_tenant__pb2.DeleteTenantResponse.FromString,
             options, channel_credentials,

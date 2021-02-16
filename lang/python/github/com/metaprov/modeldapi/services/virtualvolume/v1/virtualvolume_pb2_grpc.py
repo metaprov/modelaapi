@@ -15,27 +15,27 @@ class VirtualVolumeServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListVirtualVolumes = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
+                '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.ListVirtualVolumesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.ListVirtualVolumesResponse.FromString,
                 )
         self.CreateVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
+                '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.CreateVirtualVolumeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.CreateVirtualVolumeResponse.FromString,
                 )
         self.GetVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
+                '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.GetVirtualVolumeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.GetVirtualVolumeResponse.FromString,
                 )
         self.UpdateVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
+                '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.UpdateVirtualVolumeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.UpdateVirtualVolumeResponse.FromString,
                 )
         self.DeleteVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
+                '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.DeleteVirtualVolumeRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.DeleteVirtualVolumeResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_VirtualVolumeServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class VirtualVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.ListVirtualVolumesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.ListVirtualVolumesResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class VirtualVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.CreateVirtualVolumeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.CreateVirtualVolumeResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class VirtualVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.GetVirtualVolumeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.GetVirtualVolumeResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class VirtualVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.UpdateVirtualVolumeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.UpdateVirtualVolumeResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class VirtualVolumeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.DeleteVirtualVolumeRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualvolume_dot_v1_dot_virtualvolume__pb2.DeleteVirtualVolumeResponse.FromString,
             options, channel_credentials,

@@ -18,33 +18,34 @@ var google_api_annotations_pb = require('../../../../../../google/api/annotation
 goog.object.extend(proto, google_api_annotations_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -55,16 +56,16 @@ goog.exportSymbol('proto.github.com.metaprov.modeld.services.k8score.v1.ServiceI
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -76,16 +77,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -97,16 +98,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -118,16 +119,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -139,16 +140,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -160,16 +161,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -181,16 +182,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -202,16 +203,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -223,16 +224,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -244,16 +245,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -265,16 +266,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -286,16 +287,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -307,16 +308,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -328,16 +329,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -349,16 +350,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -370,16 +371,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -391,16 +392,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -412,16 +413,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -433,16 +434,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -454,16 +455,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -475,16 +476,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -496,16 +497,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -517,16 +518,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -538,16 +539,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -559,16 +560,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -580,16 +581,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -601,16 +602,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.displayName = 'proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo';
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo';
 }
 
 
@@ -628,8 +650,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -638,11 +660,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -660,23 +682,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.toObject =
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -710,9 +732,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.deserializ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -720,11 +742,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -751,16 +773,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.serializeB
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -769,16 +791,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -789,7 +811,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -798,9 +820,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -821,8 +843,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -831,13 +853,13 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -851,23 +873,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -875,8 +897,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -892,9 +914,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -902,18 +924,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.serializeBinaryToWriter
     );
   }
 };
@@ -921,28 +943,28 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.serialize
 
 /**
  * optional SecretInfo item = 1;
- * @return {?proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -951,7 +973,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetSecretResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -972,8 +994,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -982,11 +1004,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -1003,23 +1025,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1049,9 +1071,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1059,11 +1081,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1083,16 +1105,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.serializ
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1103,7 +1125,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototyp
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1112,9 +1134,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototyp
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1125,7 +1147,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretsRequest.prototyp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.repeatedFields_ = [1];
 
 
 
@@ -1142,8 +1164,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1152,14 +1174,14 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemList: jspb.Message.toObjectList(msg.getItemList(),
-    proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1173,23 +1195,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1197,8 +1219,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader);
       msg.addItem(value);
       break;
     default:
@@ -1214,9 +1236,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1224,18 +1246,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1243,38 +1265,38 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.serializ
 
 /**
  * repeated SecretInfo item = 1;
- * @return {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototype.getItemList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.getItemList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo>} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.setItemList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototype.addItem = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListSecretResponse.prototype.clearItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.prototype.clearItemList = function() {
   return this.setItemList([]);
 };
 
@@ -1295,8 +1317,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1305,11 +1327,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1327,23 +1349,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1377,9 +1399,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1387,11 +1409,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1418,16 +1440,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1436,16 +1458,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1456,7 +1478,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.protot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1465,9 +1487,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.protot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1488,8 +1510,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1498,13 +1520,13 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1518,23 +1540,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1542,8 +1564,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -1559,9 +1581,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1569,18 +1591,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1588,28 +1610,28 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.seria
 
 /**
  * optional DeploymentInfo item = 1;
- * @return {?proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -1618,7 +1640,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetDeploymentResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1639,8 +1661,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1649,11 +1671,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -1670,23 +1692,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1716,9 +1738,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1726,11 +1748,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1750,16 +1772,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.seri
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1770,7 +1792,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1779,9 +1801,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1792,7 +1814,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsRequest.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.repeatedFields_ = [1];
 
 
 
@@ -1809,8 +1831,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1819,14 +1841,14 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.pro
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemList: jspb.Message.toObjectList(msg.getItemList(),
-    proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1840,23 +1862,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.toO
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1864,8 +1886,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader);
       msg.addItem(value);
       break;
     default:
@@ -1881,9 +1903,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.des
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1891,18 +1913,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.pro
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1910,38 +1932,38 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.ser
 
 /**
  * repeated DeploymentInfo item = 1;
- * @return {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.prototype.getItemList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.getItemList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo>} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.setItemList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.prototype.addItem = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListDeploymentsResponse.prototype.clearItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.prototype.clearItemList = function() {
   return this.setItemList([]);
 };
 
@@ -1962,8 +1984,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1972,11 +1994,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1994,23 +2016,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2044,9 +2066,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2054,11 +2076,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2085,16 +2107,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.serialize
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2103,16 +2125,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2123,7 +2145,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -2132,9 +2154,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -2155,8 +2177,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2165,13 +2187,13 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2185,23 +2207,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2209,8 +2231,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -2226,9 +2248,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2236,18 +2258,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2255,28 +2277,28 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.serializ
 
 /**
  * optional ServiceInfo item = 1;
- * @return {?proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -2285,7 +2307,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetServiceResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2306,8 +2328,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2316,11 +2338,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototy
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -2337,23 +2359,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.toObjec
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2383,9 +2405,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.deseria
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2393,11 +2415,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototy
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2417,16 +2439,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.seriali
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2437,7 +2459,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototy
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -2446,9 +2468,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototy
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -2459,7 +2481,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesRequest.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.repeatedFields_ = [1];
 
 
 
@@ -2476,8 +2498,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2486,14 +2508,14 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemList: jspb.Message.toObjectList(msg.getItemList(),
-    proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2507,23 +2529,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2531,8 +2553,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader);
       msg.addItem(value);
       break;
     default:
@@ -2548,9 +2570,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2558,18 +2580,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2577,38 +2599,38 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.serial
 
 /**
  * repeated ServiceInfo item = 1;
- * @return {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.prototype.getItemList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.getItemList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo>} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.setItemList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.prototype.addItem = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListServicesResponse.prototype.clearItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.prototype.clearItemList = function() {
   return this.setItemList([]);
 };
 
@@ -2629,8 +2651,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2639,11 +2661,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.toO
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -2661,23 +2683,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.toObject = fu
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2711,9 +2733,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.deserializeBi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2721,11 +2743,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.ser
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2752,16 +2774,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.serializeBina
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2770,16 +2792,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.set
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2790,7 +2812,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.set
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -2799,9 +2821,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.get
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -2822,8 +2844,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2832,13 +2854,13 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.to
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2852,23 +2874,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.toObject = f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2876,8 +2898,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.deserializeB
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -2893,9 +2915,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.deserializeB
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2903,18 +2925,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.se
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2922,28 +2944,28 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.serializeBin
 
 /**
  * optional PodInfo item = 1;
- * @return {?proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -2952,7 +2974,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetPodResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2973,8 +2995,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2983,11 +3005,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.t
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -3004,23 +3026,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.toObject = 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3050,9 +3072,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.deserialize
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3060,11 +3082,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.s
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3084,16 +3106,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.serializeBi
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3104,7 +3126,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.s
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -3113,9 +3135,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.g
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -3126,7 +3148,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsRequest.prototype.c
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.repeatedFields_ = [1];
 
 
 
@@ -3143,8 +3165,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3153,14 +3175,14 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemList: jspb.Message.toObjectList(msg.getItemList(),
-    proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3174,23 +3196,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.toObject =
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3198,8 +3220,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
       msg.addItem(value);
       break;
     default:
@@ -3215,9 +3237,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.deserializ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3225,18 +3247,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
     );
   }
 };
@@ -3244,38 +3266,38 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.serializeB
 
 /**
  * repeated PodInfo item = 1;
- * @return {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.getItemList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.getItemList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo>} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.setItemList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.addItem = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListPodsResponse.prototype.clearItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.prototype.clearItemList = function() {
   return this.setItemList([]);
 };
 
@@ -3296,8 +3318,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3306,11 +3328,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.toO
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3328,23 +3350,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.toObject = fu
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3378,9 +3400,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.deserializeBi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3388,11 +3410,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.ser
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3419,16 +3441,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.serializeBina
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3437,16 +3459,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.set
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3457,7 +3479,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.set
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -3466,9 +3488,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.get
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -3489,8 +3511,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3499,13 +3521,13 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.to
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3519,23 +3541,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.toObject = f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3543,8 +3565,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.deserializeB
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -3560,9 +3582,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.deserializeB
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3570,18 +3592,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.se
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
     );
   }
 };
@@ -3589,28 +3611,28 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.serializeBin
 
 /**
  * optional PodInfo item = 1;
- * @return {?proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -3619,7 +3641,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.GetJobResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3640,8 +3662,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3650,11 +3672,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.t
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -3671,23 +3693,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.toObject = 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3717,9 +3739,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.deserialize
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3727,11 +3749,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.s
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3751,16 +3773,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.serializeBi
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3771,7 +3793,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.s
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -3780,9 +3802,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.g
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -3793,7 +3815,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsRequest.prototype.c
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.repeatedFields_ = [1];
 
 
 
@@ -3810,8 +3832,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3820,14 +3842,14 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemList: jspb.Message.toObjectList(msg.getItemList(),
-    proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3841,23 +3863,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.toObject =
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3865,8 +3887,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
       msg.addItem(value);
       break;
     default:
@@ -3882,9 +3904,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.deserializ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3892,18 +3914,18 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.serializeBinaryToWriter
     );
   }
 };
@@ -3911,38 +3933,38 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.serializeB
 
 /**
  * repeated JobInfo item = 1;
- * @return {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.getItemList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.getItemList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo>} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.setItemList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.addItem = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListJobsResponse.prototype.clearItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.prototype.clearItemList = function() {
   return this.setItemList([]);
 };
 
@@ -3963,8 +3985,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3973,11 +3995,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -3994,23 +4016,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4040,9 +4062,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4050,11 +4072,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4074,16 +4096,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.serialize
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4094,7 +4116,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -4103,9 +4125,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -4116,7 +4138,7 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsRequest.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.repeatedFields_ = [1];
 
 
 
@@ -4133,8 +4155,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4143,14 +4165,14 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemList: jspb.Message.toObjectList(msg.getItemList(),
-    proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4164,23 +4186,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4188,8 +4210,8 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.deserializeBinaryFromReader);
       msg.addItem(value);
       break;
     default:
@@ -4205,9 +4227,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4215,57 +4237,57 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated JobInfo item = 1;
- * @return {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo>}
+ * repeated EventInfo item = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo>}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototype.getItemList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo, 1));
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.getItemList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo>} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototype.setItemList = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.setItemList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototype.addItem = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ListEventsResponse.prototype.clearItemList = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.prototype.clearItemList = function() {
   return this.setItemList([]);
 };
 
@@ -4286,8 +4308,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -4296,11 +4318,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.toObje
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4317,23 +4339,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.toObject = funct
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4361,9 +4383,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.deserializeBinar
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4371,11 +4393,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.serial
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -4398,16 +4420,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.serializeBinaryT
  * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4416,16 +4438,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.setNam
  * optional string namespace = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.SecretInfo.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4446,8 +4468,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -4456,11 +4478,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.toObj
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4477,23 +4499,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.toObject = func
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4521,9 +4543,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.deserializeBina
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4531,11 +4553,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.seria
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -4558,16 +4580,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.serializeBinary
  * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4576,16 +4598,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.setNa
  * optional string namespace = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.ServiceInfo.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4606,8 +4628,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -4616,11 +4638,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.to
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4637,23 +4659,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.toObject = f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4681,9 +4703,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.deserializeB
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4691,11 +4713,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.se
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -4718,16 +4740,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.serializeBin
  * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4736,16 +4758,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.se
  * optional string namespace = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.DeploymentInfo.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4766,8 +4788,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -4776,11 +4798,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.toObject 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4797,23 +4819,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.toObject = function
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4841,9 +4863,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.deserializeBinaryFr
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4851,11 +4873,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.serialize
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -4878,16 +4900,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.serializeBinaryToWr
  * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4896,16 +4918,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.setName =
  * optional string namespace = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.PodInfo.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.PodInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4926,8 +4948,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -4936,11 +4958,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.toObject 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4957,23 +4979,23 @@ proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.toObject = function
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo;
-  return proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5001,9 +5023,9 @@ proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.deserializeBinaryFr
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5011,11 +5033,11 @@ proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.serialize
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -5038,16 +5060,16 @@ proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.serializeBinaryToWr
  * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5056,18 +5078,119 @@ proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.setName =
  * optional string namespace = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo} returns this
  */
-proto.github.com.metaprov.modeld.services.k8score.v1.JobInfo.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.k8score.v1.JobInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
-goog.object.extend(exports, proto.github.com.metaprov.modeld.services.k8score.v1);
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo}
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo;
+  return proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo}
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.EventInfo.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+goog.object.extend(exports, proto.github.com.metaprov.modeldapi.services.k8score.v1);

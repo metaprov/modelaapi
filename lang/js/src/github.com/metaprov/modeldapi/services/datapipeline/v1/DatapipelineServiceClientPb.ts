@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.datapipeline.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.datapipeline.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
         request,
         metadata || {},
         this.methodInfoListDataPipelines,
@@ -69,7 +69,7 @@ export class DataPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
     request,
     metadata || {},
     this.methodInfoListDataPipelines);
@@ -101,7 +101,7 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
         request,
         metadata || {},
         this.methodInfoCreateDataPipeline,
@@ -109,7 +109,7 @@ export class DataPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
     request,
     metadata || {},
     this.methodInfoCreateDataPipeline);
@@ -141,7 +141,7 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
         request,
         metadata || {},
         this.methodInfoGetDataPipeline,
@@ -149,7 +149,7 @@ export class DataPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
     request,
     metadata || {},
     this.methodInfoGetDataPipeline);
@@ -181,7 +181,7 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
         request,
         metadata || {},
         this.methodInfoUpdateDataPipeline,
@@ -189,7 +189,7 @@ export class DataPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
     request,
     metadata || {},
     this.methodInfoUpdateDataPipeline);
@@ -221,7 +221,7 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
         request,
         metadata || {},
         this.methodInfoDeleteDataPipeline,
@@ -229,7 +229,7 @@ export class DataPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
     request,
     metadata || {},
     this.methodInfoDeleteDataPipeline);
@@ -261,7 +261,7 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/Run',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/Run',
         request,
         metadata || {},
         this.methodInfoRun,
@@ -269,7 +269,7 @@ export class DataPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datapipeline.v1.DataPipelineService/Run',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/Run',
     request,
     metadata || {},
     this.methodInfoRun);

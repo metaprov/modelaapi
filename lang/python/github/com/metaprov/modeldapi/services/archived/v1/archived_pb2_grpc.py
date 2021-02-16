@@ -15,42 +15,42 @@ class ArchivedServiceStub(object):
             channel: A grpc.Channel.
         """
         self.RecordModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordModel',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelResponse.FromString,
                 )
         self.RecordStudy = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordStudy',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordStudy',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordStudyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordStudyResponse.FromString,
                 )
         self.RecordDataset = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordDataset',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDatasetResponse.FromString,
                 )
         self.RecordPredictionPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictionPipeline',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictionPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictionPipelineResponse.FromString,
                 )
         self.RecordPredictor = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictor',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictor',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictorRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictorResponse.FromString,
                 )
         self.RecordProduct = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProduct',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProduct',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductResponse.FromString,
                 )
         self.RecordProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProductVersion',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProductVersion',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductVersionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductVersionResponse.FromString,
                 )
         self.RecordAccount = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordAccount',
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordAccount',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordAccountRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordAccountResponse.FromString,
                 )
@@ -153,7 +153,7 @@ def add_ArchivedServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.archived.v1.ArchivedService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.archived.v1.ArchivedService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -172,7 +172,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelResponse.FromString,
             options, channel_credentials,
@@ -189,7 +189,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordStudy',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordStudy',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordStudyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordStudyResponse.FromString,
             options, channel_credentials,
@@ -206,7 +206,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordDataset',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDatasetRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDatasetResponse.FromString,
             options, channel_credentials,
@@ -223,7 +223,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictionPipeline',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictionPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictionPipelineResponse.FromString,
             options, channel_credentials,
@@ -240,7 +240,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictor',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictor',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictorRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordPredictorResponse.FromString,
             options, channel_credentials,
@@ -257,7 +257,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProduct',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProduct',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductResponse.FromString,
             options, channel_credentials,
@@ -274,7 +274,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProductVersion',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProductVersion',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductVersionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataProductVersionResponse.FromString,
             options, channel_credentials,
@@ -291,7 +291,7 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordAccount',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordAccount',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordAccountRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordAccountResponse.FromString,
             options, channel_credentials,

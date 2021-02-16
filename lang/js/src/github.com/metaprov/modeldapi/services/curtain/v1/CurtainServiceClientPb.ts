@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.curtain.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.curtain.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class CurtainServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/ListCurtains',
+          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains',
         request,
         metadata || {},
         this.methodInfoListCurtains,
@@ -69,7 +69,7 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/ListCurtains',
+      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains',
     request,
     metadata || {},
     this.methodInfoListCurtains);
@@ -101,7 +101,7 @@ export class CurtainServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/CreateCurtain',
+          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain',
         request,
         metadata || {},
         this.methodInfoCreateCurtain,
@@ -109,7 +109,7 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/CreateCurtain',
+      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain',
     request,
     metadata || {},
     this.methodInfoCreateCurtain);
@@ -141,7 +141,7 @@ export class CurtainServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/GetCurtain',
+          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain',
         request,
         metadata || {},
         this.methodInfoGetCurtain,
@@ -149,7 +149,7 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/GetCurtain',
+      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain',
     request,
     metadata || {},
     this.methodInfoGetCurtain);
@@ -181,7 +181,7 @@ export class CurtainServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/UpdateCurtain',
+          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain',
         request,
         metadata || {},
         this.methodInfoUpdateCurtain,
@@ -189,7 +189,7 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/UpdateCurtain',
+      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain',
     request,
     metadata || {},
     this.methodInfoUpdateCurtain);
@@ -221,7 +221,7 @@ export class CurtainServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/DeleteCurtain',
+          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain',
         request,
         metadata || {},
         this.methodInfoDeleteCurtain,
@@ -229,7 +229,7 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.curtain.v1.CurtainService/DeleteCurtain',
+      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain',
     request,
     metadata || {},
     this.methodInfoDeleteCurtain);

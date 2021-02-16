@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.lab.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.lab.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class LabServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.lab.v1.LabService/ListLabs',
+          '/github.com.metaprov.modeldapi.services.lab.v1.LabService/ListLabs',
         request,
         metadata || {},
         this.methodInfoListLabs,
@@ -69,7 +69,7 @@ export class LabServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.lab.v1.LabService/ListLabs',
+      '/github.com.metaprov.modeldapi.services.lab.v1.LabService/ListLabs',
     request,
     metadata || {},
     this.methodInfoListLabs);
@@ -101,7 +101,7 @@ export class LabServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.lab.v1.LabService/CreateLab',
+          '/github.com.metaprov.modeldapi.services.lab.v1.LabService/CreateLab',
         request,
         metadata || {},
         this.methodInfoCreateLab,
@@ -109,7 +109,7 @@ export class LabServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.lab.v1.LabService/CreateLab',
+      '/github.com.metaprov.modeldapi.services.lab.v1.LabService/CreateLab',
     request,
     metadata || {},
     this.methodInfoCreateLab);
@@ -141,7 +141,7 @@ export class LabServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.lab.v1.LabService/GetLab',
+          '/github.com.metaprov.modeldapi.services.lab.v1.LabService/GetLab',
         request,
         metadata || {},
         this.methodInfoGetLab,
@@ -149,7 +149,7 @@ export class LabServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.lab.v1.LabService/GetLab',
+      '/github.com.metaprov.modeldapi.services.lab.v1.LabService/GetLab',
     request,
     metadata || {},
     this.methodInfoGetLab);
@@ -181,7 +181,7 @@ export class LabServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.lab.v1.LabService/UpdateLab',
+          '/github.com.metaprov.modeldapi.services.lab.v1.LabService/UpdateLab',
         request,
         metadata || {},
         this.methodInfoUpdateLab,
@@ -189,7 +189,7 @@ export class LabServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.lab.v1.LabService/UpdateLab',
+      '/github.com.metaprov.modeldapi.services.lab.v1.LabService/UpdateLab',
     request,
     metadata || {},
     this.methodInfoUpdateLab);
@@ -221,7 +221,7 @@ export class LabServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.lab.v1.LabService/DeleteLab',
+          '/github.com.metaprov.modeldapi.services.lab.v1.LabService/DeleteLab',
         request,
         metadata || {},
         this.methodInfoDeleteLab,
@@ -229,7 +229,7 @@ export class LabServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.lab.v1.LabService/DeleteLab',
+      '/github.com.metaprov.modeldapi.services.lab.v1.LabService/DeleteLab',
     request,
     metadata || {},
     this.methodInfoDeleteLab);

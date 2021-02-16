@@ -15,32 +15,32 @@ class CloudsServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Download = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/Download',
+                '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/Download',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileDownloadRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileDownloadResponse.FromString,
                 )
         self.Upload = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/Upload',
+                '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/Upload',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileUploadRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileUploadResponse.FromString,
                 )
         self.KeyExistInVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/KeyExistInVirtualBucket',
+                '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/KeyExistInVirtualBucket',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.KeyExistInVirtualBucketRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.KeyExistInVirtualBucketResponse.FromString,
                 )
         self.VirtualBucketExist = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/VirtualBucketExist',
+                '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/VirtualBucketExist',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.VirtualBucketExistRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.VirtualBucketExistResponse.FromString,
                 )
         self.CreateVirtualBucketIfNotExist = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/CreateVirtualBucketIfNotExist',
+                '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/CreateVirtualBucketIfNotExist',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.CreateVirtualBucketRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.CreateVirtualBucketResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/Shutdown',
+                '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/Shutdown',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.ShutdownRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.ShutdownResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_CloudsServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.cloudsd.v1.CloudsService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class CloudsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/Download',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/Download',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileDownloadRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileDownloadResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class CloudsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/Upload',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/Upload',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileUploadRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.FileUploadResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class CloudsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/KeyExistInVirtualBucket',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/KeyExistInVirtualBucket',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.KeyExistInVirtualBucketRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.KeyExistInVirtualBucketResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class CloudsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/VirtualBucketExist',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/VirtualBucketExist',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.VirtualBucketExistRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.VirtualBucketExistResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class CloudsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/CreateVirtualBucketIfNotExist',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/CreateVirtualBucketIfNotExist',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.CreateVirtualBucketRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.CreateVirtualBucketResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class CloudsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.cloudsd.v1.CloudsService/Shutdown',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cloudsd.v1.CloudsService/Shutdown',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.ShutdownRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cloudsd_dot_v1_dot_cloudsd__pb2.ShutdownResponse.FromString,
             options, channel_credentials,

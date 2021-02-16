@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.notebook.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.notebook.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class NotebookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/ListNotebooks',
+          '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/ListNotebooks',
         request,
         metadata || {},
         this.methodInfoListNotebooks,
@@ -69,7 +69,7 @@ export class NotebookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/ListNotebooks',
+      '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/ListNotebooks',
     request,
     metadata || {},
     this.methodInfoListNotebooks);
@@ -101,7 +101,7 @@ export class NotebookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/CreateNotebook',
+          '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/CreateNotebook',
         request,
         metadata || {},
         this.methodInfoCreateNotebook,
@@ -109,7 +109,7 @@ export class NotebookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/CreateNotebook',
+      '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/CreateNotebook',
     request,
     metadata || {},
     this.methodInfoCreateNotebook);
@@ -141,7 +141,7 @@ export class NotebookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/GetNotebook',
+          '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/GetNotebook',
         request,
         metadata || {},
         this.methodInfoGetNotebook,
@@ -149,7 +149,7 @@ export class NotebookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/GetNotebook',
+      '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/GetNotebook',
     request,
     metadata || {},
     this.methodInfoGetNotebook);
@@ -181,7 +181,7 @@ export class NotebookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/UpdateNotebook',
+          '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/UpdateNotebook',
         request,
         metadata || {},
         this.methodInfoUpdateNotebook,
@@ -189,7 +189,7 @@ export class NotebookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/UpdateNotebook',
+      '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/UpdateNotebook',
     request,
     metadata || {},
     this.methodInfoUpdateNotebook);
@@ -221,7 +221,7 @@ export class NotebookServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/DeleteNotebook',
+          '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/DeleteNotebook',
         request,
         metadata || {},
         this.methodInfoDeleteNotebook,
@@ -229,7 +229,7 @@ export class NotebookServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/DeleteNotebook',
+      '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/DeleteNotebook',
     request,
     metadata || {},
     this.methodInfoDeleteNotebook);

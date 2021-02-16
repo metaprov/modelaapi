@@ -20,30 +20,30 @@ var github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb = require(
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb);
 var github_com_metaprov_modeldapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_services_common_v1_common_pb);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -54,16 +54,16 @@ goog.exportSymbol('proto.github.com.metaprov.modeld.services.dataset.v1.Validate
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -75,16 +75,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -96,16 +96,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -117,16 +117,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -138,16 +138,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -159,16 +159,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -180,16 +180,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -201,16 +201,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -222,16 +222,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -243,16 +243,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -264,16 +264,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -285,16 +285,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -306,16 +306,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -327,16 +327,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -348,16 +348,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -369,16 +369,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -390,16 +390,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -411,16 +411,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -432,16 +432,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -453,16 +453,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -474,16 +474,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -495,16 +495,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -516,16 +516,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -537,16 +537,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.displayName = 'proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse';
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse';
 }
 
 
@@ -564,8 +564,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -574,11 +574,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototy
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -595,23 +595,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.toObjec
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -641,9 +641,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.deseria
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -651,11 +651,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototy
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -675,16 +675,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.seriali
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -695,7 +695,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototy
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -704,9 +704,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototy
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -727,8 +727,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -737,11 +737,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     datasets: (f = msg.getDatasets()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.toObject(includeInstance, f)
   };
@@ -757,23 +757,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -798,9 +798,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -808,11 +808,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDatasets();
   if (f != null) {
@@ -829,7 +829,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.serial
  * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.prototype.getDatasets = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.prototype.getDatasets = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList, 1));
 };
@@ -837,18 +837,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.prototype.setDatasets = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.prototype.setDatasets = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.prototype.clearDatasets = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.prototype.clearDatasets = function() {
   return this.setDatasets(undefined);
 };
 
@@ -857,7 +857,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ListDatasetsResponse.prototype.hasDatasets = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse.prototype.hasDatasets = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -878,8 +878,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -888,11 +888,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -910,23 +910,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -960,9 +960,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -970,11 +970,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1001,16 +1001,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.serialize
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1019,16 +1019,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1039,7 +1039,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1048,9 +1048,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1071,8 +1071,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1081,11 +1081,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -1102,23 +1102,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1147,9 +1147,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1157,11 +1157,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
@@ -1185,7 +1185,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.serializ
  * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.getItem = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 1));
 };
@@ -1193,18 +1193,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototyp
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -1213,7 +1213,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1222,16 +1222,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototyp
  * optional string yaml = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.getYaml = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.getYaml = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetResponse.prototype.setYaml = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse.prototype.setYaml = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1252,8 +1252,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1262,11 +1262,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1285,23 +1285,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1340,9 +1340,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1350,11 +1350,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1389,16 +1389,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1407,16 +1407,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1427,7 +1427,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1436,9 +1436,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1447,7 +1447,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
  * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec, 5));
 };
@@ -1455,18 +1455,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -1475,7 +1475,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -1496,8 +1496,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1506,11 +1506,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1526,23 +1526,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1562,9 +1562,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1572,11 +1572,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1597,8 +1597,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1607,11 +1607,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1630,23 +1630,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1685,9 +1685,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1695,11 +1695,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1734,16 +1734,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1752,16 +1752,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1772,7 +1772,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1781,9 +1781,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1792,7 +1792,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
  * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec, 5));
 };
@@ -1800,18 +1800,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -1820,7 +1820,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -1841,8 +1841,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1851,11 +1851,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1871,23 +1871,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1907,9 +1907,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1917,11 +1917,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UpdateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1942,8 +1942,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1952,11 +1952,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -1973,23 +1973,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2017,9 +2017,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2027,11 +2027,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2054,16 +2054,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2072,16 +2072,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2102,8 +2102,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2112,11 +2112,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -2132,23 +2132,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2168,9 +2168,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2178,11 +2178,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.DeleteDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -2203,8 +2203,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2213,11 +2213,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     fname: jspb.Message.getFieldWithDefault(msg, 1, ""),
     content: msg.getContent_asB64(),
@@ -2236,23 +2236,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2288,9 +2288,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2298,11 +2298,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFname();
   if (f.length > 0) {
@@ -2339,16 +2339,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.serializ
  * optional string fname = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.getFname = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.getFname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.setFname = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.setFname = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2357,7 +2357,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
  * optional bytes content = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.getContent = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.getContent = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2367,7 +2367,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
  * This is a type-conversion wrapper around `getContent()`
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.getContent_asB64 = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.getContent_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getContent()));
 };
@@ -2380,7 +2380,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
  * This is a type-conversion wrapper around `getContent()`
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.getContent_asU8 = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.getContent_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getContent()));
 };
@@ -2388,9 +2388,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.setContent = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.setContent = function(value) {
   return jspb.Message.setProto3BytesField(this, 2, value);
 };
 
@@ -2399,16 +2399,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
  * optional int32 index = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.getIndex = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.getIndex = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.setIndex = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.setIndex = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
@@ -2417,16 +2417,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototyp
  * optional bool last = 4;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.getLast = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.getLast = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkRequest.prototype.setLast = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest.prototype.setLast = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
@@ -2447,8 +2447,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2457,11 +2457,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototy
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     fname: jspb.Message.getFieldWithDefault(msg, 1, ""),
     ok: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
@@ -2478,23 +2478,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.toObjec
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2522,9 +2522,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.deseria
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2532,11 +2532,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototy
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFname();
   if (f.length > 0) {
@@ -2559,16 +2559,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.seriali
  * optional string fname = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototype.getFname = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.prototype.getFname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototype.setFname = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.prototype.setFname = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2577,16 +2577,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototy
  * optional bool ok = 2;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototype.getOk = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.prototype.getOk = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.UploadChunkResponse.prototype.setOk = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse.prototype.setOk = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -2607,8 +2607,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2617,11 +2617,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -2639,23 +2639,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2688,9 +2688,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2698,11 +2698,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2733,16 +2733,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2751,16 +2751,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2769,7 +2769,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
  * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 3;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec, 3));
 };
@@ -2777,18 +2777,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -2797,7 +2797,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -2818,8 +2818,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2828,11 +2828,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     uri: jspb.Message.getFieldWithDefault(msg, 1, ""),
     profile: (f = msg.getProfile()) && github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile.toObject(includeInstance, f)
@@ -2849,23 +2849,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2894,9 +2894,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2904,11 +2904,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getUri();
   if (f.length > 0) {
@@ -2932,16 +2932,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
  * optional string uri = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.getUri = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.getUri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.setUri = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.setUri = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2950,7 +2950,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
  * optional github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profile = 2;
  * @return {?proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.getProfile = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.getProfile = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, 2));
 };
@@ -2958,18 +2958,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.setProfile = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.setProfile = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.clearProfile = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.clearProfile = function() {
   return this.setProfile(undefined);
 };
 
@@ -2978,7 +2978,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileRespons
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateDatasetProfileResponse.prototype.hasProfile = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse.prototype.hasProfile = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -2999,8 +2999,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3009,11 +3009,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3032,23 +3032,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3085,9 +3085,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3095,11 +3095,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3137,16 +3137,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3155,16 +3155,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3173,16 +3173,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * optional string col = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.getCol = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.getCol = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.setCol = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.setCol = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -3191,7 +3191,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec, 4));
 };
@@ -3199,18 +3199,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -3219,7 +3219,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -3240,8 +3240,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3250,11 +3250,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     plot: (f = msg.getPlot()) && github_com_metaprov_modeldapi_services_common_v1_common_pb.Plot.toObject(includeInstance, f)
@@ -3271,23 +3271,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3316,9 +3316,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3326,11 +3326,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -3354,16 +3354,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
  * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3372,7 +3372,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
  * optional github.com.metaprov.modeldapi.services.common.v1.Plot plot = 2;
  * @return {?proto.github.com.metaprov.modeldapi.services.common.v1.Plot}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.getPlot = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.getPlot = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.services.common.v1.Plot} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.Plot, 2));
 };
@@ -3380,18 +3380,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.services.common.v1.Plot|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.setPlot = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.setPlot = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.clearPlot = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.clearPlot = function() {
   return this.setPlot(undefined);
 };
 
@@ -3400,7 +3400,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CreateColumnProfileResponse.prototype.hasPlot = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse.prototype.hasPlot = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -3421,8 +3421,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3431,11 +3431,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.pr
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3453,23 +3453,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.to
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3501,9 +3501,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.de
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3511,11 +3511,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.pr
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3545,16 +3545,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.se
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3563,16 +3563,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.pr
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3581,16 +3581,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.pr
  * optional string uri = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.getUri = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.getUri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileRequest.prototype.setUri = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest.prototype.setUri = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -3611,8 +3611,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3621,11 +3621,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3643,23 +3643,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3692,9 +3692,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3702,11 +3702,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3737,16 +3737,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.s
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3755,16 +3755,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3773,7 +3773,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
  * optional github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profile = 3;
  * @return {?proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.getProfile = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.getProfile = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, 3));
 };
@@ -3781,18 +3781,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.setProfile = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.setProfile = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.clearProfile = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.clearProfile = function() {
   return this.setProfile(undefined);
 };
 
@@ -3801,7 +3801,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.prototype.hasProfile = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse.prototype.hasProfile = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -3812,7 +3812,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GetDatasetProfileResponse.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.repeatedFields_ = [2];
 
 
 
@@ -3829,8 +3829,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3839,11 +3839,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
@@ -3860,23 +3860,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3904,9 +3904,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3914,11 +3914,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3941,16 +3941,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.seri
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3959,16 +3959,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prot
  * repeated string names = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.getNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.getNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.setNamesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -3976,18 +3976,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prot
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.addNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prototype.clearNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest.prototype.clearNamesList = function() {
   return this.setNamesList([]);
 };
 
@@ -3998,7 +3998,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsRequest.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.repeatedFields_ = [2,3];
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.repeatedFields_ = [2,3];
 
 
 
@@ -4015,8 +4015,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4025,11 +4025,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
@@ -4048,23 +4048,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.toO
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4097,9 +4097,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.des
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4107,11 +4107,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4142,16 +4142,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.ser
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4160,16 +4160,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
  * repeated string names = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.getNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.getNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.setNamesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -4177,18 +4177,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.addNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.clearNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.clearNamesList = function() {
   return this.setNamesList([]);
 };
 
@@ -4197,7 +4197,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
  * repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.getProfilesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.getProfilesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>} */ (
     jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, 3));
 };
@@ -4205,9 +4205,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
 
 /**
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.setProfilesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.setProfilesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -4217,16 +4217,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.addProfiles = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.addProfiles = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.prototype.clearProfilesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse.prototype.clearProfilesList = function() {
   return this.setProfilesList([]);
 };
 
@@ -4237,7 +4237,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.CompareDatasetsResponse.pro
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.repeatedFields_ = [2];
 
 
 
@@ -4254,8 +4254,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4264,11 +4264,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
@@ -4285,23 +4285,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4329,9 +4329,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4339,11 +4339,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4366,16 +4366,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.seri
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4384,16 +4384,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prot
  * repeated string names = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.getNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.getNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.setNamesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -4401,18 +4401,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prot
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.addNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prototype.clearNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest.prototype.clearNamesList = function() {
   return this.setNamesList([]);
 };
 
@@ -4423,7 +4423,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetRequest.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.repeatedFields_ = [2,3];
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.repeatedFields_ = [2,3];
 
 
 
@@ -4440,8 +4440,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4450,11 +4450,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
@@ -4473,23 +4473,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.toO
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4522,9 +4522,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.des
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4532,11 +4532,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4567,16 +4567,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.ser
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4585,16 +4585,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
  * repeated string names = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.getNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.getNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.setNamesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -4602,18 +4602,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.addNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.clearNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.clearNamesList = function() {
   return this.setNamesList([]);
 };
 
@@ -4622,7 +4622,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
  * repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.getProfilesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.getProfilesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>} */ (
     jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, 3));
 };
@@ -4630,9 +4630,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
 
 /**
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.setProfilesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.setProfilesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -4642,16 +4642,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.addProfiles = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.addProfiles = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.prototype.clearProfilesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse.prototype.clearProfilesList = function() {
   return this.setProfilesList([]);
 };
 
@@ -4662,7 +4662,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.GenerateDatasetResponse.pro
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.repeatedFields_ = [2];
 
 
 
@@ -4679,8 +4679,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4689,11 +4689,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
@@ -4710,23 +4710,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4754,9 +4754,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4764,11 +4764,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4791,16 +4791,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.seri
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4809,16 +4809,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prot
  * repeated string names = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.getNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.getNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.setNamesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -4826,18 +4826,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prot
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.addNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prototype.clearNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest.prototype.clearNamesList = function() {
   return this.setNamesList([]);
 };
 
@@ -4848,7 +4848,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetRequest.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.repeatedFields_ = [2,3];
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.repeatedFields_ = [2,3];
 
 
 
@@ -4865,8 +4865,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4875,11 +4875,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
@@ -4898,23 +4898,23 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.toO
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse;
-  return proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse;
+  return proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4947,9 +4947,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.des
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4957,11 +4957,11 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4992,16 +4992,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.ser
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5010,16 +5010,16 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
  * repeated string names = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.getNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.getNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.setNamesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -5027,18 +5027,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.addNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.clearNamesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.clearNamesList = function() {
   return this.setNamesList([]);
 };
 
@@ -5047,7 +5047,7 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
  * repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.getProfilesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.getProfilesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>} */ (
     jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, 3));
 };
@@ -5055,9 +5055,9 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
 
 /**
  * @param {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile>} value
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.setProfilesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.setProfilesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -5067,18 +5067,18 @@ proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.pro
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile}
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.addProfiles = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.addProfiles = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.dataset.v1.ValidateDatasetResponse.prototype.clearProfilesList = function() {
+proto.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse.prototype.clearProfilesList = function() {
   return this.setProfilesList([]);
 };
 
 
-goog.object.extend(exports, proto.github.com.metaprov.modeld.services.dataset.v1);
+goog.object.extend(exports, proto.github.com.metaprov.modeldapi.services.dataset.v1);

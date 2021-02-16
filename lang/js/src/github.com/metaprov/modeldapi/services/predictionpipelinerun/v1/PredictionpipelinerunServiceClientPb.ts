@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.predictionpipelinerun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictionpipelinerun.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PredictionPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
+          '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
         request,
         metadata || {},
         this.methodInfoListPredictionPipelineRuns,
@@ -69,7 +69,7 @@ export class PredictionPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
+      '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
     request,
     metadata || {},
     this.methodInfoListPredictionPipelineRuns);
@@ -101,7 +101,7 @@ export class PredictionPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
+          '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
         request,
         metadata || {},
         this.methodInfoCreatePredictionPipelineRun,
@@ -109,7 +109,7 @@ export class PredictionPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
+      '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
     request,
     metadata || {},
     this.methodInfoCreatePredictionPipelineRun);
@@ -141,7 +141,7 @@ export class PredictionPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
+          '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
         request,
         metadata || {},
         this.methodInfoGetPredictionPipelineRun,
@@ -149,7 +149,7 @@ export class PredictionPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
+      '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
     request,
     metadata || {},
     this.methodInfoGetPredictionPipelineRun);
@@ -181,7 +181,7 @@ export class PredictionPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
+          '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
         request,
         metadata || {},
         this.methodInfoUpdatePredictionPipelineRun,
@@ -189,7 +189,7 @@ export class PredictionPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
+      '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
     request,
     metadata || {},
     this.methodInfoUpdatePredictionPipelineRun);
@@ -221,7 +221,7 @@ export class PredictionPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
+          '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
         request,
         metadata || {},
         this.methodInfoDeletePredictionPipelineRun,
@@ -229,7 +229,7 @@ export class PredictionPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
+      '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
     request,
     metadata || {},
     this.methodInfoDeletePredictionPipelineRun);
@@ -261,7 +261,7 @@ export class PredictionPipelineRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
+          '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
         request,
         metadata || {},
         this.methodInfoDownload,
@@ -269,7 +269,7 @@ export class PredictionPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
+      '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
     request,
     metadata || {},
     this.methodInfoDownload);

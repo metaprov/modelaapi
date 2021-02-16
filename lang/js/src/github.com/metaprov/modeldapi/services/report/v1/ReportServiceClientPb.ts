@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.report.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.report.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ReportServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.report.v1.ReportService/ListReports',
+          '/github.com.metaprov.modeldapi.services.report.v1.ReportService/ListReports',
         request,
         metadata || {},
         this.methodInfoListReports,
@@ -69,7 +69,7 @@ export class ReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.report.v1.ReportService/ListReports',
+      '/github.com.metaprov.modeldapi.services.report.v1.ReportService/ListReports',
     request,
     metadata || {},
     this.methodInfoListReports);
@@ -101,7 +101,7 @@ export class ReportServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.report.v1.ReportService/CreateReport',
+          '/github.com.metaprov.modeldapi.services.report.v1.ReportService/CreateReport',
         request,
         metadata || {},
         this.methodInfoCreateReport,
@@ -109,7 +109,7 @@ export class ReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.report.v1.ReportService/CreateReport',
+      '/github.com.metaprov.modeldapi.services.report.v1.ReportService/CreateReport',
     request,
     metadata || {},
     this.methodInfoCreateReport);
@@ -141,7 +141,7 @@ export class ReportServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.report.v1.ReportService/GetReport',
+          '/github.com.metaprov.modeldapi.services.report.v1.ReportService/GetReport',
         request,
         metadata || {},
         this.methodInfoGetReport,
@@ -149,7 +149,7 @@ export class ReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.report.v1.ReportService/GetReport',
+      '/github.com.metaprov.modeldapi.services.report.v1.ReportService/GetReport',
     request,
     metadata || {},
     this.methodInfoGetReport);
@@ -181,7 +181,7 @@ export class ReportServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.report.v1.ReportService/UpdateReport',
+          '/github.com.metaprov.modeldapi.services.report.v1.ReportService/UpdateReport',
         request,
         metadata || {},
         this.methodInfoUpdateReport,
@@ -189,7 +189,7 @@ export class ReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.report.v1.ReportService/UpdateReport',
+      '/github.com.metaprov.modeldapi.services.report.v1.ReportService/UpdateReport',
     request,
     metadata || {},
     this.methodInfoUpdateReport);
@@ -221,7 +221,7 @@ export class ReportServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.report.v1.ReportService/DeleteReport',
+          '/github.com.metaprov.modeldapi.services.report.v1.ReportService/DeleteReport',
         request,
         metadata || {},
         this.methodInfoDeleteReport,
@@ -229,7 +229,7 @@ export class ReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.report.v1.ReportService/DeleteReport',
+      '/github.com.metaprov.modeldapi.services.report.v1.ReportService/DeleteReport',
     request,
     metadata || {},
     this.methodInfoDeleteReport);
@@ -261,7 +261,7 @@ export class ReportServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.report.v1.ReportService/Download',
+          '/github.com.metaprov.modeldapi.services.report.v1.ReportService/Download',
         request,
         metadata || {},
         this.methodInfoDownload,
@@ -269,7 +269,7 @@ export class ReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.report.v1.ReportService/Download',
+      '/github.com.metaprov.modeldapi.services.report.v1.ReportService/Download',
     request,
     metadata || {},
     this.methodInfoDownload);

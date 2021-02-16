@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.virtualbucket.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.virtualbucket.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class VirtualBucketServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
+          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
         request,
         metadata || {},
         this.methodInfoListVirtualBuckets,
@@ -69,7 +69,7 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
+      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
     request,
     metadata || {},
     this.methodInfoListVirtualBuckets);
@@ -101,7 +101,7 @@ export class VirtualBucketServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
+          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
         request,
         metadata || {},
         this.methodInfoCreateVirtualBucket,
@@ -109,7 +109,7 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
+      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
     request,
     metadata || {},
     this.methodInfoCreateVirtualBucket);
@@ -141,7 +141,7 @@ export class VirtualBucketServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
+          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
         request,
         metadata || {},
         this.methodInfoGetVirtualBucket,
@@ -149,7 +149,7 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
+      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
     request,
     metadata || {},
     this.methodInfoGetVirtualBucket);
@@ -181,7 +181,7 @@ export class VirtualBucketServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
+          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
         request,
         metadata || {},
         this.methodInfoUpdateVirtualBucket,
@@ -189,7 +189,7 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
+      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
     request,
     metadata || {},
     this.methodInfoUpdateVirtualBucket);
@@ -221,7 +221,7 @@ export class VirtualBucketServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
+          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
         request,
         metadata || {},
         this.methodInfoDeleteVirtualBucket,
@@ -229,7 +229,7 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
+      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
     request,
     metadata || {},
     this.methodInfoDeleteVirtualBucket);

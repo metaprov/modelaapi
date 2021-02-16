@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.model.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.model.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/ListModels',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels',
         request,
         metadata || {},
         this.methodInfoListModels,
@@ -69,7 +69,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/ListModels',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels',
     request,
     metadata || {},
     this.methodInfoListModels);
@@ -101,7 +101,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel',
         request,
         metadata || {},
         this.methodInfoCreateModel,
@@ -109,7 +109,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel',
     request,
     metadata || {},
     this.methodInfoCreateModel);
@@ -141,7 +141,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel',
         request,
         metadata || {},
         this.methodInfoGetModel,
@@ -149,7 +149,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel',
     request,
     metadata || {},
     this.methodInfoGetModel);
@@ -181,7 +181,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/UpdateModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel',
         request,
         metadata || {},
         this.methodInfoUpdateModel,
@@ -189,7 +189,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/UpdateModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel',
     request,
     metadata || {},
     this.methodInfoUpdateModel);
@@ -221,7 +221,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/DeleteModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel',
         request,
         metadata || {},
         this.methodInfoDeleteModel,
@@ -229,7 +229,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/DeleteModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel',
     request,
     metadata || {},
     this.methodInfoDeleteModel);
@@ -261,7 +261,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/DeployModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel',
         request,
         metadata || {},
         this.methodInfoDeployModel,
@@ -269,7 +269,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/DeployModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel',
     request,
     metadata || {},
     this.methodInfoDeployModel);
@@ -301,7 +301,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/PublishModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel',
         request,
         metadata || {},
         this.methodInfoPublishModel,
@@ -309,7 +309,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/PublishModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel',
     request,
     metadata || {},
     this.methodInfoPublishModel);
@@ -341,7 +341,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModelProfile',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile',
         request,
         metadata || {},
         this.methodInfoCreateModelProfile,
@@ -349,7 +349,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModelProfile',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile',
     request,
     metadata || {},
     this.methodInfoCreateModelProfile);
@@ -381,7 +381,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelProfile',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile',
         request,
         metadata || {},
         this.methodInfoGetModelProfile,
@@ -389,7 +389,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelProfile',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile',
     request,
     metadata || {},
     this.methodInfoGetModelProfile);
@@ -421,7 +421,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelMisclass',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass',
         request,
         metadata || {},
         this.methodInfoGetModelMisclass,
@@ -429,7 +429,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelMisclass',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass',
     request,
     metadata || {},
     this.methodInfoGetModelMisclass);
@@ -461,7 +461,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelLogs',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs',
         request,
         metadata || {},
         this.methodInfoGetModelLogs,
@@ -469,7 +469,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelLogs',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs',
     request,
     metadata || {},
     this.methodInfoGetModelLogs);
@@ -501,7 +501,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/AbortModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel',
         request,
         metadata || {},
         this.methodInfoAbortModel,
@@ -509,7 +509,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/AbortModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel',
     request,
     metadata || {},
     this.methodInfoAbortModel);
@@ -541,7 +541,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/PauseModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel',
         request,
         metadata || {},
         this.methodInfoPauseModel,
@@ -549,7 +549,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/PauseModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel',
     request,
     metadata || {},
     this.methodInfoPauseModel);
@@ -581,7 +581,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/ResumeModel',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel',
         request,
         metadata || {},
         this.methodInfoResumeModel,
@@ -589,7 +589,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/ResumeModel',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel',
     request,
     metadata || {},
     this.methodInfoResumeModel);
@@ -621,7 +621,7 @@ export class ModelServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.model.v1.ModelService/CompareModels',
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels',
         request,
         metadata || {},
         this.methodInfoCompareModels,
@@ -629,7 +629,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.model.v1.ModelService/CompareModels',
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels',
     request,
     metadata || {},
     this.methodInfoCompareModels);

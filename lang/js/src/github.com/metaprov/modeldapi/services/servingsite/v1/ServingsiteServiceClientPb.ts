@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.servingsite.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.servingsite.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ServingSiteServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/ListServingSites',
+          '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites',
         request,
         metadata || {},
         this.methodInfoListServingSites,
@@ -69,7 +69,7 @@ export class ServingSiteServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/ListServingSites',
+      '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites',
     request,
     metadata || {},
     this.methodInfoListServingSites);
@@ -101,7 +101,7 @@ export class ServingSiteServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/CreateServingSite',
+          '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
         request,
         metadata || {},
         this.methodInfoCreateServingSite,
@@ -109,7 +109,7 @@ export class ServingSiteServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/CreateServingSite',
+      '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
     request,
     metadata || {},
     this.methodInfoCreateServingSite);
@@ -141,7 +141,7 @@ export class ServingSiteServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/GetServingSite',
+          '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite',
         request,
         metadata || {},
         this.methodInfoGetServingSite,
@@ -149,7 +149,7 @@ export class ServingSiteServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/GetServingSite',
+      '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite',
     request,
     metadata || {},
     this.methodInfoGetServingSite);
@@ -181,7 +181,7 @@ export class ServingSiteServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+          '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
         request,
         metadata || {},
         this.methodInfoUpdateServingSite,
@@ -189,7 +189,7 @@ export class ServingSiteServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+      '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
     request,
     metadata || {},
     this.methodInfoUpdateServingSite);
@@ -221,7 +221,7 @@ export class ServingSiteServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+          '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
         request,
         metadata || {},
         this.methodInfoDeleteServingSite,
@@ -229,7 +229,7 @@ export class ServingSiteServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+      '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
     request,
     metadata || {},
     this.methodInfoDeleteServingSite);

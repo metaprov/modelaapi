@@ -15,77 +15,77 @@ class ModelServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListModels = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/ListModels',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ListModelsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ListModelsResponse.FromString,
                 )
         self.CreateModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelResponse.FromString,
                 )
         self.GetModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelResponse.FromString,
                 )
         self.UpdateModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/UpdateModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.UpdateModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.UpdateModelResponse.FromString,
                 )
         self.DeleteModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/DeleteModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeleteModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeleteModelResponse.FromString,
                 )
         self.DeployModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/DeployModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeployModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeployModelResponse.FromString,
                 )
         self.PublishModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/PublishModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PublishModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PublishModelResponse.FromString,
                 )
         self.CreateModelProfile = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModelProfile',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelProfileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelProfileResponse.FromString,
                 )
         self.GetModelProfile = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelProfile',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileResponse.FromString,
                 )
         self.GetModelMisclass = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelMisclass',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetMisclassRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetMisclassResponse.FromString,
                 )
         self.GetModelLogs = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelLogs',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelLogsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelLogsResponse.FromString,
                 )
         self.AbortModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/AbortModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.AbortModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.AbortModelResponse.FromString,
                 )
         self.PauseModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/PauseModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PauseModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PauseModelResponse.FromString,
                 )
         self.ResumeModel = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/ResumeModel',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ResumeModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ResumeModelResponse.FromString,
                 )
         self.CompareModels = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.model.v1.ModelService/CompareModels',
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompareModelsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompareModelsResponse.FromString,
                 )
@@ -264,7 +264,7 @@ def add_ModelServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.model.v1.ModelService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.model.v1.ModelService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -283,7 +283,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/ListModels',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ListModelsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ListModelsResponse.FromString,
             options, channel_credentials,
@@ -300,7 +300,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelResponse.FromString,
             options, channel_credentials,
@@ -317,7 +317,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelResponse.FromString,
             options, channel_credentials,
@@ -334,7 +334,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/UpdateModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.UpdateModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.UpdateModelResponse.FromString,
             options, channel_credentials,
@@ -351,7 +351,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/DeleteModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeleteModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeleteModelResponse.FromString,
             options, channel_credentials,
@@ -368,7 +368,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/DeployModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeployModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DeployModelResponse.FromString,
             options, channel_credentials,
@@ -385,7 +385,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/PublishModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PublishModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PublishModelResponse.FromString,
             options, channel_credentials,
@@ -402,7 +402,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/CreateModelProfile',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelProfileRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CreateModelProfileResponse.FromString,
             options, channel_credentials,
@@ -419,7 +419,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelProfile',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelProfileResponse.FromString,
             options, channel_credentials,
@@ -436,7 +436,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelMisclass',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetMisclassRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetMisclassResponse.FromString,
             options, channel_credentials,
@@ -453,7 +453,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/GetModelLogs',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelLogsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.GetModelLogsResponse.FromString,
             options, channel_credentials,
@@ -470,7 +470,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/AbortModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.AbortModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.AbortModelResponse.FromString,
             options, channel_credentials,
@@ -487,7 +487,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/PauseModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PauseModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.PauseModelResponse.FromString,
             options, channel_credentials,
@@ -504,7 +504,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/ResumeModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ResumeModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.ResumeModelResponse.FromString,
             options, channel_credentials,
@@ -521,7 +521,7 @@ class ModelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.model.v1.ModelService/CompareModels',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompareModelsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompareModelsResponse.FromString,
             options, channel_credentials,

@@ -15,27 +15,27 @@ class DataPipelineRunServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListDataPipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
+                '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ListDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ListDataPipelineRunResponse.FromString,
                 )
         self.CreateDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
+                '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.CreateDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.CreateDataPipelineRunResponse.FromString,
                 )
         self.GetDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
+                '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.GetDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.GetDataPipelineRunResponse.FromString,
                 )
         self.UpdateDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
+                '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.UpdateDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.UpdateDataPipelineRunResponse.FromString,
                 )
         self.DeleteDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
+                '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_DataPipelineRunServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class DataPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ListDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ListDataPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class DataPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.CreateDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.CreateDataPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class DataPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.GetDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.GetDataPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class DataPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.UpdateDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.UpdateDataPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class DataPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunResponse.FromString,
             options, channel_credentials,

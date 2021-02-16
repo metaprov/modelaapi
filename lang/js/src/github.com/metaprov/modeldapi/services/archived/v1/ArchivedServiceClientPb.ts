@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.archived.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.archived.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordModel',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModel',
         request,
         metadata || {},
         this.methodInfoRecordModel,
@@ -69,7 +69,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordModel',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModel',
     request,
     metadata || {},
     this.methodInfoRecordModel);
@@ -101,7 +101,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordStudy',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordStudy',
         request,
         metadata || {},
         this.methodInfoRecordStudy,
@@ -109,7 +109,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordStudy',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordStudy',
     request,
     metadata || {},
     this.methodInfoRecordStudy);
@@ -141,7 +141,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordDataset',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset',
         request,
         metadata || {},
         this.methodInfoRecordDataset,
@@ -149,7 +149,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordDataset',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset',
     request,
     metadata || {},
     this.methodInfoRecordDataset);
@@ -181,7 +181,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictionPipeline',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipeline',
         request,
         metadata || {},
         this.methodInfoRecordPredictionPipeline,
@@ -189,7 +189,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictionPipeline',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipeline',
     request,
     metadata || {},
     this.methodInfoRecordPredictionPipeline);
@@ -221,7 +221,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictor',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictor',
         request,
         metadata || {},
         this.methodInfoRecordPredictor,
@@ -229,7 +229,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordPredictor',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictor',
     request,
     metadata || {},
     this.methodInfoRecordPredictor);
@@ -261,7 +261,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProduct',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProduct',
         request,
         metadata || {},
         this.methodInfoRecordProduct,
@@ -269,7 +269,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProduct',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProduct',
     request,
     metadata || {},
     this.methodInfoRecordProduct);
@@ -301,7 +301,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProductVersion',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProductVersion',
         request,
         metadata || {},
         this.methodInfoRecordProductVersion,
@@ -309,7 +309,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordProductVersion',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordProductVersion',
     request,
     metadata || {},
     this.methodInfoRecordProductVersion);
@@ -341,7 +341,7 @@ export class ArchivedServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordAccount',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordAccount',
         request,
         metadata || {},
         this.methodInfoRecordAccount,
@@ -349,7 +349,7 @@ export class ArchivedServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.archived.v1.ArchivedService/RecordAccount',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordAccount',
     request,
     metadata || {},
     this.methodInfoRecordAccount);

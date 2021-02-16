@@ -15,32 +15,32 @@ class PredictionPipelineRunServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListPredictionPipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
+                '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.ListPredictionPipelineRunsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.ListPredictionPipelineRunsResponse.FromString,
                 )
         self.CreatePredictionPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
+                '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.CreatePredictionPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.CreatePredictionPipelineRunResponse.FromString,
                 )
         self.GetPredictionPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
+                '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.GetPredictionPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.GetPredictionPipelineRunResponse.FromString,
                 )
         self.UpdatePredictionPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
+                '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.UpdatePredictionPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.UpdatePredictionPipelineRunResponse.FromString,
                 )
         self.DeletePredictionPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
+                '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DeletePredictionPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DeletePredictionPipelineRunResponse.FromString,
                 )
         self.Download = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
+                '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DownloadPredictionPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DownloadPredictionPipelineRunResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_PredictionPipelineRunServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class PredictionPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/ListPredictionPipelineRuns',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.ListPredictionPipelineRunsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.ListPredictionPipelineRunsResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class PredictionPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/CreatePredictionPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.CreatePredictionPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.CreatePredictionPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class PredictionPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/GetPredictionPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.GetPredictionPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.GetPredictionPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class PredictionPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/UpdatePredictionPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.UpdatePredictionPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.UpdatePredictionPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class PredictionPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/DeletePredictionPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DeletePredictionPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DeletePredictionPipelineRunResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class PredictionPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService/Download',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DownloadPredictionPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipelinerun_dot_v1_dot_predictionpipelinerun__pb2.DownloadPredictionPipelineRunResponse.FromString,
             options, channel_credentials,

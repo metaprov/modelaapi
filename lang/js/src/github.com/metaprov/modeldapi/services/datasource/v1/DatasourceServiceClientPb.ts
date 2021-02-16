@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.datasource.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.datasource.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/ListDataSources',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources',
         request,
         metadata || {},
         this.methodInfoListDataSources,
@@ -69,7 +69,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/ListDataSources',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources',
     request,
     metadata || {},
     this.methodInfoListDataSources);
@@ -101,7 +101,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/CreateDataSource',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource',
         request,
         metadata || {},
         this.methodInfoCreateDataSource,
@@ -109,7 +109,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/CreateDataSource',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource',
     request,
     metadata || {},
     this.methodInfoCreateDataSource);
@@ -141,7 +141,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/GetDataSource',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource',
         request,
         metadata || {},
         this.methodInfoGetDataSource,
@@ -149,7 +149,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/GetDataSource',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource',
     request,
     metadata || {},
     this.methodInfoGetDataSource);
@@ -181,7 +181,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/UpdateDataSource',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource',
         request,
         metadata || {},
         this.methodInfoUpdateDataSource,
@@ -189,7 +189,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/UpdateDataSource',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource',
     request,
     metadata || {},
     this.methodInfoUpdateDataSource);
@@ -221,7 +221,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/DeleteDataSource',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource',
         request,
         metadata || {},
         this.methodInfoDeleteDataSource,
@@ -229,7 +229,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/DeleteDataSource',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource',
     request,
     metadata || {},
     this.methodInfoDeleteDataSource);
@@ -261,7 +261,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/InferSchema',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema',
         request,
         metadata || {},
         this.methodInfoInferSchema,
@@ -269,7 +269,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/InferSchema',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema',
     request,
     metadata || {},
     this.methodInfoInferSchema);
@@ -301,7 +301,7 @@ export class DataSourceServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/GetTableView',
+          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView',
         request,
         metadata || {},
         this.methodInfoGetTableView,
@@ -309,7 +309,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.datasource.v1.DataSourceService/GetTableView',
+      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView',
     request,
     metadata || {},
     this.methodInfoGetTableView);

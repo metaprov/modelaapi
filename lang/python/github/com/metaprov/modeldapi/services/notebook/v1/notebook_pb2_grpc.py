@@ -15,27 +15,27 @@ class NotebookServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListNotebooks = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/ListNotebooks',
+                '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/ListNotebooks',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.ListNotebooksRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.ListNotebooksResponse.FromString,
                 )
         self.CreateNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/CreateNotebook',
+                '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/CreateNotebook',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.CreateNotebookRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.CreateNotebookResponse.FromString,
                 )
         self.GetNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/GetNotebook',
+                '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/GetNotebook',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.GetNotebookRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.GetNotebookResponse.FromString,
                 )
         self.UpdateNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/UpdateNotebook',
+                '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/UpdateNotebook',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.UpdateNotebookRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.UpdateNotebookResponse.FromString,
                 )
         self.DeleteNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/DeleteNotebook',
+                '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/DeleteNotebook',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.DeleteNotebookRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.DeleteNotebookResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_NotebookServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.notebook.v1.NotebookService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.notebook.v1.NotebookService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class NotebookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/ListNotebooks',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/ListNotebooks',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.ListNotebooksRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.ListNotebooksResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class NotebookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/CreateNotebook',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/CreateNotebook',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.CreateNotebookRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.CreateNotebookResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class NotebookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/GetNotebook',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/GetNotebook',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.GetNotebookRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.GetNotebookResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class NotebookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/UpdateNotebook',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/UpdateNotebook',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.UpdateNotebookRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.UpdateNotebookResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class NotebookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.notebook.v1.NotebookService/DeleteNotebook',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/DeleteNotebook',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.DeleteNotebookRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notebook_dot_v1_dot_notebook__pb2.DeleteNotebookResponse.FromString,
             options, channel_credentials,

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.authd.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.authd.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class AuthdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Login',
+          '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Login',
         request,
         metadata || {},
         this.methodInfoLogin,
@@ -69,7 +69,7 @@ export class AuthdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Login',
+      '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Login',
     request,
     metadata || {},
     this.methodInfoLogin);
@@ -101,7 +101,7 @@ export class AuthdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.authd.v1.AuthdService/CreateAccount',
+          '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/CreateAccount',
         request,
         metadata || {},
         this.methodInfoCreateAccount,
@@ -109,7 +109,7 @@ export class AuthdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.authd.v1.AuthdService/CreateAccount',
+      '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/CreateAccount',
     request,
     metadata || {},
     this.methodInfoCreateAccount);
@@ -141,7 +141,7 @@ export class AuthdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.authd.v1.AuthdService/DeleteAccount',
+          '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/DeleteAccount',
         request,
         metadata || {},
         this.methodInfoDeleteAccount,
@@ -149,7 +149,7 @@ export class AuthdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.authd.v1.AuthdService/DeleteAccount',
+      '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/DeleteAccount',
     request,
     metadata || {},
     this.methodInfoDeleteAccount);
@@ -181,7 +181,7 @@ export class AuthdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Logout',
+          '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Logout',
         request,
         metadata || {},
         this.methodInfoLogout,
@@ -189,7 +189,7 @@ export class AuthdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.authd.v1.AuthdService/Logout',
+      '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/Logout',
     request,
     metadata || {},
     this.methodInfoLogout);
@@ -221,7 +221,7 @@ export class AuthdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ChangePassword',
+          '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ChangePassword',
         request,
         metadata || {},
         this.methodInfoChangePassword,
@@ -229,7 +229,7 @@ export class AuthdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ChangePassword',
+      '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ChangePassword',
     request,
     metadata || {},
     this.methodInfoChangePassword);
@@ -261,7 +261,7 @@ export class AuthdServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ResetPassword',
+          '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ResetPassword',
         request,
         metadata || {},
         this.methodInfoResetPassword,
@@ -269,7 +269,7 @@ export class AuthdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.authd.v1.AuthdService/ResetPassword',
+      '/github.com.metaprov.modeldapi.services.authd.v1.AuthdService/ResetPassword',
     request,
     metadata || {},
     this.methodInfoResetPassword);

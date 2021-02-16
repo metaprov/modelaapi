@@ -18,30 +18,34 @@ var google_api_annotations_pb = require('../../../../../../google/api/annotation
 goog.object.extend(proto, google_api_annotations_pb);
 var github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.AccountResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse', null, global);
+var github_com_metaprov_modeldapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb.js');
+goog.object.extend(proto, github_com_metaprov_modeldapi_services_common_v1_common_pb);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -52,16 +56,16 @@ goog.exportSymbol('proto.github.com.metaprov.modeld.services.account.v1.UpdateAc
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -73,16 +77,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -94,16 +98,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -115,16 +119,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -136,16 +140,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -157,16 +161,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -178,16 +182,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -199,16 +203,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -220,16 +224,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -241,16 +245,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -262,16 +266,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -283,16 +287,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -304,16 +308,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -325,16 +329,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -346,16 +350,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -367,16 +371,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -388,16 +392,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -409,16 +413,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -430,16 +434,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -451,16 +455,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -472,16 +476,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -493,16 +497,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -514,16 +518,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -535,16 +539,58 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.displayName = 'proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest';
+  proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest';
 }
 
 
@@ -562,8 +608,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -572,11 +618,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototy
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -593,23 +639,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.toObjec
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -639,9 +685,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.deseria
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -649,11 +695,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototy
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -673,16 +719,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.seriali
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -693,7 +739,7 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototy
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
@@ -702,9 +748,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototy
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -725,8 +771,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -735,11 +781,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList.toObject(includeInstance, f)
   };
@@ -755,23 +801,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -796,9 +842,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -806,11 +852,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItems();
   if (f != null) {
@@ -827,7 +873,7 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.serial
  * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList items = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.prototype.getItems = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList, 1));
 };
@@ -835,18 +881,18 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.prototype.setItems = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.prototype.clearItems = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.prototype.clearItems = function() {
   return this.setItems(undefined);
 };
 
@@ -855,7 +901,7 @@ proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ListAccountsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.prototype.hasItems = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -876,8 +922,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -886,11 +932,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.prototype.t
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -906,23 +952,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.toObject = 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -942,9 +988,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.deserialize
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -952,11 +998,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.prototype.s
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -977,8 +1023,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -987,11 +1033,11 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1012,23 +1058,23 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1075,9 +1121,9 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1085,11 +1131,11 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1138,16 +1184,16 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1156,16 +1202,16 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1176,7 +1222,7 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1185,9 +1231,9 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1196,7 +1242,7 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec, 4));
 };
@@ -1204,18 +1250,18 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -1224,7 +1270,7 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -1233,16 +1279,16 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * optional string password = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.getPassword = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getPassword = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.setPassword = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -1251,16 +1297,16 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.protot
  * optional bool upsert = 6;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.getUpsert = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getUpsert = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountRequest.prototype.setUpsert = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setUpsert = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
@@ -1281,8 +1327,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1291,11 +1337,11 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1311,23 +1357,23 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1347,9 +1393,9 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1357,11 +1403,11 @@ proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.CreateAccountResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1382,8 +1428,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1392,11 +1438,11 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1415,23 +1461,23 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1470,9 +1516,9 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1480,11 +1526,11 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1519,16 +1565,16 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1537,16 +1583,16 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1557,7 +1603,7 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -1566,9 +1612,9 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -1577,7 +1623,7 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
  * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec, 5));
 };
@@ -1585,18 +1631,18 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -1605,7 +1651,7 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -1626,8 +1672,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1636,11 +1682,11 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1656,23 +1702,23 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1692,9 +1738,9 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1702,11 +1748,11 @@ proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.UpdateAccountResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1727,8 +1773,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1737,11 +1783,11 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -1758,23 +1804,23 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1802,9 +1848,9 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1812,11 +1858,11 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1839,16 +1885,16 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.serialize
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1857,16 +1903,16 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1887,8 +1933,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1897,11 +1943,11 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototyp
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -1918,23 +1964,23 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1963,9 +2009,9 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.deserial
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1973,11 +2019,11 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototyp
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
@@ -2001,7 +2047,7 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.serializ
  * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.getItem = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 1));
 };
@@ -2009,18 +2055,18 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototyp
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse} returns this
 */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -2029,7 +2075,7 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2038,16 +2084,16 @@ proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototyp
  * optional string yaml = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.getYaml = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.getYaml = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.GetAccountResponse.prototype.setYaml = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.prototype.setYaml = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2068,8 +2114,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2078,11 +2124,11 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -2099,23 +2145,23 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2143,9 +2189,9 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2153,11 +2199,11 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2180,16 +2226,16 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2198,16 +2244,336 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespacesList: jspb.Message.toObjectList(msg.getNamespacesList(),
+    github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+      reader.readMessage(value,github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.deserializeBinaryFromReader);
+      msg.addNamespaces(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespacesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo>}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.prototype.getNamespacesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.prototype.setNamespacesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.prototype.addNamespaces = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.prototype.clearNamespacesList = function() {
+  return this.setNamespacesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2228,8 +2594,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2238,11 +2604,11 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -2258,23 +2624,23 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2294,9 +2660,9 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2304,11 +2670,11 @@ proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.DeleteAccountResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -2329,8 +2695,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2339,11 +2705,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -2359,23 +2725,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2395,9 +2761,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2405,11 +2771,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -2430,8 +2796,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2440,11 +2806,11 @@ proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.prototype.to
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -2460,23 +2826,23 @@ proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.toObject = f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2496,9 +2862,9 @@ proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.deserializeB
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2506,11 +2872,11 @@ proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.prototype.se
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.LogoutResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -2531,8 +2897,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2541,11 +2907,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -2561,23 +2927,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2597,9 +2963,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2607,11 +2973,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -2632,8 +2998,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2642,11 +3008,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototy
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -2664,23 +3030,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.toObjec
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2712,9 +3078,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.deseria
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2722,11 +3088,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototy
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2756,16 +3122,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.seriali
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2774,16 +3140,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototy
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2792,16 +3158,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototy
  * optional string password = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.getPassword = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.getPassword = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginRequest.prototype.setPassword = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -2822,8 +3188,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2832,11 +3198,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.pro
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -2853,23 +3219,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.toO
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2897,9 +3263,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.des
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2907,11 +3273,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.pro
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -2934,16 +3300,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.ser
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2952,16 +3318,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.pro
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountGetByNameRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2982,8 +3348,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2992,11 +3358,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     token: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -3012,23 +3378,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3052,9 +3418,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3062,11 +3428,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getToken();
   if (f.length > 0) {
@@ -3082,16 +3448,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.serial
  * optional string token = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.prototype.getToken = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.prototype.getToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLoginResponse.prototype.setToken = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse.prototype.setToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3112,8 +3478,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3122,11 +3488,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     token: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -3142,23 +3508,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3182,9 +3548,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3192,11 +3558,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getToken();
   if (f.length > 0) {
@@ -3212,16 +3578,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.serial
  * optional string token = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.prototype.getToken = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.prototype.getToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountLogoutRequest.prototype.setToken = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest.prototype.setToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3242,8 +3608,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3252,11 +3618,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.proto
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3276,23 +3642,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.toObj
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3332,9 +3698,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.deser
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3342,11 +3708,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.proto
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3390,16 +3756,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.seria
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3408,16 +3774,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.proto
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3426,16 +3792,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.proto
  * optional string old = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.getOld = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.getOld = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.setOld = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.setOld = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -3444,16 +3810,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.proto
  * optional string new = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.getNew = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.getNew = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.setNew = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.setNew = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -3462,16 +3828,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.proto
  * optional string confirmedNew = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.getConfirmednew = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.getConfirmednew = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordRequest.prototype.setConfirmednew = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest.prototype.setConfirmednew = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -3492,8 +3858,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3502,11 +3868,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -3522,23 +3888,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3558,9 +3924,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3568,11 +3934,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ChangePasswordResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -3593,8 +3959,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3603,11 +3969,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3626,23 +3992,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3678,9 +4044,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3688,11 +4054,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -3729,16 +4095,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3747,16 +4113,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3765,16 +4131,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.protot
  * optional string new = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.getNew = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.getNew = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.setNew = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.setNew = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -3783,16 +4149,16 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.protot
  * optional string confirmedNew = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.getConfirmednew = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.getConfirmednew = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordRequest.prototype.setConfirmednew = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest.prototype.setConfirmednew = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -3813,8 +4179,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3823,11 +4189,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -3843,23 +4209,23 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse;
-  return proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3879,9 +4245,9 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3889,11 +4255,11 @@ proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.ResetPasswordReponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -3914,8 +4280,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3924,11 +4290,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -3947,23 +4313,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4000,9 +4366,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4010,11 +4376,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4052,16 +4418,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4070,16 +4436,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4088,7 +4454,7 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
  * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 3;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.getSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.getSpec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec, 3));
 };
@@ -4096,18 +4462,18 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
 
 /**
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} returns this
 */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.setSpec = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.clearSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.clearSpec = function() {
   return this.setSpec(undefined);
 };
 
@@ -4116,7 +4482,7 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -4125,16 +4491,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.protot
  * optional string password = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.getPassword = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.getPassword = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountCreateRequest.prototype.setPassword = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -4155,8 +4521,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4165,11 +4531,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.protot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4186,23 +4552,23 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest;
-  return proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest;
+  return proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4230,9 +4596,9 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.deseri
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4240,11 +4606,11 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.protot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -4267,16 +4633,16 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.serial
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4285,18 +4651,18 @@ proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.protot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest} returns this
  */
-proto.github.com.metaprov.modeld.services.account.v1.AccountDeleteRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
-goog.object.extend(exports, proto.github.com.metaprov.modeld.services.account.v1);
+goog.object.extend(exports, proto.github.com.metaprov.modeldapi.services.account.v1);

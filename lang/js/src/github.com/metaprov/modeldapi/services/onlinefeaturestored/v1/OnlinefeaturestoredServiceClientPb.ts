@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.onlinefeaturestored.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.onlinefeaturestored.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+          '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
         request,
         metadata || {},
         this.methodInfoCreateFeature,
@@ -69,7 +69,7 @@ export class OnlineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+      '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
     request,
     metadata || {},
     this.methodInfoCreateFeature);
@@ -101,7 +101,7 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+          '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
         request,
         metadata || {},
         this.methodInfoDeleteFeature,
@@ -109,7 +109,7 @@ export class OnlineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+      '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
     request,
     metadata || {},
     this.methodInfoDeleteFeature);
@@ -141,7 +141,7 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+          '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
         request,
         metadata || {},
         this.methodInfoListFeatures,
@@ -149,7 +149,7 @@ export class OnlineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+      '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
     request,
     metadata || {},
     this.methodInfoListFeatures);
@@ -181,7 +181,7 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
+          '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
         request,
         metadata || {},
         this.methodInfoGetFeature,
@@ -189,7 +189,7 @@ export class OnlineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
+      '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
     request,
     metadata || {},
     this.methodInfoGetFeature);
@@ -221,7 +221,7 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
+          '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
         request,
         metadata || {},
         this.methodInfoUpdateFeature,
@@ -229,7 +229,7 @@ export class OnlineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
+      '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
     request,
     metadata || {},
     this.methodInfoUpdateFeature);
@@ -261,7 +261,7 @@ export class OnlineFeatureStoreServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
+          '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
         request,
         metadata || {},
         this.methodInfoEnrich,
@@ -269,7 +269,7 @@ export class OnlineFeatureStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
+      '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
     request,
     metadata || {},
     this.methodInfoEnrich);

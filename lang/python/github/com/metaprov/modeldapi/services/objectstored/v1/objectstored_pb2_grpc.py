@@ -15,22 +15,22 @@ class ObjectstoreServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Ingest = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Ingest',
+                '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectResponse.FromString,
                 )
         self.Archive = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Archive',
+                '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectResponse.FromString,
                 )
         self.Recover = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Recover',
+                '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectResponse.FromString,
                 )
         self.ExistInVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+                '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ExistInVirtualBucketResponse.FromString,
                 )
@@ -93,7 +93,7 @@ def add_ObjectstoreServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -112,7 +112,7 @@ class ObjectstoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Ingest',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectResponse.FromString,
             options, channel_credentials,
@@ -129,7 +129,7 @@ class ObjectstoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Archive',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectResponse.FromString,
             options, channel_credentials,
@@ -146,7 +146,7 @@ class ObjectstoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/Recover',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectResponse.FromString,
             options, channel_credentials,
@@ -163,7 +163,7 @@ class ObjectstoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ObjectRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_objectstored_dot_v1_dot_objectstored__pb2.ExistInVirtualBucketResponse.FromString,
             options, channel_credentials,

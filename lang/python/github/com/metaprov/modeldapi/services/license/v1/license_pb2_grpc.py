@@ -15,32 +15,32 @@ class LicenseServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListLicenses = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.license.v1.LicenseService/ListLicenses',
+                '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/ListLicenses',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.ListLicensesRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.ListLicensesResponse.FromString,
                 )
         self.CreateLicense = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicense',
+                '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicense',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseResponse.FromString,
                 )
         self.CreateLicenseFromKey = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicenseFromKey',
+                '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicenseFromKey',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseFromKeyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseResponse.FromString,
                 )
         self.GetLicense = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.license.v1.LicenseService/GetLicense',
+                '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/GetLicense',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.GetLicenseRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.GetLicenseResponse.FromString,
                 )
         self.UpdateLicense = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.license.v1.LicenseService/UpdateLicense',
+                '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/UpdateLicense',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.UpdateLicenseRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.UpdateLicenseResponse.FromString,
                 )
         self.DeleteLicense = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.license.v1.LicenseService/DeleteLicense',
+                '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/DeleteLicense',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.DeleteLicenseRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.DeleteLicenseResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_LicenseServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.license.v1.LicenseService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.license.v1.LicenseService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class LicenseService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.license.v1.LicenseService/ListLicenses',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/ListLicenses',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.ListLicensesRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.ListLicensesResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class LicenseService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicense',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicense',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class LicenseService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.license.v1.LicenseService/CreateLicenseFromKey',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicenseFromKey',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseFromKeyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.CreateLicenseResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class LicenseService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.license.v1.LicenseService/GetLicense',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/GetLicense',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.GetLicenseRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.GetLicenseResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class LicenseService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.license.v1.LicenseService/UpdateLicense',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/UpdateLicense',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.UpdateLicenseRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.UpdateLicenseResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class LicenseService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.license.v1.LicenseService/DeleteLicense',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.license.v1.LicenseService/DeleteLicense',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.DeleteLicenseRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_license_dot_v1_dot_license__pb2.DeleteLicenseResponse.FromString,
             options, channel_credentials,

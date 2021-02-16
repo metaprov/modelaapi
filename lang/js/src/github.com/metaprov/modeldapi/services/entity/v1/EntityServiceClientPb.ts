@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.entity.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.entity.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class EntityServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.entity.v1.EntityService/ListEntities',
+          '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/ListEntities',
         request,
         metadata || {},
         this.methodInfoListEntities,
@@ -69,7 +69,7 @@ export class EntityServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.entity.v1.EntityService/ListEntities',
+      '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/ListEntities',
     request,
     metadata || {},
     this.methodInfoListEntities);
@@ -101,7 +101,7 @@ export class EntityServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.entity.v1.EntityService/CreateEntity',
+          '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/CreateEntity',
         request,
         metadata || {},
         this.methodInfoCreateEntity,
@@ -109,7 +109,7 @@ export class EntityServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.entity.v1.EntityService/CreateEntity',
+      '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/CreateEntity',
     request,
     metadata || {},
     this.methodInfoCreateEntity);
@@ -141,7 +141,7 @@ export class EntityServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.entity.v1.EntityService/GetEntity',
+          '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/GetEntity',
         request,
         metadata || {},
         this.methodInfoGetEntity,
@@ -149,7 +149,7 @@ export class EntityServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.entity.v1.EntityService/GetEntity',
+      '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/GetEntity',
     request,
     metadata || {},
     this.methodInfoGetEntity);
@@ -181,7 +181,7 @@ export class EntityServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.entity.v1.EntityService/UpdateEntity',
+          '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/UpdateEntity',
         request,
         metadata || {},
         this.methodInfoUpdateEntity,
@@ -189,7 +189,7 @@ export class EntityServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.entity.v1.EntityService/UpdateEntity',
+      '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/UpdateEntity',
     request,
     metadata || {},
     this.methodInfoUpdateEntity);
@@ -221,7 +221,7 @@ export class EntityServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.entity.v1.EntityService/DeleteEntity',
+          '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/DeleteEntity',
         request,
         metadata || {},
         this.methodInfoDeleteEntity,
@@ -229,7 +229,7 @@ export class EntityServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.entity.v1.EntityService/DeleteEntity',
+      '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/DeleteEntity',
     request,
     metadata || {},
     this.methodInfoDeleteEntity);

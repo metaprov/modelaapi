@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.predictionpipeline.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictionpipeline.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PredictionPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/ListPredictionPipelines',
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/ListPredictionPipelines',
         request,
         metadata || {},
         this.methodInfoListPredictionPipelines,
@@ -69,7 +69,7 @@ export class PredictionPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/ListPredictionPipelines',
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/ListPredictionPipelines',
     request,
     metadata || {},
     this.methodInfoListPredictionPipelines);
@@ -101,7 +101,7 @@ export class PredictionPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/CreatePredictionPipeline',
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/CreatePredictionPipeline',
         request,
         metadata || {},
         this.methodInfoCreatePredictionPipeline,
@@ -109,7 +109,7 @@ export class PredictionPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/CreatePredictionPipeline',
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/CreatePredictionPipeline',
     request,
     metadata || {},
     this.methodInfoCreatePredictionPipeline);
@@ -141,7 +141,7 @@ export class PredictionPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/GetPredictionPipeline',
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/GetPredictionPipeline',
         request,
         metadata || {},
         this.methodInfoGetPredictionPipeline,
@@ -149,7 +149,7 @@ export class PredictionPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/GetPredictionPipeline',
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/GetPredictionPipeline',
     request,
     metadata || {},
     this.methodInfoGetPredictionPipeline);
@@ -181,7 +181,7 @@ export class PredictionPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/UpdatePredictionPipeline',
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/UpdatePredictionPipeline',
         request,
         metadata || {},
         this.methodInfoUpdatePredictionPipeline,
@@ -189,7 +189,7 @@ export class PredictionPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/UpdatePredictionPipeline',
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/UpdatePredictionPipeline',
     request,
     metadata || {},
     this.methodInfoUpdatePredictionPipeline);
@@ -221,7 +221,7 @@ export class PredictionPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/DeletePredictionPipeline',
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/DeletePredictionPipeline',
         request,
         metadata || {},
         this.methodInfoDeletePredictionPipeline,
@@ -229,7 +229,7 @@ export class PredictionPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/DeletePredictionPipeline',
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/DeletePredictionPipeline',
     request,
     metadata || {},
     this.methodInfoDeletePredictionPipeline);
@@ -261,7 +261,7 @@ export class PredictionPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/Download',
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/Download',
         request,
         metadata || {},
         this.methodInfoDownload,
@@ -269,7 +269,7 @@ export class PredictionPipelineServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.predictionpipeline.v1.PredictionPipelineService/Download',
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/Download',
     request,
     metadata || {},
     this.methodInfoDownload);

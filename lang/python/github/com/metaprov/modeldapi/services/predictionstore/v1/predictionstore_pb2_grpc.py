@@ -15,7 +15,7 @@ class PredictionStoreServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Ingest = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.predictionstore.v1.PredictionStoreService/Ingest',
+                '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.FromString,
                 )
@@ -42,7 +42,7 @@ def add_PredictionStoreServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.predictionstore.v1.PredictionStoreService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -61,7 +61,7 @@ class PredictionStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.predictionstore.v1.PredictionStoreService/Ingest',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.FromString,
             options, channel_credentials,

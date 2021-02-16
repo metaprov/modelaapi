@@ -17,11 +17,11 @@ from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modeldapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto',
-  package='github.com.metaprov.modeld.services.offlinefeaturestored.v1',
+  package='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1',
   syntax='proto3',
   serialized_options=b'Z>github.com/metaprov/modeldapi/services/offlinefeaturestored/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nYgithub.com/metaprov/modeldapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto\x12;github.com.metaprov.modeld.services.offlinefeaturestored.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xb4\x04\n\x14\x43reateFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12m\n\x06labels\x18\x03 \x03(\x0b\x32].github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec\x12\x16\n\x0e\x63onnectionName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12m\n\x06secret\x18\x07 \x03(\x0b\x32].github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15\x43reateFeatureResponse\"0\n\x14\x44\x65leteFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse\"\xb4\x04\n\x14UpdateFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12m\n\x06labels\x18\x03 \x03(\x0b\x32].github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec\x12\x16\n\x0e\x63onnectionName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12m\n\x06secret\x18\x07 \x03(\x0b\x32].github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15UpdateFeatureResponse\"!\n\x13ListFeaturesRequest\x12\n\n\x02ns\x18\x01 \x01(\t\"h\n\x14ListFeaturesResponse\x12P\n\x05items\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList\"-\n\x11GetFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"a\n\x12GetFeatureResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x88\x01\n\x1eGenerateTrainingDatasetRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12L\n\x05items\x18\x03 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"!\n\x1fGenerateTrainingDatasetResponse2\x90\t\n\x1aOfflineFeatureStoreService\x12\xb8\x01\n\rCreateFeature\x12Q.github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest\x1aR.github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureResponse\"\x00\x12\xb8\x01\n\rDeleteFeature\x12Q.github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureRequest\x1aR.github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureResponse\"\x00\x12\xb8\x01\n\rUpdateFeature\x12Q.github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest\x1aR.github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureResponse\"\x00\x12\xb5\x01\n\x0cListFeatures\x12P.github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesRequest\x1aQ.github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesResponse\"\x00\x12\xaf\x01\n\nGetFeature\x12N.github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureRequest\x1aO.github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureResponse\"\x00\x12\xd6\x01\n\x17GenerateTrainingDataset\x12[.github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest\x1a\\.github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse\"\x00\x42@Z>github.com/metaprov/modeldapi/services/offlinefeaturestored/v1b\x06proto3'
+  serialized_pb=b'\nYgithub.com/metaprov/modeldapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto\x12>github.com.metaprov.modeldapi.services.offlinefeaturestored.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xba\x04\n\x14\x43reateFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12p\n\x06labels\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec\x12\x16\n\x0e\x63onnectionName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12p\n\x06secret\x18\x07 \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15\x43reateFeatureResponse\"0\n\x14\x44\x65leteFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse\"\xba\x04\n\x14UpdateFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12p\n\x06labels\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec\x12\x16\n\x0e\x63onnectionName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12p\n\x06secret\x18\x07 \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15UpdateFeatureResponse\"!\n\x13ListFeaturesRequest\x12\n\n\x02ns\x18\x01 \x01(\t\"h\n\x14ListFeaturesResponse\x12P\n\x05items\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList\"-\n\x11GetFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"a\n\x12GetFeatureResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x88\x01\n\x1eGenerateTrainingDatasetRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12L\n\x05items\x18\x03 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"!\n\x1fGenerateTrainingDatasetResponse2\xb4\t\n\x1aOfflineFeatureStoreService\x12\xbe\x01\n\rCreateFeature\x12T.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest\x1aU.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureResponse\"\x00\x12\xbe\x01\n\rDeleteFeature\x12T.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureRequest\x1aU.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureResponse\"\x00\x12\xbe\x01\n\rUpdateFeature\x12T.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest\x1aU.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureResponse\"\x00\x12\xbb\x01\n\x0cListFeatures\x12S.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesRequest\x1aT.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesResponse\"\x00\x12\xb5\x01\n\nGetFeature\x12Q.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureRequest\x1aR.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureResponse\"\x00\x12\xdc\x01\n\x17GenerateTrainingDataset\x12^.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest\x1a_.github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse\"\x00\x42@Z>github.com/metaprov/modeldapi/services/offlinefeaturestored/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _CREATEFEATUREREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -62,27 +62,27 @@ _CREATEFEATUREREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=813,
+  serialized_start=777,
+  serialized_end=822,
 )
 
 _CREATEFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   name='SecretEntry',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -100,62 +100,62 @@ _CREATEFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=860,
+  serialized_start=824,
+  serialized_end=869,
 )
 
 _CREATEFEATUREREQUEST = _descriptor.Descriptor(
   name='CreateFeatureRequest',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ns', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.ns', index=1,
+      name='ns', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.ns', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connectionName', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.connectionName', index=4,
+      name='connectionName', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.connectionName', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.connectionSpec', index=5,
+      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.connectionSpec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.secret', index=6,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.secret', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -173,14 +173,14 @@ _CREATEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=860,
+  serialized_start=299,
+  serialized_end=869,
 )
 
 
 _CREATEFEATURERESPONSE = _descriptor.Descriptor(
   name='CreateFeatureResponse',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureResponse',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -198,28 +198,28 @@ _CREATEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=862,
-  serialized_end=885,
+  serialized_start=871,
+  serialized_end=894,
 )
 
 
 _DELETEFEATUREREQUEST = _descriptor.Descriptor(
   name='DeleteFeatureRequest',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureRequest',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureRequest.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ns', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureRequest.ns', index=1,
+      name='ns', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureRequest.ns', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -237,14 +237,14 @@ _DELETEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=887,
-  serialized_end=935,
+  serialized_start=896,
+  serialized_end=944,
 )
 
 
 _DELETEFEATURERESPONSE = _descriptor.Descriptor(
   name='DeleteFeatureResponse',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureResponse',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -262,28 +262,28 @@ _DELETEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=937,
-  serialized_end=960,
+  serialized_start=946,
+  serialized_end=969,
 )
 
 
 _UPDATEFEATUREREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -301,27 +301,27 @@ _UPDATEFEATUREREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=813,
+  serialized_start=777,
+  serialized_end=822,
 )
 
 _UPDATEFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   name='SecretEntry',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -339,62 +339,62 @@ _UPDATEFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=860,
+  serialized_start=824,
+  serialized_end=869,
 )
 
 _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
   name='UpdateFeatureRequest',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ns', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.ns', index=1,
+      name='ns', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.ns', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.spec', index=3,
+      name='spec', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connectionName', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.connectionName', index=4,
+      name='connectionName', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.connectionName', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.connectionSpec', index=5,
+      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.connectionSpec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.secret', index=6,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.secret', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -412,14 +412,14 @@ _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=963,
-  serialized_end=1527,
+  serialized_start=972,
+  serialized_end=1542,
 )
 
 
 _UPDATEFEATURERESPONSE = _descriptor.Descriptor(
   name='UpdateFeatureResponse',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureResponse',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -437,21 +437,21 @@ _UPDATEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1529,
-  serialized_end=1552,
+  serialized_start=1544,
+  serialized_end=1567,
 )
 
 
 _LISTFEATURESREQUEST = _descriptor.Descriptor(
   name='ListFeaturesRequest',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesRequest',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ns', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesRequest.ns', index=0,
+      name='ns', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesRequest.ns', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -469,21 +469,21 @@ _LISTFEATURESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1554,
-  serialized_end=1587,
+  serialized_start=1569,
+  serialized_end=1602,
 )
 
 
 _LISTFEATURESRESPONSE = _descriptor.Descriptor(
   name='ListFeaturesResponse',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesResponse',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesResponse.items', index=0,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -501,28 +501,28 @@ _LISTFEATURESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1589,
-  serialized_end=1693,
+  serialized_start=1604,
+  serialized_end=1708,
 )
 
 
 _GETFEATUREREQUEST = _descriptor.Descriptor(
   name='GetFeatureRequest',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureRequest',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureRequest.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ns', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureRequest.ns', index=1,
+      name='ns', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureRequest.ns', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -540,21 +540,21 @@ _GETFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1695,
-  serialized_end=1740,
+  serialized_start=1710,
+  serialized_end=1755,
 )
 
 
 _GETFEATURERESPONSE = _descriptor.Descriptor(
   name='GetFeatureResponse',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureResponse',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -572,35 +572,35 @@ _GETFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1742,
-  serialized_end=1839,
+  serialized_start=1757,
+  serialized_end=1854,
 )
 
 
 _GENERATETRAININGDATASETREQUEST = _descriptor.Descriptor(
   name='GenerateTrainingDatasetRequest',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.name', index=0,
+      name='name', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ns', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.ns', index=1,
+      name='ns', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.ns', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.items', index=2,
+      name='items', full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest.items', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -618,14 +618,14 @@ _GENERATETRAININGDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1842,
-  serialized_end=1978,
+  serialized_start=1857,
+  serialized_end=1993,
 )
 
 
 _GENERATETRAININGDATASETRESPONSE = _descriptor.Descriptor(
   name='GenerateTrainingDatasetResponse',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -643,8 +643,8 @@ _GENERATETRAININGDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1980,
-  serialized_end=2013,
+  serialized_start=1995,
+  serialized_end=2028,
 )
 
 _CREATEFEATUREREQUEST_LABELSENTRY.containing_type = _CREATEFEATUREREQUEST
@@ -681,19 +681,19 @@ CreateFeatureRequest = _reflection.GeneratedProtocolMessageType('CreateFeatureRe
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEFEATUREREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.LabelsEntry)
     })
   ,
 
   'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
     'DESCRIPTOR' : _CREATEFEATUREREQUEST_SECRETENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest.SecretEntry)
     })
   ,
   'DESCRIPTOR' : _CREATEFEATUREREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureRequest)
   })
 _sym_db.RegisterMessage(CreateFeatureRequest)
 _sym_db.RegisterMessage(CreateFeatureRequest.LabelsEntry)
@@ -702,21 +702,21 @@ _sym_db.RegisterMessage(CreateFeatureRequest.SecretEntry)
 CreateFeatureResponse = _reflection.GeneratedProtocolMessageType('CreateFeatureResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEFEATURERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.CreateFeatureResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.CreateFeatureResponse)
   })
 _sym_db.RegisterMessage(CreateFeatureResponse)
 
 DeleteFeatureRequest = _reflection.GeneratedProtocolMessageType('DeleteFeatureRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEFEATUREREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureRequest)
   })
 _sym_db.RegisterMessage(DeleteFeatureRequest)
 
 DeleteFeatureResponse = _reflection.GeneratedProtocolMessageType('DeleteFeatureResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEFEATURERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.DeleteFeatureResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.DeleteFeatureResponse)
   })
 _sym_db.RegisterMessage(DeleteFeatureResponse)
 
@@ -725,19 +725,19 @@ UpdateFeatureRequest = _reflection.GeneratedProtocolMessageType('UpdateFeatureRe
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEFEATUREREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry)
     })
   ,
 
   'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
     'DESCRIPTOR' : _UPDATEFEATUREREQUEST_SECRETENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry)
     })
   ,
   'DESCRIPTOR' : _UPDATEFEATUREREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureRequest)
   })
 _sym_db.RegisterMessage(UpdateFeatureRequest)
 _sym_db.RegisterMessage(UpdateFeatureRequest.LabelsEntry)
@@ -746,49 +746,49 @@ _sym_db.RegisterMessage(UpdateFeatureRequest.SecretEntry)
 UpdateFeatureResponse = _reflection.GeneratedProtocolMessageType('UpdateFeatureResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEFEATURERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.UpdateFeatureResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.UpdateFeatureResponse)
   })
 _sym_db.RegisterMessage(UpdateFeatureResponse)
 
 ListFeaturesRequest = _reflection.GeneratedProtocolMessageType('ListFeaturesRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTFEATURESREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesRequest)
   })
 _sym_db.RegisterMessage(ListFeaturesRequest)
 
 ListFeaturesResponse = _reflection.GeneratedProtocolMessageType('ListFeaturesResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTFEATURESRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.ListFeaturesResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.ListFeaturesResponse)
   })
 _sym_db.RegisterMessage(ListFeaturesResponse)
 
 GetFeatureRequest = _reflection.GeneratedProtocolMessageType('GetFeatureRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETFEATUREREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureRequest)
   })
 _sym_db.RegisterMessage(GetFeatureRequest)
 
 GetFeatureResponse = _reflection.GeneratedProtocolMessageType('GetFeatureResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETFEATURERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.GetFeatureResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GetFeatureResponse)
   })
 _sym_db.RegisterMessage(GetFeatureResponse)
 
 GenerateTrainingDatasetRequest = _reflection.GeneratedProtocolMessageType('GenerateTrainingDatasetRequest', (_message.Message,), {
   'DESCRIPTOR' : _GENERATETRAININGDATASETREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetRequest)
   })
 _sym_db.RegisterMessage(GenerateTrainingDatasetRequest)
 
 GenerateTrainingDatasetResponse = _reflection.GeneratedProtocolMessageType('GenerateTrainingDatasetResponse', (_message.Message,), {
   'DESCRIPTOR' : _GENERATETRAININGDATASETRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.offlinefeaturestored_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeld.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.GenerateTrainingDatasetResponse)
   })
 _sym_db.RegisterMessage(GenerateTrainingDatasetResponse)
 
@@ -801,17 +801,17 @@ _UPDATEFEATUREREQUEST_SECRETENTRY._options = None
 
 _OFFLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   name='OfflineFeatureStoreService',
-  full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService',
+  full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2016,
-  serialized_end=3184,
+  serialized_start=2031,
+  serialized_end=3235,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateFeature',
-    full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService.CreateFeature',
+    full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService.CreateFeature',
     index=0,
     containing_service=None,
     input_type=_CREATEFEATUREREQUEST,
@@ -821,7 +821,7 @@ _OFFLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteFeature',
-    full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService.DeleteFeature',
+    full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService.DeleteFeature',
     index=1,
     containing_service=None,
     input_type=_DELETEFEATUREREQUEST,
@@ -831,7 +831,7 @@ _OFFLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateFeature',
-    full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService.UpdateFeature',
+    full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService.UpdateFeature',
     index=2,
     containing_service=None,
     input_type=_UPDATEFEATUREREQUEST,
@@ -841,7 +841,7 @@ _OFFLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListFeatures',
-    full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService.ListFeatures',
+    full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService.ListFeatures',
     index=3,
     containing_service=None,
     input_type=_LISTFEATURESREQUEST,
@@ -851,7 +851,7 @@ _OFFLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetFeature',
-    full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService.GetFeature',
+    full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService.GetFeature',
     index=4,
     containing_service=None,
     input_type=_GETFEATUREREQUEST,
@@ -861,7 +861,7 @@ _OFFLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GenerateTrainingDataset',
-    full_name='github.com.metaprov.modeld.services.offlinefeaturestored.v1.OfflineFeatureStoreService.GenerateTrainingDataset',
+    full_name='github.com.metaprov.modeldapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService.GenerateTrainingDataset',
     index=5,
     containing_service=None,
     input_type=_GENERATETRAININGDATASETREQUEST,

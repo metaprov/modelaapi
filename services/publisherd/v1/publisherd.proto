@@ -1,6 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/metaprov/modeldapi/services/publisherd/v1";
-package github.com.metaprov.modeld.services.publisherd.v1;
+package github.com.metaprov.modeldapi.services.publisherd.v1;
 
 
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.virtualvolume.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.virtualvolume.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class VirtualVolumeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
+          '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
         request,
         metadata || {},
         this.methodInfoListVirtualVolumes,
@@ -69,7 +69,7 @@ export class VirtualVolumeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
+      '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes',
     request,
     metadata || {},
     this.methodInfoListVirtualVolumes);
@@ -101,7 +101,7 @@ export class VirtualVolumeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
+          '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
         request,
         metadata || {},
         this.methodInfoCreateVirtualVolume,
@@ -109,7 +109,7 @@ export class VirtualVolumeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
+      '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume',
     request,
     metadata || {},
     this.methodInfoCreateVirtualVolume);
@@ -141,7 +141,7 @@ export class VirtualVolumeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
+          '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
         request,
         metadata || {},
         this.methodInfoGetVirtualVolume,
@@ -149,7 +149,7 @@ export class VirtualVolumeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
+      '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume',
     request,
     metadata || {},
     this.methodInfoGetVirtualVolume);
@@ -181,7 +181,7 @@ export class VirtualVolumeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
+          '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
         request,
         metadata || {},
         this.methodInfoUpdateVirtualVolume,
@@ -189,7 +189,7 @@ export class VirtualVolumeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
+      '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume',
     request,
     metadata || {},
     this.methodInfoUpdateVirtualVolume);
@@ -221,7 +221,7 @@ export class VirtualVolumeServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
+          '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
         request,
         metadata || {},
         this.methodInfoDeleteVirtualVolume,
@@ -229,7 +229,7 @@ export class VirtualVolumeServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
+      '/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume',
     request,
     metadata || {},
     this.methodInfoDeleteVirtualVolume);

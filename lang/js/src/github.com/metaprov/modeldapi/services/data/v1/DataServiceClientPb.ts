@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.data.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.data.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/ReadFile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFile',
         request,
         metadata || {},
         this.methodInfoReadFile,
@@ -69,7 +69,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/ReadFile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFile',
     request,
     metadata || {},
     this.methodInfoReadFile);
@@ -101,7 +101,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/ReadFeature',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFeature',
         request,
         metadata || {},
         this.methodInfoReadFeature,
@@ -109,7 +109,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/ReadFeature',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFeature',
     request,
     metadata || {},
     this.methodInfoReadFeature);
@@ -141,7 +141,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/ReadAudio',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadAudio',
         request,
         metadata || {},
         this.methodInfoReadAudio,
@@ -149,7 +149,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/ReadAudio',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadAudio',
     request,
     metadata || {},
     this.methodInfoReadAudio);
@@ -181,7 +181,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/RunDataPipeline',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/RunDataPipeline',
         request,
         metadata || {},
         this.methodInfoRunDataPipeline,
@@ -189,7 +189,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/RunDataPipeline',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/RunDataPipeline',
     request,
     metadata || {},
     this.methodInfoRunDataPipeline);
@@ -221,7 +221,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/RunRecipe',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/RunRecipe',
         request,
         metadata || {},
         this.methodInfoRunRecipe,
@@ -229,7 +229,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/RunRecipe',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/RunRecipe',
     request,
     metadata || {},
     this.methodInfoRunRecipe);
@@ -261,7 +261,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/WriteFile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/WriteFile',
         request,
         metadata || {},
         this.methodInfoWriteFile,
@@ -269,7 +269,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/WriteFile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/WriteFile',
     request,
     metadata || {},
     this.methodInfoWriteFile);
@@ -301,7 +301,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/ValidateDataset',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateDataset',
         request,
         metadata || {},
         this.methodInfoValidateDataset,
@@ -309,7 +309,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/ValidateDataset',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateDataset',
     request,
     metadata || {},
     this.methodInfoValidateDataset);
@@ -341,7 +341,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/GenerateDataset',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/GenerateDataset',
         request,
         metadata || {},
         this.methodInfoGenerateDataset,
@@ -349,7 +349,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/GenerateDataset',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/GenerateDataset',
     request,
     metadata || {},
     this.methodInfoGenerateDataset);
@@ -381,7 +381,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/SplitDataset',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDataset',
         request,
         metadata || {},
         this.methodInfoSplitDataset,
@@ -389,7 +389,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/SplitDataset',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDataset',
     request,
     metadata || {},
     this.methodInfoSplitDataset);
@@ -421,7 +421,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateColumnProfile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateColumnProfile',
         request,
         metadata || {},
         this.methodInfoCreateColumnProfile,
@@ -429,7 +429,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateColumnProfile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateColumnProfile',
     request,
     metadata || {},
     this.methodInfoCreateColumnProfile);
@@ -461,7 +461,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/InferSchema',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/InferSchema',
         request,
         metadata || {},
         this.methodInfoInferSchema,
@@ -469,7 +469,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/InferSchema',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/InferSchema',
     request,
     metadata || {},
     this.methodInfoInferSchema);
@@ -501,7 +501,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/GetTableView',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTableView',
         request,
         metadata || {},
         this.methodInfoGetTableView,
@@ -509,7 +509,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/GetTableView',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTableView',
     request,
     metadata || {},
     this.methodInfoGetTableView);
@@ -541,7 +541,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/GetMisclassTableView',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetMisclassTableView',
         request,
         metadata || {},
         this.methodInfoGetMisclassTableView,
@@ -549,7 +549,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/GetMisclassTableView',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetMisclassTableView',
     request,
     metadata || {},
     this.methodInfoGetMisclassTableView);
@@ -581,7 +581,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/SplitDatasetToRungs',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDatasetToRungs',
         request,
         metadata || {},
         this.methodInfoSplitDatasetToRungs,
@@ -589,7 +589,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/SplitDatasetToRungs',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDatasetToRungs',
     request,
     metadata || {},
     this.methodInfoSplitDatasetToRungs);
@@ -621,7 +621,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateDatasetProfile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetProfile',
         request,
         metadata || {},
         this.methodInfoCreateDatasetProfile,
@@ -629,7 +629,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateDatasetProfile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetProfile',
     request,
     metadata || {},
     this.methodInfoCreateDatasetProfile);
@@ -661,7 +661,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateModelProfile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelProfile',
         request,
         metadata || {},
         this.methodInfoCreateModelProfile,
@@ -669,7 +669,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateModelProfile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelProfile',
     request,
     metadata || {},
     this.methodInfoCreateModelProfile);
@@ -701,7 +701,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateStudyProfile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyProfile',
         request,
         metadata || {},
         this.methodInfoCreateStudyProfile,
@@ -709,7 +709,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateStudyProfile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyProfile',
     request,
     metadata || {},
     this.methodInfoCreateStudyProfile);
@@ -741,7 +741,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateRecipeProfile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateRecipeProfile',
         request,
         metadata || {},
         this.methodInfoCreateRecipeProfile,
@@ -749,7 +749,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateRecipeProfile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateRecipeProfile',
     request,
     metadata || {},
     this.methodInfoCreateRecipeProfile);
@@ -781,7 +781,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateModelReport',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelReport',
         request,
         metadata || {},
         this.methodInfoCreateModelReport,
@@ -789,7 +789,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateModelReport',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelReport',
     request,
     metadata || {},
     this.methodInfoCreateModelReport);
@@ -821,7 +821,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateStudyReport',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyReport',
         request,
         metadata || {},
         this.methodInfoCreateStudyReport,
@@ -829,7 +829,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateStudyReport',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyReport',
     request,
     metadata || {},
     this.methodInfoCreateStudyReport);
@@ -861,7 +861,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateDatasetReport',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetReport',
         request,
         metadata || {},
         this.methodInfoCreateDatasetReport,
@@ -869,7 +869,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateDatasetReport',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetReport',
     request,
     metadata || {},
     this.methodInfoCreateDatasetReport);
@@ -901,7 +901,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/CreateForecastReport',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateForecastReport',
         request,
         metadata || {},
         this.methodInfoCreateForecastReport,
@@ -909,7 +909,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/CreateForecastReport',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateForecastReport',
     request,
     metadata || {},
     this.methodInfoCreateForecastReport);
@@ -941,7 +941,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/AskModel',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/AskModel',
         request,
         metadata || {},
         this.methodInfoAskModel,
@@ -949,7 +949,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/AskModel',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/AskModel',
     request,
     metadata || {},
     this.methodInfoAskModel);
@@ -981,7 +981,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/TellModel',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/TellModel',
         request,
         metadata || {},
         this.methodInfoTellModel,
@@ -989,7 +989,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/TellModel',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/TellModel',
     request,
     metadata || {},
     this.methodInfoTellModel);
@@ -1021,7 +1021,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/PartitionForecastFile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/PartitionForecastFile',
         request,
         metadata || {},
         this.methodInfoPartitionForecastFile,
@@ -1029,7 +1029,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/PartitionForecastFile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/PartitionForecastFile',
     request,
     metadata || {},
     this.methodInfoPartitionForecastFile);
@@ -1061,7 +1061,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/MergeForecastFile',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/MergeForecastFile',
         request,
         metadata || {},
         this.methodInfoMergeForecastFile,
@@ -1069,7 +1069,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/MergeForecastFile',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/MergeForecastFile',
     request,
     metadata || {},
     this.methodInfoMergeForecastFile);
@@ -1101,7 +1101,7 @@ export class DataServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.data.v1.DataService/ShutDown',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ShutDown',
         request,
         metadata || {},
         this.methodInfoShutDown,
@@ -1109,7 +1109,7 @@ export class DataServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.data.v1.DataService/ShutDown',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ShutDown',
     request,
     metadata || {},
     this.methodInfoShutDown);

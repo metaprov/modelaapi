@@ -15,27 +15,27 @@ class LabelingPipelineServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListLabelingPipelines = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ListLabelingPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ListLabelingPipelineResponse.FromString,
                 )
         self.CreateLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.CreateLabelingPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.CreateLabelingPipelineResponse.FromString,
                 )
         self.GetLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.GetLabelingPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.GetLabelingPipelineResponse.FromString,
                 )
         self.UpdateLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.UpdateLabelingPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.UpdateLabelingPipelineResponse.FromString,
                 )
         self.DeleteLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineResponse.FromString,
                 )
@@ -104,7 +104,7 @@ def add_LabelingPipelineServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,7 +123,7 @@ class LabelingPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ListLabelingPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ListLabelingPipelineResponse.FromString,
             options, channel_credentials,
@@ -140,7 +140,7 @@ class LabelingPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.CreateLabelingPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.CreateLabelingPipelineResponse.FromString,
             options, channel_credentials,
@@ -157,7 +157,7 @@ class LabelingPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.GetLabelingPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.GetLabelingPipelineResponse.FromString,
             options, channel_credentials,
@@ -174,7 +174,7 @@ class LabelingPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.UpdateLabelingPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.UpdateLabelingPipelineResponse.FromString,
             options, channel_credentials,
@@ -191,7 +191,7 @@ class LabelingPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeld.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineResponse.FromString,
             options, channel_credentials,
