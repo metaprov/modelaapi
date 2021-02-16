@@ -121,7 +121,7 @@ message ListEventsRequest {
 }
 
 message ListEventsResponse {
-    repeated JobInfo item = 1;
+    repeated EventInfo item = 1;
 }
 
 
@@ -150,6 +150,10 @@ message PodInfo {
 message JobInfo {
     string name      = 1;
     string namespace = 2;
+}
+
+message EventInfo {
+    
 }
 
 /////////////////////////////// Jobs

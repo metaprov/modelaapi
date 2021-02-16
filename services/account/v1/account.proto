@@ -54,6 +54,18 @@ message GetAccountResponse {
 
 
 
+message GetAccountNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetAccountNamespacesResponse {
+    repeated github.com.metaprov.modeld.services.common.NamespaceInfo namespaces= 1;
+}
+
+
+
 
 message DeleteAccountRequest {
     string namespace = 1;
@@ -147,6 +159,9 @@ service AccountService {
     rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {}
 
 
+    rpc GetAccountNamespaces(GetAccountNamespacesRequest) returns (GetAccountNamespacesResponse) {
+        option (google.api.http).get = "/v1/accounts/namespaces/";
+    }
 
     rpc Login  (AccountLoginRequest)                returns (AccountLoginResponse) {}
     rpc Logout         (AccountLogoutRequest)       returns (LogoutResponse)   {}
