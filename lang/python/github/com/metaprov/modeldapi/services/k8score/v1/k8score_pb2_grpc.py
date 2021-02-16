@@ -57,6 +57,16 @@ class CoreK8sServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodResponse.FromString,
                 )
+        self.ListK8sJobs = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sJobs',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListJobsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListJobsResponse.FromString,
+                )
+        self.GetK8sJob = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sJob',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetJobRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetJobResponse.FromString,
+                )
         self.ListEvents = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListEvents',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListEventsRequest.SerializeToString,
@@ -122,8 +132,23 @@ class CoreK8sServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListEvents(self, request, context):
+    def ListK8sJobs(self, request, context):
+        """////////////// jobs
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetK8sJob(self, request, context):
         """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListEvents(self, request, context):
+        """Events
+
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -170,6 +195,16 @@ def add_CoreK8sServiceServicer_to_server(servicer, server):
                     servicer.GetK8sPod,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodResponse.SerializeToString,
+            ),
+            'ListK8sJobs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListK8sJobs,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListJobsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListJobsResponse.SerializeToString,
+            ),
+            'GetK8sJob': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetK8sJob,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetJobRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetJobResponse.SerializeToString,
             ),
             'ListEvents': grpc.unary_unary_rpc_method_handler(
                     servicer.ListEvents,
@@ -322,6 +357,40 @@ class CoreK8sService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sPod',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetPodResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListK8sJobs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sJobs',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListJobsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.ListJobsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetK8sJob(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sJob',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetJobRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_k8score_dot_v1_dot_k8score__pb2.GetJobResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

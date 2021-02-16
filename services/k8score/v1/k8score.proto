@@ -24,7 +24,7 @@ message ListSecretsRequest {
 }
 
 message ListSecretResponse {
-    repeated SecretInfo item = 1;
+    repeated SecretInfo items = 1;
 }
 
 
@@ -46,7 +46,7 @@ message ListDeploymentsRequest {
 }
 
 message ListDeploymentsResponse {
-    repeated DeploymentInfo item = 1;
+    repeated DeploymentInfo items = 1;
 }
 
 /////////////////////////////// Services
@@ -67,7 +67,7 @@ message ListServicesRequest {
 }
 
 message ListServicesResponse {
-    repeated ServiceInfo item = 1;
+    repeated ServiceInfo items = 1;
 }
 
 
@@ -89,7 +89,7 @@ message ListPodsRequest {
 }
 
 message ListPodsResponse {
-    repeated PodInfo item = 1;
+    repeated PodInfo items = 1;
 }
 
 /////////////////////////////// Jobs
@@ -110,7 +110,7 @@ message ListJobsRequest {
 }
 
 message ListJobsResponse {
-    repeated JobInfo item = 1;
+    repeated JobInfo items = 1;
 }
 
 //////////////////////////////////// Events
@@ -121,7 +121,7 @@ message ListEventsRequest {
 }
 
 message ListEventsResponse {
-    repeated EventInfo item = 1;
+    repeated EventInfo items = 1;
 }
 
 
@@ -196,6 +196,17 @@ service CoreK8sService {
         option (google.api.http).get = "/api/v1alpha1/pods/{name}";
     }
 
+     
+    //////////////// jobs
+    rpc ListK8sJobs(ListJobsRequest) returns (ListJobsResponse) {
+        option (google.api.http).get = "/api/v1alpha1/jobs";
+    }
+
+    rpc GetK8sJob(GetJobRequest) returns (GetJobResponse) {
+        option (google.api.http).get = "/api/v1alpha1/jobs/{name}";
+    }
+
+    // Events
 
     rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
         option (google.api.http).get = "/api/v1alpha1/events";
