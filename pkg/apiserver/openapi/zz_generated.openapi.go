@@ -9606,7 +9606,6 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 					"provider": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Provider specifies the name api provider (E.g. aws) required",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},

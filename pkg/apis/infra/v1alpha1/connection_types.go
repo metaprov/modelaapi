@@ -71,7 +71,7 @@ type ConnectionSpec struct {
 	Category *catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
 	// Provider specifies the name api provider (E.g. aws)
 	// required
-	Provider catalog.ProviderName `json:"provider" protobuf:"bytes,3,opt,name=provider"`
+	Provider *catalog.ProviderName `json:"provider" protobuf:"bytes,3,opt,name=provider"`
 
 	SecretName string `json:"secretName" protobuf:"bytes,4,opt,name=secretName"`
 	// +optional

@@ -422,6 +422,11 @@ func (in *ConnectionSpec) DeepCopyInto(out *ConnectionSpec) {
 		*out = new(catalogv1alpha1.ConnectionCategory)
 		**out = **in
 	}
+	if in.Provider != nil {
+		in, out := &in.Provider, &out.Provider
+		*out = new(catalogv1alpha1.ProviderName)
+		**out = **in
+	}
 	if in.Athena != nil {
 		in, out := &in.Athena, &out.Athena
 		*out = new(AthenaSpec)
