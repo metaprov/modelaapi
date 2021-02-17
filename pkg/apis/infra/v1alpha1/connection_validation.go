@@ -46,7 +46,7 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		},
 	}
 	fields := make(map[string]string)
-	switch connection.Spec.Provider {
+	switch *connection.Spec.Provider {
 	case catalog.Aws:
 		fields[string(catalog.AccessKey)] = connection.Spec.Aws.AccessKey
 		fields[string(catalog.SecretKey)] = connection.Spec.Aws.SecretKey
@@ -81,7 +81,7 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 
 // ask the connection to mask secret fields based on the type of the connection
 func (connection *Connection) MaskSecretFields() {
-	switch connection.Spec.Provider {
+	switch *connection.Spec.Provider {
 	case catalog.Aws:
 		connection.Spec.Aws.AccessKey = "[hidden]"
 		connection.Spec.Aws.SecretKey = "[hidden]"
@@ -107,7 +107,7 @@ func (connection *Connection) MaskSecretFields() {
 
 func (connection *Connection) validateSecret(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
-	switch connection.Spec.Provider {
+	switch *connection.Spec.Provider {
 	case catalog.UnknownProvider:
 		allErrs = append(
 			allErrs,
