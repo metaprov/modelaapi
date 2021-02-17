@@ -45,10 +45,9 @@ spec:
               submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
-            description: 'Standard object''s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata'
             type: object
           spec:
-            description: 'Spec is the desired state of the Notebook. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status'
+            description: NotebookSpec is the desired state of the notebook resource.
             properties:
               debPackages:
                 description: list of deb package
@@ -159,8 +158,7 @@ spec:
                 type: string
             type: object
           status:
-            description: 'Status is the observed state of the Notebook. More info:
-              https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status'
+            description: NotebookStatus is the observed state of the notebook resource
             properties:
               conditions:
                 description: Represents the latest available observations of a notebook
@@ -199,6 +197,8 @@ spec:
                 description: The URI of the notebook in the bucket.
                 type: string
             type: object
+        required:
+        - spec
         type: object
     served: true
     storage: true

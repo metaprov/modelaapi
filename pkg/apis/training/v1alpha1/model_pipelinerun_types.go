@@ -112,7 +112,6 @@ func (run *ModelPipelineRun) ValidateDelete() error {
 // ModelPipelineRunList represent list of pipelineruns
 type ModelPipelineRunList struct {
 	metav1.TypeMeta `json:",inline"`
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []ModelPipelineRun `json:"items" protobuf:"bytes,2,rep,name=items"`
 }

@@ -61,10 +61,8 @@ message AccountCondition {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AccountList represent list of accounts.
 message AccountList {
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  // ListAccounts of Accounts
   repeated Account items = 2;
 }
 
@@ -232,7 +230,6 @@ message Connection {
 
   optional ConnectionSpec spec = 2;
 
-  // +optional
   optional ConnectionStatus status = 3;
 }
 
@@ -472,7 +469,6 @@ message Lab {
 
   optional LabSpec spec = 2;
 
-  // +optional
   optional LabStatus status = 3;
 }
 
@@ -498,9 +494,6 @@ message LabCondition {
 // +kubebuilder:object:root=true
 // LabList is a list of labs
 message LabList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Lab items = 2;
@@ -582,9 +575,6 @@ message LicenseCondition {
 // +kubebuilder:object:root=true
 // LicenseList is a list of License
 message LicenseList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated License items = 2;
@@ -702,16 +692,10 @@ message MSTeamSpec {
 // MachineImage is an abstraction of virtual machine image that is used when
 // adding new nodes to the cluster
 message MachineImage {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec holds the desired state of the machine image.
   optional MachineImageSpec spec = 2;
 
-  // Status holds the desired state of the machine image.
-  // +optional
   optional MachineImageStatus status = 3;
 }
 
@@ -736,9 +720,6 @@ message MachineImageCondition {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 message MachineImageList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated MachineImage items = 2;
@@ -814,7 +795,6 @@ message Notifier {
 
   optional NotifierSpec spec = 2;
 
-  // +optional
   optional NotifierStatus status = 3;
 }
 
@@ -973,7 +953,6 @@ message ServingSite {
 
   optional ServingSiteSpec spec = 2;
 
-  // +optional
   optional ServingSiteStatus status = 3;
 }
 
@@ -1115,7 +1094,6 @@ message Tenant {
 
   optional TenantSpec spec = 2;
 
-  // +optional
   optional TenantStatus status = 3;
 }
 
@@ -1141,9 +1119,6 @@ message TenantCondition {
 // +kubebuilder:object:root=true
 // TenantList represent list of tenants.
 message TenantList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Tenant items = 2;
@@ -1190,7 +1165,6 @@ message VirtualBucket {
 
   optional VirtualBucketSpec spec = 2;
 
-  // +optional
   optional VirtualBucketStatus status = 3;
 }
 
@@ -1253,7 +1227,6 @@ message VirtualCluster {
 
   optional VirtualClusterSpec spec = 2;
 
-  // +optional
   optional VirtualClusterStatus status = 3;
 }
 
@@ -1279,9 +1252,6 @@ message VirtualClusterCondition {
 // +kubebuilder:object:root=true
 // VirtualClusterList is a list of VirtualCluster
 message VirtualClusterList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated VirtualCluster items = 2;

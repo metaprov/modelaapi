@@ -52,21 +52,10 @@ type NotebookCondition struct {
 // +kubebuilder:resource:path=notebooks,singular=notebook,shortName=nb,categories={training,modeld,all}
 // NotebookName represent a notebook
 type Notebook struct {
-	metav1.TypeMeta `json:",inline"`
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	// Spec is the desired state of the Notebook.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Spec NotebookSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-
-	// Status is the observed state of the Notebook.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Status NotebookStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              NotebookSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            NotebookStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -74,10 +63,6 @@ type Notebook struct {
 // NotebookList represent list of notebooks
 type NotebookList struct {
 	metav1.TypeMeta `json:",inline" `
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []Notebook `json:"items" protobuf:"bytes,2,rep,name=items"`

@@ -45,9 +45,8 @@ type DataPipelineCondition struct {
 type DataPipeline struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              DataPipelineSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status DataPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              DataPipelineSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            DataPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -77,7 +76,7 @@ type DataPipelineSpec struct {
 	// A cron field to schedule the data pipeline.
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// The owner account name
-	// +kubebuilder:default=""
+	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`

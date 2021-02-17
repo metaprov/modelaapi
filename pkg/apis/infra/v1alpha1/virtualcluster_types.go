@@ -50,9 +50,8 @@ type VirtualClusterCondition struct {
 type VirtualCluster struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              VirtualClusterSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status VirtualClusterStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              VirtualClusterSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            VirtualClusterStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 type VirtualClusterSpec struct {
@@ -110,10 +109,6 @@ type VirtualClusterStatus struct {
 // VirtualClusterList is a list of VirtualCluster
 type VirtualClusterList struct {
 	metav1.TypeMeta `json:",inline"`
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []VirtualCluster `json:"items" protobuf:"bytes,2,rep,name=items"`

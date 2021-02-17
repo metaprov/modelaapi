@@ -72,21 +72,10 @@ type ModelPipelineCondition struct {
 // +kubebuilder:resource:path=modelpipelines,singular=modelpipeline,shortName=pipe,categories={training,modeld,all}
 // ModelPipeline represent a CI/CD machine learning pipeline definition
 type ModelPipeline struct {
-	metav1.TypeMeta `json:",inline"`
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	// Spec is the desired state of the ModelPipeline.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Spec ModelPipelineSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-
-	// Status is the observed state of the ModelPipeline.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Status ModelPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              ModelPipelineSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            ModelPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 func (pl *ModelPipeline) HasTrainingStage() bool {
@@ -120,13 +109,8 @@ func (pl *ModelPipeline) HasCapacityStage() bool {
 // ModelPipelineList represent list of pipelines
 type ModelPipelineList struct {
 	metav1.TypeMeta `json:",inline"`
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	Items []ModelPipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []ModelPipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.

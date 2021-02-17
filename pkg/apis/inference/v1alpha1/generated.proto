@@ -270,7 +270,6 @@ message PredictionPipeline {
 
   optional PredictionPipelineSpec spec = 2;
 
-  // +optional
   optional PredictionPipelineStatus status = 3;
 }
 
@@ -321,7 +320,6 @@ message PredictionPipelineRun {
 
   optional PredictionPipelineRunSpec spec = 2;
 
-  // +optional
   optional PredictionPipelineRunStatus status = 3;
 }
 

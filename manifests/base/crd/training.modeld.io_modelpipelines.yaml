@@ -45,11 +45,10 @@ spec:
               submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
-            description: 'Standard object''s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata'
             type: object
           spec:
-            description: 'Spec is the desired state of the ModelPipeline. More info:
-              https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status'
+            description: ModelPipelineSpec define the desired state of the ModelPipeline
+              resource.
             properties:
               acceptanceStage:
                 description: Acceptance stage is used for further testing
@@ -217,8 +216,7 @@ spec:
                 type: string
             type: object
           status:
-            description: 'Status is the observed state of the ModelPipeline. More
-              info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status'
+            description: ModelPipelineStatus define the observed state of the pipeline
             properties:
               conditions:
                 items:
@@ -249,6 +247,8 @@ spec:
                   type: object
                 type: array
             type: object
+        required:
+        - spec
         type: object
     served: true
     storage: true

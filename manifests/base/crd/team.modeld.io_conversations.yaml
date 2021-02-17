@@ -44,11 +44,9 @@ spec:
               submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
-            description: 'Standard object''s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata'
             type: object
           spec:
-            description: 'Spec is the desired state of the Converation. More info:
-              https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status'
+            description: ConversationSpec defines the desired state of BucketName
             properties:
               entityRef:
                 description: The target of the conversation
@@ -149,8 +147,6 @@ spec:
             - messages
             type: object
           status:
-            description: 'Status is the desired state of the Conversation. More info:
-              https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status'
             properties:
               conditions:
                 items:
@@ -181,6 +177,8 @@ spec:
                   type: object
                 type: array
             type: object
+        required:
+        - spec
         type: object
     served: true
     storage: true

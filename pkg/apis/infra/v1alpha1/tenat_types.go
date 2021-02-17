@@ -51,9 +51,8 @@ type TenantCondition struct {
 type Tenant struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              TenantSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status TenantStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              TenantSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            TenantStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -61,10 +60,6 @@ type Tenant struct {
 // TenantList represent list of tenants.
 type TenantList struct {
 	metav1.TypeMeta `json:",inline"`
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []Tenant `json:"items" protobuf:"bytes,2,rep,name=items"`

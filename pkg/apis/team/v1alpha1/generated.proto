@@ -43,6 +43,7 @@ message Comment {
 }
 
 // +genclient
+// +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -51,19 +52,10 @@ message Comment {
 // +kubebuilder:resource:path=conversations,shortName=cv,singular=conversation,categories={team,modeld}
 // Conversation represents a comment about any conversation
 message Conversation {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec is the desired state of the Converation.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional ConversationSpec spec = 2;
 
-  // Status is the desired state of the Conversation.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional ConversationStatus status = 3;
 }
 
@@ -89,12 +81,8 @@ message ConversationCondition {
 // +kubebuilder:object:root=true
 // ConversationList is a list of Conversations
 message ConversationList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  // Items is the list of Conversation objects.
   repeated Conversation items = 2;
 }
 
@@ -125,14 +113,8 @@ message ConversationStatus {
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modeld,all}
 // PostMortem represent a comment about any entity
 message PostMortem {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec is the desired state of the PostMortem.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional PostMortemSpec spec = 2;
 
   optional PostMortemStatus status = 3;
@@ -160,9 +142,6 @@ message PostMortemCondition {
 // +kubebuilder:object:root=true
 // PostMortemList is a list of PostMortems
 message PostMortemList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated PostMortem items = 2;
@@ -218,14 +197,8 @@ message PostMortemStatus {
 // +kubebuilder:resource:path=runbooks,shortName=rb,singular=runbook,categories={data,modeld}
 // RunBook represent a list of instructions for a specific operation
 message RunBook {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec is the observed state of the RunBook.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional RunBookSpec spec = 2;
 
   optional RunBookStatus status = 3;
@@ -256,9 +229,6 @@ message RunBookCondition {
 // +kubebuilder:object:root=true
 // RunBookList is a list of RunBooks
 message RunBookList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated RunBook items = 2;

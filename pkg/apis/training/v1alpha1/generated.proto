@@ -404,7 +404,6 @@ message Model {
 
   optional ModelSpec spec = 2;
 
-  // +optional
   optional ModelStatus status = 3;
 }
 
@@ -656,19 +655,10 @@ message ModelList {
 // +kubebuilder:resource:path=modelpipelines,singular=modelpipeline,shortName=pipe,categories={training,modeld,all}
 // ModelPipeline represent a CI/CD machine learning pipeline definition
 message ModelPipeline {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec is the desired state of the ModelPipeline.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional ModelPipelineSpec spec = 2;
 
-  // Status is the observed state of the ModelPipeline.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional ModelPipelineStatus status = 3;
 }
 
@@ -694,9 +684,6 @@ message ModelPipelineCondition {
 // +kubebuilder:object:root=true
 // ModelPipelineList represent list of pipelines
 message ModelPipelineList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated ModelPipeline items = 2;
@@ -744,7 +731,6 @@ message ModelPipelineRunCondition {
 // +kubebuilder:object:root=true
 // ModelPipelineRunList represent list of pipelineruns
 message ModelPipelineRunList {
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated ModelPipelineRun items = 2;
@@ -1210,19 +1196,10 @@ message NNLayerParameter {
 // +kubebuilder:resource:path=notebooks,singular=notebook,shortName=nb,categories={training,modeld,all}
 // NotebookName represent a notebook
 message Notebook {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec is the desired state of the Notebook.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional NotebookSpec spec = 2;
 
-  // Status is the observed state of the Notebook.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional NotebookStatus status = 3;
 }
 
@@ -1248,9 +1225,6 @@ message NotebookCondition {
 // +kubebuilder:object:root=true
 // NotebookList represent list of notebooks
 message NotebookList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Notebook items = 2;
@@ -1267,19 +1241,10 @@ message NotebookList {
 // +kubebuilder:resource:path=notebookruns,singular=notebookrun,shortName=nbr,categories={training,modeld,all}
 // NotebookRun represent a single execution of a notebook with a specific env variables
 message NotebookRun {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  // Spec is the desired state of the NotebookRun.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional NotebookRunSpec spec = 2;
 
-  // Status is the observed state of the NotebookRun.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  // +optional
   optional NotebookRunStatus status = 3;
 }
 
@@ -1305,9 +1270,6 @@ message NotebookRunCondition {
 // +kubebuilder:object:root=true
 // NotebookRunList is a list of notebook runs
 message NotebookRunList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated NotebookRun items = 2;
@@ -1499,7 +1461,6 @@ message Report {
 
   optional ReportSpec spec = 2;
 
-  // +optional
   optional ReportStatus status = 3;
 }
 
@@ -1635,9 +1596,6 @@ message StudyCondition {
 // +kubebuilder:object:root=true
 // StudyList is a list of Study
 message StudyList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Study items = 2;

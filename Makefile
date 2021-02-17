@@ -99,5 +99,5 @@ generate: install-gen generate-proto generate-go generate-js generate-py generat
 
 .PHONY: install-crd
 install-crd:
-	
+	kustomize build ./manifests/base/crd | kubectl replace --force --save-config=false -f -	
 

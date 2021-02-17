@@ -253,7 +253,6 @@ message DataPipeline {
 
   optional DataPipelineSpec spec = 2;
 
-  // +optional
   optional DataPipelineStatus status = 3;
 }
 
@@ -347,7 +346,7 @@ message DataPipelineRunSpec {
   optional DataLocation dataLocation = 4;
 
   // The owner account name
-  // +kubebuilder:default=""
+  // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 5;
@@ -400,7 +399,7 @@ message DataPipelineSpec {
   optional string schedule = 6;
 
   // The owner account name
-  // +kubebuilder:default=""
+  // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 7;

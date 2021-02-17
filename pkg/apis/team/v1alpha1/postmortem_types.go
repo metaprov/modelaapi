@@ -46,17 +46,10 @@ type PostMortemCondition struct {
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modeld,all}
 // PostMortem represent a comment about any entity
 type PostMortem struct {
-	metav1.TypeMeta `json:",inline"`
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	// Spec is the desired state of the PostMortem.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Spec   PostMortemSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status PostMortemStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              PostMortemSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            PostMortemStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -64,10 +57,6 @@ type PostMortem struct {
 // PostMortemList is a list of PostMortems
 type PostMortemList struct {
 	metav1.TypeMeta `json:",inline"`
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []PostMortem `json:"items" protobuf:"bytes,2,rep,name=items"`

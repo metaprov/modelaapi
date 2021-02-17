@@ -1,0 +1,40 @@
+/**
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictionpipeline.v1
+ * @enhanceable
+ * @public
+ */
+import * as grpcWeb from 'grpc-web';
+import * as github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb from '../../../../../../github.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline_pb';
+export declare class PredictionPipelineServiceClient {
+    client_: grpcWeb.AbstractClientBase;
+    hostname_: string;
+    credentials_: null | {
+        [index: string]: string;
+    };
+    options_: null | {
+        [index: string]: any;
+    };
+    constructor(hostname: string, credentials?: null | {
+        [index: string]: string;
+    }, options?: null | {
+        [index: string]: any;
+    });
+    methodInfoListPredictionPipelines: grpcWeb.AbstractClientBase.MethodInfo<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesRequest, github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesResponse>;
+    listPredictionPipelines(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesRequest, metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesResponse>;
+    listPredictionPipelines(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.Error, response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.ListPredictionPipelinesResponse>;
+    methodInfoCreatePredictionPipeline: grpcWeb.AbstractClientBase.MethodInfo<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineRequest, github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineResponse>;
+    createPredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineRequest, metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineResponse>;
+    createPredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.Error, response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.CreatePredictionPipelineResponse>;
+    methodInfoGetPredictionPipeline: grpcWeb.AbstractClientBase.MethodInfo<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineRequest, github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineResponse>;
+    getPredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineRequest, metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineResponse>;
+    getPredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.Error, response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.GetPredictionPipelineResponse>;
+    methodInfoUpdatePredictionPipeline: grpcWeb.AbstractClientBase.MethodInfo<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineRequest, github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineResponse>;
+    updatePredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineRequest, metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineResponse>;
+    updatePredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.Error, response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.UpdatePredictionPipelineResponse>;
+    methodInfoDeletePredictionPipeline: grpcWeb.AbstractClientBase.MethodInfo<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineRequest, github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineResponse>;
+    deletePredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineRequest, metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineResponse>;
+    deletePredictionPipeline(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.Error, response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DeletePredictionPipelineResponse>;
+    methodInfoDownload: grpcWeb.AbstractClientBase.MethodInfo<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineRequest, github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineResponse>;
+    download(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineRequest, metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineResponse>;
+    download(request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineRequest, metadata: grpcWeb.Metadata | null, callback: (err: grpcWeb.Error, response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.DownloadPredictionPipelineResponse>;
+}

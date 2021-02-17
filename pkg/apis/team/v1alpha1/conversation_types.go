@@ -47,6 +47,7 @@ type ConversationCondition struct {
 }
 
 // +genclient
+// +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -55,21 +56,10 @@ type ConversationCondition struct {
 // +kubebuilder:resource:path=conversations,shortName=cv,singular=conversation,categories={team,modeld}
 // Conversation represents a comment about any conversation
 type Conversation struct {
-	metav1.TypeMeta `json:",inline"`
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	// Spec is the desired state of the Converation.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Spec ConversationSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-
-	// Status is the desired state of the Conversation.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Status ConversationStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              ConversationSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            ConversationStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -77,14 +67,8 @@ type Conversation struct {
 // ConversationList is a list of Conversations
 type ConversationList struct {
 	metav1.TypeMeta `json:",inline"`
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	// Items is the list of Conversation objects.
-	Items []Conversation `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []Conversation `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // ConversationSpec defines the desired state of BucketName

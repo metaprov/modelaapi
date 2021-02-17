@@ -50,20 +50,10 @@ type NotebookRunCondition struct {
 // +kubebuilder:resource:path=notebookruns,singular=notebookrun,shortName=nbr,categories={training,modeld,all}
 // NotebookRun represent a single execution of a notebook with a specific env variables
 type NotebookRun struct {
-	metav1.TypeMeta `json:",inline"`
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
-	// Spec is the desired state of the NotebookRun.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
-	Spec NotebookRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-
-	// Status is the observed state of the NotebookRun.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-	// +optional
+	Spec   NotebookRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	Status NotebookRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
@@ -72,10 +62,6 @@ type NotebookRun struct {
 // NotebookRunList is a list of notebook runs
 type NotebookRunList struct {
 	metav1.TypeMeta `json:",inline" `
-
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []NotebookRun `json:"items" protobuf:"bytes,2,rep,name=items"`

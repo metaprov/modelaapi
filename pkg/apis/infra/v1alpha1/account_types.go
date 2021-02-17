@@ -80,10 +80,8 @@ type Account struct {
 // AccountList represent list of accounts.
 type AccountList struct {
 	metav1.TypeMeta `json:",inline"`
-	//+optional
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	// ListAccounts of Accounts
-	Items []Account `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []Account `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // AccountSpec defines the desired state of Account
