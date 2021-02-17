@@ -170,11 +170,11 @@ message FloatParameter {
 
   // Min is the minimum value
   // +optional
-  optional double minimum = 3;
+  optional double min = 3;
 
   // Max is the maximum value
   // +optional
-  optional double maximum = 4;
+  optional double max = 4;
 
   // Default float value
   // +optional
@@ -218,11 +218,11 @@ message IntParameter {
 
   // Min is the minimum value
   // +optional
-  optional int32 minimum = 3;
+  optional int32 min = 3;
 
   // Max is the maximum value
   // +optional
-  optional int32 maximum = 4;
+  optional int32 max = 4;
 
   // Default float value
   optional int32 defaultValue = 6;
@@ -265,6 +265,9 @@ message MLFrameworkSpec {
 
   // The current version of the mlframework
   optional string version = 3;
+
+  // The framework languge
+  optional string lang = 4;
 }
 
 // MLFrameworkStatus defines the observed state of Datacenter.

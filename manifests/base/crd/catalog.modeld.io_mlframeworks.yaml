@@ -50,6 +50,9 @@ spec:
               description:
                 description: Comments of the framework
                 type: string
+              lang:
+                description: The framework languge
+                type: string
               url:
                 description: Url for the home page of the mlframework
                 type: string

@@ -76,10 +76,10 @@ type IntParameter struct {
 	Type DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Min is the minimum value
 	// +optional
-	Min int32 `json:"minimum,omitempty" protobuf:"varint,3,opt,name=minimum"`
+	Min int32 `json:"min,omitempty" protobuf:"varint,3,opt,name=min"`
 	// Max is the maximum value
 	// +optional
-	Max int32 `json:"maximum,omitempty" protobuf:"varint,4,opt,name=maximum"`
+	Max int32 `json:"max,omitempty" protobuf:"varint,4,opt,name=max"`
 	// Default float value
 	DefaultValue int32 `json:"defaultValue,omitempty" protobuf:"varint,6,opt,name=defaultValue"`
 }
@@ -91,11 +91,11 @@ type FloatParameter struct {
 
 	// Min is the minimum value
 	// +optional
-	Min float64 `json:"minimum,omitempty" protobuf:"bytes,3,opt,name=minimum"`
+	Min float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
 
 	// Max is the maximum value
 	// +optional
-	Max float64 `json:"maximum,omitempty" protobuf:"bytes,4,opt,name=maximum"`
+	Max float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
 
 	// Default float value
 	// +optional

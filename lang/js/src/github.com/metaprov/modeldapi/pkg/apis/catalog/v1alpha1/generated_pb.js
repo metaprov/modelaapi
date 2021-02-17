@@ -3656,8 +3656,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    minimum: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    maximum: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     defaultvalue: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     log: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
@@ -3702,11 +3702,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.des
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMinimum(value);
+      msg.setMin(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMaximum(value);
+      msg.setMax(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readDouble());
@@ -3820,10 +3820,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
 
 
 /**
- * optional double minimum = 3;
+ * optional double min = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.getMinimum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -3832,7 +3832,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.setMinimum = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -3841,7 +3841,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.clearMinimum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.clearMin = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -3850,16 +3850,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.hasMinimum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.hasMin = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional double maximum = 4;
+ * optional double max = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.getMaximum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
@@ -3868,7 +3868,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.setMaximum = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -3877,7 +3877,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.clearMaximum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.clearMax = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -3886,7 +3886,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.hasMaximum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.hasMax = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -4641,8 +4641,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.toObj
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    minimum: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    maximum: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    min: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    max: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     defaultvalue: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
@@ -4690,11 +4690,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.deser
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMinimum(value);
+      msg.setMin(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaximum(value);
+      msg.setMax(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -4840,10 +4840,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
 
 
 /**
- * optional int32 minimum = 3;
+ * optional int32 min = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.getMinimum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4852,7 +4852,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.setMinimum = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -4861,7 +4861,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.clearMinimum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.clearMin = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -4870,16 +4870,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.hasMinimum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.hasMin = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 maximum = 4;
+ * optional int32 max = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.getMaximum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -4888,7 +4888,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.setMaximum = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -4897,7 +4897,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.clearMaximum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.clearMax = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -4906,7 +4906,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.hasMaximum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter.prototype.hasMax = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -5445,7 +5445,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.to
   var f, obj = {
     url: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    version: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    version: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    lang: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5494,6 +5495,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.de
       var value = /** @type {string} */ (reader.readString());
       msg.setVersion(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLang(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5541,6 +5546,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.se
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -5652,6 +5664,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.prototype.hasVersion = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string lang = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.prototype.getLang = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.prototype.setLang = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.prototype.clearLang = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec.prototype.hasLang = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

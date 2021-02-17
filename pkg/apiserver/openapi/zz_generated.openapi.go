@@ -1152,14 +1152,14 @@ func schema_pkg_apis_catalog_v1alpha1_FloatParameter(ref common.ReferenceCallbac
 							Format:      "",
 						},
 					},
-					"minimum": {
+					"min": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Min is the minimum value",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
-					"maximum": {
+					"max": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Max is the maximum value",
 							Type:        []string{"number"},
@@ -1288,14 +1288,14 @@ func schema_pkg_apis_catalog_v1alpha1_IntParameter(ref common.ReferenceCallback)
 							Format:      "",
 						},
 					},
-					"minimum": {
+					"min": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Min is the minimum value",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
-					"maximum": {
+					"max": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Max is the maximum value",
 							Type:        []string{"integer"},
@@ -1435,6 +1435,13 @@ func schema_pkg_apis_catalog_v1alpha1_MLFrameworkSpec(ref common.ReferenceCallba
 					"version": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The current version of the mlframework",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"lang": {
+						SchemaProps: spec.SchemaProps{
+							Description: "The framework languge",
 							Type:        []string{"string"},
 							Format:      "",
 						},

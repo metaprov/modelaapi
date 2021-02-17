@@ -338,11 +338,11 @@ export class FloatParameter extends jspb.Message {
   getName(): string;
   setName(value: string): FloatParameter;
 
-  getMinimum(): number;
-  setMinimum(value: number): FloatParameter;
+  getMin(): number;
+  setMin(value: number): FloatParameter;
 
-  getMaximum(): number;
-  setMaximum(value: number): FloatParameter;
+  getMax(): number;
+  setMax(value: number): FloatParameter;
 
   getDefaultvalue(): number;
   setDefaultvalue(value: number): FloatParameter;
@@ -361,8 +361,8 @@ export class FloatParameter extends jspb.Message {
 export namespace FloatParameter {
   export type AsObject = {
     name: string,
-    minimum: number,
-    maximum: number,
+    min: number,
+    max: number,
     defaultvalue: number,
     log: boolean,
   }
@@ -447,11 +447,11 @@ export class IntParameter extends jspb.Message {
   getType(): string;
   setType(value: string): IntParameter;
 
-  getMinimum(): number;
-  setMinimum(value: number): IntParameter;
+  getMin(): number;
+  setMin(value: number): IntParameter;
 
-  getMaximum(): number;
-  setMaximum(value: number): IntParameter;
+  getMax(): number;
+  setMax(value: number): IntParameter;
 
   getDefaultvalue(): number;
   setDefaultvalue(value: number): IntParameter;
@@ -468,8 +468,8 @@ export namespace IntParameter {
   export type AsObject = {
     name: string,
     type: string,
-    minimum: number,
-    maximum: number,
+    min: number,
+    max: number,
     defaultvalue: number,
   }
 }
@@ -542,6 +542,9 @@ export class MLFrameworkSpec extends jspb.Message {
   getVersion(): string;
   setVersion(value: string): MLFrameworkSpec;
 
+  getLang(): string;
+  setLang(value: string): MLFrameworkSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MLFrameworkSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MLFrameworkSpec): MLFrameworkSpec.AsObject;
@@ -555,6 +558,7 @@ export namespace MLFrameworkSpec {
     url: string,
     description: string,
     version: string,
+    lang: string,
   }
 }
 
