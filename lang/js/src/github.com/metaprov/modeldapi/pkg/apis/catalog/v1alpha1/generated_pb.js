@@ -3658,7 +3658,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.toO
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     minimum: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
     maximum: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    defaultvalue: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f
+    defaultvalue: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
+    log: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3710,6 +3711,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.des
     case 5:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setDefaultvalue(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLog(value);
       break;
     default:
       reader.skipField();
@@ -3765,6 +3770,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.ser
   if (f != null) {
     writer.writeDouble(
       5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -3912,6 +3924,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.pro
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.hasDefaultvalue = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool log = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.getLog = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.setLog = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.clearLog = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter.prototype.hasLog = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

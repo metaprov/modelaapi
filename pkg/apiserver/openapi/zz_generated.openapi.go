@@ -1173,6 +1173,12 @@ func schema_pkg_apis_catalog_v1alpha1_FloatParameter(ref common.ReferenceCallbac
 							Format:      "double",
 						},
 					},
+					"log": {
+						SchemaProps: spec.SchemaProps{
+							Type:   []string{"boolean"},
+							Format: "",
+						},
+					},
 				},
 			},
 		},

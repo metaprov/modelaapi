@@ -100,6 +100,9 @@ type FloatParameter struct {
 	// Default float value
 	// +optional
 	DefaultValue float64 `json:"defaultValue,omitempty" protobuf:"bytes,5,opt,name=defaultValue"`
+
+	// +optional
+	Log bool `json:"log,omitempty" protobuf:"bytes,6,opt,name=log"`
 }
 
 type CategoricalParameter struct {

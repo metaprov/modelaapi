@@ -179,6 +179,9 @@ message FloatParameter {
   // Default float value
   // +optional
   optional double defaultValue = 5;
+
+  // +optional
+  optional bool log = 6;
 }
 
 message GpuClass {

@@ -78,6 +78,8 @@ spec:
                     defaultValue:
                       description: Default float value
                       type: number
+                    log:
+                      type: boolean
                     maximum:
                       description: Max is the maximum value
                       type: number

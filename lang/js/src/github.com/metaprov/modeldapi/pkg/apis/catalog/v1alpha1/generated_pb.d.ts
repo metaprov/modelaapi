@@ -347,6 +347,9 @@ export class FloatParameter extends jspb.Message {
   getDefaultvalue(): number;
   setDefaultvalue(value: number): FloatParameter;
 
+  getLog(): boolean;
+  setLog(value: boolean): FloatParameter;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FloatParameter.AsObject;
   static toObject(includeInstance: boolean, msg: FloatParameter): FloatParameter.AsObject;
@@ -361,6 +364,7 @@ export namespace FloatParameter {
     minimum: number,
     maximum: number,
     defaultvalue: number,
+    log: boolean,
   }
 }
 
