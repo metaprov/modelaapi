@@ -73,7 +73,7 @@ type ConnectionSpec struct {
 	// required
 	Provider *catalog.ProviderName `json:"provider" protobuf:"bytes,3,opt,name=provider"`
 
-	SecretName string `json:"secretName" protobuf:"bytes,4,opt,name=secretName"`
+	SecretName string `json:"secretName" protobuf:"bytes,4,req,name=secretName"`
 	// +optional
 	Athena *AthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
 	// +optional
