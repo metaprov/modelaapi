@@ -164,9 +164,9 @@ type ReportSpec struct {
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// The report location
 	// +optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// ReportType specify the report type (e.g. classification / regression)
-	ReportType ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
+	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
 	// Format specify the report format. default is pdf
 	// +optional
 	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,6,opt,name=format"`

@@ -17,8 +17,8 @@ func (run *DataPipelineRun) Default() {
 	if run.Spec.DataLocation.Path == "" {
 		run.Spec.DataLocation.Path = "modeld/live/tenants/default-tenant/dataproducts/" + run.Namespace +
 			"/dataproductversions/" +
-			run.Spec.VersionName +
-			"/wranglers/" + run.Spec.DataPipelineName + "/wranglings/" + run.Name
+			*run.Spec.VersionName +
+			"/wranglers/" + *run.Spec.DataPipelineName + "/wranglings/" + run.Name
 	}
 
 }

@@ -88,9 +88,9 @@ func NewReport(
 	result.Default()
 	result.ObjectMeta.Name = name
 	result.ObjectMeta.Namespace = ns
-	result.Spec.Location = data.DataLocation{Path: key, BucketName: bucketName}
+	result.Spec.Location = &data.DataLocation{Path: key, BucketName: bucketName}
 	result.Spec.EntityRef.Name = entity
-	result.Spec.ReportType = reportType
+	result.Spec.ReportType = &reportType
 	result.ObjectMeta.Labels = make(map[string]string)
 
 	return result
@@ -113,27 +113,27 @@ func (report *Report) RemoveFinalizer()   { util.RemoveFin(&report.ObjectMeta, t
 //==============================================================================
 
 func (report *Report) IsDatasetReport() bool {
-	return report.Spec.ReportType == ClassificationDatasetReport ||
-		report.Spec.ReportType == RegressionDatasetReport ||
-		report.Spec.ReportType == TextClassificationDatasetReport ||
-		report.Spec.ReportType == ForecastDatasetReport
+	return *report.Spec.ReportType == ClassificationDatasetReport ||
+		*report.Spec.ReportType == RegressionDatasetReport ||
+		*report.Spec.ReportType == TextClassificationDatasetReport ||
+		*report.Spec.ReportType == ForecastDatasetReport
 }
 
 func (report *Report) IsStudyReport() bool {
-	return report.Spec.ReportType == StudyReport
+	return *report.Spec.ReportType == StudyReport
 }
 
 func (report *Report) IsForecastReport() bool {
-	return report.Spec.ReportType == ForecastReport
+	return *report.Spec.ReportType == ForecastReport
 }
 
 func (report *Report) IsModelReport() bool {
 	// Binary classification report
-	return report.Spec.ReportType == BinaryClassificationModelReport ||
-		report.Spec.ReportType == ForecastModelReport ||
-		report.Spec.ReportType == MultiClassificationModelReport ||
-		report.Spec.ReportType == TextClassificationModelReport ||
-		report.Spec.ReportType == RegressionModelReport
+	return *report.Spec.ReportType == BinaryClassificationModelReport ||
+		*report.Spec.ReportType == ForecastModelReport ||
+		*report.Spec.ReportType == MultiClassificationModelReport ||
+		*report.Spec.ReportType == TextClassificationModelReport ||
+		*report.Spec.ReportType == RegressionModelReport
 }
 
 func (report *Report) Age() string {

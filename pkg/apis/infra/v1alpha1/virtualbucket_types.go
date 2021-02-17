@@ -62,11 +62,11 @@ type VirtualBucketList struct {
 type VirtualBucketSpec struct {
 	// The owner of the virtual bucket
 	// +optional
-	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,name=tenantRef"`
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,name=tenantRef"`
 	// ConnectionName specify the api connections of this bucket cloud provider.
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User provided description
 	// +optional
 	// +kubebuilder:validation:MaxLength=512

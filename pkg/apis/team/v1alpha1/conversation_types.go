@@ -25,9 +25,9 @@ type Comment struct {
 	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,2,opt,name=authorRef"`
 	// If this comment is a reply to an id
 	// +optional
-	ReplyToID string `json:"replyTo,omitempty" protobuf:"bytes,3,opt,name=replyTo"`
+	ReplyToID *string `json:"replyTo,omitempty" protobuf:"bytes,3,opt,name=replyTo"`
 	// The content of the comment
-	Content string `json:"content,omitempty" protobuf:"bytes,4,opt,name=content"`
+	Content *string `json:"content,omitempty" protobuf:"bytes,4,opt,name=content"`
 	// Time when the comment was posted
 	PostedAt *metav1.Time `json:"postedAt,omitempty" protobuf:"bytes,5,opt,name=postedAt"`
 }

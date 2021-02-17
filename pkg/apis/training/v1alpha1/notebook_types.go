@@ -72,11 +72,11 @@ type NotebookList struct {
 type NotebookSpec struct {
 	// The product of the resource
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +optional
 	// +kubebuilder:validation:MinLength=512
-	Description string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// SchemaName relate a notebook to a schema.
 	// The schema object will be accessible from the notebook
 	// +optional
@@ -85,15 +85,15 @@ type NotebookSpec struct {
 	ImageRepoRef *v1.ObjectReference `json:"imageRepoRef,omitempty" protobuf:"bytes,4,opt,name=imageRepoRef"`
 	// python req file
 	// +optional
-	Requirements string `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
+	Requirements *string `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
 	// list of deb package
 	// +optional
-	DebPackages string `json:"debPackages,omitempty" protobuf:"bytes,6,opt,name=debPackages"`
+	DebPackages *string `json:"debPackages,omitempty" protobuf:"bytes,6,opt,name=debPackages"`
 	// vars to pass to the notebook
 	// +optional
 	Vars []string `json:"vars,omitempty" protobuf:"bytes,7,rep,name=vars"`
 	// The location of the notebook
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,rep,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,rep,name=location"`
 	// The owner account name
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`

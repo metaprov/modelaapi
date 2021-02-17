@@ -12,7 +12,7 @@ import (
 )
 
 func TestFolds_Valid(t *testing.T) {
-	study := OneStudy()
+	study := DefaultStudy()
 	err := study.ValidateCreate()
 	assert.NoError(t, err)
 

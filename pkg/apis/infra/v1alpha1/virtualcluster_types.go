@@ -87,7 +87,7 @@ type VirtualClusterSpec struct {
 	//+optional
 	Spot *bool `json:"spot,omitempty" protobuf:"bytes,7,opt,name=spot"`
 	// Name of the provider connection
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
 	// the account name of the owner of this cluster
 	//+kubebuilder:default=""
 	// +optional

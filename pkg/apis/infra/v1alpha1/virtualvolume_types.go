@@ -67,11 +67,11 @@ type VirtualVolumeSpec struct {
 	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,name=tenantRef"`
 	//  specify the api connections of this mdvolume cloud provider.
 	// +optional
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User provided description
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
-	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The owner account name
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`

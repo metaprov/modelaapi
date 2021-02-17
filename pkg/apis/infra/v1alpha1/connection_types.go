@@ -56,7 +56,7 @@ type Connection struct {
 type ConnectionList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []Connection `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []Connection `json:"items" protobuf:"bytes,2,opt,name=items"`
 }
 
 // ConnectionSpec defines the desired state of Connection
@@ -70,10 +70,10 @@ type ConnectionSpec struct {
 	// +optional
 	Category *catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
 	// Provider specifies the name api provider (E.g. aws)
-	// required
-	Provider *catalog.ProviderName `json:"provider" protobuf:"bytes,3,opt,name=provider"`
-
-	SecretName string `json:"secretName" protobuf:"bytes,4,req,name=secretName"`
+	// +optional
+	Provider *catalog.ProviderName `json:"provider,omitempty" protobuf:"bytes,3,opt,name=provider"`
+	// +optional
+	SecretName *string `json:"secretName,omitempty" protobuf:"bytes,4,opt,name=secretName"`
 	// +optional
 	Athena *AthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
 	// +optional
@@ -143,118 +143,119 @@ type ConnectionSpec struct {
 	// +optional
 	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,38,opt,name=webhook"`
 	// Owner
-	Owner string `json:"owner,omitempty" protobuf:"bytes,39,opt,name=owner"`
+	// +optional
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,39,opt,name=owner"`
 }
 
 // ConnectionStatus is the observed state of a Connection
 type ConnectionStatus struct {
 	//+optional
-	Conditions []ConnectionCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []ConnectionCondition `json:"conditions,omitempty" protobuf:"bytes,1,opt,name=conditions"`
 }
 
 // =================== Definitions of spec files for each type
 
 type AthenaSpec struct {
-	Database         string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
-	S3OutputLocation string `json:"s3OutputLocation,omitempty" protobuf:"bytes,2,rep,name=s3OutputLocation"`
-	AccessKey        string `json:"accessKey,omitempty" protobuf:"bytes,3,rep,name=accessKey"`
-	SecretKey        string `json:"secretKey,omitempty" protobuf:"bytes,4,rep,name=secretKey"`
+	Database         *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
+	S3OutputLocation *string `json:"s3OutputLocation,omitempty" protobuf:"bytes,2,opt,name=s3OutputLocation"`
+	AccessKey        *string `json:"accessKey,omitempty" protobuf:"bytes,3,opt,name=accessKey"`
+	SecretKey        *string `json:"secretKey,omitempty" protobuf:"bytes,4,opt,name=secretKey"`
 }
 
 type BigQuerySpec struct {
-	ServiceAccount string `json:"serviceAccount,omitempty" protobuf:"bytes,1,rep,name=serviceAccount"`
+	ServiceAccount *string `json:"serviceAccount,omitempty" protobuf:"bytes,1,opt,name=serviceAccount"`
 }
 
 type CassandraSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// default 9042
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Database string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
-	Username string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
 }
 
 type MongoDbSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// default 27017
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Database string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
-	Username string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
 }
 
 type MySqlSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// default 3306
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Database string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
-	Username string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
 }
 
 type OdbcSpec struct {
-	ConnectionString string `json:"connectionString,omitempty" protobuf:"bytes,1,rep,name=conntectionString"`
+	ConnectionString *string `json:"connectionString,omitempty" protobuf:"bytes,1,opt,name=conntectionString"`
 }
 
 type OracleSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// Default 1521
-	Port        int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Database    string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
-	ServiceName string `json:"serviceName,omitempty" protobuf:"bytes,4,opt,name=serviceName"`
-	Role        string `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
-	Username    string `json:"username,omitempty" protobuf:"bytes,6,opt,name=username"`
-	Password    string `json:"password,omitempty" protobuf:"bytes,7,opt,name=password"`
+	Port        *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database    *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,4,opt,name=serviceName"`
+	Role        *string `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
+	Username    *string `json:"username,omitempty" protobuf:"bytes,6,opt,name=username"`
+	Password    *string `json:"password,omitempty" protobuf:"bytes,7,opt,name=password"`
 }
 
 type PostgresSQLSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	//5432
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Database string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
-	Username string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
 }
 
 type PrestoSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// Default 8080
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Catalog  string `json:"catalog,omitempty" protobuf:"bytes,3,opt,name=catalog"`
-	Schema   string `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
-	Username string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Catalog  *string `json:"catalog,omitempty" protobuf:"bytes,3,opt,name=catalog"`
+	Schema   *string `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
 }
 
 type RedShiftSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// Default 5439
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-	Database string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
-	Username string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
 }
 
 type SnowFlakeSpec struct {
-	Account   string `json:"account,omitempty" protobuf:"bytes,1,rep,name=account"`
-	Warehouse string `json:"warehouse,omitempty" protobuf:"bytes,2,rep,name=warehouse"`
-	Database  string `json:"database,omitempty" protobuf:"bytes,3,rep,name=database"`
-	Username  string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
-	Password  string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Account   *string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
+	Warehouse *string `json:"warehouse,omitempty" protobuf:"bytes,2,opt,name=warehouse"`
+	Database  *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username  *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Password  *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
 }
 
 type MSSqlServerSpec struct {
-	Hostname string `json:"hostName,omitempty" protobuf:"bytes,1,rep,name=hostName"`
+	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
 	// Default 1433
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,rep,name=port"`
-	Database string `json:"database,omitempty" protobuf:"bytes,3,rep,name=database"`
-	Domain   string `json:"domain,omitempty" protobuf:"bytes,4,rep,name=domain"`
-	Username string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Domain   *string `json:"domain,omitempty" protobuf:"bytes,4,opt,name=domain"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
 }
 
 type SqlLightSpec struct {
-	Filename string `json:"fileName,omitempty" protobuf:"bytes,1,rep,name=fileName"`
+	Filename *string `json:"fileName,omitempty" protobuf:"bytes,1,opt,name=fileName"`
 }
 
 ////////////////////////////
@@ -262,136 +263,136 @@ type SqlLightSpec struct {
 ////////////////////////////
 type AwsSpec struct {
 	// Default zone.
-	DefaultRegion string `json:"defaultRegion,omitempty" protobuf:"bytes,1,rep,name=defaultRegion"`
+	DefaultRegion *string `json:"defaultRegion,omitempty" protobuf:"bytes,1,opt,name=defaultRegion"`
 	// Aws Access key. This is an hidden fields which are stored in the secret
-	AccessKey string `json:"accessKey,omitempty" protobuf:"bytes,2,rep,name=accessKey"`
+	AccessKey *string `json:"accessKey,omitempty" protobuf:"bytes,2,opt,name=accessKey"`
 	// Aws StorageSecret key. This is an hidden fields which are stored in the secret
-	SecretKey string `json:"secretKey,omitempty" protobuf:"bytes,3,rep,name=secretKey"`
+	SecretKey *string `json:"secretKey,omitempty" protobuf:"bytes,3,opt,name=secretKey"`
 }
 
 type AzureStorageSpec struct {
-	StorageAccount string `json:"storageAccount,omitempty" protobuf:"bytes,1,rep,name=storageAccount"`
+	StorageAccount *string `json:"storageAccount,omitempty" protobuf:"bytes,1,opt,name=storageAccount"`
 	// This is an hidden field which is stored in a p
-	AccessKey string `json:"accessKey,omitempty" protobuf:"bytes,2,rep,name=accessKey"`
+	AccessKey *string `json:"accessKey,omitempty" protobuf:"bytes,2,opt,name=accessKey"`
 }
 
 type GcpStorageSpec struct {
-	KeyFile string `json:"keyFile,omitempty" protobuf:"bytes,1,rep,name=keyFile"`
-	Project string `json:"project,omitempty" protobuf:"bytes,2,rep,name=project"`
+	KeyFile *string `json:"keyFile,omitempty" protobuf:"bytes,1,opt,name=keyFile"`
+	Project *string `json:"project,omitempty" protobuf:"bytes,2,opt,name=project"`
 }
 
 type DigitalOceanSpec struct {
 	// Token for digital ocean
-	Token string `json:"token,omitempty" protobuf:"bytes,1,rep,name=token"`
+	Token *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
 	// Access Key for digital ocean spaces
-	AccessKey string `json:"accessKey,omitempty" protobuf:"bytes,2,rep,name=accessKey"`
+	AccessKey *string `json:"accessKey,omitempty" protobuf:"bytes,2,opt,name=accessKey"`
 	// StorageSecret Key for digital ocean spaces
-	SecretKey string `json:"secretKey,omitempty" protobuf:"bytes,3,rep,name=secretKey"`
+	SecretKey *string `json:"secretKey,omitempty" protobuf:"bytes,3,opt,name=secretKey"`
 	// Default digital ocean
-	DefaultRegion string `json:"defaultRegion,omitempty" protobuf:"bytes,4,rep,name=defaultRegion"`
+	DefaultRegion *string `json:"defaultRegion,omitempty" protobuf:"bytes,4,opt,name=defaultRegion"`
 	// url or connection string
-	Host string `json:"host,omitempty" protobuf:"bytes,5,rep,name=host"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,5,opt,name=host"`
 }
 
 type MinioSpec struct {
 	// Access key for minio
-	AccessKey string `json:"accessKey,omitempty" protobuf:"bytes,1,rep,name=accessKey"`
+	AccessKey *string `json:"accessKey,omitempty" protobuf:"bytes,1,opt,name=accessKey"`
 	// StorageSecret key for minio
-	SecretKey string `json:"secretKey,omitempty" protobuf:"bytes,2,rep,name=secretKey"`
+	SecretKey *string `json:"secretKey,omitempty" protobuf:"bytes,2,opt,name=secretKey"`
 	// Minio url connection.
-	Host string `json:"host,omitempty" protobuf:"bytes,3,rep,name=host"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,3,opt,name=host"`
 }
 
 type ImageRegistrySpec struct {
 	// Hostname for the image registry
-	Host string `json:"host,omitempty" protobuf:"bytes,1,rep,name=host"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// Username for image registry
-	Username string `json:"username,omitempty" protobuf:"bytes,2,rep,name=username"`
-	Password string `json:"password,omitempty" protobuf:"bytes,3,rep,name=password"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,2,opt,name=username"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,3,opt,name=password"`
 }
 
 type SlackSpec struct {
-	WebHookUrl string `json:"webhookUrl,omitempty" protobuf:"bytes,1,rep,name=webhookUrl"`
-	Channel    string `json:"channel,omitempty" protobuf:"bytes,2,rep,name=channel"`
-	Username   string `json:"userName,omitempty" protobuf:"bytes,3,rep,name=userName"`
-	Token      string `json:"token,omitempty" protobuf:"bytes,4,rep,name=token"`
+	WebHookUrl *string `json:"webhookUrl,omitempty" protobuf:"bytes,1,opt,name=webhookUrl"`
+	Channel    *string `json:"channel,omitempty" protobuf:"bytes,2,opt,name=channel"`
+	Username   *string `json:"userName,omitempty" protobuf:"bytes,3,opt,name=userName"`
+	Token      *string `json:"token,omitempty" protobuf:"bytes,4,opt,name=token"`
 }
 
 type SmtpSpec struct {
-	Host     string `json:"host,omitempty" protobuf:"bytes,1,rep,name=host"`
-	Port     int32  `json:"port,omitempty" protobuf:"varint,2,rep,name=port"`
-	Username string `json:"userName,omitempty" protobuf:"bytes,3,rep,name=userName"`
-	Password string `json:"password,omitempty" protobuf:"bytes,4,rep,name=password"`
+	Host     *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	Port     *int32  `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Username *string `json:"userName,omitempty" protobuf:"bytes,3,opt,name=userName"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
 }
 
 type GithubSpec struct {
-	Token    string `json:"token,omitempty" protobuf:"bytes,1,rep,name=token"`
-	Username string `json:"userName,omitempty" protobuf:"bytes,2,rep,name=userName"`
-	SSH      string `json:"ssh,omitempty" protobuf:"bytes,3,rep,name=ssh"`
+	Token    *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
+	Username *string `json:"userName,omitempty" protobuf:"bytes,2,opt,name=userName"`
+	SSH      *string `json:"ssh,omitempty" protobuf:"bytes,3,opt,name=ssh"`
 }
 
 type BitbucketSpec struct {
-	Token    string `json:"token,omitempty" protobuf:"bytes,1,rep,name=token"`
-	Username string `json:"userName,omitempty" protobuf:"bytes,2,rep,name=userName"`
-	SSH      string `json:"ssh,omitempty" protobuf:"bytes,3,rep,name=ssh"`
+	Token    *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
+	Username *string `json:"userName,omitempty" protobuf:"bytes,2,opt,name=userName"`
+	SSH      *string `json:"ssh,omitempty" protobuf:"bytes,3,opt,name=ssh"`
 }
 
 type AliCloudSpec struct {
-	AccessKey string `json:"accessKey,omitempty" protobuf:"bytes,1,rep,name=accessKey"`
-	SecretKey string `json:"secretKey,omitempty" protobuf:"bytes,2,rep,name=secretKey"`
-	Region    string `json:"region,omitempty" protobuf:"bytes,3,rep,name=region"`
-	Host      string `json:"host,omitempty" protobuf:"bytes,4,rep,name=host"`
+	AccessKey *string `json:"accessKey,omitempty" protobuf:"bytes,1,opt,name=accessKey"`
+	SecretKey *string `json:"secretKey,omitempty" protobuf:"bytes,2,opt,name=secretKey"`
+	Region    *string `json:"region,omitempty" protobuf:"bytes,3,opt,name=region"`
+	Host      *string `json:"host,omitempty" protobuf:"bytes,4,opt,name=host"`
 }
 
 type GitlabSpec struct {
-	Token string `json:"token,omitempty" protobuf:"bytes,1,rep,name=token"`
-	SSH   string `json:"ssh,omitempty" protobuf:"bytes,2,rep,name=ssh"`
+	Token *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
+	SSH   *string `json:"ssh,omitempty" protobuf:"bytes,2,opt,name=ssh"`
 }
 
 type HetznerSpec struct {
-	Token string `json:"token,omitempty" protobuf:"bytes,1,rep,name=token"`
-	SSH   string `json:"ssh,omitempty" protobuf:"bytes,2,rep,name=ssh"`
+	Token *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
+	SSH   *string `json:"ssh,omitempty" protobuf:"bytes,2,opt,name=ssh"`
 }
 
 type OpenstackSpec struct {
-	Username   string `json:"userName,omitempty" protobuf:"bytes,1,rep,name=userName"`
-	Tenantname string `json:"tenantName,omitempty" protobuf:"bytes,2,rep,name=tenantName"`
-	Password   string `json:"password,omitempty" protobuf:"bytes,3,rep,name=password"`
-	Authurl    string `json:"authUrl,omitempty" protobuf:"bytes,4,rep,name=authUrl"`
-	Region     string `json:"region,omitempty" protobuf:"bytes,5,rep,name=region"`
+	Username   *string `json:"userName,omitempty" protobuf:"bytes,1,opt,name=userName"`
+	Tenantname *string `json:"tenantName,omitempty" protobuf:"bytes,2,opt,name=tenantName"`
+	Password   *string `json:"password,omitempty" protobuf:"bytes,3,opt,name=password"`
+	Authurl    *string `json:"authUrl,omitempty" protobuf:"bytes,4,opt,name=authUrl"`
+	Region     *string `json:"region,omitempty" protobuf:"bytes,5,opt,name=region"`
 }
 
 type OvhSpec struct {
-	Endpoint    string `json:"endpoint,omitempty" protobuf:"bytes,1,rep,name=endpoint"`
-	Application string `json:"application,omitempty" protobuf:"bytes,2,rep,name=application"`
-	Secret      string `json:"secret,omitempty" protobuf:"bytes,3,rep,name=secret"`
-	ConsumerKey string `json:"consumerkey,omitempty" protobuf:"bytes,4,rep,name=consumerkey"`
+	Endpoint    *string `json:"endpoint,omitempty" protobuf:"bytes,1,opt,name=endpoint"`
+	Application *string `json:"application,omitempty" protobuf:"bytes,2,opt,name=application"`
+	Secret      *string `json:"secret,omitempty" protobuf:"bytes,3,opt,name=secret"`
+	ConsumerKey *string `json:"consumerkey,omitempty" protobuf:"bytes,4,opt,name=consumerkey"`
 }
 
 type LinodeSpec struct {
-	ApiKey string `json:"apikey,omitempty" protobuf:"bytes,1,rep,name=apikey"`
+	ApiKey *string `json:"apikey,omitempty" protobuf:"bytes,1,opt,name=apikey"`
 }
 
 type FlockSpec struct {
-	Url string `json:"url,omitempty" protobuf:"bytes,1,rep,name=url"`
+	Url *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 }
 
 type MSTeamSpec struct {
-	Webhook string `json:"webhook,omitempty" protobuf:"bytes,1,rep,name=webhook"`
+	Webhook *string `json:"webhook,omitempty" protobuf:"bytes,1,opt,name=webhook"`
 }
 
 type MattermostSpec struct {
-	Url      string `json:"url,omitempty" protobuf:"bytes,1,rep,name=url"`
-	Channel  string `json:"channel,omitempty" protobuf:"bytes,2,rep,name=channel"`
-	Username string `json:"username,omitempty" protobuf:"bytes,3,rep,name=username"`
+	Url      *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	Channel  *string `json:"channel,omitempty" protobuf:"bytes,2,opt,name=channel"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
 }
 
 type HipchatSpec struct {
-	Url   string `json:"url,omitempty" protobuf:"bytes,1,rep,name=url"`
-	Token string `json:"token,omitempty" protobuf:"bytes,2,rep,name=token"`
-	Room  string `json:"room,omitempty" protobuf:"bytes,3,rep,name=room"`
+	Url   *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	Token *string `json:"token,omitempty" protobuf:"bytes,2,opt,name=token"`
+	Room  *string `json:"room,omitempty" protobuf:"bytes,3,opt,name=room"`
 }
 
 type WebhookSpec struct {
-	Url string `json:"url,omitempty" protobuf:"bytes,1,rep,name=url"`
+	Url *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 }

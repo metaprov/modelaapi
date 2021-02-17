@@ -72,7 +72,7 @@ type DataPipelineSpec struct {
 	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// The output file of the pipeline
-	OutputDatasetName string `json:"outputDataset,omitempty" protobuf:"bytes,5,opt,name=outputDataset"`
+	OutputDatasetName *string `json:"outputDataset,omitempty" protobuf:"bytes,5,opt,name=outputDataset"`
 	// A cron field to schedule the data pipeline.
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// The owner account name

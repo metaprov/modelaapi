@@ -297,7 +297,6 @@ message DataPipelineRun {
 
   optional DataPipelineRunSpec spec = 2;
 
-  // +optional
   optional DataPipelineRunStatus status = 3;
 }
 

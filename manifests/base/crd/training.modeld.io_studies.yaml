@@ -918,9 +918,6 @@ spec:
                             value:
                               description: Value if the partition value
                               type: string
-                          required:
-                          - key
-                          - value
                           type: object
                         type: array
                       dimensions:

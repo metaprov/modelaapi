@@ -255,7 +255,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	// required
-	VersionName string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
@@ -266,11 +266,11 @@ type StudySpec struct {
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// Required.
-	DatasetName string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
 	// This must match the task of the data product.
 	// Required.
-	Task catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
+	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
 	// The objective defined how the study controller will compare model performance.
 	// +optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,6,opt,name=objective"`

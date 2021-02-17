@@ -91,7 +91,7 @@ func (dataset *Dataset) StatusString() string {
 }
 
 func (dataset *Dataset) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, dataset.Spec.VersionName, dataset.Name)
+	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
 }
 
 func (dataset *Dataset) ReportUri() string {
@@ -104,7 +104,7 @@ func (dataset *Dataset) ManifestUri() string {
 
 func (dataset *Dataset) ProfileUri() string {
 	return fmt.Sprintf("modeld/live/tenants/default-tenant/dataproducts/%s/versions/%s/datasets/%s/profile/dataset_profile.json",
-		dataset.Namespace, dataset.Spec.VersionName, dataset.Name)
+		dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
 }
 
 func ParseDatasetYaml(content []byte) (*Dataset, error) {
@@ -124,8 +124,8 @@ func (dataset *Dataset) Populate(name string) {
 	}
 
 	dataset.Spec = DatasetSpec{
-		VersionName:    "iris-0.0.1",
-		DataSourceName: "iris-source",
+		VersionName:    util.StrPtr("iris-0.0.1"),
+		DataSourceName: util.StrPtr("iris-source"),
 		Labeled:        nil,
 	}
 }

@@ -36,8 +36,8 @@ func (connection *Connection) ValidateSecret(s *v1.Secret) field.ErrorList {
 // currently we place all the fields in the connection.
 func (connection *Connection) CreateSecret() *v1.Secret {
 	secretName := connection.Name
-	if connection.Spec.SecretName != "" {
-		secretName = connection.Spec.SecretName
+	if *connection.Spec.SecretName != "" {
+		secretName = *connection.Spec.SecretName
 	}
 	result := &v1.Secret{
 		ObjectMeta: meta_v1.ObjectMeta{
@@ -48,31 +48,31 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 	fields := make(map[string]string)
 	switch *connection.Spec.Provider {
 	case catalog.Aws:
-		fields[string(catalog.AccessKey)] = connection.Spec.Aws.AccessKey
-		fields[string(catalog.SecretKey)] = connection.Spec.Aws.SecretKey
+		fields[string(catalog.AccessKey)] = *connection.Spec.Aws.AccessKey
+		fields[string(catalog.SecretKey)] = *connection.Spec.Aws.SecretKey
 	case catalog.Minio:
-		fields[string(catalog.AccessKey)] = connection.Spec.Minio.AccessKey
-		fields[string(catalog.SecretKey)] = connection.Spec.Minio.SecretKey
+		fields[string(catalog.AccessKey)] = *connection.Spec.Minio.AccessKey
+		fields[string(catalog.SecretKey)] = *connection.Spec.Minio.SecretKey
 	case catalog.DigitalOcean:
-		fields[string(catalog.AccessKey)] = connection.Spec.DigitalOcean.AccessKey
-		fields[string(catalog.SecretKey)] = connection.Spec.DigitalOcean.SecretKey
-		fields[string(catalog.Token)] = connection.Spec.DigitalOcean.Token
+		fields[string(catalog.AccessKey)] = *connection.Spec.DigitalOcean.AccessKey
+		fields[string(catalog.SecretKey)] = *connection.Spec.DigitalOcean.SecretKey
+		fields[string(catalog.Token)] = *connection.Spec.DigitalOcean.Token
 	case catalog.Gcp:
-		fields[string(catalog.KeyFile)] = connection.Spec.GcpStorage.KeyFile
+		fields[string(catalog.KeyFile)] = *connection.Spec.GcpStorage.KeyFile
 	case catalog.Azure:
-		fields[string(catalog.AccessKey)] = connection.Spec.AzureStorage.AccessKey
+		fields[string(catalog.AccessKey)] = *connection.Spec.AzureStorage.AccessKey
 	case catalog.SmtpProvider:
-		fields[string(catalog.Host)] = connection.Spec.Smtp.Host
-		fields[string(catalog.Port)] = util.ItoA(&connection.Spec.Smtp.Port)
-		fields[string(catalog.Username)] = connection.Spec.Smtp.Username
-		fields[string(catalog.Password)] = connection.Spec.Smtp.Password
+		fields[string(catalog.Host)] = *connection.Spec.Smtp.Host
+		fields[string(catalog.Port)] = util.ItoA(connection.Spec.Smtp.Port)
+		fields[string(catalog.Username)] = *connection.Spec.Smtp.Username
+		fields[string(catalog.Password)] = *connection.Spec.Smtp.Password
 	case catalog.Slack:
-		fields[string(catalog.Username)] = connection.Spec.Slack.Username
-		fields[string(catalog.Token)] = connection.Spec.Slack.Token
+		fields[string(catalog.Username)] = *connection.Spec.Slack.Username
+		fields[string(catalog.Token)] = *connection.Spec.Slack.Token
 	case catalog.ImageRegistry:
-		fields[string(catalog.Host)] = connection.Spec.ImageRegistry.Host
-		fields[string(catalog.Username)] = connection.Spec.ImageRegistry.Username
-		fields[string(catalog.Password)] = connection.Spec.ImageRegistry.Password
+		fields[string(catalog.Host)] = *connection.Spec.ImageRegistry.Host
+		fields[string(catalog.Username)] = *connection.Spec.ImageRegistry.Username
+		fields[string(catalog.Password)] = *connection.Spec.ImageRegistry.Password
 	}
 	result.StringData = fields
 	return result
@@ -81,27 +81,28 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 
 // ask the connection to mask secret fields based on the type of the connection
 func (connection *Connection) MaskSecretFields() {
+	hiddenPtr := util.StrPtr("[hidden]")
 	switch *connection.Spec.Provider {
 	case catalog.Aws:
-		connection.Spec.Aws.AccessKey = "[hidden]"
-		connection.Spec.Aws.SecretKey = "[hidden]"
+		connection.Spec.Aws.AccessKey = hiddenPtr
+		connection.Spec.Aws.SecretKey = hiddenPtr
 	case catalog.DigitalOcean:
-		connection.Spec.DigitalOcean.AccessKey = "[hidden]"
-		connection.Spec.DigitalOcean.SecretKey = "[hidden]"
-		connection.Spec.DigitalOcean.Token = "[hidden]"
+		connection.Spec.DigitalOcean.AccessKey = hiddenPtr
+		connection.Spec.DigitalOcean.SecretKey = hiddenPtr
+		connection.Spec.DigitalOcean.Token = hiddenPtr
 	case catalog.Gcp:
-		connection.Spec.GcpStorage.KeyFile = "[hidden]"
+		connection.Spec.GcpStorage.KeyFile = hiddenPtr
 	case catalog.Azure:
-		connection.Spec.AzureStorage.AccessKey = "[hidden]"
+		connection.Spec.AzureStorage.AccessKey = hiddenPtr
 	case catalog.Minio:
-		connection.Spec.Minio.AccessKey = "[hidden]"
-		connection.Spec.Minio.SecretKey = "[hidden]"
+		connection.Spec.Minio.AccessKey = hiddenPtr
+		connection.Spec.Minio.SecretKey = hiddenPtr
 	case catalog.SmtpProvider:
-		connection.Spec.Smtp.Password = "[hidden]"
+		connection.Spec.Smtp.Password = hiddenPtr
 	case catalog.Slack:
-		connection.Spec.Slack.Token = "[hidden]"
+		connection.Spec.Slack.Token = hiddenPtr
 	case catalog.ImageRegistry:
-		connection.Spec.ImageRegistry.Password = "[hidden]"
+		connection.Spec.ImageRegistry.Password = hiddenPtr
 	}
 }
 

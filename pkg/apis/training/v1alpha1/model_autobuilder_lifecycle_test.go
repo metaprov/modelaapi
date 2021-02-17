@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 
 	"testing"
@@ -17,13 +18,14 @@ import (
 )
 
 func autoBuilder() *ModelAutobuilder {
+	task := catalog.BinaryClassification
 	return &ModelAutobuilder{
 		ObjectMeta: metav1.ObjectMeta{Namespace: "default-tenant", Name: "iris"},
 		Spec: ModelAutobuilderSpec{
 			DataProductName:        util.StrPtr("iris-product"),
 			DataProductVersionName: util.StrPtr("v0.0.1"),
-			Path:                   "modeld/depot/iris.csv",
-			Task:                   "binary-classification",
+			Path:                   util.StrPtr("modeld/depot/iris.csv"),
+			Task:                   &task,
 			Objective:              nil,
 			TargetColumn:           nil,
 			MaxTime:                util.Int32Ptr(4),

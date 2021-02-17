@@ -64,14 +64,14 @@ type PostMortemList struct {
 
 type TimeLineEvent struct {
 	// +optional
-	Content string `json:"content" protobuf:"bytes,1,opt,name=content"`
+	Content *string `json:"content" protobuf:"bytes,1,opt,name=content"`
 	// +optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 }
 
 type Alert struct {
 	// +optional
-	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
+	Name *string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// +optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 }
@@ -95,10 +95,10 @@ type PostMortemSpec struct {
 	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,5,rep,name=timeline"`
 	// Root cause
 	// +optional
-	RootCause string `json:"rootCause" protobuf:"bytes,6,opt,name=rootCause"`
+	RootCause *string `json:"rootCause" protobuf:"bytes,6,opt,name=rootCause"`
 	// Summary of the post morten
 	// +optional
-	Summary string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
+	Summary *string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
 	// The owner account name
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`

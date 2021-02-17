@@ -188,18 +188,16 @@ spec:
                 type: object
               type:
                 description: Type is the type of account - user, group. default is
-                  user Required.
+                  user
                 enum:
                 - user
                 - group
                 type: string
               userName:
-                description: UserName specifies the name of the account Required.
+                description: UserName specifies the name of the account
                 maxLength: 64
                 minLength: 4
                 type: string
-            required:
-            - userName
             type: object
           status:
             description: AccountStatus defines the actual state of the api object

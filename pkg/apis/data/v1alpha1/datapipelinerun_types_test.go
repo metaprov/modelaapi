@@ -24,7 +24,7 @@ func TestDataPipelineRunValidate(t *testing.T) {
 			Namespace: "modeld-system",
 		},
 		Spec: DataPipelineRunSpec{
-			DataPipelineName: "",
+			DataPipelineName: util.StrPtr(""),
 		},
 	}
 	dfr.Default()

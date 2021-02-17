@@ -16,7 +16,7 @@ import (
 
 func TestTimeConstraints_Ended(t *testing.T) {
 	// Arrange
-	study := OneStudy()
+	study := DefaultStudy()
 	study.SetStartTime() // set the start time to now.
 	// Act
 	study.Spec.Search.MaxTime = util.Int32Ptr(0) // do for one minues
@@ -32,7 +32,7 @@ func TestTimeConstraints_Ended(t *testing.T) {
 
 func TestTimeConstraints_NotEnded(t *testing.T) {
 	// Arrange
-	study := OneStudy()
+	study := DefaultStudy()
 	study.SetStartTime() // set the start time to now.
 	// Act
 	study.Spec.Search.MaxTime = util.Int32Ptr(10) // do for 10 mined
@@ -49,7 +49,7 @@ func TestTimeConstraints_NotEnded(t *testing.T) {
 
 func TestMaxModel_Ended(t *testing.T) {
 	// Arrange
-	study := OneStudy()
+	study := DefaultStudy()
 	study.SetStartTime() // set the start time to now.
 	// Act
 	study.Spec.Search.MaxTime = util.Int32Ptr(0) // do for one minues

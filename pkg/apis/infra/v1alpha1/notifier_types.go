@@ -63,11 +63,13 @@ type NotifierSpec struct {
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Address within the provider to send the notifiaction to.
-	To string `json:"to,omitempty" protobuf:"bytes,4,opt,name=to"`
+	// +optional
+	To *string `json:"to,omitempty" protobuf:"bytes,4,opt,name=to"`
 	// The sender address. For example, from email.
-	From string `json:"from,omitempty" protobuf:"bytes,5,opt,name=from"`
-	// required
-	ConnectionName string `json:"connectionName" protobuf:"bytes,6,opt,name=connectionName"`
+	// +optional
+	From *string `json:"from,omitempty" protobuf:"bytes,5,opt,name=from"`
+	// +optional
+	ConnectionName *string `json:"connectionName" protobuf:"bytes,6,opt,name=connectionName"`
 	// The owner account name
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`

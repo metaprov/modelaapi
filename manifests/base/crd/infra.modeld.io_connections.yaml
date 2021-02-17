@@ -372,7 +372,7 @@ spec:
                     type: string
                 type: object
               provider:
-                description: Provider specifies the name api provider (E.g. aws) required
+                description: Provider specifies the name api provider (E.g. aws)
                 enum:
                 - alicloud
                 - athena
@@ -517,9 +517,6 @@ spec:
                   url:
                     type: string
                 type: object
-            required:
-            - provider
-            - secretName
             type: object
           status:
             description: ConnectionStatus is the observed state of a Connection

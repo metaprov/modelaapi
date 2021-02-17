@@ -58,7 +58,7 @@ func (run *NotebookRun) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta, trai
 //==============================================================================
 
 func (run *NotebookRun) RootFolderKey() string {
-	return fmt.Sprintf("modeld/notebooks/%s/runs/%s", run.Spec.NotebookName, run.ObjectMeta.Name)
+	return fmt.Sprintf("modeld/notebooks/%s/runs/%s", *run.Spec.NotebookName, run.ObjectMeta.Name)
 }
 
 //khai/labs/l1/studies/<s1>/models/<m1>/estimator.bin

@@ -114,7 +114,7 @@ type DataProductSpec struct {
 	GitLocation *GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
 	// ImageLocation is the image repository that stores the models images for the product versions
 	// Required.
-	ImageLocation ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
+	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
 	// LabName is the Lab where models of this products are trained
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
@@ -129,7 +129,7 @@ type DataProductSpec struct {
 	ServingSiteName *string `json:"servingSiteName" protobuf:"bytes,8,opt,name=servingSiteName"`
 	// Task denote the machine learning task of the product (classification/regression,etc.)
 	// Required.
-	Task catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 	// User provided description
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
@@ -144,11 +144,11 @@ type DataProductSpec struct {
 	// A reference to the workload class used when training or testing the model
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	ModelWorkloadClassName string `json:"modelWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=modelWorkloadClassName"`
+	ModelWorkloadClassName *string `json:"modelWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=modelWorkloadClassName"`
 	// A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	DataWorkloadClassName string `json:"dataWorkloadClassName,omitempty" protobuf:"bytes,14,opt,name=dataWorkloadClassName"`
+	DataWorkloadClassName *string `json:"dataWorkloadClassName,omitempty" protobuf:"bytes,14,opt,name=dataWorkloadClassName"`
 	// Denote how many time a job is retry after failure
 	// default to 3
 	// +optional

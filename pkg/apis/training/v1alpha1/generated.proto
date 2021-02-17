@@ -982,13 +982,11 @@ message ModelSpec {
   // ServingSiteName is a reference to the product version of this model. This value is based on the study product version
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  // Required
   optional string versionName = 2;
 
   // StudyName ref reference the study for this model. IF empty, the model is stand alone
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  // Required
   optional string studyName = 3;
 
   // DatasetName refer to the dataset object for which the study is for.

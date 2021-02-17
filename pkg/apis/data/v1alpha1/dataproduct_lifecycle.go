@@ -35,7 +35,7 @@ func (r *DataProduct) CreateNamespace() *v1.Namespace {
 }
 
 func (r *DataProduct) IsClassification() bool {
-	return r.Spec.Task == catalog.BinaryClassification || r.Spec.Task == catalog.MultiClassification
+	return *r.Spec.Task == catalog.BinaryClassification || *r.Spec.Task == catalog.MultiClassification
 }
 
 //==============================================================================

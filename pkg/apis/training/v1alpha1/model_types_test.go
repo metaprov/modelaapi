@@ -3,12 +3,14 @@ package v1alpha1
 import (
 	"testing"
 
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modeldapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func OneModel() Model {
+	task := catalog.BinaryClassification
 	return Model{
 		TypeMeta: metav1.TypeMeta{
 			Kind:       "Model",
@@ -19,9 +21,9 @@ func OneModel() Model {
 			Namespace: "lab1",
 		},
 		Spec: ModelSpec{
-			VersionName: "",
-			StudyName:   "",
-			Task:        "",
+			VersionName: util.StrPtr(""),
+			StudyName:   util.StrPtr(""),
+			Task:        &task,
 			Objective:   nil,
 			Estimator:   nil,
 			Dnn:         nil,

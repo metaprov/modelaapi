@@ -71,28 +71,28 @@ func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
 // Validate task checks that the
 func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	if study.Spec.Task == catalog.Regression && !study.Spec.Objective.IsRegression() {
+	if *study.Spec.Task == catalog.Regression && !study.Spec.Objective.IsRegression() {
 		err := errors.Errorf("objective %v is not a regression metric", *study.Spec.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if study.Spec.Task == catalog.BinaryClassification && !study.Spec.Objective.IsClassification() {
+	if *study.Spec.Task == catalog.BinaryClassification && !study.Spec.Objective.IsClassification() {
 		err := errors.Errorf("objective %v is not a binary classification metric", *study.Spec.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if study.Spec.Task == catalog.MultiClassification && !study.Spec.Objective.IsMultiClass() {
+	if *study.Spec.Task == catalog.MultiClassification && !study.Spec.Objective.IsMultiClass() {
 		err := errors.Errorf("objective %v is not a multi classification metric", *study.Spec.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if study.Spec.Task == catalog.Clustering && !study.Spec.Objective.IsClustering() {
+	if *study.Spec.Task == catalog.Clustering && !study.Spec.Objective.IsClustering() {
 		err := errors.Errorf("objective %v is not a clustering metric", *study.Spec.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,

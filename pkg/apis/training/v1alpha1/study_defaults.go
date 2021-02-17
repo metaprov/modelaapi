@@ -153,7 +153,7 @@ func (study *Study) Default() {
 	}
 
 	if study.Spec.Objective == nil {
-		o := DefaultObjective(study.Spec.Task)
+		o := DefaultObjective(*study.Spec.Task)
 		study.Spec.Objective = &o
 	}
 
@@ -166,7 +166,7 @@ func (study *Study) Default() {
 	}
 	study.Spec.Search.StackingEnsemble = util.BoolPtr(true)
 
-	if study.Spec.Training.Forecast == nil && study.Spec.Task == catalog.Forcasting {
+	if study.Spec.Training.Forecast == nil && *study.Spec.Task == catalog.Forcasting {
 		study.Spec.Training.Forecast = &ForecastingSpec{
 			Horizon:                nil,
 			TimeColumn:             nil,

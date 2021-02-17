@@ -46,7 +46,7 @@ func (b *ModelAutobuilder) Default() {
 	}
 
 	if b.Spec.Objective == nil {
-		o := DefaultObjective(b.Spec.Task)
+		o := DefaultObjective(*b.Spec.Task)
 		b.Spec.Objective = &o
 	}
 

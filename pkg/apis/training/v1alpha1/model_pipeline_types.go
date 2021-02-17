@@ -123,7 +123,7 @@ type ModelPipelineSpec struct {
 	DefaultServingSiteName *string `json:"defaultServingSiteName,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteName"`
 	// User provided description
 	// +optional
-	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Min score to move from stage to stage.
 	// Default is 0
 	// +optional

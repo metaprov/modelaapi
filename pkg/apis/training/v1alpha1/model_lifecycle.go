@@ -71,8 +71,8 @@ func NewModel(
 	result.ObjectMeta.Namespace = ns
 
 	result.Default()
-	result.Spec.StudyName = study
-	result.Spec.Task = task
+	result.Spec.StudyName = &study
+	result.Spec.Task = &task
 	result.ObjectMeta.Labels = map[string]string{
 		"study":  study,
 		"schema": schema,
@@ -81,10 +81,10 @@ func NewModel(
 }
 
 func (model *Model) DefaultObjective() catalog.Metric {
-	if model.Spec.Task == catalog.BinaryClassification {
+	if *model.Spec.Task == catalog.BinaryClassification {
 		return catalog.RocAuc
 	}
-	if model.Spec.Task == catalog.Regression {
+	if *model.Spec.Task == catalog.Regression {
 		return catalog.MSLE
 	}
 	return catalog.UnknownMetric
@@ -108,7 +108,7 @@ func (model *Model) IsEnsemble() bool {
 }
 
 func (model *Model) ReportType() ReportType {
-	switch model.Spec.Task {
+	switch *model.Spec.Task {
 	case catalog.BinaryClassification:
 		return BinaryClassificationModelReport
 	case catalog.MultiClassification:
@@ -148,8 +148,8 @@ func (model *Model) ToYamlFile() ([]byte, error) {
 func (model *Model) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/verions/%s/studies/%s/models/%s",
 		model.Namespace,
-		model.Spec.VersionName,
-		model.Spec.StudyName,
+		*model.Spec.VersionName,
+		*model.Spec.StudyName,
 		model.Name)
 }
 
@@ -677,9 +677,9 @@ func (model *Model) Archived() bool {
 func (model *Model) InitModelFromStudy(study *Study) {
 	model.Namespace = study.Namespace
 	*model.Spec.Training = *study.Spec.Training.DeepCopy()
-	model.Spec.StudyName = study.Name
+	model.Spec.StudyName = &study.Name
 	model.Spec.VersionName = study.Spec.VersionName
-	model.Spec.StudyName = study.Name
+	model.Spec.StudyName = &study.Name
 	model.Spec.Task = study.Spec.Task
 	model.Spec.Objective = study.Spec.Objective
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels

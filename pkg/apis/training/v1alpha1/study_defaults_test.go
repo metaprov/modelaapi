@@ -10,25 +10,27 @@ import (
 	"testing"
 
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modeldapi/pkg/util"
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func DefaultStudy() *Study {
+	task := catalog.BinaryClassification
 	return &Study{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "multi-classification-studies",
 			Namespace: "lab",
 		},
 		Spec: StudySpec{
-			VersionName: "iris",
-			Task:        catalog.BinaryClassification,
+			VersionName: util.StrPtr("iris"),
+			Task:        &task,
 			LabRef: &corev1.ObjectReference{
 				Namespace: "modeld-infra",
 				Name:      "lab",
 			},
-			DatasetName: "iris",
+			DatasetName: util.StrPtr("iris"),
 		},
 	}
 

@@ -94,13 +94,13 @@ type AccountSpec struct {
 	// +optional
 	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
 	// Type is the type of account - user, group. default is user
-	// Required.
+	// +optional
 	Type *AccountType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type,casttype=AccountType"`
 	// UserName specifies the name of the account
-	// Required.
 	// +kubebuilder:validation:MinLength=4
 	// +kubebuilder:validation:MaxLength=64
-	UserName string `json:"userName" protobuf:"bytes,4,opt,name=username"`
+	// +optional
+	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
 	// +optional
 	// +kubebuilder:validation:MaxLength=64

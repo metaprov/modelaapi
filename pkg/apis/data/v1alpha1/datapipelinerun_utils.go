@@ -78,11 +78,11 @@ func (w *DataPipelineRun) IsReady() bool {
 }
 
 func (run *DataPipelineRun) StatusString() string {
-	return run.Status.Phase
+	return *run.Status.Phase
 }
 
 func (run *DataPipelineRun) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/wranglings/%s", run.Namespace, run.Spec.VersionName, run.Name)
+	return fmt.Sprintf("dataproducts/%s/versions/%s/wranglings/%s", run.Namespace, *run.Spec.VersionName, run.Name)
 }
 
 func (run *DataPipelineRun) ManifestUri() string {

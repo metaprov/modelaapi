@@ -57,7 +57,7 @@ type MachineImageList struct {
 // MachineImageSpec defines the desired state of MachineImage
 type MachineImageSpec struct {
 	// The packer file definition.
-	Content string `json:"content" protobuf:"bytes,2,opt,name=content"`
+	Content *string `json:"content" protobuf:"bytes,2,opt,name=content"`
 }
 
 type MachineImageStatus struct {

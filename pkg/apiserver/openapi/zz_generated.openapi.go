@@ -2903,7 +2903,6 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunSpec(ref common.ReferenceCallb
 					"dataLocation": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The location of data artifacts that are generated during the run",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -2947,7 +2946,6 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunStatus(ref common.ReferenceCal
 					"output": {
 						SchemaProps: spec.SchemaProps{
 							Description: "the resulting dataset from the flow",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -2955,7 +2953,6 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunStatus(ref common.ReferenceCal
 					"phase": {
 						SchemaProps: spec.SchemaProps{
 							Description: "the phase of the run",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -3292,7 +3289,6 @@ func schema_pkg_apis_data_v1alpha1_DataProductSpec(ref common.ReferenceCallback)
 					"imageLocation": {
 						SchemaProps: spec.SchemaProps{
 							Description: "ImageLocation is the image repository that stores the models images for the product versions Required.",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.ImageLocation"),
 						},
 					},
@@ -4082,7 +4078,6 @@ func schema_pkg_apis_data_v1alpha1_DatasetSpec(ref common.ReferenceCallback) com
 					"location": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Folder of the actual data resides.",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -9071,15 +9066,14 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					},
 					"type": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Type is the type of account - user, group. default is user Required.",
+							Description: "Type is the type of account - user, group. default is user",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"userName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "UserName specifies the name of the account Required.",
-							Default:     "",
+							Description: "UserName specifies the name of the account",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -9176,7 +9170,6 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 						},
 					},
 				},
-				Required: []string{"userName"},
 			},
 		},
 		Dependencies: []string{
@@ -9605,16 +9598,15 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 					},
 					"provider": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Provider specifies the name api provider (E.g. aws) required",
+							Description: "Provider specifies the name api provider (E.g. aws)",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"secretName": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"athena": {
@@ -9795,7 +9787,6 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 						},
 					},
 				},
-				Required: []string{"provider", "secretName"},
 			},
 		},
 		Dependencies: []string{
@@ -10845,7 +10836,6 @@ func schema_pkg_apis_infra_v1alpha1_MachineImageSpec(ref common.ReferenceCallbac
 					"content": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The packer file definition.",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11217,10 +11207,8 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 					},
 					"connectionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "required",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"owner": {
@@ -11231,7 +11219,6 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 						},
 					},
 				},
-				Required: []string{"connectionName"},
 			},
 		},
 		Dependencies: []string{
@@ -12921,9 +12908,8 @@ func schema_pkg_apis_team_v1alpha1_Alert(ref common.ReferenceCallback) common.Op
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"at": {
@@ -13417,7 +13403,6 @@ func schema_pkg_apis_team_v1alpha1_PostMortemSpec(ref common.ReferenceCallback) 
 					"rootCause": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Root cause",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13425,7 +13410,6 @@ func schema_pkg_apis_team_v1alpha1_PostMortemSpec(ref common.ReferenceCallback) 
 					"summary": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Summary of the post morten",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13699,9 +13683,8 @@ func schema_pkg_apis_team_v1alpha1_TimeLineEvent(ref common.ReferenceCallback) c
 				Properties: map[string]spec.Schema{
 					"content": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"at": {
@@ -14189,7 +14172,6 @@ func schema_pkg_apis_training_v1alpha1_DimensionValue(ref common.ReferenceCallba
 					"key": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Key is the partition key",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -14197,13 +14179,11 @@ func schema_pkg_apis_training_v1alpha1_DimensionValue(ref common.ReferenceCallba
 					"value": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Value if the partition value",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 				},
-				Required: []string{"key", "value"},
 			},
 		},
 	}
@@ -16078,16 +16058,14 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					},
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "ServingSiteName is a reference to the product version of this model. This value is based on the study product version Required",
-							Default:     "",
+							Description: "ServingSiteName is a reference to the product version of this model. This value is based on the study product version",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"studyName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "StudyName ref reference the study for this model. IF empty, the model is stand alone Required",
-							Default:     "",
+							Description: "StudyName ref reference the study for this model. IF empty, the model is stand alone",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16102,7 +16080,6 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					"task": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Task is the machine learning task (regression, classification). The task is generated from the study task This is a required field. Required",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16227,7 +16204,6 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 						},
 					},
 				},
-				Required: []string{"versionName", "studyName", "task"},
 			},
 		},
 		Dependencies: []string{
@@ -16932,7 +16908,6 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 					"location": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The location of the notebook",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -17098,14 +17073,12 @@ func schema_pkg_apis_training_v1alpha1_PreprocessingSpec(ref common.ReferenceCal
 					"categorical": {
 						SchemaProps: spec.SchemaProps{
 							Description: "One or more categorical pipelines.",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.CategoricalPipelineSpec"),
 						},
 					},
 					"numeric": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Specify the column transformation for numeric columns",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.NumericPipelineSpec"),
 						},
 					},
@@ -17358,7 +17331,6 @@ func schema_pkg_apis_training_v1alpha1_ReportSpec(ref common.ReferenceCallback) 
 					"location": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The report location",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -17608,7 +17580,6 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The version of the study required",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17629,7 +17600,6 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "DatasetName refer to the dataset object for which the study is for. Required.",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17637,7 +17607,6 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					"task": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Task specify the machine learning task (e.g classification). This must match the task of the data product. Required.",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},

@@ -49,7 +49,6 @@ spec:
             description: NotifierSpec defines the desired state of Notifier
             properties:
               connectionName:
-                description: required
                 type: string
               description:
                 description: User provided description
@@ -100,8 +99,6 @@ spec:
                 description: Address within the provider to send the notifiaction
                   to.
                 type: string
-            required:
-            - connectionName
             type: object
           status:
             description: NotifierStatus is the observed state of a Notifier

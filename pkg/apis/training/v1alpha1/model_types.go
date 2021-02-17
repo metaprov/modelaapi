@@ -139,21 +139,19 @@ type ModelSpec struct {
 	// ServingSiteName is a reference to the product version of this model. This value is based on the study product version
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	// Required
-	VersionName string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// StudyName ref reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	// Required
-	StudyName string `json:"studyName" protobuf:"bytes,3,opt,name=studyName"`
+	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// Required.
-	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
 	// The task is generated from the study task
 	// This is a required field.
 	// Required
-	Task catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,5,opt,name=task"`
 	// Objective is the metric by which the system compare models
 	// Default: based on the task. classification is logloss. Regression is rmse
 	// +optional
@@ -321,10 +319,10 @@ type ClassicalEstimatorSpec struct {
 // Specification of the pre processing pipeline
 type PreprocessingSpec struct {
 	// One or more categorical pipelines.
-	Categorical CategoricalPipelineSpec `json:"categorical,omitempty" protobuf:"bytes,1,opt,name=categorical"`
+	Categorical *CategoricalPipelineSpec `json:"categorical,omitempty" protobuf:"bytes,1,opt,name=categorical"`
 	// Specify the column transformation for numeric columns
 	// +optional
-	Numeric NumericPipelineSpec `json:"numeric,omitempty" protobuf:"bytes,2,opt,name=numeric"`
+	Numeric *NumericPipelineSpec `json:"numeric,omitempty" protobuf:"bytes,2,opt,name=numeric"`
 	// Specify the column transformation for text columns
 	// +optional
 	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,3,opt,name=text"`
@@ -566,7 +564,7 @@ type FreqSpec struct {
 	// optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"varint,1,opt,name=interval"`
 	// required
-	Units catalog.Freq `json:"unit,omitempty" protobuf:"bytes,2,opt,name=unit"`
+	Units *catalog.Freq `json:"unit,omitempty" protobuf:"bytes,2,opt,name=unit"`
 }
 
 // Specify the back test
@@ -582,7 +580,7 @@ type BacktestSpec struct {
 // Partition key values are used for the partition
 type DimensionValue struct {
 	// Key is the partition key
-	Key string `json:"key" protobuf:"bytes,1,opt,name=key"`
+	Key *string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	// Value if the partition value
-	Value string `json:"value" protobuf:"bytes,2,opt,name=value"`
+	Value *string `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }

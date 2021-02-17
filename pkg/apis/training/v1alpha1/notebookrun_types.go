@@ -71,10 +71,10 @@ type NotebookRunList struct {
 type NotebookRunSpec struct {
 	// The product of the resource
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// A ref to the notebook with the definition.
 	// +optional
-	NotebookName string `json:"notebookName,omitempty" protobuf:"bytes,2,opt,name=notebookName"`
+	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,2,opt,name=notebookName"`
 	// Values to pass to the notebook during execution
 	// +optional
 	Values []NotebookVarValue `json:"values,omitempty" protobuf:"bytes,3,rep,name=values"`

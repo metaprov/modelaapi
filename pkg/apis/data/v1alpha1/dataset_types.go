@@ -106,12 +106,12 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	// required.
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// DataSourceName is the name of the data source which created this dataset. For example flat file
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	DataSourceName string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
+	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
@@ -134,7 +134,7 @@ type DatasetSpec struct {
 	Origin *DataLocation `json:"origin,omitempty" protobuf:"bytes,12,opt,name=origin"`
 	// Folder of the actual data resides.
 	// +required.
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
+	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 }
 
 // DatasetStatus defines the observed state of Dataset

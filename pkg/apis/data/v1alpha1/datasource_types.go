@@ -33,26 +33,26 @@ type DataSourceCondition struct {
 type Table struct {
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The actual query. this is required.
 	// +optional
-	Query string `json:"query,omitempty" protobuf:"bytes,3,opt,name=query"`
+	Query *string `json:"query,omitempty" protobuf:"bytes,3,opt,name=query"`
 	// Type of server
 	// +optional
-	ServerType DatabaseServerType `json:"serverType,omitempty" protobuf:"bytes,4,opt,name=serverType"`
+	ServerType *DatabaseServerType `json:"serverType,omitempty" protobuf:"bytes,4,opt,name=serverType"`
 	// ConnectionString to connect to the database server
 	// +kubebuilder:validation:MaxLength=128
 	// +optional
-	ConnectionString string `json:"connectionString,omitempty" protobuf:"bytes,5,opt,name=connectionString"`
+	ConnectionString *string `json:"connectionString,omitempty" protobuf:"bytes,5,opt,name=connectionString"`
 	// Connection refer to a connection object that point to secret
 	// +optional
 	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,6,opt,name=connectionRef"`
 	// The version of the server.
 	// +optional
-	ServerVersion string `json:"serverVersion,omitempty" protobuf:"bytes,7,opt,name=serverVersion"`
+	ServerVersion *string `json:"serverVersion,omitempty" protobuf:"bytes,7,opt,name=serverVersion"`
 }
 
 // the data source type

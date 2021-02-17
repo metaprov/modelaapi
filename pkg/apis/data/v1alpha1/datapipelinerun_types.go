@@ -62,9 +62,8 @@ type DataPipelineRunCondition struct {
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              DataPipelineRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status DataPipelineRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              DataPipelineRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            DataPipelineRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -80,15 +79,15 @@ type DataPipelineRunList struct {
 type DataPipelineRunSpec struct {
 	// The product of the rejoiner
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +optional
-	Description string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The data product
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	DataPipelineName string `json:"datapipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
+	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
 	// The location of data artifacts that are generated during the run
-	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,4,opt,name=dataLocation"`
+	DataLocation *DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,4,opt,name=dataLocation"`
 	// The owner account name
 	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -101,9 +100,9 @@ type DataPipelineRunStatus struct {
 	// Pointers to the done datasets
 	Inputs []string `json:"inputs" protobuf:"bytes,1,rep,name=inputs"`
 	// the resulting dataset from the flow
-	Output string `json:"output" protobuf:"bytes,2,opt,name=output"`
+	Output *string `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
-	Phase string `json:"phase" protobuf:"bytes,3,opt,name=phase"`
+	Phase *string `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// StartTime is the times that this data pipeline started
 	// +optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`

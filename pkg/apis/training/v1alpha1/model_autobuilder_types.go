@@ -105,10 +105,10 @@ type ModelAutobuilderSpec struct {
 	// The location of the data in the cloud
 	// +kubebuilder:validation:MaxLength=256
 	// +optional
-	Path string `json:"path,omitempty" protobuf:"bytes,5,opt,name=path"`
+	Path *string `json:"path,omitempty" protobuf:"bytes,5,opt,name=path"`
 	// The machine learning task (regression/classification)
 	// required
-	Task catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
 	// The task objective. this is how models will be scored.
 	// If not defined this will be set to the default objective for the task
 	// +optional

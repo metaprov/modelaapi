@@ -86,13 +86,13 @@ message AccountSpec {
   optional string groupName = 2;
 
   // Type is the type of account - user, group. default is user
-  // Required.
+  // +optional
   optional string type = 3;
 
   // UserName specifies the name of the account
-  // Required.
   // +kubebuilder:validation:MinLength=4
   // +kubebuilder:validation:MaxLength=64
+  // +optional
   optional string username = 4;
 
   // First FileName is the user first name
@@ -273,9 +273,10 @@ message ConnectionSpec {
   optional string category = 2;
 
   // Provider specifies the name api provider (E.g. aws)
-  // required
+  // +optional
   optional string provider = 3;
 
+  // +optional
   optional string secretName = 4;
 
   // +optional
@@ -381,6 +382,7 @@ message ConnectionSpec {
   optional WebhookSpec webhook = 38;
 
   // Owner
+  // +optional
   optional string owner = 39;
 }
 
@@ -837,12 +839,14 @@ message NotifierSpec {
   optional string description = 3;
 
   // Address within the provider to send the notifiaction to.
+  // +optional
   optional string to = 4;
 
   // The sender address. For example, from email.
+  // +optional
   optional string from = 5;
 
-  // required
+  // +optional
   optional string connectionName = 6;
 
   // The owner account name

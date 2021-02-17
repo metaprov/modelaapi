@@ -291,7 +291,7 @@ func (b *ModelAutobuilder) CreateDataProduct() *data.DataProduct {
 				BucketName: "default-digitalocean-bucket",
 				Path:       "modeld/live/tenants/default-tenant/dataproducts/" + b.DataProductName(),
 			},
-			ImageLocation: data.ImageLocation{
+			ImageLocation: &data.ImageLocation{
 				Name:                   util.StrPtr(b.Name),
 				RegistryConnectionName: util.StrPtr("default-docker-registry"),
 			},
@@ -389,7 +389,7 @@ func (b *ModelAutobuilder) SchemaName() string {
 
 // Answer the last component in the path
 func (b *ModelAutobuilder) FileName() string {
-	return b.Spec.Path
+	return *b.Spec.Path
 }
 
 func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
@@ -409,16 +409,16 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			},
 		},
 		Spec: data.DatasetSpec{
-			VersionName:    b.DataProductVersionName(),
-			DataSourceName: b.DatasourceName(),
+			VersionName:    util.StrPtr(b.DataProductVersionName()),
+			DataSourceName: util.StrPtr(b.DatasourceName()),
 			Description:    util.StrPtr(""),
 			Reported:       util.BoolPtr(true),
 			Validated:      util.BoolPtr(true),
 			Labeled:        util.BoolPtr(true),
 			Origin: &data.DataLocation{
-				Path: b.Spec.Path,
+				Path: *b.Spec.Path,
 			},
-			Location: data.DataLocation{
+			Location: &data.DataLocation{
 				Path: rawPath,
 			},
 		},
@@ -449,13 +449,13 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			},
 		},
 		Spec: StudySpec{
-			VersionName: b.DataProductVersionName(),
+			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
 			LabRef: &v1.ObjectReference{
 				Namespace: "default-tenant",
 				Name:      "default-lab",
 			},
-			DatasetName: b.DatasetName(),
+			DatasetName: util.StrPtr(b.DatasetName()),
 			Task:        b.Spec.Task,
 			Objective:   b.Spec.Objective,
 			Search: &ModelSearchSpec{

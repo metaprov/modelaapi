@@ -32,7 +32,7 @@ func NewStudy(ns string, name string, dataset string) *Study {
 	result := &Study{}
 	result.ObjectMeta.Name = name
 	result.ObjectMeta.Namespace = ns
-	result.Spec.DatasetName = dataset
+	result.Spec.DatasetName = &dataset
 	result.Kind = "StudyName"
 	result.Default()
 	result.Labels = map[string]string{
@@ -133,7 +133,7 @@ func (r *Study) IsPartitioned() bool {
 }
 
 func (r *Study) IsForecast() bool {
-	return r.Spec.Task == catalog.Forcasting
+	return *r.Spec.Task == catalog.Forcasting
 }
 
 // Compute the current phase based on the condition
@@ -142,7 +142,7 @@ func (study *Study) Phase() StudyPhase {
 }
 
 func (study *Study) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/studies/%s", study.Namespace, study.Spec.VersionName, study.Name)
+	return fmt.Sprintf("dataproducts/%s/versions/%s/studies/%s", study.Namespace, *study.Spec.VersionName, study.Name)
 }
 
 func (study *Study) ManifestUri() string {
@@ -482,7 +482,7 @@ func (study *Study) CreateReport(key string, bucketName string) *Report {
 		bucketName)
 
 	report.Label("study", study.Name)
-	report.Spec.VersionName = study.Spec.VersionName
+	report.Spec.VersionName = *study.Spec.VersionName
 	report.Spec.EntityRef = v1.ObjectReference{
 		Namespace: study.Namespace,
 		Name:      study.Name,

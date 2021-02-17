@@ -259,9 +259,6 @@ spec:
                         value:
                           description: Value if the partition value
                           type: string
-                      required:
-                      - key
-                      - value
                       type: object
                     type: array
                   dimensions:
@@ -612,7 +609,7 @@ spec:
                 type: boolean
               studyName:
                 description: StudyName ref reference the study for this model. IF
-                  empty, the model is stand alone Required
+                  empty, the model is stand alone
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -771,9 +768,6 @@ spec:
                             value:
                               description: Value if the partition value
                               type: string
-                          required:
-                          - key
-                          - value
                           type: object
                         type: array
                       dimensions:
@@ -895,14 +889,9 @@ spec:
               versionName:
                 description: ServingSiteName is a reference to the product version
                   of this model. This value is based on the study product version
-                  Required
                 maxLength: 63
                 minLength: 1
                 type: string
-            required:
-            - studyName
-            - task
-            - versionName
             type: object
           status:
             description: ModelStatus defines the observed state of the Model
