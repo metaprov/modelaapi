@@ -37,6 +37,8 @@ install:
 	python3 setup.py install
 
 # Deploy to PyPI
-upload:
+upload-to-test:
 	twine upload -r pypitest dist/*.tar.gz
-	
+
+upload:
+	twine upload -r pypi dist/*.tar.gz
