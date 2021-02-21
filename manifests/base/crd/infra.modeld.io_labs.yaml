@@ -50,11 +50,13 @@ spec:
             description: LabSpec defines the desired state of a TenantRef
             properties:
               clusterName:
+                default: ""
                 description: Optional cluster name, in case that the lab is not on
                   the working cluster
                 type: string
               description:
-                description: User provided description Default to empty.
+                default: ""
+                description: User provided description
                 maxLength: 256
                 type: string
               limitRangeSpec:

@@ -24,9 +24,11 @@ type Comment struct {
 	// The author of the comment
 	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,2,opt,name=authorRef"`
 	// If this comment is a reply to an id
+	// +kubebuilder:default = ""
 	// +optional
 	ReplyToID *string `json:"replyTo,omitempty" protobuf:"bytes,3,opt,name=replyTo"`
 	// The content of the comment
+	// +kubebuilder:default = ""
 	Content *string `json:"content,omitempty" protobuf:"bytes,4,opt,name=content"`
 	// Time when the comment was posted
 	PostedAt *metav1.Time `json:"postedAt,omitempty" protobuf:"bytes,5,opt,name=postedAt"`
@@ -78,6 +80,7 @@ type ConversationSpec struct {
 	// Messages are the messages of the conversation.
 	Messages []Comment `json:"messages" protobuf:"bytes,2,rep,name=messages"`
 	// The owner account name
+	// +kubebuilder:default = ""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }

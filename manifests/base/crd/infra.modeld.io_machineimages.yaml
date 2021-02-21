@@ -43,8 +43,6 @@ spec:
               content:
                 description: The packer file definition.
                 type: string
-            required:
-            - content
             type: object
           status:
             properties:

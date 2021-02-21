@@ -70,9 +70,11 @@ type VirtualVolumeSpec struct {
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User provided description
 	// +optional
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The owner account name
+	// +kubebuilder:default = "no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }

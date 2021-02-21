@@ -59,31 +59,44 @@ type ServingSiteList struct {
 
 type ServingSiteSpec struct {
 	// User provided description
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default = ""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// Reference to the tenant owning this serving site.
 	// Default to default tenant.
+	// +kubebuilder:validation:Optional
 	// +optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
 	// Resource Quota for the serving site
 	// By default, not quota is applied
+	// +kubebuilder:validation:Optional
 	// +optional
 	QuotaSpec *v1.ResourceQuotaSpec `json:"quotaSpec,omitempty" protobuf:"bytes,3,opt,name=quotaSpec"`
 	// limit range for the serving site
-	// By default, no limit range apply.
+	// By default, no limit range apply
+	// +kubebuilder:validation:Optional.
 	// +optional
 	LimitRangeSpec *v1.LimitRangeSpec `json:"limitRangeSpec,omitempty" protobuf:"bytes,4,opt,name=limitRangeSpec"`
 	// IngressName denote the name of the ingress object where the serving site
 	// places the external points used to access the predictors
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default = ""
 	// +optional
 	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,5,opt,name=ingressName"`
 	// The FDQN for this site. This will register with ingress.
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default = ""
 	// +optional
 	FDQN *string `json:"fdqn,omitempty" protobuf:"bytes,6,opt,name=fdqn"`
 	// The virtual cluster name in case that the lab is not on the same cluster
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default = ""
 	// +optional
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,7,opt,name=clusterName"`
 	// The owner account name
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default = "no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

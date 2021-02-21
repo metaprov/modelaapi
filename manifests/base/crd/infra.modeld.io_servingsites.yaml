@@ -60,7 +60,7 @@ spec:
                 type: string
               limitRangeSpec:
                 description: limit range for the serving site By default, no limit
-                  range apply.
+                  range apply
                 properties:
                   limits:
                     description: Limits is the list of LimitRangeItem objects that

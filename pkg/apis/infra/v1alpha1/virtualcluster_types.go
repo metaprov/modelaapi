@@ -65,6 +65,7 @@ type VirtualClusterSpec struct {
 	// +optional
 	Nodes *int32 `json:"nodes,omitempty" protobuf:"varint,2,opt,name=nodes"`
 	// The class of nodes or vm
+	// +kubebuilder:default = ""
 	// +optional
 	NodeClassName *string `json:"nodeClassName,omitempty" protobuf:"bytes,3,opt,name=nodeClassName"`
 	// The desired number of gpus
@@ -74,6 +75,7 @@ type VirtualClusterSpec struct {
 	// +optional
 	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,4,opt,name=gpus"`
 	// The class of gpu.
+	// +kubebuilder:default = ""
 	// +optional
 	GpuClassName *string `json:"gpuClassName,omitempty" protobuf:"bytes,5,opt,name=gpuClassName"`
 	// Volume, if needed. The volume is monuted on all nodes.
@@ -87,6 +89,7 @@ type VirtualClusterSpec struct {
 	//+optional
 	Spot *bool `json:"spot,omitempty" protobuf:"bytes,7,opt,name=spot"`
 	// Name of the provider connection
+	// +kubebuilder:default = ""
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
 	// the account name of the owner of this cluster
 	//+kubebuilder:default=""

@@ -99,6 +99,8 @@ spec:
                 description: Address within the provider to send the notifiaction
                   to.
                 type: string
+            required:
+            - connectionName
             type: object
           status:
             description: NotifierStatus is the observed state of a Notifier

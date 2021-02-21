@@ -58,16 +58,17 @@ spec:
             description: AccountSpec defines the desired state of Account
             properties:
               admin:
+                default: false
                 description: User is admin. Admin have full control on other accounts.
-                  Default to false.
                 type: boolean
               email:
                 description: Email specify the email of the user
                 maxLength: 64
                 type: string
               emailPassword:
+                default: false
                 description: Email account creation event to user (using the user
-                  email) Default to false.
+                  email)
                 type: boolean
               firstName:
                 description: First FileName is the user first name
@@ -127,6 +128,7 @@ spec:
                   type: object
                 type: array
               resetPassword:
+                default: false
                 description: User need to reset password upon login
                 type: boolean
               siteBindings:
@@ -187,6 +189,7 @@ spec:
                     type: string
                 type: object
               type:
+                default: user
                 description: Type is the type of account - user, group. default is
                   user
                 enum:

@@ -1258,6 +1258,9 @@ export class LicenseSpec extends jspb.Message {
   getVision(): boolean;
   setVision(value: boolean): LicenseSpec;
 
+  getChatbot(): boolean;
+  setChatbot(value: boolean): LicenseSpec;
+
   getProductname(): string;
   setProductname(value: string): LicenseSpec;
 
@@ -1296,6 +1299,7 @@ export namespace LicenseSpec {
     forecast: boolean,
     nlp: boolean,
     vision: boolean,
+    chatbot: boolean,
     productname: string,
     pricename: string,
     expireat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -1342,8 +1346,8 @@ export namespace LinodeSpec {
 }
 
 export class MSSqlServerSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): MSSqlServerSpec;
+  getHost(): string;
+  setHost(value: string): MSSqlServerSpec;
 
   getPort(): number;
   setPort(value: number): MSSqlServerSpec;
@@ -1370,7 +1374,7 @@ export class MSSqlServerSpec extends jspb.Message {
 
 export namespace MSSqlServerSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     domain: string,
@@ -1856,8 +1860,8 @@ export namespace OpenstackSpec {
 }
 
 export class OracleSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): OracleSpec;
+  getHost(): string;
+  setHost(value: string): OracleSpec;
 
   getPort(): number;
   setPort(value: number): OracleSpec;
@@ -1887,7 +1891,7 @@ export class OracleSpec extends jspb.Message {
 
 export namespace OracleSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     servicename: string,
@@ -1928,8 +1932,8 @@ export namespace OvhSpec {
 }
 
 export class PostgresSQLSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): PostgresSQLSpec;
+  getHost(): string;
+  setHost(value: string): PostgresSQLSpec;
 
   getPort(): number;
   setPort(value: number): PostgresSQLSpec;
@@ -1953,7 +1957,7 @@ export class PostgresSQLSpec extends jspb.Message {
 
 export namespace PostgresSQLSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     username: string,
@@ -1962,8 +1966,8 @@ export namespace PostgresSQLSpec {
 }
 
 export class PrestoSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): PrestoSpec;
+  getHost(): string;
+  setHost(value: string): PrestoSpec;
 
   getPort(): number;
   setPort(value: number): PrestoSpec;
@@ -1990,7 +1994,7 @@ export class PrestoSpec extends jspb.Message {
 
 export namespace PrestoSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     catalog: string,
     schema: string,
@@ -2000,8 +2004,8 @@ export namespace PrestoSpec {
 }
 
 export class RedShiftSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): RedShiftSpec;
+  getHost(): string;
+  setHost(value: string): RedShiftSpec;
 
   getPort(): number;
   setPort(value: number): RedShiftSpec;
@@ -2025,7 +2029,7 @@ export class RedShiftSpec extends jspb.Message {
 
 export namespace RedShiftSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     username: string,

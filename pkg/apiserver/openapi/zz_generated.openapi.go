@@ -9108,14 +9108,14 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					},
 					"admin": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User is admin. Admin have full control on other accounts. Default to false.",
+							Description: "User is admin. Admin have full control on other accounts.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"emailPassword": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Email account creation event to user (using the user email) Default to false.",
+							Description: "Email account creation event to user (using the user email)",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -9399,9 +9399,8 @@ func schema_pkg_apis_infra_v1alpha1_CassandraSpec(ref common.ReferenceCallback) 
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "default 9042",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -9781,9 +9780,8 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Owner",
-							Type:        []string{"string"},
-							Format:      "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 				},
@@ -10208,7 +10206,7 @@ func schema_pkg_apis_infra_v1alpha1_LabSpec(ref common.ReferenceCallback) common
 				Properties: map[string]spec.Schema{
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description Default to empty.",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10444,8 +10442,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"secretName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The secret containing the license token Required.",
-							Default:     "",
+							Description: "The secret containing the license token",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10529,6 +10526,13 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 							Format:      "",
 						},
 					},
+					"chatbot": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Is chatbot feature supported",
+							Type:        []string{"boolean"},
+							Format:      "",
+						},
+					},
 					"productName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The product name",
@@ -10557,6 +10561,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 						},
 					},
 				},
+				Required: []string{"secretName"},
 			},
 		},
 		Dependencies: []string{
@@ -10617,7 +10622,7 @@ func schema_pkg_apis_infra_v1alpha1_MSSqlServerSpec(ref common.ReferenceCallback
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -10625,9 +10630,8 @@ func schema_pkg_apis_infra_v1alpha1_MSSqlServerSpec(ref common.ReferenceCallback
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default 1433",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -10951,9 +10955,8 @@ func schema_pkg_apis_infra_v1alpha1_MongoDbSpec(ref common.ReferenceCallback) co
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "default 27017",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -10994,9 +10997,8 @@ func schema_pkg_apis_infra_v1alpha1_MySqlSpec(ref common.ReferenceCallback) comm
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "default 3306",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11219,6 +11221,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 						},
 					},
 				},
+				Required: []string{"connectionName"},
 			},
 		},
 		Dependencies: []string{
@@ -11320,7 +11323,7 @@ func schema_pkg_apis_infra_v1alpha1_OracleSpec(ref common.ReferenceCallback) com
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -11328,9 +11331,8 @@ func schema_pkg_apis_infra_v1alpha1_OracleSpec(ref common.ReferenceCallback) com
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default 1521",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11411,7 +11413,7 @@ func schema_pkg_apis_infra_v1alpha1_PostgresSQLSpec(ref common.ReferenceCallback
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -11419,9 +11421,8 @@ func schema_pkg_apis_infra_v1alpha1_PostgresSQLSpec(ref common.ReferenceCallback
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "5432",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11454,7 +11455,7 @@ func schema_pkg_apis_infra_v1alpha1_PrestoSpec(ref common.ReferenceCallback) com
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -11462,9 +11463,8 @@ func schema_pkg_apis_infra_v1alpha1_PrestoSpec(ref common.ReferenceCallback) com
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default 8080",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"catalog": {
@@ -11503,7 +11503,7 @@ func schema_pkg_apis_infra_v1alpha1_RedShiftSpec(ref common.ReferenceCallback) c
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -11511,9 +11511,8 @@ func schema_pkg_apis_infra_v1alpha1_RedShiftSpec(ref common.ReferenceCallback) c
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default 5439",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11715,7 +11714,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref common.ReferenceCallback
 					},
 					"limitRangeSpec": {
 						SchemaProps: spec.SchemaProps{
-							Description: "limit range for the serving site By default, no limit range apply.",
+							Description: "limit range for the serving site By default, no limit range apply",
 							Ref:         ref("k8s.io/api/core/v1.LimitRangeSpec"),
 						},
 					},

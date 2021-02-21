@@ -32,10 +32,12 @@ message Comment {
   optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
 
   // If this comment is a reply to an id
+  // +kubebuilder:default = ""
   // +optional
   optional string replyTo = 3;
 
   // The content of the comment
+  // +kubebuilder:default = ""
   optional string content = 4;
 
   // Time when the comment was posted
@@ -95,6 +97,7 @@ message ConversationSpec {
   repeated Comment messages = 2;
 
   // The owner account name
+  // +kubebuilder:default = ""
   // +optional
   optional string owner = 3;
 }
@@ -256,6 +259,7 @@ message RunBookStatus {
 
 message TimeLineEvent {
   // +optional
+  // +kubebuilder:default = ""
   optional string content = 1;
 
   // +optional

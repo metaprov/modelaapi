@@ -64,6 +64,7 @@ type PostMortemList struct {
 
 type TimeLineEvent struct {
 	// +optional
+	// +kubebuilder:default = ""
 	Content *string `json:"content" protobuf:"bytes,1,opt,name=content"`
 	// +optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`

@@ -53,6 +53,9 @@ spec:
           spec:
             description: LicenseSpec defines the desired state of License
             properties:
+              chatbot:
+                description: Is chatbot feature supported
+                type: boolean
               email:
                 type: string
               expireAt:
@@ -96,7 +99,7 @@ spec:
                 description: The product name
                 type: string
               secretName:
-                description: The secret containing the license token Required.
+                description: The secret containing the license token
                 maxLength: 63
                 minLength: 1
                 type: string

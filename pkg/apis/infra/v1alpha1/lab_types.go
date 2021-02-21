@@ -52,21 +52,27 @@ type Lab struct {
 // LabSpec defines the desired state of a TenantRef
 type LabSpec struct {
 	// User provided description
-	// Default to empty.
-	// +optional
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default=""
 	// +kubebuilder:validation:MaxLength=256
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
+	// +kubebuilder:validation:Optional
 	// Reference to the tenant owning this lab
 	// Default to default tenant.
 	TenantRef *corev1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
 	// Resource Quota
+	// +kubebuilder:validation:Optional
 	// +optional
 	QuotaSpec *corev1.ResourceQuotaSpec `json:"quotaSpec,omitempty" protobuf:"bytes,3,opt,name=quotaSpec"`
+	// +kubebuilder:validation:Optional
 	// +optional
 	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRangeSpec,omitempty" protobuf:"bytes,4,opt,name=limitRangeSpec"`
 	// Optional cluster name, in case that the lab is not on the working cluster
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default=""
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,5,opt,name=clusterName"`
 	// The owner account name
+	// +kubebuilder:validation:Optional
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
 }

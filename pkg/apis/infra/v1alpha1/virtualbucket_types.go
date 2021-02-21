@@ -64,14 +64,19 @@ type VirtualBucketSpec struct {
 	// +optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,name=tenantRef"`
 	// ConnectionName specify the api connections of this bucket cloud provider.
+	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User provided description
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
+	// +kubebuilder:default = ""
+	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Owner of the bucket
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default = ""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
