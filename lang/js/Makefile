@@ -6,7 +6,7 @@ PROJECT := modeldapi
 LOCALPATH := $(CURDIR)/$(PROJECT)
 
 # Export targets not associated with files
-.PHONY: clean publish
+.PHONY: clean build install upload
 
 # Clean build files
 clean:
@@ -26,13 +26,13 @@ clean:
 
 # Build the universal wheel and source distribution
 build:
-	npm run build
+	npm run build:prod
 
 # Install the package from source
 install:
 	npm install
 
 # Deploy to PyPI
-upload:
+upload: build
 	npm publish --access public
 	
