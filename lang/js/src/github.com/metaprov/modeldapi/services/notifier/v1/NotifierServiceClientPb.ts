@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.notifier.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.notifier.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class NotifierServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/ListNotifiers',
+          '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/ListNotifiers',
         request,
         metadata || {},
         this.methodInfoListNotifiers,
@@ -69,7 +69,7 @@ export class NotifierServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/ListNotifiers',
+      '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/ListNotifiers',
     request,
     metadata || {},
     this.methodInfoListNotifiers);
@@ -101,7 +101,7 @@ export class NotifierServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/CreateNotifier',
+          '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/CreateNotifier',
         request,
         metadata || {},
         this.methodInfoCreateNotifier,
@@ -109,7 +109,7 @@ export class NotifierServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/CreateNotifier',
+      '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/CreateNotifier',
     request,
     metadata || {},
     this.methodInfoCreateNotifier);
@@ -141,7 +141,7 @@ export class NotifierServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/GetNotifier',
+          '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/GetNotifier',
         request,
         metadata || {},
         this.methodInfoGetNotifier,
@@ -149,7 +149,7 @@ export class NotifierServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/GetNotifier',
+      '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/GetNotifier',
     request,
     metadata || {},
     this.methodInfoGetNotifier);
@@ -181,7 +181,7 @@ export class NotifierServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/UpdateNotifier',
+          '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/UpdateNotifier',
         request,
         metadata || {},
         this.methodInfoUpdateNotifier,
@@ -189,7 +189,7 @@ export class NotifierServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/UpdateNotifier',
+      '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/UpdateNotifier',
     request,
     metadata || {},
     this.methodInfoUpdateNotifier);
@@ -221,7 +221,7 @@ export class NotifierServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/DeleteNotifier',
+          '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/DeleteNotifier',
         request,
         metadata || {},
         this.methodInfoDeleteNotifier,
@@ -229,7 +229,7 @@ export class NotifierServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.notifier.v1.NotifierService/DeleteNotifier',
+      '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/DeleteNotifier',
     request,
     metadata || {},
     this.methodInfoDeleteNotifier);

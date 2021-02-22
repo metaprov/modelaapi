@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeld.services.postmortem.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.postmortem.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PostMortemServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/ListPostMortems',
+          '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/ListPostMortems',
         request,
         metadata || {},
         this.methodInfoListPostMortems,
@@ -69,7 +69,7 @@ export class PostMortemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/ListPostMortems',
+      '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/ListPostMortems',
     request,
     metadata || {},
     this.methodInfoListPostMortems);
@@ -101,7 +101,7 @@ export class PostMortemServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/CreatePostMortem',
+          '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/CreatePostMortem',
         request,
         metadata || {},
         this.methodInfoCreatePostMortem,
@@ -109,7 +109,7 @@ export class PostMortemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/CreatePostMortem',
+      '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/CreatePostMortem',
     request,
     metadata || {},
     this.methodInfoCreatePostMortem);
@@ -141,7 +141,7 @@ export class PostMortemServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/GetPostMortem',
+          '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/GetPostMortem',
         request,
         metadata || {},
         this.methodInfoGetPostMortem,
@@ -149,7 +149,7 @@ export class PostMortemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/GetPostMortem',
+      '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/GetPostMortem',
     request,
     metadata || {},
     this.methodInfoGetPostMortem);
@@ -181,7 +181,7 @@ export class PostMortemServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/UpdatePostMortem',
+          '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/UpdatePostMortem',
         request,
         metadata || {},
         this.methodInfoUpdatePostMortem,
@@ -189,7 +189,7 @@ export class PostMortemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/UpdatePostMortem',
+      '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/UpdatePostMortem',
     request,
     metadata || {},
     this.methodInfoUpdatePostMortem);
@@ -221,7 +221,7 @@ export class PostMortemServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/DeletePostMortem',
+          '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/DeletePostMortem',
         request,
         metadata || {},
         this.methodInfoDeletePostMortem,
@@ -229,7 +229,7 @@ export class PostMortemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeld.services.postmortem.v1.PostMortemService/DeletePostMortem',
+      '/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/DeletePostMortem',
     request,
     metadata || {},
     this.methodInfoDeletePostMortem);
