@@ -19,10 +19,7 @@ message ListLabsResponse {
 message LabResponse {}
 
 message CreateLabRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
 }
 
 message CreateLabResponse {
@@ -30,10 +27,7 @@ message CreateLabResponse {
 }
 
 message UpdateLabRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
 }
 
 message UpdateLabResponse {

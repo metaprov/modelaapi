@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z-github.com/metaprov/modeldapi/services/lab/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7github.com/metaprov/modeldapi/services/lab/v1/lab.proto\x12-github.com.metaprov.modeldapi.services.lab.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xaf\x01\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12Z\n\x06labels\x18\x03 \x03(\x0b\x32J.github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x10ListLabsResponse\x12M\n\x05items\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabList\"\r\n\x0bLabResponse\"\x8d\x02\n\x10\x43reateLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.LabelsEntry\x12L\n\x04spec\x18\x04 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x13\n\x11\x43reateLabResponse\"\x8d\x02\n\x10UpdateLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12[\n\x06labels\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.LabelsEntry\x12L\n\x04spec\x18\x05 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x13\n\x11UpdateLabResponse\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x0eGetLabResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17GetLabNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x18GetLabNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteLabResponse2\xeb\x06\n\nLabService\x12\xa1\x01\n\x08ListLabs\x12>.github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest\x1a?.github.com.metaprov.modeldapi.services.lab.v1.ListLabsResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/v1/labs\x12\xa5\x01\n\tCreateLab\x12?.github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest\x1a@.github.com.metaprov.modeldapi.services.lab.v1.CreateLabResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\x08/v1/labs:\x03lab\x12\xaf\x01\n\x06GetLab\x12<.github.com.metaprov.modeldapi.services.lab.v1.GetLabRequest\x1a=.github.com.metaprov.modeldapi.services.lab.v1.GetLabResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/labs/{lab.metadata.name}\x12\xb0\x01\n\tUpdateLab\x12?.github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest\x1a@.github.com.metaprov.modeldapi.services.lab.v1.UpdateLabResponse\" \x82\xd3\xe4\x93\x02\x1a\x1a\x13/v1/labs/{lab_name}:\x03lab\x12\xab\x01\n\tDeleteLab\x12?.github.com.metaprov.modeldapi.services.lab.v1.DeleteLabRequest\x1a@.github.com.metaprov.modeldapi.services.lab.v1.DeleteLabResponse\"\x1b\x82\xd3\xe4\x93\x02\x15*\x13/v1/labs/{lab_name}B/Z-github.com/metaprov/modeldapi/services/lab/v1b\x06proto3'
+  serialized_pb=b'\n7github.com/metaprov/modeldapi/services/lab/v1/lab.proto\x12-github.com.metaprov.modeldapi.services.lab.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xaf\x01\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12Z\n\x06labels\x18\x03 \x03(\x0b\x32J.github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x10ListLabsResponse\x12M\n\x05items\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabList\"\r\n\x0bLabResponse\"\\\n\x10\x43reateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x13\n\x11\x43reateLabResponse\"\\\n\x10UpdateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x13\n\x11UpdateLabResponse\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x0eGetLabResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17GetLabNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x18GetLabNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11\x44\x65leteLabResponse2\xeb\x06\n\nLabService\x12\xa1\x01\n\x08ListLabs\x12>.github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest\x1a?.github.com.metaprov.modeldapi.services.lab.v1.ListLabsResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/v1/labs\x12\xa5\x01\n\tCreateLab\x12?.github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest\x1a@.github.com.metaprov.modeldapi.services.lab.v1.CreateLabResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\x08/v1/labs:\x03lab\x12\xaf\x01\n\x06GetLab\x12<.github.com.metaprov.modeldapi.services.lab.v1.GetLabRequest\x1a=.github.com.metaprov.modeldapi.services.lab.v1.GetLabResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/labs/{lab.metadata.name}\x12\xb0\x01\n\tUpdateLab\x12?.github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest\x1a@.github.com.metaprov.modeldapi.services.lab.v1.UpdateLabResponse\" \x82\xd3\xe4\x93\x02\x1a\x1a\x13/v1/labs/{lab_name}:\x03lab\x12\xab\x01\n\tDeleteLab\x12?.github.com.metaprov.modeldapi.services.lab.v1.DeleteLabRequest\x1a@.github.com.metaprov.modeldapi.services.lab.v1.DeleteLabResponse\"\x1b\x82\xd3\xe4\x93\x02\x15*\x13/v1/labs/{lab_name}B/Z-github.com/metaprov/modeldapi/services/lab/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -163,44 +163,6 @@ _LABRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATELABREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=401,
-  serialized_end=446,
-)
-
 _CREATELABREQUEST = _descriptor.Descriptor(
   name='CreateLabRequest',
   full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest',
@@ -210,29 +172,8 @@ _CREATELABREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.spec', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -240,7 +181,7 @@ _CREATELABREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CREATELABREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -249,8 +190,8 @@ _CREATELABREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=832,
+  serialized_start=562,
+  serialized_end=654,
 )
 
 
@@ -274,48 +215,10 @@ _CREATELABRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=834,
-  serialized_end=853,
+  serialized_start=656,
+  serialized_end=675,
 )
 
-
-_UPDATELABREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=401,
-  serialized_end=446,
-)
 
 _UPDATELABREQUEST = _descriptor.Descriptor(
   name='UpdateLabRequest',
@@ -326,29 +229,8 @@ _UPDATELABREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -356,7 +238,7 @@ _UPDATELABREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATELABREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -365,8 +247,8 @@ _UPDATELABREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=856,
-  serialized_end=1125,
+  serialized_start=677,
+  serialized_end=769,
 )
 
 
@@ -390,8 +272,8 @@ _UPDATELABRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1127,
-  serialized_end=1146,
+  serialized_start=771,
+  serialized_end=790,
 )
 
 
@@ -429,8 +311,8 @@ _GETLABREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1148,
-  serialized_end=1196,
+  serialized_start=792,
+  serialized_end=840,
 )
 
 
@@ -468,8 +350,8 @@ _GETLABRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1198,
-  serialized_end=1302,
+  serialized_start=842,
+  serialized_end=946,
 )
 
 
@@ -507,8 +389,8 @@ _GETLABNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1304,
-  serialized_end=1362,
+  serialized_start=948,
+  serialized_end=1006,
 )
 
 
@@ -539,8 +421,8 @@ _GETLABNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1364,
-  serialized_end=1475,
+  serialized_start=1008,
+  serialized_end=1119,
 )
 
 
@@ -578,8 +460,8 @@ _DELETELABREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1477,
-  serialized_end=1528,
+  serialized_start=1121,
+  serialized_end=1172,
 )
 
 
@@ -603,19 +485,15 @@ _DELETELABRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1530,
-  serialized_end=1549,
+  serialized_start=1174,
+  serialized_end=1193,
 )
 
 _LISTLABSREQUEST_LABELSENTRY.containing_type = _LISTLABSREQUEST
 _LISTLABSREQUEST.fields_by_name['labels'].message_type = _LISTLABSREQUEST_LABELSENTRY
 _LISTLABSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LABLIST
-_CREATELABREQUEST_LABELSENTRY.containing_type = _CREATELABREQUEST
-_CREATELABREQUEST.fields_by_name['labels'].message_type = _CREATELABREQUEST_LABELSENTRY
-_CREATELABREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LABSPEC
-_UPDATELABREQUEST_LABELSENTRY.containing_type = _UPDATELABREQUEST
-_UPDATELABREQUEST.fields_by_name['labels'].message_type = _UPDATELABREQUEST_LABELSENTRY
-_UPDATELABREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LABSPEC
+_CREATELABREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
+_UPDATELABREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
 _GETLABRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
 _GETLABNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListLabsRequest'] = _LISTLABSREQUEST
@@ -663,19 +541,11 @@ LabResponse = _reflection.GeneratedProtocolMessageType('LabResponse', (_message.
 _sym_db.RegisterMessage(LabResponse)
 
 CreateLabRequest = _reflection.GeneratedProtocolMessageType('CreateLabRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATELABREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.lab.v1.lab_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATELABREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.lab.v1.lab_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest)
   })
 _sym_db.RegisterMessage(CreateLabRequest)
-_sym_db.RegisterMessage(CreateLabRequest.LabelsEntry)
 
 CreateLabResponse = _reflection.GeneratedProtocolMessageType('CreateLabResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATELABRESPONSE,
@@ -685,19 +555,11 @@ CreateLabResponse = _reflection.GeneratedProtocolMessageType('CreateLabResponse'
 _sym_db.RegisterMessage(CreateLabResponse)
 
 UpdateLabRequest = _reflection.GeneratedProtocolMessageType('UpdateLabRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATELABREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.lab.v1.lab_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATELABREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.lab.v1.lab_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest)
   })
 _sym_db.RegisterMessage(UpdateLabRequest)
-_sym_db.RegisterMessage(UpdateLabRequest.LabelsEntry)
 
 UpdateLabResponse = _reflection.GeneratedProtocolMessageType('UpdateLabResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATELABRESPONSE,
@@ -751,8 +613,6 @@ _sym_db.RegisterMessage(DeleteLabResponse)
 
 DESCRIPTOR._options = None
 _LISTLABSREQUEST_LABELSENTRY._options = None
-_CREATELABREQUEST_LABELSENTRY._options = None
-_UPDATELABREQUEST_LABELSENTRY._options = None
 
 _LABSERVICE = _descriptor.ServiceDescriptor(
   name='LabService',
@@ -761,8 +621,8 @@ _LABSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1552,
-  serialized_end=2427,
+  serialized_start=1196,
+  serialized_end=2071,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListLabs',

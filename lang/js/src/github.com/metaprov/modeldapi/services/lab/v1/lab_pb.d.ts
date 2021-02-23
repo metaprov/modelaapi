@@ -62,19 +62,10 @@ export namespace LabResponse {
 }
 
 export class CreateLabRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateLabRequest;
-
-  getName(): string;
-  setName(value: string): CreateLabRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateLabRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LabSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LabSpec): CreateLabRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateLabRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): CreateLabRequest;
+  hasItem(): boolean;
+  clearItem(): CreateLabRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLabRequest.AsObject;
@@ -86,10 +77,7 @@ export class CreateLabRequest extends jspb.Message {
 
 export namespace CreateLabRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LabSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
   }
 }
 
@@ -108,19 +96,10 @@ export namespace CreateLabResponse {
 }
 
 export class UpdateLabRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateLabRequest;
-
-  getName(): string;
-  setName(value: string): UpdateLabRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateLabRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LabSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LabSpec): UpdateLabRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateLabRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): UpdateLabRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateLabRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateLabRequest.AsObject;
@@ -132,10 +111,7 @@ export class UpdateLabRequest extends jspb.Message {
 
 export namespace UpdateLabRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LabSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
   }
 }
 
