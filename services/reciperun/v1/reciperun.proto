@@ -15,10 +15,7 @@ message ListRecipeRunsResponse {
 }
 
 message CreateRecipeRunRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
 }
 
 message CreateRecipeRunResponse {
@@ -26,10 +23,7 @@ message CreateRecipeRunResponse {
 }
 
 message UpdateRecipeRunRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
 }
 
 message UpdateRecipeRunResponse {

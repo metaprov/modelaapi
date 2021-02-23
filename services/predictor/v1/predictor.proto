@@ -21,17 +21,11 @@ message ListPredictorsResponse {
 message CreatePredictorResponse {}
 
 message CreatePredictorRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
 }
 
 message UpdatePredictorRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
 }
 
 message UpdatePredictorResponse {

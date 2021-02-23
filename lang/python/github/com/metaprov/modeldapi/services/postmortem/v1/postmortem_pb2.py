@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/postmortem/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto\x12\x34github.com.metaprov.modeldapi.services.postmortem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\"\xc4\x01\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListPostMortemsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList\"\xa8\x02\n\x17\x43reatePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12i\n\x06labels\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.LabelsEntry\x12R\n\x04spec\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reatePostMortemResponse\"\xa8\x02\n\x17UpdatePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12i\n\x06labels\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.LabelsEntry\x12R\n\x04spec\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdatePostMortemResponse\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetPostMortemResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65letePostMortemResponse2\xab\x08\n\x11PostMortemService\x12\xc7\x01\n\x0fListPostMortems\x12L.github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest\x1aM.github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/postmortems\x12\xd6\x01\n\x10\x43reatePostMortem\x12M.github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest\x1aN.github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/postmortems:\npostmortem\x12\xc8\x01\n\rGetPostMortem\x12J.github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemRequest\x1aK.github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/postmortems/{name}\x12\xf1\x01\n\x10UpdatePostMortem\x12M.github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest\x1aN.github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/postmortems/{postmortem.metadata.name}:\npostmortem\x12\xb3\x01\n\x10\x44\x65letePostMortem\x12M.github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemRequest\x1aN.github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/postmortem/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto\x12\x34github.com.metaprov.modeldapi.services.postmortem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\"\xc4\x01\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListPostMortemsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x1a\n\x18\x43reatePostMortemResponse\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x1a\n\x18UpdatePostMortemResponse\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetPostMortemResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65letePostMortemResponse2\xab\x08\n\x11PostMortemService\x12\xc7\x01\n\x0fListPostMortems\x12L.github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest\x1aM.github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/postmortems\x12\xd6\x01\n\x10\x43reatePostMortem\x12M.github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest\x1aN.github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/postmortems:\npostmortem\x12\xc8\x01\n\rGetPostMortem\x12J.github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemRequest\x1aK.github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/postmortems/{name}\x12\xf1\x01\n\x10UpdatePostMortem\x12M.github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest\x1aN.github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/postmortems/{postmortem.metadata.name}:\npostmortem\x12\xb3\x01\n\x10\x44\x65letePostMortem\x12M.github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemRequest\x1aN.github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/postmortem/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -137,44 +137,6 @@ _LISTPOSTMORTEMSRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATEPOSTMORTEMREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=379,
-  serialized_end=424,
-)
-
 _CREATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   name='CreatePostMortemRequest',
   full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest',
@@ -184,29 +146,8 @@ _CREATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.spec', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -214,7 +155,7 @@ _CREATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CREATEPOSTMORTEMREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -223,8 +164,8 @@ _CREATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=539,
-  serialized_end=835,
+  serialized_start=538,
+  serialized_end=643,
 )
 
 
@@ -248,48 +189,10 @@ _CREATEPOSTMORTEMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=837,
-  serialized_end=863,
+  serialized_start=645,
+  serialized_end=671,
 )
 
-
-_UPDATEPOSTMORTEMREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=379,
-  serialized_end=424,
-)
 
 _UPDATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   name='UpdatePostMortemRequest',
@@ -300,28 +203,7 @@ _UPDATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.spec', index=3,
+      name='item', full_name='github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.item', index=0,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -330,7 +212,7 @@ _UPDATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATEPOSTMORTEMREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -339,8 +221,8 @@ _UPDATEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=866,
-  serialized_end=1162,
+  serialized_start=673,
+  serialized_end=778,
 )
 
 
@@ -364,8 +246,8 @@ _UPDATEPOSTMORTEMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1164,
-  serialized_end=1190,
+  serialized_start=780,
+  serialized_end=806,
 )
 
 
@@ -403,8 +285,8 @@ _GETPOSTMORTEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1192,
-  serialized_end=1247,
+  serialized_start=808,
+  serialized_end=863,
 )
 
 
@@ -442,8 +324,8 @@ _GETPOSTMORTEMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1249,
-  serialized_end=1366,
+  serialized_start=865,
+  serialized_end=982,
 )
 
 
@@ -481,8 +363,8 @@ _DELETEPOSTMORTEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1368,
-  serialized_end=1426,
+  serialized_start=984,
+  serialized_end=1042,
 )
 
 
@@ -506,19 +388,15 @@ _DELETEPOSTMORTEMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1428,
-  serialized_end=1454,
+  serialized_start=1044,
+  serialized_end=1070,
 )
 
 _LISTPOSTMORTEMSREQUEST_LABELSENTRY.containing_type = _LISTPOSTMORTEMSREQUEST
 _LISTPOSTMORTEMSREQUEST.fields_by_name['labels'].message_type = _LISTPOSTMORTEMSREQUEST_LABELSENTRY
 _LISTPOSTMORTEMSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEMLIST
-_CREATEPOSTMORTEMREQUEST_LABELSENTRY.containing_type = _CREATEPOSTMORTEMREQUEST
-_CREATEPOSTMORTEMREQUEST.fields_by_name['labels'].message_type = _CREATEPOSTMORTEMREQUEST_LABELSENTRY
-_CREATEPOSTMORTEMREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEMSPEC
-_UPDATEPOSTMORTEMREQUEST_LABELSENTRY.containing_type = _UPDATEPOSTMORTEMREQUEST
-_UPDATEPOSTMORTEMREQUEST.fields_by_name['labels'].message_type = _UPDATEPOSTMORTEMREQUEST_LABELSENTRY
-_UPDATEPOSTMORTEMREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEMSPEC
+_CREATEPOSTMORTEMREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM
+_UPDATEPOSTMORTEMREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM
 _GETPOSTMORTEMRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM
 DESCRIPTOR.message_types_by_name['ListPostMortemsRequest'] = _LISTPOSTMORTEMSREQUEST
 DESCRIPTOR.message_types_by_name['ListPostMortemsResponse'] = _LISTPOSTMORTEMSRESPONSE
@@ -555,19 +433,11 @@ ListPostMortemsResponse = _reflection.GeneratedProtocolMessageType('ListPostMort
 _sym_db.RegisterMessage(ListPostMortemsResponse)
 
 CreatePostMortemRequest = _reflection.GeneratedProtocolMessageType('CreatePostMortemRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEPOSTMORTEMREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.postmortem.v1.postmortem_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATEPOSTMORTEMREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.postmortem.v1.postmortem_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest)
   })
 _sym_db.RegisterMessage(CreatePostMortemRequest)
-_sym_db.RegisterMessage(CreatePostMortemRequest.LabelsEntry)
 
 CreatePostMortemResponse = _reflection.GeneratedProtocolMessageType('CreatePostMortemResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEPOSTMORTEMRESPONSE,
@@ -577,19 +447,11 @@ CreatePostMortemResponse = _reflection.GeneratedProtocolMessageType('CreatePostM
 _sym_db.RegisterMessage(CreatePostMortemResponse)
 
 UpdatePostMortemRequest = _reflection.GeneratedProtocolMessageType('UpdatePostMortemRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEPOSTMORTEMREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.postmortem.v1.postmortem_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATEPOSTMORTEMREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.postmortem.v1.postmortem_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest)
   })
 _sym_db.RegisterMessage(UpdatePostMortemRequest)
-_sym_db.RegisterMessage(UpdatePostMortemRequest.LabelsEntry)
 
 UpdatePostMortemResponse = _reflection.GeneratedProtocolMessageType('UpdatePostMortemResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEPOSTMORTEMRESPONSE,
@@ -629,8 +491,6 @@ _sym_db.RegisterMessage(DeletePostMortemResponse)
 
 DESCRIPTOR._options = None
 _LISTPOSTMORTEMSREQUEST_LABELSENTRY._options = None
-_CREATEPOSTMORTEMREQUEST_LABELSENTRY._options = None
-_UPDATEPOSTMORTEMREQUEST_LABELSENTRY._options = None
 
 _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
   name='PostMortemService',
@@ -639,8 +499,8 @@ _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1457,
-  serialized_end=2524,
+  serialized_start=1073,
+  serialized_end=2140,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPostMortems',

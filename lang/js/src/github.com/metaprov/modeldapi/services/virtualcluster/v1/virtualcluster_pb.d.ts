@@ -62,19 +62,10 @@ export namespace VirtualClusterResponse {
 }
 
 export class CreateVirtualClusterRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateVirtualClusterRequest;
-
-  getName(): string;
-  setName(value: string): CreateVirtualClusterRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateVirtualClusterRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterSpec): CreateVirtualClusterRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateVirtualClusterRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): CreateVirtualClusterRequest;
+  hasItem(): boolean;
+  clearItem(): CreateVirtualClusterRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateVirtualClusterRequest.AsObject;
@@ -86,10 +77,7 @@ export class CreateVirtualClusterRequest extends jspb.Message {
 
 export namespace CreateVirtualClusterRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
   }
 }
 
@@ -108,19 +96,10 @@ export namespace CreateVirtualClusterResponse {
 }
 
 export class UpdateVirtualClusterRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateVirtualClusterRequest;
-
-  getName(): string;
-  setName(value: string): UpdateVirtualClusterRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateVirtualClusterRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterSpec): UpdateVirtualClusterRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateVirtualClusterRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): UpdateVirtualClusterRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateVirtualClusterRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateVirtualClusterRequest.AsObject;
@@ -132,10 +111,7 @@ export class UpdateVirtualClusterRequest extends jspb.Message {
 
 export namespace UpdateVirtualClusterRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
   }
 }
 

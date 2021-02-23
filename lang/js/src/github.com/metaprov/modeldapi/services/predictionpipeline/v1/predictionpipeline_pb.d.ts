@@ -65,19 +65,10 @@ export namespace CreatePredictionPipelineResponse {
 }
 
 export class CreatePredictionPipelineRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreatePredictionPipelineRequest;
-
-  getName(): string;
-  setName(value: string): CreatePredictionPipelineRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreatePredictionPipelineRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineSpec): CreatePredictionPipelineRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreatePredictionPipelineRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline): CreatePredictionPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): CreatePredictionPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePredictionPipelineRequest.AsObject;
@@ -89,27 +80,15 @@ export class CreatePredictionPipelineRequest extends jspb.Message {
 
 export namespace CreatePredictionPipelineRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline.AsObject,
   }
 }
 
 export class UpdatePredictionPipelineRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdatePredictionPipelineRequest;
-
-  getName(): string;
-  setName(value: string): UpdatePredictionPipelineRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdatePredictionPipelineRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineSpec): UpdatePredictionPipelineRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdatePredictionPipelineRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline): UpdatePredictionPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): UpdatePredictionPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdatePredictionPipelineRequest.AsObject;
@@ -121,10 +100,7 @@ export class UpdatePredictionPipelineRequest extends jspb.Message {
 
 export namespace UpdatePredictionPipelineRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline.AsObject,
   }
 }
 

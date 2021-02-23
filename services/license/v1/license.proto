@@ -19,10 +19,7 @@ message ListLicensesResponse {
 message LicenseResponse {}
 
 message CreateLicenseRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
 }
 
 
@@ -36,10 +33,7 @@ message CreateLicenseResponse {
 }
 
 message UpdateLicenseRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 5;
 }
 
 message UpdateLicenseResponse {

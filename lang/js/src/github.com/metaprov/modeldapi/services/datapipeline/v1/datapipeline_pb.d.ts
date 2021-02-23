@@ -47,19 +47,10 @@ export namespace ListDataPipelinesResponse {
 }
 
 export class CreateDataPipelineRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateDataPipelineRequest;
-
-  getName(): string;
-  setName(value: string): CreateDataPipelineRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateDataPipelineRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineSpec): CreateDataPipelineRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateDataPipelineRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): CreateDataPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): CreateDataPipelineRequest;
 
   getSecretMap(): jspb.Map<string, string>;
   clearSecretMap(): CreateDataPipelineRequest;
@@ -74,10 +65,7 @@ export class CreateDataPipelineRequest extends jspb.Message {
 
 export namespace CreateDataPipelineRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
     secretMap: Array<[string, string]>,
   }
 }
@@ -97,22 +85,10 @@ export namespace CreateDataPipelineResponse {
 }
 
 export class UpdateDataPipelineRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateDataPipelineRequest;
-
-  getName(): string;
-  setName(value: string): UpdateDataPipelineRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateDataPipelineRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineSpec): UpdateDataPipelineRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateDataPipelineRequest;
-
-  getSecretMap(): jspb.Map<string, string>;
-  clearSecretMap(): UpdateDataPipelineRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): UpdateDataPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateDataPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDataPipelineRequest.AsObject;
@@ -124,11 +100,7 @@ export class UpdateDataPipelineRequest extends jspb.Message {
 
 export namespace UpdateDataPipelineRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineSpec.AsObject,
-    secretMap: Array<[string, string]>,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
   }
 }
 

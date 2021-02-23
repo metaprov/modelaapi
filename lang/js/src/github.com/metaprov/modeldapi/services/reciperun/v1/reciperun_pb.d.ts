@@ -47,19 +47,10 @@ export namespace ListRecipeRunsResponse {
 }
 
 export class CreateRecipeRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateRecipeRunRequest;
-
-  getName(): string;
-  setName(value: string): CreateRecipeRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateRecipeRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunSpec): CreateRecipeRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateRecipeRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): CreateRecipeRunRequest;
+  hasItem(): boolean;
+  clearItem(): CreateRecipeRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRecipeRunRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateRecipeRunRequest extends jspb.Message {
 
 export namespace CreateRecipeRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateRecipeRunResponse {
 }
 
 export class UpdateRecipeRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateRecipeRunRequest;
-
-  getName(): string;
-  setName(value: string): UpdateRecipeRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateRecipeRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunSpec): UpdateRecipeRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateRecipeRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): UpdateRecipeRunRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateRecipeRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateRecipeRunRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateRecipeRunRequest extends jspb.Message {
 
 export namespace UpdateRecipeRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
   }
 }
 

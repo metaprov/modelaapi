@@ -47,19 +47,10 @@ export namespace ListDataProductsResponse {
 }
 
 export class CreateDataProductRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateDataProductRequest;
-
-  getName(): string;
-  setName(value: string): CreateDataProductRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateDataProductRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec): CreateDataProductRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateDataProductRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreateDataProductRequest;
+  hasItem(): boolean;
+  clearItem(): CreateDataProductRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataProductRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateDataProductRequest extends jspb.Message {
 
 export namespace CreateDataProductRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateDataProductResponse {
 }
 
 export class UpdateDataProductRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateDataProductRequest;
-
-  getName(): string;
-  setName(value: string): UpdateDataProductRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateDataProductRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec): UpdateDataProductRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateDataProductRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): UpdateDataProductRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateDataProductRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDataProductRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateDataProductRequest extends jspb.Message {
 
 export namespace UpdateDataProductRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
   }
 }
 

@@ -16,10 +16,7 @@ message ListModelAutobuildersResponse {
 }
 
 message CreateModelAutobuilderRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
 }
 
 message CreateModelAutobuilderResponse {
@@ -27,10 +24,7 @@ message CreateModelAutobuilderResponse {
 }
 
 message UpdateModelAutobuilderRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
 }
 
 message UpdateModelAutobuilderResponse {

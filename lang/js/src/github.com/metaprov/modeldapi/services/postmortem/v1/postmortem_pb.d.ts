@@ -47,19 +47,10 @@ export namespace ListPostMortemsResponse {
 }
 
 export class CreatePostMortemRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreatePostMortemRequest;
-
-  getName(): string;
-  setName(value: string): CreatePostMortemRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreatePostMortemRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec): CreatePostMortemRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreatePostMortemRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): CreatePostMortemRequest;
+  hasItem(): boolean;
+  clearItem(): CreatePostMortemRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePostMortemRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreatePostMortemRequest extends jspb.Message {
 
 export namespace CreatePostMortemRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreatePostMortemResponse {
 }
 
 export class UpdatePostMortemRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdatePostMortemRequest;
-
-  getName(): string;
-  setName(value: string): UpdatePostMortemRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdatePostMortemRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec): UpdatePostMortemRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdatePostMortemRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): UpdatePostMortemRequest;
+  hasItem(): boolean;
+  clearItem(): UpdatePostMortemRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdatePostMortemRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdatePostMortemRequest extends jspb.Message {
 
 export namespace UpdatePostMortemRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
   }
 }
 

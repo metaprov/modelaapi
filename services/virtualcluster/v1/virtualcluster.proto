@@ -18,10 +18,7 @@ message ListVirtualClustersResponse {
 message VirtualClusterResponse {}
 
 message CreateVirtualClusterRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
 }
 
 message CreateVirtualClusterResponse {
@@ -29,10 +26,7 @@ message CreateVirtualClusterResponse {
 }
 
 message UpdateVirtualClusterRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
 }
 
 message UpdateVirtualClusterResponse {

@@ -47,19 +47,10 @@ export namespace ListVirtualBucketsResponse {
 }
 
 export class CreateVirtualBucketRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateVirtualBucketRequest;
-
-  getName(): string;
-  setName(value: string): CreateVirtualBucketRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateVirtualBucketRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec): CreateVirtualBucketRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateVirtualBucketRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
+  hasItem(): boolean;
+  clearItem(): CreateVirtualBucketRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateVirtualBucketRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateVirtualBucketRequest extends jspb.Message {
 
 export namespace CreateVirtualBucketRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateVirtualBucketResponse {
 }
 
 export class UpdateVirtualBucketRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateVirtualBucketRequest;
-
-  getName(): string;
-  setName(value: string): UpdateVirtualBucketRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateVirtualBucketRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec): UpdateVirtualBucketRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateVirtualBucketRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): UpdateVirtualBucketRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateVirtualBucketRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateVirtualBucketRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateVirtualBucketRequest extends jspb.Message {
 
 export namespace UpdateVirtualBucketRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
   }
 }
 

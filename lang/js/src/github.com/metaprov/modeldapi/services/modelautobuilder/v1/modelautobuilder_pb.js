@@ -584,10 +584,7 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAuto
  */
 proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -625,23 +622,9 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAuto
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -672,109 +655,33 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAuto
  */
 proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      4,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder}
  */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec}
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -782,8 +689,8 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAuto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -791,8 +698,8 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAuto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -929,10 +836,7 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAuto
  */
 proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -970,23 +874,9 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAuto
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1017,109 +907,33 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAuto
  */
 proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder}
  */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec}
- */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1127,8 +941,8 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAuto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -1136,8 +950,8 @@ proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAuto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

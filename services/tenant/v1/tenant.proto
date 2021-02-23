@@ -15,10 +15,7 @@ message ListTenantsResponse {
 }
 
 message CreateTenantRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 4;
 }
 
 message CreateTenantResponse {
@@ -26,10 +23,7 @@ message CreateTenantResponse {
 }
 
 message UpdateTenantRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec item = 5;
 }
 
 message UpdateTenantResponse {

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z?github.com/metaprov/modeldapi/services/predictionpipelinerun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n[github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto\x12?github.com.metaprov.modeldapi.services.predictionpipelinerun.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf3\x01\n!ListPredictionPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12~\n\x06labels\x18\x03 \x03(\x0b\x32n.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\"ListPredictionPipelineRunsResponse\x12\x63\n\x05items\x18\x01 \x01(\x0b\x32T.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList\"%\n#CreatePredictionPipelineRunResponse\"\xd9\x02\n\"CreatePredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x7f\n\x06labels\x18\x03 \x03(\x0b\x32o.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.LabelsEntry\x12\x62\n\x04spec\x18\x05 \x01(\x0b\x32T.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x02\n\"UpdatePredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x7f\n\x06labels\x18\x03 \x03(\x0b\x32o.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.LabelsEntry\x12\x62\n\x04spec\x18\x05 \x01(\x0b\x32T.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n#UpdatePredictionPipelineRunResponse\"B\n\x1fGetPredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x90\x01\n GetPredictionPipelineRunResponse\x12^\n\x04item\x18\x01 \x01(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"E\n\"DeletePredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n#DeletePredictionPipelineRunResponse\"G\n$DownloadPredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"4\n%DownloadPredictionPipelineRunResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\x32\x96\r\n\x1cPredictionPipelineRunService\x12\x86\x02\n\x1aListPredictionPipelineRuns\x12\x62.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest\x1a\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/predictionpipelines\x12\x9d\x02\n\x1b\x43reatePredictionPipelineRun\x12\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest\x1a\x64.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunResponse\"3\x82\xd3\xe4\x93\x02-\"\x17/v1/predictionpipelines:\x12predictionpipeline\x12\x87\x02\n\x18GetPredictionPipelineRun\x12`.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunRequest\x1a\x61.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/predictionpipelines/{name}\x12\xa8\x02\n\x1bUpdatePredictionPipelineRun\x12\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest\x1a\x64.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/predictions/{prediction.metadata.name}:\nprediction\x12\x88\x02\n\x1b\x44\x65letePredictionPipelineRun\x12\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DeletePredictionPipelineRunRequest\x1a\x64.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DeletePredictionPipelineRunResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/predictions/{name}\x12\x8c\x02\n\x08\x44ownload\x12\x65.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DownloadPredictionPipelineRunRequest\x1a\x66.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DownloadPredictionPipelineRunResponse\"1\x82\xd3\xe4\x93\x02+\x12)/api/v1alpha1/predictions/{name}:downloadBAZ?github.com/metaprov/modeldapi/services/predictionpipelinerun/v1b\x06proto3'
+  serialized_pb=b'\n[github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto\x12?github.com.metaprov.modeldapi.services.predictionpipelinerun.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf3\x01\n!ListPredictionPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12~\n\x06labels\x18\x03 \x03(\x0b\x32n.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x89\x01\n\"ListPredictionPipelineRunsResponse\x12\x63\n\x05items\x18\x01 \x01(\x0b\x32T.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList\"%\n#CreatePredictionPipelineRunResponse\"\x84\x01\n\"CreatePredictionPipelineRunRequest\x12^\n\x04item\x18\x01 \x01(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\"\x84\x01\n\"UpdatePredictionPipelineRunRequest\x12^\n\x04item\x18\x01 \x01(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\"%\n#UpdatePredictionPipelineRunResponse\"B\n\x1fGetPredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x90\x01\n GetPredictionPipelineRunResponse\x12^\n\x04item\x18\x01 \x01(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"E\n\"DeletePredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n#DeletePredictionPipelineRunResponse\"G\n$DownloadPredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"4\n%DownloadPredictionPipelineRunResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\x32\x96\r\n\x1cPredictionPipelineRunService\x12\x86\x02\n\x1aListPredictionPipelineRuns\x12\x62.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest\x1a\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/predictionpipelines\x12\x9d\x02\n\x1b\x43reatePredictionPipelineRun\x12\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest\x1a\x64.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunResponse\"3\x82\xd3\xe4\x93\x02-\"\x17/v1/predictionpipelines:\x12predictionpipeline\x12\x87\x02\n\x18GetPredictionPipelineRun\x12`.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunRequest\x1a\x61.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/predictionpipelines/{name}\x12\xa8\x02\n\x1bUpdatePredictionPipelineRun\x12\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest\x1a\x64.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/predictions/{prediction.metadata.name}:\nprediction\x12\x88\x02\n\x1b\x44\x65letePredictionPipelineRun\x12\x63.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DeletePredictionPipelineRunRequest\x1a\x64.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DeletePredictionPipelineRunResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/predictions/{name}\x12\x8c\x02\n\x08\x44ownload\x12\x65.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DownloadPredictionPipelineRunRequest\x1a\x66.github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DownloadPredictionPipelineRunResponse\"1\x82\xd3\xe4\x93\x02+\x12)/api/v1alpha1/predictions/{name}:downloadBAZ?github.com/metaprov/modeldapi/services/predictionpipelinerun/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -169,44 +169,6 @@ _CREATEPREDICTIONPIPELINERUNRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=464,
-  serialized_end=509,
-)
-
 _CREATEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   name='CreatePredictionPipelineRunRequest',
   full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest',
@@ -216,69 +178,9 @@ _CREATEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=691,
-  serialized_end=1036,
-)
-
-
-_UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -288,15 +190,16 @@ _UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'8\001',
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=464,
-  serialized_end=509,
+  serialized_start=691,
+  serialized_end=823,
 )
+
 
 _UPDATEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   name='UpdatePredictionPipelineRunRequest',
@@ -307,29 +210,8 @@ _UPDATEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -337,7 +219,7 @@ _UPDATEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -346,8 +228,8 @@ _UPDATEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1384,
+  serialized_start=826,
+  serialized_end=958,
 )
 
 
@@ -371,8 +253,8 @@ _UPDATEPREDICTIONPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1386,
-  serialized_end=1423,
+  serialized_start=960,
+  serialized_end=997,
 )
 
 
@@ -410,8 +292,8 @@ _GETPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1425,
-  serialized_end=1491,
+  serialized_start=999,
+  serialized_end=1065,
 )
 
 
@@ -449,8 +331,8 @@ _GETPREDICTIONPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1494,
-  serialized_end=1638,
+  serialized_start=1068,
+  serialized_end=1212,
 )
 
 
@@ -488,8 +370,8 @@ _DELETEPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1640,
-  serialized_end=1709,
+  serialized_start=1214,
+  serialized_end=1283,
 )
 
 
@@ -513,8 +395,8 @@ _DELETEPREDICTIONPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1711,
-  serialized_end=1748,
+  serialized_start=1285,
+  serialized_end=1322,
 )
 
 
@@ -552,8 +434,8 @@ _DOWNLOADPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1750,
-  serialized_end=1821,
+  serialized_start=1324,
+  serialized_end=1395,
 )
 
 
@@ -584,19 +466,15 @@ _DOWNLOADPREDICTIONPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1823,
-  serialized_end=1875,
+  serialized_start=1397,
+  serialized_end=1449,
 )
 
 _LISTPREDICTIONPIPELINERUNSREQUEST_LABELSENTRY.containing_type = _LISTPREDICTIONPIPELINERUNSREQUEST
 _LISTPREDICTIONPIPELINERUNSREQUEST.fields_by_name['labels'].message_type = _LISTPREDICTIONPIPELINERUNSREQUEST_LABELSENTRY
 _LISTPREDICTIONPIPELINERUNSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUNLIST
-_CREATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY.containing_type = _CREATEPREDICTIONPIPELINERUNREQUEST
-_CREATEPREDICTIONPIPELINERUNREQUEST.fields_by_name['labels'].message_type = _CREATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY
-_CREATEPREDICTIONPIPELINERUNREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUNSPEC
-_UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY.containing_type = _UPDATEPREDICTIONPIPELINERUNREQUEST
-_UPDATEPREDICTIONPIPELINERUNREQUEST.fields_by_name['labels'].message_type = _UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY
-_UPDATEPREDICTIONPIPELINERUNREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUNSPEC
+_CREATEPREDICTIONPIPELINERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUN
+_UPDATEPREDICTIONPIPELINERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUN
 _GETPREDICTIONPIPELINERUNRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUN
 DESCRIPTOR.message_types_by_name['ListPredictionPipelineRunsRequest'] = _LISTPREDICTIONPIPELINERUNSREQUEST
 DESCRIPTOR.message_types_by_name['ListPredictionPipelineRunsResponse'] = _LISTPREDICTIONPIPELINERUNSRESPONSE
@@ -642,34 +520,18 @@ CreatePredictionPipelineRunResponse = _reflection.GeneratedProtocolMessageType('
 _sym_db.RegisterMessage(CreatePredictionPipelineRunResponse)
 
 CreatePredictionPipelineRunRequest = _reflection.GeneratedProtocolMessageType('CreatePredictionPipelineRunRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.predictionpipelinerun_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATEPREDICTIONPIPELINERUNREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.predictionpipelinerun_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest)
   })
 _sym_db.RegisterMessage(CreatePredictionPipelineRunRequest)
-_sym_db.RegisterMessage(CreatePredictionPipelineRunRequest.LabelsEntry)
 
 UpdatePredictionPipelineRunRequest = _reflection.GeneratedProtocolMessageType('UpdatePredictionPipelineRunRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.predictionpipelinerun_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATEPREDICTIONPIPELINERUNREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.predictionpipelinerun_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest)
   })
 _sym_db.RegisterMessage(UpdatePredictionPipelineRunRequest)
-_sym_db.RegisterMessage(UpdatePredictionPipelineRunRequest.LabelsEntry)
 
 UpdatePredictionPipelineRunResponse = _reflection.GeneratedProtocolMessageType('UpdatePredictionPipelineRunResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEPREDICTIONPIPELINERUNRESPONSE,
@@ -723,8 +585,6 @@ _sym_db.RegisterMessage(DownloadPredictionPipelineRunResponse)
 
 DESCRIPTOR._options = None
 _LISTPREDICTIONPIPELINERUNSREQUEST_LABELSENTRY._options = None
-_CREATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY._options = None
-_UPDATEPREDICTIONPIPELINERUNREQUEST_LABELSENTRY._options = None
 
 _PREDICTIONPIPELINERUNSERVICE = _descriptor.ServiceDescriptor(
   name='PredictionPipelineRunService',
@@ -733,8 +593,8 @@ _PREDICTIONPIPELINERUNSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1878,
-  serialized_end=3564,
+  serialized_start=1452,
+  serialized_end=3138,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPredictionPipelineRuns',

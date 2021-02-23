@@ -44,19 +44,13 @@ message GetModelLogsRequest {
 
 
 message CreateModelRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
 }
 
 message CreateModelResponse {}
 
 message UpdateModelRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 5;
 }
 
 message UpdateModelResponse {}

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/notebook/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/notebook/v1/notebook.proto\x12\x32github.com.metaprov.modeldapi.services.notebook.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbe\x01\n\x14ListNotebooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x03 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x15ListNotebooksResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookList\"\x12\n\x10NotebookResponse\"\xa4\x02\n\x15\x43reateNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x65\n\x06labels\x18\x03 \x03(\x0b\x32U.github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.LabelsEntry\x12T\n\x04spec\x18\x04 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x18\n\x16\x43reateNotebookResponse\"\xa4\x02\n\x15UpdateNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x65\n\x06labels\x18\x03 \x03(\x0b\x32U.github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.LabelsEntry\x12T\n\x04spec\x18\x05 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x18\n\x16UpdateNotebookResponse\"5\n\x12GetNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x13GetNotebookResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"8\n\x15\x44\x65leteNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteNotebookResponse2\x91\x08\n\x0fNotebookService\x12\xc5\x01\n\rListNotebooks\x12H.github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest\x1aI.github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1alpha1/notebooks\x12\xd2\x01\n\x0e\x43reateNotebook\x12I.github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest\x1aJ.github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookResponse\")\x82\xd3\xe4\x93\x02#\"\x17/api/v1alpha1/notebooks:\x08notebook\x12\xc6\x01\n\x0bGetNotebook\x12\x46.github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookRequest\x1aG.github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1alpha1/notebooks/{name}\x12\xeb\x01\n\x0eUpdateNotebook\x12I.github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest\x1aJ.github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookResponse\"B\x82\xd3\xe4\x93\x02<\x1a\x30/api/v1alpha1/notebooks/{notebook.metadata.name}:\x08notebook\x12\xa9\x01\n\x0e\x44\x65leteNotebook\x12I.github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookRequest\x1aJ.github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/notebook/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/notebook/v1/notebook.proto\x12\x32github.com.metaprov.modeldapi.services.notebook.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbe\x01\n\x14ListNotebooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x03 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x15ListNotebooksResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookList\"\x12\n\x10NotebookResponse\"i\n\x15\x43reateNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x18\n\x16\x43reateNotebookResponse\"i\n\x15UpdateNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x18\n\x16UpdateNotebookResponse\"5\n\x12GetNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x13GetNotebookResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"8\n\x15\x44\x65leteNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteNotebookResponse2\x91\x08\n\x0fNotebookService\x12\xc5\x01\n\rListNotebooks\x12H.github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest\x1aI.github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1alpha1/notebooks\x12\xd2\x01\n\x0e\x43reateNotebook\x12I.github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest\x1aJ.github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookResponse\")\x82\xd3\xe4\x93\x02#\"\x17/api/v1alpha1/notebooks:\x08notebook\x12\xc6\x01\n\x0bGetNotebook\x12\x46.github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookRequest\x1aG.github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1alpha1/notebooks/{name}\x12\xeb\x01\n\x0eUpdateNotebook\x12I.github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest\x1aJ.github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookResponse\"B\x82\xd3\xe4\x93\x02<\x1a\x30/api/v1alpha1/notebooks/{notebook.metadata.name}:\x08notebook\x12\xa9\x01\n\x0e\x44\x65leteNotebook\x12I.github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookRequest\x1aJ.github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/notebook/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -163,44 +163,6 @@ _NOTEBOOKRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATENOTEBOOKREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=434,
-  serialized_end=479,
-)
-
 _CREATENOTEBOOKREQUEST = _descriptor.Descriptor(
   name='CreateNotebookRequest',
   full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest',
@@ -210,29 +172,8 @@ _CREATENOTEBOOKREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.spec', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -240,7 +181,7 @@ _CREATENOTEBOOKREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CREATENOTEBOOKREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -249,8 +190,8 @@ _CREATENOTEBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=614,
-  serialized_end=906,
+  serialized_start=613,
+  serialized_end=718,
 )
 
 
@@ -274,48 +215,10 @@ _CREATENOTEBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=908,
-  serialized_end=932,
+  serialized_start=720,
+  serialized_end=744,
 )
 
-
-_UPDATENOTEBOOKREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=434,
-  serialized_end=479,
-)
 
 _UPDATENOTEBOOKREQUEST = _descriptor.Descriptor(
   name='UpdateNotebookRequest',
@@ -326,29 +229,8 @@ _UPDATENOTEBOOKREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -356,7 +238,7 @@ _UPDATENOTEBOOKREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATENOTEBOOKREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -365,8 +247,8 @@ _UPDATENOTEBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=935,
-  serialized_end=1227,
+  serialized_start=746,
+  serialized_end=851,
 )
 
 
@@ -390,8 +272,8 @@ _UPDATENOTEBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1229,
-  serialized_end=1253,
+  serialized_start=853,
+  serialized_end=877,
 )
 
 
@@ -429,8 +311,8 @@ _GETNOTEBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1255,
-  serialized_end=1308,
+  serialized_start=879,
+  serialized_end=932,
 )
 
 
@@ -468,8 +350,8 @@ _GETNOTEBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1310,
-  serialized_end=1427,
+  serialized_start=934,
+  serialized_end=1051,
 )
 
 
@@ -507,8 +389,8 @@ _DELETENOTEBOOKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1429,
-  serialized_end=1485,
+  serialized_start=1053,
+  serialized_end=1109,
 )
 
 
@@ -532,19 +414,15 @@ _DELETENOTEBOOKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1487,
-  serialized_end=1511,
+  serialized_start=1111,
+  serialized_end=1135,
 )
 
 _LISTNOTEBOOKSREQUEST_LABELSENTRY.containing_type = _LISTNOTEBOOKSREQUEST
 _LISTNOTEBOOKSREQUEST.fields_by_name['labels'].message_type = _LISTNOTEBOOKSREQUEST_LABELSENTRY
 _LISTNOTEBOOKSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKLIST
-_CREATENOTEBOOKREQUEST_LABELSENTRY.containing_type = _CREATENOTEBOOKREQUEST
-_CREATENOTEBOOKREQUEST.fields_by_name['labels'].message_type = _CREATENOTEBOOKREQUEST_LABELSENTRY
-_CREATENOTEBOOKREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKSPEC
-_UPDATENOTEBOOKREQUEST_LABELSENTRY.containing_type = _UPDATENOTEBOOKREQUEST
-_UPDATENOTEBOOKREQUEST.fields_by_name['labels'].message_type = _UPDATENOTEBOOKREQUEST_LABELSENTRY
-_UPDATENOTEBOOKREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKSPEC
+_CREATENOTEBOOKREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK
+_UPDATENOTEBOOKREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK
 _GETNOTEBOOKRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK
 DESCRIPTOR.message_types_by_name['ListNotebooksRequest'] = _LISTNOTEBOOKSREQUEST
 DESCRIPTOR.message_types_by_name['ListNotebooksResponse'] = _LISTNOTEBOOKSRESPONSE
@@ -589,19 +467,11 @@ NotebookResponse = _reflection.GeneratedProtocolMessageType('NotebookResponse', 
 _sym_db.RegisterMessage(NotebookResponse)
 
 CreateNotebookRequest = _reflection.GeneratedProtocolMessageType('CreateNotebookRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATENOTEBOOKREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.notebook.v1.notebook_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATENOTEBOOKREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.notebook.v1.notebook_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest)
   })
 _sym_db.RegisterMessage(CreateNotebookRequest)
-_sym_db.RegisterMessage(CreateNotebookRequest.LabelsEntry)
 
 CreateNotebookResponse = _reflection.GeneratedProtocolMessageType('CreateNotebookResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATENOTEBOOKRESPONSE,
@@ -611,19 +481,11 @@ CreateNotebookResponse = _reflection.GeneratedProtocolMessageType('CreateNoteboo
 _sym_db.RegisterMessage(CreateNotebookResponse)
 
 UpdateNotebookRequest = _reflection.GeneratedProtocolMessageType('UpdateNotebookRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATENOTEBOOKREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.notebook.v1.notebook_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATENOTEBOOKREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.notebook.v1.notebook_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest)
   })
 _sym_db.RegisterMessage(UpdateNotebookRequest)
-_sym_db.RegisterMessage(UpdateNotebookRequest.LabelsEntry)
 
 UpdateNotebookResponse = _reflection.GeneratedProtocolMessageType('UpdateNotebookResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATENOTEBOOKRESPONSE,
@@ -663,8 +525,6 @@ _sym_db.RegisterMessage(DeleteNotebookResponse)
 
 DESCRIPTOR._options = None
 _LISTNOTEBOOKSREQUEST_LABELSENTRY._options = None
-_CREATENOTEBOOKREQUEST_LABELSENTRY._options = None
-_UPDATENOTEBOOKREQUEST_LABELSENTRY._options = None
 
 _NOTEBOOKSERVICE = _descriptor.ServiceDescriptor(
   name='NotebookService',
@@ -673,8 +533,8 @@ _NOTEBOOKSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1514,
-  serialized_end=2555,
+  serialized_start=1138,
+  serialized_end=2179,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListNotebooks',

@@ -62,19 +62,10 @@ export namespace LicenseResponse {
 }
 
 export class CreateLicenseRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateLicenseRequest;
-
-  getName(): string;
-  setName(value: string): CreateLicenseRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateLicenseRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec): CreateLicenseRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateLicenseRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License): CreateLicenseRequest;
+  hasItem(): boolean;
+  clearItem(): CreateLicenseRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLicenseRequest.AsObject;
@@ -86,10 +77,7 @@ export class CreateLicenseRequest extends jspb.Message {
 
 export namespace CreateLicenseRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
   }
 }
 
@@ -126,19 +114,10 @@ export namespace CreateLicenseResponse {
 }
 
 export class UpdateLicenseRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateLicenseRequest;
-
-  getName(): string;
-  setName(value: string): UpdateLicenseRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateLicenseRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec): UpdateLicenseRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateLicenseRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License): UpdateLicenseRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateLicenseRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateLicenseRequest.AsObject;
@@ -150,10 +129,7 @@ export class UpdateLicenseRequest extends jspb.Message {
 
 export namespace UpdateLicenseRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
   }
 }
 

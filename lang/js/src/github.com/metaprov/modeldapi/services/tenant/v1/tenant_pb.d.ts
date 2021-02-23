@@ -47,19 +47,10 @@ export namespace ListTenantsResponse {
 }
 
 export class CreateTenantRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateTenantRequest;
-
-  getName(): string;
-  setName(value: string): CreateTenantRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateTenantRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec): CreateTenantRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateTenantRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): CreateTenantRequest;
+  hasItem(): boolean;
+  clearItem(): CreateTenantRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTenantRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateTenantRequest extends jspb.Message {
 
 export namespace CreateTenantRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateTenantResponse {
 }
 
 export class UpdateTenantRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateTenantRequest;
-
-  getName(): string;
-  setName(value: string): UpdateTenantRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateTenantRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec): UpdateTenantRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateTenantRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec): UpdateTenantRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateTenantRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateTenantRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateTenantRequest extends jspb.Message {
 
 export namespace UpdateTenantRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.AsObject,
   }
 }
 

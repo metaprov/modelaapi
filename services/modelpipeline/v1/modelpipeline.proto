@@ -17,10 +17,7 @@ message ListModelPipelinesResponse {
 message ModelPipelineResponse {}
 
 message CreateModelPipelineRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message CreateModelPipelineResponse {
@@ -28,10 +25,7 @@ message CreateModelPipelineResponse {
 }
 
 message UpdateModelPipelineRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message UpdateModelPipelineResponse {

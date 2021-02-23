@@ -22,42 +22,24 @@ message PublishNotebookResponse {
 }
 
 message PublishModelRequest {
-    string dataproductName = 1;
-    string dataproductNamespace = 2;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec    dataproductSpec    = 3;
-    string dataproductversionName = 4;
-    string dataproductversionNamespace = 5;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec    dataproductversionSpec    = 6;
-    string modelName = 7;
-    string modelNamespace = 8;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec      modelSpec    = 9;
-    string studyName = 13;
-    string studyNamespace = 14;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec      studySpec    = 15;
-    string datasourceName = 16;
-    string datasourceNamespace = 17;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec         datasourceSpec   = 18;
-    string datasetName = 19;
-    string datasetNamespace = 20;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec         datasetSpec   = 21;
-    string   provider            = 22; // the image registry provider
-    string   imagename           = 23;
-    bool     push                = 24;
-    string bucketName            = 25;
-    string bucketNamespace       = 26;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec         bucketSpec   = 27;
-    string cloudConnectionName = 28;
-    string cloudsConnectionNamespace = 29;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec         cloudConnectionSpec   = 30;
-    map<string,bytes>  cloudSecret   = 31; // the image registry login details.
-    string dockerConnectionName = 32;
-    string dockerConnectionNamespace = 33;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec         dockerConnectionSpec   = 34;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model             model               = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study             study               = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
+    string   provider            = 7; // the image registry provider
+    string   imagename           = 8;
+    bool     push                = 9;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket      = 10;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            cloudConn   = 11;
+    map<string,bytes>  cloudSecret   = 12; // the image registry login details.
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            dockerConnection   = 13;
     map<string,bytes>  dockerRegistrySecret    = 35; // the image registry login details.
-    string    modelWeightsUri        = 36;
-    string    preprocessorWeightsUri = 37;
-    string    labelEncoderUri        = 38;
-    bool      kaniko                 = 39;
+    string    modelWeightsUri        = 14;
+    string    preprocessorWeightsUri = 15;
+    string    labelEncoderUri        = 16;
+    bool      kaniko                 = 17;
 }
 
 message PublishModelResponse {

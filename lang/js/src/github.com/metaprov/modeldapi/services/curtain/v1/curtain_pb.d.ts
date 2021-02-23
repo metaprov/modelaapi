@@ -61,19 +61,10 @@ export namespace CreateCurtainResponse {
 }
 
 export class CreateCurtainRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateCurtainRequest;
-
-  getName(): string;
-  setName(value: string): CreateCurtainRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateCurtainRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec): CreateCurtainRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateCurtainRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): CreateCurtainRequest;
+  hasItem(): boolean;
+  clearItem(): CreateCurtainRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCurtainRequest.AsObject;
@@ -85,27 +76,15 @@ export class CreateCurtainRequest extends jspb.Message {
 
 export namespace CreateCurtainRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
   }
 }
 
 export class UpdateCurtainRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateCurtainRequest;
-
-  getName(): string;
-  setName(value: string): UpdateCurtainRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateCurtainRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec): UpdateCurtainRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateCurtainRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): UpdateCurtainRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateCurtainRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateCurtainRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateCurtainRequest extends jspb.Message {
 
 export namespace UpdateCurtainRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
   }
 }
 

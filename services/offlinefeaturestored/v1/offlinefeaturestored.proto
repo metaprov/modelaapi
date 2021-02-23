@@ -17,13 +17,9 @@ service OfflineFeatureStoreService {
 }
 
 message CreateFeatureRequest {
-    string name = 1;
-    string ns   = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
-    string connectionName = 5;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
-    map<string,bytes>  secret    = 7;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
+    map<string,bytes>  secret    = 3;
 }
 message CreateFeatureResponse {}
 
@@ -36,13 +32,9 @@ message DeleteFeatureResponse {}
 
 
 message UpdateFeatureRequest {
-    string name = 1;
-    string ns   = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
-    string connectionName = 5;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
-    map<string,bytes>  secret    = 7;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
+    map<string,bytes>  secret    = 3;
 }
 message UpdateFeatureResponse {}
 

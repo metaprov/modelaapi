@@ -47,19 +47,10 @@ export namespace ListEntitiesResponse {
 }
 
 export class CreateEntityRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateEntityRequest;
-
-  getName(): string;
-  setName(value: string): CreateEntityRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateEntityRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntitySpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntitySpec): CreateEntityRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateEntityRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity): CreateEntityRequest;
+  hasItem(): boolean;
+  clearItem(): CreateEntityRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateEntityRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateEntityRequest extends jspb.Message {
 
 export namespace CreateEntityRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntitySpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateEntityResponse {
 }
 
 export class UpdateEntityRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateEntityRequest;
-
-  getName(): string;
-  setName(value: string): UpdateEntityRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateEntityRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntitySpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntitySpec): UpdateEntityRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateEntityRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity): UpdateEntityRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateEntityRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateEntityRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateEntityRequest extends jspb.Message {
 
 export namespace UpdateEntityRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntitySpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
   }
 }
 

@@ -648,42 +648,24 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataproductname: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    dataproductnamespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dataproductspec: (f = msg.getDataproductspec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec.toObject(includeInstance, f),
-    dataproductversionname: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    dataproductversionnamespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dataproductversionspec: (f = msg.getDataproductversionspec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec.toObject(includeInstance, f),
-    modelname: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    modelnamespace: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    modelspec: (f = msg.getModelspec()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.toObject(includeInstance, f),
-    studyname: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    studynamespace: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    studyspec: (f = msg.getStudyspec()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.toObject(includeInstance, f),
-    datasourcename: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    datasourcenamespace: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    datasourcespec: (f = msg.getDatasourcespec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.toObject(includeInstance, f),
-    datasetname: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    datasetnamespace: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    datasetspec: (f = msg.getDatasetspec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.toObject(includeInstance, f),
-    provider: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    imagename: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    push: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
-    bucketname: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    bucketnamespace: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    bucketspec: (f = msg.getBucketspec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.toObject(includeInstance, f),
-    cloudconnectionname: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    cloudsconnectionnamespace: jspb.Message.getFieldWithDefault(msg, 29, ""),
-    cloudconnectionspec: (f = msg.getCloudconnectionspec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.toObject(includeInstance, f),
+    dataproduct: (f = msg.getDataproduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    dataproductversion: (f = msg.getDataproductversion()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
+    model: (f = msg.getModel()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
+    study: (f = msg.getStudy()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    provider: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    imagename: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    push: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    cloudconn: (f = msg.getCloudconn()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     cloudsecretMap: (f = msg.getCloudsecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    dockerconnectionname: jspb.Message.getFieldWithDefault(msg, 32, ""),
-    dockerconnectionnamespace: jspb.Message.getFieldWithDefault(msg, 33, ""),
-    dockerconnectionspec: (f = msg.getDockerconnectionspec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.toObject(includeInstance, f),
+    dockerconnection: (f = msg.getDockerconnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dockerregistrysecretMap: (f = msg.getDockerregistrysecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    modelweightsuri: jspb.Message.getFieldWithDefault(msg, 36, ""),
-    preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 37, ""),
-    labelencoderuri: jspb.Message.getFieldWithDefault(msg, 38, ""),
-    kaniko: jspb.Message.getBooleanFieldWithDefault(msg, 39, false)
+    modelweightsuri: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    labelencoderuri: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    kaniko: jspb.Message.getBooleanFieldWithDefault(msg, 17, false)
   };
 
   if (includeInstance) {
@@ -721,139 +703,67 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDataproductname(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
+      msg.setDataproduct(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDataproductnamespace(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
+      msg.setDataproductversion(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec.deserializeBinaryFromReader);
-      msg.setDataproductspec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
+      msg.setModel(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDataproductversionname(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
+      msg.setStudy(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDataproductversionnamespace(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
       break;
     case 6:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec.deserializeBinaryFromReader);
-      msg.setDataproductversionspec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setDataset(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelname(value);
+      msg.setProvider(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelnamespace(value);
-      break;
-    case 9:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.deserializeBinaryFromReader);
-      msg.setModelspec(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStudyname(value);
-      break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStudynamespace(value);
-      break;
-    case 15:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.deserializeBinaryFromReader);
-      msg.setStudyspec(value);
-      break;
-    case 16:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasourcename(value);
-      break;
-    case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasourcenamespace(value);
-      break;
-    case 18:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.deserializeBinaryFromReader);
-      msg.setDatasourcespec(value);
-      break;
-    case 19:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetname(value);
-      break;
-    case 20:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetnamespace(value);
-      break;
-    case 21:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.deserializeBinaryFromReader);
-      msg.setDatasetspec(value);
-      break;
-    case 22:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProvider(value);
-      break;
-    case 23:
-      var value = /** @type {string} */ (reader.readString());
       msg.setImagename(value);
       break;
-    case 24:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPush(value);
       break;
-    case 25:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBucketname(value);
+    case 10:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setBucket(value);
       break;
-    case 26:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBucketnamespace(value);
+    case 11:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setCloudconn(value);
       break;
-    case 27:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.deserializeBinaryFromReader);
-      msg.setBucketspec(value);
-      break;
-    case 28:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCloudconnectionname(value);
-      break;
-    case 29:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCloudsconnectionnamespace(value);
-      break;
-    case 30:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.deserializeBinaryFromReader);
-      msg.setCloudconnectionspec(value);
-      break;
-    case 31:
+    case 12:
       var value = msg.getCloudsecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
-    case 32:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDockerconnectionname(value);
-      break;
-    case 33:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDockerconnectionnamespace(value);
-      break;
-    case 34:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.deserializeBinaryFromReader);
-      msg.setDockerconnectionspec(value);
+    case 13:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setDockerconnection(value);
       break;
     case 35:
       var value = msg.getDockerregistrysecretMap();
@@ -861,19 +771,19 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.d
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
-    case 36:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setModelweightsuri(value);
       break;
-    case 37:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setPreprocessorweightsuri(value);
       break;
-    case 38:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setLabelencoderuri(value);
       break;
-    case 39:
+    case 17:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setKaniko(value);
       break;
@@ -906,227 +816,101 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDataproductname();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getDataproduct();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
     );
   }
-  f = message.getDataproductnamespace();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getDataproductversion();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
     );
   }
-  f = message.getDataproductspec();
+  f = message.getModel();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
   }
-  f = message.getDataproductversionname();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getStudy();
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
     );
   }
-  f = message.getDataproductversionnamespace();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
-  f = message.getDataproductversionspec();
+  f = message.getDataset();
   if (f != null) {
     writer.writeMessage(
       6,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
     );
   }
-  f = message.getModelname();
+  f = message.getProvider();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getModelnamespace();
+  f = message.getImagename();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getModelspec();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getStudyname();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
-  f = message.getStudynamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = message.getStudyspec();
-  if (f != null) {
-    writer.writeMessage(
-      15,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasourcename();
-  if (f.length > 0) {
-    writer.writeString(
-      16,
-      f
-    );
-  }
-  f = message.getDatasourcenamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      17,
-      f
-    );
-  }
-  f = message.getDatasourcespec();
-  if (f != null) {
-    writer.writeMessage(
-      18,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasetname();
-  if (f.length > 0) {
-    writer.writeString(
-      19,
-      f
-    );
-  }
-  f = message.getDatasetnamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      20,
-      f
-    );
-  }
-  f = message.getDatasetspec();
-  if (f != null) {
-    writer.writeMessage(
-      21,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getProvider();
-  if (f.length > 0) {
-    writer.writeString(
-      22,
-      f
-    );
-  }
-  f = message.getImagename();
-  if (f.length > 0) {
-    writer.writeString(
-      23,
-      f
-    );
-  }
   f = message.getPush();
   if (f) {
     writer.writeBool(
-      24,
+      9,
       f
     );
   }
-  f = message.getBucketname();
-  if (f.length > 0) {
-    writer.writeString(
-      25,
-      f
-    );
-  }
-  f = message.getBucketnamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      26,
-      f
-    );
-  }
-  f = message.getBucketspec();
+  f = message.getBucket();
   if (f != null) {
     writer.writeMessage(
-      27,
+      10,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getCloudconnectionname();
-  if (f.length > 0) {
-    writer.writeString(
-      28,
-      f
-    );
-  }
-  f = message.getCloudsconnectionnamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      29,
-      f
-    );
-  }
-  f = message.getCloudconnectionspec();
+  f = message.getCloudconn();
   if (f != null) {
     writer.writeMessage(
-      30,
+      11,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getCloudsecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(31, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
-  f = message.getDockerconnectionname();
-  if (f.length > 0) {
-    writer.writeString(
-      32,
-      f
-    );
-  }
-  f = message.getDockerconnectionnamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      33,
-      f
-    );
-  }
-  f = message.getDockerconnectionspec();
+  f = message.getDockerconnection();
   if (f != null) {
     writer.writeMessage(
-      34,
+      13,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getDockerregistrysecretMap(true);
@@ -1136,28 +920,28 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.s
   f = message.getModelweightsuri();
   if (f.length > 0) {
     writer.writeString(
-      36,
+      14,
       f
     );
   }
   f = message.getPreprocessorweightsuri();
   if (f.length > 0) {
     writer.writeString(
-      37,
+      15,
       f
     );
   }
   f = message.getLabelencoderuri();
   if (f.length > 0) {
     writer.writeString(
-      38,
+      16,
       f
     );
   }
   f = message.getKaniko();
   if (f) {
     writer.writeBool(
-      39,
+      17,
       f
     );
   }
@@ -1165,56 +949,94 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.s
 
 
 /**
- * optional string dataproductName = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct dataproduct = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproduct = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductname = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string dataproductNamespace = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec dataproductSpec = 3;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductspec = function(value) {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproduct = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDataproduct = function() {
+  return this.setDataproduct(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataproduct = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion dataproductversion = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductversion = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductversion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDataproductversion = function() {
+  return this.setDataproductversion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataproductversion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModel = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -1223,8 +1045,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDataproductspec = function() {
-  return this.setDataproductspec(undefined);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearModel = function() {
+  return this.setModel(undefined);
 };
 
 
@@ -1232,62 +1054,100 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataproductspec = function() {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasModel = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string dataproductversionName = 4;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study study = 4;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductversionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getStudy = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study, 4));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductversionname = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string dataproductversionNamespace = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductversionnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductversionnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec dataproductversionSpec = 6;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductversionspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductversionspec = function(value) {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setStudy = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearStudy = function() {
+  return this.setStudy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasStudy = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource datasource = 5;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 6;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDataset = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDataset = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -1296,8 +1156,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDataproductversionspec = function() {
-  return this.setDataproductversionspec(undefined);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
 };
 
 
@@ -1305,16 +1165,16 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataproductversionspec = function() {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string modelName = 7;
+ * optional string provider = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModelname = function() {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getProvider = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -1323,16 +1183,16 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelname = function(value) {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setProvider = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string modelNamespace = 8;
+ * optional string imagename = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModelnamespace = function() {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getImagename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -1341,309 +1201,17 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelnamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setImagename = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec modelSpec = 9;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModelspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelspec = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearModelspec = function() {
-  return this.setModelspec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasModelspec = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional string studyName = 13;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getStudyname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setStudyname = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
-};
-
-
-/**
- * optional string studyNamespace = 14;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getStudynamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setStudynamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec studySpec = 15;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getStudyspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec, 15));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setStudyspec = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearStudyspec = function() {
-  return this.setStudyspec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasStudyspec = function() {
-  return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional string datasourceName = 16;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasourcename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasourcename = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
-};
-
-
-/**
- * optional string datasourceNamespace = 17;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasourcenamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasourcenamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec datasourceSpec = 18;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasourcespec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec, 18));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasourcespec = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDatasourcespec = function() {
-  return this.setDatasourcespec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDatasourcespec = function() {
-  return jspb.Message.getField(this, 18) != null;
-};
-
-
-/**
- * optional string datasetName = 19;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasetname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasetname = function(value) {
-  return jspb.Message.setProto3StringField(this, 19, value);
-};
-
-
-/**
- * optional string datasetNamespace = 20;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasetnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasetnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 20, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec datasetSpec = 21;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDatasetspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec, 21));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDatasetspec = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDatasetspec = function() {
-  return this.setDatasetspec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDatasetspec = function() {
-  return jspb.Message.getField(this, 21) != null;
-};
-
-
-/**
- * optional string provider = 22;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getProvider = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setProvider = function(value) {
-  return jspb.Message.setProto3StringField(this, 22, value);
-};
-
-
-/**
- * optional string imagename = 23;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getImagename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setImagename = function(value) {
-  return jspb.Message.setProto3StringField(this, 23, value);
-};
-
-
-/**
- * optional bool push = 24;
+ * optional bool push = 9;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getPush = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
@@ -1652,62 +1220,26 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setPush = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 24, value);
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional string bucketName = 25;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 10;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getBucketname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getBucket = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 10));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setBucketname = function(value) {
-  return jspb.Message.setProto3StringField(this, 25, value);
-};
-
-
-/**
- * optional string bucketNamespace = 26;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getBucketnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setBucketnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 26, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 27;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getBucketspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec, 27));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setBucketspec = function(value) {
-  return jspb.Message.setWrapperField(this, 27, value);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -1715,8 +1247,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearBucketspec = function() {
-  return this.setBucketspec(undefined);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
 };
 
 
@@ -1724,63 +1256,27 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasBucketspec = function() {
-  return jspb.Message.getField(this, 27) != null;
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string cloudConnectionName = 28;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection cloudConn = 11;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudconnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudconn = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 11));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setCloudconnectionname = function(value) {
-  return jspb.Message.setProto3StringField(this, 28, value);
-};
-
-
-/**
- * optional string cloudsConnectionNamespace = 29;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudsconnectionnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 29, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setCloudsconnectionnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 29, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec cloudConnectionSpec = 30;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudconnectionspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec, 30));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setCloudconnectionspec = function(value) {
-  return jspb.Message.setWrapperField(this, 30, value);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setCloudconn = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -1788,8 +1284,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearCloudconnectionspec = function() {
-  return this.setCloudconnectionspec(undefined);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearCloudconn = function() {
+  return this.setCloudconn(undefined);
 };
 
 
@@ -1797,20 +1293,20 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasCloudconnectionspec = function() {
-  return jspb.Message.getField(this, 30) != null;
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasCloudconn = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * map<string, bytes> cloudSecret = 31;
+ * map<string, bytes> cloudSecret = 12;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudsecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 31, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
       null));
 };
 
@@ -1825,57 +1321,21 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
 
 
 /**
- * optional string dockerConnectionName = 32;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection dockerConnection = 13;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDockerconnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 32, ""));
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDockerconnection = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 13));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDockerconnectionname = function(value) {
-  return jspb.Message.setProto3StringField(this, 32, value);
-};
-
-
-/**
- * optional string dockerConnectionNamespace = 33;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDockerconnectionnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDockerconnectionnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 33, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec dockerConnectionSpec = 34;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDockerconnectionspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec, 34));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDockerconnectionspec = function(value) {
-  return jspb.Message.setWrapperField(this, 34, value);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDockerconnection = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -1883,8 +1343,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDockerconnectionspec = function() {
-  return this.setDockerconnectionspec(undefined);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.clearDockerconnection = function() {
+  return this.setDockerconnection(undefined);
 };
 
 
@@ -1892,8 +1352,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDockerconnectionspec = function() {
-  return jspb.Message.getField(this, 34) != null;
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDockerconnection = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -1920,11 +1380,11 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
 
 
 /**
- * optional string modelWeightsUri = 36;
+ * optional string modelWeightsUri = 14;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModelweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
@@ -1933,16 +1393,16 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 36, value);
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
 /**
- * optional string preprocessorWeightsUri = 37;
+ * optional string preprocessorWeightsUri = 15;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getPreprocessorweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
 
@@ -1951,16 +1411,16 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setPreprocessorweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 37, value);
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
 /**
- * optional string labelEncoderUri = 38;
+ * optional string labelEncoderUri = 16;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getLabelencoderuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 38, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
 
@@ -1969,16 +1429,16 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setLabelencoderuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 38, value);
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
 /**
- * optional bool kaniko = 39;
+ * optional bool kaniko = 17;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getKaniko = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 39, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
@@ -1987,7 +1447,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setKaniko = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 39, value);
+  return jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 

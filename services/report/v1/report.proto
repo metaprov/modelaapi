@@ -19,20 +19,14 @@ message ListReportsResponse {
 }
 
 message CreateReportRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 1;
 }
 
 message CreateReportResponse {}
 
 
 message UpdateReportRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 5;
 }
 
 message UpdateReportResponse {

@@ -98,19 +98,10 @@ export namespace GetDatasetResponse {
 }
 
 export class CreateDatasetRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateDatasetRequest;
-
-  getName(): string;
-  setName(value: string): CreateDatasetRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateDatasetRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec): CreateDatasetRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateDatasetRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;
+  hasItem(): boolean;
+  clearItem(): CreateDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDatasetRequest.AsObject;
@@ -122,10 +113,7 @@ export class CreateDatasetRequest extends jspb.Message {
 
 export namespace CreateDatasetRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -144,19 +132,10 @@ export namespace CreateDatasetResponse {
 }
 
 export class UpdateDatasetRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateDatasetRequest;
-
-  getName(): string;
-  setName(value: string): UpdateDatasetRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateDatasetRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec): UpdateDatasetRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateDatasetRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): UpdateDatasetRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDatasetRequest.AsObject;
@@ -168,10 +147,7 @@ export class UpdateDatasetRequest extends jspb.Message {
 
 export namespace UpdateDatasetRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 

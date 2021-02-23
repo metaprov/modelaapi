@@ -68,71 +68,35 @@ export namespace PublishNotebookResponse {
 }
 
 export class PublishModelRequest extends jspb.Message {
-  getDataproductname(): string;
-  setDataproductname(value: string): PublishModelRequest;
+  getDataproduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setDataproduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): PublishModelRequest;
+  hasDataproduct(): boolean;
+  clearDataproduct(): PublishModelRequest;
 
-  getDataproductnamespace(): string;
-  setDataproductnamespace(value: string): PublishModelRequest;
+  getDataproductversion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setDataproductversion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): PublishModelRequest;
+  hasDataproductversion(): boolean;
+  clearDataproductversion(): PublishModelRequest;
 
-  getDataproductspec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec | undefined;
-  setDataproductspec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec): PublishModelRequest;
-  hasDataproductspec(): boolean;
-  clearDataproductspec(): PublishModelRequest;
+  getModel(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): PublishModelRequest;
+  hasModel(): boolean;
+  clearModel(): PublishModelRequest;
 
-  getDataproductversionname(): string;
-  setDataproductversionname(value: string): PublishModelRequest;
+  getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): PublishModelRequest;
+  hasStudy(): boolean;
+  clearStudy(): PublishModelRequest;
 
-  getDataproductversionnamespace(): string;
-  setDataproductversionnamespace(value: string): PublishModelRequest;
+  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): PublishModelRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): PublishModelRequest;
 
-  getDataproductversionspec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec | undefined;
-  setDataproductversionspec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec): PublishModelRequest;
-  hasDataproductversionspec(): boolean;
-  clearDataproductversionspec(): PublishModelRequest;
-
-  getModelname(): string;
-  setModelname(value: string): PublishModelRequest;
-
-  getModelnamespace(): string;
-  setModelnamespace(value: string): PublishModelRequest;
-
-  getModelspec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec | undefined;
-  setModelspec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec): PublishModelRequest;
-  hasModelspec(): boolean;
-  clearModelspec(): PublishModelRequest;
-
-  getStudyname(): string;
-  setStudyname(value: string): PublishModelRequest;
-
-  getStudynamespace(): string;
-  setStudynamespace(value: string): PublishModelRequest;
-
-  getStudyspec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec | undefined;
-  setStudyspec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec): PublishModelRequest;
-  hasStudyspec(): boolean;
-  clearStudyspec(): PublishModelRequest;
-
-  getDatasourcename(): string;
-  setDatasourcename(value: string): PublishModelRequest;
-
-  getDatasourcenamespace(): string;
-  setDatasourcenamespace(value: string): PublishModelRequest;
-
-  getDatasourcespec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec | undefined;
-  setDatasourcespec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec): PublishModelRequest;
-  hasDatasourcespec(): boolean;
-  clearDatasourcespec(): PublishModelRequest;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): PublishModelRequest;
-
-  getDatasetnamespace(): string;
-  setDatasetnamespace(value: string): PublishModelRequest;
-
-  getDatasetspec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec | undefined;
-  setDatasetspec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec): PublishModelRequest;
-  hasDatasetspec(): boolean;
-  clearDatasetspec(): PublishModelRequest;
+  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): PublishModelRequest;
+  hasDataset(): boolean;
+  clearDataset(): PublishModelRequest;
 
   getProvider(): string;
   setProvider(value: string): PublishModelRequest;
@@ -143,41 +107,23 @@ export class PublishModelRequest extends jspb.Message {
   getPush(): boolean;
   setPush(value: boolean): PublishModelRequest;
 
-  getBucketname(): string;
-  setBucketname(value: string): PublishModelRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): PublishModelRequest;
+  hasBucket(): boolean;
+  clearBucket(): PublishModelRequest;
 
-  getBucketnamespace(): string;
-  setBucketnamespace(value: string): PublishModelRequest;
-
-  getBucketspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec | undefined;
-  setBucketspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec): PublishModelRequest;
-  hasBucketspec(): boolean;
-  clearBucketspec(): PublishModelRequest;
-
-  getCloudconnectionname(): string;
-  setCloudconnectionname(value: string): PublishModelRequest;
-
-  getCloudsconnectionnamespace(): string;
-  setCloudsconnectionnamespace(value: string): PublishModelRequest;
-
-  getCloudconnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setCloudconnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): PublishModelRequest;
-  hasCloudconnectionspec(): boolean;
-  clearCloudconnectionspec(): PublishModelRequest;
+  getCloudconn(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setCloudconn(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): PublishModelRequest;
+  hasCloudconn(): boolean;
+  clearCloudconn(): PublishModelRequest;
 
   getCloudsecretMap(): jspb.Map<string, Uint8Array | string>;
   clearCloudsecretMap(): PublishModelRequest;
 
-  getDockerconnectionname(): string;
-  setDockerconnectionname(value: string): PublishModelRequest;
-
-  getDockerconnectionnamespace(): string;
-  setDockerconnectionnamespace(value: string): PublishModelRequest;
-
-  getDockerconnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setDockerconnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): PublishModelRequest;
-  hasDockerconnectionspec(): boolean;
-  clearDockerconnectionspec(): PublishModelRequest;
+  getDockerconnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setDockerconnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): PublishModelRequest;
+  hasDockerconnection(): boolean;
+  clearDockerconnection(): PublishModelRequest;
 
   getDockerregistrysecretMap(): jspb.Map<string, Uint8Array | string>;
   clearDockerregistrysecretMap(): PublishModelRequest;
@@ -204,37 +150,19 @@ export class PublishModelRequest extends jspb.Message {
 
 export namespace PublishModelRequest {
   export type AsObject = {
-    dataproductname: string,
-    dataproductnamespace: string,
-    dataproductspec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductSpec.AsObject,
-    dataproductversionname: string,
-    dataproductversionnamespace: string,
-    dataproductversionspec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionSpec.AsObject,
-    modelname: string,
-    modelnamespace: string,
-    modelspec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.AsObject,
-    studyname: string,
-    studynamespace: string,
-    studyspec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.AsObject,
-    datasourcename: string,
-    datasourcenamespace: string,
-    datasourcespec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
-    datasetname: string,
-    datasetnamespace: string,
-    datasetspec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.AsObject,
+    dataproduct?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    dataproductversion?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     provider: string,
     imagename: string,
     push: boolean,
-    bucketname: string,
-    bucketnamespace: string,
-    bucketspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.AsObject,
-    cloudconnectionname: string,
-    cloudsconnectionnamespace: string,
-    cloudconnectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    cloudconn?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     cloudsecretMap: Array<[string, Uint8Array | string]>,
-    dockerconnectionname: string,
-    dockerconnectionnamespace: string,
-    dockerconnectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    dockerconnection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dockerregistrysecretMap: Array<[string, Uint8Array | string]>,
     modelweightsuri: string,
     preprocessorweightsuri: string,

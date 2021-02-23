@@ -47,19 +47,10 @@ export namespace ListFeaturesetResponse {
 }
 
 export class CreateFeaturesetRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateFeaturesetRequest;
-
-  getName(): string;
-  setName(value: string): CreateFeaturesetRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateFeaturesetRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetSpec): CreateFeaturesetRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateFeaturesetRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): CreateFeaturesetRequest;
+  hasItem(): boolean;
+  clearItem(): CreateFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeaturesetRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateFeaturesetRequest extends jspb.Message {
 
 export namespace CreateFeaturesetRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateFeaturesetResponse {
 }
 
 export class UpdateFeaturesetRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateFeaturesetRequest;
-
-  getName(): string;
-  setName(value: string): UpdateFeaturesetRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateFeaturesetRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetSpec): UpdateFeaturesetRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateFeaturesetRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeaturesetRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateFeaturesetRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateFeaturesetRequest extends jspb.Message {
 
 export namespace UpdateFeaturesetRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
   }
 }
 

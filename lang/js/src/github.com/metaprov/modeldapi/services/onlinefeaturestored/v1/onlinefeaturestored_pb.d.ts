@@ -14,10 +14,10 @@ export class CreateFeatureRequest extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): CreateFeatureRequest;
 
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): CreateFeatureRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): CreateFeatureRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateFeatureRequest;
+  hasItem(): boolean;
+  clearItem(): CreateFeatureRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): CreateFeatureRequest;
@@ -35,7 +35,7 @@ export namespace CreateFeatureRequest {
     name: string,
     ns: string,
     connectionname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }

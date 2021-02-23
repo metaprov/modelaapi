@@ -65,19 +65,10 @@ export namespace CreatePredictionPipelineRunResponse {
 }
 
 export class CreatePredictionPipelineRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreatePredictionPipelineRunRequest;
-
-  getName(): string;
-  setName(value: string): CreatePredictionPipelineRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreatePredictionPipelineRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRunSpec): CreatePredictionPipelineRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreatePredictionPipelineRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun): CreatePredictionPipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): CreatePredictionPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePredictionPipelineRunRequest.AsObject;
@@ -89,27 +80,15 @@ export class CreatePredictionPipelineRunRequest extends jspb.Message {
 
 export namespace CreatePredictionPipelineRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun.AsObject,
   }
 }
 
 export class UpdatePredictionPipelineRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdatePredictionPipelineRunRequest;
-
-  getName(): string;
-  setName(value: string): UpdatePredictionPipelineRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdatePredictionPipelineRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRunSpec): UpdatePredictionPipelineRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdatePredictionPipelineRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun): UpdatePredictionPipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): UpdatePredictionPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdatePredictionPipelineRunRequest.AsObject;
@@ -121,10 +100,7 @@ export class UpdatePredictionPipelineRunRequest extends jspb.Message {
 
 export namespace UpdatePredictionPipelineRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun.AsObject,
   }
 }
 

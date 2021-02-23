@@ -47,19 +47,10 @@ export namespace ListRunBooksResponse {
 }
 
 export class CreateRunBookRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateRunBookRequest;
-
-  getName(): string;
-  setName(value: string): CreateRunBookRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateRunBookRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookSpec): CreateRunBookRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateRunBookRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): CreateRunBookRequest;
+  hasItem(): boolean;
+  clearItem(): CreateRunBookRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRunBookRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateRunBookRequest extends jspb.Message {
 
 export namespace CreateRunBookRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateRunBookResponse {
 }
 
 export class UpdateRunBookRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateRunBookRequest;
-
-  getName(): string;
-  setName(value: string): UpdateRunBookRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateRunBookRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookSpec): UpdateRunBookRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateRunBookRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): UpdateRunBookRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateRunBookRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateRunBookRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateRunBookRequest extends jspb.Message {
 
 export namespace UpdateRunBookRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
   }
 }
 

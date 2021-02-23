@@ -22,7 +22,7 @@ message CreateFeatureRequest {
     string name = 1;
     string ns   = 2;
     string connectionName = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 4;
     map<string,bytes>  secret    = 5;
 
 }

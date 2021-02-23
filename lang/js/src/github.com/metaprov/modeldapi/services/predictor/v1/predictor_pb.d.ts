@@ -61,19 +61,10 @@ export namespace CreatePredictorResponse {
 }
 
 export class CreatePredictorRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreatePredictorRequest;
-
-  getName(): string;
-  setName(value: string): CreatePredictorRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreatePredictorRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorSpec): CreatePredictorRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreatePredictorRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CreatePredictorRequest;
+  hasItem(): boolean;
+  clearItem(): CreatePredictorRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePredictorRequest.AsObject;
@@ -85,27 +76,15 @@ export class CreatePredictorRequest extends jspb.Message {
 
 export namespace CreatePredictorRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
   }
 }
 
 export class UpdatePredictorRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdatePredictorRequest;
-
-  getName(): string;
-  setName(value: string): UpdatePredictorRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdatePredictorRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorSpec): UpdatePredictorRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdatePredictorRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): UpdatePredictorRequest;
+  hasItem(): boolean;
+  clearItem(): UpdatePredictorRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdatePredictorRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdatePredictorRequest extends jspb.Message {
 
 export namespace UpdatePredictorRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
   }
 }
 

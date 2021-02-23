@@ -19,10 +19,7 @@ message ListNotebookRunsResponse {
 message NotebookRunResponse {}
 
 message CreateNotebookRunRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
 }
 
 message CreateNotebookRunResponse {
@@ -30,10 +27,7 @@ message CreateNotebookRunResponse {
 }
 
 message UpdateNotebookRunRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
 }
 
 message UpdateNotebookRunResponse {

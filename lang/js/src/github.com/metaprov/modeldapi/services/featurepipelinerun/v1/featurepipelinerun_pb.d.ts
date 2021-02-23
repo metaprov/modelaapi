@@ -47,19 +47,10 @@ export namespace ListFeaturePipelineRunResponse {
 }
 
 export class CreateFeaturePipelineRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateFeaturePipelineRunRequest;
-
-  getName(): string;
-  setName(value: string): CreateFeaturePipelineRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateFeaturePipelineRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunSpec): CreateFeaturePipelineRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateFeaturePipelineRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): CreateFeaturePipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): CreateFeaturePipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeaturePipelineRunRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateFeaturePipelineRunRequest extends jspb.Message {
 
 export namespace CreateFeaturePipelineRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateFeaturePipelineRunResponse {
 }
 
 export class UpdateFeaturePipelineRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateFeaturePipelineRunRequest;
-
-  getName(): string;
-  setName(value: string): UpdateFeaturePipelineRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateFeaturePipelineRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunSpec): UpdateFeaturePipelineRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateFeaturePipelineRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): UpdateFeaturePipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateFeaturePipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateFeaturePipelineRunRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateFeaturePipelineRunRequest extends jspb.Message {
 
 export namespace UpdateFeaturePipelineRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
   }
 }
 

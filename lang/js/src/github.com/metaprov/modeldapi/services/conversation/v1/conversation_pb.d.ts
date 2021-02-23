@@ -56,25 +56,10 @@ export namespace GetConversationResponse {
 }
 
 export class CreateConversationRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateConversationRequest;
-
-  getName(): string;
-  setName(value: string): CreateConversationRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateConversationRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec): CreateConversationRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateConversationRequest;
-
-  getPassword(): string;
-  setPassword(value: string): CreateConversationRequest;
-
-  getUpsert(): boolean;
-  setUpsert(value: boolean): CreateConversationRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation): CreateConversationRequest;
+  hasItem(): boolean;
+  clearItem(): CreateConversationRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateConversationRequest.AsObject;
@@ -86,12 +71,7 @@ export class CreateConversationRequest extends jspb.Message {
 
 export namespace CreateConversationRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.AsObject,
-    password: string,
-    upsert: boolean,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.AsObject,
   }
 }
 
@@ -110,19 +90,10 @@ export namespace CreateConversationResponse {
 }
 
 export class UpdateConversationRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateConversationRequest;
-
-  getName(): string;
-  setName(value: string): UpdateConversationRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateConversationRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec): UpdateConversationRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateConversationRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation): UpdateConversationRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateConversationRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateConversationRequest.AsObject;
@@ -134,10 +105,7 @@ export class UpdateConversationRequest extends jspb.Message {
 
 export namespace UpdateConversationRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.AsObject,
   }
 }
 

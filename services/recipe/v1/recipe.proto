@@ -16,20 +16,14 @@ message ListRecipesResponse {
 }
 
 message CreateRecipeRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
 }
 
 message CreateRecipeResponse {
 }
 
 message UpdateRecipeRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
 }
 
 message UpdateRecipeResponse {

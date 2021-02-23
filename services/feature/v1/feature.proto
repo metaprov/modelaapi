@@ -16,10 +16,7 @@ message ListFeaturesResponse {
 }
 
 message CreateFeatureRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message CreateFeatureResponse {
@@ -27,10 +24,7 @@ message CreateFeatureResponse {
 }
 
 message UpdateFeatureRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message UpdateFeatureResponse {

@@ -646,12 +646,7 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationR
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.toObject(includeInstance, f),
-    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    upsert: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -689,31 +684,9 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
-      break;
-    case 7:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUpsert(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -744,123 +717,33 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationR
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getPassword();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getUpsert();
-  if (f) {
-    writer.writeBool(
-      7,
-      f
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
  */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -868,8 +751,8 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationR
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -877,44 +760,8 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string password = 6;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getPassword = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.setPassword = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional bool upsert = 7;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.getUpsert = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.setUpsert = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
+proto.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1051,10 +898,7 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationR
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1092,23 +936,9 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1139,109 +969,33 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationR
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
  */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec}
- */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1249,8 +1003,8 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationR
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -1258,8 +1012,8 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

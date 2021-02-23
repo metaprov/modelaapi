@@ -21,17 +21,11 @@ message ListPredictionPipelineRunsResponse {
 message CreatePredictionPipelineRunResponse {}
 
 message CreatePredictionPipelineRunRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun item = 1;
 }
 
 message UpdatePredictionPipelineRunRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun item = 1;
 }
 
 message UpdatePredictionPipelineRunResponse {

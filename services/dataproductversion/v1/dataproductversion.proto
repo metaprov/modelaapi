@@ -17,10 +17,7 @@ message ListDataProductVersionsResponse {
 }
 
 message CreateDataProductVersionRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
 }
 
 message CreateDataProductVersionResponse {
@@ -28,10 +25,7 @@ message CreateDataProductVersionResponse {
 }
 
 message UpdateDataProductVersionRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
 }
 
 message UpdateDataProductVersionResponse {

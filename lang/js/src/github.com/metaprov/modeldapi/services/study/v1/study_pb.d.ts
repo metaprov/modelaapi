@@ -94,19 +94,10 @@ export namespace ListStudyResponse {
 }
 
 export class CreateStudyRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateStudyRequest;
-
-  getName(): string;
-  setName(value: string): CreateStudyRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateStudyRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec): CreateStudyRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateStudyRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyRequest;
+  hasItem(): boolean;
+  clearItem(): CreateStudyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateStudyRequest.AsObject;
@@ -118,10 +109,7 @@ export class CreateStudyRequest extends jspb.Message {
 
 export namespace CreateStudyRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
   }
 }
 
@@ -140,19 +128,10 @@ export namespace CreateStudyResponse {
 }
 
 export class UpdateStudyRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateStudyRequest;
-
-  getName(): string;
-  setName(value: string): UpdateStudyRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateStudyRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec): UpdateStudyRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateStudyRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): UpdateStudyRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateStudyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateStudyRequest.AsObject;
@@ -164,10 +143,7 @@ export class UpdateStudyRequest extends jspb.Message {
 
 export namespace UpdateStudyRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
   }
 }
 

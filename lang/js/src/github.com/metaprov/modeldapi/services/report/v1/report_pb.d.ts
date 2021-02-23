@@ -51,19 +51,10 @@ export namespace ListReportsResponse {
 }
 
 export class CreateReportRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateReportRequest;
-
-  getName(): string;
-  setName(value: string): CreateReportRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateReportRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportSpec): CreateReportRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateReportRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateReportRequest;
+  hasItem(): boolean;
+  clearItem(): CreateReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateReportRequest.AsObject;
@@ -75,10 +66,7 @@ export class CreateReportRequest extends jspb.Message {
 
 export namespace CreateReportRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
 
@@ -97,19 +85,10 @@ export namespace CreateReportResponse {
 }
 
 export class UpdateReportRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateReportRequest;
-
-  getName(): string;
-  setName(value: string): UpdateReportRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateReportRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportSpec): UpdateReportRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateReportRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): UpdateReportRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateReportRequest.AsObject;
@@ -121,10 +100,7 @@ export class UpdateReportRequest extends jspb.Message {
 
 export namespace UpdateReportRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
 

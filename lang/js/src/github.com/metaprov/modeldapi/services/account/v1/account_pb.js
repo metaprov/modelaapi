@@ -995,13 +995,8 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.toObject(includeInstance, f),
-    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    upsert: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f),
+    password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1039,36 +1034,13 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUpsert(value);
-      break;
-    case 7:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.deserializeBinaryFromReader);
       msg.setItem(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
       break;
     default:
       reader.skipField();
@@ -1099,195 +1071,31 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.serializeBinaryToWriter
     );
   }
-  f = message.getName();
+  f = message.getPassword();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getPassword();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getUpsert();
-  if (f) {
-    writer.writeBool(
-      6,
-      f
-    );
-  }
-  f = message.getItem();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.serializeBinaryToWriter
-    );
-  }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string password = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getPassword = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setPassword = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional bool upsert = 6;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getUpsert = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setUpsert = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 7;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account}
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getItem = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 7));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 1));
 };
 
 
@@ -1296,7 +1104,7 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.pro
  * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setItem = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1314,7 +1122,25 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.hasItem = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string password = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setPassword = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1451,10 +1277,7 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1492,23 +1315,9 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1539,109 +1348,33 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account}
  */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec}
- */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1649,8 +1382,8 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -1658,8 +1391,8 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/publisherd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modeldapi.services.publisherd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xcf\x0e\n\x13PublishModelRequest\x12\x17\n\x0f\x64\x61taproductName\x18\x01 \x01(\t\x12\x1c\n\x14\x64\x61taproductNamespace\x18\x02 \x01(\t\x12^\n\x0f\x64\x61taproductSpec\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec\x12\x1e\n\x16\x64\x61taproductversionName\x18\x04 \x01(\t\x12#\n\x1b\x64\x61taproductversionNamespace\x18\x05 \x01(\t\x12l\n\x16\x64\x61taproductversionSpec\x18\x06 \x01(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec\x12\x11\n\tmodelName\x18\x07 \x01(\t\x12\x16\n\x0emodelNamespace\x18\x08 \x01(\t\x12V\n\tmodelSpec\x18\t \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec\x12\x11\n\tstudyName\x18\r \x01(\t\x12\x16\n\x0estudyNamespace\x18\x0e \x01(\t\x12V\n\tstudySpec\x18\x0f \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec\x12\x16\n\x0e\x64\x61tasourceName\x18\x10 \x01(\t\x12\x1b\n\x13\x64\x61tasourceNamespace\x18\x11 \x01(\t\x12\\\n\x0e\x64\x61tasourceSpec\x18\x12 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x13\n\x0b\x64\x61tasetName\x18\x13 \x01(\t\x12\x18\n\x10\x64\x61tasetNamespace\x18\x14 \x01(\t\x12V\n\x0b\x64\x61tasetSpec\x18\x15 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec\x12\x10\n\x08provider\x18\x16 \x01(\t\x12\x11\n\timagename\x18\x17 \x01(\t\x12\x0c\n\x04push\x18\x18 \x01(\x08\x12\x12\n\nbucketName\x18\x19 \x01(\t\x12\x17\n\x0f\x62ucketNamespace\x18\x1a \x01(\t\x12\\\n\nbucketSpec\x18\x1b \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x12\x1b\n\x13\x63loudConnectionName\x18\x1c \x01(\t\x12!\n\x19\x63loudsConnectionNamespace\x18\x1d \x01(\t\x12\x62\n\x13\x63loudConnectionSpec\x18\x1e \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12o\n\x0b\x63loudSecret\x18\x1f \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry\x12\x1c\n\x14\x64ockerConnectionName\x18  \x01(\t\x12!\n\x19\x64ockerConnectionNamespace\x18! \x01(\t\x12\x63\n\x14\x64ockerConnectionSpec\x18\" \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12\x81\x01\n\x14\x64ockerRegistrySecret\x18# \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry\x12\x17\n\x0fmodelWeightsUri\x18$ \x01(\t\x12\x1e\n\x16preprocessorWeightsUri\x18% \x01(\t\x12\x17\n\x0flabelEncoderUri\x18& \x01(\t\x12\x0e\n\x06kaniko\x18\' \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\")\n\x14PublishModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\x91\x04\n\x11PublisherdService\x12\xaa\x01\n\x0fPublishCombined\x12I.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest\x1aJ.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/publisherd/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modeldapi.services.publisherd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\x9d\n\n\x13PublishModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x0c\n\x04push\x18\t \x01(\x08\x12T\n\x06\x62ucket\x18\n \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0b \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x0b\x63loudSecret\x18\x0c \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\r \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x81\x01\n\x14\x64ockerRegistrySecret\x18# \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry\x12\x17\n\x0fmodelWeightsUri\x18\x0e \x01(\t\x12\x1e\n\x16preprocessorWeightsUri\x18\x0f \x01(\t\x12\x17\n\x0flabelEncoderUri\x18\x10 \x01(\t\x12\x0e\n\x06kaniko\x18\x11 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\")\n\x14PublishModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\x91\x04\n\x11PublisherdService\x12\xaa\x01\n\x0fPublishCombined\x12I.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest\x1aJ.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/publisherd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -207,8 +207,8 @@ _PUBLISHMODELREQUEST_CLOUDSECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2535,
-  serialized_end=2585,
+  serialized_start=1973,
+  serialized_end=2023,
 )
 
 _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY = _descriptor.Descriptor(
@@ -245,8 +245,8 @@ _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2587,
-  serialized_end=2646,
+  serialized_start=2025,
+  serialized_end=2084,
 )
 
 _PUBLISHMODELREQUEST = _descriptor.Descriptor(
@@ -258,253 +258,127 @@ _PUBLISHMODELREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataproductName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductName', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='dataproduct', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproduct', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataproductNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductNamespace', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='dataproductversion', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductversion', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataproductSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductSpec', index=2,
+      name='model', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.model', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataproductversionName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductversionName', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='study', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.study', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataproductversionNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductversionNamespace', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasource', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataproductversionSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductversionSpec', index=5,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataset', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.modelName', index=6,
+      name='provider', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.provider', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.modelNamespace', index=7,
+      name='imagename', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.imagename', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.modelSpec', index=8,
-      number=9, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='studyName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.studyName', index=9,
-      number=13, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='studyNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.studyNamespace', index=10,
-      number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='studySpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.studySpec', index=11,
-      number=15, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='datasourceName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasourceName', index=12,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='datasourceNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasourceNamespace', index=13,
-      number=17, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='datasourceSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasourceSpec', index=14,
-      number=18, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='datasetName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasetName', index=15,
-      number=19, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='datasetNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasetNamespace', index=16,
-      number=20, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='datasetSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasetSpec', index=17,
-      number=21, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='provider', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.provider', index=18,
-      number=22, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='imagename', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.imagename', index=19,
-      number=23, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='push', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.push', index=20,
-      number=24, type=8, cpp_type=7, label=1,
+      name='push', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.push', index=8,
+      number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucketName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.bucketName', index=21,
-      number=25, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bucketNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.bucketNamespace', index=22,
-      number=26, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bucketSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.bucketSpec', index=23,
-      number=27, type=11, cpp_type=10, label=1,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.bucket', index=9,
+      number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cloudConnectionName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudConnectionName', index=24,
-      number=28, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cloudsConnectionNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudsConnectionNamespace', index=25,
-      number=29, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cloudConnectionSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudConnectionSpec', index=26,
-      number=30, type=11, cpp_type=10, label=1,
+      name='cloudConn', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudConn', index=10,
+      number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cloudSecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudSecret', index=27,
-      number=31, type=11, cpp_type=10, label=3,
+      name='cloudSecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudSecret', index=11,
+      number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dockerConnectionName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerConnectionName', index=28,
-      number=32, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='dockerConnectionNamespace', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerConnectionNamespace', index=29,
-      number=33, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='dockerConnectionSpec', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerConnectionSpec', index=30,
-      number=34, type=11, cpp_type=10, label=1,
+      name='dockerConnection', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerConnection', index=12,
+      number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dockerRegistrySecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerRegistrySecret', index=31,
+      name='dockerRegistrySecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerRegistrySecret', index=13,
       number=35, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelWeightsUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.modelWeightsUri', index=32,
-      number=36, type=9, cpp_type=9, label=1,
+      name='modelWeightsUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.modelWeightsUri', index=14,
+      number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='preprocessorWeightsUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.preprocessorWeightsUri', index=33,
-      number=37, type=9, cpp_type=9, label=1,
+      name='preprocessorWeightsUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.preprocessorWeightsUri', index=15,
+      number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labelEncoderUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.labelEncoderUri', index=34,
-      number=38, type=9, cpp_type=9, label=1,
+      name='labelEncoderUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.labelEncoderUri', index=16,
+      number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kaniko', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.kaniko', index=35,
-      number=39, type=8, cpp_type=7, label=1,
+      name='kaniko', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.kaniko', index=17,
+      number=17, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -522,7 +396,7 @@ _PUBLISHMODELREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=775,
-  serialized_end=2646,
+  serialized_end=2084,
 )
 
 
@@ -553,8 +427,8 @@ _PUBLISHMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2648,
-  serialized_end=2689,
+  serialized_start=2086,
+  serialized_end=2127,
 )
 
 
@@ -578,8 +452,8 @@ _SHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2691,
-  serialized_end=2708,
+  serialized_start=2129,
+  serialized_end=2146,
 )
 
 
@@ -603,8 +477,8 @@ _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2710,
-  serialized_end=2728,
+  serialized_start=2148,
+  serialized_end=2166,
 )
 
 _PUBLISHNOTEBOOKREQUEST_SECRETENTRY.containing_type = _PUBLISHNOTEBOOKREQUEST
@@ -612,16 +486,16 @@ _PUBLISHNOTEBOOKREQUEST.fields_by_name['notebookSpec'].message_type = github_dot
 _PUBLISHNOTEBOOKREQUEST.fields_by_name['secret'].message_type = _PUBLISHNOTEBOOKREQUEST_SECRETENTRY
 _PUBLISHMODELREQUEST_CLOUDSECRETENTRY.containing_type = _PUBLISHMODELREQUEST
 _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY.containing_type = _PUBLISHMODELREQUEST
-_PUBLISHMODELREQUEST.fields_by_name['dataproductSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTSPEC
-_PUBLISHMODELREQUEST.fields_by_name['dataproductversionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSIONSPEC
-_PUBLISHMODELREQUEST.fields_by_name['modelSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELSPEC
-_PUBLISHMODELREQUEST.fields_by_name['studySpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDYSPEC
-_PUBLISHMODELREQUEST.fields_by_name['datasourceSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCESPEC
-_PUBLISHMODELREQUEST.fields_by_name['datasetSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASETSPEC
-_PUBLISHMODELREQUEST.fields_by_name['bucketSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKETSPEC
-_PUBLISHMODELREQUEST.fields_by_name['cloudConnectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_PUBLISHMODELREQUEST.fields_by_name['dataproduct'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
+_PUBLISHMODELREQUEST.fields_by_name['dataproductversion'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
+_PUBLISHMODELREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_PUBLISHMODELREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_PUBLISHMODELREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
+_PUBLISHMODELREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
+_PUBLISHMODELREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_PUBLISHMODELREQUEST.fields_by_name['cloudConn'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _PUBLISHMODELREQUEST.fields_by_name['cloudSecret'].message_type = _PUBLISHMODELREQUEST_CLOUDSECRETENTRY
-_PUBLISHMODELREQUEST.fields_by_name['dockerConnectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_PUBLISHMODELREQUEST.fields_by_name['dockerConnection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _PUBLISHMODELREQUEST.fields_by_name['dockerRegistrySecret'].message_type = _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY
 DESCRIPTOR.message_types_by_name['PublishNotebookRequest'] = _PUBLISHNOTEBOOKREQUEST
 DESCRIPTOR.message_types_by_name['PublishNotebookResponse'] = _PUBLISHNOTEBOOKRESPONSE
@@ -710,8 +584,8 @@ _PUBLISHERDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2731,
-  serialized_end=3260,
+  serialized_start=2169,
+  serialized_end=2698,
   methods=[
   _descriptor.MethodDescriptor(
     name='PublishCombined',

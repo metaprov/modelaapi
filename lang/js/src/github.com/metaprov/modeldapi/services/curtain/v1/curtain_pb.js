@@ -685,10 +685,7 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -726,23 +723,9 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -773,109 +756,33 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain}
  */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec}
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -883,8 +790,8 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -892,8 +799,8 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -929,10 +836,7 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -970,23 +874,9 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1017,109 +907,33 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain}
  */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec}
- */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1127,8 +941,8 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -1136,8 +950,8 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

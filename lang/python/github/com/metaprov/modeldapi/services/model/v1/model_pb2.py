@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z/github.com/metaprov/modeldapi/services/model/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;github.com/metaprov/modeldapi/services/model/v1/model.proto\x12/github.com.metaprov.modeldapi.services.model.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\")\n\x1a\x43reateModelProfileResponse\x12\x0b\n\x03uri\x18\x03 \x01(\t\"<\n\x19\x43reateModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\":\n\x17ListModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"F\n\x16GetModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"j\n\x17GetModelProfileResponse\x12O\n\x07profile\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.common.v1.ModelProfile\"\xa2\x01\n\x14GetModelLogsResponse\x12]\n\x04logs\x18\x01 \x03(\x0b\x32O.github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse.LogsEntry\x1a+\n\tLogsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x13GetModelLogsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x98\x02\n\x12\x43reateModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.LabelsEntry\x12Q\n\x04spec\x18\x05 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x15\n\x13\x43reateModelResponse\"\x98\x02\n\x12UpdateModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12_\n\x06labels\x18\x03 \x03(\x0b\x32O.github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.LabelsEntry\x12Q\n\x04spec\x18\x05 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x15\n\x13UpdateModelResponse\"o\n\x10GetModelResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"4\n\x11\x41\x62ortModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x41\x62ortModelResponse\"4\n\x11PauseModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12PauseModelResponse\"5\n\x12ResumeModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13ResumeModelResponse\"8\n\x14\x43ompareModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8b\x01\n\x15\x43ompareModelsResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12P\n\x08profiles\x18\x03 \x03(\x0b\x32>.github.com.metaprov.modeldapi.services.common.v1.ModelProfile\"y\n\x12\x44\x65ployModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tpredictor\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x0f\n\x07traffic\x18\x05 \x01(\x05\x12\x0c\n\x04role\x18\x06 \x01(\t\"6\n\x13PublishModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65ployModelResponse\"\xb5\x01\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x12ListModelsResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11UpdateModelResult\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteModelResponse\"\x16\n\x14PublishModelResponse\"5\n\x12GetMisclassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13GetMisclassResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView2\xb8\x18\n\x0cModelService\x12\xac\x01\n\nListModels\x12\x42.github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest\x1a\x43.github.com.metaprov.modeldapi.services.model.v1.ListModelsResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/api/v1/model\x12\xb7\x01\n\x0b\x43reateModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.CreateModelResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0e/api/v1/models:\x05model\x12\xbd\x01\n\x08GetModel\x12@.github.com.metaprov.modeldapi.services.model.v1.GetModelRequest\x1a\x41.github.com.metaprov.modeldapi.services.model.v1.GetModelResponse\",\x82\xd3\xe4\x93\x02&\x12$/api/v1/models/{model.metadata.name}\x12\xcf\x01\n\x0bUpdateModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.UpdateModelResponse\"5\x82\xd3\xe4\x93\x02/\x1a&/api/v1/models/{dataset.metadata.name}:\x05model\x12\xc8\x01\n\x0b\x44\x65leteModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.DeleteModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.DeleteModelResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/models/{dataset.metadata.name}\x12\xd6\x01\n\x0b\x44\x65ployModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.DeployModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.DeployModelResponse\"<\x82\xd3\xe4\x93\x02\x36\"-/api/v1/models/{dataset.metadata.name}:deploy:\x05model\x12\xd8\x01\n\x0cPublishModel\x12\x44.github.com.metaprov.modeldapi.services.model.v1.PublishModelRequest\x1a\x45.github.com.metaprov.modeldapi.services.model.v1.PublishModelResponse\";\x82\xd3\xe4\x93\x02\x35\",/api/v1/models/{model.metadata.name}:publish:\x05model\x12\xe3\x01\n\x12\x43reateModelProfile\x12J.github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileRequest\x1aK.github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileResponse\"4\x82\xd3\xe4\x93\x02.\",/api/v1/models/{model.metadata.name}:profile\x12\xdc\x01\n\x0fGetModelProfile\x12G.github.com.metaprov.modeldapi.services.model.v1.GetModelProfileRequest\x1aH.github.com.metaprov.modeldapi.services.model.v1.GetModelProfileResponse\"6\x82\xd3\xe4\x93\x02\x30\"./api/v1/models/{dataset.metadata.name}:profile\x12\xd6\x01\n\x10GetModelMisclass\x12\x43.github.com.metaprov.modeldapi.services.model.v1.GetMisclassRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.GetMisclassResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//api/v1/models/{dataset.metadata.name}:misclass\x12\xd0\x01\n\x0cGetModelLogs\x12\x44.github.com.metaprov.modeldapi.services.model.v1.GetModelLogsRequest\x1a\x45.github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/models/{dataset.metadata.name}:logs\x12\xc9\x01\n\nAbortModel\x12\x42.github.com.metaprov.modeldapi.services.model.v1.AbortModelRequest\x1a\x43.github.com.metaprov.modeldapi.services.model.v1.AbortModelResponse\"2\x82\xd3\xe4\x93\x02,\"*/api/v1/models/{model.metadata.name}:abort\x12\xc9\x01\n\nPauseModel\x12\x42.github.com.metaprov.modeldapi.services.model.v1.PauseModelRequest\x1a\x43.github.com.metaprov.modeldapi.services.model.v1.PauseModelResponse\"2\x82\xd3\xe4\x93\x02,\"*/api/v1/models/{model.metadata.name}:pause\x12\xcd\x01\n\x0bResumeModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.ResumeModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.ResumeModelResponse\"3\x82\xd3\xe4\x93\x02-\"+/api/v1/models/{model.metadata.name}:resume\x12\xd4\x01\n\rCompareModels\x12\x45.github.com.metaprov.modeldapi.services.model.v1.CompareModelsRequest\x1a\x46.github.com.metaprov.modeldapi.services.model.v1.CompareModelsResponse\"4\x82\xd3\xe4\x93\x02.\",/api/v1/models/{model.metadata.name}:compareB1Z/github.com/metaprov/modeldapi/services/model/v1b\x06proto3'
+  serialized_pb=b'\n;github.com/metaprov/modeldapi/services/model/v1/model.proto\x12/github.com.metaprov.modeldapi.services.model.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\")\n\x1a\x43reateModelProfileResponse\x12\x0b\n\x03uri\x18\x03 \x01(\t\"<\n\x19\x43reateModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\":\n\x17ListModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"F\n\x16GetModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"j\n\x17GetModelProfileResponse\x12O\n\x07profile\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.common.v1.ModelProfile\"\xa2\x01\n\x14GetModelLogsResponse\x12]\n\x04logs\x18\x01 \x03(\x0b\x32O.github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse.LogsEntry\x1a+\n\tLogsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x13GetModelLogsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13\x43reateModelResponse\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13UpdateModelResponse\"o\n\x10GetModelResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"4\n\x11\x41\x62ortModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x41\x62ortModelResponse\"4\n\x11PauseModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12PauseModelResponse\"5\n\x12ResumeModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13ResumeModelResponse\"8\n\x14\x43ompareModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8b\x01\n\x15\x43ompareModelsResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12P\n\x08profiles\x18\x03 \x03(\x0b\x32>.github.com.metaprov.modeldapi.services.common.v1.ModelProfile\"y\n\x12\x44\x65ployModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tpredictor\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x0f\n\x07traffic\x18\x05 \x01(\x05\x12\x0c\n\x04role\x18\x06 \x01(\t\"6\n\x13PublishModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65ployModelResponse\"\xb5\x01\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x12ListModelsResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11UpdateModelResult\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteModelResponse\"\x16\n\x14PublishModelResponse\"5\n\x12GetMisclassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13GetMisclassResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView2\xb8\x18\n\x0cModelService\x12\xac\x01\n\nListModels\x12\x42.github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest\x1a\x43.github.com.metaprov.modeldapi.services.model.v1.ListModelsResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/api/v1/model\x12\xb7\x01\n\x0b\x43reateModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.CreateModelResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0e/api/v1/models:\x05model\x12\xbd\x01\n\x08GetModel\x12@.github.com.metaprov.modeldapi.services.model.v1.GetModelRequest\x1a\x41.github.com.metaprov.modeldapi.services.model.v1.GetModelResponse\",\x82\xd3\xe4\x93\x02&\x12$/api/v1/models/{model.metadata.name}\x12\xcf\x01\n\x0bUpdateModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.UpdateModelResponse\"5\x82\xd3\xe4\x93\x02/\x1a&/api/v1/models/{dataset.metadata.name}:\x05model\x12\xc8\x01\n\x0b\x44\x65leteModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.DeleteModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.DeleteModelResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/models/{dataset.metadata.name}\x12\xd6\x01\n\x0b\x44\x65ployModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.DeployModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.DeployModelResponse\"<\x82\xd3\xe4\x93\x02\x36\"-/api/v1/models/{dataset.metadata.name}:deploy:\x05model\x12\xd8\x01\n\x0cPublishModel\x12\x44.github.com.metaprov.modeldapi.services.model.v1.PublishModelRequest\x1a\x45.github.com.metaprov.modeldapi.services.model.v1.PublishModelResponse\";\x82\xd3\xe4\x93\x02\x35\",/api/v1/models/{model.metadata.name}:publish:\x05model\x12\xe3\x01\n\x12\x43reateModelProfile\x12J.github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileRequest\x1aK.github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileResponse\"4\x82\xd3\xe4\x93\x02.\",/api/v1/models/{model.metadata.name}:profile\x12\xdc\x01\n\x0fGetModelProfile\x12G.github.com.metaprov.modeldapi.services.model.v1.GetModelProfileRequest\x1aH.github.com.metaprov.modeldapi.services.model.v1.GetModelProfileResponse\"6\x82\xd3\xe4\x93\x02\x30\"./api/v1/models/{dataset.metadata.name}:profile\x12\xd6\x01\n\x10GetModelMisclass\x12\x43.github.com.metaprov.modeldapi.services.model.v1.GetMisclassRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.GetMisclassResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//api/v1/models/{dataset.metadata.name}:misclass\x12\xd0\x01\n\x0cGetModelLogs\x12\x44.github.com.metaprov.modeldapi.services.model.v1.GetModelLogsRequest\x1a\x45.github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/models/{dataset.metadata.name}:logs\x12\xc9\x01\n\nAbortModel\x12\x42.github.com.metaprov.modeldapi.services.model.v1.AbortModelRequest\x1a\x43.github.com.metaprov.modeldapi.services.model.v1.AbortModelResponse\"2\x82\xd3\xe4\x93\x02,\"*/api/v1/models/{model.metadata.name}:abort\x12\xc9\x01\n\nPauseModel\x12\x42.github.com.metaprov.modeldapi.services.model.v1.PauseModelRequest\x1a\x43.github.com.metaprov.modeldapi.services.model.v1.PauseModelResponse\"2\x82\xd3\xe4\x93\x02,\"*/api/v1/models/{model.metadata.name}:pause\x12\xcd\x01\n\x0bResumeModel\x12\x43.github.com.metaprov.modeldapi.services.model.v1.ResumeModelRequest\x1a\x44.github.com.metaprov.modeldapi.services.model.v1.ResumeModelResponse\"3\x82\xd3\xe4\x93\x02-\"+/api/v1/models/{model.metadata.name}:resume\x12\xd4\x01\n\rCompareModels\x12\x45.github.com.metaprov.modeldapi.services.model.v1.CompareModelsRequest\x1a\x46.github.com.metaprov.modeldapi.services.model.v1.CompareModelsResponse\"4\x82\xd3\xe4\x93\x02.\",/api/v1/models/{model.metadata.name}:compareB1Z/github.com/metaprov/modeldapi/services/model/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -326,44 +326,6 @@ _GETMODELLOGSREQUEST = _descriptor.Descriptor(
 )
 
 
-_CREATEMODELREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1081,
-  serialized_end=1126,
-)
-
 _CREATEMODELREQUEST = _descriptor.Descriptor(
   name='CreateModelRequest',
   full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest',
@@ -373,29 +335,8 @@ _CREATEMODELREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -403,7 +344,7 @@ _CREATEMODELREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CREATEMODELREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -412,8 +353,8 @@ _CREATEMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=846,
-  serialized_end=1126,
+  serialized_start=845,
+  serialized_end=944,
 )
 
 
@@ -437,48 +378,10 @@ _CREATEMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1128,
-  serialized_end=1149,
+  serialized_start=946,
+  serialized_end=967,
 )
 
-
-_UPDATEMODELREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1081,
-  serialized_end=1126,
-)
 
 _UPDATEMODELREQUEST = _descriptor.Descriptor(
   name='UpdateModelRequest',
@@ -489,28 +392,7 @@ _UPDATEMODELREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.spec', index=3,
+      name='item', full_name='github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.item', index=0,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -519,7 +401,7 @@ _UPDATEMODELREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATEMODELREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -528,8 +410,8 @@ _UPDATEMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1152,
-  serialized_end=1432,
+  serialized_start=969,
+  serialized_end=1068,
 )
 
 
@@ -553,8 +435,8 @@ _UPDATEMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1434,
-  serialized_end=1455,
+  serialized_start=1070,
+  serialized_end=1091,
 )
 
 
@@ -592,8 +474,8 @@ _GETMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1457,
-  serialized_end=1568,
+  serialized_start=1093,
+  serialized_end=1204,
 )
 
 
@@ -631,8 +513,8 @@ _ABORTMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1570,
-  serialized_end=1622,
+  serialized_start=1206,
+  serialized_end=1258,
 )
 
 
@@ -656,8 +538,8 @@ _ABORTMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1624,
-  serialized_end=1644,
+  serialized_start=1260,
+  serialized_end=1280,
 )
 
 
@@ -695,8 +577,8 @@ _PAUSEMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1646,
-  serialized_end=1698,
+  serialized_start=1282,
+  serialized_end=1334,
 )
 
 
@@ -720,8 +602,8 @@ _PAUSEMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1700,
-  serialized_end=1720,
+  serialized_start=1336,
+  serialized_end=1356,
 )
 
 
@@ -759,8 +641,8 @@ _RESUMEMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1722,
-  serialized_end=1775,
+  serialized_start=1358,
+  serialized_end=1411,
 )
 
 
@@ -784,8 +666,8 @@ _RESUMEMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1777,
-  serialized_end=1798,
+  serialized_start=1413,
+  serialized_end=1434,
 )
 
 
@@ -823,8 +705,8 @@ _COMPAREMODELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1800,
-  serialized_end=1856,
+  serialized_start=1436,
+  serialized_end=1492,
 )
 
 
@@ -869,8 +751,8 @@ _COMPAREMODELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1859,
-  serialized_end=1998,
+  serialized_start=1495,
+  serialized_end=1634,
 )
 
 
@@ -936,8 +818,8 @@ _DEPLOYMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2000,
-  serialized_end=2121,
+  serialized_start=1636,
+  serialized_end=1757,
 )
 
 
@@ -975,8 +857,8 @@ _PUBLISHMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2123,
-  serialized_end=2177,
+  serialized_start=1759,
+  serialized_end=1813,
 )
 
 
@@ -1000,8 +882,8 @@ _DEPLOYMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2179,
-  serialized_end=2200,
+  serialized_start=1815,
+  serialized_end=1836,
 )
 
 
@@ -1039,8 +921,8 @@ _LISTMODELSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1081,
-  serialized_end=1126,
+  serialized_start=1975,
+  serialized_end=2020,
 )
 
 _LISTMODELSREQUEST = _descriptor.Descriptor(
@@ -1077,8 +959,8 @@ _LISTMODELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2203,
-  serialized_end=2384,
+  serialized_start=1839,
+  serialized_end=2020,
 )
 
 
@@ -1109,8 +991,8 @@ _LISTMODELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2386,
-  serialized_end=2490,
+  serialized_start=2022,
+  serialized_end=2126,
 )
 
 
@@ -1148,8 +1030,8 @@ _GETMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2492,
-  serialized_end=2542,
+  serialized_start=2128,
+  serialized_end=2178,
 )
 
 
@@ -1173,8 +1055,8 @@ _UPDATEMODELRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2544,
-  serialized_end=2563,
+  serialized_start=2180,
+  serialized_end=2199,
 )
 
 
@@ -1212,8 +1094,8 @@ _DELETEMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2565,
-  serialized_end=2618,
+  serialized_start=2201,
+  serialized_end=2254,
 )
 
 
@@ -1237,8 +1119,8 @@ _DELETEMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2620,
-  serialized_end=2641,
+  serialized_start=2256,
+  serialized_end=2277,
 )
 
 
@@ -1262,8 +1144,8 @@ _PUBLISHMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2643,
-  serialized_end=2665,
+  serialized_start=2279,
+  serialized_end=2301,
 )
 
 
@@ -1301,8 +1183,8 @@ _GETMISCLASSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2667,
-  serialized_end=2720,
+  serialized_start=2303,
+  serialized_end=2356,
 )
 
 
@@ -1333,19 +1215,15 @@ _GETMISCLASSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2722,
-  serialized_end=2819,
+  serialized_start=2358,
+  serialized_end=2455,
 )
 
 _GETMODELPROFILERESPONSE.fields_by_name['profile'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2._MODELPROFILE
 _GETMODELLOGSRESPONSE_LOGSENTRY.containing_type = _GETMODELLOGSRESPONSE
 _GETMODELLOGSRESPONSE.fields_by_name['logs'].message_type = _GETMODELLOGSRESPONSE_LOGSENTRY
-_CREATEMODELREQUEST_LABELSENTRY.containing_type = _CREATEMODELREQUEST
-_CREATEMODELREQUEST.fields_by_name['labels'].message_type = _CREATEMODELREQUEST_LABELSENTRY
-_CREATEMODELREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELSPEC
-_UPDATEMODELREQUEST_LABELSENTRY.containing_type = _UPDATEMODELREQUEST
-_UPDATEMODELREQUEST.fields_by_name['labels'].message_type = _UPDATEMODELREQUEST_LABELSENTRY
-_UPDATEMODELREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELSPEC
+_CREATEMODELREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_UPDATEMODELREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
 _GETMODELRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
 _COMPAREMODELSRESPONSE.fields_by_name['profiles'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2._MODELPROFILE
 _LISTMODELSREQUEST_LABELSENTRY.containing_type = _LISTMODELSREQUEST
@@ -1444,19 +1322,11 @@ GetModelLogsRequest = _reflection.GeneratedProtocolMessageType('GetModelLogsRequ
 _sym_db.RegisterMessage(GetModelLogsRequest)
 
 CreateModelRequest = _reflection.GeneratedProtocolMessageType('CreateModelRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEMODELREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.model.v1.model_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATEMODELREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.model.v1.model_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest)
   })
 _sym_db.RegisterMessage(CreateModelRequest)
-_sym_db.RegisterMessage(CreateModelRequest.LabelsEntry)
 
 CreateModelResponse = _reflection.GeneratedProtocolMessageType('CreateModelResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEMODELRESPONSE,
@@ -1466,19 +1336,11 @@ CreateModelResponse = _reflection.GeneratedProtocolMessageType('CreateModelRespo
 _sym_db.RegisterMessage(CreateModelResponse)
 
 UpdateModelRequest = _reflection.GeneratedProtocolMessageType('UpdateModelRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEMODELREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.model.v1.model_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATEMODELREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.model.v1.model_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest)
   })
 _sym_db.RegisterMessage(UpdateModelRequest)
-_sym_db.RegisterMessage(UpdateModelRequest.LabelsEntry)
 
 UpdateModelResponse = _reflection.GeneratedProtocolMessageType('UpdateModelResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEMODELRESPONSE,
@@ -1645,8 +1507,6 @@ _sym_db.RegisterMessage(GetMisclassResponse)
 
 DESCRIPTOR._options = None
 _GETMODELLOGSRESPONSE_LOGSENTRY._options = None
-_CREATEMODELREQUEST_LABELSENTRY._options = None
-_UPDATEMODELREQUEST_LABELSENTRY._options = None
 _LISTMODELSREQUEST_LABELSENTRY._options = None
 
 _MODELSERVICE = _descriptor.ServiceDescriptor(
@@ -1656,8 +1516,8 @@ _MODELSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2822,
-  serialized_end=5950,
+  serialized_start=2458,
+  serialized_end=5586,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModels',

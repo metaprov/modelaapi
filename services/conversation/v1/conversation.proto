@@ -18,12 +18,7 @@ message GetConversationResponse {
 }
 
 message CreateConversationRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
-    string password = 6;
-    bool upsert = 7;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
 }
 
 message CreateConversationResponse {
@@ -32,10 +27,7 @@ message CreateConversationResponse {
 
 
 message UpdateConversationRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
 }
 
 message UpdateConversationResponse {

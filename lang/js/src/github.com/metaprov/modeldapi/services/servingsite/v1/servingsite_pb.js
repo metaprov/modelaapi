@@ -433,7 +433,7 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResp
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.toObject(includeInstance, f)
+    items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -471,8 +471,8 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResp
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.deserializeBinaryFromReader);
       msg.setItems(value);
       break;
     default:
@@ -509,24 +509,24 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResp
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteList items = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteList}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite items = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite}
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse.prototype.getItems = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteList} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList, 1));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteList|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse} returns this
 */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse.prototype.setItems = function(value) {
@@ -584,10 +584,7 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteReq
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.toObject(includeInstance, f)
+    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -625,22 +622,8 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteReq
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.deserializeBinaryFromReader);
       msg.setSpec(value);
       break;
     default:
@@ -672,109 +655,33 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteReq
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
   f = message.getSpec();
   if (f != null) {
     writer.writeMessage(
-      4,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite spec = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite}
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec, 4));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -792,7 +699,7 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteReq
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -929,10 +836,7 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteReq
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.toObject(includeInstance, f)
+    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -970,22 +874,8 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteReq
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.deserializeBinaryFromReader);
       msg.setSpec(value);
       break;
     default:
@@ -1017,109 +907,33 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteReq
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
   f = message.getSpec();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite spec = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite}
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec, 5));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1137,7 +951,7 @@ proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteReq
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

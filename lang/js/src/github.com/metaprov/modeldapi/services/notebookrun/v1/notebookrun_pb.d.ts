@@ -62,19 +62,10 @@ export namespace NotebookRunResponse {
 }
 
 export class CreateNotebookRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateNotebookRunRequest;
-
-  getName(): string;
-  setName(value: string): CreateNotebookRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateNotebookRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunSpec): CreateNotebookRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateNotebookRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): CreateNotebookRunRequest;
+  hasItem(): boolean;
+  clearItem(): CreateNotebookRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateNotebookRunRequest.AsObject;
@@ -86,10 +77,7 @@ export class CreateNotebookRunRequest extends jspb.Message {
 
 export namespace CreateNotebookRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
   }
 }
 
@@ -108,19 +96,10 @@ export namespace CreateNotebookRunResponse {
 }
 
 export class UpdateNotebookRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateNotebookRunRequest;
-
-  getName(): string;
-  setName(value: string): UpdateNotebookRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateNotebookRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunSpec): UpdateNotebookRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateNotebookRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): UpdateNotebookRunRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateNotebookRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateNotebookRunRequest.AsObject;
@@ -132,10 +111,7 @@ export class UpdateNotebookRunRequest extends jspb.Message {
 
 export namespace UpdateNotebookRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
   }
 }
 

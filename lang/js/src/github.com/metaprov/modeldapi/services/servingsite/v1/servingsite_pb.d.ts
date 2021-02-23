@@ -27,8 +27,8 @@ export namespace ListServingSitesRequest {
 }
 
 export class ListServingSitesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList): ListServingSitesResponse;
+  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): ListServingSitesResponse;
   hasItems(): boolean;
   clearItems(): ListServingSitesResponse;
 
@@ -42,22 +42,13 @@ export class ListServingSitesResponse extends jspb.Message {
 
 export namespace ListServingSitesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.AsObject,
+    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 
 export class CreateServingSiteRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateServingSiteRequest;
-
-  getName(): string;
-  setName(value: string): CreateServingSiteRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateServingSiteRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec): CreateServingSiteRequest;
+  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
   hasSpec(): boolean;
   clearSpec(): CreateServingSiteRequest;
 
@@ -71,10 +62,7 @@ export class CreateServingSiteRequest extends jspb.Message {
 
 export namespace CreateServingSiteRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.AsObject,
+    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 
@@ -93,17 +81,8 @@ export namespace CreateServingSiteResponse {
 }
 
 export class UpdateServingSiteRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateServingSiteRequest;
-
-  getName(): string;
-  setName(value: string): UpdateServingSiteRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateServingSiteRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec): UpdateServingSiteRequest;
+  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
   hasSpec(): boolean;
   clearSpec(): UpdateServingSiteRequest;
 
@@ -117,10 +96,7 @@ export class UpdateServingSiteRequest extends jspb.Message {
 
 export namespace UpdateServingSiteRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteSpec.AsObject,
+    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 

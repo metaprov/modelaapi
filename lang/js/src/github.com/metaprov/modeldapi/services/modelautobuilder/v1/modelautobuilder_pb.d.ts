@@ -47,19 +47,10 @@ export namespace ListModelAutobuildersResponse {
 }
 
 export class CreateModelAutobuilderRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateModelAutobuilderRequest;
-
-  getName(): string;
-  setName(value: string): CreateModelAutobuilderRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateModelAutobuilderRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec): CreateModelAutobuilderRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateModelAutobuilderRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): CreateModelAutobuilderRequest;
+  hasItem(): boolean;
+  clearItem(): CreateModelAutobuilderRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelAutobuilderRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateModelAutobuilderRequest extends jspb.Message {
 
 export namespace CreateModelAutobuilderRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateModelAutobuilderResponse {
 }
 
 export class UpdateModelAutobuilderRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateModelAutobuilderRequest;
-
-  getName(): string;
-  setName(value: string): UpdateModelAutobuilderRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateModelAutobuilderRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec): UpdateModelAutobuilderRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateModelAutobuilderRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): UpdateModelAutobuilderRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateModelAutobuilderRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateModelAutobuilderRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateModelAutobuilderRequest extends jspb.Message {
 
 export namespace UpdateModelAutobuilderRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
   }
 }
 

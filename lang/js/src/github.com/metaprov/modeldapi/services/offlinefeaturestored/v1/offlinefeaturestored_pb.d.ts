@@ -5,27 +5,15 @@ import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb fr
 
 
 export class CreateFeatureRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): CreateFeatureRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature): CreateFeatureRequest;
+  hasItem(): boolean;
+  clearItem(): CreateFeatureRequest;
 
-  getNs(): string;
-  setNs(value: string): CreateFeatureRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateFeatureRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec): CreateFeatureRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateFeatureRequest;
-
-  getConnectionname(): string;
-  setConnectionname(value: string): CreateFeatureRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): CreateFeatureRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): CreateFeatureRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateFeatureRequest;
+  hasConnection(): boolean;
+  clearConnection(): CreateFeatureRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): CreateFeatureRequest;
@@ -40,12 +28,8 @@ export class CreateFeatureRequest extends jspb.Message {
 
 export namespace CreateFeatureRequest {
   export type AsObject = {
-    name: string,
-    ns: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec.AsObject,
-    connectionname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -101,27 +85,15 @@ export namespace DeleteFeatureResponse {
 }
 
 export class UpdateFeatureRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): UpdateFeatureRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature): UpdateFeatureRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateFeatureRequest;
 
-  getNs(): string;
-  setNs(value: string): UpdateFeatureRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateFeatureRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec): UpdateFeatureRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateFeatureRequest;
-
-  getConnectionname(): string;
-  setConnectionname(value: string): UpdateFeatureRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): UpdateFeatureRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): UpdateFeatureRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): UpdateFeatureRequest;
+  hasConnection(): boolean;
+  clearConnection(): UpdateFeatureRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): UpdateFeatureRequest;
@@ -136,12 +108,8 @@ export class UpdateFeatureRequest extends jspb.Message {
 
 export namespace UpdateFeatureRequest {
   export type AsObject = {
-    name: string,
-    ns: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec.AsObject,
-    connectionname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }

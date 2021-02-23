@@ -47,22 +47,10 @@ export namespace ListDataPipelineRunResponse {
 }
 
 export class CreateDataPipelineRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateDataPipelineRunRequest;
-
-  getName(): string;
-  setName(value: string): CreateDataPipelineRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateDataPipelineRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec): CreateDataPipelineRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateDataPipelineRunRequest;
-
-  getSecretMap(): jspb.Map<string, string>;
-  clearSecretMap(): CreateDataPipelineRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun): CreateDataPipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): CreateDataPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataPipelineRunRequest.AsObject;
@@ -74,11 +62,7 @@ export class CreateDataPipelineRunRequest extends jspb.Message {
 
 export namespace CreateDataPipelineRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.AsObject,
-    secretMap: Array<[string, string]>,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.AsObject,
   }
 }
 
@@ -97,22 +81,10 @@ export namespace CreateDataPipelineRunResponse {
 }
 
 export class UpdateDataPipelineRunRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateDataPipelineRunRequest;
-
-  getName(): string;
-  setName(value: string): UpdateDataPipelineRunRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateDataPipelineRunRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec): UpdateDataPipelineRunRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateDataPipelineRunRequest;
-
-  getSecretMap(): jspb.Map<string, string>;
-  clearSecretMap(): UpdateDataPipelineRunRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun): UpdateDataPipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateDataPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDataPipelineRunRequest.AsObject;
@@ -124,11 +96,7 @@ export class UpdateDataPipelineRunRequest extends jspb.Message {
 
 export namespace UpdateDataPipelineRunRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.AsObject,
-    secretMap: Array<[string, string]>,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.AsObject,
   }
 }
 

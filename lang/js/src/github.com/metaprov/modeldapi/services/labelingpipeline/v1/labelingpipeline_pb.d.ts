@@ -47,19 +47,10 @@ export namespace ListLabelingPipelineResponse {
 }
 
 export class CreateLabelingPipelineRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateLabelingPipelineRequest;
-
-  getName(): string;
-  setName(value: string): CreateLabelingPipelineRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateLabelingPipelineRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineSpec): CreateLabelingPipelineRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateLabelingPipelineRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): CreateLabelingPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): CreateLabelingPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLabelingPipelineRequest.AsObject;
@@ -71,10 +62,7 @@ export class CreateLabelingPipelineRequest extends jspb.Message {
 
 export namespace CreateLabelingPipelineRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
   }
 }
 
@@ -93,19 +81,10 @@ export namespace CreateLabelingPipelineResponse {
 }
 
 export class UpdateLabelingPipelineRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateLabelingPipelineRequest;
-
-  getName(): string;
-  setName(value: string): UpdateLabelingPipelineRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateLabelingPipelineRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineSpec): UpdateLabelingPipelineRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateLabelingPipelineRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): UpdateLabelingPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateLabelingPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateLabelingPipelineRequest.AsObject;
@@ -117,10 +96,7 @@ export class UpdateLabelingPipelineRequest extends jspb.Message {
 
 export namespace UpdateLabelingPipelineRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
   }
 }
 

@@ -62,19 +62,10 @@ export namespace VirtualVolumeResponse {
 }
 
 export class CreateVirtualVolumeRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateVirtualVolumeRequest;
-
-  getName(): string;
-  setName(value: string): CreateVirtualVolumeRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateVirtualVolumeRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeSpec): CreateVirtualVolumeRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateVirtualVolumeRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): CreateVirtualVolumeRequest;
+  hasItem(): boolean;
+  clearItem(): CreateVirtualVolumeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateVirtualVolumeRequest.AsObject;
@@ -86,10 +77,7 @@ export class CreateVirtualVolumeRequest extends jspb.Message {
 
 export namespace CreateVirtualVolumeRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
   }
 }
 
@@ -108,19 +96,10 @@ export namespace CreateVirtualVolumeResponse {
 }
 
 export class UpdateVirtualVolumeRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateVirtualVolumeRequest;
-
-  getName(): string;
-  setName(value: string): UpdateVirtualVolumeRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateVirtualVolumeRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeSpec): UpdateVirtualVolumeRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateVirtualVolumeRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): UpdateVirtualVolumeRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateVirtualVolumeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateVirtualVolumeRequest.AsObject;
@@ -132,10 +111,7 @@ export class UpdateVirtualVolumeRequest extends jspb.Message {
 
 export namespace UpdateVirtualVolumeRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
   }
 }
 

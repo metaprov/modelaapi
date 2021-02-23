@@ -19,10 +19,7 @@ message ListNotifiersResponse {
 message NotifierResponse {}
 
 message CreateNotifierRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
 }
 
 message CreateNotifierResponse {
@@ -30,10 +27,7 @@ message CreateNotifierResponse {
 }
 
 message UpdateNotifierRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
 }
 
 message UpdateNotifierResponse {

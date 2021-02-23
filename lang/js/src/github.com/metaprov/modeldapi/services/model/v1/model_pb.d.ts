@@ -154,19 +154,10 @@ export namespace GetModelLogsRequest {
 }
 
 export class CreateModelRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateModelRequest;
-
-  getName(): string;
-  setName(value: string): CreateModelRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateModelRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec): CreateModelRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateModelRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): CreateModelRequest;
+  hasItem(): boolean;
+  clearItem(): CreateModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelRequest.AsObject;
@@ -178,10 +169,7 @@ export class CreateModelRequest extends jspb.Message {
 
 export namespace CreateModelRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 
@@ -200,19 +188,10 @@ export namespace CreateModelResponse {
 }
 
 export class UpdateModelRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateModelRequest;
-
-  getName(): string;
-  setName(value: string): UpdateModelRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateModelRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec): UpdateModelRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateModelRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): UpdateModelRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateModelRequest.AsObject;
@@ -224,10 +203,7 @@ export class UpdateModelRequest extends jspb.Message {
 
 export namespace UpdateModelRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 

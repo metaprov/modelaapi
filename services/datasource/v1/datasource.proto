@@ -30,20 +30,14 @@ message GetDataSourceResponse {
 
 
 message UpdateDataSourceRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message UpdateDataSourceResponse {}
 
 
 message CreateDataSourceRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message CreateDataSourceResponse {}

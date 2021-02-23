@@ -775,10 +775,7 @@ proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -816,23 +813,9 @@ proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -863,109 +846,33 @@ proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      4,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License}
  */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec}
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -973,8 +880,8 @@ proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -982,8 +889,8 @@ proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1250,10 +1157,7 @@ proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1290,24 +1194,10 @@ proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.des
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
     case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1338,108 +1228,32 @@ proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       5,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 5;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License}
  */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License, 5));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec spec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec}
- */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -1448,8 +1262,8 @@ proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -1457,7 +1271,7 @@ proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

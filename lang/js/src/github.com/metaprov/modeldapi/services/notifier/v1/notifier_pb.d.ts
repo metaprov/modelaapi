@@ -62,19 +62,10 @@ export namespace NotifierResponse {
 }
 
 export class CreateNotifierRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateNotifierRequest;
-
-  getName(): string;
-  setName(value: string): CreateNotifierRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateNotifierRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierSpec): CreateNotifierRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateNotifierRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): CreateNotifierRequest;
+  hasItem(): boolean;
+  clearItem(): CreateNotifierRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateNotifierRequest.AsObject;
@@ -86,10 +77,7 @@ export class CreateNotifierRequest extends jspb.Message {
 
 export namespace CreateNotifierRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
   }
 }
 
@@ -108,19 +96,10 @@ export namespace CreateNotifierResponse {
 }
 
 export class UpdateNotifierRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateNotifierRequest;
-
-  getName(): string;
-  setName(value: string): UpdateNotifierRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateNotifierRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierSpec): UpdateNotifierRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateNotifierRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): UpdateNotifierRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateNotifierRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateNotifierRequest.AsObject;
@@ -132,10 +111,7 @@ export class UpdateNotifierRequest extends jspb.Message {
 
 export namespace UpdateNotifierRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
   }
 }
 

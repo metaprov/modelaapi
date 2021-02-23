@@ -47,19 +47,10 @@ export namespace ListConnectionsResponse {
 }
 
 export class CreateConnectionRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateConnectionRequest;
-
-  getName(): string;
-  setName(value: string): CreateConnectionRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateConnectionRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): CreateConnectionRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateConnectionRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateConnectionRequest;
+  hasItem(): boolean;
+  clearItem(): CreateConnectionRequest;
 
   getSecretMap(): jspb.Map<string, string>;
   clearSecretMap(): CreateConnectionRequest;
@@ -74,10 +65,7 @@ export class CreateConnectionRequest extends jspb.Message {
 
 export namespace CreateConnectionRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, string]>,
   }
 }
@@ -97,19 +85,10 @@ export namespace CreateConnectionResponse {
 }
 
 export class UpdateConnectionRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateConnectionRequest;
-
-  getName(): string;
-  setName(value: string): UpdateConnectionRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateConnectionRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): UpdateConnectionRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateConnectionRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): UpdateConnectionRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateConnectionRequest;
 
   getSecretMap(): jspb.Map<string, string>;
   clearSecretMap(): UpdateConnectionRequest;
@@ -124,10 +103,7 @@ export class UpdateConnectionRequest extends jspb.Message {
 
 export namespace UpdateConnectionRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, string]>,
   }
 }

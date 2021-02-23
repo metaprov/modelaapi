@@ -584,11 +584,7 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipeli
  */
 proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -626,29 +622,9 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipeli
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
-      break;
-    case 5:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -679,113 +655,33 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipeli
  */
 proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      4,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.serializeBinaryToWriter
     );
   }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun}
  */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -793,8 +689,8 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipeli
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -802,31 +698,9 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
-
-
-/**
- * map<string, string> secret = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 
@@ -962,11 +836,7 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipeli
  */
 proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1004,29 +874,9 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipeli
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
-      break;
-    case 5:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1057,113 +907,33 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipeli
  */
 proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
+  f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      4,
+      1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.serializeBinaryToWriter
     );
   }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
 };
 
 
 /**
- * optional string namespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun}
  */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunSpec, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1171,8 +941,8 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipeli
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -1180,31 +950,9 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
-
-
-/**
- * map<string, string> secret = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 

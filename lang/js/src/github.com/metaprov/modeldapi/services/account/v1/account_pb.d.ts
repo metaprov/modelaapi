@@ -62,30 +62,13 @@ export namespace AccountResponse {
 }
 
 export class CreateAccountRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateAccountRequest;
-
-  getName(): string;
-  setName(value: string): CreateAccountRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateAccountRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec): CreateAccountRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateAccountRequest;
-
-  getPassword(): string;
-  setPassword(value: string): CreateAccountRequest;
-
-  getUpsert(): boolean;
-  setUpsert(value: boolean): CreateAccountRequest;
-
   getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account): CreateAccountRequest;
   hasItem(): boolean;
   clearItem(): CreateAccountRequest;
+
+  getPassword(): string;
+  setPassword(value: string): CreateAccountRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAccountRequest.AsObject;
@@ -97,13 +80,8 @@ export class CreateAccountRequest extends jspb.Message {
 
 export namespace CreateAccountRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.AsObject,
-    password: string,
-    upsert: boolean,
     item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
+    password: string,
   }
 }
 
@@ -122,19 +100,10 @@ export namespace CreateAccountResponse {
 }
 
 export class UpdateAccountRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateAccountRequest;
-
-  getName(): string;
-  setName(value: string): UpdateAccountRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateAccountRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec): UpdateAccountRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateAccountRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account): UpdateAccountRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateAccountRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateAccountRequest.AsObject;
@@ -146,10 +115,7 @@ export class UpdateAccountRequest extends jspb.Message {
 
 export namespace UpdateAccountRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
   }
 }
 

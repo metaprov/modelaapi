@@ -48,19 +48,10 @@ export namespace ListRecipesResponse {
 }
 
 export class CreateRecipeRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): CreateRecipeRequest;
-
-  getName(): string;
-  setName(value: string): CreateRecipeRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): CreateRecipeRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec): CreateRecipeRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateRecipeRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): CreateRecipeRequest;
+  hasItem(): boolean;
+  clearItem(): CreateRecipeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRecipeRequest.AsObject;
@@ -72,10 +63,7 @@ export class CreateRecipeRequest extends jspb.Message {
 
 export namespace CreateRecipeRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
 
@@ -94,19 +82,10 @@ export namespace CreateRecipeResponse {
 }
 
 export class UpdateRecipeRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): UpdateRecipeRequest;
-
-  getName(): string;
-  setName(value: string): UpdateRecipeRequest;
-
-  getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): UpdateRecipeRequest;
-
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec): UpdateRecipeRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateRecipeRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): UpdateRecipeRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateRecipeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateRecipeRequest.AsObject;
@@ -118,10 +97,7 @@ export class UpdateRecipeRequest extends jspb.Message {
 
 export namespace UpdateRecipeRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
-    labelsMap: Array<[string, string]>,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
 

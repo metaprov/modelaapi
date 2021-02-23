@@ -16,10 +16,7 @@ message ListDataProductsResponse {
 }
 
 message CreateDataProductRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
 }
 
 message CreateDataProductResponse {
@@ -27,10 +24,7 @@ message CreateDataProductResponse {
 }
 
 message UpdateDataProductRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec spec = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
 }
 
 message UpdateDataProductResponse {
