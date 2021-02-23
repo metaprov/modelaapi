@@ -40,5 +40,5 @@ install:
 upload-to-test:
 	twine upload -r pypitest dist/*.tar.gz
 
-upload:
+upload: build
 	twine upload -r pypi dist/*.tar.gz

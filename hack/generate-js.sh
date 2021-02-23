@@ -33,6 +33,7 @@ protoc \
     github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto \
+    github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/services/account/v1/account.proto \
     github.com/metaprov/modeldapi/services/archived/v1/archived.proto \
     github.com/metaprov/modeldapi/services/authd/v1/authd.proto \
@@ -40,7 +41,6 @@ protoc \
     github.com/metaprov/modeldapi/services/cloudsd/v1/cloudsd.proto \
     github.com/metaprov/modeldapi/services/common/v1/common.proto \
     github.com/metaprov/modeldapi/services/connection/v1/connection.proto \
-    github.com/metaprov/modeldapi/services/conversation/v1/conversation.proto \
     github.com/metaprov/modeldapi/services/curtain/v1/curtain.proto \
     github.com/metaprov/modeldapi/services/data/v1/data.proto \
     github.com/metaprov/modeldapi/services/datapipeline/v1/datapipeline.proto \
@@ -70,6 +70,8 @@ protoc \
     github.com/metaprov/modeldapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto \
     github.com/metaprov/modeldapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto \
     github.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto \
+    github.com/metaprov/modeldapi/services/conversation/v1/conversation.proto \
+    github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto \
     github.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline.proto \
     github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto \
     github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
@@ -78,7 +80,6 @@ protoc \
     github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto \
     github.com/metaprov/modeldapi/services/reciperun/v1/reciperun.proto \
     github.com/metaprov/modeldapi/services/report/v1/report.proto \
-    github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto \
     github.com/metaprov/modeldapi/services/servingsite/v1/servingsite.proto \
     github.com/metaprov/modeldapi/services/study/v1/study.proto \
     github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto \

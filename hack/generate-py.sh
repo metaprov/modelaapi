@@ -43,6 +43,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto \
+    github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/services/account/v1/account.proto \
     github.com/metaprov/modeldapi/services/archived/v1/archived.proto \
     github.com/metaprov/modeldapi/services/authd/v1/authd.proto \
