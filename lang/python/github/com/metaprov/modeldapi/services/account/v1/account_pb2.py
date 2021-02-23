@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/account/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/account/v1/account.proto\x12\x31github.com.metaprov.modeldapi.services.account.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"i\n\x14ListAccountsResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList\"\x11\n\x0f\x41\x63\x63ountResponse\"\x8d\x03\n\x14\x43reateAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.LabelsEntry\x12P\n\x04spec\x18\x04 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0e\n\x06upsert\x18\x06 \x01(\x08\x12L\n\x04item\x18\x07 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15\x43reateAccountResponse\"\x9d\x02\n\x14UpdateAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.LabelsEntry\x12P\n\x04spec\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15UpdateAccountResponse\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x12GetAccountResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetAccountNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetAccountNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteAccountResponse\"\x17\n\x15\x41\x63\x63ountCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"H\n\x13\x41\x63\x63ountLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\":\n\x17\x41\x63\x63ountGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x14\x41\x63\x63ountLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"%\n\x14\x41\x63\x63ountLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse\"\x9b\x01\n\x14\x41\x63\x63ountCreateRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12P\n\x04spec\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec\x12\x10\n\x08password\x18\x04 \x01(\t\"7\n\x14\x41\x63\x63ountDeleteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xab\x0e\n\x0e\x41\x63\x63ountService\x12\xb5\x01\n\x0cListAccounts\x12\x46.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest\x1aG.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/accounts\x12\xc1\x01\n\rCreateAccount\x12G.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0c/v1/accounts:\x07\x61\x63\x63ount\x12\xb6\x01\n\nGetAccount\x12\x44.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest\x1a\x45.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/accounts/{name}\x12\xd9\x01\n\rUpdateAccount\x12G.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse\"5\x82\xd3\xe4\x93\x02/\x1a$/v1/accounts/{account.metadata.name}:\x07\x61\x63\x63ount\x12\xa4\x01\n\rDeleteAccount\x12G.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse\"\x00\x12\xd9\x01\n\x14GetAccountNamespaces\x12N.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest\x1aO.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/accounts/namespaces/\x12\x9a\x01\n\x05Login\x12\x46.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest\x1aG.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse\"\x00\x12\x96\x01\n\x06Logout\x12G.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest\x1a\x41.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse\"\x00\x12\xa7\x01\n\x0e\x43hangePassword\x12H.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest\x1aI.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse\"\x00\x12\xa4\x01\n\rResetPassword\x12G.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/account/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/account/v1/account.proto\x12\x31github.com.metaprov.modeldapi.services.account.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"i\n\x14ListAccountsResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList\"\x11\n\x0f\x41\x63\x63ountResponse\"\x8d\x03\n\x14\x43reateAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.LabelsEntry\x12P\n\x04spec\x18\x04 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0e\n\x06upsert\x18\x06 \x01(\x08\x12L\n\x04item\x18\x07 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15\x43reateAccountResponse\"\x9d\x02\n\x14UpdateAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x63\n\x06labels\x18\x03 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.LabelsEntry\x12P\n\x04spec\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x15UpdateAccountResponse\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x12GetAccountResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetAccountNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetAccountNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteAccountResponse\"\x17\n\x15\x41\x63\x63ountCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"H\n\x13\x41\x63\x63ountLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\":\n\x17\x41\x63\x63ountGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x14\x41\x63\x63ountLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"%\n\x14\x41\x63\x63ountLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\xab\x0e\n\x0e\x41\x63\x63ountService\x12\xb5\x01\n\x0cListAccounts\x12\x46.github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest\x1aG.github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/accounts\x12\xc1\x01\n\rCreateAccount\x12G.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0c/v1/accounts:\x07\x61\x63\x63ount\x12\xb6\x01\n\nGetAccount\x12\x44.github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest\x1a\x45.github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/accounts/{name}\x12\xd9\x01\n\rUpdateAccount\x12G.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse\"5\x82\xd3\xe4\x93\x02/\x1a$/v1/accounts/{account.metadata.name}:\x07\x61\x63\x63ount\x12\xa4\x01\n\rDeleteAccount\x12G.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse\"\x00\x12\xd9\x01\n\x14GetAccountNamespaces\x12N.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest\x1aO.github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/accounts/namespaces/\x12\x9a\x01\n\x05Login\x12\x46.github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest\x1aG.github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse\"\x00\x12\x96\x01\n\x06Logout\x12G.github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest\x1a\x41.github.com.metaprov.modeldapi.services.account.v1.LogoutResponse\"\x00\x12\xa7\x01\n\x0e\x43hangePassword\x12H.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest\x1aI.github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse\"\x00\x12\xa4\x01\n\rResetPassword\x12G.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest\x1aH.github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/account/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -1015,98 +1015,6 @@ _RESETPASSWORDREPONSE = _descriptor.Descriptor(
   serialized_end=2293,
 )
 
-
-_ACCOUNTCREATEREQUEST = _descriptor.Descriptor(
-  name='AccountCreateRequest',
-  full_name='github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.spec', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest.password', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2296,
-  serialized_end=2451,
-)
-
-
-_ACCOUNTDELETEREQUEST = _descriptor.Descriptor(
-  name='AccountDeleteRequest',
-  full_name='github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2453,
-  serialized_end=2508,
-)
-
 _LISTACCOUNTSREQUEST_LABELSENTRY.containing_type = _LISTACCOUNTSREQUEST
 _LISTACCOUNTSREQUEST.fields_by_name['labels'].message_type = _LISTACCOUNTSREQUEST_LABELSENTRY
 _LISTACCOUNTSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNTLIST
@@ -1119,7 +1027,6 @@ _UPDATEACCOUNTREQUEST.fields_by_name['labels'].message_type = _UPDATEACCOUNTREQU
 _UPDATEACCOUNTREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNTSPEC
 _GETACCOUNTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNT
 _GETACCOUNTNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
-_ACCOUNTCREATEREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNTSPEC
 DESCRIPTOR.message_types_by_name['ListAccountsRequest'] = _LISTACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountsResponse'] = _LISTACCOUNTSRESPONSE
 DESCRIPTOR.message_types_by_name['AccountResponse'] = _ACCOUNTRESPONSE
@@ -1144,8 +1051,6 @@ DESCRIPTOR.message_types_by_name['ChangePasswordRequest'] = _CHANGEPASSWORDREQUE
 DESCRIPTOR.message_types_by_name['ChangePasswordResponse'] = _CHANGEPASSWORDRESPONSE
 DESCRIPTOR.message_types_by_name['ResetPasswordRequest'] = _RESETPASSWORDREQUEST
 DESCRIPTOR.message_types_by_name['ResetPasswordReponse'] = _RESETPASSWORDREPONSE
-DESCRIPTOR.message_types_by_name['AccountCreateRequest'] = _ACCOUNTCREATEREQUEST
-DESCRIPTOR.message_types_by_name['AccountDeleteRequest'] = _ACCOUNTDELETEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAccountsRequest = _reflection.GeneratedProtocolMessageType('ListAccountsRequest', (_message.Message,), {
@@ -1340,20 +1245,6 @@ ResetPasswordReponse = _reflection.GeneratedProtocolMessageType('ResetPasswordRe
   })
 _sym_db.RegisterMessage(ResetPasswordReponse)
 
-AccountCreateRequest = _reflection.GeneratedProtocolMessageType('AccountCreateRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ACCOUNTCREATEREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.account.v1.account_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.account.v1.AccountCreateRequest)
-  })
-_sym_db.RegisterMessage(AccountCreateRequest)
-
-AccountDeleteRequest = _reflection.GeneratedProtocolMessageType('AccountDeleteRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ACCOUNTDELETEREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.account.v1.account_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.account.v1.AccountDeleteRequest)
-  })
-_sym_db.RegisterMessage(AccountDeleteRequest)
-
 
 DESCRIPTOR._options = None
 _LISTACCOUNTSREQUEST_LABELSENTRY._options = None
@@ -1367,8 +1258,8 @@ _ACCOUNTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2511,
-  serialized_end=4346,
+  serialized_start=2296,
+  serialized_end=4131,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccounts',

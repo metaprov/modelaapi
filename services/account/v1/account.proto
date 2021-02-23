@@ -121,19 +121,6 @@ message ResetPasswordReponse {
 }
 
 
-message AccountCreateRequest {
-    string namespace = 1;
-    string name      = 2;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec  = 3;
-    string  password = 4;
-}
-
-message AccountDeleteRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-
 
 
 
