@@ -1044,7 +1044,8 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.toO
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
     spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.toObject(includeInstance, f),
     password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    upsert: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    upsert: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1107,6 +1108,11 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.des
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUpsert(value);
+      break;
+    case 7:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     default:
       reader.skipField();
@@ -1175,6 +1181,14 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.ser
     writer.writeBool(
       6,
       f
+    );
+  }
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.serializeBinaryToWriter
     );
   }
 };
@@ -1308,6 +1322,43 @@ proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.pro
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setUpsert = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 7;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

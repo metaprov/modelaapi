@@ -82,6 +82,11 @@ export class CreateAccountRequest extends jspb.Message {
   getUpsert(): boolean;
   setUpsert(value: boolean): CreateAccountRequest;
 
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account): CreateAccountRequest;
+  hasItem(): boolean;
+  clearItem(): CreateAccountRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAccountRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateAccountRequest): CreateAccountRequest.AsObject;
@@ -98,6 +103,7 @@ export namespace CreateAccountRequest {
     spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountSpec.AsObject,
     password: string,
     upsert: boolean,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
   }
 }
 

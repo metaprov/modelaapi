@@ -24,6 +24,7 @@ message CreateAccountRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec spec = 4;
     string password = 5;
     bool upsert = 6;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account  item = 7;
 }
 
 message CreateAccountResponse {
