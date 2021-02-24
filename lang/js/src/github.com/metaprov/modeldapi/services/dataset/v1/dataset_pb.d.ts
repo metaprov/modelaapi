@@ -262,10 +262,10 @@ export class CreateDatasetProfileRequest extends jspb.Message {
   getName(): string;
   setName(value: string): CreateDatasetProfileRequest;
 
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec): CreateDatasetProfileRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateDatasetProfileRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetProfileRequest;
+  hasItem(): boolean;
+  clearItem(): CreateDatasetProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDatasetProfileRequest.AsObject;
@@ -279,7 +279,7 @@ export namespace CreateDatasetProfileRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -317,10 +317,10 @@ export class CreateColumnProfileRequest extends jspb.Message {
   getCol(): string;
   setCol(value: string): CreateColumnProfileRequest;
 
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec): CreateColumnProfileRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateColumnProfileRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateColumnProfileRequest;
+  hasItem(): boolean;
+  clearItem(): CreateColumnProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateColumnProfileRequest.AsObject;
@@ -335,7 +335,7 @@ export namespace CreateColumnProfileRequest {
     namespace: string,
     name: string,
     col: string,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 

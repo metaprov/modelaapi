@@ -85,7 +85,7 @@ message UploadChunkResponse {
 message CreateDatasetProfileRequest {
     string namespace   = 1;
     string name        = 2;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 3;
 }
 
 message CreateDatasetProfileResponse {
@@ -98,7 +98,7 @@ message CreateColumnProfileRequest {
     string namespace   = 1;
     string name        = 2;
     string col         = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec spec = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 4;
 }
 
 message CreateColumnProfileResponse {
