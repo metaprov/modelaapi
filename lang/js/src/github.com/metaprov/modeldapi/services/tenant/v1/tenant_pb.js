@@ -836,7 +836,7 @@ proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.proto
  */
 proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -874,8 +874,8 @@ proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -912,24 +912,24 @@ proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.seria
     writer.writeMessage(
       5,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec item = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 5;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant}
  */
 proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec, 5));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant, 5));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.prototype.setItem = function(value) {

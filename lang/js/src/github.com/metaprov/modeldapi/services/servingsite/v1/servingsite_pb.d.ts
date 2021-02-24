@@ -27,8 +27,8 @@ export namespace ListServingSitesRequest {
 }
 
 export class ListServingSitesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): ListServingSitesResponse;
+  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList | undefined;
+  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList): ListServingSitesResponse;
   hasItems(): boolean;
   clearItems(): ListServingSitesResponse;
 
@@ -42,15 +42,15 @@ export class ListServingSitesResponse extends jspb.Message {
 
 export namespace ListServingSitesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.AsObject,
   }
 }
 
 export class CreateServingSiteRequest extends jspb.Message {
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
-  hasSpec(): boolean;
-  clearSpec(): CreateServingSiteRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
+  hasItem(): boolean;
+  clearItem(): CreateServingSiteRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateServingSiteRequest.AsObject;
@@ -62,7 +62,7 @@ export class CreateServingSiteRequest extends jspb.Message {
 
 export namespace CreateServingSiteRequest {
   export type AsObject = {
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 
@@ -81,10 +81,10 @@ export namespace CreateServingSiteResponse {
 }
 
 export class UpdateServingSiteRequest extends jspb.Message {
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
-  hasSpec(): boolean;
-  clearSpec(): UpdateServingSiteRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateServingSiteRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateServingSiteRequest.AsObject;
@@ -96,7 +96,7 @@ export class UpdateServingSiteRequest extends jspb.Message {
 
 export namespace UpdateServingSiteRequest {
   export type AsObject = {
-    spec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 

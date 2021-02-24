@@ -81,8 +81,8 @@ export namespace CreateTenantResponse {
 }
 
 export class UpdateTenantRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec): UpdateTenantRequest;
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): UpdateTenantRequest;
   hasItem(): boolean;
   clearItem(): UpdateTenantRequest;
 
@@ -96,7 +96,7 @@ export class UpdateTenantRequest extends jspb.Message {
 
 export namespace UpdateTenantRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantSpec.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
   }
 }
 

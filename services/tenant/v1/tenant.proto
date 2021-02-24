@@ -23,7 +23,7 @@ message CreateTenantResponse {
 }
 
 message UpdateTenantRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec item = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 5;
 }
 
 message UpdateTenantResponse {

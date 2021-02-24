@@ -79,12 +79,12 @@ service PredictionPipelineService {
     }
 
     rpc GetPredictionPipeline(GetPredictionPipelineRequest) returns (GetPredictionPipelineResponse) {
-        option (google.api.http).get = "/v1/predictionpipelines/{name}";
+        option (google.api.http).get = "/v1/{namespace}/predictionpipelines/{name}";
     }
 
     rpc UpdatePredictionPipeline(UpdatePredictionPipelineRequest) returns (UpdatePredictionPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/predictions/{predictionpipeline.metadata.name}"
+			put: "/v1/{predictionpipeline.metadata.namespace}predictions/{predictionpipeline.metadata.name}"
 			body: "*"
 		};
     }
@@ -94,7 +94,7 @@ service PredictionPipelineService {
     }
 
     rpc Download(DownloadPredictionPipelineRequest) returns (DownloadPredictionPipelineResponse) {
-        option (google.api.http).get = "/api/v1alpha1/predictionpipelines/{name}:download";
+        option (google.api.http).get = "/api/v1alpha1/{namespace}/predictionpipelines/{name}:download";
     }
 
 
