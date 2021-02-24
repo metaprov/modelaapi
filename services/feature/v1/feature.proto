@@ -60,7 +60,7 @@ service FeatureService {
     rpc CreateFeature(CreateFeatureRequest) returns (CreateFeatureResponse) {
         option (google.api.http) = {
 			post: "/v1/features"
-			body: "feature"
+			body: "*"
 		};
     }
     rpc GetFeature(GetFeatureRequest) returns (GetFeatureResponse) {
@@ -69,7 +69,7 @@ service FeatureService {
     rpc UpdateFeature(UpdateFeatureRequest) returns (UpdateFeatureResponse) {
         option (google.api.http) = {
 			put: "/v1/features/{feature.metadata.name}"
-			body: "feature"
+			body: "*"
 		};
     }
 

@@ -56,7 +56,7 @@ service DataPipelineRunService {
     rpc CreateDataPipelineRun(CreateDataPipelineRunRequest) returns (CreateDataPipelineRunResponse) {
         option (google.api.http) = {
 			post: "/v1/datapipelineruns"
-			body: "datapipelinerun"
+			body: "*"
 		};
     }
 
@@ -67,7 +67,7 @@ service DataPipelineRunService {
     rpc UpdateDataPipelineRun(UpdateDataPipelineRunRequest) returns (UpdateDataPipelineRunResponse) {
         option (google.api.http) = {
 			put: "/v1/datapipelineruns/{datapipelinerun.metadata.name}"
-			body: "datapipelinerun"
+			body: "*"
 		};
     }
 

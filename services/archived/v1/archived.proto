@@ -14,72 +14,51 @@ message RecordModelRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
-message RecordModelResponse {
-
-}
+message RecordModelResponse {}
 
 message RecordStudyRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study study = 1;
 }
 
-message RecordStudyResponse {
-
-}
+message RecordStudyResponse {}
 
 
 message RecordDatasetRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
 }
 
-message RecordDatasetResponse {
-
-}
+message RecordDatasetResponse {}
 
 message RecordPredictionPipelineRequest {
     github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline prediction = 1;
 }
 
-message RecordPredictionPipelineResponse {
-
-}
+message RecordPredictionPipelineResponse {}
 
 message RecordPredictorRequest {
     github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
 }
 
-message RecordPredictorResponse {
-
-}
+message RecordPredictorResponse {}
 
 
 message RecordDataProductRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
 }
 
-message RecordDataProductResponse {
-
-}
+message RecordDataProductResponse {}
 
 message RecordDataProductVersionRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 1;
 }
 
-message RecordDataProductVersionResponse {
-
-}
+message RecordDataProductVersionResponse {}
 
 message RecordAccountRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account account = 1;
 }
 
-message RecordAccountResponse {
-
-}
-
-
-message RecordForecastResponse {
-
-}
+message RecordAccountResponse {}
 
 
 // Used for delete resultponse

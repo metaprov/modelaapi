@@ -60,9 +60,6 @@ export class CreateDataPipelineRequest extends jspb.Message {
   hasItem(): boolean;
   clearItem(): CreateDataPipelineRequest;
 
-  getSecretMap(): jspb.Map<string, string>;
-  clearSecretMap(): CreateDataPipelineRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataPipelineRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateDataPipelineRequest): CreateDataPipelineRequest.AsObject;
@@ -74,7 +71,6 @@ export class CreateDataPipelineRequest extends jspb.Message {
 export namespace CreateDataPipelineRequest {
   export type AsObject = {
     item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
-    secretMap: Array<[string, string]>,
   }
 }
 

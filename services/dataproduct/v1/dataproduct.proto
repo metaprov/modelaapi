@@ -59,7 +59,7 @@ service DataProductService {
     rpc CreateDataProduct(CreateDataProductRequest) returns (CreateDataProductResponse) {
         option (google.api.http) = {
 			post: "/v1/dataproducts"
-			body: "dataproduct"
+			body: "*"
 		};
     }
     rpc GetDataProduct(GetDataProductRequest) returns (GetDataProductResponse) {
@@ -68,7 +68,7 @@ service DataProductService {
     rpc UpdateDataProduct(UpdateDataProductRequest) returns (UpdateDataProductResponse) {
         option (google.api.http) = {
 			put: "/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}"
-			body: "dataproduct"
+			body: "*"
 		};
     }
 

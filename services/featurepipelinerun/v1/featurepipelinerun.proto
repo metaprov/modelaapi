@@ -59,7 +59,7 @@ service FeaturePipelineRunService {
     rpc CreateFeaturePipelineRun(CreateFeaturePipelineRunRequest) returns (CreateFeaturePipelineRunResponse) {
         option (google.api.http) = {
 			post: "/v1/featurepipelineruns"
-			body: "featurepipelinerun"
+			body: "*"
 		};
     }
     rpc GetFeaturePipelineRun(GetFeaturePipelineRunRequest) returns (GetFeaturePipelineRunResponse) {
@@ -68,7 +68,7 @@ service FeaturePipelineRunService {
     rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (UpdateFeaturePipelineRunResponse) {
         option (google.api.http) = {
 			put: "/v1/featurepipelines/{feature.metadata.name}"
-			body: "featurepipelinerun"
+			body: "*"
 		};
     }
 

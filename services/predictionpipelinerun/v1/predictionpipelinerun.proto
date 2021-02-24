@@ -73,7 +73,7 @@ service PredictionPipelineRunService {
     rpc CreatePredictionPipelineRun(CreatePredictionPipelineRunRequest) returns (CreatePredictionPipelineRunResponse) {
         option (google.api.http) = {
 			post: "/v1/predictionpipelines"
-			body: "predictionpipeline"
+			body: "*"
 		};
     }
 
@@ -84,7 +84,7 @@ service PredictionPipelineRunService {
     rpc UpdatePredictionPipelineRun(UpdatePredictionPipelineRunRequest) returns (UpdatePredictionPipelineRunResponse) {
         option (google.api.http) = {
 			put: "/v1/predictions/{prediction.metadata.name}"
-			body: "prediction"
+			body: "*"
 		};
     }
 

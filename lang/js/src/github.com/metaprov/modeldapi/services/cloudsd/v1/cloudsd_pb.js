@@ -1406,8 +1406,8 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    path: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    path: jspb.Message.getFieldWithDefault(msg, 2, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
@@ -1447,25 +1447,25 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.dese
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPath(value);
       break;
-    case 4:
+    case 3:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 5:
+    case 4:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 6:
+    case 5:
       var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
@@ -1503,21 +1503,21 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.seri
   f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getPath();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getBucket();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
@@ -1525,24 +1525,24 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.seri
   f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
 
 /**
- * optional string key = 2;
+ * optional string key = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1551,16 +1551,16 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  * @return {!proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string path = 3;
+ * optional string path = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1569,17 +1569,17 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  * @return {!proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.getBucket = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 4));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 3));
 };
 
 
@@ -1588,7 +1588,7 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  * @return {!proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -1606,17 +1606,17 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 4));
 };
 
 
@@ -1625,7 +1625,7 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  * @return {!proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -1643,19 +1643,19 @@ proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * map<string, bytes> secret = 6;
+ * map<string, bytes> secret = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
 

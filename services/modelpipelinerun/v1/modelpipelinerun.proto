@@ -64,7 +64,7 @@ service ModelPipelineRunService {
     rpc CreateModelPipelineRun(CreateModelPipelineRunRequest) returns (CreateModelPipelineRunResponse) {
         option (google.api.http) = {
 			post: "/api/v1alpha1/modelpipelineruns"
-			body: "modelpipelinerun"
+			body: "*"
 		};
     }
     rpc GetModelPipelineRun(GetModelPipelineRunRequest) returns (GetModelPipelineRunResponse) {
@@ -73,7 +73,7 @@ service ModelPipelineRunService {
     rpc UpdateModelPipelineRun(UpdateModelPipelineRunRequest) returns (UpdateModelPipelineRunResponse) {
         option (google.api.http) = {
 			put: "/api/v1alpha1/modelpipelineruns/{modelpipelinerun.metadata.name}"
-			body: "modelpipelinerun"
+			body: "*"
 		};
     }
 

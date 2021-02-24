@@ -59,7 +59,7 @@ service RecipeRunService {
     rpc CreateRecipeRun(CreateRecipeRunRequest) returns (CreateRecipeRunResponse) {
         option (google.api.http) = {
 			post: "/v1/reciperuns"
-			body: "reciperun"
+			body: "*"
 		};
     }
     rpc GetRecipeRun(GetRecipeRunRequest) returns (GetRecipeRunResponse) {
@@ -68,7 +68,7 @@ service RecipeRunService {
     rpc UpdateRecipeRun(UpdateRecipeRunRequest) returns (UpdateRecipeRunResponse) {
         option (google.api.http) = {
 			put: "/v1/reciperuns/{reciperun.metadata.name}"
-			body: "reciperun"
+			body: "*"
 		};
     }
 

@@ -67,7 +67,7 @@ service NotifierService {
     rpc CreateNotifier(CreateNotifierRequest) returns (CreateNotifierResponse) {
         option (google.api.http) = {
 			post: "/api/v1alpha1/notifiers"
-			body: "notifier"
+			body: "*"
 		};
     }
     rpc GetNotifier(GetNotifierRequest) returns (GetNotifierResponse) {
@@ -76,7 +76,7 @@ service NotifierService {
     rpc UpdateNotifier(UpdateNotifierRequest) returns (UpdateNotifierResponse) {
         option (google.api.http) = {
 			put: "/api/v1alpha1/notifiers/{notifier.metadata.name}"
-			body: "notifier"
+			body: "*"
 		};
     }
 

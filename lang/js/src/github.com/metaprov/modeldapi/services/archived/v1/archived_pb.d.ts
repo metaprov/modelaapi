@@ -278,20 +278,6 @@ export namespace RecordAccountResponse {
   }
 }
 
-export class RecordForecastResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordForecastResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordForecastResponse): RecordForecastResponse.AsObject;
-  static serializeBinaryToWriter(message: RecordForecastResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordForecastResponse;
-  static deserializeBinaryFromReader(message: RecordForecastResponse, reader: jspb.BinaryReader): RecordForecastResponse;
-}
-
-export namespace RecordForecastResponse {
-  export type AsObject = {
-  }
-}
-
 export class DeleteResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteResponse.AsObject;

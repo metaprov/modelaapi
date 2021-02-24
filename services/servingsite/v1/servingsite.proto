@@ -62,7 +62,7 @@ service ServingSiteService {
     rpc CreateServingSite(CreateServingSiteRequest) returns (CreateServingSiteResponse) {
         option (google.api.http) = {
 			post: "/v1/servingsites"
-			body: "servingsite"
+			body: "*"
 		};
     }
     rpc GetServingSite(GetServingSiteRequest) returns (GetServingSiteResponse) {
@@ -71,7 +71,7 @@ service ServingSiteService {
     rpc UpdateServingSite(UpdateServingSiteRequest) returns (UpdateServingSiteResponse) {
         option (google.api.http) = {
 			put: "/v1/servingsites/{servingsite.metadata.name}"
-			body: "servingsite"
+			body: "*"
 		};
     }
 

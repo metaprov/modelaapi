@@ -60,7 +60,7 @@ service ModelAutobuilderService {
     rpc CreateModelAutobuilder(CreateModelAutobuilderRequest) returns (CreateModelAutobuilderResponse) {
         option (google.api.http) = {
 			post: "/v1/modelautobuilders"
-			body: "modelautobuilder"
+			body: "*"
 		};
     }
     rpc GetModelAutobuilder(GetModelAutobuilderRequest) returns (GetModelAutobuilderResponse) {
@@ -69,7 +69,7 @@ service ModelAutobuilderService {
     rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (UpdateModelAutobuilderResponse) {
         option (google.api.http) = {
 			put: "/v1/modelautobuilders/{modelautobuilders.metadata.name}"
-			body: "modelautobuilder"
+			body: "*"
 		};
     }
 

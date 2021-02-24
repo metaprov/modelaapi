@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/archived/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"d\n\x12RecordModelRequest\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13RecordModelResponse\"d\n\x12RecordStudyRequest\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x15\n\x13RecordStudyResponse\"f\n\x14RecordDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15RecordDatasetResponse\"\x84\x01\n\x1fRecordPredictionPipelineRequest\x12\x61\n\nprediction\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\"\n RecordPredictionPipelineResponse\"q\n\x16RecordPredictorRequest\x12W\n\tpredictor\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x19\n\x17RecordPredictorResponse\"n\n\x18RecordDataProductRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19RecordDataProductResponse\"|\n\x1fRecordDataProductVersionRequest\x12Y\n\x07version\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n RecordDataProductVersionResponse\"g\n\x14RecordAccountRequest\x12O\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x17\n\x15RecordAccountResponse\"\x18\n\x16RecordForecastResponse\"\x10\n\x0e\x44\x65leteResponse2\x99\x0b\n\x0f\x41rchivedService\x12\xa0\x01\n\x0bRecordModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.RecordModelResponse\"\x00\x12\xa0\x01\n\x0bRecordStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyResponse\"\x00\x12\xa6\x01\n\rRecordDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetResponse\"\x00\x12\xc7\x01\n\x18RecordPredictionPipeline\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineResponse\"\x00\x12\xac\x01\n\x0fRecordPredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorResponse\"\x00\x12\xae\x01\n\rRecordProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductResponse\"\x00\x12\xc3\x01\n\x14RecordProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionResponse\"\x00\x12\xa6\x01\n\rRecordAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"d\n\x12RecordModelRequest\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13RecordModelResponse\"d\n\x12RecordStudyRequest\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x15\n\x13RecordStudyResponse\"f\n\x14RecordDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15RecordDatasetResponse\"\x84\x01\n\x1fRecordPredictionPipelineRequest\x12\x61\n\nprediction\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\"\n RecordPredictionPipelineResponse\"q\n\x16RecordPredictorRequest\x12W\n\tpredictor\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x19\n\x17RecordPredictorResponse\"n\n\x18RecordDataProductRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19RecordDataProductResponse\"|\n\x1fRecordDataProductVersionRequest\x12Y\n\x07version\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n RecordDataProductVersionResponse\"g\n\x14RecordAccountRequest\x12O\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x17\n\x15RecordAccountResponse\"\x10\n\x0e\x44\x65leteResponse2\x99\x0b\n\x0f\x41rchivedService\x12\xa0\x01\n\x0bRecordModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.RecordModelResponse\"\x00\x12\xa0\x01\n\x0bRecordStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyResponse\"\x00\x12\xa6\x01\n\rRecordDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetResponse\"\x00\x12\xc7\x01\n\x18RecordPredictionPipeline\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineResponse\"\x00\x12\xac\x01\n\x0fRecordPredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorResponse\"\x00\x12\xae\x01\n\rRecordProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductResponse\"\x00\x12\xc3\x01\n\x14RecordProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionResponse\"\x00\x12\xa6\x01\n\rRecordAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -486,31 +486,6 @@ _RECORDACCOUNTRESPONSE = _descriptor.Descriptor(
 )
 
 
-_RECORDFORECASTRESPONSE = _descriptor.Descriptor(
-  name='RecordForecastResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordForecastResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1536,
-  serialized_end=1560,
-)
-
-
 _DELETERESPONSE = _descriptor.Descriptor(
   name='DeleteResponse',
   full_name='github.com.metaprov.modeldapi.services.archived.v1.DeleteResponse',
@@ -531,8 +506,8 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1562,
-  serialized_end=1578,
+  serialized_start=1536,
+  serialized_end=1552,
 )
 
 _RECORDMODELREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
@@ -559,7 +534,6 @@ DESCRIPTOR.message_types_by_name['RecordDataProductVersionRequest'] = _RECORDDAT
 DESCRIPTOR.message_types_by_name['RecordDataProductVersionResponse'] = _RECORDDATAPRODUCTVERSIONRESPONSE
 DESCRIPTOR.message_types_by_name['RecordAccountRequest'] = _RECORDACCOUNTREQUEST
 DESCRIPTOR.message_types_by_name['RecordAccountResponse'] = _RECORDACCOUNTRESPONSE
-DESCRIPTOR.message_types_by_name['RecordForecastResponse'] = _RECORDFORECASTRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -675,13 +649,6 @@ RecordAccountResponse = _reflection.GeneratedProtocolMessageType('RecordAccountR
   })
 _sym_db.RegisterMessage(RecordAccountResponse)
 
-RecordForecastResponse = _reflection.GeneratedProtocolMessageType('RecordForecastResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDFORECASTRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordForecastResponse)
-  })
-_sym_db.RegisterMessage(RecordForecastResponse)
-
 DeleteResponse = _reflection.GeneratedProtocolMessageType('DeleteResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETERESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
@@ -699,8 +666,8 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1581,
-  serialized_end=3014,
+  serialized_start=1555,
+  serialized_end=2988,
   methods=[
   _descriptor.MethodDescriptor(
     name='RecordModel',

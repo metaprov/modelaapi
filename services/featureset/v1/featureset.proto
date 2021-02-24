@@ -59,7 +59,7 @@ service FeaturesetService {
     rpc CreateFeatureset(CreateFeaturesetRequest) returns (CreateFeaturesetResponse) {
         option (google.api.http) = {
 			post: "/v1/featuresets"
-			body: "featureset"
+			body: "*"
 		};
     }
     rpc GetFeatureset(GetFeaturesetRequest) returns (GetFeaturesetResponse) {
@@ -68,7 +68,7 @@ service FeaturesetService {
     rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (UpdateFeaturesetResponse) {
         option (google.api.http) = {
 			put: "/v1/featuresets/{featureset.metadata.name}"
-			body: "featureset"
+			body: "*"
 		};
     }
     rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (DeleteFeaturesetResponse) {}

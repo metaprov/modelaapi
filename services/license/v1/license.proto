@@ -81,14 +81,14 @@ service LicenseService {
     rpc CreateLicense(CreateLicenseRequest) returns (CreateLicenseResponse) {
         option (google.api.http) = {
 			post: "/v1/licenses"
-			body: "license"
+			body: "*"
 		};
     }
 
     rpc CreateLicenseFromKey(CreateLicenseFromKeyRequest) returns (CreateLicenseResponse) {
         option (google.api.http) = {
 			post: "/v1/licenses"
-			body: "license"
+			body: "*"
 		};
     }
 
@@ -100,7 +100,7 @@ service LicenseService {
     rpc UpdateLicense(UpdateLicenseRequest) returns (UpdateLicenseResponse) {
         option (google.api.http) = {
 			put: "/v1/licenses/{license_name}"
-			body: "license"
+			body: "*"
 		};
     }
 

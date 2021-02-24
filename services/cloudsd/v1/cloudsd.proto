@@ -8,12 +8,12 @@ import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 service CloudsService {
-    rpc Download(FileDownloadRequest)  returns (FileDownloadResponse)     {}
-    rpc Upload  (FileUploadRequest)  returns (FileUploadResponse)     {}
-    rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest) returns (KeyExistInVirtualBucketResponse)     {}
-    rpc VirtualBucketExist(VirtualBucketExistRequest) returns (VirtualBucketExistResponse)     {}
+    rpc Download(FileDownloadRequest)                             returns (FileDownloadResponse)     {}
+    rpc Upload  (FileUploadRequest)                               returns (FileUploadResponse)     {}
+    rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest)   returns (KeyExistInVirtualBucketResponse)     {}
+    rpc VirtualBucketExist(VirtualBucketExistRequest)             returns (VirtualBucketExistResponse)     {}
     rpc CreateVirtualBucketIfNotExist(CreateVirtualBucketRequest) returns (CreateVirtualBucketResponse)     {}
-    rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {} // used when job ends in order to exist the side car.
+    rpc Shutdown(ShutdownRequest)                                 returns (ShutdownResponse) {} 
 }
 
 message ShutdownRequest {}
@@ -45,11 +45,11 @@ message CloudVirtualBucketResponse {}
 
 // Ask the bucket to download a file
 message FileDownloadRequest {
-    string key    = 2; // key on the cloud storage
-    string path   = 3; // local path
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 4;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection       connection = 5;
-    map<string,bytes>  secret    = 6;
+    string key    = 1; // key on the cloud storage
+    string path   = 2; // local path
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
+    map<string,bytes>  secret    = 5;
 }
 
 message FileDownloadResponse {}

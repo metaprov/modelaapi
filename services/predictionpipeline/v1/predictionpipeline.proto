@@ -74,7 +74,7 @@ service PredictionPipelineService {
     rpc CreatePredictionPipeline(CreatePredictionPipelineRequest) returns (CreatePredictionPipelineResponse) {
         option (google.api.http) = {
 			post: "/v1/predictionpipelines"
-			body: "predictionpipeline"
+			body: "*"
 		};
     }
 
@@ -85,7 +85,7 @@ service PredictionPipelineService {
     rpc UpdatePredictionPipeline(UpdatePredictionPipelineRequest) returns (UpdatePredictionPipelineResponse) {
         option (google.api.http) = {
 			put: "/v1/predictions/{predictionpipeline.metadata.name}"
-			body: "predictionpipeline"
+			body: "*"
 		};
     }
 

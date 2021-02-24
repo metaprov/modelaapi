@@ -59,7 +59,7 @@ service RunBookService {
     rpc CreateRunBook(CreateRunBookRequest) returns (CreateRunBookResponse) {
         option (google.api.http) = {
 			post: "/v1/runbooks"
-			body: "runbook"
+			body: "*"
 		};
     }
     rpc GetRunBook(GetRunBookRequest) returns (GetRunBookResponse) {
@@ -68,7 +68,7 @@ service RunBookService {
     rpc UpdateRunBook(UpdateRunBookRequest) returns (UpdateRunBookResponse) {
         option (google.api.http) = {
 			put: "/v1/runbooks/{runbook.metadata.name}"
-			body: "runbook"
+			body: "*"
 		};
     }
 

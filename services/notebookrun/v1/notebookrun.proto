@@ -66,7 +66,7 @@ service NotebookRunService {
     rpc CreateNotebookRun(CreateNotebookRunRequest) returns (CreateNotebookRunResponse) {
         option (google.api.http) = {
 			post: "/api/v1alpha1/notebookruns"
-			body: "notebookrun"
+			body: "*"
 		};
     }
     rpc GetNotebookRun(GetNotebookRunRequest) returns (GetNotebookRunResponse) {
@@ -75,7 +75,7 @@ service NotebookRunService {
     rpc UpdateNotebookRun(UpdateNotebookRunRequest) returns (UpdateNotebookRunResponse) {
         option (google.api.http) = {
 			put: "/api/v1alpha1/notebookruns/{notebookrun.metadata.name}"
-			body: "notebookrun"
+			body: "*"
 		};
     }
 

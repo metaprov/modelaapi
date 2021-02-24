@@ -64,7 +64,7 @@ service VirtualBucketService {
     rpc CreateVirtualBucket(CreateVirtualBucketRequest) returns (CreateVirtualBucketResponse) {
         option (google.api.http) = {
 			post: "/v1/virtualbuckets"
-			body: "virtualbucket"
+			body: "*"
 		};
     }
     rpc GetVirtualBucket(GetVirtualBucketRequest) returns (GetVirtualBucketResponse) {
@@ -73,7 +73,7 @@ service VirtualBucketService {
     rpc UpdateVirtualBucket(UpdateVirtualBucketRequest) returns (UpdateVirtualBucketResponse) {
         option (google.api.http) = {
 			put: "/v1/virtualbuckets/{virtualbucket.metadata.name}"
-			body: "virtualbucket"
+			body: "*"
 		};
     }
 

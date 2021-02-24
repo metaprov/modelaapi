@@ -64,7 +64,7 @@ service ConversationService {
     rpc CreateConversation(CreateConversationRequest) returns (CreateConversationResponse) {
         option (google.api.http) = {
 			post: "/api/v1alpha1/conversations"
-			body: "conversation"
+			body: "*"
 		};
     }
     rpc GetConversation(GetConversationRequest) returns (GetConversationResponse) {
@@ -73,7 +73,7 @@ service ConversationService {
     rpc UpdateConersation(UpdateConversationRequest) returns (UpdateConversationResponse) {
         option (google.api.http) = {
 			put: "/api/v1alpha1/conversations/{conversation.metadata.namespace}/{conversation.metadata.name}"
-			body: "conversation"
+			body: "*"
 		};
     }
 

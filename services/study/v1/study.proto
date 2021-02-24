@@ -116,7 +116,7 @@ service StudyService {
     rpc CreateStudy(CreateStudyRequest) returns (CreateStudyResponse) {
         option (google.api.http) = {
 			post: "/v1/studies"
-			body: "study"
+			body: "*"
 		};
     }
 
@@ -127,7 +127,7 @@ service StudyService {
     rpc UpdateStudy(UpdateStudyRequest) returns (UpdateStudyResponse) {
         option (google.api.http) = {
 			put: "/v1/studies/{study.metadata.namespace}/{study.metadata.name}"
-			body: "study"
+			body: "*"
 		};
     }
 

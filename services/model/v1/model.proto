@@ -170,7 +170,7 @@ service ModelService {
     rpc CreateModel(CreateModelRequest) returns (CreateModelResponse) {
         option (google.api.http) = {
 			post: "/api/v1/models"
-			body: "model"
+			body: "*"
 		};
     }
 
@@ -181,7 +181,7 @@ service ModelService {
     rpc UpdateModel(UpdateModelRequest) returns (UpdateModelResponse) {
         option (google.api.http) = {
 			put: "/api/v1/models/{model.metadata.name}"
-			body: "model"
+			body: "*"
 		};
     }
 
@@ -192,14 +192,14 @@ service ModelService {
     rpc DeployModel(DeployModelRequest) returns (DeployModelResponse) {
         option (google.api.http) = {
 			post: "/api/v1/models/{model.metadata.name}:deploy"
-			body: "model"
+			body: "*"
 		};
     }
 
     rpc PublishModel(PublishModelRequest) returns (PublishModelResponse) {
         option (google.api.http) = {
 			post: "/api/v1/models/{model.metadata.name}:publish"
-			body: "model"
+			body: "*"
 		};
     }
 

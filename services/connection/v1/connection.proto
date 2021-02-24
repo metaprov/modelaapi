@@ -7,9 +7,7 @@ import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message ListConnectionsRequest {
     string             namespace  = 1;
-    map<string,string> labels     = 2;
-    int32              page_size  = 3;
-    string             page_token = 4;
+    map<string,string> labels     = 2;    
 }
 
 message ListConnectionsResponse {
@@ -61,20 +59,20 @@ message DeleteConnectionResponse {
 
 service ConnectionService {
     rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {
-        option (google.api.http).get = "/v1/credentials";
+        option (google.api.http).get = "/v1/connections";
     }
     rpc CreateConnection(CreateConnectionRequest) returns (CreateConnectionResponse) {
         option (google.api.http) = {
-			post: "/v1/credentials"
+			post: "/v1/connections"
 			body: "connection"
 		};
     }
     rpc GetConnection(GetConnectionRequest) returns (GetConnectionResponse) {
-        option (google.api.http).get = "/v1/credentials/{name}";
+        option (google.api.http).get = "/v1/connections/{name}";
     }
     rpc UpdateConnection(UpdateConnectionRequest) returns (UpdateConnectionResponse) {
         option (google.api.http) = {
-			put: "/v1/credentials/{connection.metadata.name}"
+			put: "/v1/connections/{connection.metadata.name}"
 			body: "connection"
 		};
     }

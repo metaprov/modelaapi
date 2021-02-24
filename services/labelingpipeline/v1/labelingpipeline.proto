@@ -61,7 +61,7 @@ service LabelingPipelineService {
     rpc CreateLabelingPipeline(CreateLabelingPipelineRequest) returns (CreateLabelingPipelineResponse) {
         option (google.api.http) = {
 			post: "/v1/labelpipelines"
-			body: "labelpipeline"
+			body: "*"
 		};
     }
 
@@ -72,7 +72,7 @@ service LabelingPipelineService {
     rpc UpdateLabelingPipeline(UpdateLabelingPipelineRequest) returns (UpdateLabelingPipelineResponse) {
         option (google.api.http) = {
 			put: "/v1/labelpipelines/{label.metadata.name}"
-			body: "labelpipeline"
+			body: "*"
 		};
     }
 

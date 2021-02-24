@@ -84,7 +84,7 @@ service RecipeService {
     rpc CreateRecipe(CreateRecipeRequest) returns (CreateRecipeResponse) {
         option (google.api.http) = {
 			post: "/v1/recipes"
-			body: "recipe"
+			body: "*"
 		};
     }
     rpc GetRecipe(GetRecipeRequest) returns (GetRecipeResponse) {
@@ -102,7 +102,7 @@ service RecipeService {
     rpc UpdateRecipe(UpdateRecipeRequest) returns (UpdateRecipeResponse) {
         option (google.api.http) = {
 			put: "/v1/recipes/{recipe.metadata.name}"
-			body: "recipe"
+			body: "*"
 		};
     }
 

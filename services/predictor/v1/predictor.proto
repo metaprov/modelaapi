@@ -76,7 +76,7 @@ service PredictorService {
     rpc CreatePredictor(CreatePredictorRequest) returns (CreatePredictorResponse) {
         option (google.api.http) = {
 			post: "/v1/predictors"
-			body: "predictor"
+			body: "*"
 		};
     }
 
@@ -87,7 +87,7 @@ service PredictorService {
     rpc UpdatePredictor(UpdatePredictorRequest) returns (UpdatePredictorResponse) {
         option (google.api.http) = {
 			put: "/v1/predictors/{predictor.metadata.name}"
-			body: "predictor"
+			body: "*"
 		};
     }
 

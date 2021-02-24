@@ -8,16 +8,11 @@ import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
 message ListAccountsRequest {
     string             namespace = 1;
-    map<string,string> labels =2;
-    int32              page_size = 3;
-    string             page_token = 4;
+    map<string,string> labels    = 2;   
 }
 
 message ListAccountsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList items = 1;
-    // Token to retrieve the next page of results, or empty if there are no
-    // more results in the list.
-    string next_page_token = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList items = 1;   
 }
 
 message AccountResponse {}
@@ -83,17 +78,22 @@ message AccountLoginRequest {
     string password  = 3;
 }
 
+message AccountLoginResponse {
+    string token = 1; // jwt token
+}
+
+
 message AccountGetByNameRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message AccountLoginResponse {
-    string token = 1; // jwt token
-}
 message AccountLogoutRequest {
     string token = 1; // jwt token
 }
+
+
+
 
 
 message ChangePasswordRequest {
@@ -132,25 +132,25 @@ service AccountService {
 		};
     }
     rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
-        option (google.api.http).get = "/v1/accounts/{namespace}/{name}";
+        option (google.api.http).get = "/v1/{namespace}/accounts/{name}";
     }
     rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
         option (google.api.http) = {
-			put: "/v1/accounts/{account.metadata.namespace}/{account.metadata.name}"
+			put: "/v1/{account.metadata.namespace}/accounts//{account.metadata.name}"
 			body: "account"
 		};
     }
 
     rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {
-        option (google.api.http).delete = "/api/v1/accounts/{namespace}/{name}";
+        option (google.api.http).delete = "/api/{namespace}/v1/accounts/{name}";
     }
 
 
     rpc GetAccountNamespaces(GetAccountNamespacesRequest) returns (GetAccountNamespacesResponse) {
-        option (google.api.http).get = "/v1/accounts/namespaces/";
+        option (google.api.http).get = "/api/{namespace}/v1/accounts/{name}:namespaces";
     }
 
-    rpc Login  (AccountLoginRequest)                returns (AccountLoginResponse) {}
+    rpc Login          (AccountLoginRequest)        returns (AccountLoginResponse) {}
     rpc Logout         (AccountLogoutRequest)       returns (LogoutResponse)   {}
     rpc ChangePassword (ChangePasswordRequest)      returns (ChangePasswordResponse)   {}
     rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}

@@ -59,7 +59,7 @@ service TenantService {
     rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
         option (google.api.http) = {
 			post: "/v1/tenants"
-			body: "tenant"
+			body: "*"
 		};
     }
     rpc GetTenant(GetTenantRequest) returns (GetTenantResponse) {
@@ -68,7 +68,7 @@ service TenantService {
     rpc UpdateTenant(UpdateTenantRequest) returns (UpdateTenantResponse) {
         option (google.api.http) = {
 			put: "/v1/tenants/{tenant.metadata.name}"
-			body: "tenant"
+			body: "*"
 		};
     }
 

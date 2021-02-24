@@ -59,7 +59,7 @@ service PostMortemService {
     rpc CreatePostMortem(CreatePostMortemRequest) returns (CreatePostMortemResponse) {
         option (google.api.http) = {
 			post: "/v1/postmortems"
-			body: "postmortem"
+			body: "*"
 		};
     }
     rpc GetPostMortem(GetPostMortemRequest) returns (GetPostMortemResponse) {
@@ -68,7 +68,7 @@ service PostMortemService {
     rpc UpdatePostMortem(UpdatePostMortemRequest) returns (UpdatePostMortemResponse) {
         option (google.api.http) = {
 			put: "/v1/postmortems/{postmortem.metadata.name}"
-			body: "postmortem"
+			body: "*"
 		};
     }
 

@@ -76,7 +76,7 @@ service ReportService {
     rpc CreateReport(CreateReportRequest) returns (CreateReportResponse) {
         option (google.api.http) = {
 			post: "/v1/reports"
-			body: "report"
+			body: "*"
 		};
     }
 
@@ -87,7 +87,7 @@ service ReportService {
     rpc UpdateReport(UpdateReportRequest) returns (UpdateReportResponse) {
         option (google.api.http) = {
 			put: "/v1/reports/{report.metadata.name}"
-			body: "report"
+			body: "*"
 		};
     }
 

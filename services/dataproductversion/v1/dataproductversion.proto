@@ -60,7 +60,7 @@ service DataProductVersionService {
     rpc CreateDataProductVersion(CreateDataProductVersionRequest) returns (CreateDataProductVersionResponse) {
         option (google.api.http) = {
 			post: "/v1/dataproductversions"
-			body: "dataproductversion"
+			body: "*"
 		};
     }
     rpc GetDataProductVersion(GetDataProductVersionRequest) returns (GetDataProductVersionResponse) {
@@ -69,7 +69,7 @@ service DataProductVersionService {
     rpc UpdateDataProductVersion(UpdateDataProductVersionRequest) returns (UpdateDataProductVersionResponse) {
         option (google.api.http) = {
 			put: "/v1/dataproductversions/{dataproductversion.metadata.name}"
-			body: "dataproductversion"
+			body: "*"
 		};
     }
 

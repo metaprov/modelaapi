@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/runbook/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto\x12\x31github.com.metaprov.modeldapi.services.runbook.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\"\xbb\x01\n\x13ListRunBooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListRunBooksResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList\"c\n\x14\x43reateRunBookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x17\n\x15\x43reateRunBookResponse\"c\n\x14UpdateRunBookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x17\n\x15UpdateRunBookResponse\"4\n\x11GetRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetRunBookResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteRunBookResponse2\xc8\x07\n\x0eRunBookService\x12\xb5\x01\n\x0cListRunBooks\x12\x46.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest\x1aG.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/runbooks\x12\xc1\x01\n\rCreateRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0c/v1/runbooks:\x07runbook\x12\xb6\x01\n\nGetRunBook\x12\x44.github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest\x1a\x45.github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/runbooks/{name}\x12\xd9\x01\n\rUpdateRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse\"5\x82\xd3\xe4\x93\x02/\x1a$/v1/runbooks/{runbook.metadata.name}:\x07runbook\x12\xa4\x01\n\rDeleteRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/runbook/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto\x12\x31github.com.metaprov.modeldapi.services.runbook.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\"\xbb\x01\n\x13ListRunBooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListRunBooksResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList\"c\n\x14\x43reateRunBookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x17\n\x15\x43reateRunBookResponse\"c\n\x14UpdateRunBookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x17\n\x15UpdateRunBookResponse\"4\n\x11GetRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetRunBookResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteRunBookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteRunBookResponse2\xbc\x07\n\x0eRunBookService\x12\xb5\x01\n\x0cListRunBooks\x12\x46.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest\x1aG.github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/runbooks\x12\xbb\x01\n\rCreateRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/runbooks:\x01*\x12\xb6\x01\n\nGetRunBook\x12\x44.github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest\x1a\x45.github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/runbooks/{name}\x12\xd3\x01\n\rUpdateRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse\"/\x82\xd3\xe4\x93\x02)\x1a$/v1/runbooks/{runbook.metadata.name}:\x01*\x12\xa4\x01\n\rDeleteRunBook\x12G.github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest\x1aH.github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/runbook/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1016,
-  serialized_end=1984,
+  serialized_end=1972,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListRunBooks',
@@ -519,7 +519,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATERUNBOOKREQUEST,
     output_type=_CREATERUNBOOKRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\"\014/v1/runbooks:\007runbook',
+    serialized_options=b'\202\323\344\223\002\021\"\014/v1/runbooks:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _RUNBOOKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATERUNBOOKREQUEST,
     output_type=_UPDATERUNBOOKRESPONSE,
-    serialized_options=b'\202\323\344\223\002/\032$/v1/runbooks/{runbook.metadata.name}:\007runbook',
+    serialized_options=b'\202\323\344\223\002)\032$/v1/runbooks/{runbook.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(

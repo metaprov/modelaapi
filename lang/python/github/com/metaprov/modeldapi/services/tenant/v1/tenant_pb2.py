@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modeldapi/services/tenant/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto\x12\x30github.com.metaprov.modeldapi.services.tenant.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xb8\x01\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListTenantsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x16\n\x14\x43reateTenantResponse\"f\n\x13UpdateTenantRequest\x12O\n\x04item\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec\"\x16\n\x14UpdateTenantResponse\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x11GetTenantResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTenantResponse2\xa7\x07\n\rTenantService\x12\xaf\x01\n\x0bListTenants\x12\x44.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest\x1a\x45.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/tenants\x12\xba\x01\n\x0c\x43reateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/tenants:\x06tenant\x12\xb0\x01\n\tGetTenant\x12\x42.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantRequest\x1a\x43.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/tenants/{name}\x12\xd1\x01\n\x0cUpdateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantResponse\"2\x82\xd3\xe4\x93\x02,\x1a\"/v1/tenants/{tenant.metadata.name}:\x06tenant\x12\x9f\x01\n\x0c\x44\x65leteTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/tenant/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto\x12\x30github.com.metaprov.modeldapi.services.tenant.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xb8\x01\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListTenantsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x16\n\x14\x43reateTenantResponse\"f\n\x13UpdateTenantRequest\x12O\n\x04item\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec\"\x16\n\x14UpdateTenantResponse\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x11GetTenantResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTenantResponse2\x9d\x07\n\rTenantService\x12\xaf\x01\n\x0bListTenants\x12\x44.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest\x1a\x45.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/tenants\x12\xb5\x01\n\x0c\x43reateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/tenants:\x01*\x12\xb0\x01\n\tGetTenant\x12\x42.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantRequest\x1a\x43.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/tenants/{name}\x12\xcc\x01\n\x0cUpdateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantResponse\"-\x82\xd3\xe4\x93\x02\'\x1a\"/v1/tenants/{tenant.metadata.name}:\x01*\x12\x9f\x01\n\x0c\x44\x65leteTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/tenant/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _TENANTSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1006,
-  serialized_end=1941,
+  serialized_end=1931,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListTenants',
@@ -519,7 +519,7 @@ _TENANTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATETENANTREQUEST,
     output_type=_CREATETENANTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\025\"\013/v1/tenants:\006tenant',
+    serialized_options=b'\202\323\344\223\002\020\"\013/v1/tenants:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _TENANTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATETENANTREQUEST,
     output_type=_UPDATETENANTRESPONSE,
-    serialized_options=b'\202\323\344\223\002,\032\"/v1/tenants/{tenant.metadata.name}:\006tenant',
+    serialized_options=b'\202\323\344\223\002\'\032\"/v1/tenants/{tenant.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(

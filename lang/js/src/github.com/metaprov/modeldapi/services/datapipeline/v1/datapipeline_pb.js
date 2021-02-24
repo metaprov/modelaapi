@@ -688,8 +688,7 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineR
  */
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -731,12 +730,6 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineR
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
-    case 5:
-      var value = msg.getSecretMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
     default:
       reader.skipField();
       break;
@@ -773,10 +766,6 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineR
       f,
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.serializeBinaryToWriter
     );
-  }
-  f = message.getSecretMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -816,28 +805,6 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineR
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
-
-
-/**
- * map<string, string> secret = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.datapipeline.v1.CreateDataPipelineRequest.prototype.clearSecretMap = function() {
-  this.getSecretMap().clear();
-  return this;};
 
 
 
