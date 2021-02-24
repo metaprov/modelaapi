@@ -1913,12 +1913,8 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
  */
 proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    ns: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec.toObject(includeInstance, f),
-    connectionname: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    connectionspec: (f = msg.getConnectionspec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.toObject(includeInstance, f),
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -1957,32 +1953,14 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinaryFromReader);
+      msg.setItem(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNs(value);
-      break;
-    case 3:
-      var value = msg.getLabelsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setConnectionname(value);
-      break;
-    case 6:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.deserializeBinaryFromReader);
-      msg.setConnectionspec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setConnection(value);
       break;
     case 7:
       var value = msg.getSecretMap();
@@ -2019,45 +1997,20 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
  */
 proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.serializeBinaryToWriter
     );
   }
-  f = message.getNs();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
-    );
-  }
-  f = message.getLabelsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getSpec();
-  if (f != null) {
-    writer.writeMessage(
-      4,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getConnectionname();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getConnectionspec();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
@@ -2068,79 +2021,21 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
 
 
 /**
- * optional string name = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature}
  */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string ns = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getNs = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setNs = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * map<string, string> labels = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.clearLabelsMap = function() {
-  this.getLabelsMap().clear();
-  return this;};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec spec = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec}
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureSpec, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -2148,8 +2043,8 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
 };
 
 
@@ -2157,45 +2052,27 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string connectionName = 5;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getConnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getConnection = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 2));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setConnectionname = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 6;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec}
- */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.getConnectionspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setConnectionspec = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.setConnection = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -2203,8 +2080,8 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.clearConnectionspec = function() {
-  return this.setConnectionspec(undefined);
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
 };
 
 
@@ -2212,8 +2089,8 @@ proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatur
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.hasConnectionspec = function() {
-  return jspb.Message.getField(this, 6) != null;
+proto.github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.prototype.hasConnection = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

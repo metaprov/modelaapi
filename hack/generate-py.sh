@@ -46,7 +46,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/services/account/v1/account.proto \
     github.com/metaprov/modeldapi/services/archived/v1/archived.proto \
-    github.com/metaprov/modeldapi/services/authd/v1/authd.proto \
     github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto \
     github.com/metaprov/modeldapi/services/cloudsd/v1/cloudsd.proto \
     github.com/metaprov/modeldapi/services/common/v1/common.proto \
@@ -136,7 +135,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/services/account/v1/account.proto \
     github.com/metaprov/modeldapi/services/archived/v1/archived.proto \
-    github.com/metaprov/modeldapi/services/authd/v1/authd.proto \
     github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto \
     github.com/metaprov/modeldapi/services/cloudsd/v1/cloudsd.proto \
     github.com/metaprov/modeldapi/services/common/v1/common.proto \

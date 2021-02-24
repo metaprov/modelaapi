@@ -100,6 +100,7 @@ github/com/metaprov/modeldapi/pkg/apis/infra/__init__.py
 github/com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/__init__.py
 github/com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb2.py
 github/com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb2_grpc.py
+github/com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb2_grpc.py
 github/com/metaprov/modeldapi/pkg/apis/training/__init__.py
 github/com/metaprov/modeldapi/pkg/apis/training/v1alpha1/__init__.py
 github/com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb2.py

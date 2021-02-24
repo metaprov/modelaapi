@@ -79,6 +79,8 @@ service NotebookService {
 		};
     }
 
-    rpc DeleteNotebook(DeleteNotebookRequest) returns (DeleteNotebookResponse) {}
+    rpc DeleteNotebook(DeleteNotebookRequest) returns (DeleteNotebookResponse) {
+        option (google.api.http).delete = "/api/v1/notebooks/{notebook.metadata.name}";
+    }
 
 }

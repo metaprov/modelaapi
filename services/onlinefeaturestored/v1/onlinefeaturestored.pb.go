@@ -560,13 +560,9 @@ type UpdateFeatureRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name           string                   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Ns             string                   `protobuf:"bytes,2,opt,name=ns,proto3" json:"ns,omitempty"`
-	Labels         map[string]string        `protobuf:"bytes,3,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Spec           *v1alpha11.FeatureSpec   `protobuf:"bytes,4,opt,name=spec,proto3" json:"spec,omitempty"`
-	ConnectionName string                   `protobuf:"bytes,5,opt,name=connectionName,proto3" json:"connectionName,omitempty"`
-	ConnectionSpec *v1alpha1.ConnectionSpec `protobuf:"bytes,6,opt,name=connectionSpec,proto3" json:"connectionSpec,omitempty"`
-	Secret         map[string][]byte        `protobuf:"bytes,7,rep,name=secret,proto3" json:"secret,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Item       *v1alpha11.Feature   `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Connection *v1alpha1.Connection `protobuf:"bytes,2,opt,name=connection,proto3" json:"connection,omitempty"`
+	Secret     map[string][]byte    `protobuf:"bytes,7,rep,name=secret,proto3" json:"secret,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
 func (x *UpdateFeatureRequest) Reset() {
@@ -601,44 +597,16 @@ func (*UpdateFeatureRequest) Descriptor() ([]byte, []int) {
 	return file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *UpdateFeatureRequest) GetName() string {
+func (x *UpdateFeatureRequest) GetItem() *v1alpha11.Feature {
 	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *UpdateFeatureRequest) GetNs() string {
-	if x != nil {
-		return x.Ns
-	}
-	return ""
-}
-
-func (x *UpdateFeatureRequest) GetLabels() map[string]string {
-	if x != nil {
-		return x.Labels
+		return x.Item
 	}
 	return nil
 }
 
-func (x *UpdateFeatureRequest) GetSpec() *v1alpha11.FeatureSpec {
+func (x *UpdateFeatureRequest) GetConnection() *v1alpha1.Connection {
 	if x != nil {
-		return x.Spec
-	}
-	return nil
-}
-
-func (x *UpdateFeatureRequest) GetConnectionName() string {
-	if x != nil {
-		return x.ConnectionName
-	}
-	return ""
-}
-
-func (x *UpdateFeatureRequest) GetConnectionSpec() *v1alpha1.ConnectionSpec {
-	if x != nil {
-		return x.ConnectionSpec
+		return x.Connection
 	}
 	return nil
 }
@@ -769,44 +737,27 @@ var file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc = []b
 	0x45, 0x6e, 0x72, 0x69, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e,
 	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x16,
 	0x0a, 0x06, 0x72, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
-	0x72, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x22, 0x90, 0x05, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x72, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x22, 0x80, 0x03, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74,
 	0x65, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x02, 0x6e, 0x73, 0x12, 0x77, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x03, 0x20,
-	0x03, 0x28, 0x0b, 0x32, 0x5f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6f, 0x6e, 0x6c,
-	0x69, 0x6e, 0x65, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x45,
-	0x6e, 0x74, 0x72, 0x79, 0x52, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x55, 0x0a, 0x04,
-	0x73, 0x70, 0x65, 0x63, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61,
-	0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x2e, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x53, 0x70, 0x65, 0x63, 0x52, 0x04, 0x73,
-	0x70, 0x65, 0x63, 0x12, 0x26, 0x0a, 0x0e, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x63, 0x6f, 0x6e,
-	0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x6d, 0x0a, 0x0e, 0x63,
-	0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x70, 0x65, 0x63, 0x18, 0x06, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
-	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x6e,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x70, 0x65, 0x63, 0x52, 0x0e, 0x63, 0x6f, 0x6e, 0x6e,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x70, 0x65, 0x63, 0x12, 0x77, 0x0a, 0x06, 0x73, 0x65,
-	0x63, 0x72, 0x65, 0x74, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x5f, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x73, 0x2e, 0x6f, 0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72,
-	0x65, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e,
-	0x53, 0x65, 0x63, 0x72, 0x65, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x06, 0x73, 0x65, 0x63,
-	0x72, 0x65, 0x74, 0x1a, 0x39, 0x0a, 0x0b, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x45, 0x6e, 0x74,
-	0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x1a, 0x39,
+	0x51, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3d, 0x2e,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
+	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0x2e, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x04, 0x69, 0x74,
+	0x65, 0x6d, 0x12, 0x61, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43,
+	0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x77, 0x0a, 0x06, 0x73, 0x65, 0x63, 0x72, 0x65, 0x74, 0x18,
+	0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x5f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6f,
+	0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x74, 0x6f, 0x72,
+	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x46, 0x65, 0x61, 0x74,
+	0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65, 0x63, 0x72, 0x65,
+	0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x06, 0x73, 0x65, 0x63, 0x72, 0x65, 0x74, 0x1a, 0x39,
 	0x0a, 0x0b, 0x53, 0x65, 0x63, 0x72, 0x65, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a,
 	0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12,
 	0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05,
@@ -903,56 +854,52 @@ func file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(
 	return file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData
 }
 
-var file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes = []interface{}{
-	(*CreateFeatureRequest)(nil),    // 0: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest
-	(*CreateFeatureResponse)(nil),   // 1: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureResponse
-	(*DeleteFeatureRequest)(nil),    // 2: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
-	(*DeleteFeatureResponse)(nil),   // 3: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
-	(*ListFeaturesRequest)(nil),     // 4: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesRequest
-	(*ListFeaturesResponse)(nil),    // 5: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse
-	(*GetFeatureRequest)(nil),       // 6: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest
-	(*GetFeatureResponse)(nil),      // 7: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse
-	(*EnrichRequest)(nil),           // 8: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichRequest
-	(*EnrichResponse)(nil),          // 9: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichResponse
-	(*UpdateFeatureRequest)(nil),    // 10: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
-	(*UpdateFeatureResponse)(nil),   // 11: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
-	nil,                             // 12: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
-	nil,                             // 13: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry
-	nil,                             // 14: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
-	(*v1alpha1.Connection)(nil),     // 15: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	(*v1alpha11.FeatureList)(nil),   // 16: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
-	(*v1alpha11.Feature)(nil),       // 17: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	(*v1alpha11.FeatureSpec)(nil),   // 18: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec
-	(*v1alpha1.ConnectionSpec)(nil), // 19: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec
+	(*CreateFeatureRequest)(nil),  // 0: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest
+	(*CreateFeatureResponse)(nil), // 1: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureResponse
+	(*DeleteFeatureRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
+	(*DeleteFeatureResponse)(nil), // 3: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
+	(*ListFeaturesRequest)(nil),   // 4: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesRequest
+	(*ListFeaturesResponse)(nil),  // 5: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse
+	(*GetFeatureRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest
+	(*GetFeatureResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse
+	(*EnrichRequest)(nil),         // 8: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichRequest
+	(*EnrichResponse)(nil),        // 9: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichResponse
+	(*UpdateFeatureRequest)(nil),  // 10: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
+	(*UpdateFeatureResponse)(nil), // 11: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
+	nil,                           // 12: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
+	nil,                           // 13: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
+	(*v1alpha1.Connection)(nil),   // 14: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+	(*v1alpha11.FeatureList)(nil), // 15: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
+	(*v1alpha11.Feature)(nil),     // 16: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
 }
 var file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs = []int32{
-	15, // 0: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+	14, // 0: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
 	12, // 1: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.secret:type_name -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
-	16, // 2: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
-	17, // 3: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	17, // 4: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	13, // 5: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.labels:type_name -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.LabelsEntry
-	18, // 6: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.spec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureSpec
-	19, // 7: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.connectionSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec
-	14, // 8: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.secret:type_name -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
-	0,  // 9: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest
-	2,  // 10: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
-	4,  // 11: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesRequest
-	6,  // 12: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest
-	10, // 13: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
-	8,  // 14: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichRequest
-	1,  // 15: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureResponse
-	3,  // 16: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
-	5,  // 17: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse
-	7,  // 18: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse
-	11, // 19: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
-	9,  // 20: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichResponse
-	15, // [15:21] is the sub-list for method output_type
-	9,  // [9:15] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	15, // 2: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
+	16, // 3: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
+	16, // 4: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
+	16, // 5: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
+	14, // 6: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+	13, // 7: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.secret:type_name -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
+	0,  // 8: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest
+	2,  // 9: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
+	4,  // 10: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesRequest
+	6,  // 11: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest
+	10, // 12: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
+	8,  // 13: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichRequest
+	1,  // 14: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureResponse
+	3,  // 15: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
+	5,  // 16: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse
+	7,  // 17: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse
+	11, // 18: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
+	9,  // 19: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichResponse
+	14, // [14:20] is the sub-list for method output_type
+	8,  // [8:14] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_init() }
@@ -1112,7 +1059,7 @@ func file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

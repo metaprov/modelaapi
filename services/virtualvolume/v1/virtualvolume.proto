@@ -66,24 +66,24 @@ service VirtualVolumeService {
     rpc CreateVirtualVolume(CreateVirtualVolumeRequest) returns (CreateVirtualVolumeResponse) {
         option (google.api.http) = {
 			post: "/v1/virtualvolumes"
-			body: "virtualvolume"
+			body: "item"
 		};
     }
 
     rpc GetVirtualVolume(GetVirtualVolumeRequest) returns (GetVirtualVolumeResponse) {
-        option (google.api.http).get = "/api/v1/virtualvolumes/{virtualvolume.metadata.name}";
+        option (google.api.http).get = "/api/v1/virtualvolumes/{name}";
     }
 
     rpc UpdateVirtualVolume(UpdateVirtualVolumeRequest) returns (UpdateVirtualVolumeResponse) {
         option (google.api.http) = {
-			put: "/v1/virtualvolumes/{virtualvolume_name}"
-			body: "virtualvolume"
+			put: "/v1/virtualvolumes/{name}"
+			body: "item"
 		};
     }
 
     rpc DeleteVirtualVolume(DeleteVirtualVolumeRequest) returns (DeleteVirtualVolumeResponse) {
         option (google.api.http) = {
-			delete: "/v1/virtualvolumes/{virtualvolume_name}"
+			delete: "/v1/virtualvolumes/{name}"
 		};
     }
 

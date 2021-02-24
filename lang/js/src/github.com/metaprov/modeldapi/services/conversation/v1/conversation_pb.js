@@ -1445,7 +1445,9 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationReq
 proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1486,11 +1488,19 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationReq
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
-    case 3:
+    case 2:
       var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
       break;
     default:
       reader.skipField();
@@ -1530,7 +1540,21 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationReq
   }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
   }
 };
 
@@ -1554,14 +1578,14 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationReq
 
 
 /**
- * map<string, string> labels = 3;
+ * map<string, string> labels = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
 };
 
@@ -1573,6 +1597,42 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationReq
 proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
+
+
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
 
 
 
@@ -1607,7 +1667,8 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRes
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList.toObject(includeInstance, f)
+    items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1649,6 +1710,10 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRes
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList.deserializeBinaryFromReader);
       msg.setItems(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1684,6 +1749,13 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRes
       1,
       f,
       github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1723,6 +1795,24 @@ proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRes
  */
 proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse.prototype.hasItems = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

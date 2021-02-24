@@ -68,12 +68,14 @@ service ModelAutobuilderService {
     }
     rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (UpdateModelAutobuilderResponse) {
         option (google.api.http) = {
-			put: "/v1/modelautobuilders/{corpus.metadata.name}"
+			put: "/v1/modelautobuilders/{modelautobuilders.metadata.name}"
 			body: "modelautobuilder"
 		};
     }
 
-    rpc DeleteModelAutobuilder(DeleteModelAutobuilderRequest) returns (DeleteModelAutobuilderResponse) {}
+    rpc DeleteModelAutobuilder(DeleteModelAutobuilderRequest) returns (DeleteModelAutobuilderResponse) {
+        option (google.api.http).delete = "/api/v1/modelautobuilders/{modelautobuilder.metadata.name}";
+    }
 
 
 

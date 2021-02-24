@@ -9,12 +9,15 @@ import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.prot
 
 
 message ListCurtainsRequest {
-    string namespace = 1;
-    map<string,string> labels =2;
+    string namespace              = 1;
+    map<string,string> labels     = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
 }
 
 message ListCurtainsResponse {
     github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList items = 1;
+    string next_page_token = 2;
 }
 
 
@@ -57,7 +60,7 @@ message DeleteCurtainResponse {
 service CurtainService {
 
     rpc ListCurtains(ListCurtainsRequest) returns (ListCurtainsResponse) {
-        option (google.api.http).get = "/v1/curtains";
+        option (google.api.http).get = "/v1/curtains";        
     }
 
     rpc CreateCurtain(CreateCurtainRequest) returns (CreateCurtainResponse) {
@@ -68,18 +71,18 @@ service CurtainService {
     }
 
     rpc GetCurtain(GetCurtainRequest) returns (GetCurtainResponse) {
-        option (google.api.http).get = "/v1/curtains/{name}";
+        option (google.api.http).get = "/v1/curtains/{namespace}/{name}";
     }
 
     rpc UpdateCurtain(UpdateCurtainRequest) returns (UpdateCurtainResponse) {
         option (google.api.http) = {
-			put: "/v1/curtains/{curtain.metadata.name}"
+			put: "/v1/curtains/{curtain.metadata.namespace}/{curtain.metadata.name}"
 			body: "curtain"
 		};
     }
 
     rpc DeleteCurtain(DeleteCurtainRequest) returns (DeleteCurtainResponse) {
-        option (google.api.http).delete = "/v1/curtains/{name}";
+        option (google.api.http).delete = "/v1/curtains/{namespace}/{name}";
     }
 
 }

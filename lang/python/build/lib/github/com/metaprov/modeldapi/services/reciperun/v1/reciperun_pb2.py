@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z3github.com/metaprov/modeldapi/services/reciperun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nCgithub.com/metaprov/modeldapi/services/reciperun/v1/reciperun.proto\x12\x33github.com.metaprov.modeldapi.services.reciperun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc1\x01\n\x15ListRecipeRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x06labels\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.reciperun.v1.ListRecipeRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"l\n\x16ListRecipeRunsResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunList\"\xa4\x02\n\x16\x43reateRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12g\n\x06labels\x18\x03 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.LabelsEntry\x12Q\n\x04spec\x18\x04 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x19\n\x17\x43reateRecipeRunResponse\"\xa4\x02\n\x16UpdateRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12g\n\x06labels\x18\x03 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.LabelsEntry\x12Q\n\x04spec\x18\x05 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x19\n\x17UpdateRecipeRunResponse\"6\n\x13GetRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x14GetRecipeRunResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"9\n\x16\x44\x65leteRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17\x44\x65leteRecipeRunResponse2\x8a\x08\n\x10RecipeRunService\x12\xc1\x01\n\x0eListRecipeRuns\x12J.github.com.metaprov.modeldapi.services.reciperun.v1.ListRecipeRunsRequest\x1aK.github.com.metaprov.modeldapi.services.reciperun.v1.ListRecipeRunsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/reciperuns\x12\xcf\x01\n\x0f\x43reateRecipeRun\x12K.github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest\x1aL.github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/reciperuns:\treciperun\x12\xc2\x01\n\x0cGetRecipeRun\x12H.github.com.metaprov.modeldapi.services.reciperun.v1.GetRecipeRunRequest\x1aI.github.com.metaprov.modeldapi.services.reciperun.v1.GetRecipeRunResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/reciperuns/{name}\x12\xe9\x01\n\x0fUpdateRecipeRun\x12K.github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest\x1aL.github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunResponse\";\x82\xd3\xe4\x93\x02\x35\x1a(/v1/reciperuns/{reciperun.metadata.name}:\treciperun\x12\xae\x01\n\x0f\x44\x65leteRecipeRun\x12K.github.com.metaprov.modeldapi.services.reciperun.v1.DeleteRecipeRunRequest\x1aL.github.com.metaprov.modeldapi.services.reciperun.v1.DeleteRecipeRunResponse\"\x00\x42\x35Z3github.com/metaprov/modeldapi/services/reciperun/v1b\x06proto3'
+  serialized_pb=b'\nCgithub.com/metaprov/modeldapi/services/reciperun/v1/reciperun.proto\x12\x33github.com.metaprov.modeldapi.services.reciperun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc1\x01\n\x15ListRecipeRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x06labels\x18\x03 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.reciperun.v1.ListRecipeRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"l\n\x16ListRecipeRunsResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunList\"g\n\x16\x43reateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x19\n\x17\x43reateRecipeRunResponse\"g\n\x16UpdateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x19\n\x17UpdateRecipeRunResponse\"6\n\x13GetRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x14GetRecipeRunResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"9\n\x16\x44\x65leteRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17\x44\x65leteRecipeRunResponse2\x8a\x08\n\x10RecipeRunService\x12\xc1\x01\n\x0eListRecipeRuns\x12J.github.com.metaprov.modeldapi.services.reciperun.v1.ListRecipeRunsRequest\x1aK.github.com.metaprov.modeldapi.services.reciperun.v1.ListRecipeRunsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/reciperuns\x12\xcf\x01\n\x0f\x43reateRecipeRun\x12K.github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest\x1aL.github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/reciperuns:\treciperun\x12\xc2\x01\n\x0cGetRecipeRun\x12H.github.com.metaprov.modeldapi.services.reciperun.v1.GetRecipeRunRequest\x1aI.github.com.metaprov.modeldapi.services.reciperun.v1.GetRecipeRunResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/reciperuns/{name}\x12\xe9\x01\n\x0fUpdateRecipeRun\x12K.github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest\x1aL.github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunResponse\";\x82\xd3\xe4\x93\x02\x35\x1a(/v1/reciperuns/{reciperun.metadata.name}:\treciperun\x12\xae\x01\n\x0f\x44\x65leteRecipeRun\x12K.github.com.metaprov.modeldapi.services.reciperun.v1.DeleteRecipeRunRequest\x1aL.github.com.metaprov.modeldapi.services.reciperun.v1.DeleteRecipeRunResponse\"\x00\x42\x35Z3github.com/metaprov/modeldapi/services/reciperun/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -137,44 +137,6 @@ _LISTRECIPERUNSRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATERECIPERUNREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=373,
-  serialized_end=418,
-)
-
 _CREATERECIPERUNREQUEST = _descriptor.Descriptor(
   name='CreateRecipeRunRequest',
   full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest',
@@ -184,29 +146,8 @@ _CREATERECIPERUNREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.spec', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -214,7 +155,7 @@ _CREATERECIPERUNREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CREATERECIPERUNREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -223,8 +164,8 @@ _CREATERECIPERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=531,
-  serialized_end=823,
+  serialized_start=530,
+  serialized_end=633,
 )
 
 
@@ -248,48 +189,10 @@ _CREATERECIPERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=825,
-  serialized_end=850,
+  serialized_start=635,
+  serialized_end=660,
 )
 
-
-_UPDATERECIPERUNREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=373,
-  serialized_end=418,
-)
 
 _UPDATERECIPERUNREQUEST = _descriptor.Descriptor(
   name='UpdateRecipeRunRequest',
@@ -300,29 +203,8 @@ _UPDATERECIPERUNREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -330,7 +212,7 @@ _UPDATERECIPERUNREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATERECIPERUNREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -339,8 +221,8 @@ _UPDATERECIPERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=853,
-  serialized_end=1145,
+  serialized_start=662,
+  serialized_end=765,
 )
 
 
@@ -364,8 +246,8 @@ _UPDATERECIPERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1147,
-  serialized_end=1172,
+  serialized_start=767,
+  serialized_end=792,
 )
 
 
@@ -403,8 +285,8 @@ _GETRECIPERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1174,
-  serialized_end=1228,
+  serialized_start=794,
+  serialized_end=848,
 )
 
 
@@ -442,8 +324,8 @@ _GETRECIPERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1230,
-  serialized_end=1345,
+  serialized_start=850,
+  serialized_end=965,
 )
 
 
@@ -481,8 +363,8 @@ _DELETERECIPERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1347,
-  serialized_end=1404,
+  serialized_start=967,
+  serialized_end=1024,
 )
 
 
@@ -506,19 +388,15 @@ _DELETERECIPERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1406,
-  serialized_end=1431,
+  serialized_start=1026,
+  serialized_end=1051,
 )
 
 _LISTRECIPERUNSREQUEST_LABELSENTRY.containing_type = _LISTRECIPERUNSREQUEST
 _LISTRECIPERUNSREQUEST.fields_by_name['labels'].message_type = _LISTRECIPERUNSREQUEST_LABELSENTRY
 _LISTRECIPERUNSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUNLIST
-_CREATERECIPERUNREQUEST_LABELSENTRY.containing_type = _CREATERECIPERUNREQUEST
-_CREATERECIPERUNREQUEST.fields_by_name['labels'].message_type = _CREATERECIPERUNREQUEST_LABELSENTRY
-_CREATERECIPERUNREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUNSPEC
-_UPDATERECIPERUNREQUEST_LABELSENTRY.containing_type = _UPDATERECIPERUNREQUEST
-_UPDATERECIPERUNREQUEST.fields_by_name['labels'].message_type = _UPDATERECIPERUNREQUEST_LABELSENTRY
-_UPDATERECIPERUNREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUNSPEC
+_CREATERECIPERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN
+_UPDATERECIPERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN
 _GETRECIPERUNRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN
 DESCRIPTOR.message_types_by_name['ListRecipeRunsRequest'] = _LISTRECIPERUNSREQUEST
 DESCRIPTOR.message_types_by_name['ListRecipeRunsResponse'] = _LISTRECIPERUNSRESPONSE
@@ -555,19 +433,11 @@ ListRecipeRunsResponse = _reflection.GeneratedProtocolMessageType('ListRecipeRun
 _sym_db.RegisterMessage(ListRecipeRunsResponse)
 
 CreateRecipeRunRequest = _reflection.GeneratedProtocolMessageType('CreateRecipeRunRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATERECIPERUNREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.reciperun.v1.reciperun_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATERECIPERUNREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.reciperun.v1.reciperun_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.reciperun.v1.CreateRecipeRunRequest)
   })
 _sym_db.RegisterMessage(CreateRecipeRunRequest)
-_sym_db.RegisterMessage(CreateRecipeRunRequest.LabelsEntry)
 
 CreateRecipeRunResponse = _reflection.GeneratedProtocolMessageType('CreateRecipeRunResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATERECIPERUNRESPONSE,
@@ -577,19 +447,11 @@ CreateRecipeRunResponse = _reflection.GeneratedProtocolMessageType('CreateRecipe
 _sym_db.RegisterMessage(CreateRecipeRunResponse)
 
 UpdateRecipeRunRequest = _reflection.GeneratedProtocolMessageType('UpdateRecipeRunRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATERECIPERUNREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.reciperun.v1.reciperun_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATERECIPERUNREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.reciperun.v1.reciperun_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.reciperun.v1.UpdateRecipeRunRequest)
   })
 _sym_db.RegisterMessage(UpdateRecipeRunRequest)
-_sym_db.RegisterMessage(UpdateRecipeRunRequest.LabelsEntry)
 
 UpdateRecipeRunResponse = _reflection.GeneratedProtocolMessageType('UpdateRecipeRunResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATERECIPERUNRESPONSE,
@@ -629,8 +491,6 @@ _sym_db.RegisterMessage(DeleteRecipeRunResponse)
 
 DESCRIPTOR._options = None
 _LISTRECIPERUNSREQUEST_LABELSENTRY._options = None
-_CREATERECIPERUNREQUEST_LABELSENTRY._options = None
-_UPDATERECIPERUNREQUEST_LABELSENTRY._options = None
 
 _RECIPERUNSERVICE = _descriptor.ServiceDescriptor(
   name='RecipeRunService',
@@ -639,8 +499,8 @@ _RECIPERUNSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1434,
-  serialized_end=2468,
+  serialized_start=1054,
+  serialized_end=2088,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListRecipeRuns',

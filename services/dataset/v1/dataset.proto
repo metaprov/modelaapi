@@ -11,8 +11,8 @@ import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
 // list datasets req/response
 message ListDatasetsRequest {
-    string namespace = 1;
-    map<string,string> labels = 3;
+    string namespace          = 1;
+    map<string,string> labels = 2;
 }
 
 message ListDatasetsResponse {

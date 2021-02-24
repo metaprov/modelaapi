@@ -170,6 +170,12 @@ export class ListConversationRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListConversationRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListConversationRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListConversationRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConversationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListConversationRequest): ListConversationRequest.AsObject;
@@ -182,6 +188,8 @@ export namespace ListConversationRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -190,6 +198,9 @@ export class ListConversationResponse extends jspb.Message {
   setItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList): ListConversationResponse;
   hasItems(): boolean;
   clearItems(): ListConversationResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListConversationResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConversationResponse.AsObject;
@@ -202,6 +213,7 @@ export class ListConversationResponse extends jspb.Message {
 export namespace ListConversationResponse {
   export type AsObject = {
     items?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ConversationList.AsObject,
+    nextPageToken: string,
   }
 }
 

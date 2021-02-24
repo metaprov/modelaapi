@@ -312,7 +312,7 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipeline
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
-    case 3:
+    case 2:
       var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -356,7 +356,7 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipeline
   }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -380,14 +380,14 @@ proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipeline
 
 
 /**
- * map<string, string> labels = 3;
+ * map<string, string> labels = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
 };
 

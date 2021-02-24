@@ -87,14 +87,14 @@ service LabService {
 
     rpc UpdateLab(UpdateLabRequest) returns (UpdateLabResponse) {
         option (google.api.http) = {
-			put: "/v1/labs/{lab_name}"
+			put: "/v1/labs/{name}"
 			body: "lab"
 		};
     }
 
     rpc DeleteLab(DeleteLabRequest) returns (DeleteLabResponse) {
         option (google.api.http) = {
-			delete: "/v1/labs/{lab_name}"
+			delete: "/v1/labs/{name}"
 		};
     }
 

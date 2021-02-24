@@ -315,7 +315,9 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRe
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -356,11 +358,19 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRe
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
-    case 3:
+    case 2:
       var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
       break;
     default:
       reader.skipField();
@@ -400,7 +410,21 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRe
   }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
   }
 };
 
@@ -424,14 +448,14 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRe
 
 
 /**
- * map<string, string> labels = 3;
+ * map<string, string> labels = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
 };
 
@@ -443,6 +467,42 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRe
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
+
+
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.datapipeline.v1.ListDataPipelinesRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
 
 
 
@@ -950,7 +1010,7 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinaryFromReader);
       msg.setItem(value);
@@ -987,7 +1047,7 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineR
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.serializeBinaryToWriter
     );
@@ -996,12 +1056,12 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineR
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 2;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline}
  */
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.getItem = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline, 2));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline, 1));
 };
 
 
@@ -1010,7 +1070,7 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineR
  * @return {!proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.setItem = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1028,7 +1088,7 @@ proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineR
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.datapipeline.v1.UpdateDataPipelineRequest.prototype.hasItem = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

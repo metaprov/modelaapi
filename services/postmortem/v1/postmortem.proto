@@ -72,7 +72,11 @@ service PostMortemService {
 		};
     }
 
-    rpc DeletePostMortem(DeletePostMortemRequest) returns (DeletePostMortemResponse) {}
+    rpc DeletePostMortem(DeletePostMortemRequest) returns (DeletePostMortemResponse) {
+        option (google.api.http) = {
+			delete: "/api/v1alpha1/postmortems/{postmortem.metadata.name}"
+		};
+    }
 
 
 

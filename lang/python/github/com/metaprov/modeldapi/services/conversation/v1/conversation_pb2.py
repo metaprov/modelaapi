@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modeldapi/services/conversation/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modeldapi/services/conversation/v1/conversation.proto\x12\x36github.com.metaprov.modeldapi.services.conversation.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1cgoogle/api/annotations.proto\"\xd4\x01\n\x16GetConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.conversation.v1.GetConversationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x17GetConversationResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"m\n\x19\x43reateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x1c\n\x1a\x43reateConversationResponse\"m\n\x19UpdateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x1c\n\x1aUpdateConversationResponse\"\xda\x01\n\x19\x44\x65leteConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12m\n\x06labels\x18\x03 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.conversation.v1.DeleteConversationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1c\n\x1a\x44\x65leteConversationResponse\"\xc8\x01\n\x17ListConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12k\n\x06labels\x18\x03 \x03(\x0b\x32[.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x18ListConversationResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList2\xd6\x08\n\x13\x43onversationService\x12\xce\x01\n\x04List\x12O.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest\x1aP.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/v1alpha1/conversations\x12\xe2\x01\n\x06\x43reate\x12Q.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest\x1aR.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationResponse\"1\x82\xd3\xe4\x93\x02+\"\x1b/api/v1alpha1/conversations:\x0c\x63onversation\x12\xd2\x01\n\x03Get\x12N.github.com.metaprov.modeldapi.services.conversation.v1.GetConversationRequest\x1aO.github.com.metaprov.modeldapi.services.conversation.v1.GetConversationResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/api/v1alpha1/conversations/{name}\x12\xff\x01\n\x06Update\x12Q.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest\x1aR.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationResponse\"N\x82\xd3\xe4\x93\x02H\x1a\x38/api/v1alpha1/conversations/{conversation.metadata.name}:\x0c\x63onversation\x12\xb1\x01\n\x06\x44\x65lete\x12Q.github.com.metaprov.modeldapi.services.conversation.v1.DeleteConversationRequest\x1aR.github.com.metaprov.modeldapi.services.conversation.v1.DeleteConversationResponse\"\x00\x42\x38Z6github.com/metaprov/modeldapi/services/conversation/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modeldapi/services/conversation/v1/conversation.proto\x12\x36github.com.metaprov.modeldapi.services.conversation.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1cgoogle/api/annotations.proto\"\xd4\x01\n\x16GetConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.conversation.v1.GetConversationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x17GetConversationResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"m\n\x19\x43reateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x1c\n\x1a\x43reateConversationResponse\"m\n\x19UpdateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x1c\n\x1aUpdateConversationResponse\"\xda\x01\n\x19\x44\x65leteConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12m\n\x06labels\x18\x03 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.conversation.v1.DeleteConversationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1c\n\x1a\x44\x65leteConversationResponse\"\xef\x01\n\x17ListConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12k\n\x06labels\x18\x02 \x03(\x0b\x32[.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8a\x01\n\x18ListConversationResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xfc\t\n\x13\x43onversationService\x12\xe7\x01\n\x11ListConversations\x12O.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest\x1aP.github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/api/v1alpha1/conversations/{namespace}\x12\xee\x01\n\x12\x43reateConversation\x12Q.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationRequest\x1aR.github.com.metaprov.modeldapi.services.conversation.v1.CreateConversationResponse\"1\x82\xd3\xe4\x93\x02+\"\x1b/api/v1alpha1/conversations:\x0c\x63onversation\x12\xea\x01\n\x0fGetConversation\x12N.github.com.metaprov.modeldapi.services.conversation.v1.GetConversationRequest\x1aO.github.com.metaprov.modeldapi.services.conversation.v1.GetConversationResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./api/v1alpha1/conversations/{namespace}/{name}\x12\xac\x02\n\x11UpdateConersation\x12Q.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationRequest\x1aR.github.com.metaprov.modeldapi.services.conversation.v1.UpdateConversationResponse\"p\x82\xd3\xe4\x93\x02j\x1aZ/api/v1alpha1/conversations/{conversation.metadata.namespace}/{conversation.metadata.name}:\x0c\x63onversation\x12\xed\x01\n\x12\x44\x65leteConversation\x12Q.github.com.metaprov.modeldapi.services.conversation.v1.DeleteConversationRequest\x1aR.github.com.metaprov.modeldapi.services.conversation.v1.DeleteConversationResponse\"0\x82\xd3\xe4\x93\x02**(/api/v1/conversations/{namespace}/{name}B8Z6github.com/metaprov/modeldapi/services/conversation/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -430,8 +430,22 @@ _LISTCONVERSATIONREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.labels', index=1,
-      number=3, type=11, cpp_type=10, label=3,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.page_size', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='github.com.metaprov.modeldapi.services.conversation.v1.ListConversationRequest.page_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -448,7 +462,7 @@ _LISTCONVERSATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1134,
-  serialized_end=1334,
+  serialized_end=1373,
 )
 
 
@@ -467,6 +481,13 @@ _LISTCONVERSATIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='github.com.metaprov.modeldapi.services.conversation.v1.ListConversationResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -479,8 +500,8 @@ _LISTCONVERSATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1336,
-  serialized_end=1449,
+  serialized_start=1376,
+  serialized_end=1514,
 )
 
 _GETCONVERSATIONREQUEST_LABELSENTRY.containing_type = _GETCONVERSATIONREQUEST
@@ -612,22 +633,22 @@ _CONVERSATIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1452,
-  serialized_end=2562,
+  serialized_start=1517,
+  serialized_end=2793,
   methods=[
   _descriptor.MethodDescriptor(
-    name='List',
-    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.List',
+    name='ListConversations',
+    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.ListConversations',
     index=0,
     containing_service=None,
     input_type=_LISTCONVERSATIONREQUEST,
     output_type=_LISTCONVERSATIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\035\022\033/api/v1alpha1/conversations',
+    serialized_options=b'\202\323\344\223\002)\022\'/api/v1alpha1/conversations/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.Create',
+    name='CreateConversation',
+    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.CreateConversation',
     index=1,
     containing_service=None,
     input_type=_CREATECONVERSATIONREQUEST,
@@ -636,33 +657,33 @@ _CONVERSATIONSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.Get',
+    name='GetConversation',
+    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.GetConversation',
     index=2,
     containing_service=None,
     input_type=_GETCONVERSATIONREQUEST,
     output_type=_GETCONVERSATIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002$\022\"/api/v1alpha1/conversations/{name}',
+    serialized_options=b'\202\323\344\223\0020\022./api/v1alpha1/conversations/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.Update',
+    name='UpdateConersation',
+    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.UpdateConersation',
     index=3,
     containing_service=None,
     input_type=_UPDATECONVERSATIONREQUEST,
     output_type=_UPDATECONVERSATIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002H\0328/api/v1alpha1/conversations/{conversation.metadata.name}:\014conversation',
+    serialized_options=b'\202\323\344\223\002j\032Z/api/v1alpha1/conversations/{conversation.metadata.namespace}/{conversation.metadata.name}:\014conversation',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.Delete',
+    name='DeleteConversation',
+    full_name='github.com.metaprov.modeldapi.services.conversation.v1.ConversationService.DeleteConversation',
     index=4,
     containing_service=None,
     input_type=_DELETECONVERSATIONREQUEST,
     output_type=_DELETECONVERSATIONRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002**(/api/v1/conversations/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

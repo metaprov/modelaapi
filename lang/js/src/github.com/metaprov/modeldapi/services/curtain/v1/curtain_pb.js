@@ -271,7 +271,9 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.prot
 proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -318,6 +320,14 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.dese
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -357,6 +367,20 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.seri
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
   }
 };
 
@@ -401,6 +425,42 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.prot
   return this;};
 
 
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 
 
@@ -433,7 +493,8 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.pro
  */
 proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.toObject(includeInstance, f)
+    items: (f = msg.getItems()) && github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -475,6 +536,10 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.des
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.deserializeBinaryFromReader);
       msg.setItems(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -510,6 +575,13 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.ser
       1,
       f,
       github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -549,6 +621,24 @@ proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.pro
  */
 proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.prototype.hasItems = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

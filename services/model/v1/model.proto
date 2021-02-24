@@ -180,18 +180,18 @@ service ModelService {
 
     rpc UpdateModel(UpdateModelRequest) returns (UpdateModelResponse) {
         option (google.api.http) = {
-			put: "/api/v1/models/{dataset.metadata.name}"
+			put: "/api/v1/models/{model.metadata.name}"
 			body: "model"
 		};
     }
 
     rpc DeleteModel(DeleteModelRequest) returns (DeleteModelResponse) {
-        option (google.api.http).delete = "/api/v1/models/{dataset.metadata.name}";
+        option (google.api.http).delete = "/api/v1/models/{model.metadata.name}";
     }
 
     rpc DeployModel(DeployModelRequest) returns (DeployModelResponse) {
         option (google.api.http) = {
-			post: "/api/v1/models/{dataset.metadata.name}:deploy"
+			post: "/api/v1/models/{model.metadata.name}:deploy"
 			body: "model"
 		};
     }
@@ -208,15 +208,15 @@ service ModelService {
     }
 
     rpc GetModelProfile(GetModelProfileRequest) returns (GetModelProfileResponse) {
-        option (google.api.http).post = "/api/v1/models/{dataset.metadata.name}:profile";
+        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:profile";
     }
 
     rpc GetModelMisclass(GetMisclassRequest) returns (GetMisclassResponse) {
-        option (google.api.http).get = "/api/v1/models/{dataset.metadata.name}:misclass";
+        option (google.api.http).get = "/api/v1/models/{model.metadata.name}:misclass";
     }
 
     rpc GetModelLogs(GetModelLogsRequest) returns (GetModelLogsResponse) {
-        option (google.api.http).get = "/api/v1/models/{dataset.metadata.name}:logs";
+        option (google.api.http).get = "/api/v1/models/{model.metadata.name}:logs";
     }
 
     rpc AbortModel(AbortModelRequest) returns (AbortModelResponse) {

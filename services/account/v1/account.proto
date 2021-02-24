@@ -7,12 +7,17 @@ import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
 message ListAccountsRequest {
-    string namespace = 1;
+    string             namespace = 1;
     map<string,string> labels =2;
+    int32              page_size = 3;
+    string             page_token = 4;
 }
 
 message ListAccountsResponse {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList items = 1;
+    // Token to retrieve the next page of results, or empty if there are no
+    // more results in the list.
+    string next_page_token = 2;
 }
 
 message AccountResponse {}
@@ -127,16 +132,18 @@ service AccountService {
 		};
     }
     rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
-        option (google.api.http).get = "/v1/accounts/{name}";
+        option (google.api.http).get = "/v1/accounts/{namespace}/{name}";
     }
     rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
         option (google.api.http) = {
-			put: "/v1/accounts/{account.metadata.name}"
+			put: "/v1/accounts/{account.metadata.namespace}/{account.metadata.name}"
 			body: "account"
 		};
     }
 
-    rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {}
+    rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {
+        option (google.api.http).delete = "/api/v1/accounts/{namespace}/{name}";
+    }
 
 
     rpc GetAccountNamespaces(GetAccountNamespacesRequest) returns (GetAccountNamespacesResponse) {

@@ -18,6 +18,8 @@ var google_api_annotations_pb = require('../../../../../../google/api/annotation
 goog.object.extend(proto, google_api_annotations_pb);
 var github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb);
+var github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb);
 var github_com_metaprov_modeldapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_services_common_v1_common_pb);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest', null, global);
@@ -2190,8 +2192,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  */
 proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.toObject(includeInstance, f),
-    bucket: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    source: (f = msg.getSource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     key: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -2230,12 +2232,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setSource(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
     case 3:
@@ -2271,19 +2274,20 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  */
 proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSpec();
+  f = message.getSource();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
   f = message.getBucket();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
   f = message.getKey();
@@ -2297,20 +2301,20 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.s
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec spec = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource source = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec, 1));
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.getSource = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.setSource = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2319,8 +2323,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.clearSource = function() {
+  return this.setSource(undefined);
 };
 
 
@@ -2328,26 +2332,45 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.hasSource = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string bucket = 2;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
 proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.getBucket = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

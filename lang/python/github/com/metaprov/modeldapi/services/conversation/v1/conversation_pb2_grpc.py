@@ -14,28 +14,28 @@ class ConversationServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.List = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/List',
+        self.ListConversations = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/ListConversations',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.ListConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.ListConversationResponse.FromString,
                 )
-        self.Create = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Create',
+        self.CreateConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/CreateConversation',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.CreateConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.CreateConversationResponse.FromString,
                 )
-        self.Get = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Get',
+        self.GetConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/GetConversation',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationResponse.FromString,
                 )
-        self.Update = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Update',
+        self.UpdateConersation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConersation',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationResponse.FromString,
                 )
-        self.Delete = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Delete',
+        self.DeleteConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/DeleteConversation',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.DeleteConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.DeleteConversationResponse.FromString,
                 )
@@ -44,31 +44,31 @@ class ConversationServiceStub(object):
 class ConversationServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def List(self, request, context):
+    def ListConversations(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Create(self, request, context):
+    def CreateConversation(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Get(self, request, context):
+    def GetConversation(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Update(self, request, context):
+    def UpdateConersation(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
+    def DeleteConversation(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,28 +77,28 @@ class ConversationServiceServicer(object):
 
 def add_ConversationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
+            'ListConversations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListConversations,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.ListConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.ListConversationResponse.SerializeToString,
             ),
-            'Create': grpc.unary_unary_rpc_method_handler(
-                    servicer.Create,
+            'CreateConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateConversation,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.CreateConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.CreateConversationResponse.SerializeToString,
             ),
-            'Get': grpc.unary_unary_rpc_method_handler(
-                    servicer.Get,
+            'GetConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetConversation,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationResponse.SerializeToString,
             ),
-            'Update': grpc.unary_unary_rpc_method_handler(
-                    servicer.Update,
+            'UpdateConersation': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateConersation,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationResponse.SerializeToString,
             ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
+            'DeleteConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteConversation,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.DeleteConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.DeleteConversationResponse.SerializeToString,
             ),
@@ -113,7 +113,7 @@ class ConversationService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def List(request,
+    def ListConversations(request,
             target,
             options=(),
             channel_credentials=None,
@@ -123,14 +123,14 @@ class ConversationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/List',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/ListConversations',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.ListConversationRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.ListConversationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Create(request,
+    def CreateConversation(request,
             target,
             options=(),
             channel_credentials=None,
@@ -140,14 +140,14 @@ class ConversationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Create',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/CreateConversation',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.CreateConversationRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.CreateConversationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Get(request,
+    def GetConversation(request,
             target,
             options=(),
             channel_credentials=None,
@@ -157,14 +157,14 @@ class ConversationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Get',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/GetConversation',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Update(request,
+    def UpdateConersation(request,
             target,
             options=(),
             channel_credentials=None,
@@ -174,14 +174,14 @@ class ConversationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Update',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConersation',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Delete(request,
+    def DeleteConversation(request,
             target,
             options=(),
             channel_credentials=None,
@@ -191,7 +191,7 @@ class ConversationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Delete',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/DeleteConversation',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.DeleteConversationRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.DeleteConversationResponse.FromString,
             options, channel_credentials,

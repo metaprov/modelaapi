@@ -32,19 +32,15 @@ export namespace ShutdownResponse {
 }
 
 export class VirtualBucketExistRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): VirtualBucketExistRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): VirtualBucketExistRequest;
+  hasBucket(): boolean;
+  clearBucket(): VirtualBucketExistRequest;
 
-  getCrednamespace(): string;
-  setCrednamespace(value: string): VirtualBucketExistRequest;
-
-  getCredname(): string;
-  setCredname(value: string): VirtualBucketExistRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): VirtualBucketExistRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): VirtualBucketExistRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): VirtualBucketExistRequest;
+  hasConnection(): boolean;
+  clearConnection(): VirtualBucketExistRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): VirtualBucketExistRequest;
@@ -59,10 +55,8 @@ export class VirtualBucketExistRequest extends jspb.Message {
 
 export namespace VirtualBucketExistRequest {
   export type AsObject = {
-    name: string,
-    crednamespace: string,
-    credname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -95,16 +89,10 @@ export class KeyExistInVirtualBucketRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): KeyExistInVirtualBucketRequest;
 
-  getCrednamespace(): string;
-  setCrednamespace(value: string): KeyExistInVirtualBucketRequest;
-
-  getCredname(): string;
-  setCredname(value: string): KeyExistInVirtualBucketRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): KeyExistInVirtualBucketRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): KeyExistInVirtualBucketRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): KeyExistInVirtualBucketRequest;
+  hasConnection(): boolean;
+  clearConnection(): KeyExistInVirtualBucketRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): KeyExistInVirtualBucketRequest;
@@ -122,9 +110,7 @@ export namespace KeyExistInVirtualBucketRequest {
     region: string,
     name: string,
     key: string,
-    crednamespace: string,
-    credname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -162,25 +148,21 @@ export namespace CloudVirtualBucketResponse {
 }
 
 export class FileDownloadRequest extends jspb.Message {
-  getBucket(): string;
-  setBucket(value: string): FileDownloadRequest;
-
   getKey(): string;
   setKey(value: string): FileDownloadRequest;
 
   getPath(): string;
   setPath(value: string): FileDownloadRequest;
 
-  getCrednamespace(): string;
-  setCrednamespace(value: string): FileDownloadRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): FileDownloadRequest;
+  hasBucket(): boolean;
+  clearBucket(): FileDownloadRequest;
 
-  getCredname(): string;
-  setCredname(value: string): FileDownloadRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): FileDownloadRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): FileDownloadRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileDownloadRequest;
+  hasConnection(): boolean;
+  clearConnection(): FileDownloadRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): FileDownloadRequest;
@@ -195,12 +177,10 @@ export class FileDownloadRequest extends jspb.Message {
 
 export namespace FileDownloadRequest {
   export type AsObject = {
-    bucket: string,
     key: string,
     path: string,
-    crednamespace: string,
-    credname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -220,25 +200,21 @@ export namespace FileDownloadResponse {
 }
 
 export class FileUploadRequest extends jspb.Message {
-  getBucket(): string;
-  setBucket(value: string): FileUploadRequest;
-
   getKey(): string;
   setKey(value: string): FileUploadRequest;
 
   getPath(): string;
   setPath(value: string): FileUploadRequest;
 
-  getCrednamespace(): string;
-  setCrednamespace(value: string): FileUploadRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): FileUploadRequest;
+  hasBucket(): boolean;
+  clearBucket(): FileUploadRequest;
 
-  getCredname(): string;
-  setCredname(value: string): FileUploadRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): FileUploadRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): FileUploadRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileUploadRequest;
+  hasConnection(): boolean;
+  clearConnection(): FileUploadRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): FileUploadRequest;
@@ -253,12 +229,10 @@ export class FileUploadRequest extends jspb.Message {
 
 export namespace FileUploadRequest {
   export type AsObject = {
-    bucket: string,
     key: string,
     path: string,
-    crednamespace: string,
-    credname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -278,24 +252,15 @@ export namespace FileUploadResponse {
 }
 
 export class CreateVirtualBucketRequest extends jspb.Message {
-  getBucketname(): string;
-  setBucketname(value: string): CreateVirtualBucketRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
+  hasBucket(): boolean;
+  clearBucket(): CreateVirtualBucketRequest;
 
-  getBucketspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec | undefined;
-  setBucketspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec): CreateVirtualBucketRequest;
-  hasBucketspec(): boolean;
-  clearBucketspec(): CreateVirtualBucketRequest;
-
-  getCrednamespace(): string;
-  setCrednamespace(value: string): CreateVirtualBucketRequest;
-
-  getCredname(): string;
-  setCredname(value: string): CreateVirtualBucketRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): CreateVirtualBucketRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): CreateVirtualBucketRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateVirtualBucketRequest;
+  hasConnection(): boolean;
+  clearConnection(): CreateVirtualBucketRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): CreateVirtualBucketRequest;
@@ -310,11 +275,8 @@ export class CreateVirtualBucketRequest extends jspb.Message {
 
 export namespace CreateVirtualBucketRequest {
   export type AsObject = {
-    bucketname: string,
-    bucketspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.AsObject,
-    crednamespace: string,
-    credname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }

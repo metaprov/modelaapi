@@ -132,7 +132,7 @@ service StudyService {
     }
 
     rpc DeleteStudy(DeleteStudyRequest) returns (DeleteStudyResponse) {
-        option (google.api.http).delete = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}";
+        option (google.api.http).delete = "/v1/studies/{namespace}/{name}";
     }
 
 
@@ -141,7 +141,7 @@ service StudyService {
     }
 
     rpc GetStudyProfile(GetStudyProfileRequest) returns (GetStudyProfileResponse) {
-        option (google.api.http).get = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/profile";
+        option (google.api.http).get = "/v1/studies/{namespace}/{name}/profile";
     }
 
     rpc AbortStudy(AbortStudyRequest) returns (AbortStudyResponse) {

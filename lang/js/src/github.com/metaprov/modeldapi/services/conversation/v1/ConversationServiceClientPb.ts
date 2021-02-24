@@ -35,7 +35,7 @@ export class ConversationServiceClient {
     this.options_ = options;
   }
 
-  methodInfoList = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListConversations = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse,
     (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest) => {
       return request.serializeBinary();
@@ -43,17 +43,17 @@ export class ConversationServiceClient {
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse.deserializeBinary
   );
 
-  list(
+  listConversations(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse>;
 
-  list(
+  listConversations(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationResponse>;
 
-  list(
+  listConversations(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.ListConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -61,21 +61,21 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/List',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/ListConversations',
         request,
         metadata || {},
-        this.methodInfoList,
+        this.methodInfoListConversations,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/List',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/ListConversations',
     request,
     metadata || {},
-    this.methodInfoList);
+    this.methodInfoListConversations);
   }
 
-  methodInfoCreate = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateConversation = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse,
     (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest) => {
       return request.serializeBinary();
@@ -83,17 +83,17 @@ export class ConversationServiceClient {
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse.deserializeBinary
   );
 
-  create(
+  createConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse>;
 
-  create(
+  createConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationResponse>;
 
-  create(
+  createConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.CreateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -101,21 +101,21 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Create',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/CreateConversation',
         request,
         metadata || {},
-        this.methodInfoCreate,
+        this.methodInfoCreateConversation,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Create',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/CreateConversation',
     request,
     metadata || {},
-    this.methodInfoCreate);
+    this.methodInfoCreateConversation);
   }
 
-  methodInfoGet = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetConversation = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse,
     (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest) => {
       return request.serializeBinary();
@@ -123,17 +123,17 @@ export class ConversationServiceClient {
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse.deserializeBinary
   );
 
-  get(
+  getConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse>;
 
-  get(
+  getConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationResponse>;
 
-  get(
+  getConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.GetConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -141,21 +141,21 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Get',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/GetConversation',
         request,
         metadata || {},
-        this.methodInfoGet,
+        this.methodInfoGetConversation,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Get',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/GetConversation',
     request,
     metadata || {},
-    this.methodInfoGet);
+    this.methodInfoGetConversation);
   }
 
-  methodInfoUpdate = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateConersation = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse,
     (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest) => {
       return request.serializeBinary();
@@ -163,17 +163,17 @@ export class ConversationServiceClient {
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse.deserializeBinary
   );
 
-  update(
+  updateConersation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse>;
 
-  update(
+  updateConersation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationResponse>;
 
-  update(
+  updateConersation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.UpdateConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -181,21 +181,21 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Update',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConersation',
         request,
         metadata || {},
-        this.methodInfoUpdate,
+        this.methodInfoUpdateConersation,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Update',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConersation',
     request,
     metadata || {},
-    this.methodInfoUpdate);
+    this.methodInfoUpdateConersation);
   }
 
-  methodInfoDelete = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteConversation = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse,
     (request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest) => {
       return request.serializeBinary();
@@ -203,17 +203,17 @@ export class ConversationServiceClient {
     github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse.deserializeBinary
   );
 
-  delete(
+  deleteConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse>;
 
-  delete(
+  deleteConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationResponse>;
 
-  delete(
+  deleteConversation(
     request: github_com_metaprov_modeldapi_services_conversation_v1_conversation_pb.DeleteConversationRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -221,18 +221,18 @@ export class ConversationServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Delete',
+          '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/DeleteConversation',
         request,
         metadata || {},
-        this.methodInfoDelete,
+        this.methodInfoDeleteConversation,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/Delete',
+      '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/DeleteConversation',
     request,
     metadata || {},
-    this.methodInfoDelete);
+    this.methodInfoDeleteConversation);
   }
 
 }

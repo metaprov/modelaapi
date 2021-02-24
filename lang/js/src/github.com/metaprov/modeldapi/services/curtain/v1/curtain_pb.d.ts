@@ -11,6 +11,12 @@ export class ListCurtainsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListCurtainsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListCurtainsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListCurtainsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCurtainsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCurtainsRequest): ListCurtainsRequest.AsObject;
@@ -23,6 +29,8 @@ export namespace ListCurtainsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -31,6 +39,9 @@ export class ListCurtainsResponse extends jspb.Message {
   setItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList): ListCurtainsResponse;
   hasItems(): boolean;
   clearItems(): ListCurtainsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListCurtainsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCurtainsResponse.AsObject;
@@ -43,6 +54,7 @@ export class ListCurtainsResponse extends jspb.Message {
 export namespace ListCurtainsResponse {
   export type AsObject = {
     items?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.AsObject,
+    nextPageToken: string,
   }
 }
 

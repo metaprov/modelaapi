@@ -6,8 +6,10 @@ import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message ListConnectionsRequest {
-    string namespace = 1;
-    map<string,string> labels =3;
+    string             namespace  = 1;
+    map<string,string> labels     = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
 }
 
 message ListConnectionsResponse {
@@ -24,7 +26,7 @@ message CreateConnectionResponse {
 
 message UpdateConnectionRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 1;
-    map<string,string> secret = 5;
+    map<string,string> secret = 2;
 }
 
 message UpdateConnectionResponse {
@@ -77,6 +79,8 @@ service ConnectionService {
 		};
     }
 
-    rpc DeleteConnection(DeleteConnectionRequest) returns (DeleteConnectionResponse) {}
+    rpc DeleteConnection(DeleteConnectionRequest) returns (DeleteConnectionResponse) {
+        option (google.api.http).delete = "/api/v1/connections/{namespace}/{name}";
+    }
 
 }

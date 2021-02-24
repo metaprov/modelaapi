@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/metaprov/modeldapi/services/dataproduct/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modeldapi/services/dataproduct/v1/dataproduct.proto\x12\x35github.com.metaprov.modeldapi.services.dataproduct.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc7\x01\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"p\n\x18ListDataProductsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductList\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19\x43reateDataProductResponse\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19UpdateDataProductResponse\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x16GetDataProductResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteDataProductResponse2\xcc\x08\n\x12\x44\x61taProductService\x12\xcd\x01\n\x10ListDataProducts\x12N.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest\x1aO.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/dataproducts\x12\xdd\x01\n\x11\x43reateDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x10/v1/dataproducts:\x0b\x64\x61taproduct\x12\xce\x01\n\x0eGetDataProduct\x12L.github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest\x1aM.github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/dataproducts/{name}\x12\xf9\x01\n\x11UpdateDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductResponse\"A\x82\xd3\xe4\x93\x02;\x1a,/v1/dataproducts/{dataproduct.metadata.name}:\x0b\x64\x61taproduct\x12\xb8\x01\n\x11\x44\x65leteDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductResponse\"\x00\x42\x37Z5github.com/metaprov/modeldapi/services/dataproduct/v1b\x06proto3'
+  serialized_pb=b'\nGgithub.com/metaprov/modeldapi/services/dataproduct/v1/dataproduct.proto\x12\x35github.com.metaprov.modeldapi.services.dataproduct.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xc7\x01\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"p\n\x18ListDataProductsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductList\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19\x43reateDataProductResponse\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19UpdateDataProductResponse\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x16GetDataProductResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteDataProductResponse2\xa8\t\n\x12\x44\x61taProductService\x12\xcd\x01\n\x10ListDataProducts\x12N.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsRequest\x1aO.github.com.metaprov.modeldapi.services.dataproduct.v1.ListDataProductsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/dataproducts\x12\xdd\x01\n\x11\x43reateDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.CreateDataProductResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x10/v1/dataproducts:\x0b\x64\x61taproduct\x12\xda\x01\n\x0eGetDataProduct\x12L.github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductRequest\x1aM.github.com.metaprov.modeldapi.services.dataproduct.v1.GetDataProductResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/{namespace}/dataproducts/{name}\x12\x9a\x02\n\x11UpdateDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.UpdateDataProductResponse\"b\x82\xd3\xe4\x93\x02\\\x1aM/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}:\x0b\x64\x61taproduct\x12\xe7\x01\n\x11\x44\x65leteDataProduct\x12O.github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductRequest\x1aP.github.com.metaprov.modeldapi.services.dataproduct.v1.DeleteDataProductResponse\"/\x82\xd3\xe4\x93\x02)*\'/api/v1/{namespace}/dataproducts/{name}B7Z5github.com/metaprov/modeldapi/services/dataproduct/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1092,
-  serialized_end=2192,
+  serialized_end=2284,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataProducts',
@@ -529,7 +529,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETDATAPRODUCTREQUEST,
     output_type=_GETDATAPRODUCTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\022\027/v1/dataproducts/{name}',
+    serialized_options=b'\202\323\344\223\002%\022#/v1/{namespace}/dataproducts/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEDATAPRODUCTREQUEST,
     output_type=_UPDATEDATAPRODUCTRESPONSE,
-    serialized_options=b'\202\323\344\223\002;\032,/v1/dataproducts/{dataproduct.metadata.name}:\013dataproduct',
+    serialized_options=b'\202\323\344\223\002\\\032M/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}:\013dataproduct',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -549,7 +549,7 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEDATAPRODUCTREQUEST,
     output_type=_DELETEDATAPRODUCTRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002)*\'/api/v1/{namespace}/dataproducts/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

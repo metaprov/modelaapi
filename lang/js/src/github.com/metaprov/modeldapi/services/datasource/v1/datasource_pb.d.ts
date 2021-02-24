@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
 
 
@@ -252,13 +253,15 @@ export namespace InferSchemaResponse {
 }
 
 export class GetTableViewRequest extends jspb.Message {
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec): GetTableViewRequest;
-  hasSpec(): boolean;
-  clearSpec(): GetTableViewRequest;
+  getSource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setSource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetTableViewRequest;
+  hasSource(): boolean;
+  clearSource(): GetTableViewRequest;
 
-  getBucket(): string;
-  setBucket(value: string): GetTableViewRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): GetTableViewRequest;
+  hasBucket(): boolean;
+  clearBucket(): GetTableViewRequest;
 
   getKey(): string;
   setKey(value: string): GetTableViewRequest;
@@ -273,8 +276,8 @@ export class GetTableViewRequest extends jspb.Message {
 
 export namespace GetTableViewRequest {
   export type AsObject = {
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
-    bucket: string,
+    source?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     key: string,
   }
 }

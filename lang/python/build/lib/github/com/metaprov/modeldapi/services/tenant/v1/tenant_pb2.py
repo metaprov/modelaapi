@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modeldapi/services/tenant/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto\x12\x30github.com.metaprov.modeldapi.services.tenant.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xb8\x01\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListTenantsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList\"\x99\x02\n\x13\x43reateTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.LabelsEntry\x12O\n\x04spec\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x43reateTenantResponse\"\x99\x02\n\x13UpdateTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.LabelsEntry\x12O\n\x04spec\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14UpdateTenantResponse\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x11GetTenantResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTenantResponse2\xa7\x07\n\rTenantService\x12\xaf\x01\n\x0bListTenants\x12\x44.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest\x1a\x45.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/tenants\x12\xba\x01\n\x0c\x43reateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/tenants:\x06tenant\x12\xb0\x01\n\tGetTenant\x12\x42.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantRequest\x1a\x43.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/tenants/{name}\x12\xd1\x01\n\x0cUpdateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantResponse\"2\x82\xd3\xe4\x93\x02,\x1a\"/v1/tenants/{tenant.metadata.name}:\x06tenant\x12\x9f\x01\n\x0c\x44\x65leteTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/tenant/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto\x12\x30github.com.metaprov.modeldapi.services.tenant.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xb8\x01\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListTenantsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x16\n\x14\x43reateTenantResponse\"f\n\x13UpdateTenantRequest\x12O\n\x04item\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantSpec\"\x16\n\x14UpdateTenantResponse\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x11GetTenantResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTenantResponse2\xa7\x07\n\rTenantService\x12\xaf\x01\n\x0bListTenants\x12\x44.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest\x1a\x45.github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/tenants\x12\xba\x01\n\x0c\x43reateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/tenants:\x06tenant\x12\xb0\x01\n\tGetTenant\x12\x42.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantRequest\x1a\x43.github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/tenants/{name}\x12\xd1\x01\n\x0cUpdateTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantResponse\"2\x82\xd3\xe4\x93\x02,\x1a\"/v1/tenants/{tenant.metadata.name}:\x06tenant\x12\x9f\x01\n\x0c\x44\x65leteTenant\x12\x45.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantRequest\x1a\x46.github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/tenant/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -137,44 +137,6 @@ _LISTTENANTSRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATETENANTREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=356,
-  serialized_end=401,
-)
-
 _CREATETENANTREQUEST = _descriptor.Descriptor(
   name='CreateTenantRequest',
   full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest',
@@ -184,28 +146,7 @@ _CREATETENANTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.spec', index=3,
+      name='item', full_name='github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.item', index=0,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -214,7 +155,7 @@ _CREATETENANTREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CREATETENANTREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -223,8 +164,8 @@ _CREATETENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=509,
-  serialized_end=790,
+  serialized_start=508,
+  serialized_end=606,
 )
 
 
@@ -248,48 +189,10 @@ _CREATETENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=792,
-  serialized_end=814,
+  serialized_start=608,
+  serialized_end=630,
 )
 
-
-_UPDATETENANTREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=356,
-  serialized_end=401,
-)
 
 _UPDATETENANTREQUEST = _descriptor.Descriptor(
   name='UpdateTenantRequest',
@@ -300,28 +203,7 @@ _UPDATETENANTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.spec', index=3,
+      name='item', full_name='github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.item', index=0,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -330,7 +212,7 @@ _UPDATETENANTREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATETENANTREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -339,8 +221,8 @@ _UPDATETENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=1098,
+  serialized_start=632,
+  serialized_end=734,
 )
 
 
@@ -364,8 +246,8 @@ _UPDATETENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1100,
-  serialized_end=1122,
+  serialized_start=736,
+  serialized_end=758,
 )
 
 
@@ -403,8 +285,8 @@ _GETTENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1124,
-  serialized_end=1175,
+  serialized_start=760,
+  serialized_end=811,
 )
 
 
@@ -442,8 +324,8 @@ _GETTENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1177,
-  serialized_end=1287,
+  serialized_start=813,
+  serialized_end=923,
 )
 
 
@@ -481,8 +363,8 @@ _DELETETENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1289,
-  serialized_end=1343,
+  serialized_start=925,
+  serialized_end=979,
 )
 
 
@@ -506,19 +388,15 @@ _DELETETENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1345,
-  serialized_end=1367,
+  serialized_start=981,
+  serialized_end=1003,
 )
 
 _LISTTENANTSREQUEST_LABELSENTRY.containing_type = _LISTTENANTSREQUEST
 _LISTTENANTSREQUEST.fields_by_name['labels'].message_type = _LISTTENANTSREQUEST_LABELSENTRY
 _LISTTENANTSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANTLIST
-_CREATETENANTREQUEST_LABELSENTRY.containing_type = _CREATETENANTREQUEST
-_CREATETENANTREQUEST.fields_by_name['labels'].message_type = _CREATETENANTREQUEST_LABELSENTRY
-_CREATETENANTREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANTSPEC
-_UPDATETENANTREQUEST_LABELSENTRY.containing_type = _UPDATETENANTREQUEST
-_UPDATETENANTREQUEST.fields_by_name['labels'].message_type = _UPDATETENANTREQUEST_LABELSENTRY
-_UPDATETENANTREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANTSPEC
+_CREATETENANTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANT
+_UPDATETENANTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANTSPEC
 _GETTENANTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANT
 DESCRIPTOR.message_types_by_name['ListTenantsRequest'] = _LISTTENANTSREQUEST
 DESCRIPTOR.message_types_by_name['ListTenantsResponse'] = _LISTTENANTSRESPONSE
@@ -555,19 +433,11 @@ ListTenantsResponse = _reflection.GeneratedProtocolMessageType('ListTenantsRespo
 _sym_db.RegisterMessage(ListTenantsResponse)
 
 CreateTenantRequest = _reflection.GeneratedProtocolMessageType('CreateTenantRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATETENANTREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.tenant.v1.tenant_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATETENANTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.tenant.v1.tenant_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest)
   })
 _sym_db.RegisterMessage(CreateTenantRequest)
-_sym_db.RegisterMessage(CreateTenantRequest.LabelsEntry)
 
 CreateTenantResponse = _reflection.GeneratedProtocolMessageType('CreateTenantResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATETENANTRESPONSE,
@@ -577,19 +447,11 @@ CreateTenantResponse = _reflection.GeneratedProtocolMessageType('CreateTenantRes
 _sym_db.RegisterMessage(CreateTenantResponse)
 
 UpdateTenantRequest = _reflection.GeneratedProtocolMessageType('UpdateTenantRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATETENANTREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.tenant.v1.tenant_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATETENANTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.tenant.v1.tenant_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest)
   })
 _sym_db.RegisterMessage(UpdateTenantRequest)
-_sym_db.RegisterMessage(UpdateTenantRequest.LabelsEntry)
 
 UpdateTenantResponse = _reflection.GeneratedProtocolMessageType('UpdateTenantResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATETENANTRESPONSE,
@@ -629,8 +491,6 @@ _sym_db.RegisterMessage(DeleteTenantResponse)
 
 DESCRIPTOR._options = None
 _LISTTENANTSREQUEST_LABELSENTRY._options = None
-_CREATETENANTREQUEST_LABELSENTRY._options = None
-_UPDATETENANTREQUEST_LABELSENTRY._options = None
 
 _TENANTSERVICE = _descriptor.ServiceDescriptor(
   name='TenantService',
@@ -639,8 +499,8 @@ _TENANTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1370,
-  serialized_end=2305,
+  serialized_start=1006,
+  serialized_end=1941,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListTenants',

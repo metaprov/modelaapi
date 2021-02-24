@@ -63,16 +63,18 @@ service DataProductService {
 		};
     }
     rpc GetDataProduct(GetDataProductRequest) returns (GetDataProductResponse) {
-        option (google.api.http).get = "/v1/dataproducts/{name}";
+        option (google.api.http).get = "/v1/{namespace}/dataproducts/{name}";
     }
     rpc UpdateDataProduct(UpdateDataProductRequest) returns (UpdateDataProductResponse) {
         option (google.api.http) = {
-			put: "/v1/dataproducts/{dataproduct.metadata.name}"
+			put: "/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}"
 			body: "dataproduct"
 		};
     }
 
-    rpc DeleteDataProduct(DeleteDataProductRequest) returns (DeleteDataProductResponse) {}
+    rpc DeleteDataProduct(DeleteDataProductRequest) returns (DeleteDataProductResponse) {
+        option (google.api.http).delete = "/api/v1/{namespace}/dataproducts/{name}";
+    }
 
 
 

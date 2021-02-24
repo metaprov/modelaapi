@@ -44,37 +44,42 @@ message DeleteConversationResponse {
 }
 
 message ListConversationRequest {
-    string namespace = 1;
-    map<string,string> labels =3;
+    string             namespace  = 1;
+    map<string,string> labels     = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
 }
 
 message ListConversationResponse {
     github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList items = 1;
+    string next_page_token = 2;
 }
 
 
 
 service ConversationService {
-    rpc List(ListConversationRequest) returns (ListConversationResponse) {
-        option (google.api.http).get = "/api/v1alpha1/conversations";
+    rpc ListConversations(ListConversationRequest) returns (ListConversationResponse) {
+        option (google.api.http).get = "/api/v1alpha1/conversations/{namespace}";
     }
-    rpc Create(CreateConversationRequest) returns (CreateConversationResponse) {
+    rpc CreateConversation(CreateConversationRequest) returns (CreateConversationResponse) {
         option (google.api.http) = {
 			post: "/api/v1alpha1/conversations"
 			body: "conversation"
 		};
     }
-    rpc Get(GetConversationRequest) returns (GetConversationResponse) {
-        option (google.api.http).get = "/api/v1alpha1/conversations/{name}";
+    rpc GetConversation(GetConversationRequest) returns (GetConversationResponse) {
+        option (google.api.http).get = "/api/v1alpha1/conversations/{namespace}/{name}";
     }
-    rpc Update(UpdateConversationRequest) returns (UpdateConversationResponse) {
+    rpc UpdateConersation(UpdateConversationRequest) returns (UpdateConversationResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/conversations/{conversation.metadata.name}"
+			put: "/api/v1alpha1/conversations/{conversation.metadata.namespace}/{conversation.metadata.name}"
 			body: "conversation"
 		};
     }
 
-    rpc Delete(DeleteConversationRequest) returns (DeleteConversationResponse) {}
+    rpc DeleteConversation(DeleteConversationRequest) returns (DeleteConversationResponse) {
+        option (google.api.http).delete = "/api/v1/conversations/{namespace}/{name}";
+    }
 
 
 

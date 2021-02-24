@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z8github.com/metaprov/modeldapi/services/virtualcluster/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nMgithub.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto\x12\x38github.com.metaprov.modeldapi.services.virtualcluster.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xf2\x01\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x86\x01\n\x11virtualclusterels\x18\x03 \x03(\x0b\x32k.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry\x1a\x38\n\x16VirtualclusterelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListVirtualClustersResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList\"\x18\n\x16VirtualClusterResponse\"r\n\x1b\x43reateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x1e\n\x1c\x43reateVirtualClusterResponse\"r\n\x1bUpdateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x1e\n\x1cUpdateVirtualClusterResponse\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x19GetVirtualClusterResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteVirtualClusterResponse2\xf7\t\n\x15VirtualClusterService\x12\xe3\x01\n\x13ListVirtualClusters\x12T.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest\x1aU.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/virtualclusters\x12\xf2\x01\n\x14\x43reateVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtualclusters:\x0evirtualcluster\x12\xfc\x01\n\x11GetVirtualCluster\x12R.github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest\x1aS.github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/virtualclusters/{virtualcluster.metadata.name}\x12\x88\x02\n\x14UpdateVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse\"A\x82\xd3\xe4\x93\x02;\x1a)/v1/virtualclusters/{virtualcluster_name}:\x0evirtualcluster\x12\xf8\x01\n\x14\x44\x65leteVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse\"1\x82\xd3\xe4\x93\x02+*)/v1/virtualclusters/{virtualcluster_name}B:Z8github.com/metaprov/modeldapi/services/virtualcluster/v1b\x06proto3'
+  serialized_pb=b'\nMgithub.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto\x12\x38github.com.metaprov.modeldapi.services.virtualcluster.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xf2\x01\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x86\x01\n\x11virtualclusterels\x18\x03 \x03(\x0b\x32k.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry\x1a\x38\n\x16VirtualclusterelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListVirtualClustersResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList\"\x18\n\x16VirtualClusterResponse\"r\n\x1b\x43reateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x1e\n\x1c\x43reateVirtualClusterResponse\"r\n\x1bUpdateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x1e\n\x1cUpdateVirtualClusterResponse\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"~\n\x19GetVirtualClusterResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteVirtualClusterResponse2\xc1\t\n\x15VirtualClusterService\x12\xe3\x01\n\x13ListVirtualClusters\x12T.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest\x1aU.github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/virtualclusters\x12\xf2\x01\n\x14\x43reateVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtualclusters:\x0evirtualcluster\x12\xe4\x01\n\x11GetVirtualCluster\x12R.github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest\x1aS.github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/virtualclusters/{name}\x12\xf9\x01\n\x14UpdateVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse\"2\x82\xd3\xe4\x93\x02,\x1a\x1a/v1/virtualclusters/{name}:\x0evirtualcluster\x12\xe9\x01\n\x14\x44\x65leteVirtualCluster\x12U.github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest\x1aV.github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/virtualclusters/{name}B:Z8github.com/metaprov/modeldapi/services/virtualcluster/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -534,7 +534,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1277,
-  serialized_end=2548,
+  serialized_end=2494,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVirtualClusters',
@@ -563,7 +563,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETVIRTUALCLUSTERREQUEST,
     output_type=_GETVIRTUALCLUSTERRESPONSE,
-    serialized_options=b'\202\323\344\223\0028\0226/api/v1/virtualclusters/{virtualcluster.metadata.name}',
+    serialized_options=b'\202\323\344\223\002 \022\036/api/v1/virtualclusters/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -573,7 +573,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEVIRTUALCLUSTERREQUEST,
     output_type=_UPDATEVIRTUALCLUSTERRESPONSE,
-    serialized_options=b'\202\323\344\223\002;\032)/v1/virtualclusters/{virtualcluster_name}:\016virtualcluster',
+    serialized_options=b'\202\323\344\223\002,\032\032/v1/virtualclusters/{name}:\016virtualcluster',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -583,7 +583,7 @@ _VIRTUALCLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEVIRTUALCLUSTERREQUEST,
     output_type=_DELETEVIRTUALCLUSTERRESPONSE,
-    serialized_options=b'\202\323\344\223\002+*)/v1/virtualclusters/{virtualcluster_name}',
+    serialized_options=b'\202\323\344\223\002\034*\032/v1/virtualclusters/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

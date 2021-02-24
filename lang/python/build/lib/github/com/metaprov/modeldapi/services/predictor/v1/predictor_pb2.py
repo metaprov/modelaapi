@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z3github.com/metaprov/modeldapi/services/predictor/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nCgithub.com/metaprov/modeldapi/services/predictor/v1/predictor.proto\x12\x33github.com.metaprov.modeldapi.services.predictor.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\"\xc1\x01\n\x15ListPredictorsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x06labels\x18\x02 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x16ListPredictorsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorList\"\x19\n\x17\x43reatePredictorResponse\"\xa9\x02\n\x16\x43reatePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12g\n\x06labels\x18\x03 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.LabelsEntry\x12V\n\x04spec\x18\x05 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa9\x02\n\x16UpdatePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12g\n\x06labels\x18\x03 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.LabelsEntry\x12V\n\x04spec\x18\x05 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x19\n\x17UpdatePredictorResponse\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n\x14GetPredictorResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"9\n\x16\x44\x65letePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17\x44\x65letePredictorResponse\"T\n\x11PredictOneRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x66ields\x18\x03 \x01(\t\x12\x0e\n\x06values\x18\x04 \x01(\t\"\xe4\x01\n\x12PredictOneResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05label\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x61\n\x05proba\x18\x05 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse.ProbaEntry\x1a,\n\nProbaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x32\xf1\t\n\x10PredictorService\x12\xc1\x01\n\x0eListPredictors\x12J.github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest\x1aK.github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/predictors\x12\xcf\x01\n\x0f\x43reatePredictor\x12K.github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest\x1aL.github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/predictors:\tpredictor\x12\xc2\x01\n\x0cGetPredictor\x12H.github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorRequest\x1aI.github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/predictors/{name}\x12\xe9\x01\n\x0fUpdatePredictor\x12K.github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest\x1aL.github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorResponse\";\x82\xd3\xe4\x93\x02\x35\x1a(/v1/predictors/{predictor.metadata.name}:\tpredictor\x12\xcb\x01\n\x0f\x44\x65letePredictor\x12K.github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorRequest\x1aL.github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorResponse\"\x1d\x82\xd3\xe4\x93\x02\x17*\x15/v1/predictors/{name}\x12\xc7\x01\n\nPredictOne\x12\x46.github.com.metaprov.modeldapi.services.predictor.v1.PredictOneRequest\x1aG.github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/predictors/{name}:predictoneB5Z3github.com/metaprov/modeldapi/services/predictor/v1b\x06proto3'
+  serialized_pb=b'\nCgithub.com/metaprov/modeldapi/services/predictor/v1/predictor.proto\x12\x33github.com.metaprov.modeldapi.services.predictor.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\"\xc1\x01\n\x15ListPredictorsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x06labels\x18\x02 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x16ListPredictorsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorList\"\x19\n\x17\x43reatePredictorResponse\"l\n\x16\x43reatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"l\n\x16UpdatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x19\n\x17UpdatePredictorResponse\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n\x14GetPredictorResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"9\n\x16\x44\x65letePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17\x44\x65letePredictorResponse\"T\n\x11PredictOneRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x66ields\x18\x03 \x01(\t\x12\x0e\n\x06values\x18\x04 \x01(\t\"\xe4\x01\n\x12PredictOneResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05label\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x61\n\x05proba\x18\x05 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse.ProbaEntry\x1a,\n\nProbaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x32\xf1\t\n\x10PredictorService\x12\xc1\x01\n\x0eListPredictors\x12J.github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest\x1aK.github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/predictors\x12\xcf\x01\n\x0f\x43reatePredictor\x12K.github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest\x1aL.github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/predictors:\tpredictor\x12\xc2\x01\n\x0cGetPredictor\x12H.github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorRequest\x1aI.github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/predictors/{name}\x12\xe9\x01\n\x0fUpdatePredictor\x12K.github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest\x1aL.github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorResponse\";\x82\xd3\xe4\x93\x02\x35\x1a(/v1/predictors/{predictor.metadata.name}:\tpredictor\x12\xcb\x01\n\x0f\x44\x65letePredictor\x12K.github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorRequest\x1aL.github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorResponse\"\x1d\x82\xd3\xe4\x93\x02\x17*\x15/v1/predictors/{name}\x12\xc7\x01\n\nPredictOne\x12\x46.github.com.metaprov.modeldapi.services.predictor.v1.PredictOneRequest\x1aG.github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/predictors/{name}:predictoneB5Z3github.com/metaprov/modeldapi/services/predictor/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -162,44 +162,6 @@ _CREATEPREDICTORRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CREATEPREDICTORREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=378,
-  serialized_end=423,
-)
-
 _CREATEPREDICTORREQUEST = _descriptor.Descriptor(
   name='CreatePredictorRequest',
   full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest',
@@ -209,69 +171,9 @@ _CREATEPREDICTORREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEPREDICTORREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=568,
-  serialized_end=865,
-)
-
-
-_UPDATEPREDICTORREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -281,15 +183,16 @@ _UPDATEPREDICTORREQUEST_LABELSENTRY = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'8\001',
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=378,
-  serialized_end=423,
+  serialized_start=567,
+  serialized_end=675,
 )
+
 
 _UPDATEPREDICTORREQUEST = _descriptor.Descriptor(
   name='UpdatePredictorRequest',
@@ -300,29 +203,8 @@ _UPDATEPREDICTORREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.spec', index=3,
-      number=5, type=11, cpp_type=10, label=1,
+      name='item', full_name='github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -330,7 +212,7 @@ _UPDATEPREDICTORREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATEPREDICTORREQUEST_LABELSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -339,8 +221,8 @@ _UPDATEPREDICTORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=868,
-  serialized_end=1165,
+  serialized_start=677,
+  serialized_end=785,
 )
 
 
@@ -364,8 +246,8 @@ _UPDATEPREDICTORRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1167,
-  serialized_end=1192,
+  serialized_start=787,
+  serialized_end=812,
 )
 
 
@@ -403,8 +285,8 @@ _GETPREDICTORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1194,
-  serialized_end=1248,
+  serialized_start=814,
+  serialized_end=868,
 )
 
 
@@ -442,8 +324,8 @@ _GETPREDICTORRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1250,
-  serialized_end=1370,
+  serialized_start=870,
+  serialized_end=990,
 )
 
 
@@ -481,8 +363,8 @@ _DELETEPREDICTORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1372,
-  serialized_end=1429,
+  serialized_start=992,
+  serialized_end=1049,
 )
 
 
@@ -506,8 +388,8 @@ _DELETEPREDICTORRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1431,
-  serialized_end=1456,
+  serialized_start=1051,
+  serialized_end=1076,
 )
 
 
@@ -559,8 +441,8 @@ _PREDICTONEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1458,
-  serialized_end=1542,
+  serialized_start=1078,
+  serialized_end=1162,
 )
 
 
@@ -598,8 +480,8 @@ _PREDICTONERESPONSE_PROBAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1729,
-  serialized_end=1773,
+  serialized_start=1349,
+  serialized_end=1393,
 )
 
 _PREDICTONERESPONSE = _descriptor.Descriptor(
@@ -657,19 +539,15 @@ _PREDICTONERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1545,
-  serialized_end=1773,
+  serialized_start=1165,
+  serialized_end=1393,
 )
 
 _LISTPREDICTORSREQUEST_LABELSENTRY.containing_type = _LISTPREDICTORSREQUEST
 _LISTPREDICTORSREQUEST.fields_by_name['labels'].message_type = _LISTPREDICTORSREQUEST_LABELSENTRY
 _LISTPREDICTORSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTORLIST
-_CREATEPREDICTORREQUEST_LABELSENTRY.containing_type = _CREATEPREDICTORREQUEST
-_CREATEPREDICTORREQUEST.fields_by_name['labels'].message_type = _CREATEPREDICTORREQUEST_LABELSENTRY
-_CREATEPREDICTORREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTORSPEC
-_UPDATEPREDICTORREQUEST_LABELSENTRY.containing_type = _UPDATEPREDICTORREQUEST
-_UPDATEPREDICTORREQUEST.fields_by_name['labels'].message_type = _UPDATEPREDICTORREQUEST_LABELSENTRY
-_UPDATEPREDICTORREQUEST.fields_by_name['spec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTORSPEC
+_CREATEPREDICTORREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
+_UPDATEPREDICTORREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
 _GETPREDICTORRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
 _PREDICTONERESPONSE_PROBAENTRY.containing_type = _PREDICTONERESPONSE
 _PREDICTONERESPONSE.fields_by_name['proba'].message_type = _PREDICTONERESPONSE_PROBAENTRY
@@ -717,34 +595,18 @@ CreatePredictorResponse = _reflection.GeneratedProtocolMessageType('CreatePredic
 _sym_db.RegisterMessage(CreatePredictorResponse)
 
 CreatePredictorRequest = _reflection.GeneratedProtocolMessageType('CreatePredictorRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEPREDICTORREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.predictor.v1.predictor_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _CREATEPREDICTORREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.predictor.v1.predictor_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest)
   })
 _sym_db.RegisterMessage(CreatePredictorRequest)
-_sym_db.RegisterMessage(CreatePredictorRequest.LabelsEntry)
 
 UpdatePredictorRequest = _reflection.GeneratedProtocolMessageType('UpdatePredictorRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEPREDICTORREQUEST_LABELSENTRY,
-    '__module__' : 'github.com.metaprov.modeldapi.services.predictor.v1.predictor_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.LabelsEntry)
-    })
-  ,
   'DESCRIPTOR' : _UPDATEPREDICTORREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.predictor.v1.predictor_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest)
   })
 _sym_db.RegisterMessage(UpdatePredictorRequest)
-_sym_db.RegisterMessage(UpdatePredictorRequest.LabelsEntry)
 
 UpdatePredictorResponse = _reflection.GeneratedProtocolMessageType('UpdatePredictorResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEPREDICTORRESPONSE,
@@ -806,8 +668,6 @@ _sym_db.RegisterMessage(PredictOneResponse.ProbaEntry)
 
 DESCRIPTOR._options = None
 _LISTPREDICTORSREQUEST_LABELSENTRY._options = None
-_CREATEPREDICTORREQUEST_LABELSENTRY._options = None
-_UPDATEPREDICTORREQUEST_LABELSENTRY._options = None
 _PREDICTONERESPONSE_PROBAENTRY._options = None
 
 _PREDICTORSERVICE = _descriptor.ServiceDescriptor(
@@ -817,8 +677,8 @@ _PREDICTORSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1776,
-  serialized_end=3041,
+  serialized_start=1396,
+  serialized_end=2661,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPredictors',

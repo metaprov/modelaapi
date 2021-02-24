@@ -6,6 +6,7 @@ package github.com.metaprov.modeldapi.services.datasource.v1;
 
 import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 
 message ListDataSourceRequest {
@@ -65,8 +66,8 @@ message InferSchemaResponse {
 }
 
 message GetTableViewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec spec = 1; // contain the csv or table definition
-    string bucket    = 2; // the bucket holding the file
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource     source = 1; // contain the csv or table definition
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2; // contain the csv or table definition
     string key       = 3; // the key holding the file.
 }
 
@@ -100,7 +101,7 @@ service DataSourceService {
     }
 
     rpc DeleteDataSource(DeleteDataSourceRequest) returns (DeleteDataSourceResponse) {
-        option (google.api.http).delete = "v1/datasources/{datasource.metadata.name}";
+        option (google.api.http).delete = "v1/datasources/{namespace}/{name}";
     }
 
     rpc InferSchema(InferSchemaRequest) returns (InferSchemaResponse) {

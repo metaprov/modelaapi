@@ -11,6 +11,12 @@ export class ListDataPipelinesRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListDataPipelinesRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListDataPipelinesRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListDataPipelinesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataPipelinesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDataPipelinesRequest): ListDataPipelinesRequest.AsObject;
@@ -23,6 +29,8 @@ export namespace ListDataPipelinesRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
   }
 }
 

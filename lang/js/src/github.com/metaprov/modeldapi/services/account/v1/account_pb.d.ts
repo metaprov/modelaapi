@@ -12,6 +12,12 @@ export class ListAccountsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListAccountsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListAccountsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListAccountsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAccountsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAccountsRequest): ListAccountsRequest.AsObject;
@@ -24,6 +30,8 @@ export namespace ListAccountsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -32,6 +40,9 @@ export class ListAccountsResponse extends jspb.Message {
   setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList): ListAccountsResponse;
   hasItems(): boolean;
   clearItems(): ListAccountsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListAccountsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAccountsResponse.AsObject;
@@ -44,6 +55,7 @@ export class ListAccountsResponse extends jspb.Message {
 export namespace ListAccountsResponse {
   export type AsObject = {
     items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList.AsObject,
+    nextPageToken: string,
   }
 }
 

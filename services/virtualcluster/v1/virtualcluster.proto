@@ -71,19 +71,19 @@ service VirtualClusterService {
     }
 
     rpc GetVirtualCluster(GetVirtualClusterRequest) returns (GetVirtualClusterResponse) {
-        option (google.api.http).get = "/api/v1/virtualclusters/{virtualcluster.metadata.name}";
+        option (google.api.http).get = "/api/v1/virtualclusters/{name}";
     }
 
     rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (UpdateVirtualClusterResponse) {
         option (google.api.http) = {
-			put: "/v1/virtualclusters/{virtualcluster_name}"
+			put: "/v1/virtualclusters/{name}"
 			body: "virtualcluster"
 		};
     }
 
     rpc DeleteVirtualCluster(DeleteVirtualClusterRequest) returns (DeleteVirtualClusterResponse) {
         option (google.api.http) = {
-			delete: "/v1/virtualclusters/{virtualcluster_name}"
+			delete: "/v1/virtualclusters/{name}"
 		};
     }
 

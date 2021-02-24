@@ -6,8 +6,10 @@ import "google/api/annotations.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListDataPipelinesRequest {
-    string namespace = 1;
-    map<string,string> labels =3;
+    string namespace              = 1;
+    map<string,string> labels     = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
 }
 
 message ListDataPipelinesResponse {
@@ -23,7 +25,7 @@ message CreateDataPipelineResponse {
 }
 
 message UpdateDataPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 2;    
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;    
 }
 
 message UpdateDataPipelineResponse {
@@ -73,17 +75,19 @@ service DataPipelineService {
     }
 
     rpc GetDataPipeline(GetDataPipelineRequest) returns (GetDataPipelineResponse) {
-        option (google.api.http).get = "/v1/datapipelines/{name}";
+        option (google.api.http).get = "/v1/datapipelines/{namespace}/{name}";
     }
 
     rpc UpdateDataPipeline(UpdateDataPipelineRequest) returns (UpdateDataPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/datapipelines/{datapipeline.metadata.name}"
+			put: "/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"
 			body: "datapipeline"
 		};
     }
 
     rpc DeleteDataPipeline(DeleteDataPipelineRequest) returns (DeleteDataPipelineResponse) {}
 
-    rpc Run(RunDataPipelineRequest) returns (RunDataPipelineResponse) {}
+    rpc Run(RunDataPipelineRequest) returns (RunDataPipelineResponse) {
+        option (google.api.http).delete = "/api/v1/datapipelines/{namespace}/{name}";
+    }
 }

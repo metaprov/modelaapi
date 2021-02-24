@@ -77,6 +77,8 @@ service ModelPipelineRunService {
 		};
     }
 
-    rpc DeleteModelPipelineRun(DeleteModelPipelineRunRequest) returns (DeleteModelPipelineRunResponse) {}
+    rpc DeleteModelPipelineRun(DeleteModelPipelineRunRequest) returns (DeleteModelPipelineRunResponse) {
+        option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}";
+    }
 
 }

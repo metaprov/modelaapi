@@ -73,7 +73,9 @@ service DataProductVersionService {
 		};
     }
 
-    rpc DeleteDataProductVersion(DeleteDataProductVersionRequest) returns (DeleteDataProductVersionResponse) {}
+    rpc DeleteDataProductVersion(DeleteDataProductVersionRequest) returns (DeleteDataProductVersionResponse) {
+        option (google.api.http).delete = "/api/v1/dataproductversions/{namespace}/{name}";
+    }
 
 
 }

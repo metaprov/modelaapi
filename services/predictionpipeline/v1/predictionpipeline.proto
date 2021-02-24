@@ -84,17 +84,17 @@ service PredictionPipelineService {
 
     rpc UpdatePredictionPipeline(UpdatePredictionPipelineRequest) returns (UpdatePredictionPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/predictions/{prediction.metadata.name}"
-			body: "prediction"
+			put: "/v1/predictions/{predictionpipeline.metadata.name}"
+			body: "predictionpipeline"
 		};
     }
 
     rpc DeletePredictionPipeline(DeletePredictionPipelineRequest) returns (DeletePredictionPipelineResponse) {
-        option (google.api.http).delete = "/v1/predictions/{name}";
+        option (google.api.http).delete = "/v1/predictionpipelines/{name}";
     }
 
     rpc Download(DownloadPredictionPipelineRequest) returns (DownloadPredictionPipelineResponse) {
-        option (google.api.http).get = "/api/v1alpha1/predictions/{name}:download";
+        option (google.api.http).get = "/api/v1alpha1/predictionpipelines/{name}:download";
     }
 
 
