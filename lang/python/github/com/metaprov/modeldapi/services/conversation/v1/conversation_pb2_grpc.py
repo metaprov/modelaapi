@@ -29,8 +29,8 @@ class ConversationServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationResponse.FromString,
                 )
-        self.UpdateConersation = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConersation',
+        self.UpdateConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConversation',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationResponse.FromString,
                 )
@@ -62,7 +62,7 @@ class ConversationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateConersation(self, request, context):
+    def UpdateConversation(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -92,8 +92,8 @@ def add_ConversationServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.GetConversationResponse.SerializeToString,
             ),
-            'UpdateConersation': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateConersation,
+            'UpdateConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateConversation,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationResponse.SerializeToString,
             ),
@@ -164,7 +164,7 @@ class ConversationService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateConersation(request,
+    def UpdateConversation(request,
             target,
             options=(),
             channel_credentials=None,
@@ -174,7 +174,7 @@ class ConversationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConersation',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.conversation.v1.ConversationService/UpdateConversation',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_conversation_dot_v1_dot_conversation__pb2.UpdateConversationResponse.FromString,
             options, channel_credentials,
