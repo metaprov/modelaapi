@@ -32,6 +32,7 @@ type LabelingPipelineCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
@@ -41,7 +42,6 @@ type LabelingPipelineCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,categories={data,modeld}
-// LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 type LabelingPipeline struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

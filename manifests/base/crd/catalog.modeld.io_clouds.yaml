@@ -23,6 +23,8 @@ spec:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine
+          classes
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

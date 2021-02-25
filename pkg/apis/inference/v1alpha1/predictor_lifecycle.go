@@ -16,10 +16,6 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-//==============================================================================
-// EntityRef
-//==============================================================================
-
 func (predictor *Predictor) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(predictor).

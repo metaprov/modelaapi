@@ -11,14 +11,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// CloudName
-//==============================================================================
+// Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
 // +genclient
 // +genclient:noStatus
-
-// Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
-
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}

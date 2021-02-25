@@ -41,7 +41,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PredictorName represent an PredictorName API object
+        description: Predictor represent an PredictorName API object
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

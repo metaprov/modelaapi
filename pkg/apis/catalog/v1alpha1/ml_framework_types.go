@@ -4,9 +4,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// Framework Name
-//==============================================================================
 // +kubebuilder:validation:Enum="scikit-learn";"tensorflow";"pytorch";"catcoost";"lightgbm";
 // FrameworkName is the name of the machine learning framework
 type FrameworkName string
@@ -19,12 +16,11 @@ const (
 	LightGbm    FrameworkName = "lightgbm"
 )
 
+// MLFramework define the metadata about a machine learning framework
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// MLFramework define the metadata about a machine learning framework
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Name",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"

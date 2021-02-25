@@ -59,16 +59,17 @@ spec:
             description: RecipeSpec defines the desired state of a dataset
             properties:
               description:
-                description: User provided description
+                description: Description is the user provided description
                 maxLength: 512
                 type: string
               input:
-                description: The recipe input spec.
+                description: Input is the input recipe spec
                 properties:
                   datasetName:
+                    description: DatasetName is the name of the dataset
                     type: string
                   format:
-                    description: dataset name format
+                    description: Format is the dataset format
                     enum:
                     - url
                     - path
@@ -95,7 +96,7 @@ spec:
                     - unknown
                     type: string
                   location:
-                    description: Folder of the actual data resides.
+                    description: Location is the folder of the actual data resides.
                     properties:
                       bucketName:
                         type: string
@@ -108,16 +109,19 @@ spec:
                     type: object
                 type: object
               output:
-                description: Use this as the output dataset name
+                description: Output is the desired output
                 properties:
                   createDataset:
-                    description: If true, create a new dataset when the recipe is
-                      done.
+                    description: CreateDataset if true, create a new dataset when
+                      the recipe is done.
                     type: boolean
                   datasetName:
+                    description: DatasetName is the name of the dataset output to
+                      the recipe
                     type: string
                   location:
-                    description: Folder of the actual data resides.
+                    description: Location is the data location folder of the actual
+                      data resides.
                     properties:
                       bucketName:
                         type: string
@@ -131,30 +135,36 @@ spec:
                 type: object
               owner:
                 default: no-one
-                description: The account name of the owner of this dataset
+                description: Owner is the owner of the recipe
                 type: string
               sample:
-                description: Specify the sampling paramters when viewing the recipe
+                description: Sample specify the sampling paramters when viewing the
+                  recipe
                 properties:
                   rows:
-                    description: The number of rows. Default is 500
+                    description: Rows is the number of rows. Default is 500
                     format: int32
                     type: integer
                   string:
-                    description: filter formula. Valid only if the sample is a filter.
+                    description: Filter formula. Valid only if the sample is a filter.
                     type: string
                   type:
-                    description: Define how the recipe file is sampled.
+                    description: Type is the sampling type
                     type: string
                 type: object
               steps:
-                description: The reciepe steps
+                description: Steps are the list of recipe steps
                 items:
+                  description: RecipeStep defines one step in the recipe
                   properties:
                     op:
+                      description: RecipeStepOperation is the operation name of one
+                        step in the recipe
                       type: string
                     parameters:
                       items:
+                        description: RecipeStepParam is a key value parameter of the
+                          recipe
                         properties:
                           name:
                             type: string
@@ -165,13 +175,13 @@ spec:
                   type: object
                 type: array
               versionName:
-                description: VersionName is the data product version of the dataset
+                description: VersionName is the data product version of the recipe
                   required.
                 maxLength: 63
                 type: string
               workloadClassName:
-                description: Specify the sampling paramters when viewing the recipe.
-                  By default the recipe controller use the product workload class.
+                description: WorkloadClassName is the name of the workload used to
+                  execute this recipe
                 type: string
             type: object
           status:
@@ -200,7 +210,7 @@ spec:
                       description: Status of the condition, one of True, False, AutoScaler.
                       type: string
                     type:
-                      description: Condition on the dataset
+                      description: RecipeConditionType is the condition on the Recipe
                       type: string
                   required:
                   - status

@@ -629,7 +629,8 @@ func schema_pkg_apis_catalog_v1alpha1_Algorithm(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Algorithm define the metadata about a machine learning algorithm.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -854,7 +855,8 @@ func schema_pkg_apis_catalog_v1alpha1_Cloud(ref common.ReferenceCallback) common
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -1278,7 +1280,8 @@ func schema_pkg_apis_catalog_v1alpha1_MLFramework(ref common.ReferenceCallback) 
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "MLFramework define the metadata about a machine learning framework",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -1502,7 +1505,8 @@ func schema_pkg_apis_catalog_v1alpha1_PretrainedModel(ref common.ReferenceCallba
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Pretrained model contain the metadata about a pretrained model",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -1813,7 +1817,8 @@ func schema_pkg_apis_catalog_v1alpha1_UserRoleClass(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "UserRoleClass specify the RBAC premission for a specific user role.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -1955,7 +1960,8 @@ func schema_pkg_apis_catalog_v1alpha1_WorkloadClass(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "WorkloadClass define a template for a trainer.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -3572,7 +3578,7 @@ func schema_pkg_apis_data_v1alpha1_DataSource(ref common.ReferenceCallback) comm
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Datasource represent source of the data in the system. The spec consist of schema",
+				Description: "DataSource represent source of the data in the system. The spec consist of schema",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -4516,7 +4522,7 @@ func schema_pkg_apis_data_v1alpha1_FeatureCondition(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DeploymentCondition describes the state of a deployment at a certain point.",
+				Description: "FeatureCondition describes the state of a deployment at a certain point.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -4665,7 +4671,7 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineCondition(ref common.Reference
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DeploymentCondition describes the state of a deployment at a certain point.",
+				Description: "FeaturePipelineCondition describes the state of a deployment at a certain point.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -4814,7 +4820,7 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineRunCondition(ref common.Refere
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DeploymentCondition describes the state of a deployment at a certain point.",
+				Description: "FeaturePipelineRunCondition describes the state of a deployment at a certain point.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -4866,7 +4872,7 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineRunList(ref common.ReferenceCa
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "FeatureList contain a list of feature objects",
+				Description: "FeaturePipelineRunList contain a list of FeaturePipelineRun objects",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -5814,7 +5820,7 @@ func schema_pkg_apis_data_v1alpha1_LabelingPipelineRun(ref common.ReferenceCallb
 						},
 					},
 				},
-				Required: []string{"metadata", "spec"},
+				Required: []string{"metadata", "spec", "status"},
 			},
 		},
 		Dependencies: []string{
@@ -5826,7 +5832,7 @@ func schema_pkg_apis_data_v1alpha1_LabelingPipelineRunCondition(ref common.Refer
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DeploymentCondition describes the state of a deployment at a certain point.",
+				Description: "LabelingPipelineRunCondition describes the state of a deployment at a certain point.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -5931,22 +5937,21 @@ func schema_pkg_apis_data_v1alpha1_LabelingPipelineRunSpec(ref common.ReferenceC
 				Properties: map[string]spec.Schema{
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The feature owner",
+							Description: "The owner of the LabelingPipelineRunSpec",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The product version for the feature.",
+							Description: "The product version for the pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"featurePipelineName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "FileName specify the name of the attribute",
-							Default:     "",
+							Description: "LabelPipelineName specifies the name of LabelingPipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5962,7 +5967,7 @@ func schema_pkg_apis_data_v1alpha1_LabelingPipelineRunStatus(ref common.Referenc
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "LabelStatus defines the observed state of Label",
+				Description: "LabelPipelineRunStatus defines the observed state of Label",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"startTime": {
@@ -6260,24 +6265,25 @@ func schema_pkg_apis_data_v1alpha1_RecipeInputSpec(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Specification for the recipe input",
+				Description: "RecipeInputSpec specify the input for a recipe",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "DatasetName is the name of the dataset",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"location": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Folder of the actual data resides.",
+							Description: "Location is the folder of the actual data resides.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
 					"format": {
 						SchemaProps: spec.SchemaProps{
-							Description: "dataset name format",
+							Description: "Format is the dataset format",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -6343,25 +6349,26 @@ func schema_pkg_apis_data_v1alpha1_RecipeOutputSpec(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Specification for the recipe output",
+				Description: "RecipeOutputSpec for the recipe output",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"createDataset": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, create a new dataset when the recipe is done.",
+							Description: "CreateDataset if true, create a new dataset when the recipe is done.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "DatasetName is the name of the dataset output to the recipe",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"location": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Folder of the actual data resides.",
+							Description: "Location is the data location folder of the actual data resides.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -6619,20 +6626,21 @@ func schema_pkg_apis_data_v1alpha1_RecipeSampleSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"type": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Type is the sampling type",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"rows": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The number of rows. Default is 500",
+							Description: "Rows is the number of rows. Default is 500",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"string": {
 						SchemaProps: spec.SchemaProps{
-							Description: "filter formula. Valid only if the sample is a filter.",
+							Description: "Filter formula. Valid only if the sample is a filter.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -6652,35 +6660,35 @@ func schema_pkg_apis_data_v1alpha1_RecipeSpec(ref common.ReferenceCallback) comm
 				Properties: map[string]spec.Schema{
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The account name of the owner of this dataset",
+							Description: "Owner is the owner of the recipe",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "VersionName is the data product version of the dataset required.",
+							Description: "VersionName is the data product version of the recipe required.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description is the user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"input": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The recipe input spec.",
+							Description: "Input is the input recipe spec",
 							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.RecipeInputSpec"),
 						},
 					},
 					"steps": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The reciepe steps",
+							Description: "Steps are the list of recipe steps",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -6694,20 +6702,20 @@ func schema_pkg_apis_data_v1alpha1_RecipeSpec(ref common.ReferenceCallback) comm
 					},
 					"output": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Use this as the output dataset name",
+							Description: "Output is the desired output",
 							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.RecipeOutputSpec"),
 						},
 					},
 					"sample": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the sampling paramters when viewing the recipe",
+							Description: "Sample specify the sampling paramters when viewing the recipe",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.RecipeSampleSpec"),
 						},
 					},
 					"workloadClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the sampling paramters when viewing the recipe. By default the recipe controller use the product workload class.",
+							Description: "WorkloadClassName is the name of the workload used to execute this recipe",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -6753,7 +6761,8 @@ func schema_pkg_apis_data_v1alpha1_RecipeStep(ref common.ReferenceCallback) comm
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "RecipeStep defines one step in the recipe",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"op": {
 						SchemaProps: spec.SchemaProps{
@@ -6785,7 +6794,8 @@ func schema_pkg_apis_data_v1alpha1_RecipeStepParam(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "RecipeStepParam is a key value parameter of the recipe",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
@@ -7111,7 +7121,7 @@ func schema_pkg_apis_inference_v1alpha1_Curtain(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Curtain represent a Curtain API object",
+				Description: "Curtain represent an object which can be placed before or after predictor",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -7930,27 +7940,27 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineRunSpec(ref common.Ref
 					},
 					"objective": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The objective metric used to score",
+							Description: "Objective is the objective metric used to score",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "In where we are using a dataset name. This can be dataset name",
+							Description: "DatasetName is where we are using a dataset name. This can be dataset name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"input": {
 						SchemaProps: spec.SchemaProps{
-							Description: "DataLocation of the input if using direct input file",
+							Description: "Input is of the input if using direct input file",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
 					"output": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The key in the bucket for storing all the prediction output",
+							Description: "Output is the key in the bucket for storing all the prediction output",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -8057,20 +8067,20 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineSpec(ref common.Refere
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "In where we are using a dataset name. This can be dataset name",
+							Description: "DatasetName is where we are using a dataset name. This can be dataset name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"input": {
 						SchemaProps: spec.SchemaProps{
-							Description: "DataLocation of the input if using direct input file",
+							Description: "Input is the DataLocation of the input if using direct input file",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
 					"output": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The key in the bucket for storing all the prediction output",
+							Description: "Output is the key in the bucket for storing all the prediction output",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -8097,31 +8107,11 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineStatus(ref common.Refe
 				Description: "PredictionPipelineStatus is the observed state of a PredictionTemplate",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"score": {
-						SchemaProps: spec.SchemaProps{
-							Description: "PredictionPipeline score based on the objective.",
-							Type:        []string{"number"},
-							Format:      "double",
-						},
-					},
 					"phase": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The phase of the prediction",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"startTime": {
-						SchemaProps: spec.SchemaProps{
-							Description: "StartTime is the times that this prediction job started",
-							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
-						},
-					},
-					"completionTime": {
-						SchemaProps: spec.SchemaProps{
-							Description: "CompletionTime is the time that this prediction job finished",
-							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
+							Default: "",
+							Type:    []string{"string"},
+							Format:  "",
 						},
 					},
 					"conditions": {
@@ -8141,7 +8131,7 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineStatus(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictionPipelineCondition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictionPipelineCondition"},
 	}
 }
 
@@ -8149,7 +8139,7 @@ func schema_pkg_apis_inference_v1alpha1_Predictor(ref common.ReferenceCallback) 
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "PredictorName represent an PredictorName API object",
+				Description: "Predictor represent an PredictorName API object",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {

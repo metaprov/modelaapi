@@ -88,7 +88,7 @@ spec:
             properties:
               conditions:
                 items:
-                  description: DeploymentCondition describes the state of a deployment
+                  description: FeatureCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

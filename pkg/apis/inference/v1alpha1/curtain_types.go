@@ -45,7 +45,7 @@ type CurtainCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Curtain represent a Curtain API object
+// Curtain represent an object which can be placed before or after predictor
 // +genclient
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

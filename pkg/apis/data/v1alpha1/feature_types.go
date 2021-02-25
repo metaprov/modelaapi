@@ -11,12 +11,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// FeatureRef
-//==============================================================================
-
-// Feature condition
-// Condition on the entity
+// FeatureConditionType is the condition of the feature
 type FeatureConditionType string
 
 /// Feature Condition
@@ -24,7 +19,7 @@ const (
 	FeatureReady FeatureConditionType = "Ready"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// FeatureCondition describes the state of a deployment at a certain point.
 type FeatureCondition struct {
 	// Type of account condition.
 	Type FeatureConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
@@ -38,10 +33,9 @@ type FeatureCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// Feature represent a single feature in the feature store.
 // +genclient
 // +genclient:noStatus
-
-// Feature represent a single feature in the feature store.
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

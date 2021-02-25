@@ -124,7 +124,7 @@ spec:
                 type: number
               conditions:
                 items:
-                  description: DeploymentCondition describes the state of a deployment
+                  description: FeaturePipelineCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

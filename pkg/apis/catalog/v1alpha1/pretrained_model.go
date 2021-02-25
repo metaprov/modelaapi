@@ -11,15 +11,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// PretrainedModel
-//==============================================================================
-
+// Pretrained model contain the metadata about a pretrained model
 // +genclient
 // +genclient:noStatus
-
-// Pretrained model contain the metadata about a pretrained model
-
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

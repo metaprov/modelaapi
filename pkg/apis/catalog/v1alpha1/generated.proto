@@ -19,6 +19,13 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+// Algorithm define the metadata about a machine learning algorithm.
+// +genclient
+// +genclient:noStatus
+// +k8s:openapi-gen=true
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
 // +kubebuilder:printcolumn:name="Repository",type="string",JSONPath=".spec.url",description=""
@@ -90,6 +97,9 @@ message CategoricalParameter {
   repeated string enums = 3;
 }
 
+// Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
@@ -223,6 +233,11 @@ message IntParameter {
   optional int32 defaultValue = 6;
 }
 
+// MLFramework define the metadata about a machine learning framework
+// +genclient
+// +genclient:noStatus
+// +k8s:openapi-gen=true
+// +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Name",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
@@ -296,6 +311,9 @@ message MachineClassCost {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
 }
 
+// Pretrained model contain the metadata about a pretrained model
+// +genclient
+// +genclient:noStatus
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -373,6 +391,10 @@ message Region {
   repeated DataCenter datacenters = 5;
 }
 
+// UserRoleClass specify the RBAC premission for a specific user role.
+// +genclient
+// +genclient:noStatus
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""
@@ -403,6 +425,9 @@ message VizUri {
   optional string uri = 2;
 }
 
+// WorkloadClass define a template for a trainer.
+// +genclient
+// +genclient:noStatus
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -751,21 +751,8 @@ export namespace PredictionPipelineSpec {
 }
 
 export class PredictionPipelineStatus extends jspb.Message {
-  getScore(): number;
-  setScore(value: number): PredictionPipelineStatus;
-
   getPhase(): string;
   setPhase(value: string): PredictionPipelineStatus;
-
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionPipelineStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): PredictionPipelineStatus;
-
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionPipelineStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): PredictionPipelineStatus;
 
   getConditionsList(): Array<PredictionPipelineCondition>;
   setConditionsList(value: Array<PredictionPipelineCondition>): PredictionPipelineStatus;
@@ -782,10 +769,7 @@ export class PredictionPipelineStatus extends jspb.Message {
 
 export namespace PredictionPipelineStatus {
   export type AsObject = {
-    score: number,
     phase: string,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PredictionPipelineCondition.AsObject>,
   }
 }

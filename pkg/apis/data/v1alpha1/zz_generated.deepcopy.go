@@ -2287,6 +2287,11 @@ func (in *LabelingPipelineRunSpec) DeepCopyInto(out *LabelingPipelineRunSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.LabelPipelineName != nil {
+		in, out := &in.LabelPipelineName, &out.LabelPipelineName
+		*out = new(string)
+		**out = **in
+	}
 	return
 }
 
@@ -2509,6 +2514,11 @@ func (in *RecipeInputSpec) DeepCopyInto(out *RecipeInputSpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(DataLocation)
+		**out = **in
+	}
+	if in.Format != nil {
+		in, out := &in.Format, &out.Format
+		*out = new(catalogv1alpha1.DataFormat)
 		**out = **in
 	}
 	return

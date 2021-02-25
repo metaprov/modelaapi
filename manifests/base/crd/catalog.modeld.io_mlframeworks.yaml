@@ -30,6 +30,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: MLFramework define the metadata about a machine learning framework
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

@@ -71,6 +71,7 @@ type PredictorCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// Predictor represent an PredictorName API object
 // +k8s:openapi-gen=true
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -83,13 +84,11 @@ type PredictorCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
-// PredictorName represent an PredictorName API object
 type Predictor struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              PredictorSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status PredictorStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              PredictorSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            PredictorStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

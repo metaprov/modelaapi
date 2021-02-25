@@ -8,13 +8,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// PredictionTemplate
-//==============================================================================
-
 type PredictionPipelinePhase string
 
-/// PredictionTemplate Phases
+/// PredictionPipelinePhase
 const (
 	// The system is performing the prediction against the predictor
 	PredictionPhaseRunning PredictionPipelinePhase = "Running"
@@ -24,7 +20,7 @@ const (
 	PredictionPhaseFailed PredictionPipelinePhase = "Failed"
 )
 
-// PredictionTemplate Condition
+// PredictionPipelineConditionType is the condition type of the prediction pipeline
 type PredictionPipelineConditionType string
 
 /// PredictionTemplate Condition
@@ -47,6 +43,7 @@ type PredictionPipelineCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// PredictionTemplate represents a prediction object
 // +genclient
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -61,7 +58,6 @@ type PredictionPipelineCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictionpipelines,singular=predictionpipeline,categories={inference,modeld}
-// PredictionTemplate represents a prediction object
 type PredictionPipeline struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -89,12 +85,12 @@ type PredictionPipelineSpec struct {
 	Labeled bool `json:"labeled" protobuf:"bytes,2,opt,name=labeled"`
 	// The objective metric used to score
 	Objective *catalog.Metric `json:"objective" protobuf:"bytes,3,opt,name=objective"`
-	// In where we are using a dataset name. This can be dataset name
+	// DatasetName is where we are using a dataset name. This can be dataset name
 	// +optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// DataLocation of the input if using direct input file
+	// Input is the DataLocation of the input if using direct input file
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
-	// The key in the bucket for storing all the prediction output
+	// Output is the key in the bucket for storing all the prediction output
 	// +optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// The owner account name
@@ -104,18 +100,8 @@ type PredictionPipelineSpec struct {
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 type PredictionPipelineStatus struct {
-	// PredictionPipeline score based on the objective.
-	// +optional
-	Score float64 `json:"score,omitempty" protobuf:"bytes,2,opt,name=score"`
-	// The phase of the prediction
 	// +optional
 	Phase PredictionPipelinePhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
-	// StartTime is the times that this prediction job started
-	// +optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
-	// CompletionTime is the time that this prediction job finished
-	// +optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,5,opt,name=completionTime"`
 	//+optional
 	Conditions []PredictionPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
 }

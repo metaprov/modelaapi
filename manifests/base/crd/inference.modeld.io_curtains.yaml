@@ -36,7 +36,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Curtain represent a Curtain API object
+        description: Curtain represent an object which can be placed before or after
+          predictor
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

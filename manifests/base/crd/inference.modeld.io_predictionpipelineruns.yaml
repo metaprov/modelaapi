@@ -67,11 +67,11 @@ spec:
               PredictionPipelineRun
             properties:
               datasetName:
-                description: In where we are using a dataset name. This can be dataset
-                  name
+                description: DatasetName is where we are using a dataset name. This
+                  can be dataset name
                 type: string
               input:
-                description: DataLocation of the input if using direct input file
+                description: Input is of the input if using direct input file
                 properties:
                   bucketName:
                     type: string
@@ -87,7 +87,7 @@ spec:
                   Used usually for unit testing
                 type: boolean
               objective:
-                description: The objective metric used to score
+                description: Objective is the objective metric used to score
                 enum:
                 - accuracy
                 - average-precision
@@ -132,7 +132,7 @@ spec:
                 - mdape
                 type: string
               output:
-                description: The key in the bucket for storing all the prediction
+                description: Output is the key in the bucket for storing all the prediction
                   output
                 properties:
                   bucketName:

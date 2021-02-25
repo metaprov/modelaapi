@@ -47,8 +47,18 @@ func (f *genericInformer) Lister() cache.GenericLister {
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
 	// Group=catalog.modeld.io, Version=v1alpha1
+	case v1alpha1.SchemeGroupVersion.WithResource("algorithms"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().Algorithms().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("clouds"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().Clouds().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("mlframeworks"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().MLFrameworks().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("pretrainedmodels"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().PretrainedModels().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("userroleclasses"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().UserRoleClasses().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("workloadclasses"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().WorkloadClasses().Informer()}, nil
 
 		// Group=data.modeld.io, Version=v1alpha1
 	case datav1alpha1.SchemeGroupVersion.WithResource("datapipelines"):

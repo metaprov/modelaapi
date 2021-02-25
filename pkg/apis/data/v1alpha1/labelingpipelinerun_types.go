@@ -15,8 +15,7 @@ import (
 // Label
 //==============================================================================
 
-// Label condition
-// Condition on the entity
+// LabelingPipelineRunConditionType condition on the entity
 type LabelingPipelineRunConditionType string
 
 /// Label Condition
@@ -24,7 +23,7 @@ const (
 	LabelingPipelineRunReady LabelingPipelineRunConditionType = "Ready"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// LabelingPipelineRunCondition describes the state of a deployment at a certain point.
 type LabelingPipelineRunCondition struct {
 	// Type of account condition.
 	Type LabelingPipelineRunConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=LabelConditionType"`
@@ -38,10 +37,9 @@ type LabelingPipelineRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// LabelingPipeline represent a feature set object in the feature store.
 // +genclient
 // +genclient:noStatus
-
-// LabelingPipeline represent a feature set object in the feature store.
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
@@ -53,9 +51,8 @@ type LabelingPipelineRunCondition struct {
 type LabelingPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              LabelingPipelineRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status LabelingPipelineRunStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              LabelingPipelineRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            LabelingPipelineRunStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
@@ -68,19 +65,19 @@ type LabelingPipelineRunList struct {
 
 // LabelSpec contain the desired state of a Label
 type LabelingPipelineRunSpec struct {
-	// The feature owner
+	// The owner of the LabelingPipelineRunSpec
 	// +kubebuilder:default="no-one"
 	Owner *string `json:"owner" protobuf:"bytes,1,opt,name=owner"`
-	// The product version for the feature.
+	// The product version for the pipeline
 	// +optional
 	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
-	// FileName specify the name of the attribute
+	// LabelPipelineName specifies the name of LabelingPipeline
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
-	LabelPipelineName string `json:"featurePipelineName" protobuf:"bytes,3,opt,name=featurePipelineName"`
+	LabelPipelineName *string `json:"featurePipelineName" protobuf:"bytes,3,opt,name=featurePipelineName"`
 }
 
-// LabelStatus defines the observed state of Label
+// LabelPipelineRunStatus defines the observed state of Label
 type LabelingPipelineRunStatus struct {
 
 	// The Start time of the run

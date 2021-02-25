@@ -282,7 +282,7 @@ func (in *Column) Validate() (bool, []metav1.StatusCause) {
 	return false, nil
 }
 
-// Datasource represent source of the data in the system. The spec consist of schema
+// DataSource represent source of the data in the system. The spec consist of schema
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true

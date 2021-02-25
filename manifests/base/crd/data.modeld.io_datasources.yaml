@@ -36,7 +36,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Datasource represent source of the data in the system. The spec
+        description: DataSource represent source of the data in the system. The spec
           consist of schema
         properties:
           apiVersion:

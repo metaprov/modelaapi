@@ -104,7 +104,7 @@ spec:
                       description: Status of the condition, one of True, False, AutoScaler.
                       type: string
                     type:
-                      description: Condition on the dataset
+                      description: RecipeConditionType is the condition on the Recipe
                       type: string
                   required:
                   - status

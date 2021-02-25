@@ -409,9 +409,9 @@ message DataPipelineStatus {
   repeated DataPipelineCondition conditions = 1;
 }
 
+// DataProduct represent a single data product in the system
 // +genclient
 // +genclient:noStatus
-// DataProduct represent a single data product in the system
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
@@ -621,7 +621,7 @@ message DataProductVersionStatus {
   repeated DataProductVersionCondition conditions = 1;
 }
 
-// Datasource represent source of the data in the system. The spec consist of schema
+// DataSource represent source of the data in the system. The spec consist of schema
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
@@ -713,6 +713,8 @@ message DataSourceStatus {
   repeated DataSourceCondition conditions = 2;
 }
 
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -870,6 +872,9 @@ message DatasetTemplate {
   optional DatasetSpec spec = 2;
 }
 
+// Entity represents a entity object
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
@@ -878,7 +883,6 @@ message DatasetTemplate {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=entities,singular=entity,categories={data,modeld}
 // +kubebuilder:subresource:status
-// Entity represents a entity object
 message Entity {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -945,6 +949,8 @@ message EntityStatus {
 }
 
 // Feature represent a single feature in the feature store.
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -973,7 +979,7 @@ message FeatureAggrSpec {
   repeated string windows = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// FeatureCondition describes the state of a deployment at a certain point.
 message FeatureCondition {
   // Type of account condition.
   optional string type = 1;
@@ -1001,6 +1007,8 @@ message FeatureList {
 }
 
 // FeaturePipeline represent the processing of feature in the store.
+// +genclient
+// +genclient:noStatus
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
@@ -1017,7 +1025,7 @@ message FeaturePipeline {
   optional FeaturePipelineStatus status = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// FeaturePipelineCondition describes the state of a deployment at a certain point.
 message FeaturePipelineCondition {
   // Type of account condition.
   optional string type = 1;
@@ -1045,6 +1053,8 @@ message FeaturePipelineList {
 }
 
 // FeaturePipeline represent a feature set object in the feature store.
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
@@ -1062,7 +1072,7 @@ message FeaturePipelineRun {
   optional FeaturePipelineRunStatus status = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// FeaturePipelineRunCondition describes the state of a deployment at a certain point.
 message FeaturePipelineRunCondition {
   // Type of account condition.
   optional string type = 1;
@@ -1080,8 +1090,8 @@ message FeaturePipelineRunCondition {
   optional string message = 5;
 }
 
+// FeaturePipelineRunList contain a list of FeaturePipelineRun objects
 // +kubebuilder:object:root=true
-// FeatureList contain a list of feature objects
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 message FeaturePipelineRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -1255,6 +1265,9 @@ message FeatureStatus {
   repeated FeatureCondition conditions = 13;
 }
 
+// Featureset represents a featureset object
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1263,7 +1276,6 @@ message FeatureStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featuresets,singular=featureset,categories={data,modeld}
 // +kubebuilder:subresource:status
-// Featureset represents a featureset object
 message Featureset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1397,6 +1409,7 @@ message ImageLocation {
   optional string registryConnectionName = 2;
 }
 
+// LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
@@ -1406,7 +1419,6 @@ message ImageLocation {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,categories={data,modeld}
-// LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 message LabelingPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1444,6 +1456,8 @@ message LabelingPipelineList {
 }
 
 // LabelingPipeline represent a feature set object in the feature store.
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
@@ -1457,11 +1471,10 @@ message LabelingPipelineRun {
 
   optional LabelingPipelineRunSpec spec = 2;
 
-  // +optional
   optional LabelingPipelineRunStatus status = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// LabelingPipelineRunCondition describes the state of a deployment at a certain point.
 message LabelingPipelineRunCondition {
   // Type of account condition.
   optional string type = 1;
@@ -1489,21 +1502,21 @@ message LabelingPipelineRunList {
 
 // LabelSpec contain the desired state of a Label
 message LabelingPipelineRunSpec {
-  // The feature owner
+  // The owner of the LabelingPipelineRunSpec
   // +kubebuilder:default="no-one"
   optional string owner = 1;
 
-  // The product version for the feature.
+  // The product version for the pipeline
   // +optional
   optional string versionName = 2;
 
-  // FileName specify the name of the attribute
+  // LabelPipelineName specifies the name of LabelingPipeline
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:MinLength=1
   optional string featurePipelineName = 3;
 }
 
-// LabelStatus defines the observed state of Label
+// LabelPipelineRunStatus defines the observed state of Label
 message LabelingPipelineRunStatus {
   // The Start time of the run
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
@@ -1574,6 +1587,9 @@ message MaterializationSpec {
   optional int32 backfill = 6;
 }
 
+// Recipe represents a single batch of data
+// +genclient
+// +genclient:noStatus
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1584,13 +1600,11 @@ message MaterializationSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modeld,all}
-// Recipe represents a single batch of data
 message Recipe {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional RecipeSpec spec = 2;
 
-  // +optional
   optional RecipeStatus status = 3;
 }
 
@@ -1614,17 +1628,17 @@ message RecipeCondition {
   optional string message = 5;
 }
 
-// Specification for the recipe input
+// RecipeInputSpec specify the input for a recipe
 message RecipeInputSpec {
-  optional string datasetName = 2;
+  // DatasetName is the name of the dataset
+  optional string datasetName = 1;
 
-  // Folder of the actual data resides.
+  // Location is the folder of the actual data resides.
   // +required.
-  optional DataLocation location = 3;
+  optional DataLocation location = 2;
 
-  // dataset name
-  // format
-  optional string format = 4;
+  // Format is the dataset format
+  optional string format = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -1636,16 +1650,17 @@ message RecipeList {
   repeated Recipe items = 2;
 }
 
-// Specification for the recipe output
+// RecipeOutputSpec for the recipe output
 message RecipeOutputSpec {
-  // If true, create a new dataset when the recipe is done.
+  // CreateDataset if true, create a new dataset when the recipe is done.
   // +optional
   optional bool createDataset = 1;
 
+  // DatasetName is the name of the dataset output to the recipe
   // +optional
   optional string datasetName = 2;
 
-  // Folder of the actual data resides.
+  // Location is the data location folder of the actual data resides.
   // +required.
   optional DataLocation location = 3;
 }
@@ -1734,49 +1749,50 @@ message RecipeRunStatus {
 }
 
 message RecipeSampleSpec {
+  // Type is the sampling type
   optional string type = 1;
 
-  // The number of rows. Default is 500
+  // Rows is the number of rows. Default is 500
   // +optional
   optional int32 rows = 2;
 
-  // filter formula. Valid only if the sample is a filter.
+  // Filter formula. Valid only if the sample is a filter.
   // +optional
   optional string filter = 3;
 }
 
 // RecipeSpec defines the desired state of a dataset
 message RecipeSpec {
-  // The account name of the owner of this dataset
+  // Owner is the owner of the recipe
   // +kubebuilder:default="no-one"
   // +optional
   optional string owner = 1;
 
-  // VersionName is the data product version of the dataset
+  // VersionName is the data product version of the recipe
   // +kubebuilder:validation:MaxLength=63
   // required.
   optional string versionName = 2;
 
-  // User provided description
+  // Description is the user provided description
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default =""
   // +optional
   optional string description = 3;
 
-  // The recipe input spec.
+  // Input is the input recipe spec
   optional RecipeInputSpec input = 4;
 
-  // The reciepe steps
+  // Steps are the list of recipe steps
   repeated RecipeStep steps = 5;
 
-  // Use this as the output dataset name
+  // Output is the desired output
   optional RecipeOutputSpec output = 6;
 
-  // Specify the sampling paramters when viewing the recipe
+  // Sample specify the sampling paramters when viewing the recipe
   // +optional
   optional RecipeSampleSpec sample = 7;
 
-  // Specify the sampling paramters when viewing the recipe. By default the recipe controller use the product workload class.
+  // WorkloadClassName is the name of the workload used to execute this recipe
   // +optional
   optional string workloadClassName = 8;
 }
@@ -1788,12 +1804,14 @@ message RecipeStatus {
   repeated RecipeCondition conditions = 1;
 }
 
+// RecipeStep defines one step in the recipe
 message RecipeStep {
   optional string op = 1;
 
   repeated RecipeStepParam parameters = 2;
 }
 
+// RecipeStepParam is a key value parameter of the recipe
 message RecipeStepParam {
   optional string name = 1;
 

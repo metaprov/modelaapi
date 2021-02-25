@@ -87,14 +87,14 @@ type PredictionPipelineRunSpec struct {
 	// Labeled , true if this is labeled prediction request.
 	// Used usually for unit testing
 	Labeled bool `json:"labeled" protobuf:"bytes,2,opt,name=labeled"`
-	// The objective metric used to score
+	// Objective is the objective metric used to score
 	Objective *catalog.Metric `json:"objective" protobuf:"bytes,3,opt,name=objective"`
-	// In where we are using a dataset name. This can be dataset name
+	// DatasetName is where we are using a dataset name. This can be dataset name
 	// +optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// DataLocation of the input if using direct input file
+	// Input is of the input if using direct input file
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
-	// The key in the bucket for storing all the prediction output
+	// Output is the key in the bucket for storing all the prediction output
 	// +optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Owner of the run

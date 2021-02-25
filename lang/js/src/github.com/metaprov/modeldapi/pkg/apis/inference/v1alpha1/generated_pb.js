@@ -7497,10 +7497,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    score: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
     phase: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.toObject, includeInstance)
   };
@@ -7539,23 +7536,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setScore(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhase(value);
-      break;
-    case 4:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStarttime(value);
-      break;
-    case 5:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
       break;
     case 6:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition;
@@ -7591,34 +7574,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeDouble(
-      2,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
       3,
       f
-    );
-  }
-  f = message.getStarttime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = message.getCompletiontime();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -7629,42 +7589,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * optional double score = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.getScore = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.setScore = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.clearScore = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.hasScore = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -7701,80 +7625,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.hasPhase = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.getStarttime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.setStarttime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.clearStarttime = function() {
-  return this.setStarttime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.hasStarttime = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.getCompletiontime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.setCompletiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.hasCompletiontime = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

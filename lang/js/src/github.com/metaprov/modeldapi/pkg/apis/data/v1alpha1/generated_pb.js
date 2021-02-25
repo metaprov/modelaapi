@@ -27111,9 +27111,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datasetname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    format: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    format: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -27150,16 +27150,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.deser
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasetname(value);
       break;
-    case 3:
+    case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setFormat(value);
       break;
@@ -27192,25 +27192,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -27218,11 +27218,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.seria
 
 
 /**
- * optional string datasetName = 2;
+ * optional string datasetName = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.getDatasetname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -27231,7 +27231,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.setDatasetname = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -27240,7 +27240,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.clearDatasetname = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -27249,17 +27249,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.hasDatasetname = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional DataLocation location = 3;
+ * optional DataLocation location = 2;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, 3));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, 2));
 };
 
 
@@ -27268,7 +27268,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -27286,16 +27286,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string format = 4;
+ * optional string format = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.getFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -27304,7 +27304,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.setFormat = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -27313,7 +27313,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.clearFormat = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -27322,7 +27322,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec.prototype.hasFormat = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

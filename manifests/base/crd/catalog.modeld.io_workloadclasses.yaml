@@ -27,6 +27,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: WorkloadClass define a template for a trainer.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -56,6 +57,8 @@ spec:
                     type: string
                   items:
                     items:
+                      description: MLFramework define the metadata about a machine
+                        learning framework
                       properties:
                         apiVersion:
                           description: 'APIVersion defines the versioned schema of

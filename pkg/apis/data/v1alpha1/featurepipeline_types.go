@@ -15,16 +15,14 @@ import (
 // FeatureRef
 //==============================================================================
 
-// Feature condition
-// Condition on the entity
+// FeaturePipelineConditionType
 type FeaturePipelineConditionType string
 
-/// Feature Condition
 const (
 	FeaturePipelineReady FeaturePipelineConditionType = "Ready"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// FeaturePipelineCondition describes the state of a deployment at a certain point.
 type FeaturePipelineCondition struct {
 	// Type of account condition.
 	Type FeaturePipelineConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
@@ -38,10 +36,9 @@ type FeaturePipelineCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// FeaturePipeline represent the processing of feature in the store.
 // +genclient
 // +genclient:noStatus
-
-// FeaturePipeline represent the processing of feature in the store.
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true

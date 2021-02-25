@@ -7,4 +7,14 @@
 
 package v1alpha1
 
+type AlgorithmExpansion interface{}
+
+type CloudExpansion interface{}
+
 type MLFrameworkExpansion interface{}
+
+type PretrainedModelExpansion interface{}
+
+type UserRoleClassExpansion interface{}
+
+type WorkloadClassExpansion interface{}

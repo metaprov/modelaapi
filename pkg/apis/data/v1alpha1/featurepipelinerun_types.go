@@ -15,8 +15,7 @@ import (
 // FeatureRef
 //==============================================================================
 
-// Feature condition
-// Condition on the entity
+// FeaturePipelineRunConditionType
 type FeaturePipelineRunConditionType string
 
 /// Feature Condition
@@ -24,7 +23,7 @@ const (
 	FeaturePipelineRunReady FeaturePipelineRunConditionType = "Ready"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// FeaturePipelineRunCondition describes the state of a deployment at a certain point.
 type FeaturePipelineRunCondition struct {
 	// Type of account condition.
 	Type FeaturePipelineRunConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=FeatureConditionType"`
@@ -38,10 +37,9 @@ type FeaturePipelineRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// FeaturePipeline represent a feature set object in the feature store.
 // +genclient
 // +genclient:noStatus
-
-// FeaturePipeline represent a feature set object in the feature store.
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
@@ -58,8 +56,8 @@ type FeaturePipelineRun struct {
 	Status FeaturePipelineRunStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
+// FeaturePipelineRunList contain a list of FeaturePipelineRun objects
 // +kubebuilder:object:root=true
-// FeatureList contain a list of feature objects
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type FeaturePipelineRunList struct {
 	metav1.TypeMeta `json:",inline"`

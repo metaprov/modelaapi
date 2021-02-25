@@ -54,7 +54,7 @@ message ChannelStatus {
   optional string error = 2;
 }
 
-// Curtain represent a Curtain API object
+// Curtain represent an object which can be placed before or after predictor
 // +genclient
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -251,6 +251,7 @@ message PredictionChannel {
   optional StreamingChannelSpec streaming = 4;
 }
 
+// PredictionTemplate represents a prediction object
 // +genclient
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -265,7 +266,6 @@ message PredictionChannel {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictionpipelines,singular=predictionpipeline,categories={inference,modeld}
-// PredictionTemplate represents a prediction object
 message PredictionPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -362,17 +362,17 @@ message PredictionPipelineRunSpec {
   // Used usually for unit testing
   optional bool labeled = 2;
 
-  // The objective metric used to score
+  // Objective is the objective metric used to score
   optional string objective = 3;
 
-  // In where we are using a dataset name. This can be dataset name
+  // DatasetName is where we are using a dataset name. This can be dataset name
   // +optional
   optional string datasetName = 4;
 
-  // DataLocation of the input if using direct input file
+  // Input is of the input if using direct input file
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
-  // The key in the bucket for storing all the prediction output
+  // Output is the key in the bucket for storing all the prediction output
   // +optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
@@ -417,14 +417,14 @@ message PredictionPipelineSpec {
   // The objective metric used to score
   optional string objective = 3;
 
-  // In where we are using a dataset name. This can be dataset name
+  // DatasetName is where we are using a dataset name. This can be dataset name
   // +optional
   optional string datasetName = 4;
 
-  // DataLocation of the input if using direct input file
+  // Input is the DataLocation of the input if using direct input file
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
-  // The key in the bucket for storing all the prediction output
+  // Output is the key in the bucket for storing all the prediction output
   // +optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
@@ -435,26 +435,14 @@ message PredictionPipelineSpec {
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 message PredictionPipelineStatus {
-  // PredictionPipeline score based on the objective.
-  // +optional
-  optional double score = 2;
-
-  // The phase of the prediction
   // +optional
   optional string phase = 3;
-
-  // StartTime is the times that this prediction job started
-  // +optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
-
-  // CompletionTime is the time that this prediction job finished
-  // +optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
 
   // +optional
   repeated PredictionPipelineCondition conditions = 6;
 }
 
+// Predictor represent an PredictorName API object
 // +k8s:openapi-gen=true
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -467,13 +455,11 @@ message PredictionPipelineStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
-// PredictorName represent an PredictorName API object
 message Predictor {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional PredictorSpec spec = 2;
 
-  // +optional
   optional PredictorStatus status = 3;
 }
 

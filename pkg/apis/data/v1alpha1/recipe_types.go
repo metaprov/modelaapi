@@ -6,6 +6,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+//RecipePhase is the name of the phase
 type RecipePhase string
 
 const (
@@ -13,7 +14,7 @@ const (
 	RecipePhaseError RecipePhase = "Err"
 )
 
-// Condition on the dataset
+// RecipeConditionType is the condition on the Recipe
 type RecipeConditionType string
 
 /// RecipeName Condition
@@ -37,9 +38,9 @@ type RecipeCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// Recipe represents a single batch of data
 // +genclient
 // +genclient:noStatus
-
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -50,13 +51,11 @@ type RecipeCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modeld,all}
-// Recipe represents a single batch of data
 type Recipe struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              RecipeSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status RecipeStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              RecipeSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            RecipeStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
@@ -70,29 +69,29 @@ type RecipeList struct {
 
 //RecipeSpec defines the desired state of a dataset
 type RecipeSpec struct {
-	// The account name of the owner of this dataset
+	// Owner is the owner of the recipe
 	// +kubebuilder:default="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// VersionName is the data product version of the dataset
+	// VersionName is the data product version of the recipe
 	// +kubebuilder:validation:MaxLength=63
 	// required.
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// User provided description
+	// Description is the user provided description
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// The recipe input spec.
+	// Input is the input recipe spec
 	Input RecipeInputSpec `json:"input,omitempty" protobuf:"bytes,4,opt,name=input"`
-	// The reciepe steps
+	// Steps are the list of recipe steps
 	Steps []RecipeStep `json:"steps,omitempty" protobuf:"bytes,5,rep,name=steps"`
-	// Use this as the output dataset name
+	// Output is the desired output
 	Output RecipeOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
-	// Specify the sampling paramters when viewing the recipe
+	// Sample specify the sampling paramters when viewing the recipe
 	// +optional
 	Sample *RecipeSampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
-	// Specify the sampling paramters when viewing the recipe. By default the recipe controller use the product workload class.
+	// WorkloadClassName is the name of the workload used to execute this recipe
 	// +optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 }
@@ -104,15 +103,19 @@ type RecipeStatus struct {
 	Conditions []RecipeCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
 }
 
+//RecipeStep defines one step in the recipe
 type RecipeStep struct {
 	Op         RecipeStepOperation `json:"op,omitempty" protobuf:"bytes,1,opt,name=op"`
 	Parameters []*RecipeStepParam  `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters"`
 }
+
+//RecipeStepParam is a key value parameter of the recipe
 type RecipeStepParam struct {
 	Name  string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	Value string `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 
+//RecipeStepOperation is the operation name of one step in the recipe
 type RecipeStepOperation string
 
 const (
@@ -393,7 +396,7 @@ const (
 	UnpivotStepOp      RecipeStepOperation = "unpivot"
 )
 
-// Define how the recipe file is sampled.
+// SamplingType defines how the recipe file is sampled.
 type SamplingType string
 
 const (
@@ -404,34 +407,38 @@ const (
 )
 
 type RecipeSampleSpec struct {
+	//Type is the sampling type
 	Type SamplingType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// The number of rows. Default is 500
+	// Rows is the number of rows. Default is 500
 	// +optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,2,opt,name=rows"`
-	// filter formula. Valid only if the sample is a filter.
+	// Filter formula. Valid only if the sample is a filter.
 	// +optional
 	Filter *string `json:"string,omitempty" protobuf:"bytes,3,opt,name=filter"`
 }
 
-// Specification for the recipe input
+// RecipeInputSpec specify the input for a recipe
 type RecipeInputSpec struct {
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
-	// Folder of the actual data resides.
+	// DatasetName is the name of the dataset
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
+	// Location is the folder of the actual data resides.
 	// +required.
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
-	// dataset name
-	// format
-	Format v1alpha1.DataFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
+	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	// Format is the dataset format
+	Format *v1alpha1.DataFormat `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
-// Specification for the recipe output
+// RecipeOutputSpec for the recipe output
 type RecipeOutputSpec struct {
-	// If true, create a new dataset when the recipe is done.
+	// CreateDataset if true, create a new dataset when the recipe is done.
 	// +optional
 	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,1,opt,name=createDataset"`
+
+	// DatasetName is the name of the dataset output to the recipe
 	// +optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
-	// Folder of the actual data resides.
+
+	// Location is the data location folder of the actual data resides.
 	// +required.
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }

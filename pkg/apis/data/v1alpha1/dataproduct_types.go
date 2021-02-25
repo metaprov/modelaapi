@@ -36,9 +36,9 @@ type DataProductCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
+// DataProduct represent a single data product in the system
 // +genclient
 // +genclient:noStatus
-// DataProduct represent a single data product in the system
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true

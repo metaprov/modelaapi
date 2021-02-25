@@ -5,11 +5,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// WorkloadClass define a template for a trainer.
 // +genclient
 // +genclient:noStatus
-
-// WorkloadClass define a template for a trainer.
-
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

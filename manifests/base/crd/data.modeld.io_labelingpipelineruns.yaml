@@ -51,23 +51,23 @@ spec:
             description: LabelSpec contain the desired state of a Label
             properties:
               featurePipelineName:
-                description: FileName specify the name of the attribute
+                description: LabelPipelineName specifies the name of LabelingPipeline
                 maxLength: 64
                 minLength: 1
                 type: string
               owner:
                 default: no-one
-                description: The feature owner
+                description: The owner of the LabelingPipelineRunSpec
                 type: string
               versionName:
-                description: The product version for the feature.
+                description: The product version for the pipeline
                 type: string
             required:
             - featurePipelineName
             - owner
             type: object
           status:
-            description: LabelStatus defines the observed state of Label
+            description: LabelPipelineRunStatus defines the observed state of Label
             properties:
               completionTime:
                 description: The End time of the run
@@ -75,8 +75,8 @@ spec:
                 type: string
               conditions:
                 items:
-                  description: DeploymentCondition describes the state of a deployment
-                    at a certain point.
+                  description: LabelingPipelineRunCondition describes the state of
+                    a deployment at a certain point.
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -112,6 +112,7 @@ spec:
         required:
         - metadata
         - spec
+        - status
         type: object
     served: true
     storage: true

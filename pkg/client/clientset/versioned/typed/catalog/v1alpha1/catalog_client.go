@@ -15,7 +15,12 @@ import (
 
 type CatalogV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	AlgorithmsGetter
+	CloudsGetter
 	MLFrameworksGetter
+	PretrainedModelsGetter
+	UserRoleClassesGetter
+	WorkloadClassesGetter
 }
 
 // CatalogV1alpha1Client is used to interact with features provided by the catalog.modeld.io group.
@@ -23,8 +28,28 @@ type CatalogV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *CatalogV1alpha1Client) Algorithms(namespace string) AlgorithmInterface {
+	return newAlgorithms(c, namespace)
+}
+
+func (c *CatalogV1alpha1Client) Clouds(namespace string) CloudInterface {
+	return newClouds(c, namespace)
+}
+
 func (c *CatalogV1alpha1Client) MLFrameworks(namespace string) MLFrameworkInterface {
 	return newMLFrameworks(c, namespace)
+}
+
+func (c *CatalogV1alpha1Client) PretrainedModels(namespace string) PretrainedModelInterface {
+	return newPretrainedModels(c, namespace)
+}
+
+func (c *CatalogV1alpha1Client) UserRoleClasses(namespace string) UserRoleClassInterface {
+	return newUserRoleClasses(c, namespace)
+}
+
+func (c *CatalogV1alpha1Client) WorkloadClasses(namespace string) WorkloadClassInterface {
+	return newWorkloadClasses(c, namespace)
 }
 
 // NewForConfig creates a new CatalogV1alpha1Client for the given config.
