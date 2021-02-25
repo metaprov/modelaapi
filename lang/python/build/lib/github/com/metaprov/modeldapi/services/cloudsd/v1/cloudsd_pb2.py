@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/cloudsd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/cloudsd/v1/cloudsd.proto\x12\x31github.com.metaprov.modeldapi.services.cloudsd.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse\"\xca\x02\n\x19VirtualBucketExistRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\rcredNamespace\x18\x02 \x01(\t\x12\x10\n\x08\x63redName\x18\x03 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x04 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12h\n\x06secret\x18\x05 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1aVirtualBucketExistResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\xf1\x02\n\x1eKeyExistInVirtualBucketRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x15\n\rcredNamespace\x18\x04 \x01(\t\x12\x10\n\x08\x63redName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12m\n\x06secret\x18\x07 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"0\n\x1fKeyExistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x1c\n\x1a\x43loudVirtualBucketResponse\"\xdb\x02\n\x13\x46ileDownloadRequest\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x15\n\rcredNamespace\x18\x04 \x01(\t\x12\x10\n\x08\x63redName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12\x62\n\x06secret\x18\x07 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x46ileDownloadResponse\"\xd7\x02\n\x11\x46ileUploadRequest\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x15\n\rcredNamespace\x18\x04 \x01(\t\x12\x10\n\x08\x63redName\x18\x05 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x06 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12`\n\x06secret\x18\x07 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x46ileUploadResponse\"\xb0\x03\n\x1a\x43reateVirtualBucketRequest\x12\x12\n\nbucketName\x18\x01 \x01(\t\x12\\\n\nbucketSpec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x12\x15\n\rcredNamespace\x18\x03 \x01(\t\x12\x10\n\x08\x63redName\x18\x04 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x05 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12i\n\x06secret\x18\x07 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1d\n\x1b\x43reateVirtualBucketResponse2\x9f\x08\n\rCloudsService\x12\x9d\x01\n\x08\x44ownload\x12\x46.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest\x1aG.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadResponse\"\x00\x12\x97\x01\n\x06Upload\x12\x44.github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest\x1a\x45.github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadResponse\"\x00\x12\xc2\x01\n\x17KeyExistInVirtualBucket\x12Q.github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest\x1aR.github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketResponse\"\x00\x12\xb3\x01\n\x12VirtualBucketExist\x12L.github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest\x1aM.github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistResponse\"\x00\x12\xc0\x01\n\x1d\x43reateVirtualBucketIfNotExist\x12M.github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest\x1aN.github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketResponse\"\x00\x12\x95\x01\n\x08Shutdown\x12\x42.github.com.metaprov.modeldapi.services.cloudsd.v1.ShutdownRequest\x1a\x43.github.com.metaprov.modeldapi.services.cloudsd.v1.ShutdownResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/cloudsd/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/cloudsd/v1/cloudsd.proto\x12\x31github.com.metaprov.modeldapi.services.cloudsd.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse\"\xe1\x02\n\x19VirtualBucketExistRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1aVirtualBucketExistResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\xc0\x02\n\x1eKeyExistInVirtualBucketRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12m\n\x06secret\x18\x05 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"0\n\x1fKeyExistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\"\x1c\n\x1a\x43loudVirtualBucketResponse\"\xf0\x02\n\x13\x46ileDownloadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x62\n\x06secret\x18\x05 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x16\n\x14\x46ileDownloadResponse\"\xec\x02\n\x11\x46ileUploadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x05 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x14\n\x12\x46ileUploadResponse\"\xe3\x02\n\x1a\x43reateVirtualBucketRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1d\n\x1b\x43reateVirtualBucketResponse2\x9f\x08\n\rCloudsService\x12\x9d\x01\n\x08\x44ownload\x12\x46.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest\x1aG.github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadResponse\"\x00\x12\x97\x01\n\x06Upload\x12\x44.github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest\x1a\x45.github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadResponse\"\x00\x12\xc2\x01\n\x17KeyExistInVirtualBucket\x12Q.github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest\x1aR.github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketResponse\"\x00\x12\xb3\x01\n\x12VirtualBucketExist\x12L.github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest\x1aM.github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistResponse\"\x00\x12\xc0\x01\n\x1d\x43reateVirtualBucketIfNotExist\x12M.github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest\x1aN.github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketResponse\"\x00\x12\x95\x01\n\x08Shutdown\x12\x42.github.com.metaprov.modeldapi.services.cloudsd.v1.ShutdownRequest\x1a\x43.github.com.metaprov.modeldapi.services.cloudsd.v1.ShutdownResponse\"\x00\x42\x33Z1github.com/metaprov/modeldapi/services/cloudsd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -111,8 +111,8 @@ _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=559,
+  serialized_start=537,
+  serialized_end=582,
 )
 
 _VIRTUALBUCKETEXISTREQUEST = _descriptor.Descriptor(
@@ -124,36 +124,22 @@ _VIRTUALBUCKETEXISTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credNamespace', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.credNamespace', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credName', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.credName', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.connectionSpec', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.bucket', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.secret', index=4,
-      number=5, type=11, cpp_type=10, label=3,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.connection', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.VirtualBucketExistRequest.secret', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -171,7 +157,7 @@ _VIRTUALBUCKETEXISTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=229,
-  serialized_end=559,
+  serialized_end=582,
 )
 
 
@@ -202,8 +188,8 @@ _VIRTUALBUCKETEXISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=604,
+  serialized_start=584,
+  serialized_end=627,
 )
 
 
@@ -241,8 +227,8 @@ _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=559,
+  serialized_start=537,
+  serialized_end=582,
 )
 
 _KEYEXISTINVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
@@ -275,29 +261,15 @@ _KEYEXISTINVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='credNamespace', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.credNamespace', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credName', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.credName', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.connectionSpec', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.connection', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.secret', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.KeyExistInVirtualBucketRequest.secret', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -314,8 +286,8 @@ _KEYEXISTINVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=607,
-  serialized_end=976,
+  serialized_start=630,
+  serialized_end=950,
 )
 
 
@@ -346,8 +318,8 @@ _KEYEXISTINVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=978,
-  serialized_end=1026,
+  serialized_start=952,
+  serialized_end=1000,
 )
 
 
@@ -371,8 +343,8 @@ _CLOUDVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1028,
-  serialized_end=1056,
+  serialized_start=1002,
+  serialized_end=1030,
 )
 
 
@@ -410,8 +382,8 @@ _FILEDOWNLOADREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=559,
+  serialized_start=537,
+  serialized_end=582,
 )
 
 _FILEDOWNLOADREQUEST = _descriptor.Descriptor(
@@ -423,50 +395,36 @@ _FILEDOWNLOADREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.bucket', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.key', index=1,
+      name='path', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='path', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.path', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credNamespace', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.credNamespace', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credName', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.credName', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.connectionSpec', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.bucket', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.secret', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.connection', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileDownloadRequest.secret', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -483,8 +441,8 @@ _FILEDOWNLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1059,
-  serialized_end=1406,
+  serialized_start=1033,
+  serialized_end=1401,
 )
 
 
@@ -508,8 +466,8 @@ _FILEDOWNLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1408,
-  serialized_end=1430,
+  serialized_start=1403,
+  serialized_end=1425,
 )
 
 
@@ -547,8 +505,8 @@ _FILEUPLOADREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=559,
+  serialized_start=537,
+  serialized_end=582,
 )
 
 _FILEUPLOADREQUEST = _descriptor.Descriptor(
@@ -560,50 +518,36 @@ _FILEUPLOADREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.bucket', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.key', index=1,
+      name='path', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='path', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.path', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credNamespace', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.credNamespace', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credName', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.credName', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.connectionSpec', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.bucket', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.secret', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.connection', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.FileUploadRequest.secret', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -620,8 +564,8 @@ _FILEUPLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1433,
-  serialized_end=1776,
+  serialized_start=1428,
+  serialized_end=1792,
 )
 
 
@@ -645,8 +589,8 @@ _FILEUPLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1778,
-  serialized_end=1798,
+  serialized_start=1794,
+  serialized_end=1814,
 )
 
 
@@ -684,8 +628,8 @@ _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=559,
+  serialized_start=537,
+  serialized_end=582,
 )
 
 _CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
@@ -697,43 +641,22 @@ _CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bucketName', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.bucketName', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.bucket', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucketSpec', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.bucketSpec', index=1,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.connection', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='credNamespace', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.credNamespace', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credName', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.credName', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.connectionSpec', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.secret', index=5,
-      number=7, type=11, cpp_type=10, label=3,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.cloudsd.v1.CreateVirtualBucketRequest.secret', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -750,8 +673,8 @@ _CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1801,
-  serialized_end=2233,
+  serialized_start=1817,
+  serialized_end=2172,
 )
 
 
@@ -775,25 +698,28 @@ _CREATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2235,
-  serialized_end=2264,
+  serialized_start=2174,
+  serialized_end=2203,
 )
 
 _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY.containing_type = _VIRTUALBUCKETEXISTREQUEST
-_VIRTUALBUCKETEXISTREQUEST.fields_by_name['connectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_VIRTUALBUCKETEXISTREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_VIRTUALBUCKETEXISTREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _VIRTUALBUCKETEXISTREQUEST.fields_by_name['secret'].message_type = _VIRTUALBUCKETEXISTREQUEST_SECRETENTRY
 _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY.containing_type = _KEYEXISTINVIRTUALBUCKETREQUEST
-_KEYEXISTINVIRTUALBUCKETREQUEST.fields_by_name['connectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_KEYEXISTINVIRTUALBUCKETREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _KEYEXISTINVIRTUALBUCKETREQUEST.fields_by_name['secret'].message_type = _KEYEXISTINVIRTUALBUCKETREQUEST_SECRETENTRY
 _FILEDOWNLOADREQUEST_SECRETENTRY.containing_type = _FILEDOWNLOADREQUEST
-_FILEDOWNLOADREQUEST.fields_by_name['connectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_FILEDOWNLOADREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_FILEDOWNLOADREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _FILEDOWNLOADREQUEST.fields_by_name['secret'].message_type = _FILEDOWNLOADREQUEST_SECRETENTRY
 _FILEUPLOADREQUEST_SECRETENTRY.containing_type = _FILEUPLOADREQUEST
-_FILEUPLOADREQUEST.fields_by_name['connectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_FILEUPLOADREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_FILEUPLOADREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _FILEUPLOADREQUEST.fields_by_name['secret'].message_type = _FILEUPLOADREQUEST_SECRETENTRY
 _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY.containing_type = _CREATEVIRTUALBUCKETREQUEST
-_CREATEVIRTUALBUCKETREQUEST.fields_by_name['bucketSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKETSPEC
-_CREATEVIRTUALBUCKETREQUEST.fields_by_name['connectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_CREATEVIRTUALBUCKETREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_CREATEVIRTUALBUCKETREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _CREATEVIRTUALBUCKETREQUEST.fields_by_name['secret'].message_type = _CREATEVIRTUALBUCKETREQUEST_SECRETENTRY
 DESCRIPTOR.message_types_by_name['ShutdownRequest'] = _SHUTDOWNREQUEST
 DESCRIPTOR.message_types_by_name['ShutdownResponse'] = _SHUTDOWNRESPONSE
@@ -956,8 +882,8 @@ _CLOUDSSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2267,
-  serialized_end=3322,
+  serialized_start=2206,
+  serialized_end=3261,
   methods=[
   _descriptor.MethodDescriptor(
     name='Download',

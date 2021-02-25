@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modeldapi/services/entity/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/entity/v1/entity.proto\x12\x30github.com.metaprov.modeldapi.services.entity.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xba\x01\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x14ListEntitiesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14\x43reateEntityResponse\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14UpdateEntityResponse\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x11GetEntityResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteEntityResponse2\x9a\x07\n\rEntityService\x12\xb3\x01\n\x0cListEntities\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/entities\x12\xb9\x01\n\x0c\x43reateEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0c/v1/entities:\x04spec\x12\xb1\x01\n\tGetEntity\x12\x42.github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest\x1a\x43.github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/entities/{name}\x12\xc0\x01\n\x0cUpdateEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse\"!\x82\xd3\xe4\x93\x02\x1b\x1a\x13/v1/entities/{name}:\x04spec\x12\x9f\x01\n\x0c\x44\x65leteEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/entity/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modeldapi/services/entity/v1/entity.proto\x12\x30github.com.metaprov.modeldapi.services.entity.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xba\x01\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x14ListEntitiesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14\x43reateEntityResponse\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14UpdateEntityResponse\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x11GetEntityResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteEntityResponse2\x94\x07\n\rEntityService\x12\xb3\x01\n\x0cListEntities\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/entities\x12\xb6\x01\n\x0c\x43reateEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/entities:\x01*\x12\xb1\x01\n\tGetEntity\x12\x42.github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest\x1a\x43.github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/entities/{name}\x12\xbd\x01\n\x0cUpdateEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x1a\x13/v1/entities/{name}:\x01*\x12\x9f\x01\n\x0c\x44\x65leteEntity\x12\x45.github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest\x1a\x46.github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse\"\x00\x42\x32Z0github.com/metaprov/modeldapi/services/entity/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1000,
-  serialized_end=1922,
+  serialized_end=1916,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListEntities',
@@ -519,7 +519,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEENTITYREQUEST,
     output_type=_CREATEENTITYRESPONSE,
-    serialized_options=b'\202\323\344\223\002\024\"\014/v1/entities:\004spec',
+    serialized_options=b'\202\323\344\223\002\021\"\014/v1/entities:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEENTITYREQUEST,
     output_type=_UPDATEENTITYRESPONSE,
-    serialized_options=b'\202\323\344\223\002\033\032\023/v1/entities/{name}:\004spec',
+    serialized_options=b'\202\323\344\223\002\030\032\023/v1/entities/{name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(

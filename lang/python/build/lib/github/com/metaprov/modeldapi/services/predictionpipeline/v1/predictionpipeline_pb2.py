@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/metaprov/modeldapi/services/predictionpipeline/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nUgithub.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline.proto\x12<github.com.metaprov.modeldapi.services.predictionpipeline.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\"\xea\x01\n\x1eListPredictionPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12x\n\x06labels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modeldapi.services.predictionpipeline.v1.ListPredictionPipelinesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x83\x01\n\x1fListPredictionPipelinesResponse\x12`\n\x05items\x18\x01 \x01(\x0b\x32Q.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineList\"\"\n CreatePredictionPipelineResponse\"~\n\x1f\x43reatePredictionPipelineRequest\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"~\n\x1fUpdatePredictionPipelineRequest\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\"\n UpdatePredictionPipelineResponse\"?\n\x1cGetPredictionPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8a\x01\n\x1dGetPredictionPipelineResponse\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"B\n\x1f\x44\x65letePredictionPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n DeletePredictionPipelineResponse\"D\n!DownloadPredictionPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"1\n\"DownloadPredictionPipelineResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\x32\xbc\x0c\n\x19PredictionPipelineService\x12\xf7\x01\n\x17ListPredictionPipelines\x12\\.github.com.metaprov.modeldapi.services.predictionpipeline.v1.ListPredictionPipelinesRequest\x1a].github.com.metaprov.modeldapi.services.predictionpipeline.v1.ListPredictionPipelinesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/predictionpipelines\x12\x8e\x02\n\x18\x43reatePredictionPipeline\x12].github.com.metaprov.modeldapi.services.predictionpipeline.v1.CreatePredictionPipelineRequest\x1a^.github.com.metaprov.modeldapi.services.predictionpipeline.v1.CreatePredictionPipelineResponse\"3\x82\xd3\xe4\x93\x02-\"\x17/v1/predictionpipelines:\x12predictionpipeline\x12\xf8\x01\n\x15GetPredictionPipeline\x12Z.github.com.metaprov.modeldapi.services.predictionpipeline.v1.GetPredictionPipelineRequest\x1a[.github.com.metaprov.modeldapi.services.predictionpipeline.v1.GetPredictionPipelineResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/predictionpipelines/{name}\x12\x99\x02\n\x18UpdatePredictionPipeline\x12].github.com.metaprov.modeldapi.services.predictionpipeline.v1.UpdatePredictionPipelineRequest\x1a^.github.com.metaprov.modeldapi.services.predictionpipeline.v1.UpdatePredictionPipelineResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/predictions/{prediction.metadata.name}:\nprediction\x12\xf9\x01\n\x18\x44\x65letePredictionPipeline\x12].github.com.metaprov.modeldapi.services.predictionpipeline.v1.DeletePredictionPipelineRequest\x1a^.github.com.metaprov.modeldapi.services.predictionpipeline.v1.DeletePredictionPipelineResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/predictions/{name}\x12\x80\x02\n\x08\x44ownload\x12_.github.com.metaprov.modeldapi.services.predictionpipeline.v1.DownloadPredictionPipelineRequest\x1a`.github.com.metaprov.modeldapi.services.predictionpipeline.v1.DownloadPredictionPipelineResponse\"1\x82\xd3\xe4\x93\x02+\x12)/api/v1alpha1/predictions/{name}:downloadB>Z<github.com/metaprov/modeldapi/services/predictionpipeline/v1b\x06proto3'
+  serialized_pb=b'\nUgithub.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline.proto\x12<github.com.metaprov.modeldapi.services.predictionpipeline.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\"\xea\x01\n\x1eListPredictionPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12x\n\x06labels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modeldapi.services.predictionpipeline.v1.ListPredictionPipelinesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x83\x01\n\x1fListPredictionPipelinesResponse\x12`\n\x05items\x18\x01 \x01(\x0b\x32Q.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineList\"\"\n CreatePredictionPipelineResponse\"~\n\x1f\x43reatePredictionPipelineRequest\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"~\n\x1fUpdatePredictionPipelineRequest\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\"\n UpdatePredictionPipelineResponse\"?\n\x1cGetPredictionPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8a\x01\n\x1dGetPredictionPipelineResponse\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"B\n\x1f\x44\x65letePredictionPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n DeletePredictionPipelineResponse\"D\n!DownloadPredictionPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"1\n\"DownloadPredictionPipelineResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\x32\xf9\x0c\n\x19PredictionPipelineService\x12\xf7\x01\n\x17ListPredictionPipelines\x12\\.github.com.metaprov.modeldapi.services.predictionpipeline.v1.ListPredictionPipelinesRequest\x1a].github.com.metaprov.modeldapi.services.predictionpipeline.v1.ListPredictionPipelinesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/predictionpipelines\x12\xfd\x01\n\x18\x43reatePredictionPipeline\x12].github.com.metaprov.modeldapi.services.predictionpipeline.v1.CreatePredictionPipelineRequest\x1a^.github.com.metaprov.modeldapi.services.predictionpipeline.v1.CreatePredictionPipelineResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/predictionpipelines:\x01*\x12\x84\x02\n\x15GetPredictionPipeline\x12Z.github.com.metaprov.modeldapi.services.predictionpipeline.v1.GetPredictionPipelineRequest\x1a[.github.com.metaprov.modeldapi.services.predictionpipeline.v1.GetPredictionPipelineResponse\"2\x82\xd3\xe4\x93\x02,\x12*/v1/{namespace}/predictionpipelines/{name}\x12\xbf\x02\n\x18UpdatePredictionPipeline\x12].github.com.metaprov.modeldapi.services.predictionpipeline.v1.UpdatePredictionPipelineRequest\x1a^.github.com.metaprov.modeldapi.services.predictionpipeline.v1.UpdatePredictionPipelineResponse\"d\x82\xd3\xe4\x93\x02^\x1aY/v1/{predictionpipeline.metadata.namespace}predictions/{predictionpipeline.metadata.name}:\x01*\x12\x81\x02\n\x18\x44\x65letePredictionPipeline\x12].github.com.metaprov.modeldapi.services.predictionpipeline.v1.DeletePredictionPipelineRequest\x1a^.github.com.metaprov.modeldapi.services.predictionpipeline.v1.DeletePredictionPipelineResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/predictionpipelines/{name}\x12\x94\x02\n\x08\x44ownload\x12_.github.com.metaprov.modeldapi.services.predictionpipeline.v1.DownloadPredictionPipelineRequest\x1a`.github.com.metaprov.modeldapi.services.predictionpipeline.v1.DownloadPredictionPipelineResponse\"E\x82\xd3\xe4\x93\x02?\x12=/api/v1alpha1/{namespace}/predictionpipelines/{name}:downloadB>Z<github.com/metaprov/modeldapi/services/predictionpipeline/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -594,7 +594,7 @@ _PREDICTIONPIPELINESERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1387,
-  serialized_end=2983,
+  serialized_end=3044,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPredictionPipelines',
@@ -613,7 +613,7 @@ _PREDICTIONPIPELINESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEPREDICTIONPIPELINEREQUEST,
     output_type=_CREATEPREDICTIONPIPELINERESPONSE,
-    serialized_options=b'\202\323\344\223\002-\"\027/v1/predictionpipelines:\022predictionpipeline',
+    serialized_options=b'\202\323\344\223\002\034\"\027/v1/predictionpipelines:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -623,7 +623,7 @@ _PREDICTIONPIPELINESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETPREDICTIONPIPELINEREQUEST,
     output_type=_GETPREDICTIONPIPELINERESPONSE,
-    serialized_options=b'\202\323\344\223\002 \022\036/v1/predictionpipelines/{name}',
+    serialized_options=b'\202\323\344\223\002,\022*/v1/{namespace}/predictionpipelines/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -633,7 +633,7 @@ _PREDICTIONPIPELINESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEPREDICTIONPIPELINEREQUEST,
     output_type=_UPDATEPREDICTIONPIPELINERESPONSE,
-    serialized_options=b'\202\323\344\223\0028\032*/v1/predictions/{prediction.metadata.name}:\nprediction',
+    serialized_options=b'\202\323\344\223\002^\032Y/v1/{predictionpipeline.metadata.namespace}predictions/{predictionpipeline.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -643,7 +643,7 @@ _PREDICTIONPIPELINESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEPREDICTIONPIPELINEREQUEST,
     output_type=_DELETEPREDICTIONPIPELINERESPONSE,
-    serialized_options=b'\202\323\344\223\002\030*\026/v1/predictions/{name}',
+    serialized_options=b'\202\323\344\223\002 *\036/v1/predictionpipelines/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -653,7 +653,7 @@ _PREDICTIONPIPELINESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DOWNLOADPREDICTIONPIPELINEREQUEST,
     output_type=_DOWNLOADPREDICTIONPIPELINERESPONSE,
-    serialized_options=b'\202\323\344\223\002+\022)/api/v1alpha1/predictions/{name}:download',
+    serialized_options=b'\202\323\344\223\002?\022=/api/v1alpha1/{namespace}/predictionpipelines/{name}:download',
     create_key=_descriptor._internal_create_key,
   ),
 ])
