@@ -84,10 +84,10 @@ spec:
                   for this product
                 properties:
                   gitConnectionName:
-                    description: The credential to the git repo provider
+                    description: GitConnectionName
                     type: string
                   url:
-                    description: The url to the git repo.
+                    description: URL of the stakeholder
                     maxLength: 256
                     type: string
                 type: object
@@ -103,7 +103,6 @@ spec:
                   registryConnectionName:
                     description: The connection of the docker registry provider If
                       the value is empty, the system will not push images. optional
-                    pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                     type: string
                 type: object
               labName:
@@ -123,7 +122,6 @@ spec:
                 type: string
               owner:
                 description: The data product owner
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               retriesOnFailure:
                 default: 3
@@ -145,16 +143,20 @@ spec:
                     holder can hove one or more roles.
                   properties:
                     accountName:
+                      description: The account name of the stake holder
                       type: string
                     roles:
+                      description: The roles assigned to the stake holder
                       items:
+                        description: RoleName is the type of role a user can have
                         enum:
-                        - owner
-                        - sre
-                        - business
-                        - ml-engineer
+                        - administrator
                         - data-scientist
-                        - other
+                        - data-engineer
+                        - data-operations
+                        - sponsor
+                        - end-user
+                        - domain-expert
                         type: string
                       type: array
                   type: object

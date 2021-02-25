@@ -122,13 +122,13 @@ type MachineClassCost struct {
 //GpuClassCost contain the current cost of a gpu class in a region
 type GpuClassCost struct {
 	// Code is the machine class code
-	Code string `json:"region,omitempty" protobuf:"bytes,1,opt,name=region"`
+	Code string `json:"code,omitempty" protobuf:"bytes,1,opt,name=code"`
 
 	Region string `json:"region,omitempty" protobuf:"bytes,2,opt,name=region"`
 	// CostPerMinute is the cost per minute in dollar of the machine class
 	CostPerMinute *resource.Quantity `json:"costPerMinute,omitempty" protobuf:"bytes,3,opt,name=costPerMinute"`
 	// CostSpot is the spot cost of the machine class
-	CostSpot *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,3,opt,name=costSpot"`
+	CostSpot *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,4,opt,name=costSpot"`
 }
 
 // CloudStatus defines the observed state of Cloud.

@@ -23,10 +23,6 @@ spec:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ==============================================================================
-          CloudName ==============================================================================
-          Cloud represent a cloud provider. A cloud contains regions,datacenter,machine
-          classes
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -41,76 +37,102 @@ spec:
           metadata:
             type: object
           spec:
-            description: CloudSpec contains a list of Clouds
+            description: CloudSpec define the attribute of a single cloud provider
+              (E.g. AWS)
             properties:
               defaultGpuClassRef:
+                description: DefaultGpuClassName is the default gpu class. Used when
+                  allocating new gpu on this provider
                 type: string
               defaultMachineClassRef:
+                description: DefaultMachineClassName is the default machine class.
+                  Used when allocating new machine on this provider
                 type: string
               defaultRegionRef:
+                description: DefaultRegionName is the default region.
                 type: string
               gpuClasses:
+                description: GPUClasses define the type of GPUs offered by this provider
                 items:
                   description: GpuClass define the specific for a machine type of
                     a cloud provider
                   properties:
+                    code:
+                      description: Code the the code of the gpu class within the data
+                        provider
+                      type: string
                     gpumem:
                       anyOf:
                       - type: integer
                       - type: string
-                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
-                      x-kubernetes-int-or-string: true
-                    mem:
-                      anyOf:
-                      - type: integer
-                      - type: string
+                      description: Gpumem is the amount of memory on the gpu
                       pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                       x-kubernetes-int-or-string: true
                     regionName:
                       type: string
-                    storage:
-                      type: string
                     vcpu:
+                      description: Vcpu is the number of cores
                       format: int32
-                      minimum: 0
                       type: integer
                   required:
+                  - code
                   - regionName
                   type: object
                 type: array
               machineClasses:
+                description: MachineClasses defines the types of machines in this
+                  provider
                 items:
                   description: MachineClass define the specific for a machine type
                     of a cloud provider
                   properties:
+                    code:
+                      description: Code the the code of the machine class within the
+                        data provider
+                      type: string
                     mem:
                       anyOf:
                       - type: integer
                       - type: string
+                      description: Mem is the amount of memory on this machine
                       pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                       x-kubernetes-int-or-string: true
                     regionName:
                       type: string
                     storage:
+                      description: Storage is the amount of storage on this machine
+                        class
                       type: string
                     vcpu:
+                      description: Vcpu is the number of virtual cpus on this machine
                       format: int32
                       type: integer
+                  required:
+                  - code
                   type: object
                 type: array
               regions:
+                description: Regions define the type of regions offered by this provider
                 items:
-                  description: Region defines
+                  description: Region defines a region within the data provider
                   properties:
                     billingCode:
-                      description: The billing code of the region
+                      description: BillingCode is the billing code of the region
+                      type: string
+                    code:
+                      description: Code is the code of the region
                       type: string
                     datacenters:
+                      description: Datacenters if the list of datacenters
                       items:
+                        description: Datacenter contains the attribute of a specific
+                          data center
                         properties:
                           code:
+                            description: Code is the code of the datacenter
                             type: string
                           name:
+                            description: Name is the name of the datacenter
                             type: string
                         type: object
                       type: array
@@ -118,8 +140,11 @@ spec:
                       description: The default datacenter for a region
                       type: string
                     location:
-                      description: The location of the region
+                      description: Location is the location code The location of the
+                        region
                       type: string
+                  required:
+                  - code
                   type: object
                 type: array
             type: object
@@ -127,18 +152,27 @@ spec:
             description: CloudStatus defines the observed state of Cloud.
             properties:
               gpuCosts:
+                description: CostSpot is the spot cost of the machine class
                 items:
+                  description: GpuClassCost contain the current cost of a gpu class
+                    in a region
                   properties:
+                    code:
+                      description: Code is the machine class code
+                      type: string
                     costPerMinute:
                       anyOf:
                       - type: integer
                       - type: string
+                      description: CostPerMinute is the cost per minute in dollar
+                        of the machine class
                       pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                       x-kubernetes-int-or-string: true
                     costSpot:
                       anyOf:
                       - type: integer
                       - type: string
+                      description: CostSpot is the spot cost of the machine class
                       pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                       x-kubernetes-int-or-string: true
                     region:
@@ -146,21 +180,31 @@ spec:
                   type: object
                 type: array
               machineCosts:
+                description: Machine cost is the costs of
                 items:
+                  description: MachineClassCost contain the current cost of a machine
+                    class in a region
                   properties:
+                    code:
+                      description: Code is the machine class code
+                      type: string
                     costPerMinute:
                       anyOf:
                       - type: integer
                       - type: string
+                      description: CostPerMinute is the cost per minute in dollar
+                        of the machine class
                       pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                       x-kubernetes-int-or-string: true
                     costSpot:
                       anyOf:
                       - type: integer
                       - type: string
+                      description: CostSpot is the spot cost of the machine class
                       pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                       x-kubernetes-int-or-string: true
                     region:
+                      description: Region is the code of the region
                       type: string
                   type: object
                 type: array

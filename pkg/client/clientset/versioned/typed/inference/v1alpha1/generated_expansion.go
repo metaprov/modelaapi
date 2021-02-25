@@ -14,5 +14,3 @@ type PredictionPipelineExpansion interface{}
 type PredictionPipelineRunExpansion interface{}
 
 type PredictorExpansion interface{}
-
-type PredictorTemplateExpansion interface{}

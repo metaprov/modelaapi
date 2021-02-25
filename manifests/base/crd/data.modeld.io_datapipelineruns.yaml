@@ -30,7 +30,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataPipelineRun represent the joiner of dataset into the system
+        description: DataPipelineRun represent one execution of the data pipeline
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -62,18 +62,14 @@ spec:
                 type: object
               datapipelineName:
                 description: The data product
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
-                type: string
-              description:
-                description: User provided description
                 type: string
               owner:
                 default: no-one
-                description: The owner account name
+                description: The owner of the run, set to the owner of the pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               versionName:
-                description: The product of the rejoiner
+                description: The data product version of the run
                 type: string
             type: object
           status:

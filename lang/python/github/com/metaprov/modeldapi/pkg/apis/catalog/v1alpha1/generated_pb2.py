@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z\010v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto\x12\x37github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1\x1a\"k8s.io/api/core/v1/generated.proto\x1a\"k8s.io/api/rbac/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xff\x01\n\tAlgorithm\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmStatus\"\xa4\x01\n\rAlgorithmList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Algorithm\"\x98\x03\n\rAlgorithmSpec\x12\x15\n\rframeworkName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x0c\n\x04task\x18\x04 \x01(\t\x12\x0e\n\x06sparse\x18\x05 \x01(\x08\x12`\n\x11integerParameters\x18\x06 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter\x12`\n\x0f\x66loatParameters\x18\x07 \x03(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter\x12l\n\x15\x63\x61tegoricalParameters\x18\x08 \x03(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CategoricalParameter\"\x11\n\x0f\x41lgorithmStatus\"I\n\x14\x43\x61tegoricalParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x08 \x01(\t\x12\r\n\x05\x65nums\x18\n \x03(\t\"\xf3\x01\n\x05\x43loud\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudStatus\"\x9c\x01\n\tCloudList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Cloud\"\xec\x02\n\tCloudSpec\x12\x19\n\x11\x64\x65\x66\x61ultRegionName\x18\x01 \x01(\t\x12\x1f\n\x17\x64\x65\x66\x61ultMachineClassName\x18\x02 \x01(\t\x12\x1b\n\x13\x64\x65\x66\x61ultGpuClassName\x18\x03 \x01(\t\x12]\n\x0emachineClasses\x18\x04 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass\x12U\n\ngpuClasses\x18\x05 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass\x12P\n\x07regions\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region\"\xc7\x01\n\x0b\x43loudStatus\x12_\n\x0cmachineCosts\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost\x12W\n\x08gpuCosts\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost\"f\n\x13\x43ustomResourceError\x12>\n\noccurredAt\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0f\n\x07message\x18\x02 \x01(\t\"(\n\nDataCenter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"[\n\x0e\x46loatParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x01\x12\x0b\n\x03max\x18\x04 \x01(\x01\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x05 \x01(\x01\x12\x0b\n\x03log\x18\x06 \x01(\x08\"\xba\x01\n\x08GpuClass\x12\x12\n\nregionName\x18\x01 \x01(\t\x12;\n\x03mem\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0c\n\x04vcpu\x18\x03 \x01(\x05\x12>\n\x06gpumem\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0f\n\x07storage\x18\x05 \x01(\t\"\xa7\x01\n\x0cGpuClassCost\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\x45\n\rcostPerMinute\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"Z\n\x0cIntParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x05\x12\x0b\n\x03max\x18\x04 \x01(\x05\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x06 \x01(\x05\"\x85\x02\n\x0bMLFramework\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkStatus\"\xa8\x01\n\x0fMLFrameworkList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFramework\"R\n\x0fMLFrameworkSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x0c\n\x04lang\x18\x04 \x01(\t\"\x13\n\x11MLFrameworkStatus\"~\n\x0cMachineClass\x12\x12\n\nregionName\x18\x01 \x01(\t\x12;\n\x03mem\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0c\n\x04vcpu\x18\x03 \x01(\x05\x12\x0f\n\x07storage\x18\x04 \x01(\t\"\xab\x01\n\x10MachineClassCost\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\x45\n\rcostPerMinute\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\x91\x02\n\x0fPretrainedModel\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Z\n\x04spec\x18\x02 \x01(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelSpec\x12^\n\x06status\x18\x03 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelStatus\"\xb0\x01\n\x13PretrainedModelList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12W\n\x05items\x18\x02 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModel\"$\n\x13PretrainedModelSpec\x12\r\n\x05image\x18\x01 \x01(\t\"\x17\n\x15PretrainedModelStatus\"\xad\x01\n\rPublicDataset\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec\"\xac\x01\n\x11PublicDatasetList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDataset\"c\n\x11PublicDatasetSpec\x12\r\n\x05image\x18\x01 \x01(\t\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x14\n\x0c\x65xternalName\x18\x04 \x01(\t\x12\x0f\n\x07\x64\x61taUrl\x18\x05 \x01(\t\"\xa8\x01\n\x06Region\x12\x1d\n\x15\x64\x65\x66\x61ultDatacenterName\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\x12\x13\n\x0b\x62illingCode\x18\x03 \x01(\t\x12X\n\x0b\x64\x61tacenters\x18\x04 \x03(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter\"\xad\x01\n\rUserRoleClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec\"\xac\x01\n\x11UserRoleClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClass\"B\n\x11UserRoleClassSpec\x12-\n\x05rules\x18\x01 \x03(\x0b\x32\x1e.k8s.io.api.rbac.v1.PolicyRule\"#\n\x06VizUri\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\"\xad\x01\n\rWorkloadClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec\"\xac\x01\n\x11WorkloadClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClass\"\xc9\x01\n\x11WorkloadClassSpec\x12\r\n\x05image\x18\x01 \x01(\t\x12\r\n\x05tasks\x18\x02 \x03(\t\x12\\\n\nframeworks\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList\x12\x38\n\x0bpodTemplate\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpecB\nZ\x08v1alpha1'
+  serialized_pb=b'\nGgithub.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto\x12\x37github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1\x1a\"k8s.io/api/core/v1/generated.proto\x1a\"k8s.io/api/rbac/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xa5\x01\n\tAlgorithm\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec\"\xa4\x01\n\rAlgorithmList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Algorithm\"\x98\x03\n\rAlgorithmSpec\x12\x15\n\rframeworkName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x0c\n\x04task\x18\x04 \x01(\t\x12\x0e\n\x06sparse\x18\x05 \x01(\x08\x12`\n\x11integerParameters\x18\x06 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.IntParameter\x12`\n\x0f\x66loatParameters\x18\x07 \x03(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.FloatParameter\x12l\n\x15\x63\x61tegoricalParameters\x18\x08 \x03(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CategoricalParameter\"I\n\x14\x43\x61tegoricalParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x02 \x01(\t\x12\r\n\x05\x65nums\x18\x03 \x03(\t\"\xf3\x01\n\x05\x43loud\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudStatus\"\x9c\x01\n\tCloudList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Cloud\"\xec\x02\n\tCloudSpec\x12\x19\n\x11\x64\x65\x66\x61ultRegionName\x18\x01 \x01(\t\x12\x1f\n\x17\x64\x65\x66\x61ultMachineClassName\x18\x02 \x01(\t\x12\x1b\n\x13\x64\x65\x66\x61ultGpuClassName\x18\x03 \x01(\t\x12]\n\x0emachineClasses\x18\x04 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass\x12U\n\ngpuClasses\x18\x05 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass\x12P\n\x07regions\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region\"\xc7\x01\n\x0b\x43loudStatus\x12_\n\x0cmachineCosts\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost\x12W\n\x08gpuCosts\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost\"(\n\nDataCenter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"[\n\x0e\x46loatParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x01\x12\x0b\n\x03max\x18\x04 \x01(\x01\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x05 \x01(\x01\x12\x0b\n\x03log\x18\x06 \x01(\x08\"z\n\x08GpuClass\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x12\n\nregionName\x18\x02 \x01(\t\x12\x0c\n\x04vcpu\x18\x03 \x01(\x05\x12>\n\x06gpumem\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\xb5\x01\n\x0cGpuClassCost\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x45\n\rcostPerMinute\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"Z\n\x0cIntParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x05\x12\x0b\n\x03max\x18\x04 \x01(\x05\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x06 \x01(\x05\"\xa9\x01\n\x0bMLFramework\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec\"\xa8\x01\n\x0fMLFrameworkList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFramework\"R\n\x0fMLFrameworkSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x0c\n\x04lang\x18\x04 \x01(\t\"\x8c\x01\n\x0cMachineClass\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x12\n\nregionName\x18\x02 \x01(\t\x12;\n\x03mem\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0c\n\x04vcpu\x18\x04 \x01(\x05\x12\x0f\n\x07storage\x18\x05 \x01(\t\"\xb9\x01\n\x10MachineClassCost\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x45\n\rcostPerMinute\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\xb1\x01\n\x0fPretrainedModel\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Z\n\x04spec\x18\x02 \x01(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelSpec\"\xb0\x01\n\x13PretrainedModelList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12W\n\x05items\x18\x02 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModel\"$\n\x13PretrainedModelSpec\x12\r\n\x05image\x18\x01 \x01(\t\"\xad\x01\n\rPublicDataset\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec\"\xac\x01\n\x11PublicDatasetList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDataset\"c\n\x11PublicDatasetSpec\x12\r\n\x05image\x18\x01 \x01(\t\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x14\n\x0c\x65xternalName\x18\x04 \x01(\t\x12\x0f\n\x07\x64\x61taUrl\x18\x05 \x01(\t\"\xb6\x01\n\x06Region\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65\x66\x61ultDatacenterName\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x13\n\x0b\x62illingCode\x18\x04 \x01(\t\x12X\n\x0b\x64\x61tacenters\x18\x05 \x03(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter\"\xad\x01\n\rUserRoleClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec\"\xac\x01\n\x11UserRoleClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClass\"B\n\x11UserRoleClassSpec\x12-\n\x05rules\x18\x01 \x03(\x0b\x32\x1e.k8s.io.api.rbac.v1.PolicyRule\"#\n\x06VizUri\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\"\xad\x01\n\rWorkloadClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec\"\xac\x01\n\x11WorkloadClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClass\"\xc9\x01\n\x11WorkloadClassSpec\x12\r\n\x05image\x18\x01 \x01(\t\x12\r\n\x05tasks\x18\x02 \x03(\t\x12\\\n\nframeworks\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList\x12\x38\n\x0bpodTemplate\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpecB\nZ\x08v1alpha1'
   ,
   dependencies=[k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_rbac_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
@@ -54,13 +54,6 @@ _ALGORITHM = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Algorithm.status', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -74,7 +67,7 @@ _ALGORITHM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=418,
-  serialized_end=673,
+  serialized_end=583,
 )
 
 
@@ -112,8 +105,8 @@ _ALGORITHMLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=676,
-  serialized_end=840,
+  serialized_start=586,
+  serialized_end=750,
 )
 
 
@@ -193,33 +186,8 @@ _ALGORITHMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=843,
-  serialized_end=1251,
-)
-
-
-_ALGORITHMSTATUS = _descriptor.Descriptor(
-  name='AlgorithmStatus',
-  full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1253,
-  serialized_end=1270,
+  serialized_start=753,
+  serialized_end=1161,
 )
 
 
@@ -240,14 +208,14 @@ _CATEGORICALPARAMETER = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='defaultValue', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CategoricalParameter.defaultValue', index=1,
-      number=8, type=9, cpp_type=9, label=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='enums', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CategoricalParameter.enums', index=2,
-      number=10, type=9, cpp_type=9, label=3,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -264,8 +232,8 @@ _CATEGORICALPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1272,
-  serialized_end=1345,
+  serialized_start=1163,
+  serialized_end=1236,
 )
 
 
@@ -310,8 +278,8 @@ _CLOUD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1348,
-  serialized_end=1591,
+  serialized_start=1239,
+  serialized_end=1482,
 )
 
 
@@ -349,8 +317,8 @@ _CLOUDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1594,
-  serialized_end=1750,
+  serialized_start=1485,
+  serialized_end=1641,
 )
 
 
@@ -416,8 +384,8 @@ _CLOUDSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1753,
-  serialized_end=2117,
+  serialized_start=1644,
+  serialized_end=2008,
 )
 
 
@@ -455,47 +423,8 @@ _CLOUDSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2120,
-  serialized_end=2319,
-)
-
-
-_CUSTOMRESOURCEERROR = _descriptor.Descriptor(
-  name='CustomResourceError',
-  full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CustomResourceError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='occurredAt', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CustomResourceError.occurredAt', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CustomResourceError.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2321,
-  serialized_end=2423,
+  serialized_start=2011,
+  serialized_end=2210,
 )
 
 
@@ -533,8 +462,8 @@ _DATACENTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2425,
-  serialized_end=2465,
+  serialized_start=2212,
+  serialized_end=2252,
 )
 
 
@@ -593,8 +522,8 @@ _FLOATPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2467,
-  serialized_end=2558,
+  serialized_start=2254,
+  serialized_end=2345,
 )
 
 
@@ -607,16 +536,16 @@ _GPUCLASS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='regionName', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.regionName', index=0,
+      name='code', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.code', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mem', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.mem', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='regionName', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.regionName', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -634,13 +563,6 @@ _GPUCLASS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='storage', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.storage', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -653,8 +575,8 @@ _GPUCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2561,
-  serialized_end=2747,
+  serialized_start=2347,
+  serialized_end=2469,
 )
 
 
@@ -667,22 +589,29 @@ _GPUCLASSCOST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='region', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.region', index=0,
+      name='code', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.code', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='costPerMinute', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.costPerMinute', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='region', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.region', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='costPerMinute', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.costPerMinute', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='costSpot', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.costSpot', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='costSpot', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClassCost.costSpot', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -699,8 +628,8 @@ _GPUCLASSCOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2750,
-  serialized_end=2917,
+  serialized_start=2472,
+  serialized_end=2653,
 )
 
 
@@ -759,8 +688,8 @@ _INTPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2919,
-  serialized_end=3009,
+  serialized_start=2655,
+  serialized_end=2745,
 )
 
 
@@ -786,13 +715,6 @@ _MLFRAMEWORK = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFramework.status', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -805,8 +727,8 @@ _MLFRAMEWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3012,
-  serialized_end=3273,
+  serialized_start=2748,
+  serialized_end=2917,
 )
 
 
@@ -844,8 +766,8 @@ _MLFRAMEWORKLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3276,
-  serialized_end=3444,
+  serialized_start=2920,
+  serialized_end=3088,
 )
 
 
@@ -897,33 +819,8 @@ _MLFRAMEWORKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3446,
-  serialized_end=3528,
-)
-
-
-_MLFRAMEWORKSTATUS = _descriptor.Descriptor(
-  name='MLFrameworkStatus',
-  full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3530,
-  serialized_end=3549,
+  serialized_start=3090,
+  serialized_end=3172,
 )
 
 
@@ -936,29 +833,36 @@ _MACHINECLASS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='regionName', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.regionName', index=0,
+      name='code', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.code', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mem', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.mem', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='regionName', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.regionName', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mem', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.mem', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='vcpu', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.vcpu', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      name='vcpu', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.vcpu', index=3,
+      number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='storage', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.storage', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='storage', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.storage', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -975,8 +879,8 @@ _MACHINECLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3551,
-  serialized_end=3677,
+  serialized_start=3175,
+  serialized_end=3315,
 )
 
 
@@ -989,22 +893,29 @@ _MACHINECLASSCOST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='region', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.region', index=0,
+      name='code', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.code', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='costPerMinute', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.costPerMinute', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='region', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.region', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='costPerMinute', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.costPerMinute', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='costSpot', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.costSpot', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='costSpot', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClassCost.costSpot', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1021,8 +932,8 @@ _MACHINECLASSCOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3680,
-  serialized_end=3851,
+  serialized_start=3318,
+  serialized_end=3503,
 )
 
 
@@ -1048,13 +959,6 @@ _PRETRAINEDMODEL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModel.status', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1067,8 +971,8 @@ _PRETRAINEDMODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3854,
-  serialized_end=4127,
+  serialized_start=3506,
+  serialized_end=3683,
 )
 
 
@@ -1106,8 +1010,8 @@ _PRETRAINEDMODELLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4130,
-  serialized_end=4306,
+  serialized_start=3686,
+  serialized_end=3862,
 )
 
 
@@ -1138,33 +1042,8 @@ _PRETRAINEDMODELSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4308,
-  serialized_end=4344,
-)
-
-
-_PRETRAINEDMODELSTATUS = _descriptor.Descriptor(
-  name='PretrainedModelStatus',
-  full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4346,
-  serialized_end=4369,
+  serialized_start=3864,
+  serialized_end=3900,
 )
 
 
@@ -1202,8 +1081,8 @@ _PUBLICDATASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4372,
-  serialized_end=4545,
+  serialized_start=3903,
+  serialized_end=4076,
 )
 
 
@@ -1241,8 +1120,8 @@ _PUBLICDATASETLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4548,
-  serialized_end=4720,
+  serialized_start=4079,
+  serialized_end=4251,
 )
 
 
@@ -1301,8 +1180,8 @@ _PUBLICDATASETSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4722,
-  serialized_end=4821,
+  serialized_start=4253,
+  serialized_end=4352,
 )
 
 
@@ -1315,29 +1194,36 @@ _REGION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='defaultDatacenterName', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.defaultDatacenterName', index=0,
+      name='code', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.code', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='location', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.location', index=1,
+      name='defaultDatacenterName', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.defaultDatacenterName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='billingCode', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.billingCode', index=2,
+      name='location', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.location', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datacenters', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.datacenters', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='billingCode', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.billingCode', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='datacenters', full_name='github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.datacenters', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1354,8 +1240,8 @@ _REGION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4824,
-  serialized_end=4992,
+  serialized_start=4355,
+  serialized_end=4537,
 )
 
 
@@ -1393,8 +1279,8 @@ _USERROLECLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4995,
-  serialized_end=5168,
+  serialized_start=4540,
+  serialized_end=4713,
 )
 
 
@@ -1432,8 +1318,8 @@ _USERROLECLASSLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5171,
-  serialized_end=5343,
+  serialized_start=4716,
+  serialized_end=4888,
 )
 
 
@@ -1464,8 +1350,8 @@ _USERROLECLASSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5345,
-  serialized_end=5411,
+  serialized_start=4890,
+  serialized_end=4956,
 )
 
 
@@ -1503,8 +1389,8 @@ _VIZURI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5413,
-  serialized_end=5448,
+  serialized_start=4958,
+  serialized_end=4993,
 )
 
 
@@ -1542,8 +1428,8 @@ _WORKLOADCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5451,
-  serialized_end=5624,
+  serialized_start=4996,
+  serialized_end=5169,
 )
 
 
@@ -1581,8 +1467,8 @@ _WORKLOADCLASSLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5627,
-  serialized_end=5799,
+  serialized_start=5172,
+  serialized_end=5344,
 )
 
 
@@ -1634,13 +1520,12 @@ _WORKLOADCLASSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5802,
-  serialized_end=6003,
+  serialized_start=5347,
+  serialized_end=5548,
 )
 
 _ALGORITHM.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _ALGORITHM.fields_by_name['spec'].message_type = _ALGORITHMSPEC
-_ALGORITHM.fields_by_name['status'].message_type = _ALGORITHMSTATUS
 _ALGORITHMLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
 _ALGORITHMLIST.fields_by_name['items'].message_type = _ALGORITHM
 _ALGORITHMSPEC.fields_by_name['integerParameters'].message_type = _INTPARAMETER
@@ -1656,14 +1541,11 @@ _CLOUDSPEC.fields_by_name['gpuClasses'].message_type = _GPUCLASS
 _CLOUDSPEC.fields_by_name['regions'].message_type = _REGION
 _CLOUDSTATUS.fields_by_name['machineCosts'].message_type = _MACHINECLASSCOST
 _CLOUDSTATUS.fields_by_name['gpuCosts'].message_type = _GPUCLASSCOST
-_CUSTOMRESOURCEERROR.fields_by_name['occurredAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
-_GPUCLASS.fields_by_name['mem'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _GPUCLASS.fields_by_name['gpumem'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _GPUCLASSCOST.fields_by_name['costPerMinute'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _GPUCLASSCOST.fields_by_name['costSpot'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _MLFRAMEWORK.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _MLFRAMEWORK.fields_by_name['spec'].message_type = _MLFRAMEWORKSPEC
-_MLFRAMEWORK.fields_by_name['status'].message_type = _MLFRAMEWORKSTATUS
 _MLFRAMEWORKLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
 _MLFRAMEWORKLIST.fields_by_name['items'].message_type = _MLFRAMEWORK
 _MACHINECLASS.fields_by_name['mem'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
@@ -1671,7 +1553,6 @@ _MACHINECLASSCOST.fields_by_name['costPerMinute'].message_type = k8s_dot_io_dot_
 _MACHINECLASSCOST.fields_by_name['costSpot'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _PRETRAINEDMODEL.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _PRETRAINEDMODEL.fields_by_name['spec'].message_type = _PRETRAINEDMODELSPEC
-_PRETRAINEDMODEL.fields_by_name['status'].message_type = _PRETRAINEDMODELSTATUS
 _PRETRAINEDMODELLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
 _PRETRAINEDMODELLIST.fields_by_name['items'].message_type = _PRETRAINEDMODEL
 _PUBLICDATASET.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
@@ -1693,13 +1574,11 @@ _WORKLOADCLASSSPEC.fields_by_name['podTemplate'].message_type = k8s_dot_io_dot_a
 DESCRIPTOR.message_types_by_name['Algorithm'] = _ALGORITHM
 DESCRIPTOR.message_types_by_name['AlgorithmList'] = _ALGORITHMLIST
 DESCRIPTOR.message_types_by_name['AlgorithmSpec'] = _ALGORITHMSPEC
-DESCRIPTOR.message_types_by_name['AlgorithmStatus'] = _ALGORITHMSTATUS
 DESCRIPTOR.message_types_by_name['CategoricalParameter'] = _CATEGORICALPARAMETER
 DESCRIPTOR.message_types_by_name['Cloud'] = _CLOUD
 DESCRIPTOR.message_types_by_name['CloudList'] = _CLOUDLIST
 DESCRIPTOR.message_types_by_name['CloudSpec'] = _CLOUDSPEC
 DESCRIPTOR.message_types_by_name['CloudStatus'] = _CLOUDSTATUS
-DESCRIPTOR.message_types_by_name['CustomResourceError'] = _CUSTOMRESOURCEERROR
 DESCRIPTOR.message_types_by_name['DataCenter'] = _DATACENTER
 DESCRIPTOR.message_types_by_name['FloatParameter'] = _FLOATPARAMETER
 DESCRIPTOR.message_types_by_name['GpuClass'] = _GPUCLASS
@@ -1708,13 +1587,11 @@ DESCRIPTOR.message_types_by_name['IntParameter'] = _INTPARAMETER
 DESCRIPTOR.message_types_by_name['MLFramework'] = _MLFRAMEWORK
 DESCRIPTOR.message_types_by_name['MLFrameworkList'] = _MLFRAMEWORKLIST
 DESCRIPTOR.message_types_by_name['MLFrameworkSpec'] = _MLFRAMEWORKSPEC
-DESCRIPTOR.message_types_by_name['MLFrameworkStatus'] = _MLFRAMEWORKSTATUS
 DESCRIPTOR.message_types_by_name['MachineClass'] = _MACHINECLASS
 DESCRIPTOR.message_types_by_name['MachineClassCost'] = _MACHINECLASSCOST
 DESCRIPTOR.message_types_by_name['PretrainedModel'] = _PRETRAINEDMODEL
 DESCRIPTOR.message_types_by_name['PretrainedModelList'] = _PRETRAINEDMODELLIST
 DESCRIPTOR.message_types_by_name['PretrainedModelSpec'] = _PRETRAINEDMODELSPEC
-DESCRIPTOR.message_types_by_name['PretrainedModelStatus'] = _PRETRAINEDMODELSTATUS
 DESCRIPTOR.message_types_by_name['PublicDataset'] = _PUBLICDATASET
 DESCRIPTOR.message_types_by_name['PublicDatasetList'] = _PUBLICDATASETLIST
 DESCRIPTOR.message_types_by_name['PublicDatasetSpec'] = _PUBLICDATASETSPEC
@@ -1748,13 +1625,6 @@ AlgorithmSpec = _reflection.GeneratedProtocolMessageType('AlgorithmSpec', (_mess
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec)
   })
 _sym_db.RegisterMessage(AlgorithmSpec)
-
-AlgorithmStatus = _reflection.GeneratedProtocolMessageType('AlgorithmStatus', (_message.Message,), {
-  'DESCRIPTOR' : _ALGORITHMSTATUS,
-  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.generated_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmStatus)
-  })
-_sym_db.RegisterMessage(AlgorithmStatus)
 
 CategoricalParameter = _reflection.GeneratedProtocolMessageType('CategoricalParameter', (_message.Message,), {
   'DESCRIPTOR' : _CATEGORICALPARAMETER,
@@ -1790,13 +1660,6 @@ CloudStatus = _reflection.GeneratedProtocolMessageType('CloudStatus', (_message.
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudStatus)
   })
 _sym_db.RegisterMessage(CloudStatus)
-
-CustomResourceError = _reflection.GeneratedProtocolMessageType('CustomResourceError', (_message.Message,), {
-  'DESCRIPTOR' : _CUSTOMRESOURCEERROR,
-  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.generated_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CustomResourceError)
-  })
-_sym_db.RegisterMessage(CustomResourceError)
 
 DataCenter = _reflection.GeneratedProtocolMessageType('DataCenter', (_message.Message,), {
   'DESCRIPTOR' : _DATACENTER,
@@ -1854,13 +1717,6 @@ MLFrameworkSpec = _reflection.GeneratedProtocolMessageType('MLFrameworkSpec', (_
   })
 _sym_db.RegisterMessage(MLFrameworkSpec)
 
-MLFrameworkStatus = _reflection.GeneratedProtocolMessageType('MLFrameworkStatus', (_message.Message,), {
-  'DESCRIPTOR' : _MLFRAMEWORKSTATUS,
-  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.generated_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkStatus)
-  })
-_sym_db.RegisterMessage(MLFrameworkStatus)
-
 MachineClass = _reflection.GeneratedProtocolMessageType('MachineClass', (_message.Message,), {
   'DESCRIPTOR' : _MACHINECLASS,
   '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.generated_pb2'
@@ -1895,13 +1751,6 @@ PretrainedModelSpec = _reflection.GeneratedProtocolMessageType('PretrainedModelS
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelSpec)
   })
 _sym_db.RegisterMessage(PretrainedModelSpec)
-
-PretrainedModelStatus = _reflection.GeneratedProtocolMessageType('PretrainedModelStatus', (_message.Message,), {
-  'DESCRIPTOR' : _PRETRAINEDMODELSTATUS,
-  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.generated_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelStatus)
-  })
-_sym_db.RegisterMessage(PretrainedModelStatus)
 
 PublicDataset = _reflection.GeneratedProtocolMessageType('PublicDataset', (_message.Message,), {
   'DESCRIPTOR' : _PUBLICDATASET,

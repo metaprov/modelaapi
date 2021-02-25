@@ -6699,10 +6699,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    datapipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    datapipelinename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6745,18 +6744,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.d
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setDatapipelinename(value);
       break;
-    case 4:
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
       msg.setDatalocation(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -6803,25 +6798,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getDatalocation();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
@@ -6865,10 +6853,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
 
 
 /**
- * optional string description = 2;
+ * optional string datapipelineName = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getDescription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getDatapipelinename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -6877,7 +6865,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setDescription = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setDatapipelinename = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -6886,7 +6874,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearDescription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearDatapipelinename = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -6895,54 +6883,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasDescription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasDatapipelinename = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string datapipelineName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getDatapipelinename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setDatapipelinename = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearDatapipelinename = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasDatapipelinename = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional DataLocation dataLocation = 4;
+ * optional DataLocation dataLocation = 3;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getDatalocation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, 4));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, 3));
 };
 
 
@@ -6951,7 +6903,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setDatalocation = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -6969,16 +6921,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasDatalocation = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string owner = 5;
+ * optional string owner = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -6987,7 +6939,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -6996,7 +6948,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -7005,7 +6957,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -7459,7 +7411,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     inputdatasetsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     recipenamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    outputdataset: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    outputdatasetname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     schedule: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
@@ -7516,7 +7468,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOutputdataset(value);
+      msg.setOutputdatasetname(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -7754,10 +7706,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
 
 
 /**
- * optional string outputDataset = 5;
+ * optional string outputDatasetName = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getOutputdataset = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getOutputdatasetname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -7766,7 +7718,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setOutputdataset = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setOutputdatasetname = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -7775,7 +7727,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearOutputdataset = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearOutputdatasetname = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -7784,7 +7736,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasOutputdataset = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasOutputdatasetname = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -23055,8 +23007,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gitconnectionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+    gitconnectionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23093,11 +23045,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.deseriali
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setGitconnectionname(value);
       break;
-    case 1:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
@@ -23130,13 +23082,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeString(
@@ -23144,50 +23089,21 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.serialize
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string gitConnectionName = 2;
+ * optional string gitConnectionName = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.getGitconnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.setGitconnectionname = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.clearGitconnectionname = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasGitconnectionname = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string url = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.getUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -23196,7 +23112,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.setGitconnectionname = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -23205,7 +23121,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.clearUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.clearGitconnectionname = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -23214,8 +23130,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasGitconnectionname = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string url = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

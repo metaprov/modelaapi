@@ -19,11 +19,6 @@ export class Algorithm extends jspb.Message {
   hasSpec(): boolean;
   clearSpec(): Algorithm;
 
-  getStatus(): AlgorithmStatus | undefined;
-  setStatus(value?: AlgorithmStatus): Algorithm;
-  hasStatus(): boolean;
-  clearStatus(): Algorithm;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Algorithm.AsObject;
   static toObject(includeInstance: boolean, msg: Algorithm): Algorithm.AsObject;
@@ -36,7 +31,6 @@ export namespace Algorithm {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: AlgorithmSpec.AsObject,
-    status?: AlgorithmStatus.AsObject,
   }
 }
 
@@ -115,20 +109,6 @@ export namespace AlgorithmSpec {
     integerparametersList: Array<IntParameter.AsObject>,
     floatparametersList: Array<FloatParameter.AsObject>,
     categoricalparametersList: Array<CategoricalParameter.AsObject>,
-  }
-}
-
-export class AlgorithmStatus extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AlgorithmStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: AlgorithmStatus): AlgorithmStatus.AsObject;
-  static serializeBinaryToWriter(message: AlgorithmStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AlgorithmStatus;
-  static deserializeBinaryFromReader(message: AlgorithmStatus, reader: jspb.BinaryReader): AlgorithmStatus;
-}
-
-export namespace AlgorithmStatus {
-  export type AsObject = {
   }
 }
 
@@ -288,30 +268,6 @@ export namespace CloudStatus {
   }
 }
 
-export class CustomResourceError extends jspb.Message {
-  getOccurredat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setOccurredat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CustomResourceError;
-  hasOccurredat(): boolean;
-  clearOccurredat(): CustomResourceError;
-
-  getMessage(): string;
-  setMessage(value: string): CustomResourceError;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomResourceError.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomResourceError): CustomResourceError.AsObject;
-  static serializeBinaryToWriter(message: CustomResourceError, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomResourceError;
-  static deserializeBinaryFromReader(message: CustomResourceError, reader: jspb.BinaryReader): CustomResourceError;
-}
-
-export namespace CustomResourceError {
-  export type AsObject = {
-    occurredat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    message: string,
-  }
-}
-
 export class DataCenter extends jspb.Message {
   getName(): string;
   setName(value: string): DataCenter;
@@ -369,13 +325,11 @@ export namespace FloatParameter {
 }
 
 export class GpuClass extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): GpuClass;
+
   getRegionname(): string;
   setRegionname(value: string): GpuClass;
-
-  getMem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
-  setMem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): GpuClass;
-  hasMem(): boolean;
-  clearMem(): GpuClass;
 
   getVcpu(): number;
   setVcpu(value: number): GpuClass;
@@ -384,9 +338,6 @@ export class GpuClass extends jspb.Message {
   setGpumem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): GpuClass;
   hasGpumem(): boolean;
   clearGpumem(): GpuClass;
-
-  getStorage(): string;
-  setStorage(value: string): GpuClass;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GpuClass.AsObject;
@@ -398,15 +349,17 @@ export class GpuClass extends jspb.Message {
 
 export namespace GpuClass {
   export type AsObject = {
+    code: string,
     regionname: string,
-    mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     vcpu: number,
     gpumem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-    storage: string,
   }
 }
 
 export class GpuClassCost extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): GpuClassCost;
+
   getRegion(): string;
   setRegion(value: string): GpuClassCost;
 
@@ -430,6 +383,7 @@ export class GpuClassCost extends jspb.Message {
 
 export namespace GpuClassCost {
   export type AsObject = {
+    code: string,
     region: string,
     costperminute?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     costspot?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
@@ -481,11 +435,6 @@ export class MLFramework extends jspb.Message {
   hasSpec(): boolean;
   clearSpec(): MLFramework;
 
-  getStatus(): MLFrameworkStatus | undefined;
-  setStatus(value?: MLFrameworkStatus): MLFramework;
-  hasStatus(): boolean;
-  clearStatus(): MLFramework;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MLFramework.AsObject;
   static toObject(includeInstance: boolean, msg: MLFramework): MLFramework.AsObject;
@@ -498,7 +447,6 @@ export namespace MLFramework {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: MLFrameworkSpec.AsObject,
-    status?: MLFrameworkStatus.AsObject,
   }
 }
 
@@ -558,21 +506,10 @@ export namespace MLFrameworkSpec {
   }
 }
 
-export class MLFrameworkStatus extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MLFrameworkStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: MLFrameworkStatus): MLFrameworkStatus.AsObject;
-  static serializeBinaryToWriter(message: MLFrameworkStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MLFrameworkStatus;
-  static deserializeBinaryFromReader(message: MLFrameworkStatus, reader: jspb.BinaryReader): MLFrameworkStatus;
-}
-
-export namespace MLFrameworkStatus {
-  export type AsObject = {
-  }
-}
-
 export class MachineClass extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): MachineClass;
+
   getRegionname(): string;
   setRegionname(value: string): MachineClass;
 
@@ -597,6 +534,7 @@ export class MachineClass extends jspb.Message {
 
 export namespace MachineClass {
   export type AsObject = {
+    code: string,
     regionname: string,
     mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     vcpu: number,
@@ -605,6 +543,9 @@ export namespace MachineClass {
 }
 
 export class MachineClassCost extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): MachineClassCost;
+
   getRegion(): string;
   setRegion(value: string): MachineClassCost;
 
@@ -628,6 +569,7 @@ export class MachineClassCost extends jspb.Message {
 
 export namespace MachineClassCost {
   export type AsObject = {
+    code: string,
     region: string,
     costperminute?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     costspot?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
@@ -645,11 +587,6 @@ export class PretrainedModel extends jspb.Message {
   hasSpec(): boolean;
   clearSpec(): PretrainedModel;
 
-  getStatus(): PretrainedModelStatus | undefined;
-  setStatus(value?: PretrainedModelStatus): PretrainedModel;
-  hasStatus(): boolean;
-  clearStatus(): PretrainedModel;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PretrainedModel.AsObject;
   static toObject(includeInstance: boolean, msg: PretrainedModel): PretrainedModel.AsObject;
@@ -662,7 +599,6 @@ export namespace PretrainedModel {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: PretrainedModelSpec.AsObject,
-    status?: PretrainedModelStatus.AsObject,
   }
 }
 
@@ -707,20 +643,6 @@ export class PretrainedModelSpec extends jspb.Message {
 export namespace PretrainedModelSpec {
   export type AsObject = {
     image: string,
-  }
-}
-
-export class PretrainedModelStatus extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PretrainedModelStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: PretrainedModelStatus): PretrainedModelStatus.AsObject;
-  static serializeBinaryToWriter(message: PretrainedModelStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PretrainedModelStatus;
-  static deserializeBinaryFromReader(message: PretrainedModelStatus, reader: jspb.BinaryReader): PretrainedModelStatus;
-}
-
-export namespace PretrainedModelStatus {
-  export type AsObject = {
   }
 }
 
@@ -811,6 +733,9 @@ export namespace PublicDatasetSpec {
 }
 
 export class Region extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): Region;
+
   getDefaultdatacentername(): string;
   setDefaultdatacentername(value: string): Region;
 
@@ -835,6 +760,7 @@ export class Region extends jspb.Message {
 
 export namespace Region {
   export type AsObject = {
+    code: string,
     defaultdatacentername: string,
     location: string,
     billingcode: string,

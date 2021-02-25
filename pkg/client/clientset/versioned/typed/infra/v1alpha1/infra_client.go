@@ -19,7 +19,6 @@ type InfraV1alpha1Interface interface {
 	ConnectionsGetter
 	LabsGetter
 	LicensesGetter
-	MachineImagesGetter
 	NotifiersGetter
 	ServingSitesGetter
 	TenantsGetter
@@ -47,10 +46,6 @@ func (c *InfraV1alpha1Client) Labs(namespace string) LabInterface {
 
 func (c *InfraV1alpha1Client) Licenses(namespace string) LicenseInterface {
 	return newLicenses(c, namespace)
-}
-
-func (c *InfraV1alpha1Client) MachineImages(namespace string) MachineImageInterface {
-	return newMachineImages(c, namespace)
 }
 
 func (c *InfraV1alpha1Client) Notifiers(namespace string) NotifierInterface {

@@ -33,10 +33,6 @@ func (c *FakeInferenceV1alpha1) Predictors(namespace string) v1alpha1.PredictorI
 	return &FakePredictors{c, namespace}
 }
 
-func (c *FakeInferenceV1alpha1) PredictorTemplates(namespace string) v1alpha1.PredictorTemplateInterface {
-	return &FakePredictorTemplates{c, namespace}
-}
-
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeInferenceV1alpha1) RESTClient() rest.Interface {

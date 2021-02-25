@@ -23,13 +23,11 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.Algorithm":                        schema_pkg_apis_catalog_v1alpha1_Algorithm(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmList":                    schema_pkg_apis_catalog_v1alpha1_AlgorithmList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmSpec":                    schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmStatus":                  schema_pkg_apis_catalog_v1alpha1_AlgorithmStatus(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.CategoricalParameter":             schema_pkg_apis_catalog_v1alpha1_CategoricalParameter(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.Cloud":                            schema_pkg_apis_catalog_v1alpha1_Cloud(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.CloudList":                        schema_pkg_apis_catalog_v1alpha1_CloudList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.CloudSpec":                        schema_pkg_apis_catalog_v1alpha1_CloudSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.CloudStatus":                      schema_pkg_apis_catalog_v1alpha1_CloudStatus(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.CustomResourceError":              schema_pkg_apis_catalog_v1alpha1_CustomResourceError(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.DataCenter":                       schema_pkg_apis_catalog_v1alpha1_DataCenter(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.FloatParameter":                   schema_pkg_apis_catalog_v1alpha1_FloatParameter(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.GpuClass":                         schema_pkg_apis_catalog_v1alpha1_GpuClass(ref),
@@ -38,13 +36,11 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFramework":                      schema_pkg_apis_catalog_v1alpha1_MLFramework(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkList":                  schema_pkg_apis_catalog_v1alpha1_MLFrameworkList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkSpec":                  schema_pkg_apis_catalog_v1alpha1_MLFrameworkSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkStatus":                schema_pkg_apis_catalog_v1alpha1_MLFrameworkStatus(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MachineClass":                     schema_pkg_apis_catalog_v1alpha1_MachineClass(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MachineClassCost":                 schema_pkg_apis_catalog_v1alpha1_MachineClassCost(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModel":                  schema_pkg_apis_catalog_v1alpha1_PretrainedModel(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelList":              schema_pkg_apis_catalog_v1alpha1_PretrainedModelList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelSpec":              schema_pkg_apis_catalog_v1alpha1_PretrainedModelSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelStatus":            schema_pkg_apis_catalog_v1alpha1_PretrainedModelStatus(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PublicDataset":                    schema_pkg_apis_catalog_v1alpha1_PublicDataset(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PublicDatasetList":                schema_pkg_apis_catalog_v1alpha1_PublicDatasetList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PublicDatasetSpec":                schema_pkg_apis_catalog_v1alpha1_PublicDatasetSpec(ref),
@@ -181,9 +177,6 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorList":                  schema_pkg_apis_inference_v1alpha1_PredictorList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorSpec":                  schema_pkg_apis_inference_v1alpha1_PredictorSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorStatus":                schema_pkg_apis_inference_v1alpha1_PredictorStatus(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplate":              schema_pkg_apis_inference_v1alpha1_PredictorTemplate(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplateList":          schema_pkg_apis_inference_v1alpha1_PredictorTemplateList(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplateSpec":          schema_pkg_apis_inference_v1alpha1_PredictorTemplateSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.ProgressiveSpec":                schema_pkg_apis_inference_v1alpha1_ProgressiveSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.StreamingChannelSpec":           schema_pkg_apis_inference_v1alpha1_StreamingChannelSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.TableChannelSpec":               schema_pkg_apis_inference_v1alpha1_TableChannelSpec(ref),
@@ -226,11 +219,6 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.LinodeSpec":                         schema_pkg_apis_infra_v1alpha1_LinodeSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MSSqlServerSpec":                    schema_pkg_apis_infra_v1alpha1_MSSqlServerSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MSTeamSpec":                         schema_pkg_apis_infra_v1alpha1_MSTeamSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImage":                       schema_pkg_apis_infra_v1alpha1_MachineImage(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageCondition":              schema_pkg_apis_infra_v1alpha1_MachineImageCondition(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageList":                   schema_pkg_apis_infra_v1alpha1_MachineImageList(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageSpec":                   schema_pkg_apis_infra_v1alpha1_MachineImageSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageStatus":                 schema_pkg_apis_infra_v1alpha1_MachineImageStatus(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MattermostSpec":                     schema_pkg_apis_infra_v1alpha1_MattermostSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MinioSpec":                          schema_pkg_apis_infra_v1alpha1_MinioSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MongoDbSpec":                        schema_pkg_apis_infra_v1alpha1_MongoDbSpec(ref),
@@ -641,8 +629,7 @@ func schema_pkg_apis_catalog_v1alpha1_Algorithm(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "============================================================================== Algorithm ==============================================================================",
-				Type:        []string{"object"},
+				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -670,18 +657,12 @@ func schema_pkg_apis_catalog_v1alpha1_Algorithm(ref common.ReferenceCallback) co
 							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmSpec"),
 						},
 					},
-					"status": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmStatus"),
-						},
-					},
 				},
 				Required: []string{"spec"},
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmSpec", "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.AlgorithmSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -738,7 +719,7 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "AlgorithmSpec is the desired state of Algorithm.",
+				Description: "AlgorithmSpec describes the attributes of an machine learning algorithm",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"frameworkName": {
@@ -750,20 +731,21 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Description is the description of the algorithm",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"url": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Url for the algorithm information",
+							Description: "URL is a url to the html page describing the algorithm",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"task": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Algorithm Task (binary classification / regression)",
+							Description: "Task is the machine learning task (binary classification / regression)",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
@@ -771,14 +753,14 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 					},
 					"sparse": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Algorithm Task (binary classification / regression)",
+							Description: "Sparse indicate if this algorithm can deal with sparse data",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"integerParameters": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Integer hyper parameters",
+							Description: "IntegerParameters is the list of integer hyper parameter ranges.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -792,7 +774,7 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 					},
 					"floatParameters": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Float hyper parameters",
+							Description: "FloatParameters is the list of float hyper parameters ranges",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -806,7 +788,7 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 					},
 					"categoricalParameters": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Categorical hyper parameters",
+							Description: "CategoricalParameters is the list of categorical hyper parameters ranges",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -826,17 +808,6 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 	}
 }
 
-func schema_pkg_apis_catalog_v1alpha1_AlgorithmStatus(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "AlgorithmStatus defines the observed state of Datacenter.",
-				Type:        []string{"object"},
-			},
-		},
-	}
-}
-
 func schema_pkg_apis_catalog_v1alpha1_CategoricalParameter(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
@@ -853,7 +824,7 @@ func schema_pkg_apis_catalog_v1alpha1_CategoricalParameter(ref common.ReferenceC
 					},
 					"defaultValue": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default value",
+							Description: "DefaultValue if the default categorical value",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -883,8 +854,7 @@ func schema_pkg_apis_catalog_v1alpha1_Cloud(ref common.ReferenceCallback) common
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "============================================================================== CloudName ============================================================================== Cloud represent a cloud provider. A cloud contains regions,datacenter,machine classes",
-				Type:        []string{"object"},
+				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -931,7 +901,7 @@ func schema_pkg_apis_catalog_v1alpha1_CloudList(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "CloudList contains a list of Clouds",
+				Description: "CloudList contains a list of Cloud",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -980,30 +950,34 @@ func schema_pkg_apis_catalog_v1alpha1_CloudSpec(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "CloudSpec contains a list of Clouds",
+				Description: "CloudSpec define the attribute of a single cloud provider (E.g. AWS)",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"defaultRegionRef": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "DefaultRegionName is the default region.",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"defaultMachineClassRef": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "DefaultMachineClassName is the default machine class. Used when allocating new machine on this provider",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"defaultGpuClassRef": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "DefaultGpuClassName is the default gpu class. Used when allocating new gpu on this provider",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"machineClasses": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "MachineClasses defines the types of machines in this provider",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -1016,7 +990,8 @@ func schema_pkg_apis_catalog_v1alpha1_CloudSpec(ref common.ReferenceCallback) co
 					},
 					"gpuClasses": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "GPUClasses define the type of GPUs offered by this provider",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -1029,7 +1004,8 @@ func schema_pkg_apis_catalog_v1alpha1_CloudSpec(ref common.ReferenceCallback) co
 					},
 					"regions": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "Regions define the type of regions offered by this provider",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -1057,7 +1033,8 @@ func schema_pkg_apis_catalog_v1alpha1_CloudStatus(ref common.ReferenceCallback) 
 				Properties: map[string]spec.Schema{
 					"machineCosts": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "Machine cost is the costs of",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -1070,7 +1047,8 @@ func schema_pkg_apis_catalog_v1alpha1_CloudStatus(ref common.ReferenceCallback) 
 					},
 					"gpuCosts": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "CostSpot is the spot cost of the machine class",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -1089,50 +1067,25 @@ func schema_pkg_apis_catalog_v1alpha1_CloudStatus(ref common.ReferenceCallback) 
 	}
 }
 
-func schema_pkg_apis_catalog_v1alpha1_CustomResourceError(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "Update the error that occured during the operator reconcile process.",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"occurredAt": {
-						SchemaProps: spec.SchemaProps{
-							Description: "time of error",
-							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
-						},
-					},
-					"message": {
-						SchemaProps: spec.SchemaProps{
-							Description: "error message",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-				},
-			},
-		},
-		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
-	}
-}
-
 func schema_pkg_apis_catalog_v1alpha1_DataCenter(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Datacenter contains the attribute of a specific data center",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Name is the name of the datacenter",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"code": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Code is the code of the datacenter",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 				},
@@ -1178,7 +1131,7 @@ func schema_pkg_apis_catalog_v1alpha1_FloatParameter(ref common.ReferenceCallbac
 					},
 					"log": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Sample from a log parameter",
+							Description: "Log specify if this hyper paramer is logartimic",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -1196,6 +1149,14 @@ func schema_pkg_apis_catalog_v1alpha1_GpuClass(ref common.ReferenceCallback) com
 				Description: "GpuClass define the specific for a machine type of a cloud provider",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
+					"code": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Code the the code of the gpu class within the data provider",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"regionName": {
 						SchemaProps: spec.SchemaProps{
 							Default: "",
@@ -1203,31 +1164,21 @@ func schema_pkg_apis_catalog_v1alpha1_GpuClass(ref common.ReferenceCallback) com
 							Format:  "",
 						},
 					},
-					"mem": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
-						},
-					},
 					"vcpu": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"integer"},
-							Format: "int32",
+							Description: "Vcpu is the number of cores",
+							Type:        []string{"integer"},
+							Format:      "int32",
 						},
 					},
 					"gpumem": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
-						},
-					},
-					"storage": {
-						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Gpumem is the amount of memory on the gpu",
+							Ref:         ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
 						},
 					},
 				},
-				Required: []string{"regionName"},
+				Required: []string{"code", "regionName"},
 			},
 		},
 		Dependencies: []string{
@@ -1239,8 +1190,16 @@ func schema_pkg_apis_catalog_v1alpha1_GpuClassCost(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "GpuClassCost contain the current cost of a gpu class in a region",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
+					"code": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Code is the machine class code",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"region": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
@@ -1249,12 +1208,14 @@ func schema_pkg_apis_catalog_v1alpha1_GpuClassCost(ref common.ReferenceCallback)
 					},
 					"costPerMinute": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+							Description: "CostPerMinute is the cost per minute in dollar of the machine class",
+							Ref:         ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
 						},
 					},
 					"costSpot": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+							Description: "CostSpot is the spot cost of the machine class",
+							Ref:         ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
 						},
 					},
 				},
@@ -1288,21 +1249,21 @@ func schema_pkg_apis_catalog_v1alpha1_IntParameter(ref common.ReferenceCallback)
 					},
 					"min": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Min is the minimum value",
+							Description: "Min is the minimum value of the hyper parameter range",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"max": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Max is the maximum value",
+							Description: "Max is the maximum value of the hyper parameter range",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"defaultValue": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default parameter value",
+							Description: "DefaultValue is the default value of the parameter",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -1345,18 +1306,12 @@ func schema_pkg_apis_catalog_v1alpha1_MLFramework(ref common.ReferenceCallback) 
 							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkSpec"),
 						},
 					},
-					"status": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkStatus"),
-						},
-					},
 				},
 				Required: []string{"spec"},
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkSpec", "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1418,7 +1373,7 @@ func schema_pkg_apis_catalog_v1alpha1_MLFrameworkSpec(ref common.ReferenceCallba
 				Properties: map[string]spec.Schema{
 					"url": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Url for the home page of the mlframework",
+							Description: "URL for the home page of the mlframework",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -1439,23 +1394,12 @@ func schema_pkg_apis_catalog_v1alpha1_MLFrameworkSpec(ref common.ReferenceCallba
 					},
 					"lang": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The framework languge",
+							Description: "Lang is the framework lang",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 				},
-			},
-		},
-	}
-}
-
-func schema_pkg_apis_catalog_v1alpha1_MLFrameworkStatus(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "MLFrameworkStatus defines the observed state of Datacenter.",
-				Type:        []string{"object"},
 			},
 		},
 	}
@@ -1468,6 +1412,14 @@ func schema_pkg_apis_catalog_v1alpha1_MachineClass(ref common.ReferenceCallback)
 				Description: "MachineClass define the specific for a machine type of a cloud provider",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
+					"code": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Code the the code of the machine class within the data provider",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"regionName": {
 						SchemaProps: spec.SchemaProps{
 							Default: "",
@@ -1477,23 +1429,27 @@ func schema_pkg_apis_catalog_v1alpha1_MachineClass(ref common.ReferenceCallback)
 					},
 					"mem": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+							Description: "Mem is the amount of memory on this machine",
+							Ref:         ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
 						},
 					},
 					"vcpu": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"integer"},
-							Format: "int32",
+							Description: "Vcpu is the number of virtual cpus on this machine",
+							Type:        []string{"integer"},
+							Format:      "int32",
 						},
 					},
 					"storage": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Description: "Storage is the amount of storage on this machine class",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 				},
+				Required: []string{"code"},
 			},
 		},
 		Dependencies: []string{
@@ -1505,22 +1461,33 @@ func schema_pkg_apis_catalog_v1alpha1_MachineClassCost(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "MachineClassCost contain the current cost of a machine class in a region",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
+					"code": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Code is the machine class code",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"region": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Region is the code of the region",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"costPerMinute": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+							Description: "CostPerMinute is the cost per minute in dollar of the machine class",
+							Ref:         ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
 						},
 					},
 					"costSpot": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
+							Description: "CostSpot is the spot cost of the machine class",
+							Ref:         ref("k8s.io/apimachinery/pkg/api/resource.Quantity"),
 						},
 					},
 				},
@@ -1563,18 +1530,12 @@ func schema_pkg_apis_catalog_v1alpha1_PretrainedModel(ref common.ReferenceCallba
 							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelSpec"),
 						},
 					},
-					"status": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelStatus"),
-						},
-					},
 				},
 				Required: []string{"spec"},
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelSpec", "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.PretrainedModelSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1631,14 +1592,15 @@ func schema_pkg_apis_catalog_v1alpha1_PretrainedModelSpec(ref common.ReferenceCa
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "PrebuildModelSpec is the desired state of the pretrained model",
+				Description: "PretrainedModelSpec is the desired state of the pretrained model",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"image": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Description: "Image is the docker image of the pretrained model",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 				},
@@ -1648,21 +1610,11 @@ func schema_pkg_apis_catalog_v1alpha1_PretrainedModelSpec(ref common.ReferenceCa
 	}
 }
 
-func schema_pkg_apis_catalog_v1alpha1_PretrainedModelStatus(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
-			},
-		},
-	}
-}
-
 func schema_pkg_apis_catalog_v1alpha1_PublicDataset(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "PublicDataset",
+				Description: "PublicDataset represent the metadata about a public dataset",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -1764,9 +1716,10 @@ func schema_pkg_apis_catalog_v1alpha1_PublicDatasetSpec(ref common.ReferenceCall
 					},
 					"task": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Description: "Task is the machine learning task of the public dataset",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"id": {
@@ -1801,9 +1754,17 @@ func schema_pkg_apis_catalog_v1alpha1_Region(ref common.ReferenceCallback) commo
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Region defines",
+				Description: "Region defines a region within the data provider",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
+					"code": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Code is the code of the region",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"defaultDatacenterName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The default datacenter for a region",
@@ -1813,21 +1774,22 @@ func schema_pkg_apis_catalog_v1alpha1_Region(ref common.ReferenceCallback) commo
 					},
 					"location": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The location of the region",
+							Description: "Location is the location code The location of the region",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"billingCode": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The billing code of the region",
+							Description: "BillingCode is the billing code of the region",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"datacenters": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "Datacenters if the list of datacenters",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -1839,6 +1801,7 @@ func schema_pkg_apis_catalog_v1alpha1_Region(ref common.ReferenceCallback) commo
 						},
 					},
 				},
+				Required: []string{"code"},
 			},
 		},
 		Dependencies: []string{
@@ -1992,8 +1955,7 @@ func schema_pkg_apis_catalog_v1alpha1_WorkloadClass(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Trainer class define a template for a trainer.",
-				Type:        []string{"object"},
+				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -2083,18 +2045,21 @@ func schema_pkg_apis_catalog_v1alpha1_WorkloadClassSpec(ref common.ReferenceCall
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "WorkloadClassSpec defines the specification of  a workload class.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"image": {
 						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
+							Description: "Image is the container image of the workload",
+							Default:     "",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"tasks": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "Tasks are the machine learning tasks supported by the image",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -2108,13 +2073,14 @@ func schema_pkg_apis_catalog_v1alpha1_WorkloadClassSpec(ref common.ReferenceCall
 					},
 					"frameworks": {
 						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkList"),
+							Description: "Frameworks are the machine learning framework supported by the workload",
+							Default:     map[string]interface{}{},
+							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1.MLFrameworkList"),
 						},
 					},
 					"podTemplate": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Pod specification for new trainers from this workload class.",
+							Description: "Template is the Pod specification for new trainers from this workload class.",
 							Ref:         ref("k8s.io/api/core/v1.PodTemplateSpec"),
 						},
 					},
@@ -2714,7 +2680,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRun(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DataPipelineRun represent the joiner of dataset into the system",
+				Description: "DataPipelineRun represent one execution of the data pipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -2814,7 +2780,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunList(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DataPipelineList contains a list of DataPipeline",
+				Description: "DataPipelineRunList contains a list of DataPipelineRun",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -2868,14 +2834,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunSpec(ref common.ReferenceCallb
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The product of the rejoiner",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"description": {
-						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "The data product version of the run",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -2895,7 +2854,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunSpec(ref common.ReferenceCallb
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "The owner of the run, set to the owner of the pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -2933,6 +2892,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunStatus(ref common.ReferenceCal
 					"output": {
 						SchemaProps: spec.SchemaProps{
 							Description: "the resulting dataset from the flow",
+							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -2940,6 +2900,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineRunStatus(ref common.ReferenceCal
 					"phase": {
 						SchemaProps: spec.SchemaProps{
 							Description: "the phase of the run",
+							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -2987,21 +2948,21 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Dataproduct version",
+							Description: "VersionName is the data product version of the data pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description of the data pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"inputDatesets": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The datasets objects which are used for this pipeline. Each datafile can be from a bucket",
+							Description: "InputDatasets is the collection of input dataset names to the data pipelines",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -3016,7 +2977,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineSpec(ref common.ReferenceCallback
 					},
 					"recipeNames": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The recipe for this pipeline.",
+							Description: "RecipeNames is the recipe for this pipeline.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -3029,7 +2990,7 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineSpec(ref common.ReferenceCallback
 							},
 						},
 					},
-					"outputDataset": {
+					"outputDatasetName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The output file of the pipeline",
 							Type:        []string{"string"},
@@ -3038,14 +2999,14 @@ func schema_pkg_apis_data_v1alpha1_DataPipelineSpec(ref common.ReferenceCallback
 					},
 					"schedule": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A cron field to schedule the data pipeline.",
+							Description: "Schedule is a cron field to schedule the data pipeline.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "Owner of this data pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -4392,14 +4353,14 @@ func schema_pkg_apis_data_v1alpha1_EntitySpec(ref common.ReferenceCallback) comm
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description of the entity",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"keys": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Reference to the feature names of this entity",
+							Description: "Keys are the features that create a unique key to the entity.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -4414,7 +4375,7 @@ func schema_pkg_apis_data_v1alpha1_EntitySpec(ref common.ReferenceCallback) comm
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "Owner of this Entity",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -4458,7 +4419,7 @@ func schema_pkg_apis_data_v1alpha1_Feature(ref common.ReferenceCallback) common.
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Feature represent a feature object in the feature store.",
+				Description: "Feature represent a single feature in the feature store.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -4656,7 +4617,7 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipeline(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "FeaturePipeline represent a feature set object in the feature store.",
+				Description: "FeaturePipeline represent the processing of feature in the store.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -4692,7 +4653,7 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipeline(ref common.ReferenceCallback)
 						},
 					},
 				},
-				Required: []string{"metadata", "spec"},
+				Required: []string{"metadata", "spec", "status"},
 			},
 		},
 		Dependencies: []string{
@@ -5028,33 +4989,33 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "FeaturePipelineSpec contain the desired state of a Feature",
+				Description: "FeaturePipelineSpec contain the desired state of a FeaturePipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The feature owner",
+							Description: "Owner is the owner of the feature pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The product version for the feature.",
+							Description: "Version name is the the product version for the feature.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Comments is a description of the feature",
+							Description: "Description of the feature pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"aggregation": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Aggregation",
+							Description: "Aggregation is the aggregation spec",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.AggregationSpec"),
 						},
 					},
@@ -5066,7 +5027,7 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 					},
 					"family": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Feature Family name",
+							Description: "Family is the feature family",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5620,14 +5581,14 @@ func schema_pkg_apis_data_v1alpha1_GitLocation(ref common.ReferenceCallback) com
 				Properties: map[string]spec.Schema{
 					"gitConnectionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The credential to the git repo provider",
+							Description: "GitConnectionName",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"url": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The url to the git repo.",
+							Description: "URL of the stakeholder",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -6416,7 +6377,7 @@ func schema_pkg_apis_data_v1alpha1_RecipeRun(ref common.ReferenceCallback) commo
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Recipe run represent one execution of the recipe. Execution is perfomed by creating a kuberentes job.",
+				Description: "Recipe run represent one execution of the recipe. Execution is performed by creating a Kubernetes job.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -6941,13 +6902,15 @@ func schema_pkg_apis_data_v1alpha1_StakeHolder(ref common.ReferenceCallback) com
 				Properties: map[string]spec.Schema{
 					"accountName": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "The account name of the stake holder",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"roles": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "The roles assigned to the stake holder",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -7797,7 +7760,7 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineRun(ref common.Referen
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "PredictionTemplate represents a prediction object",
+				Description: "PredictionPipelineRun represents a single run of the Prediction Pipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -7959,7 +7922,7 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineRunSpec(ref common.Ref
 					},
 					"labeled": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Labeled , true if this is labeled prediction request. Used usally for unit testing",
+							Description: "Labeled , true if this is labeled prediction request. Used usually for unit testing",
 							Default:     false,
 							Type:        []string{"boolean"},
 							Format:      "",
@@ -7993,7 +7956,7 @@ func schema_pkg_apis_inference_v1alpha1_PredictionPipelineRunSpec(ref common.Ref
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "Owner of the run",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -8599,126 +8562,6 @@ func schema_pkg_apis_inference_v1alpha1_PredictorStatus(ref common.ReferenceCall
 		},
 		Dependencies: []string{
 			"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.ChannelStatus", "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.ModelDeploymentStatus", "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorCondition", "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorHealth", "k8s.io/apimachinery/pkg/apis/meta/v1.Timestamp"},
-	}
-}
-
-func schema_pkg_apis_inference_v1alpha1_PredictorTemplate(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "PredictorTemplate Template is a template for new studies",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"kind": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"apiVersion": {
-						SchemaProps: spec.SchemaProps{
-							Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"metadata": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
-							Default:     map[string]interface{}{},
-							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"),
-						},
-					},
-					"spec": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplateSpec"),
-						},
-					},
-				},
-				Required: []string{"spec"},
-			},
-		},
-		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
-	}
-}
-
-func schema_pkg_apis_inference_v1alpha1_PredictorTemplateList(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "PredictorTemplateList is a list of PredictorTemplates",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"kind": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"apiVersion": {
-						SchemaProps: spec.SchemaProps{
-							Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"metadata": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
-							Default:     map[string]interface{}{},
-							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"),
-						},
-					},
-					"items": {
-						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
-							Items: &spec.SchemaOrArray{
-								Schema: &spec.Schema{
-									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplate"),
-									},
-								},
-							},
-						},
-					},
-				},
-				Required: []string{"items"},
-			},
-		},
-		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorTemplate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
-	}
-}
-
-func schema_pkg_apis_inference_v1alpha1_PredictorTemplateSpec(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "PredictorSpec defines the desired state of the predictor resource.",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"metadata": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"),
-						},
-					},
-					"spec": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorSpec"),
-						},
-					},
-				},
-			},
-		},
-		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1.PredictorSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -10640,202 +10483,6 @@ func schema_pkg_apis_infra_v1alpha1_MSTeamSpec(ref common.ReferenceCallback) com
 				},
 			},
 		},
-	}
-}
-
-func schema_pkg_apis_infra_v1alpha1_MachineImage(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "MachineImage is an abstraction of virtual machine image that is used when adding new nodes to the cluster",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"kind": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"apiVersion": {
-						SchemaProps: spec.SchemaProps{
-							Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"metadata": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"),
-						},
-					},
-					"spec": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageSpec"),
-						},
-					},
-					"status": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageStatus"),
-						},
-					},
-				},
-				Required: []string{"spec"},
-			},
-		},
-		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
-	}
-}
-
-func schema_pkg_apis_infra_v1alpha1_MachineImageCondition(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "MachineImageCondition describes the state of the MachineImage at a certain point.",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"type": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Type of account condition.",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"status": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Status of the condition, one of True, False, Unknown.",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"lastTransitionTime": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Last time the condition transitioned from one status to another.",
-							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
-						},
-					},
-					"reason": {
-						SchemaProps: spec.SchemaProps{
-							Description: "The reason for the condition's last transition.",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"message": {
-						SchemaProps: spec.SchemaProps{
-							Description: "A human readable message indicating details about the transition.",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-				},
-				Required: []string{"type", "status"},
-			},
-		},
-		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
-	}
-}
-
-func schema_pkg_apis_infra_v1alpha1_MachineImageList(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
-				Properties: map[string]spec.Schema{
-					"kind": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"apiVersion": {
-						SchemaProps: spec.SchemaProps{
-							Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"metadata": {
-						SchemaProps: spec.SchemaProps{
-							Default: map[string]interface{}{},
-							Ref:     ref("k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"),
-						},
-					},
-					"items": {
-						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
-							Items: &spec.SchemaOrArray{
-								Schema: &spec.Schema{
-									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImage"),
-									},
-								},
-							},
-						},
-					},
-				},
-				Required: []string{"items"},
-			},
-		},
-		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImage", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
-	}
-}
-
-func schema_pkg_apis_infra_v1alpha1_MachineImageSpec(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "MachineImageSpec defines the desired state of MachineImage",
-				Type:        []string{"object"},
-				Properties: map[string]spec.Schema{
-					"content": {
-						SchemaProps: spec.SchemaProps{
-							Description: "The packer file definition.",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-				},
-				Required: []string{"content"},
-			},
-		},
-	}
-}
-
-func schema_pkg_apis_infra_v1alpha1_MachineImageStatus(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
-				Properties: map[string]spec.Schema{
-					"conditions": {
-						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
-							Items: &spec.SchemaOrArray{
-								Schema: &spec.Schema{
-									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageCondition"),
-									},
-								},
-							},
-						},
-					},
-				},
-			},
-		},
-		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.MachineImageCondition"},
 	}
 }
 

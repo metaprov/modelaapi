@@ -315,7 +315,7 @@ message PredictionPipelineList {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictionpipelineruns,singular=predictionpipelinerun,categories={inference,modeld}
-// PredictionTemplate represents a prediction object
+// PredictionPipelineRun represents a single run of the Prediction Pipeline
 message PredictionPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -359,7 +359,7 @@ message PredictionPipelineRunSpec {
   optional string predictorName = 1;
 
   // Labeled , true if this is labeled prediction request.
-  // Used usally for unit testing
+  // Used usually for unit testing
   optional bool labeled = 2;
 
   // The objective metric used to score
@@ -376,7 +376,7 @@ message PredictionPipelineRunSpec {
   // +optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
-  // The owner account name
+  // Owner of the run
   // +optional
   optional string owner = 7;
 }
@@ -611,38 +611,6 @@ message PredictorStatus {
 
   // The channels
   repeated ChannelStatus statuses = 7;
-}
-
-// +genclient
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +kubebuilder:object:root=true
-// PredictorTemplate Template is a template for new studies
-message PredictorTemplate {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional PredictorTemplateSpec spec = 2;
-}
-
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +kubebuilder:object:root=true
-// PredictorTemplateList is a list of PredictorTemplates
-message PredictorTemplateList {
-  // Standard object's metadata.
-  // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated PredictorTemplate items = 2;
-}
-
-// PredictorSpec defines the desired state of the predictor resource.
-message PredictorTemplateSpec {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional PredictorSpec spec = 2;
 }
 
 message ProgressiveSpec {

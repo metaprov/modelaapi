@@ -21,8 +21,6 @@ type Interface interface {
 	Labs() LabInformer
 	// Licenses returns a LicenseInformer.
 	Licenses() LicenseInformer
-	// MachineImages returns a MachineImageInformer.
-	MachineImages() MachineImageInformer
 	// Notifiers returns a NotifierInformer.
 	Notifiers() NotifierInformer
 	// ServingSites returns a ServingSiteInformer.
@@ -66,11 +64,6 @@ func (v *version) Labs() LabInformer {
 // Licenses returns a LicenseInformer.
 func (v *version) Licenses() LicenseInformer {
 	return &licenseInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
-// MachineImages returns a MachineImageInformer.
-func (v *version) MachineImages() MachineImageInformer {
-	return &machineImageInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Notifiers returns a NotifierInformer.

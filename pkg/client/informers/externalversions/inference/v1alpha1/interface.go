@@ -21,8 +21,6 @@ type Interface interface {
 	PredictionPipelineRuns() PredictionPipelineRunInformer
 	// Predictors returns a PredictorInformer.
 	Predictors() PredictorInformer
-	// PredictorTemplates returns a PredictorTemplateInformer.
-	PredictorTemplates() PredictorTemplateInformer
 }
 
 type version struct {
@@ -54,9 +52,4 @@ func (v *version) PredictionPipelineRuns() PredictionPipelineRunInformer {
 // Predictors returns a PredictorInformer.
 func (v *version) Predictors() PredictorInformer {
 	return &predictorInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
-// PredictorTemplates returns a PredictorTemplateInformer.
-func (v *version) PredictorTemplates() PredictorTemplateInformer {
-	return &predictorTemplateInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

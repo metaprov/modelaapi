@@ -467,9 +467,6 @@ export class DataPipelineRunSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): DataPipelineRunSpec;
 
-  getDescription(): string;
-  setDescription(value: string): DataPipelineRunSpec;
-
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataPipelineRunSpec;
 
@@ -492,7 +489,6 @@ export class DataPipelineRunSpec extends jspb.Message {
 export namespace DataPipelineRunSpec {
   export type AsObject = {
     versionname: string,
-    description: string,
     datapipelinename: string,
     datalocation?: DataLocation.AsObject,
     owner: string,
@@ -562,8 +558,8 @@ export class DataPipelineSpec extends jspb.Message {
   clearRecipenamesList(): DataPipelineSpec;
   addRecipenames(value: string, index?: number): DataPipelineSpec;
 
-  getOutputdataset(): string;
-  setOutputdataset(value: string): DataPipelineSpec;
+  getOutputdatasetname(): string;
+  setOutputdatasetname(value: string): DataPipelineSpec;
 
   getSchedule(): string;
   setSchedule(value: string): DataPipelineSpec;
@@ -585,7 +581,7 @@ export namespace DataPipelineSpec {
     description: string,
     inputdatasetsList: Array<string>,
     recipenamesList: Array<string>,
-    outputdataset: string,
+    outputdatasetname: string,
     schedule: string,
     owner: string,
   }

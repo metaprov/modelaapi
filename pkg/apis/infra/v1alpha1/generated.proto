@@ -794,60 +794,6 @@ message MSTeamSpec {
   optional string webhook = 1;
 }
 
-// +genclient
-// +genclient:noStatus
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +kubebuilder:object:root=true
-// +kubebuilder:resource:path=machineimages,singular=machineimage,categories={infra,modeld}
-// MachineImage is an abstraction of virtual machine image that is used when
-// adding new nodes to the cluster
-message MachineImage {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional MachineImageSpec spec = 2;
-
-  optional MachineImageStatus status = 3;
-}
-
-// MachineImageCondition describes the state of the MachineImage at a certain point.
-message MachineImageCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
-
-  // The reason for the condition's last transition.
-  optional string reason = 5;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 6;
-}
-
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +kubebuilder:object:root=true
-message MachineImageList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated MachineImage items = 2;
-}
-
-// MachineImageSpec defines the desired state of MachineImage
-message MachineImageSpec {
-  // The packer file definition.
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default = ""
-  optional string content = 1;
-}
-
-message MachineImageStatus {
-  // +optional
-  repeated MachineImageCondition conditions = 1;
-}
-
 message MattermostSpec {
   // +kubebuilder:default=""
   optional string url = 1;

@@ -15,8 +15,6 @@ type LabExpansion interface{}
 
 type LicenseExpansion interface{}
 
-type MachineImageExpansion interface{}
-
 type NotifierExpansion interface{}
 
 type ServingSiteExpansion interface{}

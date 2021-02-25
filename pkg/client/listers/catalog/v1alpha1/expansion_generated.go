@@ -7,22 +7,6 @@
 
 package v1alpha1
 
-// AlgorithmListerExpansion allows custom methods to be added to
-// AlgorithmLister.
-type AlgorithmListerExpansion interface{}
-
-// AlgorithmNamespaceListerExpansion allows custom methods to be added to
-// AlgorithmNamespaceLister.
-type AlgorithmNamespaceListerExpansion interface{}
-
-// CloudListerExpansion allows custom methods to be added to
-// CloudLister.
-type CloudListerExpansion interface{}
-
-// CloudNamespaceListerExpansion allows custom methods to be added to
-// CloudNamespaceLister.
-type CloudNamespaceListerExpansion interface{}
-
 // MLFrameworkListerExpansion allows custom methods to be added to
 // MLFrameworkLister.
 type MLFrameworkListerExpansion interface{}
@@ -30,27 +14,3 @@ type MLFrameworkListerExpansion interface{}
 // MLFrameworkNamespaceListerExpansion allows custom methods to be added to
 // MLFrameworkNamespaceLister.
 type MLFrameworkNamespaceListerExpansion interface{}
-
-// PretrainedModelListerExpansion allows custom methods to be added to
-// PretrainedModelLister.
-type PretrainedModelListerExpansion interface{}
-
-// PretrainedModelNamespaceListerExpansion allows custom methods to be added to
-// PretrainedModelNamespaceLister.
-type PretrainedModelNamespaceListerExpansion interface{}
-
-// UserRoleClassListerExpansion allows custom methods to be added to
-// UserRoleClassLister.
-type UserRoleClassListerExpansion interface{}
-
-// UserRoleClassNamespaceListerExpansion allows custom methods to be added to
-// UserRoleClassNamespaceLister.
-type UserRoleClassNamespaceListerExpansion interface{}
-
-// WorkloadClassListerExpansion allows custom methods to be added to
-// WorkloadClassLister.
-type WorkloadClassListerExpansion interface{}
-
-// WorkloadClassNamespaceListerExpansion allows custom methods to be added to
-// WorkloadClassNamespaceLister.
-type WorkloadClassNamespaceListerExpansion interface{}

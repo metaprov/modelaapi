@@ -39,14 +39,6 @@ type LicenseListerExpansion interface{}
 // LicenseNamespaceLister.
 type LicenseNamespaceListerExpansion interface{}
 
-// MachineImageListerExpansion allows custom methods to be added to
-// MachineImageLister.
-type MachineImageListerExpansion interface{}
-
-// MachineImageNamespaceListerExpansion allows custom methods to be added to
-// MachineImageNamespaceLister.
-type MachineImageNamespaceListerExpansion interface{}
-
 // NotifierListerExpansion allows custom methods to be added to
 // NotifierLister.
 type NotifierListerExpansion interface{}

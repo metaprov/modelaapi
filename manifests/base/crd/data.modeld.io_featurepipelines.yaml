@@ -32,8 +32,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeaturePipeline represent a feature set object in the feature
-          store.
+        description: FeaturePipeline represent the processing of feature in the store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -48,10 +47,10 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeaturePipelineSpec contain the desired state of a Feature
+            description: FeaturePipelineSpec contain the desired state of a FeaturePipeline
             properties:
               aggregation:
-                description: Aggregation
+                description: Aggregation is the aggregation spec
                 properties:
                   aggregations:
                     items:
@@ -75,14 +74,14 @@ spec:
                     type: string
                 type: object
               description:
-                description: Comments is a description of the feature
+                description: Description of the feature pipeline
                 maxLength: 512
                 type: string
               entityName:
                 description: Reference to the entity name
                 type: string
               family:
-                description: Feature Family name
+                description: Family is the feature family
                 type: string
               materialization:
                 description: Materialization
@@ -109,11 +108,11 @@ spec:
                 type: object
               owner:
                 default: no-one
-                description: The feature owner
+                description: Owner is the owner of the feature pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               versionName:
-                description: The product version for the feature.
+                description: Version name is the the product version for the feature.
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
             type: object
@@ -155,6 +154,7 @@ spec:
         required:
         - metadata
         - spec
+        - status
         type: object
     served: true
     storage: true

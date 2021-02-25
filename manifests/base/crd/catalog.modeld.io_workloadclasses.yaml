@@ -27,7 +27,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Trainer class define a template for a trainer.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -42,9 +41,12 @@ spec:
           metadata:
             type: object
           spec:
+            description: WorkloadClassSpec defines the specification of  a workload
+              class.
             properties:
               frameworks:
-                description: MLFrameworkList contains a list of MLFramework
+                description: Frameworks are the machine learning framework supported
+                  by the workload
                 properties:
                   apiVersion:
                     description: 'APIVersion defines the versioned schema of this
@@ -77,18 +79,14 @@ spec:
                               description: Comments of the framework
                               type: string
                             lang:
-                              description: The framework languge
+                              description: Lang is the framework lang
                               type: string
                             url:
-                              description: Url for the home page of the mlframework
+                              description: URL for the home page of the mlframework
                               type: string
                             version:
                               description: The current version of the mlframework
                               type: string
-                          type: object
-                        status:
-                          description: MLFrameworkStatus defines the observed state
-                            of Datacenter.
                           type: object
                       required:
                       - spec
@@ -151,10 +149,11 @@ spec:
                 - items
                 type: object
               image:
+                description: Image is the container image of the workload
                 type: string
               podTemplate:
-                description: The Pod specification for new trainers from this workload
-                  class.
+                description: Template is the Pod specification for new trainers from
+                  this workload class.
                 properties:
                   metadata:
                     description: 'Standard object''s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata'
@@ -6396,7 +6395,10 @@ spec:
                     type: object
                 type: object
               tasks:
+                description: Tasks are the machine learning tasks supported by the
+                  image
                 items:
+                  description: MLTask is the machine learning task name
                   enum:
                   - binary-classification
                   - multi-classification

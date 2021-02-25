@@ -48,33 +48,32 @@ spec:
             description: DataPipelineSpec defines the desired state of a DataPipeline
             properties:
               description:
-                description: User provided description
+                description: Description of the data pipeline
                 type: string
               inputDatesets:
-                description: The datasets objects which are used for this pipeline.
-                  Each datafile can be from a bucket
+                description: InputDatasets is the collection of input dataset names
+                  to the data pipelines
                 items:
                   type: string
                 type: array
-              outputDataset:
+              outputDatasetName:
                 description: The output file of the pipeline
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               owner:
                 default: no-one
-                description: The owner account name
+                description: Owner of this data pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               recipeNames:
-                description: The recipe for this pipeline.
+                description: RecipeNames is the recipe for this pipeline.
                 items:
                   type: string
                 type: array
               schedule:
-                description: A cron field to schedule the data pipeline.
+                description: Schedule is a cron field to schedule the data pipeline.
                 type: string
               versionName:
-                description: Dataproduct version
+                description: VersionName is the data product version of the data pipeline
                 type: string
             type: object
           status:

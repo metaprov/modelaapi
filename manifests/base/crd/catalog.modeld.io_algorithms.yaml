@@ -21,20 +21,23 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .spec.frameworkName
+    - description: ML Framework name
+      jsonPath: .spec.frameworkName
       name: Framework
       type: string
     - jsonPath: .spec.url
       name: Repository
       type: string
-    - jsonPath: .spec.task
+    - description: ML task name
+      jsonPath: .spec.task
       name: Task
       type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ==============================================================================
-          Algorithm ==============================================================================
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -49,16 +52,18 @@ spec:
           metadata:
             type: object
           spec:
-            description: AlgorithmSpec is the desired state of Algorithm.
+            description: AlgorithmSpec describes the attributes of an machine learning
+              algorithm
             properties:
               categoricalParameters:
-                description: Categorical hyper parameters
+                description: CategoricalParameters is the list of categorical hyper
+                  parameters ranges
                 items:
                   description: CategoricalParameter contain the specification of an
                     categorical hyper parameter
                   properties:
                     defaultValue:
-                      description: Default value
+                      description: DefaultValue if the default categorical value
                       type: string
                     enums:
                       description: Enums defines the list of values
@@ -71,9 +76,11 @@ spec:
                   type: object
                 type: array
               description:
+                description: Description is the description of the algorithm
                 type: string
               floatParameters:
-                description: Float hyper parameters
+                description: FloatParameters is the list of float hyper parameters
+                  ranges
                 items:
                   description: FloatParameter contain the specification of an float
                     hyper parameter
@@ -82,7 +89,7 @@ spec:
                       description: Default float value
                       type: number
                     log:
-                      description: Sample from a log parameter
+                      description: Log specify if this hyper paramer is logartimic
                       type: boolean
                     max:
                       description: Max is the maximum value
@@ -99,21 +106,24 @@ spec:
                 description: FrameworkName is a reference to library
                 type: string
               integerParameters:
-                description: Integer hyper parameters
+                description: IntegerParameters is the list of integer hyper parameter
+                  ranges.
                 items:
                   description: IntParameter contain the specification of an integer
                     hyper parameter
                   properties:
                     defaultValue:
-                      description: Default parameter value
+                      description: DefaultValue is the default value of the parameter
                       format: int32
                       type: integer
                     max:
-                      description: Max is the maximum value
+                      description: Max is the maximum value of the hyper parameter
+                        range
                       format: int32
                       type: integer
                     min:
-                      description: Min is the minimum value
+                      description: Min is the minimum value of the hyper parameter
+                        range
                       format: int32
                       type: integer
                     name:
@@ -142,10 +152,12 @@ spec:
                   type: object
                 type: array
               sparse:
-                description: The Algorithm Task (binary classification / regression)
+                description: Sparse indicate if this algorithm can deal with sparse
+                  data
                 type: boolean
               task:
-                description: The Algorithm Task (binary classification / regression)
+                description: Task is the machine learning task (binary classification
+                  / regression)
                 enum:
                 - binary-classification
                 - multi-classification
@@ -162,11 +174,8 @@ spec:
                 - unknown
                 type: string
               url:
-                description: The Url for the algorithm information
+                description: URL is a url to the html page describing the algorithm
                 type: string
-            type: object
-          status:
-            description: AlgorithmStatus defines the observed state of Datacenter.
             type: object
         required:
         - spec

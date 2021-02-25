@@ -51,17 +51,14 @@ spec:
                 description: Comments of the framework
                 type: string
               lang:
-                description: The framework languge
+                description: Lang is the framework lang
                 type: string
               url:
-                description: Url for the home page of the mlframework
+                description: URL for the home page of the mlframework
                 type: string
               version:
                 description: The current version of the mlframework
                 type: string
-            type: object
-          status:
-            description: MLFrameworkStatus defines the observed state of Datacenter.
             type: object
         required:
         - spec

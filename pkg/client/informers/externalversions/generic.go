@@ -47,18 +47,8 @@ func (f *genericInformer) Lister() cache.GenericLister {
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
 	// Group=catalog.modeld.io, Version=v1alpha1
-	case v1alpha1.SchemeGroupVersion.WithResource("algorithms"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().Algorithms().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("clouds"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().Clouds().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("mlframeworks"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().MLFrameworks().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("pretrainedmodels"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().PretrainedModels().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("userroleclasses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().UserRoleClasses().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("workloadclasses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Catalog().V1alpha1().WorkloadClasses().Informer()}, nil
 
 		// Group=data.modeld.io, Version=v1alpha1
 	case datav1alpha1.SchemeGroupVersion.WithResource("datapipelines"):
@@ -101,8 +91,6 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Inference().V1alpha1().PredictionPipelineRuns().Informer()}, nil
 	case inferencev1alpha1.SchemeGroupVersion.WithResource("predictors"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Inference().V1alpha1().Predictors().Informer()}, nil
-	case inferencev1alpha1.SchemeGroupVersion.WithResource("predictortemplates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Inference().V1alpha1().PredictorTemplates().Informer()}, nil
 
 		// Group=infra.modeld.io, Version=v1alpha1
 	case infrav1alpha1.SchemeGroupVersion.WithResource("accounts"):
@@ -113,8 +101,6 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Infra().V1alpha1().Labs().Informer()}, nil
 	case infrav1alpha1.SchemeGroupVersion.WithResource("licenses"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Infra().V1alpha1().Licenses().Informer()}, nil
-	case infrav1alpha1.SchemeGroupVersion.WithResource("machineimages"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Infra().V1alpha1().MachineImages().Informer()}, nil
 	case infrav1alpha1.SchemeGroupVersion.WithResource("notifiers"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Infra().V1alpha1().Notifiers().Informer()}, nil
 	case infrav1alpha1.SchemeGroupVersion.WithResource("servingsites"):

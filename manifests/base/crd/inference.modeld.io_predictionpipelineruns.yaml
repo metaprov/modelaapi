@@ -47,7 +47,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PredictionTemplate represents a prediction object
+        description: PredictionPipelineRun represents a single run of the Prediction
+          Pipeline
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -83,7 +84,7 @@ spec:
                 type: object
               labeled:
                 description: Labeled , true if this is labeled prediction request.
-                  Used usally for unit testing
+                  Used usually for unit testing
                 type: boolean
               objective:
                 description: The objective metric used to score
@@ -144,7 +145,7 @@ spec:
                 - path
                 type: object
               owner:
-                description: The owner account name
+                description: Owner of the run
                 type: string
               predictorName:
                 description: PredictorName refer to the predictor which would predict

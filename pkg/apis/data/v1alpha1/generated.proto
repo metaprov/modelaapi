@@ -292,7 +292,7 @@ message DataPipelineList {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,categories={data,modeld,all}
-// DataPipelineRun represent the joiner of dataset into the system
+// DataPipelineRun represent one execution of the data pipeline
 message DataPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -321,7 +321,7 @@ message DataPipelineRunCondition {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// DataPipelineList contains a list of DataPipeline
+// DataPipelineRunList contains a list of DataPipelineRun
 message DataPipelineRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -330,28 +330,22 @@ message DataPipelineRunList {
 
 // DataPipelineRunSpec defines the desired state of a schema
 message DataPipelineRunSpec {
-  // The product of the rejoiner
+  // The data product version of the run
   // +kubebuilder:default =""
   optional string versionName = 1;
 
-  // User provided description
-  // +kubebuilder:default =""
-  // +optional
-  optional string description = 2;
-
   // The data product
   // +kubebuilder:default =""
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  optional string datapipelineName = 3;
+  optional string datapipelineName = 2;
 
   // The location of data artifacts that are generated during the run
-  optional DataLocation dataLocation = 4;
+  optional DataLocation dataLocation = 3;
 
-  // The owner account name
+  // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
-  optional string owner = 5;
+  optional string owner = 4;
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
@@ -379,31 +373,30 @@ message DataPipelineRunStatus {
 
 // DataPipelineSpec defines the desired state of a DataPipeline
 message DataPipelineSpec {
-  // Dataproduct version
+  // VersionName is the data product version of the data pipeline
   // +kubebuilder:default =""
   optional string versionName = 1;
 
-  // User provided description
+  // Description of the data pipeline
   // +kubebuilder:default =""
   // +optional
   optional string description = 2;
 
-  // The datasets objects which are used for this pipeline. Each datafile can be from a bucket
+  // InputDatasets is the collection of input dataset names to the data pipelines
   repeated string inputDatasets = 3;
 
-  // The recipe for this pipeline.
+  // RecipeNames is the recipe for this pipeline.
   repeated string recipeNames = 4;
 
   // +kubebuilder:default =""
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // The output file of the pipeline
-  optional string outputDataset = 5;
+  optional string outputDatasetName = 5;
 
-  // A cron field to schedule the data pipeline.
+  // Schedule is a cron field to schedule the data pipeline.
   // +kubebuilder:default =""
   optional string schedule = 6;
 
-  // The owner account name
+  // Owner of this data pipeline
   // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
@@ -467,7 +460,6 @@ message DataProductList {
 // DataProductSpec defines the desired state of a data product
 message DataProductSpec {
   // The data product owner
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:default =""
   // +optional
   optional string owner = 1;
@@ -776,7 +768,6 @@ message DatasetList {
 // DatasetSpec defines the desired state of a dataset
 message DatasetSpec {
   // The account name of the owner of this dataset
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 1;
 
@@ -930,17 +921,17 @@ message EntitySpec {
   // +kubebuilder:default =""
   optional string versionName = 1;
 
-  // User provided description
+  // Description of the entity
   // +kubebuilder:default =""
   // +optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
-  // Reference to the feature names of this entity
+  // Keys are the features that create a unique key to the entity.
   // +optional
   repeated string keys = 3;
 
-  // The owner account name
+  // Owner of this Entity
   // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
@@ -953,7 +944,7 @@ message EntityStatus {
   repeated EntityCondition conditions = 1;
 }
 
-// Feature represent a feature object in the feature store.
+// Feature represent a single feature in the feature store.
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1009,7 +1000,7 @@ message FeatureList {
   repeated Feature items = 2;
 }
 
-// FeaturePipeline represent a feature set object in the feature store.
+// FeaturePipeline represent the processing of feature in the store.
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
@@ -1023,7 +1014,6 @@ message FeaturePipeline {
 
   optional FeaturePipelineSpec spec = 2;
 
-  // +optional
   optional FeaturePipelineStatus status = 3;
 }
 
@@ -1133,32 +1123,32 @@ message FeaturePipelineRunStatus {
   repeated FeaturePipelineRunCondition conditions = 3;
 }
 
-// FeaturePipelineSpec contain the desired state of a Feature
+// FeaturePipelineSpec contain the desired state of a FeaturePipeline
 message FeaturePipelineSpec {
-  // The feature owner
+  // Owner is the owner of the feature pipeline
   // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 1;
 
-  // The product version for the feature.
+  // Version name is the the product version for the feature.
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string versionName = 2;
 
-  // Comments is a description of the feature
+  // Description of the feature pipeline
   // +optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 3;
 
-  // Aggregation
+  // Aggregation is the aggregation spec
   // +optional
   optional AggregationSpec aggregation = 4;
 
   // Materialization
   optional MaterializationSpec materialization = 5;
 
-  // Feature Family name
+  // Family is the feature family
   // +optional
   optional string family = 6;
 
@@ -1386,12 +1376,12 @@ message FlatFileSpec {
 }
 
 message GitLocation {
-  // The credential to the git repo provider
-  optional string gitConnectionName = 2;
+  // GitConnectionName
+  optional string gitConnectionName = 1;
 
-  // The url to the git repo.
+  // URL of the stakeholder
   // +kubebuilder:validation:MaxLength=256
-  optional string url = 1;
+  optional string url = 2;
 }
 
 message ImageLocation {
@@ -1403,7 +1393,6 @@ message ImageLocation {
 
   // The connection of the docker registry provider
   // If the value is empty, the system will not push images.
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // optional
   optional string registryConnectionName = 2;
 }
@@ -1670,7 +1659,7 @@ message RecipeOutputSpec {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reciperuns,shortName=rr,singular=reciperun,categories={data,modeld,all}
 // Recipe run represent one execution of the recipe.
-// Execution is perfomed by creating a kuberentes job.
+// Execution is performed by creating a Kubernetes job.
 message RecipeRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1845,8 +1834,10 @@ message Signatures {
 // Represent a stack holder in the product.
 // Each stake holder can hove one or more roles.
 message StakeHolder {
+  // The account name of the stake holder
   optional string accountName = 1;
 
+  // The roles assigned to the stake holder
   repeated string roles = 2;
 }
 

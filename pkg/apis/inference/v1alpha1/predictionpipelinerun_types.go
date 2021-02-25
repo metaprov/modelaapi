@@ -61,7 +61,7 @@ type PredictionPipelineRunCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictionpipelineruns,singular=predictionpipelinerun,categories={inference,modeld}
-// PredictionTemplate represents a prediction object
+// PredictionPipelineRun represents a single run of the Prediction Pipeline
 type PredictionPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -85,7 +85,7 @@ type PredictionPipelineRunSpec struct {
 	// +kubebuilder:validation:MinLength=1
 	PredictorName string `json:"predictorName" protobuf:"bytes,1,opt,name=predictorName"`
 	// Labeled , true if this is labeled prediction request.
-	// Used usally for unit testing
+	// Used usually for unit testing
 	Labeled bool `json:"labeled" protobuf:"bytes,2,opt,name=labeled"`
 	// The objective metric used to score
 	Objective *catalog.Metric `json:"objective" protobuf:"bytes,3,opt,name=objective"`
@@ -97,7 +97,7 @@ type PredictionPipelineRunSpec struct {
 	// The key in the bucket for storing all the prediction output
 	// +optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
-	// The owner account name
+	// Owner of the run
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }

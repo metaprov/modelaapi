@@ -17,28 +17,8 @@ type FakeCatalogV1alpha1 struct {
 	*testing.Fake
 }
 
-func (c *FakeCatalogV1alpha1) Algorithms(namespace string) v1alpha1.AlgorithmInterface {
-	return &FakeAlgorithms{c, namespace}
-}
-
-func (c *FakeCatalogV1alpha1) Clouds(namespace string) v1alpha1.CloudInterface {
-	return &FakeClouds{c, namespace}
-}
-
 func (c *FakeCatalogV1alpha1) MLFrameworks(namespace string) v1alpha1.MLFrameworkInterface {
 	return &FakeMLFrameworks{c, namespace}
-}
-
-func (c *FakeCatalogV1alpha1) PretrainedModels(namespace string) v1alpha1.PretrainedModelInterface {
-	return &FakePretrainedModels{c, namespace}
-}
-
-func (c *FakeCatalogV1alpha1) UserRoleClasses(namespace string) v1alpha1.UserRoleClassInterface {
-	return &FakeUserRoleClasses{c, namespace}
-}
-
-func (c *FakeCatalogV1alpha1) WorkloadClasses(namespace string) v1alpha1.WorkloadClassInterface {
-	return &FakeWorkloadClasses{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

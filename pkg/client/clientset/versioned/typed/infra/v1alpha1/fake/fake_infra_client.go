@@ -33,10 +33,6 @@ func (c *FakeInfraV1alpha1) Licenses(namespace string) v1alpha1.LicenseInterface
 	return &FakeLicenses{c, namespace}
 }
 
-func (c *FakeInfraV1alpha1) MachineImages(namespace string) v1alpha1.MachineImageInterface {
-	return &FakeMachineImages{c, namespace}
-}
-
 func (c *FakeInfraV1alpha1) Notifiers(namespace string) v1alpha1.NotifierInterface {
 	return &FakeNotifiers{c, namespace}
 }

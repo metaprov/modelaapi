@@ -27,7 +27,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PublicDataset
+        description: PublicDataset represent the metadata about a public dataset
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,6 +50,7 @@ spec:
               id:
                 type: string
               task:
+                description: Task is the machine learning task of the public dataset
                 enum:
                 - binary-classification
                 - multi-classification

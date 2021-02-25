@@ -811,6 +811,8 @@ spec:
                   evalMetrics:
                     description: Evaluation metrics are the scores
                     items:
+                      description: Metric is the machine learning metric used to evaluate
+                        a model performance.
                       enum:
                       - accuracy
                       - average-precision

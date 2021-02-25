@@ -33,15 +33,14 @@ spec:
           metadata:
             type: object
           spec:
-            description: PrebuildModelSpec is the desired state of the pretrained
+            description: PretrainedModelSpec is the desired state of the pretrained
               model
             properties:
               image:
+                description: Image is the docker image of the pretrained model
                 type: string
             required:
             - image
-            type: object
-          status:
             type: object
         required:
         - spec

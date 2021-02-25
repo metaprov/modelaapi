@@ -19,7 +19,6 @@ type InferenceV1alpha1Interface interface {
 	PredictionPipelinesGetter
 	PredictionPipelineRunsGetter
 	PredictorsGetter
-	PredictorTemplatesGetter
 }
 
 // InferenceV1alpha1Client is used to interact with features provided by the inference.modeld.io group.
@@ -41,10 +40,6 @@ func (c *InferenceV1alpha1Client) PredictionPipelineRuns(namespace string) Predi
 
 func (c *InferenceV1alpha1Client) Predictors(namespace string) PredictorInterface {
 	return newPredictors(c, namespace)
-}
-
-func (c *InferenceV1alpha1Client) PredictorTemplates(namespace string) PredictorTemplateInterface {
-	return newPredictorTemplates(c, namespace)
 }
 
 // NewForConfig creates a new InferenceV1alpha1Client for the given config.

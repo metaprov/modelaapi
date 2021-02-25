@@ -50,17 +50,18 @@ spec:
             description: EntitySpec contain the desired state of a Entity.
             properties:
               description:
-                description: User provided description
+                description: Description of the entity
                 maxLength: 512
                 type: string
               keys:
-                description: Reference to the feature names of this entity
+                description: Keys are the features that create a unique key to the
+                  entity.
                 items:
                   type: string
                 type: array
               owner:
                 default: no-one
-                description: The owner account name
+                description: Owner of this Entity
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               versionName:

@@ -32,7 +32,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Feature represent a feature object in the feature store.
+        description: Feature represent a single feature in the feature store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

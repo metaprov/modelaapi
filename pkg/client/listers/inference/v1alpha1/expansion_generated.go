@@ -38,11 +38,3 @@ type PredictorListerExpansion interface{}
 // PredictorNamespaceListerExpansion allows custom methods to be added to
 // PredictorNamespaceLister.
 type PredictorNamespaceListerExpansion interface{}
-
-// PredictorTemplateListerExpansion allows custom methods to be added to
-// PredictorTemplateLister.
-type PredictorTemplateListerExpansion interface{}
-
-// PredictorTemplateNamespaceListerExpansion allows custom methods to be added to
-// PredictorTemplateNamespaceLister.
-type PredictorTemplateNamespaceListerExpansion interface{}
