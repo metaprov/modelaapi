@@ -16,10 +16,12 @@ import (
 //==============================================================================
 // +genclient
 // +genclient:noStatus
+
+// Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
+
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
-// Cloud represent a cloud provider. A cloud contains regions,datacenter,machine classes
 type Cloud struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -30,79 +32,109 @@ type Cloud struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// CloudList contains a list of Clouds
+// CloudList contains a list of Cloud
 type CloudList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []Cloud `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// CloudSpec contains a list of Clouds
+// CloudSpec define the attribute of a single cloud provider (E.g. AWS)
 type CloudSpec struct {
-	DefaultRegionName       string         `json:"defaultRegionRef,omitempty" protobuf:"bytes,1,opt,name=defaultRegionName"`
-	DefaultMachineClassName string         `json:"defaultMachineClassRef,omitempty" protobuf:"bytes,2,opt,name=defaultMachineClassName"`
-	DefaultGpuClassName     string         `json:"defaultGpuClassRef,omitempty" protobuf:"bytes,3,opt,name=defaultGpuClassName"`
-	MachineClasses          []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,rep,name=machineClasses"`
-	GpuClasses              []GpuClass     `json:"gpuClasses,omitempty" protobuf:"bytes,5,rep,name=gpuClasses"`
-	Regions                 []Region       `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions"`
+	// DefaultRegionName is the default region.
+	DefaultRegionName string `json:"defaultRegionRef,omitempty" protobuf:"bytes,1,opt,name=defaultRegionName"`
+	// DefaultMachineClassName is the default machine class. Used when allocating new machine on this provider
+	DefaultMachineClassName string `json:"defaultMachineClassRef,omitempty" protobuf:"bytes,2,opt,name=defaultMachineClassName"`
+	// DefaultGpuClassName is the default gpu class. Used when allocating new gpu on this provider
+	DefaultGpuClassName string `json:"defaultGpuClassRef,omitempty" protobuf:"bytes,3,opt,name=defaultGpuClassName"`
+	// MachineClasses defines the types of machines in this provider
+	MachineClasses []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,rep,name=machineClasses"`
+	// GPUClasses define the type of GPUs offered by this provider
+	GpuClasses []GpuClass `json:"gpuClasses,omitempty" protobuf:"bytes,5,rep,name=gpuClasses"`
+	// Regions define the type of regions offered by this provider
+	Regions []Region `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions"`
 }
 
 // MachineClass define the specific for a machine type of a cloud provider
 type MachineClass struct {
+	//Code the the code of the machine class within the data provider
+	Code string `json:"code" protobuf:"bytes,1,opt,name=code"`
 	//+optional
-	RegionName string `json:"regionName" protobuf:"bytes,1,opt,name=regionName"`
+	RegionName string `json:"regionName" protobuf:"bytes,2,opt,name=regionName"`
+	//Mem is the amount of memory on this machine
 	//+optional
-	Mem *resource.Quantity `json:"mem" protobuf:"bytes,2,opt,name=mem"`
+	Mem *resource.Quantity `json:"mem" protobuf:"bytes,3,opt,name=mem"`
+	//Vcpu is the number of virtual cpus on this machine
 	//+optional
-	Vcpu *int32 `json:"vcpu" protobuf:"varint,3,opt,name=vcpu"`
+	Vcpu *int32 `json:"vcpu" protobuf:"varint,4,opt,name=vcpu"`
+	//Storage is the amount of storage on this machine class
 	//+optional
-	Storage string `json:"storage" protobuf:"bytes,4,opt,name=storage"`
+	Storage string `json:"storage" protobuf:"bytes,5,opt,name=storage"`
 }
 
 // GpuClass define the specific for a machine type of a cloud provider
 type GpuClass struct {
-	RegionName string            `json:"regionName" protobuf:"bytes,1,opt,name=regionName"`
-	Mem        resource.Quantity `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
-	// +kubebuilder:validation:Minimum=0
+	//Code the the code of the gpu class within the data provider
+	Code string `json:"code" protobuf:"bytes,1,opt,name=code"`
+
+	RegionName string `json:"regionName" protobuf:"bytes,2,opt,name=regionName"`
+	//Vcpu is the number of cores
 	Vcpu int32 `json:"vcpu,omitempty" protobuf:"varint,3,opt,name=vcpu"`
-
+	//Gpumem is the amount of memory on the gpu
 	Gpumem *resource.Quantity `json:"gpumem,omitempty" protobuf:"bytes,4,opt,name=gpumem"`
-
-	Storage string `json:"storage,omitempty" protobuf:"bytes,5,opt,name=storage"`
 }
 
-//Region defines
+//Region defines a region within the data provider
 type Region struct {
+	//Code is the code of the region
+	Code string `json:"code" protobuf:"bytes,1,opt,name=code"`
 	// The default datacenter for a region
 	//+optional
-	DefaultDatacenterName string `json:"defaultDatacenterName,omitempty" protobuf:"bytes,1,opt,name=defaultDatacenterName"`
-	// The location of the region
-	Location string `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
-	// The billing code of the region
-	BillingCode string `json:"billingCode,omitempty" protobuf:"bytes,3,opt,name=billingCode"`
-
-	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,4,rep,name=datacenters"`
+	DefaultDatacenterName string `json:"defaultDatacenterName,omitempty" protobuf:"bytes,2,opt,name=defaultDatacenterName"`
+	// Location is the location code The location of the region
+	Location string `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	// BillingCode is the billing code of the region
+	BillingCode string `json:"billingCode,omitempty" protobuf:"bytes,4,opt,name=billingCode"`
+	//Datacenters if the list of datacenters
+	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,5,rep,name=datacenters"`
 }
 
+//Datacenter contains the attribute of a specific data center
 type DataCenter struct {
+	// Name is the name of the datacenter
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	//Code is the code of the datacenter
 	Code string `json:"code,omitempty" protobuf:"bytes,2,opt,name=code"`
 }
 
+//MachineClassCost contain the current cost of a machine class in a region
 type MachineClassCost struct {
-	Region        string             `json:"region,omitempty" protobuf:"bytes,1,opt,name=region"`
-	CostPerMinute *resource.Quantity `json:"costPerMinute,omitempty" protobuf:"bytes,2,opt,name=costPerMinute"`
-	CostSpot      *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,3,opt,name=costSpot"`
+	// Code is the machine class code
+	Code string `json:"code,omitempty" protobuf:"bytes,1,opt,name=code"`
+	// Region is the code of the region
+	Region string `json:"region,omitempty" protobuf:"bytes,2,opt,name=region"`
+	// CostPerMinute is the cost per minute in dollar of the machine class
+	CostPerMinute *resource.Quantity `json:"costPerMinute,omitempty" protobuf:"bytes,3,opt,name=costPerMinute"`
+	// CostSpot is the spot cost of the machine class
+	CostSpot *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,4,opt,name=costSpot"`
 }
 
+//GpuClassCost contain the current cost of a gpu class in a region
 type GpuClassCost struct {
-	Region        string             `json:"region,omitempty" protobuf:"bytes,1,opt,name=region"`
-	CostPerMinute *resource.Quantity `json:"costPerMinute,omitempty" protobuf:"bytes,2,opt,name=costPerMinute"`
-	CostSpot      *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,3,opt,name=costSpot"`
+	// Code is the machine class code
+	Code string `json:"region,omitempty" protobuf:"bytes,1,opt,name=region"`
+
+	Region string `json:"region,omitempty" protobuf:"bytes,2,opt,name=region"`
+	// CostPerMinute is the cost per minute in dollar of the machine class
+	CostPerMinute *resource.Quantity `json:"costPerMinute,omitempty" protobuf:"bytes,3,opt,name=costPerMinute"`
+	// CostSpot is the spot cost of the machine class
+	CostSpot *resource.Quantity `json:"costSpot,omitempty" protobuf:"bytes,3,opt,name=costSpot"`
 }
 
 // CloudStatus defines the observed state of Cloud.
 type CloudStatus struct {
+	// Machine cost is the costs of
 	MachineCosts []MachineClassCost `json:"machineCosts,omitempty" protobuf:"bytes,1,rep,name=machineCosts"`
-	GpuCosts     []GpuClassCost     `json:"gpuCosts,omitempty" protobuf:"bytes,2,rep,name=gpuCosts"`
+	// CostSpot is the spot cost of the machine class
+	GpuCosts []GpuClassCost `json:"gpuCosts,omitempty" protobuf:"bytes,2,rep,name=gpuCosts"`
 }

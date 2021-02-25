@@ -4,24 +4,25 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// Algorithm
-//==============================================================================
 // +genclient
 // +genclient:noStatus
+
+// Algorithm define the metadata about a machine learning algorithm.
+
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:scope=Namespaced
+
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
-// +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description=""
+// +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
 // +kubebuilder:printcolumn:name="Repository",type="string",JSONPath=".spec.url",description=""
-// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description=""
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
+// +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 type Algorithm struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              AlgorithmSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status AlgorithmStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
@@ -33,30 +34,32 @@ type AlgorithmList struct {
 	Items           []Algorithm `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-//AlgorithmSpec is the desired state of Algorithm.
+//AlgorithmSpec describes the attributes of an machine learning algorithm
 type AlgorithmSpec struct {
 	// FrameworkName is a reference to library
 	// +optional
 	FrameworkName string `json:"frameworkName,omitempty" protobuf:"bytes,1,opt,name=frameworkName"`
+	// Description is the description of the algorithm
 	// +kubebuilder:default = ""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The Url for the algorithm information
+	// URL is a url to the html page describing the algorithm
+	// +kubebuilder:default = ""
 	// +optional
-	Url string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
-	// The Algorithm Task (binary classification / regression)
+	URL *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
+	// Task is the machine learning task (binary classification / regression)
 	// +optional
 	Task MLTask `json:"task" protobuf:"bytes,4,opt,name=task"`
-	// The Algorithm Task (binary classification / regression)
+	// Sparse indicate if this algorithm can deal with sparse data
 	// +optional
-	Sparse bool `json:"sparse,omitempty" protobuf:"bytes,5,opt,name=sparse"`
-	// Integer hyper parameters
+	Sparse *bool `json:"sparse,omitempty" protobuf:"bytes,5,opt,name=sparse"`
+	// IntegerParameters is the list of integer hyper parameter ranges.
 	// +optional
 	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters"`
-	// Float hyper parameters
+	// FloatParameters is the list of float hyper parameters ranges
 	// +optional
 	FloatParameters []FloatParameter `json:"floatParameters,omitempty" protobuf:"bytes,7,rep,name=floatParameters"`
-	// Categorical hyper parameters
+	// CategoricalParameters is the list of categorical hyper parameters ranges
 	// +optional
 	CategoricalParameters []CategoricalParameter `json:"categoricalParameters,omitempty" protobuf:"bytes,8,rep,name=categoricalParameters"`
 }
@@ -69,13 +72,13 @@ type IntParameter struct {
 	// Type is the datatype of the parameter
 	// +optional
 	Type DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
-	// Min is the minimum value
+	// Min is the minimum value of the hyper parameter range
 	// +optional
 	Min int32 `json:"min,omitempty" protobuf:"varint,3,opt,name=min"`
-	// Max is the maximum value
+	// Max is the maximum value of the hyper parameter range
 	// +optional
 	Max int32 `json:"max,omitempty" protobuf:"varint,4,opt,name=max"`
-	// Default parameter value
+	// DefaultValue is the default value of the parameter
 	DefaultValue int32 `json:"defaultValue,omitempty" protobuf:"varint,6,opt,name=defaultValue"`
 }
 
@@ -93,7 +96,7 @@ type FloatParameter struct {
 	// Default float value
 	// +optional
 	DefaultValue float64 `json:"defaultValue,omitempty" protobuf:"bytes,5,opt,name=defaultValue"`
-	// Sample from a log parameter
+	// Log specify if this hyper paramer is logartimic
 	// +optional
 	Log bool `json:"log,omitempty" protobuf:"bytes,6,opt,name=log"`
 }
@@ -103,13 +106,9 @@ type CategoricalParameter struct {
 	// Name is the name of the hyper parameter
 	// +optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Default value
-	DefaultValue string `json:"defaultValue,omitempty" protobuf:"bytes,8,opt,name=defaultValue"`
+	// DefaultValue if the default categorical value
+	DefaultValue string `json:"defaultValue,omitempty" protobuf:"bytes,2,opt,name=defaultValue"`
 	// Enums defines the list of values
 	// +optional
-	Enums []string `json:"enums,omitempty" protobuf:"bytes,10,rep,name=enums"`
-}
-
-// AlgorithmStatus defines the observed state of Datacenter.
-type AlgorithmStatus struct {
+	Enums []string `json:"enums,omitempty" protobuf:"bytes,3,rep,name=enums"`
 }

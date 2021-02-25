@@ -78,15 +78,6 @@ type Dataset struct {
 	Status DatasetStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-func (r *Dataset) MarkInjested() {
-	r.Status.Phase = DatasetPhaseIngested
-	r.CreateOrUpdateCond(DatasetCondition{
-		Type:   DatasetIngested,
-		Status: v1.ConditionTrue,
-	})
-
-}
-
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // DatasetList contains a list of Datasets
@@ -99,7 +90,6 @@ type DatasetList struct {
 //DatasetSpec defines the desired state of a dataset
 type DatasetSpec struct {
 	// The account name of the owner of this dataset
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the dataset

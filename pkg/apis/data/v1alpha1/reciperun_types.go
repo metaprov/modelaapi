@@ -50,7 +50,7 @@ type RecipeRunCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reciperuns,shortName=rr,singular=reciperun,categories={data,modeld,all}
 // Recipe run represent one execution of the recipe.
-// Execution is perfomed by creating a kuberentes job.
+// Execution is performed by creating a Kubernetes job.
 type RecipeRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

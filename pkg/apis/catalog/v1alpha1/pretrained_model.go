@@ -17,6 +17,9 @@ import (
 
 // +genclient
 // +genclient:noStatus
+
+// Pretrained model contain the metadata about a pretrained model
+
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -24,8 +27,6 @@ type PretrainedModel struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              PretrainedModelSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	// +optional
-	Status PretrainedModelStatus `json:"status,,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -38,12 +39,10 @@ type PretrainedModelList struct {
 	Items []PretrainedModel `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// PrebuildModelSpec is the desired state of the pretrained model
+// PretrainedModelSpec is the desired state of the pretrained model
 type PretrainedModelSpec struct {
+	// Image is the docker image of the pretrained model
 	Image string `json:"image" protobuf:"bytes,1,opt,name=image"`
-}
-
-type PretrainedModelStatus struct {
 }
 
 func (p *PretrainedModel) Default() {

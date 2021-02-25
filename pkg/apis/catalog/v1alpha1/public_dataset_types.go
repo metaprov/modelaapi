@@ -14,7 +14,7 @@ import (
 // PublicDataset
 //==============================================================================
 
-// PublicDataset
+// PublicDataset represent the metadata about a public dataset
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
@@ -27,7 +27,8 @@ type PublicDataset struct {
 }
 
 type PublicDatasetSpec struct {
-	Url          string `json:"url" protobuf:"bytes,1,opt,name=image"`
+	Url string `json:"url" protobuf:"bytes,1,opt,name=image"`
+	// Task is the machine learning task of the public dataset
 	Task         MLTask `json:"task" protobuf:"bytes,2,rep,name=task,casttype=MLTask"`
 	ID           string `json:"id" protobuf:"bytes,3,rep,name=id"`
 	ExternalName string `json:"externalName" protobuf:"bytes,4,opt,name=externalName"`

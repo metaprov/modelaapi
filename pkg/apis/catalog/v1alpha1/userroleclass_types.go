@@ -12,6 +12,7 @@ import (
 )
 
 // +kubebuilder:validation:Enum="administrator";"data-scientist";"data-engineer";"data-operations";"sponsor";"end-user";"domain-expert"
+//RoleName is the type of role a user can have
 type RoleName string
 
 const (
@@ -27,6 +28,9 @@ const (
 // +genclient
 // +genclient:noStatus
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+//UserRoleClass specify the RBAC premission for a specific user role.
+
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""

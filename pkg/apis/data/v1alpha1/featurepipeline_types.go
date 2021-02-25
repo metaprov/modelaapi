@@ -41,7 +41,7 @@ type FeaturePipelineCondition struct {
 // +genclient
 // +genclient:noStatus
 
-// FeaturePipeline represent a feature set object in the feature store.
+// FeaturePipeline represent the processing of feature in the store.
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
@@ -53,9 +53,8 @@ type FeaturePipelineCondition struct {
 type FeaturePipeline struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              FeaturePipelineSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status FeaturePipelineStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Spec              FeaturePipelineSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            FeaturePipelineStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
@@ -67,27 +66,27 @@ type FeaturePipelineList struct {
 	Items           []FeaturePipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// FeaturePipelineSpec contain the desired state of a Feature
+// FeaturePipelineSpec contain the desired state of a FeaturePipeline
 type FeaturePipelineSpec struct {
-	// The feature owner
+	// Owner is the owner of the feature pipeline
 	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The product version for the feature.
+	// Version name is the the product version for the feature.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// Comments is a description of the feature
+	// Description of the feature pipeline
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
 	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Aggregation
+	// Aggregation is the aggregation spec
 	// +optional
 	Aggregation *AggregationSpec `json:"aggregation,omitempty" protobuf:"bytes,4,opt,name=aggregation"`
 	// Materialization
 	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,5,opt,name=materialization"`
-	// Feature Family name
+	// Family is the feature family
 	// +optional
 	Family *string `json:"family,omitempty" protobuf:"bytes,6,opt,name=family"`
 	// Reference to the entity name

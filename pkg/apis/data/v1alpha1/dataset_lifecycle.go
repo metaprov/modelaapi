@@ -332,3 +332,12 @@ func (dataset *Dataset) Archived() bool {
 func (dataset *Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
 }
+
+func (r *Dataset) MarkInjested() {
+	r.Status.Phase = DatasetPhaseIngested
+	r.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetIngested,
+		Status: v1.ConditionTrue,
+	})
+
+}

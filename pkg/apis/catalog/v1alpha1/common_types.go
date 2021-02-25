@@ -5,7 +5,7 @@ import (
 )
 
 // ===========================================================
-// Api File name
+// Common ports
 // ===========================================================
 
 const (
@@ -59,7 +59,7 @@ const (
 	SplitDatasetToRungs   TaskName = "split-dataset-to-rungs"
 )
 
-// Repsent api key name in a secret or in env variable
+// ApiKeyName is the secret or in env variable
 // +kubebuilder:validation:Enum="provider";"keyfile";"accessKey";"secretKey";"host";"token";"username";"password";"port";"ssh";"openstack-authurl"
 type ApiKeyName string
 
@@ -81,6 +81,7 @@ func (ak ApiKeyName) AsCliOption() string {
 	return string(ak)
 }
 
+// MLTask is the machine learning task name
 // +kubebuilder:validation:Enum="binary-classification";"multi-classification";"multi-label-classification";"text-classification";"regression";"forecasting";"clustering";"recommendation";"outlier-detection";"novelty-detection";"topic-modeling";"auto";"unknown";
 type MLTask string
 
@@ -100,6 +101,7 @@ const (
 )
 
 // +kubebuilder:validation:Enum="alicloud";"athena";"azure";"big-query";"bitbucket";"cassandra";"digitalocean";"smtp";"gcp";"github";"hetzner";"linode";"mysql";"minio";"mongo-db";"ms-sql-server";"odbc";"oracle";"ovh";"postgres";"presto";"redshift";"aws";"slack";"snowflake";"sqlite";"image-registry";"license";"gitlab";"lm";"openstack";"hipchat";"pagerduty";"pushover";"opengenie";"webook";"victorops";"wechat";"flock";"msteam";"mattermost";"docker-hub";"unknown";
+// ProviderName is the machine learning task name
 type ProviderName string
 
 const (
@@ -217,7 +219,7 @@ func IsRegression(task MLTask) bool {
 	return task == Regression
 }
 
-// Contain the event and the action
+// WebHookNameAndAction Contain the event and the action
 // +kubebuilder:validation:Enum="commit";"pull_request_assigned";"pull_request_unsassigned";"pull_request_labeled";"pull_request_unlabeled";"pull_request_opened";"pull_request_edited";"pull_request_closed";"pull_request_reopened";"pull_request_synchronized";"pull_request_all";"notsupported"
 type WebHookNameAndAction string
 
@@ -340,6 +342,7 @@ func (metric Metric) IsClustering() bool {
 }
 
 // +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";
+// Metric is the machine learning metric used to evaluate a model performance.
 type Metric string
 
 const (
@@ -404,7 +407,7 @@ const (
 	UnknownMetric Metric = "unknown"
 )
 
-// compare two scores in the metrics
+// Compare two scores in the metrics
 func (metric Metric) Compare(i float64, j float64) bool {
 	if metric == MaxError ||
 		metric == MAE ||

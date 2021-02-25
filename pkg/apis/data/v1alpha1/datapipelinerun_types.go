@@ -5,10 +5,6 @@
  */
 package v1alpha1
 
-// DataEnv is a joiner of data into the system in batch mode.
-// DataEnv can enter the system from different places (one of them is the user).
-// The datajoiner knows how to create datasets.
-
 import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -58,7 +54,7 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,categories={data,modeld,all}
-// DataPipelineRun represent the joiner of dataset into the system
+// DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -68,7 +64,7 @@ type DataPipelineRun struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// DataPipelineList contains a list of DataPipeline
+// DataPipelineRunList contains a list of DataPipelineRun
 type DataPipelineRunList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -77,24 +73,19 @@ type DataPipelineRunList struct {
 
 //DataPipelineRunSpec defines the desired state of a schema
 type DataPipelineRunSpec struct {
-	// The product of the rejoiner
+	// The data product version of the run
 	// +kubebuilder:default =""
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// User provided description
-	// +kubebuilder:default =""
-	// +optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The data product
 	// +kubebuilder:default =""
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
+	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
 	// The location of data artifacts that are generated during the run
-	DataLocation *DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,4,opt,name=dataLocation"`
-	// The owner account name
+	DataLocation *DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,3,opt,name=dataLocation"`
+	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
@@ -102,9 +93,9 @@ type DataPipelineRunStatus struct {
 	// Pointers to the done datasets
 	Inputs []string `json:"inputs" protobuf:"bytes,1,rep,name=inputs"`
 	// the resulting dataset from the flow
-	Output *string `json:"output" protobuf:"bytes,2,opt,name=output"`
+	Output string `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
-	Phase *string `json:"phase" protobuf:"bytes,3,opt,name=phase"`
+	Phase string `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// StartTime is the times that this data pipeline started
 	// +optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`

@@ -63,15 +63,15 @@ type EntitySpec struct {
 	// The product version of the entity
 	// +kubebuilder:default =""
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// User provided description
+	// Description of the entity
 	// +kubebuilder:default =""
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// Reference to the feature names of this entity
+	// Keys are the features that create a unique key to the entity.
 	// +optional
 	Keys []string `json:"keys,omitempty" protobuf:"bytes,3,rep,name=keys"`
-	// The owner account name
+	// Owner of this Entity
 	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional

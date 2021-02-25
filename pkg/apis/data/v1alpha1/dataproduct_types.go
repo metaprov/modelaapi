@@ -56,31 +56,21 @@ type DataProduct struct {
 	Status            DataProductStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +kubebuilder:validation:Enum="owner";"sre";"business";"ml-engineer";"data-scientist";"other"
-type StakeHolderRole string
-
-const (
-	OwnerStakeHolderRole         StakeHolderRole = "owner"
-	SREStakeHolderRole           StakeHolderRole = "sre"
-	BusinessStakeHolderRole      StakeHolderRole = "business"
-	MLEngineerStakeHolderRole    StakeHolderRole = "ml-engineer"
-	DataScientistStakeHolderRole StakeHolderRole = "data-scientist"
-	OtherStakeHolderRole         StakeHolderRole = "other"
-)
-
 // Represent a stack holder in the product.
 // Each stake holder can hove one or more roles.
 type StakeHolder struct {
-	AccountName *string           `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
-	Roles       []StakeHolderRole `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
+	// The account name of the stake holder
+	AccountName *string `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
+	// The roles assigned to the stake holder
+	Roles []catalog.RoleName `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
 }
 
 type GitLocation struct {
-	// The credential to the git repo provider
-	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,2,opt,name=gitConnectionName"`
-	// The url to the git repo.
+	// GitConnectionName
+	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
+	// URL of the stakeholder
 	// +kubebuilder:validation:MaxLength=256
-	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	URL string `json:"url,omitempty" protobuf:"bytes,2,opt,name=url"`
 }
 
 type ImageLocation struct {
@@ -91,7 +81,6 @@ type ImageLocation struct {
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The connection of the docker registry provider
 	// If the value is empty, the system will not push images.
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// optional
 	RegistryConnectionName *string `json:"registryConnectionName,omitempty" protobuf:"bytes,2,opt,name=registryConnectionName"`
 }
@@ -99,7 +88,6 @@ type ImageLocation struct {
 //DataProductSpec defines the desired state of a data product
 type DataProductSpec struct {
 	// The data product owner
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default =""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`

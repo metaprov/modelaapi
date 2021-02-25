@@ -41,7 +41,7 @@ type FeatureCondition struct {
 // +genclient
 // +genclient:noStatus
 
-// Feature represent a feature object in the feature store.
+// Feature represent a single feature in the feature store.
 // +kubebuilder:object:root=true
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

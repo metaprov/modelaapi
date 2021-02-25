@@ -5,13 +5,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// TrainerRef
-//==============================================================================
 // +genclient
 // +genclient:noStatus
 
-// Trainer class define a template for a trainer.
+// WorkloadClass define a template for a trainer.
+
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -23,11 +21,15 @@ type WorkloadClass struct {
 	Spec              WorkloadClassSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
+//WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
-	Image      string          `json:"image" protobuf:"bytes,1,opt,name=image"`
-	Tasks      []MLTask        `json:"tasks" protobuf:"bytes,2,rep,name=tasks,casttype=MLTask"`
+	// Image is the container image of the workload
+	Image string `json:"image" protobuf:"bytes,1,opt,name=image"`
+	// Tasks are the machine learning tasks supported by the image
+	Tasks []MLTask `json:"tasks" protobuf:"bytes,2,rep,name=tasks,casttype=MLTask"`
+	// Frameworks are the machine learning framework supported by the workload
 	Frameworks MLFrameworkList `json:"frameworks,omitempty" protobuf:"bytes,3,opt,name=frameworks"`
-	// The Pod specification for new trainers from this workload class.
+	// Template is the Pod specification for new trainers from this workload class.
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,4,opt,name=podTemplate"`
 }
 
