@@ -61,19 +61,22 @@ type DataPipelineList struct {
 //DataPipelineSpec defines the desired state of a DataPipeline
 type DataPipelineSpec struct {
 	// Dataproduct version
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	// +kubebuilder:default =""
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The datasets objects which are used for this pipeline. Each datafile can be from a bucket
 	InputDatasets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputDatasets"`
 	// The recipe for this pipeline.
 	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// The output file of the pipeline
 	OutputDatasetName *string `json:"outputDataset,omitempty" protobuf:"bytes,5,opt,name=outputDataset"`
 	// A cron field to schedule the data pipeline.
+	// +kubebuilder:default =""
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// The owner account name
 	// +kubebuilder:default="no-one"

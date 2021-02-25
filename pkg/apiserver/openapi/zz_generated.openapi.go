@@ -738,26 +738,25 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Algorithm is the spec for a machine learning algorithm All of the fields are real only",
+				Description: "AlgorithmSpec is the desired state of Algorithm.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"frameworkName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "FrameworkRef is a reference to library",
+							Description: "FrameworkName is a reference to library",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Algorithm description",
-							Type:        []string{"string"},
-							Format:      "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"url": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Algorithm Url",
+							Description: "The Url for the algorithm information",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -793,7 +792,7 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 					},
 					"floatParameters": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Integer hyper parameters",
+							Description: "Float hyper parameters",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -842,11 +841,12 @@ func schema_pkg_apis_catalog_v1alpha1_CategoricalParameter(ref common.ReferenceC
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "CategoricalParameter contain the specification of an categorical hyper parameter",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
-							Description: "FileName is the name of the hyper parameter",
+							Description: "Name is the name of the hyper parameter",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -860,7 +860,8 @@ func schema_pkg_apis_catalog_v1alpha1_CategoricalParameter(ref common.ReferenceC
 					},
 					"enums": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"array"},
+							Description: "Enums defines the list of values",
+							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -882,7 +883,7 @@ func schema_pkg_apis_catalog_v1alpha1_Cloud(ref common.ReferenceCallback) common
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "============================================================================== CloudName ============================================================================== Cloud represent a cloud provider. A cloud contains RegionName, machines",
+				Description: "============================================================================== CloudName ============================================================================== Cloud represent a cloud provider. A cloud contains regions,datacenter,machine classes",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -930,7 +931,7 @@ func schema_pkg_apis_catalog_v1alpha1_CloudList(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "CloudList contains a list of CloudName",
+				Description: "CloudList contains a list of Clouds",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -979,7 +980,8 @@ func schema_pkg_apis_catalog_v1alpha1_CloudSpec(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "CloudSpec contains a list of Clouds",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"defaultRegionRef": {
 						SchemaProps: spec.SchemaProps{
@@ -1143,11 +1145,12 @@ func schema_pkg_apis_catalog_v1alpha1_FloatParameter(ref common.ReferenceCallbac
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "FloatParameter contain the specification of an float hyper parameter",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
-							Description: "FileName is the name of the hyper parameter",
+							Description: "Name is the name of the hyper parameter",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -1175,8 +1178,9 @@ func schema_pkg_apis_catalog_v1alpha1_FloatParameter(ref common.ReferenceCallbac
 					},
 					"log": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"boolean"},
-							Format: "",
+							Description: "Sample from a log parameter",
+							Type:        []string{"boolean"},
+							Format:      "",
 						},
 					},
 				},
@@ -1189,15 +1193,9 @@ func schema_pkg_apis_catalog_v1alpha1_GpuClass(ref common.ReferenceCallback) com
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "GpuClass define the specific for a machine type of a cloud provider",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"cloudName": {
-						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
-						},
-					},
 					"regionName": {
 						SchemaProps: spec.SchemaProps{
 							Default: "",
@@ -1229,7 +1227,7 @@ func schema_pkg_apis_catalog_v1alpha1_GpuClass(ref common.ReferenceCallback) com
 						},
 					},
 				},
-				Required: []string{"cloudName", "regionName"},
+				Required: []string{"regionName"},
 			},
 		},
 		Dependencies: []string{
@@ -1276,7 +1274,7 @@ func schema_pkg_apis_catalog_v1alpha1_IntParameter(ref common.ReferenceCallback)
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
-							Description: "FileName is the name of the hyper parameter",
+							Description: "Name is the name of the hyper parameter",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -1304,7 +1302,7 @@ func schema_pkg_apis_catalog_v1alpha1_IntParameter(ref common.ReferenceCallback)
 					},
 					"defaultValue": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default float value",
+							Description: "Default parameter value",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -1467,15 +1465,9 @@ func schema_pkg_apis_catalog_v1alpha1_MachineClass(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "MachineClass define the specific for a machine type of a cloud provider",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"cloudName": {
-						SchemaProps: spec.SchemaProps{
-							Default: "",
-							Type:    []string{"string"},
-							Format:  "",
-						},
-					},
 					"regionName": {
 						SchemaProps: spec.SchemaProps{
 							Default: "",
@@ -1809,14 +1801,9 @@ func schema_pkg_apis_catalog_v1alpha1_Region(ref common.ReferenceCallback) commo
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Region defines",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"cloudName": {
-						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
-						},
-					},
 					"defaultDatacenterName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The default datacenter for a region",
@@ -3250,12 +3237,12 @@ func schema_pkg_apis_data_v1alpha1_DataProductSpec(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DataProduct defines the desired state of a data product",
+				Description: "DataProductSpec defines the desired state of a data product",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The account name of the owner of this data product",
+							Description: "The data product owner",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -3294,7 +3281,7 @@ func schema_pkg_apis_data_v1alpha1_DataProductSpec(ref common.ReferenceCallback)
 					},
 					"labName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "LabName is the Lab where models of this products are trained Required.",
+							Description: "LabName is the Lab where models of this products are trained",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -3350,7 +3337,7 @@ func schema_pkg_apis_data_v1alpha1_DataProductSpec(ref common.ReferenceCallback)
 					},
 					"retriesOnFailure": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Denote how many time a job is retry after failure default to 3",
+							Description: "Denote how many time a job is retry after failure",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -3571,7 +3558,7 @@ func schema_pkg_apis_data_v1alpha1_DataProductVersionSpec(ref common.ReferenceCa
 					},
 					"baseline": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage collect all the parents' product versions Default: false",
+							Description: "Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage collect all the parents' product versions",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -3812,13 +3799,13 @@ func schema_pkg_apis_data_v1alpha1_DataSourceSpec(ref common.ReferenceCallback) 
 					},
 					"file": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If the data source is flat file",
+							Description: "FlatFile access specification",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.FlatFileSpec"),
 						},
 					},
 					"table": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If the data source is a table",
+							Description: "Table access specification if the data source is a table",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.Table"),
 						},
 					},
@@ -4050,21 +4037,21 @@ func schema_pkg_apis_data_v1alpha1_DatasetSpec(ref common.ReferenceCallback) com
 					},
 					"report": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, a dataset report should be generated for this dataset. Default: true",
+							Description: "If true, a dataset report should be generated for this dataset.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"validate": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, we should validate the dataset Default:  true",
+							Description: "If true, we should validate the dataset",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"labeled": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Labeled indicates if this dataset is labeled or not. Default:  true",
+							Description: "Labeled indicates if this dataset is labeled or not.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -4399,7 +4386,6 @@ func schema_pkg_apis_data_v1alpha1_EntitySpec(ref common.ReferenceCallback) comm
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The product version of the entity",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5042,13 +5028,12 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "FeatureSpec contain the desired state of a Feature",
+				Description: "FeaturePipelineSpec contain the desired state of a Feature",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"owner": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The feature owner",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5056,15 +5041,6 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The product version for the feature.",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"name": {
-						SchemaProps: spec.SchemaProps{
-							Description: "FileName specify the name of the attribute",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5072,7 +5048,6 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 					"description": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Comments is a description of the feature",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5086,7 +5061,6 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 					"materialization": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Materialization",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.MaterializationSpec"),
 						},
 					},
@@ -5105,7 +5079,6 @@ func schema_pkg_apis_data_v1alpha1_FeaturePipelineSpec(ref common.ReferenceCallb
 						},
 					},
 				},
-				Required: []string{"name", "materialization"},
 			},
 		},
 		Dependencies: []string{
@@ -5158,7 +5131,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"owner": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The feature owner",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5166,7 +5138,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The product version for the feature.",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5174,7 +5145,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"description": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Comments is a description of the feature",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5182,7 +5152,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"name": {
 						SchemaProps: spec.SchemaProps{
 							Description: "FileName specify the name of the attribute",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5190,7 +5159,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"keyColumn": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Type name of the column key, this column is the key column in the entity.",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5198,7 +5166,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"timestampColumn": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The name of the time stamp column",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5206,7 +5173,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"featureColumn": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The name of the feature column",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5214,7 +5180,6 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"entityName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The name of the entity containing this feature",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5222,13 +5187,11 @@ func schema_pkg_apis_data_v1alpha1_FeatureSpec(ref common.ReferenceCallback) com
 					"featurePipelineName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The name of the feature pipeline that is producing this feature",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 				},
-				Required: []string{"owner", "name", "timestampColumn", "featureColumn", "entityName", "featurePipelineName"},
 			},
 		},
 	}
@@ -6008,7 +5971,6 @@ func schema_pkg_apis_data_v1alpha1_LabelingPipelineRunSpec(ref common.ReferenceC
 					"owner": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The feature owner",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -6016,7 +5978,6 @@ func schema_pkg_apis_data_v1alpha1_LabelingPipelineRunSpec(ref common.ReferenceC
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The product version for the feature.",
-							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -8437,7 +8398,7 @@ func schema_pkg_apis_inference_v1alpha1_PredictorSpec(ref common.ReferenceCallba
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description Default : empty",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15792,7 +15753,7 @@ func schema_pkg_apis_training_v1alpha1_ModelPipelineSpec(ref common.ReferenceCal
 					},
 					"minScore": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Min score to move from stage to stage. Default is 0",
+							Description: "Min score to move from stage to stage.",
 							Type:        []string{"number"},
 							Format:      "double",
 						},

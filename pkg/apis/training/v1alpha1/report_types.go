@@ -159,7 +159,7 @@ type ReportList struct {
 // ReportSpec specifies the desired state of the ReportName resource
 type ReportSpec struct {
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityName specify the entity being report. Currently entities can be dataset,model or study
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// The report location
@@ -168,6 +168,7 @@ type ReportSpec struct {
 	// ReportType specify the report type (e.g. classification / regression)
 	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
 	// Format specify the report format. default is pdf
+	// +kubebuilder:default = pdf
 	// +optional
 	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,6,opt,name=format"`
 	// reference to the notifier that is used to send the report

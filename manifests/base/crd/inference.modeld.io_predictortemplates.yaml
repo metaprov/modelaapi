@@ -61,7 +61,7 @@ spec:
                     minLength: 1
                     type: string
                   description:
-                    description: 'User provided description Default : empty'
+                    description: User provided description
                     maxLength: 256
                     type: string
                   driftCheck:

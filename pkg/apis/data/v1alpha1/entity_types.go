@@ -61,13 +61,15 @@ type Entity struct {
 // EntitySpec contain the desired state of a Entity.
 type EntitySpec struct {
 	// The product version of the entity
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	VersionName string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
+	// +kubebuilder:default =""
+	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Reference to the feature names of this entity
+	// +optional
 	Keys []string `json:"keys,omitempty" protobuf:"bytes,3,rep,name=keys"`
 	// The owner account name
 	// +kubebuilder:default="no-one"

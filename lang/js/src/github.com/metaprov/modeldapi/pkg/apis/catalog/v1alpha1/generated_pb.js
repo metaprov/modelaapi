@@ -3995,12 +3995,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cloudname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    regionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    regionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     mem: (f = msg.getMem()) && k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.toObject(includeInstance, f),
-    vcpu: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    vcpu: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     gpumem: (f = msg.getGpumem()) && k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.toObject(includeInstance, f),
-    storage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    storage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4039,27 +4038,23 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.deseriali
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCloudname(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setRegionname(value);
       break;
-    case 3:
+    case 2:
       var value = new k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity;
       reader.readMessage(value,k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.deserializeBinaryFromReader);
       msg.setMem(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setVcpu(value);
       break;
-    case 5:
+    case 4:
       var value = new k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity;
       reader.readMessage(value,k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.deserializeBinaryFromReader);
       msg.setGpumem(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setStorage(value);
       break;
@@ -4099,40 +4094,33 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.serialize
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getMem();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeInt32(
-      4,
+      3,
       f
     );
   }
   f = message.getGpumem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      6,
+      5,
       f
     );
   }
@@ -4140,10 +4128,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.serialize
 
 
 /**
- * optional string cloudName = 1;
+ * optional string regionName = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getRegionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4152,7 +4140,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setCloudname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setRegionname = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -4161,7 +4149,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.clearCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.clearRegionname = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -4170,54 +4158,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasRegionname = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string regionName = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getRegionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setRegionname = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.clearRegionname = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasRegionname = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3;
+ * optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getMem = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.api.resource.Quantity} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 3));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 2));
 };
 
 
@@ -4226,7 +4178,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setMem = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -4244,16 +4196,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasMem = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 vcpu = 4;
+ * optional int32 vcpu = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getVcpu = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -4262,7 +4214,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setVcpu = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -4271,7 +4223,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.clearVcpu = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -4280,17 +4232,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasVcpu = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.api.resource.Quantity gpumem = 5;
+ * optional k8s.io.apimachinery.pkg.api.resource.Quantity gpumem = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getGpumem = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.api.resource.Quantity} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 5));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 4));
 };
 
 
@@ -4299,7 +4251,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setGpumem = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -4317,16 +4269,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasGpumem = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string storage = 6;
+ * optional string storage = 5;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.getStorage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -4335,7 +4287,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.setStorage = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -4344,7 +4296,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.clearStorage = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -4353,7 +4305,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GpuClass.prototype.hasStorage = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -5836,11 +5788,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cloudname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    regionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    regionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     mem: (f = msg.getMem()) && k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.toObject(includeInstance, f),
-    vcpu: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    storage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    vcpu: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    storage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5879,22 +5830,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.deser
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCloudname(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setRegionname(value);
       break;
-    case 3:
+    case 2:
       var value = new k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity;
       reader.readMessage(value,k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.deserializeBinaryFromReader);
       msg.setMem(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setVcpu(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setStorage(value);
       break;
@@ -5934,32 +5881,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getMem();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeInt32(
-      4,
+      3,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
@@ -5967,10 +5907,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.seria
 
 
 /**
- * optional string cloudName = 1;
+ * optional string regionName = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.getCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.getRegionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5979,7 +5919,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.setCloudname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.setRegionname = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -5988,7 +5928,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.clearCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.clearRegionname = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -5997,54 +5937,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.hasCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.hasRegionname = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string regionName = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.getRegionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.setRegionname = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.clearRegionname = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.hasRegionname = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3;
+ * optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.getMem = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.api.resource.Quantity} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 3));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 2));
 };
 
 
@@ -6053,7 +5957,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.setMem = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -6071,16 +5975,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.hasMem = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 vcpu = 4;
+ * optional int32 vcpu = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.getVcpu = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -6089,7 +5993,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.setVcpu = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -6098,7 +6002,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.clearVcpu = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -6107,16 +6011,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.hasVcpu = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string storage = 5;
+ * optional string storage = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.getStorage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -6125,7 +6029,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.setStorage = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -6134,7 +6038,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.clearStorage = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -6143,7 +6047,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MachineClass.prototype.hasStorage = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -7869,7 +7773,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.repeatedFields_ = [5];
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.repeatedFields_ = [4];
 
 
 
@@ -7902,10 +7806,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.t
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cloudname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    defaultdatacentername: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    location: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    billingcode: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    defaultdatacentername: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    location: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    billingcode: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     datacentersList: jspb.Message.toObjectList(msg.getDatacentersList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter.toObject, includeInstance)
   };
@@ -7946,21 +7849,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.deserialize
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCloudname(value);
+      msg.setDefaultdatacentername(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDefaultdatacentername(value);
+      msg.setLocation(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLocation(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setBillingcode(value);
       break;
-    case 5:
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter.deserializeBinaryFromReader);
       msg.addDatacenters(value);
@@ -8015,17 +7914,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.serializeBi
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getDatacentersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter.serializeBinaryToWriter
     );
@@ -8034,10 +7926,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.serializeBi
 
 
 /**
- * optional string cloudName = 1;
+ * optional string defaultDatacenterName = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getDefaultdatacentername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -8046,7 +7938,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.g
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setCloudname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setDefaultdatacentername = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -8055,7 +7947,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.s
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearDefaultdatacentername = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -8064,16 +7956,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasCloudname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasDefaultdatacentername = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string defaultDatacenterName = 2;
+ * optional string location = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getDefaultdatacentername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getLocation = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -8082,7 +7974,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.g
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setDefaultdatacentername = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setLocation = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -8091,7 +7983,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.s
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearDefaultdatacentername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearLocation = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -8100,16 +7992,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasDefaultdatacentername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string location = 3;
+ * optional string billingCode = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getLocation = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getBillingcode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -8118,7 +8010,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.g
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setLocation = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setBillingcode = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -8127,7 +8019,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.s
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearLocation = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearBillingcode = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -8136,54 +8028,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasLocation = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasBillingcode = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string billingCode = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getBillingcode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setBillingcode = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.clearBillingcode = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.hasBillingcode = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * repeated DataCenter datacenters = 5;
+ * repeated DataCenter datacenters = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.getDatacentersList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter, 4));
 };
 
 
@@ -8192,7 +8048,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.g
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.setDatacentersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -8202,7 +8058,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.s
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Region.prototype.addDatacenters = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.DataCenter, opt_index);
 };
 
 

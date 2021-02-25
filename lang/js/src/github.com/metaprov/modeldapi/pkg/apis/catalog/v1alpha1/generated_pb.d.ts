@@ -369,9 +369,6 @@ export namespace FloatParameter {
 }
 
 export class GpuClass extends jspb.Message {
-  getCloudname(): string;
-  setCloudname(value: string): GpuClass;
-
   getRegionname(): string;
   setRegionname(value: string): GpuClass;
 
@@ -401,7 +398,6 @@ export class GpuClass extends jspb.Message {
 
 export namespace GpuClass {
   export type AsObject = {
-    cloudname: string,
     regionname: string,
     mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     vcpu: number,
@@ -577,9 +573,6 @@ export namespace MLFrameworkStatus {
 }
 
 export class MachineClass extends jspb.Message {
-  getCloudname(): string;
-  setCloudname(value: string): MachineClass;
-
   getRegionname(): string;
   setRegionname(value: string): MachineClass;
 
@@ -604,7 +597,6 @@ export class MachineClass extends jspb.Message {
 
 export namespace MachineClass {
   export type AsObject = {
-    cloudname: string,
     regionname: string,
     mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     vcpu: number,
@@ -819,9 +811,6 @@ export namespace PublicDatasetSpec {
 }
 
 export class Region extends jspb.Message {
-  getCloudname(): string;
-  setCloudname(value: string): Region;
-
   getDefaultdatacentername(): string;
   setDefaultdatacentername(value: string): Region;
 
@@ -846,7 +835,6 @@ export class Region extends jspb.Message {
 
 export namespace Region {
   export type AsObject = {
-    cloudname: string,
     defaultdatacentername: string,
     location: string,
     billingcode: string,

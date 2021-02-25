@@ -257,6 +257,7 @@ type StudySpec struct {
 	// required
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
@@ -265,6 +266,7 @@ type StudySpec struct {
 	// +optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
+	// +kubebuilder:default = ""
 	// Required.
 	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
@@ -292,21 +294,27 @@ type StudySpec struct {
 	// +optional
 	Split DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
 	// Aborted is set when we want to abort the training
+	// +kubebuilder:default = false
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Reported is set when we want to create model report
+	// +kubebuilder:default = false
 	// +optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,14,opt,name=reported"`
 	// Paused is set when we want to pause the training
+	// +kubebuilder:default = false
 	// +optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,15,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
+	// +kubebuilder:default = false
 	// +optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,16,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
+	// +kubebuilder:default = false
 	// +optional
 	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"bytes,17,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
+	// +kubebuilder:default = false
 	// +optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"bytes,18,opt,name=modelImagePushed"`
 	// The location of the study artifacts
@@ -317,6 +325,7 @@ type StudySpec struct {
 	// +optional
 	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,21,opt,name=hierarchy"`
 	// The owner account name
+	// +kubebuilder:default = ""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
 }

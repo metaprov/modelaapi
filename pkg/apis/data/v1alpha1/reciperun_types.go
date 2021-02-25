@@ -70,10 +70,10 @@ type RecipeRunList struct {
 
 //RecipeSpec defines the desired state of a dataset
 type RecipeRunSpec struct {
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The name of the recipe that execute this run
 	// +required.
-	RecipeName string `json:"recipeName,omitempty" protobuf:"bytes,2,opt,name=recipeName"`
+	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,2,opt,name=recipeName"`
 	// The execution env of this recipes
 	// +optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,3,opt,name=labName"`

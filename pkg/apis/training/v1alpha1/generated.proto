@@ -739,22 +739,27 @@ message ModelPipelineRunList {
 // ModelPipelineRunSpec is the desired state of the ModelPipelineRun resource
 message ModelPipelineRunSpec {
   // User provided description
+  // +kubebuilder:default = ""
   // +optional
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default = ""
   // +optional
   optional string description = 2;
 
   // TriggerName denote the trigger that fired this pipeline run
+  // +kubebuilder:default = ""
   // +optional
   optional string triggerName = 3;
 
   // PipelineName is the name of the pipeline specification for this pipeline
+  // +kubebuilder:default = ""
   // +optional
   optional string pipelineName = 4;
 
   // The owner account name
+  // +kubebuilder:default = ""
   // +optional
   optional string owner = 5;
 }
@@ -828,15 +833,17 @@ message ModelPipelineSpec {
   optional string versionName = 1;
 
   // Servingsite name is the default serving site for each stage.
+  // +kubebuilder:default =""
   // +optional
   optional string defaultServingSiteName = 2;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   optional string description = 3;
 
   // Min score to move from stage to stage.
-  // Default is 0
+  // +kubebuilder:default = 0
   // +optional
   optional double minScore = 4;
 
@@ -1505,6 +1512,7 @@ message ReportSpec {
   optional string reportType = 5;
 
   // Format specify the report format. default is pdf
+  // +kubebuilder:default = pdf
   // +optional
   optional string format = 6;
 
@@ -1608,6 +1616,7 @@ message StudySpec {
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:MaxLength=512
   // +optional
   optional string description = 2;
@@ -1618,6 +1627,7 @@ message StudySpec {
   optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
   // DatasetName refer to the dataset object for which the study is for.
+  // +kubebuilder:default = ""
   // Required.
   optional string datasetName = 4;
 
@@ -1653,26 +1663,32 @@ message StudySpec {
   optional DataSplit split = 12;
 
   // Aborted is set when we want to abort the training
+  // +kubebuilder:default = false
   // +optional
   optional bool aborted = 13;
 
   // Reported is set when we want to create model report
+  // +kubebuilder:default = false
   // +optional
   optional bool reported = 14;
 
   // Paused is set when we want to pause the training
+  // +kubebuilder:default = false
   // +optional
   optional bool paused = 15;
 
   // Profiled is set when we want to create model profile and study profile.
+  // +kubebuilder:default = false
   // +optional
   optional bool profiled = 16;
 
   // Set to true if you want the system to create a docker model image, at the end of training.
+  // +kubebuilder:default = false
   // +optional
   optional bool modelPublished = 17;
 
   // Set to true if you want the system to push model image to remote docker registry
+  // +kubebuilder:default = false
   // +optional
   optional bool modelImagePushed = 18;
 
@@ -1686,6 +1702,7 @@ message StudySpec {
   optional Hierarchy hierarchy = 21;
 
   // The owner account name
+  // +kubebuilder:default = ""
   // +optional
   optional string owner = 22;
 }

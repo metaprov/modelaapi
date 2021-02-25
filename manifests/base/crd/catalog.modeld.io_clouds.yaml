@@ -25,7 +25,8 @@ spec:
       openAPIV3Schema:
         description: ==============================================================================
           CloudName ==============================================================================
-          Cloud represent a cloud provider. A cloud contains RegionName, machines
+          Cloud represent a cloud provider. A cloud contains regions,datacenter,machine
+          classes
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -40,6 +41,7 @@ spec:
           metadata:
             type: object
           spec:
+            description: CloudSpec contains a list of Clouds
             properties:
               defaultGpuClassRef:
                 type: string
@@ -49,9 +51,9 @@ spec:
                 type: string
               gpuClasses:
                 items:
+                  description: GpuClass define the specific for a machine type of
+                    a cloud provider
                   properties:
-                    cloudName:
-                      type: string
                     gpumem:
                       anyOf:
                       - type: integer
@@ -73,15 +75,14 @@ spec:
                       minimum: 0
                       type: integer
                   required:
-                  - cloudName
                   - regionName
                   type: object
                 type: array
               machineClasses:
                 items:
+                  description: MachineClass define the specific for a machine type
+                    of a cloud provider
                   properties:
-                    cloudName:
-                      type: string
                     mem:
                       anyOf:
                       - type: integer
@@ -99,11 +100,10 @@ spec:
                 type: array
               regions:
                 items:
+                  description: Region defines
                   properties:
                     billingCode:
                       description: The billing code of the region
-                      type: string
-                    cloudName:
                       type: string
                     datacenters:
                       items:

@@ -48,10 +48,12 @@ type MLFrameworkSpec struct {
 	// Url for the home page of the mlframework
 	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 	// Comments of the framework
+	// +kubebuilder:default =""
 	// +Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The current version of the mlframework
-	Version string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
+	// +kubebuilder:default =""
+	Version *string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
 	// The framework languge
 	Lang *string `json:"lang,omitempty" protobuf:"bytes,4,opt,name=lang"`
 }

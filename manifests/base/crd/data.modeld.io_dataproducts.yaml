@@ -56,7 +56,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: DataProduct defines the desired state of a data product
+            description: DataProductSpec defines the desired state of a data product
             properties:
               dataLocation:
                 description: This folder contain the root location for all the artifacts
@@ -74,7 +74,6 @@ spec:
               dataWorkloadClassName:
                 description: A reference to the workload class used when running tasks
                   on the dataset, for example profiling or reports.
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               description:
                 description: User provided description
@@ -109,7 +108,7 @@ spec:
                 type: object
               labName:
                 description: LabName is the Lab where models of this products are
-                  trained Required.
+                  trained
                 maxLength: 63
                 minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
@@ -117,20 +116,18 @@ spec:
               modelWorkloadClassName:
                 description: A reference to the workload class used when training
                   or testing the model
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               notifierName:
                 description: the notifier selector select the notifier for events
                   that occur in the product life cycle.
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               owner:
-                description: The account name of the owner of this data product
+                description: The data product owner
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               retriesOnFailure:
-                description: Denote how many time a job is retry after failure default
-                  to 3
+                default: 3
+                description: Denote how many time a job is retry after failure
                 format: int32
                 type: integer
               servingSiteName:

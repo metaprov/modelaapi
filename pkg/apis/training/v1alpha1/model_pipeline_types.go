@@ -117,15 +117,17 @@ type ModelPipelineList struct {
 type ModelPipelineSpec struct {
 	// The product version of the resource
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// Servingsite name is the default serving site for each stage.
+	// +kubebuilder:default =""
 	// +optional
 	DefaultServingSiteName *string `json:"defaultServingSiteName,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteName"`
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Min score to move from stage to stage.
-	// Default is 0
+	// +kubebuilder:default = 0
 	// +optional
 	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 	// Datastage build new dataset from the data sources.

@@ -119,18 +119,23 @@ type ModelPipelineRunList struct {
 // ModelPipelineRunSpec is the desired state of the ModelPipelineRun resource
 type ModelPipelineRunSpec struct {
 	// User provided description
+	// +kubebuilder:default = ""
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default = ""
 	// +optional
-	Description string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// TriggerName denote the trigger that fired this pipeline run
+	// +kubebuilder:default = ""
 	// +optional
-	TriggerName string `json:"triggerName,omitempty" protobuf:"bytes,3,opt,name=triggerName"`
+	TriggerName *string `json:"triggerName,omitempty" protobuf:"bytes,3,opt,name=triggerName"`
 	// PipelineName is the name of the pipeline specification for this pipeline
+	// +kubebuilder:default = ""
 	// +optional
-	PipelineName string `json:"pipelineName,omitempty" protobuf:"bytes,4,opt,name=pipelineName"`
+	PipelineName *string `json:"pipelineName,omitempty" protobuf:"bytes,4,opt,name=pipelineName"`
 	// The owner account name
+	// +kubebuilder:default = ""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }

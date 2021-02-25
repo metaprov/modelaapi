@@ -78,12 +78,14 @@ type DataPipelineRunList struct {
 //DataPipelineRunSpec defines the desired state of a schema
 type DataPipelineRunSpec struct {
 	// The product of the rejoiner
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default =""
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The data product
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
 	// The location of data artifacts that are generated during the run

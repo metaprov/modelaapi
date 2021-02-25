@@ -76,11 +76,12 @@ type CurtainList struct {
 // CurtainSpec define the desired state of a Curtain
 type CurtainSpec struct {
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// User provided description
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// The product of the resource
 	// +optional
 	ServingSiteName string `json:"servingsiteName,omitempty" protobuf:"bytes,3,opt,name=servingsiteName"`

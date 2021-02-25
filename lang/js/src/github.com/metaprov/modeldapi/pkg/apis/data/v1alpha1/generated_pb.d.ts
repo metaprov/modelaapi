@@ -1898,9 +1898,6 @@ export class FeaturePipelineSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): FeaturePipelineSpec;
 
-  getName(): string;
-  setName(value: string): FeaturePipelineSpec;
-
   getDescription(): string;
   setDescription(value: string): FeaturePipelineSpec;
 
@@ -1932,7 +1929,6 @@ export namespace FeaturePipelineSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
-    name: string,
     description: string,
     aggregation?: AggregationSpec.AsObject,
     materialization?: MaterializationSpec.AsObject,

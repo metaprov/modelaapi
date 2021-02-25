@@ -19340,12 +19340,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.t
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     aggregation: (f = msg.getAggregation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec.toObject(includeInstance, f),
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f),
-    family: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    entityname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    family: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    entityname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -19392,27 +19391,23 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.d
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 5:
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec.deserializeBinaryFromReader);
       msg.setAggregation(value);
       break;
-    case 6:
+    case 5:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.deserializeBinaryFromReader);
       msg.setMaterialization(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setFamily(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setEntityname(value);
       break;
@@ -19466,17 +19461,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getAggregation();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec.serializeBinaryToWriter
     );
@@ -19484,22 +19472,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
   f = message.getMaterialization();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 7));
   if (f != null) {
     writer.writeString(
       7,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeString(
-      8,
       f
     );
   }
@@ -19579,10 +19567,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
 
 
 /**
- * optional string name = 3;
+ * optional string description = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -19591,7 +19579,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setDescription = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -19600,7 +19588,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearName = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearDescription = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -19609,54 +19597,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasName = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string description = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional AggregationSpec aggregation = 5;
+ * optional AggregationSpec aggregation = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getAggregation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec, 5));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec, 4));
 };
 
 
@@ -19665,7 +19617,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setAggregation = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -19683,17 +19635,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasAggregation = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional MaterializationSpec materialization = 6;
+ * optional MaterializationSpec materialization = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getMaterialization = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec, 6));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec, 5));
 };
 
 
@@ -19702,7 +19654,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setMaterialization = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -19720,16 +19672,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasMaterialization = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string family = 7;
+ * optional string family = 6;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getFamily = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -19738,7 +19690,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setFamily = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -19747,7 +19699,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearFamily = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -19756,16 +19708,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasFamily = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string entityName = 8;
+ * optional string entityName = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getEntityname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -19774,7 +19726,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setEntityname = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -19783,7 +19735,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearEntityname = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -19792,7 +19744,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasEntityname = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

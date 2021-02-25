@@ -104,6 +104,7 @@ message CurtainList {
 // CurtainSpec define the desired state of a Curtain
 message CurtainSpec {
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   optional string description = 1;
 
@@ -524,7 +525,7 @@ message PredictorSpec {
 
   // User provided description
   // +kubebuilder:validation:MaxLength=256
-  // Default : empty
+  // +kubebuilder:default =""
   // +optional
   optional string description = 2;
 

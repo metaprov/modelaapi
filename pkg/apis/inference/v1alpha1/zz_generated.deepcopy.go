@@ -153,6 +153,11 @@ func (in *CurtainSpec) DeepCopyInto(out *CurtainSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.VersionName != nil {
+		in, out := &in.VersionName, &out.VersionName
+		*out = new(string)
+		**out = **in
+	}
 	if in.Wizards != nil {
 		in, out := &in.Wizards, &out.Wizards
 		*out = make([]string, len(*in))

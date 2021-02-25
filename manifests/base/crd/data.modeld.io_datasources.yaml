@@ -58,7 +58,7 @@ spec:
                 maxLength: 512
                 type: string
               file:
-                description: If the data source is flat file
+                description: FlatFile access specification
                 properties:
                   commentChars:
                     description: CommentCharacter(s) to split comments off the end
@@ -330,7 +330,7 @@ spec:
                     type: object
                 type: object
               table:
-                description: If the data source is a table
+                description: Table access specification if the data source is a table
                 properties:
                   connectionRef:
                     description: Connection refer to a connection object that point
@@ -402,6 +402,7 @@ spec:
                 - table
                 type: string
               versionName:
+                default: ""
                 description: The version of the flat file.
                 maxLength: 63
                 type: string

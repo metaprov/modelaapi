@@ -77,9 +77,10 @@ type RecipeSpec struct {
 	// VersionName is the data product version of the dataset
 	// +kubebuilder:validation:MaxLength=63
 	// required.
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The recipe input spec.

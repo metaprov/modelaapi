@@ -97,7 +97,7 @@ spec:
                   folder contains all the study artifacts - metadata, reports, profile,models
                 type: string
               minScore:
-                description: Min score to move from stage to stage. Default is 0
+                description: Min score to move from stage to stage.
                 type: number
               owner:
                 description: The owner account name

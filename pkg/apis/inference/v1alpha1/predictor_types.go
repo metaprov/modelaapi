@@ -195,7 +195,7 @@ type PredictorSpec struct {
 	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=256
-	// Default : empty
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The product that this predictor serve.

@@ -73,23 +73,25 @@ type FeaturePipelineRunSpec struct {
 	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	Owner string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the feature.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// FileName specify the name of the attribute
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
-	FeaturePipelineName string `json:"featurePipelineName,omitempty" protobuf:"bytes,3,opt,name=featurePipelineName"`
+	FeaturePipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,3,opt,name=featurePipelineName"`
 }
 
 // FeatureStatus defines the observed state of Feature
 type FeaturePipelineRunStatus struct {
 	// The Start time of the run
+	//+option
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// The End time of the run
+	//+option
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,2,opt,name=completionTime"`
 	//+optional
 	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`

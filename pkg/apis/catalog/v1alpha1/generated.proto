@@ -49,18 +49,17 @@ message AlgorithmList {
   repeated Algorithm items = 2;
 }
 
-// Algorithm is the spec for a machine learning algorithm
-// All of the fields are real only
+// AlgorithmSpec is the desired state of Algorithm.
 message AlgorithmSpec {
-  // FrameworkRef is a reference to library
+  // FrameworkName is a reference to library
   // +optional
   optional string frameworkName = 1;
 
-  // The Algorithm description
+  // +kubebuilder:default = ""
   // +optional
   optional string description = 2;
 
-  // The Algorithm Url
+  // The Url for the algorithm information
   // +optional
   optional string url = 3;
 
@@ -76,11 +75,12 @@ message AlgorithmSpec {
   // +optional
   repeated IntParameter integerParameters = 6;
 
-  // Integer hyper parameters
+  // Float hyper parameters
   // +optional
   repeated FloatParameter floatParameters = 7;
 
   // Categorical hyper parameters
+  // +optional
   repeated CategoricalParameter categoricalParameters = 8;
 }
 
@@ -88,14 +88,16 @@ message AlgorithmSpec {
 message AlgorithmStatus {
 }
 
+// CategoricalParameter contain the specification of an categorical hyper parameter
 message CategoricalParameter {
-  // FileName is the name of the hyper parameter
+  // Name is the name of the hyper parameter
   // +optional
   optional string name = 1;
 
   // Default value
   optional string defaultValue = 8;
 
+  // Enums defines the list of values
   // +optional
   repeated string enums = 10;
 }
@@ -108,7 +110,7 @@ message CategoricalParameter {
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
-// Cloud represent a cloud provider. A cloud contains RegionName, machines
+// Cloud represent a cloud provider. A cloud contains regions,datacenter,machine classes
 message Cloud {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -120,13 +122,14 @@ message Cloud {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// CloudList contains a list of CloudName
+// CloudList contains a list of Clouds
 message CloudList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated Cloud items = 2;
 }
 
+// CloudSpec contains a list of Clouds
 message CloudSpec {
   optional string defaultRegionName = 1;
 
@@ -163,8 +166,9 @@ message DataCenter {
   optional string code = 2;
 }
 
+// FloatParameter contain the specification of an float hyper parameter
 message FloatParameter {
-  // FileName is the name of the hyper parameter
+  // Name is the name of the hyper parameter
   // +optional
   optional string name = 1;
 
@@ -180,22 +184,23 @@ message FloatParameter {
   // +optional
   optional double defaultValue = 5;
 
+  // Sample from a log parameter
   // +optional
   optional bool log = 6;
 }
 
+// GpuClass define the specific for a machine type of a cloud provider
 message GpuClass {
-  optional string cloudName = 1;
+  optional string regionName = 1;
 
-  optional string regionName = 2;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 2;
 
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3;
+  // +kubebuilder:validation:Minimum=0
+  optional int32 vcpu = 3;
 
-  optional int32 vcpu = 4;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity gpumem = 4;
 
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity gpumem = 5;
-
-  optional string storage = 6;
+  optional string storage = 5;
 }
 
 message GpuClassCost {
@@ -208,7 +213,7 @@ message GpuClassCost {
 
 // IntParameter contain the specification of an integer hyper parameter
 message IntParameter {
-  // FileName is the name of the hyper parameter
+  // Name is the name of the hyper parameter
   // +optional
   optional string name = 1;
 
@@ -224,7 +229,7 @@ message IntParameter {
   // +optional
   optional int32 max = 4;
 
-  // Default float value
+  // Default parameter value
   optional int32 defaultValue = 6;
 }
 
@@ -260,10 +265,12 @@ message MLFrameworkSpec {
   optional string url = 1;
 
   // Comments of the framework
+  // +kubebuilder:default =""
   // +Optional
   optional string description = 2;
 
   // The current version of the mlframework
+  // +kubebuilder:default =""
   optional string version = 3;
 
   // The framework languge
@@ -274,21 +281,19 @@ message MLFrameworkSpec {
 message MLFrameworkStatus {
 }
 
+// MachineClass define the specific for a machine type of a cloud provider
 message MachineClass {
   // +optional
-  optional string cloudName = 1;
+  optional string regionName = 1;
 
   // +optional
-  optional string regionName = 2;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 2;
 
   // +optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3;
+  optional int32 vcpu = 3;
 
   // +optional
-  optional int32 vcpu = 4;
-
-  // +optional
-  optional string storage = 5;
+  optional string storage = 4;
 }
 
 message MachineClassCost {
@@ -363,20 +368,19 @@ message PublicDatasetSpec {
   optional string dataUrl = 5;
 }
 
+// Region defines
 message Region {
-  optional string cloudName = 1;
-
   // The default datacenter for a region
   // +optional
-  optional string defaultDatacenterName = 2;
+  optional string defaultDatacenterName = 1;
 
   // The location of the region
-  optional string location = 3;
+  optional string location = 2;
 
   // The billing code of the region
-  optional string billingCode = 4;
+  optional string billingCode = 3;
 
-  repeated DataCenter datacenters = 5;
+  repeated DataCenter datacenters = 4;
 }
 
 // +genclient

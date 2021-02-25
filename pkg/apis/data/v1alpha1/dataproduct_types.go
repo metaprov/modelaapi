@@ -71,13 +71,13 @@ const (
 // Represent a stack holder in the product.
 // Each stake holder can hove one or more roles.
 type StakeHolder struct {
-	AccountName string            `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
+	AccountName *string           `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
 	Roles       []StakeHolderRole `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
 }
 
 type GitLocation struct {
 	// The credential to the git repo provider
-	GitConnectionName string `json:"gitConnectionName,omitempty" protobuf:"bytes,2,opt,name=gitConnectionName"`
+	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,2,opt,name=gitConnectionName"`
 	// The url to the git repo.
 	// +kubebuilder:validation:MaxLength=256
 	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
@@ -96,10 +96,11 @@ type ImageLocation struct {
 	RegistryConnectionName *string `json:"registryConnectionName,omitempty" protobuf:"bytes,2,opt,name=registryConnectionName"`
 }
 
-//DataProduct defines the desired state of a data product
+//DataProductSpec defines the desired state of a data product
 type DataProductSpec struct {
-	// The account name of the owner of this data product
+	// The data product owner
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default =""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The tenant that own the data product.
@@ -116,12 +117,13 @@ type DataProductSpec struct {
 	// Required.
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
 	// LabName is the Lab where models of this products are trained
+	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// Required.
 	LabName *string `json:"labName" protobuf:"bytes,7,opt,name=labName"`
 	// ServingSiteName is the serving site where predictors of this product are deployed
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -131,6 +133,7 @@ type DataProductSpec struct {
 	// Required.
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,10,opt,name=description"`
@@ -138,19 +141,19 @@ type DataProductSpec struct {
 	// +optional
 	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,11,opt,name=dataLocation"`
 	// the notifier selector select the notifier for events that occur in the product life cycle.
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default = ""
 	// +optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,12,opt,name=notifierName"`
 	// A reference to the workload class used when training or testing the model
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default = ""
 	// +optional
 	ModelWorkloadClassName *string `json:"modelWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=modelWorkloadClassName"`
 	// A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default = ""
 	// +optional
 	DataWorkloadClassName *string `json:"dataWorkloadClassName,omitempty" protobuf:"bytes,14,opt,name=dataWorkloadClassName"`
 	// Denote how many time a job is retry after failure
-	// default to 3
+	// +kubebuilder:default=3
 	// +optional
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
 }

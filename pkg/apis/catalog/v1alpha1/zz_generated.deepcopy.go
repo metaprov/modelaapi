@@ -469,6 +469,11 @@ func (in *MLFrameworkSpec) DeepCopyInto(out *MLFrameworkSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Version != nil {
+		in, out := &in.Version, &out.Version
+		*out = new(string)
+		**out = **in
+	}
 	if in.Lang != nil {
 		in, out := &in.Lang, &out.Lang
 		*out = new(string)

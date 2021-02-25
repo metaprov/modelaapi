@@ -46,6 +46,7 @@ message Column {
   optional string format = 4;
 
   // Description is a description of the feature
+  // +kubebuilder:default =""
   // +kubebuilder:validation:MaxLength=63
   // +optional
   optional string description = 5;
@@ -330,14 +331,16 @@ message DataPipelineRunList {
 // DataPipelineRunSpec defines the desired state of a schema
 message DataPipelineRunSpec {
   // The product of the rejoiner
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default =""
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   optional string description = 2;
 
   // The data product
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   optional string datapipelineName = 3;
 
@@ -377,10 +380,11 @@ message DataPipelineRunStatus {
 // DataPipelineSpec defines the desired state of a DataPipeline
 message DataPipelineSpec {
   // Dataproduct version
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default =""
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   optional string description = 2;
 
@@ -390,11 +394,13 @@ message DataPipelineSpec {
   // The recipe for this pipeline.
   repeated string recipeNames = 4;
 
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // The output file of the pipeline
   optional string outputDataset = 5;
 
   // A cron field to schedule the data pipeline.
+  // +kubebuilder:default =""
   optional string schedule = 6;
 
   // The owner account name
@@ -458,10 +464,11 @@ message DataProductList {
   repeated DataProduct items = 2;
 }
 
-// DataProduct defines the desired state of a data product
+// DataProductSpec defines the desired state of a data product
 message DataProductSpec {
-  // The account name of the owner of this data product
+  // The data product owner
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default =""
   // +optional
   optional string owner = 1;
 
@@ -483,13 +490,14 @@ message DataProductSpec {
   optional ImageLocation imageLocation = 5;
 
   // LabName is the Lab where models of this products are trained
+  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default =""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  // Required.
   optional string labName = 7;
 
   // ServingSiteName is the serving site where predictors of this product are deployed
+  // +kubebuilder:default =""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -501,6 +509,7 @@ message DataProductSpec {
   optional string task = 9;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 10;
@@ -510,22 +519,22 @@ message DataProductSpec {
   optional DataLocation dataLocation = 11;
 
   // the notifier selector select the notifier for events that occur in the product life cycle.
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default = ""
   // +optional
   optional string notifierName = 12;
 
   // A reference to the workload class used when training or testing the model
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default = ""
   // +optional
   optional string modelWorkloadClassName = 13;
 
   // A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default = ""
   // +optional
   optional string dataWorkloadClassName = 14;
 
   // Denote how many time a job is retry after failure
-  // default to 3
+  // +kubebuilder:default=3
   // +optional
   optional int32 retriesOnFailure = 15;
 }
@@ -591,6 +600,7 @@ message DataProductVersionSpec {
 
   // Description is user provided description
   // +optional
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
@@ -602,13 +612,12 @@ message DataProductVersionSpec {
 
   // Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
   // collect all the parents' product versions
-  // Default: false
+  // +kubebuilder:default = false
   // +optional
   optional bool baseline = 4;
 
   // The owner account name
   // +kubebuilder:default="no-one"
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 5;
 }
@@ -676,10 +685,12 @@ message DataSourceSpec {
 
   // The version of the flat file.
   // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:default=""
   // +optional
   optional string versionName = 2;
 
   // User provided description of the data source
+  // +kubebuilder:default =""
   // +kubebuilder:validation:MaxLength=512
   // +optional
   optional string description = 3;
@@ -690,10 +701,12 @@ message DataSourceSpec {
   // The data source type.
   optional string type = 5;
 
-  // If the data source is flat file
+  // FlatFile access specification
+  // +optional
   optional FlatFileSpec file = 6;
 
-  // If the data source is a table
+  // Table access specification if the data source is a table
+  // +optional
   optional Table table = 7;
 
   // The owner account name
@@ -768,34 +781,33 @@ message DatasetSpec {
   optional string owner = 1;
 
   // VersionName is the data product version of the dataset
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // required.
   optional string versionName = 2;
 
   // DataSourceName is the name of the data source which created this dataset. For example flat file
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string datasourceName = 3;
 
   // User provided description
   // +kubebuilder:validation:MaxLength=512
+  // +kubebuilder:default =""
   // +optional
   optional string description = 4;
 
   // If true, a dataset report should be generated for this dataset.
-  // Default: true
+  // +kubebuilder:default = true
   // +optional
   optional bool report = 7;
 
   // If true, we should validate the dataset
-  // Default:  true
+  // +kubebuilder:default = true
   // +optional
   optional bool validate = 8;
 
   // Labeled indicates if this dataset is labeled or not.
-  // Default:  true
+  // +kubebuilder:default = true
   // +optional
   optional bool labeled = 10;
 
@@ -915,15 +927,17 @@ message EntityList {
 // EntitySpec contain the desired state of a Entity.
 message EntitySpec {
   // The product version of the entity
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default =""
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
   // Reference to the feature names of this entity
+  // +optional
   repeated string keys = 3;
 
   // The owner account name
@@ -1108,16 +1122,18 @@ message FeaturePipelineRunSpec {
 // FeatureStatus defines the observed state of Feature
 message FeaturePipelineRunStatus {
   // The Start time of the run
+  // +option
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
 
   // The End time of the run
+  // +option
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
 
   // +optional
   repeated FeaturePipelineRunCondition conditions = 3;
 }
 
-// FeatureSpec contain the desired state of a Feature
+// FeaturePipelineSpec contain the desired state of a Feature
 message FeaturePipelineSpec {
   // The feature owner
   // +kubebuilder:default="no-one"
@@ -1130,32 +1146,25 @@ message FeaturePipelineSpec {
   // +optional
   optional string versionName = 2;
 
-  // FileName specify the name of the attribute
-  // +kubebuilder:validation:MaxLength=64
-  // +kubebuilder:validation:MinLength=1
-  optional string name = 3;
-
   // Comments is a description of the feature
   // +optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 4;
+  optional string description = 3;
 
   // Aggregation
   // +optional
-  optional AggregationSpec aggregation = 5;
+  optional AggregationSpec aggregation = 4;
 
   // Materialization
-  optional MaterializationSpec materialization = 6;
+  optional MaterializationSpec materialization = 5;
 
   // Feature Family name
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
-  optional string family = 7;
+  optional string family = 6;
 
   // Reference to the entity name
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
-  optional string entityName = 8;
+  optional string entityName = 7;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1174,11 +1183,13 @@ message FeatureSpec {
   optional string owner = 1;
 
   // The product version for the feature.
+  // +kubebuilder:default =""
   // +optional
   optional string versionName = 2;
 
   // Comments is a description of the feature
   // +optional
+  // +kubebuilder:default =""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 3;
 
@@ -1192,15 +1203,19 @@ message FeatureSpec {
   optional string keyColumn = 5;
 
   // The name of the time stamp column
+  // +optional
   optional string timestampColumn = 6;
 
   // The name of the feature column
+  // +optional
   optional string featureColumn = 7;
 
   // The name of the entity containing this feature
+  // +optional
   optional string entityName = 8;
 
   // The name of the feature pipeline that is producing this feature
+  // +optional
   optional string featurePipelineName = 9;
 }
 
@@ -1298,10 +1313,12 @@ message FeaturesetList {
 // FeaturesetSpec contain the desired state of a Featureset.
 message FeaturesetSpec {
   // The product version of the featureset
+  // +kubebuilder:default = ""
   optional string versionName = 1;
 
   // User provided description
   // +optional
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
@@ -1515,16 +1532,20 @@ message LabelingPipelineSpec {
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   optional string description = 2;
 
   // The datasets objects which are used for this pipeline. Each datafile can be from a bucket
+  // +optional
   repeated string inputLabelsets = 3;
 
   // The recipe for this pipeline.
+  // +optional
   repeated string recipeNames = 4;
 
   // The output file of the pipeline
+  // +optional
   optional string outputLabelset = 5;
 
   // A cron field to schedule the data pipeline.
@@ -1749,6 +1770,7 @@ message RecipeSpec {
 
   // User provided description
   // +kubebuilder:validation:MaxLength=512
+  // +kubebuilder:default =""
   // +optional
   optional string description = 3;
 
@@ -1834,6 +1856,7 @@ message Table {
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default =""
   // +optional
   optional string description = 2;
 

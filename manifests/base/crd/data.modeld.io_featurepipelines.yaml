@@ -48,7 +48,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeatureSpec contain the desired state of a Feature
+            description: FeaturePipelineSpec contain the desired state of a Feature
             properties:
               aggregation:
                 description: Aggregation
@@ -80,11 +80,9 @@ spec:
                 type: string
               entityName:
                 description: Reference to the entity name
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               family:
                 description: Feature Family name
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               materialization:
                 description: Materialization
@@ -109,11 +107,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              name:
-                description: FileName specify the name of the attribute
-                maxLength: 64
-                minLength: 1
-                type: string
               owner:
                 default: no-one
                 description: The feature owner
@@ -123,9 +116,6 @@ spec:
                 description: The product version for the feature.
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-            required:
-            - materialization
-            - name
             type: object
           status:
             description: FeatureStatus defines the observed state of Feature

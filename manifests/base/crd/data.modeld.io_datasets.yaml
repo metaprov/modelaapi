@@ -72,15 +72,13 @@ spec:
                   this dataset. For example flat file
                 maxLength: 63
                 minLength: 1
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               description:
                 description: User provided description
                 maxLength: 512
                 type: string
               labeled:
-                description: 'Labeled indicates if this dataset is labeled or not.
-                  Default:  true'
+                description: Labeled indicates if this dataset is labeled or not.
                 type: boolean
               location:
                 description: Folder of the actual data resides.
@@ -113,17 +111,16 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               report:
-                description: 'If true, a dataset report should be generated for this
-                  dataset. Default: true'
+                description: If true, a dataset report should be generated for this
+                  dataset.
                 type: boolean
               validate:
-                description: 'If true, we should validate the dataset Default:  true'
+                description: If true, we should validate the dataset
                 type: boolean
               versionName:
                 description: VersionName is the data product version of the dataset
                   required.
                 maxLength: 63
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
             type: object
           status:

@@ -19,7 +19,7 @@ import (
 // +kubebuilder:object:root=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
-// Cloud represent a cloud provider. A cloud contains RegionName, machines
+// Cloud represent a cloud provider. A cloud contains regions,datacenter,machine classes
 type Cloud struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -30,13 +30,14 @@ type Cloud struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// CloudList contains a list of CloudName
+// CloudList contains a list of Clouds
 type CloudList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []Cloud `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// CloudSpec contains a list of Clouds
 type CloudSpec struct {
 	DefaultRegionName       string         `json:"defaultRegionRef,omitempty" protobuf:"bytes,1,opt,name=defaultRegionName"`
 	DefaultMachineClassName string         `json:"defaultMachineClassRef,omitempty" protobuf:"bytes,2,opt,name=defaultMachineClassName"`
@@ -46,43 +47,41 @@ type CloudSpec struct {
 	Regions                 []Region       `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions"`
 }
 
+// MachineClass define the specific for a machine type of a cloud provider
 type MachineClass struct {
 	//+optional
-	CloudName string `json:"cloudName" protobuf:"bytes,1,opt,name=cloudName"`
+	RegionName string `json:"regionName" protobuf:"bytes,1,opt,name=regionName"`
 	//+optional
-	RegionName string `json:"regionName" protobuf:"bytes,2,opt,name=regionName"`
+	Mem *resource.Quantity `json:"mem" protobuf:"bytes,2,opt,name=mem"`
 	//+optional
-	Mem *resource.Quantity `json:"mem" protobuf:"bytes,3,opt,name=mem"`
+	Vcpu *int32 `json:"vcpu" protobuf:"varint,3,opt,name=vcpu"`
 	//+optional
-	Vcpu *int32 `json:"vcpu" protobuf:"varint,4,opt,name=vcpu"`
-	//+optional
-	Storage string `json:"storage" protobuf:"bytes,5,opt,name=storage"`
+	Storage string `json:"storage" protobuf:"bytes,4,opt,name=storage"`
 }
 
+// GpuClass define the specific for a machine type of a cloud provider
 type GpuClass struct {
-	CloudName  string            `json:"cloudName" protobuf:"bytes,1,opt,name=cloudName"`
-	RegionName string            `json:"regionName" protobuf:"bytes,2,opt,name=regionName"`
-	Mem        resource.Quantity `json:"mem,omitempty" protobuf:"bytes,3,opt,name=mem"`
+	RegionName string            `json:"regionName" protobuf:"bytes,1,opt,name=regionName"`
+	Mem        resource.Quantity `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
 	// +kubebuilder:validation:Minimum=0
+	Vcpu int32 `json:"vcpu,omitempty" protobuf:"varint,3,opt,name=vcpu"`
 
-	Vcpu int32 `json:"vcpu,omitempty" protobuf:"varint,4,opt,name=vcpu"`
+	Gpumem *resource.Quantity `json:"gpumem,omitempty" protobuf:"bytes,4,opt,name=gpumem"`
 
-	Gpumem *resource.Quantity `json:"gpumem,omitempty" protobuf:"bytes,5,opt,name=gpumem"`
-
-	Storage string `json:"storage,omitempty" protobuf:"bytes,6,opt,name=storage"`
+	Storage string `json:"storage,omitempty" protobuf:"bytes,5,opt,name=storage"`
 }
 
+//Region defines
 type Region struct {
-	CloudName string `json:"cloudName,omitempty" protobuf:"bytes,1,opt,name=cloudName"`
 	// The default datacenter for a region
 	//+optional
-	DefaultDatacenterName string `json:"defaultDatacenterName,omitempty" protobuf:"bytes,2,opt,name=defaultDatacenterName"`
+	DefaultDatacenterName string `json:"defaultDatacenterName,omitempty" protobuf:"bytes,1,opt,name=defaultDatacenterName"`
 	// The location of the region
-	Location string `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	Location string `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// The billing code of the region
-	BillingCode string `json:"billingCode,omitempty" protobuf:"bytes,4,opt,name=billingCode"`
+	BillingCode string `json:"billingCode,omitempty" protobuf:"bytes,3,opt,name=billingCode"`
 
-	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,5,rep,name=datacenters"`
+	Datacenters []DataCenter `json:"datacenters,omitempty" protobuf:"bytes,4,rep,name=datacenters"`
 }
 
 type DataCenter struct {

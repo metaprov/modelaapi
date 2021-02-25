@@ -35,6 +35,7 @@ type Table struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default =""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The actual query. this is required.
@@ -126,7 +127,6 @@ const (
 )
 
 type FlatFileSpec struct {
-
 	// The text file type
 	// Default: csv
 	// +optional
@@ -199,6 +199,7 @@ type Column struct {
 	// +optional
 	Format *catalog.DataFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// Description is a description of the feature
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=63
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,5,opt,name=description"`
@@ -308,9 +309,11 @@ type DataSourceSpec struct {
 	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
 	// The version of the flat file.
 	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:default=""
 	// +optional
-	VersionName string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User provided description of the data source
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
@@ -318,9 +321,11 @@ type DataSourceSpec struct {
 	Schema Schema `json:"schema,omitempty" protobuf:"bytes,4,rep,name=schema"`
 	// The data source type.
 	Type DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
-	// If the data source is flat file
+	// FlatFile access specification
+	// +optional
 	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,rep,name=file"`
-	// If the data source is a table
+	// Table access specification if the data source is a table
+	// +optional
 	Table *Table `json:"table,omitempty" protobuf:"bytes,7,rep,name=table"`
 	// The owner account name
 	// +kubebuilder:default="no-one"

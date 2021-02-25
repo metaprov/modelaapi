@@ -67,38 +67,32 @@ type FeaturePipelineList struct {
 	Items           []FeaturePipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// FeatureSpec contain the desired state of a Feature
+// FeaturePipelineSpec contain the desired state of a Feature
 type FeaturePipelineSpec struct {
 	// The feature owner
 	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	Owner string `json:"owner" protobuf:"bytes,1,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the feature.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	VersionName string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
-	// FileName specify the name of the attribute
-	// +kubebuilder:validation:MaxLength=64
-	// +kubebuilder:validation:MinLength=1
-	Name string `json:"name" protobuf:"bytes,3,opt,name=name"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Comments is a description of the feature
 	// +optional
 	// +kubebuilder:validation:MaxLength=512
-	Description string `json:"description" protobuf:"bytes,4,opt,name=description"`
+	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Aggregation
 	// +optional
-	Aggregation *AggregationSpec `json:"aggregation" protobuf:"bytes,5,opt,name=aggregation"`
+	Aggregation *AggregationSpec `json:"aggregation,omitempty" protobuf:"bytes,4,opt,name=aggregation"`
 	// Materialization
-	Materialization MaterializationSpec `json:"materialization" protobuf:"bytes,6,opt,name=materialization"`
+	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,5,opt,name=materialization"`
 	// Feature Family name
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	Family *string `json:"family" protobuf:"bytes,7,opt,name=family"`
+	Family *string `json:"family,omitempty" protobuf:"bytes,6,opt,name=family"`
 	// Reference to the entity name
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
-	EntityName *string `json:"entityName" protobuf:"bytes,8,opt,name=entityName"`
+	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,7,opt,name=entityName"`
 }
 
 // FeatureStatus defines the observed state of Feature

@@ -75,7 +75,6 @@ spec:
                 type: string
               versionName:
                 description: Dataproduct version
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
             type: object
           status:

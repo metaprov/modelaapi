@@ -49,36 +49,40 @@ spec:
           metadata:
             type: object
           spec:
-            description: Algorithm is the spec for a machine learning algorithm All
-              of the fields are real only
+            description: AlgorithmSpec is the desired state of Algorithm.
             properties:
               categoricalParameters:
                 description: Categorical hyper parameters
                 items:
+                  description: CategoricalParameter contain the specification of an
+                    categorical hyper parameter
                   properties:
                     defaultValue:
                       description: Default value
                       type: string
                     enums:
+                      description: Enums defines the list of values
                       items:
                         type: string
                       type: array
                     name:
-                      description: FileName is the name of the hyper parameter
+                      description: Name is the name of the hyper parameter
                       type: string
                   type: object
                 type: array
               description:
-                description: The Algorithm description
                 type: string
               floatParameters:
-                description: Integer hyper parameters
+                description: Float hyper parameters
                 items:
+                  description: FloatParameter contain the specification of an float
+                    hyper parameter
                   properties:
                     defaultValue:
                       description: Default float value
                       type: number
                     log:
+                      description: Sample from a log parameter
                       type: boolean
                     max:
                       description: Max is the maximum value
@@ -87,12 +91,12 @@ spec:
                       description: Min is the minimum value
                       type: number
                     name:
-                      description: FileName is the name of the hyper parameter
+                      description: Name is the name of the hyper parameter
                       type: string
                   type: object
                 type: array
               frameworkName:
-                description: FrameworkRef is a reference to library
+                description: FrameworkName is a reference to library
                 type: string
               integerParameters:
                 description: Integer hyper parameters
@@ -101,7 +105,7 @@ spec:
                     hyper parameter
                   properties:
                     defaultValue:
-                      description: Default float value
+                      description: Default parameter value
                       format: int32
                       type: integer
                     max:
@@ -113,7 +117,7 @@ spec:
                       format: int32
                       type: integer
                     name:
-                      description: FileName is the name of the hyper parameter
+                      description: Name is the name of the hyper parameter
                       type: string
                     type:
                       description: Type is the datatype of the parameter
@@ -158,7 +162,7 @@ spec:
                 - unknown
                 type: string
               url:
-                description: The Algorithm Url
+                description: The Url for the algorithm information
                 type: string
             type: object
           status:

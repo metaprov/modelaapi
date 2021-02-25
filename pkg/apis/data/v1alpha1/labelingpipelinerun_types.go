@@ -70,10 +70,10 @@ type LabelingPipelineRunList struct {
 type LabelingPipelineRunSpec struct {
 	// The feature owner
 	// +kubebuilder:default="no-one"
-	Owner string `json:"owner" protobuf:"bytes,1,opt,name=owner"`
+	Owner *string `json:"owner" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the feature.
 	// +optional
-	VersionName string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
 	// FileName specify the name of the attribute
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
