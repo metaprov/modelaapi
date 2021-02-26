@@ -6,12 +6,19 @@
 
 package v1alpha1
 
-import "github.com/metaprov/modeldapi/pkg/util"
+import (
+	"github.com/metaprov/modeldapi/pkg/util"
+	apierrors "k8s.io/apimachinery/pkg/api/errors"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"k8s.io/apimachinery/pkg/util/validation/field"
+	"sigs.k8s.io/controller-runtime/pkg/webhook"
+)
 
 func (pl *ModelPipeline) Default() {
 	pl.Spec.Folder = util.StrPtr("modeld/live/tenants/default-tenant/dataproducts/" + pl.Namespace +
 		"/dataproductversions/" +
-		pl.Spec.VersionName +
+		*pl.Spec.VersionName +
 		"/pipelines/" + pl.Name)
 }
 

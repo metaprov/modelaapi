@@ -359,7 +359,7 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 		},
 		Spec: data.DataSourceSpec{
 			OwnerName:   nil,
-			VersionName: b.DataProductVersionName(),
+			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
 			Schema:      data.Schema{Columns: columns},
 			Type:        data.FlatFileDataSource,

@@ -88,7 +88,7 @@ func (r *Recipe) Populate(name string) {
 	}
 
 	r.Spec = RecipeSpec{
-		VersionName: "iris-0.0.1",
+		VersionName: util.StrPtr("iris-0.0.1"),
 	}
 }
 

@@ -19,7 +19,7 @@ func DatasetReport() Report {
 			Namespace: "",
 		},
 		Spec: ReportSpec{
-			VersionName: "",
+			VersionName: util.StrPtr(""),
 			EntityRef: v1.ObjectReference{
 				Kind:       "PublishedModel",
 				Namespace:  "lab",

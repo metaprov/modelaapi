@@ -197,11 +197,11 @@ func (schema *DataSource) IsReady() bool {
 }
 
 func (sc *DataSource) Key() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/schemas/%s-schema.yaml", sc.Namespace, sc.Spec.VersionName, sc.Name)
+	return fmt.Sprintf("dataproducts/%s/versions/%s/datasources/%s-datasource.yaml", sc.Namespace, *sc.Spec.VersionName, sc.Name)
 }
 
 func (schema *DataSource) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/versions/%s/schemas/%s", schema.Namespace, schema.Spec.VersionName, schema.Name)
+	return fmt.Sprintf("dataproducts/%s/versions/%s/datasources/%s", schema.Namespace, *schema.Spec.VersionName, schema.Name)
 }
 
 func (schema *DataSource) ManifestUri() string {
@@ -223,7 +223,7 @@ func (sc *DataSource) Poplulate() {
 		Namespace: "iris-product",
 	}
 	sc.Spec = DataSourceSpec{
-		VersionName: "iris",
+		VersionName: util.StrPtr("iris"),
 	}
 
 	sc.Spec.Schema.Columns = make([]Column, 0)

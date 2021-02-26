@@ -482,7 +482,7 @@ func (study *Study) CreateReport(key string, bucketName string) *Report {
 		bucketName)
 
 	report.Label("study", study.Name)
-	report.Spec.VersionName = *study.Spec.VersionName
+	report.Spec.VersionName = study.Spec.VersionName
 	report.Spec.EntityRef = v1.ObjectReference{
 		Namespace: study.Namespace,
 		Name:      study.Name,

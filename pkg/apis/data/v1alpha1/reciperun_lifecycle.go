@@ -91,7 +91,7 @@ func (r *RecipeRun) StatusString() string {
 }
 
 func (r *RecipeRun) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasets/%s", r.Namespace, r.Spec.VersionName, r.Name)
+	return fmt.Sprintf("dataproducts/%s/versions/%s/reciperuns/%s", r.Namespace, *r.Spec.VersionName, r.Name)
 }
 
 func (r *RecipeRun) ManifestUri() string {
@@ -105,18 +105,6 @@ func ParseRecipeYaml(content []byte) (*Recipe, error) {
 	}
 	r := requiredObj.(*Recipe)
 	return r, nil
-}
-
-func (r *RecipeRun) Populate(name string) {
-
-	r.ObjectMeta = metav1.ObjectMeta{
-		Name:      "iris",
-		Namespace: "modeld-data",
-	}
-
-	r.Spec = RecipeRunSpec{
-		VersionName: "iris-0.0.1",
-	}
 }
 
 func (r *RecipeRun) ToYamlFile() ([]byte, error) {

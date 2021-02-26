@@ -78,7 +78,7 @@ func (w *DataPipelineRun) IsReady() bool {
 }
 
 func (run *DataPipelineRun) StatusString() string {
-	return *run.Status.Phase
+	return run.Status.Phase
 }
 
 func (run *DataPipelineRun) RootUri() string {

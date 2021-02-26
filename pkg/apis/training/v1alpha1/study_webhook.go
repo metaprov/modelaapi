@@ -129,6 +129,10 @@ func (study *Study) Default() {
 	if study.Spec.Preprocessing == nil {
 		study.Spec.Preprocessing = &PreprocessingSpec{}
 	}
+	if study.Spec.Preprocessing.Categorical == nil {
+		study.Spec.Preprocessing.Categorical = &CategoricalPipelineSpec{}
+	}
+
 	if study.Spec.Preprocessing.Categorical.Encoder == nil {
 		auto := catalog.AutoEncoder
 		study.Spec.Preprocessing.Categorical.Encoder = &auto
