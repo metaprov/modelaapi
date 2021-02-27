@@ -11,11 +11,6 @@ const (
 
 type ResourceClassType string
 
-//==============================================================================
-// VirtualCluster
-//==============================================================================
-
-/// ServingSiteName site condition
 type VirtualClusterConditionType string
 
 /// ServingSite Condition
@@ -55,43 +50,44 @@ type VirtualCluster struct {
 }
 
 type VirtualClusterSpec struct {
+	// Description is the user provided description
 	//+kubebuilder:default=""
 	//+optional
 	Description *string `json:"description" protobuf:"bytes,1,opt,name=description"`
-	// The desired number of nodes
+	// Nodes is the desired number of nodes
 	//+kubebuilder:default=1
 	//+kubebuilder:validation:Minimum=1
 	//+kubebuilder:validation:Maximum=10
 	// +optional
 	Nodes *int32 `json:"nodes,omitempty" protobuf:"varint,2,opt,name=nodes"`
-	// The class of nodes or vm
+	// NodeClassName is the class of nodes or vm
 	// +kubebuilder:default = ""
 	// +optional
 	NodeClassName *string `json:"nodeClassName,omitempty" protobuf:"bytes,3,opt,name=nodeClassName"`
-	// The desired number of gpus
+	// Gpus is the desired number of gpus
 	//+kubebuilder:default=0
 	//+kubebuilder:validation:Minimum=0
 	//+kubebuilder:validation:Maximum=10
 	// +optional
 	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,4,opt,name=gpus"`
-	// The class of gpu.
+	// GpuClassName is the The class of gpu.
 	// +kubebuilder:default = ""
 	// +optional
 	GpuClassName *string `json:"gpuClassName,omitempty" protobuf:"bytes,5,opt,name=gpuClassName"`
-	// Volume, if needed. The volume is monuted on all nodes.
+	// VolumeSize is the size of the volume that would be mounted on all the node of the cluster
 	//+kubebuilder:default=0
 	//+kubebuilder:validation:Minimum=0
 	//+kubebuilder:validation:Maximum=10
 	// +optional
 	VolumeSize *int32 `json:"volumeSize,omitempty" protobuf:"varint,6,opt,name=volumeSize"`
-	// Should we use spot instances.
+	// Spot indicate if we should we use spot instances.
 	//+kubebuilder:default=false
 	//+optional
 	Spot *bool `json:"spot,omitempty" protobuf:"bytes,7,opt,name=spot"`
-	// Name of the provider connection
+	// ConnectionName refer to the name of the provider connection
 	// +kubebuilder:default = ""
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
-	// the account name of the owner of this cluster
+	// Owner is the account name of the owner of this cluster
 	//+kubebuilder:default=""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`

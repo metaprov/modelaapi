@@ -16405,7 +16405,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ownername: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     studyname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -16426,8 +16426,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     archived: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
     forecasted: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    forecastingspec: (f = msg.getForecastingspec()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f
+    forecastingspec: (f = msg.getForecastingspec()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16466,7 +16465,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOwnername(value);
+      msg.setOwner(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -16558,10 +16557,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.deserializeBinaryFromReader);
       msg.setForecastingspec(value);
-      break;
-    case 23:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
       break;
     default:
       reader.skipField();
@@ -16753,21 +16748,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 23));
-  if (f != null) {
-    writer.writeString(
-      23,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string ownerName = 1;
+ * optional string owner = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getOwnername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getOwner = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -16776,7 +16764,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setOwnername = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setOwner = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -16785,7 +16773,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearOwnername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearOwner = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -16794,7 +16782,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasOwnername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -17559,42 +17547,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasForecastingspec = function() {
   return jspb.Message.getField(this, 22) != null;
-};
-
-
-/**
- * optional string owner = 23;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 23, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 23, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 23) != null;
 };
 
 
@@ -21356,7 +21308,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.toOb
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     schemaref: (f = msg.getSchemaref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    imagereporef: (f = msg.getImagereporef()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    imagename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     requirements: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     debpackages: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     varsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
@@ -21412,9 +21364,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.dese
       msg.setSchemaref(value);
       break;
     case 4:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setImagereporef(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImagename(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -21488,12 +21439,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.seri
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getImagereporef();
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       4,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
@@ -21645,30 +21595,29 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference imageRepoRef = 4;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ * optional string imageName = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getImagereporef = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getImagename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setImagereporef = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setImagename = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearImagereporef = function() {
-  return this.setImagereporef(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearImagename = function() {
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -21676,7 +21625,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasImagereporef = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasImagename = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

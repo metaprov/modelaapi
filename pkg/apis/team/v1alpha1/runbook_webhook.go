@@ -8,11 +8,11 @@ package v1alpha1
 
 import (
 	"github.com/metaprov/modeldapi/pkg/apis/common"
+	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
 )
 
 // defaulting

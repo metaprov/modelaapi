@@ -46,7 +46,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: ConversationSpec defines the desired state of BucketName
+            description: ConversationSpec defines the desired state of a Conversation
             properties:
               entityRef:
                 description: The target of the conversation
@@ -87,9 +87,10 @@ spec:
               messages:
                 description: Messages are the messages of the conversation.
                 items:
+                  description: Commnet represents a single comment in the conversation
                   properties:
                     authorRef:
-                      description: The author of the comment
+                      description: AuthorRef is a reference to the author of the comment
                       properties:
                         apiVersion:
                           description: API version of the referent.
@@ -126,12 +127,13 @@ spec:
                           type: string
                       type: object
                     content:
-                      description: The content of the comment
+                      description: Content is the content of the comment
                       type: string
                     id:
+                      description: ID is the comment ID. Used when replying to a comment.
                       type: string
                     postedAt:
-                      description: Time when the comment was posted
+                      description: PostedAt is the time when the comment was posted
                       format: date-time
                       type: string
                     replyTo:
@@ -147,11 +149,11 @@ spec:
             - messages
             type: object
           status:
+            description: ConversationStatus is the current status of the conversation
             properties:
               conditions:
                 items:
-                  description: VitualBucketCondition describes the state of a virtual
-                    bucket at a certain point.
+                  description: ConversationCondition describes the state of the conversation
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -166,10 +168,9 @@ spec:
                       description: The reason for the condition's last transition.
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, Unknown.
                       type: string
                     type:
-                      description: Type of bucket condition.
+                      description: / BucketName conditions
                       type: string
                   required:
                   - status

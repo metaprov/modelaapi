@@ -38,42 +38,44 @@ spec:
           spec:
             properties:
               connectionName:
-                description: Name of the provider connection
+                description: ConnectionName refer to the name of the provider connection
                 type: string
               description:
                 default: ""
+                description: Description is the user provided description
                 type: string
               gpuClassName:
-                description: The class of gpu.
+                description: GpuClassName is the The class of gpu.
                 type: string
               gpus:
                 default: 0
-                description: The desired number of gpus
+                description: Gpus is the desired number of gpus
                 format: int32
                 maximum: 10
                 minimum: 0
                 type: integer
               nodeClassName:
-                description: The class of nodes or vm
+                description: NodeClassName is the class of nodes or vm
                 type: string
               nodes:
                 default: 1
-                description: The desired number of nodes
+                description: Nodes is the desired number of nodes
                 format: int32
                 maximum: 10
                 minimum: 1
                 type: integer
               owner:
                 default: ""
-                description: the account name of the owner of this cluster
+                description: Owner is the account name of the owner of this cluster
                 type: string
               spot:
                 default: false
-                description: Should we use spot instances.
+                description: Spot indicate if we should we use spot instances.
                 type: boolean
               volumeSize:
                 default: 0
-                description: Volume, if needed. The volume is monuted on all nodes.
+                description: VolumeSize is the size of the volume that would be mounted
+                  on all the node of the cluster
                 format: int32
                 maximum: 10
                 minimum: 0

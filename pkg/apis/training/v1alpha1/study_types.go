@@ -8,6 +8,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// StudyPhase is the current phase of the study
 type StudyPhase string
 
 const (
@@ -26,6 +27,7 @@ const (
 )
 
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"sh";"manual";"auto";
+// SearchMethodName
 type SearchMethodName string
 
 const (
@@ -37,8 +39,7 @@ const (
 	AutoSearchMethod SearchMethodName = "auto"
 )
 
-/// StudyName Condition
-// Condition on the study
+// StudyConditionType is the condition on the study
 type StudyConditionType string
 
 /// Study Condition
@@ -52,11 +53,11 @@ const (
 	StudyModelsTrained StudyConditionType = "ModelsTrained"
 	// true if we did ensamble training
 	StudyEnsambleTrained StudyConditionType = "ModelsEnsembleTrained"
-	// The best model canidate were tests on the full dataset.
+	// The best model candidate was tested on the full dataset.
 	StudyBestModelTested StudyConditionType = "ModelTested"
 	// True when we generated the reports.
 	StudyReported StudyConditionType = "Reported"
-	// True after we profiled the stdy
+	// True after we profiled the study
 	StudyProfiled StudyConditionType = "Profiled"
 	// True after we profiled the study
 	StudyAborted StudyConditionType = "Aborted"
@@ -72,7 +73,7 @@ const (
 
 // StudyCondition describes the state of a StudyName.
 type StudyCondition struct {
-	// Type of account condition.
+	// Type of study condition.
 	// +optional
 	Type StudyConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=StudyConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
@@ -105,6 +106,7 @@ type StudyCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
+// Study represent a search for the best machine learning model using automl.
 type Study struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -127,6 +129,7 @@ const (
 )
 
 // +kubebuilder:validation:Enum="flask";"grpc";"onyx";
+// Predictor format represent the API implementation of the model
 type PredictorFormat string
 
 const (
@@ -135,6 +138,7 @@ const (
 	OnyxPredictor  PredictorFormat = "onyx"
 )
 
+// ModalityType define the way that ASHA algorithm divide the data .
 // Since we are using multi modal alg , this parameter define the modality
 // +kubebuilder:validation:Enum="data";"epochs";
 type ModalityType string
@@ -144,6 +148,7 @@ const (
 	ModalityTypeEpochs ModalityType = "epochs"
 )
 
+// SplitType defines how the data is splitted between training/testing or training/testing/validation
 type SplitType string
 
 const (
@@ -155,6 +160,7 @@ const (
 	Auto           SplitType = "auto"
 )
 
+// TrainingResourceRequest specify the desired resources for the training job
 type TrainingResourceRequest struct {
 	// Gpu specify the desired gpu requirements.  will be compared
 	// +optional
@@ -167,6 +173,7 @@ type TrainingResourceRequest struct {
 	Mem ResourceSize `json:"mem,omitempty" protobuf:"bytes,3,opt,name=mem"`
 }
 
+//SuccessiveHalvingOptions define the parameters for the successive halving algorithm
 type SuccessiveHalvingOptions struct {
 	// The maximum budget allocated to each model during SH search.
 	// The default max budget is 81
@@ -184,7 +191,8 @@ type SuccessiveHalvingOptions struct {
 	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,8,opt,name=modality"`
 }
 
-// Define the constraint on the training process.
+// ModelSearchSpec the constraint on the training process.
+// The values are assigned to the model from the study.
 type ModelSearchSpec struct {
 	// Type specify the hyper parameter optimization search method.
 	// The only supported value is random
@@ -218,8 +226,8 @@ type ModelSearchSpec struct {
 	// SHOptions is the desired options for successive halving search.
 	// All other models are saved into an archive.
 	// +optional
-	SHOptions SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,7,opt,name=shOptions"`
-	// Indicate the desired number of models that should be passed to the testing phase.
+	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,7,opt,name=shOptions"`
+	// Test indicate the desired number of models that should be passed to the testing phase.
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +optional
@@ -239,29 +247,29 @@ type ModelSearchSpec struct {
 	// Define the general size of the resources needed for each trainer.
 	// +optional
 	Resources *TrainingResourceRequest `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
-	// Contain the list of algorithms that should be tested as part of the search.
+	// AllowList contain the list of algorithms that should be tested as part of the search.
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
-	// If true, create a voting ensemble of the top 3 models.
+	// VotingEnsample - If true, create a voting ensemble of the top 3 models.
 	// +optional
 	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"bytes,13,opt,name=votingEnsemble"`
-	// If true, create a stacking ensemble of the top 3 models.
+	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
 	// +optional
 	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"bytes,14,opt,name=stackingEnsemble"`
 }
 
 // StudySpec defines the desired state of the study
 type StudySpec struct {
-	// The version of the study
+	// VersionName is the data product version of the study
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	// required
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// User provided description
+	// Description is user provided description
 	// +kubebuilder:default = ""
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// A reference to the lab where the trainers for this study run.
+	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
 	// +optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
@@ -273,26 +281,26 @@ type StudySpec struct {
 	// This must match the task of the data product.
 	// Required.
 	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
-	// The objective defined how the study controller will compare model performance.
+	// Objective is the objective defined how the study controller will compare model performance.
 	// +optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,6,opt,name=objective"`
-	// Defines the model search
+	// Search defines the model search
 	// +optional
 	Search *ModelSearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
-	// This is template for preprocessors for this study
+	// Preprocessing is template for preprocessors for this study
 	// Default: all preprocessing is set to auto.
 	// +optional
 	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,9,opt,name=preprocessing"`
 	// Training template contain the desired training parameter for the models.
 	// +optional
 	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,10,opt,name=training"`
-	// A reference to the workload class object from the catalog.
+	// WorkloadClassRef is a reference to the workload class object from the catalog.
 	// Default : scikit learn trainer.
 	// +optional
 	WorkloadClassRef *v1.ObjectReference `json:"trainerClassRef,omitempty" protobuf:"bytes,11,opt,name=trainerClassRef"`
-	// A reference to the split.
+	// Split is reference to the split specification
 	// +optional
-	Split DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
+	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default = false
 	// +optional
@@ -412,11 +420,13 @@ type StudyList struct {
 
 type DataSplit struct {
 	// Indicate that this is an automatic split.
+	// +kubebuilder:default = true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,1,opt,name=auto"`
 	// Training is a percent number (0-100) which specify how much of
 	// the data will be used for training
 	// +optional
+	// +kubebuilder:default = 80
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=100
 	Train *int32 `json:"train,omitempty" protobuf:"varint,2,opt,name=train"`
@@ -426,15 +436,18 @@ type DataSplit struct {
 	// default is 10% of the data, if we do not have cross validation.
 	// default is 0% of the data, if we do cross validation.
 	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Maximum=50
 	// +optional
 	Validation *int32 `json:"validation,omitempty" protobuf:"varint,3,opt,name=validation"`
 	// Test is percent of dataset rows which would be used to compute the objective during
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=50
+	// +kubebuilder:default = 20
 	// +optional
 	Test *int32 `json:"test,omitempty" protobuf:"varint,4,opt,name=test"`
 	// Indicate if the dataset split should be stratified.
+	// +kubebuilder:default = "stratified"
 	// +optional
 	SplitPolicy SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
 	// The name of the column used to split
@@ -442,6 +455,7 @@ type DataSplit struct {
 	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,6,opt,name=splitColumn"`
 	// The seed to use for the estimator
 	// Default: 42
+	// +kubebuilder:default = 42
 	// +optional
 	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,7,opt,name=seed"`
 }

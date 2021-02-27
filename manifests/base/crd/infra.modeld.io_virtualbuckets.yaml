@@ -36,7 +36,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: VirtualBucket represent a bucket api object
+        description: VirtualBucket represent a object storage location in the cloud
+          or on-prem
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

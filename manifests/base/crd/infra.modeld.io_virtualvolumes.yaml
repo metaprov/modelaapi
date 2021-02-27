@@ -108,8 +108,6 @@ spec:
             properties:
               conditions:
                 items:
-                  description: DeploymentCondition describes the state of a deployment
-                    at a certain point.
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status

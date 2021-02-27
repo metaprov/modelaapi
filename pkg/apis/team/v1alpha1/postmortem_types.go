@@ -15,15 +15,14 @@ import (
 // BucketName
 // ===========
 
-/// BucketName conditions
 type PostMortemConditionType string
 
-/// BucketName Condition
+/// Post Moretem Condition
 const (
 	PostMortemReady PostMortemConditionType = "Ready"
 )
 
-// VitualBucketCondition describes the state of a virtual bucket at a certain point.
+// Post Morem Condition describes the state of a post mortem at a certain point.
 type PostMortemCondition struct {
 	// Type of bucket condition.
 	Type PostMortemConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PostMortemConditionType"`
@@ -44,7 +43,7 @@ type PostMortemCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modeld,all}
-// PostMortem represent a comment about any entity
+// PostMortem represent a post mortem
 type PostMortem struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -62,6 +61,7 @@ type PostMortemList struct {
 	Items []PostMortem `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// TimeLineEvent
 type TimeLineEvent struct {
 	// +optional
 	// +kubebuilder:default = ""
@@ -70,6 +70,7 @@ type TimeLineEvent struct {
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 }
 
+// Alert is an alert that was raised during the incident
 type Alert struct {
 	// +optional
 	Name *string `json:"name" protobuf:"bytes,1,opt,name=name"`
@@ -95,12 +96,15 @@ type PostMortemSpec struct {
 	// +optional
 	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,5,rep,name=timeline"`
 	// Root cause
+	// +kubebuilder:default = ""
 	// +optional
 	RootCause *string `json:"rootCause" protobuf:"bytes,6,opt,name=rootCause"`
-	// Summary of the post morten
+	// Summary of the post mortem
+	// +kubebuilder:default = ""
 	// +optional
 	Summary *string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
 	// The owner account name
+	// +kubebuilder:default = ""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

@@ -374,8 +374,8 @@ export namespace BitbucketSpec {
 }
 
 export class CassandraSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): CassandraSpec;
+  getHost(): string;
+  setHost(value: string): CassandraSpec;
 
   getPort(): number;
   setPort(value: number): CassandraSpec;
@@ -399,7 +399,7 @@ export class CassandraSpec extends jspb.Message {
 
 export namespace CassandraSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     username: string,
@@ -1454,8 +1454,8 @@ export namespace MinioSpec {
 }
 
 export class MongoDbSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): MongoDbSpec;
+  getHost(): string;
+  setHost(value: string): MongoDbSpec;
 
   getPort(): number;
   setPort(value: number): MongoDbSpec;
@@ -1479,7 +1479,7 @@ export class MongoDbSpec extends jspb.Message {
 
 export namespace MongoDbSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     username: string,
@@ -1488,8 +1488,8 @@ export namespace MongoDbSpec {
 }
 
 export class MySqlSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): MySqlSpec;
+  getHost(): string;
+  setHost(value: string): MySqlSpec;
 
   getPort(): number;
   setPort(value: number): MySqlSpec;
@@ -1513,7 +1513,7 @@ export class MySqlSpec extends jspb.Message {
 
 export namespace MySqlSpec {
   export type AsObject = {
-    hostname: string,
+    host: string,
     port: number,
     database: string,
     username: string,

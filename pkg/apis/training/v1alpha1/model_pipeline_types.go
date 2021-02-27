@@ -5,7 +5,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// Github event specify repo and the events to listen in order ot fire the pipeline
+// GithubEvents specify repo and the events to listen in order ot fire the pipeline
 type GithubEvents struct {
 	// The github connections used to loginto git
 	GitConnectionsName string `json:"gitConnectionName" protobuf:"bytes,1,opt,name=gitConnectionName"`
@@ -20,17 +20,18 @@ type GithubEvents struct {
 	Events []string `json:"events" protobuf:"bytes,5,rep,name=events"`
 }
 
+//TriggerSchedule specify a cron schedule
 type TriggerSchedule struct {
 	// The start time of the schedule
 	// +optional
 	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,1,opt,name=startTime"`
-	// The start data of the schedule
+	// StartDay is the start day of the schedule
 	// +optional
 	StartDay *metav1.Time `json:"startDay" protobuf:"bytes,2,opt,name=startDay"`
-	// The end time of the schedule
+	// EndTime is the end time of the schedule
 	// +optional
 	EndTime *metav1.Timestamp `json:"endTime" protobuf:"bytes,3,opt,name=endTime"`
-	// The end day of the schedule
+	// EndDay is the end day of the schedule
 	// +optional
 	EndDay *metav1.Time `json:"endDay" protobuf:"bytes,4,opt,name=endDay"`
 	// Cron string of the schedule.
@@ -78,32 +79,6 @@ type ModelPipeline struct {
 	Status            ModelPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-func (pl *ModelPipeline) HasTrainingStage() bool {
-	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.StudyName != nil && *pl.Spec.TrainingStage.StudyName != ""
-
-}
-
-func (pl *ModelPipeline) HasProdStage() bool {
-	return pl.Spec.ReleaseStage != nil && pl.Spec.ReleaseStage.PredictorName != nil && *pl.Spec.ReleaseStage.PredictorName != ""
-}
-
-func (pl *ModelPipeline) HasAcceptanceStage() bool {
-	return pl.Spec.AcceptanceStage != nil && pl.Spec.AcceptanceStage.TestDatasetName != nil &&
-		*pl.Spec.AcceptanceStage.TestDatasetName != ""
-}
-
-func (pl *ModelPipeline) HasTrainingNotebook() bool {
-	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.NotebookName != nil && *pl.Spec.TrainingStage.NotebookName != ""
-}
-
-func (pl *ModelPipeline) HasTrainingStudy() bool {
-	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.StudyName != nil && *pl.Spec.TrainingStage.StudyName != ""
-}
-
-func (pl *ModelPipeline) HasCapacityStage() bool {
-	return pl.Spec.CapacityStage != nil && pl.Spec.CapacityStage.TestDatasetName != nil && *pl.Spec.CapacityStage.TestDatasetName != ""
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ModelPipelineList represent list of pipelines
@@ -149,9 +124,10 @@ type ModelPipelineSpec struct {
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +optional
 	Folder *string `json:"folder,omitempty" protobuf:"bytes,10,opt,name=folder"`
-	// Trigger
+	// Trigger is definition of the pipeline trigger
 	Trigger *PipelineTrigger `json:"trigger,omitempty" protobuf:"bytes,11,opt,name=trigger"`
 	// The owner account name
+
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`
 }
@@ -208,12 +184,14 @@ const (
 	PipelineTriggerFailure  PipelineTriggerConditionType = "PipelineTriggerFailure"
 )
 
+//DataStageSpec is the desired state of the data preprocesing step of the pipeline.
+//Data preprocessing will be done via
 type DataStageSpec struct {
 	// +optional
 	DataPipelineName string `json:"wranglerName,omitempty" protobuf:"bytes,1,opt,name=wranglerName"`
 }
 
-// A specification of a the training stage.
+// TrainingStageSpec is the desired state of the training step of the pipeline
 type TrainingStageSpec struct {
 	// NotebookName template specify the notebook
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,1,opt,name=notebookName"`
@@ -228,11 +206,23 @@ type TrainingStageSpec struct {
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
 }
 
-//AcceptanceStageSpec is used to verify the new model.
+//AcceptanceStageSpec is the desired step of the acceptance stage of the pipeline
 type AcceptanceStageSpec struct {
 	// The serving site for the testing
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-	// The name of predictor which will be the base for this stage
+	// The name of test dataset name
+	// +optional
+	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
+	// Auto defines if we move to the next stage without human intervation
+	// +optional
+	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
+}
+
+// CapacityStageSpec is the desired state of the capcity testing.
+type CapacityStageSpec struct {
+	// ServingSiteName is the serving site for the testing
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
+	// TestDatasetName is the name of dataset used to test the model at this stage.
 	// +optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move from stage to stage automatically.
@@ -240,30 +230,11 @@ type AcceptanceStageSpec struct {
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }
 
-type CapacityStageSpec struct {
-	// The serving site for the testing
-	// The default is to use the pipeline serving site.
-	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-	// The name of dataset used to test the model at this stage.
-	// +optional
-	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
-	// Gate defines if we move from stage to stage automatically.
-	// +optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
-}
-
+//ReleaseStageSpec is the predictor name that would host the model
 type ReleaseStageSpec struct {
 	// +optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,1,opt,name=predictorName"`
 }
-
-/*
-type DataPipelineTemplateSpec struct {
-	// +optional
-	Spec data.DataPipelineSpec `json:"spec" protobuf:"bytes,1,opt,name=spec"`
-}
-
-*/
 
 // ModelPipelineStatus define the observed state of the pipeline
 type ModelPipelineStatus struct {

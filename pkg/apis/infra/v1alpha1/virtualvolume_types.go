@@ -19,7 +19,6 @@ const (
 	VirtualVolumeReady VirtualVolumeConditionType = "Ready"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
 type VirtualVolumeCondition struct {
 	// Type of account condition.
 	Type VirtualVolumeConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=VirtualVolumeConditionType"`

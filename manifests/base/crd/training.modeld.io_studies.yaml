@@ -55,6 +55,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Study represent a search for the best machine learning model
+          using automl.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -79,7 +81,7 @@ spec:
                   study is for. Required.
                 type: string
               description:
-                description: User provided description
+                description: Description is user provided description
                 maxLength: 512
                 type: string
               hierarchy:
@@ -175,8 +177,8 @@ spec:
                     type: string
                 type: object
               labRef:
-                description: A reference to the lab where the trainers for this study
-                  run. If no value is provided, the lab is taken from the
+                description: LabRef is a reference to the lab where the trainers for
+                  this study run. If no value is provided, the lab is taken from the
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -233,8 +235,8 @@ spec:
                   model image, at the end of training.
                 type: boolean
               objective:
-                description: The objective defined how the study controller will compare
-                  model performance.
+                description: Objective is the objective defined how the study controller
+                  will compare model performance.
                 enum:
                 - accuracy
                 - average-precision
@@ -285,12 +287,12 @@ spec:
                 description: Paused is set when we want to pause the training
                 type: boolean
               preprocessing:
-                description: 'This is template for preprocessors for this study Default:
-                  all preprocessing is set to auto.'
+                description: 'Preprocessing is template for preprocessors for this
+                  study Default: all preprocessing is set to auto.'
                 properties:
                   audio:
-                    description: Specify the pipeline for audio. Not supported in
-                      this release
+                    description: Audio specify the pipeline for audio. Not supported
+                      in this release
                     properties:
                       columns:
                         description: Name of the datetime columns
@@ -343,7 +345,8 @@ spec:
                         type: string
                     type: object
                   datatime:
-                    description: Specify the column transformation for datetime columns
+                    description: DataTime specify the column transformation for datetime
+                      columns
                     properties:
                       columns:
                         description: Name of the datetime columns
@@ -382,8 +385,8 @@ spec:
                     - auto
                     type: string
                   image:
-                    description: Specify the pipeline for images. Not supported in
-                      this release
+                    description: Image specify the pipeline for images. Not supported
+                      in this release
                     properties:
                       columns:
                         description: Name of the datetime columns
@@ -399,7 +402,8 @@ spec:
                       imbalanced pipeline. Default is false
                     type: boolean
                   numeric:
-                    description: Specify the column transformation for numeric columns
+                    description: Numeric specify the column transformation for numeric
+                      columns
                     properties:
                       columns:
                         items:
@@ -443,7 +447,7 @@ spec:
                     - auto
                     type: string
                   text:
-                    description: Specify the column transformation for text columns
+                    description: Text specify the column transformation for text columns
                     properties:
                       columns:
                         description: The list of test columns
@@ -478,8 +482,8 @@ spec:
                         type: string
                     type: object
                   video:
-                    description: Specify the pipeline for video. Not supported in
-                      this release
+                    description: Video specify the pipeline for video. Not supported
+                      in this release
                     properties:
                       columns:
                         description: Name of the datetime columns
@@ -499,11 +503,11 @@ spec:
                 description: Reported is set when we want to create model report
                 type: boolean
               search:
-                description: Defines the model search
+                description: Search defines the model search
                 properties:
                   allowlist:
-                    description: Contain the list of algorithms that should be tested
-                      as part of the search.
+                    description: AllowList contain the list of algorithms that should
+                      be tested as part of the search.
                     items:
                       enum:
                       - knn-regressor
@@ -660,11 +664,11 @@ spec:
                         type: string
                     type: object
                   stackingEnsemble:
-                    description: If true, create a stacking ensemble of the top 3
-                      models.
+                    description: StackingEnsemble If true, create a stacking ensemble
+                      of the top 3 models.
                     type: boolean
                   test:
-                    description: Indicate the desired number of models that should
+                    description: Test indicate the desired number of models that should
                       be passed to the testing phase.
                     format: int32
                     maximum: 100
@@ -688,11 +692,12 @@ spec:
                     - auto
                     type: string
                   votingEnsemble:
-                    description: If true, create a voting ensemble of the top 3 models.
+                    description: VotingEnsample - If true, create a voting ensemble
+                      of the top 3 models.
                     type: boolean
                 type: object
               split:
-                description: A reference to the split.
+                description: Split is reference to the split specification
                 properties:
                   auto:
                     description: Indicate that this is an automatic split.
@@ -750,8 +755,8 @@ spec:
                 - unknown
                 type: string
               trainerClassRef:
-                description: 'A reference to the workload class object from the catalog.
-                  Default : scikit learn trainer.'
+                description: 'WorkloadClassRef is a reference to the workload class
+                  object from the catalog. Default : scikit learn trainer.'
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -912,7 +917,8 @@ spec:
                       dimensionValues:
                         description: a set of value for each partition key
                         items:
-                          description: Partition key values are used for the partition
+                          description: DimensionValue specify the partition key values
+                            are used for the partition
                           properties:
                             key:
                               description: Key is the partition key
@@ -959,8 +965,8 @@ spec:
                             type: string
                         type: object
                       horizon:
-                        description: number of data points to predict in the future.
-                          Required.
+                        description: Horizon is the number of data points to predict
+                          in the future. Required.
                         format: int32
                         type: integer
                       repressors:
@@ -1039,7 +1045,8 @@ spec:
                     type: object
                 type: object
               versionName:
-                description: The version of the study required
+                description: VersionName is the data product version of the study
+                  required
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -1087,7 +1094,7 @@ spec:
                       description: Status of the condition, one of True, False, AutoScaler.
                       type: string
                     type:
-                      description: Type of account condition.
+                      description: Type of study condition.
                       type: string
                   type: object
                 type: array

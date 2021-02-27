@@ -19,27 +19,27 @@ const (
 	ConversationReady ConversationConditionType = "Ready"
 )
 
+// Commnet represents a single comment in the conversation
 type Comment struct {
+	// ID is the comment ID. Used when replying to a comment.
 	ID string `json:"id,omitempty" protobuf:"bytes,1,opt,name=id"`
-	// The author of the comment
+	// AuthorRef is a reference to the author of the comment
 	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,2,opt,name=authorRef"`
 	// If this comment is a reply to an id
 	// +kubebuilder:default = ""
 	// +optional
 	ReplyToID *string `json:"replyTo,omitempty" protobuf:"bytes,3,opt,name=replyTo"`
-	// The content of the comment
+	// Content is the content of the comment
 	// +kubebuilder:default = ""
 	Content *string `json:"content,omitempty" protobuf:"bytes,4,opt,name=content"`
-	// Time when the comment was posted
+	// PostedAt is the time when the comment was posted
 	PostedAt *metav1.Time `json:"postedAt,omitempty" protobuf:"bytes,5,opt,name=postedAt"`
 }
 
-// VitualBucketCondition describes the state of a virtual bucket at a certain point.
+// ConversationCondition describes the state of the conversation
 type ConversationCondition struct {
-	// Type of bucket condition.
-	Type ConversationConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ConversationConditionType"`
-	// Status of the condition, one of True, False, Unknown.
-	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
+	Type   ConversationConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ConversationConditionType"`
+	Status v1.ConditionStatus        `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
 	// The reason for the condition's last transition.
@@ -73,7 +73,7 @@ type ConversationList struct {
 	Items           []Conversation `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// ConversationSpec defines the desired state of BucketName
+// ConversationSpec defines the desired state of a Conversation
 type ConversationSpec struct {
 	// The target of the conversation
 	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,1,opt,name=entityRef"`
@@ -85,6 +85,7 @@ type ConversationSpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }
 
+//ConversationStatus is the current status of the conversation
 type ConversationStatus struct {
 	//+optional
 	Conditions []ConversationCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`

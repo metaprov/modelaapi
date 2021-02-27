@@ -6,7 +6,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-/// RegistryConnectionName conditions
+// ConnectionConditionType is the type of condition
 type ConnectionConditionType string
 
 // RegistryConnectionName Condition
@@ -29,10 +29,7 @@ type ConnectionCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-//==============================================================================
-// RegistryConnectionName
-//==============================================================================
-
+// Connection define a connection to an external system (e.g. database, public cloud)
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
@@ -61,17 +58,18 @@ type ConnectionList struct {
 
 // ConnectionSpec defines the desired state of Connection
 type ConnectionSpec struct {
-	// The owner of the connection
+	// TenantRef is the tenant of the connection
 	// default to the default tenant
 	// +optional
 	TenantRef *corev1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,opt,name=tenantRef"`
 	// The connection category
-	// default for general
+	// +kubebuilder:default = "general"
 	// +optional
 	Category *catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
 	// Provider specifies the name api provider (E.g. aws)
 	// +kubebuilder:validation:Required
 	Provider *catalog.ProviderName `json:"provider,omitempty" protobuf:"bytes,3,opt,name=provider"`
+	// SecretName is a reference to a secret which holds the connection credentials
 	// +kubebuilder:validation:Required
 	SecretName *string `json:"secretName,omitempty" protobuf:"bytes,4,opt,name=secretName"`
 	// +kubebuilder:validation:Optional
@@ -188,7 +186,7 @@ type ConnectionStatus struct {
 }
 
 // =================== Definitions of spec files for each type
-
+// AthenaSpec defines the connection to Athena db
 type AthenaSpec struct {
 	// +kubebuilder:default=""
 	Database *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
@@ -200,14 +198,16 @@ type AthenaSpec struct {
 	SecretKey *string `json:"secretKey,omitempty" protobuf:"bytes,4,opt,name=secretKey"`
 }
 
+// BigQuerySpec defines the connection to big query
 type BigQuerySpec struct {
 	// +kubebuilder:default=""
 	ServiceAccount *string `json:"serviceAccount,omitempty" protobuf:"bytes,1,opt,name=serviceAccount"`
 }
 
+// CassandraSpec defines the connection to cassandra
 type CassandraSpec struct {
 	// +kubebuilder:default=""
-	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default= 9042
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default=""
@@ -220,7 +220,7 @@ type CassandraSpec struct {
 
 type MongoDbSpec struct {
 	// +kubebuilder:default=""
-	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default=27017
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default=""
@@ -233,7 +233,7 @@ type MongoDbSpec struct {
 
 type MySqlSpec struct {
 	// +kubebuilder:default=""
-	Hostname *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default = 3306
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default=""

@@ -9,7 +9,7 @@ import (
 // License
 // ===========
 
-// The type if license
+// LicenseType is the type of license
 // +kubebuilder:validation:Enum="lite";"pro";"enterprise"
 type LicenseType string
 
@@ -19,7 +19,6 @@ const (
 	Enterprise LicenseType = "enterprise"
 )
 
-// License condition
 type LicenseConditionType string
 
 /// License Condition
@@ -56,9 +55,8 @@ type LicenseCondition struct {
 type License struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              LicenseSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status LicenseStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              LicenseSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            LicenseStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -82,37 +80,38 @@ type LicenseSpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	SecretName *string `json:"secretName" protobuf:"bytes,2,opt,name=secretName"`
+	// Owner is the account owning this license
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default = ""
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default = ""
 	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
-	// Start date for free trial
+	// TrialStart is the start date for free trial
 	// +kubebuilder:default = ""
 	// +kubebuilder:validation:Optional
 	TrialStart *metav1.Time `json:"trialStart,omitempty" protobuf:"bytes,5,opt,name=trialStart"`
-	// when free trial end
+	// TrialEnd when free trial end
 	// +kubebuilder:validation:Optional
 	TrialEnd *metav1.Time `json:"trialEnd,omitempty" protobuf:"bytes,6,opt,name=trialEnd"`
 	// +kubebuilder:validation:Optional
 	MaxProducts *int32 `json:"maxProducts,omitempty" protobuf:"varint,7,opt,name=maxProducts"`
-	// max number of trainers
+	// MaxTrainers is max number of trainers
 	// +kubebuilder:validation:Optional
 	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,8,opt,name=maxTrainers"`
-	// the max number of servers.
+	// MaxServers is the max number of worker nodes
 	// +kubebuilder:validation:Optional
 	MaxServers *int32 `json:"maxServers,omitempty" protobuf:"varint,9,opt,name=maxServers"`
-	// max users
+	// MaxUsers is the max number of active accounts
 	// +kubebuilder:validation:Optional
 	MaxUsers *int32 `json:"maxUsers,omitempty" protobuf:"varint,10,opt,name=maxUsers"`
 	// max data planes
 	// +kubebuilder:validation:Optional
 	MaxDataPlanes *int32 `json:"maxDataPlanes,omitempty" protobuf:"varint,11,opt,name=maxDataPlanes"`
-	// Is forecast feature supported
+	// Forcast denote if forecast feature supported
 	// +kubebuilder:validation:Optional
 	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,12,opt,name=forecast"`
-	// Is nlp feature supported
+	// NLP is nlp feature supported
 	// +kubebuilder:validation:Optional
 	NLP *bool `json:"nlp,omitempty" protobuf:"bytes,13,opt,name=nlp"`
 	// Is vision feature supported
@@ -129,7 +128,7 @@ type LicenseSpec struct {
 	// When the license expire
 	// +kubebuilder:validation:Optional
 	ExpireAt *metav1.Time `json:"expireAt,omitempty" protobuf:"bytes,18,opt,name=expireAt"`
-	// a notifier to receive the license expiration notification
+	// NotifierName is a reference to a notifier to receive the license expiration notification
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,19,opt,name=notifierName"`
 }

@@ -1582,8 +1582,8 @@ export namespace ModelSearchSpec {
 }
 
 export class ModelSpec extends jspb.Message {
-  getOwnername(): string;
-  setOwnername(value: string): ModelSpec;
+  getOwner(): string;
+  setOwner(value: string): ModelSpec;
 
   getVersionname(): string;
   setVersionname(value: string): ModelSpec;
@@ -1662,9 +1662,6 @@ export class ModelSpec extends jspb.Message {
   hasForecastingspec(): boolean;
   clearForecastingspec(): ModelSpec;
 
-  getOwner(): string;
-  setOwner(value: string): ModelSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -1675,7 +1672,7 @@ export class ModelSpec extends jspb.Message {
 
 export namespace ModelSpec {
   export type AsObject = {
-    ownername: string,
+    owner: string,
     versionname: string,
     studyname: string,
     datasetname: string,
@@ -1697,7 +1694,6 @@ export namespace ModelSpec {
     forecasted: boolean,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
-    owner: string,
   }
 }
 
@@ -2119,10 +2115,8 @@ export class NotebookSpec extends jspb.Message {
   hasSchemaref(): boolean;
   clearSchemaref(): NotebookSpec;
 
-  getImagereporef(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setImagereporef(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): NotebookSpec;
-  hasImagereporef(): boolean;
-  clearImagereporef(): NotebookSpec;
+  getImagename(): string;
+  setImagename(value: string): NotebookSpec;
 
   getRequirements(): string;
   setRequirements(value: string): NotebookSpec;
@@ -2156,7 +2150,7 @@ export namespace NotebookSpec {
     versionname: string,
     description: string,
     schemaref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    imagereporef?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    imagename: string,
     requirements: string,
     debpackages: string,
     varsList: Array<string>,

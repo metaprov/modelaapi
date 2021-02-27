@@ -52,6 +52,7 @@ type AccountCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// Account represents a user or team in the system
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +k8s:openapi-gen=true
@@ -63,16 +64,11 @@ type AccountCondition struct {
 // +kubebuilder:printcolumn:name="Smtp",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=accounts,shortName=act,singular=account,categories={infra,modeld}
-// Account represents a user or team in the system
 type Account struct {
-	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
-
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              AccountSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status AccountStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              AccountSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            AccountStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
@@ -86,11 +82,10 @@ type AccountList struct {
 
 // AccountSpec defines the desired state of Account
 type AccountSpec struct {
-	// The account tenant.
-	// Default to default tenant.
+	// TenantRef is the account tenant
 	// +optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
-	// A reference to the group account of this account
+	// GroupName is a reference to the group account
 	// +kubebuilder:validation:Optional
 	// +optional
 	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
@@ -106,19 +101,23 @@ type AccountSpec struct {
 	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
 	// +optional
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	FirstName *string `json:"firstName,omitempty" protobuf:"bytes,5,opt,name=firstName"`
 	// LastName is the user last name
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	// +optional
 	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
 	// Email specify the email of the user
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
 	Email *string `json:"email,omitempty" protobuf:"bytes,7,opt,name=email"`
 	// Phone specify the phone of the user
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	Phone *string `json:"phone,omitempty" protobuf:"bytes,8,opt,name=phone"`
@@ -137,15 +136,15 @@ type AccountSpec struct {
 	// +kubebuilder:default=false
 	// +optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,11,opt,name=resetPassword"`
-	// Entity Binding
+	// ProductBinding is the premission that the user have for each product
 	// +kubebuilder:validation:Optional
 	// +optional
 	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,12,rep,name=productBindings"`
-	// Lab Binding
+	// LabBinding is the RBAC roles that the user have within each lab
 	// +kubebuilder:validation:Optional
 	// +optional
 	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,13,rep,name=labBindings"`
-	// ServingSite Binding
+	// SiteBindings is the RBAC roles that the user have within each serving site.
 	// +kubebuilder:validation:Optional
 	// +optional
 	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,14,rep,name=siteBindings"`

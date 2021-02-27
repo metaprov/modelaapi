@@ -7,6 +7,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// ModelPhase is the current phase of a model
 type ModelPhase string
 
 const (
@@ -35,7 +36,7 @@ const (
 	ModelPhaseFailedPublish  ModelPhase = "FailedPublish"
 )
 
-// Represent a value for a specific metric
+// Measurement is a value for a specific metric
 type Measurement struct {
 	// The metric type name (e.g. F1 / Accuracy)
 	// +optional
@@ -45,12 +46,10 @@ type Measurement struct {
 	Value float64 `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 
-// Condition on the dataset
+// ModelConditionType is a condition on a model
 type ModelConditionType string
 
-// model state
-
-/// DatasetName Condition
+/// Model
 const (
 	// NodePlanned means that the model is populated with an algorithm and hyper parameter
 	ModelInitialized ModelConditionType = "Initialized"
@@ -69,13 +68,16 @@ const (
 	// The model artifact were archived in the bucket.
 	ModelArchived ModelConditionType = "Archived"
 	// True if the model is active and serving prediction
-	ModelServing    ModelConditionType = "Serving"
-	ModelAborted    ModelConditionType = "Aborted"
-	ModelPaused     ModelConditionType = "Paused"
+	ModelServing ModelConditionType = "Serving"
+	// Training was aborted
+	ModelAborted ModelConditionType = "Aborted"
+	// Training is paused
+	ModelPaused ModelConditionType = "Paused"
+	//
 	ModelForecasted ModelConditionType = "Forecasted"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// ModelCondition describes the state of a model at a certain point.
 type ModelCondition struct {
 	// Type of account condition.
 	Type ModelConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelConditionType"`
@@ -89,9 +91,6 @@ type ModelCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-//==============================================================================
-// PublishedModelRef Configuration
-//==============================================================================
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
@@ -133,14 +132,16 @@ type ModelList struct {
 
 // ModelSpec defines the desired state of the Model resource
 type ModelSpec struct {
-	// The account name of the owner of this model
+	// Owner is the account name of the owner of this model
+	// +kubebuilder:default = ""
 	// +optional
-	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
-	// ServingSiteName is a reference to the product version of this model. This value is based on the study product version
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// VersionName is the product version name for this model
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// StudyName ref reference the study for this model. IF empty, the model is stand alone
+	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
@@ -160,10 +161,10 @@ type ModelSpec struct {
 	// Default: All preprocessing will be created automatically
 	// +optional
 	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,7,opt,name=preprocessing"`
-	// Specification of the ML algorithm and its hyper parameters.
+	// Estimator is a specification of the ML algorithm and its hyper parameters.
 	// +optional
 	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,8,opt,name=estimator"`
-	// DeepNet estimator specification. Not supported for this release.
+	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +optional
 	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,9,opt,name=dnn"`
 	// If this is an ensemble model, specify the ensemble
@@ -175,41 +176,47 @@ type ModelSpec struct {
 	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,11,opt,name=training"`
 	// Tested indicate if this model should be testedActual. Default is false.
 	// The study controller will set this to true if a model is the best model
+	// kubebuilder:default =false
 	// +optional
 	Tested *bool `json:"tested,omitempty" protobuf:"bytes,12,opt,name=tested"`
 	// Aborted indicate the desire to abort the model
+	// kubebuilder:default =false
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Published is set when we want to wrap the model in a docker container
+	// kubebuilder:default =false
 	// +optional
 	Published *bool `json:"published,omitempty" protobuf:"bytes,14,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
+	// kubebuilder:default =false
 	// +optional
 	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,15,opt,name=pushed"`
 	// Reported is set when a report should be created for this model
+	// kubebuilder:default =false
 	// +optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,16,opt,name=reported"`
 	// Paused is set when we want to pause the training
+	// kubebuilder:default =false
 	// +optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,17,opt,name=paused"`
 	// Profiled is set when we want to create model profile.
+	// kubebuilder:default =false
 	// +optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,18,opt,name=profiled"`
-	// Set when the model should be archived
+	// Archived is true when the model should be archived
+	// kubebuilder:default =false
 	// +optional
 	Archived *bool `json:"archived,omitempty" protobuf:"bytes,19,opt,name=archived"`
-	// Set the true when the model should perform a forecast
+	// Forecasted is true when the model should perform a forecast
+	// kubebuilder:default =false
 	// +optional
 	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,20,opt,name=forecasted"`
-	// The location of the model artifacts (metadata, reports and estimators).
+	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +optional
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,21,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +optional
 	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,22,opt,name=forecastingSpec"`
-	// The owner account name
-	// +optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,23,opt,name=owner"`
 }
 
 type EnsembleSpec struct {
@@ -220,77 +227,81 @@ type EnsembleSpec struct {
 
 // ModelStatus defines the observed state of the Model
 type ModelStatus struct {
-	// Represents time when the model is first handled by the model controller
+	// StartTime represents time when the model is first handled by the model controller
 	// +optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 
-	// Represents time when the model started training.
+	// TrainStartTime represents time when the model started training.
 	// +optional
 	TrainStartTime *metav1.Time `json:"trainStartTime,omitempty" protobuf:"bytes,2,opt,name=trainStartTime"`
 
-	// Represents time when the model ended training
+	// TrainCompletionTime represents time when the model ended training
 	// +optional
 	TrainCompletionTime *metav1.Time `json:"trainCompletionTime,omitempty" protobuf:"bytes,3,opt,name=trainCompletionTime"`
-	// Represents time when the model started test on a trainer
+
+	// TestStartTime represents time when the model started test on a trainer
 	// It is not guaranteed to be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +optional
 	TestStartTime *metav1.Time `json:"testStartTime,omitempty" protobuf:"bytes,4,opt,name=testStartTime"`
-	// Represents time when the model ended testing
+
+	// TestCompletionTime represents time when the model ended testing
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +optional
 	TestCompletionTime *metav1.Time `json:"testCompletionTime,omitempty" protobuf:"bytes,5,opt,name=testCompletionTime"`
-	// Represent the time that the model is marked as ready
+
+	// CompletionTime represent the time that the model is marked as ready
 	// +optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,6,opt,name=completionTime"`
-	// Cross validation score using on the training set.
+
+	// CVScrore is the score using on the training set.
 	// +optional
 	CVScore float64 `json:"cvScore,omitempty" protobuf:"bytes,7,opt,name=cvScore"`
-	// TrainingSpec on the full training set, Evaluating on the training set
+	// TrainScore is the score on the full training set, Evaluating on the training set
 	// +optional
 	TrainScore float64 `json:"trainScore,omitempty" protobuf:"bytes,8,opt,name=trainScore"`
-	// TrainingSpec on the full training set, Evaluating on the test set
+	// TestScore is the score
 	// +optional
 	TestScore float64 `json:"testScore,omitempty" protobuf:"bytes,9,opt,name=testScore"`
-	// The cost of the model
+	// Cost is the cost of training the model
 	// +optional
 	Cost float64 `json:"cost,omitempty" protobuf:"bytes,10,opt,name=cost"`
-	// True if this is the best model
+	// Best is true if this is the best model
 	// +optional
 	Best bool `json:"best,omitempty" protobuf:"bytes,11,opt,name=best"`
-	// results of training the model (pipeline) on the full training set, and test it on the training set
+	// TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set
 	// +optional
 	TrainResult []Measurement `json:"trainResult,omitempty" protobuf:"bytes,12,rep,name=trainResult"`
-	// results of training the model (pipeline) on the full training set, and test it on the test set
+	// TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
 	// +optional
 	TestResult []Measurement `json:"testResult,omitempty" protobuf:"bytes,13,rep,name=testResult"`
-	// The phase of the model
+	// Phase is the phase of the model
 	// +optional
 	Phase ModelPhase `json:"phase" protobuf:"bytes,14,opt,name=phase"`
-	// Reference to the model report
+	// ReportName is a reference to the model report
 	// +optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,15,opt,name=reportName"`
-	// The URI of the manifest in the product bucket.
+	// ManifestUri is the URI of the manifest in the product bucket.
 	// +optional
 	ManifestUri string `json:"manifestUri,omitempty" protobuf:"bytes,16,opt,name=manifestUri"`
-	// The URI of the model binary file.
+	// WeightsUri is the URI of the model binary file.
 	// +optional
 	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,17,opt,name=weightsUri"`
-	// The URI of the label encoder binary file, if there is one.
+	// LabelEncoderUri is the URI of the label encoder binary file, if there is one.
 	// +optional
 	LabelEncoderUri string `json:"labelsEncoderUri,omitempty" protobuf:"bytes,18,opt,name=labelsEncoderUri"`
-	// The URI of the log file
+	// LogsUri is the URI of the log file
 	// +optional
 	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,19,opt,name=logsUri"`
 	// ProfileUri is a reference to the visualization uri which were produce during processing
 	// +optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,20,opt,name=profileUri"`
-	// A reference to the mis-classification file which were produce during processing
+	// MisclassUri is a reference to the mis-classification file which were produce during processing
 	MisclassUri string `json:"misclassUri" protobuf:"bytes,21,opt,name=misclassUri"`
-	// The image name of the model
+	// ImageName is the image name of the model
 	ImageName string `json:"imageName" protobuf:"bytes,22,opt,name=imageName"`
-	// The forecast URI
+	// ForecastUri is the uri of the forecast
 	// +optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,23,opt,name=forecastUri"`
 	// +optional
@@ -309,33 +320,34 @@ type HyperParameterValue struct {
 	Value string `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
+// ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters
 type ClassicalEstimatorSpec struct {
-	// A reference to the algorithm in the catalog
+	// AlgorithmName is a reference to the algorithm in the catalog
 	AlgorithmName string `json:"algorithmName,omitempty" protobuf:"bytes,1,opt,name=algorithmName"`
-	// The algorithm hyper parameters
+	// Parameters is a list of the algorithm hyper parameters
 	Parameters []HyperParameterValue `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters,casttype=HyperParameterValue"`
 }
 
-// Specification of the pre processing pipeline
+// PreprocessingSpec of the pre processing pipeline
 type PreprocessingSpec struct {
 	// One or more categorical pipelines.
 	Categorical *CategoricalPipelineSpec `json:"categorical,omitempty" protobuf:"bytes,1,opt,name=categorical"`
-	// Specify the column transformation for numeric columns
+	// Numeric specify the column transformation for numeric columns
 	// +optional
 	Numeric *NumericPipelineSpec `json:"numeric,omitempty" protobuf:"bytes,2,opt,name=numeric"`
-	// Specify the column transformation for text columns
+	// Text specify the column transformation for text columns
 	// +optional
 	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,3,opt,name=text"`
-	// Specify the pipeline for images. Not supported in this release
+	// Image specify the pipeline for images. Not supported in this release
 	// +optional
 	Image *ImagePipelineSpec `json:"image,omitempty" protobuf:"bytes,4,opt,name=image"`
-	// Specify the pipeline for audio. Not supported in this release
+	// Audio specify the pipeline for audio. Not supported in this release
 	// +optional
 	Audio *AudioPipelineSpec `json:"audio,omitempty" protobuf:"bytes,5,opt,name=audio"`
-	// Specify the pipeline for video. Not supported in this release
+	// Video specify the pipeline for video. Not supported in this release
 	// +optional
 	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,6,opt,name=video"`
-	// Specify the column transformation for datetime columns
+	// DataTime specify the column transformation for datetime columns
 	// +optional
 	DataTime *DateTimePipelineSpec `json:"datatime,omitempty" protobuf:"bytes,7,opt,name=datetime"`
 	// FeaturePipeline selector
@@ -378,7 +390,7 @@ type SuccessiveHalvingSpec struct {
 	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
 }
 
-// Specification of the training process
+// TrainingSpec is the specification of the training process
 type TrainingSpec struct {
 	// Priority specify the priority of the model in the training queue.
 	// The priority is defined in the model study.
@@ -430,6 +442,7 @@ type TrainingSpec struct {
 	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,13,opt,name=seed"`
 }
 
+// CategoricalPipelineSpec is the specification for processing categorical columns
 type CategoricalPipelineSpec struct {
 	// The columns for this pipeline. Use * to denotes all the columns.
 	// Must have at least on value.
@@ -442,6 +455,7 @@ type CategoricalPipelineSpec struct {
 	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,3,opt,name=encoder"`
 }
 
+// NumericPipelineSpec is the specification for preprocessing numerical columns
 type NumericPipelineSpec struct {
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// Numerical var imputer
@@ -452,6 +466,7 @@ type NumericPipelineSpec struct {
 	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,3,opt,name=scaler"`
 }
 
+// TextPipelineSpec is the specification for preprocessing of text columns
 type TextPipelineSpec struct {
 	// The list of test columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
@@ -478,6 +493,7 @@ type TextPipelineSpec struct {
 	Embedding *string `json:"embedding,omitempty" protobuf:"bytes,8,opt,name=embedding"`
 }
 
+//DateTimePipelineSpec is the specification for preprocessing datetime features
 type DateTimePipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
@@ -489,6 +505,7 @@ type DateTimePipelineSpec struct {
 	Expand *bool `json:"expand,omitempty" protobuf:"bytes,3,opt,name=expand"`
 }
 
+// ImagePipelineSpec is the specification for preprocessing image data
 type ImagePipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
@@ -497,6 +514,7 @@ type ImagePipelineSpec struct {
 	Featurizer *catalog.ImageFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
 }
 
+// VideoPipelineSpec is the specification for preprocessing video data
 type VideoPipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
@@ -505,6 +523,7 @@ type VideoPipelineSpec struct {
 	Featurizer *catalog.VideoFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
 }
 
+// AudioPipelineSpec is the specification for preprocessing audio data
 type AudioPipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
@@ -513,6 +532,7 @@ type AudioPipelineSpec struct {
 	Featurizer *catalog.AudioFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
 }
 
+// ForecastingSpec
 type ForecastingSpec struct {
 	// The name of the time column
 	// Required.
@@ -533,7 +553,7 @@ type ForecastingSpec struct {
 	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,5,opt,name=repressors"`
 	// Required, the freq of the time series (daily,weekly)
 	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,6,opt,name=freqSpec"`
-	// number of data points to predict in the future.
+	// Horizon is the number of data points to predict in the future.
 	// Required.
 	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,7,opt,name=horizon"`
 	// The confidence levels for the forecast, each level must be between 1-100.
@@ -558,7 +578,7 @@ type ForecastingSpec struct {
 	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,13,opt,name=forecast"`
 }
 
-// Specify the frequency specification.
+// FreqSpec specify the frequency specification.
 type FreqSpec struct {
 	// Default to 1.
 	// optional
@@ -567,7 +587,7 @@ type FreqSpec struct {
 	Units *catalog.Freq `json:"unit,omitempty" protobuf:"bytes,2,opt,name=unit"`
 }
 
-// Specify the back test
+// BacktestSpec specify the back test
 type BacktestSpec struct {
 	// The initial number of data points, default to 80% of rows.
 	// +optional
@@ -577,7 +597,7 @@ type BacktestSpec struct {
 	Windows *int32 `json:"windows,omitempty" protobuf:"varint,2,opt,name=windows"`
 }
 
-// Partition key values are used for the partition
+// DimensionValue specify the partition key values are used for the partition
 type DimensionValue struct {
 	// Key is the partition key
 	Key *string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`

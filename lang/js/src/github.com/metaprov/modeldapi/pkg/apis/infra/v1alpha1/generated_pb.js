@@ -5302,7 +5302,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hostname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     database: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -5345,7 +5345,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.deseri
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHostname(value);
+      msg.setHost(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -5431,10 +5431,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.serial
 
 
 /**
- * optional string hostName = 1;
+ * optional string host = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.getHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.getHost = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5443,7 +5443,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.setHostname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.setHost = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -5452,7 +5452,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.clearHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.clearHost = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -5461,7 +5461,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.hasHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CassandraSpec.prototype.hasHost = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -15021,7 +15021,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hostname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     database: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -15064,7 +15064,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.deserial
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHostname(value);
+      msg.setHost(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -15150,10 +15150,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.serializ
 
 
 /**
- * optional string hostName = 1;
+ * optional string host = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.getHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.getHost = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -15162,7 +15162,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototyp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.setHostname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.setHost = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -15171,7 +15171,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.clearHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.clearHost = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -15180,7 +15180,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.hasHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.prototype.hasHost = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -15361,7 +15361,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hostname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     database: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
@@ -15404,7 +15404,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.deserializ
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHostname(value);
+      msg.setHost(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -15490,10 +15490,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.serializeB
 
 
 /**
- * optional string hostName = 1;
+ * optional string host = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.getHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.getHost = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -15502,7 +15502,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.setHostname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.setHost = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -15511,7 +15511,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.clearHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.clearHost = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -15520,7 +15520,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.hasHostname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.prototype.hasHost = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

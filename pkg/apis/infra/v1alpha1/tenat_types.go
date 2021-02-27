@@ -12,9 +12,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//=======
-// Tenant
-//========
 type TenantType string
 
 type TenantConditionType string
@@ -73,14 +70,13 @@ type TenantSpec struct {
 	// the default serving site for this account
 	// +optional
 	DefaultServingSiteRef *v1.ObjectReference `json:"defaultServingSiteRef,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteRef"`
-
-	// User provided description
+	// Description is user provided description
 	// +kubebuilder:default = ""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// The owner account name
+	// Owner is the owner account name
 	// +kubebuilder:default = ""
 	// +kubebuilder:validation:Optional
 	// +optional

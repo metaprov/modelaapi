@@ -42,7 +42,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ReportName represent a report object
+        description: ReportName represent a report object. A report is a pdf report
+          which contain images and tables about another object
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -61,10 +62,11 @@ spec:
               resource
             properties:
               description:
-                description: reference to the notifier that is used to send the report
+                description: NotifierRef is areference to the notifier that is used
+                  to send the report
                 type: string
               entityRef:
-                description: EntityName specify the entity being report. Currently
+                description: EntityRef specify the entity being report. Currently
                   entities can be dataset,model or study
                 properties:
                   apiVersion:
@@ -106,7 +108,7 @@ spec:
                 - pdf
                 type: string
               location:
-                description: The report location
+                description: Location is the report location in storage.
                 properties:
                   bucketName:
                     type: string
@@ -138,15 +140,18 @@ spec:
                 - invalid-report
                 type: string
               versionName:
+                description: VersionName is the data product version name for this
+                  report.
                 type: string
             type: object
           status:
             description: ReportStatus defines the observed state of the report.
             properties:
               completionTime:
-                description: Represents time when the report ended generation and
-                  was uploaded to storage be set in happens-before order across separate
-                  operations. It is represented in RFC3339 form and is in UTC.
+                description: CompletionTime is the time when the report ended generation
+                  and was uploaded to storage be set in happens-before order across
+                  separate operations. It is represented in RFC3339 form and is in
+                  UTC.
                 format: date-time
                 type: string
               conditions:
@@ -178,16 +183,17 @@ spec:
                   type: object
                 type: array
               phase:
-                description: The phase of the report
+                description: Phase is the phase of the report
                 type: string
               startTime:
-                description: Represents time when the report was sent for generation
-                  It is not guaranteed to be set in happens-before order across separate
-                  operations. It is represented in RFC3339 form and is in UTC.
+                description: StartTime is the start time of the report was sent for
+                  generation It is not guaranteed to be set in happens-before order
+                  across separate operations. It is represented in RFC3339 form and
+                  is in UTC.
                 format: date-time
                 type: string
               uri:
-                description: The report uri in the bucket
+                description: URI is the report uri in the bucket
                 type: string
             type: object
         required:

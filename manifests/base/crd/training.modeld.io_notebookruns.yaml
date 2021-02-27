@@ -55,10 +55,10 @@ spec:
               resource
             properties:
               notebookName:
-                description: A ref to the notebook with the definition.
+                description: NotebookName of the notebook for this run
                 type: string
               owner:
-                description: The owner account name
+                description: Owner account name
                 type: string
               values:
                 description: Values to pass to the notebook during execution
@@ -76,7 +76,7 @@ spec:
                   type: object
                 type: array
               versionName:
-                description: The product of the resource
+                description: VersionName of the data product for this notebook
                 type: string
             type: object
           status:

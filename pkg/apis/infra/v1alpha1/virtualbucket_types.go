@@ -5,10 +5,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//============
-// BucketName
-// ===========
-
 type VirtualBucketConditionType string
 
 /// Bucket Condition
@@ -40,7 +36,7 @@ type VirtualBucketCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
-// VirtualBucket represent a bucket api object
+// VirtualBucket represent a object storage location in the cloud or on-prem
 type VirtualBucket struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

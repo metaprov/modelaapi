@@ -8,6 +8,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+//ModelAutobuilderPhase represent that state of the model auto builder
 type ModelAutobuilderPhase string
 
 const (
@@ -19,6 +20,7 @@ const (
 	ModelAutobuilderPhaseFailed     ModelAutobuilderPhase = "Failed"
 )
 
+// ModelAutobuilderConditionType represent that condition that a model auto builder can be in.
 type ModelAutobuilderConditionType string
 
 const (
@@ -60,7 +62,7 @@ type ModelAutobuilderCondition struct {
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".status.predictorName"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:resource:path=modelautobuilders,singular=modelautobuilder,shortName=ar,categories={training,modeld,all}
-// ModelAutobuilder represent am automatic run of the model creation
+// ModelAutobuilder represent an automatic run of all the phases needed to create a model
 type ModelAutobuilder struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -71,7 +73,7 @@ type ModelAutobuilder struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// ModelAutobuilderList represent list of pipelines
+// ModelAutobuilderList represent a list of ModelAutoBuilders
 type ModelAutobuilderList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -80,33 +82,33 @@ type ModelAutobuilderList struct {
 
 // ModelAutobuilderSpec define the desired state of the ModelAutobuilder resource.
 type ModelAutobuilderSpec struct {
-	// Path product name, if not defined, if not defined set to generic product name
+	// DataProductName is the name of the data product
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	DataProductName *string `json:"dataProductName,omitempty" protobuf:"bytes,1,opt,name=dataProductName"`
-	// Path product version, if not defined set to generic product version.
+	// DataProductVersionName is a reference to data product version
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	DataProductVersionName *string `json:"dataProductVersionName,omitempty" protobuf:"bytes,2,opt,name=dataProductVersionName"`
-	// The name of existing datasource, if empty the datasource parameters will be inferred from the file
+	// DataSourceName is the name of existing datasource, if empty the datasource parameters will be inferred from the file
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
-	// The name of existing dataset, if empty the dataset object will be created
+	// DatasetName is the name of existing dataset, if empty the dataset object will be created
 	// otherwise, a dataset will be created based on the file in the path section.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=63
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// The location of the data in the cloud
+	// Path is the location of the data in the cloud
 	// +kubebuilder:validation:MaxLength=256
 	// +optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,5,opt,name=path"`
-	// The machine learning task (regression/classification)
+	// Task is the machine learning task (regression/classification)
 	// required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
 	// The task objective. this is how models will be scored.
@@ -121,21 +123,23 @@ type ModelAutobuilderSpec struct {
 	// Max training time.
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
-	// Default: 60 min.
+	// +kubebuilder:default = 60
 	// +optional
 	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,9,opt,name=maxTime"`
 	// Max model
-	// Default: 10 models
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default = 10
 	// +optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,10,opt,name=maxModels"`
 	// Access method specify the predictor access method.
 	// Default: ClusterPort
+	// +kubebuilder:default = "ClusterPort"
 	// +optional
 	AccessMethod *inferencev1.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
 	// Specify if the predictor should autoscale.
 	// Default : false
+	// +kubebuilder:default = false
 	// +optional
 	AutoScale *bool `json:"autoScale,omitempty" protobuf:"bytes,12,opt,name=autoScale"`
 	// The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
@@ -143,17 +147,20 @@ type ModelAutobuilderSpec struct {
 	DataSourceSpec *datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
 	// Specify the number of trainers.
 	// Default 1 trainer.
+	// +kubebuilder:default = 1
 	// +optional
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,14,opt,name=trainers"`
 	// Specify the search method
-	// Default is random search
+	// +kubebuilder:default = "random"
 	// +optional
 	SearchMethod *SearchMethodName `json:"searchMethod,omitempty" protobuf:"bytes,15,opt,name=searchMethod"`
 	// Set the true to abort the model auto builder
+	// +kubebuilder:default = false
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,16,opt,name=aborted"`
 	// The owner account name
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+	// +kubebuilder:default = "no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
 }
@@ -179,7 +186,7 @@ type ModelAutobuilderStatus struct {
 	// number of rows in the dataset
 	// +optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,10,opt,name=rows"`
-	// number of columns, used mainly to show the columns in the kubectl
+	// number of columns, used mainly to show the columns
 	// +optional
 	Cols int32 `json:"cols,omitempty" protobuf:"varint,11,opt,name=cols"`
 	// file size in bytes

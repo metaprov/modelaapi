@@ -119,11 +119,11 @@ spec:
                     type: string
                 type: object
               description:
-                description: User provided description
+                description: Description is user provided description
                 maxLength: 512
                 type: string
               owner:
-                description: The owner account name
+                description: Owner is the owner account name
                 type: string
             type: object
           status:

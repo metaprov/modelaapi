@@ -54,29 +54,28 @@ spec:
                 description: Acceptance stage is used for further testing
                 properties:
                   auto:
-                    description: Auto defines if we move from stage to stage automatically.
+                    description: Auto defines if we move to the next stage without
+                      human intervation
                     type: boolean
                   servingSiteName:
                     description: The serving site for the testing
                     type: string
                   testDatasetName:
-                    description: The name of predictor which will be the base for
-                      this stage
+                    description: The name of test dataset name
                     type: string
                 type: object
               capacityStage:
                 description: Capacity stage for capacity
                 properties:
                   auto:
-                    description: Gate defines if we move from stage to stage automatically.
+                    description: Auto defines if we move from stage to stage automatically.
                     type: boolean
                   servingSiteName:
-                    description: The serving site for the testing The default is to
-                      use the pipeline serving site.
+                    description: ServingSiteName is the serving site for the testing
                     type: string
                   testDatasetName:
-                    description: The name of dataset used to test the model at this
-                      stage.
+                    description: TestDatasetName is the name of dataset used to test
+                      the model at this stage.
                     type: string
                 type: object
               dataStage:
@@ -100,7 +99,6 @@ spec:
                 description: Min score to move from stage to stage.
                 type: number
               owner:
-                description: The owner account name
                 type: string
               releaseStage:
                 description: ReleaseStage stage define how to place the model into
@@ -127,7 +125,7 @@ spec:
                     type: string
                 type: object
               trigger:
-                description: Trigger
+                description: Trigger is definition of the pipeline trigger
                 properties:
                   githubEvents:
                     description: Definition of git hub events
@@ -165,11 +163,11 @@ spec:
                         description: Cron string of the schedule.
                         type: string
                       endDay:
-                        description: The end day of the schedule
+                        description: EndDay is the end day of the schedule
                         format: date-time
                         type: string
                       endTime:
-                        description: The end time of the schedule
+                        description: EndTime is the end time of the schedule
                         properties:
                           nanos:
                             description: Non-negative fractions of a second at nanosecond
@@ -190,7 +188,7 @@ spec:
                         - seconds
                         type: object
                       startDay:
-                        description: The start data of the schedule
+                        description: StartDay is the start day of the schedule
                         format: date-time
                         type: string
                       startTime:

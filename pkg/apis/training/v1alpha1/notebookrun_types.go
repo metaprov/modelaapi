@@ -15,7 +15,7 @@ import (
 // NotebookName run
 //==============================================================================
 
-// NotebookRun run condiftion
+// NotebookRun condition
 // Condition on the dataset
 type NotebookRunConditionType string
 
@@ -69,16 +69,16 @@ type NotebookRunList struct {
 
 // NotebookRunSpec defines the desired state of the NotebookRun resource
 type NotebookRunSpec struct {
-	// The product of the resource
+	// VersionName of the data product for this notebook
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// A ref to the notebook with the definition.
+	// NotebookName of the notebook for this run
 	// +optional
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,2,opt,name=notebookName"`
 	// Values to pass to the notebook during execution
 	// +optional
 	Values []NotebookVarValue `json:"values,omitempty" protobuf:"bytes,3,rep,name=values"`
-	// The owner account name
+	// Owner account name
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }

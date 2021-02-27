@@ -63,7 +63,7 @@ spec:
                 format: date-time
                 type: string
               forecast:
-                description: Is forecast feature supported
+                description: Forcast denote if forecast feature supported
                 type: boolean
               maxDataPlanes:
                 description: max data planes
@@ -73,24 +73,26 @@ spec:
                 format: int32
                 type: integer
               maxServers:
-                description: the max number of servers.
+                description: MaxServers is the max number of worker nodes
                 format: int32
                 type: integer
               maxTrainers:
-                description: max number of trainers
+                description: MaxTrainers is max number of trainers
                 format: int32
                 type: integer
               maxUsers:
-                description: max users
+                description: MaxUsers is the max number of active accounts
                 format: int32
                 type: integer
               nlp:
-                description: Is nlp feature supported
+                description: NLP is nlp feature supported
                 type: boolean
               notifierName:
-                description: a notifier to receive the license expiration notification
+                description: NotifierName is a reference to a notifier to receive
+                  the license expiration notification
                 type: string
               owner:
+                description: Owner is the account owning this license
                 type: string
               priceName:
                 description: The price name
@@ -141,11 +143,11 @@ spec:
                     type: string
                 type: object
               trialEnd:
-                description: when free trial end
+                description: TrialEnd when free trial end
                 format: date-time
                 type: string
               trialStart:
-                description: Start date for free trial
+                description: TrialStart is the start date for free trial
                 format: date-time
                 type: string
               vision:

@@ -32,7 +32,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PostMortem represent a comment about any entity
+        description: PostMortem represent a post mortem
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -52,6 +52,7 @@ spec:
               alerts:
                 description: Alerts
                 items:
+                  description: Alert is an alert that was raised during the incident
                   properties:
                     at:
                       format: date-time
@@ -202,12 +203,13 @@ spec:
                 description: Root cause
                 type: string
               summary:
-                description: Summary of the post morten
+                description: Summary of the post mortem
                 type: string
               timeline:
                 description: Timeline is the list of events that happed during the
                   events
                 items:
+                  description: TimeLineEvent
                   properties:
                     at:
                       format: date-time
@@ -222,8 +224,8 @@ spec:
             properties:
               conditions:
                 items:
-                  description: VitualBucketCondition describes the state of a virtual
-                    bucket at a certain point.
+                  description: Post Morem Condition describes the state of a post
+                    mortem at a certain point.
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status

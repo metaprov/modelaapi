@@ -380,3 +380,29 @@ func ParsePipelineYaml(content []byte) (*ModelPipeline, error) {
 	r := requiredObj.(*ModelPipeline)
 	return r, nil
 }
+
+func (pl *ModelPipeline) HasTrainingStage() bool {
+	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.StudyName != nil && *pl.Spec.TrainingStage.StudyName != ""
+
+}
+
+func (pl *ModelPipeline) HasProdStage() bool {
+	return pl.Spec.ReleaseStage != nil && pl.Spec.ReleaseStage.PredictorName != nil && *pl.Spec.ReleaseStage.PredictorName != ""
+}
+
+func (pl *ModelPipeline) HasAcceptanceStage() bool {
+	return pl.Spec.AcceptanceStage != nil && pl.Spec.AcceptanceStage.TestDatasetName != nil &&
+		*pl.Spec.AcceptanceStage.TestDatasetName != ""
+}
+
+func (pl *ModelPipeline) HasTrainingNotebook() bool {
+	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.NotebookName != nil && *pl.Spec.TrainingStage.NotebookName != ""
+}
+
+func (pl *ModelPipeline) HasTrainingStudy() bool {
+	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.StudyName != nil && *pl.Spec.TrainingStage.StudyName != ""
+}
+
+func (pl *ModelPipeline) HasCapacityStage() bool {
+	return pl.Spec.CapacityStage != nil && pl.Spec.CapacityStage.TestDatasetName != nil && *pl.Spec.CapacityStage.TestDatasetName != ""
+}

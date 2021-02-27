@@ -18,6 +18,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+// Account represents a user or team in the system
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +k8s:openapi-gen=true
@@ -29,13 +30,11 @@ option go_package = "v1alpha1";
 // +kubebuilder:printcolumn:name="Smtp",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=accounts,shortName=act,singular=account,categories={infra,modeld}
-// Account represents a user or team in the system
 message Account {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional AccountSpec spec = 2;
 
-  // +optional
   optional AccountStatus status = 3;
 }
 
@@ -76,12 +75,11 @@ message AccountRoleBinding {
 
 // AccountSpec defines the desired state of Account
 message AccountSpec {
-  // The account tenant.
-  // Default to default tenant.
+  // TenantRef is the account tenant
   // +optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
-  // A reference to the group account of this account
+  // GroupName is a reference to the group account
   // +kubebuilder:validation:Optional
   // +optional
   optional string groupName = 2;
@@ -100,22 +98,26 @@ message AccountSpec {
 
   // First FileName is the user first name
   // +optional
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   optional string firstName = 5;
 
   // LastName is the user last name
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   // +optional
   optional string lastName = 6;
 
   // Email specify the email of the user
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
   optional string email = 7;
 
   // Phone specify the phone of the user
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   optional string phone = 8;
@@ -138,17 +140,17 @@ message AccountSpec {
   // +optional
   optional bool resetPassword = 11;
 
-  // Entity Binding
+  // ProductBinding is the premission that the user have for each product
   // +kubebuilder:validation:Optional
   // +optional
   repeated AccountRoleBinding productBindings = 12;
 
-  // Lab Binding
+  // LabBinding is the RBAC roles that the user have within each lab
   // +kubebuilder:validation:Optional
   // +optional
   repeated AccountRoleBinding labBindings = 13;
 
-  // ServingSite Binding
+  // SiteBindings is the RBAC roles that the user have within each serving site.
   // +kubebuilder:validation:Optional
   // +optional
   repeated AccountRoleBinding siteBindings = 14;
@@ -175,6 +177,8 @@ message AliCloudSpec {
   optional string host = 4;
 }
 
+// =================== Definitions of spec files for each type
+// AthenaSpec defines the connection to Athena db
 message AthenaSpec {
   // +kubebuilder:default=""
   optional string hostName = 1;
@@ -215,6 +219,7 @@ message AzureStorageSpec {
   optional string accessKey = 2;
 }
 
+// BigQuerySpec defines the connection to big query
 message BigQuerySpec {
   // +kubebuilder:default=""
   optional string serviceAccount = 1;
@@ -231,9 +236,10 @@ message BitbucketSpec {
   optional string ssh = 3;
 }
 
+// CassandraSpec defines the connection to cassandra
 message CassandraSpec {
   // +kubebuilder:default=""
-  optional string hostName = 1;
+  optional string host = 1;
 
   // +kubebuilder:default= 9042
   optional int32 port = 2;
@@ -248,6 +254,7 @@ message CassandraSpec {
   optional string password = 5;
 }
 
+// Connection define a connection to an external system (e.g. database, public cloud)
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
@@ -295,13 +302,13 @@ message ConnectionList {
 
 // ConnectionSpec defines the desired state of Connection
 message ConnectionSpec {
-  // The owner of the connection
+  // TenantRef is the tenant of the connection
   // default to the default tenant
   // +optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // The connection category
-  // default for general
+  // +kubebuilder:default = "general"
   // +optional
   optional string category = 2;
 
@@ -309,6 +316,7 @@ message ConnectionSpec {
   // +kubebuilder:validation:Required
   optional string provider = 3;
 
+  // SecretName is a reference to a secret which holds the connection credentials
   // +kubebuilder:validation:Required
   optional string secretName = 4;
 
@@ -545,6 +553,7 @@ message ImageRegistrySpec {
   optional string password = 3;
 }
 
+// Lab is a namespace used for training and data analysis operations.
 // +genclient
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
@@ -589,20 +598,20 @@ message LabList {
   repeated Lab items = 2;
 }
 
-// LabSpec defines the desired state of a TenantRef
+// LabSpec defines the desired state of a Lab
 message LabSpec {
-  // User provided description
+  // Description is a user provided description
   // +kubebuilder:validation:Optional
   // +kubebuilder:default=""
   // +kubebuilder:validation:MaxLength=256
   optional string description = 1;
 
   // +kubebuilder:validation:Optional
-  // Reference to the tenant owning this lab
+  // TenantRef is a reference to the tenant owning this lab
   // Default to default tenant.
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // Resource Quota
+  // QuotaSpec is quoute specification for the lab namespace.
   // +kubebuilder:validation:Optional
   // +optional
   optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
@@ -611,12 +620,13 @@ message LabSpec {
   // +optional
   optional k8s.io.api.core.v1.LimitRangeSpec limitRangeSpec = 4;
 
-  // Optional cluster name, in case that the lab is not on the working cluster
+  // ClusterName is the name of a remote cluster that is used to execute jobs for this lab
   // +kubebuilder:validation:Optional
   // +kubebuilder:default=""
   optional string clusterName = 5;
 
   // The owner account name
+  // +kubebuilder:default="no-one"
   // +kubebuilder:validation:Optional
   // +optional
   optional string owner = 6;
@@ -645,7 +655,6 @@ message License {
 
   optional LicenseSpec spec = 2;
 
-  // +optional
   optional LicenseStatus status = 3;
 }
 
@@ -689,6 +698,7 @@ message LicenseSpec {
   // +kubebuilder:validation:MinLength=1
   optional string secretName = 2;
 
+  // Owner is the account owning this license
   // +kubebuilder:validation:Optional
   // +kubebuilder:default = ""
   optional string owner = 3;
@@ -697,27 +707,27 @@ message LicenseSpec {
   // +kubebuilder:default = ""
   optional string email = 4;
 
-  // Start date for free trial
+  // TrialStart is the start date for free trial
   // +kubebuilder:default = ""
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
 
-  // when free trial end
+  // TrialEnd when free trial end
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6;
 
   // +kubebuilder:validation:Optional
   optional int32 maxProducts = 7;
 
-  // max number of trainers
+  // MaxTrainers is max number of trainers
   // +kubebuilder:validation:Optional
   optional int32 maxTrainers = 8;
 
-  // the max number of servers.
+  // MaxServers is the max number of worker nodes
   // +kubebuilder:validation:Optional
   optional int32 maxServers = 9;
 
-  // max users
+  // MaxUsers is the max number of active accounts
   // +kubebuilder:validation:Optional
   optional int32 maxUsers = 10;
 
@@ -725,11 +735,11 @@ message LicenseSpec {
   // +kubebuilder:validation:Optional
   optional int32 maxDataPlanes = 11;
 
-  // Is forecast feature supported
+  // Forcast denote if forecast feature supported
   // +kubebuilder:validation:Optional
   optional bool forecast = 12;
 
-  // Is nlp feature supported
+  // NLP is nlp feature supported
   // +kubebuilder:validation:Optional
   optional bool nlp = 13;
 
@@ -752,7 +762,7 @@ message LicenseSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time expireAt = 18;
 
-  // a notifier to receive the license expiration notification
+  // NotifierName is a reference to a notifier to receive the license expiration notification
   // +kubebuilder:validation:Optional
   optional string notifierName = 19;
 }
@@ -821,7 +831,7 @@ message MinioSpec {
 
 message MongoDbSpec {
   // +kubebuilder:default=""
-  optional string hostName = 1;
+  optional string host = 1;
 
   // +kubebuilder:default=27017
   optional int32 port = 2;
@@ -838,7 +848,7 @@ message MongoDbSpec {
 
 message MySqlSpec {
   // +kubebuilder:default=""
-  optional string hostName = 1;
+  optional string host = 1;
 
   // +kubebuilder:default = 3306
   optional int32 port = 2;
@@ -1047,6 +1057,7 @@ message RedShiftSpec {
   optional string password = 5;
 }
 
+// ServingSite is a namespace used for serving
 // +genclient
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -1091,7 +1102,7 @@ message ServingSiteList {
 }
 
 message ServingSiteSpec {
-  // User provided description
+  // Description is user provided description
   // +kubebuilder:validation:Optional
   // +kubebuilder:default = ""
   // +optional
@@ -1103,13 +1114,13 @@ message ServingSiteSpec {
   // +optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // Resource Quota for the serving site
+  // QuotaSpec is  resource quota for the serving site
   // By default, not quota is applied
   // +kubebuilder:validation:Optional
   // +optional
   optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
 
-  // limit range for the serving site
+  // LimitRangeSpec limit range for the serving site
   // By default, no limit range apply
   // +kubebuilder:validation:Optional.
   // +optional
@@ -1128,13 +1139,13 @@ message ServingSiteSpec {
   // +optional
   optional string fdqn = 6;
 
-  // The virtual cluster name in case that the lab is not on the same cluster
+  // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
   // +kubebuilder:validation:Optional
   // +kubebuilder:default = ""
   // +optional
   optional string clusterName = 7;
 
-  // The owner account name
+  // Owner is the owner account name
   // +kubebuilder:validation:Optional
   // +kubebuilder:default = "no-one"
   // +optional
@@ -1267,14 +1278,14 @@ message TenantSpec {
   // +optional
   optional k8s.io.api.core.v1.ObjectReference defaultServingSiteRef = 2;
 
-  // User provided description
+  // Description is user provided description
   // +kubebuilder:default = ""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   // +optional
   optional string description = 3;
 
-  // The owner account name
+  // Owner is the owner account name
   // +kubebuilder:default = ""
   // +kubebuilder:validation:Optional
   // +optional
@@ -1296,7 +1307,7 @@ message TenantStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
-// VirtualBucket represent a bucket api object
+// VirtualBucket represent a object storage location in the cloud or on-prem
 message VirtualBucket {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1400,51 +1411,52 @@ message VirtualClusterList {
 }
 
 message VirtualClusterSpec {
+  // Description is the user provided description
   // +kubebuilder:default=""
   // +optional
   optional string description = 1;
 
-  // The desired number of nodes
+  // Nodes is the desired number of nodes
   // +kubebuilder:default=1
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +optional
   optional int32 nodes = 2;
 
-  // The class of nodes or vm
+  // NodeClassName is the class of nodes or vm
   // +kubebuilder:default = ""
   // +optional
   optional string nodeClassName = 3;
 
-  // The desired number of gpus
+  // Gpus is the desired number of gpus
   // +kubebuilder:default=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +optional
   optional int32 gpus = 4;
 
-  // The class of gpu.
+  // GpuClassName is the The class of gpu.
   // +kubebuilder:default = ""
   // +optional
   optional string gpuClassName = 5;
 
-  // Volume, if needed. The volume is monuted on all nodes.
+  // VolumeSize is the size of the volume that would be mounted on all the node of the cluster
   // +kubebuilder:default=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +optional
   optional int32 volumeSize = 6;
 
-  // Should we use spot instances.
+  // Spot indicate if we should we use spot instances.
   // +kubebuilder:default=false
   // +optional
   optional bool spot = 7;
 
-  // Name of the provider connection
+  // ConnectionName refer to the name of the provider connection
   // +kubebuilder:default = ""
   optional string connectionName = 8;
 
-  // the account name of the owner of this cluster
+  // Owner is the account name of the owner of this cluster
   // +kubebuilder:default=""
   // +optional
   optional string owner = 9;
@@ -1481,7 +1493,6 @@ message VirtualVolume {
   optional VirtualVolumeStatus status = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
 message VirtualVolumeCondition {
   // Type of account condition.
   optional string type = 1;

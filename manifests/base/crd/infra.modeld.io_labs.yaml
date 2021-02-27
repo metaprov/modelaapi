@@ -33,6 +33,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Lab is a namespace used for training and data analysis operations.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -47,16 +48,16 @@ spec:
           metadata:
             type: object
           spec:
-            description: LabSpec defines the desired state of a TenantRef
+            description: LabSpec defines the desired state of a Lab
             properties:
               clusterName:
                 default: ""
-                description: Optional cluster name, in case that the lab is not on
-                  the working cluster
+                description: ClusterName is the name of a remote cluster that is used
+                  to execute jobs for this lab
                 type: string
               description:
                 default: ""
-                description: User provided description
+                description: Description is a user provided description
                 maxLength: 256
                 type: string
               limitRangeSpec:
@@ -135,10 +136,11 @@ spec:
                 - limits
                 type: object
               owner:
+                default: no-one
                 description: The owner account name
                 type: string
               quotaSpec:
-                description: Resource Quota
+                description: QuotaSpec is quoute specification for the lab namespace.
                 properties:
                   hard:
                     additionalProperties:
@@ -200,8 +202,8 @@ spec:
                     type: array
                 type: object
               tenantRef:
-                description: Reference to the tenant owning this lab Default to default
-                  tenant.
+                description: TenantRef is a reference to the tenant owning this lab
+                  Default to default tenant.
                 properties:
                   apiVersion:
                     description: API version of the referent.

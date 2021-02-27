@@ -7,6 +7,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// ReportPhase is the current state of the report
 type ReportPhase string
 
 /// Dataset Condition
@@ -16,7 +17,7 @@ const (
 	ReportPhaseFailed   ReportPhase = "Failed"
 )
 
-// The report image type
+// ReportImageName denote the name of a report image
 type ReportImageName string
 
 const (
@@ -44,11 +45,11 @@ const (
 	TrainingTableName             ReportTableName = "training_table"
 )
 
+// ReportType is the type of report
 // +kubebuilder:validation:Enum="binary-classification-model";"forecast-model";"regression-model";"multi-classification-model";"text-classification-model";"classification-dataset";"forecast-dataset";"text-classification-dataset";"regression-dataset";"study-report";"feature-report";"invalid-report"
 type ReportType string
 
 const (
-	// PublishedModelRef report
 	BinaryClassificationModelReport ReportType = "binary-classification-model"
 	ForecastModelReport             ReportType = "forecast-model"
 	RegressionModelReport           ReportType = "regression-model"
@@ -103,7 +104,7 @@ func ConvertStringToReportType(s string) ReportType {
 // ReportName
 //==============================================================================
 
-// Reported Condition Type
+// ReporteConditionType
 type ReportConditionType string
 
 const (
@@ -139,7 +140,8 @@ type ReportCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reports,singular=report,categories={training,modeld,all}
-// ReportName represent a report object
+// ReportName represent a report object. A report is a pdf report which contain images and tables about another
+// object
 type Report struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -158,11 +160,12 @@ type ReportList struct {
 
 // ReportSpec specifies the desired state of the ReportName resource
 type ReportSpec struct {
+	// VersionName is the data product version name for this report.
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// EntityName specify the entity being report. Currently entities can be dataset,model or study
+	// EntityRef specify the entity being report. Currently entities can be dataset,model or study
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
-	// The report location
+	// Location is the report location in storage.
 	// +optional
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// ReportType specify the report type (e.g. classification / regression)
@@ -171,32 +174,33 @@ type ReportSpec struct {
 	// +kubebuilder:default = pdf
 	// +optional
 	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,6,opt,name=format"`
-	// reference to the notifier that is used to send the report
+	// NotifierRef is areference to the notifier that is used to send the report
 	// +optional
 	NotifierRef *string `json:"description,omitempty" protobuf:"bytes,7,opt,name=description"`
 	// The owner account name
+	// +kubebuilder:default = "no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }
 
 // ReportStatus defines the observed state of the report.
 type ReportStatus struct {
-	// Represents time when the report was sent for generation
+	// StartTime is the start time of the report was sent for generation
 	// It is not guaranteed to be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// Represents time when the report ended generation and was uploaded to storage
+	// CompletionTime is the time when the report ended generation and was uploaded to storage
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
-	// The phase of the report
+	// Phase is the phase of the report
 	// +optional
 	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,4,opt,name=phase"`
-	// The report uri in the bucket
+	// URI is the report uri in the bucket
 	// +optional
-	Uri string `json:"uri,omitempty" protobuf:"bytes,5,opt,name=uri"`
+	URI string `json:"uri,omitempty" protobuf:"bytes,5,opt,name=uri"`
 	//+optional
 	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
 }

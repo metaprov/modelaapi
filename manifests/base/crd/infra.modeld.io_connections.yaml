@@ -37,6 +37,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Connection define a connection to an external system (e.g. database,
+          public cloud)
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -69,6 +71,8 @@ spec:
                     type: string
                 type: object
               athena:
+                description: =================== Definitions of spec files for each
+                  type AthenaSpec defines the connection to Athena db
                 properties:
                   accessKey:
                     default: ""
@@ -112,6 +116,7 @@ spec:
                     type: string
                 type: object
               bigQuery:
+                description: BigQuerySpec defines the connection to big query
                 properties:
                   serviceAccount:
                     default: ""
@@ -130,11 +135,12 @@ spec:
                     type: string
                 type: object
               cassandra:
+                description: CassandraSpec defines the connection to cassandra
                 properties:
                   database:
                     default: ""
                     type: string
-                  hostName:
+                  host:
                     default: ""
                     type: string
                   password:
@@ -149,7 +155,7 @@ spec:
                     type: string
                 type: object
               category:
-                description: The connection category default for general
+                description: The connection category
                 enum:
                 - general
                 - cloud
@@ -290,7 +296,7 @@ spec:
                   database:
                     default: ""
                     type: string
-                  hostName:
+                  host:
                     default: ""
                     type: string
                   password:
@@ -336,7 +342,7 @@ spec:
                   database:
                     default: ""
                     type: string
-                  hostName:
+                  host:
                     default: ""
                     type: string
                   password:
@@ -519,6 +525,8 @@ spec:
                     type: string
                 type: object
               secretName:
+                description: SecretName is a reference to a secret which holds the
+                  connection credentials
                 type: string
               slack:
                 properties:
@@ -575,7 +583,8 @@ spec:
                     type: string
                 type: object
               tenantRef:
-                description: The owner of the connection default to the default tenant
+                description: TenantRef is the tenant of the connection default to
+                  the default tenant
                 properties:
                   apiVersion:
                     description: API version of the referent.

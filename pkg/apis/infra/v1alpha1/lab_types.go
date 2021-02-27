@@ -5,12 +5,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//=======
-// TenantRef
-// =====
-
-// Condition
-/// BucketName conditions
+// LabConditionType is the condition of the lab
 type LabConditionType string
 
 /// TenantRef Condition
@@ -33,6 +28,7 @@ type LabCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
+// Lab is a namespace used for training and data analysis operations.
 // +genclient
 // +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
@@ -49,29 +45,30 @@ type Lab struct {
 	Status            LabStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// LabSpec defines the desired state of a TenantRef
+// LabSpec defines the desired state of a Lab
 type LabSpec struct {
-	// User provided description
+	// Description is a user provided description
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default=""
 	// +kubebuilder:validation:MaxLength=256
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:validation:Optional
-	// Reference to the tenant owning this lab
+	// TenantRef is a reference to the tenant owning this lab
 	// Default to default tenant.
 	TenantRef *corev1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// Resource Quota
+	// QuotaSpec is quoute specification for the lab namespace.
 	// +kubebuilder:validation:Optional
 	// +optional
 	QuotaSpec *corev1.ResourceQuotaSpec `json:"quotaSpec,omitempty" protobuf:"bytes,3,opt,name=quotaSpec"`
 	// +kubebuilder:validation:Optional
 	// +optional
 	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRangeSpec,omitempty" protobuf:"bytes,4,opt,name=limitRangeSpec"`
-	// Optional cluster name, in case that the lab is not on the working cluster
+	// ClusterName is the name of a remote cluster that is used to execute jobs for this lab
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default=""
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,5,opt,name=clusterName"`
 	// The owner account name
+	// +kubebuilder:default="no-one"
 	// +kubebuilder:validation:Optional
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`

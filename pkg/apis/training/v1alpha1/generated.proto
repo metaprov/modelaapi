@@ -20,20 +20,21 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
-// AcceptanceStageSpec is used to verify the new model.
+// AcceptanceStageSpec is the desired step of the acceptance stage of the pipeline
 message AcceptanceStageSpec {
   // The serving site for the testing
   optional string servingSiteName = 1;
 
-  // The name of predictor which will be the base for this stage
+  // The name of test dataset name
   // +optional
   optional string testDatasetName = 2;
 
-  // Auto defines if we move from stage to stage automatically.
+  // Auto defines if we move to the next stage without human intervation
   // +optional
   optional bool auto = 3;
 }
 
+// AudioPipelineSpec is the specification for preprocessing audio data
 message AudioPipelineSpec {
   // Name of the datetime columns
   repeated string columns = 1;
@@ -43,7 +44,7 @@ message AudioPipelineSpec {
   optional string featurizer = 2;
 }
 
-// Specify the back test
+// BacktestSpec specify the back test
 message BacktestSpec {
   // The initial number of data points, default to 80% of rows.
   // +optional
@@ -54,20 +55,21 @@ message BacktestSpec {
   optional int32 windows = 2;
 }
 
+// CapacityStageSpec is the desired state of the capcity testing.
 message CapacityStageSpec {
-  // The serving site for the testing
-  // The default is to use the pipeline serving site.
+  // ServingSiteName is the serving site for the testing
   optional string servingSiteName = 1;
 
-  // The name of dataset used to test the model at this stage.
+  // TestDatasetName is the name of dataset used to test the model at this stage.
   // +optional
   optional string testDatasetName = 2;
 
-  // Gate defines if we move from stage to stage automatically.
+  // Auto defines if we move from stage to stage automatically.
   // +optional
   optional bool auto = 3;
 }
 
+// CategoricalPipelineSpec is the specification for processing categorical columns
 message CategoricalPipelineSpec {
   // The columns for this pipeline. Use * to denotes all the columns.
   // Must have at least on value.
@@ -82,22 +84,25 @@ message CategoricalPipelineSpec {
   optional string encoder = 3;
 }
 
+// ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters
 message ClassicalEstimatorSpec {
-  // A reference to the algorithm in the catalog
+  // AlgorithmName is a reference to the algorithm in the catalog
   optional string algorithmName = 1;
 
-  // The algorithm hyper parameters
+  // Parameters is a list of the algorithm hyper parameters
   repeated HyperParameterValue parameters = 2;
 }
 
 message DataSplit {
   // Indicate that this is an automatic split.
+  // +kubebuilder:default = true
   // +optional
   optional bool auto = 1;
 
   // Training is a percent number (0-100) which specify how much of
   // the data will be used for training
   // +optional
+  // +kubebuilder:default = 80
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
   optional int32 train = 2;
@@ -108,6 +113,7 @@ message DataSplit {
   // default is 10% of the data, if we do not have cross validation.
   // default is 0% of the data, if we do cross validation.
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:default = 0
   // +kubebuilder:validation:Maximum=50
   // +optional
   optional int32 validation = 3;
@@ -115,10 +121,12 @@ message DataSplit {
   // Test is percent of dataset rows which would be used to compute the objective during
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=50
+  // +kubebuilder:default = 20
   // +optional
   optional int32 test = 4;
 
   // Indicate if the dataset split should be stratified.
+  // +kubebuilder:default = "stratified"
   // +optional
   optional string splitPolicy = 5;
 
@@ -128,15 +136,19 @@ message DataSplit {
 
   // The seed to use for the estimator
   // Default: 42
+  // +kubebuilder:default = 42
   // +optional
   optional double seed = 7;
 }
 
+// DataStageSpec is the desired state of the data preprocesing step of the pipeline.
+// Data preprocessing will be done via
 message DataStageSpec {
   // +optional
   optional string wranglerName = 1;
 }
 
+// DateTimePipelineSpec is the specification for preprocessing datetime features
 message DateTimePipelineSpec {
   // Name of the datetime columns
   repeated string columns = 1;
@@ -198,7 +210,7 @@ message DeepEstimatorSpec {
   optional string loss = 8;
 }
 
-// Partition key values are used for the partition
+// DimensionValue specify the partition key values are used for the partition
 message DimensionValue {
   // Key is the partition key
   optional string key = 1;
@@ -224,6 +236,7 @@ message ForecastObj {
   optional int32 levelIndex = 2;
 }
 
+// ForecastingSpec
 message ForecastingSpec {
   // The name of the time column
   // Required.
@@ -250,7 +263,7 @@ message ForecastingSpec {
   // Required, the freq of the time series (daily,weekly)
   optional FreqSpec freqSpec = 6;
 
-  // number of data points to predict in the future.
+  // Horizon is the number of data points to predict in the future.
   // Required.
   optional int32 horizon = 7;
 
@@ -281,7 +294,7 @@ message ForecastingSpec {
   optional bool forecast = 13;
 }
 
-// Specify the frequency specification.
+// FreqSpec specify the frequency specification.
 message FreqSpec {
   // Default to 1.
   // optional
@@ -291,7 +304,7 @@ message FreqSpec {
   optional string unit = 2;
 }
 
-// Github event specify repo and the events to listen in order ot fire the pipeline
+// GithubEvents specify repo and the events to listen in order ot fire the pipeline
 message GithubEvents {
   // The github connections used to loginto git
   optional string gitConnectionName = 1;
@@ -336,6 +349,7 @@ message HyperParameterValue {
   optional string value = 2;
 }
 
+// ImagePipelineSpec is the specification for preprocessing image data
 message ImagePipelineSpec {
   // Name of the datetime columns
   repeated string columns = 1;
@@ -362,7 +376,7 @@ message Level {
   repeated string distinc = 5;
 }
 
-// Represent a value for a specific metric
+// Measurement is a value for a specific metric
 message Measurement {
   // The metric type name (e.g. F1 / Accuracy)
   // +optional
@@ -373,9 +387,6 @@ message Measurement {
   optional double value = 2;
 }
 
-// ==============================================================================
-// PublishedModelRef Configuration
-// ==============================================================================
 // +genclient
 // +genclient:noStatus
 // +k8s:openapi-gen=true
@@ -421,7 +432,7 @@ message Model {
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".status.predictorName"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:resource:path=modelautobuilders,singular=modelautobuilder,shortName=ar,categories={training,modeld,all}
-// ModelAutobuilder represent am automatic run of the model creation
+// ModelAutobuilder represent an automatic run of all the phases needed to create a model
 message ModelAutobuilder {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -450,7 +461,7 @@ message ModelAutobuilderCondition {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// ModelAutobuilderList represent list of pipelines
+// ModelAutobuilderList represent a list of ModelAutoBuilders
 message ModelAutobuilderList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
@@ -459,38 +470,38 @@ message ModelAutobuilderList {
 
 // ModelAutobuilderSpec define the desired state of the ModelAutobuilder resource.
 message ModelAutobuilderSpec {
-  // Path product name, if not defined, if not defined set to generic product name
+  // DataProductName is the name of the data product
   // +kubebuilder:validation:MaxLength=253
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string dataProductName = 1;
 
-  // Path product version, if not defined set to generic product version.
+  // DataProductVersionName is a reference to data product version
   // +kubebuilder:validation:MaxLength=253
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string dataProductVersionName = 2;
 
-  // The name of existing datasource, if empty the datasource parameters will be inferred from the file
+  // DataSourceName is the name of existing datasource, if empty the datasource parameters will be inferred from the file
   // +kubebuilder:validation:MaxLength=253
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string datasourceName = 3;
 
-  // The name of existing dataset, if empty the dataset object will be created
+  // DatasetName is the name of existing dataset, if empty the dataset object will be created
   // otherwise, a dataset will be created based on the file in the path section.
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   optional string datasetName = 4;
 
-  // The location of the data in the cloud
+  // Path is the location of the data in the cloud
   // +kubebuilder:validation:MaxLength=256
   // +optional
   optional string path = 5;
 
-  // The machine learning task (regression/classification)
+  // Task is the machine learning task (regression/classification)
   // required
   optional string task = 6;
 
@@ -508,24 +519,26 @@ message ModelAutobuilderSpec {
   // Max training time.
   // +kubebuilder:validation:Maximum=512
   // +kubebuilder:validation:Minimum=1
-  // Default: 60 min.
+  // +kubebuilder:default = 60
   // +optional
   optional int32 maxTime = 9;
 
   // Max model
-  // Default: 10 models
   // +kubebuilder:validation:Maximum=512
   // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:default = 10
   // +optional
   optional int32 maxModels = 10;
 
   // Access method specify the predictor access method.
   // Default: ClusterPort
+  // +kubebuilder:default = "ClusterPort"
   // +optional
   optional string accessMethod = 11;
 
   // Specify if the predictor should autoscale.
   // Default : false
+  // +kubebuilder:default = false
   // +optional
   optional bool autoScale = 12;
 
@@ -535,20 +548,23 @@ message ModelAutobuilderSpec {
 
   // Specify the number of trainers.
   // Default 1 trainer.
+  // +kubebuilder:default = 1
   // +optional
   optional int32 trainers = 14;
 
   // Specify the search method
-  // Default is random search
+  // +kubebuilder:default = "random"
   // +optional
   optional string searchMethod = 15;
 
   // Set the true to abort the model auto builder
+  // +kubebuilder:default = false
   // +optional
   optional bool aborted = 16;
 
   // The owner account name
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+  // +kubebuilder:default = "no-one"
   // +optional
   optional string owner = 17;
 }
@@ -583,7 +599,7 @@ message ModelAutobuilderStatus {
   // +optional
   optional int32 rows = 10;
 
-  // number of columns, used mainly to show the columns in the kubectl
+  // number of columns, used mainly to show the columns
   // +optional
   optional int32 cols = 11;
 
@@ -618,7 +634,7 @@ message ModelAutobuilderStatus {
   repeated ModelAutobuilderCondition conditions = 19;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// ModelCondition describes the state of a model at a certain point.
 message ModelCondition {
   // Type of account condition.
   optional string type = 1;
@@ -872,10 +888,9 @@ message ModelPipelineSpec {
   // +optional
   optional string folder = 10;
 
-  // Trigger
+  // Trigger is definition of the pipeline trigger
   optional PipelineTrigger trigger = 11;
 
-  // The owner account name
   // +optional
   optional string owner = 12;
 }
@@ -902,7 +917,8 @@ message ModelResult {
   optional bool error = 4;
 }
 
-// Define the constraint on the training process.
+// ModelSearchSpec the constraint on the training process.
+// The values are assigned to the model from the study.
 message ModelSearchSpec {
   // Type specify the hyper parameter optimization search method.
   // The only supported value is random
@@ -944,7 +960,7 @@ message ModelSearchSpec {
   // +optional
   optional SuccessiveHalvingOptions shOptions = 7;
 
-  // Indicate the desired number of models that should be passed to the testing phase.
+  // Test indicate the desired number of models that should be passed to the testing phase.
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   // +optional
@@ -968,30 +984,32 @@ message ModelSearchSpec {
   // +optional
   optional TrainingResourceRequest resources = 11;
 
-  // Contain the list of algorithms that should be tested as part of the search.
+  // AllowList contain the list of algorithms that should be tested as part of the search.
   repeated string allowlist = 12;
 
-  // If true, create a voting ensemble of the top 3 models.
+  // VotingEnsample - If true, create a voting ensemble of the top 3 models.
   // +optional
   optional bool votingEnsemble = 13;
 
-  // If true, create a stacking ensemble of the top 3 models.
+  // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
   // +optional
   optional bool stackingEnsemble = 14;
 }
 
 // ModelSpec defines the desired state of the Model resource
 message ModelSpec {
-  // The account name of the owner of this model
+  // Owner is the account name of the owner of this model
+  // +kubebuilder:default = ""
   // +optional
-  optional string ownerName = 1;
+  optional string owner = 1;
 
-  // ServingSiteName is a reference to the product version of this model. This value is based on the study product version
+  // VersionName is the product version name for this model
+  // +kubebuilder:default = ""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string versionName = 2;
 
-  // StudyName ref reference the study for this model. IF empty, the model is stand alone
+  // StudyName reference the study for this model. IF empty, the model is stand alone
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string studyName = 3;
@@ -1016,11 +1034,11 @@ message ModelSpec {
   // +optional
   optional PreprocessingSpec preprocessing = 7;
 
-  // Specification of the ML algorithm and its hyper parameters.
+  // Estimator is a specification of the ML algorithm and its hyper parameters.
   // +optional
   optional ClassicalEstimatorSpec estimator = 8;
 
-  // DeepNet estimator specification. Not supported for this release.
+  // Dnn is a specification of the DNN estimator specification. Not supported for this release.
   // +optional
   optional DeepEstimatorSpec dnn = 9;
 
@@ -1035,133 +1053,138 @@ message ModelSpec {
 
   // Tested indicate if this model should be testedActual. Default is false.
   // The study controller will set this to true if a model is the best model
+  // kubebuilder:default =false
   // +optional
   optional bool tested = 12;
 
   // Aborted indicate the desire to abort the model
+  // kubebuilder:default =false
   // +optional
   optional bool aborted = 13;
 
   // Published is set when we want to wrap the model in a docker container
+  // kubebuilder:default =false
   // +optional
   optional bool published = 14;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
+  // kubebuilder:default =false
   // +optional
   optional bool pushed = 15;
 
   // Reported is set when a report should be created for this model
+  // kubebuilder:default =false
   // +optional
   optional bool reported = 16;
 
   // Paused is set when we want to pause the training
+  // kubebuilder:default =false
   // +optional
   optional bool paused = 17;
 
   // Profiled is set when we want to create model profile.
+  // kubebuilder:default =false
   // +optional
   optional bool profiled = 18;
 
-  // Set when the model should be archived
+  // Archived is true when the model should be archived
+  // kubebuilder:default =false
   // +optional
   optional bool archived = 19;
 
-  // Set the true when the model should perform a forecast
+  // Forecasted is true when the model should perform a forecast
+  // kubebuilder:default =false
   // +optional
   optional bool forecasted = 20;
 
-  // The location of the model artifacts (metadata, reports and estimators).
+  // Location is the location of the model artifacts (metadata, reports and estimators).
   // +optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 21;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +optional
   optional ForecastingSpec forecastingSpec = 22;
-
-  // The owner account name
-  // +optional
-  optional string owner = 23;
 }
 
 // ModelStatus defines the observed state of the Model
 message ModelStatus {
-  // Represents time when the model is first handled by the model controller
+  // StartTime represents time when the model is first handled by the model controller
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
 
-  // Represents time when the model started training.
+  // TrainStartTime represents time when the model started training.
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainStartTime = 2;
 
-  // Represents time when the model ended training
+  // TrainCompletionTime represents time when the model ended training
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainCompletionTime = 3;
 
-  // Represents time when the model started test on a trainer
+  // TestStartTime represents time when the model started test on a trainer
   // It is not guaranteed to be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testStartTime = 4;
 
-  // Represents time when the model ended testing
+  // TestCompletionTime represents time when the model ended testing
   // be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testCompletionTime = 5;
 
-  // Represent the time that the model is marked as ready
+  // CompletionTime represent the time that the model is marked as ready
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 6;
 
-  // Cross validation score using on the training set.
+  // CVScrore is the score using on the training set.
   // +optional
   optional double cvScore = 7;
 
-  // TrainingSpec on the full training set, Evaluating on the training set
+  // TrainScore is the score on the full training set, Evaluating on the training set
   // +optional
   optional double trainScore = 8;
 
-  // TrainingSpec on the full training set, Evaluating on the test set
+  // TestScore is the score
   // +optional
   optional double testScore = 9;
 
-  // The cost of the model
+  // Cost is the cost of training the model
   // +optional
   optional double cost = 10;
 
-  // True if this is the best model
+  // Best is true if this is the best model
   // +optional
   optional bool best = 11;
 
-  // results of training the model (pipeline) on the full training set, and test it on the training set
+  // TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set
   // +optional
   repeated Measurement trainResult = 12;
 
-  // results of training the model (pipeline) on the full training set, and test it on the test set
+  // TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
   // +optional
   repeated Measurement testResult = 13;
 
-  // The phase of the model
+  // Phase is the phase of the model
   // +optional
   optional string phase = 14;
 
-  // Reference to the model report
+  // ReportName is a reference to the model report
   // +optional
   optional string reportName = 15;
 
-  // The URI of the manifest in the product bucket.
+  // ManifestUri is the URI of the manifest in the product bucket.
   // +optional
   optional string manifestUri = 16;
 
-  // The URI of the model binary file.
+  // WeightsUri is the URI of the model binary file.
   // +optional
   optional string weightsUri = 17;
 
-  // The URI of the label encoder binary file, if there is one.
+  // LabelEncoderUri is the URI of the label encoder binary file, if there is one.
   // +optional
   optional string labelsEncoderUri = 18;
 
-  // The URI of the log file
+  // LogsUri is the URI of the log file
   // +optional
   optional string logsUri = 19;
 
@@ -1169,13 +1192,13 @@ message ModelStatus {
   // +optional
   optional string profileUri = 20;
 
-  // A reference to the mis-classification file which were produce during processing
+  // MisclassUri is a reference to the mis-classification file which were produce during processing
   optional string misclassUri = 21;
 
-  // The image name of the model
+  // ImageName is the image name of the model
   optional string imageName = 22;
 
-  // The forecast URI
+  // ForecastUri is the uri of the forecast
   // +optional
   optional string forecastUri = 23;
 
@@ -1199,7 +1222,7 @@ message NNLayerParameter {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=notebooks,singular=notebook,shortName=nb,categories={training,modeld,all}
-// NotebookName represent a notebook
+// Notebook represent a notebook object which specify a single notebook execution
 message Notebook {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1282,11 +1305,11 @@ message NotebookRunList {
 
 // NotebookRunSpec defines the desired state of the NotebookRun resource
 message NotebookRunSpec {
-  // The product of the resource
+  // VersionName of the data product for this notebook
   // +optional
   optional string versionName = 1;
 
-  // A ref to the notebook with the definition.
+  // NotebookName of the notebook for this run
   // +optional
   optional string notebookName = 2;
 
@@ -1294,7 +1317,7 @@ message NotebookRunSpec {
   // +optional
   repeated NotebookVarValue values = 3;
 
-  // The owner account name
+  // Owner account name
   // +optional
   optional string owner = 4;
 }
@@ -1320,11 +1343,12 @@ message NotebookRunStatus {
 
 // NotebookSpec is the desired state of the notebook resource.
 message NotebookSpec {
-  // The product of the resource
+  // The version of the notebook
   // +optional
   optional string versionName = 1;
 
   // User provided description
+  // +kubebuilder:default = ""
   // +optional
   // +kubebuilder:validation:MinLength=512
   optional string description = 2;
@@ -1335,13 +1359,13 @@ message NotebookSpec {
   optional k8s.io.api.core.v1.ObjectReference schemaRef = 3;
 
   // A reference to the container image repository for this notebook.
-  optional k8s.io.api.core.v1.ObjectReference imageRepoRef = 4;
+  optional string imageName = 4;
 
-  // python req file
+  // Requirements python file
   // +optional
   optional string requirements = 5;
 
-  // list of deb package
+  // DebPackages is a list of deb package to install
   // +optional
   optional string debPackages = 6;
 
@@ -1349,7 +1373,7 @@ message NotebookSpec {
   // +optional
   repeated string vars = 7;
 
-  // The location of the notebook
+  // Location is the location of the notebook file
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 8;
 
   // The owner account name
@@ -1379,6 +1403,7 @@ message NotebookVarValue {
   optional string value = 2;
 }
 
+// NumericPipelineSpec is the specification for preprocessing numerical columns
 message NumericPipelineSpec {
   repeated string columns = 1;
 
@@ -1401,32 +1426,32 @@ message PipelineTrigger {
   optional GithubEvents githubEvents = 2;
 }
 
-// Specification of the pre processing pipeline
+// PreprocessingSpec of the pre processing pipeline
 message PreprocessingSpec {
   // One or more categorical pipelines.
   optional CategoricalPipelineSpec categorical = 1;
 
-  // Specify the column transformation for numeric columns
+  // Numeric specify the column transformation for numeric columns
   // +optional
   optional NumericPipelineSpec numeric = 2;
 
-  // Specify the column transformation for text columns
+  // Text specify the column transformation for text columns
   // +optional
   optional TextPipelineSpec text = 3;
 
-  // Specify the pipeline for images. Not supported in this release
+  // Image specify the pipeline for images. Not supported in this release
   // +optional
   optional ImagePipelineSpec image = 4;
 
-  // Specify the pipeline for audio. Not supported in this release
+  // Audio specify the pipeline for audio. Not supported in this release
   // +optional
   optional AudioPipelineSpec audio = 5;
 
-  // Specify the pipeline for video. Not supported in this release
+  // Video specify the pipeline for video. Not supported in this release
   // +optional
   optional VideoPipelineSpec video = 6;
 
-  // Specify the column transformation for datetime columns
+  // DataTime specify the column transformation for datetime columns
   // +optional
   optional DateTimePipelineSpec datetime = 7;
 
@@ -1443,6 +1468,7 @@ message PreprocessingSpec {
   optional bool imbalanced = 10;
 }
 
+// ReleaseStageSpec is the predictor name that would host the model
 message ReleaseStageSpec {
   // +optional
   optional string predictorName = 1;
@@ -1460,7 +1486,8 @@ message ReleaseStageSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reports,singular=report,categories={training,modeld,all}
-// ReportName represent a report object
+// ReportName represent a report object. A report is a pdf report which contain images and tables about another
+// object
 message Report {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1498,13 +1525,14 @@ message ReportList {
 
 // ReportSpec specifies the desired state of the ReportName resource
 message ReportSpec {
+  // VersionName is the data product version name for this report.
   // +optional
   optional string versionName = 1;
 
-  // EntityName specify the entity being report. Currently entities can be dataset,model or study
+  // EntityRef specify the entity being report. Currently entities can be dataset,model or study
   optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
-  // The report location
+  // Location is the report location in storage.
   // +optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
 
@@ -1516,34 +1544,35 @@ message ReportSpec {
   // +optional
   optional string format = 6;
 
-  // reference to the notifier that is used to send the report
+  // NotifierRef is areference to the notifier that is used to send the report
   // +optional
   optional string description = 7;
 
   // The owner account name
+  // +kubebuilder:default = "no-one"
   // +optional
   optional string owner = 8;
 }
 
 // ReportStatus defines the observed state of the report.
 message ReportStatus {
-  // Represents time when the report was sent for generation
+  // StartTime is the start time of the report was sent for generation
   // It is not guaranteed to be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
-  // Represents time when the report ended generation and was uploaded to storage
+  // CompletionTime is the time when the report ended generation and was uploaded to storage
   // be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
-  // The phase of the report
+  // Phase is the phase of the report
   // +optional
   optional string phase = 4;
 
-  // The report uri in the bucket
+  // URI is the report uri in the bucket
   // +optional
   optional string uri = 5;
 
@@ -1567,6 +1596,7 @@ message ReportStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
+// Study represent a search for the best machine learning model using automl.
 message Study {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1577,7 +1607,7 @@ message Study {
 
 // StudyCondition describes the state of a StudyName.
 message StudyCondition {
-  // Type of account condition.
+  // Type of study condition.
   // +optional
   optional string type = 1;
 
@@ -1609,19 +1639,19 @@ message StudyList {
 
 // StudySpec defines the desired state of the study
 message StudySpec {
-  // The version of the study
+  // VersionName is the data product version of the study
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   // required
   optional string versionName = 1;
 
-  // User provided description
+  // Description is user provided description
   // +kubebuilder:default = ""
   // +kubebuilder:validation:MaxLength=512
   // +optional
   optional string description = 2;
 
-  // A reference to the lab where the trainers for this study run.
+  // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
   // +optional
   optional k8s.io.api.core.v1.ObjectReference labRef = 3;
@@ -1636,15 +1666,15 @@ message StudySpec {
   // Required.
   optional string task = 5;
 
-  // The objective defined how the study controller will compare model performance.
+  // Objective is the objective defined how the study controller will compare model performance.
   // +optional
   optional string objective = 6;
 
-  // Defines the model search
+  // Search defines the model search
   // +optional
   optional ModelSearchSpec search = 8;
 
-  // This is template for preprocessors for this study
+  // Preprocessing is template for preprocessors for this study
   // Default: all preprocessing is set to auto.
   // +optional
   optional PreprocessingSpec preprocessing = 9;
@@ -1653,12 +1683,12 @@ message StudySpec {
   // +optional
   optional TrainingSpec training = 10;
 
-  // A reference to the workload class object from the catalog.
+  // WorkloadClassRef is a reference to the workload class object from the catalog.
   // Default : scikit learn trainer.
   // +optional
   optional k8s.io.api.core.v1.ObjectReference trainerClassRef = 11;
 
-  // A reference to the split.
+  // Split is reference to the split specification
   // +optional
   optional DataSplit split = 12;
 
@@ -1783,6 +1813,7 @@ message StudyStatus {
   repeated StudyCondition conditions = 25;
 }
 
+// SuccessiveHalvingOptions define the parameters for the successive halving algorithm
 message SuccessiveHalvingOptions {
   // The maximum budget allocated to each model during SH search.
   // The default max budget is 81
@@ -1835,6 +1866,7 @@ message SuccessiveHalvingSpec {
   optional string modality = 26;
 }
 
+// TextPipelineSpec is the specification for preprocessing of text columns
 message TextPipelineSpec {
   // The list of test columns
   repeated string columns = 1;
@@ -1868,6 +1900,7 @@ message TextPipelineSpec {
   optional string embedding = 8;
 }
 
+// TrainingResourceRequest specify the desired resources for the training job
 message TrainingResourceRequest {
   // Gpu specify the desired gpu requirements.  will be compared
   // +optional
@@ -1882,7 +1915,7 @@ message TrainingResourceRequest {
   optional string mem = 3;
 }
 
-// Specification of the training process
+// TrainingSpec is the specification of the training process
 message TrainingSpec {
   // Priority specify the priority of the model in the training queue.
   // The priority is defined in the model study.
@@ -1944,7 +1977,7 @@ message TrainingSpec {
   optional double seed = 13;
 }
 
-// A specification of a the training stage.
+// TrainingStageSpec is the desired state of the training step of the pipeline
 message TrainingStageSpec {
   // NotebookName template specify the notebook
   optional string notebookName = 1;
@@ -1962,20 +1995,21 @@ message TrainingStageSpec {
   optional bool auto = 4;
 }
 
+// TriggerSchedule specify a cron schedule
 message TriggerSchedule {
   // The start time of the schedule
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
 
-  // The start data of the schedule
+  // StartDay is the start day of the schedule
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDay = 2;
 
-  // The end time of the schedule
+  // EndTime is the end time of the schedule
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp endTime = 3;
 
-  // The end day of the schedule
+  // EndDay is the end day of the schedule
   // +optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endDay = 4;
 
@@ -1988,6 +2022,7 @@ message TriggerSchedule {
   optional string type = 6;
 }
 
+// VideoPipelineSpec is the specification for preprocessing video data
 message VideoPipelineSpec {
   // Name of the datetime columns
   repeated string columns = 1;

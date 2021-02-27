@@ -17,6 +17,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+// Alert is an alert that was raised during the incident
 message Alert {
   // +optional
   optional string name = 1;
@@ -25,10 +26,12 @@ message Alert {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
+// Commnet represents a single comment in the conversation
 message Comment {
+  // ID is the comment ID. Used when replying to a comment.
   optional string id = 1;
 
-  // The author of the comment
+  // AuthorRef is a reference to the author of the comment
   optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
 
   // If this comment is a reply to an id
@@ -36,11 +39,11 @@ message Comment {
   // +optional
   optional string replyTo = 3;
 
-  // The content of the comment
+  // Content is the content of the comment
   // +kubebuilder:default = ""
   optional string content = 4;
 
-  // Time when the comment was posted
+  // PostedAt is the time when the comment was posted
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time postedAt = 5;
 }
 
@@ -61,12 +64,10 @@ message Conversation {
   optional ConversationStatus status = 3;
 }
 
-// VitualBucketCondition describes the state of a virtual bucket at a certain point.
+// ConversationCondition describes the state of the conversation
 message ConversationCondition {
-  // Type of bucket condition.
   optional string type = 1;
 
-  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -88,7 +89,7 @@ message ConversationList {
   repeated Conversation items = 2;
 }
 
-// ConversationSpec defines the desired state of BucketName
+// ConversationSpec defines the desired state of a Conversation
 message ConversationSpec {
   // The target of the conversation
   optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
@@ -102,6 +103,7 @@ message ConversationSpec {
   optional string owner = 3;
 }
 
+// ConversationStatus is the current status of the conversation
 message ConversationStatus {
   // +optional
   repeated ConversationCondition conditions = 1;
@@ -114,7 +116,7 @@ message ConversationStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modeld,all}
-// PostMortem represent a comment about any entity
+// PostMortem represent a post mortem
 message PostMortem {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -123,7 +125,7 @@ message PostMortem {
   optional PostMortemStatus status = 3;
 }
 
-// VitualBucketCondition describes the state of a virtual bucket at a certain point.
+// Post Morem Condition describes the state of a post mortem at a certain point.
 message PostMortemCondition {
   // Type of bucket condition.
   optional string type = 1;
@@ -173,14 +175,17 @@ message PostMortemSpec {
   repeated TimeLineEvent timeline = 5;
 
   // Root cause
+  // +kubebuilder:default = ""
   // +optional
   optional string rootCause = 6;
 
-  // Summary of the post morten
+  // Summary of the post mortem
+  // +kubebuilder:default = ""
   // +optional
   optional string summary = 7;
 
   // The owner account name
+  // +kubebuilder:default = ""
   // +optional
   optional string owner = 8;
 }
@@ -247,6 +252,7 @@ message RunBookSpec {
   optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
 
   // The owner account name
+  // +kubebuilder:default = ""
   // +optional
   optional string owner = 3;
 }
@@ -257,6 +263,7 @@ message RunBookStatus {
   repeated RunBookCondition conditions = 1;
 }
 
+// TimeLineEvent
 message TimeLineEvent {
   // +optional
   // +kubebuilder:default = ""

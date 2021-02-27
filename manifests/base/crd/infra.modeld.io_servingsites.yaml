@@ -29,6 +29,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: ServingSite is a namespace used for serving
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -45,11 +46,11 @@ spec:
           spec:
             properties:
               clusterName:
-                description: The virtual cluster name in case that the lab is not
-                  on the same cluster
+                description: ClusterName is  the virtual cluster name in case that
+                  the lab is not on the same cluster
                 type: string
               description:
-                description: User provided description
+                description: Description is user provided description
                 type: string
               fdqn:
                 description: The FDQN for this site. This will register with ingress.
@@ -59,8 +60,8 @@ spec:
                   the serving site places the external points used to access the predictors
                 type: string
               limitRangeSpec:
-                description: limit range for the serving site By default, no limit
-                  range apply
+                description: LimitRangeSpec limit range for the serving site By default,
+                  no limit range apply
                 properties:
                   limits:
                     description: Limits is the list of LimitRangeItem objects that
@@ -134,11 +135,11 @@ spec:
                 - limits
                 type: object
               owner:
-                description: The owner account name
+                description: Owner is the owner account name
                 type: string
               quotaSpec:
-                description: Resource Quota for the serving site By default, not quota
-                  is applied
+                description: QuotaSpec is  resource quota for the serving site By
+                  default, not quota is applied
                 properties:
                   hard:
                     additionalProperties:

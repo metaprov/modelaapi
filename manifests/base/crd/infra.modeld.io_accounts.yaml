@@ -75,10 +75,11 @@ spec:
                 maxLength: 64
                 type: string
               groupName:
-                description: A reference to the group account of this account
+                description: GroupName is a reference to the group account
                 type: string
               labBindings:
-                description: Lab Binding
+                description: LabBinding is the RBAC roles that the user have within
+                  each lab
                 items:
                   properties:
                     entity:
@@ -107,7 +108,8 @@ spec:
                 maxLength: 64
                 type: string
               productBindings:
-                description: Entity Binding
+                description: ProductBinding is the premission that the user have for
+                  each product
                 items:
                   properties:
                     entity:
@@ -132,7 +134,8 @@ spec:
                 description: User need to reset password upon login
                 type: boolean
               siteBindings:
-                description: ServingSite Binding
+                description: SiteBindings is the RBAC roles that the user have within
+                  each serving site.
                 items:
                   properties:
                     entity:
@@ -153,7 +156,7 @@ spec:
                   type: object
                 type: array
               tenantRef:
-                description: The account tenant. Default to default tenant.
+                description: TenantRef is the account tenant
                 properties:
                   apiVersion:
                     description: API version of the referent.

@@ -8847,13 +8847,13 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 				Properties: map[string]spec.Schema{
 					"tenantRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The account tenant. Default to default tenant.",
+							Description: "TenantRef is the account tenant",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
 					"groupName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the group account of this account",
+							Description: "GroupName is a reference to the group account",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -8923,7 +8923,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					},
 					"productBindings": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Entity Binding",
+							Description: "ProductBinding is the premission that the user have for each product",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -8937,7 +8937,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					},
 					"labBindings": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Lab Binding",
+							Description: "LabBinding is the RBAC roles that the user have within each lab",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -8951,7 +8951,7 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					},
 					"siteBindings": {
 						SchemaProps: spec.SchemaProps{
-							Description: "ServingSite Binding",
+							Description: "SiteBindings is the RBAC roles that the user have within each serving site.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -9040,7 +9040,8 @@ func schema_pkg_apis_infra_v1alpha1_AthenaSpec(ref common.ReferenceCallback) com
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "=================== Definitions of spec files for each type AthenaSpec defines the connection to Athena db",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"hostName": {
 						SchemaProps: spec.SchemaProps{
@@ -9135,7 +9136,8 @@ func schema_pkg_apis_infra_v1alpha1_BigQuerySpec(ref common.ReferenceCallback) c
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "BigQuerySpec defines the connection to big query",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"serviceAccount": {
 						SchemaProps: spec.SchemaProps{
@@ -9183,9 +9185,10 @@ func schema_pkg_apis_infra_v1alpha1_CassandraSpec(ref common.ReferenceCallback) 
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "CassandraSpec defines the connection to cassandra",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -9225,7 +9228,8 @@ func schema_pkg_apis_infra_v1alpha1_Connection(ref common.ReferenceCallback) com
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Connection define a connection to an external system (e.g. database, public cloud)",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -9378,13 +9382,13 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 				Properties: map[string]spec.Schema{
 					"tenantRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner of the connection default to the default tenant",
+							Description: "TenantRef is the tenant of the connection default to the default tenant",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
 					"category": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The connection category default for general",
+							Description: "The connection category",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -9398,8 +9402,9 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 					},
 					"secretName": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "SecretName is a reference to a secret which holds the connection credentials",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"athena": {
@@ -9847,7 +9852,8 @@ func schema_pkg_apis_infra_v1alpha1_Lab(ref common.ReferenceCallback) common.Ope
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Lab is a namespace used for training and data analysis operations.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -9995,25 +10001,25 @@ func schema_pkg_apis_infra_v1alpha1_LabSpec(ref common.ReferenceCallback) common
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "LabSpec defines the desired state of a TenantRef",
+				Description: "LabSpec defines the desired state of a Lab",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description is a user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"tenantRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Reference to the tenant owning this lab Default to default tenant.",
+							Description: "TenantRef is a reference to the tenant owning this lab Default to default tenant.",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
 					"quotaSpec": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Resource Quota",
+							Description: "QuotaSpec is quoute specification for the lab namespace.",
 							Ref:         ref("k8s.io/api/core/v1.ResourceQuotaSpec"),
 						},
 					},
@@ -10024,7 +10030,7 @@ func schema_pkg_apis_infra_v1alpha1_LabSpec(ref common.ReferenceCallback) common
 					},
 					"clusterName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Optional cluster name, in case that the lab is not on the working cluster",
+							Description: "ClusterName is the name of a remote cluster that is used to execute jobs for this lab",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10243,8 +10249,9 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Owner is the account owning this license",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"email": {
@@ -10255,13 +10262,13 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"trialStart": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Start date for free trial",
+							Description: "TrialStart is the start date for free trial",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"trialEnd": {
 						SchemaProps: spec.SchemaProps{
-							Description: "when free trial end",
+							Description: "TrialEnd when free trial end",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
@@ -10273,21 +10280,21 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"maxTrainers": {
 						SchemaProps: spec.SchemaProps{
-							Description: "max number of trainers",
+							Description: "MaxTrainers is max number of trainers",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"maxServers": {
 						SchemaProps: spec.SchemaProps{
-							Description: "the max number of servers.",
+							Description: "MaxServers is the max number of worker nodes",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"maxUsers": {
 						SchemaProps: spec.SchemaProps{
-							Description: "max users",
+							Description: "MaxUsers is the max number of active accounts",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -10301,14 +10308,14 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"forecast": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Is forecast feature supported",
+							Description: "Forcast denote if forecast feature supported",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"nlp": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Is nlp feature supported",
+							Description: "NLP is nlp feature supported",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -10349,7 +10356,7 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"notifierName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "a notifier to receive the license expiration notification",
+							Description: "NotifierName is a reference to a notifier to receive the license expiration notification",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10545,7 +10552,7 @@ func schema_pkg_apis_infra_v1alpha1_MongoDbSpec(ref common.ReferenceCallback) co
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -10587,7 +10594,7 @@ func schema_pkg_apis_infra_v1alpha1_MySqlSpec(ref common.ReferenceCallback) comm
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"hostName": {
+					"host": {
 						SchemaProps: spec.SchemaProps{
 							Type:   []string{"string"},
 							Format: "",
@@ -11141,7 +11148,8 @@ func schema_pkg_apis_infra_v1alpha1_ServingSite(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "ServingSite is a namespace used for serving",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -11293,7 +11301,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11306,13 +11314,13 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref common.ReferenceCallback
 					},
 					"quotaSpec": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Resource Quota for the serving site By default, not quota is applied",
+							Description: "QuotaSpec is  resource quota for the serving site By default, not quota is applied",
 							Ref:         ref("k8s.io/api/core/v1.ResourceQuotaSpec"),
 						},
 					},
 					"limitRangeSpec": {
 						SchemaProps: spec.SchemaProps{
-							Description: "limit range for the serving site By default, no limit range apply",
+							Description: "LimitRangeSpec limit range for the serving site By default, no limit range apply",
 							Ref:         ref("k8s.io/api/core/v1.LimitRangeSpec"),
 						},
 					},
@@ -11332,14 +11340,14 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref common.ReferenceCallback
 					},
 					"clusterName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The virtual cluster name in case that the lab is not on the same cluster",
+							Description: "ClusterName is  the virtual cluster name in case that the lab is not on the same cluster",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "Owner is the owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11731,14 +11739,14 @@ func schema_pkg_apis_infra_v1alpha1_TenantSpec(ref common.ReferenceCallback) com
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "Owner is the owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11783,7 +11791,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucket(ref common.ReferenceCallback) 
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "VirtualBucket represent a bucket api object",
+				Description: "VirtualBucket represent a object storage location in the cloud or on-prem",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -12154,62 +12162,63 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref common.ReferenceCallb
 				Properties: map[string]spec.Schema{
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Description is the user provided description",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"nodes": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The desired number of nodes",
+							Description: "Nodes is the desired number of nodes",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"nodeClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The class of nodes or vm",
+							Description: "NodeClassName is the class of nodes or vm",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"gpus": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The desired number of gpus",
+							Description: "Gpus is the desired number of gpus",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"gpuClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The class of gpu.",
+							Description: "GpuClassName is the The class of gpu.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"volumeSize": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Volume, if needed. The volume is monuted on all nodes.",
+							Description: "VolumeSize is the size of the volume that would be mounted on all the node of the cluster",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"spot": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Should we use spot instances.",
+							Description: "Spot indicate if we should we use spot instances.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"connectionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Name of the provider connection",
+							Description: "ConnectionName refer to the name of the provider connection",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "the account name of the owner of this cluster",
+							Description: "Owner is the account name of the owner of this cluster",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12312,8 +12321,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolumeCondition(ref common.ReferenceC
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DeploymentCondition describes the state of a deployment at a certain point.",
-				Type:        []string{"object"},
+				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
 						SchemaProps: spec.SchemaProps{
@@ -12501,7 +12509,8 @@ func schema_pkg_apis_team_v1alpha1_Alert(ref common.ReferenceCallback) common.Op
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Alert is an alert that was raised during the incident",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"name": {
 						SchemaProps: spec.SchemaProps{
@@ -12526,17 +12535,19 @@ func schema_pkg_apis_team_v1alpha1_Comment(ref common.ReferenceCallback) common.
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Commnet represents a single comment in the conversation",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"id": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "ID is the comment ID. Used when replying to a comment.",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"authorRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The author of the comment",
+							Description: "AuthorRef is a reference to the author of the comment",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
@@ -12549,14 +12560,14 @@ func schema_pkg_apis_team_v1alpha1_Comment(ref common.ReferenceCallback) common.
 					},
 					"content": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The content of the comment",
+							Description: "Content is the content of the comment",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"postedAt": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Time when the comment was posted",
+							Description: "PostedAt is the time when the comment was posted",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
@@ -12620,23 +12631,21 @@ func schema_pkg_apis_team_v1alpha1_ConversationCondition(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "VitualBucketCondition describes the state of a virtual bucket at a certain point.",
+				Description: "ConversationCondition describes the state of the conversation",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Type of bucket condition.",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
+							Default: "",
+							Type:    []string{"string"},
+							Format:  "",
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Status of the condition, one of True, False, Unknown.",
-							Default:     "",
-							Type:        []string{"string"},
-							Format:      "",
+							Default: "",
+							Type:    []string{"string"},
+							Format:  "",
 						},
 					},
 					"lastTransitionTime": {
@@ -12721,7 +12730,7 @@ func schema_pkg_apis_team_v1alpha1_ConversationSpec(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationSpec defines the desired state of BucketName",
+				Description: "ConversationSpec defines the desired state of a Conversation",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"entityRef": {
@@ -12764,7 +12773,8 @@ func schema_pkg_apis_team_v1alpha1_ConversationStatus(ref common.ReferenceCallba
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "ConversationStatus is the current status of the conversation",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"conditions": {
 						SchemaProps: spec.SchemaProps{
@@ -12791,7 +12801,7 @@ func schema_pkg_apis_team_v1alpha1_PostMortem(ref common.ReferenceCallback) comm
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "PostMortem represent a comment about any entity",
+				Description: "PostMortem represent a post mortem",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -12839,7 +12849,7 @@ func schema_pkg_apis_team_v1alpha1_PostMortemCondition(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "VitualBucketCondition describes the state of a virtual bucket at a certain point.",
+				Description: "Post Morem Condition describes the state of a post mortem at a certain point.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -13006,7 +13016,7 @@ func schema_pkg_apis_team_v1alpha1_PostMortemSpec(ref common.ReferenceCallback) 
 					},
 					"summary": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Summary of the post morten",
+							Description: "Summary of the post mortem",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13276,7 +13286,8 @@ func schema_pkg_apis_team_v1alpha1_TimeLineEvent(ref common.ReferenceCallback) c
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "TimeLineEvent",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"content": {
 						SchemaProps: spec.SchemaProps{
@@ -13301,7 +13312,7 @@ func schema_pkg_apis_training_v1alpha1_AcceptanceStageSpec(ref common.ReferenceC
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "AcceptanceStageSpec is used to verify the new model.",
+				Description: "AcceptanceStageSpec is the desired step of the acceptance stage of the pipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"servingSiteName": {
@@ -13313,14 +13324,14 @@ func schema_pkg_apis_training_v1alpha1_AcceptanceStageSpec(ref common.ReferenceC
 					},
 					"testDatasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The name of predictor which will be the base for this stage",
+							Description: "The name of test dataset name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"auto": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Auto defines if we move from stage to stage automatically.",
+							Description: "Auto defines if we move to the next stage without human intervation",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -13335,7 +13346,8 @@ func schema_pkg_apis_training_v1alpha1_AudioPipelineSpec(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "AudioPipelineSpec is the specification for preprocessing audio data",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{
@@ -13369,7 +13381,7 @@ func schema_pkg_apis_training_v1alpha1_BacktestSpec(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Specify the back test",
+				Description: "BacktestSpec specify the back test",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"initial": {
@@ -13396,25 +13408,26 @@ func schema_pkg_apis_training_v1alpha1_CapacityStageSpec(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "CapacityStageSpec is the desired state of the capcity testing.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"servingSiteName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The serving site for the testing The default is to use the pipeline serving site.",
+							Description: "ServingSiteName is the serving site for the testing",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"testDatasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The name of dataset used to test the model at this stage.",
+							Description: "TestDatasetName is the name of dataset used to test the model at this stage.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"auto": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Gate defines if we move from stage to stage automatically.",
+							Description: "Auto defines if we move from stage to stage automatically.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -13429,7 +13442,8 @@ func schema_pkg_apis_training_v1alpha1_CategoricalPipelineSpec(ref common.Refere
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "CategoricalPipelineSpec is the specification for processing categorical columns",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{
@@ -13470,18 +13484,19 @@ func schema_pkg_apis_training_v1alpha1_ClassicalEstimatorSpec(ref common.Referen
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"algorithmName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the algorithm in the catalog",
+							Description: "AlgorithmName is a reference to the algorithm in the catalog",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"parameters": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The algorithm hyper parameters",
+							Description: "Parameters is a list of the algorithm hyper parameters",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -13566,7 +13581,8 @@ func schema_pkg_apis_training_v1alpha1_DataStageSpec(ref common.ReferenceCallbac
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "DataStageSpec is the desired state of the data preprocesing step of the pipeline. Data preprocessing will be done via",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"wranglerName": {
 						SchemaProps: spec.SchemaProps{
@@ -13584,7 +13600,8 @@ func schema_pkg_apis_training_v1alpha1_DateTimePipelineSpec(ref common.Reference
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "DateTimePipelineSpec is the specification for preprocessing datetime features",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{
@@ -13763,7 +13780,7 @@ func schema_pkg_apis_training_v1alpha1_DimensionValue(ref common.ReferenceCallba
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Partition key values are used for the partition",
+				Description: "DimensionValue specify the partition key values are used for the partition",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"key": {
@@ -13888,7 +13905,8 @@ func schema_pkg_apis_training_v1alpha1_ForecastingSpec(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "ForecastingSpec",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"timeColumn": {
 						SchemaProps: spec.SchemaProps{
@@ -13949,7 +13967,7 @@ func schema_pkg_apis_training_v1alpha1_ForecastingSpec(ref common.ReferenceCallb
 					},
 					"horizon": {
 						SchemaProps: spec.SchemaProps{
-							Description: "number of data points to predict in the future. Required.",
+							Description: "Horizon is the number of data points to predict in the future. Required.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -14014,7 +14032,7 @@ func schema_pkg_apis_training_v1alpha1_FreqSpec(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Specify the frequency specification.",
+				Description: "FreqSpec specify the frequency specification.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"interval": {
@@ -14041,7 +14059,7 @@ func schema_pkg_apis_training_v1alpha1_GithubEvents(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Github event specify repo and the events to listen in order ot fire the pipeline",
+				Description: "GithubEvents specify repo and the events to listen in order ot fire the pipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"gitConnectionName": {
@@ -14189,7 +14207,8 @@ func schema_pkg_apis_training_v1alpha1_ImagePipelineSpec(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "ImagePipelineSpec is the specification for preprocessing image data",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{
@@ -14278,7 +14297,7 @@ func schema_pkg_apis_training_v1alpha1_Measurement(ref common.ReferenceCallback)
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Represent a value for a specific metric",
+				Description: "Measurement is a value for a specific metric",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"metric": {
@@ -14305,7 +14324,7 @@ func schema_pkg_apis_training_v1alpha1_Model(ref common.ReferenceCallback) commo
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "============================================================================== PublishedModelRef Configuration ============================================================================== Model represent a machine learning model. models are automatically generated by the planner and trained by the trainer. After training, models are packaged into a docker container and served by predictor.",
+				Description: "Model represent a machine learning model. models are automatically generated by the planner and trained by the trainer. After training, models are packaged into a docker container and served by predictor.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -14353,7 +14372,7 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilder(ref common.ReferenceCall
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ModelAutobuilder represent am automatic run of the model creation",
+				Description: "ModelAutobuilder represent an automatic run of all the phases needed to create a model",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -14453,7 +14472,7 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderList(ref common.Reference
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ModelAutobuilderList represent list of pipelines",
+				Description: "ModelAutobuilderList represent a list of ModelAutoBuilders",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -14507,42 +14526,42 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderSpec(ref common.Reference
 				Properties: map[string]spec.Schema{
 					"dataProductName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Path product name, if not defined, if not defined set to generic product name",
+							Description: "DataProductName is the name of the data product",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"dataProductVersionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Path product version, if not defined set to generic product version.",
+							Description: "DataProductVersionName is a reference to data product version",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"datasourceName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The name of existing datasource, if empty the datasource parameters will be inferred from the file",
+							Description: "DataSourceName is the name of existing datasource, if empty the datasource parameters will be inferred from the file",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The name of existing dataset, if empty the dataset object will be created otherwise, a dataset will be created based on the file in the path section.",
+							Description: "DatasetName is the name of existing dataset, if empty the dataset object will be created otherwise, a dataset will be created based on the file in the path section.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"path": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The location of the data in the cloud",
+							Description: "Path is the location of the data in the cloud",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"task": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The machine learning task (regression/classification) required",
+							Description: "Task is the machine learning task (regression/classification) required",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -14563,14 +14582,14 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderSpec(ref common.Reference
 					},
 					"maxTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Max training time. Default: 60 min.",
+							Description: "Max training time.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"maxModels": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Max model Default: 10 models",
+							Description: "Max model",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -14604,7 +14623,7 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderSpec(ref common.Reference
 					},
 					"searchMethod": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the search method Default is random search",
+							Description: "Specify the search method",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -14703,7 +14722,7 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderStatus(ref common.Referen
 					},
 					"cols": {
 						SchemaProps: spec.SchemaProps{
-							Description: "number of columns, used mainly to show the columns in the kubectl",
+							Description: "number of columns, used mainly to show the columns",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -14779,7 +14798,7 @@ func schema_pkg_apis_training_v1alpha1_ModelCondition(ref common.ReferenceCallba
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "DeploymentCondition describes the state of a deployment at a certain point.",
+				Description: "ModelCondition describes the state of a model at a certain point.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -15434,15 +15453,14 @@ func schema_pkg_apis_training_v1alpha1_ModelPipelineSpec(ref common.ReferenceCal
 					},
 					"trigger": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Trigger",
+							Description: "Trigger is definition of the pipeline trigger",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.PipelineTrigger"),
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
-							Type:        []string{"string"},
-							Format:      "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 				},
@@ -15523,7 +15541,7 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Define the constraint on the training process.",
+				Description: "ModelSearchSpec the constraint on the training process. The values are assigned to the model from the study.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -15571,13 +15589,12 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 					"shOptions": {
 						SchemaProps: spec.SchemaProps{
 							Description: "SHOptions is the desired options for successive halving search. All other models are saved into an archive.",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.SuccessiveHalvingOptions"),
 						},
 					},
 					"test": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Indicate the desired number of models that should be passed to the testing phase.",
+							Description: "Test indicate the desired number of models that should be passed to the testing phase.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -15604,7 +15621,7 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 					},
 					"allowlist": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Contain the list of algorithms that should be tested as part of the search.",
+							Description: "AllowList contain the list of algorithms that should be tested as part of the search.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -15619,14 +15636,14 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 					},
 					"votingEnsemble": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, create a voting ensemble of the top 3 models.",
+							Description: "VotingEnsample - If true, create a voting ensemble of the top 3 models.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"stackingEnsemble": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, create a stacking ensemble of the top 3 models.",
+							Description: "StackingEnsemble If true, create a stacking ensemble of the top 3 models.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -15646,23 +15663,23 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 				Description: "ModelSpec defines the desired state of the Model resource",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"ownerName": {
+					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The account name of the owner of this model",
+							Description: "Owner is the account name of the owner of this model",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "ServingSiteName is a reference to the product version of this model. This value is based on the study product version",
+							Description: "VersionName is the product version name for this model",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"studyName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "StudyName ref reference the study for this model. IF empty, the model is stand alone",
+							Description: "StudyName reference the study for this model. IF empty, the model is stand alone",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15696,13 +15713,13 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					},
 					"estimator": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specification of the ML algorithm and its hyper parameters.",
+							Description: "Estimator is a specification of the ML algorithm and its hyper parameters.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.ClassicalEstimatorSpec"),
 						},
 					},
 					"dnn": {
 						SchemaProps: spec.SchemaProps{
-							Description: "DeepNet estimator specification. Not supported for this release.",
+							Description: "Dnn is a specification of the DNN estimator specification. Not supported for this release.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.DeepEstimatorSpec"),
 						},
 					},
@@ -15720,70 +15737,70 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					},
 					"tested": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Tested indicate if this model should be testedActual. Default is false. The study controller will set this to true if a model is the best model",
+							Description: "Tested indicate if this model should be testedActual. Default is false. The study controller will set this to true if a model is the best model kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"aborted": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Aborted indicate the desire to abort the model",
+							Description: "Aborted indicate the desire to abort the model kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"published": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Published is set when we want to wrap the model in a docker container",
+							Description: "Published is set when we want to wrap the model in a docker container kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"pushed": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Pushed indicate if the model image should be pushed into the remote docker registry.",
+							Description: "Pushed indicate if the model image should be pushed into the remote docker registry. kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"reported": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Reported is set when a report should be created for this model",
+							Description: "Reported is set when a report should be created for this model kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"paused": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Paused is set when we want to pause the training",
+							Description: "Paused is set when we want to pause the training kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"profiled": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Profiled is set when we want to create model profile.",
+							Description: "Profiled is set when we want to create model profile. kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"archived": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Set when the model should be archived",
+							Description: "Archived is true when the model should be archived kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"forecasted": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Set the true when the model should perform a forecast",
+							Description: "Forecasted is true when the model should perform a forecast kubebuilder:default =false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"location": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The location of the model artifacts (metadata, reports and estimators).",
+							Description: "Location is the location of the model artifacts (metadata, reports and estimators).",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -15791,13 +15808,6 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 						SchemaProps: spec.SchemaProps{
 							Description: "The specification for the forecasting algorithm if this is a forecast study.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.ForecastingSpec"),
-						},
-					},
-					"owner": {
-						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
-							Type:        []string{"string"},
-							Format:      "",
 						},
 					},
 				},
@@ -15817,78 +15827,78 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 				Properties: map[string]spec.Schema{
 					"startTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the model is first handled by the model controller",
+							Description: "StartTime represents time when the model is first handled by the model controller",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"trainStartTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the model started training.",
+							Description: "TrainStartTime represents time when the model started training.",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"trainCompletionTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the model ended training",
+							Description: "TrainCompletionTime represents time when the model ended training",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"testStartTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the model started test on a trainer It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+							Description: "TestStartTime represents time when the model started test on a trainer It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"testCompletionTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the model ended testing be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+							Description: "TestCompletionTime represents time when the model ended testing be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"completionTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represent the time that the model is marked as ready",
+							Description: "CompletionTime represent the time that the model is marked as ready",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"cvScore": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Cross validation score using on the training set.",
+							Description: "CVScrore is the score using on the training set.",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
 					"trainScore": {
 						SchemaProps: spec.SchemaProps{
-							Description: "TrainingSpec on the full training set, Evaluating on the training set",
+							Description: "TrainScore is the score on the full training set, Evaluating on the training set",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
 					"testScore": {
 						SchemaProps: spec.SchemaProps{
-							Description: "TrainingSpec on the full training set, Evaluating on the test set",
+							Description: "TestScore is the score",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
 					"cost": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The cost of the model",
+							Description: "Cost is the cost of training the model",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
 					"best": {
 						SchemaProps: spec.SchemaProps{
-							Description: "True if this is the best model",
+							Description: "Best is true if this is the best model",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"trainResult": {
 						SchemaProps: spec.SchemaProps{
-							Description: "results of training the model (pipeline) on the full training set, and test it on the training set",
+							Description: "TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -15902,7 +15912,7 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"testResult": {
 						SchemaProps: spec.SchemaProps{
-							Description: "results of training the model (pipeline) on the full training set, and test it on the test set",
+							Description: "TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -15916,7 +15926,7 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"phase": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The phase of the model",
+							Description: "Phase is the phase of the model",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
@@ -15924,35 +15934,35 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"reportName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Reference to the model report",
+							Description: "ReportName is a reference to the model report",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"manifestUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The URI of the manifest in the product bucket.",
+							Description: "ManifestUri is the URI of the manifest in the product bucket.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"weightsUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The URI of the model binary file.",
+							Description: "WeightsUri is the URI of the model binary file.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"labelsEncoderUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The URI of the label encoder binary file, if there is one.",
+							Description: "LabelEncoderUri is the URI of the label encoder binary file, if there is one.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"logsUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The URI of the log file",
+							Description: "LogsUri is the URI of the log file",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15967,7 +15977,7 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"misclassUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the mis-classification file which were produce during processing",
+							Description: "MisclassUri is a reference to the mis-classification file which were produce during processing",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
@@ -15975,7 +15985,7 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"imageName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The image name of the model",
+							Description: "ImageName is the image name of the model",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
@@ -15983,7 +15993,7 @@ func schema_pkg_apis_training_v1alpha1_ModelStatus(ref common.ReferenceCallback)
 					},
 					"forecastUri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The forecast URI",
+							Description: "ForecastUri is the uri of the forecast",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16047,7 +16057,7 @@ func schema_pkg_apis_training_v1alpha1_Notebook(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "NotebookName represent a notebook",
+				Description: "Notebook represent a notebook object which specify a single notebook execution",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -16350,14 +16360,14 @@ func schema_pkg_apis_training_v1alpha1_NotebookRunSpec(ref common.ReferenceCallb
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The product of the resource",
+							Description: "VersionName of the data product for this notebook",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"notebookName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A ref to the notebook with the definition.",
+							Description: "NotebookName of the notebook for this run",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16378,7 +16388,7 @@ func schema_pkg_apis_training_v1alpha1_NotebookRunSpec(ref common.ReferenceCallb
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name",
+							Description: "Owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16449,7 +16459,7 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The product of the resource",
+							Description: "The version of the notebook",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16467,22 +16477,23 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
-					"imageRepoRef": {
+					"imageName": {
 						SchemaProps: spec.SchemaProps{
 							Description: "A reference to the container image repository for this notebook.",
-							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"requirements": {
 						SchemaProps: spec.SchemaProps{
-							Description: "python req file",
+							Description: "Requirements python file",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"debPackages": {
 						SchemaProps: spec.SchemaProps{
-							Description: "list of deb package",
+							Description: "DebPackages is a list of deb package to install",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16504,7 +16515,7 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 					},
 					"location": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The location of the notebook",
+							Description: "Location is the location of the notebook file",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -16598,7 +16609,8 @@ func schema_pkg_apis_training_v1alpha1_NumericPipelineSpec(ref common.ReferenceC
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "NumericPipelineSpec is the specification for preprocessing numerical columns",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{
@@ -16664,7 +16676,7 @@ func schema_pkg_apis_training_v1alpha1_PreprocessingSpec(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Specification of the pre processing pipeline",
+				Description: "PreprocessingSpec of the pre processing pipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"categorical": {
@@ -16675,37 +16687,37 @@ func schema_pkg_apis_training_v1alpha1_PreprocessingSpec(ref common.ReferenceCal
 					},
 					"numeric": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the column transformation for numeric columns",
+							Description: "Numeric specify the column transformation for numeric columns",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.NumericPipelineSpec"),
 						},
 					},
 					"text": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the column transformation for text columns",
+							Description: "Text specify the column transformation for text columns",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.TextPipelineSpec"),
 						},
 					},
 					"image": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the pipeline for images. Not supported in this release",
+							Description: "Image specify the pipeline for images. Not supported in this release",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.ImagePipelineSpec"),
 						},
 					},
 					"audio": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the pipeline for audio. Not supported in this release",
+							Description: "Audio specify the pipeline for audio. Not supported in this release",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.AudioPipelineSpec"),
 						},
 					},
 					"video": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the pipeline for video. Not supported in this release",
+							Description: "Video specify the pipeline for video. Not supported in this release",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.VideoPipelineSpec"),
 						},
 					},
 					"datatime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the column transformation for datetime columns",
+							Description: "DataTime specify the column transformation for datetime columns",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.DateTimePipelineSpec"),
 						},
 					},
@@ -16742,7 +16754,8 @@ func schema_pkg_apis_training_v1alpha1_ReleaseStageSpec(ref common.ReferenceCall
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "ReleaseStageSpec is the predictor name that would host the model",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"predictorName": {
 						SchemaProps: spec.SchemaProps{
@@ -16760,7 +16773,7 @@ func schema_pkg_apis_training_v1alpha1_Report(ref common.ReferenceCallback) comm
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ReportName represent a report object",
+				Description: "ReportName represent a report object. A report is a pdf report which contain images and tables about another object",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -16914,20 +16927,21 @@ func schema_pkg_apis_training_v1alpha1_ReportSpec(ref common.ReferenceCallback) 
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "VersionName is the data product version name for this report.",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"entityRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "EntityName specify the entity being report. Currently entities can be dataset,model or study",
+							Description: "EntityRef specify the entity being report. Currently entities can be dataset,model or study",
 							Default:     map[string]interface{}{},
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
 					"location": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The report location",
+							Description: "Location is the report location in storage.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.DataLocation"),
 						},
 					},
@@ -16947,7 +16961,7 @@ func schema_pkg_apis_training_v1alpha1_ReportSpec(ref common.ReferenceCallback) 
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "reference to the notifier that is used to send the report",
+							Description: "NotifierRef is areference to the notifier that is used to send the report",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16976,26 +16990,26 @@ func schema_pkg_apis_training_v1alpha1_ReportStatus(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"startTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the report was sent for generation It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+							Description: "StartTime is the start time of the report was sent for generation It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"completionTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Represents time when the report ended generation and was uploaded to storage be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+							Description: "CompletionTime is the time when the report ended generation and was uploaded to storage be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"phase": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The phase of the report",
+							Description: "Phase is the phase of the report",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"uri": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The report uri in the bucket",
+							Description: "URI is the report uri in the bucket",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17025,7 +17039,8 @@ func schema_pkg_apis_training_v1alpha1_Study(ref common.ReferenceCallback) commo
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "Study represent a search for the best machine learning model using automl.",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
 						SchemaProps: spec.SchemaProps{
@@ -17076,7 +17091,7 @@ func schema_pkg_apis_training_v1alpha1_StudyCondition(ref common.ReferenceCallba
 				Properties: map[string]spec.Schema{
 					"type": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Type of account condition.",
+							Description: "Type of study condition.",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",
@@ -17176,21 +17191,21 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The version of the study required",
+							Description: "VersionName is the data product version of the study required",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"labRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the lab where the trainers for this study run. If no value is provided, the lab is taken from the",
+							Description: "LabRef is a reference to the lab where the trainers for this study run. If no value is provided, the lab is taken from the",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
@@ -17210,20 +17225,20 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					},
 					"objective": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The objective defined how the study controller will compare model performance.",
+							Description: "Objective is the objective defined how the study controller will compare model performance.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"search": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Defines the model search",
+							Description: "Search defines the model search",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.ModelSearchSpec"),
 						},
 					},
 					"preprocessing": {
 						SchemaProps: spec.SchemaProps{
-							Description: "This is template for preprocessors for this study Default: all preprocessing is set to auto.",
+							Description: "Preprocessing is template for preprocessors for this study Default: all preprocessing is set to auto.",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.PreprocessingSpec"),
 						},
 					},
@@ -17235,14 +17250,13 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					},
 					"trainerClassRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the workload class object from the catalog. Default : scikit learn trainer.",
+							Description: "WorkloadClassRef is a reference to the workload class object from the catalog. Default : scikit learn trainer.",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
 					"split": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the split.",
-							Default:     map[string]interface{}{},
+							Description: "Split is reference to the split specification",
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.DataSplit"),
 						},
 					},
@@ -17507,7 +17521,8 @@ func schema_pkg_apis_training_v1alpha1_SuccessiveHalvingOptions(ref common.Refer
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "SuccessiveHalvingOptions define the parameters for the successive halving algorithm",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"maxBudget": {
 						SchemaProps: spec.SchemaProps{
@@ -17587,7 +17602,8 @@ func schema_pkg_apis_training_v1alpha1_TextPipelineSpec(ref common.ReferenceCall
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "TextPipelineSpec is the specification for preprocessing of text columns",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{
@@ -17663,7 +17679,8 @@ func schema_pkg_apis_training_v1alpha1_TrainingResourceRequest(ref common.Refere
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "TrainingResourceRequest specify the desired resources for the training job",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"gpu": {
 						SchemaProps: spec.SchemaProps{
@@ -17696,7 +17713,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingSpec(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Specification of the training process",
+				Description: "TrainingSpec is the specification of the training process",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"priority": {
@@ -17794,7 +17811,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingStageSpec(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "A specification of a the training stage.",
+				Description: "TrainingStageSpec is the desired state of the training step of the pipeline",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"notebookName": {
@@ -17835,7 +17852,8 @@ func schema_pkg_apis_training_v1alpha1_TriggerSchedule(ref common.ReferenceCallb
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "TriggerSchedule specify a cron schedule",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"startTime": {
 						SchemaProps: spec.SchemaProps{
@@ -17845,19 +17863,19 @@ func schema_pkg_apis_training_v1alpha1_TriggerSchedule(ref common.ReferenceCallb
 					},
 					"startDay": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The start data of the schedule",
+							Description: "StartDay is the start day of the schedule",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
 					"endTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The end time of the schedule",
+							Description: "EndTime is the end time of the schedule",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Timestamp"),
 						},
 					},
 					"endDay": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The end day of the schedule",
+							Description: "EndDay is the end day of the schedule",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
@@ -17889,7 +17907,8 @@ func schema_pkg_apis_training_v1alpha1_VideoPipelineSpec(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "VideoPipelineSpec is the specification for preprocessing video data",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"columns": {
 						SchemaProps: spec.SchemaProps{

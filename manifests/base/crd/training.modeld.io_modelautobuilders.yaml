@@ -50,7 +50,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ModelAutobuilder represent am automatic run of the model creation
+        description: ModelAutobuilder represent an automatic run of all the phases
+          needed to create a model
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -87,15 +88,14 @@ spec:
                   false'
                 type: boolean
               dataProductName:
-                description: Path product name, if not defined, if not defined set
-                  to generic product name
+                description: DataProductName is the name of the data product
                 maxLength: 253
                 minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               dataProductVersionName:
-                description: Path product version, if not defined set to generic product
-                  version.
+                description: DataProductVersionName is a reference to data product
+                  version
                 maxLength: 253
                 minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
@@ -463,26 +463,26 @@ spec:
                     type: string
                 type: object
               datasetName:
-                description: The name of existing dataset, if empty the dataset object
-                  will be created otherwise, a dataset will be created based on the
-                  file in the path section.
+                description: DatasetName is the name of existing dataset, if empty
+                  the dataset object will be created otherwise, a dataset will be
+                  created based on the file in the path section.
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               datasourceName:
-                description: The name of existing datasource, if empty the datasource
-                  parameters will be inferred from the file
+                description: DataSourceName is the name of existing datasource, if
+                  empty the datasource parameters will be inferred from the file
                 maxLength: 253
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               maxModels:
-                description: 'Max model Default: 10 models'
+                description: Max model
                 format: int32
                 maximum: 512
                 minimum: 1
                 type: integer
               maxTime:
-                description: 'Max training time. Default: 60 min.'
+                description: Max training time.
                 format: int32
                 maximum: 512
                 minimum: 1
@@ -539,11 +539,11 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               path:
-                description: The location of the data in the cloud
+                description: Path is the location of the data in the cloud
                 maxLength: 256
                 type: string
               searchMethod:
-                description: Specify the search method Default is random search
+                description: Specify the search method
                 enum:
                 - random
                 - grid
@@ -557,7 +557,7 @@ spec:
                 maxLength: 128
                 type: string
               task:
-                description: The machine learning task (regression/classification)
+                description: Task is the machine learning task (regression/classification)
                   required
                 enum:
                 - binary-classification
@@ -589,8 +589,7 @@ spec:
                 description: The Best model score, so far.
                 type: number
               cols:
-                description: number of columns, used mainly to show the columns in
-                  the kubectl
+                description: number of columns, used mainly to show the columns
                 format: int32
                 type: integer
               completionTime:
@@ -635,10 +634,11 @@ spec:
                 description: The best estimator, taken from the best model
                 properties:
                   algorithmName:
-                    description: A reference to the algorithm in the catalog
+                    description: AlgorithmName is a reference to the algorithm in
+                      the catalog
                     type: string
                   parameters:
-                    description: The algorithm hyper parameters
+                    description: Parameters is a list of the algorithm hyper parameters
                     items:
                       description: HyperParameterValue represent a specific value
                         of the learning algorithm hyper-parameter. The value is chosen

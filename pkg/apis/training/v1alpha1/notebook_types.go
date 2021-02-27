@@ -17,10 +17,10 @@ import (
 // NotebookName
 // ===================================================
 
-// NotebookName condition
+// Notebook condition
 type NotebookConditionType string
 
-/// NotebookName Condition
+/// Notebook Condition
 const (
 	NotebookPublished NotebookConditionType = "Published"
 	NotebookIngested  NotebookConditionType = "Ingested"
@@ -50,7 +50,7 @@ type NotebookCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=notebooks,singular=notebook,shortName=nb,categories={training,modeld,all}
-// NotebookName represent a notebook
+// Notebook represent a notebook object which specify a single notebook execution
 type Notebook struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -70,10 +70,11 @@ type NotebookList struct {
 
 // NotebookSpec is the desired state of the notebook resource.
 type NotebookSpec struct {
-	// The product of the resource
+	// The version of the notebook
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
+	// +kubebuilder:default = ""
 	// +optional
 	// +kubebuilder:validation:MinLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
@@ -82,17 +83,17 @@ type NotebookSpec struct {
 	// +optional
 	SchemaRef *v1.ObjectReference `json:"schemaRef,omitempty" protobuf:"bytes,3,opt,name=schemaRef"`
 	// A reference to the container image repository for this notebook.
-	ImageRepoRef *v1.ObjectReference `json:"imageRepoRef,omitempty" protobuf:"bytes,4,opt,name=imageRepoRef"`
-	// python req file
+	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,4,opt,name=imageName"`
+	// Requirements python file
 	// +optional
 	Requirements *string `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
-	// list of deb package
+	// DebPackages is a list of deb package to install
 	// +optional
 	DebPackages *string `json:"debPackages,omitempty" protobuf:"bytes,6,opt,name=debPackages"`
 	// vars to pass to the notebook
 	// +optional
 	Vars []string `json:"vars,omitempty" protobuf:"bytes,7,rep,name=vars"`
-	// The location of the notebook
+	// Location is the location of the notebook file
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,rep,name=location"`
 	// The owner account name
 	// +optional
@@ -106,7 +107,7 @@ type NotebookStatus struct {
 	Image string `json:"image,omitempty" protobuf:"bytes,1,opt,name=image"`
 	// The URI of the notebook in the bucket.
 	// +optional
-	Uri string `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
+	URI string `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
 	// Represents the latest available observations of a notebook state.
 	//+optional
 	Conditions []NotebookCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
