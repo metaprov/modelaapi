@@ -215,6 +215,6 @@ func (report *Report) MarkReportReady(product *data.DataProduct) {
 	})
 
 	liveUri := product.PrefixLiveUri(report.PdfUri())
-	report.Status.Uri = liveUri
+	report.Status.URI = liveUri
 
 }

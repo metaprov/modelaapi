@@ -20,8 +20,8 @@ import (
 
 func (model *Model) Default() {
 
-	if model.Spec.OwnerName == nil {
-		model.Spec.OwnerName = util.StrPtr("")
+	if model.Spec.Owner == nil {
+		model.Spec.Owner = util.StrPtr("")
 	}
 	// Objective
 	if model.Spec.Training == nil {
