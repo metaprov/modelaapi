@@ -14,11 +14,14 @@ CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${PROJECT_ROOT}; ls -d -1 ./vendor/k8s.io/code-g
 PATH="${PROJECT_ROOT}/dist:${PATH}"
 GIT_ROOT=$(cd $(dirname ${BASH_SOURCE})/../../../../; pwd)
 
+find $PROJECT_ROOT -name "*.pb.go" -type f -delete
+
 PROTO_FILES=$(find $PROJECT_ROOT \( -name "*.proto" -and -path '*/services/*' -or -path '*/modeldapi/pkg/apis/*' -and -name "*.proto" \))
 
 
 GOOGLE_PROTO_API_PATH=${PROJECT_ROOT}/common-protos
 GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
+
 
 
 # generate the api objects
