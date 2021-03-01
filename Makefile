@@ -92,6 +92,11 @@ install-gen:
 	go install k8s.io/code-generator/cmd/import-boss     
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
+	go install github.com/gogo/protobuf/gogoproto
+	go install github.com/golang/protobuf/protoc-gen-go
+	go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+	go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+	
 
 .PHONY: generate
 generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy update-codegen
@@ -100,4 +105,16 @@ generate: install-gen generate-proto generate-go generate-js generate-py generat
 .PHONY: install-crd
 install-crd:
 	kustomize build ./manifests/base/crd | kubectl replace --force --save-config=false -f -	
+
+
+generated-reference-docs: update-licenses
+	SKIP_CHANGELOG_GENERATION=true go run codegen/docs/docsgen.go
+
+
+.PHONY: update-licenses
+update-licenses:
+	# check for GPL licenses, if there are any, this will fail
+	cd hack/oss; GO111MODULE=on go run main.go osagen -c "GNU General Public License v2.0,GNU General Public License v3.0,GNU Lesser General Public License v2.1,GNU Lesser General Public License v3.0,GNU Affero General Public License v3.0"
+	cd hack/oss; GO111MODULE=on go run main.go osagen -s "Mozilla Public License 2.0,GNU General Public License v2.0,GNU General Public License v3.0,GNU Lesser General Public License v2.1,GNU Lesser General Public License v3.0,GNU Affero General Public License v3.0"> ../../docs/content/static/content/osa_provided.md
+	cd hack/oss; GO111MODULE=on go run main.go osagen -i "Mozilla Public License 2.0,GNU General Public License v2.0,GNU General Public License v3.0,GNU Lesser General Public License v2.1,GNU Lesser General Public License v3.0,GNU Affero General Public License v3.0"> ../../docs/content/static/content/osa_included.md
 

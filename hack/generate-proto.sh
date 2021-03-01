@@ -10,8 +10,8 @@ CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${PROJECT_ROOT}; ls -d -1 ./vendor/k8s.io/code-g
 PATH="${PROJECT_ROOT}/dist:${PATH}"
 
 # protbuf tooling required to build .proto files from go annotations from k8s-like api types
-GO111MODULE=on go get k8s.io/code-generator/cmd/go-to-protobuf@v0.20.2
-GO111MODULE=on go get k8s.io/code-generator/cmd/go-to-protobuf/protoc-gen-gogo@v0.20.2
+##cd && GO111MODULE=on go get k8s.io/code-generator/cmd/go-to-protobuf@v0.20.2
+##cd && GO111MODULE=on go get k8s.io/code-generator/cmd/go-to-protobuf/protoc-gen-gogo@v0.20.2
 
 
 PACKAGES=(
