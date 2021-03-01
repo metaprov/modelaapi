@@ -92,10 +92,7 @@ install-gen:
 	go install k8s.io/code-generator/cmd/import-boss     
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
-	go install github.com/gogo/protobuf/gogoproto
-	go install github.com/golang/protobuf/protoc-gen-go
-	go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
-	go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+	GO111MODULE=on go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.5.0 
 	
 
 .PHONY: generate
