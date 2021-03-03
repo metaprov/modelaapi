@@ -40,5 +40,5 @@ install:
 upload-to-test:
 	twine upload -r pypitest dist/*.tar.gz
 
-upload: build
-	twine upload -r pypi dist/*.tar.gz
+upload: clean build
+	python3 -m twine upload --repository pypi dist/*.tar.gz --verbose

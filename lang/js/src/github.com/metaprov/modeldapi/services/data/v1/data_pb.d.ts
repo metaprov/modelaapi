@@ -28,10 +28,8 @@ export class DsReadFileRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsReadFileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsReadFileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsReadFileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsReadFileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsReadFileRequest.AsObject;
@@ -47,7 +45,7 @@ export namespace DsReadFileRequest {
     version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -72,10 +70,8 @@ export class DsReadFeatureRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsReadFeatureRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsReadFeatureRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsReadFeatureRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsReadFeatureRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsReadFeatureRequest.AsObject;
@@ -91,7 +87,7 @@ export namespace DsReadFeatureRequest {
     version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -121,10 +117,8 @@ export class DsWriteFileRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsWriteFileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsWriteFileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsWriteFileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsWriteFileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsWriteFileRequest.AsObject;
@@ -141,7 +135,7 @@ export namespace DsWriteFileRequest {
     content?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -156,10 +150,8 @@ export class DsReadAudioRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsReadAudioRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsReadAudioRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsReadAudioRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsReadAudioRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsReadAudioRequest.AsObject;
@@ -173,7 +165,7 @@ export namespace DsReadAudioRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -198,10 +190,8 @@ export class DsReadTextCorpusRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsReadTextCorpusRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsReadTextCorpusRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsReadTextCorpusRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsReadTextCorpusRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsReadTextCorpusRequest.AsObject;
@@ -217,7 +207,7 @@ export namespace DsReadTextCorpusRequest {
     version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -247,10 +237,8 @@ export class DsReadFromStoreResponse extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsReadFromStoreResponse;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsReadFromStoreResponse;
-  hasSecret(): boolean;
-  clearSecret(): DsReadFromStoreResponse;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsReadFromStoreResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsReadFromStoreResponse.AsObject;
@@ -267,7 +255,7 @@ export namespace DsReadFromStoreResponse {
     result?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -342,10 +330,8 @@ export class DsRunRecipeRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsRunRecipeRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsRunRecipeRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsRunRecipeRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsRunRecipeRequest;
 
   getRecipe(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
   setRecipe(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): DsRunRecipeRequest;
@@ -373,7 +359,7 @@ export namespace DsRunRecipeRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     recipe?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     reciperun?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
   }
@@ -430,10 +416,8 @@ export class DsCreateRecipeProfileRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsCreateRecipeProfileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsCreateRecipeProfileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsCreateRecipeProfileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsCreateRecipeProfileRequest;
 
   getRecipe(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
   setRecipe(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): DsCreateRecipeProfileRequest;
@@ -456,7 +440,7 @@ export namespace DsCreateRecipeProfileRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     recipe?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
@@ -540,10 +524,8 @@ export class DsCreateDatasetProfileRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsCreateDatasetProfileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsCreateDatasetProfileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsCreateDatasetProfileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsCreateDatasetProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateDatasetProfileRequest.AsObject;
@@ -561,7 +543,7 @@ export namespace DsCreateDatasetProfileRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -630,10 +612,8 @@ export class DsCreateModelProfileRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsCreateModelProfileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsCreateModelProfileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsCreateModelProfileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsCreateModelProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateModelProfileRequest.AsObject;
@@ -653,7 +633,7 @@ export namespace DsCreateModelProfileRequest {
     model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -716,10 +696,8 @@ export class DsCreateForecastPartitionFilesRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsCreateForecastPartitionFilesRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsCreateForecastPartitionFilesRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsCreateForecastPartitionFilesRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsCreateForecastPartitionFilesRequest;
 
   getForecastsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ForecastObj>;
   setForecastsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ForecastObj>): DsCreateForecastPartitionFilesRequest;
@@ -744,7 +722,7 @@ export namespace DsCreateForecastPartitionFilesRequest {
     model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     forecastsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ForecastObj.AsObject>,
   }
 }
@@ -834,10 +812,8 @@ export class DsMergeForecastFileRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsMergeForecastFileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsMergeForecastFileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsMergeForecastFileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsMergeForecastFileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsMergeForecastFileRequest.AsObject;
@@ -857,7 +833,7 @@ export namespace DsMergeForecastFileRequest {
     model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -920,10 +896,8 @@ export class DsCreateStudyProfileRequest extends jspb.Message {
   clearModelsList(): DsCreateStudyProfileRequest;
   addModels(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsCreateStudyProfileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsCreateStudyProfileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsCreateStudyProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsCreateStudyProfileRequest.AsObject;
@@ -943,7 +917,7 @@ export namespace DsCreateStudyProfileRequest {
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -996,10 +970,8 @@ export class DsValidateDatasetRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsValidateDatasetRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsValidateDatasetRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsValidateDatasetRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsValidateDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsValidateDatasetRequest.AsObject;
@@ -1017,7 +989,7 @@ export namespace DsValidateDatasetRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1067,10 +1039,8 @@ export class DsGenerateDatasetRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsGenerateDatasetRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsGenerateDatasetRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsGenerateDatasetRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsGenerateDatasetRequest;
 
   getRows(): number;
   setRows(value: number): DsGenerateDatasetRequest;
@@ -1090,7 +1060,7 @@ export namespace DsGenerateDatasetRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     rows: number,
   }
 }
@@ -1149,10 +1119,8 @@ export class DsSplitDatasetRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsSplitDatasetRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsSplitDatasetRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsSplitDatasetRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsSplitDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSplitDatasetRequest.AsObject;
@@ -1171,7 +1139,7 @@ export namespace DsSplitDatasetRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -1206,10 +1174,8 @@ export class DsSplitDatasetToRungsRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsSplitDatasetToRungsRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsSplitDatasetToRungsRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsSplitDatasetToRungsRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsSplitDatasetToRungsRequest;
 
   getRungs(): number;
   setRungs(value: number): DsSplitDatasetToRungsRequest;
@@ -1230,7 +1196,7 @@ export namespace DsSplitDatasetToRungsRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     rungs: number,
   }
 }
@@ -1294,10 +1260,8 @@ export class DsCreateColumnProfileRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsCreateColumnProfileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsCreateColumnProfileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsCreateColumnProfileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsCreateColumnProfileRequest;
 
   getColumntype(): string;
   setColumntype(value: string): DsCreateColumnProfileRequest;
@@ -1321,7 +1285,7 @@ export namespace DsCreateColumnProfileRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     columntype: string,
     columnname: string,
   }
@@ -1382,10 +1346,8 @@ export class DsDatasetProfileRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsDatasetProfileRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsDatasetProfileRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsDatasetProfileRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsDatasetProfileRequest;
 
   getQuick(): boolean;
   setQuick(value: boolean): DsDatasetProfileRequest;
@@ -1406,7 +1368,7 @@ export namespace DsDatasetProfileRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     quick: boolean,
   }
 }
@@ -1447,10 +1409,8 @@ export class DsInferSchemaRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsInferSchemaRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsInferSchemaRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsInferSchemaRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsInferSchemaRequest;
 
   getKey(): string;
   setKey(value: string): DsInferSchemaRequest;
@@ -1468,7 +1428,7 @@ export namespace DsInferSchemaRequest {
     product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     key: string,
   }
 }
@@ -1509,10 +1469,8 @@ export class DsGetTableViewRequest extends jspb.Message {
   hasDatasource(): boolean;
   clearDatasource(): DsGetTableViewRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsGetTableViewRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsGetTableViewRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsGetTableViewRequest;
 
   getKey(): string;
   setKey(value: string): DsGetTableViewRequest;
@@ -1530,7 +1488,7 @@ export namespace DsGetTableViewRequest {
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     key: string,
   }
 }
@@ -1566,10 +1524,8 @@ export class DsGetMisclassTableViewRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): DsGetMisclassTableViewRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): DsGetMisclassTableViewRequest;
-  hasSecret(): boolean;
-  clearSecret(): DsGetMisclassTableViewRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsGetMisclassTableViewRequest;
 
   getKey(): string;
   setKey(value: string): DsGetMisclassTableViewRequest;
@@ -1586,7 +1542,7 @@ export namespace DsGetMisclassTableViewRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     key: string,
   }
 }
@@ -1647,10 +1603,8 @@ export class CreateModelReportRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): CreateModelReportRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): CreateModelReportRequest;
-  hasSecret(): boolean;
-  clearSecret(): CreateModelReportRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): CreateModelReportRequest;
 
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateModelReportRequest;
@@ -1679,7 +1633,7 @@ export namespace CreateModelReportRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
@@ -1721,10 +1675,8 @@ export class CreateForecastReportRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): CreateForecastReportRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): CreateForecastReportRequest;
-  hasSecret(): boolean;
-  clearSecret(): CreateForecastReportRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): CreateForecastReportRequest;
 
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateForecastReportRequest;
@@ -1753,7 +1705,7 @@ export namespace CreateForecastReportRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     forecast?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     report?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
@@ -1810,10 +1762,8 @@ export class CreateDatasetReportRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): CreateDatasetReportRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): CreateDatasetReportRequest;
-  hasSecret(): boolean;
-  clearSecret(): CreateDatasetReportRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): CreateDatasetReportRequest;
 
   getReport(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
   setReport(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateDatasetReportRequest;
@@ -1836,7 +1786,7 @@ export namespace CreateDatasetReportRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     report?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
@@ -1882,10 +1832,8 @@ export class CreateStudyReportRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): CreateStudyReportRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): CreateStudyReportRequest;
-  hasSecret(): boolean;
-  clearSecret(): CreateStudyReportRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): CreateStudyReportRequest;
 
   getReport(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
   setReport(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateStudyReportRequest;
@@ -1910,7 +1858,7 @@ export namespace CreateStudyReportRequest {
     models?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     report?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }

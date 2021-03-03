@@ -12160,7 +12160,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref common.ReferenceCallb
 			SchemaProps: spec.SchemaProps{
 				Type: []string{"object"},
 				Properties: map[string]spec.Schema{
-					"description": {
+					"description.omitempty": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Description is the user provided description",
 							Type:        []string{"string"},

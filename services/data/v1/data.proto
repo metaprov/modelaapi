@@ -15,7 +15,7 @@ message DsReadFileRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
-    k8s.io.api.core.v1.Secret secret = 6;
+    map<string,bytes> secret = 6;
 }
 
 message DsReadFeatureRequest {
@@ -23,7 +23,7 @@ message DsReadFeatureRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
-    k8s.io.api.core.v1.Secret secret = 6;
+    map<string,bytes>  secret    = 6;
 }
 
 
@@ -33,26 +33,26 @@ message DsWriteFileRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset content = 3;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
-    k8s.io.api.core.v1.Secret secret = 7;
+    map<string,bytes>  secret    = 7;
 
 }
 
 
 
 message DsReadAudioRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
-    k8s.io.api.core.v1.Secret secret = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
+    map<string,bytes>  secret    = 3;
 
 }
 
 
 message DsReadTextCorpusRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct        product = 1;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
-    k8s.io.api.core.v1.Secret secret = 6;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 4;
+    map<string,bytes>  secret    = 5;
 
 }
 
@@ -64,7 +64,7 @@ message DsReadFromStoreResponse {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset result = 3;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
-    k8s.io.api.core.v1.Secret secret = 6;
+    map<string,bytes>  secret    = 6;
 
 }
 
@@ -84,7 +84,7 @@ message DsRunRecipeRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection    = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 6;
-    k8s.io.api.core.v1.Secret                                                secret        = 7;
+    map<string,bytes>                                                           secret        = 7;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 8;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun              reciperun     = 9;
 }
@@ -100,7 +100,7 @@ message DsCreateRecipeProfileRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset       = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection    = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket        = 6;
-    k8s.io.api.core.v1.Secret                                                secret        = 7;
+    map<string,bytes>                                                           secret        = 7;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe                 recipe        = 8;
 }
 
@@ -122,7 +122,7 @@ message DsCreateDatasetProfileRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
-    k8s.io.api.core.v1.Secret secret = 7;
+    map<string,bytes> secret = 7;
 }
 
 message DsCreateDatasetProfileResponse {
@@ -142,7 +142,7 @@ message DsCreateModelProfileRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    k8s.io.api.core.v1.Secret secret = 10;
+    map<string,bytes> secret = 10;
 }
 
 message DsCreateModelProfileResponse {
@@ -162,7 +162,7 @@ message DsCreateForecastPartitionFilesRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    k8s.io.api.core.v1.Secret secret = 10;
+    map<string,bytes> secret = 10;
     repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastObj forecasts= 11;
 }
 
@@ -192,7 +192,7 @@ message DsMergeForecastFileRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 9;
-    k8s.io.api.core.v1.Secret secret = 10;
+    map<string,bytes> secret = 10;
 }
 
 message DsMergeForecastFileResponse {
@@ -211,7 +211,7 @@ message DsCreateStudyProfileRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
     repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model models = 8;
-    k8s.io.api.core.v1.Secret secret = 9;
+    map<string,bytes> secret = 9;
 }
 
 message DsCreateStudyProfileResponse {
@@ -228,7 +228,7 @@ message DsValidateDatasetRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 6;
-    k8s.io.api.core.v1.Secret secret = 7;
+    map<string,bytes> secret = 7;
 }
 
 message DsValidateDatasetResponse {
@@ -241,7 +241,7 @@ message DsGenerateDatasetRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
-    k8s.io.api.core.v1.Secret secret = 6;
+    map<string,bytes> secret = 6;
     int32 rows = 7;
 }
 
@@ -257,7 +257,7 @@ message DsSplitDatasetRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study study   = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
-    k8s.io.api.core.v1.Secret secret = 8;
+    map<string,bytes> secret = 8;
 }
 
 message DsSplitDatasetToRungsRequest {
@@ -267,7 +267,7 @@ message DsSplitDatasetToRungsRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
-    k8s.io.api.core.v1.Secret secret = 7;
+    map<string,bytes> secret = 7;
     int32 rungs = 8;
 }
 
@@ -282,7 +282,7 @@ message DsCreateColumnProfileRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
-    k8s.io.api.core.v1.Secret secret = 7;
+    map<string,bytes> secret = 7;
     string columnType     = 8;
     string columnName     = 9;
 }
@@ -300,7 +300,7 @@ message DsDatasetProfileRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset     dataset = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 6;
-    k8s.io.api.core.v1.Secret secret = 7;
+    map<string,bytes> secret = 7;
     bool    quick         = 8;
 }
 
@@ -312,7 +312,7 @@ message DsInferSchemaRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
-    k8s.io.api.core.v1.Secret secret =4;
+    map<string,bytes> secret =4;
     string key = 5;
 }
 
@@ -325,7 +325,7 @@ message DsGetTableViewRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 1;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 2;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec     datasource = 3;
-    k8s.io.api.core.v1.Secret secret =4;
+    map<string,bytes> secret =4;
     string key = 5;
 }
 
@@ -336,8 +336,8 @@ message DsGetTableViewResponse {
 message DsGetMisclassTableViewRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 1;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 2;
-    k8s.io.api.core.v1.Secret                                            secret =3;
-    string                                                               key = 4;
+    map<string,bytes>                                                       secret =3;
+    string                                                                  key = 4;
 }
 
 message DsGetMisclassTableViewResponse {
@@ -354,7 +354,7 @@ message CreateModelReportRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource        = 5;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model              model   = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection         = 7;
-    k8s.io.api.core.v1.Secret     secret     = 8;
+    map<string,bytes>                                                           secret     = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
 }
@@ -368,7 +368,7 @@ message CreateForecastReportRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource = 5;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model           forecast   = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection            = 7;
-    k8s.io.api.core.v1.Secret     secret     = 8;
+    map<string,bytes>     secret     = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
 }
@@ -384,7 +384,7 @@ message CreateDatasetReportRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset     dataset     = 4;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection  = 5;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket   = 6;
-    k8s.io.api.core.v1.Secret     secret     = 7;
+    map<string,bytes>     secret     = 7;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 8;
 }
 
@@ -398,7 +398,7 @@ message CreateStudyReportRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList   models   = 6;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket   = 7;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection        = 8;
-    k8s.io.api.core.v1.Secret     secret     = 9;
+    map<string,bytes>     secret     = 9;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
 }
 

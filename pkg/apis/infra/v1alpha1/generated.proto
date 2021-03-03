@@ -1417,17 +1417,20 @@ message VirtualClusterSpec {
   optional string description = 1;
 
   // Nodes is the desired number of nodes
+  // +kubebuilder:validation:Optional
   // +kubebuilder:default=1
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +optional
   optional int32 nodes = 2;
 
+  // +kubebuilder:validation:Optional
   // NodeClassName is the class of nodes or vm
   // +kubebuilder:default = ""
   // +optional
   optional string nodeClassName = 3;
 
+  // +kubebuilder:validation:Optional
   // Gpus is the desired number of gpus
   // +kubebuilder:default=0
   // +kubebuilder:validation:Minimum=0
@@ -1435,11 +1438,13 @@ message VirtualClusterSpec {
   // +optional
   optional int32 gpus = 4;
 
+  // +kubebuilder:validation:Optional
   // GpuClassName is the The class of gpu.
   // +kubebuilder:default = ""
   // +optional
   optional string gpuClassName = 5;
 
+  // +kubebuilder:validation:Optional
   // VolumeSize is the size of the volume that would be mounted on all the node of the cluster
   // +kubebuilder:default=0
   // +kubebuilder:validation:Minimum=0
@@ -1447,6 +1452,7 @@ message VirtualClusterSpec {
   // +optional
   optional int32 volumeSize = 6;
 
+  // +kubebuilder:validation:Optional
   // Spot indicate if we should we use spot instances.
   // +kubebuilder:default=false
   // +optional
@@ -1456,6 +1462,7 @@ message VirtualClusterSpec {
   // +kubebuilder:default = ""
   optional string connectionName = 8;
 
+  // +kubebuilder:validation:Optional
   // Owner is the account name of the owner of this cluster
   // +kubebuilder:default=""
   // +optional

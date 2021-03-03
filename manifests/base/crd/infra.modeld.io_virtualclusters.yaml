@@ -40,7 +40,7 @@ spec:
               connectionName:
                 description: ConnectionName refer to the name of the provider connection
                 type: string
-              description:
+              description.omitempty:
                 default: ""
                 description: Description is the user provided description
                 type: string
