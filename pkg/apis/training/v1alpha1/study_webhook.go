@@ -133,22 +133,7 @@ func (study *Study) Default() {
 		study.Spec.Training = &TrainingSpec{}
 	}
 
-	if study.Spec.Training.EarlyStop == nil {
-		study.Spec.Training.EarlyStop = util.BoolPtr(false)
-	}
-
-	if study.Spec.Preprocessing.Imbalanced == nil {
-		study.Spec.Preprocessing.Imbalanced = util.BoolPtr(false)
-	}
-
-	if study.Spec.ModelPublished == nil {
-		study.Spec.ModelPublished = util.BoolPtr(false)
-	}
-
-	if study.Spec.ModelImagePushed == nil {
-		study.Spec.ModelImagePushed = util.BoolPtr(false)
-	}
-
+	
 	// if we search preprocessor, but we do not have an estimator
 	study.Status.Conditions = make([]StudyCondition, 0)
 
