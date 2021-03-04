@@ -102,7 +102,7 @@ type ModelAutobuilderSpec struct {
 	// DatasetName is the name of existing dataset, if empty the dataset object will be created
 	// otherwise, a dataset will be created based on the file in the path section.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:validation:MaxLength=253
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Path is the location of the data in the cloud
 	// +kubebuilder:validation:MaxLength=256

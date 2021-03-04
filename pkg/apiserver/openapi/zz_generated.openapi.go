@@ -13627,9 +13627,8 @@ func schema_pkg_apis_training_v1alpha1_DateTimePipelineSpec(ref common.Reference
 					},
 					"expand": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If",
-							Type:        []string{"boolean"},
-							Format:      "",
+							Type:   []string{"boolean"},
+							Format: "",
 						},
 					},
 				},
@@ -13807,7 +13806,8 @@ func schema_pkg_apis_training_v1alpha1_EnsembleRules(ref common.ReferenceCallbac
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Type: []string{"object"},
+				Description: "EnsembleRules is an algorithm class that decide",
+				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"byAlg": {
 						SchemaProps: spec.SchemaProps{
@@ -15581,7 +15581,7 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 					},
 					"trainers": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The desired number of trainers running during search. Default: 1",
+							Description: "The desired number of trainers running during search.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -17533,7 +17533,7 @@ func schema_pkg_apis_training_v1alpha1_SuccessiveHalvingOptions(ref common.Refer
 					},
 					"eliminationRate": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The rate of elimination during SH search, such that only 1/rate of models are promoted to the next half The default rate is 3",
+							Description: "The rate of elimination during SH search, such that only 1/rate of models are promoted to the next half",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},

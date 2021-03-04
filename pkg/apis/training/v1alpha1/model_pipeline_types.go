@@ -91,6 +91,7 @@ type ModelPipelineList struct {
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
 type ModelPipelineSpec struct {
 	// The product version of the resource
+	// +kubebuilder:default ="latest"
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// Servingsite name is the default serving site for each stage.
@@ -194,14 +195,18 @@ type DataStageSpec struct {
 // TrainingStageSpec is the desired state of the training step of the pipeline
 type TrainingStageSpec struct {
 	// NotebookName template specify the notebook
+	// +kubebuilder:default =""
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,1,opt,name=notebookName"`
 	// LabName is the name of the lab used for training
+	// +kubebuilder:default =""
 	// +optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
 	// Study FileName is a name of a study which will be cloned for this stage.
+	// +kubebuilder:default =""
 	// +optional
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// Auto defines if we move from stage to stage automatically.
+	// +kubebuilder:default = true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
 }
@@ -209,11 +214,14 @@ type TrainingStageSpec struct {
 //AcceptanceStageSpec is the desired step of the acceptance stage of the pipeline
 type AcceptanceStageSpec struct {
 	// The serving site for the testing
+	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 	// The name of test dataset name
+	// +kubebuilder:default =""
 	// +optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move to the next stage without human intervation
+	// +kubebuilder:default = true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }
@@ -221,11 +229,14 @@ type AcceptanceStageSpec struct {
 // CapacityStageSpec is the desired state of the capcity testing.
 type CapacityStageSpec struct {
 	// ServingSiteName is the serving site for the testing
+	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 	// TestDatasetName is the name of dataset used to test the model at this stage.
+	// +kubebuilder:default =""
 	// +optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move from stage to stage automatically.
+	// +kubebuilder:default = true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }

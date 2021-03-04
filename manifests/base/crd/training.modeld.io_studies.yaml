@@ -354,7 +354,6 @@ spec:
                           type: string
                         type: array
                       expand:
-                        description: If
                         type: boolean
                       imputer:
                         description: The date time imputer.
@@ -646,7 +645,6 @@ spec:
                       eliminationRate:
                         description: The rate of elimination during SH search, such
                           that only 1/rate of models are promoted to the next half
-                          The default rate is 3
                         format: int32
                         type: integer
                       maxBudget:
@@ -675,8 +673,7 @@ spec:
                     minimum: 0
                     type: integer
                   trainers:
-                    description: 'The desired number of trainers running during search.
-                      Default: 1'
+                    description: The desired number of trainers running during search.
                     format: int32
                     maximum: 50
                     type: integer

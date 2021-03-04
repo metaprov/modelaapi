@@ -92,6 +92,8 @@ spec:
               datasetName:
                 description: DatasetName refer to the dataset object for which the
                   study is for. Required.
+                maxLength: 63
+                minLength: 1
                 type: string
               dnn:
                 description: Dnn is a specification of the DNN estimator specification.
@@ -456,7 +458,6 @@ spec:
                           type: string
                         type: array
                       expand:
-                        description: If
                         type: boolean
                       imputer:
                         description: The date time imputer.

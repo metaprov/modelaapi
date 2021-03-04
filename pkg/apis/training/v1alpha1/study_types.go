@@ -163,12 +163,15 @@ const (
 // TrainingResourceRequest specify the desired resources for the training job
 type TrainingResourceRequest struct {
 	// Gpu specify the desired gpu requirements.  will be compared
+	// +kubebuilder:default = "M"
 	// +optional
 	Gpu ResourceSize `json:"gpu,omitempty" protobuf:"bytes,1,opt,name=gpu"`
 	// Cpu specify the cpu requirements will be compared
+	// +kubebuilder:default = "M"
 	// +optional
 	Cpu ResourceSize `json:"cpu,omitempty" protobuf:"bytes,2,opt,name=cpu"`
 	// Mem define the memory resource requirements will be compared
+	// +kubebuilder:default = "M"
 	// +optional
 	Mem ResourceSize `json:"mem,omitempty" protobuf:"bytes,3,opt,name=mem"`
 }
@@ -177,16 +180,18 @@ type TrainingResourceRequest struct {
 type SuccessiveHalvingOptions struct {
 	// The maximum budget allocated to each model during SH search.
 	// The default max budget is 81
+	// +kubebuilder:default = 81
 	// +optional
 	MaxBudget *int32 `json:"maxBudget,omitempty" protobuf:"varint,6,opt,name=maxBudget"`
 	// The rate of elimination during SH search, such that only 1/rate of models are promoted to the
 	// next half
-	// The default rate is 3
+	// +kubebuilder:default = 3
 	// +optional
 	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,7,opt,name=eliminationRate"`
 	// The modality type. The default modality is based on the type of models
 	// For deep models - we use epocs.
 	// For classical models - we use data
+	// +kubebuilder:default = "epocs"
 	// +optional
 	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,8,opt,name=modality"`
 }
@@ -196,30 +201,35 @@ type SuccessiveHalvingOptions struct {
 type ModelSearchSpec struct {
 	// Type specify the hyper parameter optimization search method.
 	// The only supported value is random
+	// +kubebuilder:default = 'random'
 	// +optional
 	Type *SearchMethodName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// MaxCost specify what is the maximum cost incurred before
 	// stopping model creations
 	// +optional
+	// +kubebuilder:default = 100
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	MaxCost *int32 `json:"maxCost,omitempty" protobuf:"varint,2,opt,name=maxCost"`
 	// MaxTime specify what is the maximum time allocated to a study (in minutes).
 	// the cross validation stage.
+	// +kubebuilder:default = 30
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10000
 	// +optional
 	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,3,opt,name=maxTime"`
 	// Used for random search, the max models sampled.
+	// +kubebuilder:default = 10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	// +optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
 	// The minimum score by which the search would stop
+	// +kubebuilder:default = 0
 	// +optional
 	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,5,opt,name=minScore"`
 	// The desired number of trainers running during search.
-	// Default: 1
+	// +kubebuilder:default = 1
 	// +optional
 	// +kubebuilder:validation:Maximum=50
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,6,opt,name=trainers"`
@@ -228,6 +238,7 @@ type ModelSearchSpec struct {
 	// +optional
 	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,7,opt,name=shOptions"`
 	// Test indicate the desired number of models that should be passed to the testing phase.
+	// +kubebuilder:default = 80
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +optional
@@ -235,12 +246,14 @@ type ModelSearchSpec struct {
 	// Indicate the total number of full models that would be retain in etcd.
 	// All other models are garbage collected (archived).
 	// models are sorted by thier objective score.
+	// +kubebuilder:default = 10
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +optional
 	RetainTop *int32 `json:"retainTop,omitempty" protobuf:"varint,9,opt,name=retainTop"`
 	// RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H).
 	// +optional
+	// +kubebuilder:default = 60
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=2400
 	RetainFor *int32 `json:"retainedFor,omitempty" protobuf:"varint,10,opt,name=retainedFor"`
@@ -250,9 +263,11 @@ type ModelSearchSpec struct {
 	// AllowList contain the list of algorithms that should be tested as part of the search.
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
 	// VotingEnsample - If true, create a voting ensemble of the top 3 models.
-	// +optional
+	// +kubebuilder:default = false
+	// +optionals
 	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"bytes,13,opt,name=votingEnsemble"`
 	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
+	// +kubebuilder:default = true
 	// +optional
 	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"bytes,14,opt,name=stackingEnsemble"`
 }

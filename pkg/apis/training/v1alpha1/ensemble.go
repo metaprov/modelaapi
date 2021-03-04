@@ -6,6 +6,7 @@
 
 package v1alpha1
 
+//EnsembleRules is an algorithm class that decide
 type EnsembleRules struct {
 	// best score pre alg
 	byAlg map[string]float64

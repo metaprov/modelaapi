@@ -38,90 +38,6 @@ func (study *Study) Default() {
 
 	// set default to cv
 
-	if study.Spec.Reported == nil {
-		study.Spec.Reported = util.BoolPtr(true)
-	}
-
-	if study.Spec.Aborted == nil {
-		study.Spec.Aborted = util.BoolPtr(false)
-	}
-
-	if study.Spec.Paused == nil {
-		study.Spec.Paused = util.BoolPtr(false)
-	}
-
-	if study.Spec.Profiled == nil {
-		study.Spec.Profiled = util.BoolPtr(true)
-	}
-
-	if study.Spec.Training == nil {
-		study.Spec.Training = &TrainingSpec{}
-	}
-	if study.Spec.Training.Folds == nil {
-		study.Spec.Training.Folds = util.Int32Ptr(5)
-	}
-	if study.Spec.Training.CvType == nil {
-		cvtype := catalog.CvTypeKFoldCV
-		study.Spec.Training.CvType = &cvtype
-	}
-
-	if study.Spec.Search == nil {
-		study.Spec.Search = &ModelSearchSpec{}
-	}
-	if study.Spec.Search.MaxCost == nil {
-		study.Spec.Search.MaxCost = util.Int32Ptr(999)
-	}
-	if study.Spec.Search.MaxTime == nil {
-		study.Spec.Search.MaxTime = util.Int32Ptr(999)
-	}
-	if study.Spec.Search.MaxModels == nil {
-		study.Spec.Search.MaxModels = util.Int32Ptr(10)
-	}
-	if study.Spec.Search.MinScore == nil {
-		study.Spec.Search.MinScore = util.FloatPtr(100)
-	}
-
-	if study.Spec.Training.Priority == nil {
-		study.Spec.Training.Priority = util.Int32Ptr(5)
-	}
-
-	if study.Spec.Search.RetainTop == nil {
-		study.Spec.Search.RetainTop = util.Int32Ptr(10)
-	}
-
-	if study.Spec.Search.RetainFor == nil {
-		study.Spec.Search.RetainFor = util.Int32Ptr(60) // retain for 60 minutes.
-	}
-
-	if study.Spec.Search.Type == nil {
-		v := RandomSearch
-		study.Spec.Search.Type = &v
-	}
-
-	if study.Spec.Search.Resources == nil {
-		study.Spec.Search.Resources = &TrainingResourceRequest{
-			Gpu: M,
-			Cpu: M,
-			Mem: M,
-		}
-	}
-
-	if study.Spec.Search.Trainers == nil {
-		study.Spec.Search.Trainers = util.Int32Ptr(1)
-	}
-
-	if study.Spec.Search.Test == nil {
-		study.Spec.Search.Test = util.Int32Ptr(1)
-	}
-
-	if study.Spec.Search.RetainTop == nil {
-		study.Spec.Search.RetainTop = util.Int32Ptr(10)
-	}
-
-	if study.Spec.Search.RetainFor == nil {
-		study.Spec.Search.RetainFor = util.Int32Ptr(24 * 60)
-	}
-
 	if study.Spec.Training.CheckpointInterval == nil {
 		study.Spec.Training.CheckpointInterval = util.Int32Ptr(0)
 	}
@@ -231,23 +147,6 @@ func (study *Study) Default() {
 
 	if study.Spec.ModelImagePushed == nil {
 		study.Spec.ModelImagePushed = util.BoolPtr(false)
-	}
-
-	// assign the train/test split
-	if study.Spec.Split.Train == nil {
-		study.Spec.Split.Train = util.Int32Ptr(80)
-	}
-
-	if study.Spec.Split.Test == nil {
-		study.Spec.Split.Test = util.Int32Ptr(20)
-	}
-
-	if study.Spec.Split.Validation == nil {
-		study.Spec.Split.Validation = util.Int32Ptr(0)
-	}
-
-	if study.Spec.Split.Seed == nil {
-		study.Spec.Split.Seed = util.Float64Ptr(42)
 	}
 
 	// if we search preprocessor, but we do not have an estimator

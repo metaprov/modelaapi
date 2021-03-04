@@ -161,6 +161,7 @@ type ReportList struct {
 // ReportSpec specifies the desired state of the ReportName resource
 type ReportSpec struct {
 	// VersionName is the data product version name for this report.
+	// +kubebuilder:default = "latest"
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specify the entity being report. Currently entities can be dataset,model or study

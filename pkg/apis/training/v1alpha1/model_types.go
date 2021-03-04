@@ -133,19 +133,23 @@ type ModelList struct {
 // ModelSpec defines the desired state of the Model resource
 type ModelSpec struct {
 	// Owner is the account name of the owner of this model
-	// +kubebuilder:default = ""
+	// +kubebuilder:default = "no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the product version name for this model
-	// +kubebuilder:default = ""
+	// +kubebuilder:default = "latest"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
+	// +kubebuilder:default = ""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
+	// +kubebuilder:default = ""
+	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:validation:MaxLength=63
 	// Required.
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
@@ -448,9 +452,11 @@ type CategoricalPipelineSpec struct {
 	// Must have at least on value.
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// Categorical varaible imputer
+	// +kubebuilder:default = "auto"
 	//+optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
 	// CatEncoder
+	// +kubebuilder:default = "auto"
 	//+optional
 	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,3,opt,name=encoder"`
 }
@@ -459,9 +465,11 @@ type CategoricalPipelineSpec struct {
 type NumericPipelineSpec struct {
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// Numerical var imputer
+	// +kubebuilder:default = "auto"
 	// +optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
 	// Numeric var scaler
+	// +kubebuilder:default = "auto"
 	// +optional
 	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,3,opt,name=scaler"`
 }
@@ -477,14 +485,18 @@ type TextPipelineSpec struct {
 	// +optional
 	Tokenizer *string `json:"tokenizer,omitempty" protobuf:"bytes,3,opt,name=tokenizer"`
 	// If true, the controller will Add stop word handling to the text pipeline.
+	// +kubebuilder:default = true
 	// +optional
 	StopWords *bool `json:"stopwords,omitempty" protobuf:"bytes,4,opt,name=stopwords"`
+	// +kubebuilder:default = true
 	// If true, the controller will Add part of speech handling to the text pipeline.
 	// +optional
 	Pos *bool `json:"pos,omitempty" protobuf:"bytes,5,opt,name=pos"`
 	// If true, the controller will Add lemma handling to the text pipeline.
+	// +kubebuilder:default = true
 	// +optional
 	Lemma *bool `json:"lemma,omitempty" protobuf:"bytes,6,opt,name=lemma"`
+	// +kubebuilder:default = true
 	// If true, the controller will Add stemmer handling to the text pipeline.
 	// +optional
 	Stem *bool `json:"stem,omitempty" protobuf:"bytes,7,opt,name=stem"`
@@ -498,9 +510,10 @@ type DateTimePipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// The date time imputer.
+	// +kubebuilder:default = "auto"
 	// +optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
-	// If
+	// +kubebuilder:default = false
 	// +optional
 	Expand *bool `json:"expand,omitempty" protobuf:"bytes,3,opt,name=expand"`
 }
@@ -510,6 +523,7 @@ type ImagePipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// The date time imputer.
+	// +kubebuilder:default = "auto"
 	// +optional
 	Featurizer *catalog.ImageFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
 }
@@ -519,6 +533,7 @@ type VideoPipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// The date time imputer.
+	// +kubebuilder:default = "auto"
 	// +optional
 	Featurizer *catalog.VideoFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
 }
@@ -528,6 +543,7 @@ type AudioPipelineSpec struct {
 	// Name of the datetime columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// The date time imputer.
+	// +kubebuilder:default = "auto"
 	// +optional
 	Featurizer *catalog.AudioFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
 }
@@ -581,6 +597,7 @@ type ForecastingSpec struct {
 // FreqSpec specify the frequency specification.
 type FreqSpec struct {
 	// Default to 1.
+	// +kubebuilder:default = 1
 	// optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"varint,1,opt,name=interval"`
 	// required
@@ -590,9 +607,11 @@ type FreqSpec struct {
 // BacktestSpec specify the back test
 type BacktestSpec struct {
 	// The initial number of data points, default to 80% of rows.
+	// +kubebuilder:default = 80
 	// +optional
 	Initial *int32 `json:"initial,omitempty" protobuf:"varint,1,opt,name=initial"`
 	// The number of backtesting windows. Default to 3. can be from 1 to 5.
+	// +kubebuilder:default = 3
 	// +optional
 	Windows *int32 `json:"windows,omitempty" protobuf:"varint,2,opt,name=windows"`
 }

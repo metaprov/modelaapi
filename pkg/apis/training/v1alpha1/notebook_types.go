@@ -71,6 +71,7 @@ type NotebookList struct {
 // NotebookSpec is the desired state of the notebook resource.
 type NotebookSpec struct {
 	// The version of the notebook
+	// +kubebuilder:default = "latest"
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
@@ -83,8 +84,10 @@ type NotebookSpec struct {
 	// +optional
 	SchemaRef *v1.ObjectReference `json:"schemaRef,omitempty" protobuf:"bytes,3,opt,name=schemaRef"`
 	// A reference to the container image repository for this notebook.
+	// +kubebuilder:default = ""
 	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,4,opt,name=imageName"`
 	// Requirements python file
+	// +kubebuilder:default = ""
 	// +optional
 	Requirements *string `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
 	// DebPackages is a list of deb package to install
@@ -96,6 +99,7 @@ type NotebookSpec struct {
 	// Location is the location of the notebook file
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,rep,name=location"`
 	// The owner account name
+	// +kubebuilder:default = "no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 }
