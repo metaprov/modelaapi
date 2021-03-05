@@ -708,7 +708,6 @@ message LicenseSpec {
   optional string email = 4;
 
   // TrialStart is the start date for free trial
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
 

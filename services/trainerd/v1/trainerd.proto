@@ -29,10 +29,10 @@ message TrainRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket        = 3;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model          model   = 5;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study          study   = 6;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource  = 7;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource         datasource  = 7;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
-    k8s.io.api.core.v1.Secret     secret     = 10;
+    map<string,bytes> secret = 10;
 }
 
 message TrainResponse {
@@ -61,7 +61,7 @@ message TestRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource     = 7;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 9;
-    k8s.io.api.core.v1.Secret     secret     = 10;
+    map<string,bytes> secret = 10;
 
 }
 
@@ -100,7 +100,7 @@ message TrainEnsembleRequest  {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-    k8s.io.api.core.v1.Secret     secret     = 11;
+    map<string,bytes> secret = 11;
 }
 
 
@@ -109,13 +109,13 @@ message TestEnsembleRequest  {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version    = 2;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 3;
     // the spec for the base models
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model   base     = 5;
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model base       = 5;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model          model      = 6;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study          study      = 7;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource         datasource     = 8;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource         datasource = 8;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset            dataset    = 9;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 10;
-    k8s.io.api.core.v1.Secret     secret     = 11;
+    map<string,bytes> secret = 11;
 }
 
 message ForecastRequest {
@@ -127,7 +127,7 @@ message ForecastRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource         datasource  = 7;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
-    k8s.io.api.core.v1.Secret     secret     = 10;
+    map<string,bytes> secret = 10;
 }
 
 message ForecastResponse {

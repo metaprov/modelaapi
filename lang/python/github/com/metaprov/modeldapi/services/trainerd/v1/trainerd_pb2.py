@@ -23,12 +23,50 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/trainerd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto\x12\x32github.com.metaprov.modeldapi.services.trainerd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xdc\x05\n\x0cTrainRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xc5\x01\n\rTrainResponse\x12U\n\x06result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x17\n\x0fweightsCloudUri\x18\x02 \x01(\t\x12\x18\n\x10manifestCloudUri\x18\x03 \x01(\t\x12\x14\n\x0clogsCloudUri\x18\x04 \x01(\t\x12\x14\n\x0clabelEncoder\x18\x05 \x01(\t\"\xdb\x05\n\x0bTestRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\x9c\x03\n\x0cTestResponse\x12[\n\x0ctrain_result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12Z\n\x0btest_result\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x1c\n\x14modelWeightsCloudUri\x18\x03 \x01(\t\x12\x1d\n\x15modelManifestCloudUri\x18\x04 \x01(\t\x12\x19\n\x11modelLogsCloudUri\x18\x05 \x01(\t\x12\x1a\n\x12preWeightsCloudUri\x18\x06 \x01(\t\x12\x1b\n\x13preManifestCloudUri\x18\x07 \x01(\t\x12\x17\n\x0fpreLogsCloudUri\x18\x08 \x01(\t\x12\x14\n\x0clabelEncoder\x18\t \x01(\t\x12\x13\n\x0bmisclassUri\x18\n \x01(\t\"\xb3\x06\n\x14TrainEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\x0b \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xb2\x06\n\x13TestEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\x0b \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\xdf\x05\n\x0f\x46orecastRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12*\n\x06secret\x18\n \x01(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\",\n\x10\x46orecastResponse\x12\x18\n\x10\x66orecastCloudUri\x18\x02 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa3\x07\n\x0fTrainerdService\x12\x8e\x01\n\x05Train\x12@.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest\x1a\x41.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse\"\x00\x12\x97\x01\n\x08\x46orecast\x12\x43.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest\x1a\x44.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse\"\x00\x12\x8b\x01\n\x04Test\x12?.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest\x1a@.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse\"\x00\x12\x9e\x01\n\rTrainEnsemble\x12H.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest\x1a\x41.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse\"\x00\x12\x9b\x01\n\x0cTestEnsemble\x12G.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest\x1a@.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse\"\x00\x12\x97\x01\n\x08Shutdown\x12\x43.github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest\x1a\x44.github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/trainerd/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto\x12\x32github.com.metaprov.modeldapi.services.trainerd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xbd\x06\n\x0cTrainRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\\\n\x06secret\x18\n \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xc5\x01\n\rTrainResponse\x12U\n\x06result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x17\n\x0fweightsCloudUri\x18\x02 \x01(\t\x12\x18\n\x10manifestCloudUri\x18\x03 \x01(\t\x12\x14\n\x0clogsCloudUri\x18\x04 \x01(\t\x12\x14\n\x0clabelEncoder\x18\x05 \x01(\t\"\xbb\x06\n\x0bTestRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12[\n\x06secret\x18\n \x03(\x0b\x32K.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x9c\x03\n\x0cTestResponse\x12[\n\x0ctrain_result\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12Z\n\x0btest_result\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement\x12\x1c\n\x14modelWeightsCloudUri\x18\x03 \x01(\t\x12\x1d\n\x15modelManifestCloudUri\x18\x04 \x01(\t\x12\x19\n\x11modelLogsCloudUri\x18\x05 \x01(\t\x12\x1a\n\x12preWeightsCloudUri\x18\x06 \x01(\t\x12\x1b\n\x13preManifestCloudUri\x18\x07 \x01(\t\x12\x17\n\x0fpreLogsCloudUri\x18\x08 \x01(\t\x12\x14\n\x0clabelEncoder\x18\t \x01(\t\x12\x13\n\x0bmisclassUri\x18\n \x01(\t\"\x9c\x07\n\x14TrainEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x0b \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x9a\x07\n\x13TestEnsembleRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12M\n\x04\x62\x61se\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x07 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\t \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x0b \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xc3\x06\n\x0f\x46orecastRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12N\n\x05model\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x07 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12_\n\x06secret\x18\n \x03(\x0b\x32O.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x10\x46orecastResponse\x12\x18\n\x10\x66orecastCloudUri\x18\x02 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa3\x07\n\x0fTrainerdService\x12\x8e\x01\n\x05Train\x12@.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest\x1a\x41.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse\"\x00\x12\x97\x01\n\x08\x46orecast\x12\x43.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest\x1a\x44.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse\"\x00\x12\x8b\x01\n\x04Test\x12?.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest\x1a@.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse\"\x00\x12\x9e\x01\n\rTrainEnsemble\x12H.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest\x1a\x41.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse\"\x00\x12\x9b\x01\n\x0cTestEnsemble\x12G.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest\x1a@.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse\"\x00\x12\x97\x01\n\x08Shutdown\x12\x43.github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest\x1a\x44.github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/trainerd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
+
+_TRAINREQUEST_SECRETENTRY = _descriptor.Descriptor(
+  name='SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry.value', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1157,
+  serialized_end=1202,
+)
 
 _TRAINREQUEST = _descriptor.Descriptor(
   name='TrainRequest',
@@ -96,15 +134,15 @@ _TRAINREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.secret', index=8,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_TRAINREQUEST_SECRETENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -114,7 +152,7 @@ _TRAINREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=373,
-  serialized_end=1105,
+  serialized_end=1202,
 )
 
 
@@ -173,10 +211,48 @@ _TRAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1108,
-  serialized_end=1305,
+  serialized_start=1205,
+  serialized_end=1402,
 )
 
+
+_TESTREQUEST_SECRETENTRY = _descriptor.Descriptor(
+  name='SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry.value', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1157,
+  serialized_end=1202,
+)
 
 _TESTREQUEST = _descriptor.Descriptor(
   name='TestRequest',
@@ -244,15 +320,15 @@ _TESTREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.secret', index=8,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_TESTREQUEST_SECRETENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -261,8 +337,8 @@ _TESTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1308,
-  serialized_end=2039,
+  serialized_start=1405,
+  serialized_end=2232,
 )
 
 
@@ -356,10 +432,48 @@ _TESTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2042,
-  serialized_end=2454,
+  serialized_start=2235,
+  serialized_end=2647,
 )
 
+
+_TRAINENSEMBLEREQUEST_SECRETENTRY = _descriptor.Descriptor(
+  name='SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry.value', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1157,
+  serialized_end=1202,
+)
 
 _TRAINENSEMBLEREQUEST = _descriptor.Descriptor(
   name='TrainEnsembleRequest',
@@ -434,8 +548,47 @@ _TRAINENSEMBLEREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.secret', index=9,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TRAINENSEMBLEREQUEST_SECRETENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2650,
+  serialized_end=3574,
+)
+
+
+_TESTENSEMBLEREQUEST_SECRETENTRY = _descriptor.Descriptor(
+  name='SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry.value', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -445,16 +598,15 @@ _TRAINENSEMBLEREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'8\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2457,
-  serialized_end=3276,
+  serialized_start=1157,
+  serialized_end=1202,
 )
-
 
 _TESTENSEMBLEREQUEST = _descriptor.Descriptor(
   name='TestEnsembleRequest',
@@ -529,8 +681,47 @@ _TESTENSEMBLEREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.secret', index=9,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TESTENSEMBLEREQUEST_SECRETENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3577,
+  serialized_end=4499,
+)
+
+
+_FORECASTREQUEST_SECRETENTRY = _descriptor.Descriptor(
+  name='SecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry.value', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -540,16 +731,15 @@ _TESTENSEMBLEREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'8\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3279,
-  serialized_end=4097,
+  serialized_start=1157,
+  serialized_end=1202,
 )
-
 
 _FORECASTREQUEST = _descriptor.Descriptor(
   name='ForecastRequest',
@@ -617,15 +807,15 @@ _FORECASTREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='secret', full_name='github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.secret', index=8,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_FORECASTREQUEST_SECRETENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -634,8 +824,8 @@ _FORECASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4100,
-  serialized_end=4835,
+  serialized_start=4502,
+  serialized_end=5337,
 )
 
 
@@ -666,8 +856,8 @@ _FORECASTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4837,
-  serialized_end=4881,
+  serialized_start=5339,
+  serialized_end=5383,
 )
 
 
@@ -691,8 +881,8 @@ _SHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4883,
-  serialized_end=4900,
+  serialized_start=5385,
+  serialized_end=5402,
 )
 
 
@@ -716,10 +906,11 @@ _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4902,
-  serialized_end=4920,
+  serialized_start=5404,
+  serialized_end=5422,
 )
 
+_TRAINREQUEST_SECRETENTRY.containing_type = _TRAINREQUEST
 _TRAINREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _TRAINREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _TRAINREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
@@ -728,8 +919,9 @@ _TRAINREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov
 _TRAINREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _TRAINREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
 _TRAINREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_TRAINREQUEST.fields_by_name['secret'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._SECRET
+_TRAINREQUEST.fields_by_name['secret'].message_type = _TRAINREQUEST_SECRETENTRY
 _TRAINRESPONSE.fields_by_name['result'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MEASUREMENT
+_TESTREQUEST_SECRETENTRY.containing_type = _TESTREQUEST
 _TESTREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _TESTREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _TESTREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
@@ -738,9 +930,10 @@ _TESTREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_
 _TESTREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _TESTREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
 _TESTREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_TESTREQUEST.fields_by_name['secret'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._SECRET
+_TESTREQUEST.fields_by_name['secret'].message_type = _TESTREQUEST_SECRETENTRY
 _TESTRESPONSE.fields_by_name['train_result'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MEASUREMENT
 _TESTRESPONSE.fields_by_name['test_result'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MEASUREMENT
+_TRAINENSEMBLEREQUEST_SECRETENTRY.containing_type = _TRAINENSEMBLEREQUEST
 _TRAINENSEMBLEREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _TRAINENSEMBLEREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _TRAINENSEMBLEREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
@@ -750,7 +943,8 @@ _TRAINENSEMBLEREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_
 _TRAINENSEMBLEREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _TRAINENSEMBLEREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
 _TRAINENSEMBLEREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_TRAINENSEMBLEREQUEST.fields_by_name['secret'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._SECRET
+_TRAINENSEMBLEREQUEST.fields_by_name['secret'].message_type = _TRAINENSEMBLEREQUEST_SECRETENTRY
+_TESTENSEMBLEREQUEST_SECRETENTRY.containing_type = _TESTENSEMBLEREQUEST
 _TESTENSEMBLEREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _TESTENSEMBLEREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _TESTENSEMBLEREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
@@ -760,7 +954,8 @@ _TESTENSEMBLEREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_m
 _TESTENSEMBLEREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _TESTENSEMBLEREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
 _TESTENSEMBLEREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_TESTENSEMBLEREQUEST.fields_by_name['secret'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._SECRET
+_TESTENSEMBLEREQUEST.fields_by_name['secret'].message_type = _TESTENSEMBLEREQUEST_SECRETENTRY
+_FORECASTREQUEST_SECRETENTRY.containing_type = _FORECASTREQUEST
 _FORECASTREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _FORECASTREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _FORECASTREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
@@ -769,7 +964,7 @@ _FORECASTREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metap
 _FORECASTREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _FORECASTREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
 _FORECASTREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_FORECASTREQUEST.fields_by_name['secret'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._SECRET
+_FORECASTREQUEST.fields_by_name['secret'].message_type = _FORECASTREQUEST_SECRETENTRY
 DESCRIPTOR.message_types_by_name['TrainRequest'] = _TRAINREQUEST
 DESCRIPTOR.message_types_by_name['TrainResponse'] = _TRAINRESPONSE
 DESCRIPTOR.message_types_by_name['TestRequest'] = _TESTREQUEST
@@ -783,11 +978,19 @@ DESCRIPTOR.message_types_by_name['ShutdownResponse'] = _SHUTDOWNRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TrainRequest = _reflection.GeneratedProtocolMessageType('TrainRequest', (_message.Message,), {
+
+  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TRAINREQUEST_SECRETENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _TRAINREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest)
   })
 _sym_db.RegisterMessage(TrainRequest)
+_sym_db.RegisterMessage(TrainRequest.SecretEntry)
 
 TrainResponse = _reflection.GeneratedProtocolMessageType('TrainResponse', (_message.Message,), {
   'DESCRIPTOR' : _TRAINRESPONSE,
@@ -797,11 +1000,19 @@ TrainResponse = _reflection.GeneratedProtocolMessageType('TrainResponse', (_mess
 _sym_db.RegisterMessage(TrainResponse)
 
 TestRequest = _reflection.GeneratedProtocolMessageType('TestRequest', (_message.Message,), {
+
+  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TESTREQUEST_SECRETENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _TESTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest)
   })
 _sym_db.RegisterMessage(TestRequest)
+_sym_db.RegisterMessage(TestRequest.SecretEntry)
 
 TestResponse = _reflection.GeneratedProtocolMessageType('TestResponse', (_message.Message,), {
   'DESCRIPTOR' : _TESTRESPONSE,
@@ -811,25 +1022,49 @@ TestResponse = _reflection.GeneratedProtocolMessageType('TestResponse', (_messag
 _sym_db.RegisterMessage(TestResponse)
 
 TrainEnsembleRequest = _reflection.GeneratedProtocolMessageType('TrainEnsembleRequest', (_message.Message,), {
+
+  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TRAINENSEMBLEREQUEST_SECRETENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _TRAINENSEMBLEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest)
   })
 _sym_db.RegisterMessage(TrainEnsembleRequest)
+_sym_db.RegisterMessage(TrainEnsembleRequest.SecretEntry)
 
 TestEnsembleRequest = _reflection.GeneratedProtocolMessageType('TestEnsembleRequest', (_message.Message,), {
+
+  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _TESTENSEMBLEREQUEST_SECRETENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _TESTENSEMBLEREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest)
   })
 _sym_db.RegisterMessage(TestEnsembleRequest)
+_sym_db.RegisterMessage(TestEnsembleRequest.SecretEntry)
 
 ForecastRequest = _reflection.GeneratedProtocolMessageType('ForecastRequest', (_message.Message,), {
+
+  'SecretEntry' : _reflection.GeneratedProtocolMessageType('SecretEntry', (_message.Message,), {
+    'DESCRIPTOR' : _FORECASTREQUEST_SECRETENTRY,
+    '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry)
+    })
+  ,
   'DESCRIPTOR' : _FORECASTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.trainerd.v1.trainerd_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest)
   })
 _sym_db.RegisterMessage(ForecastRequest)
+_sym_db.RegisterMessage(ForecastRequest.SecretEntry)
 
 ForecastResponse = _reflection.GeneratedProtocolMessageType('ForecastResponse', (_message.Message,), {
   'DESCRIPTOR' : _FORECASTRESPONSE,
@@ -854,6 +1089,11 @@ _sym_db.RegisterMessage(ShutdownResponse)
 
 
 DESCRIPTOR._options = None
+_TRAINREQUEST_SECRETENTRY._options = None
+_TESTREQUEST_SECRETENTRY._options = None
+_TRAINENSEMBLEREQUEST_SECRETENTRY._options = None
+_TESTENSEMBLEREQUEST_SECRETENTRY._options = None
+_FORECASTREQUEST_SECRETENTRY._options = None
 
 _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   name='TrainerdService',
@@ -862,8 +1102,8 @@ _TRAINERDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4923,
-  serialized_end=5854,
+  serialized_start=5425,
+  serialized_end=6356,
   methods=[
   _descriptor.MethodDescriptor(
     name='Train',

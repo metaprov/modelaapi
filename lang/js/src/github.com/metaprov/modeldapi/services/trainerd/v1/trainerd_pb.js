@@ -282,7 +282,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.toObject =
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secret: (f = msg.getSecret()) && k8s_io_api_core_v1_generated_pb.Secret.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -360,9 +360,10 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.deserializ
       msg.setConnection(value);
       break;
     case 10:
-      var value = new k8s_io_api_core_v1_generated_pb.Secret;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.Secret.deserializeBinaryFromReader);
-      msg.setSecret(value);
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -457,13 +458,9 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.serializeB
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecret();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      k8s_io_api_core_v1_generated_pb.Secret.serializeBinaryToWriter
-    );
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -765,40 +762,25 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.
 
 
 /**
- * optional k8s.io.api.core.v1.Secret secret = 10;
- * @return {?proto.k8s.io.api.core.v1.Secret}
+ * map<string, bytes> secret = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.getSecret = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.Secret} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.Secret, 10));
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.Secret|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.setSecret = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.clearSecret = function() {
-  return this.setSecret(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.hasSecret = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
 
 
 
@@ -1121,7 +1103,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.toObject = 
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secret: (f = msg.getSecret()) && k8s_io_api_core_v1_generated_pb.Secret.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -1199,9 +1181,10 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.deserialize
       msg.setConnection(value);
       break;
     case 10:
-      var value = new k8s_io_api_core_v1_generated_pb.Secret;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.Secret.deserializeBinaryFromReader);
-      msg.setSecret(value);
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -1296,13 +1279,9 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.serializeBi
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecret();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      k8s_io_api_core_v1_generated_pb.Secret.serializeBinaryToWriter
-    );
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -1604,40 +1583,25 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.h
 
 
 /**
- * optional k8s.io.api.core.v1.Secret secret = 10;
- * @return {?proto.k8s.io.api.core.v1.Secret}
+ * map<string, bytes> secret = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.getSecret = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.Secret} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.Secret, 10));
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.Secret|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.setSecret = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.clearSecret = function() {
-  return this.setSecret(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.hasSecret = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
 
 
 
@@ -2142,7 +2106,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.to
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secret: (f = msg.getSecret()) && k8s_io_api_core_v1_generated_pb.Secret.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2225,9 +2189,10 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.de
       msg.setConnection(value);
       break;
     case 11:
-      var value = new k8s_io_api_core_v1_generated_pb.Secret;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.Secret.deserializeBinaryFromReader);
-      msg.setSecret(value);
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -2330,13 +2295,9 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.se
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecret();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      k8s_io_api_core_v1_generated_pb.Secret.serializeBinaryToWriter
-    );
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -2676,40 +2637,25 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.pr
 
 
 /**
- * optional k8s.io.api.core.v1.Secret secret = 11;
- * @return {?proto.k8s.io.api.core.v1.Secret}
+ * map<string, bytes> secret = 11;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.prototype.getSecret = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.Secret} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.Secret, 11));
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.Secret|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.prototype.setSecret = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.prototype.clearSecret = function() {
-  return this.setSecret(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.prototype.hasSecret = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
 
 
 
@@ -2761,7 +2707,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.toO
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secret: (f = msg.getSecret()) && k8s_io_api_core_v1_generated_pb.Secret.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2844,9 +2790,10 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.des
       msg.setConnection(value);
       break;
     case 11:
-      var value = new k8s_io_api_core_v1_generated_pb.Secret;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.Secret.deserializeBinaryFromReader);
-      msg.setSecret(value);
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -2949,13 +2896,9 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.ser
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecret();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      k8s_io_api_core_v1_generated_pb.Secret.serializeBinaryToWriter
-    );
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -3295,40 +3238,25 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.pro
 
 
 /**
- * optional k8s.io.api.core.v1.Secret secret = 11;
- * @return {?proto.k8s.io.api.core.v1.Secret}
+ * map<string, bytes> secret = 11;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.prototype.getSecret = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.Secret} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.Secret, 11));
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.Secret|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.prototype.setSecret = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.prototype.clearSecret = function() {
-  return this.setSecret(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.prototype.hasSecret = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
 
 
 
@@ -3371,7 +3299,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.toObjec
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secret: (f = msg.getSecret()) && k8s_io_api_core_v1_generated_pb.Secret.toObject(includeInstance, f)
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3449,9 +3377,10 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.deseria
       msg.setConnection(value);
       break;
     case 10:
-      var value = new k8s_io_api_core_v1_generated_pb.Secret;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.Secret.deserializeBinaryFromReader);
-      msg.setSecret(value);
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -3546,13 +3475,9 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.seriali
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getSecret();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      k8s_io_api_core_v1_generated_pb.Secret.serializeBinaryToWriter
-    );
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -3854,40 +3779,25 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototy
 
 
 /**
- * optional k8s.io.api.core.v1.Secret secret = 10;
- * @return {?proto.k8s.io.api.core.v1.Secret}
+ * map<string, bytes> secret = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototype.getSecret = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.Secret} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.Secret, 10));
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.Secret|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototype.setSecret = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototype.clearSecret = function() {
-  return this.setSecret(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototype.hasSecret = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
+proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
 
 
 

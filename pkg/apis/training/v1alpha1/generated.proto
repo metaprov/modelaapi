@@ -547,7 +547,7 @@ message ModelAutobuilderSpec {
 
   // Access method specify the predictor access method.
   // Default: ClusterPort
-  // +kubebuilder:default:="ClusterPort"
+  // +kubebuilder:default:=cluster-port
   // +optional
   optional string accessMethod = 11;
 
@@ -938,7 +938,7 @@ message ModelResult {
 message ModelSearchSpec {
   // Type specify the hyper parameter optimization search method.
   // The only supported value is random
-  // +kubebuilder:default:='random'
+  // +kubebuilder:default:=random
   // +optional
   optional string type = 1;
 
@@ -1036,13 +1036,11 @@ message ModelSpec {
   optional string versionName = 2;
 
   // StudyName reference the study for this model. IF empty, the model is stand alone
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string studyName = 3;
 
   // DatasetName refer to the dataset object for which the study is for.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:MaxLength=63
   // Required.
@@ -1381,7 +1379,7 @@ message NotebookSpec {
   // User provided description
   // +kubebuilder:default:=""
   // +optional
-  // +kubebuilder:validation:MinLength=512
+  // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
   // SchemaName relate a notebook to a schema.
@@ -1867,7 +1865,7 @@ message SuccessiveHalvingOptions {
   // The modality type. The default modality is based on the type of models
   // For deep models - we use epocs.
   // For classical models - we use data
-  // +kubebuilder:default:="epocs"
+  // +kubebuilder:default:=epochs
   // +optional
   optional string modality = 8;
 }

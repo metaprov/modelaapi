@@ -47,10 +47,8 @@ export class TrainRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): TrainRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): TrainRequest;
-  hasSecret(): boolean;
-  clearSecret(): TrainRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): TrainRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainRequest.AsObject;
@@ -70,7 +68,7 @@ export namespace TrainRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -151,10 +149,8 @@ export class TestRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): TestRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): TestRequest;
-  hasSecret(): boolean;
-  clearSecret(): TestRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): TestRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestRequest.AsObject;
@@ -174,7 +170,7 @@ export namespace TestRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -282,10 +278,8 @@ export class TrainEnsembleRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): TrainEnsembleRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): TrainEnsembleRequest;
-  hasSecret(): boolean;
-  clearSecret(): TrainEnsembleRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): TrainEnsembleRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainEnsembleRequest.AsObject;
@@ -306,7 +300,7 @@ export namespace TrainEnsembleRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -356,10 +350,8 @@ export class TestEnsembleRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): TestEnsembleRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): TestEnsembleRequest;
-  hasSecret(): boolean;
-  clearSecret(): TestEnsembleRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): TestEnsembleRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestEnsembleRequest.AsObject;
@@ -380,7 +372,7 @@ export namespace TestEnsembleRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
@@ -425,10 +417,8 @@ export class ForecastRequest extends jspb.Message {
   hasConnection(): boolean;
   clearConnection(): ForecastRequest;
 
-  getSecret(): k8s_io_api_core_v1_generated_pb.Secret | undefined;
-  setSecret(value?: k8s_io_api_core_v1_generated_pb.Secret): ForecastRequest;
-  hasSecret(): boolean;
-  clearSecret(): ForecastRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): ForecastRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForecastRequest.AsObject;
@@ -448,7 +438,7 @@ export namespace ForecastRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secret?: k8s_io_api_core_v1_generated_pb.Secret.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 
