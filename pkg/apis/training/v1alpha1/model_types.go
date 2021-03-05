@@ -43,7 +43,7 @@ type Measurement struct {
 	Metric *catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
 	// The value for this model
 	// +kubebuilder:validation:Required
-	Value float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
+	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
 // ModelConditionType is a condition on a model

@@ -14308,7 +14308,6 @@ func schema_pkg_apis_training_v1alpha1_Measurement(ref common.ReferenceCallback)
 					"value": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The value for this model",
-							Default:     0,
 							Type:        []string{"number"},
 							Format:      "double",
 						},

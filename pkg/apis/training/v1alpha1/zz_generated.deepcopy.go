@@ -704,6 +704,11 @@ func (in *Measurement) DeepCopyInto(out *Measurement) {
 		*out = new(catalogv1alpha1.Metric)
 		**out = **in
 	}
+	if in.Value != nil {
+		in, out := &in.Value, &out.Value
+		*out = new(float64)
+		**out = **in
+	}
 	return
 }
 
