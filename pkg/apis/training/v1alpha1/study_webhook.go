@@ -37,6 +37,9 @@ var _ webhook.Defaulter = &Study{}
 func (study *Study) Default() {
 
 	// set default to cv
+	if study.Spec.Training == nil {
+		study.Spec.Training = &TrainingSpec{}
+	}
 
 	if study.Spec.Training.CheckpointInterval == nil {
 		study.Spec.Training.CheckpointInterval = util.Int32Ptr(0)
@@ -44,6 +47,9 @@ func (study *Study) Default() {
 
 	if study.Spec.Preprocessing == nil {
 		study.Spec.Preprocessing = &PreprocessingSpec{}
+		study.Spec.Preprocessing.Numeric = &NumericPipelineSpec{}
+		study.Spec.Preprocessing.Categorical = &CategoricalPipelineSpec{}
+		study.Spec.Preprocessing.Text = &TextPipelineSpec{}
 	}
 	if study.Spec.Preprocessing.Categorical == nil {
 		study.Spec.Preprocessing.Categorical = &CategoricalPipelineSpec{}

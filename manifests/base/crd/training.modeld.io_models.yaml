@@ -82,9 +82,11 @@ spec:
             description: ModelSpec defines the desired state of the Model resource
             properties:
               aborted:
+                default: false
                 description: Aborted indicate the desire to abort the model
                 type: boolean
               archived:
+                default: false
                 description: Archived is true when the model should be archived
                 type: boolean
               datasetName:
@@ -200,6 +202,7 @@ spec:
                     type: array
                 type: object
               forecasted:
+                default: false
                 description: Forecasted is true when the model should perform a forecast
                 type: boolean
               forecastingSpec:
@@ -387,6 +390,7 @@ spec:
                 description: Owner is the account name of the owner of this model
                 type: string
               paused:
+                default: false
                 description: Paused is set when we want to pause the training
                 type: boolean
               preprocessing:
@@ -570,6 +574,7 @@ spec:
                           handling to the text pipeline.
                         type: string
                       encoder:
+                        default: auto
                         description: The text encoder (e.g. tfidf)
                         type: string
                       lemma:
@@ -612,17 +617,21 @@ spec:
                     type: object
                 type: object
               profiled:
+                default: false
                 description: Profiled is set when we want to create model profile.
                 type: boolean
               published:
+                default: false
                 description: Published is set when we want to wrap the model in a
                   docker container
                 type: boolean
               pushed:
+                default: false
                 description: Pushed indicate if the model image should be pushed into
                   the remote docker registry.
                 type: boolean
               reported:
+                default: false
                 description: Reported is set when a report should be created for this
                   model
                 type: boolean
@@ -634,8 +643,7 @@ spec:
                 type: string
               task:
                 description: Task is the machine learning task (regression, classification).
-                  The task is generated from the study task This is a required field.
-                  Required
+                  The task is generated from the study task
                 enum:
                 - binary-classification
                 - multi-classification
@@ -652,6 +660,7 @@ spec:
                 - unknown
                 type: string
               tested:
+                default: false
                 description: Tested indicate if this model should be testedActual.
                   Default is false. The study controller will set this to true if
                   a model is the best model
@@ -660,22 +669,26 @@ spec:
                 description: TrainingSpec is the desired training settings
                 properties:
                   checkpointInterval:
+                    default: 10
                     description: Add snapshot interval for long training time in minutes.
                       This is used to checkpoint training model.
                     format: int32
                     minimum: 0
                     type: integer
                   cv:
-                    description: 'If true, this is a cross validation using folds.
-                      If False, use the validation set. Default: True'
+                    default: true
+                    description: If true, this is a cross validation using folds.
+                      If False, use the validation set.
                     type: boolean
                   cvtype:
+                    default: kfold
                     description: The  type of cross validation. if we have a validation
                       set, we do not do cv.
                     type: string
                   earlyStop:
-                    description: 'Early stopping, stop the training after X models
-                      with no improvement. Default: False'
+                    default: false
+                    description: Early stopping, stop the training after X models
+                      with no improvement.
                     type: boolean
                   evalMetrics:
                     description: Evaluation metrics are the scores
@@ -727,6 +740,7 @@ spec:
                       type: string
                     type: array
                   folds:
+                    default: 5
                     description: The number of folds during cross validation.
                     format: int32
                     type: integer
@@ -851,21 +865,23 @@ spec:
                         type: string
                     type: object
                   priority:
-                    description: 'Priority specify the priority of the model in the
-                      training queue. The priority is defined in the model study.
-                      Default: 5'
+                    default: 5
+                    description: Priority specify the priority of the model in the
+                      training queue.
                     format: int32
                     maximum: 10
                     minimum: 1
                     type: integer
                   retry:
+                    default: 5
                     description: Retry attempt is the number of training retry for
-                      this model, Default is 5
+                      this model,
                     format: int32
                     type: integer
                   seed:
-                    description: 'Used as the random state for an estimator if needed
-                      (for example, in RandomForestClassifier) Default: 42'
+                    default: 42
+                    description: Used as the random state for an estimator if needed
+                      (for example, in RandomForestClassifier)
                     type: number
                   sh:
                     description: Successive halving represent the configuration for

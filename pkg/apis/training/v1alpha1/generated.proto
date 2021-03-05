@@ -85,12 +85,12 @@ message CategoricalPipelineSpec {
   repeated string columns = 1;
 
   // Categorical varaible imputer
-  // +kubebuilder:default:="auto"
+  // +kubebuilder:default:=auto
   // +optional
   optional string imputer = 2;
 
   // CatEncoder
-  // +kubebuilder:default:="auto"
+  // +kubebuilder:default:=auto
   // +optional
   optional string encoder = 3;
 }
@@ -1030,17 +1030,20 @@ message ModelSpec {
   optional string owner = 1;
 
   // VersionName is the product version name for this model
+  // +kubebuilder:validation:Required
   // +kubebuilder:default:="latest"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string versionName = 2;
 
   // StudyName reference the study for this model. IF empty, the model is stand alone
+  // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string studyName = 3;
 
   // DatasetName refer to the dataset object for which the study is for.
+  // +kubebuilder:validation:Required
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:MaxLength=63
   // Required.
@@ -1048,8 +1051,7 @@ message ModelSpec {
 
   // Task is the machine learning task (regression, classification).
   // The task is generated from the study task
-  // This is a required field.
-  // Required
+  // +kubebuilder:validation:Required
   optional string task = 5;
 
   // Objective is the metric by which the system compare models
@@ -1081,47 +1083,47 @@ message ModelSpec {
 
   // Tested indicate if this model should be testedActual. Default is false.
   // The study controller will set this to true if a model is the best model
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool tested = 12;
 
   // Aborted indicate the desire to abort the model
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool aborted = 13;
 
   // Published is set when we want to wrap the model in a docker container
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool published = 14;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool pushed = 15;
 
   // Reported is set when a report should be created for this model
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool reported = 16;
 
   // Paused is set when we want to pause the training
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool paused = 17;
 
   // Profiled is set when we want to create model profile.
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool profiled = 18;
 
   // Archived is true when the model should be archived
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool archived = 19;
 
   // Forecasted is true when the model should perform a forecast
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +optional
   optional bool forecasted = 20;
 
@@ -1440,12 +1442,12 @@ message NumericPipelineSpec {
   repeated string columns = 1;
 
   // Numerical var imputer
-  // +kubebuilder:default:="auto"
+  // +kubebuilder:default:=auto
   // +optional
   optional string imputer = 2;
 
   // Numeric var scaler
-  // +kubebuilder:default:="auto"
+  // +kubebuilder:default:=auto
   // +optional
   optional string scaler = 3;
 }
@@ -1909,6 +1911,7 @@ message TextPipelineSpec {
   repeated string columns = 1;
 
   // The text encoder (e.g. tfidf)
+  // +kubebuilder:default:=auto
   // +optional
   optional string encoder = 2;
 
@@ -1921,8 +1924,8 @@ message TextPipelineSpec {
   // +optional
   optional bool stopwords = 4;
 
-  // +kubebuilder:default:=true
   // If true, the controller will Add part of speech handling to the text pipeline.
+  // +kubebuilder:default:=true
   // +optional
   optional bool pos = 5;
 
@@ -1931,8 +1934,8 @@ message TextPipelineSpec {
   // +optional
   optional bool lemma = 6;
 
-  // +kubebuilder:default:=true
   // If true, the controller will Add stemmer handling to the text pipeline.
+  // +kubebuilder:default:=true
   // +optional
   optional bool stem = 7;
 
@@ -1962,29 +1965,30 @@ message TrainingResourceRequest {
 // TrainingSpec is the specification of the training process
 message TrainingSpec {
   // Priority specify the priority of the model in the training queue.
-  // The priority is defined in the model study.
-  // Default: 5
   // +optional
+  // +kubebuilder:default:=5
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Minimum=1
   optional int32 priority = 2;
 
   // The  type of cross validation.
   // if we have a validation set, we do not do cv.
+  // +kubebuilder:default:=kfold
   // +optional
   optional string cvtype = 3;
 
   // If true, this is a cross validation using folds. If False, use the validation set.
-  // Default: True
+  // +kubebuilder:default:=true
   // +optional
   optional bool cv = 4;
 
   // The number of folds during cross validation.
+  // +kubebuilder:default:=5
   // +optional
   optional int32 folds = 6;
 
   // Retry attempt is the number of training retry for this model,
-  // Default is 5
+  // +kubebuilder:default:=5
   // +optional
   optional int32 retry = 7;
 
@@ -1993,13 +1997,14 @@ message TrainingSpec {
   repeated string evalMetrics = 8;
 
   // Early stopping, stop the training after X models with no improvement.
-  // Default: False
+  // +kubebuilder:default:=false
   // +optional
   optional bool earlyStop = 9;
 
   // Add snapshot interval for long training time in minutes.
   // This is used to checkpoint training model.
   // +optional
+  // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=0
   optional int32 checkpointInterval = 10;
 
@@ -2016,7 +2021,7 @@ message TrainingSpec {
   optional SuccessiveHalvingSpec sh = 12;
 
   // Used as the random state for an estimator if needed (for example, in RandomForestClassifier)
-  // Default: 42
+  // +kubebuilder:default:=42
   // +optional
   optional double seed = 13;
 }

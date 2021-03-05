@@ -15692,7 +15692,7 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					},
 					"task": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Task is the machine learning task (regression, classification). The task is generated from the study task This is a required field. Required",
+							Description: "Task is the machine learning task (regression, classification). The task is generated from the study task",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17717,7 +17717,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"priority": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Priority specify the priority of the model in the training queue. The priority is defined in the model study. Default: 5",
+							Description: "Priority specify the priority of the model in the training queue.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -17731,7 +17731,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingSpec(ref common.ReferenceCallback
 					},
 					"cv": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, this is a cross validation using folds. If False, use the validation set. Default: True",
+							Description: "If true, this is a cross validation using folds. If False, use the validation set.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -17745,7 +17745,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingSpec(ref common.ReferenceCallback
 					},
 					"retry": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Retry attempt is the number of training retry for this model, Default is 5",
+							Description: "Retry attempt is the number of training retry for this model,",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -17767,7 +17767,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingSpec(ref common.ReferenceCallback
 					},
 					"earlyStop": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Early stopping, stop the training after X models with no improvement. Default: False",
+							Description: "Early stopping, stop the training after X models with no improvement.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -17793,7 +17793,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingSpec(ref common.ReferenceCallback
 					},
 					"seed": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Used as the random state for an estimator if needed (for example, in RandomForestClassifier) Default: 42",
+							Description: "Used as the random state for an estimator if needed (for example, in RandomForestClassifier)",
 							Type:        []string{"number"},
 							Format:      "double",
 						},

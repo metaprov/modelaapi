@@ -137,23 +137,25 @@ type ModelSpec struct {
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the product version name for this model
+	// +kubebuilder:validation:Required
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
+	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
+	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:MaxLength=63
 	// Required.
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
 	// The task is generated from the study task
-	// This is a required field.
-	// Required
+	// +kubebuilder:validation:Required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,5,opt,name=task"`
 	// Objective is the metric by which the system compare models
 	// Default: based on the task. classification is logloss. Regression is rmse
@@ -178,39 +180,39 @@ type ModelSpec struct {
 	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,11,opt,name=training"`
 	// Tested indicate if this model should be testedActual. Default is false.
 	// The study controller will set this to true if a model is the best model
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Tested *bool `json:"tested,omitempty" protobuf:"bytes,12,opt,name=tested"`
 	// Aborted indicate the desire to abort the model
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Published is set when we want to wrap the model in a docker container
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Published *bool `json:"published,omitempty" protobuf:"bytes,14,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,15,opt,name=pushed"`
 	// Reported is set when a report should be created for this model
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,16,opt,name=reported"`
 	// Paused is set when we want to pause the training
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,17,opt,name=paused"`
 	// Profiled is set when we want to create model profile.
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,18,opt,name=profiled"`
 	// Archived is true when the model should be archived
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Archived *bool `json:"archived,omitempty" protobuf:"bytes,19,opt,name=archived"`
 	// Forecasted is true when the model should perform a forecast
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +optional
 	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,20,opt,name=forecasted"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
@@ -395,37 +397,39 @@ type SuccessiveHalvingSpec struct {
 // TrainingSpec is the specification of the training process
 type TrainingSpec struct {
 	// Priority specify the priority of the model in the training queue.
-	// The priority is defined in the model study.
-	// Default: 5
 	// +optional
+	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	Priority *int32 `json:"priority,omitempty" protobuf:"varint,2,opt,name=priority"`
 	// The  type of cross validation.
 	// if we have a validation set, we do not do cv.
+	// +kubebuilder:default:=kfold
 	// +optional
 	CvType *catalog.CvType `json:"cvtype,omitempty" protobuf:"bytes,3,opt,name=cvtype"`
 	// If true, this is a cross validation using folds. If False, use the validation set.
-	// Default: True
+	// +kubebuilder:default:=true
 	// +optional
 	CV *bool `json:"cv,omitempty" protobuf:"bytes,4,opt,name=cv"`
 	// The number of folds during cross validation.
+	// +kubebuilder:default:=5
 	// +optional
 	Folds *int32 `json:"folds,omitempty" protobuf:"varint,6,opt,name=folds"`
 	// Retry attempt is the number of training retry for this model,
-	// Default is 5
+	// +kubebuilder:default:=5
 	// +optional
 	Retry *int32 `json:"retry,omitempty" protobuf:"varint,7,rep,name=retry"`
 	// Evaluation metrics are the scores
 	// +optional
 	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,8,opt,name=evalMetrics"`
 	// Early stopping, stop the training after X models with no improvement.
-	// Default: False
+	// +kubebuilder:default:=false
 	// +optional
 	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"bytes,9,opt,name=earlyStop"`
 	// Add snapshot interval for long training time in minutes.
 	// This is used to checkpoint training model.
 	// +optional
+	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
 	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,10,opt,name=checkpointInterval"`
 	// Define the forecast period for time series studies. This is only used in time series models.
@@ -439,7 +443,7 @@ type TrainingSpec struct {
 	// +optional
 	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,12,opt,name=sh"`
 	// Used as the random state for an estimator if needed (for example, in RandomForestClassifier)
-	// Default: 42
+	// +kubebuilder:default:=42
 	// +optional
 	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,13,opt,name=seed"`
 }
@@ -450,11 +454,11 @@ type CategoricalPipelineSpec struct {
 	// Must have at least on value.
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// Categorical varaible imputer
-	// +kubebuilder:default:="auto"
+	// +kubebuilder:default:=auto
 	//+optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
 	// CatEncoder
-	// +kubebuilder:default:="auto"
+	// +kubebuilder:default:=auto
 	//+optional
 	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,3,opt,name=encoder"`
 }
@@ -463,11 +467,11 @@ type CategoricalPipelineSpec struct {
 type NumericPipelineSpec struct {
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// Numerical var imputer
-	// +kubebuilder:default:="auto"
+	// +kubebuilder:default:=auto
 	// +optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
 	// Numeric var scaler
-	// +kubebuilder:default:="auto"
+	// +kubebuilder:default:=auto
 	// +optional
 	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,3,opt,name=scaler"`
 }
@@ -477,6 +481,7 @@ type TextPipelineSpec struct {
 	// The list of test columns
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// The text encoder (e.g. tfidf)
+	// +kubebuilder:default:=auto
 	// +optional
 	Encoder *catalog.TextTransformer `json:"encoder,omitempty" protobuf:"bytes,2,opt,name=encoder"`
 	// Text tokenizer
@@ -486,16 +491,16 @@ type TextPipelineSpec struct {
 	// +kubebuilder:default:=true
 	// +optional
 	StopWords *bool `json:"stopwords,omitempty" protobuf:"bytes,4,opt,name=stopwords"`
-	// +kubebuilder:default:=true
 	// If true, the controller will Add part of speech handling to the text pipeline.
+	// +kubebuilder:default:=true
 	// +optional
 	Pos *bool `json:"pos,omitempty" protobuf:"bytes,5,opt,name=pos"`
 	// If true, the controller will Add lemma handling to the text pipeline.
 	// +kubebuilder:default:=true
 	// +optional
 	Lemma *bool `json:"lemma,omitempty" protobuf:"bytes,6,opt,name=lemma"`
-	// +kubebuilder:default:=true
 	// If true, the controller will Add stemmer handling to the text pipeline.
+	// +kubebuilder:default:=true
 	// +optional
 	Stem *bool `json:"stem,omitempty" protobuf:"bytes,7,opt,name=stem"`
 	// If true, the controller will Add word embedding handling to the text pipeline.
