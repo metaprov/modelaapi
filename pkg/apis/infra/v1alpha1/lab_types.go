@@ -49,7 +49,7 @@ type Lab struct {
 type LabSpec struct {
 	// Description is a user provided description
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default=""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:validation:Optional
@@ -65,10 +65,10 @@ type LabSpec struct {
 	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRangeSpec,omitempty" protobuf:"bytes,4,opt,name=limitRangeSpec"`
 	// ClusterName is the name of a remote cluster that is used to execute jobs for this lab
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default=""
+	// +kubebuilder:default:=""
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,5,opt,name=clusterName"`
 	// The owner account name
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`

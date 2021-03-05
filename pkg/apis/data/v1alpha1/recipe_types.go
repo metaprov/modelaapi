@@ -70,7 +70,7 @@ type RecipeList struct {
 //RecipeSpec defines the desired state of a dataset
 type RecipeSpec struct {
 	// Owner is the owner of the recipe
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the recipe

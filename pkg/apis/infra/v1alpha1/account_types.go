@@ -90,7 +90,7 @@ type AccountSpec struct {
 	// +optional
 	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
 	// Type is the type of account - user, group. default is user
-	// +kubebuilder:default=user
+	// +kubebuilder:default:=user
 	// +kubebuilder:validation:Optional
 	// +optional
 	Type *AccountType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type,casttype=AccountType"`
@@ -101,39 +101,39 @@ type AccountSpec struct {
 	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
 	// +optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	FirstName *string `json:"firstName,omitempty" protobuf:"bytes,5,opt,name=firstName"`
 	// LastName is the user last name
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	// +optional
 	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
 	// Email specify the email of the user
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
 	Email *string `json:"email,omitempty" protobuf:"bytes,7,opt,name=email"`
 	// Phone specify the phone of the user
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	Phone *string `json:"phone,omitempty" protobuf:"bytes,8,opt,name=phone"`
 	// User is admin. Admin have full control on other accounts.
-	// +kubebuilder:default=false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	// +optional
 	Admin *bool `json:"admin,omitempty" protobuf:"bytes,9,opt,name=admin"`
 	// Email account creation event to user (using the user email)
-	// +kubebuilder:default=false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	// +optional
 	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,10,opt,name=emailPassword"`
 	// User need to reset password upon login
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default=false
+	// +kubebuilder:default:=false
 	// +optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,11,opt,name=resetPassword"`
 	// ProductBinding is the premission that the user have for each product

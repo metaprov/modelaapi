@@ -155,7 +155,7 @@ spec:
                     type: string
                 type: object
               category:
-                description: The connection category
+                description: The connection category kubebuilder:default:="general"
                 enum:
                 - general
                 - cloud
@@ -325,6 +325,7 @@ spec:
                     default: ""
                     type: string
                   port:
+                    description: kubebuilder:default:=1433
                     format: int32
                     type: integer
                   username:
@@ -349,6 +350,7 @@ spec:
                     default: ""
                     type: string
                   port:
+                    description: kubebuilder:default:=3306
                     format: int32
                     type: integer
                   username:
@@ -391,6 +393,7 @@ spec:
                     default: ""
                     type: string
                   port:
+                    description: kubebuilder:default:=1521
                     format: int32
                     type: integer
                   role:
@@ -432,6 +435,7 @@ spec:
                     default: ""
                     type: string
                   port:
+                    description: kubebuilder:default:=5432
                     format: int32
                     type: integer
                   username:
@@ -450,6 +454,7 @@ spec:
                     default: ""
                     type: string
                   port:
+                    description: kubebuilder:default:=8080
                     format: int32
                     type: integer
                   schema:
@@ -518,6 +523,7 @@ spec:
                     default: ""
                     type: string
                   port:
+                    description: kubebuilder:default:=5439
                     format: int32
                     type: integer
                   username:

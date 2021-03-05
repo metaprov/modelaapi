@@ -66,7 +66,7 @@ type LabelingPipelineRunList struct {
 // LabelSpec contain the desired state of a Label
 type LabelingPipelineRunSpec struct {
 	// The owner of the LabelingPipelineRunSpec
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the pipeline
 	// +optional

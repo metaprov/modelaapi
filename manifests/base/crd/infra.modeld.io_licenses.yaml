@@ -57,6 +57,7 @@ spec:
                 description: Is chatbot feature supported
                 type: boolean
               email:
+                description: kubebuilder:default:=""
                 type: string
               expireAt:
                 description: When the license expire
@@ -92,7 +93,7 @@ spec:
                   the license expiration notification
                 type: string
               owner:
-                description: Owner is the account owning this license
+                description: Owner is the account owning this license kubebuilder:default:=""
                 type: string
               priceName:
                 description: The price name
@@ -147,7 +148,7 @@ spec:
                 format: date-time
                 type: string
               trialStart:
-                description: TrialStart is the start date for free trial
+                description: TrialStart is the start date for free trial kubebuilder:default:=""
                 format: date-time
                 type: string
               vision:

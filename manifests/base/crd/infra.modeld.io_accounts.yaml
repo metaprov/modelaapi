@@ -62,7 +62,7 @@ spec:
                 description: User is admin. Admin have full control on other accounts.
                 type: boolean
               email:
-                description: Email specify the email of the user
+                description: Email specify the email of the user kubebuilder:default:=""
                 maxLength: 64
                 type: string
               emailPassword:
@@ -71,7 +71,7 @@ spec:
                   email)
                 type: boolean
               firstName:
-                description: First FileName is the user first name
+                description: First FileName is the user first name kubebuilder:default:=""
                 maxLength: 64
                 type: string
               groupName:
@@ -100,11 +100,11 @@ spec:
                   type: object
                 type: array
               lastName:
-                description: LastName is the user last name
+                description: LastName is the user last name kubebuilder:default:=""
                 maxLength: 64
                 type: string
               phone:
-                description: Phone specify the phone of the user
+                description: Phone specify the phone of the user kubebuilder:default:=""
                 maxLength: 64
                 type: string
               productBindings:

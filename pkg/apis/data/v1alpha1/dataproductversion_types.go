@@ -75,21 +75,21 @@ type DataProductVersionSpec struct {
 	ProductRef v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,1,opt,name=productRef"`
 	// Description is user provided description
 	// +optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// PrevVersionName is a pointer to the version that we derived from
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:default=""
+	// +kubebuilder:default:=""
 	// +optional
 	PrevVersionName *string `json:"prevVersionName,omitempty" protobuf:"bytes,3,opt,name=prevVersionName"`
 	// Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
 	// collect all the parents' product versions
-	// +kubebuilder:default = false
+	// kubebuilder:default:=false
 	// +optional
 	Baseline *bool `json:"baseline,omitempty" protobuf:"bytes,4,opt,name=baseline"`
 	// The owner account name
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }

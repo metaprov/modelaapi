@@ -71,7 +71,7 @@ type EntitySpec struct {
 	// +optional
 	Keys []string `json:"keys,omitempty" protobuf:"bytes,3,rep,name=keys"`
 	// Owner of this Entity
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`

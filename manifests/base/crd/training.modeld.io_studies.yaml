@@ -74,14 +74,15 @@ spec:
             description: StudySpec defines the desired state of the study
             properties:
               aborted:
+                default: false
                 description: Aborted is set when we want to abort the training
                 type: boolean
               datasetName:
                 description: DatasetName refer to the dataset object for which the
-                  study is for. Required.
+                  study is for. kubebuilder:default:="" Required.
                 type: string
               description:
-                description: Description is user provided description
+                description: Description is user provided description kubebuilder:default:=""
                 maxLength: 512
                 type: string
               hierarchy:
@@ -228,9 +229,10 @@ spec:
                 type: object
               modelImagePushed:
                 description: Set to true if you want the system to push model image
-                  to remote docker registry
+                  to remote docker registry kubebuilder:default:=false
                 type: boolean
               modelPublished:
+                default: false
                 description: Set to true if you want the system to create a docker
                   model image, at the end of training.
                 type: boolean
@@ -281,9 +283,10 @@ spec:
                 - mdape
                 type: string
               owner:
-                description: The owner account name
+                description: The owner account name kubebuilder:default:=""
                 type: string
               paused:
+                default: false
                 description: Paused is set when we want to pause the training
                 type: boolean
               preprocessing:
@@ -300,7 +303,7 @@ spec:
                           type: string
                         type: array
                       featurizer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         type: string
                     type: object
                   categorical:
@@ -313,7 +316,7 @@ spec:
                           type: string
                         type: array
                       encoder:
-                        description: CatEncoder
+                        description: CatEncoder kubebuilder:default:="auto"
                         enum:
                         - one-hot
                         - count-freq
@@ -328,7 +331,7 @@ spec:
                         - auto
                         type: string
                       imputer:
-                        description: Categorical varaible imputer
+                        description: Categorical varaible imputer kubebuilder:default:="auto"
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -354,9 +357,10 @@ spec:
                           type: string
                         type: array
                       expand:
+                        description: kubebuilder:default:=false
                         type: boolean
                       imputer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -393,7 +397,7 @@ spec:
                           type: string
                         type: array
                       featurizer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         type: string
                     type: object
                   imbalanced:
@@ -409,7 +413,7 @@ spec:
                           type: string
                         type: array
                       imputer:
-                        description: Numerical var imputer
+                        description: Numerical var imputer kubebuilder:default:="auto"
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -425,7 +429,7 @@ spec:
                         - constant
                         type: string
                       scaler:
-                        description: Numeric var scaler
+                        description: Numeric var scaler kubebuilder:default:="auto"
                         enum:
                         - standard
                         - max-abs
@@ -462,19 +466,19 @@ spec:
                         type: string
                       lemma:
                         description: If true, the controller will Add lemma handling
-                          to the text pipeline.
+                          to the text pipeline. kubebuilder:default:=true
                         type: boolean
                       pos:
-                        description: If true, the controller will Add part of speech
-                          handling to the text pipeline.
+                        description: kubebuilder:default:=true If true, the controller
+                          will Add part of speech handling to the text pipeline.
                         type: boolean
                       stem:
-                        description: If true, the controller will Add stemmer handling
-                          to the text pipeline.
+                        description: kubebuilder:default:=true If true, the controller
+                          will Add stemmer handling to the text pipeline.
                         type: boolean
                       stopwords:
                         description: If true, the controller will Add stop word handling
-                          to the text pipeline.
+                          to the text pipeline. kubebuilder:default:=true
                         type: boolean
                       tokenizer:
                         description: Text tokenizer
@@ -490,15 +494,17 @@ spec:
                           type: string
                         type: array
                       featurizer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         type: string
                     type: object
                 type: object
               profiled:
+                default: false
                 description: Profiled is set when we want to create model profile
                   and study profile.
                 type: boolean
               reported:
+                default: false
                 description: Reported is set when we want to create model report
                 type: boolean
               search:
@@ -559,26 +565,27 @@ spec:
                     type: array
                   maxCost:
                     description: MaxCost specify what is the maximum cost incurred
-                      before stopping model creations
+                      before stopping model creations kubebuilder:default:=100
                     format: int32
                     maximum: 1000
                     minimum: 1
                     type: integer
                   maxModels:
-                    description: Used for random search, the max models sampled.
+                    description: Used for random search, the max models sampled. kubebuilder:default:=10
                     format: int32
                     maximum: 1000
                     minimum: 1
                     type: integer
                   maxTime:
                     description: MaxTime specify what is the maximum time allocated
-                      to a study (in minutes). the cross validation stage.
+                      to a study (in minutes). the cross validation stage. kubebuilder:default:=30
                     format: int32
                     maximum: 10000
                     minimum: 1
                     type: integer
                   minScore:
                     description: The minimum score by which the search would stop
+                      kubebuilder:default:=0
                     type: number
                   resources:
                     description: Define the general size of the resources needed for
@@ -586,6 +593,7 @@ spec:
                     properties:
                       cpu:
                         description: Cpu specify the cpu requirements will be compared
+                          kubebuilder:default:="M"
                         enum:
                         - XS
                         - S
@@ -598,7 +606,7 @@ spec:
                         type: string
                       gpu:
                         description: Gpu specify the desired gpu requirements.  will
-                          be compared
+                          be compared kubebuilder:default:="M"
                         enum:
                         - XS
                         - S
@@ -611,7 +619,7 @@ spec:
                         type: string
                       mem:
                         description: Mem define the memory resource requirements will
-                          be compared
+                          be compared kubebuilder:default:="M"
                         enum:
                         - XS
                         - S
@@ -626,14 +634,14 @@ spec:
                   retainTop:
                     description: Indicate the total number of full models that would
                       be retain in etcd. All other models are garbage collected (archived).
-                      models are sorted by thier objective score.
+                      models are sorted by thier objective score. kubebuilder:default:=10
                     format: int32
                     maximum: 100
                     minimum: 0
                     type: integer
                   retainedFor:
                     description: RetainFor measure the time in minutes for modeld
-                      trained. Default is 60 min (1 H).
+                      trained. Default is 60 min (1 H). kubebuilder:default:=60
                     format: int32
                     maximum: 2400
                     minimum: 0
@@ -645,17 +653,18 @@ spec:
                       eliminationRate:
                         description: The rate of elimination during SH search, such
                           that only 1/rate of models are promoted to the next half
+                          kubebuilder:default:=3
                         format: int32
                         type: integer
                       maxBudget:
                         description: The maximum budget allocated to each model during
-                          SH search. The default max budget is 81
+                          SH search. The default max budget is 81 kubebuilder:default:=81
                         format: int32
                         type: integer
                       modality:
                         description: The modality type. The default modality is based
                           on the type of models For deep models - we use epocs. For
-                          classical models - we use data
+                          classical models - we use data kubebuilder:default:="epocs"
                         enum:
                         - data
                         - epochs
@@ -663,23 +672,24 @@ spec:
                     type: object
                   stackingEnsemble:
                     description: StackingEnsemble If true, create a stacking ensemble
-                      of the top 3 models.
+                      of the top 3 models. kubebuilder:default:=true
                     type: boolean
                   test:
                     description: Test indicate the desired number of models that should
-                      be passed to the testing phase.
+                      be passed to the testing phase. kubebuilder:default:=80
                     format: int32
                     maximum: 100
                     minimum: 0
                     type: integer
                   trainers:
                     description: The desired number of trainers running during search.
+                      kubebuilder:default:=1
                     format: int32
                     maximum: 50
                     type: integer
                   type:
                     description: Type specify the hyper parameter optimization search
-                      method. The only supported value is random
+                      method. The only supported value is random kubebuilder:default:='random'
                     enum:
                     - random
                     - grid
@@ -690,34 +700,35 @@ spec:
                     type: string
                   votingEnsemble:
                     description: VotingEnsample - If true, create a voting ensemble
-                      of the top 3 models.
+                      of the top 3 models. kubebuilder:default:=false
                     type: boolean
                 type: object
               split:
                 description: Split is reference to the split specification
                 properties:
                   auto:
-                    description: Indicate that this is an automatic split.
+                    description: Indicate that this is an automatic split. kubebuilder:default:=true
                     type: boolean
                   seed:
-                    description: 'The seed to use for the estimator Default: 42'
+                    description: 'The seed to use for the estimator Default: 42 kubebuilder:default:=42'
                     type: number
                   splitColumn:
                     description: The name of the column used to split
                     type: string
                   splitPolicy:
                     description: Indicate if the dataset split should be stratified.
+                      kubebuilder:default:="stratified"
                     type: string
                   test:
                     description: Test is percent of dataset rows which would be used
-                      to compute the objective during
+                      to compute the objective during kubebuilder:default:=20
                     format: int32
                     maximum: 50
                     minimum: 0
                     type: integer
                   train:
                     description: Training is a percent number (0-100) which specify
-                      how much of the data will be used for training
+                      how much of the data will be used for training kubebuilder:default:=80
                     format: int32
                     maximum: 100
                     minimum: 1
@@ -727,7 +738,7 @@ spec:
                       be used to compute the objective during hyper parameter search
                       phase. Only used if we do not do cross validation. default is
                       10% of the data, if we do not have cross validation. default
-                      is 0% of the data, if we do cross validation.
+                      is 0% of the data, if we do cross validation. kubebuilder:default:=0
                     format: int32
                     maximum: 50
                     minimum: 0
@@ -873,12 +884,12 @@ spec:
                         properties:
                           initial:
                             description: The initial number of data points, default
-                              to 80% of rows.
+                              to 80% of rows. kubebuilder:default:=80
                             format: int32
                             type: integer
                           windows:
                             description: The number of backtesting windows. Default
-                              to 3. can be from 1 to 5.
+                              to 3. can be from 1 to 5. kubebuilder:default:=3
                             format: int32
                             type: integer
                         type: object
@@ -945,7 +956,7 @@ spec:
                         description: Required, the freq of the time series (daily,weekly)
                         properties:
                           interval:
-                            description: Default to 1. optional
+                            description: Default to 1. kubebuilder:default:=1 optional
                             format: int32
                             type: integer
                           unit:

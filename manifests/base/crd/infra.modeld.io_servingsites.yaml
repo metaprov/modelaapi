@@ -47,17 +47,19 @@ spec:
             properties:
               clusterName:
                 description: ClusterName is  the virtual cluster name in case that
-                  the lab is not on the same cluster
+                  the lab is not on the same cluster kubebuilder:default:=""
                 type: string
               description:
-                description: Description is user provided description
+                description: Description is user provided description kubebuilder:default:=""
                 type: string
               fdqn:
                 description: The FDQN for this site. This will register with ingress.
+                  kubebuilder:default:=""
                 type: string
               ingressName:
                 description: IngressName denote the name of the ingress object where
                   the serving site places the external points used to access the predictors
+                  kubebuilder:default:=""
                 type: string
               limitRangeSpec:
                 description: LimitRangeSpec limit range for the serving site By default,
@@ -135,7 +137,7 @@ spec:
                 - limits
                 type: object
               owner:
-                description: Owner is the owner account name
+                description: Owner is the owner account name kubebuilder:default:="no-one"
                 type: string
               quotaSpec:
                 description: QuotaSpec is  resource quota for the serving site By

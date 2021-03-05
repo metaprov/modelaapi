@@ -304,12 +304,12 @@ type DataSource struct {
 
 type DataSourceSpec struct {
 	// The account name of the owner of this dataset
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +optional
 	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
 	// The version of the flat file.
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:default=""
+	// +kubebuilder:default:=""
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User provided description of the data source
@@ -328,7 +328,7 @@ type DataSourceSpec struct {
 	// +optional
 	Table *Table `json:"table,omitempty" protobuf:"bytes,7,rep,name=table"`
 	// The owner account name
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

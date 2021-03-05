@@ -53,12 +53,12 @@ message AlgorithmSpec {
   optional string frameworkName = 1;
 
   // Description is the description of the algorithm
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +optional
   optional string description = 2;
 
   // URL is a url to the html page describing the algorithm
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +optional
   optional string url = 3;
 

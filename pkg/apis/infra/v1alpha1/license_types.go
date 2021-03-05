@@ -82,13 +82,13 @@ type LicenseSpec struct {
 	SecretName *string `json:"secretName" protobuf:"bytes,2,opt,name=secretName"`
 	// Owner is the account owning this license
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
 	// TrialStart is the start date for free trial
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TrialStart *metav1.Time `json:"trialStart,omitempty" protobuf:"bytes,5,opt,name=trialStart"`
 	// TrialEnd when free trial end

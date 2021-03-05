@@ -103,7 +103,7 @@ spec:
                     type: string
                 type: object
               format:
-                description: Format specify the report format. default is pdf
+                description: Format specify the report format. default is pdf kubebuilder:default:=pdf
                 enum:
                 - pdf
                 type: string
@@ -120,7 +120,7 @@ spec:
                 - path
                 type: object
               owner:
-                description: The owner account name
+                description: The owner account name kubebuilder:default:="no-one"
                 type: string
               reportType:
                 description: ReportType specify the report type (e.g. classification
@@ -141,7 +141,7 @@ spec:
                 type: string
               versionName:
                 description: VersionName is the data product version name for this
-                  report.
+                  report. kubebuilder:default:="latest"
                 type: string
             type: object
           status:

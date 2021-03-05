@@ -68,7 +68,7 @@ type FeaturePipelineRunList struct {
 // FeatureSpec contain the desired state of a Feature
 type FeaturePipelineRunSpec struct {
 	// The feature owner
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`

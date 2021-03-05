@@ -61,7 +61,7 @@ type ServingSiteList struct {
 type ServingSiteSpec struct {
 	// Description is user provided description
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// Reference to the tenant owning this serving site.
@@ -82,22 +82,22 @@ type ServingSiteSpec struct {
 	// IngressName denote the name of the ingress object where the serving site
 	// places the external points used to access the predictors
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,5,opt,name=ingressName"`
 	// The FDQN for this site. This will register with ingress.
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	FDQN *string `json:"fdqn,omitempty" protobuf:"bytes,6,opt,name=fdqn"`
 	// ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,7,opt,name=clusterName"`
 	// Owner is the owner account name
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default = "no-one"
+	// kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

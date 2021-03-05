@@ -54,12 +54,12 @@ spec:
                 description: DebPackages is a list of deb package to install
                 type: string
               description:
-                description: User provided description
+                description: User provided description kubebuilder:default:=""
                 minLength: 512
                 type: string
               imageName:
                 description: A reference to the container image repository for this
-                  notebook.
+                  notebook. kubebuilder:default:=""
                 type: string
               location:
                 description: Location is the location of the notebook file
@@ -74,10 +74,10 @@ spec:
                 - path
                 type: object
               owner:
-                description: The owner account name
+                description: The owner account name kubebuilder:default:="no-one"
                 type: string
               requirements:
-                description: Requirements python file
+                description: Requirements python file kubebuilder:default:=""
                 type: string
               schemaRef:
                 description: SchemaName relate a notebook to a schema. The schema
@@ -122,7 +122,7 @@ spec:
                   type: string
                 type: array
               versionName:
-                description: The version of the notebook
+                description: The version of the notebook kubebuilder:default:="latest"
                 type: string
             type: object
           status:

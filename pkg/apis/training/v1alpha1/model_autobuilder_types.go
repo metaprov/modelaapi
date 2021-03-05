@@ -123,23 +123,23 @@ type ModelAutobuilderSpec struct {
 	// Max training time.
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:default = 60
+	// kubebuilder:default:=60
 	// +optional
 	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,9,opt,name=maxTime"`
 	// Max model
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:default = 10
+	// kubebuilder:default:=10
 	// +optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,10,opt,name=maxModels"`
 	// Access method specify the predictor access method.
 	// Default: ClusterPort
-	// +kubebuilder:default = "ClusterPort"
+	// kubebuilder:default:="ClusterPort"
 	// +optional
 	AccessMethod *inferencev1.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
 	// Specify if the predictor should autoscale.
 	// Default : false
-	// +kubebuilder:default = false
+	// kubebuilder:default:=false
 	// +optional
 	AutoScale *bool `json:"autoScale,omitempty" protobuf:"bytes,12,opt,name=autoScale"`
 	// The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
@@ -147,20 +147,20 @@ type ModelAutobuilderSpec struct {
 	DataSourceSpec *datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
 	// Specify the number of trainers.
 	// Default 1 trainer.
-	// +kubebuilder:default = 1
+	// kubebuilder:default:=1
 	// +optional
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,14,opt,name=trainers"`
 	// Specify the search method
-	// +kubebuilder:default = "random"
+	// kubebuilder:default:="random"
 	// +optional
 	SearchMethod *SearchMethodName `json:"searchMethod,omitempty" protobuf:"bytes,15,opt,name=searchMethod"`
 	// Set the true to abort the model auto builder
-	// +kubebuilder:default = false
+	// kubebuilder:default:=false
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,16,opt,name=aborted"`
 	// The owner account name
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +kubebuilder:default = "no-one"
+	// kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
 }

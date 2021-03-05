@@ -73,7 +73,7 @@ spec:
                 type: object
               dataWorkloadClassName:
                 description: A reference to the workload class used when running tasks
-                  on the dataset, for example profiling or reports.
+                  on the dataset, for example profiling or reports. kubebuilder:default:=""
                 type: string
               description:
                 description: User provided description
@@ -114,11 +114,11 @@ spec:
                 type: string
               modelWorkloadClassName:
                 description: A reference to the workload class used when training
-                  or testing the model
+                  or testing the model kubebuilder:default:=""
                 type: string
               notifierName:
                 description: the notifier selector select the notifier for events
-                  that occur in the product life cycle.
+                  that occur in the product life cycle. kubebuilder:default:=""
                 type: string
               owner:
                 description: The data product owner

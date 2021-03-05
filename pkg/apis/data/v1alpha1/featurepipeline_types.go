@@ -66,7 +66,7 @@ type FeaturePipelineList struct {
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
 type FeaturePipelineSpec struct {
 	// Owner is the owner of the feature pipeline
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`

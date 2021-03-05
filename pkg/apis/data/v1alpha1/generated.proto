@@ -342,7 +342,7 @@ message DataPipelineRunSpec {
   optional DataLocation dataLocation = 3;
 
   // The owner of the run, set to the owner of the pipeline
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 4;
@@ -397,7 +397,7 @@ message DataPipelineSpec {
   optional string schedule = 6;
 
   // Owner of this data pipeline
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 7;
@@ -511,22 +511,22 @@ message DataProductSpec {
   optional DataLocation dataLocation = 11;
 
   // the notifier selector select the notifier for events that occur in the product life cycle.
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +optional
   optional string notifierName = 12;
 
   // A reference to the workload class used when training or testing the model
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +optional
   optional string modelWorkloadClassName = 13;
 
   // A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +optional
   optional string dataWorkloadClassName = 14;
 
   // Denote how many time a job is retry after failure
-  // +kubebuilder:default=3
+  // +kubebuilder:default:=3
   // +optional
   optional int32 retriesOnFailure = 15;
 }
@@ -592,24 +592,24 @@ message DataProductVersionSpec {
 
   // Description is user provided description
   // +optional
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
   // PrevVersionName is a pointer to the version that we derived from
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:default=""
+  // +kubebuilder:default:=""
   // +optional
   optional string prevVersionName = 3;
 
   // Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
   // collect all the parents' product versions
-  // +kubebuilder:default = false
+  // kubebuilder:default:=false
   // +optional
   optional bool baseline = 4;
 
   // The owner account name
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 5;
 }
@@ -671,13 +671,13 @@ message DataSourceList {
 
 message DataSourceSpec {
   // The account name of the owner of this dataset
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string ownerName = 1;
 
   // The version of the flat file.
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:default=""
+  // +kubebuilder:default:=""
   // +optional
   optional string versionName = 2;
 
@@ -702,7 +702,7 @@ message DataSourceSpec {
   optional Table table = 7;
 
   // The owner account name
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 8;
 }
@@ -790,17 +790,17 @@ message DatasetSpec {
   optional string description = 4;
 
   // If true, a dataset report should be generated for this dataset.
-  // +kubebuilder:default = true
+  // kubebuilder:default:=true
   // +optional
   optional bool report = 7;
 
   // If true, we should validate the dataset
-  // +kubebuilder:default = true
+  // kubebuilder:default:=true
   // +optional
   optional bool validate = 8;
 
   // Labeled indicates if this dataset is labeled or not.
-  // +kubebuilder:default = true
+  // kubebuilder:default:=true
   // +optional
   optional bool labeled = 10;
 
@@ -936,7 +936,7 @@ message EntitySpec {
   repeated string keys = 3;
 
   // Owner of this Entity
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 4;
@@ -1102,7 +1102,7 @@ message FeaturePipelineRunList {
 // FeatureSpec contain the desired state of a Feature
 message FeaturePipelineRunSpec {
   // The feature owner
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 1;
@@ -1136,7 +1136,7 @@ message FeaturePipelineRunStatus {
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
 message FeaturePipelineSpec {
   // Owner is the owner of the feature pipeline
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +optional
   optional string owner = 1;
@@ -1179,7 +1179,7 @@ message FeaturePipelineStatus {
 // FeatureSpec contain the desired state of a Feature
 message FeatureSpec {
   // The feature owner
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   optional string owner = 1;
 
   // The product version for the feature.
@@ -1315,12 +1315,12 @@ message FeaturesetList {
 // FeaturesetSpec contain the desired state of a Featureset.
 message FeaturesetSpec {
   // The product version of the featureset
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   optional string versionName = 1;
 
   // User provided description
   // +optional
-  // +kubebuilder:default = ""
+  // kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
@@ -1328,7 +1328,7 @@ message FeaturesetSpec {
   repeated string features = 3;
 
   // The owner account name
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 4;
 }
@@ -1503,7 +1503,7 @@ message LabelingPipelineRunList {
 // LabelSpec contain the desired state of a Label
 message LabelingPipelineRunSpec {
   // The owner of the LabelingPipelineRunSpec
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   optional string owner = 1;
 
   // The product version for the pipeline
@@ -1554,7 +1554,7 @@ message LabelingPipelineSpec {
   optional string schedule = 6;
 
   // The owner account name
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 7;
 }
@@ -1764,7 +1764,7 @@ message RecipeSampleSpec {
 // RecipeSpec defines the desired state of a dataset
 message RecipeSpec {
   // Owner is the owner of the recipe
-  // +kubebuilder:default="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 1;
 

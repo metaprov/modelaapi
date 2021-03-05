@@ -37,11 +37,11 @@ type AlgorithmSpec struct {
 	// +optional
 	FrameworkName string `json:"frameworkName,omitempty" protobuf:"bytes,1,opt,name=frameworkName"`
 	// Description is the description of the algorithm
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// URL is a url to the html page describing the algorithm
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	URL *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
 	// Task is the machine learning task (binary classification / regression)

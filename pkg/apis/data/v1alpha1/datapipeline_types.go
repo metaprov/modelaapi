@@ -78,7 +78,7 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default =""
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// Owner of this data pipeline
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`

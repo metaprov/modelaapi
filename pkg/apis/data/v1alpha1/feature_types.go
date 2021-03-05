@@ -64,7 +64,7 @@ type FeatureList struct {
 // FeatureSpec contain the desired state of a Feature
 type FeatureSpec struct {
 	// The feature owner
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the feature.
 	// +kubebuilder:default =""

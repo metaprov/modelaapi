@@ -79,7 +79,7 @@ type LabelingPipelineSpec struct {
 	// A cron field to schedule the data pipeline.
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// The owner account name
-	// +kubebuilder:default="no-one"
+	// +kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }

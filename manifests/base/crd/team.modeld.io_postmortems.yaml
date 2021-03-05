@@ -197,13 +197,13 @@ spec:
                     type: string
                 type: object
               owner:
-                description: The owner account name
+                description: The owner account name kubebuilder:default:=""
                 type: string
               rootCause:
-                description: Root cause
+                description: Root cause kubebuilder:default:=""
                 type: string
               summary:
-                description: Summary of the post mortem
+                description: Summary of the post mortem kubebuilder:default:=""
                 type: string
               timeline:
                 description: Timeline is the list of events that happed during the
@@ -215,6 +215,7 @@ spec:
                       format: date-time
                       type: string
                     content:
+                      description: kubebuilder:default:=""
                       type: string
                   type: object
                 type: array

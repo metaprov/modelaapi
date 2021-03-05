@@ -91,7 +91,7 @@ spec:
                 type: boolean
               datasetName:
                 description: DatasetName refer to the dataset object for which the
-                  study is for. Required.
+                  study is for. kubebuilder:default:="" Required.
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -215,12 +215,12 @@ spec:
                     properties:
                       initial:
                         description: The initial number of data points, default to
-                          80% of rows.
+                          80% of rows. kubebuilder:default:=80
                         format: int32
                         type: integer
                       windows:
                         description: The number of backtesting windows. Default to
-                          3. can be from 1 to 5.
+                          3. can be from 1 to 5. kubebuilder:default:=3
                         format: int32
                         type: integer
                     type: object
@@ -287,7 +287,7 @@ spec:
                     description: Required, the freq of the time series (daily,weekly)
                     properties:
                       interval:
-                        description: Default to 1. optional
+                        description: Default to 1. kubebuilder:default:=1 optional
                         format: int32
                         type: integer
                       unit:
@@ -384,6 +384,7 @@ spec:
                 type: string
               owner:
                 description: Owner is the account name of the owner of this model
+                  kubebuilder:default:="no-one"
                 type: string
               paused:
                 description: Paused is set when we want to pause the training kubebuilder:default
@@ -404,7 +405,7 @@ spec:
                           type: string
                         type: array
                       featurizer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         type: string
                     type: object
                   categorical:
@@ -417,7 +418,7 @@ spec:
                           type: string
                         type: array
                       encoder:
-                        description: CatEncoder
+                        description: CatEncoder kubebuilder:default:="auto"
                         enum:
                         - one-hot
                         - count-freq
@@ -432,7 +433,7 @@ spec:
                         - auto
                         type: string
                       imputer:
-                        description: Categorical varaible imputer
+                        description: Categorical varaible imputer kubebuilder:default:="auto"
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -458,9 +459,10 @@ spec:
                           type: string
                         type: array
                       expand:
+                        description: kubebuilder:default:=false
                         type: boolean
                       imputer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -497,7 +499,7 @@ spec:
                           type: string
                         type: array
                       featurizer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         type: string
                     type: object
                   imbalanced:
@@ -513,7 +515,7 @@ spec:
                           type: string
                         type: array
                       imputer:
-                        description: Numerical var imputer
+                        description: Numerical var imputer kubebuilder:default:="auto"
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -529,7 +531,7 @@ spec:
                         - constant
                         type: string
                       scaler:
-                        description: Numeric var scaler
+                        description: Numeric var scaler kubebuilder:default:="auto"
                         enum:
                         - standard
                         - max-abs
@@ -566,19 +568,19 @@ spec:
                         type: string
                       lemma:
                         description: If true, the controller will Add lemma handling
-                          to the text pipeline.
+                          to the text pipeline. kubebuilder:default:=true
                         type: boolean
                       pos:
-                        description: If true, the controller will Add part of speech
-                          handling to the text pipeline.
+                        description: kubebuilder:default:=true If true, the controller
+                          will Add part of speech handling to the text pipeline.
                         type: boolean
                       stem:
-                        description: If true, the controller will Add stemmer handling
-                          to the text pipeline.
+                        description: kubebuilder:default:=true If true, the controller
+                          will Add stemmer handling to the text pipeline.
                         type: boolean
                       stopwords:
                         description: If true, the controller will Add stop word handling
-                          to the text pipeline.
+                          to the text pipeline. kubebuilder:default:=true
                         type: boolean
                       tokenizer:
                         description: Text tokenizer
@@ -594,7 +596,7 @@ spec:
                           type: string
                         type: array
                       featurizer:
-                        description: The date time imputer.
+                        description: The date time imputer. kubebuilder:default:="auto"
                         type: string
                     type: object
                 type: object
@@ -616,7 +618,7 @@ spec:
                 type: boolean
               studyName:
                 description: StudyName reference the study for this model. IF empty,
-                  the model is stand alone
+                  the model is stand alone kubebuilder:default:=""
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -728,12 +730,12 @@ spec:
                         properties:
                           initial:
                             description: The initial number of data points, default
-                              to 80% of rows.
+                              to 80% of rows. kubebuilder:default:=80
                             format: int32
                             type: integer
                           windows:
                             description: The number of backtesting windows. Default
-                              to 3. can be from 1 to 5.
+                              to 3. can be from 1 to 5. kubebuilder:default:=3
                             format: int32
                             type: integer
                         type: object
@@ -800,7 +802,7 @@ spec:
                         description: Required, the freq of the time series (daily,weekly)
                         properties:
                           interval:
-                            description: Default to 1. optional
+                            description: Default to 1. kubebuilder:default:=1 optional
                             format: int32
                             type: integer
                           unit:
@@ -898,6 +900,7 @@ spec:
                 type: object
               versionName:
                 description: VersionName is the product version name for this model
+                  kubebuilder:default:="latest"
                 maxLength: 63
                 minLength: 1
                 type: string

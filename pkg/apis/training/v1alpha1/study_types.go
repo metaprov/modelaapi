@@ -163,15 +163,15 @@ const (
 // TrainingResourceRequest specify the desired resources for the training job
 type TrainingResourceRequest struct {
 	// Gpu specify the desired gpu requirements.  will be compared
-	// +kubebuilder:default = "M"
+	// kubebuilder:default:="M"
 	// +optional
 	Gpu ResourceSize `json:"gpu,omitempty" protobuf:"bytes,1,opt,name=gpu"`
 	// Cpu specify the cpu requirements will be compared
-	// +kubebuilder:default = "M"
+	// kubebuilder:default:="M"
 	// +optional
 	Cpu ResourceSize `json:"cpu,omitempty" protobuf:"bytes,2,opt,name=cpu"`
 	// Mem define the memory resource requirements will be compared
-	// +kubebuilder:default = "M"
+	// kubebuilder:default:="M"
 	// +optional
 	Mem ResourceSize `json:"mem,omitempty" protobuf:"bytes,3,opt,name=mem"`
 }
@@ -180,18 +180,18 @@ type TrainingResourceRequest struct {
 type SuccessiveHalvingOptions struct {
 	// The maximum budget allocated to each model during SH search.
 	// The default max budget is 81
-	// +kubebuilder:default = 81
+	// kubebuilder:default:=81
 	// +optional
 	MaxBudget *int32 `json:"maxBudget,omitempty" protobuf:"varint,6,opt,name=maxBudget"`
 	// The rate of elimination during SH search, such that only 1/rate of models are promoted to the
 	// next half
-	// +kubebuilder:default = 3
+	// kubebuilder:default:=3
 	// +optional
 	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,7,opt,name=eliminationRate"`
 	// The modality type. The default modality is based on the type of models
 	// For deep models - we use epocs.
 	// For classical models - we use data
-	// +kubebuilder:default = "epocs"
+	// kubebuilder:default:="epocs"
 	// +optional
 	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,8,opt,name=modality"`
 }
@@ -201,35 +201,35 @@ type SuccessiveHalvingOptions struct {
 type ModelSearchSpec struct {
 	// Type specify the hyper parameter optimization search method.
 	// The only supported value is random
-	// +kubebuilder:default = 'random'
+	// kubebuilder:default:='random'
 	// +optional
 	Type *SearchMethodName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// MaxCost specify what is the maximum cost incurred before
 	// stopping model creations
 	// +optional
-	// +kubebuilder:default = 100
+	// kubebuilder:default:=100
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	MaxCost *int32 `json:"maxCost,omitempty" protobuf:"varint,2,opt,name=maxCost"`
 	// MaxTime specify what is the maximum time allocated to a study (in minutes).
 	// the cross validation stage.
-	// +kubebuilder:default = 30
+	// kubebuilder:default:=30
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10000
 	// +optional
 	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,3,opt,name=maxTime"`
 	// Used for random search, the max models sampled.
-	// +kubebuilder:default = 10
+	// kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	// +optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
 	// The minimum score by which the search would stop
-	// +kubebuilder:default = 0
+	// kubebuilder:default:=0
 	// +optional
 	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,5,opt,name=minScore"`
 	// The desired number of trainers running during search.
-	// +kubebuilder:default = 1
+	// kubebuilder:default:=1
 	// +optional
 	// +kubebuilder:validation:Maximum=50
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,6,opt,name=trainers"`
@@ -238,7 +238,7 @@ type ModelSearchSpec struct {
 	// +optional
 	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,7,opt,name=shOptions"`
 	// Test indicate the desired number of models that should be passed to the testing phase.
-	// +kubebuilder:default = 80
+	// kubebuilder:default:=80
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +optional
@@ -246,14 +246,14 @@ type ModelSearchSpec struct {
 	// Indicate the total number of full models that would be retain in etcd.
 	// All other models are garbage collected (archived).
 	// models are sorted by thier objective score.
-	// +kubebuilder:default = 10
+	// kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +optional
 	RetainTop *int32 `json:"retainTop,omitempty" protobuf:"varint,9,opt,name=retainTop"`
 	// RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H).
 	// +optional
-	// +kubebuilder:default = 60
+	// kubebuilder:default:=60
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=2400
 	RetainFor *int32 `json:"retainedFor,omitempty" protobuf:"varint,10,opt,name=retainedFor"`
@@ -263,11 +263,11 @@ type ModelSearchSpec struct {
 	// AllowList contain the list of algorithms that should be tested as part of the search.
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
 	// VotingEnsample - If true, create a voting ensemble of the top 3 models.
-	// +kubebuilder:default = false
+	// kubebuilder:default:=false
 	// +optionals
 	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"bytes,13,opt,name=votingEnsemble"`
 	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
-	// +kubebuilder:default = true
+	// kubebuilder:default:=true
 	// +optional
 	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"bytes,14,opt,name=stackingEnsemble"`
 }
@@ -280,7 +280,7 @@ type StudySpec struct {
 	// required
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// Description is user provided description
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
@@ -289,7 +289,7 @@ type StudySpec struct {
 	// +optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// Required.
 	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
@@ -317,27 +317,27 @@ type StudySpec struct {
 	// +optional
 	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
 	// Aborted is set when we want to abort the training
-	// +kubebuilder:default = false
+	// +kubebuilder:default:=false
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Reported is set when we want to create model report
-	// +kubebuilder:default = false
+	// +kubebuilder:default:=false
 	// +optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,14,opt,name=reported"`
 	// Paused is set when we want to pause the training
-	// +kubebuilder:default = false
+	// +kubebuilder:default:=false
 	// +optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,15,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
-	// +kubebuilder:default = false
+	// +kubebuilder:default:=false
 	// +optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,16,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
-	// +kubebuilder:default = false
+	// +kubebuilder:default:=false
 	// +optional
 	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"bytes,17,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
-	// +kubebuilder:default = false
+	// kubebuilder:default:=false
 	// +optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"bytes,18,opt,name=modelImagePushed"`
 	// The location of the study artifacts
@@ -348,7 +348,7 @@ type StudySpec struct {
 	// +optional
 	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,21,opt,name=hierarchy"`
 	// The owner account name
-	// +kubebuilder:default = ""
+	// kubebuilder:default:=""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
 }
@@ -435,13 +435,13 @@ type StudyList struct {
 
 type DataSplit struct {
 	// Indicate that this is an automatic split.
-	// +kubebuilder:default = true
+	// kubebuilder:default:=true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,1,opt,name=auto"`
 	// Training is a percent number (0-100) which specify how much of
 	// the data will be used for training
 	// +optional
-	// +kubebuilder:default = 80
+	// kubebuilder:default:=80
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=100
 	Train *int32 `json:"train,omitempty" protobuf:"varint,2,opt,name=train"`
@@ -451,18 +451,18 @@ type DataSplit struct {
 	// default is 10% of the data, if we do not have cross validation.
 	// default is 0% of the data, if we do cross validation.
 	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:default = 0
+	// kubebuilder:default:=0
 	// +kubebuilder:validation:Maximum=50
 	// +optional
 	Validation *int32 `json:"validation,omitempty" protobuf:"varint,3,opt,name=validation"`
 	// Test is percent of dataset rows which would be used to compute the objective during
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=50
-	// +kubebuilder:default = 20
+	// kubebuilder:default:=20
 	// +optional
 	Test *int32 `json:"test,omitempty" protobuf:"varint,4,opt,name=test"`
 	// Indicate if the dataset split should be stratified.
-	// +kubebuilder:default = "stratified"
+	// kubebuilder:default:="stratified"
 	// +optional
 	SplitPolicy SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
 	// The name of the column used to split
@@ -470,7 +470,7 @@ type DataSplit struct {
 	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,6,opt,name=splitColumn"`
 	// The seed to use for the estimator
 	// Default: 42
-	// +kubebuilder:default = 42
+	// kubebuilder:default:=42
 	// +optional
 	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,7,opt,name=seed"`
 }

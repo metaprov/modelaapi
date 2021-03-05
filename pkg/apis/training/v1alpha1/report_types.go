@@ -161,7 +161,7 @@ type ReportList struct {
 // ReportSpec specifies the desired state of the ReportName resource
 type ReportSpec struct {
 	// VersionName is the data product version name for this report.
-	// +kubebuilder:default = "latest"
+	// kubebuilder:default:="latest"
 	// +optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specify the entity being report. Currently entities can be dataset,model or study
@@ -172,14 +172,14 @@ type ReportSpec struct {
 	// ReportType specify the report type (e.g. classification / regression)
 	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
 	// Format specify the report format. default is pdf
-	// +kubebuilder:default = pdf
+	// kubebuilder:default:=pdf
 	// +optional
 	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,6,opt,name=format"`
 	// NotifierRef is areference to the notifier that is used to send the report
 	// +optional
 	NotifierRef *string `json:"description,omitempty" protobuf:"bytes,7,opt,name=description"`
 	// The owner account name
-	// +kubebuilder:default = "no-one"
+	// kubebuilder:default:="no-one"
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

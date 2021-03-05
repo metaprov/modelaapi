@@ -121,7 +121,7 @@ spec:
                     type: string
                 type: object
               owner:
-                description: The owner account name
+                description: The owner account name kubebuilder:default:=""
                 type: string
             type: object
           status:

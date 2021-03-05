@@ -55,7 +55,7 @@ spec:
                 properties:
                   auto:
                     description: Auto defines if we move to the next stage without
-                      human intervation
+                      human intervation kubebuilder:default:=true
                     type: boolean
                   servingSiteName:
                     description: The serving site for the testing
@@ -69,6 +69,7 @@ spec:
                 properties:
                   auto:
                     description: Auto defines if we move from stage to stage automatically.
+                      kubebuilder:default:=true
                     type: boolean
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
@@ -96,7 +97,7 @@ spec:
                   folder contains all the study artifacts - metadata, reports, profile,models
                 type: string
               minScore:
-                description: Min score to move from stage to stage.
+                description: Min score to move from stage to stage. kubebuilder:default:=0
                 type: number
               owner:
                 type: string
@@ -112,6 +113,7 @@ spec:
                 properties:
                   auto:
                     description: Auto defines if we move from stage to stage automatically.
+                      kubebuilder:default:=true
                     type: boolean
                   labName:
                     description: LabName is the name of the lab used for training

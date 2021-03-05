@@ -60,21 +60,21 @@ spec:
               resource
             properties:
               description:
-                description: User provided description
+                description: User provided description kubebuilder:default:=""
                 type: string
               owner:
-                description: The owner account name
+                description: The owner account name kubebuilder:default:=""
                 type: string
               pipelineName:
                 description: PipelineName is the name of the pipeline specification
-                  for this pipeline
+                  for this pipeline kubebuilder:default:=""
                 type: string
               triggerName:
                 description: TriggerName denote the trigger that fired this pipeline
-                  run
+                  run kubebuilder:default:=""
                 type: string
               versionName:
-                description: User provided description
+                description: User provided description kubebuilder:default:=""
                 type: string
             type: object
           status:
