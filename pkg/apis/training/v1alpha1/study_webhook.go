@@ -133,7 +133,6 @@ func (study *Study) Default() {
 		study.Spec.Training = &TrainingSpec{}
 	}
 
-	
 	// if we search preprocessor, but we do not have an estimator
 	study.Status.Conditions = make([]StudyCondition, 0)
 

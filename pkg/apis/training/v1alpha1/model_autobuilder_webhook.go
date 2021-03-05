@@ -41,7 +41,7 @@ func (b *ModelAutobuilder) Default() {
 	}
 	if b.Spec.DataSourceSpec == nil {
 		b.Spec.DataSourceSpec = &data.DataSourceSpec{
-			Schema: data.Schema{
+			Schema: &data.Schema{
 				Columns: []data.Column{},
 			},
 		}

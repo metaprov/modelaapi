@@ -318,9 +318,9 @@ type DataSourceSpec struct {
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The data source schema
-	Schema Schema `json:"schema,omitempty" protobuf:"bytes,4,rep,name=schema"`
+	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,rep,name=schema"`
 	// The data source type.
-	Type DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
+	Type *DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 	// FlatFile access specification
 	// +optional
 	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,rep,name=file"`

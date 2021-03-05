@@ -3753,7 +3753,6 @@ func schema_pkg_apis_data_v1alpha1_DataSourceSpec(ref common.ReferenceCallback) 
 					"schema": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The data source schema",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1.Schema"),
 						},
 					},

@@ -947,7 +947,16 @@ func (in *DataSourceSpec) DeepCopyInto(out *DataSourceSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Schema.DeepCopyInto(&out.Schema)
+	if in.Schema != nil {
+		in, out := &in.Schema, &out.Schema
+		*out = new(Schema)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.Type != nil {
+		in, out := &in.Type, &out.Type
+		*out = new(DataSourceType)
+		**out = **in
+	}
 	if in.FlatFile != nil {
 		in, out := &in.FlatFile, &out.FlatFile
 		*out = new(FlatFileSpec)
