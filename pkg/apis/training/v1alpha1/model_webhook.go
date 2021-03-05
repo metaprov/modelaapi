@@ -32,30 +32,6 @@ func (model *Model) Default() {
 		model.Spec.Training.Priority = util.Int32Ptr(int32(0)) // default prioirty is 5
 	}
 
-	if model.Spec.Aborted == nil {
-		model.Spec.Aborted = util.BoolPtr(false)
-	}
-
-	if model.Spec.Published == nil {
-		model.Spec.Published = util.BoolPtr(false)
-	}
-
-	if model.Spec.Reported == nil {
-		model.Spec.Reported = util.BoolPtr(false)
-	}
-
-	if model.Spec.Paused == nil {
-		model.Spec.Paused = util.BoolPtr(false)
-	}
-
-	if model.Spec.Profiled == nil {
-		model.Spec.Profiled = util.BoolPtr(false)
-	}
-
-	if model.Spec.Training.CV == nil {
-		model.Spec.Training.CV = util.BoolPtr(false)
-	}
-
 	if model.Spec.Objective == nil {
 		o := model.DefaultObjective()
 		model.Spec.Objective = &o
@@ -88,38 +64,6 @@ func (model *Model) Default() {
 		model.Spec.Ensemble = &EnsembleSpec{
 			Base: make([]string, 0),
 		}
-	}
-
-	if model.Spec.Training.Folds == nil {
-		model.Spec.Training.Folds = util.Int32Ptr(5)
-	}
-
-	if model.Spec.Preprocessing.Imbalanced == nil {
-		model.Spec.Preprocessing.Imbalanced = util.BoolPtr(false)
-	}
-	if model.Spec.Tested == nil {
-		model.Spec.Tested = util.BoolPtr(false)
-	}
-	if model.Spec.Aborted == nil {
-		model.Spec.Aborted = util.BoolPtr(false)
-	}
-	if model.Spec.Published == nil {
-		model.Spec.Published = util.BoolPtr(false)
-	}
-	if model.Spec.Reported == nil {
-		model.Spec.Reported = util.BoolPtr(false)
-	}
-	if model.Spec.Paused == nil {
-		model.Spec.Paused = util.BoolPtr(false)
-	}
-	if model.Spec.Profiled == nil {
-		model.Spec.Profiled = util.BoolPtr(false)
-	}
-	if model.Spec.Archived == nil {
-		model.Spec.Archived = util.BoolPtr(false)
-	}
-	if model.Spec.Published == nil {
-		model.Spec.Published = util.BoolPtr(false)
 	}
 
 }

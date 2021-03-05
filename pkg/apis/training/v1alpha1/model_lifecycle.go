@@ -679,7 +679,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	*model.Spec.Training = *study.Spec.Training.DeepCopy()
 	model.Spec.StudyName = &study.Name
 	model.Spec.VersionName = study.Spec.VersionName
-	model.Spec.StudyName = &study.Name
+	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.Task = study.Spec.Task
 	model.Spec.Objective = study.Spec.Objective
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
