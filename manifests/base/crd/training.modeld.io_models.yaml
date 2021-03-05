@@ -91,7 +91,7 @@ spec:
                 type: boolean
               datasetName:
                 description: DatasetName refer to the dataset object for which the
-                  study is for. Required.
+                  study is for.
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -933,6 +933,12 @@ spec:
                 maxLength: 63
                 minLength: 1
                 type: string
+            required:
+            - datasetName
+            - objective
+            - studyName
+            - task
+            - versionName
             type: object
           status:
             description: ModelStatus defines the observed state of the Model
@@ -1075,6 +1081,9 @@ spec:
                     value:
                       description: The value for this model
                       type: number
+                  required:
+                  - metric
+                  - value
                   type: object
                 type: array
               testScore:
@@ -1146,6 +1155,9 @@ spec:
                     value:
                       description: The value for this model
                       type: number
+                  required:
+                  - metric
+                  - value
                   type: object
                 type: array
               trainScore:

@@ -15,8 +15,9 @@ import (
 
 func Test_Trained(t *testing.T) {
 	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
+	metric := catalog.F1Binary
 	model.MarkTrained([]Measurement{{
-		Metric: "a",
+		Metric: &metric,
 		Value:  1,
 	}})
 	assert.True(t, model.Trained())
@@ -29,8 +30,9 @@ func Test_Training(t *testing.T) {
 
 func Test_Failed_Testing(t *testing.T) {
 	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
+	metric := catalog.F1Binary
 	model.MarkTrained([]Measurement{{
-		Metric: "a",
+		Metric: &metric,
 		Value:  1,
 	}})
 	model.Status.Best = true

@@ -39,11 +39,11 @@ const (
 // Measurement is a value for a specific metric
 type Measurement struct {
 	// The metric type name (e.g. F1 / Accuracy)
-	// +optional
-	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,1,opt,name=metric"`
+	// +kubebuilder:validation:Required
+	Metric *catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
 	// The value for this model
-	// +optional
-	Value float64 `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
+	// +kubebuilder:validation:Required
+	Value float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
 // ModelConditionType is a condition on a model
@@ -141,26 +141,25 @@ type ModelSpec struct {
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
+	StudyName *string `json:"studyName" protobuf:"bytes,3,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:MaxLength=63
-	// Required.
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
 	// The task is generated from the study task
 	// +kubebuilder:validation:Required
-	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,5,opt,name=task"`
+	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
 	// Objective is the metric by which the system compare models
 	// Default: based on the task. classification is logloss. Regression is rmse
-	// +optional
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,6,opt,name=objective"`
+	// +kubebuilder:validation:Required
+	Objective *catalog.Metric `json:"objective" protobuf:"bytes,6,opt,name=objective"`
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +optional

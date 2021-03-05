@@ -550,7 +550,7 @@ func (h Hierarchy) Explode() []ForecastObj {
 	for _, v := range h.GroupLevels {
 		levels = append(levels, v)
 	}
-	levels = append(levels, h.ItemLevel)
+	levels = append(levels, *h.ItemLevel)
 	result := make([]ForecastObj, 0)
 	// for each level explode all the items in the level
 

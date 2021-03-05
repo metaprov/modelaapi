@@ -14153,7 +14153,6 @@ func schema_pkg_apis_training_v1alpha1_Hierarchy(ref common.ReferenceCallback) c
 					"itemLevel": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Item level column.",
-							Default:     map[string]interface{}{},
 							Ref:         ref("github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1.Level"),
 						},
 					},
@@ -14309,11 +14308,13 @@ func schema_pkg_apis_training_v1alpha1_Measurement(ref common.ReferenceCallback)
 					"value": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The value for this model",
+							Default:     0,
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
 				},
+				Required: []string{"metric", "value"},
 			},
 		},
 	}
@@ -15685,7 +15686,7 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "DatasetName refer to the dataset object for which the study is for. Required.",
+							Description: "DatasetName refer to the dataset object for which the study is for.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15810,6 +15811,7 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 						},
 					},
 				},
+				Required: []string{"versionName", "studyName", "datasetName", "task", "objective"},
 			},
 		},
 		Dependencies: []string{

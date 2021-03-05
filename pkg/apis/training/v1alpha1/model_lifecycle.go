@@ -208,7 +208,7 @@ func (model *Model) CombinedImageName() string {
 // return the result for a metric
 func (model *Model) GetTestResult(metric catalog.Metric) float64 {
 	for _, v := range model.Status.TrainResult {
-		if v.Metric == metric {
+		if *v.Metric == metric {
 			return v.Value
 		}
 	}

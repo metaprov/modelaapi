@@ -394,11 +394,11 @@ message Level {
 // Measurement is a value for a specific metric
 message Measurement {
   // The metric type name (e.g. F1 / Accuracy)
-  // +optional
+  // +kubebuilder:validation:Required
   optional string metric = 1;
 
   // The value for this model
-  // +optional
+  // +kubebuilder:validation:Required
   optional double value = 2;
 }
 
@@ -1046,7 +1046,6 @@ message ModelSpec {
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:MaxLength=63
-  // Required.
   optional string datasetName = 4;
 
   // Task is the machine learning task (regression, classification).
@@ -1056,7 +1055,7 @@ message ModelSpec {
 
   // Objective is the metric by which the system compare models
   // Default: based on the task. classification is logloss. Regression is rmse
-  // +optional
+  // +kubebuilder:validation:Required
   optional string objective = 6;
 
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.

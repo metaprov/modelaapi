@@ -147,15 +147,15 @@ func Test_One_Parent_Levels(t *testing.T) {
 	hierarcy.GroupLevels = append(hierarcy.GroupLevels, Level{
 		Name:      "parent", // column name
 		Horizon:   10,
-		Freq:      "",
-		Aggregate: "sum",
+		Freq:      nil,
+		Aggregate: nil,
 		Values:    []string{"p1", "p2"},
 	})
-	hierarcy.ItemLevel = Level{
+	hierarcy.ItemLevel = &Level{
 		Name:      "child", //column name
 		Horizon:   10,
-		Freq:      "",
-		Aggregate: "",
+		Freq:      nil,
+		Aggregate: nil,
 		Values:    []string{"c1", "c2"},
 	}
 
@@ -175,11 +175,11 @@ func Test_One_Parent_Levels(t *testing.T) {
 func Test_Only_Item_Levels(t *testing.T) {
 	hierarcy := Hierarchy{}
 	hierarcy.GroupLevels = make([]Level, 0)
-	hierarcy.ItemLevel = Level{
+	hierarcy.ItemLevel = &Level{
 		Name:      "child", //column name
 		Horizon:   10,
-		Freq:      "",
-		Aggregate: "",
+		Freq:      nil,
+		Aggregate: nil,
 		Values:    []string{"c1", "c2"},
 	}
 	forecasts := hierarcy.Explode()

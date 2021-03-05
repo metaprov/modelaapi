@@ -464,7 +464,7 @@ type DataSplit struct {
 	// Indicate if the dataset split should be stratified.
 	// +kubebuilder:default:="stratified"
 	// +optional
-	SplitPolicy SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
+	SplitPolicy *SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
 	// The name of the column used to split
 	// +optional
 	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,6,opt,name=splitColumn"`
@@ -481,9 +481,9 @@ type Level struct {
 	// The number of time periods to
 	Horizon int32 `json:"horizon,omitempty" protobuf:"varint,2,opt,name=horizon"`
 	// The freq of the level
-	Freq catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
+	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
 	// The aggregate function used to roll up the lower level
-	Aggregate catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,4,opt,name=aggregate"`
+	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,4,opt,name=aggregate"`
 	// The distinct values of the column for this level
 	Values []string `json:"distinc,omitempty" protobuf:"bytes,5,opt,name=distinc"`
 }
@@ -494,7 +494,7 @@ type Hierarchy struct {
 	// The group level columns. For each group level column specify the horizon and the aggregate function
 	GroupLevels []Level `json:"groupLevels,omitempty" protobuf:"bytes,2,rep,name=groupLevels"`
 	// Item level column.
-	ItemLevel Level `json:"itemLevel,omitempty" protobuf:"bytes,3,opt,name=itemLevel"`
+	ItemLevel *Level `json:"itemLevel,omitempty" protobuf:"bytes,3,opt,name=itemLevel"`
 	// Optional notifier to use when the forecast is complete.
 	// +optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
