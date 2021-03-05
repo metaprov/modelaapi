@@ -51,13 +51,16 @@ spec:
               connectionName:
                 type: string
               description:
-                description: User provided description kubebuilder:default:=""
+                default: ""
+                description: User provided description
                 type: string
               from:
-                description: The sender address. For example, from email. kubebuilder:default:=""
+                default: ""
+                description: The sender address. For example, from email.
                 type: string
               owner:
-                description: The owner account name kubebuilder:default:="no-one"
+                default: no-one
+                description: The owner account name
                 type: string
               tenantRef:
                 description: The tenant that own the notifier Default to default tenant.
@@ -96,8 +99,9 @@ spec:
                     type: string
                 type: object
               to:
+                default: ""
                 description: Address within the provider to send the notifiaction
-                  to. kubebuilder:default:=""
+                  to.
                 type: string
             required:
             - connectionName

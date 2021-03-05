@@ -77,7 +77,8 @@ spec:
                   type: object
                 type: array
               description:
-                description: Description is the description of the algorithm kubebuilder:default:=""
+                default: ""
+                description: Description is the description of the algorithm
                 type: string
               floatParameters:
                 description: FloatParameters is the list of float hyper parameters
@@ -175,8 +176,8 @@ spec:
                 - unknown
                 type: string
               url:
+                default: ""
                 description: URL is a url to the html page describing the algorithm
-                  kubebuilder:default:=""
                 type: string
             type: object
         required:

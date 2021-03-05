@@ -61,11 +61,13 @@ spec:
                 minLength: 1
                 type: string
               description:
-                description: User provided description kubebuilder:default:=""
+                default: ""
+                description: User provided description
                 maxLength: 512
                 type: string
               owner:
-                description: Owner of the bucket kubebuilder:default:=""
+                default: ""
+                description: Owner of the bucket
                 type: string
               tenantRef:
                 description: The owner of the virtual bucket

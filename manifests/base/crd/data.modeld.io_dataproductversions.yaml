@@ -55,12 +55,14 @@ spec:
               product version
             properties:
               baseline:
+                default: false
                 description: Baseline denote if this product version a baseline. If
                   a product version is a baseline, we can garbage collect all the
-                  parents' product versions kubebuilder:default:=false
+                  parents' product versions
                 type: boolean
               description:
-                description: Description is user provided description kubebuilder:default:=""
+                default: ""
+                description: Description is user provided description
                 maxLength: 512
                 type: string
               owner:

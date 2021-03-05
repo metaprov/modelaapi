@@ -32,7 +32,7 @@ message AcceptanceStageSpec {
   optional string testDatasetName = 2;
 
   // Auto defines if we move to the next stage without human intervation
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool auto = 3;
 }
@@ -43,7 +43,7 @@ message AudioPipelineSpec {
   repeated string columns = 1;
 
   // The date time imputer.
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string featurizer = 2;
 }
@@ -51,12 +51,12 @@ message AudioPipelineSpec {
 // BacktestSpec specify the back test
 message BacktestSpec {
   // The initial number of data points, default to 80% of rows.
-  // kubebuilder:default:=80
+  // +kubebuilder:default:=80
   // +optional
   optional int32 initial = 1;
 
   // The number of backtesting windows. Default to 3. can be from 1 to 5.
-  // kubebuilder:default:=3
+  // +kubebuilder:default:=3
   // +optional
   optional int32 windows = 2;
 }
@@ -73,7 +73,7 @@ message CapacityStageSpec {
   optional string testDatasetName = 2;
 
   // Auto defines if we move from stage to stage automatically.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool auto = 3;
 }
@@ -85,12 +85,12 @@ message CategoricalPipelineSpec {
   repeated string columns = 1;
 
   // Categorical varaible imputer
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string imputer = 2;
 
   // CatEncoder
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string encoder = 3;
 }
@@ -106,14 +106,14 @@ message ClassicalEstimatorSpec {
 
 message DataSplit {
   // Indicate that this is an automatic split.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool auto = 1;
 
   // Training is a percent number (0-100) which specify how much of
   // the data will be used for training
   // +optional
-  // kubebuilder:default:=80
+  // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
   optional int32 train = 2;
@@ -124,7 +124,7 @@ message DataSplit {
   // default is 10% of the data, if we do not have cross validation.
   // default is 0% of the data, if we do cross validation.
   // +kubebuilder:validation:Minimum=0
-  // kubebuilder:default:=0
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Maximum=50
   // +optional
   optional int32 validation = 3;
@@ -132,12 +132,12 @@ message DataSplit {
   // Test is percent of dataset rows which would be used to compute the objective during
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=50
-  // kubebuilder:default:=20
+  // +kubebuilder:default:=20
   // +optional
   optional int32 test = 4;
 
   // Indicate if the dataset split should be stratified.
-  // kubebuilder:default:="stratified"
+  // +kubebuilder:default:="stratified"
   // +optional
   optional string splitPolicy = 5;
 
@@ -147,7 +147,7 @@ message DataSplit {
 
   // The seed to use for the estimator
   // Default: 42
-  // kubebuilder:default:=42
+  // +kubebuilder:default:=42
   // +optional
   optional double seed = 7;
 }
@@ -165,11 +165,11 @@ message DateTimePipelineSpec {
   repeated string columns = 1;
 
   // The date time imputer.
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string imputer = 2;
 
-  // kubebuilder:default:=false
+  // +kubebuilder:default:=false
   // +optional
   optional bool expand = 3;
 }
@@ -310,7 +310,7 @@ message ForecastingSpec {
 // FreqSpec specify the frequency specification.
 message FreqSpec {
   // Default to 1.
-  // kubebuilder:default:=1
+  // +kubebuilder:default:=1
   // optional
   optional int32 interval = 1;
 
@@ -369,7 +369,7 @@ message ImagePipelineSpec {
   repeated string columns = 1;
 
   // The date time imputer.
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string featurizer = 2;
 }
@@ -534,26 +534,26 @@ message ModelAutobuilderSpec {
   // Max training time.
   // +kubebuilder:validation:Maximum=512
   // +kubebuilder:validation:Minimum=1
-  // kubebuilder:default:=60
+  // +kubebuilder:default:=60
   // +optional
   optional int32 maxTime = 9;
 
   // Max model
   // +kubebuilder:validation:Maximum=512
   // +kubebuilder:validation:Minimum=1
-  // kubebuilder:default:=10
+  // +kubebuilder:default:=10
   // +optional
   optional int32 maxModels = 10;
 
   // Access method specify the predictor access method.
   // Default: ClusterPort
-  // kubebuilder:default:="ClusterPort"
+  // +kubebuilder:default:="ClusterPort"
   // +optional
   optional string accessMethod = 11;
 
   // Specify if the predictor should autoscale.
   // Default : false
-  // kubebuilder:default:=false
+  // +kubebuilder:default:=false
   // +optional
   optional bool autoScale = 12;
 
@@ -563,23 +563,23 @@ message ModelAutobuilderSpec {
 
   // Specify the number of trainers.
   // Default 1 trainer.
-  // kubebuilder:default:=1
+  // +kubebuilder:default:=1
   // +optional
   optional int32 trainers = 14;
 
   // Specify the search method
-  // kubebuilder:default:="random"
+  // +kubebuilder:default:="random"
   // +optional
   optional string searchMethod = 15;
 
   // Set the true to abort the model auto builder
-  // kubebuilder:default:=false
+  // +kubebuilder:default:=false
   // +optional
   optional bool aborted = 16;
 
   // The owner account name
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 17;
 }
@@ -770,27 +770,27 @@ message ModelPipelineRunList {
 // ModelPipelineRunSpec is the desired state of the ModelPipelineRun resource
 message ModelPipelineRunSpec {
   // User provided description
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string versionName = 1;
 
   // User provided description
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string description = 2;
 
   // TriggerName denote the trigger that fired this pipeline run
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string triggerName = 3;
 
   // PipelineName is the name of the pipeline specification for this pipeline
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string pipelineName = 4;
 
   // The owner account name
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string owner = 5;
 }
@@ -875,7 +875,7 @@ message ModelPipelineSpec {
   optional string description = 3;
 
   // Min score to move from stage to stage.
-  // kubebuilder:default:=0
+  // +kubebuilder:default:=0
   // +optional
   optional double minScore = 4;
 
@@ -938,40 +938,40 @@ message ModelResult {
 message ModelSearchSpec {
   // Type specify the hyper parameter optimization search method.
   // The only supported value is random
-  // kubebuilder:default:='random'
+  // +kubebuilder:default:='random'
   // +optional
   optional string type = 1;
 
   // MaxCost specify what is the maximum cost incurred before
   // stopping model creations
   // +optional
-  // kubebuilder:default:=100
+  // +kubebuilder:default:=100
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=1000
   optional int32 maxCost = 2;
 
   // MaxTime specify what is the maximum time allocated to a study (in minutes).
   // the cross validation stage.
-  // kubebuilder:default:=30
+  // +kubebuilder:default:=30
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10000
   // +optional
   optional int32 maxTime = 3;
 
   // Used for random search, the max models sampled.
-  // kubebuilder:default:=10
+  // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=1000
   // +optional
   optional int32 maxModels = 4;
 
   // The minimum score by which the search would stop
-  // kubebuilder:default:=0
+  // +kubebuilder:default:=0
   // +optional
   optional double minScore = 5;
 
   // The desired number of trainers running during search.
-  // kubebuilder:default:=1
+  // +kubebuilder:default:=1
   // +optional
   // +kubebuilder:validation:Maximum=50
   optional int32 trainers = 6;
@@ -982,7 +982,7 @@ message ModelSearchSpec {
   optional SuccessiveHalvingOptions shOptions = 7;
 
   // Test indicate the desired number of models that should be passed to the testing phase.
-  // kubebuilder:default:=80
+  // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   // +optional
@@ -991,7 +991,7 @@ message ModelSearchSpec {
   // Indicate the total number of full models that would be retain in etcd.
   // All other models are garbage collected (archived).
   // models are sorted by thier objective score.
-  // kubebuilder:default:=10
+  // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   // +optional
@@ -999,7 +999,7 @@ message ModelSearchSpec {
 
   // RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H).
   // +optional
-  // kubebuilder:default:=60
+  // +kubebuilder:default:=60
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=2400
   optional int32 retainedFor = 10;
@@ -1012,12 +1012,12 @@ message ModelSearchSpec {
   repeated string allowlist = 12;
 
   // VotingEnsample - If true, create a voting ensemble of the top 3 models.
-  // kubebuilder:default:=false
+  // +kubebuilder:default:=false
   // +optionals
   optional bool votingEnsemble = 13;
 
   // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool stackingEnsemble = 14;
 }
@@ -1025,24 +1025,24 @@ message ModelSearchSpec {
 // ModelSpec defines the desired state of the Model resource
 message ModelSpec {
   // Owner is the account name of the owner of this model
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 1;
 
   // VersionName is the product version name for this model
-  // kubebuilder:default:="latest"
+  // +kubebuilder:default:="latest"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string versionName = 2;
 
   // StudyName reference the study for this model. IF empty, the model is stand alone
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string studyName = 3;
 
   // DatasetName refer to the dataset object for which the study is for.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:MaxLength=63
   // Required.
@@ -1083,47 +1083,47 @@ message ModelSpec {
 
   // Tested indicate if this model should be testedActual. Default is false.
   // The study controller will set this to true if a model is the best model
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool tested = 12;
 
   // Aborted indicate the desire to abort the model
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool aborted = 13;
 
   // Published is set when we want to wrap the model in a docker container
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool published = 14;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool pushed = 15;
 
   // Reported is set when a report should be created for this model
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool reported = 16;
 
   // Paused is set when we want to pause the training
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool paused = 17;
 
   // Profiled is set when we want to create model profile.
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool profiled = 18;
 
   // Archived is true when the model should be archived
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool archived = 19;
 
   // Forecasted is true when the model should perform a forecast
-  // kubebuilder:default =false
+  // +kubebuilder:default =false
   // +optional
   optional bool forecasted = 20;
 
@@ -1374,12 +1374,12 @@ message NotebookRunStatus {
 // NotebookSpec is the desired state of the notebook resource.
 message NotebookSpec {
   // The version of the notebook
-  // kubebuilder:default:="latest"
+  // +kubebuilder:default:="latest"
   // +optional
   optional string versionName = 1;
 
   // User provided description
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   // +kubebuilder:validation:MinLength=512
   optional string description = 2;
@@ -1390,11 +1390,11 @@ message NotebookSpec {
   optional k8s.io.api.core.v1.ObjectReference schemaRef = 3;
 
   // A reference to the container image repository for this notebook.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   optional string imageName = 4;
 
   // Requirements python file
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string requirements = 5;
 
@@ -1410,7 +1410,7 @@ message NotebookSpec {
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 8;
 
   // The owner account name
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 9;
 }
@@ -1442,12 +1442,12 @@ message NumericPipelineSpec {
   repeated string columns = 1;
 
   // Numerical var imputer
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string imputer = 2;
 
   // Numeric var scaler
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string scaler = 3;
 }
@@ -1562,7 +1562,7 @@ message ReportList {
 // ReportSpec specifies the desired state of the ReportName resource
 message ReportSpec {
   // VersionName is the data product version name for this report.
-  // kubebuilder:default:="latest"
+  // +kubebuilder:default:="latest"
   // +optional
   optional string versionName = 1;
 
@@ -1577,7 +1577,7 @@ message ReportSpec {
   optional string reportType = 5;
 
   // Format specify the report format. default is pdf
-  // kubebuilder:default:=pdf
+  // +kubebuilder:default:=pdf
   // +optional
   optional string format = 6;
 
@@ -1586,7 +1586,7 @@ message ReportSpec {
   optional string description = 7;
 
   // The owner account name
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 8;
 }
@@ -1683,7 +1683,7 @@ message StudySpec {
   optional string versionName = 1;
 
   // Description is user provided description
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +optional
   optional string description = 2;
@@ -1694,7 +1694,7 @@ message StudySpec {
   optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
   // DatasetName refer to the dataset object for which the study is for.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // Required.
   optional string datasetName = 4;
 
@@ -1755,7 +1755,7 @@ message StudySpec {
   optional bool modelPublished = 17;
 
   // Set to true if you want the system to push model image to remote docker registry
-  // kubebuilder:default:=false
+  // +kubebuilder:default:=false
   // +optional
   optional bool modelImagePushed = 18;
 
@@ -1769,7 +1769,7 @@ message StudySpec {
   optional Hierarchy hierarchy = 21;
 
   // The owner account name
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string owner = 22;
 }
@@ -1854,20 +1854,20 @@ message StudyStatus {
 message SuccessiveHalvingOptions {
   // The maximum budget allocated to each model during SH search.
   // The default max budget is 81
-  // kubebuilder:default:=81
+  // +kubebuilder:default:=81
   // +optional
   optional int32 maxBudget = 6;
 
   // The rate of elimination during SH search, such that only 1/rate of models are promoted to the
   // next half
-  // kubebuilder:default:=3
+  // +kubebuilder:default:=3
   // +optional
   optional int32 eliminationRate = 7;
 
   // The modality type. The default modality is based on the type of models
   // For deep models - we use epocs.
   // For classical models - we use data
-  // kubebuilder:default:="epocs"
+  // +kubebuilder:default:="epocs"
   // +optional
   optional string modality = 8;
 }
@@ -1919,21 +1919,21 @@ message TextPipelineSpec {
   optional string tokenizer = 3;
 
   // If true, the controller will Add stop word handling to the text pipeline.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool stopwords = 4;
 
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // If true, the controller will Add part of speech handling to the text pipeline.
   // +optional
   optional bool pos = 5;
 
   // If true, the controller will Add lemma handling to the text pipeline.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool lemma = 6;
 
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // If true, the controller will Add stemmer handling to the text pipeline.
   // +optional
   optional bool stem = 7;
@@ -1946,17 +1946,17 @@ message TextPipelineSpec {
 // TrainingResourceRequest specify the desired resources for the training job
 message TrainingResourceRequest {
   // Gpu specify the desired gpu requirements.  will be compared
-  // kubebuilder:default:="M"
+  // +kubebuilder:default:="M"
   // +optional
   optional string gpu = 1;
 
   // Cpu specify the cpu requirements will be compared
-  // kubebuilder:default:="M"
+  // +kubebuilder:default:="M"
   // +optional
   optional string cpu = 2;
 
   // Mem define the memory resource requirements will be compared
-  // kubebuilder:default:="M"
+  // +kubebuilder:default:="M"
   // +optional
   optional string mem = 3;
 }
@@ -2040,7 +2040,7 @@ message TrainingStageSpec {
   optional string studyName = 3;
 
   // Auto defines if we move from stage to stage automatically.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool auto = 4;
 }
@@ -2078,7 +2078,7 @@ message VideoPipelineSpec {
   repeated string columns = 1;
 
   // The date time imputer.
-  // kubebuilder:default:="auto"
+  // +kubebuilder:default:="auto"
   // +optional
   optional string featurizer = 2;
 }

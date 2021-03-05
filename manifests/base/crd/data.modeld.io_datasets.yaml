@@ -78,8 +78,8 @@ spec:
                 maxLength: 512
                 type: string
               labeled:
+                default: true
                 description: Labeled indicates if this dataset is labeled or not.
-                  kubebuilder:default:=true
                 type: boolean
               location:
                 description: Folder of the actual data resides.
@@ -111,11 +111,13 @@ spec:
                 description: The account name of the owner of this dataset
                 type: string
               report:
+                default: true
                 description: If true, a dataset report should be generated for this
-                  dataset. kubebuilder:default:=true
+                  dataset.
                 type: boolean
               validate:
-                description: If true, we should validate the dataset kubebuilder:default:=true
+                default: true
+                description: If true, we should validate the dataset
                 type: boolean
               versionName:
                 description: VersionName is the data product version of the dataset

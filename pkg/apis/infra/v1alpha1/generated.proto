@@ -98,26 +98,26 @@ message AccountSpec {
 
   // First FileName is the user first name
   // +optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   optional string firstName = 5;
 
   // LastName is the user last name
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   // +optional
   optional string lastName = 6;
 
   // Email specify the email of the user
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
   optional string email = 7;
 
   // Phone specify the phone of the user
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   optional string phone = 8;
@@ -308,7 +308,7 @@ message ConnectionSpec {
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // The connection category
-  // kubebuilder:default:="general"
+  // +kubebuilder:default:="general"
   // +optional
   optional string category = 2;
 
@@ -700,15 +700,15 @@ message LicenseSpec {
 
   // Owner is the account owning this license
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   optional string owner = 3;
 
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   optional string email = 4;
 
   // TrialStart is the start date for free trial
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
 
@@ -783,7 +783,7 @@ message MSSqlServerSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // kubebuilder:default:=1433
+  // +kubebuilder:default:=1433
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -850,7 +850,7 @@ message MySqlSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // kubebuilder:default:=3306
+  // +kubebuilder:default:=3306
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -915,17 +915,17 @@ message NotifierSpec {
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // User provided description
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string description = 2;
 
   // Address within the provider to send the notifiaction to.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string to = 3;
 
   // The sender address. For example, from email.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string from = 4;
 
@@ -933,7 +933,7 @@ message NotifierSpec {
   optional string connectionName = 5;
 
   // The owner account name
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 6;
 }
@@ -970,7 +970,7 @@ message OracleSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // kubebuilder:default:=1521
+  // +kubebuilder:default:=1521
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1007,7 +1007,7 @@ message PostgresSQLSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // kubebuilder:default:=5432
+  // +kubebuilder:default:=5432
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1024,7 +1024,7 @@ message PrestoSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // kubebuilder:default:=8080
+  // +kubebuilder:default:=8080
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1044,7 +1044,7 @@ message RedShiftSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // kubebuilder:default:=5439
+  // +kubebuilder:default:=5439
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1104,7 +1104,7 @@ message ServingSiteList {
 message ServingSiteSpec {
   // Description is user provided description
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string description = 1;
 
@@ -1129,25 +1129,25 @@ message ServingSiteSpec {
   // IngressName denote the name of the ingress object where the serving site
   // places the external points used to access the predictors
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string ingressName = 5;
 
   // The FDQN for this site. This will register with ingress.
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string fdqn = 6;
 
   // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string clusterName = 7;
 
   // Owner is the owner account name
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 8;
 }
@@ -1279,14 +1279,14 @@ message TenantSpec {
   optional k8s.io.api.core.v1.ObjectReference defaultServingSiteRef = 2;
 
   // Description is user provided description
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   // +optional
   optional string description = 3;
 
   // Owner is the owner account name
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +optional
   optional string owner = 4;
@@ -1358,13 +1358,13 @@ message VirtualBucketSpec {
   // User provided description
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string description = 3;
 
   // Owner of the bucket
   // +kubebuilder:validation:Optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string owner = 4;
 }
@@ -1426,7 +1426,7 @@ message VirtualClusterSpec {
 
   // +kubebuilder:validation:Optional
   // NodeClassName is the class of nodes or vm
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string nodeClassName = 3;
 
@@ -1440,7 +1440,7 @@ message VirtualClusterSpec {
 
   // +kubebuilder:validation:Optional
   // GpuClassName is the The class of gpu.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string gpuClassName = 5;
 
@@ -1459,7 +1459,7 @@ message VirtualClusterSpec {
   optional bool spot = 7;
 
   // ConnectionName refer to the name of the provider connection
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   optional string connectionName = 8;
 
   // +kubebuilder:validation:Optional
@@ -1538,12 +1538,12 @@ message VirtualVolumeSpec {
 
   // User provided description
   // +optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 3;
 
   // The owner account name
-  // kubebuilder:default:="no-one"
+  // +kubebuilder:default:="no-one"
   // +optional
   optional string owner = 4;
 }

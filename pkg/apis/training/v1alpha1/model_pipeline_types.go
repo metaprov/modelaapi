@@ -103,7 +103,7 @@ type ModelPipelineSpec struct {
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Min score to move from stage to stage.
-	// kubebuilder:default:=0
+	// +kubebuilder:default:=0
 	// +optional
 	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 	// Datastage build new dataset from the data sources.
@@ -206,7 +206,7 @@ type TrainingStageSpec struct {
 	// +optional
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// Auto defines if we move from stage to stage automatically.
-	// kubebuilder:default:=true
+	// +kubebuilder:default:=true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
 }
@@ -221,7 +221,7 @@ type AcceptanceStageSpec struct {
 	// +optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move to the next stage without human intervation
-	// kubebuilder:default:=true
+	// +kubebuilder:default:=true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }
@@ -236,7 +236,7 @@ type CapacityStageSpec struct {
 	// +optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move from stage to stage automatically.
-	// kubebuilder:default:=true
+	// +kubebuilder:default:=true
 	// +optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }

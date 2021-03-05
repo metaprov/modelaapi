@@ -72,8 +72,9 @@ spec:
                 - path
                 type: object
               dataWorkloadClassName:
+                default: ""
                 description: A reference to the workload class used when running tasks
-                  on the dataset, for example profiling or reports. kubebuilder:default:=""
+                  on the dataset, for example profiling or reports.
                 type: string
               description:
                 description: User provided description
@@ -113,12 +114,14 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               modelWorkloadClassName:
+                default: ""
                 description: A reference to the workload class used when training
-                  or testing the model kubebuilder:default:=""
+                  or testing the model
                 type: string
               notifierName:
+                default: ""
                 description: the notifier selector select the notifier for events
-                  that occur in the product life cycle. kubebuilder:default:=""
+                  that occur in the product life cycle.
                 type: string
               owner:
                 description: The data product owner

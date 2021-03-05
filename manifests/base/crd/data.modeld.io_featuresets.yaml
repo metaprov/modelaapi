@@ -50,7 +50,8 @@ spec:
             description: FeaturesetSpec contain the desired state of a Featureset.
             properties:
               description:
-                description: User provided description kubebuilder:default:=""
+                default: ""
+                description: User provided description
                 maxLength: 512
                 type: string
               features:
@@ -63,7 +64,8 @@ spec:
                 description: The owner account name
                 type: string
               versionName:
-                description: The product version of the featureset kubebuilder:default:=""
+                default: ""
+                description: The product version of the featureset
                 type: string
             type: object
           status:

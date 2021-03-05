@@ -127,7 +127,8 @@ spec:
                           type: string
                       type: object
                     content:
-                      description: Content is the content of the comment kubebuilder:default:=""
+                      default: ""
+                      description: Content is the content of the comment
                       type: string
                     id:
                       description: ID is the comment ID. Used when replying to a comment.
@@ -137,12 +138,14 @@ spec:
                       format: date-time
                       type: string
                     replyTo:
-                      description: If this comment is a reply to an id kubebuilder:default:=""
+                      default: ""
+                      description: If this comment is a reply to an id
                       type: string
                   type: object
                 type: array
               owner:
-                description: The owner account name kubebuilder:default:=""
+                default: ""
+                description: The owner account name
                 type: string
             required:
             - entityRef

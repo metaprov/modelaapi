@@ -58,11 +58,13 @@ spec:
                   provider.'
                 type: string
               description:
-                description: User provided description kubebuilder:default:=""
+                default: ""
+                description: User provided description
                 maxLength: 512
                 type: string
               owner:
-                description: The owner account name kubebuilder:default:="no-one"
+                default: no-one
+                description: The owner account name
                 type: string
               tenantRef:
                 description: The Lab that own the git repository Default to the default

@@ -54,8 +54,9 @@ spec:
                 description: Acceptance stage is used for further testing
                 properties:
                   auto:
+                    default: true
                     description: Auto defines if we move to the next stage without
-                      human intervation kubebuilder:default:=true
+                      human intervation
                     type: boolean
                   servingSiteName:
                     description: The serving site for the testing
@@ -68,8 +69,8 @@ spec:
                 description: Capacity stage for capacity
                 properties:
                   auto:
+                    default: true
                     description: Auto defines if we move from stage to stage automatically.
-                      kubebuilder:default:=true
                     type: boolean
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
@@ -97,7 +98,8 @@ spec:
                   folder contains all the study artifacts - metadata, reports, profile,models
                 type: string
               minScore:
-                description: Min score to move from stage to stage. kubebuilder:default:=0
+                default: 0
+                description: Min score to move from stage to stage.
                 type: number
               owner:
                 type: string
@@ -112,8 +114,8 @@ spec:
                 description: TrainingSpec stage
                 properties:
                   auto:
+                    default: true
                     description: Auto defines if we move from stage to stage automatically.
-                      kubebuilder:default:=true
                     type: boolean
                   labName:
                     description: LabName is the name of the lab used for training

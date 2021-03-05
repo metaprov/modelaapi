@@ -105,15 +105,15 @@ type DatasetSpec struct {
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// If true, a dataset report should be generated for this dataset.
-	// kubebuilder:default:=true
+	// +kubebuilder:default:=true
 	// +optional
 	Reported *bool `json:"report,omitempty" protobuf:"bytes,7,opt,name=report"`
 	// If true, we should validate the dataset
-	// kubebuilder:default:=true
+	// +kubebuilder:default:=true
 	// +optional
 	Validated *bool `json:"validate,omitempty" protobuf:"bytes,8,opt,name=validate"`
 	// Labeled indicates if this dataset is labeled or not.
-	// kubebuilder:default:=true
+	// +kubebuilder:default:=true
 	// +optional
 	Labeled *bool `json:"labeled" protobuf:"bytes,10,opt,name=labeled"`
 	// Define the data location. The operator will copy the data from this location into the live location.

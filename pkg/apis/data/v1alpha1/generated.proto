@@ -511,17 +511,17 @@ message DataProductSpec {
   optional DataLocation dataLocation = 11;
 
   // the notifier selector select the notifier for events that occur in the product life cycle.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string notifierName = 12;
 
   // A reference to the workload class used when training or testing the model
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string modelWorkloadClassName = 13;
 
   // A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +optional
   optional string dataWorkloadClassName = 14;
 
@@ -592,7 +592,7 @@ message DataProductVersionSpec {
 
   // Description is user provided description
   // +optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 
@@ -604,7 +604,7 @@ message DataProductVersionSpec {
 
   // Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
   // collect all the parents' product versions
-  // kubebuilder:default:=false
+  // +kubebuilder:default:=false
   // +optional
   optional bool baseline = 4;
 
@@ -790,17 +790,17 @@ message DatasetSpec {
   optional string description = 4;
 
   // If true, a dataset report should be generated for this dataset.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool report = 7;
 
   // If true, we should validate the dataset
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool validate = 8;
 
   // Labeled indicates if this dataset is labeled or not.
-  // kubebuilder:default:=true
+  // +kubebuilder:default:=true
   // +optional
   optional bool labeled = 10;
 
@@ -1315,12 +1315,12 @@ message FeaturesetList {
 // FeaturesetSpec contain the desired state of a Featureset.
 message FeaturesetSpec {
   // The product version of the featureset
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   optional string versionName = 1;
 
   // User provided description
   // +optional
-  // kubebuilder:default:=""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
 

@@ -732,14 +732,14 @@ func schema_pkg_apis_catalog_v1alpha1_AlgorithmSpec(ref common.ReferenceCallback
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Description is the description of the algorithm kubebuilder:default:=\"\"",
+							Description: "Description is the description of the algorithm",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"url": {
 						SchemaProps: spec.SchemaProps{
-							Description: "URL is a url to the html page describing the algorithm kubebuilder:default:=\"\"",
+							Description: "URL is a url to the html page describing the algorithm",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -3283,21 +3283,21 @@ func schema_pkg_apis_data_v1alpha1_DataProductSpec(ref common.ReferenceCallback)
 					},
 					"notifierName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "the notifier selector select the notifier for events that occur in the product life cycle. kubebuilder:default:=\"\"",
+							Description: "the notifier selector select the notifier for events that occur in the product life cycle.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"modelWorkloadClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the workload class used when training or testing the model kubebuilder:default:=\"\"",
+							Description: "A reference to the workload class used when training or testing the model",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"dataWorkloadClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the workload class used when running tasks on the dataset, for example profiling or reports. kubebuilder:default:=\"\"",
+							Description: "A reference to the workload class used when running tasks on the dataset, for example profiling or reports.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -3511,7 +3511,7 @@ func schema_pkg_apis_data_v1alpha1_DataProductVersionSpec(ref common.ReferenceCa
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Description is user provided description kubebuilder:default:=\"\"",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -3525,7 +3525,7 @@ func schema_pkg_apis_data_v1alpha1_DataProductVersionSpec(ref common.ReferenceCa
 					},
 					"baseline": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage collect all the parents' product versions kubebuilder:default:=false",
+							Description: "Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage collect all the parents' product versions",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -4003,21 +4003,21 @@ func schema_pkg_apis_data_v1alpha1_DatasetSpec(ref common.ReferenceCallback) com
 					},
 					"report": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, a dataset report should be generated for this dataset. kubebuilder:default:=true",
+							Description: "If true, a dataset report should be generated for this dataset.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"validate": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, we should validate the dataset kubebuilder:default:=true",
+							Description: "If true, we should validate the dataset",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"labeled": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Labeled indicates if this dataset is labeled or not. kubebuilder:default:=true",
+							Description: "Labeled indicates if this dataset is labeled or not.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -5421,14 +5421,14 @@ func schema_pkg_apis_data_v1alpha1_FeaturesetSpec(ref common.ReferenceCallback) 
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The product version of the featureset kubebuilder:default:=\"\"",
+							Description: "The product version of the featureset",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -8873,28 +8873,28 @@ func schema_pkg_apis_infra_v1alpha1_AccountSpec(ref common.ReferenceCallback) co
 					},
 					"firstName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "First FileName is the user first name kubebuilder:default:=\"\"",
+							Description: "First FileName is the user first name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"lastName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "LastName is the user last name kubebuilder:default:=\"\"",
+							Description: "LastName is the user last name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"email": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Email specify the email of the user kubebuilder:default:=\"\"",
+							Description: "Email specify the email of the user",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"phone": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Phone specify the phone of the user kubebuilder:default:=\"\"",
+							Description: "Phone specify the phone of the user",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -9387,7 +9387,7 @@ func schema_pkg_apis_infra_v1alpha1_ConnectionSpec(ref common.ReferenceCallback)
 					},
 					"category": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The connection category kubebuilder:default:=\"general\"",
+							Description: "The connection category",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10248,21 +10248,20 @@ func schema_pkg_apis_infra_v1alpha1_LicenseSpec(ref common.ReferenceCallback) co
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Owner is the account owning this license kubebuilder:default:=\"\"",
+							Description: "Owner is the account owning this license",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"email": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=\"\"",
-							Type:        []string{"string"},
-							Format:      "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"trialStart": {
 						SchemaProps: spec.SchemaProps{
-							Description: "TrialStart is the start date for free trial kubebuilder:default:=\"\"",
+							Description: "TrialStart is the start date for free trial",
 							Ref:         ref("k8s.io/apimachinery/pkg/apis/meta/v1.Time"),
 						},
 					},
@@ -10431,9 +10430,8 @@ func schema_pkg_apis_infra_v1alpha1_MSSqlServerSpec(ref common.ReferenceCallback
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=1433",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -10603,9 +10601,8 @@ func schema_pkg_apis_infra_v1alpha1_MySqlSpec(ref common.ReferenceCallback) comm
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=3306",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -10795,21 +10792,21 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"to": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Address within the provider to send the notifiaction to. kubebuilder:default:=\"\"",
+							Description: "Address within the provider to send the notifiaction to.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"from": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The sender address. For example, from email. kubebuilder:default:=\"\"",
+							Description: "The sender address. For example, from email.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10822,7 +10819,7 @@ func schema_pkg_apis_infra_v1alpha1_NotifierSpec(ref common.ReferenceCallback) c
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"no-one\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -10938,9 +10935,8 @@ func schema_pkg_apis_infra_v1alpha1_OracleSpec(ref common.ReferenceCallback) com
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=1521",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11029,9 +11025,8 @@ func schema_pkg_apis_infra_v1alpha1_PostgresSQLSpec(ref common.ReferenceCallback
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=5432",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11072,9 +11067,8 @@ func schema_pkg_apis_infra_v1alpha1_PrestoSpec(ref common.ReferenceCallback) com
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=8080",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"catalog": {
@@ -11121,9 +11115,8 @@ func schema_pkg_apis_infra_v1alpha1_RedShiftSpec(ref common.ReferenceCallback) c
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=5439",
-							Type:        []string{"integer"},
-							Format:      "int32",
+							Type:   []string{"integer"},
+							Format: "int32",
 						},
 					},
 					"database": {
@@ -11307,7 +11300,7 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Description is user provided description kubebuilder:default:=\"\"",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11332,28 +11325,28 @@ func schema_pkg_apis_infra_v1alpha1_ServingSiteSpec(ref common.ReferenceCallback
 					},
 					"ingressName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "IngressName denote the name of the ingress object where the serving site places the external points used to access the predictors kubebuilder:default:=\"\"",
+							Description: "IngressName denote the name of the ingress object where the serving site places the external points used to access the predictors",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"fdqn": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The FDQN for this site. This will register with ingress. kubebuilder:default:=\"\"",
+							Description: "The FDQN for this site. This will register with ingress.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"clusterName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "ClusterName is  the virtual cluster name in case that the lab is not on the same cluster kubebuilder:default:=\"\"",
+							Description: "ClusterName is  the virtual cluster name in case that the lab is not on the same cluster",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Owner is the owner account name kubebuilder:default:=\"no-one\"",
+							Description: "Owner is the owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11745,14 +11738,14 @@ func schema_pkg_apis_infra_v1alpha1_TenantSpec(ref common.ReferenceCallback) com
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Description is user provided description kubebuilder:default:=\"\"",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Owner is the owner account name kubebuilder:default:=\"\"",
+							Description: "Owner is the owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -11964,14 +11957,14 @@ func schema_pkg_apis_infra_v1alpha1_VirtualBucketSpec(ref common.ReferenceCallba
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Owner of the bucket kubebuilder:default:=\"\"",
+							Description: "Owner of the bucket",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12182,7 +12175,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref common.ReferenceCallb
 					},
 					"nodeClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "NodeClassName is the class of nodes or vm kubebuilder:default:=\"\"",
+							Description: "NodeClassName is the class of nodes or vm",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12196,7 +12189,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref common.ReferenceCallb
 					},
 					"gpuClassName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "GpuClassName is the The class of gpu. kubebuilder:default:=\"\"",
+							Description: "GpuClassName is the The class of gpu.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12217,7 +12210,7 @@ func schema_pkg_apis_infra_v1alpha1_VirtualClusterSpec(ref common.ReferenceCallb
 					},
 					"connectionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "ConnectionName refer to the name of the provider connection kubebuilder:default:=\"\"",
+							Description: "ConnectionName refer to the name of the provider connection",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12445,14 +12438,14 @@ func schema_pkg_apis_infra_v1alpha1_VirtualVolumeSpec(ref common.ReferenceCallba
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"no-one\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12559,14 +12552,14 @@ func schema_pkg_apis_team_v1alpha1_Comment(ref common.ReferenceCallback) common.
 					},
 					"replyTo": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If this comment is a reply to an id kubebuilder:default:=\"\"",
+							Description: "If this comment is a reply to an id",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"content": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Content is the content of the comment kubebuilder:default:=\"\"",
+							Description: "Content is the content of the comment",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -12761,7 +12754,7 @@ func schema_pkg_apis_team_v1alpha1_ConversationSpec(ref common.ReferenceCallback
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13015,21 +13008,21 @@ func schema_pkg_apis_team_v1alpha1_PostMortemSpec(ref common.ReferenceCallback) 
 					},
 					"rootCause": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Root cause kubebuilder:default:=\"\"",
+							Description: "Root cause",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"summary": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Summary of the post mortem kubebuilder:default:=\"\"",
+							Description: "Summary of the post mortem",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13247,7 +13240,7 @@ func schema_pkg_apis_team_v1alpha1_RunBookSpec(ref common.ReferenceCallback) com
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13297,9 +13290,8 @@ func schema_pkg_apis_team_v1alpha1_TimeLineEvent(ref common.ReferenceCallback) c
 				Properties: map[string]spec.Schema{
 					"content": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=\"\"",
-							Type:        []string{"string"},
-							Format:      "",
+							Type:   []string{"string"},
+							Format: "",
 						},
 					},
 					"at": {
@@ -13338,7 +13330,7 @@ func schema_pkg_apis_training_v1alpha1_AcceptanceStageSpec(ref common.ReferenceC
 					},
 					"auto": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Auto defines if we move to the next stage without human intervation kubebuilder:default:=true",
+							Description: "Auto defines if we move to the next stage without human intervation",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -13373,7 +13365,7 @@ func schema_pkg_apis_training_v1alpha1_AudioPipelineSpec(ref common.ReferenceCal
 					},
 					"featurizer": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The date time imputer. kubebuilder:default:=\"auto\"",
+							Description: "The date time imputer.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13393,14 +13385,14 @@ func schema_pkg_apis_training_v1alpha1_BacktestSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"initial": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The initial number of data points, default to 80% of rows. kubebuilder:default:=80",
+							Description: "The initial number of data points, default to 80% of rows.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"windows": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The number of backtesting windows. Default to 3. can be from 1 to 5. kubebuilder:default:=3",
+							Description: "The number of backtesting windows. Default to 3. can be from 1 to 5.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -13434,7 +13426,7 @@ func schema_pkg_apis_training_v1alpha1_CapacityStageSpec(ref common.ReferenceCal
 					},
 					"auto": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Auto defines if we move from stage to stage automatically. kubebuilder:default:=true",
+							Description: "Auto defines if we move from stage to stage automatically.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -13469,14 +13461,14 @@ func schema_pkg_apis_training_v1alpha1_CategoricalPipelineSpec(ref common.Refere
 					},
 					"imputer": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Categorical varaible imputer kubebuilder:default:=\"auto\"",
+							Description: "Categorical varaible imputer",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"encoder": {
 						SchemaProps: spec.SchemaProps{
-							Description: "CatEncoder kubebuilder:default:=\"auto\"",
+							Description: "CatEncoder",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13531,35 +13523,35 @@ func schema_pkg_apis_training_v1alpha1_DataSplit(ref common.ReferenceCallback) c
 				Properties: map[string]spec.Schema{
 					"auto": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Indicate that this is an automatic split. kubebuilder:default:=true",
+							Description: "Indicate that this is an automatic split.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"train": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Training is a percent number (0-100) which specify how much of the data will be used for training kubebuilder:default:=80",
+							Description: "Training is a percent number (0-100) which specify how much of the data will be used for training",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"validation": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Validation is percent of dataset rows which would be used to compute the objective during hyper parameter search phase. Only used if we do not do cross validation. default is 10% of the data, if we do not have cross validation. default is 0% of the data, if we do cross validation. kubebuilder:default:=0",
+							Description: "Validation is percent of dataset rows which would be used to compute the objective during hyper parameter search phase. Only used if we do not do cross validation. default is 10% of the data, if we do not have cross validation. default is 0% of the data, if we do cross validation.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"test": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Test is percent of dataset rows which would be used to compute the objective during kubebuilder:default:=20",
+							Description: "Test is percent of dataset rows which would be used to compute the objective during",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"splitPolicy": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Indicate if the dataset split should be stratified. kubebuilder:default:=\"stratified\"",
+							Description: "Indicate if the dataset split should be stratified.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -13573,7 +13565,7 @@ func schema_pkg_apis_training_v1alpha1_DataSplit(ref common.ReferenceCallback) c
 					},
 					"seed": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The seed to use for the estimator Default: 42 kubebuilder:default:=42",
+							Description: "The seed to use for the estimator Default: 42",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
@@ -13627,16 +13619,15 @@ func schema_pkg_apis_training_v1alpha1_DateTimePipelineSpec(ref common.Reference
 					},
 					"imputer": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The date time imputer. kubebuilder:default:=\"auto\"",
+							Description: "The date time imputer.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"expand": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=false",
-							Type:        []string{"boolean"},
-							Format:      "",
+							Type:   []string{"boolean"},
+							Format: "",
 						},
 					},
 				},
@@ -14045,7 +14036,7 @@ func schema_pkg_apis_training_v1alpha1_FreqSpec(ref common.ReferenceCallback) co
 				Properties: map[string]spec.Schema{
 					"interval": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Default to 1. kubebuilder:default:=1 optional",
+							Description: "Default to 1. optional",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -14235,7 +14226,7 @@ func schema_pkg_apis_training_v1alpha1_ImagePipelineSpec(ref common.ReferenceCal
 					},
 					"featurizer": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The date time imputer. kubebuilder:default:=\"auto\"",
+							Description: "The date time imputer.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -14590,28 +14581,28 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderSpec(ref common.Reference
 					},
 					"maxTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Max training time. kubebuilder:default:=60",
+							Description: "Max training time.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"maxModels": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Max model kubebuilder:default:=10",
+							Description: "Max model",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"accessMethod": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Access method specify the predictor access method. Default: ClusterPort kubebuilder:default:=\"ClusterPort\"",
+							Description: "Access method specify the predictor access method. Default: ClusterPort",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"autoScale": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify if the predictor should autoscale. Default : false kubebuilder:default:=false",
+							Description: "Specify if the predictor should autoscale. Default : false",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -14624,28 +14615,28 @@ func schema_pkg_apis_training_v1alpha1_ModelAutobuilderSpec(ref common.Reference
 					},
 					"trainers": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the number of trainers. Default 1 trainer. kubebuilder:default:=1",
+							Description: "Specify the number of trainers. Default 1 trainer.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"searchMethod": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Specify the search method kubebuilder:default:=\"random\"",
+							Description: "Specify the search method",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"aborted": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Set the true to abort the model auto builder kubebuilder:default:=false",
+							Description: "Set the true to abort the model auto builder",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"no-one\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15210,35 +15201,35 @@ func schema_pkg_apis_training_v1alpha1_ModelPipelineRunSpec(ref common.Reference
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"triggerName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "TriggerName denote the trigger that fired this pipeline run kubebuilder:default:=\"\"",
+							Description: "TriggerName denote the trigger that fired this pipeline run",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"pipelineName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "PipelineName is the name of the pipeline specification for this pipeline kubebuilder:default:=\"\"",
+							Description: "PipelineName is the name of the pipeline specification for this pipeline",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15417,7 +15408,7 @@ func schema_pkg_apis_training_v1alpha1_ModelPipelineSpec(ref common.ReferenceCal
 					},
 					"minScore": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Min score to move from stage to stage. kubebuilder:default:=0",
+							Description: "Min score to move from stage to stage.",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
@@ -15554,42 +15545,42 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 				Properties: map[string]spec.Schema{
 					"type": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Type specify the hyper parameter optimization search method. The only supported value is random kubebuilder:default:='random'",
+							Description: "Type specify the hyper parameter optimization search method. The only supported value is random",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"maxCost": {
 						SchemaProps: spec.SchemaProps{
-							Description: "MaxCost specify what is the maximum cost incurred before stopping model creations kubebuilder:default:=100",
+							Description: "MaxCost specify what is the maximum cost incurred before stopping model creations",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"maxTime": {
 						SchemaProps: spec.SchemaProps{
-							Description: "MaxTime specify what is the maximum time allocated to a study (in minutes). the cross validation stage. kubebuilder:default:=30",
+							Description: "MaxTime specify what is the maximum time allocated to a study (in minutes). the cross validation stage.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"maxModels": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Used for random search, the max models sampled. kubebuilder:default:=10",
+							Description: "Used for random search, the max models sampled.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"minScore": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The minimum score by which the search would stop kubebuilder:default:=0",
+							Description: "The minimum score by which the search would stop",
 							Type:        []string{"number"},
 							Format:      "double",
 						},
 					},
 					"trainers": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The desired number of trainers running during search. kubebuilder:default:=1",
+							Description: "The desired number of trainers running during search.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -15602,21 +15593,21 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 					},
 					"test": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Test indicate the desired number of models that should be passed to the testing phase. kubebuilder:default:=80",
+							Description: "Test indicate the desired number of models that should be passed to the testing phase.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"retainTop": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Indicate the total number of full models that would be retain in etcd. All other models are garbage collected (archived). models are sorted by thier objective score. kubebuilder:default:=10",
+							Description: "Indicate the total number of full models that would be retain in etcd. All other models are garbage collected (archived). models are sorted by thier objective score.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"retainedFor": {
 						SchemaProps: spec.SchemaProps{
-							Description: "RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H). kubebuilder:default:=60",
+							Description: "RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H).",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
@@ -15644,14 +15635,14 @@ func schema_pkg_apis_training_v1alpha1_ModelSearchSpec(ref common.ReferenceCallb
 					},
 					"votingEnsemble": {
 						SchemaProps: spec.SchemaProps{
-							Description: "VotingEnsample - If true, create a voting ensemble of the top 3 models. kubebuilder:default:=false",
+							Description: "VotingEnsample - If true, create a voting ensemble of the top 3 models.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"stackingEnsemble": {
 						SchemaProps: spec.SchemaProps{
-							Description: "StackingEnsemble If true, create a stacking ensemble of the top 3 models. kubebuilder:default:=true",
+							Description: "StackingEnsemble If true, create a stacking ensemble of the top 3 models.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -15673,28 +15664,28 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 				Properties: map[string]spec.Schema{
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Owner is the account name of the owner of this model kubebuilder:default:=\"no-one\"",
+							Description: "Owner is the account name of the owner of this model",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "VersionName is the product version name for this model kubebuilder:default:=\"latest\"",
+							Description: "VersionName is the product version name for this model",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"studyName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "StudyName reference the study for this model. IF empty, the model is stand alone kubebuilder:default:=\"\"",
+							Description: "StudyName reference the study for this model. IF empty, the model is stand alone",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "DatasetName refer to the dataset object for which the study is for. kubebuilder:default:=\"\" Required.",
+							Description: "DatasetName refer to the dataset object for which the study is for. Required.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -15745,63 +15736,63 @@ func schema_pkg_apis_training_v1alpha1_ModelSpec(ref common.ReferenceCallback) c
 					},
 					"tested": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Tested indicate if this model should be testedActual. Default is false. The study controller will set this to true if a model is the best model kubebuilder:default =false",
+							Description: "Tested indicate if this model should be testedActual. Default is false. The study controller will set this to true if a model is the best model",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"aborted": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Aborted indicate the desire to abort the model kubebuilder:default =false",
+							Description: "Aborted indicate the desire to abort the model",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"published": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Published is set when we want to wrap the model in a docker container kubebuilder:default =false",
+							Description: "Published is set when we want to wrap the model in a docker container",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"pushed": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Pushed indicate if the model image should be pushed into the remote docker registry. kubebuilder:default =false",
+							Description: "Pushed indicate if the model image should be pushed into the remote docker registry.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"reported": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Reported is set when a report should be created for this model kubebuilder:default =false",
+							Description: "Reported is set when a report should be created for this model",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"paused": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Paused is set when we want to pause the training kubebuilder:default =false",
+							Description: "Paused is set when we want to pause the training",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"profiled": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Profiled is set when we want to create model profile. kubebuilder:default =false",
+							Description: "Profiled is set when we want to create model profile.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"archived": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Archived is true when the model should be archived kubebuilder:default =false",
+							Description: "Archived is true when the model should be archived",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"forecasted": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Forecasted is true when the model should perform a forecast kubebuilder:default =false",
+							Description: "Forecasted is true when the model should perform a forecast",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -16467,14 +16458,14 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The version of the notebook kubebuilder:default:=\"latest\"",
+							Description: "The version of the notebook",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "User provided description kubebuilder:default:=\"\"",
+							Description: "User provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16487,14 +16478,14 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 					},
 					"imageName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "A reference to the container image repository for this notebook. kubebuilder:default:=\"\"",
+							Description: "A reference to the container image repository for this notebook.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"requirements": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Requirements python file kubebuilder:default:=\"\"",
+							Description: "Requirements python file",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16529,7 +16520,7 @@ func schema_pkg_apis_training_v1alpha1_NotebookSpec(ref common.ReferenceCallback
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"no-one\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16636,14 +16627,14 @@ func schema_pkg_apis_training_v1alpha1_NumericPipelineSpec(ref common.ReferenceC
 					},
 					"imputer": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Numerical var imputer kubebuilder:default:=\"auto\"",
+							Description: "Numerical var imputer",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"scaler": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Numeric var scaler kubebuilder:default:=\"auto\"",
+							Description: "Numeric var scaler",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16935,7 +16926,7 @@ func schema_pkg_apis_training_v1alpha1_ReportSpec(ref common.ReferenceCallback) 
 				Properties: map[string]spec.Schema{
 					"versionName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "VersionName is the data product version name for this report. kubebuilder:default:=\"latest\"",
+							Description: "VersionName is the data product version name for this report.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16962,7 +16953,7 @@ func schema_pkg_apis_training_v1alpha1_ReportSpec(ref common.ReferenceCallback) 
 					},
 					"format": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Format specify the report format. default is pdf kubebuilder:default:=pdf",
+							Description: "Format specify the report format. default is pdf",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -16976,7 +16967,7 @@ func schema_pkg_apis_training_v1alpha1_ReportSpec(ref common.ReferenceCallback) 
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"no-one\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17206,7 +17197,7 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					},
 					"description": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Description is user provided description kubebuilder:default:=\"\"",
+							Description: "Description is user provided description",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17219,7 +17210,7 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					},
 					"datasetName": {
 						SchemaProps: spec.SchemaProps{
-							Description: "DatasetName refer to the dataset object for which the study is for. kubebuilder:default:=\"\" Required.",
+							Description: "DatasetName refer to the dataset object for which the study is for. Required.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17305,7 +17296,7 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					},
 					"modelImagePushed": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Set to true if you want the system to push model image to remote docker registry kubebuilder:default:=false",
+							Description: "Set to true if you want the system to push model image to remote docker registry",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -17324,7 +17315,7 @@ func schema_pkg_apis_training_v1alpha1_StudySpec(ref common.ReferenceCallback) c
 					},
 					"owner": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The owner account name kubebuilder:default:=\"\"",
+							Description: "The owner account name",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17534,21 +17525,21 @@ func schema_pkg_apis_training_v1alpha1_SuccessiveHalvingOptions(ref common.Refer
 				Properties: map[string]spec.Schema{
 					"maxBudget": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The maximum budget allocated to each model during SH search. The default max budget is 81 kubebuilder:default:=81",
+							Description: "The maximum budget allocated to each model during SH search. The default max budget is 81",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"eliminationRate": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The rate of elimination during SH search, such that only 1/rate of models are promoted to the next half kubebuilder:default:=3",
+							Description: "The rate of elimination during SH search, such that only 1/rate of models are promoted to the next half",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"modality": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The modality type. The default modality is based on the type of models For deep models - we use epocs. For classical models - we use data kubebuilder:default:=\"epocs\"",
+							Description: "The modality type. The default modality is based on the type of models For deep models - we use epocs. For classical models - we use data",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17644,28 +17635,28 @@ func schema_pkg_apis_training_v1alpha1_TextPipelineSpec(ref common.ReferenceCall
 					},
 					"stopwords": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, the controller will Add stop word handling to the text pipeline. kubebuilder:default:=true",
+							Description: "If true, the controller will Add stop word handling to the text pipeline.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"pos": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=true If true, the controller will Add part of speech handling to the text pipeline.",
+							Description: "If true, the controller will Add part of speech handling to the text pipeline.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"lemma": {
 						SchemaProps: spec.SchemaProps{
-							Description: "If true, the controller will Add lemma handling to the text pipeline. kubebuilder:default:=true",
+							Description: "If true, the controller will Add lemma handling to the text pipeline.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
 					},
 					"stem": {
 						SchemaProps: spec.SchemaProps{
-							Description: "kubebuilder:default:=true If true, the controller will Add stemmer handling to the text pipeline.",
+							Description: "If true, the controller will Add stemmer handling to the text pipeline.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -17692,21 +17683,21 @@ func schema_pkg_apis_training_v1alpha1_TrainingResourceRequest(ref common.Refere
 				Properties: map[string]spec.Schema{
 					"gpu": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Gpu specify the desired gpu requirements.  will be compared kubebuilder:default:=\"M\"",
+							Description: "Gpu specify the desired gpu requirements.  will be compared",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"cpu": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Cpu specify the cpu requirements will be compared kubebuilder:default:=\"M\"",
+							Description: "Cpu specify the cpu requirements will be compared",
 							Type:        []string{"string"},
 							Format:      "",
 						},
 					},
 					"mem": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Mem define the memory resource requirements will be compared kubebuilder:default:=\"M\"",
+							Description: "Mem define the memory resource requirements will be compared",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -17845,7 +17836,7 @@ func schema_pkg_apis_training_v1alpha1_TrainingStageSpec(ref common.ReferenceCal
 					},
 					"auto": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Auto defines if we move from stage to stage automatically. kubebuilder:default:=true",
+							Description: "Auto defines if we move from stage to stage automatically.",
 							Type:        []string{"boolean"},
 							Format:      "",
 						},
@@ -17935,7 +17926,7 @@ func schema_pkg_apis_training_v1alpha1_VideoPipelineSpec(ref common.ReferenceCal
 					},
 					"featurizer": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The date time imputer. kubebuilder:default:=\"auto\"",
+							Description: "The date time imputer.",
 							Type:        []string{"string"},
 							Format:      "",
 						},

@@ -129,15 +129,15 @@ type DataProductSpec struct {
 	// +optional
 	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,11,opt,name=dataLocation"`
 	// the notifier selector select the notifier for events that occur in the product life cycle.
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,12,opt,name=notifierName"`
 	// A reference to the workload class used when training or testing the model
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	ModelWorkloadClassName *string `json:"modelWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=modelWorkloadClassName"`
 	// A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	DataWorkloadClassName *string `json:"dataWorkloadClassName,omitempty" protobuf:"bytes,14,opt,name=dataWorkloadClassName"`
 	// Denote how many time a job is retry after failure

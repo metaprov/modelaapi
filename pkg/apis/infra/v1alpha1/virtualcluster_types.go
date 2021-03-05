@@ -63,7 +63,7 @@ type VirtualClusterSpec struct {
 	Nodes *int32 `json:"nodes,omitempty" protobuf:"varint,2,opt,name=nodes"`
 	// +kubebuilder:validation:Optional
 	// NodeClassName is the class of nodes or vm
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	NodeClassName *string `json:"nodeClassName,omitempty" protobuf:"bytes,3,opt,name=nodeClassName"`
 	// +kubebuilder:validation:Optional
@@ -75,7 +75,7 @@ type VirtualClusterSpec struct {
 	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,4,opt,name=gpus"`
 	// +kubebuilder:validation:Optional
 	// GpuClassName is the The class of gpu.
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	GpuClassName *string `json:"gpuClassName,omitempty" protobuf:"bytes,5,opt,name=gpuClassName"`
 	// +kubebuilder:validation:Optional
@@ -91,7 +91,7 @@ type VirtualClusterSpec struct {
 	//+optional
 	Spot *bool `json:"spot,omitempty" protobuf:"bytes,7,opt,name=spot"`
 	// ConnectionName refer to the name of the provider connection
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
 	// +kubebuilder:validation:Optional
 	// Owner is the account name of the owner of this cluster

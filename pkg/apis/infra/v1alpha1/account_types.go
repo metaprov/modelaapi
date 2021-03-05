@@ -101,23 +101,23 @@ type AccountSpec struct {
 	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
 	// +optional
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	FirstName *string `json:"firstName,omitempty" protobuf:"bytes,5,opt,name=firstName"`
 	// LastName is the user last name
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	// +optional
 	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
 	// Email specify the email of the user
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
 	Email *string `json:"email,omitempty" protobuf:"bytes,7,opt,name=email"`
 	// Phone specify the phone of the user
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	Phone *string `json:"phone,omitempty" protobuf:"bytes,8,opt,name=phone"`

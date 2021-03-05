@@ -67,12 +67,12 @@ type VirtualBucketSpec struct {
 	// User provided description
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Owner of the bucket
 	// +kubebuilder:validation:Optional
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }

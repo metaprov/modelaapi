@@ -63,7 +63,7 @@ type ConnectionSpec struct {
 	// +optional
 	TenantRef *corev1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,opt,name=tenantRef"`
 	// The connection category
-	// kubebuilder:default:="general"
+	// +kubebuilder:default:="general"
 	// +optional
 	Category *catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
 	// Provider specifies the name api provider (E.g. aws)
@@ -234,7 +234,7 @@ type MongoDbSpec struct {
 type MySqlSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// kubebuilder:default:=3306
+	// +kubebuilder:default:=3306
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -252,7 +252,7 @@ type OdbcSpec struct {
 type OracleSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// kubebuilder:default:=1521
+	// +kubebuilder:default:=1521
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -269,7 +269,7 @@ type OracleSpec struct {
 type PostgresSQLSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// kubebuilder:default:=5432
+	// +kubebuilder:default:=5432
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -282,7 +282,7 @@ type PostgresSQLSpec struct {
 type PrestoSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// kubebuilder:default:=8080
+	// +kubebuilder:default:=8080
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Catalog *string `json:"catalog,omitempty" protobuf:"bytes,3,opt,name=catalog"`
@@ -297,7 +297,7 @@ type PrestoSpec struct {
 type RedShiftSpec struct {
 	// +kubebuilder:default:=""
 	Hostname *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// kubebuilder:default:=5439
+	// +kubebuilder:default:=5439
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -323,7 +323,7 @@ type SnowFlakeSpec struct {
 type MSSqlServerSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// kubebuilder:default:=1433
+	// +kubebuilder:default:=1433
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`

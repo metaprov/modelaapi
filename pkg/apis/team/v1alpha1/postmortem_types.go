@@ -64,7 +64,7 @@ type PostMortemList struct {
 // TimeLineEvent
 type TimeLineEvent struct {
 	// +optional
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	Content *string `json:"content" protobuf:"bytes,1,opt,name=content"`
 	// +optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
@@ -96,15 +96,15 @@ type PostMortemSpec struct {
 	// +optional
 	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,5,rep,name=timeline"`
 	// Root cause
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	RootCause *string `json:"rootCause" protobuf:"bytes,6,opt,name=rootCause"`
 	// Summary of the post mortem
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	Summary *string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
 	// The owner account name
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

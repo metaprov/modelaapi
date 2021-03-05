@@ -70,11 +70,13 @@ spec:
               resource.
             properties:
               aborted:
-                description: Set the true to abort the model auto builder kubebuilder:default:=false
+                default: false
+                description: Set the true to abort the model auto builder
                 type: boolean
               accessMethod:
+                default: ClusterPort
                 description: 'Access method specify the predictor access method. Default:
-                  ClusterPort kubebuilder:default:="ClusterPort"'
+                  ClusterPort'
                 enum:
                 - cluster-port
                 - node-port
@@ -84,8 +86,9 @@ spec:
                 - none
                 type: string
               autoScale:
+                default: false
                 description: 'Specify if the predictor should autoscale. Default :
-                  false kubebuilder:default:=false'
+                  false'
                 type: boolean
               dataProductName:
                 description: DataProductName is the name of the data product
@@ -476,13 +479,15 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               maxModels:
-                description: Max model kubebuilder:default:=10
+                default: 10
+                description: Max model
                 format: int32
                 maximum: 512
                 minimum: 1
                 type: integer
               maxTime:
-                description: Max training time. kubebuilder:default:=60
+                default: 60
+                description: Max training time.
                 format: int32
                 maximum: 512
                 minimum: 1
@@ -535,7 +540,8 @@ spec:
                 - mdape
                 type: string
               owner:
-                description: The owner account name kubebuilder:default:="no-one"
+                default: no-one
+                description: The owner account name
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               path:
@@ -543,7 +549,8 @@ spec:
                 maxLength: 256
                 type: string
               searchMethod:
-                description: Specify the search method kubebuilder:default:="random"
+                default: random
+                description: Specify the search method
                 enum:
                 - random
                 - grid
@@ -575,7 +582,8 @@ spec:
                 - unknown
                 type: string
               trainers:
-                description: Specify the number of trainers. Default 1 trainer. kubebuilder:default:=1
+                default: 1
+                description: Specify the number of trainers. Default 1 trainer.
                 format: int32
                 type: integer
             type: object

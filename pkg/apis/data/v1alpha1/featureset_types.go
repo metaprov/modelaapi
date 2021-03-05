@@ -60,11 +60,11 @@ type Featureset struct {
 // FeaturesetSpec contain the desired state of a Featureset.
 type FeaturesetSpec struct {
 	// The product version of the featureset
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +optional
-	// kubebuilder:default:=""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Reference to the feature names of this featureset
