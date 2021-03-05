@@ -702,12 +702,12 @@ spec:
                       of the top 3 models.
                     type: boolean
                   test:
-                    default: 80
+                    default: 1
                     description: Test indicate the desired number of models that should
                       be passed to the testing phase.
                     format: int32
-                    maximum: 100
-                    minimum: 0
+                    maximum: 5
+                    minimum: 1
                     type: integer
                   trainers:
                     default: 1

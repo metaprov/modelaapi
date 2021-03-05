@@ -238,9 +238,9 @@ type ModelSearchSpec struct {
 	// +optional
 	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,7,opt,name=shOptions"`
 	// Test indicate the desired number of models that should be passed to the testing phase.
-	// +kubebuilder:default:=80
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=100
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=5
 	// +optional
 	Test *int32 `json:"test,omitempty" protobuf:"varint,8,opt,name=test"`
 	// Indicate the total number of full models that would be retain in etcd.
