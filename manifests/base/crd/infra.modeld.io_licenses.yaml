@@ -149,7 +149,6 @@ spec:
                 format: date-time
                 type: string
               trialStart:
-                default: ""
                 description: TrialStart is the start date for free trial
                 format: date-time
                 type: string

@@ -88,7 +88,6 @@ type LicenseSpec struct {
 	// +kubebuilder:default:=""
 	Email *string `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
 	// TrialStart is the start date for free trial
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TrialStart *metav1.Time `json:"trialStart,omitempty" protobuf:"bytes,5,opt,name=trialStart"`
 	// TrialEnd when free trial end

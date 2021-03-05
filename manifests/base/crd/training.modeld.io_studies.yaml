@@ -686,7 +686,7 @@ spec:
                         format: int32
                         type: integer
                       modality:
-                        default: epocs
+                        default: epochs
                         description: The modality type. The default modality is based
                           on the type of models For deep models - we use epocs. For
                           classical models - we use data
@@ -715,7 +715,7 @@ spec:
                     maximum: 50
                     type: integer
                   type:
-                    default: '''random'''
+                    default: random
                     description: Type specify the hyper parameter optimization search
                       method. The only supported value is random
                     enum:

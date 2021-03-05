@@ -142,12 +142,10 @@ type ModelSpec struct {
 	// +kubebuilder:validation:MinLength=1
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:MaxLength=63
 	// Required.

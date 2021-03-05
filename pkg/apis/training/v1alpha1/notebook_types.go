@@ -77,7 +77,7 @@ type NotebookSpec struct {
 	// User provided description
 	// +kubebuilder:default:=""
 	// +optional
-	// +kubebuilder:validation:MinLength=512
+	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// SchemaName relate a notebook to a schema.
 	// The schema object will be accessible from the notebook

@@ -191,7 +191,7 @@ type SuccessiveHalvingOptions struct {
 	// The modality type. The default modality is based on the type of models
 	// For deep models - we use epocs.
 	// For classical models - we use data
-	// +kubebuilder:default:="epocs"
+	// +kubebuilder:default:=epochs
 	// +optional
 	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,8,opt,name=modality"`
 }
@@ -201,7 +201,7 @@ type SuccessiveHalvingOptions struct {
 type ModelSearchSpec struct {
 	// Type specify the hyper parameter optimization search method.
 	// The only supported value is random
-	// +kubebuilder:default:='random'
+	// +kubebuilder:default:=random
 	// +optional
 	Type *SearchMethodName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// MaxCost specify what is the maximum cost incurred before

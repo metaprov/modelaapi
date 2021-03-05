@@ -74,7 +74,7 @@ spec:
                 description: Set the true to abort the model auto builder
                 type: boolean
               accessMethod:
-                default: ClusterPort
+                default: cluster-port
                 description: 'Access method specify the predictor access method. Default:
                   ClusterPort'
                 enum:
