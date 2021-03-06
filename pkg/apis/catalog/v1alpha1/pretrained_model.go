@@ -12,18 +12,13 @@ import (
 )
 
 // Pretrained model contain the metadata about a pretrained model
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type PretrainedModel struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              PretrainedModelSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // PretrainedModelList is a list of pretrained models
 type PretrainedModelList struct {

@@ -55,9 +55,6 @@ message ChannelStatus {
 }
 
 // Curtain represent an object which can be placed before or after predictor
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetRef.name"
@@ -92,7 +89,6 @@ message CurtainCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // CurtainList represent a list of Curtain resources
 message CurtainList {
@@ -252,9 +248,6 @@ message PredictionChannel {
 }
 
 // PredictionTemplate represents a prediction object
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
@@ -293,7 +286,6 @@ message PredictionPipelineCondition {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineList is a list of PredictionPipeline
 message PredictionPipelineList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -301,9 +293,8 @@ message PredictionPipelineList {
   repeated PredictionPipeline items = 2;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
@@ -312,8 +303,6 @@ message PredictionPipelineList {
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictionpipelineruns,singular=predictionpipelinerun,categories={inference,modeld}
 // PredictionPipelineRun represents a single run of the Prediction Pipeline
 message PredictionPipelineRun {
@@ -343,7 +332,6 @@ message PredictionPipelineRunCondition {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineRunList is a list of PredictionPipelineRun
 message PredictionPipelineRunList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -443,17 +431,14 @@ message PredictionPipelineStatus {
 }
 
 // Predictor represent an PredictorName API object
-// +k8s:openapi-gen=true
-// +genclient
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.port",description=""
 // +kubebuilder:printcolumn:name="Production",type="string",JSONPath=".spec.prod.modelName",description=""
 // +kubebuilder:printcolumn:name="Weight",type="string",JSONPath=".spec.prod.weight",description=""
 // +kubebuilder:printcolumn:name="Access",type="string",JSONPath=".spec.accessType",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
 message Predictor {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -494,7 +479,6 @@ message PredictorHealth {
   repeated int32 lastDailyPredictions = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // PredictorList represent a list of predictors
 message PredictorList {

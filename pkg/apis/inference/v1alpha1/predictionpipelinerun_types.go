@@ -47,9 +47,8 @@ type PredictionPipelineRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
@@ -58,8 +57,6 @@ type PredictionPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictionpipelineruns,singular=predictionpipelinerun,categories={inference,modeld}
 // PredictionPipelineRun represents a single run of the Prediction Pipeline
 type PredictionPipelineRun struct {
@@ -70,7 +67,6 @@ type PredictionPipelineRun struct {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineRunList is a list of PredictionPipelineRun
 type PredictionPipelineRunList struct {
 	metav1.TypeMeta `json:",inline" `

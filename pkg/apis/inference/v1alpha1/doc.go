@@ -1,4 +1,3 @@
 // +groupName=inference.modeld.io
-// +k8s:deepcopy-gen=package,register
-// +k8s:openapi-gen=true
+// +kubebuilder:object:generate=true
 package v1alpha1

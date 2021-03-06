@@ -34,11 +34,6 @@ type FeatureCondition struct {
 }
 
 // Feature represent a single feature in the feature store.
-// +genclient
-// +genclient:noStatus
-// +kubebuilder:object:root=true
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -53,7 +48,6 @@ type Feature struct {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // FeatureList contain a list of feature objects
 type FeatureList struct {
 	metav1.TypeMeta `json:",inline"`

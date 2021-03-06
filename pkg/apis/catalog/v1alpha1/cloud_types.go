@@ -12,10 +12,7 @@ import (
 )
 
 // Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
-// +genclient
-// +genclient:noStatus
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
 type Cloud struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -25,7 +22,6 @@ type Cloud struct {
 	Status CloudStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // CloudList contains a list of Cloud
 type CloudList struct {

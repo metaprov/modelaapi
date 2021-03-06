@@ -33,13 +33,10 @@ type ServingSiteCondition struct {
 }
 
 // ServingSite is a namespace used for serving
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
-// +kubebuilder:object:root=true
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modeld}
 type ServingSite struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -48,7 +45,6 @@ type ServingSite struct {
 	Status            ServingSiteStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ServingSiteList is a list of ServingSite
 type ServingSiteList struct {

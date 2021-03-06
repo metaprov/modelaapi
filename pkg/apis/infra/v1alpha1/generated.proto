@@ -21,9 +21,6 @@ option go_package = "v1alpha1";
 // Account represents a user or team in the system
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +genclient
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
@@ -57,7 +54,6 @@ message AccountCondition {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AccountList represent list of accounts.
 message AccountList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -255,11 +251,8 @@ message CassandraSpec {
 }
 
 // Connection define a connection to an external system (e.g. database, public cloud)
-// +genclient
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
 // +kubebuilder:printcolumn:name="StorageSecret",type="string",JSONPath=".spec.secretName",description=""
@@ -291,7 +284,6 @@ message ConnectionCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ConnectionList is a list of Connections.
 message ConnectionList {
@@ -554,10 +546,7 @@ message ImageRegistrySpec {
 }
 
 // Lab is a namespace used for training and data analysis operations.
-// +genclient
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Git SecretRepo",type="string",JSONPath=".spec.gitrepoName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -589,7 +578,6 @@ message LabCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // LabList is a list of labs
 message LabList {
@@ -638,11 +626,8 @@ message LabStatus {
   repeated LabCondition conditions = 1;
 }
 
-// +genclient
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
@@ -676,7 +661,6 @@ message LicenseCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // LicenseList is a list of License
 message LicenseList {
@@ -862,15 +846,12 @@ message MySqlSpec {
   optional string password = 5;
 }
 
-// +genclient
+// +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modeld}
-// +kubebuilder:object:root=true
 message Notifier {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -898,7 +879,6 @@ message NotifierCondition {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // NotifierList is a list of Notifiers
 message NotifierList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -1057,13 +1037,10 @@ message RedShiftSpec {
 }
 
 // ServingSite is a namespace used for serving
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
-// +kubebuilder:object:root=true
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modeld}
 message ServingSite {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1091,7 +1068,6 @@ message ServingSiteCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ServingSiteList is a list of ServingSite
 message ServingSiteList {
@@ -1223,13 +1199,10 @@ message SqlLightSpec {
   optional string fileName = 1;
 }
 
-// +genclient
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:openapi-gen=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modeld}
 // Tenant represents root tenant.
 message Tenant {
@@ -1258,7 +1231,6 @@ message TenantCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // TenantList represent list of tenants.
 message TenantList {
@@ -1297,14 +1269,11 @@ message TenantStatus {
   repeated TenantCondition conditions = 1;
 }
 
-// +genclient
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:openapi-gen=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
 // VirtualBucket represent a object storage location in the cloud or on-prem
 message VirtualBucket {
@@ -1333,7 +1302,6 @@ message VirtualBucketCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // VirtualBucketList is a list of VirtualBucket
 message VirtualBucketList {
@@ -1400,7 +1368,6 @@ message VirtualClusterCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // VirtualClusterList is a list of VirtualCluster
 message VirtualClusterList {
@@ -1480,14 +1447,11 @@ message VirtualClusterStatus {
   repeated VirtualClusterCondition conditions = 3;
 }
 
-// +genclient
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:openapi-gen=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=virtualvolumes,shortName=vol,singular=virtualvolume,categories={infra,modeld,all}
 // VirtualVolume represent a volume api object
 message VirtualVolume {
@@ -1516,7 +1480,6 @@ message VirtualVolumeCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // VirtualVolumeList is a list of mdvolumes
 message VirtualVolumeList {

@@ -17,11 +17,7 @@ const (
 )
 
 // MLFramework define the metadata about a machine learning framework
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Name",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modeld,all}
@@ -31,7 +27,6 @@ type MLFramework struct {
 	Spec              MLFrameworkSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // MLFrameworkList contains a list of MLFramework
 type MLFrameworkList struct {

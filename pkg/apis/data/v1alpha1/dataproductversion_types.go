@@ -41,11 +41,7 @@ type DataProductVersionCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.productRef.name",description=""
@@ -61,7 +57,6 @@ type DataProductVersion struct {
 	Status DataProductVersionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // DataProductVersionList contains a list of DataProductVersion
 type DataProductVersionList struct {

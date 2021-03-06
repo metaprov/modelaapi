@@ -34,9 +34,7 @@ type VirtualClusterCondition struct {
 	// Represents the latest available observations of a serving site state.
 }
 
-// +genclient
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modeld}
 //A VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
@@ -110,7 +108,6 @@ type VirtualClusterStatus struct {
 	Conditions []VirtualClusterCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // VirtualClusterList is a list of VirtualCluster
 type VirtualClusterList struct {

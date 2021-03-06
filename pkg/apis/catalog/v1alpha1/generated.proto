@@ -20,10 +20,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 option go_package = "v1alpha1";
 
 // Algorithm define the metadata about a machine learning algorithm.
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
@@ -38,7 +34,6 @@ message Algorithm {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AlgorithmList contains a list of Algorithm
 message AlgorithmList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -98,10 +93,7 @@ message CategoricalParameter {
 }
 
 // Cloud represent a cloud provider metadata. A cloud contains regions,datacenter,machine classes
-// +genclient
-// +genclient:noStatus
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:path=clouds,singular=cloud,categories={catalog,modeld,all}
 message Cloud {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -112,7 +104,6 @@ message Cloud {
   optional CloudStatus status = 3;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // CloudList contains a list of Cloud
 message CloudList {
@@ -234,11 +225,7 @@ message IntParameter {
 }
 
 // MLFramework define the metadata about a machine learning framework
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Name",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modeld,all}
@@ -248,7 +235,6 @@ message MLFramework {
   optional MLFrameworkSpec spec = 2;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // MLFrameworkList contains a list of MLFramework
 message MLFrameworkList {
@@ -312,18 +298,13 @@ message MachineClassCost {
 }
 
 // Pretrained model contain the metadata about a pretrained model
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 message PretrainedModel {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional PretrainedModelSpec spec = 2;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // PretrainedModelList is a list of pretrained models
 message PretrainedModelList {
@@ -339,8 +320,6 @@ message PretrainedModelSpec {
 }
 
 // PublicDataset represent the metadata about a public dataset
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
 // +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modeld,all}
@@ -351,7 +330,6 @@ message PublicDataset {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PublicDatasetList contains a list of PublicDataset
 message PublicDatasetList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -392,11 +370,7 @@ message Region {
 }
 
 // UserRoleClass specify the RBAC premission for a specific user role.
-// +genclient
-// +genclient:noStatus
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""
 // +kubebuilder:printcolumn:priority=0,name="Task",type=string,JSONPath=".spc.task",description="machine learning task",format=""
 message UserRoleClass {
@@ -405,7 +379,6 @@ message UserRoleClass {
   optional UserRoleClassSpec spec = 2;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // UserRoleClassList contains a list of UserRoleClass
 message UserRoleClassList {
@@ -426,11 +399,7 @@ message VizUri {
 }
 
 // WorkloadClass define a template for a trainer.
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modeld,all}
 message WorkloadClass {
@@ -440,7 +409,6 @@ message WorkloadClass {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // TrainerList contains a list of Trainer
 message WorkloadClassList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;

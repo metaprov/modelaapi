@@ -6,11 +6,7 @@ import (
 )
 
 // WorkloadClass define a template for a trainer.
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modeld,all}
 type WorkloadClass struct {
@@ -36,7 +32,6 @@ type WorkloadClassSpec struct {
 //==============================================================================
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // TrainerList contains a list of Trainer
 type WorkloadClassList struct {
 	metav1.TypeMeta `json:",inline"`

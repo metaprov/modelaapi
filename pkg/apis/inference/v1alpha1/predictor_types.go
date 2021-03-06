@@ -72,17 +72,14 @@ type PredictorCondition struct {
 }
 
 // Predictor represent an PredictorName API object
-// +k8s:openapi-gen=true
-// +genclient
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.port",description=""
 // +kubebuilder:printcolumn:name="Production",type="string",JSONPath=".spec.prod.modelName",description=""
 // +kubebuilder:printcolumn:name="Weight",type="string",JSONPath=".spec.prod.weight",description=""
 // +kubebuilder:printcolumn:name="Access",type="string",JSONPath=".spec.accessType",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
 type Predictor struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -91,7 +88,6 @@ type Predictor struct {
 	Status            PredictorStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // PredictorList represent a list of predictors
 type PredictorList struct {

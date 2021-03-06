@@ -90,9 +90,8 @@ type StudyCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:subresource:status
+// +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
@@ -103,8 +102,6 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="TotalTrainers",type="string",JSONPath=".status.totalTrainers"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:subresource:status
-// +kubebuilder:object:root=true
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
 // Study represent a search for the best machine learning model using automl.
 type Study struct {
@@ -407,7 +404,6 @@ type StudyStatus struct {
 }
 
 // model cv results
-// +k8s:deepcopy-gen=true
 type ModelResult struct {
 	// +optional
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
@@ -423,7 +419,6 @@ type ModelResult struct {
 // StudyList
 //==============================================================================
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // StudyList is a list of Study
 type StudyList struct {

@@ -44,9 +44,6 @@ type PredictionPipelineCondition struct {
 }
 
 // PredictionTemplate represents a prediction object
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
@@ -66,7 +63,6 @@ type PredictionPipeline struct {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // PredictionPipelineList is a list of PredictionPipeline
 type PredictionPipelineList struct {
 	metav1.TypeMeta `json:",inline" `

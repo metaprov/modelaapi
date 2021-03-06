@@ -37,10 +37,6 @@ type DataProductCondition struct {
 }
 
 // DataProduct represent a single data product in the system
-// +genclient
-// +genclient:noStatus
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -153,7 +149,6 @@ type DataProductStatus struct {
 	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // DataProductList contains a list of DataProducts
 type DataProductList struct {

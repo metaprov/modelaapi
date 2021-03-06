@@ -30,11 +30,8 @@ type ConnectionCondition struct {
 }
 
 // Connection define a connection to an external system (e.g. database, public cloud)
-// +genclient
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
 // +kubebuilder:printcolumn:name="StorageSecret",type="string",JSONPath=".spec.secretName",description=""
@@ -47,7 +44,6 @@ type Connection struct {
 	Status            ConnectionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ConnectionList is a list of Connections.
 type ConnectionList struct {

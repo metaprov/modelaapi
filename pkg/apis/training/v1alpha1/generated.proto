@@ -402,11 +402,7 @@ message Measurement {
   optional double value = 2;
 }
 
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
@@ -433,9 +429,6 @@ message Model {
   optional ModelStatus status = 3;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -474,7 +467,6 @@ message ModelAutobuilderCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ModelAutobuilderList represent a list of ModelAutoBuilders
 message ModelAutobuilderList {
@@ -668,7 +660,6 @@ message ModelCondition {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // ModelList is a list of models.
 message ModelList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
@@ -676,9 +667,6 @@ message ModelList {
   repeated Model items = 2;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -711,7 +699,6 @@ message ModelPipelineCondition {
   optional string message = 5;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ModelPipelineList represent list of pipelines
 message ModelPipelineList {
@@ -720,9 +707,6 @@ message ModelPipelineList {
   repeated ModelPipeline items = 2;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -758,7 +742,6 @@ message ModelPipelineRunCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ModelPipelineRunList represent list of pipelineruns
 message ModelPipelineRunList {
@@ -918,7 +901,6 @@ message ModelPipelineStatus {
 }
 
 // model cv results
-// +k8s:deepcopy-gen=true
 message ModelResult {
   // +optional
   optional string name = 1;
@@ -1243,9 +1225,6 @@ message NNLayerParameter {
   optional string value = 2;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -1278,7 +1257,6 @@ message NotebookCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // NotebookList represent list of notebooks
 message NotebookList {
@@ -1287,9 +1265,6 @@ message NotebookList {
   repeated Notebook items = 2;
 }
 
-// +genclient
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -1323,7 +1298,6 @@ message NotebookRunCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // NotebookRunList is a list of notebook runs
 message NotebookRunList {
@@ -1509,17 +1483,14 @@ message ReleaseStageSpec {
   optional string predictorName = 1;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.reportType"
 // +kubebuilder:printcolumn:name="Uri",type="string",JSONPath=".status.uri"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reports,singular=report,categories={training,modeld,all}
 // ReportName represent a report object. A report is a pdf report which contain images and tables about another
 // object
@@ -1549,7 +1520,6 @@ message ReportCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // ReportList is a list of reports
 message ReportList {
@@ -1616,9 +1586,8 @@ message ReportStatus {
   repeated ReportCondition conditions = 6;
 }
 
-// +genclient
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:subresource:status
+// +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
@@ -1629,8 +1598,6 @@ message ReportStatus {
 // +kubebuilder:printcolumn:name="TotalTrainers",type="string",JSONPath=".status.totalTrainers"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:subresource:status
-// +kubebuilder:object:root=true
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
 // Study represent a search for the best machine learning model using automl.
 message Study {
@@ -1664,7 +1631,6 @@ message StudyCondition {
   optional string message = 6;
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // StudyList is a list of Study
 message StudyList {

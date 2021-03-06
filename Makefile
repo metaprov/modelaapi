@@ -96,7 +96,7 @@ install-gen:
 	
 
 .PHONY: generate
-generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy update-codegen
+generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy 
 
 
 .PHONY: install-crd

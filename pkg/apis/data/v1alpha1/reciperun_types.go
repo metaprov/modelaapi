@@ -38,12 +38,7 @@ type RecipeRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// +genclient
-// +genclient:noStatus
-
 // +kubebuilder:object:root=true
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -60,7 +55,6 @@ type RecipeRun struct {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // RecipeRunList contains a list of Recipes
 type RecipeRunList struct {
 	metav1.TypeMeta `json:",inline"`

@@ -1,5 +1,3 @@
 // +groupName=infra.modeld.io
-// +k8s:deepcopy-gen=package,register
-// +k8s:openapi-gen=true
-// +webhook
+// +kubebuilder:object:generate=true
 package v1alpha1

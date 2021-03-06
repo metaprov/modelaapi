@@ -33,10 +33,6 @@ type LabelingPipelineCondition struct {
 }
 
 // LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -50,7 +46,6 @@ type LabelingPipeline struct {
 	Status LabelingPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // LabelingPipelineList contain the list of LabelingPipeline
 type LabelingPipelineList struct {

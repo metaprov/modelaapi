@@ -26,11 +26,7 @@ const (
 )
 
 // UserRoleClass specify the RBAC premission for a specific user role.
-// +genclient
-// +genclient:noStatus
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
-// +k8s:openapi-gen=true
 // +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""
 // +kubebuilder:printcolumn:priority=0,name="Task",type=string,JSONPath=".spc.task",description="machine learning task",format=""
 type UserRoleClass struct {
@@ -39,7 +35,6 @@ type UserRoleClass struct {
 	Spec              UserRoleClassSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // UserRoleClassList contains a list of UserRoleClass
 type UserRoleClassList struct {

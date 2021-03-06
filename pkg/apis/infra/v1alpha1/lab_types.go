@@ -29,10 +29,7 @@ type LabCondition struct {
 }
 
 // Lab is a namespace used for training and data analysis operations.
-// +genclient
-// +k8s:openapi-gen=true
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Git SecretRepo",type="string",JSONPath=".spec.gitrepoName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -74,7 +71,6 @@ type LabSpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // LabList is a list of labs
 type LabList struct {

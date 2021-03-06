@@ -5,10 +5,6 @@ import (
 )
 
 // Algorithm define the metadata about a machine learning algorithm.
-// +genclient
-// +genclient:noStatus
-// +k8s:openapi-gen=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
@@ -23,7 +19,6 @@ type Algorithm struct {
 }
 
 // +kubebuilder:object:root=true
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // AlgorithmList contains a list of Algorithm
 type AlgorithmList struct {
 	metav1.TypeMeta `json:",inline"`
