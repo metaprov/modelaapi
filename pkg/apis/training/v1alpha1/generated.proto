@@ -1734,7 +1734,7 @@ message StudySpec {
   optional bool aborted = 13;
 
   // Reported is set when we want to create model report
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +optional
   optional bool reported = 14;
 
@@ -1744,7 +1744,7 @@ message StudySpec {
   optional bool paused = 15;
 
   // Profiled is set when we want to create model profile and study profile.
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +optional
   optional bool profiled = 16;
 

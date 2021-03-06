@@ -516,12 +516,12 @@ spec:
                     type: object
                 type: object
               profiled:
-                default: false
+                default: true
                 description: Profiled is set when we want to create model profile
                   and study profile.
                 type: boolean
               reported:
-                default: false
+                default: true
                 description: Reported is set when we want to create model report
                 type: boolean
               search:

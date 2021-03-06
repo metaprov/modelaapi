@@ -321,7 +321,7 @@ type StudySpec struct {
 	// +optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Reported is set when we want to create model report
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,14,opt,name=reported"`
 	// Paused is set when we want to pause the training
@@ -329,7 +329,7 @@ type StudySpec struct {
 	// +optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,15,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,16,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
