@@ -101,19 +101,19 @@ message CurtainList {
 message CurtainSpec {
   // User provided description
   // +kubebuilder:default =""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string description = 1;
 
   // User provided description
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
   // The product of the resource
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string servingsiteName = 3;
 
   // The dataset that store the wizard answers
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
   // The wizards him self. This is a reference to one or more wizards objects.
@@ -124,7 +124,7 @@ message CurtainSpec {
   optional string question = 6;
 
   // The owner account name
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 7;
 }
 
@@ -137,7 +137,7 @@ message CurtainStatus {
 message CurtainTemplateSpec {
   // Standard object's metadata.
   // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional CurtainSpec spec = 2;
@@ -149,7 +149,7 @@ message DriftCheckSpec {
   optional string cronExpr = 1;
 
   // The drift threshold.
-  // +optional
+  // +kubebuilder:validation:Optional
   optional double treshold = 2;
 
   // The notifier to invoke in case of
@@ -166,40 +166,40 @@ message ModelDeploymentSpec {
 
   // number of replicas of the current model
   // Default: 1
-  // +optional
+  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Minimum=0
   optional int32 replicas = 2;
 
   // Does the current model pods needs autoscaling. If yes we will use HPA.
   // Default is false
-  // +optional
+  // +kubebuilder:validation:Optional
   optional bool autoscale = 3;
 
   // How much traffic to the current model
   // Default: 100.
-  // +optional
+  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
   optional int32 weight = 4;
 
   // Denotes if this deployment is canary. This must be false for the prod deployment.
   // Default: false
-  // +optional
+  // +kubebuilder:validation:Optional
   optional bool canary = 5;
 
   // Denotes if the model is a shadow. This must be false for the prod deployment.
   // Default: false
-  // +optional
+  // +kubebuilder:validation:Optional
   optional bool shadow = 6;
 
   // Filter donotes a selection on the model
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string filter = 7;
 
   // If the deployment is canary, the metric define how to evaluate the canary.
   // Default: none
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated string canaryMetrics = 8;
 }
 
@@ -231,19 +231,19 @@ message ModelDeploymentStatus {
 // The specific of a prediction channel
 message PredictionChannel {
   // Define a prediction via table
-  // +optional
+  // +kubebuilder:validation:Optional
   optional TableChannelSpec table = 1;
 
   // Define a prediction via a bot
-  // +optional
+  // +kubebuilder:validation:Optional
   optional BotChannelSpec bot = 2;
 
   // Define a prediction via a bot
-  // +optional
+  // +kubebuilder:validation:Optional
   optional BucketChannelSpec bucket = 3;
 
   // Define a streaming spec for the predictor
-  // +optional
+  // +kubebuilder:validation:Optional
   optional StreamingChannelSpec streaming = 4;
 }
 
@@ -354,37 +354,37 @@ message PredictionPipelineRunSpec {
   optional string objective = 3;
 
   // DatasetName is where we are using a dataset name. This can be dataset name
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
   // Input is of the input if using direct input file
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
   // Output is the key in the bucket for storing all the prediction output
-  // +optional
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
   // Owner of the run
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 7;
 }
 
 // PredictionPipelineRunStatus is the observed state of a PredictionTemplate
 message PredictionPipelineRunStatus {
   // PredictionPipelineRun score based on the objective.
-  // +optional
+  // +kubebuilder:validation:Optional
   optional double score = 2;
 
   // The phase of the prediction
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string phase = 3;
 
   // StartTime is the times that this prediction job started
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
 
   // CompletionTime is the time that this prediction job finished
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
 
   // +optional
@@ -406,24 +406,24 @@ message PredictionPipelineSpec {
   optional string objective = 3;
 
   // DatasetName is where we are using a dataset name. This can be dataset name
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
   // Input is the DataLocation of the input if using direct input file
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
   // Output is the key in the bucket for storing all the prediction output
-  // +optional
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
   // The owner account name
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 7;
 }
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 message PredictionPipelineStatus {
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string phase = 3;
 
   // +optional
@@ -490,79 +490,79 @@ message PredictorList {
 // PredictorSpec define the desired state of the predictor
 message PredictorSpec {
   // The account name of the owner of this predictor
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string ownerName = 1;
 
   // User provided description
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:default =""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string description = 2;
 
   // The product that this predictor serve.
   optional k8s.io.api.core.v1.ObjectReference productRef = 3;
 
   // The serving site that owns the
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 4;
 
   // Service port specify the predictor port.
   // Default: 8080
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 port = 5;
 
   // This is the path relative to the ingress path
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:validation:MinLength=1
   // Default: /predict
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string path = 6;
 
   // The access method specified how external clients will access the predictor
   // Default: ClusterPort
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string accessType = 7;
 
   // A template for the predictor pod. The system will create the deployment based on this template.
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.PodTemplate template = 8;
 
   // Production model deployment
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated ModelDeploymentSpec models = 9;
 
   // How much do we increment the warm up traffic
-  // +optional
+  // +kubebuilder:validation:Optional
   optional DriftCheckSpec driftCheck = 12;
 
   // Denotes the progressive spec
   // What metric to use when comparing the candidate to the current
-  // +optional
+  // +kubebuilder:validation:Optional
   optional ProgressiveSpec progressive = 13;
 
   // The key in the bucket for storing all the predictor artifacts.
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:MinLength=1
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string artifactsFolder = 14;
 
   // set of input channel, the predictor will watch those channels for predictions
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated PredictionChannel inputChannels = 15;
 
   // set of output channels, the predictor will
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated PredictionChannel outputChannels = 16;
 
   // The owner account name
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 17;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
 message PredictorStatus {
   // Model one status
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated ModelDeploymentStatus modelStatus = 1;
 
   repeated PredictorCondition conditions = 2;
@@ -586,7 +586,7 @@ message PredictorStatus {
 message ProgressiveSpec {
   // How long in seconds does the warm up period started
   // This is used only during progressive deployment
-  // +optional
+  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
   optional int32 warmup = 1;
@@ -595,11 +595,11 @@ message ProgressiveSpec {
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Minimum=1
   // Default : 10
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 trafficIncrement = 2;
 
   // What metric to use when comparing the candidate to the current
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated string canaryMetrics = 3;
 }
 

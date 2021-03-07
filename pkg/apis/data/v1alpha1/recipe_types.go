@@ -28,13 +28,13 @@ type RecipeCondition struct {
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
-	// +optional
+	// +kubebuilder:validation:Optional
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,3,opt,name=lastTransitionTime"`
 	// The reason for the condition's last transition.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
 	// A human readable message indicating details about the transition.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
@@ -66,7 +66,7 @@ type RecipeList struct {
 type RecipeSpec struct {
 	// Owner is the owner of the recipe
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the recipe
 	// +kubebuilder:validation:MaxLength=63
@@ -75,7 +75,7 @@ type RecipeSpec struct {
 	// Description is the user provided description
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Input is the input recipe spec
 	Input RecipeInputSpec `json:"input,omitempty" protobuf:"bytes,4,opt,name=input"`
@@ -84,10 +84,10 @@ type RecipeSpec struct {
 	// Output is the desired output
 	Output RecipeOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Sample specify the sampling paramters when viewing the recipe
-	// +optional
+	// +kubebuilder:validation:Optional
 	Sample *RecipeSampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
 	// WorkloadClassName is the name of the workload used to execute this recipe
-	// +optional
+	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 }
 
@@ -405,10 +405,10 @@ type RecipeSampleSpec struct {
 	//Type is the sampling type
 	Type SamplingType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Rows is the number of rows. Default is 500
-	// +optional
+	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,2,opt,name=rows"`
 	// Filter formula. Valid only if the sample is a filter.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Filter *string `json:"string,omitempty" protobuf:"bytes,3,opt,name=filter"`
 }
 
@@ -426,11 +426,11 @@ type RecipeInputSpec struct {
 // RecipeOutputSpec for the recipe output
 type RecipeOutputSpec struct {
 	// CreateDataset if true, create a new dataset when the recipe is done.
-	// +optional
+	// +kubebuilder:validation:Optional
 	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,1,opt,name=createDataset"`
 
 	// DatasetName is the name of the dataset output to the recipe
-	// +optional
+	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
 
 	// Location is the data location folder of the actual data resides.

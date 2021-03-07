@@ -33,16 +33,22 @@ type CloudList struct {
 // CloudSpec define the attribute of a single cloud provider (E.g. AWS)
 type CloudSpec struct {
 	// DefaultRegionName is the default region.
+	// +kubebuilder:validation:Optional
 	DefaultRegionName string `json:"defaultRegionRef,omitempty" protobuf:"bytes,1,opt,name=defaultRegionName"`
 	// DefaultMachineClassName is the default machine class. Used when allocating new machine on this provider
+	// +kubebuilder:validation:Optional
 	DefaultMachineClassName string `json:"defaultMachineClassRef,omitempty" protobuf:"bytes,2,opt,name=defaultMachineClassName"`
 	// DefaultGpuClassName is the default gpu class. Used when allocating new gpu on this provider
+	// +kubebuilder:validation:Optional
 	DefaultGpuClassName string `json:"defaultGpuClassRef,omitempty" protobuf:"bytes,3,opt,name=defaultGpuClassName"`
 	// MachineClasses defines the types of machines in this provider
+	// +kubebuilder:validation:Optional
 	MachineClasses []MachineClass `json:"machineClasses,omitempty" protobuf:"bytes,4,rep,name=machineClasses"`
 	// GPUClasses define the type of GPUs offered by this provider
+	// +kubebuilder:validation:Optional
 	GpuClasses []GpuClass `json:"gpuClasses,omitempty" protobuf:"bytes,5,rep,name=gpuClasses"`
 	// Regions define the type of regions offered by this provider
+	// +kubebuilder:validation:Optional
 	Regions []Region `json:"regions,omitempty" protobuf:"bytes,6,rep,name=regions"`
 }
 

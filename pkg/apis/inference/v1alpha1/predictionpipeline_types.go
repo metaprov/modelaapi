@@ -82,21 +82,21 @@ type PredictionPipelineSpec struct {
 	// The objective metric used to score
 	Objective *catalog.Metric `json:"objective" protobuf:"bytes,3,opt,name=objective"`
 	// DatasetName is where we are using a dataset name. This can be dataset name
-	// +optional
+	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Input is the DataLocation of the input if using direct input file
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
 	// Output is the key in the bucket for storing all the prediction output
-	// +optional
+	// +kubebuilder:validation:Optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// The owner account name
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 type PredictionPipelineStatus struct {
-	// +optional
+	// +kubebuilder:validation:Optional
 	Phase PredictionPipelinePhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	//+optional
 	Conditions []PredictionPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`

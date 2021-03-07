@@ -84,61 +84,62 @@ type ImageLocation struct {
 //DataProductSpec defines the desired state of a data product
 type DataProductSpec struct {
 	// The data product owner
-	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:default ="no-one"
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The tenant that own the data product.
 	// Default to default tenant.
-	// +optional
+	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
 	// Stake holders refer to a list of stackholders, which have interest in the product.
-	// +optional
+	// +kubebuilder:validation:Optional
 	StakeHolders []StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,3,rep,name=stakeholders"`
 	// GitLocation is the github repository for all the artifacts for this product
-	// +optional
+	// +kubebuilder:validation:Optional
 	GitLocation *GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
 	// ImageLocation is the image repository that stores the models images for the product versions
-	// Required.
+	// +kubebuilder:validation:Optional
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
 	// LabName is the Lab where models of this products are trained
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName" protobuf:"bytes,7,opt,name=labName"`
 	// ServingSiteName is the serving site where predictors of this product are deployed
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// Required.
+	// +kubebuilder:validation:Optional
 	ServingSiteName *string `json:"servingSiteName" protobuf:"bytes,8,opt,name=servingSiteName"`
 	// Task denote the machine learning task of the product (classification/regression,etc.)
-	// Required.
+	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 	// User provided description
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,10,opt,name=description"`
 	//This folder contain the root location for all the artifacts from the product.
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,11,opt,name=dataLocation"`
 	// the notifier selector select the notifier for events that occur in the product life cycle.
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,12,opt,name=notifierName"`
 	// A reference to the workload class used when training or testing the model
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	ModelWorkloadClassName *string `json:"modelWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=modelWorkloadClassName"`
 	// A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataWorkloadClassName *string `json:"dataWorkloadClassName,omitempty" protobuf:"bytes,14,opt,name=dataWorkloadClassName"`
 	// Denote how many time a job is retry after failure
 	// +kubebuilder:default:=3
-	// +optional
+	// +kubebuilder:validation:Optional
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
 }
 

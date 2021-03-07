@@ -59,7 +59,7 @@ type FeaturesetSpec struct {
 	// +kubebuilder:default:=""
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
@@ -67,7 +67,7 @@ type FeaturesetSpec struct {
 	Features []string `json:"features,omitempty" protobuf:"bytes,3,rep,name=features"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 

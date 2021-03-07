@@ -57,25 +57,30 @@ type DataPipelineList struct {
 type DataPipelineSpec struct {
 	// VersionName is the data product version of the data pipeline
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// Description of the data pipeline
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// InputDatasets is the collection of input dataset names to the data pipelines
+	// +kubebuilder:validation:Optional
 	InputDatasets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputDatasets"`
 	// RecipeNames is the recipe for this pipeline.
+	// +kubebuilder:validation:Optional
 	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
 	// +kubebuilder:default =""
 	// The output file of the pipeline
+	// +kubebuilder:validation:Optional
 	OutputDatasetName *string `json:"outputDatasetName,omitempty" protobuf:"bytes,5,opt,name=outputDatasetName"`
 	// Schedule is a cron field to schedule the data pipeline.
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// Owner of this data pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }
 

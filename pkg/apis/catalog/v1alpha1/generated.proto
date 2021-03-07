@@ -44,51 +44,51 @@ message AlgorithmList {
 // AlgorithmSpec describes the attributes of an machine learning algorithm
 message AlgorithmSpec {
   // FrameworkName is a reference to library
-  // +optional
+  // +kubebuilder:validation:Required
   optional string frameworkName = 1;
 
   // Description is the description of the algorithm
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string description = 2;
 
   // URL is a url to the html page describing the algorithm
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string url = 3;
 
   // Task is the machine learning task (binary classification / regression)
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string task = 4;
 
   // Sparse indicate if this algorithm can deal with sparse data
-  // +optional
+  // +kubebuilder:validation:Optional
   optional bool sparse = 5;
 
   // IntegerParameters is the list of integer hyper parameter ranges.
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated IntParameter integerParameters = 6;
 
   // FloatParameters is the list of float hyper parameters ranges
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated FloatParameter floatParameters = 7;
 
   // CategoricalParameters is the list of categorical hyper parameters ranges
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated CategoricalParameter categoricalParameters = 8;
 }
 
 // CategoricalParameter contain the specification of an categorical hyper parameter
 message CategoricalParameter {
   // Name is the name of the hyper parameter
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string name = 1;
 
   // DefaultValue if the default categorical value
   optional string defaultValue = 2;
 
   // Enums defines the list of values
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated string enums = 3;
 }
 
@@ -115,21 +115,27 @@ message CloudList {
 // CloudSpec define the attribute of a single cloud provider (E.g. AWS)
 message CloudSpec {
   // DefaultRegionName is the default region.
+  // +kubebuilder:validation:Optional
   optional string defaultRegionName = 1;
 
   // DefaultMachineClassName is the default machine class. Used when allocating new machine on this provider
+  // +kubebuilder:validation:Optional
   optional string defaultMachineClassName = 2;
 
   // DefaultGpuClassName is the default gpu class. Used when allocating new gpu on this provider
+  // +kubebuilder:validation:Optional
   optional string defaultGpuClassName = 3;
 
   // MachineClasses defines the types of machines in this provider
+  // +kubebuilder:validation:Optional
   repeated MachineClass machineClasses = 4;
 
   // GPUClasses define the type of GPUs offered by this provider
+  // +kubebuilder:validation:Optional
   repeated GpuClass gpuClasses = 5;
 
   // Regions define the type of regions offered by this provider
+  // +kubebuilder:validation:Optional
   repeated Region regions = 6;
 }
 
@@ -154,23 +160,23 @@ message DataCenter {
 // FloatParameter contain the specification of an float hyper parameter
 message FloatParameter {
   // Name is the name of the hyper parameter
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string name = 1;
 
   // Min is the minimum value
-  // +optional
+  // +kubebuilder:validation:Optional
   optional double min = 3;
 
   // Max is the maximum value
-  // +optional
+  // +kubebuilder:validation:Optional
   optional double max = 4;
 
   // Default float value
-  // +optional
+  // +kubebuilder:validation:Optional
   optional double defaultValue = 5;
 
   // Log specify if this hyper paramer is logartimic
-  // +optional
+  // +kubebuilder:validation:Optional
   optional bool log = 6;
 }
 
@@ -205,19 +211,19 @@ message GpuClassCost {
 // IntParameter contain the specification of an integer hyper parameter
 message IntParameter {
   // Name is the name of the hyper parameter
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string name = 1;
 
   // Type is the datatype of the parameter
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string type = 2;
 
   // Min is the minimum value of the hyper parameter range
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 min = 3;
 
   // Max is the maximum value of the hyper parameter range
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 max = 4;
 
   // DefaultValue is the default value of the parameter
@@ -246,18 +252,21 @@ message MLFrameworkList {
 // MLFramework is the spec for a specific version of machine learning framework (e.g. tensorflow)
 message MLFrameworkSpec {
   // URL for the home page of the mlframework
+  // +kubebuilder:validation:Optional
   optional string url = 1;
 
   // Comments of the framework
   // +kubebuilder:default =""
-  // +Optional
+  // +kubebuilder:validation:Optional
   optional string description = 2;
 
   // The current version of the mlframework
   // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
   optional string version = 3;
 
   // Lang is the framework lang
+  // +kubebuilder:validation:Optional
   optional string lang = 4;
 }
 
@@ -338,15 +347,20 @@ message PublicDatasetList {
 }
 
 message PublicDatasetSpec {
+  // +kubebuilder:validation:Optional
   optional string image = 1;
 
   // Task is the machine learning task of the public dataset
+  // +kubebuilder:validation:Optional
   optional string task = 2;
 
+  // +kubebuilder:validation:Optional
   optional string id = 3;
 
+  // +kubebuilder:validation:Optional
   optional string externalName = 4;
 
+  // +kubebuilder:validation:Optional
   optional string dataUrl = 5;
 }
 
@@ -389,6 +403,7 @@ message UserRoleClassList {
 
 // UserRoleClassSpec is the spec for UserRoleClass
 message UserRoleClassSpec {
+  // +kubebuilder:validation:Optional
   repeated k8s.io.api.rbac.v1.PolicyRule rules = 1;
 }
 
@@ -419,15 +434,19 @@ message WorkloadClassList {
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
   // Image is the container image of the workload
+  // +kubebuilder:validation:Optional
   optional string image = 1;
 
   // Tasks are the machine learning tasks supported by the image
+  // +kubebuilder:validation:Optional
   repeated string tasks = 2;
 
   // Frameworks are the machine learning framework supported by the workload
+  // +kubebuilder:validation:Optional
   optional MLFrameworkList frameworks = 3;
 
   // Template is the Pod specification for new trainers from this workload class.
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 4;
 }
 

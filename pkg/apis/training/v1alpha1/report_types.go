@@ -158,25 +158,25 @@ type ReportList struct {
 type ReportSpec struct {
 	// VersionName is the data product version name for this report.
 	// +kubebuilder:default:="latest"
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// EntityRef specify the entity being report. Currently entities can be dataset,model or study
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// Location is the report location in storage.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// ReportType specify the report type (e.g. classification / regression)
 	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
 	// Format specify the report format. default is pdf
 	// +kubebuilder:default:=pdf
-	// +optional
+	// +kubebuilder:validation:Optional
 	Format *ReportFormat `json:"format,omitempty" protobuf:"bytes,6,opt,name=format"`
 	// NotifierRef is areference to the notifier that is used to send the report
-	// +optional
+	// +kubebuilder:validation:Optional
 	NotifierRef *string `json:"description,omitempty" protobuf:"bytes,7,opt,name=description"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }
 
@@ -185,18 +185,18 @@ type ReportStatus struct {
 	// StartTime is the start time of the report was sent for generation
 	// It is not guaranteed to be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
 	// CompletionTime is the time when the report ended generation and was uploaded to storage
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
-	// +optional
+	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
 	// Phase is the phase of the report
-	// +optional
+	// +kubebuilder:validation:Optional
 	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,4,opt,name=phase"`
 	// URI is the report uri in the bucket
-	// +optional
+	// +kubebuilder:validation:Optional
 	URI string `json:"uri,omitempty" protobuf:"bytes,5,opt,name=uri"`
 	//+optional
 	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`

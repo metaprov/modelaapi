@@ -18,12 +18,16 @@ type WorkloadClass struct {
 //WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
 	// Image is the container image of the workload
+	// +kubebuilder:validation:Optional
 	Image string `json:"image" protobuf:"bytes,1,opt,name=image"`
 	// Tasks are the machine learning tasks supported by the image
+	// +kubebuilder:validation:Optional
 	Tasks []MLTask `json:"tasks" protobuf:"bytes,2,rep,name=tasks,casttype=MLTask"`
 	// Frameworks are the machine learning framework supported by the workload
+	// +kubebuilder:validation:Optional
 	Frameworks MLFrameworkList `json:"frameworks,omitempty" protobuf:"bytes,3,opt,name=frameworks"`
 	// Template is the Pod specification for new trainers from this workload class.
+	// +kubebuilder:validation:Optional
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,4,opt,name=podTemplate"`
 }
 

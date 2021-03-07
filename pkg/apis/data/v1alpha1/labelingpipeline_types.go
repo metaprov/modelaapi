@@ -60,22 +60,22 @@ type LabelingPipelineSpec struct {
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The datasets objects which are used for this pipeline. Each datafile can be from a bucket
-	// +optional
+	// +kubebuilder:validation:Optional
 	InputLabelsets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputLabelsets"`
 	// The recipe for this pipeline.
-	// +optional
+	// +kubebuilder:validation:Optional
 	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
 	// The output file of the pipeline
-	// +optional
+	// +kubebuilder:validation:Optional
 	OutputLabelsetName *string `json:"outputLabelset,omitempty" protobuf:"bytes,5,opt,name=outputLabelset"`
 	// A cron field to schedule the data pipeline.
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }
 

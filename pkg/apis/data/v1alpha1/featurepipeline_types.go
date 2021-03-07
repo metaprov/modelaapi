@@ -63,26 +63,26 @@ type FeaturePipelineSpec struct {
 	// Owner is the owner of the feature pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// Version name is the the product version for the feature.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Description of the feature pipeline
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Aggregation is the aggregation spec
-	// +optional
+	// +kubebuilder:validation:Optional
 	Aggregation *AggregationSpec `json:"aggregation,omitempty" protobuf:"bytes,4,opt,name=aggregation"`
 	// Materialization
 	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,5,opt,name=materialization"`
 	// Family is the feature family
-	// +optional
+	// +kubebuilder:validation:Optional
 	Family *string `json:"family,omitempty" protobuf:"bytes,6,opt,name=family"`
 	// Reference to the entity name
-	// +optional
+	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,7,opt,name=entityName"`
 }
 
@@ -96,16 +96,16 @@ type FeaturePipelineStatus struct {
 
 type MaterializationSpec struct {
 	// If true, update the online store
-	// +optional
+	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
 	// If true update the offline store.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Offline *bool `json:"offline,omitempty" protobuf:"bytes,2,opt,name=offline"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartDate *metav1.Time `json:"startDate,omitempty" protobuf:"bytes,3,opt,name=startDate"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	ScheduleInterval *string `json:"scheduleInterval,omitempty" protobuf:"bytes,4,opt,name=scheduleInterval"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,5,opt,name=ttl"`
 	// Number of days to store information from the past in the feature store.
 	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,6,opt,name=backfill"`

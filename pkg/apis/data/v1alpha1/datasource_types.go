@@ -36,23 +36,23 @@ type Table struct {
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The actual query. this is required.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Query *string `json:"query,omitempty" protobuf:"bytes,3,opt,name=query"`
 	// Type of server
-	// +optional
+	// +kubebuilder:validation:Optional
 	ServerType *DatabaseServerType `json:"serverType,omitempty" protobuf:"bytes,4,opt,name=serverType"`
 	// ConnectionString to connect to the database server
 	// +kubebuilder:validation:MaxLength=128
-	// +optional
+	// +kubebuilder:validation:Optional
 	ConnectionString *string `json:"connectionString,omitempty" protobuf:"bytes,5,opt,name=connectionString"`
 	// Connection refer to a connection object that point to secret
-	// +optional
+	// +kubebuilder:validation:Optional
 	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,6,opt,name=connectionRef"`
 	// The version of the server.
-	// +optional
+	// +kubebuilder:validation:Optional
 	ServerVersion *string `json:"serverVersion,omitempty" protobuf:"bytes,7,opt,name=serverVersion"`
 }
 
@@ -129,44 +129,44 @@ const (
 type FlatFileSpec struct {
 	// The text file type
 	// Default: csv
-	// +optional
+	// +kubebuilder:validation:Optional
 	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,4,opt,name=fileType"`
 	// Refers to the character used to separate fields.
 	// Default to comma
-	// +optional
+	// +kubebuilder:validation:Optional
 	Delimiter *Delimiter `json:"delimiter,omitempty" protobuf:"bytes,5,opt,name=delimiter"`
 	//The quata char.
-	// +optional
+	// +kubebuilder:validation:Optional
 	QuoteChar QuoteChar `json:"quote,omitempty" protobuf:"bytes,6,opt,name=quote"`
 	// the char used to escape the delimiter when quoting
-	// +optional
+	// +kubebuilder:validation:Optional
 	EscapeChar EscapeChar `json:"escapeChar,omitempty" protobuf:"bytes,7,opt,name=escapeChar"`
 	//CommentCharacter(s) to split comments off the end of lines.
-	// +optional
+	// +kubebuilder:validation:Optional
 	CommentChars string `json:"commentChars,omitempty" protobuf:"bytes,8,opt,name=commentChars"`
 	//Check if there is an header
-	// +optional
+	// +kubebuilder:validation:Optional
 	Header *bool `json:"header,omitempty" protobuf:"bytes,9,opt,name=header"`
 	//The number of rows to skip
-	// +optional
+	// +kubebuilder:validation:Optional
 	SkipRows *int32 `json:"skipRows,omitempty" protobuf:"varint,10,opt,name=skipRows"`
 	//NullValue	is a sequence of values to replace with NA.
-	// +optional
+	// +kubebuilder:validation:Optional
 	NullValues *string `json:"nullValues,omitempty" protobuf:"bytes,11,opt,name=nullValues"`
 	//Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
-	// +optional
+	// +kubebuilder:validation:Optional
 	Encoding *catalog.FileEncoding `json:"encoding,omitempty" protobuf:"bytes,12,opt,name=encoding"`
 	//The maximum number of rows to read.
-	// +optional
+	// +kubebuilder:validation:Optional
 	MaxRows *int32 `json:"maxRows,omitempty" protobuf:"varint,13,opt,name=maxRows"`
 	//If true, the import will fail if there is an error
-	// +optional
+	// +kubebuilder:validation:Optional
 	Strict *bool `json:"strict,omitempty" protobuf:"bytes,14,opt,name=strict"`
 }
 
 type Schema struct {
 	// Time series schema. Set time series specific parameters.
-	// +optional
+	// +kubebuilder:validation:Optional
 	TimeSeriesSchema *TimeSeriesSchema `json:"tsSchema,omitempty" protobuf:"bytes,1,rep,name=tsSchema"`
 	// Columns
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
@@ -190,91 +190,91 @@ type Column struct {
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// FileName specify the name of the feature, if this attribute comes from a feature
 	// +kubebuilder:validation:MaxLength=63
-	// +optional
+	// +kubebuilder:validation:Optional
 	FeatureName *string `json:"featureName,omitempty" protobuf:"bytes,2,opt,name=featureName"`
 	// Type specify the data type of the attribute
 	// required
 	DataType catalog.DataType `json:"datatype" protobuf:"bytes,3,opt,name=datatype"`
 	// DataFormat is the domain of the column. A domain constrain the set of values.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Format *catalog.DataFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// Description is a description of the feature
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=63
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,5,opt,name=description"`
 	// Ignore specify if the attribute should be ignored when building the model
 	// default is false
-	// +optional
+	// +kubebuilder:validation:Optional
 	Ignore *bool `json:"ignore,omitempty" protobuf:"bytes,6,opt,name=ignore"`
 	// Label should be true if this attribute is the predictable target
 	// Default is false
-	// +optional
+	// +kubebuilder:validation:Optional
 	Label *bool `json:"label,omitempty" protobuf:"bytes,7,opt,name=label"`
 	// Nullable indicates if a column can contain string
 	// Default is false
-	// +optional
+	// +kubebuilder:validation:Optional
 	Nullable *bool `json:"nullable,omitempty" protobuf:"bytes,8,opt,name=nullable"`
 	// PrimaryKey denotes if this column is part of the file key.
-	// +optional
+	// +kubebuilder:validation:Optional
 	PK *bool `json:"pk,omitempty" protobuf:"bytes,9,opt,name=pk"`
 	// MultipleOf
-	// +optional
+	// +kubebuilder:validation:Optional
 	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,10,opt,name=multipleOf"`
 	// MaximumFloat
-	// +optional
+	// +kubebuilder:validation:Optional
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,11,opt,name=maximum"`
 	// ExclusiveMaximum
-	// +optional
+	// +kubebuilder:validation:Optional
 	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"bytes,12,opt,name=exclusiveMaximum"`
 	// MinimumFloat
-	// +optional
+	// +kubebuilder:validation:Optional
 	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,13,opt,name=minimum"`
 	// ExclusiveMinimum
-	// +optional
+	// +kubebuilder:validation:Optional
 	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"bytes,14,opt,name=exclusiveMinimum"`
 	// MaxLength
-	// +optional
+	// +kubebuilder:validation:Optional
 	MaxLength *int32 `json:"maxLength,omitempty" protobuf:"varint,15,opt,name=maxLength"`
 	// MinLength
-	// +optional
+	// +kubebuilder:validation:Optional
 	MinLength *int32 `json:"minLength,omitempty" protobuf:"varint,16,opt,name=minLength"`
 	// Pattern
 	// Default is empty
-	// +optional
+	// +kubebuilder:validation:Optional
 	Pattern *string `json:"pattern,omitempty" protobuf:"bytes,17,opt,name=pattern"`
 	// Required
-	// +optional
+	// +kubebuilder:validation:Optional
 	Required *bool `json:"required,omitempty" protobuf:"bytes,18,opt,name=required"`
 	// Title
 	// +kubebuilder:validation:MaxLength=63
-	// +optional
+	// +kubebuilder:validation:Optional
 	Title *string `json:"title,omitempty" protobuf:"bytes,19,opt,name=title"`
 	// Example
-	// +optional
+	// +kubebuilder:validation:Optional
 	Example *string `json:"example,omitempty" protobuf:"bytes,20,opt,name=example"`
 	// External Docs
-	// +optional
+	// +kubebuilder:validation:Optional
 	ExternalDocs *string `json:"externalDocs,omitempty" protobuf:"bytes,21,opt,name=externalDocs"`
 	// Enum
-	// +optional
+	// +kubebuilder:validation:Optional
 	Enum []string `json:"enum,omitempty" protobuf:"bytes,22,rep,name=enum"`
 	// Preprocessor hint constrain the transformer
 	// Default is empty
-	// +optional
+	// +kubebuilder:validation:Optional
 	TransformerHint *string `json:"transformerHint,omitempty" protobuf:"bytes,23,opt,name=transformerHint"`
 	// Max Items in the data in case of a list
-	// +optional
+	// +kubebuilder:validation:Optional
 	MaxItems *int32 `json:"maxItems,omitempty" protobuf:"varint,24,opt,name=maxItems"`
 	// Min Items in the data in case of a list.
-	// +optional
+	// +kubebuilder:validation:Optional
 	MinItems *int32 `json:"minItems,omitempty" protobuf:"varint,25,opt,name=minItems"`
 	// Enforce that all the items in the list are unique
-	// +optional
+	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"bytes,26,opt,name=uniqueItems"`
 	// True if this column is used as the time axis in time series foreacst
 	// Default is false.
-	// +optional
+	// +kubebuilder:validation:Optional
 	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"bytes,27,opt,name=timeColumn"`
 }
 
@@ -301,31 +301,31 @@ type DataSource struct {
 type DataSourceSpec struct {
 	// The account name of the owner of this dataset
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
 	// The version of the flat file.
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User provided description of the data source
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=512
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The data source schema
 	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,rep,name=schema"`
 	// The data source type.
 	Type *DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 	// FlatFile access specification
-	// +optional
+	// +kubebuilder:validation:Optional
 	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,rep,name=file"`
 	// Table access specification if the data source is a table
-	// +optional
+	// +kubebuilder:validation:Optional
 	Table *Table `json:"table,omitempty" protobuf:"bytes,7,rep,name=table"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }
 

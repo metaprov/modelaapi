@@ -21,12 +21,17 @@ type PublicDataset struct {
 }
 
 type PublicDatasetSpec struct {
+	// +kubebuilder:validation:Optional
 	Url string `json:"url" protobuf:"bytes,1,opt,name=image"`
 	// Task is the machine learning task of the public dataset
-	Task         MLTask `json:"task" protobuf:"bytes,2,rep,name=task,casttype=MLTask"`
-	ID           string `json:"id" protobuf:"bytes,3,rep,name=id"`
+	// +kubebuilder:validation:Optional
+	Task MLTask `json:"task" protobuf:"bytes,2,rep,name=task,casttype=MLTask"`
+	// +kubebuilder:validation:Optional
+	ID string `json:"id" protobuf:"bytes,3,rep,name=id"`
+	// +kubebuilder:validation:Optional
 	ExternalName string `json:"externalName" protobuf:"bytes,4,opt,name=externalName"`
-	DataUrl      string `json:"dataUrl" protobuf:"bytes,5,opt,name=dataUrl"`
+	// +kubebuilder:validation:Optional
+	DataUrl string `json:"dataUrl" protobuf:"bytes,5,opt,name=dataUrl"`
 }
 
 //==============================================================================

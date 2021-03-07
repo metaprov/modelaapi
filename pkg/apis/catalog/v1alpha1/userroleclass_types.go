@@ -45,5 +45,6 @@ type UserRoleClassList struct {
 
 // UserRoleClassSpec is the spec for UserRoleClass
 type UserRoleClassSpec struct {
+	// +kubebuilder:validation:Optional
 	Rules []rbacv1.PolicyRule `json:"rules,omitempty" protobuf:"bytes,1,rep,name=rules"`
 }

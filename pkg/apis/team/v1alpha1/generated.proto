@@ -19,10 +19,10 @@ option go_package = "v1alpha1";
 
 // Alert is an alert that was raised during the incident
 message Alert {
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string name = 1;
 
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
@@ -36,7 +36,7 @@ message Comment {
 
   // If this comment is a reply to an id
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string replyTo = 3;
 
   // Content is the content of the comment
@@ -95,7 +95,7 @@ message ConversationSpec {
 
   // The owner account name
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 3;
 }
 
@@ -148,38 +148,38 @@ message PostMortemList {
 // PostMortemSpec defines the desired state of PostMorem
 message PostMortemSpec {
   // The target object of the post mortem for example a predictor.
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
 
   // The place of the events, can be lab or serving site.
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference locationRef = 2;
 
   // Reference to accounts that handled the post-mortem
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated k8s.io.api.core.v1.ObjectReference handledBy = 3;
 
   // Alerts
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated Alert alert = 4;
 
   // Timeline is the list of events that happed during the events
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated TimeLineEvent timeline = 5;
 
   // Root cause
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string rootCause = 6;
 
   // Summary of the post mortem
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string summary = 7;
 
   // The owner account name
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 8;
 }
 
@@ -235,7 +235,7 @@ message RunBookList {
 // RunBookSpec defines the desired state of RunBook
 message RunBookSpec {
   // The target object of run book
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
 
   // The author of the comment
@@ -243,7 +243,7 @@ message RunBookSpec {
 
   // The owner account name
   // +kubebuilder:default:=""
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string owner = 3;
 }
 
@@ -255,11 +255,11 @@ message RunBookStatus {
 
 // TimeLineEvent
 message TimeLineEvent {
-  // +optional
+  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   optional string content = 1;
 
-  // +optional
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 

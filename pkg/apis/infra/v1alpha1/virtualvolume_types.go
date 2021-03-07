@@ -43,7 +43,7 @@ type VirtualVolume struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              VirtualVolumeSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	Status VirtualVolumeStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
@@ -61,16 +61,16 @@ type VirtualVolumeSpec struct {
 	// Default to the default volume.
 	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,name=tenantRef"`
 	//  specify the api connections of this mdvolume cloud provider.
-	// +optional
+	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User provided description
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 

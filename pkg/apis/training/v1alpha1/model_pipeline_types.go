@@ -23,21 +23,21 @@ type GithubEvents struct {
 //TriggerSchedule specify a cron schedule
 type TriggerSchedule struct {
 	// The start time of the schedule
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,1,opt,name=startTime"`
 	// StartDay is the start day of the schedule
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartDay *metav1.Time `json:"startDay" protobuf:"bytes,2,opt,name=startDay"`
 	// EndTime is the end time of the schedule
-	// +optional
+	// +kubebuilder:validation:Optional
 	EndTime *metav1.Timestamp `json:"endTime" protobuf:"bytes,3,opt,name=endTime"`
 	// EndDay is the end day of the schedule
-	// +optional
+	// +kubebuilder:validation:Optional
 	EndDay *metav1.Time `json:"endDay" protobuf:"bytes,4,opt,name=endDay"`
 	// Cron string of the schedule.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Cron string `json:"cron" protobuf:"bytes,5,opt,name=cron"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	// The type of schedule events.
 	Type TriggerScheduleEventType `json:"type" protobuf:"bytes,6,opt,name=type"`
 }
@@ -88,57 +88,57 @@ type ModelPipelineList struct {
 type ModelPipelineSpec struct {
 	// The product version of the resource
 	// +kubebuilder:default ="latest"
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// Servingsite name is the default serving site for each stage.
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	DefaultServingSiteName *string `json:"defaultServingSiteName,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteName"`
 	// User provided description
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Min score to move from stage to stage.
 	// +kubebuilder:default:=0
-	// +optional
+	// +kubebuilder:validation:Optional
 	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 	// Datastage build new dataset from the data sources.
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataStage *DataStageSpec `json:"dataStage,omitempty" protobuf:"bytes,5,opt,name=dataStage"`
 	// TrainingSpec stage
-	// +optional
+	// +kubebuilder:validation:Optional
 	TrainingStage *TrainingStageSpec `json:"trainingStage,omitempty" protobuf:"bytes,6,opt,name=trainingStage"`
 	// Acceptance stage is used for further testing
-	// +optional
+	// +kubebuilder:validation:Optional
 	AcceptanceStage *AcceptanceStageSpec `json:"acceptanceStage,omitempty" protobuf:"bytes,7,opt,name=acceptanceStage"`
 	// Capacity stage for capacity
-	// +optional
+	// +kubebuilder:validation:Optional
 	CapacityStage *CapacityStageSpec `json:"capacityStage,omitempty" protobuf:"bytes,8,opt,name=capacityStage"`
 	// ReleaseStage stage define how to place the model into production.
-	// +optional
+	// +kubebuilder:validation:Optional
 	ReleaseStage *ReleaseStageSpec `json:"releaseStage,omitempty" protobuf:"bytes,9,opt,name=releaseStage"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
-	// +optional
+	// +kubebuilder:validation:Optional
 	Folder *string `json:"folder,omitempty" protobuf:"bytes,10,opt,name=folder"`
 	// Trigger is definition of the pipeline trigger
 	Trigger *PipelineTrigger `json:"trigger,omitempty" protobuf:"bytes,11,opt,name=trigger"`
 	// The owner account name
 
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`
 }
 
 type PipelineTrigger struct {
 	// Spec for a schedule in case that the trigger
-	// +optional
+	// +kubebuilder:validation:Optional
 	Schedule *TriggerSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
 	// Definition of git hub events
-	// +optional
+	// +kubebuilder:validation:Optional
 	GithubEvents *GithubEvents `json:"githubEvents,omitempty" protobuf:"bytes,2,opt,name=githubEvents"`
 	// Template is a template of the pipeline that will be created when the
 	// trigger fire.
-	// +optional
+	// +kubebuilder:validation:Optional
 }
 
 type TriggerType string
@@ -184,7 +184,7 @@ const (
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataPipelineName string `json:"wranglerName,omitempty" protobuf:"bytes,1,opt,name=wranglerName"`
 }
 
@@ -195,15 +195,15 @@ type TrainingStageSpec struct {
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,1,opt,name=notebookName"`
 	// LabName is the name of the lab used for training
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
 	// Study FileName is a name of a study which will be cloned for this stage.
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
-	// +optional
+	// +kubebuilder:validation:Optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
 }
 
@@ -214,11 +214,11 @@ type AcceptanceStageSpec struct {
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 	// The name of test dataset name
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move to the next stage without human intervation
 	// +kubebuilder:default:=true
-	// +optional
+	// +kubebuilder:validation:Optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }
 
@@ -229,17 +229,17 @@ type CapacityStageSpec struct {
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 	// TestDatasetName is the name of dataset used to test the model at this stage.
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,2,opt,name=testDatasetName"`
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
-	// +optional
+	// +kubebuilder:validation:Optional
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
 }
 
 //ReleaseStageSpec is the predictor name that would host the model
 type ReleaseStageSpec struct {
-	// +optional
+	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,1,opt,name=predictorName"`
 }
 

@@ -27,7 +27,7 @@ type Comment struct {
 	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,2,opt,name=authorRef"`
 	// If this comment is a reply to an id
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	ReplyToID *string `json:"replyTo,omitempty" protobuf:"bytes,3,opt,name=replyTo"`
 	// Content is the content of the comment
 	// +kubebuilder:default:=""
@@ -77,7 +77,7 @@ type ConversationSpec struct {
 	Messages []Comment `json:"messages" protobuf:"bytes,2,rep,name=messages"`
 	// The owner account name
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }
 

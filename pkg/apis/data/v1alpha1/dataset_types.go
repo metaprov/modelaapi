@@ -43,13 +43,13 @@ type DatasetCondition struct {
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
-	// +optional
+	// +kubebuilder:validation:Optional
 	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,4,opt,name=lastTransitionTime"`
 	// The reason for the condition's last transition.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Reason string `json:"reason,omitempty" protobuf:"bytes,5,opt,name=reason"`
 	// A human readable message indicating details about the transition.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
@@ -84,7 +84,7 @@ type DatasetList struct {
 //DatasetSpec defines the desired state of a dataset
 type DatasetSpec struct {
 	// The account name of the owner of this dataset
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the dataset
 	// +kubebuilder:validation:MaxLength=63
@@ -97,23 +97,23 @@ type DatasetSpec struct {
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// If true, a dataset report should be generated for this dataset.
 	// +kubebuilder:default:=true
-	// +optional
+	// +kubebuilder:validation:Optional
 	Reported *bool `json:"report,omitempty" protobuf:"bytes,7,opt,name=report"`
 	// If true, we should validate the dataset
 	// +kubebuilder:default:=true
-	// +optional
+	// +kubebuilder:validation:Optional
 	Validated *bool `json:"validate,omitempty" protobuf:"bytes,8,opt,name=validate"`
 	// Labeled indicates if this dataset is labeled or not.
 	// +kubebuilder:default:=true
-	// +optional
+	// +kubebuilder:validation:Optional
 	Labeled *bool `json:"labeled" protobuf:"bytes,10,opt,name=labeled"`
 	// Define the data location. The operator will copy the data from this location into the live location.
 	// The datafiles are initially uploaded to this location.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Origin *DataLocation `json:"origin,omitempty" protobuf:"bytes,12,opt,name=origin"`
 	// Folder of the actual data resides.
 	// +required.
@@ -123,16 +123,16 @@ type DatasetSpec struct {
 // DatasetStatus defines the observed state of Dataset
 type DatasetStatus struct {
 	// Statistics for the dataset. The statistics contain information about each column.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Statistics DatasetStatistics `json:"statistics,omitempty" protobuf:"bytes,1,opt,name=statistics"`
 	// The phase of the dataset processing
-	// +optional
+	// +kubebuilder:validation:Optional
 	Phase DatasetPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
 	// Reference to the report object that was generated for the dataset
-	// +optional
+	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,3,opt,name=reportName"`
 	// A reference to the visualization uri which were produce during processing
-	// +optional
+	// +kubebuilder:validation:Optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,4,opt,name=profileUri"`
 	// Based on the actual data, treat this dataset as imbalanced.
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,5,opt,name=imbalanced"`
@@ -146,53 +146,53 @@ type DatasetStatus struct {
 // DatasetStatistics contains statistics about attributes and correltation between attributes
 type DatasetStatistics struct {
 	// Columns contain the collection of statistics for each attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Columns []ColumnStatistics `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// number of rows in the dataset
-	// +optional
+	// +kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
 	// number of columns, used mainly to show the columns in the kubectl
-	// +optional
+	// +kubebuilder:validation:Optional
 	Cols int32 `json:"cols,omitempty" protobuf:"varint,4,opt,name=cols"`
 	// file size in bytes
-	// +optional
+	// +kubebuilder:validation:Optional
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,5,opt,name=fileSize"`
 }
 
 // Hold the statistical parameters about a single attribute
 type ColumnStatistics struct {
 	// FileName is the name of the column
-	// +optional
+	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Min is the minimum value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Min float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
 	// Max is the maximum value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Max float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
 	// Mean is the mean value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Mean float64 `json:"mean,omitempty" protobuf:"bytes,4,opt,name=mean"`
 	// StdDev is the standard deviation value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,5,opt,name=stddev"`
 	// Skewness is the standard deviation value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,6,opt,name=skewness"`
 	// Kurtosis is the standard deviation value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,7,opt,name=kurtosis"`
 	// Zeros is the numbers of zeros in the feature
-	// +optional
+	// +kubebuilder:validation:Optional
 	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,8,opt,name=zeros"`
 	// Pct25 is the 25 precent point
-	// +optional
+	// +kubebuilder:validation:Optional
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,10,opt,name=p25"`
 	// Pct50 is the median
-	// +optional
+	// +kubebuilder:validation:Optional
 	P50 float64 `json:"p50,omitempty" protobuf:"bytes,11,opt,name=p50"`
 	// Pct75 is the 75% point
-	// +optional
+	// +kubebuilder:validation:Optional
 	P75 float64 `json:"p75,omitempty" protobuf:"bytes,12,opt,name=p75"`
 	// The number of missing values
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,14,opt,name=missing"`
@@ -227,7 +227,7 @@ type ColumnStatistics struct {
 type DatasetTemplate struct {
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	// +kubebuilder:validation:Optional
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              DatasetSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
@@ -246,14 +246,14 @@ type Signatures struct {
 	// +required
 	Data string `json:"data" protobuf:"bytes,2,opt,name=data"`
 	// The location of the labels file (If exist)
-	// +optional
+	// +kubebuilder:validation:Optional
 	Labels string `json:"labels" protobuf:"bytes,3,opt,name=labels"`
 	// path to the training set
 	Train string `json:"train" protobuf:"bytes,4,opt,name=train"`
 	// the location of the training data, if different from the data.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Test string `json:"test" protobuf:"bytes,5,opt,name=test"`
 	// Pointer to the validation
-	// +optional
+	// +kubebuilder:validation:Optional
 	Validation string `json:"validation" protobuf:"bytes,6,opt,name=validation"`
 }

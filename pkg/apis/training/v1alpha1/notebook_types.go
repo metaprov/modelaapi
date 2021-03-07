@@ -68,45 +68,45 @@ type NotebookList struct {
 type NotebookSpec struct {
 	// The version of the notebook
 	// +kubebuilder:default:="latest"
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// SchemaName relate a notebook to a schema.
 	// The schema object will be accessible from the notebook
-	// +optional
+	// +kubebuilder:validation:Optional
 	SchemaRef *v1.ObjectReference `json:"schemaRef,omitempty" protobuf:"bytes,3,opt,name=schemaRef"`
 	// A reference to the container image repository for this notebook.
 	// +kubebuilder:default:=""
 	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,4,opt,name=imageName"`
 	// Requirements python file
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Requirements *string `json:"requirements,omitempty" protobuf:"bytes,5,opt,name=requirements"`
 	// DebPackages is a list of deb package to install
-	// +optional
+	// +kubebuilder:validation:Optional
 	DebPackages *string `json:"debPackages,omitempty" protobuf:"bytes,6,opt,name=debPackages"`
 	// vars to pass to the notebook
-	// +optional
+	// +kubebuilder:validation:Optional
 	Vars []string `json:"vars,omitempty" protobuf:"bytes,7,rep,name=vars"`
 	// Location is the location of the notebook file
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,rep,name=location"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 }
 
 // NotebookStatus is the observed state of the notebook resource
 type NotebookStatus struct {
 	// Image is the name of the image after publication
-	// +optional
+	// +kubebuilder:validation:Optional
 	Image string `json:"image,omitempty" protobuf:"bytes,1,opt,name=image"`
 	// The URI of the notebook in the bucket.
-	// +optional
+	// +kubebuilder:validation:Optional
 	URI string `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
 	// Represents the latest available observations of a notebook state.
 	//+optional

@@ -66,29 +66,29 @@ type NotebookRunList struct {
 // NotebookRunSpec defines the desired state of the NotebookRun resource
 type NotebookRunSpec struct {
 	// VersionName of the data product for this notebook
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// NotebookName of the notebook for this run
-	// +optional
+	// +kubebuilder:validation:Optional
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,2,opt,name=notebookName"`
 	// Values to pass to the notebook during execution
-	// +optional
+	// +kubebuilder:validation:Optional
 	Values []NotebookVarValue `json:"values,omitempty" protobuf:"bytes,3,rep,name=values"`
 	// Owner account name
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 
 // NotebookRunStatus define that observed state of NotebookRun resource
 type NotebookRunStatus struct {
 	// The phase of the notebook
-	// +optional
+	// +kubebuilder:validation:Optional
 	Phase string `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// StartTime is the times that this prediction job started
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
 	// CompletionTime is the time that this prediction job finished
-	// +optional
+	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
 	// Represents the latest available observations of a notebook run state.
 	//+optional

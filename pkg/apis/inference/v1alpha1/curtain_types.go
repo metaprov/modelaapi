@@ -73,16 +73,16 @@ type CurtainList struct {
 type CurtainSpec struct {
 	// User provided description
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// User provided description
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// The product of the resource
-	// +optional
+	// +kubebuilder:validation:Optional
 	ServingSiteName string `json:"servingsiteName,omitempty" protobuf:"bytes,3,opt,name=servingsiteName"`
 	// The dataset that store the wizard answers
-	// +optional
+	// +kubebuilder:validation:Optional
 	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// The wizards him self. This is a reference to one or more wizards objects.
 	Wizards []string `json:"wizards,omitempty" protobuf:"bytes,5,rep,name=wizards"`
@@ -90,7 +90,7 @@ type CurtainSpec struct {
 	// +kubebuilder:validation:MaxLength=256
 	Question string `json:"question,omitempty" protobuf:"bytes,6,opt,name=question"`
 	// The owner account name
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }
 
@@ -103,7 +103,7 @@ type CurtainStatus struct {
 type CurtainTemplateSpec struct {
 	// Standard object's metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	// +optional
+	// +kubebuilder:validation:Optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              CurtainSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }

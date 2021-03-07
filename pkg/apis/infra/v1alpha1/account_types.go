@@ -79,16 +79,16 @@ type AccountList struct {
 // AccountSpec defines the desired state of Account
 type AccountSpec struct {
 	// TenantRef is the account tenant
-	// +optional
+	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// GroupName is a reference to the group account
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
 	// Type is the type of account - user, group. default is user
 	// +kubebuilder:default:=user
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	Type *AccountType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type,casttype=AccountType"`
 	// UserName specifies the name of the account
 	// +kubebuilder:validation:MinLength=4
@@ -96,7 +96,7 @@ type AccountSpec struct {
 	// +kubebuilder:validation:Required
 	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
@@ -105,7 +105,7 @@ type AccountSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
-	// +optional
+	// +kubebuilder:validation:Optional
 	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
 	// Email specify the email of the user
 	// +kubebuilder:default:=""
@@ -120,29 +120,29 @@ type AccountSpec struct {
 	// User is admin. Admin have full control on other accounts.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	Admin *bool `json:"admin,omitempty" protobuf:"bytes,9,opt,name=admin"`
 	// Email account creation event to user (using the user email)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,10,opt,name=emailPassword"`
 	// User need to reset password upon login
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
-	// +optional
+	// +kubebuilder:validation:Optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,11,opt,name=resetPassword"`
 	// ProductBinding is the premission that the user have for each product
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,12,rep,name=productBindings"`
 	// LabBinding is the RBAC roles that the user have within each lab
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,13,rep,name=labBindings"`
 	// SiteBindings is the RBAC roles that the user have within each serving site.
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,14,rep,name=siteBindings"`
 }
 

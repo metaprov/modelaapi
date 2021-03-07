@@ -53,25 +53,25 @@ type NotifierList struct {
 type NotifierSpec struct {
 	// The tenant that own the notifier
 	// Default to default tenant.
-	// +optional
+	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef" protobuf:"bytes,1,opt,name=tenantRef"`
 	// User provided description
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Address within the provider to send the notifiaction to.
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	To *string `json:"to,omitempty" protobuf:"bytes,3,opt,name=to"`
 	// The sender address. For example, from email.
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	From *string `json:"from,omitempty" protobuf:"bytes,4,opt,name=from"`
 	// +kubebuilder:validation:Required
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,5,opt,name=connectionName"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
 }
 

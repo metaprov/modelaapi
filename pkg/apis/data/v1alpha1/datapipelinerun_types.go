@@ -71,16 +71,19 @@ type DataPipelineRunList struct {
 type DataPipelineRunSpec struct {
 	// The data product version of the run
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The data product
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
 	// The location of data artifacts that are generated during the run
+	// +kubebuilder:validation:Optional
 	DataLocation *DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,3,opt,name=dataLocation"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 
@@ -93,10 +96,10 @@ type DataPipelineRunStatus struct {
 	// the phase of the run
 	Phase string `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// StartTime is the times that this data pipeline started
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
 	// CompletionTime is the time that this pipeline finishes
-	// +optional
+	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,5,opt,name=completionTime"`
 	//+optional
 	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`

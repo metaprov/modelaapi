@@ -61,21 +61,21 @@ type TenantList struct {
 // TenantSpec defines the desired state of Tenant
 type TenantSpec struct {
 	// the default lab for this account
-	// +optional
+	// +kubebuilder:validation:Optional
 	DefaultLabRef *v1.ObjectReference `json:"defaultLabRef,omitempty" protobuf:"bytes,1,opt,name=defaultLab"`
 	// the default serving site for this account
-	// +optional
+	// +kubebuilder:validation:Optional
 	DefaultServingSiteRef *v1.ObjectReference `json:"defaultServingSiteRef,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteRef"`
 	// Description is user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Owner is the owner account name
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 

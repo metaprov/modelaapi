@@ -60,49 +60,49 @@ type PostMortemList struct {
 
 // TimeLineEvent
 type TimeLineEvent struct {
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Content *string `json:"content" protobuf:"bytes,1,opt,name=content"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 }
 
 // Alert is an alert that was raised during the incident
 type Alert struct {
-	// +optional
+	// +kubebuilder:validation:Optional
 	Name *string `json:"name" protobuf:"bytes,1,opt,name=name"`
-	// +optional
+	// +kubebuilder:validation:Optional
 	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 }
 
 // PostMortemSpec defines the desired state of PostMorem
 type PostMortemSpec struct {
 	// The target object of the post mortem for example a predictor.
-	// +optional
+	// +kubebuilder:validation:Optional
 	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,1,opt,name=entityRef"`
 	// The place of the events, can be lab or serving site.
-	// +optional
+	// +kubebuilder:validation:Optional
 	LocationRef *v1.ObjectReference `json:"locationRef" protobuf:"bytes,2,opt,name=locationRef"`
 	// Reference to accounts that handled the post-mortem
-	// +optional
+	// +kubebuilder:validation:Optional
 	HandledBy []v1.ObjectReference `json:"handledBy" protobuf:"bytes,3,rep,name=handledBy"`
 	// Alerts
-	// +optional
+	// +kubebuilder:validation:Optional
 	Alerts []Alert `json:"alerts" protobuf:"bytes,4,rep,name=alert"`
 	// Timeline is the list of events that happed during the events
-	// +optional
+	// +kubebuilder:validation:Optional
 	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,5,rep,name=timeline"`
 	// Root cause
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	RootCause *string `json:"rootCause" protobuf:"bytes,6,opt,name=rootCause"`
 	// Summary of the post mortem
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Summary *string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
 	// The owner account name
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }
 

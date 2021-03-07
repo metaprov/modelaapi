@@ -38,14 +38,17 @@ type MLFrameworkList struct {
 // MLFramework is the spec for a specific version of machine learning framework (e.g. tensorflow)
 type MLFrameworkSpec struct {
 	// URL for the home page of the mlframework
+	// +kubebuilder:validation:Optional
 	URL string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 	// Comments of the framework
 	// +kubebuilder:default =""
-	// +Optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The current version of the mlframework
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	Version *string `json:"version,omitempty" protobuf:"bytes,3,opt,name=version"`
 	// Lang is the framework lang
+	// +kubebuilder:validation:Optional
 	Lang *string `json:"lang,omitempty" protobuf:"bytes,4,opt,name=lang"`
 }

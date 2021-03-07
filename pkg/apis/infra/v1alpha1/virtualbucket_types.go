@@ -53,7 +53,7 @@ type VirtualBucketList struct {
 // VirtualBucketSpec defines the desired state of Bucket
 type VirtualBucketSpec struct {
 	// The owner of the virtual bucket
-	// +optional
+	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,name=tenantRef"`
 	// ConnectionName specify the api connections of this bucket cloud provider.
 	// +kubebuilder:validation:Required
@@ -64,12 +64,12 @@ type VirtualBucketSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Owner of the bucket
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 

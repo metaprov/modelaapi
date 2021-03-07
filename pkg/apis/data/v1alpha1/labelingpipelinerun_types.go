@@ -64,7 +64,7 @@ type LabelingPipelineRunSpec struct {
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the pipeline
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
 	// LabelPipelineName specifies the name of LabelingPipeline
 	// +kubebuilder:validation:MaxLength=64

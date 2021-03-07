@@ -63,10 +63,10 @@ type FeatureSpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the feature.
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Comments is a description of the feature
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
@@ -75,53 +75,53 @@ type FeatureSpec struct {
 	// +kubebuilder:validation:MinLength=1
 	Name *string `json:"name,omitempty" protobuf:"bytes,4,opt,name=name"`
 	// Type name of the column key, this column is the key column in the entity.
-	// +optional
+	// +kubebuilder:validation:Optional
 	KeyColumn *string `json:"keyColumn,omitempty" protobuf:"bytes,5,opt,name=keyColumn"`
 	// The name of the time stamp column
-	// +optional
+	// +kubebuilder:validation:Optional
 	TimestampColumn *string `json:"timestampColumn,omitempty" protobuf:"bytes,6,opt,name=timestampColumn"`
 	// The name of the feature column
-	// +optional
+	// +kubebuilder:validation:Optional
 	FeatureColumn *string `json:"featureColumn,omitempty" protobuf:"bytes,7,opt,name=featureColumn"`
 	// The name of the entity containing this feature
-	// +optional
+	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
 	// The name of the feature pipeline that is producing this feature
-	// +optional
+	// +kubebuilder:validation:Optional
 	FeaturePipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,9,opt,name=featurePipelineName"`
 }
 
 // FeatureStatus defines the observed state of Feature
 type FeatureStatus struct {
 	// Sha256 contains the signature of
-	// +optional
+	// +kubebuilder:validation:Optional
 	Sha256 string `json:"sha256" protobuf:"bytes,2,opt,name=sha256"`
 	// FileName is the name of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Name string `json:"name" protobuf:"bytes,3,opt,name=name"`
 	// Min is the minimum value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Min *float64 `json:"min" protobuf:"bytes,4,opt,name=min"`
 	// Max is the maximum value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Max *float64 `json:"max" protobuf:"bytes,5,opt,name=max"`
 	// Mean is the mean value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	Mean *float64 `json:"mean" protobuf:"bytes,6,opt,name=mean"`
 	// Zeros is the numbers of zeros in the feature
-	// +optional
+	// +kubebuilder:validation:Optional
 	Zeros *int32 `json:"zeros" protobuf:"varint,7,opt,name=zeros"`
 	// Nulls is the numbers of zeros in the feature
-	// +optional
+	// +kubebuilder:validation:Optional
 	Nulls *int32 `json:"nulls" protobuf:"varint,8,opt,name=nulls"`
 	// P01 is the numbers of values in the first precent
-	// +optional
+	// +kubebuilder:validation:Optional
 	P01 *float64 `json:"p01" protobuf:"bytes,9,opt,name=p01"`
 	// P99 is the numbers of values
-	// +optional
+	// +kubebuilder:validation:Optional
 	P99 *float64 `json:"p99" protobuf:"bytes,10,opt,name=p99"`
 	// StdDev is the standard deviation value of the attribute
-	// +optional
+	// +kubebuilder:validation:Optional
 	StdDev *float64 `json:"stddev" protobuf:"bytes,11,opt,name=stddev"`
 
 	//+optional

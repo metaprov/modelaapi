@@ -57,31 +57,31 @@ type VirtualClusterSpec struct {
 	//+kubebuilder:default:=1
 	//+kubebuilder:validation:Minimum=1
 	//+kubebuilder:validation:Maximum=10
-	// +optional
+	// +kubebuilder:validation:Optional
 	Nodes *int32 `json:"nodes,omitempty" protobuf:"varint,2,opt,name=nodes"`
 	// +kubebuilder:validation:Optional
 	// NodeClassName is the class of nodes or vm
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	NodeClassName *string `json:"nodeClassName,omitempty" protobuf:"bytes,3,opt,name=nodeClassName"`
 	// +kubebuilder:validation:Optional
 	// Gpus is the desired number of gpus
 	//+kubebuilder:default:=0
 	//+kubebuilder:validation:Minimum=0
 	//+kubebuilder:validation:Maximum=10
-	// +optional
+	// +kubebuilder:validation:Optional
 	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,4,opt,name=gpus"`
 	// +kubebuilder:validation:Optional
 	// GpuClassName is the The class of gpu.
 	// +kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	GpuClassName *string `json:"gpuClassName,omitempty" protobuf:"bytes,5,opt,name=gpuClassName"`
 	// +kubebuilder:validation:Optional
 	// VolumeSize is the size of the volume that would be mounted on all the node of the cluster
 	//+kubebuilder:default:=0
 	//+kubebuilder:validation:Minimum=0
 	//+kubebuilder:validation:Maximum=10
-	// +optional
+	// +kubebuilder:validation:Optional
 	VolumeSize *int32 `json:"volumeSize,omitempty" protobuf:"varint,6,opt,name=volumeSize"`
 	// +kubebuilder:validation:Optional
 	// Spot indicate if we should we use spot instances.
@@ -94,7 +94,7 @@ type VirtualClusterSpec struct {
 	// +kubebuilder:validation:Optional
 	// Owner is the account name of the owner of this cluster
 	//+kubebuilder:default:=""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 }
 

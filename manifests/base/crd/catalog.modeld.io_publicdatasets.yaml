@@ -68,12 +68,6 @@ spec:
                 type: string
               url:
                 type: string
-            required:
-            - dataUrl
-            - externalName
-            - id
-            - task
-            - url
             type: object
         required:
         - spec

@@ -6418,9 +6418,6 @@ spec:
                   - unknown
                   type: string
                 type: array
-            required:
-            - image
-            - tasks
             type: object
         required:
         - spec

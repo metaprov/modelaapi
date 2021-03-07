@@ -82,18 +82,18 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataProductName *string `json:"dataProductName,omitempty" protobuf:"bytes,1,opt,name=dataProductName"`
 	// DataProductVersionName is a reference to data product version
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataProductVersionName *string `json:"dataProductVersionName,omitempty" protobuf:"bytes,2,opt,name=dataProductVersionName"`
 	// DataSourceName is the name of existing datasource, if empty the datasource parameters will be inferred from the file
 	// +kubebuilder:validation:MaxLength=253
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
 	// DatasetName is the name of existing dataset, if empty the dataset object will be created
 	// otherwise, a dataset will be created based on the file in the path section.
@@ -102,62 +102,62 @@ type ModelAutobuilderSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Path is the location of the data in the cloud
 	// +kubebuilder:validation:MaxLength=256
-	// +optional
+	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,5,opt,name=path"`
 	// Task is the machine learning task (regression/classification)
 	// required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
 	// The task objective. this is how models will be scored.
 	// If not defined this will be set to the default objective for the task
-	// +optional
+	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
 	// Target column.
 	// Default: last column in the schema.
 	// +kubebuilder:validation:MaxLength=128
-	// +optional
+	// +kubebuilder:validation:Optional
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,8,opt,name=targetColumn"`
 	// Max training time.
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=60
-	// +optional
+	// +kubebuilder:validation:Optional
 	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,9,opt,name=maxTime"`
 	// Max model
 	// +kubebuilder:validation:Maximum=512
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=10
-	// +optional
+	// +kubebuilder:validation:Optional
 	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,10,opt,name=maxModels"`
 	// Access method specify the predictor access method.
 	// Default: ClusterPort
 	// +kubebuilder:default:=cluster-port
-	// +optional
+	// +kubebuilder:validation:Optional
 	AccessMethod *inferencev1.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
 	// Specify if the predictor should autoscale.
 	// Default : false
 	// +kubebuilder:default:=false
-	// +optional
+	// +kubebuilder:validation:Optional
 	AutoScale *bool `json:"autoScale,omitempty" protobuf:"bytes,12,opt,name=autoScale"`
 	// The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
-	// +optional
+	// +kubebuilder:validation:Optional
 	DataSourceSpec *datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
 	// Specify the number of trainers.
 	// Default 1 trainer.
 	// +kubebuilder:default:=1
-	// +optional
+	// +kubebuilder:validation:Optional
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,14,opt,name=trainers"`
 	// Specify the search method
 	// +kubebuilder:default:="random"
-	// +optional
+	// +kubebuilder:validation:Optional
 	SearchMethod *SearchMethodName `json:"searchMethod,omitempty" protobuf:"bytes,15,opt,name=searchMethod"`
 	// Set the true to abort the model auto builder
 	// +kubebuilder:default:=false
-	// +optional
+	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,16,opt,name=aborted"`
 	// The owner account name
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default:="no-one"
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
 }
 
@@ -180,30 +180,30 @@ type ModelAutobuilderStatus struct {
 	// The phase of the auto ml run
 	Phase ModelAutobuilderPhase `json:"phase,omitempty" protobuf:"bytes,9,opt,name=phase"`
 	// number of rows in the dataset
-	// +optional
+	// +kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,10,opt,name=rows"`
 	// number of columns, used mainly to show the columns
-	// +optional
+	// +kubebuilder:validation:Optional
 	Cols int32 `json:"cols,omitempty" protobuf:"varint,11,opt,name=cols"`
 	// file size in bytes
-	// +optional
+	// +kubebuilder:validation:Optional
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,12,opt,name=fileSize"`
 	// Total models created for the study
-	// +optional
+	// +kubebuilder:validation:Optional
 	Models int32 `json:"models,omitempty" protobuf:"varint,13,opt,name=models"`
 	// models that were successful during training
-	// +optional
+	// +kubebuilder:validation:Optional
 	TrainedModels int32 `json:"trainedModels,omitempty" protobuf:"varint,14,opt,name=trainedModels"`
 	// The Best model score, so far.
-	// +optional
+	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,15,opt,name=bestModelScore"`
 	// The best estimator, taken from the best model
 	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,16,opt,name=estimator"`
 	// StartTime is the times that this prediction job started
-	// +optional
+	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,17,opt,name=startTime"`
 	// CompletionTime is the time that this prediction job finished
-	// +optional
+	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,18,opt,name=completionTime"`
 	//+optional
 	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,19,rep,name=conditions"`

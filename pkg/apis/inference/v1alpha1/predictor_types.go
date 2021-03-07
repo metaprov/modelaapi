@@ -101,7 +101,7 @@ type DriftCheckSpec struct {
 	// The crdn schedule to run the drift detection
 	CronExpression string `json:"cronExpr,omitempty" protobuf:"bytes,1,opt,name=cronExpr"`
 	// The drift threshold.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Threshold *float64 `json:"threshold,omitempty" protobuf:"bytes,2,opt,name=treshold"`
 	// The notifier to invoke in case of
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
@@ -115,34 +115,34 @@ type ModelDeploymentSpec struct {
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
 	// number of replicas of the current model
 	// Default: 1
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=0
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,2,opt,name=replicas"`
 	// Does the current model pods needs autoscaling. If yes we will use HPA.
 	// Default is false
-	// +optional
+	// +kubebuilder:validation:Optional
 	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,3,opt,name=autoscale"`
 	// How much traffic to the current model
 	// Default: 100.
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	Weight *int32 `json:"weight,omitempty" protobuf:"varint,4,opt,name=weight"`
 	// Denotes if this deployment is canary. This must be false for the prod deployment.
 	// Default: false
-	// +optional
+	// +kubebuilder:validation:Optional
 	Canary *bool `json:"canary,omitempty" protobuf:"bytes,5,opt,name=canary"`
 	// Denotes if the model is a shadow. This must be false for the prod deployment.
 	// Default: false
-	// +optional
+	// +kubebuilder:validation:Optional
 	Shadow *bool `json:"shadow,omitempty" protobuf:"bytes,6,opt,name=shadow"`
 	// Filter donotes a selection on the model
-	// +optional
+	// +kubebuilder:validation:Optional
 	Filter *string `json:"filter,omitempty" protobuf:"bytes,7,opt,name=filter"`
 	// If the deployment is canary, the metric define how to evaluate the canary.
 	// Default: none
-	// +optional
+	// +kubebuilder:validation:Optional
 	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,8,rep,name=canaryMetrics"`
 }
 
@@ -168,7 +168,7 @@ type ModelDeploymentStatus struct {
 type ProgressiveSpec struct {
 	// How long in seconds does the warm up period started
 	// This is used only during progressive deployment
-	// +optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	Warmup *int32 `json:"warmup,omitempty" protobuf:"varint,1,opt,name=warmup"`
@@ -176,75 +176,75 @@ type ProgressiveSpec struct {
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	// Default : 10
-	// +optional
+	// +kubebuilder:validation:Optional
 	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,2,opt,name=trafficIncrement"`
 	// What metric to use when comparing the candidate to the current
-	// +optional
+	// +kubebuilder:validation:Optional
 	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,opt,name=canaryMetrics"`
 }
 
 // PredictorSpec define the desired state of the predictor
 type PredictorSpec struct {
 	// The account name of the owner of this predictor
-	// +optional
+	// +kubebuilder:validation:Optional
 	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default =""
-	// +optional
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The product that this predictor serve.
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
 	// The serving site that owns the
-	// +optional
+	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
 	// Service port specify the predictor port.
 	// Default: 8080
-	// +optional
+	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,5,opt,name=port"`
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:validation:MinLength=1
 	// Default: /predict
-	// +optional
+	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
-	// +optional
+	// +kubebuilder:validation:Optional
 	AccessType *AccessType `json:"accessType,omitempty" protobuf:"bytes,7,opt,name=accessType"`
 	// A template for the predictor pod. The system will create the deployment based on this template.
-	// +optional
+	// +kubebuilder:validation:Optional
 	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,8,opt,name=template"`
 	// Production model deployment
-	// +optional
+	// +kubebuilder:validation:Optional
 	Models []ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,9,opt,name=models"`
 	// How much do we increment the warm up traffic
-	// +optional
+	// +kubebuilder:validation:Optional
 	DriftCheck *DriftCheckSpec `json:"driftCheck,omitempty" protobuf:"bytes,12,opt,name=driftCheck"`
 	// Denotes the progressive spec
 	// What metric to use when comparing the candidate to the current
-	// +optional
+	// +kubebuilder:validation:Optional
 	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,13,opt,name=progressive"`
 	// The key in the bucket for storing all the predictor artifacts.
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:MinLength=1
-	// +optional
+	// +kubebuilder:validation:Optional
 	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,14,opt,name=artifactsFolder"`
 	// set of input channel, the predictor will watch those channels for predictions
-	// +optional
+	// +kubebuilder:validation:Optional
 	InputChannels []PredictionChannel `json:"inputChannels,omitempty" protobuf:"bytes,15,opt,name=inputChannels"`
 	// set of output channels, the predictor will
-	// +optional
+	// +kubebuilder:validation:Optional
 	OutputChannels []PredictionChannel `json:"outputChannels,omitempty" protobuf:"bytes,16,opt,name=outputChannels"`
 	// The owner account name
-	// +optional
+	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
 }
 
 // PredictorStatus contain the current state of the Predictor resource
 type PredictorStatus struct {
 	// Model one status
-	// +optional
+	// +kubebuilder:validation:Optional
 	ModelStatuses []ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,opt,name=modelStatus"`
 
 	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
@@ -272,16 +272,16 @@ type PredictorHealth struct {
 // The specific of a prediction channel
 type PredictionChannel struct {
 	// Define a prediction via table
-	// +optional
+	// +kubebuilder:validation:Optional
 	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,1,opt,name=table"`
 	// Define a prediction via a bot
-	// +optional
+	// +kubebuilder:validation:Optional
 	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,2,opt,name=bot"`
 	// Define a prediction via a bot
-	// +optional
+	// +kubebuilder:validation:Optional
 	Bucket *BucketChannelSpec `json:"bucket,omitempty" protobuf:"bytes,3,opt,name=bucket"`
 	// Define a streaming spec for the predictor
-	// +optional
+	// +kubebuilder:validation:Optional
 	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,4,opt,name=streaming"`
 }
 

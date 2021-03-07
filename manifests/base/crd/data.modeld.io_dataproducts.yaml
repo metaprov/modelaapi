@@ -94,7 +94,7 @@ spec:
                 type: object
               imageLocation:
                 description: ImageLocation is the image repository that stores the
-                  models images for the product versions Required.
+                  models images for the product versions
                 properties:
                   name:
                     description: The canonical name of the image repo. The default
@@ -133,7 +133,7 @@ spec:
                 type: integer
               servingSiteName:
                 description: ServingSiteName is the serving site where predictors
-                  of this product are deployed Required.
+                  of this product are deployed
                 maxLength: 63
                 minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
@@ -166,7 +166,7 @@ spec:
                 type: array
               task:
                 description: Task denote the machine learning task of the product
-                  (classification/regression,etc.) Required.
+                  (classification/regression,etc.)
                 enum:
                 - binary-classification
                 - multi-classification
@@ -219,9 +219,6 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-            required:
-            - labName
-            - servingSiteName
             type: object
           status:
             description: DataProductStatus defines the observed state of DataProduct
