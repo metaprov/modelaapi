@@ -43,6 +43,7 @@ type AlgorithmSpec struct {
 	// +kubebuilder:validation:Optional
 	Task MLTask `json:"task" protobuf:"bytes,4,opt,name=task"`
 	// Sparse indicate if this algorithm can deal with sparse data
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Sparse *bool `json:"sparse,omitempty" protobuf:"bytes,5,opt,name=sparse"`
 	// IntegerParameters is the list of integer hyper parameter ranges.

@@ -150,47 +150,36 @@ message Column {
 // Hold the statistical parameters about a single attribute
 message ColumnStatistics {
   // FileName is the name of the column
-  // +kubebuilder:validation:Optional
   optional string name = 1;
 
   // Min is the minimum value of the attribute
-  // +kubebuilder:validation:Optional
   optional double min = 2;
 
   // Max is the maximum value of the attribute
-  // +kubebuilder:validation:Optional
   optional double max = 3;
 
   // Mean is the mean value of the attribute
-  // +kubebuilder:validation:Optional
   optional double mean = 4;
 
   // StdDev is the standard deviation value of the attribute
-  // +kubebuilder:validation:Optional
   optional double stddev = 5;
 
   // Skewness is the standard deviation value of the attribute
-  // +kubebuilder:validation:Optional
   optional double skewness = 6;
 
   // Kurtosis is the standard deviation value of the attribute
-  // +kubebuilder:validation:Optional
   optional double kurtosis = 7;
 
   // Zeros is the numbers of zeros in the feature
-  // +kubebuilder:validation:Optional
   optional double zeros = 8;
 
   // Pct25 is the 25 precent point
-  // +kubebuilder:validation:Optional
   optional double p25 = 10;
 
   // Pct50 is the median
-  // +kubebuilder:validation:Optional
   optional double p50 = 11;
 
   // Pct75 is the 75% point
-  // +kubebuilder:validation:Optional
   optional double p75 = 12;
 
   // The number of missing values
@@ -752,6 +741,7 @@ message DatasetList {
 // DatasetSpec defines the desired state of a dataset
 message DatasetSpec {
   // The account name of the owner of this dataset
+  // +kubebuilder:default ="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
@@ -761,6 +751,7 @@ message DatasetSpec {
   optional string versionName = 2;
 
   // DataSourceName is the name of the data source which created this dataset. For example flat file
+  // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string datasourceName = 3;
@@ -1773,11 +1764,9 @@ message Signatures {
   optional string train = 4;
 
   // the location of the training data, if different from the data.
-  // +kubebuilder:validation:Optional
   optional string test = 5;
 
   // Pointer to the validation
-  // +kubebuilder:validation:Optional
   optional string validation = 6;
 }
 

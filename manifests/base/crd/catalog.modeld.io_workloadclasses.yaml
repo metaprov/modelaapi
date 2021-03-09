@@ -27,7 +27,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: WorkloadClass define a template for a trainer.
+        description: WorkloadClass define a template for a job.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -6418,6 +6418,8 @@ spec:
                   - unknown
                   type: string
                 type: array
+            required:
+            - image
             type: object
         required:
         - spec

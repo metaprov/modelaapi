@@ -115,3 +115,11 @@ update-licenses:
 	cd hack/oss; GO111MODULE=on go run main.go osagen -s "Mozilla Public License 2.0,GNU General Public License v2.0,GNU General Public License v3.0,GNU Lesser General Public License v2.1,GNU Lesser General Public License v3.0,GNU Affero General Public License v3.0"> ../../docs/content/static/content/osa_provided.md
 	cd hack/oss; GO111MODULE=on go run main.go osagen -i "Mozilla Public License 2.0,GNU General Public License v2.0,GNU General Public License v3.0,GNU Lesser General Public License v2.1,GNU Lesser General Public License v3.0,GNU Affero General Public License v3.0"> ../../docs/content/static/content/osa_included.md
 
+
+.PHONY: install-protoc
+install-protoc:	 
+	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.15.5/protoc-3.15.5-linux-x86_64.zip 
+	 mv protoc-3.15.5-linux-x86_64.zip /tmp/protoc-3.15.5-linux-x86_64.zip
+	 unzip /tmp/protoc-3.15.5-linux-x86_64.zip -d $(HOME)/.local
+	 export PATH="$PATH:$HOME/.local/bin"
+

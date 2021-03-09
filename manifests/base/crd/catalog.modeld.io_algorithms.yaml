@@ -154,6 +154,7 @@ spec:
                   type: object
                 type: array
               sparse:
+                default: false
                 description: Sparse indicate if this algorithm can deal with sparse
                   data
                 type: boolean

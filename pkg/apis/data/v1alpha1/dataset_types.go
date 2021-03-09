@@ -84,6 +84,7 @@ type DatasetList struct {
 //DatasetSpec defines the desired state of a dataset
 type DatasetSpec struct {
 	// The account name of the owner of this dataset
+	// +kubebuilder:default ="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the dataset
@@ -91,6 +92,7 @@ type DatasetSpec struct {
 	// required.
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// DataSourceName is the name of the data source which created this dataset. For example flat file
+	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
@@ -162,37 +164,26 @@ type DatasetStatistics struct {
 // Hold the statistical parameters about a single attribute
 type ColumnStatistics struct {
 	// FileName is the name of the column
-	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Min is the minimum value of the attribute
-	// +kubebuilder:validation:Optional
 	Min float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
 	// Max is the maximum value of the attribute
-	// +kubebuilder:validation:Optional
 	Max float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
 	// Mean is the mean value of the attribute
-	// +kubebuilder:validation:Optional
 	Mean float64 `json:"mean,omitempty" protobuf:"bytes,4,opt,name=mean"`
 	// StdDev is the standard deviation value of the attribute
-	// +kubebuilder:validation:Optional
 	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,5,opt,name=stddev"`
 	// Skewness is the standard deviation value of the attribute
-	// +kubebuilder:validation:Optional
 	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,6,opt,name=skewness"`
 	// Kurtosis is the standard deviation value of the attribute
-	// +kubebuilder:validation:Optional
 	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,7,opt,name=kurtosis"`
 	// Zeros is the numbers of zeros in the feature
-	// +kubebuilder:validation:Optional
 	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,8,opt,name=zeros"`
 	// Pct25 is the 25 precent point
-	// +kubebuilder:validation:Optional
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,10,opt,name=p25"`
 	// Pct50 is the median
-	// +kubebuilder:validation:Optional
 	P50 float64 `json:"p50,omitempty" protobuf:"bytes,11,opt,name=p50"`
 	// Pct75 is the 75% point
-	// +kubebuilder:validation:Optional
 	P75 float64 `json:"p75,omitempty" protobuf:"bytes,12,opt,name=p75"`
 	// The number of missing values
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,14,opt,name=missing"`
@@ -251,9 +242,7 @@ type Signatures struct {
 	// path to the training set
 	Train string `json:"train" protobuf:"bytes,4,opt,name=train"`
 	// the location of the training data, if different from the data.
-	// +kubebuilder:validation:Optional
 	Test string `json:"test" protobuf:"bytes,5,opt,name=test"`
 	// Pointer to the validation
-	// +kubebuilder:validation:Optional
 	Validation string `json:"validation" protobuf:"bytes,6,opt,name=validation"`
 }

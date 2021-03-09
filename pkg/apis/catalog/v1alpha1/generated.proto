@@ -62,6 +62,7 @@ message AlgorithmSpec {
   optional string task = 4;
 
   // Sparse indicate if this algorithm can deal with sparse data
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool sparse = 5;
 
@@ -413,7 +414,7 @@ message VizUri {
   optional string uri = 2;
 }
 
-// WorkloadClass define a template for a trainer.
+// WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modeld,all}
@@ -434,7 +435,7 @@ message WorkloadClassList {
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
   // Image is the container image of the workload
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Required
   optional string image = 1;
 
   // Tasks are the machine learning tasks supported by the image
@@ -446,7 +447,7 @@ message WorkloadClassSpec {
   optional MLFrameworkList frameworks = 3;
 
   // Template is the Pod specification for new trainers from this workload class.
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Required
   optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 4;
 }
 

@@ -42,15 +42,15 @@ spec:
             description: CloudSpec define the attribute of a single cloud provider
               (E.g. AWS)
             properties:
-              defaultGpuClassRef:
+              defaultGpuClassName:
                 description: DefaultGpuClassName is the default gpu class. Used when
                   allocating new gpu on this provider
                 type: string
-              defaultMachineClassRef:
+              defaultMachineClassName:
                 description: DefaultMachineClassName is the default machine class.
                   Used when allocating new machine on this provider
                 type: string
-              defaultRegionRef:
+              defaultRegionName:
                 description: DefaultRegionName is the default region.
                 type: string
               gpuClasses:

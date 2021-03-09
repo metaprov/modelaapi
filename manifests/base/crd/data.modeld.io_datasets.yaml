@@ -193,7 +193,9 @@ spec:
                     type: string
                 required:
                 - data
+                - test
                 - train
+                - validation
                 type: object
               statistics:
                 description: Statistics for the dataset. The statistics contain information

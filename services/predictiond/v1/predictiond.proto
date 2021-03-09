@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package modeld.proto.predictionserver.v1;
+package modeld.proto.predictiond.v1;
 
 import "protoc-gen-swagger/options/annotations.proto";
 import "google/api/annotations.proto";
@@ -8,10 +8,9 @@ import "google/protobuf/struct.proto";
 
 
 option csharp_namespace = "Modeld.Client.Autogen.Grpc.v1";
-option java_outer_classname = "ModeldProtos";
-option java_package = "io.modeld.v1";
-option go_package = "github.com/metaprov/modeldapiapi/pkg/proto/predictionserver/v1";
-
+option java_outer_classname = "Predictiond";
+option java_package = "io.modeld.predictord.v1";
+option go_package = "github.com/metaprov/modeldapi/services/predictiond/v1";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
   info: {

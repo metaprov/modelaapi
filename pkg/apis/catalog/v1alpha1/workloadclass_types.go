@@ -5,7 +5,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// WorkloadClass define a template for a trainer.
+// WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modeld,all}
@@ -18,7 +18,7 @@ type WorkloadClass struct {
 //WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
 	// Image is the container image of the workload
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Required
 	Image string `json:"image" protobuf:"bytes,1,opt,name=image"`
 	// Tasks are the machine learning tasks supported by the image
 	// +kubebuilder:validation:Optional
@@ -27,7 +27,7 @@ type WorkloadClassSpec struct {
 	// +kubebuilder:validation:Optional
 	Frameworks MLFrameworkList `json:"frameworks,omitempty" protobuf:"bytes,3,opt,name=frameworks"`
 	// Template is the Pod specification for new trainers from this workload class.
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Required
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,4,opt,name=podTemplate"`
 }
 

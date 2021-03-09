@@ -26,7 +26,6 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
 
 # generate the api objects
      protoc \
-        --experimental_allow_proto3_optional \
         -I${PROJECT_ROOT}/../../.. \
         -I${PROJECT_ROOT} \
         -I/usr/local/include \
@@ -84,6 +83,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline.proto \
          github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto \
          github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
+         github.com/metaprov/modeldapi/services/predictiond/v1/predictiond.proto \
          github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto \
          github.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto \
          github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto \
