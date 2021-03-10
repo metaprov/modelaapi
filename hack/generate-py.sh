@@ -118,7 +118,7 @@ python3 -m grpc_tools.protoc \
     -I${PROJECT_ROOT}/pkg \
     -I${PROJECT_ROOT}/common-protos \
     -I${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf \
-    --python_out=./lang/python  \
+    --python_out=${PROJECT_ROOT}/lang/python \
     google/api/annotations.proto \
     google/api/http.proto \
     k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \
@@ -172,6 +172,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto \
     github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
     github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto \
+    github.com/metaprov/modeldapi/services/predictiond/v1/predictiond.proto \
     github.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto \
     github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto \
     github.com/metaprov/modeldapi/services/reciperun/v1/reciperun.proto \

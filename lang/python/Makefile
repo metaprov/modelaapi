@@ -29,7 +29,7 @@ test:
 	python setup.py test
 
 # Build the universal wheel and source distribution
-build:
+build: clean
 	python3 setup.py sdist bdist_wheel
 
 # Install the package from source
@@ -40,5 +40,8 @@ install:
 upload-to-test:
 	twine upload -r pypitest dist/*.tar.gz
 
-upload: build
+upload: packagify
 	python3 -m twine upload --repository pypi dist/*.tar.gz --verbose
+
+packagify: build
+	python3 packagify.py
