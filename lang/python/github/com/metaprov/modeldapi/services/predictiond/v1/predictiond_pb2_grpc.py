@@ -17,42 +17,42 @@ class PredictionServerStub(object):
             channel: A grpc.Channel.
         """
         self.ServerLive = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/ServerLive',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerLive',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerLiveRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerLiveResponse.FromString,
                 )
         self.ServerReady = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/ServerReady',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerReady',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerReadyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerReadyResponse.FromString,
                 )
         self.ModelReady = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/ModelReady',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelReady',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelReadyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelReadyResponse.FromString,
                 )
         self.ServerMetadata = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/ServerMetadata',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerMetadata',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerMetadataRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerMetadataResponse.FromString,
                 )
         self.ModelMetadata = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/ModelMetadata',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelMetadata',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelMetadataRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelMetadataResponse.FromString,
                 )
         self.GetPredictor = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/GetPredictor',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetPredictor',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetPredictorRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetPredictorResponse.FromString,
                 )
         self.GetModel = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/GetModel',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.FromString,
                 )
         self.Predict = channel.unary_unary(
-                '/modeld.proto.predictiond.v1.PredictionServer/Predict',
+                '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/Predict',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.PredictRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.PredictResponse.FromString,
                 )
@@ -161,7 +161,7 @@ def add_PredictionServerServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'modeld.proto.predictiond.v1.PredictionServer', rpc_method_handlers)
+            'github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -182,7 +182,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/ServerLive',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerLive',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerLiveRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerLiveResponse.FromString,
             options, channel_credentials,
@@ -199,7 +199,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/ServerReady',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerReady',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerReadyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerReadyResponse.FromString,
             options, channel_credentials,
@@ -216,7 +216,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/ModelReady',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelReady',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelReadyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelReadyResponse.FromString,
             options, channel_credentials,
@@ -233,7 +233,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/ServerMetadata',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerMetadata',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerMetadataRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ServerMetadataResponse.FromString,
             options, channel_credentials,
@@ -250,7 +250,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/ModelMetadata',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelMetadata',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelMetadataRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.ModelMetadataResponse.FromString,
             options, channel_credentials,
@@ -267,7 +267,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/GetPredictor',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetPredictor',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetPredictorRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetPredictorResponse.FromString,
             options, channel_credentials,
@@ -284,7 +284,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/GetModel',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.FromString,
             options, channel_credentials,
@@ -301,7 +301,7 @@ class PredictionServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/modeld.proto.predictiond.v1.PredictionServer/Predict',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/Predict',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.PredictRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.PredictResponse.FromString,
             options, channel_credentials,

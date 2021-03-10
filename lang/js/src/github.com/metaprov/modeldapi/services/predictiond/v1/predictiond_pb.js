@@ -21,39 +21,39 @@ var google_api_annotations_pb = require('../../../../../../google/api/annotation
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ColumnInfo', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.GetModelRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.GetModelResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.GetPredictorRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.GetPredictorResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.InferParameter', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.InferParameter.ParameterChoiceCase', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.InferTensorContents', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelInferRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelInferResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelInfo', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelMetadataRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelMetadataResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelReadyRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ModelReadyResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.PredictFormat', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.PredictRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.PredictResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.PredictResultLineItem', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.PredictorInfo', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ProbabilityValue', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.SchemaInfo', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ServerLiveRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ServerLiveResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ServerMetadataRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ServerMetadataResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ServerReadyRequest', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ServerReadyResponse', null, global);
-goog.exportSymbol('proto.modeld.proto.predictiond.v1.ShapValue', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.ParameterChoiceCase', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictFormat', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -64,16 +64,16 @@ goog.exportSymbol('proto.modeld.proto.predictiond.v1.ShapValue', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.PredictorInfo.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.PredictorInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.PredictorInfo.displayName = 'proto.modeld.proto.predictiond.v1.PredictorInfo';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -85,16 +85,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelInfo = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelInfo.displayName = 'proto.modeld.proto.predictiond.v1.ModelInfo';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -106,16 +106,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.SchemaInfo.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.SchemaInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.SchemaInfo.displayName = 'proto.modeld.proto.predictiond.v1.SchemaInfo';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -127,16 +127,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ColumnInfo.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ColumnInfo, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ColumnInfo.displayName = 'proto.modeld.proto.predictiond.v1.ColumnInfo';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -148,16 +148,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.GetPredictorRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.GetPredictorRequest.displayName = 'proto.modeld.proto.predictiond.v1.GetPredictorRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -169,16 +169,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.GetPredictorResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.GetPredictorResponse.displayName = 'proto.modeld.proto.predictiond.v1.GetPredictorResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -190,16 +190,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.GetModelRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.GetModelRequest.displayName = 'proto.modeld.proto.predictiond.v1.GetModelRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -211,16 +211,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.GetModelResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.GetModelResponse.displayName = 'proto.modeld.proto.predictiond.v1.GetModelResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -232,16 +232,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.PredictRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.PredictRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.PredictRequest.displayName = 'proto.modeld.proto.predictiond.v1.PredictRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -253,16 +253,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.PredictResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.PredictResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.PredictResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.PredictResponse.displayName = 'proto.modeld.proto.predictiond.v1.PredictResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -274,16 +274,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.PredictResultLineItem.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.PredictResultLineItem, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.PredictResultLineItem.displayName = 'proto.modeld.proto.predictiond.v1.PredictResultLineItem';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -295,16 +295,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ProbabilityValue, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ProbabilityValue.displayName = 'proto.modeld.proto.predictiond.v1.ProbabilityValue';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -316,16 +316,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ShapValue = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ShapValue, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ShapValue.displayName = 'proto.modeld.proto.predictiond.v1.ShapValue';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -337,16 +337,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ServerLiveRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ServerLiveRequest.displayName = 'proto.modeld.proto.predictiond.v1.ServerLiveRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -358,16 +358,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ServerLiveResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ServerLiveResponse.displayName = 'proto.modeld.proto.predictiond.v1.ServerLiveResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -379,16 +379,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ServerReadyRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ServerReadyRequest.displayName = 'proto.modeld.proto.predictiond.v1.ServerReadyRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -400,16 +400,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ServerReadyResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ServerReadyResponse.displayName = 'proto.modeld.proto.predictiond.v1.ServerReadyResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -421,16 +421,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelReadyRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelReadyRequest.displayName = 'proto.modeld.proto.predictiond.v1.ModelReadyRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -442,16 +442,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelReadyResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelReadyResponse.displayName = 'proto.modeld.proto.predictiond.v1.ModelReadyResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -463,16 +463,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ServerMetadataRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ServerMetadataRequest.displayName = 'proto.modeld.proto.predictiond.v1.ServerMetadataRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -484,16 +484,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ServerMetadataResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ServerMetadataResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ServerMetadataResponse.displayName = 'proto.modeld.proto.predictiond.v1.ServerMetadataResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -505,16 +505,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelMetadataRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelMetadataRequest.displayName = 'proto.modeld.proto.predictiond.v1.ModelMetadataRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -526,16 +526,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ModelMetadataResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelMetadataResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelMetadataResponse.displayName = 'proto.modeld.proto.predictiond.v1.ModelMetadataResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -547,16 +547,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.displayName = 'proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -568,16 +568,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ModelInferRequest.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelInferRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelInferRequest.displayName = 'proto.modeld.proto.predictiond.v1.ModelInferRequest';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -589,16 +589,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.displayName = 'proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -610,16 +610,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.displayName = 'proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -631,16 +631,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.InferParameter = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.InferParameter, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.InferParameter.displayName = 'proto.modeld.proto.predictiond.v1.InferParameter';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -652,16 +652,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.InferTensorContents.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.InferTensorContents, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.InferTensorContents.displayName = 'proto.modeld.proto.predictiond.v1.InferTensorContents';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -673,16 +673,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ModelInferResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelInferResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelInferResponse.displayName = 'proto.modeld.proto.predictiond.v1.ModelInferResponse';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -694,16 +694,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.repeatedFields_, null);
 };
-goog.inherits(proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.displayName = 'proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor';
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.displayName = 'proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor';
 }
 
 /**
@@ -711,7 +711,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.repeatedFields_ = [3];
 
 
 
@@ -728,8 +728,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.PredictorInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -738,17 +738,17 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.toObject = function(op
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.PredictorInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     task: jspb.Message.getFieldWithDefault(msg, 2, ""),
     modelsList: jspb.Message.toObjectList(msg.getModelsList(),
-    proto.modeld.proto.predictiond.v1.ModelInfo.toObject, includeInstance),
-    schema: (f = msg.getSchema()) && proto.modeld.proto.predictiond.v1.SchemaInfo.toObject(includeInstance, f)
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.toObject, includeInstance),
+    schema: (f = msg.getSchema()) && proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -762,23 +762,23 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.toObject = function(includeInsta
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.PredictorInfo;
-  return proto.modeld.proto.predictiond.v1.PredictorInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.PredictorInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -794,13 +794,13 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.deserializeBinaryFromReader = fu
       msg.setTask(value);
       break;
     case 3:
-      var value = new proto.modeld.proto.predictiond.v1.ModelInfo;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.deserializeBinaryFromReader);
       msg.addModels(value);
       break;
     case 4:
-      var value = new proto.modeld.proto.predictiond.v1.SchemaInfo;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.SchemaInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.deserializeBinaryFromReader);
       msg.setSchema(value);
       break;
     default:
@@ -816,9 +816,9 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.deserializeBinaryFromReader = fu
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.PredictorInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -826,11 +826,11 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.serializeBinary = func
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.PredictorInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -851,7 +851,7 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.serializeBinaryToWriter = functi
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.modeld.proto.predictiond.v1.ModelInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.serializeBinaryToWriter
     );
   }
   f = message.getSchema();
@@ -859,7 +859,7 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.serializeBinaryToWriter = functi
     writer.writeMessage(
       4,
       f,
-      proto.modeld.proto.predictiond.v1.SchemaInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.serializeBinaryToWriter
     );
   }
 };
@@ -869,16 +869,16 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.serializeBinaryToWriter = functi
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -887,82 +887,82 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.setName = function(val
  * optional string task = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.getTask = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.getTask = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.setTask = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.setTask = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
  * repeated ModelInfo models = 3;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ModelInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo>}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.getModelsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ModelInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ModelInfo, 3));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.getModelsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo, 3));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ModelInfo>} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} returns this
 */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.setModelsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.setModelsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ModelInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.addModels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.modeld.proto.predictiond.v1.ModelInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.addModels = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.clearModelsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.clearModelsList = function() {
   return this.setModelsList([]);
 };
 
 
 /**
  * optional SchemaInfo schema = 4;
- * @return {?proto.modeld.proto.predictiond.v1.SchemaInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.getSchema = function() {
-  return /** @type{?proto.modeld.proto.predictiond.v1.SchemaInfo} */ (
-    jspb.Message.getWrapperField(this, proto.modeld.proto.predictiond.v1.SchemaInfo, 4));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.getSchema = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo, 4));
 };
 
 
 /**
- * @param {?proto.modeld.proto.predictiond.v1.SchemaInfo|undefined} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} returns this
 */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.setSchema = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.setSchema = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.PredictorInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.clearSchema = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.clearSchema = function() {
   return this.setSchema(undefined);
 };
 
@@ -971,7 +971,7 @@ proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.clearSchema = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.PredictorInfo.prototype.hasSchema = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.prototype.hasSchema = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -992,8 +992,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -1002,11 +1002,11 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -1041,23 +1041,23 @@ proto.modeld.proto.predictiond.v1.ModelInfo.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelInfo;
-  return proto.modeld.proto.predictiond.v1.ModelInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1157,9 +1157,9 @@ proto.modeld.proto.predictiond.v1.ModelInfo.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1167,11 +1167,11 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -1320,16 +1320,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.serializeBinaryToWriter = function(m
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1338,16 +1338,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setName = function(value) 
  * optional string namespace = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1356,16 +1356,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setNamespace = function(va
  * optional string task = 3;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getTask = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getTask = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setTask = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setTask = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -1374,16 +1374,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setTask = function(value) 
  * optional float rmse = 4;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getRmse = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getRmse = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setRmse = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setRmse = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
@@ -1392,16 +1392,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setRmse = function(value) 
  * optional float auc = 5;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getAuc = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getAuc = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setAuc = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setAuc = function(value) {
   return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
@@ -1410,16 +1410,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setAuc = function(value) {
  * optional string status = 6;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getStatus = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getStatus = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setStatus = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -1428,16 +1428,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setStatus = function(value
  * optional bool canary = 7;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getCanary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getCanary = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setCanary = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setCanary = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
@@ -1446,16 +1446,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setCanary = function(value
  * optional bool shadow = 8;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getShadow = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getShadow = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setShadow = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setShadow = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
@@ -1464,16 +1464,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setShadow = function(value
  * optional int32 traffic = 9;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getTraffic = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getTraffic = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setTraffic = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setTraffic = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
@@ -1482,16 +1482,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setTraffic = function(valu
  * optional string filter = 10;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getFilter = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getFilter = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setFilter = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setFilter = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
@@ -1500,16 +1500,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setFilter = function(value
  * optional int64 rank = 11;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getRank = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getRank = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setRank = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setRank = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
@@ -1518,16 +1518,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setRank = function(value) 
  * optional string logPath = 12;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getLogpath = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getLogpath = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setLogpath = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setLogpath = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
@@ -1536,16 +1536,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setLogpath = function(valu
  * optional string imageName = 13;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getImagename = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getImagename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setImagename = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setImagename = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
@@ -1554,16 +1554,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setImagename = function(va
  * optional string deploymentName = 14;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getDeploymentname = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getDeploymentname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setDeploymentname = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setDeploymentname = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
 };
 
@@ -1572,16 +1572,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setDeploymentname = functi
  * optional string serviceName = 15;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getServicename = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getServicename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setServicename = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setServicename = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
 };
 
@@ -1590,16 +1590,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setServicename = function(
  * optional string hpaName = 16;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getHpaname = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getHpaname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setHpaname = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setHpaname = function(value) {
   return jspb.Message.setProto3StringField(this, 16, value);
 };
 
@@ -1608,16 +1608,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setHpaname = function(valu
  * optional float p95 = 17;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getP95 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getP95 = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 17, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setP95 = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setP95 = function(value) {
   return jspb.Message.setProto3FloatField(this, 17, value);
 };
 
@@ -1626,16 +1626,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setP95 = function(value) {
  * optional float p99 = 18;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getP99 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getP99 = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 18, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setP99 = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setP99 = function(value) {
   return jspb.Message.setProto3FloatField(this, 18, value);
 };
 
@@ -1644,16 +1644,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setP99 = function(value) {
  * optional int64 lastPrediction = 19;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getLastprediction = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getLastprediction = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setLastprediction = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setLastprediction = function(value) {
   return jspb.Message.setProto3IntField(this, 19, value);
 };
 
@@ -1662,16 +1662,16 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setLastprediction = functi
  * optional int32 dailyPredictionAvg = 20;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.getDailypredictionavg = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.getDailypredictionavg = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setDailypredictionavg = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.prototype.setDailypredictionavg = function(value) {
   return jspb.Message.setProto3IntField(this, 20, value);
 };
 
@@ -1682,7 +1682,7 @@ proto.modeld.proto.predictiond.v1.ModelInfo.prototype.setDailypredictionavg = fu
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.repeatedFields_ = [1];
 
 
 
@@ -1699,8 +1699,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.SchemaInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -1709,14 +1709,14 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.toObject = function(opt_i
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.SchemaInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
-    proto.modeld.proto.predictiond.v1.ColumnInfo.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1730,23 +1730,23 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.toObject = function(includeInstance
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.SchemaInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo}
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.SchemaInfo;
-  return proto.modeld.proto.predictiond.v1.SchemaInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.SchemaInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.SchemaInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo}
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1754,8 +1754,8 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.modeld.proto.predictiond.v1.ColumnInfo;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ColumnInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.deserializeBinaryFromReader);
       msg.addColumns(value);
       break;
     default:
@@ -1771,9 +1771,9 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.deserializeBinaryFromReader = funct
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.SchemaInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1781,18 +1781,18 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.serializeBinary = functio
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.SchemaInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getColumnsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.modeld.proto.predictiond.v1.ColumnInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.serializeBinaryToWriter
     );
   }
 };
@@ -1800,38 +1800,38 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.serializeBinaryToWriter = function(
 
 /**
  * repeated ColumnInfo columns = 1;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ColumnInfo>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo>}
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.getColumnsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ColumnInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ColumnInfo, 1));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ColumnInfo>} value
- * @return {!proto.modeld.proto.predictiond.v1.SchemaInfo} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo} returns this
 */
-proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.setColumnsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.prototype.setColumnsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ColumnInfo=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo}
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.addColumns = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.modeld.proto.predictiond.v1.ColumnInfo, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.SchemaInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.clearColumnsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.SchemaInfo.prototype.clearColumnsList = function() {
   return this.setColumnsList([]);
 };
 
@@ -1842,7 +1842,7 @@ proto.modeld.proto.predictiond.v1.SchemaInfo.prototype.clearColumnsList = functi
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.repeatedFields_ = [7];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.repeatedFields_ = [7];
 
 
 
@@ -1859,8 +1859,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ColumnInfo.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.toObject(opt_includeInstance, this);
 };
 
 
@@ -1869,11 +1869,11 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.toObject = function(opt_i
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ColumnInfo} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -1896,23 +1896,23 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.toObject = function(includeInstance
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ColumnInfo;
-  return proto.modeld.proto.predictiond.v1.ColumnInfo.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ColumnInfo} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1964,9 +1964,9 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.deserializeBinaryFromReader = funct
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ColumnInfo.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1974,11 +1974,11 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.serializeBinary = functio
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ColumnInfo} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -2043,16 +2043,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.serializeBinaryToWriter = function(
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2061,16 +2061,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setName = function(value)
  * optional int32 type = 2;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getType = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getType = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setType = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setType = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -2079,16 +2079,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setType = function(value)
  * optional int32 min = 3;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getMin = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMin = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setMin = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
@@ -2097,16 +2097,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMin = function(value) 
  * optional int32 max = 4;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getMax = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMax = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setMax = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -2115,16 +2115,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMax = function(value) 
  * optional int32 minLength = 5;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getMinlength = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getMinlength = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMinlength = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setMinlength = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -2133,16 +2133,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMinlength = function(v
  * optional int32 maxLength = 6;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getMaxlength = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getMaxlength = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMaxlength = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setMaxlength = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
@@ -2151,16 +2151,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setMaxlength = function(v
  * repeated string enum = 7;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getEnumList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getEnumList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setEnumList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setEnumList = function(value) {
   return jspb.Message.setField(this, 7, value || []);
 };
 
@@ -2168,18 +2168,18 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setEnumList = function(va
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.addEnum = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.addEnum = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.clearEnumList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.clearEnumList = function() {
   return this.setEnumList([]);
 };
 
@@ -2188,16 +2188,16 @@ proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.clearEnumList = function(
  * optional bool nullable = 8;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.getNullable = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.getNullable = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.ColumnInfo} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo} returns this
  */
-proto.modeld.proto.predictiond.v1.ColumnInfo.prototype.setNullable = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ColumnInfo.prototype.setNullable = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
@@ -2218,8 +2218,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.GetPredictorRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2228,11 +2228,11 @@ proto.modeld.proto.predictiond.v1.GetPredictorRequest.prototype.toObject = funct
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.GetPredictorRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -2248,23 +2248,23 @@ proto.modeld.proto.predictiond.v1.GetPredictorRequest.toObject = function(includ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.GetPredictorRequest;
-  return proto.modeld.proto.predictiond.v1.GetPredictorRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.GetPredictorRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2288,9 +2288,9 @@ proto.modeld.proto.predictiond.v1.GetPredictorRequest.deserializeBinaryFromReade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.GetPredictorRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2298,11 +2298,11 @@ proto.modeld.proto.predictiond.v1.GetPredictorRequest.prototype.serializeBinary 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.GetPredictorRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -2318,16 +2318,16 @@ proto.modeld.proto.predictiond.v1.GetPredictorRequest.serializeBinaryToWriter = 
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.GetPredictorRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2348,8 +2348,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.GetPredictorResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2358,13 +2358,13 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.toObject = func
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.GetPredictorResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.modeld.proto.predictiond.v1.PredictorInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2378,23 +2378,23 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.toObject = function(inclu
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.GetPredictorResponse;
-  return proto.modeld.proto.predictiond.v1.GetPredictorResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.GetPredictorResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2402,8 +2402,8 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.modeld.proto.predictiond.v1.PredictorInfo;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.PredictorInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -2419,9 +2419,9 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.deserializeBinaryFromRead
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.GetPredictorResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2429,18 +2429,18 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.serializeBinary
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.GetPredictorResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.modeld.proto.predictiond.v1.PredictorInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2448,28 +2448,28 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.serializeBinaryToWriter =
 
 /**
  * optional PredictorInfo item = 1;
- * @return {?proto.modeld.proto.predictiond.v1.PredictorInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.getItem = function() {
-  return /** @type{?proto.modeld.proto.predictiond.v1.PredictorInfo} */ (
-    jspb.Message.getWrapperField(this, proto.modeld.proto.predictiond.v1.PredictorInfo, 1));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo, 1));
 };
 
 
 /**
- * @param {?proto.modeld.proto.predictiond.v1.PredictorInfo|undefined} value
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictorInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse} returns this
 */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.GetPredictorResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -2478,7 +2478,7 @@ proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.clearItem = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.GetPredictorResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetPredictorResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2499,8 +2499,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.GetModelRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2509,11 +2509,11 @@ proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.toObject = function(
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.GetModelRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     predictorname: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -2530,23 +2530,23 @@ proto.modeld.proto.predictiond.v1.GetModelRequest.toObject = function(includeIns
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.GetModelRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest}
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.GetModelRequest;
-  return proto.modeld.proto.predictiond.v1.GetModelRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.GetModelRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.GetModelRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest}
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2574,9 +2574,9 @@ proto.modeld.proto.predictiond.v1.GetModelRequest.deserializeBinaryFromReader = 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.GetModelRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2584,11 +2584,11 @@ proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.serializeBinary = fu
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.GetModelRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPredictorname();
   if (f.length > 0) {
@@ -2611,16 +2611,16 @@ proto.modeld.proto.predictiond.v1.GetModelRequest.serializeBinaryToWriter = func
  * optional string predictorName = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.getPredictorname = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.prototype.getPredictorname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.GetModelRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.setPredictorname = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.prototype.setPredictorname = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2629,16 +2629,16 @@ proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.setPredictorname = f
  * optional string name = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.GetModelRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.GetModelRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2659,8 +2659,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.GetModelResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2669,13 +2669,13 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.toObject = function
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.GetModelResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.modeld.proto.predictiond.v1.ModelInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2689,23 +2689,23 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.toObject = function(includeIn
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.GetModelResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse}
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.GetModelResponse;
-  return proto.modeld.proto.predictiond.v1.GetModelResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.GetModelResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.GetModelResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse}
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2713,8 +2713,8 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.modeld.proto.predictiond.v1.ModelInfo;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -2730,9 +2730,9 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.deserializeBinaryFromReader =
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.GetModelResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2740,18 +2740,18 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.serializeBinary = f
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.GetModelResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.modeld.proto.predictiond.v1.ModelInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2759,28 +2759,28 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.serializeBinaryToWriter = fun
 
 /**
  * optional ModelInfo item = 1;
- * @return {?proto.modeld.proto.predictiond.v1.ModelInfo}
+ * @return {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo}
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.getItem = function() {
-  return /** @type{?proto.modeld.proto.predictiond.v1.ModelInfo} */ (
-    jspb.Message.getWrapperField(this, proto.modeld.proto.predictiond.v1.ModelInfo, 1));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo, 1));
 };
 
 
 /**
- * @param {?proto.modeld.proto.predictiond.v1.ModelInfo|undefined} value
- * @return {!proto.modeld.proto.predictiond.v1.GetModelResponse} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInfo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse} returns this
 */
-proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.GetModelResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -2789,7 +2789,7 @@ proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.clearItem = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.GetModelResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.GetModelResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2810,8 +2810,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.PredictRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2820,11 +2820,11 @@ proto.modeld.proto.predictiond.v1.PredictRequest.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.PredictRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     validate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
@@ -2844,23 +2844,23 @@ proto.modeld.proto.predictiond.v1.PredictRequest.toObject = function(includeInst
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.PredictRequest;
-  return proto.modeld.proto.predictiond.v1.PredictRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.PredictRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2880,7 +2880,7 @@ proto.modeld.proto.predictiond.v1.PredictRequest.deserializeBinaryFromReader = f
       msg.setExplain(value);
       break;
     case 5:
-      var value = /** @type {!proto.modeld.proto.predictiond.v1.PredictFormat} */ (reader.readEnum());
+      var value = /** @type {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictFormat} */ (reader.readEnum());
       msg.setFormat(value);
       break;
     case 6:
@@ -2900,9 +2900,9 @@ proto.modeld.proto.predictiond.v1.PredictRequest.deserializeBinaryFromReader = f
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.PredictRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2910,11 +2910,11 @@ proto.modeld.proto.predictiond.v1.PredictRequest.prototype.serializeBinary = fun
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.PredictRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -2958,16 +2958,16 @@ proto.modeld.proto.predictiond.v1.PredictRequest.serializeBinaryToWriter = funct
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2976,16 +2976,16 @@ proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setName = function(va
  * optional bool validate = 2;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.getValidate = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.getValidate = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setValidate = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.setValidate = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -2994,34 +2994,34 @@ proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setValidate = functio
  * optional bool explain = 3;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.getExplain = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.getExplain = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setExplain = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.setExplain = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
 /**
  * optional PredictFormat format = 5;
- * @return {!proto.modeld.proto.predictiond.v1.PredictFormat}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictFormat}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.getFormat = function() {
-  return /** @type {!proto.modeld.proto.predictiond.v1.PredictFormat} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.getFormat = function() {
+  return /** @type {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictFormat} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.PredictFormat} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest} returns this
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictFormat} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setFormat = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.setFormat = function(value) {
   return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
@@ -3030,16 +3030,16 @@ proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setFormat = function(
  * optional string payload = 6;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.getPayload = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.getPayload = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setPayload = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictRequest.prototype.setPayload = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -3050,7 +3050,7 @@ proto.modeld.proto.predictiond.v1.PredictRequest.prototype.setPayload = function
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.repeatedFields_ = [1];
 
 
 
@@ -3067,8 +3067,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.PredictResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3077,14 +3077,14 @@ proto.modeld.proto.predictiond.v1.PredictResponse.prototype.toObject = function(
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.PredictResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.modeld.proto.predictiond.v1.PredictResultLineItem.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3098,23 +3098,23 @@ proto.modeld.proto.predictiond.v1.PredictResponse.toObject = function(includeIns
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse}
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.PredictResponse;
-  return proto.modeld.proto.predictiond.v1.PredictResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.PredictResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse}
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3122,8 +3122,8 @@ proto.modeld.proto.predictiond.v1.PredictResponse.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.modeld.proto.predictiond.v1.PredictResultLineItem;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     default:
@@ -3139,9 +3139,9 @@ proto.modeld.proto.predictiond.v1.PredictResponse.deserializeBinaryFromReader = 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.PredictResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3149,18 +3149,18 @@ proto.modeld.proto.predictiond.v1.PredictResponse.prototype.serializeBinary = fu
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.PredictResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.modeld.proto.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter
     );
   }
 };
@@ -3168,38 +3168,38 @@ proto.modeld.proto.predictiond.v1.PredictResponse.serializeBinaryToWriter = func
 
 /**
  * repeated PredictResultLineItem items = 1;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.PredictResultLineItem>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem>}
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.PredictResultLineItem>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.PredictResultLineItem, 1));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem, 1));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.PredictResultLineItem>} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse} returns this
 */
-proto.modeld.proto.predictiond.v1.PredictResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.PredictResultLineItem=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem}
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.modeld.proto.predictiond.v1.PredictResultLineItem, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResponse.prototype.clearItemsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResponse.prototype.clearItemsList = function() {
   return this.setItemsList([]);
 };
 
@@ -3210,7 +3210,7 @@ proto.modeld.proto.predictiond.v1.PredictResponse.prototype.clearItemsList = fun
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.repeatedFields_ = [4,5,6,8];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.repeatedFields_ = [4,5,6,8];
 
 
 
@@ -3227,8 +3227,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.PredictResultLineItem.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.toObject(opt_includeInstance, this);
 };
 
 
@@ -3237,22 +3237,22 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.toObject = fun
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     score: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     label: jspb.Message.getFieldWithDefault(msg, 3, ""),
     probabilitiesList: jspb.Message.toObjectList(msg.getProbabilitiesList(),
-    proto.modeld.proto.predictiond.v1.ProbabilityValue.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.toObject, includeInstance),
     missingcolumnsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     outofboundList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     baseshapvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     shapvaluesList: jspb.Message.toObjectList(msg.getShapvaluesList(),
-    proto.modeld.proto.predictiond.v1.ShapValue.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3266,23 +3266,23 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.toObject = function(incl
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.PredictResultLineItem;
-  return proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3302,8 +3302,8 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinaryFromRea
       msg.setLabel(value);
       break;
     case 4:
-      var value = new proto.modeld.proto.predictiond.v1.ProbabilityValue;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader);
       msg.addProbabilities(value);
       break;
     case 5:
@@ -3319,8 +3319,8 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinaryFromRea
       msg.setBaseshapvalue(value);
       break;
     case 8:
-      var value = new proto.modeld.proto.predictiond.v1.ShapValue;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ShapValue.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.deserializeBinaryFromReader);
       msg.addShapvalues(value);
       break;
     default:
@@ -3336,9 +3336,9 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.deserializeBinaryFromRea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3346,11 +3346,11 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.serializeBinar
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSuccess();
   if (f) {
@@ -3378,7 +3378,7 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter 
     writer.writeRepeatedMessage(
       4,
       f,
-      proto.modeld.proto.predictiond.v1.ProbabilityValue.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.serializeBinaryToWriter
     );
   }
   f = message.getMissingcolumnsList();
@@ -3407,7 +3407,7 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter 
     writer.writeRepeatedMessage(
       8,
       f,
-      proto.modeld.proto.predictiond.v1.ShapValue.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.serializeBinaryToWriter
     );
   }
 };
@@ -3417,16 +3417,16 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.serializeBinaryToWriter 
  * optional bool success = 1;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getSuccess = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getSuccess = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setSuccess = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setSuccess = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -3435,16 +3435,16 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setSuccess = f
  * optional float score = 2;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getScore = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getScore = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setScore = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setScore = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
@@ -3453,54 +3453,54 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setScore = fun
  * optional string label = 3;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getLabel = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getLabel = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setLabel = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setLabel = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
  * repeated ProbabilityValue probabilities = 4;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ProbabilityValue>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue>}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getProbabilitiesList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ProbabilityValue>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ProbabilityValue, 4));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getProbabilitiesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue, 4));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ProbabilityValue>} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
 */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setProbabilitiesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setProbabilitiesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ProbabilityValue=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ProbabilityValue}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.addProbabilities = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.modeld.proto.predictiond.v1.ProbabilityValue, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.addProbabilities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearProbabilitiesList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.clearProbabilitiesList = function() {
   return this.setProbabilitiesList([]);
 };
 
@@ -3509,16 +3509,16 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearProbabili
  * repeated string missingColumns = 5;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getMissingcolumnsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getMissingcolumnsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setMissingcolumnsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setMissingcolumnsList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -3526,18 +3526,18 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setMissingcolu
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.addMissingcolumns = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.addMissingcolumns = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearMissingcolumnsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.clearMissingcolumnsList = function() {
   return this.setMissingcolumnsList([]);
 };
 
@@ -3546,16 +3546,16 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearMissingco
  * repeated string outOfBound = 6;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getOutofboundList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getOutofboundList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setOutofboundList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setOutofboundList = function(value) {
   return jspb.Message.setField(this, 6, value || []);
 };
 
@@ -3563,18 +3563,18 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setOutofboundL
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.addOutofbound = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.addOutofbound = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearOutofboundList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.clearOutofboundList = function() {
   return this.setOutofboundList([]);
 };
 
@@ -3583,54 +3583,54 @@ proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearOutofboun
  * optional float baseShapValue = 7;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getBaseshapvalue = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getBaseshapvalue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setBaseshapvalue = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setBaseshapvalue = function(value) {
   return jspb.Message.setProto3FloatField(this, 7, value);
 };
 
 
 /**
  * repeated ShapValue shapValues = 8;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ShapValue>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue>}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.getShapvaluesList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ShapValue>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ShapValue, 8));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.getShapvaluesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue, 8));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ShapValue>} value
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
 */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.setShapvaluesList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.setShapvaluesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ShapValue=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ShapValue}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue}
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.addShapvalues = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.modeld.proto.predictiond.v1.ShapValue, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.addShapvalues = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.PredictResultLineItem} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem} returns this
  */
-proto.modeld.proto.predictiond.v1.PredictResultLineItem.prototype.clearShapvaluesList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictResultLineItem.prototype.clearShapvaluesList = function() {
   return this.setShapvaluesList([]);
 };
 
@@ -3651,8 +3651,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ProbabilityValue.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.toObject(opt_includeInstance, this);
 };
 
 
@@ -3661,11 +3661,11 @@ proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.toObject = function
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ProbabilityValue} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.toObject = function(includeInstance, msg) {
   var f, obj = {
     label: jspb.Message.getFieldWithDefault(msg, 1, ""),
     probability: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
@@ -3682,23 +3682,23 @@ proto.modeld.proto.predictiond.v1.ProbabilityValue.toObject = function(includeIn
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ProbabilityValue}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue}
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ProbabilityValue;
-  return proto.modeld.proto.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ProbabilityValue} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ProbabilityValue}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue}
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3726,9 +3726,9 @@ proto.modeld.proto.predictiond.v1.ProbabilityValue.deserializeBinaryFromReader =
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ProbabilityValue.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3736,11 +3736,11 @@ proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.serializeBinary = f
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ProbabilityValue} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getLabel();
   if (f.length > 0) {
@@ -3763,16 +3763,16 @@ proto.modeld.proto.predictiond.v1.ProbabilityValue.serializeBinaryToWriter = fun
  * optional string label = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.getLabel = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.prototype.getLabel = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ProbabilityValue} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue} returns this
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.setLabel = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.prototype.setLabel = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3781,16 +3781,16 @@ proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.setLabel = function
  * optional float probability = 2;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.getProbability = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.prototype.getProbability = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ProbabilityValue} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue} returns this
  */
-proto.modeld.proto.predictiond.v1.ProbabilityValue.prototype.setProbability = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ProbabilityValue.prototype.setProbability = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
@@ -3811,8 +3811,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ShapValue.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ShapValue.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.toObject(opt_includeInstance, this);
 };
 
 
@@ -3821,11 +3821,11 @@ proto.modeld.proto.predictiond.v1.ShapValue.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ShapValue} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ShapValue.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.toObject = function(includeInstance, msg) {
   var f, obj = {
     feature: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
@@ -3842,23 +3842,23 @@ proto.modeld.proto.predictiond.v1.ShapValue.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ShapValue}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue}
  */
-proto.modeld.proto.predictiond.v1.ShapValue.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ShapValue;
-  return proto.modeld.proto.predictiond.v1.ShapValue.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ShapValue} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ShapValue}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue}
  */
-proto.modeld.proto.predictiond.v1.ShapValue.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3886,9 +3886,9 @@ proto.modeld.proto.predictiond.v1.ShapValue.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ShapValue.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ShapValue.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3896,11 +3896,11 @@ proto.modeld.proto.predictiond.v1.ShapValue.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ShapValue} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ShapValue.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFeature();
   if (f.length > 0) {
@@ -3923,16 +3923,16 @@ proto.modeld.proto.predictiond.v1.ShapValue.serializeBinaryToWriter = function(m
  * optional string feature = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ShapValue.prototype.getFeature = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.prototype.getFeature = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ShapValue} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue} returns this
  */
-proto.modeld.proto.predictiond.v1.ShapValue.prototype.setFeature = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.prototype.setFeature = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3941,16 +3941,16 @@ proto.modeld.proto.predictiond.v1.ShapValue.prototype.setFeature = function(valu
  * optional float value = 2;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.ShapValue.prototype.getValue = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.prototype.getValue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.ShapValue} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue} returns this
  */
-proto.modeld.proto.predictiond.v1.ShapValue.prototype.setValue = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ShapValue.prototype.setValue = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
@@ -3971,8 +3971,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ServerLiveRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3981,11 +3981,11 @@ proto.modeld.proto.predictiond.v1.ServerLiveRequest.prototype.toObject = functio
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ServerLiveRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -4001,23 +4001,23 @@ proto.modeld.proto.predictiond.v1.ServerLiveRequest.toObject = function(includeI
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ServerLiveRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ServerLiveRequest;
-  return proto.modeld.proto.predictiond.v1.ServerLiveRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ServerLiveRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ServerLiveRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4037,9 +4037,9 @@ proto.modeld.proto.predictiond.v1.ServerLiveRequest.deserializeBinaryFromReader 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ServerLiveRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4047,11 +4047,11 @@ proto.modeld.proto.predictiond.v1.ServerLiveRequest.prototype.serializeBinary = 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ServerLiveRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerLiveRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -4072,8 +4072,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ServerLiveResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4082,11 +4082,11 @@ proto.modeld.proto.predictiond.v1.ServerLiveResponse.prototype.toObject = functi
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ServerLiveResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     live: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
@@ -4102,23 +4102,23 @@ proto.modeld.proto.predictiond.v1.ServerLiveResponse.toObject = function(include
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ServerLiveResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ServerLiveResponse;
-  return proto.modeld.proto.predictiond.v1.ServerLiveResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ServerLiveResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ServerLiveResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4142,9 +4142,9 @@ proto.modeld.proto.predictiond.v1.ServerLiveResponse.deserializeBinaryFromReader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ServerLiveResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4152,11 +4152,11 @@ proto.modeld.proto.predictiond.v1.ServerLiveResponse.prototype.serializeBinary =
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ServerLiveResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getLive();
   if (f) {
@@ -4172,16 +4172,16 @@ proto.modeld.proto.predictiond.v1.ServerLiveResponse.serializeBinaryToWriter = f
  * optional bool live = 1;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.prototype.getLive = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.prototype.getLive = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.ServerLiveResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerLiveResponse.prototype.setLive = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerLiveResponse.prototype.setLive = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -4202,8 +4202,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ServerReadyRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4212,11 +4212,11 @@ proto.modeld.proto.predictiond.v1.ServerReadyRequest.prototype.toObject = functi
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ServerReadyRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -4232,23 +4232,23 @@ proto.modeld.proto.predictiond.v1.ServerReadyRequest.toObject = function(include
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ServerReadyRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ServerReadyRequest;
-  return proto.modeld.proto.predictiond.v1.ServerReadyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ServerReadyRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ServerReadyRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4268,9 +4268,9 @@ proto.modeld.proto.predictiond.v1.ServerReadyRequest.deserializeBinaryFromReader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ServerReadyRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4278,11 +4278,11 @@ proto.modeld.proto.predictiond.v1.ServerReadyRequest.prototype.serializeBinary =
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ServerReadyRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerReadyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -4303,8 +4303,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ServerReadyResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4313,11 +4313,11 @@ proto.modeld.proto.predictiond.v1.ServerReadyResponse.prototype.toObject = funct
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ServerReadyResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     ready: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
@@ -4333,23 +4333,23 @@ proto.modeld.proto.predictiond.v1.ServerReadyResponse.toObject = function(includ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ServerReadyResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ServerReadyResponse;
-  return proto.modeld.proto.predictiond.v1.ServerReadyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ServerReadyResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ServerReadyResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4373,9 +4373,9 @@ proto.modeld.proto.predictiond.v1.ServerReadyResponse.deserializeBinaryFromReade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ServerReadyResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4383,11 +4383,11 @@ proto.modeld.proto.predictiond.v1.ServerReadyResponse.prototype.serializeBinary 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ServerReadyResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getReady();
   if (f) {
@@ -4403,16 +4403,16 @@ proto.modeld.proto.predictiond.v1.ServerReadyResponse.serializeBinaryToWriter = 
  * optional bool ready = 1;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.prototype.getReady = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.prototype.getReady = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.ServerReadyResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerReadyResponse.prototype.setReady = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerReadyResponse.prototype.setReady = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -4433,8 +4433,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelReadyRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4443,11 +4443,11 @@ proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.toObject = functio
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelReadyRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -4464,23 +4464,23 @@ proto.modeld.proto.predictiond.v1.ModelReadyRequest.toObject = function(includeI
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelReadyRequest;
-  return proto.modeld.proto.predictiond.v1.ModelReadyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelReadyRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4508,9 +4508,9 @@ proto.modeld.proto.predictiond.v1.ModelReadyRequest.deserializeBinaryFromReader 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelReadyRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4518,11 +4518,11 @@ proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.serializeBinary = 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelReadyRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -4545,16 +4545,16 @@ proto.modeld.proto.predictiond.v1.ModelReadyRequest.serializeBinaryToWriter = fu
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4563,16 +4563,16 @@ proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.setName = function
  * optional string version = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.getVersion = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelReadyRequest.prototype.setVersion = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyRequest.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4593,8 +4593,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelReadyResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4603,11 +4603,11 @@ proto.modeld.proto.predictiond.v1.ModelReadyResponse.prototype.toObject = functi
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelReadyResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     ready: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
@@ -4623,23 +4623,23 @@ proto.modeld.proto.predictiond.v1.ModelReadyResponse.toObject = function(include
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelReadyResponse;
-  return proto.modeld.proto.predictiond.v1.ModelReadyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelReadyResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4663,9 +4663,9 @@ proto.modeld.proto.predictiond.v1.ModelReadyResponse.deserializeBinaryFromReader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelReadyResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4673,11 +4673,11 @@ proto.modeld.proto.predictiond.v1.ModelReadyResponse.prototype.serializeBinary =
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelReadyResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getReady();
   if (f) {
@@ -4693,16 +4693,16 @@ proto.modeld.proto.predictiond.v1.ModelReadyResponse.serializeBinaryToWriter = f
  * optional bool ready = 1;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.prototype.getReady = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.prototype.getReady = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelReadyResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelReadyResponse.prototype.setReady = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelReadyResponse.prototype.setReady = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -4723,8 +4723,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ServerMetadataRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4733,11 +4733,11 @@ proto.modeld.proto.predictiond.v1.ServerMetadataRequest.prototype.toObject = fun
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ServerMetadataRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -4753,23 +4753,23 @@ proto.modeld.proto.predictiond.v1.ServerMetadataRequest.toObject = function(incl
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ServerMetadataRequest;
-  return proto.modeld.proto.predictiond.v1.ServerMetadataRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ServerMetadataRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4789,9 +4789,9 @@ proto.modeld.proto.predictiond.v1.ServerMetadataRequest.deserializeBinaryFromRea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ServerMetadataRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4799,11 +4799,11 @@ proto.modeld.proto.predictiond.v1.ServerMetadataRequest.prototype.serializeBinar
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ServerMetadataRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -4814,7 +4814,7 @@ proto.modeld.proto.predictiond.v1.ServerMetadataRequest.serializeBinaryToWriter 
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.repeatedFields_ = [3];
 
 
 
@@ -4831,8 +4831,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ServerMetadataResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4841,11 +4841,11 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.toObject = fu
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -4863,23 +4863,23 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.toObject = function(inc
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ServerMetadataResponse;
-  return proto.modeld.proto.predictiond.v1.ServerMetadataResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4911,9 +4911,9 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.deserializeBinaryFromRe
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ServerMetadataResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4921,11 +4921,11 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.serializeBina
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -4955,16 +4955,16 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.serializeBinaryToWriter
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -4973,16 +4973,16 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.setName = fun
  * optional string version = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.getVersion = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.setVersion = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -4991,16 +4991,16 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.setVersion = 
  * repeated string extensions = 3;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.getExtensionsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.getExtensionsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.setExtensionsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.setExtensionsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -5008,18 +5008,18 @@ proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.setExtensions
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.addExtensions = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.addExtensions = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ServerMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ServerMetadataResponse.prototype.clearExtensionsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ServerMetadataResponse.prototype.clearExtensionsList = function() {
   return this.setExtensionsList([]);
 };
 
@@ -5040,8 +5040,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelMetadataRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -5050,11 +5050,11 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.toObject = func
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -5071,23 +5071,23 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.toObject = function(inclu
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelMetadataRequest;
-  return proto.modeld.proto.predictiond.v1.ModelMetadataRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5115,9 +5115,9 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.deserializeBinaryFromRead
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelMetadataRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5125,11 +5125,11 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.serializeBinary
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -5152,16 +5152,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.serializeBinaryToWriter =
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5170,16 +5170,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.setName = funct
  * optional string version = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.getVersion = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.setVersion = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataRequest.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -5190,7 +5190,7 @@ proto.modeld.proto.predictiond.v1.ModelMetadataRequest.prototype.setVersion = fu
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.repeatedFields_ = [2,4,5];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.repeatedFields_ = [2,4,5];
 
 
 
@@ -5207,8 +5207,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelMetadataResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -5217,19 +5217,19 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.toObject = fun
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     versionsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     platform: jspb.Message.getFieldWithDefault(msg, 3, ""),
     inputsList: jspb.Message.toObjectList(msg.getInputsList(),
-    proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject, includeInstance),
     outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
-    proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5243,23 +5243,23 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.toObject = function(incl
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelMetadataResponse;
-  return proto.modeld.proto.predictiond.v1.ModelMetadataResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5279,13 +5279,13 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.deserializeBinaryFromRea
       msg.setPlatform(value);
       break;
     case 4:
-      var value = new proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader);
       msg.addInputs(value);
       break;
     case 5:
-      var value = new proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader);
       msg.addOutputs(value);
       break;
     default:
@@ -5301,9 +5301,9 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.deserializeBinaryFromRea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5311,11 +5311,11 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.serializeBinar
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -5343,7 +5343,7 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter 
     writer.writeRepeatedMessage(
       4,
       f,
-      proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter
     );
   }
   f = message.getOutputsList();
@@ -5351,7 +5351,7 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter 
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter
     );
   }
 };
@@ -5363,7 +5363,7 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.serializeBinaryToWriter 
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.repeatedFields_ = [3];
 
 
 
@@ -5380,8 +5380,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject(opt_includeInstance, this);
 };
 
 
@@ -5390,11 +5390,11 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     datatype: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -5412,23 +5412,23 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata;
-  return proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5462,9 +5462,9 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5472,11 +5472,11 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -5506,16 +5506,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.serialize
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5524,16 +5524,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype
  * optional string datatype = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.getDatatype = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.getDatatype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.setDatatype = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.setDatatype = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -5542,16 +5542,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype
  * repeated int64 shape = 3;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.getShapeList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.getShapeList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.setShapeList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.setShapeList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -5559,18 +5559,18 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.addShape = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.addShape = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.clearShapeList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype.clearShapeList = function() {
   return this.setShapeList([]);
 };
 
@@ -5579,16 +5579,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata.prototype
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5597,16 +5597,16 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setName = func
  * repeated string versions = 2;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.getVersionsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.getVersionsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setVersionsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.setVersionsList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -5614,18 +5614,18 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setVersionsLis
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.addVersions = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.addVersions = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.clearVersionsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.clearVersionsList = function() {
   return this.setVersionsList([]);
 };
 
@@ -5634,92 +5634,92 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.clearVersionsL
  * optional string platform = 3;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.getPlatform = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.getPlatform = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setPlatform = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.setPlatform = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
  * repeated TensorMetadata inputs = 4;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata>}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.getInputsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata, 4));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.getInputsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata, 4));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setInputsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.setInputsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.addInputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.addInputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.clearInputsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.clearInputsList = function() {
   return this.setInputsList([]);
 };
 
 
 /**
  * repeated TensorMetadata outputs = 5;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata>}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.getOutputsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata, 5));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.getOutputsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata, 5));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.setOutputsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.setOutputsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata}
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.addOutputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.modeld.proto.predictiond.v1.ModelMetadataResponse.TensorMetadata, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.addOutputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.TensorMetadata, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelMetadataResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.clearOutputsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelMetadataResponse.prototype.clearOutputsList = function() {
   return this.setOutputsList([]);
 };
 
@@ -5730,7 +5730,7 @@ proto.modeld.proto.predictiond.v1.ModelMetadataResponse.prototype.clearOutputsLi
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.repeatedFields_ = [5,6,7];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.repeatedFields_ = [5,6,7];
 
 
 
@@ -5747,8 +5747,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelInferRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -5757,20 +5757,20 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.toObject = functio
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     modelVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
     id: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.modeld.proto.predictiond.v1.InferParameter.toObject) : [],
+    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject) : [],
     inputsList: jspb.Message.toObjectList(msg.getInputsList(),
-    proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.toObject, includeInstance),
     outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
-    proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.toObject, includeInstance),
     rawInputContentsList: msg.getRawInputContentsList_asB64()
   };
 
@@ -5785,23 +5785,23 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.toObject = function(includeI
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelInferRequest;
-  return proto.modeld.proto.predictiond.v1.ModelInferRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5823,17 +5823,17 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.deserializeBinaryFromReader 
     case 4:
       var value = msg.getParametersMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.modeld.proto.predictiond.v1.InferParameter());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter());
          });
       break;
     case 5:
-      var value = new proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinaryFromReader);
       msg.addInputs(value);
       break;
     case 6:
-      var value = new proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinaryFromReader);
       msg.addOutputs(value);
       break;
     case 7:
@@ -5853,9 +5853,9 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.deserializeBinaryFromReader 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelInferRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5863,11 +5863,11 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.serializeBinary = 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getModelName();
   if (f.length > 0) {
@@ -5892,14 +5892,14 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.serializeBinaryToWriter = fu
   }
   f = message.getParametersMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter);
   }
   f = message.getInputsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBinaryToWriter
     );
   }
   f = message.getOutputsList();
@@ -5907,7 +5907,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.serializeBinaryToWriter = fu
     writer.writeRepeatedMessage(
       6,
       f,
-      proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.serializeBinaryToWriter
     );
   }
   f = message.getRawInputContentsList_asU8();
@@ -5926,7 +5926,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.serializeBinaryToWriter = fu
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.repeatedFields_ = [3];
 
 
 
@@ -5943,8 +5943,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.toObject(opt_includeInstance, this);
 };
 
 
@@ -5953,17 +5953,17 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.t
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     datatype: jspb.Message.getFieldWithDefault(msg, 2, ""),
     shapeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.modeld.proto.predictiond.v1.InferParameter.toObject) : [],
-    contents: (f = msg.getContents()) && proto.modeld.proto.predictiond.v1.InferTensorContents.toObject(includeInstance, f)
+    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject) : [],
+    contents: (f = msg.getContents()) && proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5977,23 +5977,23 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.toObject = 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor;
-  return proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6017,12 +6017,12 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.deserialize
     case 4:
       var value = msg.getParametersMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.modeld.proto.predictiond.v1.InferParameter());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter());
          });
       break;
     case 5:
-      var value = new proto.modeld.proto.predictiond.v1.InferTensorContents;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.InferTensorContents.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.deserializeBinaryFromReader);
       msg.setContents(value);
       break;
     default:
@@ -6038,9 +6038,9 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.deserialize
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6048,11 +6048,11 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.s
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -6077,14 +6077,14 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBi
   }
   f = message.getParametersMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter);
   }
   f = message.getContents();
   if (f != null) {
     writer.writeMessage(
       5,
       f,
-      proto.modeld.proto.predictiond.v1.InferTensorContents.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.serializeBinaryToWriter
     );
   }
 };
@@ -6094,16 +6094,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.serializeBi
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -6112,16 +6112,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.s
  * optional string datatype = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getDatatype = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getDatatype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setDatatype = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setDatatype = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -6130,16 +6130,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.s
  * repeated int64 shape = 3;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getShapeList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getShapeList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setShapeList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setShapeList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -6147,18 +6147,18 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.s
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.addShape = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.addShape = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.clearShapeList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.clearShapeList = function() {
   return this.setShapeList([]);
 };
 
@@ -6167,48 +6167,48 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.c
  * map<string, InferParameter> parameters = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>}
+ * @return {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>} */ (
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getParametersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>} */ (
       jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      proto.modeld.proto.predictiond.v1.InferParameter));
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter));
 };
 
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.clearParametersMap = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.clearParametersMap = function() {
   this.getParametersMap().clear();
   return this;};
 
 
 /**
  * optional InferTensorContents contents = 5;
- * @return {?proto.modeld.proto.predictiond.v1.InferTensorContents}
+ * @return {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getContents = function() {
-  return /** @type{?proto.modeld.proto.predictiond.v1.InferTensorContents} */ (
-    jspb.Message.getWrapperField(this, proto.modeld.proto.predictiond.v1.InferTensorContents, 5));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.getContents = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents, 5));
 };
 
 
 /**
- * @param {?proto.modeld.proto.predictiond.v1.InferTensorContents|undefined} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setContents = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.setContents = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.clearContents = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.clearContents = function() {
   return this.setContents(undefined);
 };
 
@@ -6217,7 +6217,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.hasContents = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor.prototype.hasContents = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -6238,8 +6238,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.toObject(opt_includeInstance, this);
 };
 
 
@@ -6248,14 +6248,14 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.modeld.proto.predictiond.v1.InferParameter.toObject) : []
+    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject) : []
   };
 
   if (includeInstance) {
@@ -6269,23 +6269,23 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor;
-  return proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6299,7 +6299,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.d
     case 2:
       var value = msg.getParametersMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.modeld.proto.predictiond.v1.InferParameter());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter());
          });
       break;
     default:
@@ -6315,9 +6315,9 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6325,11 +6325,11 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -6340,7 +6340,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.s
   }
   f = message.getParametersMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter);
   }
 };
 
@@ -6349,16 +6349,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.s
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -6367,20 +6367,20 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.p
  * map<string, InferParameter> parameters = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>}
+ * @return {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>} */ (
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.getParametersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>} */ (
       jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      proto.modeld.proto.predictiond.v1.InferParameter));
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter));
 };
 
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.clearParametersMap = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.prototype.clearParametersMap = function() {
   this.getParametersMap().clear();
   return this;};
 
@@ -6389,16 +6389,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor.p
  * optional string model_name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getModelName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getModelName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setModelName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.setModelName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -6407,16 +6407,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setModelName = fun
  * optional string model_version = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getModelVersion = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getModelVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setModelVersion = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.setModelVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -6425,16 +6425,16 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setModelVersion = 
  * optional string id = 3;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getId = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setId = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -6443,96 +6443,96 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setId = function(v
  * map<string, InferParameter> parameters = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>}
+ * @return {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>} */ (
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getParametersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>} */ (
       jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      proto.modeld.proto.predictiond.v1.InferParameter));
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter));
 };
 
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.clearParametersMap = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.clearParametersMap = function() {
   this.getParametersMap().clear();
   return this;};
 
 
 /**
  * repeated InferInputTensor inputs = 5;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getInputsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor, 5));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getInputsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor, 5));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setInputsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.setInputsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.addInputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.modeld.proto.predictiond.v1.ModelInferRequest.InferInputTensor, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.addInputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferInputTensor, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.clearInputsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.clearInputsList = function() {
   return this.setInputsList([]);
 };
 
 
 /**
  * repeated InferRequestedOutputTensor outputs = 6;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getOutputsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor, 6));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getOutputsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor, 6));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setOutputsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.setOutputsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.addOutputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.modeld.proto.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.addOutputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.InferRequestedOutputTensor, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.clearOutputsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.clearOutputsList = function() {
   return this.setOutputsList([]);
 };
 
@@ -6541,7 +6541,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.clearOutputsList =
  * repeated bytes raw_input_contents = 7;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getRawInputContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getRawInputContentsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
@@ -6551,7 +6551,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getRawInputContent
  * This is a type-conversion wrapper around `getRawInputContentsList()`
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getRawInputContentsList_asB64 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getRawInputContentsList_asB64 = function() {
   return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getRawInputContentsList()));
 };
@@ -6564,7 +6564,7 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getRawInputContent
  * This is a type-conversion wrapper around `getRawInputContentsList()`
  * @return {!Array<!Uint8Array>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getRawInputContentsList_asU8 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.getRawInputContentsList_asU8 = function() {
   return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getRawInputContentsList()));
 };
@@ -6572,9 +6572,9 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.getRawInputContent
 
 /**
  * @param {!(Array<!Uint8Array>|Array<string>)} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setRawInputContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.setRawInputContentsList = function(value) {
   return jspb.Message.setField(this, 7, value || []);
 };
 
@@ -6582,18 +6582,18 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.setRawInputContent
 /**
  * @param {!(string|Uint8Array)} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.addRawInputContents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.addRawInputContents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.clearRawInputContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferRequest.prototype.clearRawInputContentsList = function() {
   return this.setRawInputContentsList([]);
 };
 
@@ -6607,12 +6607,12 @@ proto.modeld.proto.predictiond.v1.ModelInferRequest.prototype.clearRawInputConte
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_ = [[1,2,3]];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_ = [[1,2,3]];
 
 /**
  * @enum {number}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.ParameterChoiceCase = {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.ParameterChoiceCase = {
   PARAMETER_CHOICE_NOT_SET: 0,
   BOOL_PARAM: 1,
   INT64_PARAM: 2,
@@ -6620,10 +6620,10 @@ proto.modeld.proto.predictiond.v1.InferParameter.ParameterChoiceCase = {
 };
 
 /**
- * @return {proto.modeld.proto.predictiond.v1.InferParameter.ParameterChoiceCase}
+ * @return {proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.ParameterChoiceCase}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.getParameterChoiceCase = function() {
-  return /** @type {proto.modeld.proto.predictiond.v1.InferParameter.ParameterChoiceCase} */(jspb.Message.computeOneofCase(this, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0]));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.getParameterChoiceCase = function() {
+  return /** @type {proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.ParameterChoiceCase} */(jspb.Message.computeOneofCase(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0]));
 };
 
 
@@ -6641,8 +6641,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.InferParameter.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject(opt_includeInstance, this);
 };
 
 
@@ -6651,11 +6651,11 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.InferParameter} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.InferParameter.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject = function(includeInstance, msg) {
   var f, obj = {
     boolParam: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     int64Param: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -6673,23 +6673,23 @@ proto.modeld.proto.predictiond.v1.InferParameter.toObject = function(includeInst
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.InferParameter;
-  return proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.InferParameter} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6721,9 +6721,9 @@ proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader = f
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6731,11 +6731,11 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.serializeBinary = fun
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.InferParameter} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -6765,26 +6765,26 @@ proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter = funct
  * optional bool bool_param = 1;
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.getBoolParam = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.getBoolParam = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} returns this
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.setBoolParam = function(value) {
-  return jspb.Message.setOneofField(this, 1, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0], value);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.setBoolParam = function(value) {
+  return jspb.Message.setOneofField(this, 1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} returns this
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.clearBoolParam = function() {
-  return jspb.Message.setOneofField(this, 1, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0], undefined);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.clearBoolParam = function() {
+  return jspb.Message.setOneofField(this, 1, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0], undefined);
 };
 
 
@@ -6792,7 +6792,7 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.clearBoolParam = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.hasBoolParam = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.hasBoolParam = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -6801,26 +6801,26 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.hasBoolParam = functi
  * optional int64 int64_param = 2;
  * @return {number}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.getInt64Param = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.getInt64Param = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} returns this
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.setInt64Param = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0], value);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.setInt64Param = function(value) {
+  return jspb.Message.setOneofField(this, 2, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} returns this
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.clearInt64Param = function() {
-  return jspb.Message.setOneofField(this, 2, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0], undefined);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.clearInt64Param = function() {
+  return jspb.Message.setOneofField(this, 2, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0], undefined);
 };
 
 
@@ -6828,7 +6828,7 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.clearInt64Param = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.hasInt64Param = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.hasInt64Param = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -6837,26 +6837,26 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.hasInt64Param = funct
  * optional string string_param = 3;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.getStringParam = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.getStringParam = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} returns this
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.setStringParam = function(value) {
-  return jspb.Message.setOneofField(this, 3, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0], value);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.setStringParam = function(value) {
+  return jspb.Message.setOneofField(this, 3, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.InferParameter} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter} returns this
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.clearStringParam = function() {
-  return jspb.Message.setOneofField(this, 3, proto.modeld.proto.predictiond.v1.InferParameter.oneofGroups_[0], undefined);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.clearStringParam = function() {
+  return jspb.Message.setOneofField(this, 3, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.oneofGroups_[0], undefined);
 };
 
 
@@ -6864,7 +6864,7 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.clearStringParam = fu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.InferParameter.prototype.hasStringParam = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.prototype.hasStringParam = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -6875,7 +6875,7 @@ proto.modeld.proto.predictiond.v1.InferParameter.prototype.hasStringParam = func
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.repeatedFields_ = [1,2,3,4,5,6,7,8];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.repeatedFields_ = [1,2,3,4,5,6,7,8];
 
 
 
@@ -6892,8 +6892,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.InferTensorContents.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.toObject(opt_includeInstance, this);
 };
 
 
@@ -6902,11 +6902,11 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.toObject = funct
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.InferTensorContents} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.toObject = function(includeInstance, msg) {
   var f, obj = {
     boolContentsList: (f = jspb.Message.getRepeatedBooleanField(msg, 1)) == null ? undefined : f,
     intContentsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
@@ -6929,23 +6929,23 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.toObject = function(includ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.InferTensorContents;
-  return proto.modeld.proto.predictiond.v1.InferTensorContents.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.InferTensorContents} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7011,9 +7011,9 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.deserializeBinaryFromReade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.InferTensorContents.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7021,11 +7021,11 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.serializeBinary 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.InferTensorContents} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBoolContentsList();
   if (f.length > 0) {
@@ -7090,16 +7090,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.serializeBinaryToWriter = 
  * repeated bool bool_contents = 1;
  * @return {!Array<boolean>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBoolContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getBoolContentsList = function() {
   return /** @type {!Array<boolean>} */ (jspb.Message.getRepeatedBooleanField(this, 1));
 };
 
 
 /**
  * @param {!Array<boolean>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setBoolContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setBoolContentsList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -7107,18 +7107,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setBoolContentsL
 /**
  * @param {boolean} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addBoolContents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addBoolContents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearBoolContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearBoolContentsList = function() {
   return this.setBoolContentsList([]);
 };
 
@@ -7127,16 +7127,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearBoolContent
  * repeated int32 int_contents = 2;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getIntContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getIntContentsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setIntContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setIntContentsList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -7144,18 +7144,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setIntContentsLi
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addIntContents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addIntContents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearIntContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearIntContentsList = function() {
   return this.setIntContentsList([]);
 };
 
@@ -7164,16 +7164,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearIntContents
  * repeated int64 int64_contents = 3;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getInt64ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getInt64ContentsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setInt64ContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setInt64ContentsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -7181,18 +7181,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setInt64Contents
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addInt64Contents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addInt64Contents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearInt64ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearInt64ContentsList = function() {
   return this.setInt64ContentsList([]);
 };
 
@@ -7201,16 +7201,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearInt64Conten
  * repeated uint32 uint_contents = 4;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getUintContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getUintContentsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setUintContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setUintContentsList = function(value) {
   return jspb.Message.setField(this, 4, value || []);
 };
 
@@ -7218,18 +7218,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setUintContentsL
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addUintContents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addUintContents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearUintContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearUintContentsList = function() {
   return this.setUintContentsList([]);
 };
 
@@ -7238,16 +7238,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearUintContent
  * repeated uint64 uint64_contents = 5;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getUint64ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getUint64ContentsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setUint64ContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setUint64ContentsList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -7255,18 +7255,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setUint64Content
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addUint64Contents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addUint64Contents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearUint64ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearUint64ContentsList = function() {
   return this.setUint64ContentsList([]);
 };
 
@@ -7275,16 +7275,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearUint64Conte
  * repeated float fp32_contents = 6;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getFp32ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getFp32ContentsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 6));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setFp32ContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setFp32ContentsList = function(value) {
   return jspb.Message.setField(this, 6, value || []);
 };
 
@@ -7292,18 +7292,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setFp32ContentsL
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addFp32Contents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addFp32Contents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearFp32ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearFp32ContentsList = function() {
   return this.setFp32ContentsList([]);
 };
 
@@ -7312,16 +7312,16 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearFp32Content
  * repeated double fp64_contents = 7;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getFp64ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getFp64ContentsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 7));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setFp64ContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setFp64ContentsList = function(value) {
   return jspb.Message.setField(this, 7, value || []);
 };
 
@@ -7329,18 +7329,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setFp64ContentsL
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addFp64Contents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addFp64Contents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearFp64ContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearFp64ContentsList = function() {
   return this.setFp64ContentsList([]);
 };
 
@@ -7349,7 +7349,7 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearFp64Content
  * repeated bytes bytes_contents = 8;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBytesContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getBytesContentsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
@@ -7359,7 +7359,7 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBytesContents
  * This is a type-conversion wrapper around `getBytesContentsList()`
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBytesContentsList_asB64 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getBytesContentsList_asB64 = function() {
   return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getBytesContentsList()));
 };
@@ -7372,7 +7372,7 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBytesContents
  * This is a type-conversion wrapper around `getBytesContentsList()`
  * @return {!Array<!Uint8Array>}
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBytesContentsList_asU8 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.getBytesContentsList_asU8 = function() {
   return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getBytesContentsList()));
 };
@@ -7380,9 +7380,9 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.getBytesContents
 
 /**
  * @param {!(Array<!Uint8Array>|Array<string>)} value
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setBytesContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.setBytesContentsList = function(value) {
   return jspb.Message.setField(this, 8, value || []);
 };
 
@@ -7390,18 +7390,18 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.setBytesContents
 /**
  * @param {!(string|Uint8Array)} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.addBytesContents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.addBytesContents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.InferTensorContents} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} returns this
  */
-proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearBytesContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.prototype.clearBytesContentsList = function() {
   return this.setBytesContentsList([]);
 };
 
@@ -7412,7 +7412,7 @@ proto.modeld.proto.predictiond.v1.InferTensorContents.prototype.clearBytesConten
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.repeatedFields_ = [5,6];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.repeatedFields_ = [5,6];
 
 
 
@@ -7429,8 +7429,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelInferResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -7439,18 +7439,18 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.toObject = functi
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     modelVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
     id: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.modeld.proto.predictiond.v1.InferParameter.toObject) : [],
+    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject) : [],
     outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
-    proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject, includeInstance),
     rawOutputContentsList: msg.getRawOutputContentsList_asB64()
   };
 
@@ -7465,23 +7465,23 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.toObject = function(include
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelInferResponse;
-  return proto.modeld.proto.predictiond.v1.ModelInferResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7503,12 +7503,12 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.deserializeBinaryFromReader
     case 4:
       var value = msg.getParametersMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.modeld.proto.predictiond.v1.InferParameter());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter());
          });
       break;
     case 5:
-      var value = new proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinaryFromReader);
       msg.addOutputs(value);
       break;
     case 6:
@@ -7528,9 +7528,9 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.deserializeBinaryFromReader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelInferResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7538,11 +7538,11 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.serializeBinary =
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getModelName();
   if (f.length > 0) {
@@ -7567,14 +7567,14 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.serializeBinaryToWriter = f
   }
   f = message.getParametersMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter);
   }
   f = message.getOutputsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.serializeBinaryToWriter
     );
   }
   f = message.getRawOutputContentsList_asU8();
@@ -7593,7 +7593,7 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.serializeBinaryToWriter = f
  * @private {!Array<number>}
  * @const
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.repeatedFields_ = [3];
 
 
 
@@ -7610,8 +7610,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.toObject = function(opt_includeInstance) {
-  return proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject(opt_includeInstance, this);
 };
 
 
@@ -7620,17 +7620,17 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     datatype: jspb.Message.getFieldWithDefault(msg, 2, ""),
     shapeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.modeld.proto.predictiond.v1.InferParameter.toObject) : [],
-    contents: (f = msg.getContents()) && proto.modeld.proto.predictiond.v1.InferTensorContents.toObject(includeInstance, f)
+    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.toObject) : [],
+    contents: (f = msg.getContents()) && proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7644,23 +7644,23 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.toObject 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor;
-  return proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor;
+  return proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7684,12 +7684,12 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.deseriali
     case 4:
       var value = msg.getParametersMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.modeld.proto.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.modeld.proto.predictiond.v1.InferParameter());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.deserializeBinaryFromReader, "", new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter());
          });
       break;
     case 5:
-      var value = new proto.modeld.proto.predictiond.v1.InferTensorContents;
-      reader.readMessage(value,proto.modeld.proto.predictiond.v1.InferTensorContents.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.deserializeBinaryFromReader);
       msg.setContents(value);
       break;
     default:
@@ -7705,9 +7705,9 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.deseriali
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7715,11 +7715,11 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -7744,14 +7744,14 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.serialize
   }
   f = message.getParametersMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.modeld.proto.predictiond.v1.InferParameter.serializeBinaryToWriter);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter.serializeBinaryToWriter);
   }
   f = message.getContents();
   if (f != null) {
     writer.writeMessage(
       5,
       f,
-      proto.modeld.proto.predictiond.v1.InferTensorContents.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents.serializeBinaryToWriter
     );
   }
 };
@@ -7761,16 +7761,16 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.serialize
  * optional string name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7779,16 +7779,16 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
  * optional string datatype = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getDatatype = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getDatatype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setDatatype = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setDatatype = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -7797,16 +7797,16 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
  * repeated int64 shape = 3;
  * @return {!Array<number>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getShapeList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getShapeList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
  * @param {!Array<number>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setShapeList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setShapeList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -7814,18 +7814,18 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
 /**
  * @param {number} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.addShape = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.addShape = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.clearShapeList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.clearShapeList = function() {
   return this.setShapeList([]);
 };
 
@@ -7834,48 +7834,48 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
  * map<string, InferParameter> parameters = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>}
+ * @return {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>} */ (
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getParametersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>} */ (
       jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      proto.modeld.proto.predictiond.v1.InferParameter));
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter));
 };
 
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.clearParametersMap = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.clearParametersMap = function() {
   this.getParametersMap().clear();
   return this;};
 
 
 /**
  * optional InferTensorContents contents = 5;
- * @return {?proto.modeld.proto.predictiond.v1.InferTensorContents}
+ * @return {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getContents = function() {
-  return /** @type{?proto.modeld.proto.predictiond.v1.InferTensorContents} */ (
-    jspb.Message.getWrapperField(this, proto.modeld.proto.predictiond.v1.InferTensorContents, 5));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.getContents = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents, 5));
 };
 
 
 /**
- * @param {?proto.modeld.proto.predictiond.v1.InferTensorContents|undefined} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferTensorContents|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setContents = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.setContents = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.clearContents = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.clearContents = function() {
   return this.setContents(undefined);
 };
 
@@ -7884,7 +7884,7 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.hasContents = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype.hasContents = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -7893,16 +7893,16 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor.prototype
  * optional string model_name = 1;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getModelName = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getModelName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setModelName = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.setModelName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7911,16 +7911,16 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setModelName = fu
  * optional string model_version = 2;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getModelVersion = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getModelVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setModelVersion = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.setModelVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -7929,16 +7929,16 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setModelVersion =
  * optional string id = 3;
  * @return {string}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getId = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setId = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -7947,58 +7947,58 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setId = function(
  * map<string, InferParameter> parameters = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>}
+ * @return {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getParametersMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.modeld.proto.predictiond.v1.InferParameter>} */ (
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getParametersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter>} */ (
       jspb.Message.getMapField(this, 4, opt_noLazyCreate,
-      proto.modeld.proto.predictiond.v1.InferParameter));
+      proto.github.com.metaprov.modeldapi.services.predictiond.v1.InferParameter));
 };
 
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.clearParametersMap = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.clearParametersMap = function() {
   this.getParametersMap().clear();
   return this;};
 
 
 /**
  * repeated InferOutputTensor outputs = 5;
- * @return {!Array<!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor>}
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getOutputsList = function() {
-  return /** @type{!Array<!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor, 5));
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getOutputsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor, 5));
 };
 
 
 /**
- * @param {!Array<!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor>} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
 */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setOutputsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.setOutputsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor=} opt_value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor}
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.addOutputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.modeld.proto.predictiond.v1.ModelInferResponse.InferOutputTensor, opt_index);
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.addOutputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.InferOutputTensor, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.clearOutputsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.clearOutputsList = function() {
   return this.setOutputsList([]);
 };
 
@@ -8007,7 +8007,7 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.clearOutputsList 
  * repeated bytes raw_output_contents = 6;
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getRawOutputContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getRawOutputContentsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
@@ -8017,7 +8017,7 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getRawOutputConte
  * This is a type-conversion wrapper around `getRawOutputContentsList()`
  * @return {!Array<string>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getRawOutputContentsList_asB64 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getRawOutputContentsList_asB64 = function() {
   return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getRawOutputContentsList()));
 };
@@ -8030,7 +8030,7 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getRawOutputConte
  * This is a type-conversion wrapper around `getRawOutputContentsList()`
  * @return {!Array<!Uint8Array>}
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getRawOutputContentsList_asU8 = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.getRawOutputContentsList_asU8 = function() {
   return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getRawOutputContentsList()));
 };
@@ -8038,9 +8038,9 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.getRawOutputConte
 
 /**
  * @param {!(Array<!Uint8Array>|Array<string>)} value
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setRawOutputContentsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.setRawOutputContentsList = function(value) {
   return jspb.Message.setField(this, 6, value || []);
 };
 
@@ -8048,18 +8048,18 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.setRawOutputConte
 /**
  * @param {!(string|Uint8Array)} value
  * @param {number=} opt_index
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.addRawOutputContents = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.addRawOutputContents = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.modeld.proto.predictiond.v1.ModelInferResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse} returns this
  */
-proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.clearRawOutputContentsList = function() {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.ModelInferResponse.prototype.clearRawOutputContentsList = function() {
   return this.setRawOutputContentsList([]);
 };
 
@@ -8067,9 +8067,9 @@ proto.modeld.proto.predictiond.v1.ModelInferResponse.prototype.clearRawOutputCon
 /**
  * @enum {number}
  */
-proto.modeld.proto.predictiond.v1.PredictFormat = {
+proto.github.com.metaprov.modeldapi.services.predictiond.v1.PredictFormat = {
   PREDICT_FORMAT_CSV: 0,
   PREDICT_FORMAT_JSON: 1
 };
 
-goog.object.extend(exports, proto.modeld.proto.predictiond.v1);
+goog.object.extend(exports, proto.github.com.metaprov.modeldapi.services.predictiond.v1);

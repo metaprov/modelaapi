@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package modeld.proto.predictiond.v1;
+package github.com.metaprov.modeldapi.services.predictiond.v1;
 
 import "protoc-gen-swagger/options/annotations.proto";
 import "google/api/annotations.proto";

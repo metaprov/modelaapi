@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for modeld.proto.predictiond.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictiond.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/ServerLive',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerLive',
         request,
         metadata || {},
         this.methodInfoServerLive,
@@ -69,7 +69,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/ServerLive',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerLive',
     request,
     metadata || {},
     this.methodInfoServerLive);
@@ -101,7 +101,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/ServerReady',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerReady',
         request,
         metadata || {},
         this.methodInfoServerReady,
@@ -109,7 +109,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/ServerReady',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerReady',
     request,
     metadata || {},
     this.methodInfoServerReady);
@@ -141,7 +141,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/ModelReady',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelReady',
         request,
         metadata || {},
         this.methodInfoModelReady,
@@ -149,7 +149,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/ModelReady',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelReady',
     request,
     metadata || {},
     this.methodInfoModelReady);
@@ -181,7 +181,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/ServerMetadata',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerMetadata',
         request,
         metadata || {},
         this.methodInfoServerMetadata,
@@ -189,7 +189,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/ServerMetadata',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ServerMetadata',
     request,
     metadata || {},
     this.methodInfoServerMetadata);
@@ -221,7 +221,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/ModelMetadata',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelMetadata',
         request,
         metadata || {},
         this.methodInfoModelMetadata,
@@ -229,7 +229,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/ModelMetadata',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/ModelMetadata',
     request,
     metadata || {},
     this.methodInfoModelMetadata);
@@ -261,7 +261,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/GetPredictor',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetPredictor',
         request,
         metadata || {},
         this.methodInfoGetPredictor,
@@ -269,7 +269,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/GetPredictor',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetPredictor',
     request,
     metadata || {},
     this.methodInfoGetPredictor);
@@ -301,7 +301,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/GetModel',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetModel',
         request,
         metadata || {},
         this.methodInfoGetModel,
@@ -309,7 +309,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/GetModel',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetModel',
     request,
     metadata || {},
     this.methodInfoGetModel);
@@ -341,7 +341,7 @@ export class PredictionServerClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/modeld.proto.predictiond.v1.PredictionServer/Predict',
+          '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/Predict',
         request,
         metadata || {},
         this.methodInfoPredict,
@@ -349,7 +349,7 @@ export class PredictionServerClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/modeld.proto.predictiond.v1.PredictionServer/Predict',
+      '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/Predict',
     request,
     metadata || {},
     this.methodInfoPredict);
