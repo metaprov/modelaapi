@@ -30,6 +30,14 @@ generate-js:
 generate-py:
 	hack/generate-py.sh
 
+.PHONY: generate-java
+generate-java:
+	hack/generate-java.sh
+
+.PHONY: generate-csharp
+generate-csharp:
+	hack/generate-csharp.sh
+
 release: build
 
 

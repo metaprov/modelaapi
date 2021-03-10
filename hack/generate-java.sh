@@ -16,7 +16,7 @@ protoc \
     -I${PROJECT_ROOT}/pkg \
     -I${PROJECT_ROOT}/common-protos \
     -I${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf \
-    --java_out=${PROJECT_ROOT}/lang/java/ \
+    --java_out=${PROJECT_ROOT}/lang/java/src \
     google/api/annotations.proto \
     google/api/http.proto \
     k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \
