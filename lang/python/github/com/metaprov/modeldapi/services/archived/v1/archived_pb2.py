@@ -15,6 +15,8 @@ from github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1 import generated_pb2 
 from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,25 +25,32 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/archived/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"d\n\x12RecordModelRequest\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13RecordModelResponse\"d\n\x12RecordStudyRequest\x12N\n\x05study\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x15\n\x13RecordStudyResponse\"f\n\x14RecordDatasetRequest\x12N\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15RecordDatasetResponse\"\x84\x01\n\x1fRecordPredictionPipelineRequest\x12\x61\n\nprediction\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\"\n RecordPredictionPipelineResponse\"q\n\x16RecordPredictorRequest\x12W\n\tpredictor\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x19\n\x17RecordPredictorResponse\"n\n\x18RecordDataProductRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19RecordDataProductResponse\"|\n\x1fRecordDataProductVersionRequest\x12Y\n\x07version\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n RecordDataProductVersionResponse\"g\n\x14RecordAccountRequest\x12O\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x17\n\x15RecordAccountResponse\"\x10\n\x0e\x44\x65leteResponse2\x99\x0b\n\x0f\x41rchivedService\x12\xa0\x01\n\x0bRecordModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.RecordModelResponse\"\x00\x12\xa0\x01\n\x0bRecordStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyResponse\"\x00\x12\xa6\x01\n\rRecordDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetResponse\"\x00\x12\xc7\x01\n\x18RecordPredictionPipeline\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineResponse\"\x00\x12\xac\x01\n\x0fRecordPredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorResponse\"\x00\x12\xae\x01\n\rRecordProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductResponse\"\x00\x12\xc3\x01\n\x14RecordProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionResponse\"\x00\x12\xa6\x01\n\rRecordAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"t\n\x14RecordAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"z\n\x17RecordConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"l\n\x10RecordLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"|\n\x18RecordServingSiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"t\n\x14RecordLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"v\n\x15RecordNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x80\x01\n\x1aRecordVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x82\x01\n\x1bRecordVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x80\x01\n\x1aRecordVirtualVolumeRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"}\n\x19RecordDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x83\x01\n\x1cRecordDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"{\n\x18RecordDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x89\x01\n\x1fRecordDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"y\n\x17RecordDataSourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"q\n\x13RecordEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"y\n\x17RecordFeaturesetRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"s\n\x14RecordFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x83\x01\n\x1cRecordFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x85\x01\n\x1dRecordLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"q\n\x13RecordRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"w\n\x16RecordRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"s\n\x12RecordModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x83\x01\n\x1aRecordModelPipelineRequest\x12U\n\x04item\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"y\n\x15RecordNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x7f\n\x18RecordNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"u\n\x13RecordReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"s\n\x12RecordStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"x\n\x14RecordCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"|\n\x16RecordPredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x8e\x01\n\x1fRecordPredictionPipelineRequest\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"\x94\x01\n\"RecordPredictionPipelineRunRequest\x12^\n\x04item\x18\x01 \x01(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"}\n\x19RecordConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"y\n\x17RecordPostmortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\"s\n\x14RecordRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x0e\n\x06\x64\x65lete\x18\x02 \x01(\x08\x32\x8e!\n\x0f\x41rchivedService\x12s\n\rRecordAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest\x1a\x16.google.protobuf.Empty\"\x00\x12y\n\x10RecordConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12r\n\tRecordLab\x12K.github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12{\n\x11RecordServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\rRecordLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest\x1a\x16.google.protobuf.Empty\"\x00\x12t\n\x0eRecordNotifier\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x7f\n\x13RecordVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x81\x01\n\x14RecordVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x7f\n\x13RecordVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12}\n\x12RecordDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x83\x01\n\x15RecordDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12{\n\x11RecordDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x89\x01\n\x18RecordDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12y\n\x10RecordDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\rRecordFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x83\x01\n\x15RecordFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12y\n\x10RecordFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12q\n\x0cRecordEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x85\x01\n\x16RecordLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12q\n\x0cRecordRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12w\n\x0fRecordRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12o\n\x0bRecordModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x7f\n\x13RecordModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12u\n\x0eRecordNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest\x1a\x16.google.protobuf.Empty\"\x00\x12{\n\x11RecordNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12q\n\x0cRecordReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest\x1a\x16.google.protobuf.Empty\"\x00\x12o\n\x0bRecordStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\rRecordCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest\x1a\x16.google.protobuf.Empty\"\x00\x12w\n\x0fRecordPredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x89\x01\n\x18RecordPredictionPipeline\x12S.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x8f\x01\n\x1bRecordPredictionPipelineRun\x12V.github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12}\n\x12RecordConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest\x1a\x16.google.protobuf.Empty\"\x00\x12y\n\x10RecordPostmortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\rRecordRunbook\x12H.github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest\x1a\x16.google.protobuf.Empty\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
 
 
 
-_RECORDMODELREQUEST = _descriptor.Descriptor(
-  name='RecordModelRequest',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest',
+_RECORDACCOUNTREQUEST = _descriptor.Descriptor(
+  name='RecordAccountRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest.model', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -57,48 +66,30 @@ _RECORDMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=411,
-  serialized_end=511,
+  serialized_start=510,
+  serialized_end=626,
 )
 
 
-_RECORDMODELRESPONSE = _descriptor.Descriptor(
-  name='RecordModelResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=513,
-  serialized_end=534,
-)
-
-
-_RECORDSTUDYREQUEST = _descriptor.Descriptor(
-  name='RecordStudyRequest',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest',
+_RECORDCONNECTIONREQUEST = _descriptor.Descriptor(
+  name='RecordConnectionRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest.study', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -114,48 +105,30 @@ _RECORDSTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=536,
-  serialized_end=636,
+  serialized_start=628,
+  serialized_end=750,
 )
 
 
-_RECORDSTUDYRESPONSE = _descriptor.Descriptor(
-  name='RecordStudyResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordStudyResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=638,
-  serialized_end=659,
-)
-
-
-_RECORDDATASETREQUEST = _descriptor.Descriptor(
-  name='RecordDatasetRequest',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest',
+_RECORDLABREQUEST = _descriptor.Descriptor(
+  name='RecordLabRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest.dataset', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -171,48 +144,30 @@ _RECORDDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=661,
-  serialized_end=763,
+  serialized_start=752,
+  serialized_end=860,
 )
 
 
-_RECORDDATASETRESPONSE = _descriptor.Descriptor(
-  name='RecordDatasetResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=765,
-  serialized_end=788,
-)
-
-
-_RECORDPREDICTIONPIPELINEREQUEST = _descriptor.Descriptor(
-  name='RecordPredictionPipelineRequest',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest',
+_RECORDSERVINGSITEREQUEST = _descriptor.Descriptor(
+  name='RecordServingSiteRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='prediction', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest.prediction', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -228,48 +183,30 @@ _RECORDPREDICTIONPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=791,
-  serialized_end=923,
+  serialized_start=862,
+  serialized_end=986,
 )
 
 
-_RECORDPREDICTIONPIPELINERESPONSE = _descriptor.Descriptor(
-  name='RecordPredictionPipelineResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=925,
-  serialized_end=959,
-)
-
-
-_RECORDPREDICTORREQUEST = _descriptor.Descriptor(
-  name='RecordPredictorRequest',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest',
+_RECORDLICENSEREQUEST = _descriptor.Descriptor(
+  name='RecordLicenseRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='predictor', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest.predictor', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -285,19 +222,33 @@ _RECORDPREDICTORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=961,
-  serialized_end=1074,
+  serialized_start=988,
+  serialized_end=1104,
 )
 
 
-_RECORDPREDICTORRESPONSE = _descriptor.Descriptor(
-  name='RecordPredictorResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorResponse',
+_RECORDNOTIFIERREQUEST = _descriptor.Descriptor(
+  name='RecordNotifierRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -310,8 +261,203 @@ _RECORDPREDICTORRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1076,
-  serialized_end=1101,
+  serialized_start=1106,
+  serialized_end=1224,
+)
+
+
+_RECORDVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
+  name='RecordVirtualBucketRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1227,
+  serialized_end=1355,
+)
+
+
+_RECORDVIRTUALCLUSTERREQUEST = _descriptor.Descriptor(
+  name='RecordVirtualClusterRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1358,
+  serialized_end=1488,
+)
+
+
+_RECORDVIRTUALVOLUMEREQUEST = _descriptor.Descriptor(
+  name='RecordVirtualVolumeRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1491,
+  serialized_end=1619,
+)
+
+
+_RECORDDATAPIPELINEREQUEST = _descriptor.Descriptor(
+  name='RecordDataPipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1621,
+  serialized_end=1746,
+)
+
+
+_RECORDDATAPIPELINERUNREQUEST = _descriptor.Descriptor(
+  name='RecordDataPipelineRunRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1749,
+  serialized_end=1880,
 )
 
 
@@ -324,9 +470,16 @@ _RECORDDATAPRODUCTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest.product', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -342,33 +495,8 @@ _RECORDDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1103,
-  serialized_end=1213,
-)
-
-
-_RECORDDATAPRODUCTRESPONSE = _descriptor.Descriptor(
-  name='RecordDataProductResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1215,
-  serialized_end=1242,
+  serialized_start=1882,
+  serialized_end=2005,
 )
 
 
@@ -381,9 +509,16 @@ _RECORDDATAPRODUCTVERSIONREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest.version', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -399,48 +534,30 @@ _RECORDDATAPRODUCTVERSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1244,
-  serialized_end=1368,
+  serialized_start=2008,
+  serialized_end=2145,
 )
 
 
-_RECORDDATAPRODUCTVERSIONRESPONSE = _descriptor.Descriptor(
-  name='RecordDataProductVersionResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1370,
-  serialized_end=1404,
-)
-
-
-_RECORDACCOUNTREQUEST = _descriptor.Descriptor(
-  name='RecordAccountRequest',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest',
+_RECORDDATASOURCEREQUEST = _descriptor.Descriptor(
+  name='RecordDataSourceRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='account', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest.account', index=0,
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -456,19 +573,33 @@ _RECORDACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1406,
-  serialized_end=1509,
+  serialized_start=2147,
+  serialized_end=2268,
 )
 
 
-_RECORDACCOUNTRESPONSE = _descriptor.Descriptor(
-  name='RecordAccountResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordAccountResponse',
+_RECORDENTITYREQUEST = _descriptor.Descriptor(
+  name='RecordEntityRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -481,19 +612,33 @@ _RECORDACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1511,
-  serialized_end=1534,
+  serialized_start=2270,
+  serialized_end=2383,
 )
 
 
-_DELETERESPONSE = _descriptor.Descriptor(
-  name='DeleteResponse',
-  full_name='github.com.metaprov.modeldapi.services.archived.v1.DeleteResponse',
+_RECORDFEATURESETREQUEST = _descriptor.Descriptor(
+  name='RecordFeaturesetRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -506,134 +651,781 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1536,
-  serialized_end=1552,
+  serialized_start=2385,
+  serialized_end=2506,
 )
 
-_RECORDMODELREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
-_RECORDSTUDYREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
-_RECORDDATASETREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
-_RECORDPREDICTIONPIPELINEREQUEST.fields_by_name['prediction'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINE
-_RECORDPREDICTORREQUEST.fields_by_name['predictor'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
-_RECORDDATAPRODUCTREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
-_RECORDDATAPRODUCTVERSIONREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
-_RECORDACCOUNTREQUEST.fields_by_name['account'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNT
-DESCRIPTOR.message_types_by_name['RecordModelRequest'] = _RECORDMODELREQUEST
-DESCRIPTOR.message_types_by_name['RecordModelResponse'] = _RECORDMODELRESPONSE
-DESCRIPTOR.message_types_by_name['RecordStudyRequest'] = _RECORDSTUDYREQUEST
-DESCRIPTOR.message_types_by_name['RecordStudyResponse'] = _RECORDSTUDYRESPONSE
-DESCRIPTOR.message_types_by_name['RecordDatasetRequest'] = _RECORDDATASETREQUEST
-DESCRIPTOR.message_types_by_name['RecordDatasetResponse'] = _RECORDDATASETRESPONSE
-DESCRIPTOR.message_types_by_name['RecordPredictionPipelineRequest'] = _RECORDPREDICTIONPIPELINEREQUEST
-DESCRIPTOR.message_types_by_name['RecordPredictionPipelineResponse'] = _RECORDPREDICTIONPIPELINERESPONSE
-DESCRIPTOR.message_types_by_name['RecordPredictorRequest'] = _RECORDPREDICTORREQUEST
-DESCRIPTOR.message_types_by_name['RecordPredictorResponse'] = _RECORDPREDICTORRESPONSE
-DESCRIPTOR.message_types_by_name['RecordDataProductRequest'] = _RECORDDATAPRODUCTREQUEST
-DESCRIPTOR.message_types_by_name['RecordDataProductResponse'] = _RECORDDATAPRODUCTRESPONSE
-DESCRIPTOR.message_types_by_name['RecordDataProductVersionRequest'] = _RECORDDATAPRODUCTVERSIONREQUEST
-DESCRIPTOR.message_types_by_name['RecordDataProductVersionResponse'] = _RECORDDATAPRODUCTVERSIONRESPONSE
+
+_RECORDFEATUREREQUEST = _descriptor.Descriptor(
+  name='RecordFeatureRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2508,
+  serialized_end=2623,
+)
+
+
+_RECORDFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
+  name='RecordFeaturePipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2626,
+  serialized_end=2757,
+)
+
+
+_RECORDLABELINGPIPELINEREQUEST = _descriptor.Descriptor(
+  name='RecordLabelingPipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2760,
+  serialized_end=2893,
+)
+
+
+_RECORDRECIPEREQUEST = _descriptor.Descriptor(
+  name='RecordRecipeRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2895,
+  serialized_end=3008,
+)
+
+
+_RECORDRECIPERUNREQUEST = _descriptor.Descriptor(
+  name='RecordRecipeRunRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3010,
+  serialized_end=3129,
+)
+
+
+_RECORDMODELREQUEST = _descriptor.Descriptor(
+  name='RecordModelRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3131,
+  serialized_end=3246,
+)
+
+
+_RECORDMODELPIPELINEREQUEST = _descriptor.Descriptor(
+  name='RecordModelPipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3249,
+  serialized_end=3380,
+)
+
+
+_RECORDNOTEBOOKREQUEST = _descriptor.Descriptor(
+  name='RecordNotebookRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3382,
+  serialized_end=3503,
+)
+
+
+_RECORDNOTEBOOKRUNREQUEST = _descriptor.Descriptor(
+  name='RecordNotebookRunRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3505,
+  serialized_end=3632,
+)
+
+
+_RECORDREPORTREQUEST = _descriptor.Descriptor(
+  name='RecordReportRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3634,
+  serialized_end=3751,
+)
+
+
+_RECORDSTUDYREQUEST = _descriptor.Descriptor(
+  name='RecordStudyRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3753,
+  serialized_end=3868,
+)
+
+
+_RECORDCURTAINREQUEST = _descriptor.Descriptor(
+  name='RecordCurtainRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3870,
+  serialized_end=3990,
+)
+
+
+_RECORDPREDICTORREQUEST = _descriptor.Descriptor(
+  name='RecordPredictorRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3992,
+  serialized_end=4116,
+)
+
+
+_RECORDPREDICTIONPIPELINEREQUEST = _descriptor.Descriptor(
+  name='RecordPredictionPipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4119,
+  serialized_end=4261,
+)
+
+
+_RECORDPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
+  name='RecordPredictionPipelineRunRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4264,
+  serialized_end=4412,
+)
+
+
+_RECORDCONVERSATIONREQUEST = _descriptor.Descriptor(
+  name='RecordConversationRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4414,
+  serialized_end=4539,
+)
+
+
+_RECORDPOSTMORTEMREQUEST = _descriptor.Descriptor(
+  name='RecordPostmortemRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4541,
+  serialized_end=4662,
+)
+
+
+_RECORDRUNBOOKREQUEST = _descriptor.Descriptor(
+  name='RecordRunbookRequest',
+  full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='item', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest.item', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest.delete', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4664,
+  serialized_end=4779,
+)
+
+_RECORDACCOUNTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNT
+_RECORDCONNECTIONREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
+_RECORDLABREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LAB
+_RECORDSERVINGSITEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._SERVINGSITE
+_RECORDLICENSEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._LICENSE
+_RECORDNOTIFIERREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._NOTIFIER
+_RECORDVIRTUALBUCKETREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_RECORDVIRTUALCLUSTERREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALCLUSTER
+_RECORDVIRTUALVOLUMEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALVOLUME
+_RECORDDATAPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINE
+_RECORDDATAPIPELINERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINERUN
+_RECORDDATAPRODUCTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
+_RECORDDATAPRODUCTVERSIONREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
+_RECORDDATASOURCEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
+_RECORDENTITYREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._ENTITY
+_RECORDFEATURESETREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURESET
+_RECORDFEATUREREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
+_RECORDFEATUREPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINE
+_RECORDLABELINGPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINE
+_RECORDRECIPEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPE
+_RECORDRECIPERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN
+_RECORDMODELREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_RECORDMODELPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINE
+_RECORDNOTEBOOKREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK
+_RECORDNOTEBOOKRUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKRUN
+_RECORDREPORTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT
+_RECORDSTUDYREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_RECORDCURTAINREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN
+_RECORDPREDICTORREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
+_RECORDPREDICTIONPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINE
+_RECORDPREDICTIONPIPELINERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTIONPIPELINERUN
+_RECORDCONVERSATIONREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._CONVERSATION
+_RECORDPOSTMORTEMREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM
+_RECORDRUNBOOKREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._RUNBOOK
 DESCRIPTOR.message_types_by_name['RecordAccountRequest'] = _RECORDACCOUNTREQUEST
-DESCRIPTOR.message_types_by_name['RecordAccountResponse'] = _RECORDACCOUNTRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
+DESCRIPTOR.message_types_by_name['RecordConnectionRequest'] = _RECORDCONNECTIONREQUEST
+DESCRIPTOR.message_types_by_name['RecordLabRequest'] = _RECORDLABREQUEST
+DESCRIPTOR.message_types_by_name['RecordServingSiteRequest'] = _RECORDSERVINGSITEREQUEST
+DESCRIPTOR.message_types_by_name['RecordLicenseRequest'] = _RECORDLICENSEREQUEST
+DESCRIPTOR.message_types_by_name['RecordNotifierRequest'] = _RECORDNOTIFIERREQUEST
+DESCRIPTOR.message_types_by_name['RecordVirtualBucketRequest'] = _RECORDVIRTUALBUCKETREQUEST
+DESCRIPTOR.message_types_by_name['RecordVirtualClusterRequest'] = _RECORDVIRTUALCLUSTERREQUEST
+DESCRIPTOR.message_types_by_name['RecordVirtualVolumeRequest'] = _RECORDVIRTUALVOLUMEREQUEST
+DESCRIPTOR.message_types_by_name['RecordDataPipelineRequest'] = _RECORDDATAPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['RecordDataPipelineRunRequest'] = _RECORDDATAPIPELINERUNREQUEST
+DESCRIPTOR.message_types_by_name['RecordDataProductRequest'] = _RECORDDATAPRODUCTREQUEST
+DESCRIPTOR.message_types_by_name['RecordDataProductVersionRequest'] = _RECORDDATAPRODUCTVERSIONREQUEST
+DESCRIPTOR.message_types_by_name['RecordDataSourceRequest'] = _RECORDDATASOURCEREQUEST
+DESCRIPTOR.message_types_by_name['RecordEntityRequest'] = _RECORDENTITYREQUEST
+DESCRIPTOR.message_types_by_name['RecordFeaturesetRequest'] = _RECORDFEATURESETREQUEST
+DESCRIPTOR.message_types_by_name['RecordFeatureRequest'] = _RECORDFEATUREREQUEST
+DESCRIPTOR.message_types_by_name['RecordFeaturePipelineRequest'] = _RECORDFEATUREPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['RecordLabelingPipelineRequest'] = _RECORDLABELINGPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['RecordRecipeRequest'] = _RECORDRECIPEREQUEST
+DESCRIPTOR.message_types_by_name['RecordRecipeRunRequest'] = _RECORDRECIPERUNREQUEST
+DESCRIPTOR.message_types_by_name['RecordModelRequest'] = _RECORDMODELREQUEST
+DESCRIPTOR.message_types_by_name['RecordModelPipelineRequest'] = _RECORDMODELPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['RecordNotebookRequest'] = _RECORDNOTEBOOKREQUEST
+DESCRIPTOR.message_types_by_name['RecordNotebookRunRequest'] = _RECORDNOTEBOOKRUNREQUEST
+DESCRIPTOR.message_types_by_name['RecordReportRequest'] = _RECORDREPORTREQUEST
+DESCRIPTOR.message_types_by_name['RecordStudyRequest'] = _RECORDSTUDYREQUEST
+DESCRIPTOR.message_types_by_name['RecordCurtainRequest'] = _RECORDCURTAINREQUEST
+DESCRIPTOR.message_types_by_name['RecordPredictorRequest'] = _RECORDPREDICTORREQUEST
+DESCRIPTOR.message_types_by_name['RecordPredictionPipelineRequest'] = _RECORDPREDICTIONPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['RecordPredictionPipelineRunRequest'] = _RECORDPREDICTIONPIPELINERUNREQUEST
+DESCRIPTOR.message_types_by_name['RecordConversationRequest'] = _RECORDCONVERSATIONREQUEST
+DESCRIPTOR.message_types_by_name['RecordPostmortemRequest'] = _RECORDPOSTMORTEMREQUEST
+DESCRIPTOR.message_types_by_name['RecordRunbookRequest'] = _RECORDRUNBOOKREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-RecordModelRequest = _reflection.GeneratedProtocolMessageType('RecordModelRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDMODELREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest)
-  })
-_sym_db.RegisterMessage(RecordModelRequest)
-
-RecordModelResponse = _reflection.GeneratedProtocolMessageType('RecordModelResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDMODELRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordModelResponse)
-  })
-_sym_db.RegisterMessage(RecordModelResponse)
-
-RecordStudyRequest = _reflection.GeneratedProtocolMessageType('RecordStudyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDSTUDYREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest)
-  })
-_sym_db.RegisterMessage(RecordStudyRequest)
-
-RecordStudyResponse = _reflection.GeneratedProtocolMessageType('RecordStudyResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDSTUDYRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordStudyResponse)
-  })
-_sym_db.RegisterMessage(RecordStudyResponse)
-
-RecordDatasetRequest = _reflection.GeneratedProtocolMessageType('RecordDatasetRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDDATASETREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest)
-  })
-_sym_db.RegisterMessage(RecordDatasetRequest)
-
-RecordDatasetResponse = _reflection.GeneratedProtocolMessageType('RecordDatasetResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDDATASETRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetResponse)
-  })
-_sym_db.RegisterMessage(RecordDatasetResponse)
-
-RecordPredictionPipelineRequest = _reflection.GeneratedProtocolMessageType('RecordPredictionPipelineRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDPREDICTIONPIPELINEREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest)
-  })
-_sym_db.RegisterMessage(RecordPredictionPipelineRequest)
-
-RecordPredictionPipelineResponse = _reflection.GeneratedProtocolMessageType('RecordPredictionPipelineResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDPREDICTIONPIPELINERESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineResponse)
-  })
-_sym_db.RegisterMessage(RecordPredictionPipelineResponse)
-
-RecordPredictorRequest = _reflection.GeneratedProtocolMessageType('RecordPredictorRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDPREDICTORREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest)
-  })
-_sym_db.RegisterMessage(RecordPredictorRequest)
-
-RecordPredictorResponse = _reflection.GeneratedProtocolMessageType('RecordPredictorResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDPREDICTORRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorResponse)
-  })
-_sym_db.RegisterMessage(RecordPredictorResponse)
-
-RecordDataProductRequest = _reflection.GeneratedProtocolMessageType('RecordDataProductRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDDATAPRODUCTREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest)
-  })
-_sym_db.RegisterMessage(RecordDataProductRequest)
-
-RecordDataProductResponse = _reflection.GeneratedProtocolMessageType('RecordDataProductResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDDATAPRODUCTRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductResponse)
-  })
-_sym_db.RegisterMessage(RecordDataProductResponse)
-
-RecordDataProductVersionRequest = _reflection.GeneratedProtocolMessageType('RecordDataProductVersionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDDATAPRODUCTVERSIONREQUEST,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest)
-  })
-_sym_db.RegisterMessage(RecordDataProductVersionRequest)
-
-RecordDataProductVersionResponse = _reflection.GeneratedProtocolMessageType('RecordDataProductVersionResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDDATAPRODUCTVERSIONRESPONSE,
-  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionResponse)
-  })
-_sym_db.RegisterMessage(RecordDataProductVersionResponse)
 
 RecordAccountRequest = _reflection.GeneratedProtocolMessageType('RecordAccountRequest', (_message.Message,), {
   'DESCRIPTOR' : _RECORDACCOUNTREQUEST,
@@ -642,19 +1434,236 @@ RecordAccountRequest = _reflection.GeneratedProtocolMessageType('RecordAccountRe
   })
 _sym_db.RegisterMessage(RecordAccountRequest)
 
-RecordAccountResponse = _reflection.GeneratedProtocolMessageType('RecordAccountResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDACCOUNTRESPONSE,
+RecordConnectionRequest = _reflection.GeneratedProtocolMessageType('RecordConnectionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDCONNECTIONREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordAccountResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest)
   })
-_sym_db.RegisterMessage(RecordAccountResponse)
+_sym_db.RegisterMessage(RecordConnectionRequest)
 
-DeleteResponse = _reflection.GeneratedProtocolMessageType('DeleteResponse', (_message.Message,), {
-  'DESCRIPTOR' : _DELETERESPONSE,
+RecordLabRequest = _reflection.GeneratedProtocolMessageType('RecordLabRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDLABREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.DeleteResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest)
   })
-_sym_db.RegisterMessage(DeleteResponse)
+_sym_db.RegisterMessage(RecordLabRequest)
+
+RecordServingSiteRequest = _reflection.GeneratedProtocolMessageType('RecordServingSiteRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDSERVINGSITEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest)
+  })
+_sym_db.RegisterMessage(RecordServingSiteRequest)
+
+RecordLicenseRequest = _reflection.GeneratedProtocolMessageType('RecordLicenseRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDLICENSEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest)
+  })
+_sym_db.RegisterMessage(RecordLicenseRequest)
+
+RecordNotifierRequest = _reflection.GeneratedProtocolMessageType('RecordNotifierRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDNOTIFIERREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest)
+  })
+_sym_db.RegisterMessage(RecordNotifierRequest)
+
+RecordVirtualBucketRequest = _reflection.GeneratedProtocolMessageType('RecordVirtualBucketRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDVIRTUALBUCKETREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest)
+  })
+_sym_db.RegisterMessage(RecordVirtualBucketRequest)
+
+RecordVirtualClusterRequest = _reflection.GeneratedProtocolMessageType('RecordVirtualClusterRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDVIRTUALCLUSTERREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest)
+  })
+_sym_db.RegisterMessage(RecordVirtualClusterRequest)
+
+RecordVirtualVolumeRequest = _reflection.GeneratedProtocolMessageType('RecordVirtualVolumeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDVIRTUALVOLUMEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest)
+  })
+_sym_db.RegisterMessage(RecordVirtualVolumeRequest)
+
+RecordDataPipelineRequest = _reflection.GeneratedProtocolMessageType('RecordDataPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDDATAPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest)
+  })
+_sym_db.RegisterMessage(RecordDataPipelineRequest)
+
+RecordDataPipelineRunRequest = _reflection.GeneratedProtocolMessageType('RecordDataPipelineRunRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDDATAPIPELINERUNREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest)
+  })
+_sym_db.RegisterMessage(RecordDataPipelineRunRequest)
+
+RecordDataProductRequest = _reflection.GeneratedProtocolMessageType('RecordDataProductRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDDATAPRODUCTREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest)
+  })
+_sym_db.RegisterMessage(RecordDataProductRequest)
+
+RecordDataProductVersionRequest = _reflection.GeneratedProtocolMessageType('RecordDataProductVersionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDDATAPRODUCTVERSIONREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest)
+  })
+_sym_db.RegisterMessage(RecordDataProductVersionRequest)
+
+RecordDataSourceRequest = _reflection.GeneratedProtocolMessageType('RecordDataSourceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDDATASOURCEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest)
+  })
+_sym_db.RegisterMessage(RecordDataSourceRequest)
+
+RecordEntityRequest = _reflection.GeneratedProtocolMessageType('RecordEntityRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDENTITYREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest)
+  })
+_sym_db.RegisterMessage(RecordEntityRequest)
+
+RecordFeaturesetRequest = _reflection.GeneratedProtocolMessageType('RecordFeaturesetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDFEATURESETREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest)
+  })
+_sym_db.RegisterMessage(RecordFeaturesetRequest)
+
+RecordFeatureRequest = _reflection.GeneratedProtocolMessageType('RecordFeatureRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDFEATUREREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest)
+  })
+_sym_db.RegisterMessage(RecordFeatureRequest)
+
+RecordFeaturePipelineRequest = _reflection.GeneratedProtocolMessageType('RecordFeaturePipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDFEATUREPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest)
+  })
+_sym_db.RegisterMessage(RecordFeaturePipelineRequest)
+
+RecordLabelingPipelineRequest = _reflection.GeneratedProtocolMessageType('RecordLabelingPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDLABELINGPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest)
+  })
+_sym_db.RegisterMessage(RecordLabelingPipelineRequest)
+
+RecordRecipeRequest = _reflection.GeneratedProtocolMessageType('RecordRecipeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDRECIPEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest)
+  })
+_sym_db.RegisterMessage(RecordRecipeRequest)
+
+RecordRecipeRunRequest = _reflection.GeneratedProtocolMessageType('RecordRecipeRunRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDRECIPERUNREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest)
+  })
+_sym_db.RegisterMessage(RecordRecipeRunRequest)
+
+RecordModelRequest = _reflection.GeneratedProtocolMessageType('RecordModelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDMODELREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest)
+  })
+_sym_db.RegisterMessage(RecordModelRequest)
+
+RecordModelPipelineRequest = _reflection.GeneratedProtocolMessageType('RecordModelPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDMODELPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest)
+  })
+_sym_db.RegisterMessage(RecordModelPipelineRequest)
+
+RecordNotebookRequest = _reflection.GeneratedProtocolMessageType('RecordNotebookRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDNOTEBOOKREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest)
+  })
+_sym_db.RegisterMessage(RecordNotebookRequest)
+
+RecordNotebookRunRequest = _reflection.GeneratedProtocolMessageType('RecordNotebookRunRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDNOTEBOOKRUNREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest)
+  })
+_sym_db.RegisterMessage(RecordNotebookRunRequest)
+
+RecordReportRequest = _reflection.GeneratedProtocolMessageType('RecordReportRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDREPORTREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest)
+  })
+_sym_db.RegisterMessage(RecordReportRequest)
+
+RecordStudyRequest = _reflection.GeneratedProtocolMessageType('RecordStudyRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDSTUDYREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest)
+  })
+_sym_db.RegisterMessage(RecordStudyRequest)
+
+RecordCurtainRequest = _reflection.GeneratedProtocolMessageType('RecordCurtainRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDCURTAINREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest)
+  })
+_sym_db.RegisterMessage(RecordCurtainRequest)
+
+RecordPredictorRequest = _reflection.GeneratedProtocolMessageType('RecordPredictorRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDPREDICTORREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest)
+  })
+_sym_db.RegisterMessage(RecordPredictorRequest)
+
+RecordPredictionPipelineRequest = _reflection.GeneratedProtocolMessageType('RecordPredictionPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDPREDICTIONPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest)
+  })
+_sym_db.RegisterMessage(RecordPredictionPipelineRequest)
+
+RecordPredictionPipelineRunRequest = _reflection.GeneratedProtocolMessageType('RecordPredictionPipelineRunRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDPREDICTIONPIPELINERUNREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest)
+  })
+_sym_db.RegisterMessage(RecordPredictionPipelineRunRequest)
+
+RecordConversationRequest = _reflection.GeneratedProtocolMessageType('RecordConversationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDCONVERSATIONREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest)
+  })
+_sym_db.RegisterMessage(RecordConversationRequest)
+
+RecordPostmortemRequest = _reflection.GeneratedProtocolMessageType('RecordPostmortemRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDPOSTMORTEMREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest)
+  })
+_sym_db.RegisterMessage(RecordPostmortemRequest)
+
+RecordRunbookRequest = _reflection.GeneratedProtocolMessageType('RecordRunbookRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RECORDRUNBOOKREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.archived.v1.archived_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest)
+  })
+_sym_db.RegisterMessage(RecordRunbookRequest)
 
 
 DESCRIPTOR._options = None
@@ -666,86 +1675,346 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1555,
-  serialized_end=2988,
+  serialized_start=4782,
+  serialized_end=9020,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='RecordAccount',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordAccount',
+    index=0,
+    containing_service=None,
+    input_type=_RECORDACCOUNTREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordConnection',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordConnection',
+    index=1,
+    containing_service=None,
+    input_type=_RECORDCONNECTIONREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordLab',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLab',
+    index=2,
+    containing_service=None,
+    input_type=_RECORDCONNECTIONREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordServingSite',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordServingSite',
+    index=3,
+    containing_service=None,
+    input_type=_RECORDSERVINGSITEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordLicense',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLicense',
+    index=4,
+    containing_service=None,
+    input_type=_RECORDLICENSEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordNotifier',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotifier',
+    index=5,
+    containing_service=None,
+    input_type=_RECORDLICENSEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordVirtualBucket',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualBucket',
+    index=6,
+    containing_service=None,
+    input_type=_RECORDVIRTUALBUCKETREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordVirtualCluster',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualCluster',
+    index=7,
+    containing_service=None,
+    input_type=_RECORDVIRTUALCLUSTERREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordVirtualVolume',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualVolume',
+    index=8,
+    containing_service=None,
+    input_type=_RECORDVIRTUALVOLUMEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordDataPipeline',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataPipeline',
+    index=9,
+    containing_service=None,
+    input_type=_RECORDDATAPIPELINEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordDataPipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataPipelineRun',
+    index=10,
+    containing_service=None,
+    input_type=_RECORDDATAPIPELINERUNREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordDataProduct',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataProduct',
+    index=11,
+    containing_service=None,
+    input_type=_RECORDDATAPRODUCTREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordDataProductVersion',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataProductVersion',
+    index=12,
+    containing_service=None,
+    input_type=_RECORDDATAPRODUCTVERSIONREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordDataSource',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataSource',
+    index=13,
+    containing_service=None,
+    input_type=_RECORDDATASOURCEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordFeature',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeature',
+    index=14,
+    containing_service=None,
+    input_type=_RECORDFEATUREREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordFeaturePipeline',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeaturePipeline',
+    index=15,
+    containing_service=None,
+    input_type=_RECORDFEATUREPIPELINEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordFeatureset',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeatureset',
+    index=16,
+    containing_service=None,
+    input_type=_RECORDFEATURESETREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordEntity',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordEntity',
+    index=17,
+    containing_service=None,
+    input_type=_RECORDENTITYREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordLabelingPipeline',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLabelingPipeline',
+    index=18,
+    containing_service=None,
+    input_type=_RECORDLABELINGPIPELINEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordRecipe',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRecipe',
+    index=19,
+    containing_service=None,
+    input_type=_RECORDRECIPEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordRecipeRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRecipeRun',
+    index=20,
+    containing_service=None,
+    input_type=_RECORDRECIPERUNREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='RecordModel',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModel',
-    index=0,
+    index=21,
     containing_service=None,
     input_type=_RECORDMODELREQUEST,
-    output_type=_RECORDMODELRESPONSE,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordModelPipeline',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelPipeline',
+    index=22,
+    containing_service=None,
+    input_type=_RECORDMODELPIPELINEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordNotebook',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotebook',
+    index=23,
+    containing_service=None,
+    input_type=_RECORDNOTEBOOKREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordNotebookRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotebookRun',
+    index=24,
+    containing_service=None,
+    input_type=_RECORDNOTEBOOKRUNREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordReport',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordReport',
+    index=25,
+    containing_service=None,
+    input_type=_RECORDREPORTREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RecordStudy',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordStudy',
-    index=1,
+    index=26,
     containing_service=None,
     input_type=_RECORDSTUDYREQUEST,
-    output_type=_RECORDSTUDYRESPONSE,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RecordDataset',
-    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataset',
-    index=2,
+    name='RecordCurtain',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordCurtain',
+    index=27,
     containing_service=None,
-    input_type=_RECORDDATASETREQUEST,
-    output_type=_RECORDDATASETRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RecordPredictionPipeline',
-    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipeline',
-    index=3,
-    containing_service=None,
-    input_type=_RECORDPREDICTIONPIPELINEREQUEST,
-    output_type=_RECORDPREDICTIONPIPELINERESPONSE,
+    input_type=_RECORDCURTAINREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RecordPredictor',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictor',
-    index=4,
+    index=28,
     containing_service=None,
     input_type=_RECORDPREDICTORREQUEST,
-    output_type=_RECORDPREDICTORRESPONSE,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RecordProduct',
-    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordProduct',
-    index=5,
+    name='RecordPredictionPipeline',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipeline',
+    index=29,
     containing_service=None,
-    input_type=_RECORDDATAPRODUCTREQUEST,
-    output_type=_RECORDDATAPRODUCTRESPONSE,
+    input_type=_RECORDPREDICTIONPIPELINEREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RecordProductVersion',
-    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordProductVersion',
-    index=6,
+    name='RecordPredictionPipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipelineRun',
+    index=30,
     containing_service=None,
-    input_type=_RECORDDATAPRODUCTVERSIONREQUEST,
-    output_type=_RECORDDATAPRODUCTVERSIONRESPONSE,
+    input_type=_RECORDPREDICTIONPIPELINERUNREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RecordAccount',
-    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordAccount',
-    index=7,
+    name='RecordConversation',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordConversation',
+    index=31,
     containing_service=None,
-    input_type=_RECORDACCOUNTREQUEST,
-    output_type=_RECORDACCOUNTRESPONSE,
+    input_type=_RECORDCONVERSATIONREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordPostmortem',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPostmortem',
+    index=32,
+    containing_service=None,
+    input_type=_RECORDPOSTMORTEMREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RecordRunbook',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRunbook',
+    index=33,
+    containing_service=None,
+    input_type=_RECORDRUNBOOKREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

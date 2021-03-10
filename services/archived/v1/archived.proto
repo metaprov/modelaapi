@@ -7,73 +7,279 @@ import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "google/protobuf/empty.proto";
 
-
-
-message RecordModelRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 1;
-}
-
-message RecordModelResponse {}
-
-message RecordStudyRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study study = 1;
-}
-
-message RecordStudyResponse {}
-
-
-message RecordDatasetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
-}
-
-message RecordDatasetResponse {}
-
-message RecordPredictionPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline prediction = 1;
-}
-
-message RecordPredictionPipelineResponse {}
-
-message RecordPredictorRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
-}
-
-message RecordPredictorResponse {}
-
-
-message RecordDataProductRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-}
-
-message RecordDataProductResponse {}
-
-message RecordDataProductVersionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 1;
-}
-
-message RecordDataProductVersionResponse {}
+// Infra
 
 message RecordAccountRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account account = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
+    bool delete = 2;
 }
 
-message RecordAccountResponse {}
+message RecordConnectionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 1;
+    bool delete = 2;
+}
+
+message RecordLabRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    bool delete = 2;
+}
+
+message RecordServingSiteRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    bool delete = 2;
+}
+
+message RecordLicenseRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+    bool delete = 2;
+}
+
+message RecordNotifierRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    bool delete = 2;
+}
+
+message RecordVirtualBucketRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    bool delete = 2;
+}
+
+message RecordVirtualClusterRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    bool delete = 2;
+}
+
+message RecordVirtualVolumeRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    bool delete = 2;
+}
+
+// ==================== data
+
+// DataPipeline
+message RecordDataPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+    bool delete = 2;
+}
+
+// DataPipelineRun
+message RecordDataPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    bool delete = 2;
+}
+
+// DataProduct
+message RecordDataProductRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    bool delete = 2;
+}
+
+// DataProductVersion
+message RecordDataProductVersionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    bool delete = 2;
+}
 
 
-// Used for delete resultponse
-message DeleteResponse {}
+// DataSource
+message RecordDataSourceRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    bool delete = 2;
+}
+
+// Entity
+message RecordEntityRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity item = 1;
+    bool delete = 2;
+}
+
+message RecordFeaturesetRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset item = 1;
+    bool delete = 2;
+}
+
+
+// Feature
+message RecordFeatureRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    bool delete = 2;
+}
+
+
+// FetaurePipeline
+message RecordFeaturePipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    bool delete = 2;
+}
+
+
+// LabelingPipeline
+message RecordLabelingPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    bool delete = 2;
+}
+
+// Recipe
+message RecordRecipeRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+    bool delete = 2;
+}
+
+
+// RecipeRun
+message RecordRecipeRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+    bool delete = 2;
+}
+
+
+
+// =================== training
+
+// Model
+message RecordModelRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
+    bool delete = 2;
+}
+
+// ModelPipeline
+message RecordModelPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    bool delete = 2;
+}
+
+
+// Notebook
+message RecordNotebookRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    bool delete = 2;
+}
+
+
+// NotebookRun
+message RecordNotebookRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+    bool delete = 2;
+}
+
+// Report
+message RecordReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 1;
+    bool delete = 2;
+}
+
+// Study
+message RecordStudyRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+    bool delete = 2;
+}
+
+
+
+
+// ==================  inference
+
+// Curtain
+
+message RecordCurtainRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    bool delete = 2;
+}
+
+// PredictionPipeline
+message RecordPredictorRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    bool delete = 2;
+}
+
+
+// PredictionPipeline
+message RecordPredictionPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline item = 1;
+    bool delete = 2;
+}
+
+
+// Predictor
+message RecordPredictionPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun item = 1;
+    bool delete = 2;
+}
+
+
+
+// ================== team
+
+// Conversation
+message RecordConversationRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+    bool delete = 2;
+}
+
+
+// Postmortem
+message RecordPostmortemRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    bool delete = 2;
+}
+
+
+// Runbook
+message RecordRunbookRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    bool delete = 2;
+}
 
 service ArchivedService {
-    // Models
-    rpc RecordModel(RecordModelRequest)  returns (RecordModelResponse)   {}
-    rpc RecordStudy(RecordStudyRequest)  returns (RecordStudyResponse)   {}
-    rpc RecordDataset(RecordDatasetRequest)  returns (RecordDatasetResponse)   {}
-    rpc RecordPredictionPipeline(RecordPredictionPipelineRequest)  returns (RecordPredictionPipelineResponse)   {}
-    rpc RecordPredictor(RecordPredictorRequest)  returns (RecordPredictorResponse)   {}
-    rpc RecordProduct(RecordDataProductRequest)  returns (RecordDataProductResponse)   {}
-    rpc RecordProductVersion(RecordDataProductVersionRequest)  returns (RecordDataProductVersionResponse)   {}
-    rpc RecordAccount(RecordAccountRequest)  returns (RecordAccountResponse)   {}
+    
+
+    // Infra
+    rpc RecordAccount(RecordAccountRequest) returns (google.protobuf.Empty) {}
+    rpc RecordConnection(RecordConnectionRequest) returns (google.protobuf.Empty) {}
+    rpc RecordLab(RecordConnectionRequest) returns (google.protobuf.Empty) {}
+    rpc RecordServingSite(RecordServingSiteRequest) returns (google.protobuf.Empty) {}
+    rpc RecordLicense(RecordLicenseRequest) returns (google.protobuf.Empty) {}
+    rpc RecordNotifier(RecordLicenseRequest) returns (google.protobuf.Empty) {}
+    rpc RecordVirtualBucket(RecordVirtualBucketRequest) returns (google.protobuf.Empty) {}
+    rpc RecordVirtualCluster(RecordVirtualClusterRequest) returns (google.protobuf.Empty) {}
+    rpc RecordVirtualVolume(RecordVirtualVolumeRequest) returns (google.protobuf.Empty) {}
+        
+    // Data    
+    rpc RecordDataPipeline(RecordDataPipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordDataPipelineRun(RecordDataPipelineRunRequest) returns (google.protobuf.Empty) {}
+    rpc RecordDataProduct(RecordDataProductRequest) returns (google.protobuf.Empty) {}
+    rpc RecordDataProductVersion(RecordDataProductVersionRequest) returns (google.protobuf.Empty) {}
+    rpc RecordDataSource(RecordDataSourceRequest) returns (google.protobuf.Empty) {}    
+    rpc RecordFeature(RecordFeatureRequest) returns (google.protobuf.Empty) {}
+    rpc RecordFeaturePipeline(RecordFeaturePipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordFeatureset(RecordFeaturesetRequest) returns (google.protobuf.Empty) {}
+    rpc RecordEntity(RecordEntityRequest) returns (google.protobuf.Empty) {}
+    rpc RecordLabelingPipeline(RecordLabelingPipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordRecipe(RecordRecipeRequest) returns (google.protobuf.Empty) {}
+    rpc RecordRecipeRun(RecordRecipeRunRequest) returns (google.protobuf.Empty) {}
+
+// =================== training
+
+    rpc RecordModel(RecordModelRequest) returns (google.protobuf.Empty) {}
+    rpc RecordModelPipeline(RecordModelPipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordNotebook(RecordNotebookRequest) returns (google.protobuf.Empty) {}
+    rpc RecordNotebookRun(RecordNotebookRunRequest) returns (google.protobuf.Empty) {}
+    rpc RecordReport(RecordReportRequest) returns (google.protobuf.Empty) {}    
+    rpc RecordStudy(RecordStudyRequest) returns (google.protobuf.Empty) {}
+
+// ==================  inference
+    rpc RecordCurtain(RecordCurtainRequest) returns (google.protobuf.Empty) {}
+    rpc RecordPredictor(RecordPredictorRequest) returns (google.protobuf.Empty) {}
+    rpc RecordPredictionPipeline(RecordPredictionPipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordPredictionPipelineRun(RecordPredictionPipelineRunRequest) returns (google.protobuf.Empty) {}
+
+// =================== team
+    rpc RecordConversation(RecordConversationRequest) returns (google.protobuf.Empty) {}
+    rpc RecordPostmortem(RecordPostmortemRequest) returns (google.protobuf.Empty) {}
+    rpc RecordRunbook(RecordRunbookRequest) returns (google.protobuf.Empty) {}
 }
 
 
