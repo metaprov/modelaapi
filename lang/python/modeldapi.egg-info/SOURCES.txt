@@ -181,6 +181,8 @@ github/com/metaprov/modeldapi/services/postmortem/__init__.py
 github/com/metaprov/modeldapi/services/postmortem/v1/__init__.py
 github/com/metaprov/modeldapi/services/postmortem/v1/postmortem_pb2.py
 github/com/metaprov/modeldapi/services/postmortem/v1/postmortem_pb2_grpc.py
+github/com/metaprov/modeldapi/services/predictiond/v1/__init__.py
+github/com/metaprov/modeldapi/services/predictiond/v1/predictiond_pb2_grpc.py
 github/com/metaprov/modeldapi/services/predictionpipeline/__init__.py
 github/com/metaprov/modeldapi/services/predictionpipeline/v1/__init__.py
 github/com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline_pb2.py
