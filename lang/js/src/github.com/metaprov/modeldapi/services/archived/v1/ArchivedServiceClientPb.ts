@@ -596,6 +596,46 @@ export class ArchivedServiceClient {
     this.methodInfoRecordDataSource);
   }
 
+  methodInfoRecordDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  recordDataset(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  recordDataset(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  recordDataset(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset',
+        request,
+        metadata || {},
+        this.methodInfoRecordDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset',
+    request,
+    metadata || {},
+    this.methodInfoRecordDataset);
+  }
+
   methodInfoRecordFeature = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordFeatureRequest) => {

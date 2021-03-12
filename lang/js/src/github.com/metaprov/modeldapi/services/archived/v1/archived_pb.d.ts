@@ -320,6 +320,30 @@ export namespace RecordDataProductVersionRequest {
   }
 }
 
+export class RecordDatasetRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RecordDatasetRequest;
+  hasItem(): boolean;
+  clearItem(): RecordDatasetRequest;
+
+  getDelete(): boolean;
+  setDelete(value: boolean): RecordDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordDatasetRequest): RecordDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordDatasetRequest;
+  static deserializeBinaryFromReader(message: RecordDatasetRequest, reader: jspb.BinaryReader): RecordDatasetRequest;
+}
+
+export namespace RecordDatasetRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    pb_delete: boolean,
+  }
+}
+
 export class RecordDataSourceRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): RecordDataSourceRequest;

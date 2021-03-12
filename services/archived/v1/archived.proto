@@ -83,6 +83,12 @@ message RecordDataProductVersionRequest {
     bool delete = 2;
 }
 
+// DataSource
+message RecordDatasetRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    bool delete = 2;
+}
+
 
 // DataSource
 message RecordDataSourceRequest {
@@ -234,8 +240,6 @@ message RecordRunbookRequest {
 }
 
 service ArchivedService {
-    
-
     // Infra
     rpc RecordAccount(RecordAccountRequest) returns (google.protobuf.Empty) {}
     rpc RecordConnection(RecordConnectionRequest) returns (google.protobuf.Empty) {}
@@ -253,6 +257,7 @@ service ArchivedService {
     rpc RecordDataProduct(RecordDataProductRequest) returns (google.protobuf.Empty) {}
     rpc RecordDataProductVersion(RecordDataProductVersionRequest) returns (google.protobuf.Empty) {}
     rpc RecordDataSource(RecordDataSourceRequest) returns (google.protobuf.Empty) {}    
+    rpc RecordDataset(RecordDatasetRequest) returns (google.protobuf.Empty) {}    
     rpc RecordFeature(RecordFeatureRequest) returns (google.protobuf.Empty) {}
     rpc RecordFeaturePipeline(RecordFeaturePipelineRequest) returns (google.protobuf.Empty) {}
     rpc RecordFeatureset(RecordFeaturesetRequest) returns (google.protobuf.Empty) {}
