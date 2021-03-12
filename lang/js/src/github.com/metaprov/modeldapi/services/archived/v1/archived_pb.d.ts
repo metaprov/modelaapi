@@ -488,6 +488,30 @@ export namespace RecordFeaturePipelineRequest {
   }
 }
 
+export class RecordFeaturePipelineRunRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): RecordFeaturePipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): RecordFeaturePipelineRunRequest;
+
+  getDelete(): boolean;
+  setDelete(value: boolean): RecordFeaturePipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordFeaturePipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordFeaturePipelineRunRequest): RecordFeaturePipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordFeaturePipelineRunRequest;
+  static deserializeBinaryFromReader(message: RecordFeaturePipelineRunRequest, reader: jspb.BinaryReader): RecordFeaturePipelineRunRequest;
+}
+
+export namespace RecordFeaturePipelineRunRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    pb_delete: boolean,
+  }
+}
+
 export class RecordLabelingPipelineRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): RecordLabelingPipelineRequest;
@@ -508,6 +532,30 @@ export class RecordLabelingPipelineRequest extends jspb.Message {
 export namespace RecordLabelingPipelineRequest {
   export type AsObject = {
     item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
+    pb_delete: boolean,
+  }
+}
+
+export class RecordLabelingPipelineRunRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun): RecordLabelingPipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): RecordLabelingPipelineRunRequest;
+
+  getDelete(): boolean;
+  setDelete(value: boolean): RecordLabelingPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordLabelingPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordLabelingPipelineRunRequest): RecordLabelingPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordLabelingPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordLabelingPipelineRunRequest;
+  static deserializeBinaryFromReader(message: RecordLabelingPipelineRunRequest, reader: jspb.BinaryReader): RecordLabelingPipelineRunRequest;
+}
+
+export namespace RecordLabelingPipelineRunRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject,
     pb_delete: boolean,
   }
 }

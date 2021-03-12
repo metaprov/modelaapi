@@ -118,24 +118,24 @@ export class ArchivedServiceClient {
 
   methodInfoRecordLab = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordConnectionRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   recordLab(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordConnectionRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   recordLab(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordConnectionRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   recordLab(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordConnectionRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -238,24 +238,24 @@ export class ArchivedServiceClient {
 
   methodInfoRecordNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLicenseRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordNotifierRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   recordNotifier(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLicenseRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordNotifierRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   recordNotifier(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLicenseRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordNotifierRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   recordNotifier(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLicenseRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordNotifierRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -756,6 +756,46 @@ export class ArchivedServiceClient {
     this.methodInfoRecordFeaturePipeline);
   }
 
+  methodInfoRecordFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordFeaturePipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  recordFeaturePipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  recordFeaturePipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  recordFeaturePipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeaturePipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoRecordFeaturePipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeaturePipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoRecordFeaturePipelineRun);
+  }
+
   methodInfoRecordFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordFeaturesetRequest) => {
@@ -874,6 +914,46 @@ export class ArchivedServiceClient {
     request,
     metadata || {},
     this.methodInfoRecordLabelingPipeline);
+  }
+
+  methodInfoRecordLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabelingPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  recordLabelingPipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  recordLabelingPipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  recordLabelingPipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLabelingPipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoRecordLabelingPipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLabelingPipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoRecordLabelingPipelineRun);
   }
 
   methodInfoRecordRecipe = new grpcWeb.AbstractClientBase.MethodInfo(

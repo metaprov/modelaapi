@@ -127,12 +127,25 @@ message RecordFeaturePipelineRequest {
     bool delete = 2;
 }
 
+message RecordFeaturePipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+    bool delete = 2;
+}
+
+
 
 // LabelingPipeline
 message RecordLabelingPipelineRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
     bool delete = 2;
 }
+
+// LabelingPipelineRun
+message RecordLabelingPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
+    bool delete = 2;
+}
+
 
 // Recipe
 message RecordRecipeRequest {
@@ -249,10 +262,10 @@ service ArchivedService {
     // Infra
     rpc RecordAccount(RecordAccountRequest) returns (google.protobuf.Empty) {}
     rpc RecordConnection(RecordConnectionRequest) returns (google.protobuf.Empty) {}
-    rpc RecordLab(RecordConnectionRequest) returns (google.protobuf.Empty) {}
+    rpc RecordLab(RecordLabRequest) returns (google.protobuf.Empty) {}
     rpc RecordServingSite(RecordServingSiteRequest) returns (google.protobuf.Empty) {}
     rpc RecordLicense(RecordLicenseRequest) returns (google.protobuf.Empty) {}
-    rpc RecordNotifier(RecordLicenseRequest) returns (google.protobuf.Empty) {}
+    rpc RecordNotifier(RecordNotifierRequest) returns (google.protobuf.Empty) {}
     rpc RecordVirtualBucket(RecordVirtualBucketRequest) returns (google.protobuf.Empty) {}
     rpc RecordVirtualCluster(RecordVirtualClusterRequest) returns (google.protobuf.Empty) {}
     rpc RecordVirtualVolume(RecordVirtualVolumeRequest) returns (google.protobuf.Empty) {}
@@ -267,9 +280,11 @@ service ArchivedService {
     rpc RecordDataset(RecordDatasetRequest) returns (google.protobuf.Empty) {}    
     rpc RecordFeature(RecordFeatureRequest) returns (google.protobuf.Empty) {}
     rpc RecordFeaturePipeline(RecordFeaturePipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordFeaturePipelineRun(RecordFeaturePipelineRunRequest) returns (google.protobuf.Empty) {}
     rpc RecordFeatureset(RecordFeaturesetRequest) returns (google.protobuf.Empty) {}
     rpc RecordEntity(RecordEntityRequest) returns (google.protobuf.Empty) {}
     rpc RecordLabelingPipeline(RecordLabelingPipelineRequest) returns (google.protobuf.Empty) {}
+    rpc RecordLabelingPipelineRun(RecordLabelingPipelineRunRequest) returns (google.protobuf.Empty) {}
     rpc RecordRecipe(RecordRecipeRequest) returns (google.protobuf.Empty) {}
     rpc RecordRecipeRun(RecordRecipeRunRequest) returns (google.protobuf.Empty) {}
 
