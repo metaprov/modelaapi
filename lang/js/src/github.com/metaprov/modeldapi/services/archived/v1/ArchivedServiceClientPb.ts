@@ -396,6 +396,46 @@ export class ArchivedServiceClient {
     this.methodInfoRecordVirtualVolume);
   }
 
+  methodInfoRecordTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordTenantRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  recordTenant(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordTenantRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  recordTenant(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordTenantRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  recordTenant(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordTenantRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordTenant',
+        request,
+        metadata || {},
+        this.methodInfoRecordTenant,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordTenant',
+    request,
+    metadata || {},
+    this.methodInfoRecordTenant);
+  }
+
   methodInfoRecordDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordDataPipelineRequest) => {

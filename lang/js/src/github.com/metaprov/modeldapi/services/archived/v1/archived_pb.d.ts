@@ -80,6 +80,30 @@ export namespace RecordLabRequest {
   }
 }
 
+export class RecordTenantRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): RecordTenantRequest;
+  hasItem(): boolean;
+  clearItem(): RecordTenantRequest;
+
+  getDelete(): boolean;
+  setDelete(value: boolean): RecordTenantRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordTenantRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordTenantRequest): RecordTenantRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordTenantRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordTenantRequest;
+  static deserializeBinaryFromReader(message: RecordTenantRequest, reader: jspb.BinaryReader): RecordTenantRequest;
+}
+
+export namespace RecordTenantRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    pb_delete: boolean,
+  }
+}
+
 export class RecordServingSiteRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): RecordServingSiteRequest;

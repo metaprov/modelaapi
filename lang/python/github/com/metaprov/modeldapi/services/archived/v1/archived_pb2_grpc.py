@@ -60,6 +60,11 @@ class ArchivedServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordVirtualVolumeRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.RecordTenant = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordTenantRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.RecordDataPipeline = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordDataPipelineRequest.SerializeToString,
@@ -245,6 +250,12 @@ class ArchivedServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RecordVirtualVolume(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RecordTenant(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -457,6 +468,11 @@ def add_ArchivedServiceServicer_to_server(servicer, server):
             'RecordVirtualVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.RecordVirtualVolume,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordVirtualVolumeRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'RecordTenant': grpc.unary_unary_rpc_method_handler(
+                    servicer.RecordTenant,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordTenantRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'RecordDataPipeline': grpc.unary_unary_rpc_method_handler(
@@ -748,6 +764,23 @@ class ArchivedService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualVolume',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordVirtualVolumeRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RecordTenant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordTenant',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordTenantRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

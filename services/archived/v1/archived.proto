@@ -27,6 +27,12 @@ message RecordLabRequest {
     bool delete = 2;
 }
 
+message RecordTenantRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+    bool delete = 2;
+}
+
+
 message RecordServingSiteRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
     bool delete = 2;
@@ -250,6 +256,7 @@ service ArchivedService {
     rpc RecordVirtualBucket(RecordVirtualBucketRequest) returns (google.protobuf.Empty) {}
     rpc RecordVirtualCluster(RecordVirtualClusterRequest) returns (google.protobuf.Empty) {}
     rpc RecordVirtualVolume(RecordVirtualVolumeRequest) returns (google.protobuf.Empty) {}
+    rpc RecordTenant(RecordTenantRequest) returns (google.protobuf.Empty) {}
         
     // Data    
     rpc RecordDataPipeline(RecordDataPipelineRequest) returns (google.protobuf.Empty) {}
