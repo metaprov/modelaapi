@@ -8,963 +8,487 @@ import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb fr
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 
 
-export class RecordAccountRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account): RecordAccountRequest;
-  hasItem(): boolean;
-  clearItem(): RecordAccountRequest;
+export class ModeldBlob extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ModeldBlob;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordAccountRequest;
+  getName(): string;
+  setName(value: string): ModeldBlob;
+
+  getKind(): string;
+  setKind(value: string): ModeldBlob;
+
+  getBlob(): string;
+  setBlob(value: string): ModeldBlob;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordAccountRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordAccountRequest): RecordAccountRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordAccountRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordAccountRequest;
-  static deserializeBinaryFromReader(message: RecordAccountRequest, reader: jspb.BinaryReader): RecordAccountRequest;
+  toObject(includeInstance?: boolean): ModeldBlob.AsObject;
+  static toObject(includeInstance: boolean, msg: ModeldBlob): ModeldBlob.AsObject;
+  static serializeBinaryToWriter(message: ModeldBlob, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModeldBlob;
+  static deserializeBinaryFromReader(message: ModeldBlob, reader: jspb.BinaryReader): ModeldBlob;
 }
 
-export namespace RecordAccountRequest {
+export namespace ModeldBlob {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    name: string,
+    kind: string,
+    blob: string,
   }
 }
 
-export class RecordConnectionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): RecordConnectionRequest;
+export class RecordObjectRequest extends jspb.Message {
+  getItem(): ModeldBlob | undefined;
+  setItem(value?: ModeldBlob): RecordObjectRequest;
   hasItem(): boolean;
-  clearItem(): RecordConnectionRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordConnectionRequest;
+  clearItem(): RecordObjectRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordConnectionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordConnectionRequest): RecordConnectionRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordConnectionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordConnectionRequest;
-  static deserializeBinaryFromReader(message: RecordConnectionRequest, reader: jspb.BinaryReader): RecordConnectionRequest;
+  toObject(includeInstance?: boolean): RecordObjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordObjectRequest): RecordObjectRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordObjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordObjectRequest;
+  static deserializeBinaryFromReader(message: RecordObjectRequest, reader: jspb.BinaryReader): RecordObjectRequest;
 }
 
-export namespace RecordConnectionRequest {
+export namespace RecordObjectRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    pb_delete: boolean,
+    item?: ModeldBlob.AsObject,
   }
 }
 
-export class RecordLabRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): RecordLabRequest;
-  hasItem(): boolean;
-  clearItem(): RecordLabRequest;
+export class GetObjectRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetObjectRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordLabRequest;
+  getName(): string;
+  setName(value: string): GetObjectRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordLabRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordLabRequest): RecordLabRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordLabRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordLabRequest;
-  static deserializeBinaryFromReader(message: RecordLabRequest, reader: jspb.BinaryReader): RecordLabRequest;
+  toObject(includeInstance?: boolean): GetObjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetObjectRequest): GetObjectRequest.AsObject;
+  static serializeBinaryToWriter(message: GetObjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetObjectRequest;
+  static deserializeBinaryFromReader(message: GetObjectRequest, reader: jspb.BinaryReader): GetObjectRequest;
 }
 
-export namespace RecordLabRequest {
+export namespace GetObjectRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    name: string,
   }
 }
 
-export class RecordTenantRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): RecordTenantRequest;
+export class GetObjectResponse extends jspb.Message {
+  getItem(): ModeldBlob | undefined;
+  setItem(value?: ModeldBlob): GetObjectResponse;
   hasItem(): boolean;
-  clearItem(): RecordTenantRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordTenantRequest;
+  clearItem(): GetObjectResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordTenantRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordTenantRequest): RecordTenantRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordTenantRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordTenantRequest;
-  static deserializeBinaryFromReader(message: RecordTenantRequest, reader: jspb.BinaryReader): RecordTenantRequest;
+  toObject(includeInstance?: boolean): GetObjectResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetObjectResponse): GetObjectResponse.AsObject;
+  static serializeBinaryToWriter(message: GetObjectResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetObjectResponse;
+  static deserializeBinaryFromReader(message: GetObjectResponse, reader: jspb.BinaryReader): GetObjectResponse;
 }
 
-export namespace RecordTenantRequest {
+export namespace GetObjectResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
-    pb_delete: boolean,
+    item?: ModeldBlob.AsObject,
   }
 }
 
-export class RecordServingSiteRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): RecordServingSiteRequest;
-  hasItem(): boolean;
-  clearItem(): RecordServingSiteRequest;
+export class ListObjectRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListObjectRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordServingSiteRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListObjectRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordServingSiteRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordServingSiteRequest): RecordServingSiteRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordServingSiteRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordServingSiteRequest;
-  static deserializeBinaryFromReader(message: RecordServingSiteRequest, reader: jspb.BinaryReader): RecordServingSiteRequest;
+  toObject(includeInstance?: boolean): ListObjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListObjectRequest): ListObjectRequest.AsObject;
+  static serializeBinaryToWriter(message: ListObjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListObjectRequest;
+  static deserializeBinaryFromReader(message: ListObjectRequest, reader: jspb.BinaryReader): ListObjectRequest;
 }
 
-export namespace RecordServingSiteRequest {
+export namespace ListObjectRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordLicenseRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License): RecordLicenseRequest;
-  hasItem(): boolean;
-  clearItem(): RecordLicenseRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordLicenseRequest;
+export class ListObjectResponse extends jspb.Message {
+  getItemsList(): Array<ModeldBlob>;
+  setItemsList(value: Array<ModeldBlob>): ListObjectResponse;
+  clearItemsList(): ListObjectResponse;
+  addItems(value?: ModeldBlob, index?: number): ModeldBlob;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordLicenseRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordLicenseRequest): RecordLicenseRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordLicenseRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordLicenseRequest;
-  static deserializeBinaryFromReader(message: RecordLicenseRequest, reader: jspb.BinaryReader): RecordLicenseRequest;
+  toObject(includeInstance?: boolean): ListObjectResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListObjectResponse): ListObjectResponse.AsObject;
+  static serializeBinaryToWriter(message: ListObjectResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListObjectResponse;
+  static deserializeBinaryFromReader(message: ListObjectResponse, reader: jspb.BinaryReader): ListObjectResponse;
 }
 
-export namespace RecordLicenseRequest {
+export namespace ListObjectResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<ModeldBlob.AsObject>,
   }
 }
 
-export class RecordNotifierRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): RecordNotifierRequest;
-  hasItem(): boolean;
-  clearItem(): RecordNotifierRequest;
+export class DeleteObjectRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteObjectRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordNotifierRequest;
+  getName(): string;
+  setName(value: string): DeleteObjectRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordNotifierRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordNotifierRequest): RecordNotifierRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordNotifierRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordNotifierRequest;
-  static deserializeBinaryFromReader(message: RecordNotifierRequest, reader: jspb.BinaryReader): RecordNotifierRequest;
+  toObject(includeInstance?: boolean): DeleteObjectRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteObjectRequest): DeleteObjectRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteObjectRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteObjectRequest;
+  static deserializeBinaryFromReader(message: DeleteObjectRequest, reader: jspb.BinaryReader): DeleteObjectRequest;
 }
 
-export namespace RecordNotifierRequest {
+export namespace DeleteObjectRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    name: string,
   }
 }
 
-export class RecordVirtualBucketRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): RecordVirtualBucketRequest;
-  hasItem(): boolean;
-  clearItem(): RecordVirtualBucketRequest;
+export class ListDatasetRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListDatasetRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordVirtualBucketRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListDatasetRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordVirtualBucketRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordVirtualBucketRequest): RecordVirtualBucketRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordVirtualBucketRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordVirtualBucketRequest;
-  static deserializeBinaryFromReader(message: RecordVirtualBucketRequest, reader: jspb.BinaryReader): RecordVirtualBucketRequest;
+  toObject(includeInstance?: boolean): ListDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDatasetRequest): ListDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDatasetRequest;
+  static deserializeBinaryFromReader(message: ListDatasetRequest, reader: jspb.BinaryReader): ListDatasetRequest;
 }
 
-export namespace RecordVirtualBucketRequest {
+export namespace ListDatasetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordVirtualClusterRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): RecordVirtualClusterRequest;
-  hasItem(): boolean;
-  clearItem(): RecordVirtualClusterRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordVirtualClusterRequest;
+export class ListDatasetResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>): ListDatasetResponse;
+  clearItemsList(): ListDatasetResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, index?: number): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordVirtualClusterRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordVirtualClusterRequest): RecordVirtualClusterRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordVirtualClusterRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordVirtualClusterRequest;
-  static deserializeBinaryFromReader(message: RecordVirtualClusterRequest, reader: jspb.BinaryReader): RecordVirtualClusterRequest;
+  toObject(includeInstance?: boolean): ListDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDatasetResponse): ListDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: ListDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDatasetResponse;
+  static deserializeBinaryFromReader(message: ListDatasetResponse, reader: jspb.BinaryReader): ListDatasetResponse;
 }
 
-export namespace RecordVirtualClusterRequest {
+export namespace ListDatasetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject>,
   }
 }
 
-export class RecordVirtualVolumeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): RecordVirtualVolumeRequest;
-  hasItem(): boolean;
-  clearItem(): RecordVirtualVolumeRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordVirtualVolumeRequest;
-
+export class ListFeaturePipelineRunRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordVirtualVolumeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordVirtualVolumeRequest): RecordVirtualVolumeRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordVirtualVolumeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordVirtualVolumeRequest;
-  static deserializeBinaryFromReader(message: RecordVirtualVolumeRequest, reader: jspb.BinaryReader): RecordVirtualVolumeRequest;
+  toObject(includeInstance?: boolean): ListFeaturePipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeaturePipelineRunRequest): ListFeaturePipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeaturePipelineRunRequest;
+  static deserializeBinaryFromReader(message: ListFeaturePipelineRunRequest, reader: jspb.BinaryReader): ListFeaturePipelineRunRequest;
 }
 
-export namespace RecordVirtualVolumeRequest {
+export namespace ListFeaturePipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
-    pb_delete: boolean,
   }
 }
 
-export class RecordDataPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): RecordDataPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): RecordDataPipelineRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordDataPipelineRequest;
+export class ListFeaturePipelineRunResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun>): ListFeaturePipelineRunResponse;
+  clearItemsList(): ListFeaturePipelineRunResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordDataPipelineRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordDataPipelineRequest): RecordDataPipelineRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordDataPipelineRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordDataPipelineRequest;
-  static deserializeBinaryFromReader(message: RecordDataPipelineRequest, reader: jspb.BinaryReader): RecordDataPipelineRequest;
+  toObject(includeInstance?: boolean): ListFeaturePipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeaturePipelineRunResponse): ListFeaturePipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ListFeaturePipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeaturePipelineRunResponse;
+  static deserializeBinaryFromReader(message: ListFeaturePipelineRunResponse, reader: jspb.BinaryReader): ListFeaturePipelineRunResponse;
 }
 
-export namespace RecordDataPipelineRequest {
+export namespace ListFeaturePipelineRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject>,
   }
 }
 
-export class RecordDataPipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun): RecordDataPipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordDataPipelineRunRequest;
+export class ListLabelingPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListLabelingPipelineRunRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordDataPipelineRunRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListLabelingPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordDataPipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordDataPipelineRunRequest): RecordDataPipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordDataPipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordDataPipelineRunRequest;
-  static deserializeBinaryFromReader(message: RecordDataPipelineRunRequest, reader: jspb.BinaryReader): RecordDataPipelineRunRequest;
+  toObject(includeInstance?: boolean): ListLabelingPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLabelingPipelineRunRequest): ListLabelingPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListLabelingPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLabelingPipelineRunRequest;
+  static deserializeBinaryFromReader(message: ListLabelingPipelineRunRequest, reader: jspb.BinaryReader): ListLabelingPipelineRunRequest;
 }
 
-export namespace RecordDataPipelineRunRequest {
+export namespace ListLabelingPipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordDataProductRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): RecordDataProductRequest;
-  hasItem(): boolean;
-  clearItem(): RecordDataProductRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordDataProductRequest;
+export class ListLabelingPipelineRunResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>): ListLabelingPipelineRunResponse;
+  clearItemsList(): ListLabelingPipelineRunResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordDataProductRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordDataProductRequest): RecordDataProductRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordDataProductRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordDataProductRequest;
-  static deserializeBinaryFromReader(message: RecordDataProductRequest, reader: jspb.BinaryReader): RecordDataProductRequest;
+  toObject(includeInstance?: boolean): ListLabelingPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLabelingPipelineRunResponse): ListLabelingPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ListLabelingPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLabelingPipelineRunResponse;
+  static deserializeBinaryFromReader(message: ListLabelingPipelineRunResponse, reader: jspb.BinaryReader): ListLabelingPipelineRunResponse;
 }
 
-export namespace RecordDataProductRequest {
+export namespace ListLabelingPipelineRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject>,
   }
 }
 
-export class RecordDataProductVersionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): RecordDataProductVersionRequest;
-  hasItem(): boolean;
-  clearItem(): RecordDataProductVersionRequest;
+export class ListRecipeRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListRecipeRunRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordDataProductVersionRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListRecipeRunRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordDataProductVersionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordDataProductVersionRequest): RecordDataProductVersionRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordDataProductVersionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordDataProductVersionRequest;
-  static deserializeBinaryFromReader(message: RecordDataProductVersionRequest, reader: jspb.BinaryReader): RecordDataProductVersionRequest;
+  toObject(includeInstance?: boolean): ListRecipeRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRecipeRunRequest): ListRecipeRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListRecipeRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRecipeRunRequest;
+  static deserializeBinaryFromReader(message: ListRecipeRunRequest, reader: jspb.BinaryReader): ListRecipeRunRequest;
 }
 
-export namespace RecordDataProductVersionRequest {
+export namespace ListRecipeRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordDatasetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): RecordDatasetRequest;
-  hasItem(): boolean;
-  clearItem(): RecordDatasetRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordDatasetRequest;
+export class ListRecipeRunResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>): ListRecipeRunResponse;
+  clearItemsList(): ListRecipeRunResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordDatasetRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordDatasetRequest): RecordDatasetRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordDatasetRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordDatasetRequest;
-  static deserializeBinaryFromReader(message: RecordDatasetRequest, reader: jspb.BinaryReader): RecordDatasetRequest;
+  toObject(includeInstance?: boolean): ListRecipeRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRecipeRunResponse): ListRecipeRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ListRecipeRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRecipeRunResponse;
+  static deserializeBinaryFromReader(message: ListRecipeRunResponse, reader: jspb.BinaryReader): ListRecipeRunResponse;
 }
 
-export namespace RecordDatasetRequest {
+export namespace ListRecipeRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject>,
   }
 }
 
-export class RecordDataSourceRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): RecordDataSourceRequest;
-  hasItem(): boolean;
-  clearItem(): RecordDataSourceRequest;
+export class ListReportRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListReportRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordDataSourceRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListReportRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordDataSourceRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordDataSourceRequest): RecordDataSourceRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordDataSourceRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordDataSourceRequest;
-  static deserializeBinaryFromReader(message: RecordDataSourceRequest, reader: jspb.BinaryReader): RecordDataSourceRequest;
+  toObject(includeInstance?: boolean): ListReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListReportRequest): ListReportRequest.AsObject;
+  static serializeBinaryToWriter(message: ListReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListReportRequest;
+  static deserializeBinaryFromReader(message: ListReportRequest, reader: jspb.BinaryReader): ListReportRequest;
 }
 
-export namespace RecordDataSourceRequest {
+export namespace ListReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordEntityRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity): RecordEntityRequest;
-  hasItem(): boolean;
-  clearItem(): RecordEntityRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordEntityRequest;
+export class ListReportResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>): ListReportResponse;
+  clearItemsList(): ListReportResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordEntityRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordEntityRequest): RecordEntityRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordEntityRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordEntityRequest;
-  static deserializeBinaryFromReader(message: RecordEntityRequest, reader: jspb.BinaryReader): RecordEntityRequest;
+  toObject(includeInstance?: boolean): ListReportResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListReportResponse): ListReportResponse.AsObject;
+  static serializeBinaryToWriter(message: ListReportResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListReportResponse;
+  static deserializeBinaryFromReader(message: ListReportResponse, reader: jspb.BinaryReader): ListReportResponse;
 }
 
-export namespace RecordEntityRequest {
+export namespace ListReportResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject>,
   }
 }
 
-export class RecordFeaturesetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): RecordFeaturesetRequest;
-  hasItem(): boolean;
-  clearItem(): RecordFeaturesetRequest;
+export class ListStudyRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListStudyRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordFeaturesetRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListStudyRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordFeaturesetRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordFeaturesetRequest): RecordFeaturesetRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordFeaturesetRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordFeaturesetRequest;
-  static deserializeBinaryFromReader(message: RecordFeaturesetRequest, reader: jspb.BinaryReader): RecordFeaturesetRequest;
+  toObject(includeInstance?: boolean): ListStudyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListStudyRequest): ListStudyRequest.AsObject;
+  static serializeBinaryToWriter(message: ListStudyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListStudyRequest;
+  static deserializeBinaryFromReader(message: ListStudyRequest, reader: jspb.BinaryReader): ListStudyRequest;
 }
 
-export namespace RecordFeaturesetRequest {
+export namespace ListStudyRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordFeatureRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature): RecordFeatureRequest;
-  hasItem(): boolean;
-  clearItem(): RecordFeatureRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordFeatureRequest;
+export class ListStudyResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>): ListStudyResponse;
+  clearItemsList(): ListStudyResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordFeatureRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordFeatureRequest): RecordFeatureRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordFeatureRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordFeatureRequest;
-  static deserializeBinaryFromReader(message: RecordFeatureRequest, reader: jspb.BinaryReader): RecordFeatureRequest;
+  toObject(includeInstance?: boolean): ListStudyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListStudyResponse): ListStudyResponse.AsObject;
+  static serializeBinaryToWriter(message: ListStudyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListStudyResponse;
+  static deserializeBinaryFromReader(message: ListStudyResponse, reader: jspb.BinaryReader): ListStudyResponse;
 }
 
-export namespace RecordFeatureRequest {
+export namespace ListStudyResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject>,
   }
 }
 
-export class RecordFeaturePipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): RecordFeaturePipelineRequest;
-  hasItem(): boolean;
-  clearItem(): RecordFeaturePipelineRequest;
+export class ListPredictionPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListPredictionPipelineRunRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordFeaturePipelineRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListPredictionPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordFeaturePipelineRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordFeaturePipelineRequest): RecordFeaturePipelineRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordFeaturePipelineRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordFeaturePipelineRequest;
-  static deserializeBinaryFromReader(message: RecordFeaturePipelineRequest, reader: jspb.BinaryReader): RecordFeaturePipelineRequest;
+  toObject(includeInstance?: boolean): ListPredictionPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPredictionPipelineRunRequest): ListPredictionPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListPredictionPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPredictionPipelineRunRequest;
+  static deserializeBinaryFromReader(message: ListPredictionPipelineRunRequest, reader: jspb.BinaryReader): ListPredictionPipelineRunRequest;
 }
 
-export namespace RecordFeaturePipelineRequest {
+export namespace ListPredictionPipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordFeaturePipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): RecordFeaturePipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordFeaturePipelineRunRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordFeaturePipelineRunRequest;
+export class ListPredictionPipelineRunResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun>): ListPredictionPipelineRunResponse;
+  clearItemsList(): ListPredictionPipelineRunResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordFeaturePipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordFeaturePipelineRunRequest): RecordFeaturePipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordFeaturePipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordFeaturePipelineRunRequest;
-  static deserializeBinaryFromReader(message: RecordFeaturePipelineRunRequest, reader: jspb.BinaryReader): RecordFeaturePipelineRunRequest;
+  toObject(includeInstance?: boolean): ListPredictionPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPredictionPipelineRunResponse): ListPredictionPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ListPredictionPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPredictionPipelineRunResponse;
+  static deserializeBinaryFromReader(message: ListPredictionPipelineRunResponse, reader: jspb.BinaryReader): ListPredictionPipelineRunResponse;
 }
 
-export namespace RecordFeaturePipelineRunRequest {
+export namespace ListPredictionPipelineRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun.AsObject>,
   }
 }
 
-export class RecordLabelingPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): RecordLabelingPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): RecordLabelingPipelineRequest;
+export class ListModelAutoBuilderRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListModelAutoBuilderRequest;
 
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordLabelingPipelineRequest;
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListModelAutoBuilderRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordLabelingPipelineRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordLabelingPipelineRequest): RecordLabelingPipelineRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordLabelingPipelineRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordLabelingPipelineRequest;
-  static deserializeBinaryFromReader(message: RecordLabelingPipelineRequest, reader: jspb.BinaryReader): RecordLabelingPipelineRequest;
+  toObject(includeInstance?: boolean): ListModelAutoBuilderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelAutoBuilderRequest): ListModelAutoBuilderRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModelAutoBuilderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelAutoBuilderRequest;
+  static deserializeBinaryFromReader(message: ListModelAutoBuilderRequest, reader: jspb.BinaryReader): ListModelAutoBuilderRequest;
 }
 
-export namespace RecordLabelingPipelineRequest {
+export namespace ListModelAutoBuilderRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
-    pb_delete: boolean,
+    namespace: string,
+    selectorMap: Array<[string, string]>,
   }
 }
 
-export class RecordLabelingPipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun): RecordLabelingPipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordLabelingPipelineRunRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordLabelingPipelineRunRequest;
+export class ListModelAutoBuilderResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>): ListModelAutoBuilderResponse;
+  clearItemsList(): ListModelAutoBuilderResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordLabelingPipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordLabelingPipelineRunRequest): RecordLabelingPipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordLabelingPipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordLabelingPipelineRunRequest;
-  static deserializeBinaryFromReader(message: RecordLabelingPipelineRunRequest, reader: jspb.BinaryReader): RecordLabelingPipelineRunRequest;
+  toObject(includeInstance?: boolean): ListModelAutoBuilderResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelAutoBuilderResponse): ListModelAutoBuilderResponse.AsObject;
+  static serializeBinaryToWriter(message: ListModelAutoBuilderResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelAutoBuilderResponse;
+  static deserializeBinaryFromReader(message: ListModelAutoBuilderResponse, reader: jspb.BinaryReader): ListModelAutoBuilderResponse;
 }
 
-export namespace RecordLabelingPipelineRunRequest {
+export namespace ListModelAutoBuilderResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordRecipeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): RecordRecipeRequest;
-  hasItem(): boolean;
-  clearItem(): RecordRecipeRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordRecipeRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordRecipeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordRecipeRequest): RecordRecipeRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordRecipeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordRecipeRequest;
-  static deserializeBinaryFromReader(message: RecordRecipeRequest, reader: jspb.BinaryReader): RecordRecipeRequest;
-}
-
-export namespace RecordRecipeRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordRecipeRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): RecordRecipeRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordRecipeRunRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordRecipeRunRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordRecipeRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordRecipeRunRequest): RecordRecipeRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordRecipeRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordRecipeRunRequest;
-  static deserializeBinaryFromReader(message: RecordRecipeRunRequest, reader: jspb.BinaryReader): RecordRecipeRunRequest;
-}
-
-export namespace RecordRecipeRunRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordModelAutoBuilderRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): RecordModelAutoBuilderRequest;
-  hasItem(): boolean;
-  clearItem(): RecordModelAutoBuilderRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordModelAutoBuilderRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordModelAutoBuilderRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordModelAutoBuilderRequest): RecordModelAutoBuilderRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordModelAutoBuilderRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordModelAutoBuilderRequest;
-  static deserializeBinaryFromReader(message: RecordModelAutoBuilderRequest, reader: jspb.BinaryReader): RecordModelAutoBuilderRequest;
-}
-
-export namespace RecordModelAutoBuilderRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordModelRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): RecordModelRequest;
-  hasItem(): boolean;
-  clearItem(): RecordModelRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordModelRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordModelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordModelRequest): RecordModelRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordModelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordModelRequest;
-  static deserializeBinaryFromReader(message: RecordModelRequest, reader: jspb.BinaryReader): RecordModelRequest;
-}
-
-export namespace RecordModelRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordModelPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): RecordModelPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): RecordModelPipelineRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordModelPipelineRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordModelPipelineRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordModelPipelineRequest): RecordModelPipelineRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordModelPipelineRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordModelPipelineRequest;
-  static deserializeBinaryFromReader(message: RecordModelPipelineRequest, reader: jspb.BinaryReader): RecordModelPipelineRequest;
-}
-
-export namespace RecordModelPipelineRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordModelPipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun): RecordModelPipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordModelPipelineRunRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordModelPipelineRunRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordModelPipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordModelPipelineRunRequest): RecordModelPipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordModelPipelineRunRequest;
-  static deserializeBinaryFromReader(message: RecordModelPipelineRunRequest, reader: jspb.BinaryReader): RecordModelPipelineRunRequest;
-}
-
-export namespace RecordModelPipelineRunRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordNotebookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): RecordNotebookRequest;
-  hasItem(): boolean;
-  clearItem(): RecordNotebookRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordNotebookRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordNotebookRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordNotebookRequest): RecordNotebookRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordNotebookRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordNotebookRequest;
-  static deserializeBinaryFromReader(message: RecordNotebookRequest, reader: jspb.BinaryReader): RecordNotebookRequest;
-}
-
-export namespace RecordNotebookRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordNotebookRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): RecordNotebookRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordNotebookRunRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordNotebookRunRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordNotebookRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordNotebookRunRequest): RecordNotebookRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordNotebookRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordNotebookRunRequest;
-  static deserializeBinaryFromReader(message: RecordNotebookRunRequest, reader: jspb.BinaryReader): RecordNotebookRunRequest;
-}
-
-export namespace RecordNotebookRunRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): RecordReportRequest;
-  hasItem(): boolean;
-  clearItem(): RecordReportRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordReportRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordReportRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordReportRequest): RecordReportRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordReportRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordReportRequest;
-  static deserializeBinaryFromReader(message: RecordReportRequest, reader: jspb.BinaryReader): RecordReportRequest;
-}
-
-export namespace RecordReportRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordStudyRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): RecordStudyRequest;
-  hasItem(): boolean;
-  clearItem(): RecordStudyRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordStudyRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordStudyRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordStudyRequest): RecordStudyRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordStudyRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordStudyRequest;
-  static deserializeBinaryFromReader(message: RecordStudyRequest, reader: jspb.BinaryReader): RecordStudyRequest;
-}
-
-export namespace RecordStudyRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordCurtainRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): RecordCurtainRequest;
-  hasItem(): boolean;
-  clearItem(): RecordCurtainRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordCurtainRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordCurtainRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordCurtainRequest): RecordCurtainRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordCurtainRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordCurtainRequest;
-  static deserializeBinaryFromReader(message: RecordCurtainRequest, reader: jspb.BinaryReader): RecordCurtainRequest;
-}
-
-export namespace RecordCurtainRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordPredictorRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): RecordPredictorRequest;
-  hasItem(): boolean;
-  clearItem(): RecordPredictorRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordPredictorRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordPredictorRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordPredictorRequest): RecordPredictorRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordPredictorRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordPredictorRequest;
-  static deserializeBinaryFromReader(message: RecordPredictorRequest, reader: jspb.BinaryReader): RecordPredictorRequest;
-}
-
-export namespace RecordPredictorRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordPredictionPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline): RecordPredictionPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): RecordPredictionPipelineRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordPredictionPipelineRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordPredictionPipelineRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordPredictionPipelineRequest): RecordPredictionPipelineRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordPredictionPipelineRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordPredictionPipelineRequest;
-  static deserializeBinaryFromReader(message: RecordPredictionPipelineRequest, reader: jspb.BinaryReader): RecordPredictionPipelineRequest;
-}
-
-export namespace RecordPredictionPipelineRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipeline.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordPredictionPipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun): RecordPredictionPipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): RecordPredictionPipelineRunRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordPredictionPipelineRunRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordPredictionPipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordPredictionPipelineRunRequest): RecordPredictionPipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordPredictionPipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordPredictionPipelineRunRequest;
-  static deserializeBinaryFromReader(message: RecordPredictionPipelineRunRequest, reader: jspb.BinaryReader): RecordPredictionPipelineRunRequest;
-}
-
-export namespace RecordPredictionPipelineRunRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordConversationRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation): RecordConversationRequest;
-  hasItem(): boolean;
-  clearItem(): RecordConversationRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordConversationRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordConversationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordConversationRequest): RecordConversationRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordConversationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordConversationRequest;
-  static deserializeBinaryFromReader(message: RecordConversationRequest, reader: jspb.BinaryReader): RecordConversationRequest;
-}
-
-export namespace RecordConversationRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordPostmortemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): RecordPostmortemRequest;
-  hasItem(): boolean;
-  clearItem(): RecordPostmortemRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordPostmortemRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordPostmortemRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordPostmortemRequest): RecordPostmortemRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordPostmortemRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordPostmortemRequest;
-  static deserializeBinaryFromReader(message: RecordPostmortemRequest, reader: jspb.BinaryReader): RecordPostmortemRequest;
-}
-
-export namespace RecordPostmortemRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
-    pb_delete: boolean,
-  }
-}
-
-export class RecordRunbookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): RecordRunbookRequest;
-  hasItem(): boolean;
-  clearItem(): RecordRunbookRequest;
-
-  getDelete(): boolean;
-  setDelete(value: boolean): RecordRunbookRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecordRunbookRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RecordRunbookRequest): RecordRunbookRequest.AsObject;
-  static serializeBinaryToWriter(message: RecordRunbookRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecordRunbookRequest;
-  static deserializeBinaryFromReader(message: RecordRunbookRequest, reader: jspb.BinaryReader): RecordRunbookRequest;
-}
-
-export namespace RecordRunbookRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
-    pb_delete: boolean,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject>,
   }
 }
 

@@ -10,11 +10,11 @@ import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1alpha13 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1alpha14 "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1"
-	v1alpha12 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	v1alpha12 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
+	_ "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	_ "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1"
+	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -35,17 +35,21 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type RecordAccountRequest struct {
+// A Modeld object represent a object in the system (e.g. account, virtual bucket)
+// Object are stored as blobs
+type ModeldBlob struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.Account `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool              `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Kind      string `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"`
+	Blob      string `protobuf:"bytes,4,opt,name=blob,proto3" json:"blob,omitempty"`
 }
 
-func (x *RecordAccountRequest) Reset() {
-	*x = RecordAccountRequest{}
+func (x *ModeldBlob) Reset() {
+	*x = ModeldBlob{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -53,13 +57,13 @@ func (x *RecordAccountRequest) Reset() {
 	}
 }
 
-func (x *RecordAccountRequest) String() string {
+func (x *ModeldBlob) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordAccountRequest) ProtoMessage() {}
+func (*ModeldBlob) ProtoMessage() {}
 
-func (x *RecordAccountRequest) ProtoReflect() protoreflect.Message {
+func (x *ModeldBlob) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -71,36 +75,49 @@ func (x *RecordAccountRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordAccountRequest.ProtoReflect.Descriptor instead.
-func (*RecordAccountRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModeldBlob.ProtoReflect.Descriptor instead.
+func (*ModeldBlob) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RecordAccountRequest) GetItem() *v1alpha1.Account {
+func (x *ModeldBlob) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
 	}
-	return nil
+	return ""
 }
 
-func (x *RecordAccountRequest) GetDelete() bool {
+func (x *ModeldBlob) GetName() string {
 	if x != nil {
-		return x.Delete
+		return x.Name
 	}
-	return false
+	return ""
 }
 
-type RecordConnectionRequest struct {
+func (x *ModeldBlob) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *ModeldBlob) GetBlob() string {
+	if x != nil {
+		return x.Blob
+	}
+	return ""
+}
+
+type RecordObjectRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.Connection `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                 `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Item *ModeldBlob `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 }
 
-func (x *RecordConnectionRequest) Reset() {
-	*x = RecordConnectionRequest{}
+func (x *RecordObjectRequest) Reset() {
+	*x = RecordObjectRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -108,13 +125,13 @@ func (x *RecordConnectionRequest) Reset() {
 	}
 }
 
-func (x *RecordConnectionRequest) String() string {
+func (x *RecordObjectRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordConnectionRequest) ProtoMessage() {}
+func (*RecordObjectRequest) ProtoMessage() {}
 
-func (x *RecordConnectionRequest) ProtoReflect() protoreflect.Message {
+func (x *RecordObjectRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -126,36 +143,29 @@ func (x *RecordConnectionRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordConnectionRequest.ProtoReflect.Descriptor instead.
-func (*RecordConnectionRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use RecordObjectRequest.ProtoReflect.Descriptor instead.
+func (*RecordObjectRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *RecordConnectionRequest) GetItem() *v1alpha1.Connection {
+func (x *RecordObjectRequest) GetItem() *ModeldBlob {
 	if x != nil {
 		return x.Item
 	}
 	return nil
 }
 
-func (x *RecordConnectionRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordLabRequest struct {
+type GetObjectRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.Lab `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool          `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *RecordLabRequest) Reset() {
-	*x = RecordLabRequest{}
+func (x *GetObjectRequest) Reset() {
+	*x = GetObjectRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -163,13 +173,13 @@ func (x *RecordLabRequest) Reset() {
 	}
 }
 
-func (x *RecordLabRequest) String() string {
+func (x *GetObjectRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordLabRequest) ProtoMessage() {}
+func (*GetObjectRequest) ProtoMessage() {}
 
-func (x *RecordLabRequest) ProtoReflect() protoreflect.Message {
+func (x *GetObjectRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -181,36 +191,35 @@ func (x *RecordLabRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordLabRequest.ProtoReflect.Descriptor instead.
-func (*RecordLabRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetObjectRequest.ProtoReflect.Descriptor instead.
+func (*GetObjectRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *RecordLabRequest) GetItem() *v1alpha1.Lab {
+func (x *GetObjectRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
 	}
-	return nil
+	return ""
 }
 
-func (x *RecordLabRequest) GetDelete() bool {
+func (x *GetObjectRequest) GetName() string {
 	if x != nil {
-		return x.Delete
+		return x.Name
 	}
-	return false
+	return ""
 }
 
-type RecordTenantRequest struct {
+type GetObjectResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.Tenant `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool             `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Item *ModeldBlob `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 }
 
-func (x *RecordTenantRequest) Reset() {
-	*x = RecordTenantRequest{}
+func (x *GetObjectResponse) Reset() {
+	*x = GetObjectResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -218,13 +227,13 @@ func (x *RecordTenantRequest) Reset() {
 	}
 }
 
-func (x *RecordTenantRequest) String() string {
+func (x *GetObjectResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordTenantRequest) ProtoMessage() {}
+func (*GetObjectResponse) ProtoMessage() {}
 
-func (x *RecordTenantRequest) ProtoReflect() protoreflect.Message {
+func (x *GetObjectResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -236,36 +245,29 @@ func (x *RecordTenantRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordTenantRequest.ProtoReflect.Descriptor instead.
-func (*RecordTenantRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetObjectResponse.ProtoReflect.Descriptor instead.
+func (*GetObjectResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *RecordTenantRequest) GetItem() *v1alpha1.Tenant {
+func (x *GetObjectResponse) GetItem() *ModeldBlob {
 	if x != nil {
 		return x.Item
 	}
 	return nil
 }
 
-func (x *RecordTenantRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordServingSiteRequest struct {
+type ListObjectRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.ServingSite `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                  `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordServingSiteRequest) Reset() {
-	*x = RecordServingSiteRequest{}
+func (x *ListObjectRequest) Reset() {
+	*x = ListObjectRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -273,13 +275,13 @@ func (x *RecordServingSiteRequest) Reset() {
 	}
 }
 
-func (x *RecordServingSiteRequest) String() string {
+func (x *ListObjectRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordServingSiteRequest) ProtoMessage() {}
+func (*ListObjectRequest) ProtoMessage() {}
 
-func (x *RecordServingSiteRequest) ProtoReflect() protoreflect.Message {
+func (x *ListObjectRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -291,36 +293,35 @@ func (x *RecordServingSiteRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordServingSiteRequest.ProtoReflect.Descriptor instead.
-func (*RecordServingSiteRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListObjectRequest.ProtoReflect.Descriptor instead.
+func (*ListObjectRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *RecordServingSiteRequest) GetItem() *v1alpha1.ServingSite {
+func (x *ListObjectRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListObjectRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordServingSiteRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordLicenseRequest struct {
+type ListObjectResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.License `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool              `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*ModeldBlob `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordLicenseRequest) Reset() {
-	*x = RecordLicenseRequest{}
+func (x *ListObjectResponse) Reset() {
+	*x = ListObjectResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -328,13 +329,13 @@ func (x *RecordLicenseRequest) Reset() {
 	}
 }
 
-func (x *RecordLicenseRequest) String() string {
+func (x *ListObjectResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordLicenseRequest) ProtoMessage() {}
+func (*ListObjectResponse) ProtoMessage() {}
 
-func (x *RecordLicenseRequest) ProtoReflect() protoreflect.Message {
+func (x *ListObjectResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -346,36 +347,29 @@ func (x *RecordLicenseRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordLicenseRequest.ProtoReflect.Descriptor instead.
-func (*RecordLicenseRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListObjectResponse.ProtoReflect.Descriptor instead.
+func (*ListObjectResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *RecordLicenseRequest) GetItem() *v1alpha1.License {
+func (x *ListObjectResponse) GetItems() []*ModeldBlob {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordLicenseRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordNotifierRequest struct {
+type DeleteObjectRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.Notifier `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool               `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *RecordNotifierRequest) Reset() {
-	*x = RecordNotifierRequest{}
+func (x *DeleteObjectRequest) Reset() {
+	*x = DeleteObjectRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -383,13 +377,13 @@ func (x *RecordNotifierRequest) Reset() {
 	}
 }
 
-func (x *RecordNotifierRequest) String() string {
+func (x *DeleteObjectRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordNotifierRequest) ProtoMessage() {}
+func (*DeleteObjectRequest) ProtoMessage() {}
 
-func (x *RecordNotifierRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteObjectRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -401,36 +395,36 @@ func (x *RecordNotifierRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordNotifierRequest.ProtoReflect.Descriptor instead.
-func (*RecordNotifierRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteObjectRequest.ProtoReflect.Descriptor instead.
+func (*DeleteObjectRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *RecordNotifierRequest) GetItem() *v1alpha1.Notifier {
+func (x *DeleteObjectRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
 	}
-	return nil
+	return ""
 }
 
-func (x *RecordNotifierRequest) GetDelete() bool {
+func (x *DeleteObjectRequest) GetName() string {
 	if x != nil {
-		return x.Delete
+		return x.Name
 	}
-	return false
+	return ""
 }
 
-type RecordVirtualBucketRequest struct {
+type ListDatasetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.VirtualBucket `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                    `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordVirtualBucketRequest) Reset() {
-	*x = RecordVirtualBucketRequest{}
+func (x *ListDatasetRequest) Reset() {
+	*x = ListDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -438,13 +432,13 @@ func (x *RecordVirtualBucketRequest) Reset() {
 	}
 }
 
-func (x *RecordVirtualBucketRequest) String() string {
+func (x *ListDatasetRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordVirtualBucketRequest) ProtoMessage() {}
+func (*ListDatasetRequest) ProtoMessage() {}
 
-func (x *RecordVirtualBucketRequest) ProtoReflect() protoreflect.Message {
+func (x *ListDatasetRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -456,36 +450,35 @@ func (x *RecordVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordVirtualBucketRequest.ProtoReflect.Descriptor instead.
-func (*RecordVirtualBucketRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListDatasetRequest.ProtoReflect.Descriptor instead.
+func (*ListDatasetRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *RecordVirtualBucketRequest) GetItem() *v1alpha1.VirtualBucket {
+func (x *ListDatasetRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListDatasetRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordVirtualBucketRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordVirtualClusterRequest struct {
+type ListDatasetResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha1.VirtualCluster `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                     `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha1.Dataset `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordVirtualClusterRequest) Reset() {
-	*x = RecordVirtualClusterRequest{}
+func (x *ListDatasetResponse) Reset() {
+	*x = ListDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -493,13 +486,13 @@ func (x *RecordVirtualClusterRequest) Reset() {
 	}
 }
 
-func (x *RecordVirtualClusterRequest) String() string {
+func (x *ListDatasetResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordVirtualClusterRequest) ProtoMessage() {}
+func (*ListDatasetResponse) ProtoMessage() {}
 
-func (x *RecordVirtualClusterRequest) ProtoReflect() protoreflect.Message {
+func (x *ListDatasetResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -511,36 +504,26 @@ func (x *RecordVirtualClusterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordVirtualClusterRequest.ProtoReflect.Descriptor instead.
-func (*RecordVirtualClusterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListDatasetResponse.ProtoReflect.Descriptor instead.
+func (*ListDatasetResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *RecordVirtualClusterRequest) GetItem() *v1alpha1.VirtualCluster {
+func (x *ListDatasetResponse) GetItems() []*v1alpha1.Dataset {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordVirtualClusterRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordVirtualVolumeRequest struct {
+type ListFeaturePipelineRunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha1.VirtualVolume `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                    `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
 }
 
-func (x *RecordVirtualVolumeRequest) Reset() {
-	*x = RecordVirtualVolumeRequest{}
+func (x *ListFeaturePipelineRunRequest) Reset() {
+	*x = ListFeaturePipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -548,13 +531,13 @@ func (x *RecordVirtualVolumeRequest) Reset() {
 	}
 }
 
-func (x *RecordVirtualVolumeRequest) String() string {
+func (x *ListFeaturePipelineRunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordVirtualVolumeRequest) ProtoMessage() {}
+func (*ListFeaturePipelineRunRequest) ProtoMessage() {}
 
-func (x *RecordVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
+func (x *ListFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -566,37 +549,21 @@ func (x *RecordVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordVirtualVolumeRequest.ProtoReflect.Descriptor instead.
-func (*RecordVirtualVolumeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
+func (*ListFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *RecordVirtualVolumeRequest) GetItem() *v1alpha1.VirtualVolume {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordVirtualVolumeRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// DataPipeline
-type RecordDataPipelineRequest struct {
+type ListFeaturePipelineRunResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.DataPipeline `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                    `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha1.FeaturePipelineRun `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordDataPipelineRequest) Reset() {
-	*x = RecordDataPipelineRequest{}
+func (x *ListFeaturePipelineRunResponse) Reset() {
+	*x = ListFeaturePipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -604,13 +571,13 @@ func (x *RecordDataPipelineRequest) Reset() {
 	}
 }
 
-func (x *RecordDataPipelineRequest) String() string {
+func (x *ListFeaturePipelineRunResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordDataPipelineRequest) ProtoMessage() {}
+func (*ListFeaturePipelineRunResponse) ProtoMessage() {}
 
-func (x *RecordDataPipelineRequest) ProtoReflect() protoreflect.Message {
+func (x *ListFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -622,37 +589,29 @@ func (x *RecordDataPipelineRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordDataPipelineRequest.ProtoReflect.Descriptor instead.
-func (*RecordDataPipelineRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListFeaturePipelineRunResponse.ProtoReflect.Descriptor instead.
+func (*ListFeaturePipelineRunResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *RecordDataPipelineRequest) GetItem() *v1alpha11.DataPipeline {
+func (x *ListFeaturePipelineRunResponse) GetItems() []*v1alpha1.FeaturePipelineRun {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordDataPipelineRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// DataPipelineRun
-type RecordDataPipelineRunRequest struct {
+type ListLabelingPipelineRunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.DataPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                       `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordDataPipelineRunRequest) Reset() {
-	*x = RecordDataPipelineRunRequest{}
+func (x *ListLabelingPipelineRunRequest) Reset() {
+	*x = ListLabelingPipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -660,13 +619,13 @@ func (x *RecordDataPipelineRunRequest) Reset() {
 	}
 }
 
-func (x *RecordDataPipelineRunRequest) String() string {
+func (x *ListLabelingPipelineRunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordDataPipelineRunRequest) ProtoMessage() {}
+func (*ListLabelingPipelineRunRequest) ProtoMessage() {}
 
-func (x *RecordDataPipelineRunRequest) ProtoReflect() protoreflect.Message {
+func (x *ListLabelingPipelineRunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -678,37 +637,35 @@ func (x *RecordDataPipelineRunRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordDataPipelineRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordDataPipelineRunRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListLabelingPipelineRunRequest.ProtoReflect.Descriptor instead.
+func (*ListLabelingPipelineRunRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *RecordDataPipelineRunRequest) GetItem() *v1alpha11.DataPipelineRun {
+func (x *ListLabelingPipelineRunRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListLabelingPipelineRunRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordDataPipelineRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// DataProduct
-type RecordDataProductRequest struct {
+type ListLabelingPipelineRunResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.DataProduct `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                   `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha1.LabelingPipelineRun `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordDataProductRequest) Reset() {
-	*x = RecordDataProductRequest{}
+func (x *ListLabelingPipelineRunResponse) Reset() {
+	*x = ListLabelingPipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -716,13 +673,13 @@ func (x *RecordDataProductRequest) Reset() {
 	}
 }
 
-func (x *RecordDataProductRequest) String() string {
+func (x *ListLabelingPipelineRunResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordDataProductRequest) ProtoMessage() {}
+func (*ListLabelingPipelineRunResponse) ProtoMessage() {}
 
-func (x *RecordDataProductRequest) ProtoReflect() protoreflect.Message {
+func (x *ListLabelingPipelineRunResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -734,37 +691,29 @@ func (x *RecordDataProductRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordDataProductRequest.ProtoReflect.Descriptor instead.
-func (*RecordDataProductRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListLabelingPipelineRunResponse.ProtoReflect.Descriptor instead.
+func (*ListLabelingPipelineRunResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *RecordDataProductRequest) GetItem() *v1alpha11.DataProduct {
+func (x *ListLabelingPipelineRunResponse) GetItems() []*v1alpha1.LabelingPipelineRun {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordDataProductRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// DataProductVersion
-type RecordDataProductVersionRequest struct {
+type ListRecipeRunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.DataProductVersion `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                          `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordDataProductVersionRequest) Reset() {
-	*x = RecordDataProductVersionRequest{}
+func (x *ListRecipeRunRequest) Reset() {
+	*x = ListRecipeRunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -772,13 +721,13 @@ func (x *RecordDataProductVersionRequest) Reset() {
 	}
 }
 
-func (x *RecordDataProductVersionRequest) String() string {
+func (x *ListRecipeRunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordDataProductVersionRequest) ProtoMessage() {}
+func (*ListRecipeRunRequest) ProtoMessage() {}
 
-func (x *RecordDataProductVersionRequest) ProtoReflect() protoreflect.Message {
+func (x *ListRecipeRunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -790,37 +739,35 @@ func (x *RecordDataProductVersionRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordDataProductVersionRequest.ProtoReflect.Descriptor instead.
-func (*RecordDataProductVersionRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListRecipeRunRequest.ProtoReflect.Descriptor instead.
+func (*ListRecipeRunRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *RecordDataProductVersionRequest) GetItem() *v1alpha11.DataProductVersion {
+func (x *ListRecipeRunRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListRecipeRunRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordDataProductVersionRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// DataSource
-type RecordDatasetRequest struct {
+type ListRecipeRunResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.Dataset `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool               `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha1.RecipeRun `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordDatasetRequest) Reset() {
-	*x = RecordDatasetRequest{}
+func (x *ListRecipeRunResponse) Reset() {
+	*x = ListRecipeRunResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -828,13 +775,13 @@ func (x *RecordDatasetRequest) Reset() {
 	}
 }
 
-func (x *RecordDatasetRequest) String() string {
+func (x *ListRecipeRunResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordDatasetRequest) ProtoMessage() {}
+func (*ListRecipeRunResponse) ProtoMessage() {}
 
-func (x *RecordDatasetRequest) ProtoReflect() protoreflect.Message {
+func (x *ListRecipeRunResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -846,37 +793,29 @@ func (x *RecordDatasetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordDatasetRequest.ProtoReflect.Descriptor instead.
-func (*RecordDatasetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListRecipeRunResponse.ProtoReflect.Descriptor instead.
+func (*ListRecipeRunResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *RecordDatasetRequest) GetItem() *v1alpha11.Dataset {
+func (x *ListRecipeRunResponse) GetItems() []*v1alpha1.RecipeRun {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordDatasetRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// DataSource
-type RecordDataSourceRequest struct {
+type ListReportRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.DataSource `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                  `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordDataSourceRequest) Reset() {
-	*x = RecordDataSourceRequest{}
+func (x *ListReportRequest) Reset() {
+	*x = ListReportRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -884,13 +823,13 @@ func (x *RecordDataSourceRequest) Reset() {
 	}
 }
 
-func (x *RecordDataSourceRequest) String() string {
+func (x *ListReportRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordDataSourceRequest) ProtoMessage() {}
+func (*ListReportRequest) ProtoMessage() {}
 
-func (x *RecordDataSourceRequest) ProtoReflect() protoreflect.Message {
+func (x *ListReportRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -902,37 +841,35 @@ func (x *RecordDataSourceRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordDataSourceRequest.ProtoReflect.Descriptor instead.
-func (*RecordDataSourceRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListReportRequest.ProtoReflect.Descriptor instead.
+func (*ListReportRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *RecordDataSourceRequest) GetItem() *v1alpha11.DataSource {
+func (x *ListReportRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListReportRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordDataSourceRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Entity
-type RecordEntityRequest struct {
+type ListReportResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.Entity `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool              `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha11.Report `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordEntityRequest) Reset() {
-	*x = RecordEntityRequest{}
+func (x *ListReportResponse) Reset() {
+	*x = ListReportResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -940,13 +877,13 @@ func (x *RecordEntityRequest) Reset() {
 	}
 }
 
-func (x *RecordEntityRequest) String() string {
+func (x *ListReportResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordEntityRequest) ProtoMessage() {}
+func (*ListReportResponse) ProtoMessage() {}
 
-func (x *RecordEntityRequest) ProtoReflect() protoreflect.Message {
+func (x *ListReportResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -958,36 +895,29 @@ func (x *RecordEntityRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordEntityRequest.ProtoReflect.Descriptor instead.
-func (*RecordEntityRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListReportResponse.ProtoReflect.Descriptor instead.
+func (*ListReportResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *RecordEntityRequest) GetItem() *v1alpha11.Entity {
+func (x *ListReportResponse) GetItems() []*v1alpha11.Report {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordEntityRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordFeaturesetRequest struct {
+type ListStudyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.Featureset `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                  `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordFeaturesetRequest) Reset() {
-	*x = RecordFeaturesetRequest{}
+func (x *ListStudyRequest) Reset() {
+	*x = ListStudyRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -995,13 +925,13 @@ func (x *RecordFeaturesetRequest) Reset() {
 	}
 }
 
-func (x *RecordFeaturesetRequest) String() string {
+func (x *ListStudyRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordFeaturesetRequest) ProtoMessage() {}
+func (*ListStudyRequest) ProtoMessage() {}
 
-func (x *RecordFeaturesetRequest) ProtoReflect() protoreflect.Message {
+func (x *ListStudyRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1013,37 +943,35 @@ func (x *RecordFeaturesetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordFeaturesetRequest.ProtoReflect.Descriptor instead.
-func (*RecordFeaturesetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListStudyRequest.ProtoReflect.Descriptor instead.
+func (*ListStudyRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *RecordFeaturesetRequest) GetItem() *v1alpha11.Featureset {
+func (x *ListStudyRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListStudyRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordFeaturesetRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Feature
-type RecordFeatureRequest struct {
+type ListStudyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.Feature `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool               `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha11.Study `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordFeatureRequest) Reset() {
-	*x = RecordFeatureRequest{}
+func (x *ListStudyResponse) Reset() {
+	*x = ListStudyResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1051,13 +979,13 @@ func (x *RecordFeatureRequest) Reset() {
 	}
 }
 
-func (x *RecordFeatureRequest) String() string {
+func (x *ListStudyResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordFeatureRequest) ProtoMessage() {}
+func (*ListStudyResponse) ProtoMessage() {}
 
-func (x *RecordFeatureRequest) ProtoReflect() protoreflect.Message {
+func (x *ListStudyResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1069,37 +997,29 @@ func (x *RecordFeatureRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordFeatureRequest.ProtoReflect.Descriptor instead.
-func (*RecordFeatureRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListStudyResponse.ProtoReflect.Descriptor instead.
+func (*ListStudyResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *RecordFeatureRequest) GetItem() *v1alpha11.Feature {
+func (x *ListStudyResponse) GetItems() []*v1alpha11.Study {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordFeatureRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// FetaurePipeline
-type RecordFeaturePipelineRequest struct {
+type ListPredictionPipelineRunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.FeaturePipeline `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                       `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordFeaturePipelineRequest) Reset() {
-	*x = RecordFeaturePipelineRequest{}
+func (x *ListPredictionPipelineRunRequest) Reset() {
+	*x = ListPredictionPipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1107,13 +1027,13 @@ func (x *RecordFeaturePipelineRequest) Reset() {
 	}
 }
 
-func (x *RecordFeaturePipelineRequest) String() string {
+func (x *ListPredictionPipelineRunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordFeaturePipelineRequest) ProtoMessage() {}
+func (*ListPredictionPipelineRunRequest) ProtoMessage() {}
 
-func (x *RecordFeaturePipelineRequest) ProtoReflect() protoreflect.Message {
+func (x *ListPredictionPipelineRunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1125,36 +1045,35 @@ func (x *RecordFeaturePipelineRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordFeaturePipelineRequest.ProtoReflect.Descriptor instead.
-func (*RecordFeaturePipelineRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPredictionPipelineRunRequest.ProtoReflect.Descriptor instead.
+func (*ListPredictionPipelineRunRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *RecordFeaturePipelineRequest) GetItem() *v1alpha11.FeaturePipeline {
+func (x *ListPredictionPipelineRunRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListPredictionPipelineRunRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordFeaturePipelineRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordFeaturePipelineRunRequest struct {
+type ListPredictionPipelineRunResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.FeaturePipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                          `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha12.PredictionPipelineRun `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordFeaturePipelineRunRequest) Reset() {
-	*x = RecordFeaturePipelineRunRequest{}
+func (x *ListPredictionPipelineRunResponse) Reset() {
+	*x = ListPredictionPipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1162,13 +1081,13 @@ func (x *RecordFeaturePipelineRunRequest) Reset() {
 	}
 }
 
-func (x *RecordFeaturePipelineRunRequest) String() string {
+func (x *ListPredictionPipelineRunResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordFeaturePipelineRunRequest) ProtoMessage() {}
+func (*ListPredictionPipelineRunResponse) ProtoMessage() {}
 
-func (x *RecordFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
+func (x *ListPredictionPipelineRunResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1180,37 +1099,29 @@ func (x *RecordFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPredictionPipelineRunResponse.ProtoReflect.Descriptor instead.
+func (*ListPredictionPipelineRunResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{20}
 }
 
-func (x *RecordFeaturePipelineRunRequest) GetItem() *v1alpha11.FeaturePipelineRun {
+func (x *ListPredictionPipelineRunResponse) GetItems() []*v1alpha12.PredictionPipelineRun {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
 }
 
-func (x *RecordFeaturePipelineRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// LabelingPipeline
-type RecordLabelingPipelineRequest struct {
+type ListModelAutoBuilderRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.LabelingPipeline `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                        `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Namespace string            `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Selector  map[string]string `protobuf:"bytes,2,rep,name=selector,proto3" json:"selector,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RecordLabelingPipelineRequest) Reset() {
-	*x = RecordLabelingPipelineRequest{}
+func (x *ListModelAutoBuilderRequest) Reset() {
+	*x = ListModelAutoBuilderRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1218,13 +1129,13 @@ func (x *RecordLabelingPipelineRequest) Reset() {
 	}
 }
 
-func (x *RecordLabelingPipelineRequest) String() string {
+func (x *ListModelAutoBuilderRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordLabelingPipelineRequest) ProtoMessage() {}
+func (*ListModelAutoBuilderRequest) ProtoMessage() {}
 
-func (x *RecordLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
+func (x *ListModelAutoBuilderRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1236,37 +1147,35 @@ func (x *RecordLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordLabelingPipelineRequest.ProtoReflect.Descriptor instead.
-func (*RecordLabelingPipelineRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListModelAutoBuilderRequest.ProtoReflect.Descriptor instead.
+func (*ListModelAutoBuilderRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{21}
 }
 
-func (x *RecordLabelingPipelineRequest) GetItem() *v1alpha11.LabelingPipeline {
+func (x *ListModelAutoBuilderRequest) GetNamespace() string {
 	if x != nil {
-		return x.Item
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ListModelAutoBuilderRequest) GetSelector() map[string]string {
+	if x != nil {
+		return x.Selector
 	}
 	return nil
 }
 
-func (x *RecordLabelingPipelineRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// LabelingPipelineRun
-type RecordLabelingPipelineRunRequest struct {
+type ListModelAutoBuilderResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item   *v1alpha11.LabelingPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                           `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
+	Items []*v1alpha11.ModelAutobuilder `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *RecordLabelingPipelineRunRequest) Reset() {
-	*x = RecordLabelingPipelineRunRequest{}
+func (x *ListModelAutoBuilderResponse) Reset() {
+	*x = ListModelAutoBuilderResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1274,13 +1183,13 @@ func (x *RecordLabelingPipelineRunRequest) Reset() {
 	}
 }
 
-func (x *RecordLabelingPipelineRunRequest) String() string {
+func (x *ListModelAutoBuilderResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RecordLabelingPipelineRunRequest) ProtoMessage() {}
+func (*ListModelAutoBuilderResponse) ProtoMessage() {}
 
-func (x *RecordLabelingPipelineRunRequest) ProtoReflect() protoreflect.Message {
+func (x *ListModelAutoBuilderResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1292,974 +1201,16 @@ func (x *RecordLabelingPipelineRunRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RecordLabelingPipelineRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordLabelingPipelineRunRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListModelAutoBuilderResponse.ProtoReflect.Descriptor instead.
+func (*ListModelAutoBuilderResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{22}
 }
 
-func (x *RecordLabelingPipelineRunRequest) GetItem() *v1alpha11.LabelingPipelineRun {
+func (x *ListModelAutoBuilderResponse) GetItems() []*v1alpha11.ModelAutobuilder {
 	if x != nil {
-		return x.Item
+		return x.Items
 	}
 	return nil
-}
-
-func (x *RecordLabelingPipelineRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Recipe
-type RecordRecipeRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha11.Recipe `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool              `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordRecipeRequest) Reset() {
-	*x = RecordRecipeRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[23]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordRecipeRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordRecipeRequest) ProtoMessage() {}
-
-func (x *RecordRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[23]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordRecipeRequest.ProtoReflect.Descriptor instead.
-func (*RecordRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{23}
-}
-
-func (x *RecordRecipeRequest) GetItem() *v1alpha11.Recipe {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordRecipeRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// RecipeRun
-type RecordRecipeRunRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha11.RecipeRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                 `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordRecipeRunRequest) Reset() {
-	*x = RecordRecipeRunRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[24]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordRecipeRunRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordRecipeRunRequest) ProtoMessage() {}
-
-func (x *RecordRecipeRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[24]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordRecipeRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordRecipeRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{24}
-}
-
-func (x *RecordRecipeRunRequest) GetItem() *v1alpha11.RecipeRun {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordRecipeRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// ModelAutoBuilder
-type RecordModelAutoBuilderRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.ModelAutobuilder `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                        `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordModelAutoBuilderRequest) Reset() {
-	*x = RecordModelAutoBuilderRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[25]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordModelAutoBuilderRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordModelAutoBuilderRequest) ProtoMessage() {}
-
-func (x *RecordModelAutoBuilderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[25]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordModelAutoBuilderRequest.ProtoReflect.Descriptor instead.
-func (*RecordModelAutoBuilderRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{25}
-}
-
-func (x *RecordModelAutoBuilderRequest) GetItem() *v1alpha12.ModelAutobuilder {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordModelAutoBuilderRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Model
-type RecordModelRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.Model `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool             `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordModelRequest) Reset() {
-	*x = RecordModelRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[26]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordModelRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordModelRequest) ProtoMessage() {}
-
-func (x *RecordModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[26]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordModelRequest.ProtoReflect.Descriptor instead.
-func (*RecordModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{26}
-}
-
-func (x *RecordModelRequest) GetItem() *v1alpha12.Model {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordModelRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// ModelPipeline
-type RecordModelPipelineRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.ModelPipeline `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                     `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordModelPipelineRequest) Reset() {
-	*x = RecordModelPipelineRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[27]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordModelPipelineRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordModelPipelineRequest) ProtoMessage() {}
-
-func (x *RecordModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[27]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordModelPipelineRequest.ProtoReflect.Descriptor instead.
-func (*RecordModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{27}
-}
-
-func (x *RecordModelPipelineRequest) GetItem() *v1alpha12.ModelPipeline {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordModelPipelineRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// ModelPipelineRun
-type RecordModelPipelineRunRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.ModelPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                        `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordModelPipelineRunRequest) Reset() {
-	*x = RecordModelPipelineRunRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[28]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordModelPipelineRunRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordModelPipelineRunRequest) ProtoMessage() {}
-
-func (x *RecordModelPipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[28]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordModelPipelineRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordModelPipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{28}
-}
-
-func (x *RecordModelPipelineRunRequest) GetItem() *v1alpha12.ModelPipelineRun {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordModelPipelineRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Notebook
-type RecordNotebookRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.Notebook `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordNotebookRequest) Reset() {
-	*x = RecordNotebookRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[29]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordNotebookRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordNotebookRequest) ProtoMessage() {}
-
-func (x *RecordNotebookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[29]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordNotebookRequest.ProtoReflect.Descriptor instead.
-func (*RecordNotebookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{29}
-}
-
-func (x *RecordNotebookRequest) GetItem() *v1alpha12.Notebook {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordNotebookRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// NotebookRun
-type RecordNotebookRunRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.NotebookRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                   `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordNotebookRunRequest) Reset() {
-	*x = RecordNotebookRunRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[30]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordNotebookRunRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordNotebookRunRequest) ProtoMessage() {}
-
-func (x *RecordNotebookRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[30]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordNotebookRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordNotebookRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{30}
-}
-
-func (x *RecordNotebookRunRequest) GetItem() *v1alpha12.NotebookRun {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordNotebookRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Report
-type RecordReportRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.Report `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool              `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordReportRequest) Reset() {
-	*x = RecordReportRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[31]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordReportRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordReportRequest) ProtoMessage() {}
-
-func (x *RecordReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[31]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordReportRequest.ProtoReflect.Descriptor instead.
-func (*RecordReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{31}
-}
-
-func (x *RecordReportRequest) GetItem() *v1alpha12.Report {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordReportRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Study
-type RecordStudyRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha12.Study `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool             `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordStudyRequest) Reset() {
-	*x = RecordStudyRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[32]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordStudyRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordStudyRequest) ProtoMessage() {}
-
-func (x *RecordStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[32]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordStudyRequest.ProtoReflect.Descriptor instead.
-func (*RecordStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{32}
-}
-
-func (x *RecordStudyRequest) GetItem() *v1alpha12.Study {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordStudyRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-type RecordCurtainRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha13.Curtain `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool               `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordCurtainRequest) Reset() {
-	*x = RecordCurtainRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[33]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordCurtainRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordCurtainRequest) ProtoMessage() {}
-
-func (x *RecordCurtainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[33]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordCurtainRequest.ProtoReflect.Descriptor instead.
-func (*RecordCurtainRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{33}
-}
-
-func (x *RecordCurtainRequest) GetItem() *v1alpha13.Curtain {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordCurtainRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// PredictionPipeline
-type RecordPredictorRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha13.Predictor `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                 `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordPredictorRequest) Reset() {
-	*x = RecordPredictorRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[34]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordPredictorRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordPredictorRequest) ProtoMessage() {}
-
-func (x *RecordPredictorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[34]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordPredictorRequest.ProtoReflect.Descriptor instead.
-func (*RecordPredictorRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{34}
-}
-
-func (x *RecordPredictorRequest) GetItem() *v1alpha13.Predictor {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordPredictorRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// PredictionPipeline
-type RecordPredictionPipelineRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha13.PredictionPipeline `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                          `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordPredictionPipelineRequest) Reset() {
-	*x = RecordPredictionPipelineRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[35]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordPredictionPipelineRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordPredictionPipelineRequest) ProtoMessage() {}
-
-func (x *RecordPredictionPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[35]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordPredictionPipelineRequest.ProtoReflect.Descriptor instead.
-func (*RecordPredictionPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{35}
-}
-
-func (x *RecordPredictionPipelineRequest) GetItem() *v1alpha13.PredictionPipeline {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordPredictionPipelineRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Predictor
-type RecordPredictionPipelineRunRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha13.PredictionPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                             `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordPredictionPipelineRunRequest) Reset() {
-	*x = RecordPredictionPipelineRunRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[36]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordPredictionPipelineRunRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordPredictionPipelineRunRequest) ProtoMessage() {}
-
-func (x *RecordPredictionPipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[36]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordPredictionPipelineRunRequest.ProtoReflect.Descriptor instead.
-func (*RecordPredictionPipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{36}
-}
-
-func (x *RecordPredictionPipelineRunRequest) GetItem() *v1alpha13.PredictionPipelineRun {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordPredictionPipelineRunRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Conversation
-type RecordConversationRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha14.Conversation `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                    `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordConversationRequest) Reset() {
-	*x = RecordConversationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[37]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordConversationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordConversationRequest) ProtoMessage() {}
-
-func (x *RecordConversationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[37]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordConversationRequest.ProtoReflect.Descriptor instead.
-func (*RecordConversationRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{37}
-}
-
-func (x *RecordConversationRequest) GetItem() *v1alpha14.Conversation {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordConversationRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Postmortem
-type RecordPostmortemRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha14.PostMortem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool                  `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordPostmortemRequest) Reset() {
-	*x = RecordPostmortemRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[38]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordPostmortemRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordPostmortemRequest) ProtoMessage() {}
-
-func (x *RecordPostmortemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[38]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordPostmortemRequest.ProtoReflect.Descriptor instead.
-func (*RecordPostmortemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{38}
-}
-
-func (x *RecordPostmortemRequest) GetItem() *v1alpha14.PostMortem {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordPostmortemRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
-}
-
-// Runbook
-type RecordRunbookRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Item   *v1alpha14.RunBook `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Delete bool               `protobuf:"varint,2,opt,name=delete,proto3" json:"delete,omitempty"`
-}
-
-func (x *RecordRunbookRequest) Reset() {
-	*x = RecordRunbookRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[39]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RecordRunbookRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordRunbookRequest) ProtoMessage() {}
-
-func (x *RecordRunbookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[39]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordRunbookRequest.ProtoReflect.Descriptor instead.
-func (*RecordRunbookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{39}
-}
-
-func (x *RecordRunbookRequest) GetItem() *v1alpha14.RunBook {
-	if x != nil {
-		return x.Item
-	}
-	return nil
-}
-
-func (x *RecordRunbookRequest) GetDelete() bool {
-	if x != nil {
-		return x.Delete
-	}
-	return false
 }
 
 var File_github_com_metaprov_modeldapi_services_archived_v1_archived_proto protoreflect.FileDescriptor
@@ -2296,678 +1247,386 @@ var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDe
 	0x73, 0x2f, 0x74, 0x65, 0x61, 0x6d, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f,
 	0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
 	0x1b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
-	0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x82, 0x01, 0x0a,
-	0x14, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x52, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
-	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x41, 0x63, 0x63, 0x6f,
-	0x75, 0x6e, 0x74, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x22, 0x88, 0x01, 0x0a, 0x17, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e, 0x6e,
-	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x55, 0x0a,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
-	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04,
-	0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x7a, 0x0a, 0x10,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x4e, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3a,
-	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
-	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70,
-	0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4c, 0x61, 0x62, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x80, 0x01, 0x0a, 0x13, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x54, 0x65, 0x6e, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x51, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3d,
-	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
-	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70,
-	0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x54, 0x65, 0x6e, 0x61, 0x6e, 0x74, 0x52, 0x04, 0x69,
-	0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x8a, 0x01, 0x0a, 0x18,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x6e, 0x67, 0x53, 0x69, 0x74,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x56, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
-	0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x6e, 0x67, 0x53, 0x69, 0x74, 0x65, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x82, 0x01, 0x0a, 0x14, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x4c, 0x69, 0x63, 0x65, 0x6e, 0x73, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x52, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x3e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
-	0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4c, 0x69, 0x63, 0x65, 0x6e, 0x73, 0x65, 0x52,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x84, 0x01,
-	0x0a, 0x15, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x53, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69,
-	0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4e, 0x6f,
-	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06,
-	0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x22, 0x8e, 0x01, 0x0a, 0x1a, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x56,
-	0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x58, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x44, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
-	0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61,
-	0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x75, 0x61,
-	0x6c, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x90, 0x01, 0x0a, 0x1b, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64,
-	0x56, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x59, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
-	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74,
-	0x75, 0x61, 0x6c, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x8e, 0x01, 0x0a, 0x1a, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x56, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x58, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69,
-	0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x56, 0x69,
-	0x72, 0x74, 0x75, 0x61, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x04, 0x69, 0x74, 0x65,
-	0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x8b, 0x01, 0x0a, 0x19, 0x52, 0x65,
-	0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x56, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64,
-	0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61, 0x74,
-	0x61, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12,
-	0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x91, 0x01, 0x0a, 0x1c, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75,
-	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x59, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
-	0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61,
-	0x74, 0x61, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x04, 0x69,
-	0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x89, 0x01, 0x0a, 0x18,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x55, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
-	0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61,
-	0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12,
-	0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x97, 0x01, 0x0a, 0x1f, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x56, 0x65, 0x72,
-	0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5c, 0x0a, 0x04, 0x69,
-	0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68,
+	0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x66, 0x0a, 0x0a,
+	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x42, 0x6c, 0x6f, 0x62, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61,
+	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e,
+	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04,
+	0x6b, 0x69, 0x6e, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64,
+	0x12, 0x12, 0x0a, 0x04, 0x62, 0x6c, 0x6f, 0x62, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x62, 0x6c, 0x6f, 0x62, 0x22, 0x69, 0x0a, 0x13, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4f, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x52, 0x0a, 0x04, 0x69,
+	0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x69, 0x74, 0x68,
 	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70,
-	0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
-	0x2e, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x56, 0x65, 0x72, 0x73,
-	0x69, 0x6f, 0x6e, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x22, 0x81, 0x01, 0x0a, 0x14, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61,
-	0x73, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x51, 0x0a, 0x04, 0x69, 0x74,
-	0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4d,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x42, 0x6c, 0x6f, 0x62, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x22,
+	0x44, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x67, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x4f, 0x62, 0x6a, 0x65,
+	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x52, 0x0a, 0x04, 0x69, 0x74,
+	0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f,
+	0x64, 0x65, 0x6c, 0x64, 0x42, 0x6c, 0x6f, 0x62, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x22, 0xdf,
+	0x01, 0x0a, 0x11, 0x4c, 0x69, 0x73, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x12, 0x6f, 0x0a, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72,
+	0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4f, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65, 0x6c, 0x65,
+	0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63,
+	0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45,
+	0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01,
+	0x22, 0x6a, 0x0a, 0x12, 0x4c, 0x69, 0x73, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x54, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61,
+	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
+	0x64, 0x42, 0x6c, 0x6f, 0x62, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22, 0x47, 0x0a, 0x13,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0xe1, 0x01, 0x0a, 0x12, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61,
+	0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09,
+	0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x70, 0x0a, 0x08, 0x73, 0x65,
+	0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x54, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76,
+	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74,
+	0x72, 0x79, 0x52, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d,
+	0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a,
+	0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12,
+	0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x6a, 0x0a, 0x13, 0x4c, 0x69, 0x73,
+	0x74, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x53, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x3d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
+	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
+	0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31,
+	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x05,
+	0x69, 0x74, 0x65, 0x6d, 0x73, 0x22, 0x1f, 0x0a, 0x1d, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x65, 0x61,
+	0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x80, 0x01, 0x0a, 0x1e, 0x4c, 0x69, 0x73, 0x74, 0x46,
+	0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5e, 0x0a, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69,
 	0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
-	0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x87, 0x01, 0x0a, 0x17, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64,
-	0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x54, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x40, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
-	0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63,
-	0x65, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22,
-	0x7f, 0x0a, 0x13, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x45, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x50, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x3c, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61,
-	0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x45, 0x6e, 0x74, 0x69,
-	0x74, 0x79, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x22, 0x87, 0x01, 0x0a, 0x17, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75,
-	0x72, 0x65, 0x73, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x54, 0x0a, 0x04,
-	0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x69, 0x74,
+	0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52,
+	0x75, 0x6e, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22, 0xf9, 0x01, 0x0a, 0x1e, 0x4c, 0x69,
+	0x73, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69,
+	0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09,
+	0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x7c, 0x0a, 0x08, 0x73, 0x65,
+	0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x60, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76,
+	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69,
+	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x2e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08,
+	0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65,
+	0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x82, 0x01, 0x0a, 0x1f, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x61,
+	0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5f, 0x0a, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x49, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
+	0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
+	0x52, 0x75, 0x6e, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22, 0xe5, 0x01, 0x0a, 0x14, 0x4c,
+	0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x12, 0x72, 0x0a, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x56, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63,
+	0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63,
+	0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65,
+	0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08, 0x73, 0x65, 0x6c,
+	0x65, 0x63, 0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f,
+	0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02,
+	0x38, 0x01, 0x22, 0x6e, 0x0a, 0x15, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65,
+	0x52, 0x75, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x55, 0x0a, 0x05, 0x69,
+	0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
 	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61,
 	0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x2e, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x65, 0x74, 0x52, 0x04, 0x69, 0x74,
-	0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x81, 0x01, 0x0a, 0x14, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x51, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x3d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
-	0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e,
-	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
-	0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x91,
-	0x01, 0x0a, 0x1c, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
-	0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x59, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x45, 0x2e,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
-	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b,
-	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2e, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65,
-	0x6c, 0x69, 0x6e, 0x65, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x22, 0x97, 0x01, 0x0a, 0x1f, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61,
-	0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5c, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61,
-	0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x46, 0x65, 0x61, 0x74,
-	0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x04,
-	0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x93, 0x01, 0x0a,
-	0x1d, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50,
-	0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5a,
-	0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x46, 0x2e, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
-	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67,
-	0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65,
-	0x6c, 0x69, 0x6e, 0x65, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x22, 0x99, 0x01, 0x0a, 0x20, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62,
-	0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5d, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x49, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64,
-	0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4c, 0x61, 0x62,
-	0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e,
-	0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x7f,
-	0x0a, 0x13, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x50, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x3c, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74,
-	0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x69, 0x70,
-	0x65, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22,
-	0x85, 0x01, 0x0a, 0x16, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65,
-	0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x53, 0x0a, 0x04, 0x69, 0x74,
-	0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x31, 0x2e, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x22, 0xdf, 0x01, 0x0a, 0x11, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x72,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d,
+	0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x6f, 0x0a, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74,
+	0x6f, 0x72, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69,
-	0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
-	0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12,
-	0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x97, 0x01, 0x0a, 0x1d, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64,
-	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5e, 0x0a, 0x04, 0x69, 0x74, 0x65,
-	0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f,
-	0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73,
-	0x2e, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
-	0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x62, 0x75, 0x69, 0x6c,
-	0x64, 0x65, 0x72, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x22, 0x81, 0x01, 0x0a, 0x12, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65,
-	0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x53, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
-	0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
-	0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x91, 0x01, 0x0a, 0x1a, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64,
-	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x5b, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x47, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
-	0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x74, 0x72, 0x61, 0x69,
-	0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f,
-	0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x04, 0x69, 0x74, 0x65,
-	0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x97, 0x01, 0x0a, 0x1d, 0x52, 0x65,
-	0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
-	0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5e, 0x0a, 0x04, 0x69,
-	0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4a, 0x2e, 0x67, 0x69, 0x74, 0x68,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69,
+	0x73, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e,
+	0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08, 0x73,
+	0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65, 0x63,
+	0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
+	0x3a, 0x02, 0x38, 0x01, 0x22, 0x6c, 0x0a, 0x12, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6f,
+	0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x56, 0x0a, 0x05, 0x69, 0x74,
+	0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x69, 0x74, 0x68,
 	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
 	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70,
 	0x69, 0x73, 0x2e, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69,
-	0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x22, 0x87, 0x01, 0x0a, 0x15, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f,
-	0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x56, 0x0a,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
-	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31,
-	0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x52,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x8d, 0x01,
-	0x0a, 0x18, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b,
-	0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x59, 0x0a, 0x04, 0x69, 0x74,
-	0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69,
-	0x73, 0x2e, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x75, 0x6e, 0x52,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x83, 0x01,
-	0x0a, 0x13, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x54, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x74, 0x72, 0x61,
-	0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52,
-	0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x22, 0x81, 0x01, 0x0a, 0x12, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x53, 0x74,
-	0x75, 0x64, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x53, 0x0a, 0x04, 0x69, 0x74,
-	0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69,
-	0x73, 0x2e, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x2e, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12,
-	0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x86, 0x01, 0x0a, 0x14, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x43, 0x75, 0x72, 0x74, 0x61, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x56, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42,
-	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
-	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70,
-	0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
-	0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x75, 0x72, 0x74, 0x61,
-	0x69, 0x6e, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x22, 0x8a, 0x01, 0x0a, 0x16, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69,
-	0x63, 0x74, 0x6f, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x58, 0x0a, 0x04, 0x69,
-	0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70,
-	0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61,
-	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72, 0x52,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x9c, 0x01,
-	0x0a, 0x1f, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69,
-	0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x61, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x4d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
-	0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e,
-	0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50, 0x72, 0x65, 0x64,
-	0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x04,
-	0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0xa2, 0x01, 0x0a,
-	0x22, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f,
+	0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x22, 0xdd, 0x01, 0x0a, 0x10, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x75, 0x64, 0x79,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x6e, 0x0a, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f,
+	0x72, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73,
+	0x74, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65,
+	0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08, 0x73, 0x65, 0x6c,
+	0x65, 0x63, 0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f,
+	0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02,
+	0x38, 0x01, 0x22, 0x6a, 0x0a, 0x11, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x55, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x74, 0x72, 0x61, 0x69, 0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
+	0x31, 0x2e, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22, 0xfd,
+	0x01, 0x0a, 0x20, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x64, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x50, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
-	0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x65, 0x72,
-	0x65, 0x6e, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50, 0x72,
-	0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
-	0x52, 0x75, 0x6e, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x22, 0x8b, 0x01, 0x0a, 0x19, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e, 0x76,
-	0x65, 0x72, 0x73, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x56, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
-	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b,
-	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x74, 0x65, 0x61, 0x6d, 0x2e, 0x76, 0x31, 0x61, 0x6c,
-	0x70, 0x68, 0x61, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22,
-	0x87, 0x01, 0x0a, 0x17, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x6f, 0x73, 0x74, 0x6d, 0x6f,
-	0x72, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x54, 0x0a, 0x04, 0x69,
-	0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70,
-	0x69, 0x73, 0x2e, 0x74, 0x65, 0x61, 0x6d, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
-	0x2e, 0x50, 0x6f, 0x73, 0x74, 0x4d, 0x6f, 0x72, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65,
-	0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x22, 0x81, 0x01, 0x0a, 0x14, 0x52, 0x65,
-	0x63, 0x6f, 0x72, 0x64, 0x52, 0x75, 0x6e, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x51, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x3d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
-	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
-	0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x74, 0x65, 0x61, 0x6d, 0x2e, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x75, 0x6e, 0x42, 0x6f, 0x6f, 0x6b, 0x52,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x32, 0x9a, 0x27,
-	0x0a, 0x0f, 0x41, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x12, 0x73, 0x0a, 0x0d, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x41, 0x63, 0x63, 0x6f, 0x75,
-	0x6e, 0x74, 0x12, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
-	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68,
-	0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x41, 0x63,
-	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45,
-	0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x79, 0x0a, 0x10, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64,
-	0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x4b, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22,
-	0x00, 0x12, 0x6b, 0x0a, 0x09, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x12, 0x44,
-	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
-	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7b,
-	0x0a, 0x11, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x6e, 0x67, 0x53,
-	0x69, 0x74, 0x65, 0x12, 0x4c, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x12, 0x7e, 0x0a, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x62, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
 	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63,
-	0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x6e, 0x67, 0x53, 0x69, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0d, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x69, 0x63, 0x65, 0x6e, 0x73, 0x65, 0x12, 0x48, 0x2e, 0x67,
+	0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x65,
+	0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52,
+	0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74,
+	0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f,
+	0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74,
+	0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x8b,
+	0x01, 0x0a, 0x21, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x66, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
+	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
+	0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69,
+	0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22, 0xf3, 0x01, 0x0a,
+	0x1b, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x42, 0x75,
+	0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09,
+	0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x79, 0x0a, 0x08, 0x73, 0x65,
+	0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x5d, 0x2e, 0x67,
 	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
 	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x69, 0x63, 0x65, 0x6e, 0x73, 0x65, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00,
-	0x12, 0x75, 0x0a, 0x0e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69,
-	0x65, 0x72, 0x12, 0x49, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x42,
+	0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65,
+	0x6c, 0x65, 0x63, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x08, 0x73, 0x65, 0x6c,
+	0x65, 0x63, 0x74, 0x6f, 0x72, 0x1a, 0x3b, 0x0a, 0x0d, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x6f,
+	0x72, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02,
+	0x38, 0x01, 0x22, 0x80, 0x01, 0x0a, 0x1c, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
+	0x41, 0x75, 0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x60, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03,
+	0x28, 0x0b, 0x32, 0x4a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
 	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
-	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68,
-	0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f,
-	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
-	0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7f, 0x0a, 0x13, 0x52, 0x65, 0x63, 0x6f, 0x72,
-	0x64, 0x56, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x12, 0x4e,
+	0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x74, 0x72, 0x61, 0x69,
+	0x6e, 0x69, 0x6e, 0x67, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f,
+	0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x05,
+	0x69, 0x74, 0x65, 0x6d, 0x73, 0x32, 0xdc, 0x13, 0x0a, 0x0f, 0x41, 0x72, 0x63, 0x68, 0x69, 0x76,
+	0x65, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x71, 0x0a, 0x0c, 0x52, 0x65, 0x63,
+	0x6f, 0x72, 0x64, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x47, 0x2e, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
+	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x65, 0x63, 0x6f, 0x72, 0x64, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x9a, 0x01, 0x0a,
+	0x09, 0x47, 0x65, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x44, 0x2e, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
+	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76,
+	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x9e, 0x01, 0x0a, 0x0b, 0x4c, 0x69,
+	0x73, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x12, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
+	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c,
+	0x69, 0x73, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x46, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
+	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76,
+	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x0c, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x47, 0x2e, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0xa1, 0x01,
+	0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x73, 0x12, 0x46,
 	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
 	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x56, 0x69, 0x72, 0x74, 0x75, 0x61,
-	0x6c, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
-	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x81, 0x01, 0x0a, 0x14, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x56, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65,
-	0x72, 0x12, 0x4f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x47, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
+	0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0xc1, 0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72,
+	0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x51, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76,
+	0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70,
+	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
+	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
+	0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xc4, 0x01, 0x0a, 0x17, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x61,
+	0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75,
+	0x6e, 0x12, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
 	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
 	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69,
-	0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x56, 0x69, 0x72,
-	0x74, 0x75, 0x61, 0x6c, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7f, 0x0a, 0x13,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x56, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x56, 0x6f, 0x6c,
-	0x75, 0x6d, 0x65, 0x12, 0x4e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
-	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63,
-	0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x56,
-	0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x71, 0x0a,
-	0x0c, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x54, 0x65, 0x6e, 0x61, 0x6e, 0x74, 0x12, 0x47, 0x2e,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
-	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e,
-	0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x54, 0x65, 0x6e, 0x61, 0x6e, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00,
-	0x12, 0x7d, 0x0a, 0x12, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x69,
-	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x4d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
-	0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12,
-	0x83, 0x01, 0x0a, 0x15, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x69,
-	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x50, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
-	0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7b, 0x0a, 0x11, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44,
-	0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x12, 0x4c, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79,
-	0x22, 0x00, 0x12, 0x89, 0x01, 0x0a, 0x18, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74,
-	0x61, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12,
-	0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x50,
-	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x79,
-	0x0a, 0x10, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72,
-	0x63, 0x65, 0x12, 0x4b, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
-	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68,
-	0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61,
-	0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0d, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x12, 0x48, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x73,
-	0x0a, 0x0d, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x12,
-	0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75,
-	0x72, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
-	0x79, 0x22, 0x00, 0x12, 0x83, 0x01, 0x0a, 0x15, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65,
-	0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x50, 0x2e,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
-	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e,
-	0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
-	0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x89, 0x01, 0x0a, 0x18, 0x52, 0x65,
-	0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c,
-	0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
-	0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
-	0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x79, 0x0a, 0x10, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x46,
-	0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x65, 0x74, 0x12, 0x4b, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x65, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00,
-	0x12, 0x71, 0x0a, 0x0c, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x45, 0x6e, 0x74, 0x69, 0x74, 0x79,
-	0x12, 0x47, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
-	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
-	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76,
-	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x45, 0x6e, 0x74, 0x69,
-	0x74, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
-	0x79, 0x22, 0x00, 0x12, 0x85, 0x01, 0x0a, 0x16, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61,
-	0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x51,
+	0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c,
+	0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61,
+	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4c,
+	0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52,
+	0x75, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xa6, 0x01, 0x0a,
+	0x0d, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x48,
 	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
 	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69,
-	0x6e, 0x67, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x8b, 0x01, 0x0a, 0x19,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69,
-	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x54, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e, 0x67, 0x50, 0x69, 0x70,
-	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x0c, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x12, 0x47, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x77, 0x0a, 0x0f,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x12,
-	0x4a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x49, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69,
+	0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xbc, 0x01, 0x0a, 0x15, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f,
+	0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x73, 0x12,
+	0x4f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x63, 0x69, 0x70,
-	0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x85, 0x01, 0x0a, 0x16, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64,
-	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x75, 0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72,
-	0x12, 0x51, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x75,
+	0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x50, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
 	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76,
-	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65,
-	0x6c, 0x41, 0x75, 0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x6f, 0x0a,
-	0x0b, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x12, 0x46, 0x2e, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
-	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
-	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76,
-	0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7f,
-	0x0a, 0x13, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70,
-	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x4e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61,
-	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72,
-	0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12,
-	0x85, 0x01, 0x0a, 0x16, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50,
-	0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x51, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c,
-	0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
-	0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x75, 0x0a, 0x0e, 0x52, 0x65, 0x63, 0x6f, 0x72,
-	0x64, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x12, 0x49, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7b,
-	0x0a, 0x11, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b,
-	0x52, 0x75, 0x6e, 0x12, 0x4c, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41,
+	0x75, 0x74, 0x6f, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0xa3, 0x01, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64,
+	0x65, 0x6c, 0x73, 0x12, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
 	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63,
-	0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x4e,
-	0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x0c, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x12, 0x47, 0x2e, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
-	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31,
-	0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x6f,
-	0x0a, 0x0b, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x53, 0x74, 0x75, 0x64, 0x79, 0x12, 0x46, 0x2e,
+	0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63,
+	0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x49, 0x2e,
 	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
 	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e,
-	0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12,
-	0x73, 0x0a, 0x0d, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x75, 0x72, 0x74, 0x61, 0x69, 0x6e,
+	0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xae, 0x01, 0x0a, 0x15, 0x4c,
+	0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
+	0x52, 0x75, 0x6e, 0x73, 0x12, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72,
+	0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65,
+	0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x49,
+	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
+	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xa9, 0x01, 0x0a, 0x10,
+	0x4c, 0x69, 0x73, 0x74, 0x4e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x75, 0x6e, 0x73,
 	0x12, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
 	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76,
-	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x75, 0x72, 0x74,
-	0x61, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
-	0x74, 0x79, 0x22, 0x00, 0x12, 0x77, 0x0a, 0x0f, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72,
-	0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72, 0x12, 0x4a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f,
-	0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
-	0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x6f, 0x72, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x89, 0x01,
-	0x0a, 0x18, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69,
-	0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x53, 0x2e, 0x67, 0x69, 0x74,
+	0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65,
+	0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x49, 0x2e, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
 	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x8f, 0x01, 0x0a, 0x1b, 0x52, 0x65,
-	0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69,
-	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x56, 0x2e, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50,
-	0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x7d, 0x0a, 0x12, 0x52,
-	0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x12, 0x4d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
-	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69,
-	0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e,
-	0x76, 0x65, 0x72, 0x73, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
-	0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x79, 0x0a, 0x10, 0x52, 0x65,
-	0x63, 0x6f, 0x72, 0x64, 0x50, 0x6f, 0x73, 0x74, 0x6d, 0x6f, 0x72, 0x74, 0x65, 0x6d, 0x12, 0x4b,
+	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x9e, 0x01, 0x0a, 0x0b, 0x4c, 0x69, 0x73, 0x74,
+	0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x73, 0x12, 0x45, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73,
+	0x74, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x46,
 	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
 	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x50, 0x6f, 0x73, 0x74, 0x6d, 0x6f,
-	0x72, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x0d, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52,
-	0x75, 0x6e, 0x62, 0x6f, 0x6f, 0x6b, 0x12, 0x48, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
-	0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x63, 0x6f,
-	0x72, 0x64, 0x52, 0x75, 0x6e, 0x62, 0x6f, 0x6f, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
-	0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x42, 0x34, 0x5a, 0x32, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
-	0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2f, 0x76, 0x31,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x9c, 0x01, 0x0a, 0x0b, 0x4c, 0x69, 0x73,
+	0x74, 0x53, 0x74, 0x75, 0x64, 0x69, 0x65, 0x73, 0x12, 0x44, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69,
+	0x73, 0x74, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x45,
+	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
+	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x75, 0x64, 0x79, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0xca, 0x01, 0x0a, 0x19, 0x4c, 0x69, 0x73, 0x74,
+	0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69,
+	0x6e, 0x65, 0x52, 0x75, 0x6e, 0x12, 0x54, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x61,
+	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50,
+	0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
+	0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x55, 0x2e, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
+	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x73, 0x2e, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2e, 0x76, 0x31,
+	0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50,
+	0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x75, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x42, 0x34, 0x5a, 0x32, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x61,
+	0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x64, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -2982,216 +1641,104 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawD
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
+var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_goTypes = []interface{}{
-	(*RecordAccountRequest)(nil),               // 0: github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest
-	(*RecordConnectionRequest)(nil),            // 1: github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest
-	(*RecordLabRequest)(nil),                   // 2: github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest
-	(*RecordTenantRequest)(nil),                // 3: github.com.metaprov.modeldapi.services.archived.v1.RecordTenantRequest
-	(*RecordServingSiteRequest)(nil),           // 4: github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest
-	(*RecordLicenseRequest)(nil),               // 5: github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest
-	(*RecordNotifierRequest)(nil),              // 6: github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest
-	(*RecordVirtualBucketRequest)(nil),         // 7: github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest
-	(*RecordVirtualClusterRequest)(nil),        // 8: github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest
-	(*RecordVirtualVolumeRequest)(nil),         // 9: github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest
-	(*RecordDataPipelineRequest)(nil),          // 10: github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest
-	(*RecordDataPipelineRunRequest)(nil),       // 11: github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest
-	(*RecordDataProductRequest)(nil),           // 12: github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest
-	(*RecordDataProductVersionRequest)(nil),    // 13: github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest
-	(*RecordDatasetRequest)(nil),               // 14: github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest
-	(*RecordDataSourceRequest)(nil),            // 15: github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest
-	(*RecordEntityRequest)(nil),                // 16: github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest
-	(*RecordFeaturesetRequest)(nil),            // 17: github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest
-	(*RecordFeatureRequest)(nil),               // 18: github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest
-	(*RecordFeaturePipelineRequest)(nil),       // 19: github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest
-	(*RecordFeaturePipelineRunRequest)(nil),    // 20: github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRunRequest
-	(*RecordLabelingPipelineRequest)(nil),      // 21: github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest
-	(*RecordLabelingPipelineRunRequest)(nil),   // 22: github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRunRequest
-	(*RecordRecipeRequest)(nil),                // 23: github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest
-	(*RecordRecipeRunRequest)(nil),             // 24: github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest
-	(*RecordModelAutoBuilderRequest)(nil),      // 25: github.com.metaprov.modeldapi.services.archived.v1.RecordModelAutoBuilderRequest
-	(*RecordModelRequest)(nil),                 // 26: github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest
-	(*RecordModelPipelineRequest)(nil),         // 27: github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest
-	(*RecordModelPipelineRunRequest)(nil),      // 28: github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRunRequest
-	(*RecordNotebookRequest)(nil),              // 29: github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest
-	(*RecordNotebookRunRequest)(nil),           // 30: github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest
-	(*RecordReportRequest)(nil),                // 31: github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest
-	(*RecordStudyRequest)(nil),                 // 32: github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest
-	(*RecordCurtainRequest)(nil),               // 33: github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest
-	(*RecordPredictorRequest)(nil),             // 34: github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest
-	(*RecordPredictionPipelineRequest)(nil),    // 35: github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest
-	(*RecordPredictionPipelineRunRequest)(nil), // 36: github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest
-	(*RecordConversationRequest)(nil),          // 37: github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest
-	(*RecordPostmortemRequest)(nil),            // 38: github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest
-	(*RecordRunbookRequest)(nil),               // 39: github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest
-	(*v1alpha1.Account)(nil),                   // 40: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	(*v1alpha1.Connection)(nil),                // 41: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	(*v1alpha1.Lab)(nil),                       // 42: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab
-	(*v1alpha1.Tenant)(nil),                    // 43: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant
-	(*v1alpha1.ServingSite)(nil),               // 44: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite
-	(*v1alpha1.License)(nil),                   // 45: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License
-	(*v1alpha1.Notifier)(nil),                  // 46: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
-	(*v1alpha1.VirtualBucket)(nil),             // 47: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha1.VirtualCluster)(nil),            // 48: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster
-	(*v1alpha1.VirtualVolume)(nil),             // 49: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume
-	(*v1alpha11.DataPipeline)(nil),             // 50: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline
-	(*v1alpha11.DataPipelineRun)(nil),          // 51: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun
-	(*v1alpha11.DataProduct)(nil),              // 52: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	(*v1alpha11.DataProductVersion)(nil),       // 53: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	(*v1alpha11.Dataset)(nil),                  // 54: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	(*v1alpha11.DataSource)(nil),               // 55: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	(*v1alpha11.Entity)(nil),                   // 56: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity
-	(*v1alpha11.Featureset)(nil),               // 57: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset
-	(*v1alpha11.Feature)(nil),                  // 58: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	(*v1alpha11.FeaturePipeline)(nil),          // 59: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline
-	(*v1alpha11.FeaturePipelineRun)(nil),       // 60: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
-	(*v1alpha11.LabelingPipeline)(nil),         // 61: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline
-	(*v1alpha11.LabelingPipelineRun)(nil),      // 62: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun
-	(*v1alpha11.Recipe)(nil),                   // 63: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	(*v1alpha11.RecipeRun)(nil),                // 64: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun
-	(*v1alpha12.ModelAutobuilder)(nil),         // 65: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
-	(*v1alpha12.Model)(nil),                    // 66: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	(*v1alpha12.ModelPipeline)(nil),            // 67: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
-	(*v1alpha12.ModelPipelineRun)(nil),         // 68: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun
-	(*v1alpha12.Notebook)(nil),                 // 69: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook
-	(*v1alpha12.NotebookRun)(nil),              // 70: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun
-	(*v1alpha12.Report)(nil),                   // 71: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	(*v1alpha12.Study)(nil),                    // 72: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	(*v1alpha13.Curtain)(nil),                  // 73: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain
-	(*v1alpha13.Predictor)(nil),                // 74: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	(*v1alpha13.PredictionPipeline)(nil),       // 75: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline
-	(*v1alpha13.PredictionPipelineRun)(nil),    // 76: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
-	(*v1alpha14.Conversation)(nil),             // 77: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation
-	(*v1alpha14.PostMortem)(nil),               // 78: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem
-	(*v1alpha14.RunBook)(nil),                  // 79: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook
-	(*empty.Empty)(nil),                        // 80: google.protobuf.Empty
+	(*ModeldBlob)(nil),                        // 0: github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob
+	(*RecordObjectRequest)(nil),               // 1: github.com.metaprov.modeldapi.services.archived.v1.RecordObjectRequest
+	(*GetObjectRequest)(nil),                  // 2: github.com.metaprov.modeldapi.services.archived.v1.GetObjectRequest
+	(*GetObjectResponse)(nil),                 // 3: github.com.metaprov.modeldapi.services.archived.v1.GetObjectResponse
+	(*ListObjectRequest)(nil),                 // 4: github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest
+	(*ListObjectResponse)(nil),                // 5: github.com.metaprov.modeldapi.services.archived.v1.ListObjectResponse
+	(*DeleteObjectRequest)(nil),               // 6: github.com.metaprov.modeldapi.services.archived.v1.DeleteObjectRequest
+	(*ListDatasetRequest)(nil),                // 7: github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest
+	(*ListDatasetResponse)(nil),               // 8: github.com.metaprov.modeldapi.services.archived.v1.ListDatasetResponse
+	(*ListFeaturePipelineRunRequest)(nil),     // 9: github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunRequest
+	(*ListFeaturePipelineRunResponse)(nil),    // 10: github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunResponse
+	(*ListLabelingPipelineRunRequest)(nil),    // 11: github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest
+	(*ListLabelingPipelineRunResponse)(nil),   // 12: github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunResponse
+	(*ListRecipeRunRequest)(nil),              // 13: github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest
+	(*ListRecipeRunResponse)(nil),             // 14: github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse
+	(*ListReportRequest)(nil),                 // 15: github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest
+	(*ListReportResponse)(nil),                // 16: github.com.metaprov.modeldapi.services.archived.v1.ListReportResponse
+	(*ListStudyRequest)(nil),                  // 17: github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest
+	(*ListStudyResponse)(nil),                 // 18: github.com.metaprov.modeldapi.services.archived.v1.ListStudyResponse
+	(*ListPredictionPipelineRunRequest)(nil),  // 19: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest
+	(*ListPredictionPipelineRunResponse)(nil), // 20: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse
+	(*ListModelAutoBuilderRequest)(nil),       // 21: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest
+	(*ListModelAutoBuilderResponse)(nil),      // 22: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderResponse
+	nil,                                       // 23: github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest.SelectorEntry
+	nil,                                       // 24: github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest.SelectorEntry
+	nil,                                       // 25: github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest.SelectorEntry
+	nil,                                       // 26: github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest.SelectorEntry
+	nil,                                       // 27: github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest.SelectorEntry
+	nil,                                       // 28: github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.SelectorEntry
+	nil,                                       // 29: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.SelectorEntry
+	nil,                                       // 30: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.SelectorEntry
+	(*v1alpha1.Dataset)(nil),                  // 31: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
+	(*v1alpha1.FeaturePipelineRun)(nil),       // 32: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
+	(*v1alpha1.LabelingPipelineRun)(nil),      // 33: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun
+	(*v1alpha1.RecipeRun)(nil),                // 34: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun
+	(*v1alpha11.Report)(nil),                  // 35: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
+	(*v1alpha11.Study)(nil),                   // 36: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
+	(*v1alpha12.PredictionPipelineRun)(nil),   // 37: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
+	(*v1alpha11.ModelAutobuilder)(nil),        // 38: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
+	(*empty.Empty)(nil),                       // 39: google.protobuf.Empty
 }
 var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_depIdxs = []int32{
-	40, // 0: github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	41, // 1: github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	42, // 2: github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab
-	43, // 3: github.com.metaprov.modeldapi.services.archived.v1.RecordTenantRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant
-	44, // 4: github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite
-	45, // 5: github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License
-	46, // 6: github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
-	47, // 7: github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	48, // 8: github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster
-	49, // 9: github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume
-	50, // 10: github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline
-	51, // 11: github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun
-	52, // 12: github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	53, // 13: github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	54, // 14: github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	55, // 15: github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	56, // 16: github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity
-	57, // 17: github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset
-	58, // 18: github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	59, // 19: github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline
-	60, // 20: github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
-	61, // 21: github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline
-	62, // 22: github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun
-	63, // 23: github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	64, // 24: github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun
-	65, // 25: github.com.metaprov.modeldapi.services.archived.v1.RecordModelAutoBuilderRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
-	66, // 26: github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	67, // 27: github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
-	68, // 28: github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun
-	69, // 29: github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook
-	70, // 30: github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun
-	71, // 31: github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	72, // 32: github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	73, // 33: github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain
-	74, // 34: github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	75, // 35: github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline
-	76, // 36: github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
-	77, // 37: github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation
-	78, // 38: github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem
-	79, // 39: github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook
-	0,  // 40: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordAccount:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordAccountRequest
-	1,  // 41: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordConnection:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordConnectionRequest
-	2,  // 42: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLab:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordLabRequest
-	4,  // 43: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordServingSite:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordServingSiteRequest
-	5,  // 44: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLicense:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordLicenseRequest
-	6,  // 45: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotifier:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordNotifierRequest
-	7,  // 46: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualBucketRequest
-	8,  // 47: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualCluster:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualClusterRequest
-	9,  // 48: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualVolume:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordVirtualVolumeRequest
-	3,  // 49: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordTenant:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordTenantRequest
-	10, // 50: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataPipeline:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRequest
-	11, // 51: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataPipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordDataPipelineRunRequest
-	12, // 52: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataProduct:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductRequest
-	13, // 53: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataProductVersion:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordDataProductVersionRequest
-	15, // 54: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataSource:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordDataSourceRequest
-	14, // 55: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataset:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordDatasetRequest
-	18, // 56: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeature:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordFeatureRequest
-	19, // 57: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeaturePipeline:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRequest
-	20, // 58: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeaturePipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturePipelineRunRequest
-	17, // 59: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeatureset:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordFeaturesetRequest
-	16, // 60: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordEntity:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordEntityRequest
-	21, // 61: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRequest
-	22, // 62: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLabelingPipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordLabelingPipelineRunRequest
-	23, // 63: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRecipe:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRequest
-	24, // 64: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRecipeRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordRecipeRunRequest
-	25, // 65: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelAutoBuilder:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordModelAutoBuilderRequest
-	26, // 66: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModel:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordModelRequest
-	27, // 67: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelPipeline:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRequest
-	28, // 68: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelPipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordModelPipelineRunRequest
-	29, // 69: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotebook:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRequest
-	30, // 70: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotebookRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordNotebookRunRequest
-	31, // 71: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordReport:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordReportRequest
-	32, // 72: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordStudy:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordStudyRequest
-	33, // 73: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordCurtain:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordCurtainRequest
-	34, // 74: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictor:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordPredictorRequest
-	35, // 75: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipeline:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRequest
-	36, // 76: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordPredictionPipelineRunRequest
-	37, // 77: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordConversation:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordConversationRequest
-	38, // 78: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPostmortem:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordPostmortemRequest
-	39, // 79: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRunbook:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordRunbookRequest
-	80, // 80: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordAccount:output_type -> google.protobuf.Empty
-	80, // 81: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordConnection:output_type -> google.protobuf.Empty
-	80, // 82: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLab:output_type -> google.protobuf.Empty
-	80, // 83: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordServingSite:output_type -> google.protobuf.Empty
-	80, // 84: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLicense:output_type -> google.protobuf.Empty
-	80, // 85: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotifier:output_type -> google.protobuf.Empty
-	80, // 86: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualBucket:output_type -> google.protobuf.Empty
-	80, // 87: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualCluster:output_type -> google.protobuf.Empty
-	80, // 88: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordVirtualVolume:output_type -> google.protobuf.Empty
-	80, // 89: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordTenant:output_type -> google.protobuf.Empty
-	80, // 90: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataPipeline:output_type -> google.protobuf.Empty
-	80, // 91: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataPipelineRun:output_type -> google.protobuf.Empty
-	80, // 92: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataProduct:output_type -> google.protobuf.Empty
-	80, // 93: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataProductVersion:output_type -> google.protobuf.Empty
-	80, // 94: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataSource:output_type -> google.protobuf.Empty
-	80, // 95: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordDataset:output_type -> google.protobuf.Empty
-	80, // 96: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeature:output_type -> google.protobuf.Empty
-	80, // 97: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeaturePipeline:output_type -> google.protobuf.Empty
-	80, // 98: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeaturePipelineRun:output_type -> google.protobuf.Empty
-	80, // 99: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordFeatureset:output_type -> google.protobuf.Empty
-	80, // 100: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordEntity:output_type -> google.protobuf.Empty
-	80, // 101: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLabelingPipeline:output_type -> google.protobuf.Empty
-	80, // 102: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordLabelingPipelineRun:output_type -> google.protobuf.Empty
-	80, // 103: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRecipe:output_type -> google.protobuf.Empty
-	80, // 104: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRecipeRun:output_type -> google.protobuf.Empty
-	80, // 105: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelAutoBuilder:output_type -> google.protobuf.Empty
-	80, // 106: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModel:output_type -> google.protobuf.Empty
-	80, // 107: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelPipeline:output_type -> google.protobuf.Empty
-	80, // 108: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordModelPipelineRun:output_type -> google.protobuf.Empty
-	80, // 109: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotebook:output_type -> google.protobuf.Empty
-	80, // 110: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordNotebookRun:output_type -> google.protobuf.Empty
-	80, // 111: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordReport:output_type -> google.protobuf.Empty
-	80, // 112: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordStudy:output_type -> google.protobuf.Empty
-	80, // 113: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordCurtain:output_type -> google.protobuf.Empty
-	80, // 114: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictor:output_type -> google.protobuf.Empty
-	80, // 115: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipeline:output_type -> google.protobuf.Empty
-	80, // 116: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPredictionPipelineRun:output_type -> google.protobuf.Empty
-	80, // 117: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordConversation:output_type -> google.protobuf.Empty
-	80, // 118: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordPostmortem:output_type -> google.protobuf.Empty
-	80, // 119: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordRunbook:output_type -> google.protobuf.Empty
-	80, // [80:120] is the sub-list for method output_type
-	40, // [40:80] is the sub-list for method input_type
-	40, // [40:40] is the sub-list for extension type_name
-	40, // [40:40] is the sub-list for extension extendee
-	0,  // [0:40] is the sub-list for field type_name
+	0,  // 0: github.com.metaprov.modeldapi.services.archived.v1.RecordObjectRequest.item:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob
+	0,  // 1: github.com.metaprov.modeldapi.services.archived.v1.GetObjectResponse.item:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob
+	23, // 2: github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest.SelectorEntry
+	0,  // 3: github.com.metaprov.modeldapi.services.archived.v1.ListObjectResponse.items:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob
+	24, // 4: github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest.SelectorEntry
+	31, // 5: github.com.metaprov.modeldapi.services.archived.v1.ListDatasetResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
+	32, // 6: github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
+	25, // 7: github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest.SelectorEntry
+	33, // 8: github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun
+	26, // 9: github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest.SelectorEntry
+	34, // 10: github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun
+	27, // 11: github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest.SelectorEntry
+	35, // 12: github.com.metaprov.modeldapi.services.archived.v1.ListReportResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
+	28, // 13: github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.SelectorEntry
+	36, // 14: github.com.metaprov.modeldapi.services.archived.v1.ListStudyResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
+	29, // 15: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.SelectorEntry
+	37, // 16: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
+	30, // 17: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.SelectorEntry
+	38, // 18: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
+	1,  // 19: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordObject:input_type -> github.com.metaprov.modeldapi.services.archived.v1.RecordObjectRequest
+	2,  // 20: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetObject:input_type -> github.com.metaprov.modeldapi.services.archived.v1.GetObjectRequest
+	4,  // 21: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListObjects:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest
+	6,  // 22: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteObject:input_type -> github.com.metaprov.modeldapi.services.archived.v1.DeleteObjectRequest
+	7,  // 23: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListDatasets:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest
+	9,  // 24: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListFeaturePipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunRequest
+	11, // 25: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListLabelingPipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest
+	13, // 26: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListRecipeRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest
+	21, // 27: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelAutoBuilders:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest
+	13, // 28: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModels:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest
+	13, // 29: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelPipelineRuns:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest
+	13, // 30: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListNotebookRuns:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest
+	15, // 31: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListReports:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest
+	17, // 32: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListStudies:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest
+	19, // 33: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListPredictionPipelineRun:input_type -> github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest
+	39, // 34: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.RecordObject:output_type -> google.protobuf.Empty
+	3,  // 35: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetObject:output_type -> github.com.metaprov.modeldapi.services.archived.v1.GetObjectResponse
+	5,  // 36: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListObjects:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListObjectResponse
+	39, // 37: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteObject:output_type -> google.protobuf.Empty
+	8,  // 38: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListDatasets:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListDatasetResponse
+	10, // 39: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListFeaturePipelineRun:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunResponse
+	12, // 40: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListLabelingPipelineRun:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunResponse
+	14, // 41: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListRecipeRun:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse
+	22, // 42: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelAutoBuilders:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderResponse
+	14, // 43: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModels:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse
+	14, // 44: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelPipelineRuns:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse
+	14, // 45: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListNotebookRuns:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse
+	16, // 46: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListReports:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListReportResponse
+	18, // 47: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListStudies:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListStudyResponse
+	20, // 48: github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListPredictionPipelineRun:output_type -> github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse
+	34, // [34:49] is the sub-list for method output_type
+	19, // [19:34] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init() }
@@ -3201,7 +1748,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordAccountRequest); i {
+			switch v := v.(*ModeldBlob); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3213,7 +1760,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordConnectionRequest); i {
+			switch v := v.(*RecordObjectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3225,7 +1772,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordLabRequest); i {
+			switch v := v.(*GetObjectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3237,7 +1784,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordTenantRequest); i {
+			switch v := v.(*GetObjectResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3249,7 +1796,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordServingSiteRequest); i {
+			switch v := v.(*ListObjectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3261,7 +1808,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordLicenseRequest); i {
+			switch v := v.(*ListObjectResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3273,7 +1820,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordNotifierRequest); i {
+			switch v := v.(*DeleteObjectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3285,7 +1832,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordVirtualBucketRequest); i {
+			switch v := v.(*ListDatasetRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3297,7 +1844,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordVirtualClusterRequest); i {
+			switch v := v.(*ListDatasetResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3309,7 +1856,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordVirtualVolumeRequest); i {
+			switch v := v.(*ListFeaturePipelineRunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3321,7 +1868,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordDataPipelineRequest); i {
+			switch v := v.(*ListFeaturePipelineRunResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3333,7 +1880,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordDataPipelineRunRequest); i {
+			switch v := v.(*ListLabelingPipelineRunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3345,7 +1892,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordDataProductRequest); i {
+			switch v := v.(*ListLabelingPipelineRunResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3357,7 +1904,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordDataProductVersionRequest); i {
+			switch v := v.(*ListRecipeRunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3369,7 +1916,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordDatasetRequest); i {
+			switch v := v.(*ListRecipeRunResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3381,7 +1928,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordDataSourceRequest); i {
+			switch v := v.(*ListReportRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3393,7 +1940,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordEntityRequest); i {
+			switch v := v.(*ListReportResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3405,7 +1952,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordFeaturesetRequest); i {
+			switch v := v.(*ListStudyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3417,7 +1964,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordFeatureRequest); i {
+			switch v := v.(*ListStudyResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3429,7 +1976,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordFeaturePipelineRequest); i {
+			switch v := v.(*ListPredictionPipelineRunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3441,7 +1988,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordFeaturePipelineRunRequest); i {
+			switch v := v.(*ListPredictionPipelineRunResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3453,7 +2000,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordLabelingPipelineRequest); i {
+			switch v := v.(*ListModelAutoBuilderRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3465,211 +2012,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordLabelingPipelineRunRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordRecipeRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordRecipeRunRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordModelAutoBuilderRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordModelRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordModelPipelineRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordModelPipelineRunRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordNotebookRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordNotebookRunRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordReportRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordStudyRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordCurtainRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordPredictorRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordPredictionPipelineRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordPredictionPipelineRunRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordConversationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordPostmortemRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordRunbookRequest); i {
+			switch v := v.(*ListModelAutoBuilderResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3687,7 +2030,7 @@ func file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_init
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   40,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -3713,51 +2056,23 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ArchivedServiceClient interface {
-	// Infra
-	RecordAccount(ctx context.Context, in *RecordAccountRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordConnection(ctx context.Context, in *RecordConnectionRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordLab(ctx context.Context, in *RecordLabRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordServingSite(ctx context.Context, in *RecordServingSiteRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordLicense(ctx context.Context, in *RecordLicenseRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordNotifier(ctx context.Context, in *RecordNotifierRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordVirtualBucket(ctx context.Context, in *RecordVirtualBucketRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordVirtualCluster(ctx context.Context, in *RecordVirtualClusterRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordVirtualVolume(ctx context.Context, in *RecordVirtualVolumeRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordTenant(ctx context.Context, in *RecordTenantRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// Data
-	RecordDataPipeline(ctx context.Context, in *RecordDataPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordDataPipelineRun(ctx context.Context, in *RecordDataPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordDataProduct(ctx context.Context, in *RecordDataProductRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordDataProductVersion(ctx context.Context, in *RecordDataProductVersionRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordDataSource(ctx context.Context, in *RecordDataSourceRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordDataset(ctx context.Context, in *RecordDatasetRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordFeature(ctx context.Context, in *RecordFeatureRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordFeaturePipeline(ctx context.Context, in *RecordFeaturePipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordFeaturePipelineRun(ctx context.Context, in *RecordFeaturePipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordFeatureset(ctx context.Context, in *RecordFeaturesetRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordEntity(ctx context.Context, in *RecordEntityRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordLabelingPipeline(ctx context.Context, in *RecordLabelingPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordLabelingPipelineRun(ctx context.Context, in *RecordLabelingPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordRecipe(ctx context.Context, in *RecordRecipeRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordRecipeRun(ctx context.Context, in *RecordRecipeRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// =================== training
-	RecordModelAutoBuilder(ctx context.Context, in *RecordModelAutoBuilderRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordModel(ctx context.Context, in *RecordModelRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordModelPipeline(ctx context.Context, in *RecordModelPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordModelPipelineRun(ctx context.Context, in *RecordModelPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordNotebook(ctx context.Context, in *RecordNotebookRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordNotebookRun(ctx context.Context, in *RecordNotebookRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordReport(ctx context.Context, in *RecordReportRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordStudy(ctx context.Context, in *RecordStudyRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// ==================  inference
-	RecordCurtain(ctx context.Context, in *RecordCurtainRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordPredictor(ctx context.Context, in *RecordPredictorRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordPredictionPipeline(ctx context.Context, in *RecordPredictionPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordPredictionPipelineRun(ctx context.Context, in *RecordPredictionPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// =================== team
-	RecordConversation(ctx context.Context, in *RecordConversationRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordPostmortem(ctx context.Context, in *RecordPostmortemRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	RecordRunbook(ctx context.Context, in *RecordRunbookRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	// Record all objects in a blob
+	RecordObject(ctx context.Context, in *RecordObjectRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	GetObject(ctx context.Context, in *GetObjectRequest, opts ...grpc.CallOption) (*GetObjectResponse, error)
+	ListObjects(ctx context.Context, in *ListObjectRequest, opts ...grpc.CallOption) (*ListObjectResponse, error)
+	DeleteObject(ctx context.Context, in *DeleteObjectRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	// records the operational objects
+	ListDatasets(ctx context.Context, in *ListDatasetRequest, opts ...grpc.CallOption) (*ListDatasetResponse, error)
+	ListFeaturePipelineRun(ctx context.Context, in *ListFeaturePipelineRunRequest, opts ...grpc.CallOption) (*ListFeaturePipelineRunResponse, error)
+	ListLabelingPipelineRun(ctx context.Context, in *ListLabelingPipelineRunRequest, opts ...grpc.CallOption) (*ListLabelingPipelineRunResponse, error)
+	ListRecipeRun(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error)
+	ListModelAutoBuilders(ctx context.Context, in *ListModelAutoBuilderRequest, opts ...grpc.CallOption) (*ListModelAutoBuilderResponse, error)
+	ListModels(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error)
+	ListModelPipelineRuns(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error)
+	ListNotebookRuns(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error)
+	ListReports(ctx context.Context, in *ListReportRequest, opts ...grpc.CallOption) (*ListReportResponse, error)
+	ListStudies(ctx context.Context, in *ListStudyRequest, opts ...grpc.CallOption) (*ListStudyResponse, error)
+	ListPredictionPipelineRun(ctx context.Context, in *ListPredictionPipelineRunRequest, opts ...grpc.CallOption) (*ListPredictionPipelineRunResponse, error)
 }
 
 type archivedServiceClient struct {
@@ -3768,360 +2083,135 @@ func NewArchivedServiceClient(cc grpc.ClientConnInterface) ArchivedServiceClient
 	return &archivedServiceClient{cc}
 }
 
-func (c *archivedServiceClient) RecordAccount(ctx context.Context, in *RecordAccountRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *archivedServiceClient) RecordObject(ctx context.Context, in *RecordObjectRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordObject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordConnection(ctx context.Context, in *RecordConnectionRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordConnection", in, out, opts...)
+func (c *archivedServiceClient) GetObject(ctx context.Context, in *GetObjectRequest, opts ...grpc.CallOption) (*GetObjectResponse, error) {
+	out := new(GetObjectResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetObject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordLab(ctx context.Context, in *RecordLabRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLab", in, out, opts...)
+func (c *archivedServiceClient) ListObjects(ctx context.Context, in *ListObjectRequest, opts ...grpc.CallOption) (*ListObjectResponse, error) {
+	out := new(ListObjectResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListObjects", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordServingSite(ctx context.Context, in *RecordServingSiteRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *archivedServiceClient) DeleteObject(ctx context.Context, in *DeleteObjectRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordServingSite", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteObject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordLicense(ctx context.Context, in *RecordLicenseRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLicense", in, out, opts...)
+func (c *archivedServiceClient) ListDatasets(ctx context.Context, in *ListDatasetRequest, opts ...grpc.CallOption) (*ListDatasetResponse, error) {
+	out := new(ListDatasetResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDatasets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordNotifier(ctx context.Context, in *RecordNotifierRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotifier", in, out, opts...)
+func (c *archivedServiceClient) ListFeaturePipelineRun(ctx context.Context, in *ListFeaturePipelineRunRequest, opts ...grpc.CallOption) (*ListFeaturePipelineRunResponse, error) {
+	out := new(ListFeaturePipelineRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturePipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordVirtualBucket(ctx context.Context, in *RecordVirtualBucketRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualBucket", in, out, opts...)
+func (c *archivedServiceClient) ListLabelingPipelineRun(ctx context.Context, in *ListLabelingPipelineRunRequest, opts ...grpc.CallOption) (*ListLabelingPipelineRunResponse, error) {
+	out := new(ListLabelingPipelineRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordVirtualCluster(ctx context.Context, in *RecordVirtualClusterRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualCluster", in, out, opts...)
+func (c *archivedServiceClient) ListRecipeRun(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error) {
+	out := new(ListRecipeRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipeRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordVirtualVolume(ctx context.Context, in *RecordVirtualVolumeRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualVolume", in, out, opts...)
+func (c *archivedServiceClient) ListModelAutoBuilders(ctx context.Context, in *ListModelAutoBuilderRequest, opts ...grpc.CallOption) (*ListModelAutoBuilderResponse, error) {
+	out := new(ListModelAutoBuilderResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelAutoBuilders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordTenant(ctx context.Context, in *RecordTenantRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordTenant", in, out, opts...)
+func (c *archivedServiceClient) ListModels(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error) {
+	out := new(ListRecipeRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordDataPipeline(ctx context.Context, in *RecordDataPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataPipeline", in, out, opts...)
+func (c *archivedServiceClient) ListModelPipelineRuns(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error) {
+	out := new(ListRecipeRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelPipelineRuns", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordDataPipelineRun(ctx context.Context, in *RecordDataPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataPipelineRun", in, out, opts...)
+func (c *archivedServiceClient) ListNotebookRuns(ctx context.Context, in *ListRecipeRunRequest, opts ...grpc.CallOption) (*ListRecipeRunResponse, error) {
+	out := new(ListRecipeRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotebookRuns", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordDataProduct(ctx context.Context, in *RecordDataProductRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataProduct", in, out, opts...)
+func (c *archivedServiceClient) ListReports(ctx context.Context, in *ListReportRequest, opts ...grpc.CallOption) (*ListReportResponse, error) {
+	out := new(ListReportResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListReports", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordDataProductVersion(ctx context.Context, in *RecordDataProductVersionRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataProductVersion", in, out, opts...)
+func (c *archivedServiceClient) ListStudies(ctx context.Context, in *ListStudyRequest, opts ...grpc.CallOption) (*ListStudyResponse, error) {
+	out := new(ListStudyResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListStudies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *archivedServiceClient) RecordDataSource(ctx context.Context, in *RecordDataSourceRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataSource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordDataset(ctx context.Context, in *RecordDatasetRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordFeature(ctx context.Context, in *RecordFeatureRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordFeaturePipeline(ctx context.Context, in *RecordFeaturePipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeaturePipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordFeaturePipelineRun(ctx context.Context, in *RecordFeaturePipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeaturePipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordFeatureset(ctx context.Context, in *RecordFeaturesetRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeatureset", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordEntity(ctx context.Context, in *RecordEntityRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordEntity", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordLabelingPipeline(ctx context.Context, in *RecordLabelingPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLabelingPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordLabelingPipelineRun(ctx context.Context, in *RecordLabelingPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLabelingPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordRecipe(ctx context.Context, in *RecordRecipeRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordRecipe", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordRecipeRun(ctx context.Context, in *RecordRecipeRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordRecipeRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordModelAutoBuilder(ctx context.Context, in *RecordModelAutoBuilderRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelAutoBuilder", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordModel(ctx context.Context, in *RecordModelRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordModelPipeline(ctx context.Context, in *RecordModelPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordModelPipelineRun(ctx context.Context, in *RecordModelPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordNotebook(ctx context.Context, in *RecordNotebookRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotebook", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordNotebookRun(ctx context.Context, in *RecordNotebookRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotebookRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordReport(ctx context.Context, in *RecordReportRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordReport", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordStudy(ctx context.Context, in *RecordStudyRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordStudy", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordCurtain(ctx context.Context, in *RecordCurtainRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordCurtain", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordPredictor(ctx context.Context, in *RecordPredictorRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictor", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordPredictionPipeline(ctx context.Context, in *RecordPredictionPipelineRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipeline", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordPredictionPipelineRun(ctx context.Context, in *RecordPredictionPipelineRunRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipelineRun", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordConversation(ctx context.Context, in *RecordConversationRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordConversation", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordPostmortem(ctx context.Context, in *RecordPostmortemRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPostmortem", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *archivedServiceClient) RecordRunbook(ctx context.Context, in *RecordRunbookRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
-	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordRunbook", in, out, opts...)
+func (c *archivedServiceClient) ListPredictionPipelineRun(ctx context.Context, in *ListPredictionPipelineRunRequest, opts ...grpc.CallOption) (*ListPredictionPipelineRunResponse, error) {
+	out := new(ListPredictionPipelineRunResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictionPipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -4130,898 +2220,345 @@ func (c *archivedServiceClient) RecordRunbook(ctx context.Context, in *RecordRun
 
 // ArchivedServiceServer is the server API for ArchivedService service.
 type ArchivedServiceServer interface {
-	// Infra
-	RecordAccount(context.Context, *RecordAccountRequest) (*empty.Empty, error)
-	RecordConnection(context.Context, *RecordConnectionRequest) (*empty.Empty, error)
-	RecordLab(context.Context, *RecordLabRequest) (*empty.Empty, error)
-	RecordServingSite(context.Context, *RecordServingSiteRequest) (*empty.Empty, error)
-	RecordLicense(context.Context, *RecordLicenseRequest) (*empty.Empty, error)
-	RecordNotifier(context.Context, *RecordNotifierRequest) (*empty.Empty, error)
-	RecordVirtualBucket(context.Context, *RecordVirtualBucketRequest) (*empty.Empty, error)
-	RecordVirtualCluster(context.Context, *RecordVirtualClusterRequest) (*empty.Empty, error)
-	RecordVirtualVolume(context.Context, *RecordVirtualVolumeRequest) (*empty.Empty, error)
-	RecordTenant(context.Context, *RecordTenantRequest) (*empty.Empty, error)
-	// Data
-	RecordDataPipeline(context.Context, *RecordDataPipelineRequest) (*empty.Empty, error)
-	RecordDataPipelineRun(context.Context, *RecordDataPipelineRunRequest) (*empty.Empty, error)
-	RecordDataProduct(context.Context, *RecordDataProductRequest) (*empty.Empty, error)
-	RecordDataProductVersion(context.Context, *RecordDataProductVersionRequest) (*empty.Empty, error)
-	RecordDataSource(context.Context, *RecordDataSourceRequest) (*empty.Empty, error)
-	RecordDataset(context.Context, *RecordDatasetRequest) (*empty.Empty, error)
-	RecordFeature(context.Context, *RecordFeatureRequest) (*empty.Empty, error)
-	RecordFeaturePipeline(context.Context, *RecordFeaturePipelineRequest) (*empty.Empty, error)
-	RecordFeaturePipelineRun(context.Context, *RecordFeaturePipelineRunRequest) (*empty.Empty, error)
-	RecordFeatureset(context.Context, *RecordFeaturesetRequest) (*empty.Empty, error)
-	RecordEntity(context.Context, *RecordEntityRequest) (*empty.Empty, error)
-	RecordLabelingPipeline(context.Context, *RecordLabelingPipelineRequest) (*empty.Empty, error)
-	RecordLabelingPipelineRun(context.Context, *RecordLabelingPipelineRunRequest) (*empty.Empty, error)
-	RecordRecipe(context.Context, *RecordRecipeRequest) (*empty.Empty, error)
-	RecordRecipeRun(context.Context, *RecordRecipeRunRequest) (*empty.Empty, error)
-	// =================== training
-	RecordModelAutoBuilder(context.Context, *RecordModelAutoBuilderRequest) (*empty.Empty, error)
-	RecordModel(context.Context, *RecordModelRequest) (*empty.Empty, error)
-	RecordModelPipeline(context.Context, *RecordModelPipelineRequest) (*empty.Empty, error)
-	RecordModelPipelineRun(context.Context, *RecordModelPipelineRunRequest) (*empty.Empty, error)
-	RecordNotebook(context.Context, *RecordNotebookRequest) (*empty.Empty, error)
-	RecordNotebookRun(context.Context, *RecordNotebookRunRequest) (*empty.Empty, error)
-	RecordReport(context.Context, *RecordReportRequest) (*empty.Empty, error)
-	RecordStudy(context.Context, *RecordStudyRequest) (*empty.Empty, error)
-	// ==================  inference
-	RecordCurtain(context.Context, *RecordCurtainRequest) (*empty.Empty, error)
-	RecordPredictor(context.Context, *RecordPredictorRequest) (*empty.Empty, error)
-	RecordPredictionPipeline(context.Context, *RecordPredictionPipelineRequest) (*empty.Empty, error)
-	RecordPredictionPipelineRun(context.Context, *RecordPredictionPipelineRunRequest) (*empty.Empty, error)
-	// =================== team
-	RecordConversation(context.Context, *RecordConversationRequest) (*empty.Empty, error)
-	RecordPostmortem(context.Context, *RecordPostmortemRequest) (*empty.Empty, error)
-	RecordRunbook(context.Context, *RecordRunbookRequest) (*empty.Empty, error)
+	// Record all objects in a blob
+	RecordObject(context.Context, *RecordObjectRequest) (*empty.Empty, error)
+	GetObject(context.Context, *GetObjectRequest) (*GetObjectResponse, error)
+	ListObjects(context.Context, *ListObjectRequest) (*ListObjectResponse, error)
+	DeleteObject(context.Context, *DeleteObjectRequest) (*empty.Empty, error)
+	// records the operational objects
+	ListDatasets(context.Context, *ListDatasetRequest) (*ListDatasetResponse, error)
+	ListFeaturePipelineRun(context.Context, *ListFeaturePipelineRunRequest) (*ListFeaturePipelineRunResponse, error)
+	ListLabelingPipelineRun(context.Context, *ListLabelingPipelineRunRequest) (*ListLabelingPipelineRunResponse, error)
+	ListRecipeRun(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error)
+	ListModelAutoBuilders(context.Context, *ListModelAutoBuilderRequest) (*ListModelAutoBuilderResponse, error)
+	ListModels(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error)
+	ListModelPipelineRuns(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error)
+	ListNotebookRuns(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error)
+	ListReports(context.Context, *ListReportRequest) (*ListReportResponse, error)
+	ListStudies(context.Context, *ListStudyRequest) (*ListStudyResponse, error)
+	ListPredictionPipelineRun(context.Context, *ListPredictionPipelineRunRequest) (*ListPredictionPipelineRunResponse, error)
 }
 
 // UnimplementedArchivedServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedArchivedServiceServer struct {
 }
 
-func (*UnimplementedArchivedServiceServer) RecordAccount(context.Context, *RecordAccountRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordAccount not implemented")
+func (*UnimplementedArchivedServiceServer) RecordObject(context.Context, *RecordObjectRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RecordObject not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordConnection(context.Context, *RecordConnectionRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordConnection not implemented")
+func (*UnimplementedArchivedServiceServer) GetObject(context.Context, *GetObjectRequest) (*GetObjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetObject not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordLab(context.Context, *RecordLabRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordLab not implemented")
+func (*UnimplementedArchivedServiceServer) ListObjects(context.Context, *ListObjectRequest) (*ListObjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListObjects not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordServingSite(context.Context, *RecordServingSiteRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordServingSite not implemented")
+func (*UnimplementedArchivedServiceServer) DeleteObject(context.Context, *DeleteObjectRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteObject not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordLicense(context.Context, *RecordLicenseRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordLicense not implemented")
+func (*UnimplementedArchivedServiceServer) ListDatasets(context.Context, *ListDatasetRequest) (*ListDatasetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListDatasets not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordNotifier(context.Context, *RecordNotifierRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordNotifier not implemented")
+func (*UnimplementedArchivedServiceServer) ListFeaturePipelineRun(context.Context, *ListFeaturePipelineRunRequest) (*ListFeaturePipelineRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeaturePipelineRun not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordVirtualBucket(context.Context, *RecordVirtualBucketRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordVirtualBucket not implemented")
+func (*UnimplementedArchivedServiceServer) ListLabelingPipelineRun(context.Context, *ListLabelingPipelineRunRequest) (*ListLabelingPipelineRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListLabelingPipelineRun not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordVirtualCluster(context.Context, *RecordVirtualClusterRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordVirtualCluster not implemented")
+func (*UnimplementedArchivedServiceServer) ListRecipeRun(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListRecipeRun not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordVirtualVolume(context.Context, *RecordVirtualVolumeRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordVirtualVolume not implemented")
+func (*UnimplementedArchivedServiceServer) ListModelAutoBuilders(context.Context, *ListModelAutoBuilderRequest) (*ListModelAutoBuilderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListModelAutoBuilders not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordTenant(context.Context, *RecordTenantRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordTenant not implemented")
+func (*UnimplementedArchivedServiceServer) ListModels(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListModels not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordDataPipeline(context.Context, *RecordDataPipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordDataPipeline not implemented")
+func (*UnimplementedArchivedServiceServer) ListModelPipelineRuns(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListModelPipelineRuns not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordDataPipelineRun(context.Context, *RecordDataPipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordDataPipelineRun not implemented")
+func (*UnimplementedArchivedServiceServer) ListNotebookRuns(context.Context, *ListRecipeRunRequest) (*ListRecipeRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNotebookRuns not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordDataProduct(context.Context, *RecordDataProductRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordDataProduct not implemented")
+func (*UnimplementedArchivedServiceServer) ListReports(context.Context, *ListReportRequest) (*ListReportResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListReports not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordDataProductVersion(context.Context, *RecordDataProductVersionRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordDataProductVersion not implemented")
+func (*UnimplementedArchivedServiceServer) ListStudies(context.Context, *ListStudyRequest) (*ListStudyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListStudies not implemented")
 }
-func (*UnimplementedArchivedServiceServer) RecordDataSource(context.Context, *RecordDataSourceRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordDataSource not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordDataset(context.Context, *RecordDatasetRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordDataset not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordFeature(context.Context, *RecordFeatureRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordFeature not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordFeaturePipeline(context.Context, *RecordFeaturePipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordFeaturePipeline not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordFeaturePipelineRun(context.Context, *RecordFeaturePipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordFeaturePipelineRun not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordFeatureset(context.Context, *RecordFeaturesetRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordFeatureset not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordEntity(context.Context, *RecordEntityRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordEntity not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordLabelingPipeline(context.Context, *RecordLabelingPipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordLabelingPipeline not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordLabelingPipelineRun(context.Context, *RecordLabelingPipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordLabelingPipelineRun not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordRecipe(context.Context, *RecordRecipeRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordRecipe not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordRecipeRun(context.Context, *RecordRecipeRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordRecipeRun not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordModelAutoBuilder(context.Context, *RecordModelAutoBuilderRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordModelAutoBuilder not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordModel(context.Context, *RecordModelRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordModel not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordModelPipeline(context.Context, *RecordModelPipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordModelPipeline not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordModelPipelineRun(context.Context, *RecordModelPipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordModelPipelineRun not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordNotebook(context.Context, *RecordNotebookRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordNotebook not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordNotebookRun(context.Context, *RecordNotebookRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordNotebookRun not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordReport(context.Context, *RecordReportRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordReport not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordStudy(context.Context, *RecordStudyRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordStudy not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordCurtain(context.Context, *RecordCurtainRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordCurtain not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordPredictor(context.Context, *RecordPredictorRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordPredictor not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordPredictionPipeline(context.Context, *RecordPredictionPipelineRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordPredictionPipeline not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordPredictionPipelineRun(context.Context, *RecordPredictionPipelineRunRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordPredictionPipelineRun not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordConversation(context.Context, *RecordConversationRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordConversation not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordPostmortem(context.Context, *RecordPostmortemRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordPostmortem not implemented")
-}
-func (*UnimplementedArchivedServiceServer) RecordRunbook(context.Context, *RecordRunbookRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RecordRunbook not implemented")
+func (*UnimplementedArchivedServiceServer) ListPredictionPipelineRun(context.Context, *ListPredictionPipelineRunRequest) (*ListPredictionPipelineRunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPredictionPipelineRun not implemented")
 }
 
 func RegisterArchivedServiceServer(s *grpc.Server, srv ArchivedServiceServer) {
 	s.RegisterService(&_ArchivedService_serviceDesc, srv)
 }
 
-func _ArchivedService_RecordAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordAccountRequest)
+func _ArchivedService_RecordObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordObjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordAccount(ctx, in)
+		return srv.(ArchivedServiceServer).RecordObject(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordAccount",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordObject",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordAccount(ctx, req.(*RecordAccountRequest))
+		return srv.(ArchivedServiceServer).RecordObject(ctx, req.(*RecordObjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordConnectionRequest)
+func _ArchivedService_GetObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetObjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordConnection(ctx, in)
+		return srv.(ArchivedServiceServer).GetObject(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordConnection",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetObject",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordConnection(ctx, req.(*RecordConnectionRequest))
+		return srv.(ArchivedServiceServer).GetObject(ctx, req.(*GetObjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordLab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordLabRequest)
+func _ArchivedService_ListObjects_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListObjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordLab(ctx, in)
+		return srv.(ArchivedServiceServer).ListObjects(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLab",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListObjects",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordLab(ctx, req.(*RecordLabRequest))
+		return srv.(ArchivedServiceServer).ListObjects(ctx, req.(*ListObjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordServingSite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordServingSiteRequest)
+func _ArchivedService_DeleteObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteObjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordServingSite(ctx, in)
+		return srv.(ArchivedServiceServer).DeleteObject(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordServingSite",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteObject",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordServingSite(ctx, req.(*RecordServingSiteRequest))
+		return srv.(ArchivedServiceServer).DeleteObject(ctx, req.(*DeleteObjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordLicense_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordLicenseRequest)
+func _ArchivedService_ListDatasets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDatasetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordLicense(ctx, in)
+		return srv.(ArchivedServiceServer).ListDatasets(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLicense",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDatasets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordLicense(ctx, req.(*RecordLicenseRequest))
+		return srv.(ArchivedServiceServer).ListDatasets(ctx, req.(*ListDatasetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordNotifier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordNotifierRequest)
+func _ArchivedService_ListFeaturePipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeaturePipelineRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordNotifier(ctx, in)
+		return srv.(ArchivedServiceServer).ListFeaturePipelineRun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotifier",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturePipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordNotifier(ctx, req.(*RecordNotifierRequest))
+		return srv.(ArchivedServiceServer).ListFeaturePipelineRun(ctx, req.(*ListFeaturePipelineRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordVirtualBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordVirtualBucketRequest)
+func _ArchivedService_ListLabelingPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLabelingPipelineRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordVirtualBucket(ctx, in)
+		return srv.(ArchivedServiceServer).ListLabelingPipelineRun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualBucket",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordVirtualBucket(ctx, req.(*RecordVirtualBucketRequest))
+		return srv.(ArchivedServiceServer).ListLabelingPipelineRun(ctx, req.(*ListLabelingPipelineRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordVirtualCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordVirtualClusterRequest)
+func _ArchivedService_ListRecipeRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecipeRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordVirtualCluster(ctx, in)
+		return srv.(ArchivedServiceServer).ListRecipeRun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualCluster",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipeRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordVirtualCluster(ctx, req.(*RecordVirtualClusterRequest))
+		return srv.(ArchivedServiceServer).ListRecipeRun(ctx, req.(*ListRecipeRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordVirtualVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordVirtualVolumeRequest)
+func _ArchivedService_ListModelAutoBuilders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListModelAutoBuilderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordVirtualVolume(ctx, in)
+		return srv.(ArchivedServiceServer).ListModelAutoBuilders(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordVirtualVolume",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelAutoBuilders",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordVirtualVolume(ctx, req.(*RecordVirtualVolumeRequest))
+		return srv.(ArchivedServiceServer).ListModelAutoBuilders(ctx, req.(*ListModelAutoBuilderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordTenant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordTenantRequest)
+func _ArchivedService_ListModels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecipeRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordTenant(ctx, in)
+		return srv.(ArchivedServiceServer).ListModels(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordTenant",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordTenant(ctx, req.(*RecordTenantRequest))
+		return srv.(ArchivedServiceServer).ListModels(ctx, req.(*ListRecipeRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordDataPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordDataPipelineRequest)
+func _ArchivedService_ListModelPipelineRuns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecipeRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordDataPipeline(ctx, in)
+		return srv.(ArchivedServiceServer).ListModelPipelineRuns(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataPipeline",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelPipelineRuns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordDataPipeline(ctx, req.(*RecordDataPipelineRequest))
+		return srv.(ArchivedServiceServer).ListModelPipelineRuns(ctx, req.(*ListRecipeRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordDataPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordDataPipelineRunRequest)
+func _ArchivedService_ListNotebookRuns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecipeRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordDataPipelineRun(ctx, in)
+		return srv.(ArchivedServiceServer).ListNotebookRuns(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataPipelineRun",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotebookRuns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordDataPipelineRun(ctx, req.(*RecordDataPipelineRunRequest))
+		return srv.(ArchivedServiceServer).ListNotebookRuns(ctx, req.(*ListRecipeRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordDataProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordDataProductRequest)
+func _ArchivedService_ListReports_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListReportRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordDataProduct(ctx, in)
+		return srv.(ArchivedServiceServer).ListReports(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataProduct",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListReports",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordDataProduct(ctx, req.(*RecordDataProductRequest))
+		return srv.(ArchivedServiceServer).ListReports(ctx, req.(*ListReportRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordDataProductVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordDataProductVersionRequest)
+func _ArchivedService_ListStudies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListStudyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordDataProductVersion(ctx, in)
+		return srv.(ArchivedServiceServer).ListStudies(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataProductVersion",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListStudies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordDataProductVersion(ctx, req.(*RecordDataProductVersionRequest))
+		return srv.(ArchivedServiceServer).ListStudies(ctx, req.(*ListStudyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ArchivedService_RecordDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordDataSourceRequest)
+func _ArchivedService_ListPredictionPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPredictionPipelineRunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordDataSource(ctx, in)
+		return srv.(ArchivedServiceServer).ListPredictionPipelineRun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataSource",
+		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictionPipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordDataSource(ctx, req.(*RecordDataSourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordDatasetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordDataset(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordDataset",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordDataset(ctx, req.(*RecordDatasetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordFeatureRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordFeature(ctx, req.(*RecordFeatureRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordFeaturePipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordFeaturePipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordFeaturePipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeaturePipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordFeaturePipeline(ctx, req.(*RecordFeaturePipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordFeaturePipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordFeaturePipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordFeaturePipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeaturePipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordFeaturePipelineRun(ctx, req.(*RecordFeaturePipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordFeatureset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordFeaturesetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordFeatureset(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordFeatureset",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordFeatureset(ctx, req.(*RecordFeaturesetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordEntity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordEntityRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordEntity(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordEntity",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordEntity(ctx, req.(*RecordEntityRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordLabelingPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordLabelingPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordLabelingPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLabelingPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordLabelingPipeline(ctx, req.(*RecordLabelingPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordLabelingPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordLabelingPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordLabelingPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordLabelingPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordLabelingPipelineRun(ctx, req.(*RecordLabelingPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordRecipe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordRecipeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordRecipe(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordRecipe",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordRecipe(ctx, req.(*RecordRecipeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordRecipeRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordRecipeRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordRecipeRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordRecipeRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordRecipeRun(ctx, req.(*RecordRecipeRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordModelAutoBuilder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordModelAutoBuilderRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordModelAutoBuilder(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelAutoBuilder",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordModelAutoBuilder(ctx, req.(*RecordModelAutoBuilderRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordModelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordModel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordModel(ctx, req.(*RecordModelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordModelPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordModelPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordModelPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordModelPipeline(ctx, req.(*RecordModelPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordModelPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordModelPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordModelPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordModelPipelineRun(ctx, req.(*RecordModelPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordNotebook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordNotebookRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordNotebook(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotebook",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordNotebook(ctx, req.(*RecordNotebookRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordNotebookRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordNotebookRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordNotebookRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotebookRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordNotebookRun(ctx, req.(*RecordNotebookRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordReportRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordReport(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordReport",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordReport(ctx, req.(*RecordReportRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordStudy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordStudyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordStudy(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordStudy",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordStudy(ctx, req.(*RecordStudyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordCurtain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordCurtainRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordCurtain(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordCurtain",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordCurtain(ctx, req.(*RecordCurtainRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordPredictor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordPredictorRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordPredictor(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictor",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordPredictor(ctx, req.(*RecordPredictorRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordPredictionPipeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordPredictionPipelineRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordPredictionPipeline(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipeline",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordPredictionPipeline(ctx, req.(*RecordPredictionPipelineRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordPredictionPipelineRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordPredictionPipelineRunRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordPredictionPipelineRun(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPredictionPipelineRun",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordPredictionPipelineRun(ctx, req.(*RecordPredictionPipelineRunRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordConversation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordConversationRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordConversation(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordConversation",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordConversation(ctx, req.(*RecordConversationRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordPostmortem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordPostmortemRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordPostmortem(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordPostmortem",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordPostmortem(ctx, req.(*RecordPostmortemRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ArchivedService_RecordRunbook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RecordRunbookRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ArchivedServiceServer).RecordRunbook(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordRunbook",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ArchivedServiceServer).RecordRunbook(ctx, req.(*RecordRunbookRequest))
+		return srv.(ArchivedServiceServer).ListPredictionPipelineRun(ctx, req.(*ListPredictionPipelineRunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -5031,164 +2568,64 @@ var _ArchivedService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*ArchivedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "RecordAccount",
-			Handler:    _ArchivedService_RecordAccount_Handler,
+			MethodName: "RecordObject",
+			Handler:    _ArchivedService_RecordObject_Handler,
 		},
 		{
-			MethodName: "RecordConnection",
-			Handler:    _ArchivedService_RecordConnection_Handler,
+			MethodName: "GetObject",
+			Handler:    _ArchivedService_GetObject_Handler,
 		},
 		{
-			MethodName: "RecordLab",
-			Handler:    _ArchivedService_RecordLab_Handler,
+			MethodName: "ListObjects",
+			Handler:    _ArchivedService_ListObjects_Handler,
 		},
 		{
-			MethodName: "RecordServingSite",
-			Handler:    _ArchivedService_RecordServingSite_Handler,
+			MethodName: "DeleteObject",
+			Handler:    _ArchivedService_DeleteObject_Handler,
 		},
 		{
-			MethodName: "RecordLicense",
-			Handler:    _ArchivedService_RecordLicense_Handler,
+			MethodName: "ListDatasets",
+			Handler:    _ArchivedService_ListDatasets_Handler,
 		},
 		{
-			MethodName: "RecordNotifier",
-			Handler:    _ArchivedService_RecordNotifier_Handler,
+			MethodName: "ListFeaturePipelineRun",
+			Handler:    _ArchivedService_ListFeaturePipelineRun_Handler,
 		},
 		{
-			MethodName: "RecordVirtualBucket",
-			Handler:    _ArchivedService_RecordVirtualBucket_Handler,
+			MethodName: "ListLabelingPipelineRun",
+			Handler:    _ArchivedService_ListLabelingPipelineRun_Handler,
 		},
 		{
-			MethodName: "RecordVirtualCluster",
-			Handler:    _ArchivedService_RecordVirtualCluster_Handler,
+			MethodName: "ListRecipeRun",
+			Handler:    _ArchivedService_ListRecipeRun_Handler,
 		},
 		{
-			MethodName: "RecordVirtualVolume",
-			Handler:    _ArchivedService_RecordVirtualVolume_Handler,
+			MethodName: "ListModelAutoBuilders",
+			Handler:    _ArchivedService_ListModelAutoBuilders_Handler,
 		},
 		{
-			MethodName: "RecordTenant",
-			Handler:    _ArchivedService_RecordTenant_Handler,
+			MethodName: "ListModels",
+			Handler:    _ArchivedService_ListModels_Handler,
 		},
 		{
-			MethodName: "RecordDataPipeline",
-			Handler:    _ArchivedService_RecordDataPipeline_Handler,
+			MethodName: "ListModelPipelineRuns",
+			Handler:    _ArchivedService_ListModelPipelineRuns_Handler,
 		},
 		{
-			MethodName: "RecordDataPipelineRun",
-			Handler:    _ArchivedService_RecordDataPipelineRun_Handler,
+			MethodName: "ListNotebookRuns",
+			Handler:    _ArchivedService_ListNotebookRuns_Handler,
 		},
 		{
-			MethodName: "RecordDataProduct",
-			Handler:    _ArchivedService_RecordDataProduct_Handler,
+			MethodName: "ListReports",
+			Handler:    _ArchivedService_ListReports_Handler,
 		},
 		{
-			MethodName: "RecordDataProductVersion",
-			Handler:    _ArchivedService_RecordDataProductVersion_Handler,
+			MethodName: "ListStudies",
+			Handler:    _ArchivedService_ListStudies_Handler,
 		},
 		{
-			MethodName: "RecordDataSource",
-			Handler:    _ArchivedService_RecordDataSource_Handler,
-		},
-		{
-			MethodName: "RecordDataset",
-			Handler:    _ArchivedService_RecordDataset_Handler,
-		},
-		{
-			MethodName: "RecordFeature",
-			Handler:    _ArchivedService_RecordFeature_Handler,
-		},
-		{
-			MethodName: "RecordFeaturePipeline",
-			Handler:    _ArchivedService_RecordFeaturePipeline_Handler,
-		},
-		{
-			MethodName: "RecordFeaturePipelineRun",
-			Handler:    _ArchivedService_RecordFeaturePipelineRun_Handler,
-		},
-		{
-			MethodName: "RecordFeatureset",
-			Handler:    _ArchivedService_RecordFeatureset_Handler,
-		},
-		{
-			MethodName: "RecordEntity",
-			Handler:    _ArchivedService_RecordEntity_Handler,
-		},
-		{
-			MethodName: "RecordLabelingPipeline",
-			Handler:    _ArchivedService_RecordLabelingPipeline_Handler,
-		},
-		{
-			MethodName: "RecordLabelingPipelineRun",
-			Handler:    _ArchivedService_RecordLabelingPipelineRun_Handler,
-		},
-		{
-			MethodName: "RecordRecipe",
-			Handler:    _ArchivedService_RecordRecipe_Handler,
-		},
-		{
-			MethodName: "RecordRecipeRun",
-			Handler:    _ArchivedService_RecordRecipeRun_Handler,
-		},
-		{
-			MethodName: "RecordModelAutoBuilder",
-			Handler:    _ArchivedService_RecordModelAutoBuilder_Handler,
-		},
-		{
-			MethodName: "RecordModel",
-			Handler:    _ArchivedService_RecordModel_Handler,
-		},
-		{
-			MethodName: "RecordModelPipeline",
-			Handler:    _ArchivedService_RecordModelPipeline_Handler,
-		},
-		{
-			MethodName: "RecordModelPipelineRun",
-			Handler:    _ArchivedService_RecordModelPipelineRun_Handler,
-		},
-		{
-			MethodName: "RecordNotebook",
-			Handler:    _ArchivedService_RecordNotebook_Handler,
-		},
-		{
-			MethodName: "RecordNotebookRun",
-			Handler:    _ArchivedService_RecordNotebookRun_Handler,
-		},
-		{
-			MethodName: "RecordReport",
-			Handler:    _ArchivedService_RecordReport_Handler,
-		},
-		{
-			MethodName: "RecordStudy",
-			Handler:    _ArchivedService_RecordStudy_Handler,
-		},
-		{
-			MethodName: "RecordCurtain",
-			Handler:    _ArchivedService_RecordCurtain_Handler,
-		},
-		{
-			MethodName: "RecordPredictor",
-			Handler:    _ArchivedService_RecordPredictor_Handler,
-		},
-		{
-			MethodName: "RecordPredictionPipeline",
-			Handler:    _ArchivedService_RecordPredictionPipeline_Handler,
-		},
-		{
-			MethodName: "RecordPredictionPipelineRun",
-			Handler:    _ArchivedService_RecordPredictionPipelineRun_Handler,
-		},
-		{
-			MethodName: "RecordConversation",
-			Handler:    _ArchivedService_RecordConversation_Handler,
-		},
-		{
-			MethodName: "RecordPostmortem",
-			Handler:    _ArchivedService_RecordPostmortem_Handler,
-		},
-		{
-			MethodName: "RecordRunbook",
-			Handler:    _ArchivedService_RecordRunbook_Handler,
+			MethodName: "ListPredictionPipelineRun",
+			Handler:    _ArchivedService_ListPredictionPipelineRun_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
