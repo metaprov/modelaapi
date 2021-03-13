@@ -680,6 +680,30 @@ export namespace RecordModelPipelineRequest {
   }
 }
 
+export class RecordModelPipelineRunRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun): RecordModelPipelineRunRequest;
+  hasItem(): boolean;
+  clearItem(): RecordModelPipelineRunRequest;
+
+  getDelete(): boolean;
+  setDelete(value: boolean): RecordModelPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordModelPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordModelPipelineRunRequest): RecordModelPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordModelPipelineRunRequest;
+  static deserializeBinaryFromReader(message: RecordModelPipelineRunRequest, reader: jspb.BinaryReader): RecordModelPipelineRunRequest;
+}
+
+export namespace RecordModelPipelineRunRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.AsObject,
+    pb_delete: boolean,
+  }
+}
+
 export class RecordNotebookRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): RecordNotebookRequest;

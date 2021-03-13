@@ -155,6 +155,11 @@ class ArchivedServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelPipelineRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.RecordModelPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelPipelineRunRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.RecordNotebook = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordNotebook',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordNotebookRequest.SerializeToString,
@@ -386,6 +391,12 @@ class ArchivedServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RecordModelPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def RecordNotebook(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -595,6 +606,11 @@ def add_ArchivedServiceServicer_to_server(servicer, server):
             'RecordModelPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.RecordModelPipeline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelPipelineRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'RecordModelPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.RecordModelPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelPipelineRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'RecordNotebook': grpc.unary_unary_rpc_method_handler(
@@ -1134,6 +1150,23 @@ class ArchivedService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelPipelineRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RecordModelPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordModelPipelineRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -1156,6 +1156,46 @@ export class ArchivedServiceClient {
     this.methodInfoRecordModelPipeline);
   }
 
+  methodInfoRecordModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordModelPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  recordModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  recordModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  recordModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoRecordModelPipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordModelPipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoRecordModelPipelineRun);
+  }
+
   methodInfoRecordNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.RecordNotebookRequest) => {
