@@ -164,6 +164,13 @@ message RecordRecipeRunRequest {
 
 // =================== training
 
+// ModelAutoBuilder
+message RecordModelAutoBuilderRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    bool delete = 2;
+}
+
+
 // Model
 message RecordModelRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
@@ -288,8 +295,8 @@ service ArchivedService {
     rpc RecordRecipe(RecordRecipeRequest) returns (google.protobuf.Empty) {}
     rpc RecordRecipeRun(RecordRecipeRunRequest) returns (google.protobuf.Empty) {}
 
-// =================== training
-
+    // =================== training
+    rpc RecordModelAutoBuilder(RecordModelAutoBuilderRequest) returns (google.protobuf.Empty) {}
     rpc RecordModel(RecordModelRequest) returns (google.protobuf.Empty) {}
     rpc RecordModelPipeline(RecordModelPipelineRequest) returns (google.protobuf.Empty) {}
     rpc RecordNotebook(RecordNotebookRequest) returns (google.protobuf.Empty) {}

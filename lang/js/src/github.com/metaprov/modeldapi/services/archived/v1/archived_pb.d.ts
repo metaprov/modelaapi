@@ -608,6 +608,30 @@ export namespace RecordRecipeRunRequest {
   }
 }
 
+export class RecordModelAutoBuilderRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): RecordModelAutoBuilderRequest;
+  hasItem(): boolean;
+  clearItem(): RecordModelAutoBuilderRequest;
+
+  getDelete(): boolean;
+  setDelete(value: boolean): RecordModelAutoBuilderRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordModelAutoBuilderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordModelAutoBuilderRequest): RecordModelAutoBuilderRequest.AsObject;
+  static serializeBinaryToWriter(message: RecordModelAutoBuilderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordModelAutoBuilderRequest;
+  static deserializeBinaryFromReader(message: RecordModelAutoBuilderRequest, reader: jspb.BinaryReader): RecordModelAutoBuilderRequest;
+}
+
+export namespace RecordModelAutoBuilderRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
+    pb_delete: boolean,
+  }
+}
+
 export class RecordModelRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): RecordModelRequest;
