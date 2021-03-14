@@ -397,28 +397,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListModels = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelResponse.deserializeBinary
   );
 
   listModels(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelResponse>;
 
   listModels(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelResponse>;
 
   listModels(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -437,28 +437,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListModelPipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunResponse.deserializeBinary
   );
 
   listModelPipelineRuns(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunResponse>;
 
   listModelPipelineRuns(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunResponse>;
 
   listModelPipelineRuns(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListModelPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -477,28 +477,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListNotebookRuns = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunResponse.deserializeBinary
   );
 
   listNotebookRuns(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunResponse>;
 
   listNotebookRuns(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunResponse>;
 
   listNotebookRuns(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListRecipeRunResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotebookRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

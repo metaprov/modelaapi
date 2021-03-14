@@ -366,6 +366,48 @@ export namespace ListReportResponse {
   }
 }
 
+export class ListModelRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListModelRequest;
+
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelRequest): ListModelRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelRequest;
+  static deserializeBinaryFromReader(message: ListModelRequest, reader: jspb.BinaryReader): ListModelRequest;
+}
+
+export namespace ListModelRequest {
+  export type AsObject = {
+    namespace: string,
+    selectorMap: Array<[string, string]>,
+  }
+}
+
+export class ListModelResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>): ListModelResponse;
+  clearItemsList(): ListModelResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelResponse): ListModelResponse.AsObject;
+  static serializeBinaryToWriter(message: ListModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelResponse;
+  static deserializeBinaryFromReader(message: ListModelResponse, reader: jspb.BinaryReader): ListModelResponse;
+}
+
+export namespace ListModelResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject>,
+  }
+}
+
 export class ListStudyRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListStudyRequest;
@@ -489,6 +531,90 @@ export class ListModelAutoBuilderResponse extends jspb.Message {
 export namespace ListModelAutoBuilderResponse {
   export type AsObject = {
     itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject>,
+  }
+}
+
+export class ListModelPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListModelPipelineRunRequest;
+
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListModelPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelPipelineRunRequest): ListModelPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelPipelineRunRequest;
+  static deserializeBinaryFromReader(message: ListModelPipelineRunRequest, reader: jspb.BinaryReader): ListModelPipelineRunRequest;
+}
+
+export namespace ListModelPipelineRunRequest {
+  export type AsObject = {
+    namespace: string,
+    selectorMap: Array<[string, string]>,
+  }
+}
+
+export class ListModelPipelineRunResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>): ListModelPipelineRunResponse;
+  clearItemsList(): ListModelPipelineRunResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelPipelineRunResponse): ListModelPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ListModelPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelPipelineRunResponse;
+  static deserializeBinaryFromReader(message: ListModelPipelineRunResponse, reader: jspb.BinaryReader): ListModelPipelineRunResponse;
+}
+
+export namespace ListModelPipelineRunResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject>,
+  }
+}
+
+export class ListNotebookRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListNotebookRunRequest;
+
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListNotebookRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNotebookRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNotebookRunRequest): ListNotebookRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ListNotebookRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNotebookRunRequest;
+  static deserializeBinaryFromReader(message: ListNotebookRunRequest, reader: jspb.BinaryReader): ListNotebookRunRequest;
+}
+
+export namespace ListNotebookRunRequest {
+  export type AsObject = {
+    namespace: string,
+    selectorMap: Array<[string, string]>,
+  }
+}
+
+export class ListNotebookRunResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>): ListNotebookRunResponse;
+  clearItemsList(): ListNotebookRunResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNotebookRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNotebookRunResponse): ListNotebookRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ListNotebookRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNotebookRunResponse;
+  static deserializeBinaryFromReader(message: ListNotebookRunResponse, reader: jspb.BinaryReader): ListNotebookRunResponse;
+}
+
+export namespace ListNotebookRunResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject>,
   }
 }
 

@@ -94,6 +94,14 @@ message ListReportResponse {
     repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report items = 1;
 }
 
+message ListModelRequest {
+    string namespace            = 1;
+    map<string,string> selector = 2;
+} 
+
+message ListModelResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report items = 1;
+}
 
 message ListStudyRequest {
     string namespace            = 1;
@@ -122,6 +130,25 @@ message ListModelAutoBuilderResponse {
     repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
 }
 
+message ListModelPipelineRunRequest {
+    string namespace            = 1;
+    map<string,string> selector = 2;
+} 
+
+message ListModelPipelineRunResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
+}
+
+message ListNotebookRunRequest {
+    string namespace            = 1;
+    map<string,string> selector = 2;
+}
+
+message ListNotebookRunResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun items = 1;
+}
+
+
 service ArchivedService {
     // Record all objects in a blob
     rpc RecordObject(RecordObjectRequest) returns (google.protobuf.Empty) {}
@@ -135,9 +162,9 @@ service ArchivedService {
     rpc ListLabelingPipelineRun(ListLabelingPipelineRunRequest) returns (ListLabelingPipelineRunResponse) {}
     rpc ListRecipeRun(ListRecipeRunRequest) returns (ListRecipeRunResponse) {}    
     rpc ListModelAutoBuilders(ListModelAutoBuilderRequest) returns (ListModelAutoBuilderResponse) {}    
-    rpc ListModels(ListRecipeRunRequest) returns (ListRecipeRunResponse) {}    
-    rpc ListModelPipelineRuns(ListRecipeRunRequest) returns (ListRecipeRunResponse) {}    
-    rpc ListNotebookRuns(ListRecipeRunRequest) returns (ListRecipeRunResponse) {}    
+    rpc ListModels(ListModelRequest) returns (ListModelResponse) {}    
+    rpc ListModelPipelineRuns(ListModelPipelineRunRequest) returns (ListModelPipelineRunResponse) {}    
+    rpc ListNotebookRuns(ListNotebookRunRequest) returns (ListNotebookRunResponse) {}    
     rpc ListReports(ListReportRequest) returns (ListReportResponse) {}    
     rpc ListStudies(ListStudyRequest) returns (ListStudyResponse) {}    
     rpc ListPredictionPipelineRun(ListPredictionPipelineRunRequest) returns (ListPredictionPipelineRunResponse) {}
