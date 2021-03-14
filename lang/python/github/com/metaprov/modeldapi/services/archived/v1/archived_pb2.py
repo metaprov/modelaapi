@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/archived/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"I\n\nModeldBlob\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12\x0c\n\x04\x62lob\x18\x04 \x01(\t\"c\n\x13RecordObjectRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob\"3\n\x10GetObjectRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x11GetObjectResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob\"\xbe\x01\n\x11ListObjectRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x08selector\x18\x02 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x12ListObjectResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob\"6\n\x13\x44\x65leteObjectRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xc0\x01\n\x12ListDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x08selector\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x13ListDatasetResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x1f\n\x1dListFeaturePipelineRunRequest\"y\n\x1eListFeaturePipelineRunResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"\xd8\x01\n\x1eListLabelingPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12r\n\x08selector\x18\x02 \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x1fListLabelingPipelineRunResponse\x12X\n\x05items\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\xc4\x01\n\x14ListRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x08selector\x18\x02 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x15ListRecipeRunResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\xbe\x01\n\x11ListReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x08selector\x18\x02 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x12ListReportResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\xbc\x01\n\x10ListModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x08selector\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.archived.v1.ListModelRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"d\n\x11ListModelResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\xbc\x01\n\x10ListStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x08selector\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x11ListStudyResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\xdc\x01\n ListPredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x08selector\x18\x02 \x03(\x0b\x32\x62.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x84\x01\n!ListPredictionPipelineRunResponse\x12_\n\x05items\x18\x01 \x03(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\"\xd2\x01\n\x1bListModelAutoBuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12o\n\x08selector\x18\x02 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x1cListModelAutoBuilderResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\xd2\x01\n\x1bListModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12o\n\x08selector\x18\x02 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x1cListModelPipelineRunResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\xc8\x01\n\x16ListNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x08selector\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x17ListNotebookRunResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun2\xe6\x13\n\x0f\x41rchivedService\x12q\n\x0cRecordObject\x12G.github.com.metaprov.modeldapi.services.archived.v1.RecordObjectRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9a\x01\n\tGetObject\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetObjectRequest\x1a\x45.github.com.metaprov.modeldapi.services.archived.v1.GetObjectResponse\"\x00\x12\x9e\x01\n\x0bListObjects\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListObjectResponse\"\x00\x12q\n\x0c\x44\x65leteObject\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteObjectRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa1\x01\n\x0cListDatasets\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetResponse\"\x00\x12\xc1\x01\n\x16ListFeaturePipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunRequest\x1aR.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunResponse\"\x00\x12\xc4\x01\n\x17ListLabelingPipelineRun\x12R.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest\x1aS.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunResponse\"\x00\x12\xa6\x01\n\rListRecipeRun\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse\"\x00\x12\xbc\x01\n\x15ListModelAutoBuilders\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderResponse\"\x00\x12\x9b\x01\n\nListModels\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.ListModelRequest\x1a\x45.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse\"\x00\x12\xbc\x01\n\x15ListModelPipelineRuns\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse\"\x00\x12\xad\x01\n\x10ListNotebookRuns\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunResponse\"\x00\x12\x9e\x01\n\x0bListReports\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListReportResponse\"\x00\x12\x9c\x01\n\x0bListStudies\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest\x1a\x45.github.com.metaprov.modeldapi.services.archived.v1.ListStudyResponse\"\x00\x12\xca\x01\n\x19ListPredictionPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest\x1aU.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"I\n\nModeldBlob\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12\x0c\n\x04\x62lob\x18\x04 \x01(\t\"c\n\x13RecordObjectRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob\"3\n\x10GetObjectRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x11GetObjectResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob\"\xbe\x01\n\x11ListObjectRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x08selector\x18\x02 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x12ListObjectResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.services.archived.v1.ModeldBlob\"6\n\x13\x44\x65leteObjectRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xc0\x01\n\x12ListDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x08selector\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x13ListDatasetResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x1f\n\x1dListFeaturePipelineRunRequest\"y\n\x1eListFeaturePipelineRunResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"\xd8\x01\n\x1eListLabelingPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12r\n\x08selector\x18\x02 \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x1fListLabelingPipelineRunResponse\x12X\n\x05items\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\xc4\x01\n\x14ListRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x08selector\x18\x02 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x15ListRecipeRunResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\xbe\x01\n\x11ListReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x65\n\x08selector\x18\x02 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x12ListReportResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\xbc\x01\n\x10ListModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x08selector\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.archived.v1.ListModelRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x11ListModelResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\xbc\x01\n\x10ListStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x08selector\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x11ListStudyResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\xdc\x01\n ListPredictionPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x08selector\x18\x02 \x03(\x0b\x32\x62.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x84\x01\n!ListPredictionPipelineRunResponse\x12_\n\x05items\x18\x01 \x03(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\"\xd2\x01\n\x1bListModelAutoBuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12o\n\x08selector\x18\x02 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x1cListModelAutoBuilderResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\xd2\x01\n\x1bListModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12o\n\x08selector\x18\x02 \x03(\x0b\x32].github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x1cListModelPipelineRunResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\xc8\x01\n\x16ListNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x08selector\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunRequest.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x17ListNotebookRunResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun2\xe6\x13\n\x0f\x41rchivedService\x12q\n\x0cRecordObject\x12G.github.com.metaprov.modeldapi.services.archived.v1.RecordObjectRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9a\x01\n\tGetObject\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetObjectRequest\x1a\x45.github.com.metaprov.modeldapi.services.archived.v1.GetObjectResponse\"\x00\x12\x9e\x01\n\x0bListObjects\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListObjectResponse\"\x00\x12q\n\x0c\x44\x65leteObject\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteObjectRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa1\x01\n\x0cListDatasets\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetResponse\"\x00\x12\xc1\x01\n\x16ListFeaturePipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunRequest\x1aR.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunResponse\"\x00\x12\xc4\x01\n\x17ListLabelingPipelineRun\x12R.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunRequest\x1aS.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunResponse\"\x00\x12\xa6\x01\n\rListRecipeRun\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunResponse\"\x00\x12\xbc\x01\n\x15ListModelAutoBuilders\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderResponse\"\x00\x12\x9b\x01\n\nListModels\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.ListModelRequest\x1a\x45.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse\"\x00\x12\xbc\x01\n\x15ListModelPipelineRuns\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse\"\x00\x12\xad\x01\n\x10ListNotebookRuns\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunResponse\"\x00\x12\x9e\x01\n\x0bListReports\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListReportRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListReportResponse\"\x00\x12\x9c\x01\n\x0bListStudies\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest\x1a\x45.github.com.metaprov.modeldapi.services.archived.v1.ListStudyResponse\"\x00\x12\xca\x01\n\x19ListPredictionPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest\x1aU.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -934,7 +934,7 @@ _LISTMODELRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2775,
-  serialized_end=2875,
+  serialized_end=2874,
 )
 
 
@@ -1010,8 +1010,8 @@ _LISTSTUDYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2878,
-  serialized_end=3066,
+  serialized_start=2877,
+  serialized_end=3065,
 )
 
 
@@ -1042,8 +1042,8 @@ _LISTSTUDYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3068,
-  serialized_end=3167,
+  serialized_start=3067,
+  serialized_end=3166,
 )
 
 
@@ -1119,8 +1119,8 @@ _LISTPREDICTIONPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3170,
-  serialized_end=3390,
+  serialized_start=3169,
+  serialized_end=3389,
 )
 
 
@@ -1151,8 +1151,8 @@ _LISTPREDICTIONPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3393,
-  serialized_end=3525,
+  serialized_start=3392,
+  serialized_end=3524,
 )
 
 
@@ -1228,8 +1228,8 @@ _LISTMODELAUTOBUILDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3528,
-  serialized_end=3738,
+  serialized_start=3527,
+  serialized_end=3737,
 )
 
 
@@ -1260,8 +1260,8 @@ _LISTMODELAUTOBUILDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3740,
-  serialized_end=3861,
+  serialized_start=3739,
+  serialized_end=3860,
 )
 
 
@@ -1337,8 +1337,8 @@ _LISTMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3864,
-  serialized_end=4074,
+  serialized_start=3863,
+  serialized_end=4073,
 )
 
 
@@ -1369,8 +1369,8 @@ _LISTMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4076,
-  serialized_end=4197,
+  serialized_start=4075,
+  serialized_end=4196,
 )
 
 
@@ -1446,8 +1446,8 @@ _LISTNOTEBOOKRUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4200,
-  serialized_end=4400,
+  serialized_start=4199,
+  serialized_end=4399,
 )
 
 
@@ -1478,8 +1478,8 @@ _LISTNOTEBOOKRUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4402,
-  serialized_end=4513,
+  serialized_start=4401,
+  serialized_end=4512,
 )
 
 _RECORDOBJECTREQUEST.fields_by_name['item'].message_type = _MODELDBLOB
@@ -1502,7 +1502,7 @@ _LISTREPORTREQUEST.fields_by_name['selector'].message_type = _LISTREPORTREQUEST_
 _LISTREPORTRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT
 _LISTMODELREQUEST_SELECTORENTRY.containing_type = _LISTMODELREQUEST
 _LISTMODELREQUEST.fields_by_name['selector'].message_type = _LISTMODELREQUEST_SELECTORENTRY
-_LISTMODELRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT
+_LISTMODELRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
 _LISTSTUDYREQUEST_SELECTORENTRY.containing_type = _LISTSTUDYREQUEST
 _LISTSTUDYREQUEST.fields_by_name['selector'].message_type = _LISTSTUDYREQUEST_SELECTORENTRY
 _LISTSTUDYRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
@@ -1514,7 +1514,7 @@ _LISTMODELAUTOBUILDERREQUEST.fields_by_name['selector'].message_type = _LISTMODE
 _LISTMODELAUTOBUILDERRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELAUTOBUILDER
 _LISTMODELPIPELINERUNREQUEST_SELECTORENTRY.containing_type = _LISTMODELPIPELINERUNREQUEST
 _LISTMODELPIPELINERUNREQUEST.fields_by_name['selector'].message_type = _LISTMODELPIPELINERUNREQUEST_SELECTORENTRY
-_LISTMODELPIPELINERUNRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELAUTOBUILDER
+_LISTMODELPIPELINERUNRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN
 _LISTNOTEBOOKRUNREQUEST_SELECTORENTRY.containing_type = _LISTNOTEBOOKRUNREQUEST
 _LISTNOTEBOOKRUNREQUEST.fields_by_name['selector'].message_type = _LISTNOTEBOOKRUNREQUEST_SELECTORENTRY
 _LISTNOTEBOOKRUNRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKRUN
@@ -1861,8 +1861,8 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4516,
-  serialized_end=7050,
+  serialized_start=4515,
+  serialized_end=7049,
   methods=[
   _descriptor.MethodDescriptor(
     name='RecordObject',

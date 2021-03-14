@@ -3586,7 +3586,7 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.proto
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.toObject, includeInstance)
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3624,8 +3624,8 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     default:
@@ -3662,24 +3662,24 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.seria
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report items = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model>}
  */
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse} returns this
 */
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.prototype.setItemsList = function(value) {
@@ -3688,12 +3688,12 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.proto
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model}
  */
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model, opt_index);
 };
 
 
@@ -4878,7 +4878,7 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRes
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.toObject, includeInstance)
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4916,8 +4916,8 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRes
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     default:
@@ -4954,24 +4954,24 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRes
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun>}
  */
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse} returns this
 */
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse.prototype.setItemsList = function(value) {
@@ -4980,12 +4980,12 @@ proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRes
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun}
  */
 proto.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun, opt_index);
 };
 
 

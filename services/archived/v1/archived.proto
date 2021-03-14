@@ -100,7 +100,7 @@ message ListModelRequest {
 } 
 
 message ListModelResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report items = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model items = 1;
 }
 
 message ListStudyRequest {
@@ -136,7 +136,7 @@ message ListModelPipelineRunRequest {
 } 
 
 message ListModelPipelineRunResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun items = 1;
 }
 
 message ListNotebookRunRequest {

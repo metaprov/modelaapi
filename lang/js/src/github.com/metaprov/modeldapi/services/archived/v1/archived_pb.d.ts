@@ -389,10 +389,10 @@ export namespace ListModelRequest {
 }
 
 export class ListModelResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
-  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>): ListModelResponse;
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model>): ListModelResponse;
   clearItemsList(): ListModelResponse;
-  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelResponse.AsObject;
@@ -404,7 +404,7 @@ export class ListModelResponse extends jspb.Message {
 
 export namespace ListModelResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject>,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
   }
 }
 
@@ -557,10 +557,10 @@ export namespace ListModelPipelineRunRequest {
 }
 
 export class ListModelPipelineRunResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
-  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>): ListModelPipelineRunResponse;
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>): ListModelPipelineRunResponse;
   clearItemsList(): ListModelPipelineRunResponse;
-  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelPipelineRunResponse.AsObject;
@@ -572,7 +572,7 @@ export class ListModelPipelineRunResponse extends jspb.Message {
 
 export namespace ListModelPipelineRunResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject>,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.AsObject>,
   }
 }
 
