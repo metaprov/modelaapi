@@ -29,12 +29,6 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .status.phase
-      name: Status
-      type: string
-    - jsonPath: .status.statistics.rows
-      name: Rows
-      type: integer
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

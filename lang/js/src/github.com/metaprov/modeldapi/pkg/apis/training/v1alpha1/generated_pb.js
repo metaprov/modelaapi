@@ -9059,7 +9059,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     dataproductversionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datasourcename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     task: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     objective: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     targetcolumn: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
@@ -9071,7 +9071,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     trainers: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     searchmethod: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    workloadclassref: (f = msg.getWorkloadclassref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9125,8 +9127,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       msg.setDatasetname(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setLocation(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -9176,6 +9179,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 18:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setWorkloadclassref(value);
+      break;
+    case 19:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setLabref(value);
       break;
     default:
       reader.skipField();
@@ -9234,11 +9247,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = message.getLocation();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       5,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 6));
@@ -9324,6 +9338,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     writer.writeString(
       17,
       f
+    );
+  }
+  f = message.getWorkloadclassref();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getLabref();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -9474,29 +9504,30 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
 
 
 /**
- * optional string path = 5;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 5;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setPath = function(value) {
-  return jspb.Message.setField(this, 5, value);
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setLocation = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearPath = function() {
-  return jspb.Message.setField(this, 5, undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
 };
 
 
@@ -9504,7 +9535,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasPath = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -9939,6 +9970,80 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference workloadClassRef = 18;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getWorkloadclassref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 18));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setWorkloadclassref = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearWorkloadclassref = function() {
+  return this.setWorkloadclassref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasWorkloadclassref = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference labRef = 19;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getLabref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 19));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setLabref = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearLabref = function() {
+  return this.setLabref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasLabref = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

@@ -503,10 +503,9 @@ message ModelAutobuilderSpec {
   // +kubebuilder:validation:MaxLength=253
   optional string datasetName = 4;
 
-  // Path is the location of the data in the cloud
-  // +kubebuilder:validation:MaxLength=256
+  // Location is the location of the data in the cloud
   // +kubebuilder:validation:Optional
-  optional string path = 5;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 5;
 
   // Task is the machine learning task (regression/classification)
   // required
@@ -574,6 +573,16 @@ message ModelAutobuilderSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 17;
+
+  // WorkloadClassRef is a reference to the workload class object from the catalog.
+  // Default : scikit learn trainer.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference workloadClassRef = 18;
+
+  // LabRef is a reference to the lab where the trainers for this study run.
+  // If no value is provided, the lab is taken from the
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference labRef = 19;
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

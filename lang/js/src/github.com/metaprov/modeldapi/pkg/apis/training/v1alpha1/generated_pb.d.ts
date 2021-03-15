@@ -820,8 +820,10 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): ModelAutobuilderSpec;
 
-  getPath(): string;
-  setPath(value: string): ModelAutobuilderSpec;
+  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelAutobuilderSpec;
+  hasLocation(): boolean;
+  clearLocation(): ModelAutobuilderSpec;
 
   getTask(): string;
   setTask(value: string): ModelAutobuilderSpec;
@@ -861,6 +863,16 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelAutobuilderSpec;
 
+  getWorkloadclassref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setWorkloadclassref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
+  hasWorkloadclassref(): boolean;
+  clearWorkloadclassref(): ModelAutobuilderSpec;
+
+  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
+  hasLabref(): boolean;
+  clearLabref(): ModelAutobuilderSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelAutobuilderSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelAutobuilderSpec): ModelAutobuilderSpec.AsObject;
@@ -875,7 +887,7 @@ export namespace ModelAutobuilderSpec {
     dataproductversionname: string,
     datasourcename: string,
     datasetname: string,
-    path: string,
+    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     task: string,
     objective: string,
     targetcolumn: string,
@@ -888,6 +900,8 @@ export namespace ModelAutobuilderSpec {
     searchmethod: string,
     aborted: boolean,
     owner: string,
+    workloadclassref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	datav1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	inferencev1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
 	v1 "k8s.io/api/core/v1"
@@ -100,10 +101,9 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:MaxLength=253
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// Path is the location of the data in the cloud
-	// +kubebuilder:validation:MaxLength=256
+	// Location is the location of the data in the cloud
 	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,5,opt,name=path"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// Task is the machine learning task (regression/classification)
 	// required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
@@ -159,6 +159,14 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
+	// WorkloadClassRef is a reference to the workload class object from the catalog.
+	// Default : scikit learn trainer.
+	// +kubebuilder:validation:Optional
+	WorkloadClassRef *v1.ObjectReference `json:"workloadClassRef,omitempty" protobuf:"bytes,18,opt,name=workloadClassRef"`
+	// LabRef is a reference to the lab where the trainers for this study run.
+	// If no value is provided, the lab is taken from the
+	// +kubebuilder:validation:Optional
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,19,opt,name=labRef"`
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

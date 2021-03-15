@@ -14,8 +14,8 @@ import (
 	catalogv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	datav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	inferencev1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
-	corev1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -828,9 +828,9 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Path != nil {
-		in, out := &in.Path, &out.Path
-		*out = new(string)
+	if in.Location != nil {
+		in, out := &in.Location, &out.Location
+		*out = new(datav1alpha1.DataLocation)
 		**out = **in
 	}
 	if in.Task != nil {
@@ -891,6 +891,16 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
+		**out = **in
+	}
+	if in.WorkloadClassRef != nil {
+		in, out := &in.WorkloadClassRef, &out.WorkloadClassRef
+		*out = new(v1.ObjectReference)
+		**out = **in
+	}
+	if in.LabRef != nil {
+		in, out := &in.LabRef, &out.LabRef
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 }
@@ -1888,7 +1898,7 @@ func (in *NotebookSpec) DeepCopyInto(out *NotebookSpec) {
 	}
 	if in.SchemaRef != nil {
 		in, out := &in.SchemaRef, &out.SchemaRef
-		*out = new(corev1.ObjectReference)
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 	if in.ImageName != nil {
@@ -2357,7 +2367,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.LabRef != nil {
 		in, out := &in.LabRef, &out.LabRef
-		*out = new(corev1.ObjectReference)
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 	if in.DatasetName != nil {
@@ -2392,7 +2402,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.WorkloadClassRef != nil {
 		in, out := &in.WorkloadClassRef, &out.WorkloadClassRef
-		*out = new(corev1.ObjectReference)
+		*out = new(v1.ObjectReference)
 		**out = **in
 	}
 	if in.Split != nil {
@@ -2761,7 +2771,7 @@ func (in *TriggerSchedule) DeepCopyInto(out *TriggerSchedule) {
 	}
 	if in.EndTime != nil {
 		in, out := &in.EndTime, &out.EndTime
-		*out = new(v1.Timestamp)
+		*out = new(metav1.Timestamp)
 		**out = **in
 	}
 	if in.EndDay != nil {

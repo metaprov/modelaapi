@@ -390,7 +390,7 @@ func (b *ModelAutobuilder) SchemaName() string {
 
 // Answer the last component in the path
 func (b *ModelAutobuilder) FileName() string {
-	return *b.Spec.Path
+	return b.Spec.Location.Path
 }
 
 func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
@@ -416,11 +416,10 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			Reported:       util.BoolPtr(true),
 			Validated:      util.BoolPtr(true),
 			Labeled:        util.BoolPtr(true),
-			Origin: &data.DataLocation{
-				Path: *b.Spec.Path,
-			},
+			Origin:         b.Spec.Location,
 			Location: &data.DataLocation{
-				Path: rawPath,
+				Path:       rawPath,
+				BucketName: b.Spec.Location.BucketName,
 			},
 		},
 	}

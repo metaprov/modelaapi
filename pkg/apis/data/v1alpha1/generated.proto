@@ -1522,8 +1522,6 @@ message MaterializationSpec {
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modeld,all}
