@@ -473,6 +473,9 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 				Retry:       nil,
 				EvalMetrics: nil,
 			},
+			Location: &data.DataLocation{
+				BucketName: b.Spec.Location.BucketName,
+			},
 			Aborted:  util.BoolPtr(false),
 			Reported: util.BoolPtr(true),
 			Paused:   util.BoolPtr(false),
@@ -480,6 +483,7 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 		},
 	}
 	res.Default()
+	res.Spec.Location.Path = res.RootUri()
 	return res
 }
 
