@@ -139,12 +139,31 @@ func (study *Study) Default() {
 		study.Spec.Search.SHOptions.EliminationRate = util.Int32Ptr(3)
 	}
 
-	if study.Spec.Training.CheckpointInterval == nil {
-		study.Spec.Training.CheckpointInterval = util.Int32Ptr(0)
+	if study.Spec.Training == nil {
+		cvtype := catalog.CvTypeStratified
+		study.Spec.Training = &TrainingSpec{
+			Priority:           util.Int32Ptr(5),
+			CvType:             &cvtype,
+			CV:                 util.BoolPtr(true),
+			Folds:              util.Int32Ptr(5),
+			Retry:              util.Int32Ptr(5),
+			EarlyStop:          util.BoolPtr(false),
+			CheckpointInterval: util.Int32Ptr(10),
+			Seed:               util.Float64Ptr(42),
+		}
 	}
 
-	if study.Spec.Training == nil {
-		study.Spec.Training = &TrainingSpec{}
+	if study.Spec.Split == nil {
+		splitPolicy := Stratified
+		study.Spec.Split = &DataSplit{
+			Auto:        util.BoolPtr(true),
+			Train:       util.Int32Ptr(80),
+			Validation:  util.Int32Ptr(0),
+			Test:        util.Int32Ptr(20),
+			SplitPolicy: &splitPolicy,
+			Seed:        util.Float64Ptr(42),
+		}
+
 	}
 
 	// if we search preprocessor, but we do not have an estimator
