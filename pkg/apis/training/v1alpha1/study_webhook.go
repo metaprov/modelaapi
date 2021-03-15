@@ -123,6 +123,14 @@ func (study *Study) Default() {
 		}
 	}
 
+	if study.Spec.Search == nil {
+		study.Spec.Search = &ModelSearchSpec{}
+	}
+
+	if study.Spec.Search.SHOptions == nil {
+		study.Spec.Search.SHOptions = &SuccessiveHalvingOptions{}
+	}
+
 	if study.Spec.Search.SHOptions.MaxBudget == nil {
 		study.Spec.Search.SHOptions.MaxBudget = util.Int32Ptr(81)
 	}
