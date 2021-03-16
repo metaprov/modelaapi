@@ -61,12 +61,12 @@ generate-deepcopy:
 
 .PHONY: generate-crd
 generate-crd:
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 
 
 .PHONY: controller-gen

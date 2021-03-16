@@ -1099,7 +1099,6 @@ spec:
                 type: object
               versionName:
                 description: VersionName is the data product version of the study
-                  required
                 maxLength: 63
                 minLength: 1
                 type: string

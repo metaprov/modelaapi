@@ -238,7 +238,6 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=5
-	// +kubebuilder:validation:Optional
 	Test *int32 `json:"test,omitempty" protobuf:"varint,8,opt,name=test"`
 	// Indicate the total number of full models that would be retain in etcd.
 	// All other models are garbage collected (archived).
@@ -246,10 +245,8 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
-	// +kubebuilder:validation:Optional
 	RetainTop *int32 `json:"retainTop,omitempty" protobuf:"varint,9,opt,name=retainTop"`
 	// RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H).
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=2400
@@ -261,11 +258,9 @@ type ModelSearchSpec struct {
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
 	// VotingEnsample - If true, create a voting ensemble of the top 3 models.
 	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optionals
 	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"bytes,13,opt,name=votingEnsemble"`
 	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
 	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
 	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"bytes,14,opt,name=stackingEnsemble"`
 }
 
@@ -274,12 +269,10 @@ type StudySpec struct {
 	// VersionName is the data product version of the study
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	// required
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// Description is user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
-	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
@@ -315,27 +308,21 @@ type StudySpec struct {
 	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,14,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,15,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
 	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,16,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
 	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
 	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"bytes,17,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"bytes,18,opt,name=modelImagePushed"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.

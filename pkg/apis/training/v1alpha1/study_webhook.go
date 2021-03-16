@@ -174,9 +174,9 @@ func (study *Study) Default() {
 		study.Spec.Reported = util.BoolPtr(true)
 	}
 
-	if study.Spec.Paused == nil {
-		study.Spec.Paused = util.BoolPtr(false)
-	}
+	//if study.Spec.Paused == nil {
+	//	study.Spec.Paused = util.BoolPtr(false)
+	//}
 
 	if study.Spec.Profiled == nil {
 		study.Spec.Profiled = util.BoolPtr(true)
