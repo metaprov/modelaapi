@@ -897,8 +897,10 @@ message ModelPipelineSpec {
   optional string folder = 10;
 
   // Trigger is definition of the pipeline trigger
+  // +kubebuilder:validation:Optional
   optional PipelineTrigger trigger = 11;
 
+  // The owner account name
   // +kubebuilder:validation:Optional
   optional string owner = 12;
 }

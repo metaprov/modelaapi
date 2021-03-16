@@ -102,6 +102,7 @@ spec:
                 description: Min score to move from stage to stage.
                 type: number
               owner:
+                description: The owner account name
                 type: string
               releaseStage:
                 description: ReleaseStage stage define how to place the model into
@@ -153,12 +154,6 @@ spec:
                       repository:
                         description: Repository is the name of the github repository
                         type: string
-                    required:
-                    - blobNameRegex
-                    - branch
-                    - events
-                    - gitConnectionName
-                    - repository
                     type: object
                   schedule:
                     description: Spec for a schedule in case that the trigger

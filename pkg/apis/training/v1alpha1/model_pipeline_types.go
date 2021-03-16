@@ -8,38 +8,38 @@ import (
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
 type GithubEvents struct {
 	// The github connections used to loginto git
-	GitConnectionsName string `json:"gitConnectionName" protobuf:"bytes,1,opt,name=gitConnectionName"`
+	GitConnectionsName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
 	// Repository is the name of the github repository
-	Repository string `json:"repository" protobuf:"bytes,2,opt,name=repository"`
+	Repository *string `json:"repository,omitempty" protobuf:"bytes,2,opt,name=repository"`
 	// Branch is the name of the github branch.
 	// By default the trigger listen to all branch
-	Branch string `json:"branch" protobuf:"bytes,3,opt,name=branch"`
+	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
 	// Blobname regex is a regular expression on the blob name that changed
-	BlobNameRegex string `json:"blobNameRegex" protobuf:"bytes,4,opt,name=blobNameRegex"`
+	BlobNameRegex *string `json:"blobNameRegex,omitempty" protobuf:"bytes,4,opt,name=blobNameRegex"`
 	// Events is the name of the github events.
-	Events []string `json:"events" protobuf:"bytes,5,rep,name=events"`
+	Events []string `json:"events,omitempty" protobuf:"bytes,5,rep,name=events"`
 }
 
 //TriggerSchedule specify a cron schedule
 type TriggerSchedule struct {
 	// The start time of the schedule
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,1,opt,name=startTime"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// StartDay is the start day of the schedule
 	// +kubebuilder:validation:Optional
-	StartDay *metav1.Time `json:"startDay" protobuf:"bytes,2,opt,name=startDay"`
+	StartDay *metav1.Time `json:"startDay,omitempty" protobuf:"bytes,2,opt,name=startDay"`
 	// EndTime is the end time of the schedule
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Timestamp `json:"endTime" protobuf:"bytes,3,opt,name=endTime"`
+	EndTime *metav1.Timestamp `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
 	// EndDay is the end day of the schedule
 	// +kubebuilder:validation:Optional
-	EndDay *metav1.Time `json:"endDay" protobuf:"bytes,4,opt,name=endDay"`
+	EndDay *metav1.Time `json:"endDay,omitempty" protobuf:"bytes,4,opt,name=endDay"`
 	// Cron string of the schedule.
 	// +kubebuilder:validation:Optional
-	Cron string `json:"cron" protobuf:"bytes,5,opt,name=cron"`
+	Cron *string `json:"cron,omitempty" protobuf:"bytes,5,opt,name=cron"`
 	// +kubebuilder:validation:Optional
 	// The type of schedule events.
-	Type TriggerScheduleEventType `json:"type" protobuf:"bytes,6,opt,name=type"`
+	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,6,opt,name=type"`
 }
 
 type ModelPipelineConditionType string
@@ -122,9 +122,9 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	Folder *string `json:"folder,omitempty" protobuf:"bytes,10,opt,name=folder"`
 	// Trigger is definition of the pipeline trigger
+	// +kubebuilder:validation:Optional
 	Trigger *PipelineTrigger `json:"trigger,omitempty" protobuf:"bytes,11,opt,name=trigger"`
 	// The owner account name
-
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`
 }
