@@ -1,7 +1,7 @@
 {
   "name": "modeldapi",
   "description": "Automatic machine learning for kubernetes",
-  "version": "0.3.61",
+  "version": "0.3.63",
   "dependencies": {
     "google-protobuf": "^3.14.0",
     "grpc-web": "~1.2.1",
