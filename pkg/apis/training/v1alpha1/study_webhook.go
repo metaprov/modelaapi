@@ -166,6 +166,26 @@ func (study *Study) Default() {
 
 	}
 
+	if study.Spec.Aborted == nil {
+		study.Spec.Aborted = util.BoolPtr(false)
+	}
+
+	if study.Spec.Reported == nil {
+		study.Spec.Reported = util.BoolPtr(false)
+	}
+
+	if study.Spec.Paused == nil {
+		study.Spec.Paused = util.BoolPtr(false)
+	}
+
+	if study.Spec.Profiled == nil {
+		study.Spec.Profiled = util.BoolPtr(true)
+	}
+
+	if study.Spec.ModelPublished == nil {
+		study.Spec.ModelPublished = util.BoolPtr(false)
+	}
+
 	// if we search preprocessor, but we do not have an estimator
 	study.Status.Conditions = make([]StudyCondition, 0)
 
