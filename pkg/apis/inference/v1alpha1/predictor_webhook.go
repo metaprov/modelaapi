@@ -13,8 +13,8 @@ var _ webhook.Defaulter = &Predictor{}
 func (predictor *Predictor) Default() {
 	// add the finalizer if we are not about to get deleted.
 
-	if predictor.Spec.OwnerName == nil {
-		predictor.Spec.OwnerName = util.StrPtr("")
+	if predictor.Spec.Owner == nil {
+		predictor.Spec.Owner = util.StrPtr("")
 	}
 
 	if predictor.Spec.Port == nil {
