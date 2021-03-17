@@ -76,6 +76,10 @@ type FeaturePipelineRunSpec struct {
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
 	FeaturePipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,3,opt,name=featurePipelineName"`
+	// A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
+	// +kubebuilder:default:="default-data-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 // FeatureStatus defines the observed state of Feature

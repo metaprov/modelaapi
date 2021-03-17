@@ -2714,6 +2714,9 @@ export class StudySpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): StudySpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -2744,6 +2747,7 @@ export namespace StudySpec {
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     hierarchy?: Hierarchy.AsObject,
     owner: string,
+    workloadclassname: string,
   }
 }
 

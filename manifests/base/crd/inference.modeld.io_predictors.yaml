@@ -74,6 +74,22 @@ spec:
                 maxLength: 512
                 minLength: 1
                 type: string
+              autoscale:
+                default: false
+                description: Does the current model pods needs autoscaling. If yes
+                  we will use HPA.
+                type: boolean
+              cache:
+                description: Cache is the specification of prediction cache
+                properties:
+                  active:
+                    default: false
+                    description: Active indicate if the cache is active
+                    type: boolean
+                  serviceName:
+                    description: the name of the cache service
+                    type: string
+                type: object
               description:
                 description: User provided description
                 maxLength: 256
@@ -159,15 +175,23 @@ spec:
                       type: object
                   type: object
                 type: array
+              maxReplicas:
+                default: 1
+                description: Max num of replicates. Used during auto scaling
+                format: int32
+                maximum: 10
+                type: integer
+              minReplicas:
+                default: 1
+                description: Min num of replicates
+                format: int32
+                minimum: 1
+                type: integer
               models:
                 description: Production model deployment
                 items:
                   description: The desired state of the model.
                   properties:
-                    autoscale:
-                      description: Does the current model pods needs autoscaling.
-                        If yes we will use HPA. Default is false
-                      type: boolean
                     canary:
                       description: 'Denotes if this deployment is canary. This must
                         be false for the prod deployment. Default: false'
@@ -184,13 +208,6 @@ spec:
                     modelName:
                       description: The model serving the prediction
                       type: string
-                    replicas:
-                      description: 'number of replicas of the current model Default:
-                        1'
-                      format: int32
-                      maximum: 10
-                      minimum: 0
-                      type: integer
                     shadow:
                       description: 'Denotes if the model is a shadow. This must be
                         false for the prod deployment. Default: false'
@@ -269,10 +286,8 @@ spec:
                   type: object
                 type: array
               owner:
+                default: no-one
                 description: The owner account name
-                type: string
-              ownerName:
-                description: The account name of the owner of this predictor
                 type: string
               path:
                 description: 'This is the path relative to the ingress path Default:
@@ -346,7 +361,7 @@ spec:
                     type: integer
                 type: object
               servingsiteRef:
-                description: The serving site that owns the
+                description: The serving site that hosts this predictor and the models
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -379,6 +394,17 @@ spec:
                     type: string
                   uid:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              store:
+                description: Store is the specification of the online score.
+                properties:
+                  active:
+                    default: false
+                    description: Active indicate if the cache is active
+                    type: boolean
+                  serviceName:
+                    description: the name of the cache service
                     type: string
                 type: object
               template:
@@ -6959,6 +6985,10 @@ spec:
                         type: object
                     type: object
                 type: object
+              workloadClassName:
+                description: A reference to the workload class for this predictor
+                  deployment
+                type: string
             type: object
           status:
             description: PredictorStatus contain the current state of the Predictor

@@ -84,6 +84,10 @@ type FeaturePipelineSpec struct {
 	// Reference to the entity name
 	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,7,opt,name=entityName"`
+	// A reference to the workload class that is used for running the workload class
+	// +kubebuilder:default:="default-data-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 }
 
 // FeatureStatus defines the observed state of Feature

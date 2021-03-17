@@ -1735,6 +1735,11 @@ message StudySpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string owner = 22;
+
+  // A reference to the workload class that is used for training
+  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 23;
 }
 
 // StudyStatus defines the observed state of the Study

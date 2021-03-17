@@ -928,6 +928,17 @@ export class WorkloadClassSpec extends jspb.Message {
   hasFrameworks(): boolean;
   clearFrameworks(): WorkloadClassSpec;
 
+  getVcpu(): number;
+  setVcpu(value: number): WorkloadClassSpec;
+
+  getMem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
+  setMem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): WorkloadClassSpec;
+  hasMem(): boolean;
+  clearMem(): WorkloadClassSpec;
+
+  getGpu(): number;
+  setGpu(value: number): WorkloadClassSpec;
+
   getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
   setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): WorkloadClassSpec;
   hasPodtemplate(): boolean;
@@ -946,6 +957,9 @@ export namespace WorkloadClassSpec {
     image: string,
     tasksList: Array<string>,
     frameworks?: MLFrameworkList.AsObject,
+    vcpu: number,
+    mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
+    gpu: number,
     podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
   }
 }

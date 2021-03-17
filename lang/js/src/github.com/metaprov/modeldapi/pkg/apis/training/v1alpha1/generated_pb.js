@@ -26038,7 +26038,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     modelimagepushed: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     hierarchy: (f = msg.getHierarchy()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Hierarchy.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -26162,6 +26163,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 23:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -26337,6 +26342,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeString(
       22,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 23));
+  if (f != null) {
+    writer.writeString(
+      23,
       f
     );
   }
@@ -27068,6 +27080,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 23;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 23, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 23, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 

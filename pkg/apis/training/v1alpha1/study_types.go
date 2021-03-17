@@ -335,6 +335,10 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
+	// A reference to the workload class that is used for training
+	// +kubebuilder:default:="default-data-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,23,opt,name=workloadClassName"`
 }
 
 // StudyStatus defines the observed state of the Study

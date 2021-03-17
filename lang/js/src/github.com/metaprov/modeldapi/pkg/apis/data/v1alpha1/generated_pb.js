@@ -13354,7 +13354,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     validate: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     labeled: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     origin: (f = msg.getOrigin()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f)
+    location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
+    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13428,6 +13429,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -13521,6 +13526,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       13,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeString(
+      14,
+      f
     );
   }
 };
@@ -13849,6 +13861,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 14;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -18787,7 +18835,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    featurepipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    featurepipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18836,6 +18885,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
       var value = /** @type {string} */ (reader.readString());
       msg.setFeaturepipelinename(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -18883,6 +18936,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -18994,6 +19054,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.hasFeaturepipelinename = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -19297,7 +19393,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.t
     aggregation: (f = msg.getAggregation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.AggregationSpec.toObject(includeInstance, f),
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f),
     family: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    entityname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    entityname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -19363,6 +19460,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.d
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setEntityname(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -19441,6 +19542,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
   if (f != null) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -19698,6 +19806,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasEntityname = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -28627,7 +28771,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.toObjec
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     recipename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     labname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    output: (f = msg.getOutput()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f)
+    output: (f = msg.getOutput()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
+    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -28680,6 +28825,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.deseria
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
       msg.setOutput(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -28737,6 +28886,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.seriali
       4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -28884,6 +29040,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.hasOutput = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

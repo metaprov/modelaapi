@@ -92,6 +92,10 @@ type PredictionPipelineSpec struct {
 	// The owner account name
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	// A reference to the workload class that is used for training
+	// +kubebuilder:default:="default-prediction-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 }
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate

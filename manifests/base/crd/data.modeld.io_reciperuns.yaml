@@ -73,6 +73,10 @@ spec:
                 type: string
               versionName:
                 type: string
+              workloadClassName:
+                description: WorkloadClassName is the name of the workload used to
+                  execute this recipe run, The value is set from the Recipe definition.
+                type: string
             type: object
           status:
             description: RecipeStatus defines the observed state of Recipe

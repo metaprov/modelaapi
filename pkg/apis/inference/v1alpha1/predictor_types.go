@@ -113,16 +113,6 @@ type DriftCheckSpec struct {
 type ModelDeploymentSpec struct {
 	// The model serving the prediction
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
-	// number of replicas of the current model
-	// Default: 1
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Maximum=10
-	// +kubebuilder:validation:Minimum=0
-	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,2,opt,name=replicas"`
-	// Does the current model pods needs autoscaling. If yes we will use HPA.
-	// Default is false
-	// +kubebuilder:validation:Optional
-	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,3,opt,name=autoscale"`
 	// How much traffic to the current model
 	// Default: 100.
 	// +kubebuilder:validation:Optional
@@ -185,17 +175,13 @@ type ProgressiveSpec struct {
 
 // PredictorSpec define the desired state of the predictor
 type PredictorSpec struct {
-	// The account name of the owner of this predictor
-	// +kubebuilder:validation:Optional
-	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The product that this predictor serve.
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
-	// The serving site that owns the
+	// The serving site that hosts this predictor and the models
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
 	// Service port specify the predictor port.
@@ -236,9 +222,54 @@ type PredictorSpec struct {
 	// set of output channels, the predictor will
 	// +kubebuilder:validation:Optional
 	OutputChannels []PredictionChannel `json:"outputChannels,omitempty" protobuf:"bytes,16,opt,name=outputChannels"`
-	// The owner account name
+	// Min num of replicates
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default:=1
+	MinReplicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,17,opt,name=minReplicas"`
+	// Does the current model pods needs autoscaling. If yes we will use HPA.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,18,opt,name=autoscale"`
+	// Max num of replicates. Used during auto scaling
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Maximum=10
+	// +kubebuilder:default:=1
+	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,19,opt,name=maxReplicas"`
+	// The owner account name
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,20,opt,name=owner"`
+	// A reference to the workload class for this predictor deployment
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,21,opt,name=workloadClassName"`
+	// Cache is the specification of prediction cache
+	// +kubebuilder:validation:Optional
+	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,22,opt,name=cache"`
+	// Store is the specification of the online score.
+	// +kubebuilder:validation:Optional
+	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,23,opt,name=store"`
+}
+
+// A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
+// A cache is a key value store.
+type PredictionCacheSpec struct {
+	// Active indicate if the cache is active
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Active *bool `json:"active,omitempty" protobuf:"bytes,1,opt,name=active"`
+	// the name of the cache service
+	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
+}
+
+// A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
+type OnlineFeaturestoreSpec struct {
+	// Active indicate if the cache is active
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Active *bool `json:"active,omitempty" protobuf:"bytes,1,opt,name=active"`
+	// the name of the cache service
+	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
 }
 
 // PredictorStatus contain the current state of the Predictor resource

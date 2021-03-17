@@ -124,6 +124,11 @@ spec:
                   required.
                 maxLength: 63
                 type: string
+              workloadClassName:
+                default: default-data-workload-class
+                description: A reference to the workload class this is used to analyze
+                  the workload
+                type: string
             type: object
           status:
             description: DatasetStatus defines the observed state of Dataset

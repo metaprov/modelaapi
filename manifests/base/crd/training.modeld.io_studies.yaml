@@ -1102,6 +1102,10 @@ spec:
                 maxLength: 63
                 minLength: 1
                 type: string
+              workloadClassName:
+                default: default-data-workload-class
+                description: A reference to the workload class that is used for training
+                type: string
             required:
             - datasetName
             - task

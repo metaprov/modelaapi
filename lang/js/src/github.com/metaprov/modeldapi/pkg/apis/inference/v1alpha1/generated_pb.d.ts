@@ -300,12 +300,6 @@ export class ModelDeploymentSpec extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelDeploymentSpec;
 
-  getReplicas(): number;
-  setReplicas(value: number): ModelDeploymentSpec;
-
-  getAutoscale(): boolean;
-  setAutoscale(value: boolean): ModelDeploymentSpec;
-
   getWeight(): number;
   setWeight(value: number): ModelDeploymentSpec;
 
@@ -334,8 +328,6 @@ export class ModelDeploymentSpec extends jspb.Message {
 export namespace ModelDeploymentSpec {
   export type AsObject = {
     modelname: string,
-    replicas: number,
-    autoscale: boolean,
     weight: number,
     canary: boolean,
     shadow: boolean,
@@ -389,6 +381,50 @@ export namespace ModelDeploymentStatus {
     current99: number,
     lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     dailypredictionavg: number,
+  }
+}
+
+export class OnlineFeaturestoreSpec extends jspb.Message {
+  getActive(): boolean;
+  setActive(value: boolean): OnlineFeaturestoreSpec;
+
+  getServicename(): string;
+  setServicename(value: string): OnlineFeaturestoreSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OnlineFeaturestoreSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: OnlineFeaturestoreSpec): OnlineFeaturestoreSpec.AsObject;
+  static serializeBinaryToWriter(message: OnlineFeaturestoreSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OnlineFeaturestoreSpec;
+  static deserializeBinaryFromReader(message: OnlineFeaturestoreSpec, reader: jspb.BinaryReader): OnlineFeaturestoreSpec;
+}
+
+export namespace OnlineFeaturestoreSpec {
+  export type AsObject = {
+    active: boolean,
+    servicename: string,
+  }
+}
+
+export class PredictionCacheSpec extends jspb.Message {
+  getActive(): boolean;
+  setActive(value: boolean): PredictionCacheSpec;
+
+  getServicename(): string;
+  setServicename(value: string): PredictionCacheSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionCacheSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionCacheSpec): PredictionCacheSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictionCacheSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionCacheSpec;
+  static deserializeBinaryFromReader(message: PredictionCacheSpec, reader: jspb.BinaryReader): PredictionCacheSpec;
+}
+
+export namespace PredictionCacheSpec {
+  export type AsObject = {
+    active: boolean,
+    servicename: string,
   }
 }
 
@@ -730,6 +766,9 @@ export class PredictionPipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): PredictionPipelineSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): PredictionPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionPipelineSpec): PredictionPipelineSpec.AsObject;
@@ -747,6 +786,7 @@ export namespace PredictionPipelineSpec {
     input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
+    workloadclassname: string,
   }
 }
 
@@ -905,9 +945,6 @@ export namespace PredictorList {
 }
 
 export class PredictorSpec extends jspb.Message {
-  getOwnername(): string;
-  setOwnername(value: string): PredictorSpec;
-
   getDescription(): string;
   setDescription(value: string): PredictorSpec;
 
@@ -963,8 +1000,30 @@ export class PredictorSpec extends jspb.Message {
   clearOutputchannelsList(): PredictorSpec;
   addOutputchannels(value?: PredictionChannel, index?: number): PredictionChannel;
 
+  getMinreplicas(): number;
+  setMinreplicas(value: number): PredictorSpec;
+
+  getAutoscale(): boolean;
+  setAutoscale(value: boolean): PredictorSpec;
+
+  getMaxreplicas(): number;
+  setMaxreplicas(value: number): PredictorSpec;
+
   getOwner(): string;
   setOwner(value: string): PredictorSpec;
+
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): PredictorSpec;
+
+  getCache(): PredictionCacheSpec | undefined;
+  setCache(value?: PredictionCacheSpec): PredictorSpec;
+  hasCache(): boolean;
+  clearCache(): PredictorSpec;
+
+  getStore(): OnlineFeaturestoreSpec | undefined;
+  setStore(value?: OnlineFeaturestoreSpec): PredictorSpec;
+  hasStore(): boolean;
+  clearStore(): PredictorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
@@ -976,7 +1035,6 @@ export class PredictorSpec extends jspb.Message {
 
 export namespace PredictorSpec {
   export type AsObject = {
-    ownername: string,
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -990,7 +1048,13 @@ export namespace PredictorSpec {
     artifactsfolder: string,
     inputchannelsList: Array<PredictionChannel.AsObject>,
     outputchannelsList: Array<PredictionChannel.AsObject>,
+    minreplicas: number,
+    autoscale: boolean,
+    maxreplicas: number,
     owner: string,
+    workloadclassname: string,
+    cache?: PredictionCacheSpec.AsObject,
+    store?: OnlineFeaturestoreSpec.AsObject,
   }
 }
 

@@ -164,18 +164,6 @@ message ModelDeploymentSpec {
   // The model serving the prediction
   optional string modelName = 1;
 
-  // number of replicas of the current model
-  // Default: 1
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Minimum=0
-  optional int32 replicas = 2;
-
-  // Does the current model pods needs autoscaling. If yes we will use HPA.
-  // Default is false
-  // +kubebuilder:validation:Optional
-  optional bool autoscale = 3;
-
   // How much traffic to the current model
   // Default: 100.
   // +kubebuilder:validation:Optional
@@ -226,6 +214,29 @@ message ModelDeploymentStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 7;
 
   optional int32 dailyPredictionAvg = 8;
+}
+
+// A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
+message OnlineFeaturestoreSpec {
+  // Active indicate if the cache is active
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool active = 1;
+
+  // the name of the cache service
+  optional string serviceName = 2;
+}
+
+// A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
+// A cache is a key value store.
+message PredictionCacheSpec {
+  // Active indicate if the cache is active
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool active = 1;
+
+  // the name of the cache service
+  optional string serviceName = 2;
 }
 
 // The specific of a prediction channel
@@ -419,6 +430,11 @@ message PredictionPipelineSpec {
   // The owner account name
   // +kubebuilder:validation:Optional
   optional string owner = 7;
+
+  // A reference to the workload class that is used for training
+  // +kubebuilder:default:="default-prediction-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 8;
 }
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
@@ -489,20 +505,15 @@ message PredictorList {
 
 // PredictorSpec define the desired state of the predictor
 message PredictorSpec {
-  // The account name of the owner of this predictor
-  // +kubebuilder:validation:Optional
-  optional string ownerName = 1;
-
   // User provided description
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
   optional string description = 2;
 
   // The product that this predictor serve.
   optional k8s.io.api.core.v1.ObjectReference productRef = 3;
 
-  // The serving site that owns the
+  // The serving site that hosts this predictor and the models
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 4;
 
@@ -554,9 +565,39 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   repeated PredictionChannel outputChannels = 16;
 
-  // The owner account name
+  // Min num of replicates
   // +kubebuilder:validation:Optional
-  optional string owner = 17;
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:default:=1
+  optional int32 minReplicas = 17;
+
+  // Does the current model pods needs autoscaling. If yes we will use HPA.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool autoscale = 18;
+
+  // Max num of replicates. Used during auto scaling
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Maximum=10
+  // +kubebuilder:default:=1
+  optional int32 maxReplicas = 19;
+
+  // The owner account name
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 20;
+
+  // A reference to the workload class for this predictor deployment
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 21;
+
+  // Cache is the specification of prediction cache
+  // +kubebuilder:validation:Optional
+  optional PredictionCacheSpec cache = 22;
+
+  // Store is the specification of the online score.
+  // +kubebuilder:validation:Optional
+  optional OnlineFeaturestoreSpec store = 23;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

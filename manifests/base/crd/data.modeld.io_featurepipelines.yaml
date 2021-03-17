@@ -115,6 +115,11 @@ spec:
                 description: Version name is the the product version for the feature.
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              workloadClassName:
+                default: default-data-workload-class
+                description: A reference to the workload class that is used for running
+                  the workload class
+                type: string
             type: object
           status:
             description: FeatureStatus defines the observed state of Feature

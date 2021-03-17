@@ -120,6 +120,10 @@ type DatasetSpec struct {
 	// Folder of the actual data resides.
 	// +required.
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
+	// A reference to the workload class this is used to analyze the workload
+	// +kubebuilder:default:="default-data-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,14,opt,name=workloadClassName"`
 }
 
 // DatasetStatus defines the observed state of Dataset

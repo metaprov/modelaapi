@@ -416,6 +416,9 @@ message VizUri {
 // WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
+// +kubebuilder:printcolumn:name="vCpu",type="string",JSONPath=".spec.vcpu"
+// +kubebuilder:printcolumn:name="Memory",type="string",JSONPath=".spec.mem"
+// +kubebuilder:printcolumn:name="Gpu",type="interger",JSONPath=".spec.gpu"
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modeld,all}
 message WorkloadClass {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -445,8 +448,20 @@ message WorkloadClassSpec {
   // +kubebuilder:validation:Optional
   optional MLFrameworkList frameworks = 3;
 
+  // Vcpu is the number of cpu
+  // +kubebuilder:validation:Optional
+  optional float vcpu = 4;
+
+  // Memory is the amount of memory offered by thie template
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 5;
+
+  // Number of gpus of this workload
+  // +kubebuilder:validation:Optional
+  optional int32 gpu = 6;
+
   // Template is the Pod specification for new trainers from this workload class.
   // +kubebuilder:validation:Required
-  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 4;
+  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 7;
 }
 

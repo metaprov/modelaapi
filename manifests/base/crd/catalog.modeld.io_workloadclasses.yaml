@@ -24,6 +24,15 @@ spec:
     - jsonPath: .spec.image
       name: Image
       type: string
+    - jsonPath: .spec.vcpu
+      name: vCpu
+      type: string
+    - jsonPath: .spec.mem
+      name: Memory
+      type: string
+    - jsonPath: .spec.gpu
+      name: Gpu
+      type: interger
     name: v1alpha1
     schema:
       openAPIV3Schema:
@@ -151,9 +160,20 @@ spec:
                 required:
                 - items
                 type: object
+              gpu:
+                description: Number of gpus of this workload
+                format: int32
+                type: integer
               image:
                 description: Image is the container image of the workload
                 type: string
+              mem:
+                anyOf:
+                - type: integer
+                - type: string
+                description: Memory is the amount of memory offered by thie template
+                pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                x-kubernetes-int-or-string: true
               podTemplate:
                 description: Template is the Pod specification for new trainers from
                   this workload class.
@@ -6418,6 +6438,9 @@ spec:
                   - unknown
                   type: string
                 type: array
+              vcpu:
+                description: Vcpu is the number of cpu
+                type: number
             required:
             - image
             type: object

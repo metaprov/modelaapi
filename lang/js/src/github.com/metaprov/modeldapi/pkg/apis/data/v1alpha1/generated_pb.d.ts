@@ -1243,6 +1243,9 @@ export class DatasetSpec extends jspb.Message {
   hasLocation(): boolean;
   clearLocation(): DatasetSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1262,6 +1265,7 @@ export namespace DatasetSpec {
     labeled: boolean,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
+    workloadclassname: string,
   }
 }
 
@@ -1839,6 +1843,9 @@ export class FeaturePipelineRunSpec extends jspb.Message {
   getFeaturepipelinename(): string;
   setFeaturepipelinename(value: string): FeaturePipelineRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): FeaturePipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineRunSpec): FeaturePipelineRunSpec.AsObject;
@@ -1852,6 +1859,7 @@ export namespace FeaturePipelineRunSpec {
     owner: string,
     versionname: string,
     featurepipelinename: string,
+    workloadclassname: string,
   }
 }
 
@@ -1913,6 +1921,9 @@ export class FeaturePipelineSpec extends jspb.Message {
   getEntityname(): string;
   setEntityname(value: string): FeaturePipelineSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): FeaturePipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineSpec): FeaturePipelineSpec.AsObject;
@@ -1930,6 +1941,7 @@ export namespace FeaturePipelineSpec {
     materialization?: MaterializationSpec.AsObject,
     family: string,
     entityname: string,
+    workloadclassname: string,
   }
 }
 
@@ -2926,6 +2938,9 @@ export class RecipeRunSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): RecipeRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): RecipeRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeRunSpec): RecipeRunSpec.AsObject;
@@ -2940,6 +2955,7 @@ export namespace RecipeRunSpec {
     recipename: string,
     labname: string,
     output?: DataLocation.AsObject,
+    workloadclassname: string,
   }
 }
 

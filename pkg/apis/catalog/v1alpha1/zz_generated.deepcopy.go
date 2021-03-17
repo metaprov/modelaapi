@@ -821,6 +821,21 @@ func (in *WorkloadClassSpec) DeepCopyInto(out *WorkloadClassSpec) {
 		copy(*out, *in)
 	}
 	in.Frameworks.DeepCopyInto(&out.Frameworks)
+	if in.Vcpu != nil {
+		in, out := &in.Vcpu, &out.Vcpu
+		*out = new(float32)
+		**out = **in
+	}
+	if in.Mem != nil {
+		in, out := &in.Mem, &out.Mem
+		x := (*in).DeepCopy()
+		*out = &x
+	}
+	if in.Gpu != nil {
+		in, out := &in.Gpu, &out.Gpu
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Template != nil {
 		in, out := &in.Template, &out.Template
 		*out = new(corev1.PodTemplateSpec)

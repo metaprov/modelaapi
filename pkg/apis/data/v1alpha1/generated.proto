@@ -268,9 +268,6 @@ message DataPipelineList {
   repeated DataPipeline items = 2;
 }
 
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,categories={data,modeld,all}
 // DataPipelineRun represent one execution of the data pipeline
@@ -788,6 +785,11 @@ message DatasetSpec {
   // Folder of the actual data resides.
   // +required.
   optional DataLocation location = 13;
+
+  // A reference to the workload class this is used to analyze the workload
+  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 14;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -1066,6 +1068,11 @@ message FeaturePipelineRunSpec {
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:MinLength=1
   optional string featurePipelineName = 3;
+
+  // A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
+  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 4;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1114,6 +1121,11 @@ message FeaturePipelineSpec {
   // Reference to the entity name
   // +kubebuilder:validation:Optional
   optional string entityName = 7;
+
+  // A reference to the workload class that is used for running the workload class
+  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 8;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1652,6 +1664,11 @@ message RecipeRunSpec {
   // The location of the data output.
   // +required.
   optional DataLocation output = 4;
+
+  // WorkloadClassName is the name of the workload used to execute this recipe run,
+  // The value is set from the Recipe definition.
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 5;
 }
 
 // RecipeStatus defines the observed state of Recipe

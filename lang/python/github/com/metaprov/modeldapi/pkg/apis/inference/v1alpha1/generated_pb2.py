@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z\010v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x12\x39github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1\x1aGgithub.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\">\n\x0e\x42otChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x14\n\x0cnotifierName\x18\x02 \x01(\t\"s\n\x11\x42ucketChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x1e\n\x16\x64\x61tabaseConnectionName\x18\x02 \x01(\t\x12\x10\n\x08inputKey\x18\x03 \x01(\t\x12\x14\n\x0cscanInterval\x18\x04 \x01(\x05\",\n\rChannelStatus\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65rror\x18\x02 \x01(\t\"\xfd\x01\n\x07\x43urtain\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainStatus\"\x99\x01\n\x10\x43urtainCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa2\x01\n\x0b\x43urtainList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x97\x01\n\x0b\x43urtainSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x13\n\x0bversionName\x18\x02 \x01(\t\x12\x17\n\x0fservingsiteName\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12\x0f\n\x07wizards\x18\x05 \x03(\t\x12\x10\n\x08question\x18\x06 \x01(\t\x12\r\n\x05owner\x18\x07 \x01(\t\"p\n\rCurtainStatus\x12_\n\nconditions\x18\x01 \x03(\x0b\x32K.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainCondition\"\xaf\x01\n\x13\x43urtainTemplateSpec\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec\"_\n\x0e\x44riftCheckSpec\x12\x10\n\x08\x63ronExpr\x18\x01 \x01(\t\x12\x10\n\x08treshold\x18\x02 \x01(\x01\x12\x14\n\x0cnotifierName\x18\x03 \x01(\t\x12\x13\n\x0btestDataset\x18\x04 \x01(\t\"\xa4\x01\n\x13ModelDeploymentSpec\x12\x11\n\tmodelName\x18\x01 \x01(\t\x12\x10\n\x08replicas\x18\x02 \x01(\x05\x12\x11\n\tautoscale\x18\x03 \x01(\x08\x12\x0e\n\x06weight\x18\x04 \x01(\x05\x12\x0e\n\x06\x63\x61nary\x18\x05 \x01(\x08\x12\x0e\n\x06shadow\x18\x06 \x01(\x08\x12\x0e\n\x06\x66ilter\x18\x07 \x01(\t\x12\x15\n\rcanaryMetrics\x18\x08 \x03(\t\"\xee\x01\n\x15ModelDeploymentStatus\x12\x11\n\timageName\x18\x01 \x01(\t\x12\x16\n\x0e\x64\x65ploymentName\x18\x02 \x01(\t\x12\x13\n\x0bserviceName\x18\x03 \x01(\t\x12\x0f\n\x07hpaName\x18\x04 \x01(\t\x12\x11\n\tcurrent95\x18\x05 \x01(\x01\x12\x11\n\tcurrent99\x18\x06 \x01(\x01\x12\x42\n\x0elastPrediction\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12\x64\x61ilyPredictionAvg\x18\x08 \x01(\x05\"\x89\x03\n\x11PredictionChannel\x12Z\n\x05table\x18\x01 \x01(\x0b\x32K.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.TableChannelSpec\x12V\n\x03\x62ot\x18\x02 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.BotChannelSpec\x12\\\n\x06\x62ucket\x18\x03 \x01(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.BucketChannelSpec\x12\x62\n\tstreaming\x18\x04 \x01(\x0b\x32O.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.StreamingChannelSpec\"\x9e\x02\n\x12PredictionPipeline\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12_\n\x04spec\x18\x02 \x01(\x0b\x32Q.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec\x12\x63\n\x06status\x18\x03 \x01(\x0b\x32S.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus\"\xa4\x01\n\x1bPredictionPipelineCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xb8\x01\n\x16PredictionPipelineList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\\\n\x05items\x18\x02 \x03(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\xa7\x02\n\x15PredictionPipelineRun\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x62\n\x04spec\x18\x02 \x01(\x0b\x32T.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec\x12\x66\n\x06status\x18\x03 \x01(\x0b\x32V.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunStatus\"\xa7\x01\n\x1ePredictionPipelineRunCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xbe\x01\n\x19PredictionPipelineRunList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12_\n\x05items\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\"\xa1\x02\n\x19PredictionPipelineRunSpec\x12\x15\n\rpredictorName\x18\x01 \x01(\t\x12\x0f\n\x07labeled\x18\x02 \x01(\x08\x12\x11\n\tobjective\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12Q\n\x05input\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12R\n\x06output\x18\x06 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12\r\n\x05owner\x18\x07 \x01(\t\"\xad\x02\n\x1bPredictionPipelineRunStatus\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05phase\x18\x03 \x01(\t\x12=\n\tstartTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x42\n\x0e\x63ompletionTime\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12m\n\nconditions\x18\x06 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunCondition\"\x9e\x02\n\x16PredictionPipelineSpec\x12\x15\n\rpredictorName\x18\x01 \x01(\t\x12\x0f\n\x07labeled\x18\x02 \x01(\x08\x12\x11\n\tobjective\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12Q\n\x05input\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12R\n\x06output\x18\x06 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12\r\n\x05owner\x18\x07 \x01(\t\"\x95\x01\n\x18PredictionPipelineStatus\x12\r\n\x05phase\x18\x03 \x01(\t\x12j\n\nconditions\x18\x06 \x03(\x0b\x32V.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition\"\x83\x02\n\tPredictor\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus\"\x9b\x01\n\x12PredictorCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x96\x01\n\x0fPredictorHealth\x12\x18\n\x10totalPredictions\x18\x01 \x01(\x05\x12\x15\n\rtotalRequests\x18\x02 \x01(\x05\x12\x18\n\x10totalP95Requests\x18\x03 \x01(\x05\x12\x1a\n\x12medianResponseTime\x18\x04 \x01(\x05\x12\x1c\n\x14lastDailyPredictions\x18\x05 \x03(\x05\"\xa6\x01\n\rPredictorList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\xa3\x06\n\rPredictorSpec\x12\x11\n\townerName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x37\n\nproductRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12;\n\x0eservingsiteRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0c\n\x04port\x18\x05 \x01(\x05\x12\x0c\n\x04path\x18\x06 \x01(\t\x12\x12\n\naccessType\x18\x07 \x01(\t\x12\x31\n\x08template\x18\x08 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.PodTemplate\x12^\n\x06models\x18\t \x03(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec\x12]\n\ndriftCheck\x18\x0c \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.DriftCheckSpec\x12_\n\x0bprogressive\x18\r \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ProgressiveSpec\x12\x17\n\x0f\x61rtifactsFolder\x18\x0e \x01(\t\x12\x63\n\rinputChannels\x18\x0f \x03(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannel\x12\x64\n\x0eoutputChannels\x18\x10 \x03(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannel\x12\r\n\x05owner\x18\x11 \x01(\t\"\x98\x04\n\x0fPredictorStatus\x12\x65\n\x0bmodelStatus\x18\x01 \x03(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus\x12\x61\n\nconditions\x18\x02 \x03(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition\x12M\n\x14monitorLastAttemptAt\x18\x03 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp\x12\x18\n\x10monitorLastScore\x18\x04 \x01(\x01\x12\x1a\n\x12monitorLastLatency\x18\x05 \x01(\x01\x12Z\n\x06health\x18\x06 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorHealth\x12Z\n\x08statuses\x18\x07 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus\"R\n\x0fProgressiveSpec\x12\x0e\n\x06warmup\x18\x01 \x01(\x05\x12\x18\n\x10trafficIncrement\x18\x02 \x01(\x05\x12\x15\n\rcanaryMetrics\x18\x03 \x03(\t\"@\n\x14StreamingChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x10\n\x08inputKey\x18\x02 \x01(\t\"k\n\x10TableChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x16\n\x0e\x64\x61tasourceName\x18\x02 \x01(\t\x12\x11\n\ttableName\x18\x03 \x01(\t\x12\x14\n\x0cscanInterval\x18\x04 \x01(\x05\x42\nZ\x08v1alpha1'
+  serialized_pb=b'\nIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x12\x39github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1\x1aGgithub.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\">\n\x0e\x42otChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x14\n\x0cnotifierName\x18\x02 \x01(\t\"s\n\x11\x42ucketChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x1e\n\x16\x64\x61tabaseConnectionName\x18\x02 \x01(\t\x12\x10\n\x08inputKey\x18\x03 \x01(\t\x12\x14\n\x0cscanInterval\x18\x04 \x01(\x05\",\n\rChannelStatus\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65rror\x18\x02 \x01(\t\"\xfd\x01\n\x07\x43urtain\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainStatus\"\x99\x01\n\x10\x43urtainCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa2\x01\n\x0b\x43urtainList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x97\x01\n\x0b\x43urtainSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x13\n\x0bversionName\x18\x02 \x01(\t\x12\x17\n\x0fservingsiteName\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12\x0f\n\x07wizards\x18\x05 \x03(\t\x12\x10\n\x08question\x18\x06 \x01(\t\x12\r\n\x05owner\x18\x07 \x01(\t\"p\n\rCurtainStatus\x12_\n\nconditions\x18\x01 \x03(\x0b\x32K.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainCondition\"\xaf\x01\n\x13\x43urtainTemplateSpec\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec\"_\n\x0e\x44riftCheckSpec\x12\x10\n\x08\x63ronExpr\x18\x01 \x01(\t\x12\x10\n\x08treshold\x18\x02 \x01(\x01\x12\x14\n\x0cnotifierName\x18\x03 \x01(\t\x12\x13\n\x0btestDataset\x18\x04 \x01(\t\"\x7f\n\x13ModelDeploymentSpec\x12\x11\n\tmodelName\x18\x01 \x01(\t\x12\x0e\n\x06weight\x18\x04 \x01(\x05\x12\x0e\n\x06\x63\x61nary\x18\x05 \x01(\x08\x12\x0e\n\x06shadow\x18\x06 \x01(\x08\x12\x0e\n\x06\x66ilter\x18\x07 \x01(\t\x12\x15\n\rcanaryMetrics\x18\x08 \x03(\t\"\xee\x01\n\x15ModelDeploymentStatus\x12\x11\n\timageName\x18\x01 \x01(\t\x12\x16\n\x0e\x64\x65ploymentName\x18\x02 \x01(\t\x12\x13\n\x0bserviceName\x18\x03 \x01(\t\x12\x0f\n\x07hpaName\x18\x04 \x01(\t\x12\x11\n\tcurrent95\x18\x05 \x01(\x01\x12\x11\n\tcurrent99\x18\x06 \x01(\x01\x12\x42\n\x0elastPrediction\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12\x64\x61ilyPredictionAvg\x18\x08 \x01(\x05\"=\n\x16OnlineFeaturestoreSpec\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\":\n\x13PredictionCacheSpec\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\"\x89\x03\n\x11PredictionChannel\x12Z\n\x05table\x18\x01 \x01(\x0b\x32K.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.TableChannelSpec\x12V\n\x03\x62ot\x18\x02 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.BotChannelSpec\x12\\\n\x06\x62ucket\x18\x03 \x01(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.BucketChannelSpec\x12\x62\n\tstreaming\x18\x04 \x01(\x0b\x32O.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.StreamingChannelSpec\"\x9e\x02\n\x12PredictionPipeline\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12_\n\x04spec\x18\x02 \x01(\x0b\x32Q.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec\x12\x63\n\x06status\x18\x03 \x01(\x0b\x32S.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus\"\xa4\x01\n\x1bPredictionPipelineCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xb8\x01\n\x16PredictionPipelineList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\\\n\x05items\x18\x02 \x03(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline\"\xa7\x02\n\x15PredictionPipelineRun\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x62\n\x04spec\x18\x02 \x01(\x0b\x32T.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec\x12\x66\n\x06status\x18\x03 \x01(\x0b\x32V.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunStatus\"\xa7\x01\n\x1ePredictionPipelineRunCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xbe\x01\n\x19PredictionPipelineRunList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12_\n\x05items\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun\"\xa1\x02\n\x19PredictionPipelineRunSpec\x12\x15\n\rpredictorName\x18\x01 \x01(\t\x12\x0f\n\x07labeled\x18\x02 \x01(\x08\x12\x11\n\tobjective\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12Q\n\x05input\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12R\n\x06output\x18\x06 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12\r\n\x05owner\x18\x07 \x01(\t\"\xad\x02\n\x1bPredictionPipelineRunStatus\x12\r\n\x05score\x18\x02 \x01(\x01\x12\r\n\x05phase\x18\x03 \x01(\t\x12=\n\tstartTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x42\n\x0e\x63ompletionTime\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12m\n\nconditions\x18\x06 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunCondition\"\xb9\x02\n\x16PredictionPipelineSpec\x12\x15\n\rpredictorName\x18\x01 \x01(\t\x12\x0f\n\x07labeled\x18\x02 \x01(\x08\x12\x11\n\tobjective\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12Q\n\x05input\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12R\n\x06output\x18\x06 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation\x12\r\n\x05owner\x18\x07 \x01(\t\x12\x19\n\x11workloadClassName\x18\x08 \x01(\t\"\x95\x01\n\x18PredictionPipelineStatus\x12\r\n\x05phase\x18\x03 \x01(\t\x12j\n\nconditions\x18\x06 \x03(\x0b\x32V.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition\"\x83\x02\n\tPredictor\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus\"\x9b\x01\n\x12PredictorCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x96\x01\n\x0fPredictorHealth\x12\x18\n\x10totalPredictions\x18\x01 \x01(\x05\x12\x15\n\rtotalRequests\x18\x02 \x01(\x05\x12\x18\n\x10totalP95Requests\x18\x03 \x01(\x05\x12\x1a\n\x12medianResponseTime\x18\x04 \x01(\x05\x12\x1c\n\x14lastDailyPredictions\x18\x05 \x03(\x05\"\xa6\x01\n\rPredictorList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\xa9\x08\n\rPredictorSpec\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x37\n\nproductRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12;\n\x0eservingsiteRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0c\n\x04port\x18\x05 \x01(\x05\x12\x0c\n\x04path\x18\x06 \x01(\t\x12\x12\n\naccessType\x18\x07 \x01(\t\x12\x31\n\x08template\x18\x08 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.PodTemplate\x12^\n\x06models\x18\t \x03(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec\x12]\n\ndriftCheck\x18\x0c \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.DriftCheckSpec\x12_\n\x0bprogressive\x18\r \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ProgressiveSpec\x12\x17\n\x0f\x61rtifactsFolder\x18\x0e \x01(\t\x12\x63\n\rinputChannels\x18\x0f \x03(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannel\x12\x64\n\x0eoutputChannels\x18\x10 \x03(\x0b\x32L.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannel\x12\x13\n\x0bminReplicas\x18\x11 \x01(\x05\x12\x11\n\tautoscale\x18\x12 \x01(\x08\x12\x13\n\x0bmaxReplicas\x18\x13 \x01(\x05\x12\r\n\x05owner\x18\x14 \x01(\t\x12\x19\n\x11workloadClassName\x18\x15 \x01(\t\x12]\n\x05\x63\x61\x63he\x18\x16 \x01(\x0b\x32N.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec\x12`\n\x05store\x18\x17 \x01(\x0b\x32Q.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec\"\x98\x04\n\x0fPredictorStatus\x12\x65\n\x0bmodelStatus\x18\x01 \x03(\x0b\x32P.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus\x12\x61\n\nconditions\x18\x02 \x03(\x0b\x32M.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition\x12M\n\x14monitorLastAttemptAt\x18\x03 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp\x12\x18\n\x10monitorLastScore\x18\x04 \x01(\x01\x12\x1a\n\x12monitorLastLatency\x18\x05 \x01(\x01\x12Z\n\x06health\x18\x06 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorHealth\x12Z\n\x08statuses\x18\x07 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus\"R\n\x0fProgressiveSpec\x12\x0e\n\x06warmup\x18\x01 \x01(\x05\x12\x18\n\x10trafficIncrement\x18\x02 \x01(\x05\x12\x15\n\rcanaryMetrics\x18\x03 \x03(\t\"@\n\x14StreamingChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x10\n\x08inputKey\x18\x02 \x01(\t\"k\n\x10TableChannelSpec\x12\x16\n\x0e\x63onnectionName\x18\x01 \x01(\t\x12\x16\n\x0e\x64\x61tasourceName\x18\x02 \x01(\t\x12\x11\n\ttableName\x18\x03 \x01(\t\x12\x14\n\x0cscanInterval\x18\x04 \x01(\x05\x42\nZ\x08v1alpha1'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_catalog_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
@@ -522,49 +522,35 @@ _MODELDEPLOYMENTSPEC = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='replicas', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.replicas', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='autoscale', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.autoscale', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='weight', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.weight', index=3,
+      name='weight', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.weight', index=1,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='canary', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.canary', index=4,
+      name='canary', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.canary', index=2,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='shadow', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.shadow', index=5,
+      name='shadow', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.shadow', index=3,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='filter', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.filter', index=6,
+      name='filter', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.filter', index=4,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='canaryMetrics', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.canaryMetrics', index=7,
+      name='canaryMetrics', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec.canaryMetrics', index=5,
       number=8, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -582,8 +568,8 @@ _MODELDEPLOYMENTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1822,
-  serialized_end=1986,
+  serialized_start=1821,
+  serialized_end=1948,
 )
 
 
@@ -663,8 +649,86 @@ _MODELDEPLOYMENTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1989,
-  serialized_end=2227,
+  serialized_start=1951,
+  serialized_end=2189,
+)
+
+
+_ONLINEFEATURESTORESPEC = _descriptor.Descriptor(
+  name='OnlineFeaturestoreSpec',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='active', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.active', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='serviceName', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.serviceName', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2191,
+  serialized_end=2252,
+)
+
+
+_PREDICTIONCACHESPEC = _descriptor.Descriptor(
+  name='PredictionCacheSpec',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='active', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.active', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='serviceName', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.serviceName', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2254,
+  serialized_end=2312,
 )
 
 
@@ -716,8 +780,8 @@ _PREDICTIONCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2230,
-  serialized_end=2623,
+  serialized_start=2315,
+  serialized_end=2708,
 )
 
 
@@ -762,8 +826,8 @@ _PREDICTIONPIPELINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2626,
-  serialized_end=2912,
+  serialized_start=2711,
+  serialized_end=2997,
 )
 
 
@@ -822,8 +886,8 @@ _PREDICTIONPIPELINECONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2915,
-  serialized_end=3079,
+  serialized_start=3000,
+  serialized_end=3164,
 )
 
 
@@ -861,8 +925,8 @@ _PREDICTIONPIPELINELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3082,
-  serialized_end=3266,
+  serialized_start=3167,
+  serialized_end=3351,
 )
 
 
@@ -907,8 +971,8 @@ _PREDICTIONPIPELINERUN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3269,
-  serialized_end=3564,
+  serialized_start=3354,
+  serialized_end=3649,
 )
 
 
@@ -967,8 +1031,8 @@ _PREDICTIONPIPELINERUNCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3567,
-  serialized_end=3734,
+  serialized_start=3652,
+  serialized_end=3819,
 )
 
 
@@ -1006,8 +1070,8 @@ _PREDICTIONPIPELINERUNLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3737,
-  serialized_end=3927,
+  serialized_start=3822,
+  serialized_end=4012,
 )
 
 
@@ -1080,8 +1144,8 @@ _PREDICTIONPIPELINERUNSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3930,
-  serialized_end=4219,
+  serialized_start=4015,
+  serialized_end=4304,
 )
 
 
@@ -1140,8 +1204,8 @@ _PREDICTIONPIPELINERUNSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4222,
-  serialized_end=4523,
+  serialized_start=4307,
+  serialized_end=4608,
 )
 
 
@@ -1202,6 +1266,13 @@ _PREDICTIONPIPELINESPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='workloadClassName', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec.workloadClassName', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1214,8 +1285,8 @@ _PREDICTIONPIPELINESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4526,
-  serialized_end=4812,
+  serialized_start=4611,
+  serialized_end=4924,
 )
 
 
@@ -1253,8 +1324,8 @@ _PREDICTIONPIPELINESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4815,
-  serialized_end=4964,
+  serialized_start=4927,
+  serialized_end=5076,
 )
 
 
@@ -1299,8 +1370,8 @@ _PREDICTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4967,
-  serialized_end=5226,
+  serialized_start=5079,
+  serialized_end=5338,
 )
 
 
@@ -1359,8 +1430,8 @@ _PREDICTORCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5229,
-  serialized_end=5384,
+  serialized_start=5341,
+  serialized_end=5496,
 )
 
 
@@ -1419,8 +1490,8 @@ _PREDICTORHEALTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5387,
-  serialized_end=5537,
+  serialized_start=5499,
+  serialized_end=5649,
 )
 
 
@@ -1458,8 +1529,8 @@ _PREDICTORLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5540,
-  serialized_end=5706,
+  serialized_start=5652,
+  serialized_end=5818,
 )
 
 
@@ -1472,107 +1543,142 @@ _PREDICTORSPEC = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ownerName', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.ownerName', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.description', index=1,
+      name='description', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.description', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='productRef', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.productRef', index=2,
+      name='productRef', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.productRef', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='servingsiteRef', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.servingsiteRef', index=3,
+      name='servingsiteRef', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.servingsiteRef', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='port', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.port', index=4,
+      name='port', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.port', index=3,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='path', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.path', index=5,
+      name='path', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.path', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='accessType', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.accessType', index=6,
+      name='accessType', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.accessType', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='template', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.template', index=7,
+      name='template', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.template', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='models', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.models', index=8,
+      name='models', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.models', index=7,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='driftCheck', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.driftCheck', index=9,
+      name='driftCheck', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.driftCheck', index=8,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='progressive', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.progressive', index=10,
+      name='progressive', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.progressive', index=9,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='artifactsFolder', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.artifactsFolder', index=11,
+      name='artifactsFolder', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.artifactsFolder', index=10,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='inputChannels', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.inputChannels', index=12,
+      name='inputChannels', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.inputChannels', index=11,
       number=15, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='outputChannels', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.outputChannels', index=13,
+      name='outputChannels', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.outputChannels', index=12,
       number=16, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='owner', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.owner', index=14,
-      number=17, type=9, cpp_type=9, label=1,
+      name='minReplicas', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.minReplicas', index=13,
+      number=17, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='autoscale', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.autoscale', index=14,
+      number=18, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='maxReplicas', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.maxReplicas', index=15,
+      number=19, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='owner', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.owner', index=16,
+      number=20, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='workloadClassName', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.workloadClassName', index=17,
+      number=21, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cache', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.cache', index=18,
+      number=22, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='store', full_name='github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.store', index=19,
+      number=23, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -1588,8 +1694,8 @@ _PREDICTORSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5709,
-  serialized_end=6512,
+  serialized_start=5821,
+  serialized_end=6886,
 )
 
 
@@ -1662,8 +1768,8 @@ _PREDICTORSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6515,
-  serialized_end=7051,
+  serialized_start=6889,
+  serialized_end=7425,
 )
 
 
@@ -1708,8 +1814,8 @@ _PROGRESSIVESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7053,
-  serialized_end=7135,
+  serialized_start=7427,
+  serialized_end=7509,
 )
 
 
@@ -1747,8 +1853,8 @@ _STREAMINGCHANNELSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7137,
-  serialized_end=7201,
+  serialized_start=7511,
+  serialized_end=7575,
 )
 
 
@@ -1800,8 +1906,8 @@ _TABLECHANNELSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7203,
-  serialized_end=7310,
+  serialized_start=7577,
+  serialized_end=7684,
 )
 
 _CURTAIN.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
@@ -1852,6 +1958,8 @@ _PREDICTORSPEC.fields_by_name['driftCheck'].message_type = _DRIFTCHECKSPEC
 _PREDICTORSPEC.fields_by_name['progressive'].message_type = _PROGRESSIVESPEC
 _PREDICTORSPEC.fields_by_name['inputChannels'].message_type = _PREDICTIONCHANNEL
 _PREDICTORSPEC.fields_by_name['outputChannels'].message_type = _PREDICTIONCHANNEL
+_PREDICTORSPEC.fields_by_name['cache'].message_type = _PREDICTIONCACHESPEC
+_PREDICTORSPEC.fields_by_name['store'].message_type = _ONLINEFEATURESTORESPEC
 _PREDICTORSTATUS.fields_by_name['modelStatus'].message_type = _MODELDEPLOYMENTSTATUS
 _PREDICTORSTATUS.fields_by_name['conditions'].message_type = _PREDICTORCONDITION
 _PREDICTORSTATUS.fields_by_name['monitorLastAttemptAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIMESTAMP
@@ -1869,6 +1977,8 @@ DESCRIPTOR.message_types_by_name['CurtainTemplateSpec'] = _CURTAINTEMPLATESPEC
 DESCRIPTOR.message_types_by_name['DriftCheckSpec'] = _DRIFTCHECKSPEC
 DESCRIPTOR.message_types_by_name['ModelDeploymentSpec'] = _MODELDEPLOYMENTSPEC
 DESCRIPTOR.message_types_by_name['ModelDeploymentStatus'] = _MODELDEPLOYMENTSTATUS
+DESCRIPTOR.message_types_by_name['OnlineFeaturestoreSpec'] = _ONLINEFEATURESTORESPEC
+DESCRIPTOR.message_types_by_name['PredictionCacheSpec'] = _PREDICTIONCACHESPEC
 DESCRIPTOR.message_types_by_name['PredictionChannel'] = _PREDICTIONCHANNEL
 DESCRIPTOR.message_types_by_name['PredictionPipeline'] = _PREDICTIONPIPELINE
 DESCRIPTOR.message_types_by_name['PredictionPipelineCondition'] = _PREDICTIONPIPELINECONDITION
@@ -1974,6 +2084,20 @@ ModelDeploymentStatus = _reflection.GeneratedProtocolMessageType('ModelDeploymen
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus)
   })
 _sym_db.RegisterMessage(ModelDeploymentStatus)
+
+OnlineFeaturestoreSpec = _reflection.GeneratedProtocolMessageType('OnlineFeaturestoreSpec', (_message.Message,), {
+  'DESCRIPTOR' : _ONLINEFEATURESTORESPEC,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec)
+  })
+_sym_db.RegisterMessage(OnlineFeaturestoreSpec)
+
+PredictionCacheSpec = _reflection.GeneratedProtocolMessageType('PredictionCacheSpec', (_message.Message,), {
+  'DESCRIPTOR' : _PREDICTIONCACHESPEC,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec)
+  })
+_sym_db.RegisterMessage(PredictionCacheSpec)
 
 PredictionChannel = _reflection.GeneratedProtocolMessageType('PredictionChannel', (_message.Message,), {
   'DESCRIPTOR' : _PREDICTIONCHANNEL,
