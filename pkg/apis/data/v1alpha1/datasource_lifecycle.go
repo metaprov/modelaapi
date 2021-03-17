@@ -227,10 +227,10 @@ func (sc *DataSource) Poplulate() {
 	}
 
 	sc.Spec.Schema.Columns = make([]Column, 0)
-	sc.AddColumn("a", catalog.DataTypeNumeric, catalog.NoneDataFormat, false, false, false)
-	sc.AddColumn("b", catalog.DataTypeNumeric, catalog.NoneDataFormat, false, false, false)
-	sc.AddColumn("c", catalog.DataTypeNumeric, catalog.NoneDataFormat, false, false, false)
-	sc.AddColumn("d", catalog.DataTypeNumeric, catalog.NoneDataFormat, false, false, false)
+	sc.AddColumn("a", catalog.DataTypeNumber, catalog.NoneDataFormat, false, false, false)
+	sc.AddColumn("b", catalog.DataTypeNumber, catalog.NoneDataFormat, false, false, false)
+	sc.AddColumn("c", catalog.DataTypeNumber, catalog.NoneDataFormat, false, false, false)
+	sc.AddColumn("d", catalog.DataTypeNumber, catalog.NoneDataFormat, false, false, false)
 	sc.AddColumn("class", catalog.DataTypeCategorical, catalog.NoneDataFormat, false, true, false)
 
 }
@@ -256,7 +256,7 @@ func (in *DataSource) ActiveColumns() (string, error) {
 func (sc *DataSource) InferTask() catalog.MLTask {
 	// get last column
 	last := sc.Spec.Schema.Columns[len(sc.Spec.Schema.Columns)-1]
-	if last.DataType == catalog.DataTypeNumeric {
+	if last.DataType == catalog.DataTypeNumber {
 		return catalog.Regression
 	} else {
 		return catalog.BinaryClassification
