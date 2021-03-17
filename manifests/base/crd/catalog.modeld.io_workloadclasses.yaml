@@ -32,7 +32,7 @@ spec:
       type: string
     - jsonPath: .spec.gpu
       name: Gpu
-      type: interger
+      type: integer
     name: v1alpha1
     schema:
       openAPIV3Schema:
