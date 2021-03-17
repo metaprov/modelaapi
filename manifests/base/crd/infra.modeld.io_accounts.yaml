@@ -32,7 +32,7 @@ spec:
       name: Phone
       type: string
     - jsonPath: .spec.email
-      name: Smtp
+      name: Email
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

@@ -23,6 +23,12 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.defaultLabRef.Name
+      name: Default Lab
+      type: string
+    - jsonPath: .spec.defaultServingSiteRef.Name
+      name: Default Serving Site
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

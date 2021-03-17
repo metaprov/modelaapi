@@ -18,7 +18,7 @@ const (
 
 // MLFramework define the metadata about a machine learning framework
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Name",type="string",JSONPath=".spec.url"
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modeld,all}
 type MLFramework struct {

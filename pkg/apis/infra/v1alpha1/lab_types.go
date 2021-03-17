@@ -31,7 +31,7 @@ type LabCondition struct {
 // Lab is a namespace used for training and data analysis operations.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Git SecretRepo",type="string",JSONPath=".spec.gitrepoName"
+// +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.cluster"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=labs,singular=lab,categories={infra,modeld,all}
 // +kubebuilder:subresource:status

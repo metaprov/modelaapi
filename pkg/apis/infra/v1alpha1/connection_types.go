@@ -34,7 +34,8 @@ type ConnectionCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
-// +kubebuilder:printcolumn:name="StorageSecret",type="string",JSONPath=".spec.secretName",description=""
+// +kubebuilder:printcolumn:name="Category",type="string",JSONPath=".spec.category",description=""
+// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=connections,shortName=cred,singular=connection,categories={infra,modeld}
 type Connection struct {

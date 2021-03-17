@@ -9,7 +9,7 @@ import (
 // +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
-// +kubebuilder:printcolumn:name="Repository",type="string",JSONPath=".spec.url",description=""
+// +kubebuilder:printcolumn:name="Docs",type="string",JSONPath=".spec.url",description=""
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 type Algorithm struct {

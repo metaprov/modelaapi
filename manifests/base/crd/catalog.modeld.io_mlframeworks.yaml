@@ -22,7 +22,7 @@ spec:
   versions:
   - additionalPrinterColumns:
     - jsonPath: .spec.url
-      name: Name
+      name: URL
       type: string
     - jsonPath: .spec.version
       name: Version

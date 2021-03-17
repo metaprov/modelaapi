@@ -28,8 +28,11 @@ spec:
     - jsonPath: .spec.provider
       name: Provider
       type: string
+    - jsonPath: .spec.category
+      name: Category
+      type: string
     - jsonPath: .spec.secretName
-      name: StorageSecret
+      name: Secret
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

@@ -144,22 +144,27 @@ spec:
                           description: Type specify the data type of the attribute
                             required
                           enum:
-                          - numeric
-                          - numeric-list
-                          - categorical
-                          - categorical-list
+                          - boolean
+                          - color
+                          - currency
+                          - date
                           - datetime
-                          - string
-                          - string-list
-                          - url
+                          - guid
+                          - hyperlink
+                          - image
+                          - media
+                          - categorical
+                          - number
+                          - text
+                          - json
                           - path
                           - file
+                          - time
+                          - record
+                          - number-list
+                          - categorical-list
+                          - string-list
                           - useless
-                          - image
-                          - video
-                          - audio
-                          - boolean
-                          - json
                           type: string
                         description:
                           description: Description is a description of the feature

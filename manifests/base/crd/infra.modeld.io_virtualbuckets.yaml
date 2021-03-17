@@ -28,7 +28,7 @@ spec:
       type: string
     - description: virtual bucket connections
       jsonPath: .spec.connectionName
-      name: StorageConnection
+      name: Connection
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

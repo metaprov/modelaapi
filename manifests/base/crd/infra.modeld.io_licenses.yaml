@@ -23,8 +23,11 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.type
-      name: Type
+    - jsonPath: .spec.secretName
+      name: Secret
+      type: string
+    - jsonPath: .spec.trialEnd
+      name: Trial End
       type: string
     - jsonPath: .status.expireAt
       name: Expire At

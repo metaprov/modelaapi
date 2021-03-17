@@ -813,23 +813,28 @@ const (
 // ==================================================
 // DataEnv source
 // ==================================================
-// +kubebuilder:validation:Enum="numeric";"numeric-list";"categorical";"categorical-list";"datetime";"string";"string-list";"url";"path";"file";"useless";"image";"video";"audio";"boolean";"json";
+// +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"number-list";"categorical-list";"string-list";"useless"
 type DataType string
 
 const (
-	DataTypeNumeric         DataType = "numeric"
-	DataTypeDateTime        DataType = "datetime"
-	DataTypeCategorical     DataType = "categorical"
 	DataTypeBoolean         DataType = "boolean"
-	DataTypeString          DataType = "string"
+	DataTypeColor           DataType = "color"
+	DataTypeCurrency        DataType = "currency"
+	DataTypeDate            DataType = "date"
+	DataTypeDateTime        DataType = "datetime"
+	DataTypeGuid            DataType = "guid"
+	DataTypeHyperlink       DataType = "hyperlink"
+	DataTypeImage           DataType = "image"
+	DataTypeMedia           DataType = "media"
+	DataTypeCategorical     DataType = "categorical"
+	DataTypeNumber          DataType = "number"
+	DataTypeText            DataType = "text"
 	DataTypeJson            DataType = "json"
-	DataTypeUrl             DataType = "url"
 	DataTypePath            DataType = "path"
 	DataTypeFile            DataType = "file"
-	DataTypeImage           DataType = "image"
-	DataTypeVideo           DataType = "video"
-	DataTypeAudio           DataType = "audio"
-	DataTypeNumericList     DataType = "numeric-list"
+	DataTypeTime            DataType = "time"
+	DataTypeRecord          DataType = "record"
+	DataTypeNumberList      DataType = "number-list"
 	DataTypeCategoricalList DataType = "categorical-list"
 	DataTypeStringList      DataType = "string-list"
 	DataTypeUseless         DataType = "useless"

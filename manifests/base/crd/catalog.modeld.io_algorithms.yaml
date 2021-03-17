@@ -26,7 +26,7 @@ spec:
       name: Framework
       type: string
     - jsonPath: .spec.url
-      name: Repository
+      name: Docs
       type: string
     - description: ML task name
       jsonPath: .spec.task
@@ -134,22 +134,27 @@ spec:
                     type:
                       description: Type is the datatype of the parameter
                       enum:
-                      - numeric
-                      - numeric-list
-                      - categorical
-                      - categorical-list
+                      - boolean
+                      - color
+                      - currency
+                      - date
                       - datetime
-                      - string
-                      - string-list
-                      - url
+                      - guid
+                      - hyperlink
+                      - image
+                      - media
+                      - categorical
+                      - number
+                      - text
+                      - json
                       - path
                       - file
+                      - time
+                      - record
+                      - number-list
+                      - categorical-list
+                      - string-list
                       - useless
-                      - image
-                      - video
-                      - audio
-                      - boolean
-                      - json
                       type: string
                   type: object
                 type: array

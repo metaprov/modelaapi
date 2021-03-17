@@ -24,7 +24,7 @@ option go_package = "v1alpha1";
 // +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=algorithms,singular=algorithm,categories={catalog,modeld,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
-// +kubebuilder:printcolumn:name="Repository",type="string",JSONPath=".spec.url",description=""
+// +kubebuilder:printcolumn:name="Docs",type="string",JSONPath=".spec.url",description=""
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 message Algorithm {
@@ -233,7 +233,7 @@ message IntParameter {
 
 // MLFramework define the metadata about a machine learning framework
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Name",type="string",JSONPath=".spec.url"
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modeld,all}
 message MLFramework {
@@ -385,9 +385,8 @@ message Region {
 }
 
 // UserRoleClass specify the RBAC premission for a specific user role.
+// +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={catalog,modeld,all}
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:priority=0,name="Cloud",type=string,JSONPath=".spec.cloud",description="Cloud provider",format=""
-// +kubebuilder:printcolumn:priority=0,name="Task",type=string,JSONPath=".spc.task",description="machine learning task",format=""
 message UserRoleClass {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

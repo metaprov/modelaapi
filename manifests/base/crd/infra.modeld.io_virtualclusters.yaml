@@ -19,7 +19,31 @@ spec:
     singular: virtualcluster
   scope: Namespaced
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Nodes
+      type: integer
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Node Class
+      type: string
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Gpus
+      type: integer
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Gpu Class
+      type: string
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Connection
+      type: string
+    name: v1alpha1
     schema:
       openAPIV3Schema:
         properties:

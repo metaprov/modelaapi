@@ -29,6 +29,12 @@ spec:
     - jsonPath: .spec.dataLocation.bucketName
       name: Bucket
       type: string
+    - jsonPath: .spec.dataLocation.labName
+      name: Lab
+      type: string
+    - jsonPath: .spec.dataLocation.servingSiteName
+      name: Serving Site
+      type: string
     - jsonPath: .spec.imageLocation.url
       name: Image Repo
       type: string

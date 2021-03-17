@@ -24,8 +24,8 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.gitrepoName
-      name: Git SecretRepo
+    - jsonPath: .spec.cluster
+      name: Cluster
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

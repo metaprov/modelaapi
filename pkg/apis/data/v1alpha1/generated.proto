@@ -402,6 +402,8 @@ message DataPipelineStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.dataLocation.bucketName"
+// +kubebuilder:printcolumn:name="Lab",type="string",JSONPath=".spec.dataLocation.labName"
+// +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.dataLocation.servingSiteName"
 // +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.url"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -526,6 +528,7 @@ message DataProductStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.productRef.name",description=""
+// +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modeld,all}
 // DataProductVersion represent a version of the data product. A version is usually created when a new
@@ -693,7 +696,7 @@ message DataSourceStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Location Origin",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"

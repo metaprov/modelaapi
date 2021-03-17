@@ -29,6 +29,9 @@ spec:
     - jsonPath: .spec.productRef.name
       name: Entity
       type: string
+    - jsonPath: .spec.baseline
+      name: Base
+      type: boolean
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

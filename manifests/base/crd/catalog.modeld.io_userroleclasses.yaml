@@ -10,22 +10,17 @@ metadata:
 spec:
   group: catalog.modeld.io
   names:
+    categories:
+    - catalog
+    - modeld
+    - all
     kind: UserRoleClass
     listKind: UserRoleClassList
     plural: userroleclasses
     singular: userroleclass
   scope: Namespaced
   versions:
-  - additionalPrinterColumns:
-    - description: Cloud provider
-      jsonPath: .spec.cloud
-      name: Cloud
-      type: string
-    - description: machine learning task
-      jsonPath: .spc.task
-      name: Task
-      type: string
-    name: v1alpha1
+  - name: v1alpha1
     schema:
       openAPIV3Schema:
         description: UserRoleClass specify the RBAC premission for a specific user
@@ -101,7 +96,6 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
 status:
   acceptedNames:
     kind: ""
