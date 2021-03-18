@@ -1397,6 +1397,11 @@ message NotebookSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 9;
+
+  // WorkloadClassName is the name of the workload class used to run this pipeline.
+  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 10;
 }
 
 // NotebookStatus is the observed state of the notebook resource

@@ -2607,6 +2607,9 @@ export class LabelingPipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): LabelingPipelineSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): LabelingPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelingPipelineSpec): LabelingPipelineSpec.AsObject;
@@ -2624,6 +2627,7 @@ export namespace LabelingPipelineSpec {
     outputlabelset: string,
     schedule: string,
     owner: string,
+    workloadclassname: string,
   }
 }
 

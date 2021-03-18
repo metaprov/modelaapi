@@ -2153,6 +2153,9 @@ export class NotebookSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): NotebookSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): NotebookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookSpec): NotebookSpec.AsObject;
@@ -2172,6 +2175,7 @@ export namespace NotebookSpec {
     varsList: Array<string>,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
+    workloadclassname: string,
   }
 }
 

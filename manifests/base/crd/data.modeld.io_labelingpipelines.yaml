@@ -74,6 +74,11 @@ spec:
               versionName:
                 description: The product of the rejoiner
                 type: string
+              workloadClassName:
+                default: default-workload-class
+                description: WorkloadClassName is the name of the workload class used
+                  to run this pipeline.
+                type: string
             type: object
           status:
             description: LabelingPipelineStatus is the observed state of the LabelingPipeline
