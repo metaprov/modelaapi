@@ -86,6 +86,10 @@ type DataPipelineRunSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	// WorkloadClassName is the name of the workload class used to run this pip0eline. This is assigned by the datapipelineeun
+	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun

@@ -478,6 +478,9 @@ export class DataPipelineRunSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataPipelineRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): DataPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineRunSpec): DataPipelineRunSpec.AsObject;
@@ -492,6 +495,7 @@ export namespace DataPipelineRunSpec {
     datapipelinename: string,
     datalocation?: DataLocation.AsObject,
     owner: string,
+    workloadclassname: string,
   }
 }
 
@@ -567,6 +571,9 @@ export class DataPipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataPipelineSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): DataPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineSpec): DataPipelineSpec.AsObject;
@@ -584,6 +591,7 @@ export namespace DataPipelineSpec {
     outputdatasetname: string,
     schedule: string,
     owner: string,
+    workloadclassname: string,
   }
 }
 
