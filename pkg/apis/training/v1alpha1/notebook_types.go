@@ -98,6 +98,11 @@ type NotebookSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
+	// WorkloadClassName is the name of the workload class used to run this pipeline.
+	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
+	
 }
 
 // NotebookStatus is the observed state of the notebook resource

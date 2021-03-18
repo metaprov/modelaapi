@@ -77,6 +77,10 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	// WorkloadClassName is the name of the workload class used to run this pipeline.
+	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
