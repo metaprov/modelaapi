@@ -376,8 +376,14 @@ message PredictionPipelineRunSpec {
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
   // Owner of the run
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 7;
+
+  // WorkloadClassName A reference to the workload class this is used to run this notebook
+  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 8;
 }
 
 // PredictionPipelineRunStatus is the observed state of a PredictionTemplate

@@ -145,6 +145,7 @@ spec:
                 - path
                 type: object
               owner:
+                default: no-one
                 description: Owner of the run
                 type: string
               predictorName:
@@ -152,6 +153,11 @@ spec:
                   the dataset of this prediction.
                 maxLength: 63
                 minLength: 1
+                type: string
+              workloadClassName:
+                default: default-workload-class
+                description: WorkloadClassName A reference to the workload class this
+                  is used to run this notebook
                 type: string
             required:
             - labeled

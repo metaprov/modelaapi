@@ -680,6 +680,9 @@ export class PredictionPipelineRunSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): PredictionPipelineRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): PredictionPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionPipelineRunSpec): PredictionPipelineRunSpec.AsObject;
@@ -697,6 +700,7 @@ export namespace PredictionPipelineRunSpec {
     input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
+    workloadclassname: string,
   }
 }
 
