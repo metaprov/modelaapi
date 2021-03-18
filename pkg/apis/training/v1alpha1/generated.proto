@@ -1329,6 +1329,11 @@ message NotebookRunSpec {
   // Owner account name
   // +kubebuilder:validation:Optional
   optional string owner = 4;
+
+  // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
+  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 5;
 }
 
 // NotebookRunStatus define that observed state of NotebookRun resource
@@ -1983,7 +1988,8 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional double seed = 13;
 
-  // WorkloadClassName
+  // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
+  // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 14;
 }

@@ -78,6 +78,11 @@ spec:
               versionName:
                 description: VersionName of the data product for this notebook
                 type: string
+              workloadClassName:
+                default: default-workload-class
+                description: WorkloadClassName is the name of the workload class used
+                  to run this model. This is assigned by the study
+                type: string
             type: object
           status:
             description: NotebookRunStatus define that observed state of NotebookRun

@@ -20801,7 +20801,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.t
     notebookname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     valuesList: jspb.Message.toObjectList(msg.getValuesList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookVarValue.toObject, includeInstance),
-    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20854,6 +20855,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.d
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -20910,6 +20915,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.s
   if (f != null) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -21059,6 +21071,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

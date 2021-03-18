@@ -2064,6 +2064,9 @@ export class NotebookRunSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): NotebookRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): NotebookRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookRunSpec): NotebookRunSpec.AsObject;
@@ -2078,6 +2081,7 @@ export namespace NotebookRunSpec {
     notebookname: string,
     valuesList: Array<NotebookVarValue.AsObject>,
     owner: string,
+    workloadclassname: string,
   }
 }
 

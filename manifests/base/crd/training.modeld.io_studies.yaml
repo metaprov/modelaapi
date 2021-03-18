@@ -1060,7 +1060,9 @@ spec:
                         type: integer
                     type: object
                   workloadClassName:
-                    description: WorkloadClassName
+                    default: default-workload-class
+                    description: WorkloadClassName is the name of the workload class
+                      used to run this model. This is assigned by the study
                     type: string
                 type: object
               versionName:
