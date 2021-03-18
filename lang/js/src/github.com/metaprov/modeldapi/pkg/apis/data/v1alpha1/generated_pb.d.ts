@@ -2529,6 +2529,9 @@ export class LabelingPipelineRunSpec extends jspb.Message {
   getFeaturepipelinename(): string;
   setFeaturepipelinename(value: string): LabelingPipelineRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): LabelingPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelingPipelineRunSpec): LabelingPipelineRunSpec.AsObject;
@@ -2542,6 +2545,7 @@ export namespace LabelingPipelineRunSpec {
     owner: string,
     versionname: string,
     featurepipelinename: string,
+    workloadclassname: string,
   }
 }
 

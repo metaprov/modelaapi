@@ -70,6 +70,10 @@ type LabelingPipelineRunSpec struct {
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:MinLength=1
 	LabelPipelineName *string `json:"featurePipelineName" protobuf:"bytes,3,opt,name=featurePipelineName"`
+	// WorkloadClassName is the name of the workload class used to run this pipeline.
+	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 // LabelPipelineRunStatus defines the observed state of Label

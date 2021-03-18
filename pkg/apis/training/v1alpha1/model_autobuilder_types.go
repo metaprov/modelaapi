@@ -159,10 +159,10 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
-	// WorkloadClassRef is a reference to the workload class object from the catalog.
-	// Default : scikit learn trainer.
+	// WorkloadClassName is the name of the workload class used to run this pipeline.
+	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassRef *v1.ObjectReference `json:"workloadClassRef,omitempty" protobuf:"bytes,18,opt,name=workloadClassRef"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,18,opt,name=workloadClassName"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
 	// +kubebuilder:validation:Optional

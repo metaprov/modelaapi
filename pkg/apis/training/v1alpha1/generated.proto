@@ -574,10 +574,10 @@ message ModelAutobuilderSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 17;
 
-  // WorkloadClassRef is a reference to the workload class object from the catalog.
-  // Default : scikit learn trainer.
+  // WorkloadClassName is the name of the workload class used to run this pipeline.
+  // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference workloadClassRef = 18;
+  optional string workloadClassName = 18;
 
   // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
@@ -1569,6 +1569,11 @@ message ReportSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 8;
+
+  // WorkloadClassName is the name of the workload class used to run this report
+  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 9;
 }
 
 // ReportStatus defines the observed state of the report.

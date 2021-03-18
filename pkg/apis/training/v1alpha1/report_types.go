@@ -178,6 +178,10 @@ type ReportSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	// WorkloadClassName is the name of the workload class used to run this report
+	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 }
 
 // ReportStatus defines the observed state of the report.

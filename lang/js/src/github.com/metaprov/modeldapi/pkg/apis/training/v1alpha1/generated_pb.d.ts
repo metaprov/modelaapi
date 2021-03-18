@@ -863,10 +863,8 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelAutobuilderSpec;
 
-  getWorkloadclassref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setWorkloadclassref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
-  hasWorkloadclassref(): boolean;
-  clearWorkloadclassref(): ModelAutobuilderSpec;
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): ModelAutobuilderSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
@@ -900,7 +898,7 @@ export namespace ModelAutobuilderSpec {
     searchmethod: string,
     aborted: boolean,
     owner: string,
-    workloadclassref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    workloadclassname: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -2487,6 +2485,9 @@ export class ReportSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ReportSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -2504,6 +2505,7 @@ export namespace ReportSpec {
     format: string,
     description: string,
     owner: string,
+    workloadclassname: string,
   }
 }
 

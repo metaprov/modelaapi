@@ -913,9 +913,9 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassRef != nil {
-		in, out := &in.WorkloadClassRef, &out.WorkloadClassRef
-		*out = new(v1.ObjectReference)
+	if in.WorkloadClassName != nil {
+		in, out := &in.WorkloadClassName, &out.WorkloadClassName
+		*out = new(string)
 		**out = **in
 	}
 	if in.LabRef != nil {
@@ -2254,6 +2254,11 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
+		*out = new(string)
+		**out = **in
+	}
+	if in.WorkloadClassName != nil {
+		in, out := &in.WorkloadClassName, &out.WorkloadClassName
 		*out = new(string)
 		**out = **in
 	}

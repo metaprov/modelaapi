@@ -62,6 +62,11 @@ spec:
               versionName:
                 description: The product version for the pipeline
                 type: string
+              workloadClassName:
+                default: default-workload-class
+                description: WorkloadClassName is the name of the workload class used
+                  to run this pipeline.
+                type: string
             required:
             - featurePipelineName
             - owner

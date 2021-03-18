@@ -146,6 +146,11 @@ spec:
                 description: VersionName is the data product version name for this
                   report.
                 type: string
+              workloadClassName:
+                default: default-workload-class
+                description: WorkloadClassName is the name of the workload class used
+                  to run this report
+                type: string
             type: object
           status:
             description: ReportStatus defines the observed state of the report.
