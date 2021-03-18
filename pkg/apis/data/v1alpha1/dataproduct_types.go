@@ -131,18 +131,14 @@ type DataProductSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,12,opt,name=notifierName"`
-	// A reference to the workload class used when training or testing the model
-	// +kubebuilder:default:=""
+	// DefaultWorkloadClassName is reference to the workload class used for running product tasks.
+	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
-	ModelWorkloadClassName *string `json:"modelWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=modelWorkloadClassName"`
-	// A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	DataWorkloadClassName *string `json:"dataWorkloadClassName,omitempty" protobuf:"bytes,14,opt,name=dataWorkloadClassName"`
+	DefaultWorkloadClassName *string `json:"defaultWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=defaultWorkloadClassName"`
 	// Denote how many time a job is retry after failure
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Optional
-	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,15,opt,name=retriesOnFailure"`
+	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,14,opt,name=retriesOnFailure"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

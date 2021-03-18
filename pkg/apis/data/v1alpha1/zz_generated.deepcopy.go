@@ -640,13 +640,8 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.ModelWorkloadClassName != nil {
-		in, out := &in.ModelWorkloadClassName, &out.ModelWorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
-	if in.DataWorkloadClassName != nil {
-		in, out := &in.DataWorkloadClassName, &out.DataWorkloadClassName
+	if in.DefaultWorkloadClassName != nil {
+		in, out := &in.DefaultWorkloadClassName, &out.DefaultWorkloadClassName
 		*out = new(string)
 		**out = **in
 	}

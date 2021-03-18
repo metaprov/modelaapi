@@ -745,11 +745,8 @@ export class DataProductSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): DataProductSpec;
 
-  getModelworkloadclassname(): string;
-  setModelworkloadclassname(value: string): DataProductSpec;
-
-  getDataworkloadclassname(): string;
-  setDataworkloadclassname(value: string): DataProductSpec;
+  getDefaultworkloadclassname(): string;
+  setDefaultworkloadclassname(value: string): DataProductSpec;
 
   getRetriesonfailure(): number;
   setRetriesonfailure(value: number): DataProductSpec;
@@ -775,8 +772,7 @@ export namespace DataProductSpec {
     description: string,
     datalocation?: DataLocation.AsObject,
     notifiername: string,
-    modelworkloadclassname: string,
-    dataworkloadclassname: string,
+    defaultworkloadclassname: string,
     retriesonfailure: number,
   }
 }

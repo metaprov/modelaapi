@@ -498,20 +498,15 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional string notifierName = 12;
 
-  // A reference to the workload class used when training or testing the model
-  // +kubebuilder:default:=""
+  // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
+  // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
-  optional string modelWorkloadClassName = 13;
-
-  // A reference to the workload class used when running tasks on the dataset, for example profiling or reports.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string dataWorkloadClassName = 14;
+  optional string defaultWorkloadClassName = 13;
 
   // Denote how many time a job is retry after failure
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Optional
-  optional int32 retriesOnFailure = 15;
+  optional int32 retriesOnFailure = 14;
 }
 
 // DataProductStatus defines the observed state of DataProduct

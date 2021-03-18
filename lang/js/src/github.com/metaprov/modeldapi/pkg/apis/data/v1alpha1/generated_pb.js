@@ -8832,9 +8832,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     description: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    modelworkloadclassname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    dataworkloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    retriesonfailure: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
+    defaultworkloadclassname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    retriesonfailure: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8922,13 +8921,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelworkloadclassname(value);
+      msg.setDefaultworkloadclassname(value);
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDataworkloadclassname(value);
-      break;
-    case 15:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setRetriesonfailure(value);
       break;
@@ -9050,17 +9045,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 15));
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
   if (f != null) {
     writer.writeInt32(
-      15,
+      14,
       f
     );
   }
@@ -9470,10 +9458,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * optional string modelWorkloadClassName = 13;
+ * optional string defaultWorkloadClassName = 13;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getModelworkloadclassname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getDefaultworkloadclassname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -9482,7 +9470,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setModelworkloadclassname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setDefaultworkloadclassname = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -9491,7 +9479,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearModelworkloadclassname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearDefaultworkloadclassname = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -9500,53 +9488,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasModelworkloadclassname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasDefaultworkloadclassname = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional string dataWorkloadClassName = 14;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getDataworkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setDataworkloadclassname = function(value) {
-  return jspb.Message.setField(this, 14, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearDataworkloadclassname = function() {
-  return jspb.Message.setField(this, 14, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasDataworkloadclassname = function() {
-  return jspb.Message.getField(this, 14) != null;
-};
-
-
-/**
- * optional int32 retriesOnFailure = 15;
+ * optional int32 retriesOnFailure = 14;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getRetriesonfailure = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
@@ -9555,7 +9507,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setRetriesonfailure = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 14, value);
 };
 
 
@@ -9564,7 +9516,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearRetriesonfailure = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 14, undefined);
 };
 
 
@@ -9573,7 +9525,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasRetriesonfailure = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

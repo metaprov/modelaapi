@@ -77,10 +77,10 @@ spec:
                 - bucketName
                 - path
                 type: object
-              dataWorkloadClassName:
-                default: ""
-                description: A reference to the workload class used when running tasks
-                  on the dataset, for example profiling or reports.
+              defaultWorkloadClassName:
+                default: default-workload-class
+                description: DefaultWorkloadClassName is reference to the workload
+                  class used for running product tasks.
                 type: string
               description:
                 description: User provided description
@@ -118,11 +118,6 @@ spec:
                 maxLength: 63
                 minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
-                type: string
-              modelWorkloadClassName:
-                default: ""
-                description: A reference to the workload class used when training
-                  or testing the model
                 type: string
               notifierName:
                 default: ""
