@@ -1689,11 +1689,6 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional TrainingSpec training = 10;
 
-  // WorkloadClassRef is a reference to the workload class object from the catalog.
-  // Default : scikit learn trainer.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference trainerClassRef = 11;
-
   // Split is reference to the split specification
   // +kubebuilder:validation:Optional
   optional DataSplit split = 12;
@@ -1735,11 +1730,6 @@ message StudySpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string owner = 22;
-
-  // A reference to the workload class that is used for training
-  // +kubebuilder:default:="default-data-workload-class"
-  // +kubebuilder:validation:Optional
-  optional string workloadClassName = 23;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -1992,6 +1982,10 @@ message TrainingSpec {
   // +kubebuilder:default:=42
   // +kubebuilder:validation:Optional
   optional double seed = 13;
+
+  // WorkloadClassName
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 14;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

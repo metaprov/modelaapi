@@ -926,6 +926,9 @@ spec:
                         minimum: 0
                         type: integer
                     type: object
+                  workloadClassName:
+                    description: WorkloadClassName
+                    type: string
                 type: object
               versionName:
                 default: latest

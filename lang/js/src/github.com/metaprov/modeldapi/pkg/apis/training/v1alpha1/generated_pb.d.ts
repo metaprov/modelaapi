@@ -2673,11 +2673,6 @@ export class StudySpec extends jspb.Message {
   hasTraining(): boolean;
   clearTraining(): StudySpec;
 
-  getTrainerclassref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTrainerclassref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StudySpec;
-  hasTrainerclassref(): boolean;
-  clearTrainerclassref(): StudySpec;
-
   getSplit(): DataSplit | undefined;
   setSplit(value?: DataSplit): StudySpec;
   hasSplit(): boolean;
@@ -2714,9 +2709,6 @@ export class StudySpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): StudySpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): StudySpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -2736,7 +2728,6 @@ export namespace StudySpec {
     search?: ModelSearchSpec.AsObject,
     preprocessing?: PreprocessingSpec.AsObject,
     training?: TrainingSpec.AsObject,
-    trainerclassref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     split?: DataSplit.AsObject,
     aborted: boolean,
     reported: boolean,
@@ -2747,7 +2738,6 @@ export namespace StudySpec {
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     hierarchy?: Hierarchy.AsObject,
     owner: string,
-    workloadclassname: string,
   }
 }
 
@@ -3049,6 +3039,9 @@ export class TrainingSpec extends jspb.Message {
   getSeed(): number;
   setSeed(value: number): TrainingSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): TrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingSpec): TrainingSpec.AsObject;
@@ -3070,6 +3063,7 @@ export namespace TrainingSpec {
     forecast?: ForecastingSpec.AsObject,
     sh?: SuccessiveHalvingSpec.AsObject,
     seed: number,
+    workloadclassname: string,
   }
 }
 

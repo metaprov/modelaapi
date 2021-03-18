@@ -440,6 +440,9 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=42
 	// +kubebuilder:validation:Optional
 	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,13,opt,name=seed"`
+	// WorkloadClassName
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,14,opt,name=workloadClassName"`
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns

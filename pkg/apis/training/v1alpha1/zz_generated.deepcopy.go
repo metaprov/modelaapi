@@ -2420,11 +2420,6 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(TrainingSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.WorkloadClassRef != nil {
-		in, out := &in.WorkloadClassRef, &out.WorkloadClassRef
-		*out = new(v1.ObjectReference)
-		**out = **in
-	}
 	if in.Split != nil {
 		in, out := &in.Split, &out.Split
 		*out = new(DataSplit)
@@ -2472,11 +2467,6 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
-		*out = new(string)
-		**out = **in
-	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
 		*out = new(string)
 		**out = **in
 	}
@@ -2734,6 +2724,11 @@ func (in *TrainingSpec) DeepCopyInto(out *TrainingSpec) {
 	if in.Seed != nil {
 		in, out := &in.Seed, &out.Seed
 		*out = new(float64)
+		**out = **in
+	}
+	if in.WorkloadClassName != nil {
+		in, out := &in.WorkloadClassName, &out.WorkloadClassName
+		*out = new(string)
 		**out = **in
 	}
 }

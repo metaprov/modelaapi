@@ -26028,7 +26028,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     search: (f = msg.getSearch()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.toObject(includeInstance, f),
     preprocessing: (f = msg.getPreprocessing()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.toObject(includeInstance, f),
     training: (f = msg.getTraining()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.toObject(includeInstance, f),
-    trainerclassref: (f = msg.getTrainerclassref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     split: (f = msg.getSplit()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.toObject(includeInstance, f),
     aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     reported: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
@@ -26038,8 +26037,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     modelimagepushed: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     hierarchy: (f = msg.getHierarchy()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Hierarchy.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -26116,11 +26114,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.deserializeBinaryFromReader);
       msg.setTraining(value);
       break;
-    case 11:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setTrainerclassref(value);
-      break;
     case 12:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.deserializeBinaryFromReader);
@@ -26163,10 +26156,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
-      break;
-    case 23:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -26264,14 +26253,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.serializeBinaryToWriter
     );
   }
-  f = message.getTrainerclassref();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
   f = message.getSplit();
   if (f != null) {
     writer.writeMessage(
@@ -26342,13 +26323,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeString(
       22,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 23));
-  if (f != null) {
-    writer.writeString(
-      23,
       f
     );
   }
@@ -26680,43 +26654,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTraining = function() {
   return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference trainerClassRef = 11;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getTrainerclassref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 11));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setTrainerclassref = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearTrainerclassref = function() {
-  return this.setTrainerclassref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTrainerclassref = function() {
-  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -27080,42 +27017,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 22) != null;
-};
-
-
-/**
- * optional string workloadClassName = 23;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 23, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 23, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasWorkloadclassname = function() {
-  return jspb.Message.getField(this, 23) != null;
 };
 
 
@@ -29770,7 +29671,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     checkpointinterval: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
     sh: (f = msg.getSh()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.toObject(includeInstance, f),
-    seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f
+    seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -29852,6 +29754,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     case 13:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setSeed(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -29958,6 +29864,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
   if (f != null) {
     writer.writeDouble(
       13,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -30360,6 +30273,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSeed = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 14;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
