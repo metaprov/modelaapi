@@ -721,7 +721,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8653,13 +8653,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassList.
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -8691,12 +8684,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    image: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    tasksList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    frameworks: (f = msg.getFrameworks()) && proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList.toObject(includeInstance, f),
-    vcpu: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+    dataimage: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    controlimage: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    trainerimage: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    publisherimage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    vcpu: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     mem: (f = msg.getMem()) && k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.toObject(includeInstance, f),
-    gpu: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    gpu: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     podtemplate: (f = msg.getPodtemplate()) && k8s_io_api_core_v1_generated_pb.PodTemplateSpec.toObject(includeInstance, f)
   };
 
@@ -8736,31 +8730,34 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImage(value);
+      msg.setDataimage(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addTasks(value);
+      msg.setControlimage(value);
       break;
     case 3:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList.deserializeBinaryFromReader);
-      msg.setFrameworks(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTrainerimage(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPublisherimage(value);
+      break;
+    case 5:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setVcpu(value);
       break;
-    case 5:
+    case 6:
       var value = new k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity;
       reader.readMessage(value,k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.deserializeBinaryFromReader);
       msg.setMem(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setGpu(value);
       break;
-    case 7:
+    case 8:
       var value = new k8s_io_api_core_v1_generated_pb.PodTemplateSpec;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.PodTemplateSpec.deserializeBinaryFromReader);
       msg.setPodtemplate(value);
@@ -8801,47 +8798,53 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
       f
     );
   }
-  f = message.getTasksList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getFrameworks();
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       3,
-      f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList.serializeBinaryToWriter
+      f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeFloat(
-      4,
+      5,
       f
     );
   }
   f = message.getMem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
     writer.writeInt32(
-      6,
+      7,
       f
     );
   }
   f = message.getPodtemplate();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       k8s_io_api_core_v1_generated_pb.PodTemplateSpec.serializeBinaryToWriter
     );
@@ -8850,10 +8853,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
 
 
 /**
- * optional string image = 1;
+ * optional string dataImage = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getImage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getDataimage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -8862,7 +8865,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setImage = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setDataimage = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -8871,7 +8874,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearImage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearDataimage = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -8880,73 +8883,35 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasImage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasDataimage = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated string tasks = 2;
- * @return {!Array<string>}
+ * optional string controlImage = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getTasksList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setTasksList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getControlimage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.addTasks = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setControlimage = function(value) {
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearTasksList = function() {
-  return this.setTasksList([]);
-};
-
-
-/**
- * optional MLFrameworkList frameworks = 3;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getFrameworks = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setFrameworks = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearFrameworks = function() {
-  return this.setFrameworks(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearControlimage = function() {
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -8954,25 +8919,61 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasFrameworks = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasControlimage = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string trainerImage = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getTrainerimage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setTrainerimage = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearTrainerimage = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasTrainerimage = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional float vcpu = 4;
- * @return {number}
+ * optional string publisherImage = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getVcpu = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getPublisherimage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setVcpu = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setPublisherimage = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -8981,7 +8982,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearVcpu = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearPublisherimage = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -8990,18 +8991,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasVcpu = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasPublisherimage = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 5;
+ * optional float vcpu = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getVcpu = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setVcpu = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearVcpu = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasVcpu = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 6;
  * @return {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getMem = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.api.resource.Quantity} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 5));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 6));
 };
 
 
@@ -9010,7 +9047,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setMem = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -9028,16 +9065,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasMem = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 gpu = 6;
+ * optional int32 gpu = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getGpu = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -9046,7 +9083,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setGpu = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -9055,7 +9092,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearGpu = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -9064,17 +9101,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasGpu = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 7;
+ * optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 8;
  * @return {?proto.k8s.io.api.core.v1.PodTemplateSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getPodtemplate = function() {
   return /** @type{?proto.k8s.io.api.core.v1.PodTemplateSpec} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplateSpec, 7));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplateSpec, 8));
 };
 
 
@@ -9083,7 +9120,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setPodtemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -9101,7 +9138,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasPodtemplate = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

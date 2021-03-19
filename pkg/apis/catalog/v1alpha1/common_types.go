@@ -813,7 +813,7 @@ const (
 // ==================================================
 // DataEnv source
 // ==================================================
-// +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"number-list";"categorical-list";"string-list";"useless"
+// +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"number-list";"categorical-list";"string-list";"useless";
 type DataType string
 
 const (

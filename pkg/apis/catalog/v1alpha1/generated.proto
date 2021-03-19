@@ -436,32 +436,36 @@ message WorkloadClassList {
 
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
-  // Image is the container image of the workload
+  // DataImage is the container image used to data tasks
   // +kubebuilder:validation:Required
-  optional string image = 1;
+  optional string dataImage = 1;
 
-  // Tasks are the machine learning tasks supported by the image
-  // +kubebuilder:validation:Optional
-  repeated string tasks = 2;
+  // ControlImage is the container image used for control
+  // +kubebuilder:validation:Required
+  optional string controlImage = 2;
 
-  // Frameworks are the machine learning framework supported by the workload
-  // +kubebuilder:validation:Optional
-  optional MLFrameworkList frameworks = 3;
+  // TrainerImage is the image used for training models
+  // +kubebuilder:validation:Required
+  optional string trainerImage = 3;
+
+  // PublisherImage is the image used for publishing models
+  // +kubebuilder:validation:Required
+  optional string publisherImage = 4;
 
   // Vcpu is the number of cpu
   // +kubebuilder:validation:Optional
-  optional float vcpu = 4;
+  optional float vcpu = 5;
 
   // Memory is the amount of memory offered by thie template
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 5;
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 6;
 
   // Number of gpus of this workload
   // +kubebuilder:validation:Optional
-  optional int32 gpu = 6;
+  optional int32 gpu = 7;
 
   // Template is the Pod specification for new trainers from this workload class.
   // +kubebuilder:validation:Required
-  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 7;
+  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 8;
 }
 

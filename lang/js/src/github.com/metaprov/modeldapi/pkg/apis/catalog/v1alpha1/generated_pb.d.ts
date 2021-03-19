@@ -915,18 +915,17 @@ export namespace WorkloadClassList {
 }
 
 export class WorkloadClassSpec extends jspb.Message {
-  getImage(): string;
-  setImage(value: string): WorkloadClassSpec;
+  getDataimage(): string;
+  setDataimage(value: string): WorkloadClassSpec;
 
-  getTasksList(): Array<string>;
-  setTasksList(value: Array<string>): WorkloadClassSpec;
-  clearTasksList(): WorkloadClassSpec;
-  addTasks(value: string, index?: number): WorkloadClassSpec;
+  getControlimage(): string;
+  setControlimage(value: string): WorkloadClassSpec;
 
-  getFrameworks(): MLFrameworkList | undefined;
-  setFrameworks(value?: MLFrameworkList): WorkloadClassSpec;
-  hasFrameworks(): boolean;
-  clearFrameworks(): WorkloadClassSpec;
+  getTrainerimage(): string;
+  setTrainerimage(value: string): WorkloadClassSpec;
+
+  getPublisherimage(): string;
+  setPublisherimage(value: string): WorkloadClassSpec;
 
   getVcpu(): number;
   setVcpu(value: number): WorkloadClassSpec;
@@ -954,9 +953,10 @@ export class WorkloadClassSpec extends jspb.Message {
 
 export namespace WorkloadClassSpec {
   export type AsObject = {
-    image: string,
-    tasksList: Array<string>,
-    frameworks?: MLFrameworkList.AsObject,
+    dataimage: string,
+    controlimage: string,
+    trainerimage: string,
+    publisherimage: string,
     vcpu: number,
     mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     gpu: number,

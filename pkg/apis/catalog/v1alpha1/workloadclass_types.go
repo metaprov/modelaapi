@@ -21,27 +21,30 @@ type WorkloadClass struct {
 
 //WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
-	// Image is the container image of the workload
+	// DataImage is the container image used to data tasks
 	// +kubebuilder:validation:Required
-	Image string `json:"image" protobuf:"bytes,1,opt,name=image"`
-	// Tasks are the machine learning tasks supported by the image
-	// +kubebuilder:validation:Optional
-	Tasks []MLTask `json:"tasks" protobuf:"bytes,2,rep,name=tasks,casttype=MLTask"`
-	// Frameworks are the machine learning framework supported by the workload
-	// +kubebuilder:validation:Optional
-	Frameworks MLFrameworkList `json:"frameworks,omitempty" protobuf:"bytes,3,opt,name=frameworks"`
+	DataImage string `json:"dataImage" protobuf:"bytes,1,opt,name=dataImage"`
+	// ControlImage is the container image used for control
+	// +kubebuilder:validation:Required
+	ControlImage string `json:"controlImage" protobuf:"bytes,2,opt,name=controlImage"`
+	// TrainerImage is the image used for training models
+	// +kubebuilder:validation:Required
+	TrainerImage string `json:"trainerImage" protobuf:"bytes,3,opt,name=trainerImage"`
+	// PublisherImage is the image used for publishing models
+	// +kubebuilder:validation:Required
+	PublisherImage string `json:"publisherImage" protobuf:"bytes,4,opt,name=publisherImage"`
 	// Vcpu is the number of cpu
 	// +kubebuilder:validation:Optional
-	Vcpu *float32 `json:"vcpu" protobuf:"bytes,4,opt,name=vcpu"`
+	Vcpu *float32 `json:"vcpu" protobuf:"bytes,5,opt,name=vcpu"`
 	// Memory is the amount of memory offered by thie template
 	// +kubebuilder:validation:Optional
-	Mem *resource.Quantity `json:"mem" protobuf:"bytes,5,opt,name=mem"`
+	Mem *resource.Quantity `json:"mem" protobuf:"bytes,6,opt,name=mem"`
 	// Number of gpus of this workload
 	// +kubebuilder:validation:Optional
-	Gpu *int32 `json:"gpu" protobuf:"bytes,6,opt,name=gpu"`
+	Gpu *int32 `json:"gpu" protobuf:"bytes,7,opt,name=gpu"`
 	// Template is the Pod specification for new trainers from this workload class.
 	// +kubebuilder:validation:Required
-	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,7,opt,name=podTemplate"`
+	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,8,opt,name=podTemplate"`
 }
 
 //==============================================================================

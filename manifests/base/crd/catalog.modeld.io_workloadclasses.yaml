@@ -54,119 +54,16 @@ spec:
             description: WorkloadClassSpec defines the specification of  a workload
               class.
             properties:
-              frameworks:
-                description: Frameworks are the machine learning framework supported
-                  by the workload
-                properties:
-                  apiVersion:
-                    description: 'APIVersion defines the versioned schema of this
-                      representation of an object. Servers should convert recognized
-                      schemas to the latest internal value, and may reject unrecognized
-                      values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
-                    type: string
-                  items:
-                    items:
-                      description: MLFramework define the metadata about a machine
-                        learning framework
-                      properties:
-                        apiVersion:
-                          description: 'APIVersion defines the versioned schema of
-                            this representation of an object. Servers should convert
-                            recognized schemas to the latest internal value, and may
-                            reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
-                          type: string
-                        kind:
-                          description: 'Kind is a string value representing the REST
-                            resource this object represents. Servers may infer this
-                            from the endpoint the client submits requests to. Cannot
-                            be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                          type: string
-                        metadata:
-                          type: object
-                        spec:
-                          description: MLFramework is the spec for a specific version
-                            of machine learning framework (e.g. tensorflow)
-                          properties:
-                            description:
-                              description: Comments of the framework
-                              type: string
-                            lang:
-                              description: Lang is the framework lang
-                              type: string
-                            url:
-                              description: URL for the home page of the mlframework
-                              type: string
-                            version:
-                              description: The current version of the mlframework
-                              type: string
-                          type: object
-                      required:
-                      - spec
-                      type: object
-                    type: array
-                  kind:
-                    description: 'Kind is a string value representing the REST resource
-                      this object represents. Servers may infer this from the endpoint
-                      the client submits requests to. Cannot be updated. In CamelCase.
-                      More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  metadata:
-                    description: ListMeta describes metadata that synthetic resources
-                      must have, including lists and various status objects. A resource
-                      may have only one of {ObjectMeta, ListMeta}.
-                    properties:
-                      continue:
-                        description: continue may be set if the user set a limit on
-                          the number of items returned, and indicates that the server
-                          has more data available. The value is opaque and may be
-                          used to issue another request to the endpoint that served
-                          this list to retrieve the next set of available objects.
-                          Continuing a consistent list may not be possible if the
-                          server configuration has changed or more than a few minutes
-                          have passed. The resourceVersion field returned when using
-                          this continue value will be identical to the value in the
-                          first response, unless you have received this token from
-                          an error message.
-                        type: string
-                      remainingItemCount:
-                        description: remainingItemCount is the number of subsequent
-                          items in the list which are not included in this list response.
-                          If the list request contained label or field selectors,
-                          then the number of remaining items is unknown and the field
-                          will be left unset and omitted during serialization. If
-                          the list is complete (either because it is not chunking
-                          or because this is the last chunk), then there are no more
-                          remaining items and this field will be left unset and omitted
-                          during serialization. Servers older than v1.15 do not set
-                          this field. The intended use of the remainingItemCount is
-                          *estimating* the size of a collection. Clients should not
-                          rely on the remainingItemCount to be set or to be exact.
-                        format: int64
-                        type: integer
-                      resourceVersion:
-                        description: 'String that identifies the server''s internal
-                          version of this object that can be used by clients to determine
-                          when objects have changed. Value must be treated as opaque
-                          by clients and passed unmodified back to the server. Populated
-                          by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                        type: string
-                      selfLink:
-                        description: "selfLink is a URL representing this object.
-                          Populated by the system. Read-only. \n DEPRECATED Kubernetes
-                          will stop propagating this field in 1.20 release and the
-                          field is planned to be removed in 1.21 release."
-                        type: string
-                    type: object
-                required:
-                - items
-                type: object
+              controlImage:
+                description: ControlImage is the container image used for control
+                type: string
+              dataImage:
+                description: DataImage is the container image used to data tasks
+                type: string
               gpu:
                 description: Number of gpus of this workload
                 format: int32
                 type: integer
-              image:
-                description: Image is the container image of the workload
-                type: string
               mem:
                 anyOf:
                 - type: integer
@@ -6417,32 +6314,20 @@ spec:
                     - containers
                     type: object
                 type: object
-              tasks:
-                description: Tasks are the machine learning tasks supported by the
-                  image
-                items:
-                  description: MLTask is the machine learning task name
-                  enum:
-                  - binary-classification
-                  - multi-classification
-                  - multi-label-classification
-                  - text-classification
-                  - regression
-                  - forecasting
-                  - clustering
-                  - recommendation
-                  - outlier-detection
-                  - novelty-detection
-                  - topic-modeling
-                  - auto
-                  - unknown
-                  type: string
-                type: array
+              publisherImage:
+                description: PublisherImage is the image used for publishing models
+                type: string
+              trainerImage:
+                description: TrainerImage is the image used for training models
+                type: string
               vcpu:
                 description: Vcpu is the number of cpu
                 type: number
             required:
-            - image
+            - controlImage
+            - dataImage
+            - publisherImage
+            - trainerImage
             type: object
         required:
         - spec
