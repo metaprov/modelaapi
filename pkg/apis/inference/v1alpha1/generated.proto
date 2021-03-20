@@ -446,10 +446,10 @@ message PredictionPipelineSpec {
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 message PredictionPipelineStatus {
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 1;
 
   // +optional
-  repeated PredictionPipelineCondition conditions = 6;
+  repeated PredictionPipelineCondition conditions = 2;
 }
 
 // Predictor represent an PredictorName API object

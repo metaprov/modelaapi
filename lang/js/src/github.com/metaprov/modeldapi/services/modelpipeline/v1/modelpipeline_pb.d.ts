@@ -210,3 +210,37 @@ export namespace DeleteModelPipelineResponse {
   }
 }
 
+export class RunModelPipelineRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline): RunModelPipelineRequest;
+  hasItem(): boolean;
+  clearItem(): RunModelPipelineRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunModelPipelineRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RunModelPipelineRequest): RunModelPipelineRequest.AsObject;
+  static serializeBinaryToWriter(message: RunModelPipelineRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunModelPipelineRequest;
+  static deserializeBinaryFromReader(message: RunModelPipelineRequest, reader: jspb.BinaryReader): RunModelPipelineRequest;
+}
+
+export namespace RunModelPipelineRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.AsObject,
+  }
+}
+
+export class RunModelPipelineResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunModelPipelineResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RunModelPipelineResponse): RunModelPipelineResponse.AsObject;
+  static serializeBinaryToWriter(message: RunModelPipelineResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunModelPipelineResponse;
+  static deserializeBinaryFromReader(message: RunModelPipelineResponse, reader: jspb.BinaryReader): RunModelPipelineResponse;
+}
+
+export namespace RunModelPipelineResponse {
+  export type AsObject = {
+  }
+}
+

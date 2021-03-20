@@ -275,5 +275,45 @@ export class PredictionPipelineServiceClient {
     this.methodInfoDownload);
   }
 
+  methodInfoRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineResponse.deserializeBinary
+  );
+
+  run(
+    request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineResponse>;
+
+  run(
+    request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineResponse>;
+
+  run(
+    request: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_predictionpipeline_v1_predictionpipeline_pb.RunPredictionPipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/Run',
+        request,
+        metadata || {},
+        this.methodInfoRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/Run',
+    request,
+    metadata || {},
+    this.methodInfoRun);
+  }
+
 }
 

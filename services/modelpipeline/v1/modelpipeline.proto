@@ -53,6 +53,13 @@ message DeleteModelPipelineResponse {
 
 }
 
+message RunModelPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+}
+
+message RunModelPipelineResponse {
+    
+}
 
 
 
@@ -78,6 +85,10 @@ service ModelPipelineService {
 
     rpc DeleteModelPipeline(DeleteModelPipelineRequest) returns (DeleteModelPipelineResponse) {
         option (google.api.http).delete = "/api/v1/modelpipelines/{modelpipeline.metadata.name}";
+    }
+
+    rpc Run(RunModelPipelineRequest) returns (RunModelPipelineResponse) {
+        option (google.api.http).post = "/api/v1/modelpipelines/{namespace}/{name}:run";
     }
 
 }

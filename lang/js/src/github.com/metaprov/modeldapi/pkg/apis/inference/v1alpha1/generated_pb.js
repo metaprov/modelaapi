@@ -7901,7 +7901,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.repeatedFields_ = [2];
 
 
 
@@ -7934,7 +7934,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phase: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.toObject, includeInstance)
   };
@@ -7973,11 +7973,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 3:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhase(value);
       break;
-    case 6:
+    case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -8011,17 +8011,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeString(
-      3,
+      1,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      2,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.serializeBinaryToWriter
     );
@@ -8030,11 +8030,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
 
 
 /**
- * optional string phase = 3;
+ * optional string phase = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.getPhase = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -8043,7 +8043,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.setPhase = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -8052,7 +8052,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.clearPhase = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -8061,17 +8061,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.hasPhase = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated PredictionPipelineCondition conditions = 6;
+ * repeated PredictionPipelineCondition conditions = 2;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition, 2));
 };
 
 
@@ -8080,7 +8080,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -8090,7 +8090,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition, opt_index);
 };
 
 

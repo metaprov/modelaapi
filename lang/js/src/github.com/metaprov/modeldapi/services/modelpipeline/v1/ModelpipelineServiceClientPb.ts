@@ -235,5 +235,45 @@ export class ModelPipelineServiceClient {
     this.methodInfoDeleteModelPipeline);
   }
 
+  methodInfoRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse.deserializeBinary
+  );
+
+  run(
+    request: github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse>;
+
+  run(
+    request: github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse>;
+
+  run(
+    request: github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/Run',
+        request,
+        metadata || {},
+        this.methodInfoRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/Run',
+    request,
+    metadata || {},
+    this.methodInfoRun);
+  }
+
 }
 
