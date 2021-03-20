@@ -101,7 +101,7 @@ type PredictionPipelineSpec struct {
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 type PredictionPipelineStatus struct {
 	// +kubebuilder:validation:Optional
-	Phase PredictionPipelinePhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
+	Phase PredictionPipelinePhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	//+optional
-	Conditions []PredictionPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []PredictionPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

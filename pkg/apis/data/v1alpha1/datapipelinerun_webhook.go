@@ -7,10 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/common"
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -41,34 +38,10 @@ func (run *DataPipelineRun) ValidateDelete() error {
 }
 
 func (ffile *DataPipelineRun) validate() error {
-	var allErrs field.ErrorList
-	allErrs = append(allErrs, ffile.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, ffile.validateSpec(field.NewPath("spec"))...)
-	if len(allErrs) == 0 {
-		return nil
-	}
-
-	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modeld.io", Kind: "TDataPipelineRun"},
-		ffile.Name, allErrs)
+	return nil
 }
 
 func (ffile *DataPipelineRun) validateMeta(fldPath *field.Path) field.ErrorList {
-	var allErrs field.ErrorList
-	allErrs = append(allErrs, ffile.validateName(fldPath.Child("name"))...)
-	return allErrs
-}
-
-func (ffile *DataPipelineRun) validateName(fldPath *field.Path) field.ErrorList {
-	var allErrs field.ErrorList
-	err := common.ValidateResourceName(ffile.Name)
-	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), ffile.Name, err.Error()))
-	}
-	return allErrs
-}
-
-func (ffile *DataPipelineRun) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
@@ -81,7 +54,7 @@ func (run *DataPipelineRun) Default() {
 		run.Spec.DataLocation.Path = "modeld/live/tenants/default-tenant/dataproducts/" + run.Namespace +
 			"/dataproductversions/" +
 			*run.Spec.VersionName +
-			"/wranglers/" + *run.Spec.DataPipelineName + "/wranglings/" + run.Name
+			"/datapipelines/" + *run.Spec.DataPipelineName + "/runs/" + run.Name
 	}
 
 }
