@@ -1,8 +1,6 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/training"
-	"github.com/metaprov/modeldapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -192,28 +190,4 @@ type ModelPipelineRunStatus struct {
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
 	Folder string `json:"folder,omitempty" protobuf:"bytes,13,opt,name=evalMetrics"`
-}
-
-//==============================================================================
-// Finalizer
-//==============================================================================
-
-func (run *ModelPipelineRun) HasFinalizer() bool {
-	return util.HasFin(&run.ObjectMeta, training.GroupName)
-}
-func (run *ModelPipelineRun) AddFinalizer()    { util.AddFin(&run.ObjectMeta, training.GroupName) }
-func (run *ModelPipelineRun) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta, training.GroupName) }
-
-//==============================================================================
-// PIpeline stage status
-//==============================================================================
-
-func (this *ModelPipelineRunStageStatus) RecordApprove(name string) {
-	this.Approved = true
-	this.ApprovedBy = name
-}
-
-func (this *ModelPipelineRunStageStatus) RecordDeny(name string) {
-	this.Approved = false
-	this.ApprovedBy = name
 }
