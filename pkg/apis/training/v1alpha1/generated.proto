@@ -26,15 +26,19 @@ message AcceptanceStageSpec {
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // The name of test dataset name
+  // PredictionPipelineName is the name
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string testDatasetName = 2;
+  optional string predictionPipelineName = 2;
+
+  // Min score
+  // +kubebuilder:validation:Optional
+  optional double minScore = 3;
 
   // Auto defines if we move to the next stage without human intervation
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 3;
+  optional bool auto = 4;
 }
 
 // AudioPipelineSpec is the specification for preprocessing audio data
@@ -67,15 +71,24 @@ message CapacityStageSpec {
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
+  // PredictionPipelineName is the name
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional string predictionPipelineName = 2;
+
   // TestDatasetName is the name of dataset used to test the model at this stage.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string testDatasetName = 2;
+  optional string testDatasetName = 3;
+
+  // Min score
+  // +kubebuilder:validation:Optional
+  optional double minScore = 4;
 
   // Auto defines if we move from stage to stage automatically.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 3;
+  optional bool auto = 5;
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns
@@ -156,7 +169,7 @@ message DataSplit {
 // Data preprocessing will be done via
 message DataStageSpec {
   // +kubebuilder:validation:Optional
-  optional string wranglerName = 1;
+  optional string dataPipelineName = 1;
 }
 
 // DateTimePipelineSpec is the specification for preprocessing datetime features
@@ -866,11 +879,6 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // Min score to move from stage to stage.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double minScore = 4;
-
   // Datastage build new dataset from the data sources.
   // +kubebuilder:validation:Optional
   optional DataStageSpec dataStage = 5;
@@ -894,7 +902,7 @@ message ModelPipelineSpec {
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
   // +kubebuilder:validation:Optional
-  optional string folder = 10;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation folder = 10;
 
   // Trigger is definition of the pipeline trigger
   // +kubebuilder:validation:Optional
@@ -1495,8 +1503,26 @@ message PreprocessingSpec {
 
 // ReleaseStageSpec is the predictor name that would host the model
 message ReleaseStageSpec {
+  // ServingSiteName is the serving site for the release
+  // +kubebuilder:default =""
+  optional string servingSiteName = 1;
+
+  // PredictorName he release predictor.
   // +kubebuilder:validation:Optional
-  optional string predictorName = 1;
+  optional string predictorName = 2;
+
+  // +kubebuilder:validation:Optional
+  optional string approverAccountName = 3;
+
+  // Weight is the weight of the model.
+  // +kubebuilder:default:=100
+  // +kubebuilder:validation:Optional
+  optional double weight = 4;
+
+  // Auto defines if we move from stage to stage automatically.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool auto = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2015,15 +2041,19 @@ message TrainingStageSpec {
   // +kubebuilder:validation:Optional
   optional string labName = 2;
 
-  // Study FileName is a name of a study which will be cloned for this stage.
+  // StudyName is the name of the template
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string studyName = 3;
 
+  // Min test score needed to move to another stage
+  // +kubebuilder:validation:Optional
+  optional double minScore = 4;
+
   // Auto defines if we move from stage to stage automatically.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 4;
+  optional bool auto = 5;
 }
 
 // TriggerSchedule specify a cron schedule

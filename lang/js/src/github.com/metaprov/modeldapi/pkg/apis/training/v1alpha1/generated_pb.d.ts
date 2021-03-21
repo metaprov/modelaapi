@@ -13,8 +13,11 @@ export class AcceptanceStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): AcceptanceStageSpec;
 
-  getTestdatasetname(): string;
-  setTestdatasetname(value: string): AcceptanceStageSpec;
+  getPredictionpipelinename(): string;
+  setPredictionpipelinename(value: string): AcceptanceStageSpec;
+
+  getMinscore(): number;
+  setMinscore(value: number): AcceptanceStageSpec;
 
   getAuto(): boolean;
   setAuto(value: boolean): AcceptanceStageSpec;
@@ -30,7 +33,8 @@ export class AcceptanceStageSpec extends jspb.Message {
 export namespace AcceptanceStageSpec {
   export type AsObject = {
     servingsitename: string,
-    testdatasetname: string,
+    predictionpipelinename: string,
+    minscore: number,
     auto: boolean,
   }
 }
@@ -85,8 +89,14 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
+  getPredictionpipelinename(): string;
+  setPredictionpipelinename(value: string): CapacityStageSpec;
+
   getTestdatasetname(): string;
   setTestdatasetname(value: string): CapacityStageSpec;
+
+  getMinscore(): number;
+  setMinscore(value: number): CapacityStageSpec;
 
   getAuto(): boolean;
   setAuto(value: boolean): CapacityStageSpec;
@@ -102,7 +112,9 @@ export class CapacityStageSpec extends jspb.Message {
 export namespace CapacityStageSpec {
   export type AsObject = {
     servingsitename: string,
+    predictionpipelinename: string,
     testdatasetname: string,
+    minscore: number,
     auto: boolean,
   }
 }
@@ -202,8 +214,8 @@ export namespace DataSplit {
 }
 
 export class DataStageSpec extends jspb.Message {
-  getWranglername(): string;
-  setWranglername(value: string): DataStageSpec;
+  getDatapipelinename(): string;
+  setDatapipelinename(value: string): DataStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataStageSpec.AsObject;
@@ -215,7 +227,7 @@ export class DataStageSpec extends jspb.Message {
 
 export namespace DataStageSpec {
   export type AsObject = {
-    wranglername: string,
+    datapipelinename: string,
   }
 }
 
@@ -1403,9 +1415,6 @@ export class ModelPipelineSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): ModelPipelineSpec;
 
-  getMinscore(): number;
-  setMinscore(value: number): ModelPipelineSpec;
-
   getDatastage(): DataStageSpec | undefined;
   setDatastage(value?: DataStageSpec): ModelPipelineSpec;
   hasDatastage(): boolean;
@@ -1431,8 +1440,10 @@ export class ModelPipelineSpec extends jspb.Message {
   hasReleasestage(): boolean;
   clearReleasestage(): ModelPipelineSpec;
 
-  getFolder(): string;
-  setFolder(value: string): ModelPipelineSpec;
+  getFolder(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setFolder(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
+  hasFolder(): boolean;
+  clearFolder(): ModelPipelineSpec;
 
   getTrigger(): PipelineTrigger | undefined;
   setTrigger(value?: PipelineTrigger): ModelPipelineSpec;
@@ -1455,13 +1466,12 @@ export namespace ModelPipelineSpec {
     versionname: string,
     defaultservingsitename: string,
     description: string,
-    minscore: number,
     datastage?: DataStageSpec.AsObject,
     trainingstage?: TrainingStageSpec.AsObject,
     acceptancestage?: AcceptanceStageSpec.AsObject,
     capacitystage?: CapacityStageSpec.AsObject,
     releasestage?: ReleaseStageSpec.AsObject,
-    folder: string,
+    folder?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     trigger?: PipelineTrigger.AsObject,
     owner: string,
   }
@@ -2352,8 +2362,20 @@ export namespace PreprocessingSpec {
 }
 
 export class ReleaseStageSpec extends jspb.Message {
+  getServingsitename(): string;
+  setServingsitename(value: string): ReleaseStageSpec;
+
   getPredictorname(): string;
   setPredictorname(value: string): ReleaseStageSpec;
+
+  getApproveraccountname(): string;
+  setApproveraccountname(value: string): ReleaseStageSpec;
+
+  getWeight(): number;
+  setWeight(value: number): ReleaseStageSpec;
+
+  getAuto(): boolean;
+  setAuto(value: boolean): ReleaseStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReleaseStageSpec.AsObject;
@@ -2365,7 +2387,11 @@ export class ReleaseStageSpec extends jspb.Message {
 
 export namespace ReleaseStageSpec {
   export type AsObject = {
+    servingsitename: string,
     predictorname: string,
+    approveraccountname: string,
+    weight: number,
+    auto: boolean,
   }
 }
 
@@ -3087,6 +3113,9 @@ export class TrainingStageSpec extends jspb.Message {
   getStudyname(): string;
   setStudyname(value: string): TrainingStageSpec;
 
+  getMinscore(): number;
+  setMinscore(value: number): TrainingStageSpec;
+
   getAuto(): boolean;
   setAuto(value: boolean): TrainingStageSpec;
 
@@ -3103,6 +3132,7 @@ export namespace TrainingStageSpec {
     notebookname: string,
     labname: string,
     studyname: string,
+    minscore: number,
     auto: boolean,
   }
 }

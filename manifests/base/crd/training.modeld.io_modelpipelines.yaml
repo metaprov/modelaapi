@@ -58,11 +58,14 @@ spec:
                     description: Auto defines if we move to the next stage without
                       human intervation
                     type: boolean
+                  minScore:
+                    description: Min score
+                    type: number
+                  predictionPipelineName:
+                    description: PredictionPipelineName is the name
+                    type: string
                   servingSiteName:
                     description: The serving site for the testing
-                    type: string
-                  testDatasetName:
-                    description: The name of test dataset name
                     type: string
                 type: object
               capacityStage:
@@ -72,6 +75,12 @@ spec:
                     default: true
                     description: Auto defines if we move from stage to stage automatically.
                     type: boolean
+                  minScore:
+                    description: Min score
+                    type: number
+                  predictionPipelineName:
+                    description: PredictionPipelineName is the name
+                    type: string
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
                     type: string
@@ -83,7 +92,7 @@ spec:
               dataStage:
                 description: Datastage build new dataset from the data sources.
                 properties:
-                  wranglerName:
+                  dataPipelineName:
                     type: string
                 type: object
               defaultServingSiteName:
@@ -96,11 +105,16 @@ spec:
               folder:
                 description: Folder for the pipeline and pipeline run artifacts. The
                   folder contains all the study artifacts - metadata, reports, profile,models
-                type: string
-              minScore:
-                default: 0
-                description: Min score to move from stage to stage.
-                type: number
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               owner:
                 description: The owner account name
                 type: string
@@ -108,8 +122,22 @@ spec:
                 description: ReleaseStage stage define how to place the model into
                   production.
                 properties:
-                  predictorName:
+                  approverAccountName:
                     type: string
+                  auto:
+                    default: true
+                    description: Auto defines if we move from stage to stage automatically.
+                    type: boolean
+                  predictorName:
+                    description: PredictorName he release predictor.
+                    type: string
+                  servingSiteName:
+                    description: ServingSiteName is the serving site for the release
+                    type: string
+                  weight:
+                    default: 100
+                    description: Weight is the weight of the model.
+                    type: number
                 type: object
               trainingStage:
                 description: TrainingSpec stage
@@ -121,12 +149,14 @@ spec:
                   labName:
                     description: LabName is the name of the lab used for training
                     type: string
+                  minScore:
+                    description: Min test score needed to move to another stage
+                    type: number
                   notebookName:
                     description: NotebookName template specify the notebook
                     type: string
                   studyName:
-                    description: Study FileName is a name of a study which will be
-                      cloned for this stage.
+                    description: StudyName is the name of the template
                     type: string
                 type: object
               trigger:
