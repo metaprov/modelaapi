@@ -84,9 +84,11 @@ service DataPipelineService {
 		};
     }
 
-    rpc DeleteDataPipeline(DeleteDataPipelineRequest) returns (DeleteDataPipelineResponse) {}
-
-    rpc Run(RunDataPipelineRequest) returns (RunDataPipelineResponse) {
+    rpc DeleteDataPipeline(DeleteDataPipelineRequest) returns (DeleteDataPipelineResponse) {
         option (google.api.http).delete = "/api/v1/datapipelines/{namespace}/{name}";
+    }
+
+    rpc RunDataPipeline(RunDataPipelineRequest) returns (RunDataPipelineResponse) {
+        option (google.api.http).post = "/api/v1/datapipelines/{namespace}/{name}:run";
     }
 }

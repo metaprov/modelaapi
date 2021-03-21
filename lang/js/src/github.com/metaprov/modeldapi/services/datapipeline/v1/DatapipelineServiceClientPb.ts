@@ -235,7 +235,7 @@ export class DataPipelineServiceClient {
     this.methodInfoDeleteDataPipeline);
   }
 
-  methodInfoRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineResponse,
     (request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineRequest) => {
       return request.serializeBinary();
@@ -243,17 +243,17 @@ export class DataPipelineServiceClient {
     github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineResponse.deserializeBinary
   );
 
-  run(
+  runDataPipeline(
     request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineResponse>;
 
-  run(
+  runDataPipeline(
     request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineResponse>;
 
-  run(
+  runDataPipeline(
     request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -261,18 +261,18 @@ export class DataPipelineServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/Run',
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
         request,
         metadata || {},
-        this.methodInfoRun,
+        this.methodInfoRunDataPipeline,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/Run',
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
     request,
     metadata || {},
-    this.methodInfoRun);
+    this.methodInfoRunDataPipeline);
   }
 
 }

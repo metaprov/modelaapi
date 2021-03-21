@@ -39,8 +39,8 @@ class DataPipelineServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.FromString,
                 )
-        self.Run = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/Run',
+        self.RunDataPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.FromString,
                 )
@@ -79,7 +79,7 @@ class DataPipelineServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Run(self, request, context):
+    def RunDataPipeline(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -113,8 +113,8 @@ def add_DataPipelineServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.SerializeToString,
             ),
-            'Run': grpc.unary_unary_rpc_method_handler(
-                    servicer.Run,
+            'RunDataPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunDataPipeline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.SerializeToString,
             ),
@@ -214,7 +214,7 @@ class DataPipelineService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Run(request,
+    def RunDataPipeline(request,
             target,
             options=(),
             channel_credentials=None,
@@ -224,7 +224,7 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/Run',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.FromString,
             options, channel_credentials,
