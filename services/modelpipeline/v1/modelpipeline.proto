@@ -87,7 +87,7 @@ service ModelPipelineService {
         option (google.api.http).delete = "/api/v1/modelpipelines/{modelpipeline.metadata.name}";
     }
 
-    rpc Run(RunModelPipelineRequest) returns (RunModelPipelineResponse) {
+    rpc RunModelPipeline(RunModelPipelineRequest) returns (RunModelPipelineResponse) {
         option (google.api.http).post = "/api/v1/modelpipelines/{namespace}/{name}:run";
     }
 

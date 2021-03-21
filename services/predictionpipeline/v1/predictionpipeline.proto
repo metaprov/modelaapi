@@ -106,7 +106,7 @@ service PredictionPipelineService {
         option (google.api.http).get = "/api/v1alpha1/{namespace}/predictionpipelines/{name}:download";
     }
 
-    rpc Run(RunPredictionPipelineRequest) returns (RunPredictionPipelineResponse) {
+    rpc RunPredictionPipeline(RunPredictionPipelineRequest) returns (RunPredictionPipelineResponse) {
         option (google.api.http).post = "/api/v1/predictionpipelines/{namespace}/{name}:run";
     }
 

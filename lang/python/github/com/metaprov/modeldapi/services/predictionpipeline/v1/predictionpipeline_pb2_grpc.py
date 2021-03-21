@@ -44,8 +44,8 @@ class PredictionPipelineServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.DownloadPredictionPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.DownloadPredictionPipelineResponse.FromString,
                 )
-        self.Run = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/Run',
+        self.RunPredictionPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/RunPredictionPipeline',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.RunPredictionPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.RunPredictionPipelineResponse.FromString,
                 )
@@ -90,7 +90,7 @@ class PredictionPipelineServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Run(self, request, context):
+    def RunPredictionPipeline(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -129,8 +129,8 @@ def add_PredictionPipelineServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.DownloadPredictionPipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.DownloadPredictionPipelineResponse.SerializeToString,
             ),
-            'Run': grpc.unary_unary_rpc_method_handler(
-                    servicer.Run,
+            'RunPredictionPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunPredictionPipeline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.RunPredictionPipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.RunPredictionPipelineResponse.SerializeToString,
             ),
@@ -247,7 +247,7 @@ class PredictionPipelineService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Run(request,
+    def RunPredictionPipeline(request,
             target,
             options=(),
             channel_credentials=None,
@@ -257,7 +257,7 @@ class PredictionPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/Run',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionpipeline.v1.PredictionPipelineService/RunPredictionPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.RunPredictionPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionpipeline_dot_v1_dot_predictionpipeline__pb2.RunPredictionPipelineResponse.FromString,
             options, channel_credentials,
