@@ -6589,14 +6589,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    predictorname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    labeled: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    objective: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    predictionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    labeled: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    objective: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    datasetname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     input: (f = msg.getInput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     output: (f = msg.getOutput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6635,35 +6636,39 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPredictorname(value);
+      msg.setPredictionname(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPredictorname(value);
+      break;
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setLabeled(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setObjective(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasetname(value);
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
-      msg.setInput(value);
       break;
     case 6:
       var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
-      msg.setOutput(value);
+      msg.setInput(value);
       break;
     case 7:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setOutput(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
       break;
@@ -6703,16 +6708,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       3,
       f
     );
@@ -6724,15 +6729,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
       f
     );
   }
-  f = message.getInput();
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       5,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getOutput();
+  f = message.getInput();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -6740,11 +6744,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = message.getOutput();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       7,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 8));
@@ -6754,14 +6759,21 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string predictorName = 1;
+ * optional string predictionName = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getPredictorname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getPredictionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -6770,7 +6782,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setPredictorname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setPredictionname = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -6779,7 +6791,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearPredictorname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearPredictionname = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -6788,25 +6800,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasPredictorname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasPredictionname = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional bool labeled = 2;
- * @return {boolean}
+ * optional string predictorName = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getLabeled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getPredictorname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setLabeled = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setPredictorname = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -6815,7 +6827,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearLabeled = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearPredictorname = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -6824,25 +6836,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasLabeled = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasPredictorname = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string objective = 3;
- * @return {string}
+ * optional bool labeled = 3;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getObjective = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getLabeled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setObjective = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setLabeled = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -6851,7 +6863,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearObjective = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearLabeled = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -6860,16 +6872,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasObjective = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasLabeled = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string datasetName = 4;
+ * optional string objective = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getObjective = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -6878,7 +6890,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setDatasetname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setObjective = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -6887,7 +6899,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearObjective = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -6896,18 +6908,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasObjective = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
+ * optional string datasetName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 6;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getInput = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 6));
 };
 
 
@@ -6916,7 +6964,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setInput = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -6934,17 +6982,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasInput = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getOutput = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 6));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 7));
 };
 
 
@@ -6953,7 +7001,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setOutput = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -6971,51 +7019,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasOutput = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional string owner = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string workloadClassName = 8;
+ * optional string owner = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getWorkloadclassname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getOwner = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -7024,7 +7036,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setWorkloadclassname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setOwner = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -7033,7 +7045,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearWorkloadclassname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearOwner = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -7042,8 +7054,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

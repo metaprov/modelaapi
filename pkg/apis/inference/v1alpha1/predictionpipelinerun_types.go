@@ -76,31 +76,35 @@ type PredictionPipelineRunList struct {
 
 // PredictionPipelineRunSpec represent the desired state of PredictionPipelineRun
 type PredictionPipelineRunSpec struct {
+	// Prediction name refer to the parent prediction that created this run.
+	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:validation:MinLength=1
+	PredictionName *string `json:"predictionName" protobuf:"bytes,1,opt,name=predictionName"`
 	// PredictorName refer to the predictor which would predict the dataset of this prediction.
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	PredictorName string `json:"predictorName" protobuf:"bytes,1,opt,name=predictorName"`
+	PredictorName *string `json:"predictorName" protobuf:"bytes,2,opt,name=predictorName"`
 	// Labeled , true if this is labeled prediction request.
 	// Used usually for unit testing
-	Labeled bool `json:"labeled" protobuf:"bytes,2,opt,name=labeled"`
+	Labeled bool `json:"labeled" protobuf:"bytes,3,opt,name=labeled"`
 	// Objective is the objective metric used to score
-	Objective *catalog.Metric `json:"objective" protobuf:"bytes,3,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective" protobuf:"bytes,4,opt,name=objective"`
 	// DatasetName is where we are using a dataset name. This can be dataset name
 	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
 	// Input is of the input if using direct input file
-	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
+	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
 	// Output is the key in the bucket for storing all the prediction output
 	// +kubebuilder:validation:Optional
-	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
+	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
 	// Owner of the run
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 	// WorkloadClassName A reference to the workload class this is used to run this notebook
 	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 }
 
 // PredictionPipelineRunStatus is the observed state of a PredictionTemplate

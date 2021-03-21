@@ -655,6 +655,9 @@ export namespace PredictionPipelineRunList {
 }
 
 export class PredictionPipelineRunSpec extends jspb.Message {
+  getPredictionname(): string;
+  setPredictionname(value: string): PredictionPipelineRunSpec;
+
   getPredictorname(): string;
   setPredictorname(value: string): PredictionPipelineRunSpec;
 
@@ -693,6 +696,7 @@ export class PredictionPipelineRunSpec extends jspb.Message {
 
 export namespace PredictionPipelineRunSpec {
   export type AsObject = {
+    predictionname: string,
     predictorname: string,
     labeled: boolean,
     objective: string,

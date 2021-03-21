@@ -352,38 +352,43 @@ message PredictionPipelineRunList {
 
 // PredictionPipelineRunSpec represent the desired state of PredictionPipelineRun
 message PredictionPipelineRunSpec {
+  // Prediction name refer to the parent prediction that created this run.
+  // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:validation:MinLength=1
+  optional string predictionName = 1;
+
   // PredictorName refer to the predictor which would predict the dataset of this prediction.
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  optional string predictorName = 1;
+  optional string predictorName = 2;
 
   // Labeled , true if this is labeled prediction request.
   // Used usually for unit testing
-  optional bool labeled = 2;
+  optional bool labeled = 3;
 
   // Objective is the objective metric used to score
-  optional string objective = 3;
+  optional string objective = 4;
 
   // DatasetName is where we are using a dataset name. This can be dataset name
   // +kubebuilder:validation:Optional
-  optional string datasetName = 4;
+  optional string datasetName = 5;
 
   // Input is of the input if using direct input file
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 6;
 
   // Output is the key in the bucket for storing all the prediction output
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 7;
 
   // Owner of the run
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 7;
+  optional string owner = 8;
 
   // WorkloadClassName A reference to the workload class this is used to run this notebook
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional string workloadClassName = 9;
 }
 
 // PredictionPipelineRunStatus is the observed state of a PredictionTemplate
