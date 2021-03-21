@@ -391,8 +391,7 @@ func (pl *ModelPipeline) HasProdStage() bool {
 }
 
 func (pl *ModelPipeline) HasAcceptanceStage() bool {
-	return pl.Spec.AcceptanceStage != nil && pl.Spec.AcceptanceStage.TestDatasetName != nil &&
-		*pl.Spec.AcceptanceStage.TestDatasetName != ""
+	return pl.Spec.AcceptanceStage != nil && pl.Spec.AcceptanceStage.PredictionPipelineName != nil
 }
 
 func (pl *ModelPipeline) HasTrainingNotebook() bool {

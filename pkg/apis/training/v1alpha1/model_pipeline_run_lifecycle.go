@@ -82,10 +82,3 @@ func (this *ModelPipelineRunStageStatus) RecordDeny(name string) {
 	this.Approved = false
 	this.ApprovedBy = name
 }
-
-func (model *Model) MarkTraining() {
-	now := metav1.Now()
-	model.Status.StartTime = &now
-	model.Status.TrainStartTime = &now
-	model.Status.Phase = ModelPhaseTraining
-}
