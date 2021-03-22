@@ -13,12 +13,20 @@ import (
 type ModelAutobuilderPhase string
 
 const (
-	ModelAutobuilderPhaseDataSource ModelAutobuilderPhase = "DataSource"
-	ModelAutobuilderPhaseDataset    ModelAutobuilderPhase = "Dataset"
-	ModelAutobuilderPhaseStudy      ModelAutobuilderPhase = "Study"
-	ModelAutobuilderPhasePredictor  ModelAutobuilderPhase = "Predictor"
-	ModelAutobuilderPhaseReady      ModelAutobuilderPhase = "Succeeded"
-	ModelAutobuilderPhaseFailed     ModelAutobuilderPhase = "Failed"
+	ModelAutobuilderPhaseDataSourceRunning ModelAutobuilderPhase = "DataSourceRunning"
+	ModelAutobuilderPhaseDataSourceFailed  ModelAutobuilderPhase = "DataSourceFailed"
+	ModelAutobuilderPhaseDataSourceSuccess ModelAutobuilderPhase = "DataSourceSuccess"
+	ModelAutobuilderPhaseDatasetRunning    ModelAutobuilderPhase = "DatasetRunning"
+	ModelAutobuilderPhaseDatasetFailed     ModelAutobuilderPhase = "DatasetFailed"
+	ModelAutobuilderPhaseDatasetSuccess    ModelAutobuilderPhase = "DatasetSuccess"
+	ModelAutobuilderPhaseStudyRunning      ModelAutobuilderPhase = "StudyRunning"
+	ModelAutobuilderPhaseStudyFailed       ModelAutobuilderPhase = "StudyFailed"
+	ModelAutobuilderPhaseStudySuccess      ModelAutobuilderPhase = "StudySuccess"
+	ModelAutobuilderPhasePredictorRunning  ModelAutobuilderPhase = "PredictorRunning"
+	ModelAutobuilderPhasePredictorFailed   ModelAutobuilderPhase = "PredictorFailed"
+	ModelAutobuilderPhasePredictorSuccess  ModelAutobuilderPhase = "PredictorSuccess"
+	ModelAutobuilderPhaseCompleted         ModelAutobuilderPhase = "Completed"
+	ModelAutobuilderPhaseFailed            ModelAutobuilderPhase = "Failed"
 )
 
 // ModelAutobuilderConditionType represent that condition that a model auto builder can be in.

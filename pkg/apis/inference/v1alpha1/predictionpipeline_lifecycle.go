@@ -125,10 +125,6 @@ func (prediction *PredictionPipeline) IsReady() bool {
 	return prediction.GetCond(PredictionReady).Status == v1.ConditionTrue
 }
 
-func (prediction *PredictionPipeline) StatusString() string {
-	return string(prediction.Status.Phase)
-}
-
 func (prediction *PredictionPipeline) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
 }
@@ -150,27 +146,16 @@ func (prediction *PredictionPipeline) MarkFailed(msg string) {
 	prediction.CreateOrUpdateCond(PredictionPipelineCondition{
 		Type:    PredictionReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "prediction failed",
+		Reason:  string(PredictionPipelineRunPhaseFailed),
 		Message: msg,
 	})
-	prediction.Status.Phase = PredictionPhaseFailed
 }
 
-func (prediction *PredictionPipeline) MarkDone() {
+func (prediction *PredictionPipeline) MarkReady() {
 	prediction.CreateOrUpdateCond(PredictionPipelineCondition{
 		Type:   PredictionReady,
 		Status: v1.ConditionTrue,
 	})
-	prediction.Status.Phase = PredictionPhaseReady
-
-}
-
-func (prediction *PredictionPipeline) MarkRunning() {
-	prediction.CreateOrUpdateCond(PredictionPipelineCondition{
-		Status: v1.ConditionFalse,
-		Reason: "prediction running",
-	})
-	prediction.Status.Phase = PredictionPhaseRunning
 }
 
 func (prediction *PredictionPipeline) OpName() string {

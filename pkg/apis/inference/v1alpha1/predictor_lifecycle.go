@@ -283,3 +283,10 @@ func (predictor *Predictor) MarkArchived() {
 func (predictor *Predictor) Archived() bool {
 	return predictor.GetCond(PredictorArchived).Status == v1.ConditionTrue
 }
+
+func (predictor *Predictor) MarkReady() {
+	predictor.CreateOrUpdateCond(PredictorCondition{
+		Type:   PredictorReady,
+		Status: v1.ConditionTrue,
+	})
+}

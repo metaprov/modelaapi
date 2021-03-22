@@ -16,7 +16,8 @@ type FeatureConditionType string
 
 /// Feature Condition
 const (
-	FeatureReady FeatureConditionType = "Ready"
+	FeatureReady    FeatureConditionType = "Ready"
+	FeatureArchived FeatureConditionType = "Archived"
 )
 
 // FeatureCondition describes the state of a deployment at a certain point.

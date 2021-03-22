@@ -11,9 +11,13 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//==============================================================================
-// FeatureRef
-//==============================================================================
+type FeautrePipelineRunPhase string
+
+const (
+	FeaturePipelineRunRunning FeautrePipelineRunPhase = "Running"
+	FeaturePipelineRunSuccess FeautrePipelineRunPhase = "Success"
+	FeaturePipelineRunFailed  FeautrePipelineRunPhase = "Failed"
+)
 
 // FeaturePipelineRunConditionType
 type FeaturePipelineRunConditionType string
@@ -90,6 +94,9 @@ type FeaturePipelineRunStatus struct {
 	// The End time of the run
 	//+option
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,2,opt,name=completionTime"`
+	// The phase of the dataset processing
+	// +kubebuilder:validation:Optional
+	Phase FeautrePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	//+optional
-	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

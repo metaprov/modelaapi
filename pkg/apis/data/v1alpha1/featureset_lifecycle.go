@@ -150,11 +150,21 @@ func ParseFeatureSetYaml(content []byte) (*Featureset, error) {
 	return r, nil
 }
 
-func (entity *Featureset) MarkReady() {
+func (fset *Featureset) MarkReady() {
 	// update the lab state to ready
-	entity.CreateOrUpdateCond(FeaturesetCondition{
+	fset.CreateOrUpdateCond(FeaturesetCondition{
 		Type:   FeaturesetReady,
 		Status: v1.ConditionTrue,
 	})
+}
 
+func (fset *Featureset) MarkArchived() {
+	fset.CreateOrUpdateCond(FeaturesetCondition{
+		Type:   FeaturesetArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (pipeline *Featureset) Archived() bool {
+	return pipeline.GetCond(FeaturesetArchived).Status == v1.ConditionTrue
 }

@@ -161,11 +161,21 @@ func ParseFeaturesetYaml(content []byte) (*FeaturePipeline, error) {
 	return r, nil
 }
 
-func (feautreset *FeaturePipeline) MarkReady() {
+func (pipeline *FeaturePipeline) MarkReady() {
 	// update the lab state to ready
-	feautreset.CreateOrUpdateCond(FeaturePipelineCondition{
+	pipeline.CreateOrUpdateCond(FeaturePipelineCondition{
 		Type:   FeaturePipelineReady,
 		Status: v1.ConditionTrue,
 	})
+}
 
+func (pipeline *FeaturePipeline) MarkArchived() {
+	pipeline.CreateOrUpdateCond(FeaturePipelineCondition{
+		Type:   FeaturePipelineArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (pipeline *FeaturePipeline) Archived() bool {
+	return pipeline.GetCond(FeaturePipelineArchived).Status == v1.ConditionTrue
 }

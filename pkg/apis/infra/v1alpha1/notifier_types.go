@@ -10,8 +10,8 @@ type NotifierConditionType string
 
 /// Notifier Condition
 const (
-	NotifierReady NotifierConditionType = "Ready"
-	NotifierInDb  NotifierConditionType = "InDb"
+	NotifierReady    NotifierConditionType = "Ready"
+	NotifierArchived NotifierConditionType = "Archived"
 )
 
 // NotifierCondition describes the state of the license at a certain point.

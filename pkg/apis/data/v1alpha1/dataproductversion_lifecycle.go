@@ -107,6 +107,22 @@ func (version *DataProductVersion) MarkArchived() {
 	})
 }
 
+func (version *DataProductVersion) MarkReady() {
+	version.CreateOrUpdateCond(DataProductVersionCondition{
+		Type:   DataProductVersionReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (version *DataProductVersion) MarkFailed(err error) {
+	version.CreateOrUpdateCond(DataProductVersionCondition{
+		Type:    DataProductVersionReady,
+		Status:  v1.ConditionFalse,
+		Reason:  "Failed",
+		Message: err.Error(),
+	})
+}
+
 func (version *DataProductVersion) Archived() bool {
 	return version.GetCond(DataProductVersionArchived).Status == v1.ConditionTrue
 }

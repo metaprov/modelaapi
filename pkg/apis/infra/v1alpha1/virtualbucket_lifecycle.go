@@ -102,3 +102,21 @@ func ParseVirtualBucketYaml(content []byte) (*VirtualBucket, error) {
 	r := requiredObj.(*VirtualBucket)
 	return r, nil
 }
+
+func (bucket *VirtualBucket) MarkReady() {
+	bucket.CreateOrUpdateCond(VirtualBucketCondition{
+		Type:   VirtualBucketReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (bucket *VirtualBucket) MarkArchived() {
+	bucket.CreateOrUpdateCond(VirtualBucketCondition{
+		Type:   VirtualBucketArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (bucket *VirtualBucket) Archived() bool {
+	return bucket.GetCond(VirtualBucketArchived).Status == v1.ConditionTrue
+}

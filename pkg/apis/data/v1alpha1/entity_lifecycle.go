@@ -162,5 +162,15 @@ func (entity *Entity) MarkReady() {
 		Type:   EntityReady,
 		Status: v1.ConditionTrue,
 	})
+}
 
+func (entity *Entity) MarkArchived() {
+	entity.CreateOrUpdateCond(EntityCondition{
+		Type:   EntityArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (entity *Entity) Archived() bool {
+	return entity.GetCond(EntityArchived).Status == v1.ConditionTrue
 }

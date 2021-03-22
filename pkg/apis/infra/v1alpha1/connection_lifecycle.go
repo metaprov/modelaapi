@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modeldapi/pkg/apis/infra"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -121,4 +120,11 @@ func ParseConnectionYaml(content []byte) (*Connection, error) {
 
 func (connection *Connection) IsReady() bool {
 	return connection.GetCond(ConnectionReady).Status == corev1.ConditionTrue
+}
+
+func (connection *Connection) MarkReady() {
+	connection.CreateOrUpdateCond(ConnectionCondition{
+		Type:   ConnectionReady,
+		Status: corev1.ConditionTrue,
+	})
 }

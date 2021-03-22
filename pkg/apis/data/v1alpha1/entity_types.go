@@ -21,7 +21,8 @@ type EntityConditionType string
 
 /// Entity Condition
 const (
-	EntityReady EntityConditionType = "Ready"
+	EntityReady    EntityConditionType = "Ready"
+	EntityArchived EntityConditionType = "Archived"
 )
 
 // EntityCondition describes the state of a deployment at a certain point.

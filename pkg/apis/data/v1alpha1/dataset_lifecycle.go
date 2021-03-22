@@ -139,11 +139,11 @@ func (dataset *Dataset) UpdatePhaseFromConditions() {
 	if dataset.IsReady() {
 		dataset.Status.Phase = DatasetPhaseReady
 	} else if dataset.IsInCond(DatasetProfiled) {
-		dataset.Status.Phase = DatasetPhaseProfiled
+		dataset.Status.Phase = DatasetPhaseProfileSuccess
 	} else if dataset.IsInCond(DatasetReported) {
-		dataset.Status.Phase = DatasetPhaseReported
+		dataset.Status.Phase = DatasetPhaseReportSuccess
 	} else if dataset.IsInCond(DatasetIngested) {
-		dataset.Status.Phase = DatasetPhaseIngested
+		dataset.Status.Phase = DatasetPhaseIngestSuccess
 	}
 }
 
@@ -189,10 +189,10 @@ func (dataset *Dataset) MarkValidationFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetValidated,
 		Status:  v1.ConditionFalse,
-		Reason:  "validation failed",
+		Reason:  string(DatasetPhaseValidationFailed),
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetPhaseError
+	dataset.Status.Phase = DatasetPhaseValidationFailed
 }
 
 func (dataset *Dataset) MarkValidated() {
@@ -200,7 +200,7 @@ func (dataset *Dataset) MarkValidated() {
 		Type:   DatasetValidated,
 		Status: v1.ConditionTrue,
 	})
-	dataset.Status.Phase = DatasetPhaseValidated
+	dataset.Status.Phase = DatasetPhaseValidationSuccess
 
 }
 
@@ -208,20 +208,20 @@ func (dataset *Dataset) MarkValidating() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetValidated,
 		Status: v1.ConditionFalse,
-		Reason: "validating",
+		Reason: string(DatasetPhaseValidationRunning),
 	})
-	dataset.Status.Phase = DatasetPhaseValidating
+	dataset.Status.Phase = DatasetPhaseValidationRunning
 }
 
 // ------------------------- injest
 
-func (dataset *Dataset) MarkInjesting() {
+func (dataset *Dataset) MarkIngesting() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetIngested,
 		Status: v1.ConditionFalse,
-		Reason: "ingesting",
+		Reason: string(DatasetPhaseIngestRunning),
 	})
-	dataset.Status.Phase = DatasetPhaseIngesting
+	dataset.Status.Phase = DatasetPhaseIngestRunning
 
 }
 
@@ -230,7 +230,7 @@ func (dataset *Dataset) MarkIngested() {
 		Type:   DatasetIngested,
 		Status: v1.ConditionTrue,
 	})
-	dataset.Status.Phase = DatasetPhaseIngested
+	dataset.Status.Phase = DatasetPhaseIngestSuccess
 
 }
 
@@ -238,10 +238,10 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetIngested,
 		Status:  v1.ConditionFalse,
-		Reason:  "ingest failed",
+		Reason:  string(DatasetPhaseIngestFailed),
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetPhaseError
+	dataset.Status.Phase = DatasetPhaseIngestFailed
 }
 
 // ------------------------- report
@@ -250,9 +250,9 @@ func (dataset *Dataset) MarkReporting() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetReported,
 		Status: v1.ConditionFalse,
-		Reason: "reporting",
+		Reason: string(DatasetPhaseReportRunning),
 	})
-	dataset.Status.Phase = DatasetPhaseReporting
+	dataset.Status.Phase = DatasetPhaseReportRunning
 }
 
 func (dataset *Dataset) MarkReported() {
@@ -260,17 +260,17 @@ func (dataset *Dataset) MarkReported() {
 		Type:   DatasetReported,
 		Status: v1.ConditionTrue,
 	})
-	dataset.Status.Phase = DatasetPhaseReported
+	dataset.Status.Phase = DatasetPhaseReportSuccess
 }
 
 func (dataset *Dataset) MarkReportFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetReported,
 		Status:  v1.ConditionFalse,
-		Reason:  "report failed",
+		Reason:  string(DatasetPhaseReportFailed),
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetPhaseError
+	dataset.Status.Phase = DatasetPhaseReportFailed
 }
 
 // ----------------- profile
@@ -279,9 +279,9 @@ func (dataset *Dataset) MarkProfiling() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetProfiled,
 		Status: v1.ConditionFalse,
-		Reason: "profiling",
+		Reason: string(DatasetPhaseProfileRunning),
 	})
-	dataset.Status.Phase = DatasetPhaseProfiling
+	dataset.Status.Phase = DatasetPhaseProfileRunning
 }
 
 func (dataset *Dataset) MarkProfiled(uri string) {
@@ -290,17 +290,17 @@ func (dataset *Dataset) MarkProfiled(uri string) {
 		Status: v1.ConditionTrue,
 	})
 	dataset.Status.ProfileUri = uri
-	dataset.Status.Phase = DatasetPhaseProfiled
+	dataset.Status.Phase = DatasetPhaseProfileSuccess
 }
 
 func (dataset *Dataset) MarkProfiledFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetProfiled,
 		Status:  v1.ConditionFalse,
-		Reason:  "profiled failed",
+		Reason:  string(DatasetPhaseProfileFailed),
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetPhaseError
+	dataset.Status.Phase = DatasetPhaseProfileFailed
 }
 
 func (r *Dataset) OpName() string {
@@ -331,13 +331,4 @@ func (dataset *Dataset) Archived() bool {
 
 func (dataset *Dataset) Deleted() bool {
 	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
-}
-
-func (r *Dataset) MarkInjested() {
-	r.Status.Phase = DatasetPhaseIngested
-	r.CreateOrUpdateCond(DatasetCondition{
-		Type:   DatasetIngested,
-		Status: v1.ConditionTrue,
-	})
-
 }

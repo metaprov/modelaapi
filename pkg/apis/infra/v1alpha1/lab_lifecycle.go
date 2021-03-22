@@ -126,6 +126,17 @@ func (lab *Lab) IsReady() bool {
 	return lab.GetCond(LabReady).Status == corev1.ConditionTrue
 }
 
+func (lab *Lab) IsArchived() bool {
+	return lab.GetCond(LabArchived).Status == corev1.ConditionTrue
+}
+
+func (lab *Lab) MarkArchived() {
+	lab.CreateOrUpdateCond(LabCondition{
+		Type:   LabArchived,
+		Status: corev1.ConditionTrue,
+	})
+}
+
 func (lab *Lab) Key() string {
 	return fmt.Sprintf("tenanets/%s/labs/%s", lab.Namespace, lab.Name)
 }

@@ -12,9 +12,10 @@ type ReportPhase string
 
 /// Dataset Condition
 const (
-	ReportPhaseCreating ReportPhase = "Pending"
-	ReportPhaseReady    ReportPhase = "Ready"
-	ReportPhaseFailed   ReportPhase = "Failed"
+	ReportPhasePending ReportPhase = "Pending"
+	ReportPhaseRunning ReportPhase = "Running"
+	ReportPhaseSuccess ReportPhase = "Success"
+	ReportPhaseFailed  ReportPhase = "Failed"
 )
 
 // ReportImageName denote the name of a report image

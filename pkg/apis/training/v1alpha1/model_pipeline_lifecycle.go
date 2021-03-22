@@ -365,7 +365,7 @@ func (pl *ModelPipeline) GetCond(t ModelPipelineConditionType) ModelPipelineCond
 }
 
 func (run *ModelPipeline) IsReady() bool {
-	return run.GetCond(PipelineReady).Status == v1.ConditionTrue
+	return run.GetCond(ModelPipelineReady).Status == v1.ConditionTrue
 }
 
 func (pl *ModelPipeline) ToYamlFile() ([]byte, error) {
@@ -404,4 +404,22 @@ func (pl *ModelPipeline) HasTrainingStudy() bool {
 
 func (pl *ModelPipeline) HasCapacityStage() bool {
 	return pl.Spec.CapacityStage != nil && pl.Spec.CapacityStage.TestDatasetName != nil && *pl.Spec.CapacityStage.TestDatasetName != ""
+}
+
+func (pl *ModelPipeline) MarkReady() {
+	pl.CreateOrUpdateCond(ModelPipelineCondition{
+		Type:   ModelPipelineReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (pl *ModelPipeline) MarkArchived() {
+	pl.CreateOrUpdateCond(ModelPipelineCondition{
+		Type:   ModelPipelineArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (pl *ModelPipeline) Archived() bool {
+	return pl.GetCond(ModelPipelineArchived).Status == v1.ConditionTrue
 }

@@ -176,3 +176,21 @@ func ParseNotebookYaml(content []byte) (*Notebook, error) {
 func (notebook *Notebook) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(notebook)
 }
+
+func (notebook *Notebook) MarkReady() {
+	notebook.CreateOrUpdateCond(NotebookCondition{
+		Type:   NotebookReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (notebook *Notebook) MarkArchived() {
+	notebook.CreateOrUpdateCond(NotebookCondition{
+		Type:   NotebookReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (notebook *Notebook) Archived() bool {
+	return notebook.GetCond(NotebookArchived).Status == v1.ConditionTrue
+}

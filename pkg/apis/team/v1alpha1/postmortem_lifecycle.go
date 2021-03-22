@@ -105,3 +105,21 @@ func ParsePostMortemYaml(content []byte) (*PostMortem, error) {
 	r := requiredObj.(*PostMortem)
 	return r, nil
 }
+
+func (pm *PostMortem) MarkReady() {
+	pm.CreateOrUpdateCond(PostMortemCondition{
+		Type:   PostMortemReady,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (pm *PostMortem) MarkArchived() {
+	pm.CreateOrUpdateCond(PostMortemCondition{
+		Type:   PostMortemArchived,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (pm *PostMortem) Archived() bool {
+	return pm.GetCond(PostMortemArchived).Status == corev1.ConditionTrue
+}

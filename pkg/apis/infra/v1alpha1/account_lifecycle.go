@@ -146,3 +146,10 @@ func (account *Account) MarkArchived() {
 func (account *Account) Archived() bool {
 	return account.GetCond(AccountArchived).Status == v1.ConditionTrue
 }
+
+func (account *Account) MarkReady() {
+	account.CreateOrUpdateCond(AccountCondition{
+		Type:   AccountReady,
+		Status: v1.ConditionTrue,
+	})
+}

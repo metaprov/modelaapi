@@ -9,8 +9,8 @@ type VirtualBucketConditionType string
 
 /// Bucket Condition
 const (
-	VirtualBucketReady VirtualBucketConditionType = "Ready"
-	VirtualBucketInDb  VirtualBucketConditionType = "InDb"
+	VirtualBucketReady    VirtualBucketConditionType = "Ready"
+	VirtualBucketArchived VirtualBucketConditionType = "Archived"
 )
 
 // VitualBucketCondition describes the state of a virtual bucket at a certain point.

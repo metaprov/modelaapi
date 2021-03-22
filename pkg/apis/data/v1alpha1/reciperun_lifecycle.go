@@ -123,7 +123,7 @@ func (r *RecipeRun) PrintConditions() {
 }
 
 func (r *RecipeRun) MarkCompleted() {
-	r.Status.Phase = RecipeRunPhaseCompleted
+	r.Status.Phase = RecipeRunPhaseSucceed
 	r.CreateOrUpdateCond(RecipeCondition{
 		Type:   RecipeReady,
 		Status: v1.ConditionTrue,
@@ -131,10 +131,11 @@ func (r *RecipeRun) MarkCompleted() {
 }
 
 func (r *RecipeRun) MarkFailed(error string) {
-	r.Status.Phase = RecipeRunPhaseError
+	r.Status.Phase = RecipeRunPhaseFailed
 	r.CreateOrUpdateCond(RecipeCondition{
 		Type:    RecipeReady,
 		Status:  v1.ConditionFalse,
+		Reason:  error,
 		Message: error,
 	})
 }
@@ -146,7 +147,7 @@ func (r *RecipeRun) MarkRunning() {
 	r.CreateOrUpdateCond(RecipeCondition{
 		Type:    RecipeReady,
 		Status:  v1.ConditionFalse,
-		Message: "running",
+		Message: string(RecipeRunPhaseRunning),
 	})
 }
 

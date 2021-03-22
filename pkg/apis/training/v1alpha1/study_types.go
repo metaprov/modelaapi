@@ -12,18 +12,22 @@ import (
 type StudyPhase string
 
 const (
-	StudyPhaseTraining     StudyPhase = "Training"
-	StudyPhaseModelTesting StudyPhase = "Testing"
-	StudyPhaseModelTrained StudyPhase = "Trained"
-	StudyPhaseModelTested  StudyPhase = "Tested"
-	StudyPhaseReporting    StudyPhase = "Reporting"
-	StudyPhaseReported     StudyPhase = "Reported"
-	StudyPhaseProfiling    StudyPhase = "Profiling"
-	StudyPhaseProfiled     StudyPhase = "Profiled"
-	StudyPhaseReady        StudyPhase = "Succeeded"
-	StudyPhaseFailed       StudyPhase = "Failed"
-	StudyPhaseAborted      StudyPhase = "Aborted"
-	StudyPhasePaused       StudyPhase = "Paused"
+	StudyPhaseModelSearchPending StudyPhase = "ModelSearchPending"
+	StudyPhaseModelSearchRunning StudyPhase = "ModelSearchRunning"
+	StudyPhaseModelSearchSuccess StudyPhase = "ModelSearchSuccess"
+	StudyPhaseModelSearchFailed  StudyPhase = "ModelSearchFailed"
+	StudyPhaseModelTestRunning   StudyPhase = "ModelTestRunning"
+	StudyPhaseModelTestSuccess   StudyPhase = "ModelTestSuccess"
+	StudyPhaseModelTestFailed    StudyPhase = "ModelTestFailed"
+	StudyPhaseReported           StudyPhase = "Reported"
+	StudyPhaseReportFailed       StudyPhase = "ReportFailedCreate"
+	StudyPhaseProfileRunning     StudyPhase = "ProfileRunning"
+	StudyPhaseProfileSuccess     StudyPhase = "ProfileSuccess"
+	StudyPhaseProfileFailed      StudyPhase = "ProfileFailed"
+	StudyPhaseReady              StudyPhase = "Succeeded"
+	StudyPhaseFailed             StudyPhase = "Failed"
+	StudyPhaseAborted            StudyPhase = "Aborted"
+	StudyPhasePaused             StudyPhase = "Paused"
 )
 
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"sh";"manual";"auto";

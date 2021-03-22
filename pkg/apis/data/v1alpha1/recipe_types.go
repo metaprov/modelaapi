@@ -6,20 +6,13 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//RecipePhase is the name of the phase
-type RecipePhase string
-
-const (
-	RecipePhaseReady RecipePhase = "Ready"
-	RecipePhaseError RecipePhase = "Err"
-)
-
 // RecipeConditionType is the condition on the Recipe
 type RecipeConditionType string
 
 /// RecipeName Condition
 const (
-	RecipeReady RecipeConditionType = "Ready"
+	RecipeReady    RecipeConditionType = "Ready"
+	RecipeArchived RecipeConditionType = "Archived"
 )
 
 // RecipeCondition describes the state of a dataset at a certain point.

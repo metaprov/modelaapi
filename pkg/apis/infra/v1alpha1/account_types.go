@@ -30,12 +30,8 @@ type AccountConditionType string
 
 /// Account Condition
 const (
-	AccountReady     AccountConditionType = "Ready"
-	AccountLoggedIn  AccountConditionType = "LoggedIn"
-	PasswordEmailed  AccountConditionType = "PasswordEmailed"
-	PasswordWasReset AccountConditionType = "PasswordWasReset"
-	AccountArchived  AccountConditionType = "Archived"
-	AccountInGit     AccountConditionType = "SavedInGit"
+	AccountReady    AccountConditionType = "Ready"
+	AccountArchived AccountConditionType = "Archived"
 )
 
 // AccountCondition describes the state of a account at a certain point.

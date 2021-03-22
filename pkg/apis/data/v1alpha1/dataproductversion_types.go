@@ -16,14 +16,7 @@ type DataProductVersionConditionType string
 
 /// DataProductVersion Condition
 const (
-	DataProductVersionReady DataProductVersionConditionType = "Ready"
-	// There is an active model ready to serve
-	DataProductVersionPublished DataProductVersionConditionType = "Published"
-	// The system collected all the parent of this product version
-	DataProductVersionBaselined DataProductVersionConditionType = "Baselined"
-	// A model from this version is serving predictions
-	DataProductVersionServing DataProductVersionConditionType = "ServingSiteName"
-	// A model from this version is serving predictions
+	DataProductVersionReady    DataProductVersionConditionType = "Ready"
 	DataProductVersionArchived DataProductVersionConditionType = "Archived"
 )
 

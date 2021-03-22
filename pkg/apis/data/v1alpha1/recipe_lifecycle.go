@@ -117,3 +117,14 @@ func (r *Recipe) MarkReady() {
 func (r *Recipe) Deleted() bool {
 	return !r.ObjectMeta.DeletionTimestamp.IsZero()
 }
+
+func (r *Recipe) MarkArchived() {
+	r.CreateOrUpdateCond(RecipeCondition{
+		Type:   RecipeArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (r *Recipe) Archived() bool {
+	return r.GetCond(RecipeArchived).Status == v1.ConditionTrue
+}

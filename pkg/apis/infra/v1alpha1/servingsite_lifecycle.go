@@ -209,3 +209,21 @@ func (r *ServingSite) ServingSiteOps() *rbacv1.Role {
 		},
 	}
 }
+
+func (r *ServingSite) MarkReady() {
+	r.CreateOrUpdateCond(ServingSiteCondition{
+		Type:   ServingSiteReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (r *ServingSite) MarkArchived() {
+	r.CreateOrUpdateCond(ServingSiteCondition{
+		Type:   ServingSiteArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (r *ServingSite) Archived() bool {
+	return r.GetCond(ServingSiteArchived).Status == v1.ConditionTrue
+}

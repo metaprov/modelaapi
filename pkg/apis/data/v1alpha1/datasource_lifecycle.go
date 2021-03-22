@@ -268,3 +268,22 @@ func (sc *DataSource) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		For(sc).
 		Complete()
 }
+
+func (sc *DataSource) MarkReady() {
+	sc.CreateOrUpdateCond(DataSourceCondition{
+		Type:   DatasourceReady,
+		Status: v1.ConditionTrue,
+	})
+
+}
+
+func (sc *DataSource) MarkArchived() {
+	sc.CreateOrUpdateCond(DataSourceCondition{
+		Type:   DatasourceArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (sc *DataSource) Archived() bool {
+	return sc.GetCond(DatasourceArchived).Status == v1.ConditionTrue
+}

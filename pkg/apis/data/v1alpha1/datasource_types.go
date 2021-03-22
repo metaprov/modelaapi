@@ -12,8 +12,8 @@ type DataSourceConditionType string
 /// Datastore Condition
 const (
 	// Regular state of the store.
-	DatasourceReady DataSourceConditionType = "Ready"
-	DatasourceInDb  DataSourceConditionType = "InDb"
+	DatasourceReady    DataSourceConditionType = "Ready"
+	DatasourceArchived DataSourceConditionType = "Archived"
 )
 
 // DataSourceCondition describes the state of a datasource at a certain point.

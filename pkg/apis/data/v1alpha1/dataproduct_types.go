@@ -17,9 +17,8 @@ type DataProductConditionType string
 
 /// ProductRef Condition
 const (
-	DataProductReady                 DataProductConditionType = "Ready"
-	DataProductDefaultVersionCreated DataProductConditionType = "VersionCreated"
-	DataProductArchived              DataProductConditionType = "Archived"
+	DataProductReady    DataProductConditionType = "Ready"
+	DataProductArchived DataProductConditionType = "Archived"
 )
 
 // DeploymentCondition describes the state of a deployment at a certain point.
@@ -46,7 +45,7 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.url"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproducts,shortName=dp,singular=dataproduct,categories={data,modeld,all}
+// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,categories={data,modeld,all}
 type DataProduct struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

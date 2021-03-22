@@ -16,7 +16,8 @@ type VirtualVolumeConditionType string
 
 /// VirtualVolume Condition
 const (
-	VirtualVolumeReady VirtualVolumeConditionType = "Ready"
+	VirtualVolumeReady    VirtualVolumeConditionType = "Ready"
+	VirtualVolumeArchived VirtualVolumeConditionType = "Archived"
 )
 
 type VirtualVolumeCondition struct {

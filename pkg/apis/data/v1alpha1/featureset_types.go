@@ -21,7 +21,8 @@ type FeaturesetConditionType string
 
 /// Featureset Condition
 const (
-	FeaturesetReady FeaturesetConditionType = "Ready"
+	FeaturesetReady    FeaturesetConditionType = "Ready"
+	FeaturesetArchived FeaturesetConditionType = "Archived"
 )
 
 // FeaturesetCondition describes the state of a deployment at a certain point.

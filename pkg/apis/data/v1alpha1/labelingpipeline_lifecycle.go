@@ -165,5 +165,15 @@ func (lp *LabelingPipeline) MarkReady() {
 		Type:   LabelPipelineReady,
 		Status: v1.ConditionTrue,
 	})
+}
 
+func (lp *LabelingPipeline) MarkArchived() {
+	lp.CreateOrUpdateCond(LabelingPipelineCondition{
+		Type:   LabelPipelineArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (lp *LabelingPipeline) Archived() bool {
+	return lp.GetCond(LabelPipelineArchived).Status == v1.ConditionTrue
 }

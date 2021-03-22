@@ -126,3 +126,21 @@ func (tenant *Tenant) Populate(name string) {
 	tenant.Default()
 
 }
+
+func (tenant *Tenant) MarkReady() {
+	tenant.CreateOrUpdateCond(TenantCondition{
+		Type:   TenantReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (tenant *Tenant) MarkArchived() {
+	tenant.CreateOrUpdateCond(TenantCondition{
+		Type:   TenantArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (tenant *Tenant) Archived() bool {
+	return tenant.GetCond(TenantArchived).Status == v1.ConditionTrue
+}

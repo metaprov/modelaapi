@@ -13,11 +13,11 @@ import (
 type DataPipelineRunPhase string
 
 const (
-	DataPipelineRunPhaseTraining DataPipelineRunPhase = "Running"
-	DataPipelineRunPhaseReady    DataPipelineRunPhase = "Succeeded"
-	DataPipelineRunPhaseFailed   DataPipelineRunPhase = "Failed"
-	DataPipelineRunPhaseAborted  DataPipelineRunPhase = "Aborted"
-	DataPipelineRunPhasePaused   DataPipelineRunPhase = "Paused"
+	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "Running"
+	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "Completed"
+	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "Failed"
+	DataPipelineRunPhaseAborted   DataPipelineRunPhase = "Aborted"
+	DataPipelineRunPhasePaused    DataPipelineRunPhase = "Paused"
 )
 
 // Condition on the dataset
@@ -25,11 +25,7 @@ type DataPipelineRunConditionType string
 
 /// DataPipelineRun Condition
 const (
-	DataPipelineRunRecipesCreated DataPipelineRunConditionType = "RecipesCreated"
-	DataPipelineRunAborted        DataPipelineRunConditionType = "Aborted"
-	DataPipelineRunPaused         DataPipelineRunConditionType = "Paused"
-	DataPipelineRunCompleted      DataPipelineRunConditionType = "Completed"
-	DataPipelineRunFailed         DataPipelineRunConditionType = "Failed"
+	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
 )
 
 // DataPipelineRunCondition describes the state of a data processor run at a certain point.
@@ -49,9 +45,9 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,categories={data,modeld,all}
+// +kubebuilder:printcolumn:name="Failure",type=string,JSONPath=`.status.conditions[?(@.type=="Failed")].message`,description="Human readable message describing the failure",priority=5
+// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modeld,all}
 // DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -99,7 +95,7 @@ type DataPipelineRunStatus struct {
 	// the resulting dataset from the flow
 	Output string `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
-	Phase string `json:"phase" protobuf:"bytes,3,opt,name=phase"`
+	Phase DataPipelineRunPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// StartTime is the times that this data pipeline started
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`

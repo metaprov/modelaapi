@@ -163,5 +163,15 @@ func (feature *Feature) MarkReady() {
 		Type:   FeatureReady,
 		Status: v1.ConditionTrue,
 	})
+}
 
+func (feature *Feature) MarkArchived() {
+	feature.CreateOrUpdateCond(FeatureCondition{
+		Type:   FeatureArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (feature *Feature) Archived() bool {
+	return feature.GetCond(FeatureArchived).Status == v1.ConditionTrue
 }

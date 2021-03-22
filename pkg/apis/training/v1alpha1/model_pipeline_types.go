@@ -46,8 +46,8 @@ type TriggerSchedule struct {
 type ModelPipelineConditionType string
 
 const (
-	PipelineReady ModelPipelineConditionType = "Ready"
-	PipelineInDb  ModelPipelineConditionType = "InDb"
+	ModelPipelineReady    ModelPipelineConditionType = "Ready"
+	ModelPipelineArchived ModelPipelineConditionType = "Archived"
 )
 
 // ModelPipelineCondition describes the state of a pipeline at a certain point.

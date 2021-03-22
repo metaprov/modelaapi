@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modeldapi/pkg/apis/infra"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -111,4 +110,22 @@ func ParseCommentYaml(content []byte) (*Conversation, error) {
 	}
 	r := requiredObj.(*Conversation)
 	return r, nil
+}
+
+func (conv *Conversation) MarkReady() {
+	conv.CreateOrUpdateCond(ConversationCondition{
+		Type:   ConversationReady,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (conv *Conversation) MarkArchived() {
+	conv.CreateOrUpdateCond(ConversationCondition{
+		Type:   ConversationArchived,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (conv *Conversation) Archived() bool {
+	return conv.GetCond(ConversationArchived).Status == corev1.ConditionTrue
 }

@@ -242,6 +242,15 @@ func (version *DataProduct) MarkArchived() {
 	})
 }
 
-func (version *DataProduct) Archived() bool {
-	return version.GetCond(DataProductArchived).Status == v1.ConditionTrue
+func (p *DataProduct) Archived() bool {
+	return p.GetCond(DataProductArchived).Status == v1.ConditionTrue
+}
+
+func (p *DataProduct) MarkFailed(err error) {
+	p.CreateOrUpdateCond(DataProductCondition{
+		Type:    DataProductReady,
+		Status:  v1.ConditionFalse,
+		Reason:  "Failed",
+		Message: err.Error(),
+	})
 }

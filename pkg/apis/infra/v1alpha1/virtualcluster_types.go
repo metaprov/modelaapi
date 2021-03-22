@@ -15,8 +15,8 @@ type VirtualClusterConditionType string
 
 /// ServingSite Condition
 const (
-	VirtualClusterReady VirtualClusterConditionType = "Ready"
-	VirtualClusterInDb  VirtualClusterConditionType = "InDb"
+	VirtualClusterReady    VirtualClusterConditionType = "Ready"
+	VirtualClusterArchived VirtualClusterConditionType = "Archived"
 )
 
 // DeploymentCondition describes the state of a deployment at a certain point.

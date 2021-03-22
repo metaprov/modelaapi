@@ -16,7 +16,8 @@ type ConversationConditionType string
 
 /// BucketName Condition
 const (
-	ConversationReady ConversationConditionType = "Ready"
+	ConversationReady    ConversationConditionType = "Ready"
+	ConversationArchived ConversationConditionType = "Archived"
 )
 
 // Commnet represents a single comment in the conversation

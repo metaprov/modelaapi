@@ -19,7 +19,8 @@ import (
 type FeaturePipelineConditionType string
 
 const (
-	FeaturePipelineReady FeaturePipelineConditionType = "Ready"
+	FeaturePipelineReady    FeaturePipelineConditionType = "Ready"
+	FeaturePipelineArchived FeaturePipelineConditionType = "Archived"
 )
 
 // FeaturePipelineCondition describes the state of a deployment at a certain point.

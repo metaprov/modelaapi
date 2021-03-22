@@ -43,17 +43,7 @@ type PredictorConditionType string
 
 /// Predictor Condition
 const (
-	// The system is setting up the predictor
-	PredictorPending PredictorConditionType = "Pending"
-	// The predictor is ready to serve predictions.
-	PredictorReady PredictorConditionType = "Ready"
-	// Predictor was shut down successfully
-	PredictorSuccess PredictorConditionType = "Success"
-	// Predictor has failed
-	PredictorFailed PredictorConditionType = "Failed"
-	// The predictor is up, but is not serving predictions
-	PredictorInactive PredictorConditionType = "Inactive"
-	// Db Archived
+	PredictorReady    PredictorConditionType = "Ready"
 	PredictorArchived PredictorConditionType = "Archived"
 )
 

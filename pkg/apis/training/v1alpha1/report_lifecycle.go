@@ -188,12 +188,12 @@ func (report *Report) ValidateDelete() error {
 	return nil
 }
 
-func (report *Report) MarkReporting() {
-	report.Status.Phase = ReportPhaseCreating
+func (report *Report) MarkRunning() {
+	report.Status.Phase = ReportPhaseRunning
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:   ReportReady,
 		Status: v1.ConditionFalse,
-		Reason: ReasonTesting,
+		Reason: string(ReportPhaseRunning),
 	})
 }
 
@@ -201,14 +201,14 @@ func (report *Report) MarkReportFailed(err string) {
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:    ReportReady,
 		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailed,
+		Reason:  string(ReportPhaseFailed),
 		Message: err,
 	})
 	report.Status.Phase = ReportPhaseFailed
 }
 
 func (report *Report) MarkReportReady(product *data.DataProduct) {
-	report.Status.Phase = ReportPhaseReady
+	report.Status.Phase = ReportPhaseSuccess
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:   ReportReady,
 		Status: v1.ConditionTrue,

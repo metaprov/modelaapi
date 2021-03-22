@@ -104,3 +104,21 @@ func ParseVirtualVolumeYaml(content []byte) (*VirtualVolume, error) {
 func (vv *VirtualVolume) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(vv)
 }
+
+func (vv *VirtualVolume) MarkReady() {
+	vv.CreateOrUpdateCond(VirtualVolumeCondition{
+		Type:   VirtualVolumeReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (vv *VirtualVolume) MarkArchived() {
+	vv.CreateOrUpdateCond(VirtualVolumeCondition{
+		Type:   VirtualVolumeArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (vv *VirtualVolume) Archived() bool {
+	return vv.GetCond(VirtualVolumeArchived).Status == v1.ConditionTrue
+}

@@ -8,20 +8,20 @@ import (
 type DatasetPhase string
 
 const (
-	DatasetPhaseUnkown     DatasetPhase = "AutoScaler"
-	DatasetPhaseIngesting  DatasetPhase = "Ingesting"
-	DatasetPhaseIngested   DatasetPhase = "Ingested"
-	DatasetPhaseReporting  DatasetPhase = "Reporting"
-	DatasetPhaseReported   DatasetPhase = "Reported"
-	DatasetPhaseProfiling  DatasetPhase = "Profiling"
-	DatasetPhaseProfiled   DatasetPhase = "Profiled"
-	DatasetPhaseValidating DatasetPhase = "Validating"
-	DatasetPhaseValidated  DatasetPhase = "Validated"
-	DatasetPhaseArchiving  DatasetPhase = "Archiving"
-	DatasetPhaseArchived   DatasetPhase = "Archived"
-
-	DatasetPhaseReady DatasetPhase = "Ready"
-	DatasetPhaseError DatasetPhase = "Err"
+	DatasetPhaseIngestRunning     DatasetPhase = "IngestRunning"
+	DatasetPhaseIngestSuccess     DatasetPhase = "IngestSuccess"
+	DatasetPhaseIngestFailed      DatasetPhase = "IngestFailed"
+	DatasetPhaseReportRunning     DatasetPhase = "ReportRunning"
+	DatasetPhaseReportSuccess     DatasetPhase = "ReportSuccess"
+	DatasetPhaseReportFailed      DatasetPhase = "ReportFailed"
+	DatasetPhaseProfileRunning    DatasetPhase = "ProfileRunning"
+	DatasetPhaseProfileSuccess    DatasetPhase = "ProfileSuccess"
+	DatasetPhaseProfileFailed     DatasetPhase = "ProfileFailed"
+	DatasetPhaseValidationRunning DatasetPhase = "ValidationRunning"
+	DatasetPhaseValidationSuccess DatasetPhase = "ValidationSuccess"
+	DatasetPhaseValidationFailed  DatasetPhase = "ValidationFailed"
+	DatasetPhaseReady             DatasetPhase = "Ready"
+	DatasetPhaseError             DatasetPhase = "Err"
 )
 
 // Condition on the dataset

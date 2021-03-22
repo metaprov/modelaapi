@@ -78,7 +78,7 @@ func (w *DataPipelineRun) IsReady() bool {
 }
 
 func (run *DataPipelineRun) StatusString() string {
-	return run.Status.Phase
+	return string(run.Status.Phase)
 }
 
 func (run *DataPipelineRun) RootUri() string {
@@ -99,11 +99,13 @@ func ParseDataPipelineRunYaml(content []byte) (*DataPipelineRun, error) {
 }
 
 func (in *DataPipelineRun) Paused() bool {
-	return in.GetCond(DataPipelineRunPaused).Status == v1.ConditionTrue
+	cond := in.GetCond(DataPipelineRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhasePaused)
 }
 
 func (in *DataPipelineRun) Aborted() bool {
-	return in.GetCond(DataPipelineRunAborted).Status == v1.ConditionTrue
+	cond := in.GetCond(DataPipelineRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseAborted)
 }
 
 func (in *DataPipelineRun) Completed() bool {
@@ -115,23 +117,36 @@ func (in *DataPipelineRun) Running() bool {
 }
 
 func (in *DataPipelineRun) Failed() bool {
-	return in.GetCond(DataPipelineRunFailed).Status == v1.ConditionFalse
+	cond := in.GetCond(DataPipelineRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseFailed)
 }
 
 func (r *DataPipelineRun) MarkRunning() {
 	now := metav1.Now()
 	r.Status.StartTime = &now
+	r.Status.Phase = DataPipelineRunPhaseRunning
 	r.CreateOrUpdateCond(DataPipelineRunCondition{
-		Type:    DataPipelineRunCompleted,
-		Status:  v1.ConditionFalse,
-		Message: "running",
+		Type:   DataPipelineRunCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(DataPipelineRunPhaseRunning),
 	})
 }
 
 func (in *DataPipelineRun) MarkComplete() {
+	in.Status.Phase = DataPipelineRunPhaseCompleted
 	in.CreateOrUpdateCond(DataPipelineRunCondition{
 		Type:   DataPipelineRunCompleted,
 		Status: v1.ConditionTrue,
+	})
+}
+
+func (in *DataPipelineRun) MarkFailed(err error) {
+	in.Status.Phase = DataPipelineRunPhaseFailed
+	in.CreateOrUpdateCond(DataPipelineRunCondition{
+		Type:    DataPipelineRunCompleted,
+		Status:  v1.ConditionTrue,
+		Reason:  string(DataPipelineRunPhaseFailed),
+		Message: err.Error(),
 	})
 }
 

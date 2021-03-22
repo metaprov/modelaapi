@@ -102,3 +102,26 @@ func ParseDataPipelineYaml(content []byte) (*DataPipeline, error) {
 func (wr *DataPipeline) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(wr)
 }
+
+func (in *DataPipeline) MarkReady() {
+	in.CreateOrUpdateCond(DataPipelineCondition{
+		Type:   DataPipelineReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (in *DataPipeline) MarkFailed(err error) {
+	in.CreateOrUpdateCond(DataPipelineCondition{
+		Type:    DataPipelineReady,
+		Status:  v1.ConditionFalse,
+		Reason:  "Failed",
+		Message: err.Error(),
+	})
+}
+
+func (in *DataPipeline) MarkArchived() {
+	in.CreateOrUpdateCond(DataPipelineCondition{
+		Type:   DataPipelineArchived,
+		Status: v1.ConditionTrue,
+	})
+}

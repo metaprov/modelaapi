@@ -21,8 +21,16 @@ type NotebookRunConditionType string
 
 /// NotebookRun Condition
 const (
-	NotebookRunReady NotebookRunConditionType = "Ready"
-	NotebookRunInDb  NotebookRunConditionType = "InDb"
+	NotebookRunReady    NotebookRunConditionType = "Ready"
+	NotebookRunArchived NotebookRunConditionType = "Archived"
+)
+
+type NotebookRunPhase string
+
+const (
+	NotebookRunPhaseRunning   NotebookRunPhase = "NotebookRunning"
+	NotebookRunPhaseCompleted NotebookRunPhase = "NotebookCompleted"
+	NotebookRunPhaseFailed    NotebookRunPhase = "NoteobookFailed"
 )
 
 // NotebookRunCondition describes the state of a notebook run.

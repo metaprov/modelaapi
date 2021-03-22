@@ -113,3 +113,21 @@ func ParseRunBookYaml(content []byte) (*RunBook, error) {
 	r := requiredObj.(*RunBook)
 	return r, nil
 }
+
+func (runbook *RunBook) MarkReady() {
+	runbook.CreateOrUpdateCond(RunBookCondition{
+		Type:   RunBookReady,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (runbook *RunBook) MarkArchived() {
+	runbook.CreateOrUpdateCond(RunBookCondition{
+		Type:   RunBookArchived,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (runbook *RunBook) Archived() bool {
+	return runbook.GetCond(RunBookArchived).Status == corev1.ConditionTrue
+}

@@ -148,7 +148,7 @@ func (prediction *PredictionPipelineRun) MarkFailed(msg string) {
 	prediction.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Type:    PredictionPipelineRunReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "prediction failed",
+		Reason:  string(PredictionPipelineRunPhaseFailed),
 		Message: msg,
 	})
 	prediction.Status.Phase = PredictionPipelineRunPhaseFailed
@@ -158,15 +158,16 @@ func (prediction *PredictionPipelineRun) MarkDone() {
 	prediction.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Type:   PredictionPipelineRunReady,
 		Status: v1.ConditionTrue,
+		Reason: string(PredictionPipelineRunPhaseCompleted),
 	})
-	prediction.Status.Phase = PredictionPipelineRunPhaseReady
+	prediction.Status.Phase = PredictionPipelineRunPhaseCompleted
 
 }
 
 func (prediction *PredictionPipelineRun) MarkRunning() {
 	prediction.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Status: v1.ConditionFalse,
-		Reason: "prediction running",
+		Reason: string(PredictionPipelineRunPhaseRunning),
 	})
 	prediction.Status.Phase = PredictionPipelineRunPhaseRunning
 }
@@ -184,4 +185,11 @@ func (version *PredictionPipelineRun) MarkArchived() {
 
 func (version *PredictionPipelineRun) Archived() bool {
 	return version.GetCond(PredictionPipelineRunArchived).Status == v1.ConditionTrue
+}
+
+func (version *PredictionPipelineRun) MarkReady() {
+	version.CreateOrUpdateCond(PredictionPipelineRunCondition{
+		Type:   PredictionPipelineRunReady,
+		Status: v1.ConditionTrue,
+	})
 }

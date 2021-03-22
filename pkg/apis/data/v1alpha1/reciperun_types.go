@@ -8,10 +8,9 @@ import (
 type RecipeRunPhase string
 
 const (
-	RecipeRunPhasePending   RecipeRunPhase = "Pending"
-	RecipeRunPhaseRunning   RecipeRunPhase = "Running"
-	RecipeRunPhaseCompleted RecipeRunPhase = "Completed"
-	RecipeRunPhaseError     RecipeRunPhase = "Err"
+	RecipeRunPhaseRunning RecipeRunPhase = "Running"
+	RecipeRunPhaseSucceed RecipeRunPhase = "Completed"
+	RecipeRunPhaseFailed  RecipeRunPhase = "Failed"
 )
 
 // Condition on the dataset

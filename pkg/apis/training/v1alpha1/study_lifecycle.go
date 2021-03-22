@@ -248,7 +248,7 @@ func (study *Study) MarkTraining() {
 	if study.Status.TrainingStartTime == nil {
 		study.Status.TrainingStartTime = &now
 	}
-	study.Status.Phase = StudyPhaseTraining
+	study.Status.Phase = StudyPhaseModelSearchPending
 }
 
 func (study *Study) MarkModelsTrained() {
@@ -260,7 +260,7 @@ func (study *Study) MarkModelsTrained() {
 	if study.Status.TrainingCompletionTime == nil {
 		study.Status.TrainingCompletionTime = &now
 	}
-	study.Status.Phase = StudyPhaseModelTrained
+	study.Status.Phase = StudyPhaseModelSearchSuccess
 }
 
 func (study *Study) MarkModelTrainedFailed(err string) {
@@ -270,7 +270,7 @@ func (study *Study) MarkModelTrainedFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	study.Status.Phase = StudyPhaseFailed
+	study.Status.Phase = StudyPhaseModelSearchFailed
 }
 
 // --------------- Test
@@ -288,7 +288,7 @@ func (study *Study) MarkTesting() {
 	})
 	now := metav1.Now()
 	study.Status.TestingStartTime = &now
-	study.Status.Phase = StudyPhaseModelTesting
+	study.Status.Phase = StudyPhaseModelTestRunning
 }
 
 func (study *Study) MarkModelsTested() {
@@ -298,7 +298,7 @@ func (study *Study) MarkModelsTested() {
 	})
 	now := metav1.Now()
 	study.Status.TestingCompletionTime = &now
-	study.Status.Phase = StudyPhaseModelTested
+	study.Status.Phase = StudyPhaseModelTestSuccess
 }
 
 func (study *Study) MarkModelTestedFailed(err string) {
@@ -308,7 +308,7 @@ func (study *Study) MarkModelTestedFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	study.Status.Phase = StudyPhaseFailed
+	study.Status.Phase = StudyPhaseModelTestFailed
 }
 
 // --------------- Profile
@@ -318,7 +318,7 @@ func (study *Study) Profiled() bool {
 }
 
 func (study *Study) MarkProfiling() {
-	study.Status.Phase = StudyPhaseProfiling
+	study.Status.Phase = StudyPhaseProfileRunning
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudyProfiled,
 		Status: v1.ConditionFalse,
@@ -344,7 +344,7 @@ func (study *Study) MarkReporting() {
 		Status: v1.ConditionFalse,
 		Reason: ReasonReporting,
 	})
-	study.Status.Phase = StudyPhaseReporting
+	study.Status.Phase = StudyPhaseReported
 
 }
 
@@ -448,7 +448,7 @@ func (study *Study) MarkPaused() {
 //////////////////////// Profile
 
 func (study *Study) MarkProfiled(url string) {
-	study.Status.Phase = StudyPhaseProfiled
+	study.Status.Phase = StudyPhaseProfileSuccess
 	study.Status.ProfileUri = url
 	// update the condition
 	study.CreateOrUpdateCond(StudyCondition{

@@ -8,18 +8,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type PredictionPipelinePhase string
-
-/// PredictionPipelinePhase
-const (
-	// The system is performing the prediction against the predictor
-	PredictionPhaseRunning PredictionPipelinePhase = "Running"
-	// The prediction was completed successfully, and the results were uploaded to the bucket,
-	PredictionPhaseReady PredictionPipelinePhase = "Ready"
-	// The prediction were completed successfully, and the results were uploaded to the bucket.
-	PredictionPhaseFailed PredictionPipelinePhase = "Failed"
-)
-
 // PredictionPipelineConditionType is the condition type of the prediction pipeline
 type PredictionPipelineConditionType string
 
@@ -100,8 +88,6 @@ type PredictionPipelineSpec struct {
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
 type PredictionPipelineStatus struct {
-	// +kubebuilder:validation:Optional
-	Phase PredictionPipelinePhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	//+optional
 	Conditions []PredictionPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
