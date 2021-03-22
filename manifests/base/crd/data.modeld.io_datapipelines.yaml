@@ -16,6 +16,8 @@ spec:
     kind: DataPipeline
     listKind: DataPipelineList
     plural: datapipelines
+    shortNames:
+    - dp
     singular: datapipeline
   scope: Namespaced
   versions:

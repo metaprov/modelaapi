@@ -799,9 +799,6 @@ export namespace PredictionPipelineSpec {
 }
 
 export class PredictionPipelineStatus extends jspb.Message {
-  getPhase(): string;
-  setPhase(value: string): PredictionPipelineStatus;
-
   getConditionsList(): Array<PredictionPipelineCondition>;
   setConditionsList(value: Array<PredictionPipelineCondition>): PredictionPipelineStatus;
   clearConditionsList(): PredictionPipelineStatus;
@@ -817,7 +814,6 @@ export class PredictionPipelineStatus extends jspb.Message {
 
 export namespace PredictionPipelineStatus {
   export type AsObject = {
-    phase: string,
     conditionsList: Array<PredictionPipelineCondition.AsObject>,
   }
 }

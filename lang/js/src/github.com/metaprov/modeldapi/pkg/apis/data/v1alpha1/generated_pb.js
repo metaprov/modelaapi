@@ -19147,7 +19147,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.repeatedFields_ = [4];
 
 
 
@@ -19182,6 +19182,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
   var f, obj = {
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    phase: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.toObject, includeInstance)
   };
@@ -19231,6 +19232,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
       msg.setCompletiontime(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhase(value);
+      break;
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -19280,10 +19285,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.serializeBinaryToWriter
     );
@@ -19366,12 +19378,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
 
 
 /**
- * repeated FeaturePipelineRunCondition conditions = 3;
+ * optional string phase = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getPhase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setPhase = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.clearPhase = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.hasPhase = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated FeaturePipelineRunCondition conditions = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, 4));
 };
 
 
@@ -19380,7 +19428,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -19390,7 +19438,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, opt_index);
 };
 
 

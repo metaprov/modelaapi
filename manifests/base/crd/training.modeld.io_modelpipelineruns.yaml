@@ -86,35 +86,67 @@ spec:
             description: ModelPipelineRunStatus is the observed state of the ModelPipelineRun
               resource .
             properties:
-              acceptance:
+              acceptanceStage:
                 description: Staging is status for each qa stage.
                 properties:
                   approved:
+                    description: Approved indicates that the stage is approved.
                     type: boolean
-                  approvedBy:
-                    type: string
-                  endTime:
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
                     format: date-time
                     type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record the error if occurred
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
                   score:
+                    description: Score is the score of
                     type: number
                   startTime:
+                    description: Start time is the start time of the stage
                     format: date-time
                     type: string
                 type: object
-              capacity:
+              capacityStage:
                 description: ReleaseStage is the status for the production stage.
                 properties:
                   approved:
+                    description: Approved indicates that the stage is approved.
                     type: boolean
-                  approvedBy:
-                    type: string
-                  endTime:
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
                     format: date-time
                     type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record the error if occurred
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
                   score:
+                    description: Score is the score of
                     type: number
                   startTime:
+                    description: Start time is the start time of the stage
                     format: date-time
                     type: string
                 type: object
@@ -149,19 +181,35 @@ spec:
                   - type
                   type: object
                 type: array
-              data:
+              dataStage:
                 description: data is the status for the data stage.
                 properties:
                   approved:
+                    description: Approved indicates that the stage is approved.
                     type: boolean
-                  approvedBy:
-                    type: string
-                  endTime:
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
                     format: date-time
                     type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record the error if occurred
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
                   score:
+                    description: Score is the score of
                     type: number
                   startTime:
+                    description: Start time is the start time of the stage
                     format: date-time
                     type: string
                 type: object
@@ -173,19 +221,35 @@ spec:
               phase:
                 description: The phase of the pipeline run
                 type: string
-              prod:
+              prodStage:
                 description: ReleaseStage is the status for the production stage.
                 properties:
                   approved:
+                    description: Approved indicates that the stage is approved.
                     type: boolean
-                  approvedBy:
-                    type: string
-                  endTime:
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
                     format: date-time
                     type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record the error if occurred
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
                   score:
+                    description: Score is the score of
                     type: number
                   startTime:
+                    description: Start time is the start time of the stage
                     format: date-time
                     type: string
                 type: object
@@ -194,19 +258,35 @@ spec:
                 type: string
               studyName:
                 type: string
-              training:
+              trainingStage:
                 description: dev is the status for the dev stage.
                 properties:
                   approved:
+                    description: Approved indicates that the stage is approved.
                     type: boolean
-                  approvedBy:
-                    type: string
-                  endTime:
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
                     format: date-time
                     type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record the error if occurred
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
                   score:
+                    description: Score is the score of
                     type: number
                   startTime:
+                    description: Start time is the start time of the stage
                     format: date-time
                     type: string
                 type: object

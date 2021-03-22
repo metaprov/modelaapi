@@ -192,8 +192,6 @@ spec:
                   - type
                   type: object
                 type: array
-              phase:
-                type: string
             type: object
         required:
         - spec

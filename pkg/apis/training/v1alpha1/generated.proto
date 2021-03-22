@@ -802,20 +802,37 @@ message ModelPipelineRunSpec {
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
 message ModelPipelineRunStageStatus {
+  // Phase is the phase of the stage
   // +kubebuilder:validation:Optional
-  optional bool approved = 1;
+  optional string phase = 1;
 
+  // Approved indicates that the stage is approved.
   // +kubebuilder:validation:Optional
-  optional string approvedBy = 2;
+  optional bool approved = 2;
 
+  // ApprovedBy indicates the account that approve this model.
   // +kubebuilder:validation:Optional
-  optional double score = 3;
+  optional string approvedBy = 3;
 
+  // ApprovedAt indicates the time of approval
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 4;
 
+  // Score is the score of
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
+  optional double score = 5;
+
+  // Start time is the start time of the stage
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 7;
+
+  // End time is the end time of the stage.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 8;
+
+  // Error record the error if occurred
+  // +kubebuilder:validation:Optional
+  optional string error = 9;
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
@@ -825,23 +842,23 @@ message ModelPipelineRunStatus {
 
   // +kubebuilder:validation:Optional
   // data is the status for the data stage.
-  optional ModelPipelineRunStageStatus data = 3;
+  optional ModelPipelineRunStageStatus dataStage = 3;
 
   // +kubebuilder:validation:Optional
   // dev is the status for the dev stage.
-  optional ModelPipelineRunStageStatus training = 4;
+  optional ModelPipelineRunStageStatus trainingStage = 4;
 
   // Staging is status for each qa stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus acceptance = 5;
+  optional ModelPipelineRunStageStatus acceptanceStage = 5;
 
   // ReleaseStage is the status for the production stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus capacity = 6;
+  optional ModelPipelineRunStageStatus capacityStage = 6;
 
   // ReleaseStage is the status for the production stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus prod = 7;
+  optional ModelPipelineRunStageStatus prodStage = 7;
 
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 8;

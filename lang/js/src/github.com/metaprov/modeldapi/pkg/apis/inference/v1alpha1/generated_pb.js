@@ -7982,7 +7982,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.toObject, includeInstance)
   };
@@ -8021,10 +8020,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhase(value);
-      break;
     case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.deserializeBinaryFromReader);
@@ -8059,13 +8054,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -8074,42 +8062,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * optional string phase = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.getPhase = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.setPhase = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.clearPhase = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus.prototype.hasPhase = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 

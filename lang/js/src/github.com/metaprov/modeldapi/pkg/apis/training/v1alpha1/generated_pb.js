@@ -13713,11 +13713,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    approved: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    approvedby: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    score: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    approved: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+    approvedby: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    approvedat: (f = msg.getApprovedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    score: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    error: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13755,26 +13758,39 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhase(value);
+      break;
+    case 2:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setApproved(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setApprovedby(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setScore(value);
       break;
     case 4:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStarttime(value);
+      msg.setApprovedat(value);
       break;
     case 5:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setScore(value);
+      break;
+    case 7:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setStarttime(value);
+      break;
+    case 8:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setEndtime(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -13805,28 +13821,28 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       1,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       2,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getStarttime();
+  f = message.getApprovedat();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -13834,31 +13850,53 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeDouble(
+      5,
+      f
+    );
+  }
+  f = message.getStarttime();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
-      5,
+      8,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
 
 
 /**
- * optional bool approved = 1;
- * @return {boolean}
+ * optional string phase = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getApproved = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getPhase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setApproved = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setPhase = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -13867,7 +13905,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearApproved = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearPhase = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -13876,25 +13914,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasApproved = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasPhase = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string approvedBy = 2;
- * @return {string}
+ * optional bool approved = 2;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getApprovedby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getApproved = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setApprovedby = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setApproved = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -13903,7 +13941,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearApprovedby = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearApproved = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -13912,25 +13950,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasApprovedby = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasApproved = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional double score = 3;
- * @return {number}
+ * optional string approvedBy = 3;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getScore = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getApprovedby = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setScore = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setApprovedby = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -13939,7 +13977,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearScore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearApprovedby = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -13948,16 +13986,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasScore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasApprovedby = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getStarttime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getApprovedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
@@ -13967,8 +14005,81 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setStarttime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setApprovedat = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearApprovedat = function() {
+  return this.setApprovedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasApprovedat = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional double score = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getScore = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setScore = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearScore = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 7;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getStarttime = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 7));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setStarttime = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -13986,17 +14097,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasStarttime = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 8;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 8));
 };
 
 
@@ -14005,7 +14116,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setEndtime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -14023,7 +14134,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasEndtime = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string error = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.setError = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.clearError = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.prototype.hasError = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -14067,11 +14214,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     studyname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    data: (f = msg.getData()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
-    training: (f = msg.getTraining()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
-    acceptance: (f = msg.getAcceptance()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
-    capacity: (f = msg.getCapacity()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
-    prod: (f = msg.getProd()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
+    datastage: (f = msg.getDatastage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
+    trainingstage: (f = msg.getTrainingstage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
+    acceptancestage: (f = msg.getAcceptancestage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
+    capacitystage: (f = msg.getCapacitystage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
+    prodstage: (f = msg.getProdstage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.toObject(includeInstance, f),
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
@@ -14121,27 +14268,27 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.deserializeBinaryFromReader);
-      msg.setData(value);
+      msg.setDatastage(value);
       break;
     case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.deserializeBinaryFromReader);
-      msg.setTraining(value);
+      msg.setTrainingstage(value);
       break;
     case 5:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.deserializeBinaryFromReader);
-      msg.setAcceptance(value);
+      msg.setAcceptancestage(value);
       break;
     case 6:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.deserializeBinaryFromReader);
-      msg.setCapacity(value);
+      msg.setCapacitystage(value);
       break;
     case 7:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.deserializeBinaryFromReader);
-      msg.setProd(value);
+      msg.setProdstage(value);
       break;
     case 8:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -14202,7 +14349,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       f
     );
   }
-  f = message.getData();
+  f = message.getDatastage();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -14210,7 +14357,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.serializeBinaryToWriter
     );
   }
-  f = message.getTraining();
+  f = message.getTrainingstage();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -14218,7 +14365,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.serializeBinaryToWriter
     );
   }
-  f = message.getAcceptance();
+  f = message.getAcceptancestage();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -14226,7 +14373,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.serializeBinaryToWriter
     );
   }
-  f = message.getCapacity();
+  f = message.getCapacitystage();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -14234,7 +14381,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus.serializeBinaryToWriter
     );
   }
-  f = message.getProd();
+  f = message.getProdstage();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -14320,10 +14467,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 
 
 /**
- * optional ModelPipelineRunStageStatus data = 3;
+ * optional ModelPipelineRunStageStatus dataStage = 3;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getData = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getDatastage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus, 3));
 };
@@ -14333,7 +14480,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setData = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setDatastage = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -14342,8 +14489,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearData = function() {
-  return this.setData(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearDatastage = function() {
+  return this.setDatastage(undefined);
 };
 
 
@@ -14351,16 +14498,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasData = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasDatastage = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional ModelPipelineRunStageStatus training = 4;
+ * optional ModelPipelineRunStageStatus trainingStage = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getTraining = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getTrainingstage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus, 4));
 };
@@ -14370,7 +14517,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setTraining = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setTrainingstage = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -14379,8 +14526,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearTraining = function() {
-  return this.setTraining(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearTrainingstage = function() {
+  return this.setTrainingstage(undefined);
 };
 
 
@@ -14388,16 +14535,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasTraining = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasTrainingstage = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional ModelPipelineRunStageStatus acceptance = 5;
+ * optional ModelPipelineRunStageStatus acceptanceStage = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getAcceptance = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getAcceptancestage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus, 5));
 };
@@ -14407,7 +14554,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setAcceptance = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setAcceptancestage = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -14416,8 +14563,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearAcceptance = function() {
-  return this.setAcceptance(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearAcceptancestage = function() {
+  return this.setAcceptancestage(undefined);
 };
 
 
@@ -14425,16 +14572,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasAcceptance = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasAcceptancestage = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional ModelPipelineRunStageStatus capacity = 6;
+ * optional ModelPipelineRunStageStatus capacityStage = 6;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getCapacity = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getCapacitystage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus, 6));
 };
@@ -14444,7 +14591,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setCapacity = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setCapacitystage = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -14453,8 +14600,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearCapacity = function() {
-  return this.setCapacity(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearCapacitystage = function() {
+  return this.setCapacitystage(undefined);
 };
 
 
@@ -14462,16 +14609,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasCapacity = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasCapacitystage = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional ModelPipelineRunStageStatus prod = 7;
+ * optional ModelPipelineRunStageStatus prodStage = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getProd = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getProdstage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus, 7));
 };
@@ -14481,7 +14628,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStageStatus|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setProd = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setProdstage = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -14490,8 +14637,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearProd = function() {
-  return this.setProd(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearProdstage = function() {
+  return this.setProdstage(undefined);
 };
 
 
@@ -14499,7 +14646,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasProd = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasProdstage = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

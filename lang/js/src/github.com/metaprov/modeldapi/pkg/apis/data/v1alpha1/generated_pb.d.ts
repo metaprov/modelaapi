@@ -1878,6 +1878,9 @@ export class FeaturePipelineRunStatus extends jspb.Message {
   hasCompletiontime(): boolean;
   clearCompletiontime(): FeaturePipelineRunStatus;
 
+  getPhase(): string;
+  setPhase(value: string): FeaturePipelineRunStatus;
+
   getConditionsList(): Array<FeaturePipelineRunCondition>;
   setConditionsList(value: Array<FeaturePipelineRunCondition>): FeaturePipelineRunStatus;
   clearConditionsList(): FeaturePipelineRunStatus;
@@ -1895,6 +1898,7 @@ export namespace FeaturePipelineRunStatus {
   export type AsObject = {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
     conditionsList: Array<FeaturePipelineRunCondition.AsObject>,
   }
 }

@@ -1294,11 +1294,19 @@ export namespace ModelPipelineRunSpec {
 }
 
 export class ModelPipelineRunStageStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): ModelPipelineRunStageStatus;
+
   getApproved(): boolean;
   setApproved(value: boolean): ModelPipelineRunStageStatus;
 
   getApprovedby(): string;
   setApprovedby(value: string): ModelPipelineRunStageStatus;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStageStatus;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ModelPipelineRunStageStatus;
 
   getScore(): number;
   setScore(value: number): ModelPipelineRunStageStatus;
@@ -1313,6 +1321,9 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
+  getError(): string;
+  setError(value: string): ModelPipelineRunStageStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStageStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunStageStatus): ModelPipelineRunStageStatus.AsObject;
@@ -1323,11 +1334,14 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
 
 export namespace ModelPipelineRunStageStatus {
   export type AsObject = {
+    phase: string,
     approved: boolean,
     approvedby: string,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     score: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    error: string,
   }
 }
 
@@ -1335,30 +1349,30 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getStudyname(): string;
   setStudyname(value: string): ModelPipelineRunStatus;
 
-  getData(): ModelPipelineRunStageStatus | undefined;
-  setData(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasData(): boolean;
-  clearData(): ModelPipelineRunStatus;
+  getDatastage(): ModelPipelineRunStageStatus | undefined;
+  setDatastage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasDatastage(): boolean;
+  clearDatastage(): ModelPipelineRunStatus;
 
-  getTraining(): ModelPipelineRunStageStatus | undefined;
-  setTraining(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasTraining(): boolean;
-  clearTraining(): ModelPipelineRunStatus;
+  getTrainingstage(): ModelPipelineRunStageStatus | undefined;
+  setTrainingstage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasTrainingstage(): boolean;
+  clearTrainingstage(): ModelPipelineRunStatus;
 
-  getAcceptance(): ModelPipelineRunStageStatus | undefined;
-  setAcceptance(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasAcceptance(): boolean;
-  clearAcceptance(): ModelPipelineRunStatus;
+  getAcceptancestage(): ModelPipelineRunStageStatus | undefined;
+  setAcceptancestage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasAcceptancestage(): boolean;
+  clearAcceptancestage(): ModelPipelineRunStatus;
 
-  getCapacity(): ModelPipelineRunStageStatus | undefined;
-  setCapacity(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasCapacity(): boolean;
-  clearCapacity(): ModelPipelineRunStatus;
+  getCapacitystage(): ModelPipelineRunStageStatus | undefined;
+  setCapacitystage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasCapacitystage(): boolean;
+  clearCapacitystage(): ModelPipelineRunStatus;
 
-  getProd(): ModelPipelineRunStageStatus | undefined;
-  setProd(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasProd(): boolean;
-  clearProd(): ModelPipelineRunStatus;
+  getProdstage(): ModelPipelineRunStageStatus | undefined;
+  setProdstage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasProdstage(): boolean;
+  clearProdstage(): ModelPipelineRunStatus;
 
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
@@ -1392,11 +1406,11 @@ export class ModelPipelineRunStatus extends jspb.Message {
 export namespace ModelPipelineRunStatus {
   export type AsObject = {
     studyname: string,
-    data?: ModelPipelineRunStageStatus.AsObject,
-    training?: ModelPipelineRunStageStatus.AsObject,
-    acceptance?: ModelPipelineRunStageStatus.AsObject,
-    capacity?: ModelPipelineRunStageStatus.AsObject,
-    prod?: ModelPipelineRunStageStatus.AsObject,
+    datastage?: ModelPipelineRunStageStatus.AsObject,
+    trainingstage?: ModelPipelineRunStageStatus.AsObject,
+    acceptancestage?: ModelPipelineRunStageStatus.AsObject,
+    capacitystage?: ModelPipelineRunStageStatus.AsObject,
+    prodstage?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,

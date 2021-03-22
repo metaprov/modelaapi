@@ -18,7 +18,7 @@ spec:
     listKind: DataProductList
     plural: dataproducts
     shortNames:
-    - dp
+    - prod
     singular: dataproduct
   scope: Namespaced
   versions:

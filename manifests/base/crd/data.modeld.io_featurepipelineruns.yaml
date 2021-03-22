@@ -106,6 +106,9 @@ spec:
                   - type
                   type: object
                 type: array
+              phase:
+                description: The phase of the dataset processing
+                type: string
               startTime:
                 description: The Start time of the run
                 format: date-time

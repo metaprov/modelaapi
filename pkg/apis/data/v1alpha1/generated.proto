@@ -232,7 +232,7 @@ message DataLocation {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datapipelines,singular=datapipeline,categories={data,modeld}
+// +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dp",categories={data,modeld}
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 message DataPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -268,8 +268,12 @@ message DataPipelineList {
   repeated DataPipeline items = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,categories={data,modeld,all}
+// +kubebuilder:printcolumn:name="Failure",type=string,JSONPath=`.status.conditions[?(@.type=="Failed")].message`,description="Human readable message describing the failure",priority=5
+// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modeld,all}
 // DataPipelineRun represent one execution of the data pipeline
 message DataPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -414,7 +418,7 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.url"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproducts,shortName=dp,singular=dataproduct,categories={data,modeld,all}
+// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,categories={data,modeld,all}
 message DataProduct {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1090,8 +1094,12 @@ message FeaturePipelineRunStatus {
   // +option
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
 
+  // The phase of the dataset processing
+  // +kubebuilder:validation:Optional
+  optional string phase = 3;
+
   // +optional
-  repeated FeaturePipelineRunCondition conditions = 3;
+  repeated FeaturePipelineRunCondition conditions = 4;
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
