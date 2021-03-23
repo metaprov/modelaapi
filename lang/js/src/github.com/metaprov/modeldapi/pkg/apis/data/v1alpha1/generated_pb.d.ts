@@ -565,8 +565,10 @@ export class DataPipelineSpec extends jspb.Message {
   getOutputdatasetname(): string;
   setOutputdatasetname(value: string): DataPipelineSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): DataPipelineSpec;
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DataPipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): DataPipelineSpec;
 
   getOwner(): string;
   setOwner(value: string): DataPipelineSpec;
@@ -589,7 +591,7 @@ export namespace DataPipelineSpec {
     inputdatasetsList: Array<string>,
     recipenamesList: Array<string>,
     outputdatasetname: string,
-    schedule: string,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,
   }
@@ -1932,6 +1934,11 @@ export class FeaturePipelineSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): FeaturePipelineSpec;
 
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeaturePipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): FeaturePipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineSpec): FeaturePipelineSpec.AsObject;
@@ -1950,6 +1957,7 @@ export namespace FeaturePipelineSpec {
     family: string,
     entityname: string,
     workloadclassname: string,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -2609,8 +2617,10 @@ export class LabelingPipelineSpec extends jspb.Message {
   getOutputlabelset(): string;
   setOutputlabelset(value: string): LabelingPipelineSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): LabelingPipelineSpec;
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): LabelingPipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): LabelingPipelineSpec;
 
   getOwner(): string;
   setOwner(value: string): LabelingPipelineSpec;
@@ -2633,7 +2643,7 @@ export namespace LabelingPipelineSpec {
     inputlabelsetsList: Array<string>,
     recipenamesList: Array<string>,
     outputlabelset: string,
-    schedule: string,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,
   }

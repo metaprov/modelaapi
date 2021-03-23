@@ -7492,7 +7492,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     input: (f = msg.getInput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     output: (f = msg.getOutput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7562,6 +7563,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 9:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
+      msg.setSchedule(value);
       break;
     default:
       reader.skipField();
@@ -7648,6 +7654,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
     writer.writeString(
       8,
       f
+    );
+  }
+  f = message.getSchedule();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
 };
@@ -7940,6 +7954,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeli
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec.prototype.getSchedule = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec.prototype.setSchedule = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec.prototype.clearSchedule = function() {
+  return this.setSchedule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec.prototype.hasSchedule = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

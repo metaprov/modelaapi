@@ -1311,11 +1311,7 @@ func (in *ModelPipelineSpec) DeepCopyInto(out *ModelPipelineSpec) {
 		*out = new(datav1alpha1.DataLocation)
 		**out = **in
 	}
-	if in.Trigger != nil {
-		in, out := &in.Trigger, &out.Trigger
-		*out = new(PipelineTrigger)
-		(*in).DeepCopyInto(*out)
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)

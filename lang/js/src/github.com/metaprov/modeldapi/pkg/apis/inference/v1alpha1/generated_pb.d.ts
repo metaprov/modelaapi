@@ -777,6 +777,11 @@ export class PredictionPipelineSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): PredictionPipelineSpec;
 
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictionPipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): PredictionPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionPipelineSpec): PredictionPipelineSpec.AsObject;
@@ -795,6 +800,7 @@ export namespace PredictionPipelineSpec {
     output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
     workloadclassname: string,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 

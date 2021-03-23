@@ -7461,7 +7461,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     inputdatasetsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     recipenamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     outputdatasetname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    schedule: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
@@ -7521,7 +7521,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
       msg.setOutputdatasetname(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 7:
@@ -7596,11 +7597,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       6,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 7));
@@ -7803,29 +7805,30 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
 
 
 /**
- * optional string schedule = 6;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 6));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
- */
+*/
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return this.setSchedule(undefined);
 };
 
 
@@ -19490,7 +19493,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.t
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f),
     family: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     entityname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19560,6 +19564,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.d
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 9:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
+      msg.setSchedule(value);
       break;
     default:
       reader.skipField();
@@ -19646,6 +19655,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
     writer.writeString(
       8,
       f
+    );
+  }
+  f = message.getSchedule();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
 };
@@ -19938,6 +19955,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getSchedule = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setSchedule = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearSchedule = function() {
+  return this.setSchedule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasSchedule = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -25868,7 +25922,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
     inputlabelsetsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     recipenamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     outputlabelset: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    schedule: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
@@ -25928,7 +25982,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
       msg.setOutputlabelset(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 7:
@@ -26003,11 +26058,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       6,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 7));
@@ -26210,29 +26266,30 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
 
 
 /**
- * optional string schedule = 6;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 6));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
- */
+*/
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return this.setSchedule(undefined);
 };
 
 

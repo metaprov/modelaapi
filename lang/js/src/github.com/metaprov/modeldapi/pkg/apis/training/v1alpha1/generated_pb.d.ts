@@ -1427,10 +1427,10 @@ export class ModelPipelineSpec extends jspb.Message {
   hasFolder(): boolean;
   clearFolder(): ModelPipelineSpec;
 
-  getTrigger(): PipelineTrigger | undefined;
-  setTrigger(value?: PipelineTrigger): ModelPipelineSpec;
-  hasTrigger(): boolean;
-  clearTrigger(): ModelPipelineSpec;
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelPipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelPipelineSpec;
 
   getOwner(): string;
   setOwner(value: string): ModelPipelineSpec;
@@ -1457,7 +1457,7 @@ export namespace ModelPipelineSpec {
     capacitystage?: CapacityStageSpec.AsObject,
     releasestage?: ReleaseStageSpec.AsObject,
     folder?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    trigger?: PipelineTrigger.AsObject,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     approveraccountname: string,
   }

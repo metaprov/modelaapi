@@ -909,9 +909,9 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation folder = 10;
 
-  // Trigger is definition of the pipeline trigger
+  // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional PipelineTrigger trigger = 11;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 11;
 
   // The owner account name
   // +kubebuilder:validation:Optional

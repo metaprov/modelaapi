@@ -14532,7 +14532,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     capacitystage: (f = msg.getCapacitystage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.toObject(includeInstance, f),
     releasestage: (f = msg.getReleasestage()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.toObject(includeInstance, f),
     folder: (f = msg.getFolder()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    trigger: (f = msg.getTrigger()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger.toObject(includeInstance, f),
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     approveraccountname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f
   };
@@ -14614,9 +14614,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       msg.setFolder(value);
       break;
     case 11:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger.deserializeBinaryFromReader);
-      msg.setTrigger(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
+      msg.setSchedule(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
@@ -14724,12 +14724,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
-  f = message.getTrigger();
+  f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
       11,
       f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 12));
@@ -15080,20 +15080,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional PipelineTrigger trigger = 11;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger}
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 11;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getTrigger = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger, 11));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getSchedule = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 11));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setTrigger = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setSchedule = function(value) {
   return jspb.Message.setWrapperField(this, 11, value);
 };
 
@@ -15102,8 +15102,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearTrigger = function() {
-  return this.setTrigger(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearSchedule = function() {
+  return this.setSchedule(undefined);
 };
 
 
@@ -15111,7 +15111,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasTrigger = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasSchedule = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 

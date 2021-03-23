@@ -446,6 +446,10 @@ message PredictionPipelineSpec {
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
+
+  // Schedule for running the pipeline
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
 }
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate
