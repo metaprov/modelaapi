@@ -16,6 +16,9 @@ export class AcceptanceStageSpec extends jspb.Message {
   getPredictionpipelinename(): string;
   setPredictionpipelinename(value: string): AcceptanceStageSpec;
 
+  getPredictorname(): string;
+  setPredictorname(value: string): AcceptanceStageSpec;
+
   getMinscore(): number;
   setMinscore(value: number): AcceptanceStageSpec;
 
@@ -34,6 +37,7 @@ export namespace AcceptanceStageSpec {
   export type AsObject = {
     servingsitename: string,
     predictionpipelinename: string,
+    predictorname: string,
     minscore: number,
     auto: boolean,
   }
@@ -89,11 +93,11 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
+  getPredictorname(): string;
+  setPredictorname(value: string): CapacityStageSpec;
+
   getPredictionpipelinename(): string;
   setPredictionpipelinename(value: string): CapacityStageSpec;
-
-  getTestdatasetname(): string;
-  setTestdatasetname(value: string): CapacityStageSpec;
 
   getMinscore(): number;
   setMinscore(value: number): CapacityStageSpec;
@@ -112,8 +116,8 @@ export class CapacityStageSpec extends jspb.Message {
 export namespace CapacityStageSpec {
   export type AsObject = {
     servingsitename: string,
+    predictorname: string,
     predictionpipelinename: string,
-    testdatasetname: string,
     minscore: number,
     auto: boolean,
   }
@@ -1467,6 +1471,9 @@ export class ModelPipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelPipelineSpec;
 
+  getApproveraccountname(): string;
+  setApproveraccountname(value: string): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1488,6 +1495,7 @@ export namespace ModelPipelineSpec {
     folder?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     trigger?: PipelineTrigger.AsObject,
     owner: string,
+    approveraccountname: string,
   }
 }
 
@@ -2382,9 +2390,6 @@ export class ReleaseStageSpec extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ReleaseStageSpec;
 
-  getApproveraccountname(): string;
-  setApproveraccountname(value: string): ReleaseStageSpec;
-
   getWeight(): number;
   setWeight(value: number): ReleaseStageSpec;
 
@@ -2403,7 +2408,6 @@ export namespace ReleaseStageSpec {
   export type AsObject = {
     servingsitename: string,
     predictorname: string,
-    approveraccountname: string,
     weight: number,
     auto: boolean,
   }

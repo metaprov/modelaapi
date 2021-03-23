@@ -124,6 +124,9 @@ type ModelPipelineSpec struct {
 	// The owner account name
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`
+	// ApproverAccountName is the name of the approver
+	// +kubebuilder:validation:Optional
+	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,13,opt,name=approverAccountName"`
 }
 
 type PipelineTrigger struct {
@@ -172,10 +175,10 @@ type PipelineTriggerConditionType string
 
 /// ModelPipelineTrigger Condition
 const (
-	PipelineTriggerReady    PipelineTriggerConditionType = "Ready"
-	PipelineTriggerInDb     PipelineTriggerConditionType = "InDb"
-	PipelineTriggerCreating PipelineTriggerConditionType = "Progressing"
-	PipelineTriggerFailure  PipelineTriggerConditionType = "PipelineTriggerFailure"
+	PipelineTriggerReady      PipelineTriggerConditionType = "Ready"
+	PipelineTriggerInArchived PipelineTriggerConditionType = "Archived"
+	PipelineTriggerCreating   PipelineTriggerConditionType = "Progressing"
+	PipelineTriggerFailure    PipelineTriggerConditionType = "PipelineTriggerFailure"
 )
 
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
@@ -220,33 +223,40 @@ type AcceptanceStageSpec struct {
 	// +kubebuilder:validation:Optional
 	PredictionPipelineName *string `json:"predictionPipelineName,omitempty" protobuf:"bytes,2,opt,name=predictionPipelineName"`
 
-	// Min score
+	// PredictorName is the the name of the test predictor
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,3,opt,name=minScore"`
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,3,opt,name=predictorName"`
+
+	// Min score
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 
 	// Auto defines if we move to the next stage without human intervation
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
+	Auto *bool `json:"auto,omitempty" protobuf:"bytes,5,opt,name=auto"`
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
 type CapacityStageSpec struct {
-	// ServingSiteName is the serving site for the testing
+	// ServingSiteName is the serving site for the testing during the capacity stage
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 
-	// PredictionPipelineName is the name
+	// PredictorName is the the name of the test predictor
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	PredictionPipelineName *string `json:"predictionPipelineName,omitempty" protobuf:"bytes,2,opt,name=predictionPipelineName"`
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
 
-	// TestDatasetName is the name of dataset used to test the model at this stage.
+	// PredictionPipelineName is the name of the prediction pipeline used to score the predictor
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	TestDatasetName *string `json:"testDatasetName,omitempty" protobuf:"bytes,3,opt,name=testDatasetName"`
+	PredictionPipelineName *string `json:"predictionPipelineName,omitempty" protobuf:"bytes,3,opt,name=predictionPipelineName"`
 
 	// Min score
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 
@@ -262,22 +272,19 @@ type ReleaseStageSpec struct {
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 
-	// PredictorName he release predictor.
+	// PredictorName he release predictor. The predictor will be created if it does not exist.
 	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
-
-	// +kubebuilder:validation:Optional
-	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,3,opt,name=approverAccountName"`
 
 	// Weight is the weight of the model.
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight,omitempty" protobuf:"bytes,4,opt,name=weight"`
+	Weight *float64 `json:"weight,omitempty" protobuf:"bytes,3,opt,name=weight"`
 
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,5,opt,name=auto"`
+	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

@@ -59,15 +59,22 @@ spec:
                       human intervation
                     type: boolean
                   minScore:
+                    default: 0
                     description: Min score
                     type: number
                   predictionPipelineName:
                     description: PredictionPipelineName is the name
                     type: string
+                  predictorName:
+                    description: PredictorName is the the name of the test predictor
+                    type: string
                   servingSiteName:
                     description: The serving site for the testing
                     type: string
                 type: object
+              approverAccountName:
+                description: ApproverAccountName is the name of the approver
+                type: string
               capacityStage:
                 description: Capacity stage for capacity
                 properties:
@@ -76,17 +83,19 @@ spec:
                     description: Auto defines if we move from stage to stage automatically.
                     type: boolean
                   minScore:
+                    default: 0
                     description: Min score
                     type: number
                   predictionPipelineName:
-                    description: PredictionPipelineName is the name
+                    description: PredictionPipelineName is the name of the prediction
+                      pipeline used to score the predictor
+                    type: string
+                  predictorName:
+                    description: PredictorName is the the name of the test predictor
                     type: string
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
-                    type: string
-                  testDatasetName:
-                    description: TestDatasetName is the name of dataset used to test
-                      the model at this stage.
+                      during the capacity stage
                     type: string
                 type: object
               dataStage:
@@ -122,14 +131,13 @@ spec:
                 description: ReleaseStage stage define how to place the model into
                   production.
                 properties:
-                  approverAccountName:
-                    type: string
                   auto:
                     default: true
                     description: Auto defines if we move from stage to stage automatically.
                     type: boolean
                   predictorName:
-                    description: PredictorName he release predictor.
+                    description: PredictorName he release predictor. The predictor
+                      will be created if it does not exist.
                     type: string
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release

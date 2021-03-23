@@ -31,14 +31,20 @@ message AcceptanceStageSpec {
   // +kubebuilder:validation:Optional
   optional string predictionPipelineName = 2;
 
-  // Min score
+  // PredictorName is the the name of the test predictor
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional double minScore = 3;
+  optional string predictorName = 3;
+
+  // Min score
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double minScore = 4;
 
   // Auto defines if we move to the next stage without human intervation
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 4;
+  optional bool auto = 5;
 }
 
 // AudioPipelineSpec is the specification for preprocessing audio data
@@ -67,21 +73,22 @@ message BacktestSpec {
 
 // CapacityStageSpec is the desired state of the capcity testing.
 message CapacityStageSpec {
-  // ServingSiteName is the serving site for the testing
+  // ServingSiteName is the serving site for the testing during the capacity stage
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // PredictionPipelineName is the name
+  // PredictorName is the the name of the test predictor
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string predictionPipelineName = 2;
+  optional string predictorName = 2;
 
-  // TestDatasetName is the name of dataset used to test the model at this stage.
+  // PredictionPipelineName is the name of the prediction pipeline used to score the predictor
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string testDatasetName = 3;
+  optional string predictionPipelineName = 3;
 
   // Min score
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double minScore = 4;
 
@@ -928,6 +935,10 @@ message ModelPipelineSpec {
   // The owner account name
   // +kubebuilder:validation:Optional
   optional string owner = 12;
+
+  // ApproverAccountName is the name of the approver
+  // +kubebuilder:validation:Optional
+  optional string approverAccountName = 13;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -1524,22 +1535,19 @@ message ReleaseStageSpec {
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // PredictorName he release predictor.
+  // PredictorName he release predictor. The predictor will be created if it does not exist.
   // +kubebuilder:validation:Optional
   optional string predictorName = 2;
-
-  // +kubebuilder:validation:Optional
-  optional string approverAccountName = 3;
 
   // Weight is the weight of the model.
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional double weight = 4;
+  optional double weight = 3;
 
   // Auto defines if we move from stage to stage automatically.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 5;
+  optional bool auto = 4;
 }
 
 // +kubebuilder:object:root=true
