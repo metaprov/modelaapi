@@ -5077,7 +5077,7 @@ func (m *ModelPipelineRunStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 		dAtA[i] = 0x42
 	}
 	{
-		size, err := m.ReleaseState.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ReleaseStatus.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -9234,7 +9234,7 @@ func (m *ModelPipelineRunStatus) Size() (n int) {
 	n += 1 + l + sovGenerated(uint64(l))
 	l = m.CapacityStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.ReleaseState.Size()
+	l = m.ReleaseStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	if m.StartTime != nil {
 		l = m.StartTime.Size()
@@ -11066,7 +11066,7 @@ func (this *ModelPipelineRunStatus) String() string {
 		`TrainingStatus:` + strings.Replace(strings.Replace(this.TrainingStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`AcceptanceStatus:` + strings.Replace(strings.Replace(this.AcceptanceStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`CapacityStatus:` + strings.Replace(strings.Replace(this.CapacityStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
-		`ReleaseState:` + strings.Replace(strings.Replace(this.ReleaseState.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
+		`ReleaseStatus:` + strings.Replace(strings.Replace(this.ReleaseStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`StartTime:` + strings.Replace(fmt.Sprintf("%v", this.StartTime), "Time", "v1.Time", 1) + `,`,
 		`CompletionTime:` + strings.Replace(fmt.Sprintf("%v", this.CompletionTime), "Time", "v1.Time", 1) + `,`,
 		`Phase:` + fmt.Sprintf("%v", this.Phase) + `,`,
@@ -19056,7 +19056,7 @@ func (m *ModelPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ReleaseState", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field ReleaseStatus", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -19083,7 +19083,7 @@ func (m *ModelPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ReleaseState.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ReleaseStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

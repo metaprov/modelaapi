@@ -225,7 +225,7 @@ func (study *Study) MarkSplitFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:    StudySplitted,
 		Status:  v1.ConditionFalse,
-		Reason:  ReasonFailed,
+		Reason:  string(StudyPhaseFailed),
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed

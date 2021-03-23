@@ -63,7 +63,7 @@ func (run *ModelPipelineRun) validatePipelineRunName() *field.Error {
 }
 
 func (run *ModelPipelineRun) StatusString() string {
-	return run.Status.Phase
+	return string(run.Status.Phase)
 }
 
 //Set up the webhook with the manager.

@@ -144,18 +144,40 @@ type ModelPipelineRunSpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }
 
+type StageStatusPhase string
+
+const (
+	StageStatusPhaseRunning   StageStatusPhase = "Running"
+	StageStatusPhaseCompleted StageStatusPhase = "Completed"
+	StageStatusPhaseFailed    StageStatusPhase = "Failed"
+)
+
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
 type ModelPipelineRunStageStatus struct {
+	// Phase is the phase of the stage
 	// +kubebuilder:validation:Optional
-	Approved bool `json:"approved,omitempty" protobuf:"bytes,1,opt,name=approved"`
+	Phase StageStatusPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
+	// Approved indicates that the stage is approved.
 	// +kubebuilder:validation:Optional
-	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,2,opt,name=approvedBy"`
+	Approved bool `json:"approved,omitempty" protobuf:"bytes,2,opt,name=approved"`
+	// ApprovedBy indicates the account that approve this model.
 	// +kubebuilder:validation:Optional
-	Score float64 `json:"score,omitempty" protobuf:"bytes,3,opt,name=score"`
+	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,3,opt,name=approvedBy"`
+	// ApprovedAt indicates the time of approval
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,4,opt,name=approvedAt"`
+	// Score is the score of
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,5,opt,name=endTime"`
+	Score float64 `json:"score,omitempty" protobuf:"bytes,5,opt,name=score"`
+	// Start time is the start time of the stage
+	// +kubebuilder:validation:Optional
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,7,opt,name=startTime"`
+	// End time is the end time of the stage.
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
+	// Error record the error if occurred
+	// +kubebuilder:validation:Optional
+	Error *string `json:"error,omitempty" protobuf:"bytes,9,opt,name=error"`
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
@@ -164,26 +186,26 @@ type ModelPipelineRunStatus struct {
 	StudyName string `json:"studyName" protobuf:"bytes,1,opt,name=studyName"`
 	// +kubebuilder:validation:Optional
 	// data is the status for the data stage.
-	DataStatus ModelPipelineRunStageStatus `json:"data,omitempty" protobuf:"bytes,3,opt,name=data"`
+	DataStatus ModelPipelineRunStageStatus `json:"dataStage,omitempty" protobuf:"bytes,3,opt,name=dataStage"`
 	// +kubebuilder:validation:Optional
 	// dev is the status for the dev stage.
-	TrainingStatus ModelPipelineRunStageStatus `json:"training,omitempty" protobuf:"bytes,4,opt,name=training"`
+	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStage,omitempty" protobuf:"bytes,4,opt,name=trainingStage"`
 	// Staging is status for each qa stage.
 	// +kubebuilder:validation:Optional
-	AcceptanceStatus ModelPipelineRunStageStatus `json:"acceptance,omitempty" protobuf:"bytes,5,rep,name=acceptance"`
+	AcceptanceStatus ModelPipelineRunStageStatus `json:"acceptanceStage,omitempty" protobuf:"bytes,5,rep,name=acceptanceStage"`
 	// ReleaseStage is the status for the production stage.
 	// +kubebuilder:validation:Optional
-	CapacityStatus ModelPipelineRunStageStatus `json:"capacity,omitempty" protobuf:"bytes,6,rep,name=capacity"`
+	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStage,omitempty" protobuf:"bytes,6,rep,name=capacityStage"`
 	// ReleaseStage is the status for the production stage.
 	// +kubebuilder:validation:Optional
-	ReleaseState ModelPipelineRunStageStatus `json:"prod,omitempty" protobuf:"bytes,7,rep,name=prod"`
+	ReleaseStatus ModelPipelineRunStageStatus `json:"prodStage,omitempty" protobuf:"bytes,7,rep,name=prodStage"`
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,8,opt,name=startTime"`
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,9,opt,name=completionTime"`
 	// The phase of the pipeline run
 	// +kubebuilder:validation:Optional
-	Phase string `json:"phase" protobuf:"bytes,10,opt,name=phase"`
+	Phase PipelinePhase `json:"phase" protobuf:"bytes,10,opt,name=phase"`
 	//+optional
 	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,11,rep,name=conditions"`
 	// Folder for pipeline run artifacts. This is assigned by the system

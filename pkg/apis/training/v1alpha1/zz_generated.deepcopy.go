@@ -1262,7 +1262,7 @@ func (in *ModelPipelineRunStatus) DeepCopyInto(out *ModelPipelineRunStatus) {
 	in.TrainingStatus.DeepCopyInto(&out.TrainingStatus)
 	in.AcceptanceStatus.DeepCopyInto(&out.AcceptanceStatus)
 	in.CapacityStatus.DeepCopyInto(&out.CapacityStatus)
-	in.ReleaseState.DeepCopyInto(&out.ReleaseState)
+	in.ReleaseStatus.DeepCopyInto(&out.ReleaseStatus)
 	if in.StartTime != nil {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
