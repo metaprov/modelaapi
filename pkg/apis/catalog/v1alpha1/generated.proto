@@ -181,6 +181,25 @@ message FloatParameter {
   optional bool log = 6;
 }
 
+// GithubEvents specify repo and the events to listen in order ot fire the pipeline
+message GithubEvents {
+  // The github connections used to loginto git
+  optional string gitConnectionName = 1;
+
+  // Repository is the name of the github repository
+  optional string repository = 2;
+
+  // Branch is the name of the github branch.
+  // By default the trigger listen to all branch
+  optional string branch = 3;
+
+  // Blobname regex is a regular expression on the blob name that changed
+  optional string blobNameRegex = 4;
+
+  // Events is the name of the github events.
+  repeated string events = 5;
+}
+
 // GpuClass define the specific for a machine type of a cloud provider
 message GpuClass {
   // Code the the code of the gpu class within the data provider
@@ -382,6 +401,33 @@ message Region {
 
   // Datacenters if the list of datacenters
   repeated DataCenter datacenters = 5;
+}
+
+// Run Schedule is a specification for job schedule
+message RunSchedule {
+  // The start time of the schedule
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+
+  // StartDay is the start day of the schedule
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDay = 2;
+
+  // EndTime is the end time of the schedule
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp endTime = 3;
+
+  // EndDay is the end day of the schedule
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endDay = 4;
+
+  // Cron string of the schedule.
+  // +kubebuilder:validation:Optional
+  optional string cron = 5;
+
+  // +kubebuilder:validation:Optional
+  // The type of schedule events.
+  optional string type = 6;
 }
 
 // UserRoleClass specify the RBAC premission for a specific user role.

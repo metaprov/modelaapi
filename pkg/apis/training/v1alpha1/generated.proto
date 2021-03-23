@@ -338,25 +338,6 @@ message FreqSpec {
   optional string unit = 2;
 }
 
-// GithubEvents specify repo and the events to listen in order ot fire the pipeline
-message GithubEvents {
-  // The github connections used to loginto git
-  optional string gitConnectionName = 1;
-
-  // Repository is the name of the github repository
-  optional string repository = 2;
-
-  // Branch is the name of the github branch.
-  // By default the trigger listen to all branch
-  optional string branch = 3;
-
-  // Blobname regex is a regular expression on the blob name that changed
-  optional string blobNameRegex = 4;
-
-  // Events is the name of the github events.
-  repeated string events = 5;
-}
-
 message Hierarchy {
   // The columns in the data frame that belongs to the hierarchy. By default, all the item level column is the last one. The default aggregate function is sum.
   repeated string columns = 1;
@@ -1480,11 +1461,11 @@ message NumericPipelineSpec {
 message PipelineTrigger {
   // Spec for a schedule in case that the trigger
   // +kubebuilder:validation:Optional
-  optional TriggerSchedule schedule = 1;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
 
   // Definition of git hub events
   // +kubebuilder:validation:Optional
-  optional GithubEvents githubEvents = 2;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GithubEvents githubEvents = 2;
 }
 
 // PreprocessingSpec of the pre processing pipeline
@@ -2079,33 +2060,6 @@ message TrainingStageSpec {
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool auto = 5;
-}
-
-// TriggerSchedule specify a cron schedule
-message TriggerSchedule {
-  // The start time of the schedule
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
-
-  // StartDay is the start day of the schedule
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDay = 2;
-
-  // EndTime is the end time of the schedule
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp endTime = 3;
-
-  // EndDay is the end day of the schedule
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endDay = 4;
-
-  // Cron string of the schedule.
-  // +kubebuilder:validation:Optional
-  optional string cron = 5;
-
-  // +kubebuilder:validation:Optional
-  // The type of schedule events.
-  optional string type = 6;
 }
 
 // VideoPipelineSpec is the specification for preprocessing video data

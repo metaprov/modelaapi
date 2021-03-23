@@ -521,42 +521,6 @@ export namespace FreqSpec {
   }
 }
 
-export class GithubEvents extends jspb.Message {
-  getGitconnectionname(): string;
-  setGitconnectionname(value: string): GithubEvents;
-
-  getRepository(): string;
-  setRepository(value: string): GithubEvents;
-
-  getBranch(): string;
-  setBranch(value: string): GithubEvents;
-
-  getBlobnameregex(): string;
-  setBlobnameregex(value: string): GithubEvents;
-
-  getEventsList(): Array<string>;
-  setEventsList(value: Array<string>): GithubEvents;
-  clearEventsList(): GithubEvents;
-  addEvents(value: string, index?: number): GithubEvents;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GithubEvents.AsObject;
-  static toObject(includeInstance: boolean, msg: GithubEvents): GithubEvents.AsObject;
-  static serializeBinaryToWriter(message: GithubEvents, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GithubEvents;
-  static deserializeBinaryFromReader(message: GithubEvents, reader: jspb.BinaryReader): GithubEvents;
-}
-
-export namespace GithubEvents {
-  export type AsObject = {
-    gitconnectionname: string,
-    repository: string,
-    branch: string,
-    blobnameregex: string,
-    eventsList: Array<string>,
-  }
-}
-
 export class Hierarchy extends jspb.Message {
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): Hierarchy;
@@ -2290,13 +2254,13 @@ export namespace NumericPipelineSpec {
 }
 
 export class PipelineTrigger extends jspb.Message {
-  getSchedule(): TriggerSchedule | undefined;
-  setSchedule(value?: TriggerSchedule): PipelineTrigger;
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PipelineTrigger;
   hasSchedule(): boolean;
   clearSchedule(): PipelineTrigger;
 
-  getGithubevents(): GithubEvents | undefined;
-  setGithubevents(value?: GithubEvents): PipelineTrigger;
+  getGithubevents(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.GithubEvents | undefined;
+  setGithubevents(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.GithubEvents): PipelineTrigger;
   hasGithubevents(): boolean;
   clearGithubevents(): PipelineTrigger;
 
@@ -2310,8 +2274,8 @@ export class PipelineTrigger extends jspb.Message {
 
 export namespace PipelineTrigger {
   export type AsObject = {
-    schedule?: TriggerSchedule.AsObject,
-    githubevents?: GithubEvents.AsObject,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    githubevents?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.GithubEvents.AsObject,
   }
 }
 
@@ -3152,52 +3116,6 @@ export namespace TrainingStageSpec {
     studyname: string,
     minscore: number,
     auto: boolean,
-  }
-}
-
-export class TriggerSchedule extends jspb.Message {
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TriggerSchedule;
-  hasStarttime(): boolean;
-  clearStarttime(): TriggerSchedule;
-
-  getStartday(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartday(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TriggerSchedule;
-  hasStartday(): boolean;
-  clearStartday(): TriggerSchedule;
-
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): TriggerSchedule;
-  hasEndtime(): boolean;
-  clearEndtime(): TriggerSchedule;
-
-  getEndday(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndday(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TriggerSchedule;
-  hasEndday(): boolean;
-  clearEndday(): TriggerSchedule;
-
-  getCron(): string;
-  setCron(value: string): TriggerSchedule;
-
-  getType(): string;
-  setType(value: string): TriggerSchedule;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TriggerSchedule.AsObject;
-  static toObject(includeInstance: boolean, msg: TriggerSchedule): TriggerSchedule.AsObject;
-  static serializeBinaryToWriter(message: TriggerSchedule, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TriggerSchedule;
-  static deserializeBinaryFromReader(message: TriggerSchedule, reader: jspb.BinaryReader): TriggerSchedule;
-}
-
-export namespace TriggerSchedule {
-  export type AsObject = {
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    startday?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
-    endday?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    cron: string,
-    type: string,
   }
 }
 

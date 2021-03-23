@@ -25520,7 +25520,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.repeatedFields_ = [4];
 
 
 
@@ -25553,6 +25553,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
+    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -25594,16 +25595,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStarttime(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhase(value);
       break;
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setStarttime(value);
       break;
     case 3:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCompletiontime(value);
+      break;
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -25637,15 +25642,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getStarttime();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getCompletiontime();
+  f = message.getStarttime();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -25653,10 +25657,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = message.getCompletiontime();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition.serializeBinaryToWriter
     );
@@ -25665,12 +25677,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+ * optional string phase = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getPhase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setPhase = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.clearPhase = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.hasPhase = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getStarttime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
 
 
@@ -25679,7 +25727,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setStarttime = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -25697,17 +25745,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.hasStarttime = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getCompletiontime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
 
 
@@ -25716,7 +25764,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setCompletiontime = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -25734,17 +25782,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.hasCompletiontime = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated LabelingPipelineRunCondition conditions = 3;
+ * repeated LabelingPipelineRunCondition conditions = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, 4));
 };
 
 
@@ -25753,7 +25801,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -25763,7 +25811,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunCondition, opt_index);
 };
 
 

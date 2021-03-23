@@ -272,7 +272,7 @@ message DataPipelineList {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:printcolumn:name="Failure",type=string,JSONPath=`.status.conditions[?(@.type=="Failed")].message`,description="Human readable message describing the failure",priority=5
+// +kubebuilder:printcolumn:name="Failure",type=string,JSONPath=`.status.conditions[?(@.type=="IsFailed")].message`,description="Human readable message describing the failure",priority=5
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modeld,all}
 // DataPipelineRun represent one execution of the data pipeline
 message DataPipelineRun {
@@ -1482,14 +1482,17 @@ message LabelingPipelineRunSpec {
 
 // LabelPipelineRunStatus defines the observed state of Label
 message LabelingPipelineRunStatus {
+  // The phase of the labeling pipeline run
+  optional string phase = 1;
+
   // The Start time of the run
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
   // The End time of the run
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
   // +optional
-  repeated LabelingPipelineRunCondition conditions = 3;
+  repeated LabelingPipelineRunCondition conditions = 4;
 }
 
 // LabelingPipelineSpec defines the desired state of a LabelingPipeline

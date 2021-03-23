@@ -106,12 +106,16 @@ spec:
                   - type
                   type: object
                 type: array
+              phase:
+                description: The phase of the labeling pipeline run
+                type: string
               startTime:
                 description: The Start time of the run
                 format: date-time
                 type: string
             required:
             - completionTime
+            - phase
             - startTime
             type: object
         required:

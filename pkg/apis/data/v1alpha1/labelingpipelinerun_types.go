@@ -90,9 +90,9 @@ type LabelingPipelineRunStatus struct {
 	// The phase of the labeling pipeline run
 	Phase LabelingPipelineRunPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The Start time of the run
-	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,1,opt,name=startTime"`
+	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,2,opt,name=startTime"`
 	// The End time of the run
-	CompletionTime *metav1.Time `json:"completionTime" protobuf:"bytes,2,opt,name=completionTime"`
+	CompletionTime *metav1.Time `json:"completionTime" protobuf:"bytes,3,opt,name=completionTime"`
 	//+optional
-	Conditions []LabelingPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []LabelingPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

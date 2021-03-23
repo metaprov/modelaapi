@@ -30,7 +30,7 @@ spec:
       name: Age
       type: date
     - description: Human readable message describing the failure
-      jsonPath: .status.conditions[?(@.type=="Failed")].message
+      jsonPath: .status.conditions[?(@.type=="IsFailed")].message
       name: Failure
       priority: 5
       type: string

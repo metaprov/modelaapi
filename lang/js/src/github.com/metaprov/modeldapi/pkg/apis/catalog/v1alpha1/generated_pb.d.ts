@@ -324,6 +324,42 @@ export namespace FloatParameter {
   }
 }
 
+export class GithubEvents extends jspb.Message {
+  getGitconnectionname(): string;
+  setGitconnectionname(value: string): GithubEvents;
+
+  getRepository(): string;
+  setRepository(value: string): GithubEvents;
+
+  getBranch(): string;
+  setBranch(value: string): GithubEvents;
+
+  getBlobnameregex(): string;
+  setBlobnameregex(value: string): GithubEvents;
+
+  getEventsList(): Array<string>;
+  setEventsList(value: Array<string>): GithubEvents;
+  clearEventsList(): GithubEvents;
+  addEvents(value: string, index?: number): GithubEvents;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GithubEvents.AsObject;
+  static toObject(includeInstance: boolean, msg: GithubEvents): GithubEvents.AsObject;
+  static serializeBinaryToWriter(message: GithubEvents, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GithubEvents;
+  static deserializeBinaryFromReader(message: GithubEvents, reader: jspb.BinaryReader): GithubEvents;
+}
+
+export namespace GithubEvents {
+  export type AsObject = {
+    gitconnectionname: string,
+    repository: string,
+    branch: string,
+    blobnameregex: string,
+    eventsList: Array<string>,
+  }
+}
+
 export class GpuClass extends jspb.Message {
   getCode(): string;
   setCode(value: string): GpuClass;
@@ -765,6 +801,52 @@ export namespace Region {
     location: string,
     billingcode: string,
     datacentersList: Array<DataCenter.AsObject>,
+  }
+}
+
+export class RunSchedule extends jspb.Message {
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
+  hasStarttime(): boolean;
+  clearStarttime(): RunSchedule;
+
+  getStartday(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartday(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
+  hasStartday(): boolean;
+  clearStartday(): RunSchedule;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): RunSchedule;
+  hasEndtime(): boolean;
+  clearEndtime(): RunSchedule;
+
+  getEndday(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndday(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
+  hasEndday(): boolean;
+  clearEndday(): RunSchedule;
+
+  getCron(): string;
+  setCron(value: string): RunSchedule;
+
+  getType(): string;
+  setType(value: string): RunSchedule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunSchedule.AsObject;
+  static toObject(includeInstance: boolean, msg: RunSchedule): RunSchedule.AsObject;
+  static serializeBinaryToWriter(message: RunSchedule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunSchedule;
+  static deserializeBinaryFromReader(message: RunSchedule, reader: jspb.BinaryReader): RunSchedule;
+}
+
+export namespace RunSchedule {
+  export type AsObject = {
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startday?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
+    endday?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    cron: string,
+    type: string,
   }
 }
 

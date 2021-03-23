@@ -2554,6 +2554,9 @@ export namespace LabelingPipelineRunSpec {
 }
 
 export class LabelingPipelineRunStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): LabelingPipelineRunStatus;
+
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabelingPipelineRunStatus;
   hasStarttime(): boolean;
@@ -2579,6 +2582,7 @@ export class LabelingPipelineRunStatus extends jspb.Message {
 
 export namespace LabelingPipelineRunStatus {
   export type AsObject = {
+    phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<LabelingPipelineRunCondition.AsObject>,
