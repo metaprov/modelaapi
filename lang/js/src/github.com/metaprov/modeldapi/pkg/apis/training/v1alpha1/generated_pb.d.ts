@@ -9,40 +9,6 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AcceptanceStageSpec extends jspb.Message {
-  getServingsitename(): string;
-  setServingsitename(value: string): AcceptanceStageSpec;
-
-  getPredictionpipelinename(): string;
-  setPredictionpipelinename(value: string): AcceptanceStageSpec;
-
-  getPredictorname(): string;
-  setPredictorname(value: string): AcceptanceStageSpec;
-
-  getMinscore(): number;
-  setMinscore(value: number): AcceptanceStageSpec;
-
-  getAuto(): boolean;
-  setAuto(value: boolean): AcceptanceStageSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AcceptanceStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AcceptanceStageSpec): AcceptanceStageSpec.AsObject;
-  static serializeBinaryToWriter(message: AcceptanceStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AcceptanceStageSpec;
-  static deserializeBinaryFromReader(message: AcceptanceStageSpec, reader: jspb.BinaryReader): AcceptanceStageSpec;
-}
-
-export namespace AcceptanceStageSpec {
-  export type AsObject = {
-    servingsitename: string,
-    predictionpipelinename: string,
-    predictorname: string,
-    minscore: number,
-    auto: boolean,
-  }
-}
-
 export class AudioPipelineSpec extends jspb.Message {
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): AudioPipelineSpec;
@@ -1314,6 +1280,9 @@ export namespace ModelPipelineRunStageStatus {
 }
 
 export class ModelPipelineRunStatus extends jspb.Message {
+  getStage(): string;
+  setStage(value: string): ModelPipelineRunStatus;
+
   getStudyname(): string;
   setStudyname(value: string): ModelPipelineRunStatus;
 
@@ -1327,10 +1296,10 @@ export class ModelPipelineRunStatus extends jspb.Message {
   hasTrainingstage(): boolean;
   clearTrainingstage(): ModelPipelineRunStatus;
 
-  getAcceptancestage(): ModelPipelineRunStageStatus | undefined;
-  setAcceptancestage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasAcceptancestage(): boolean;
-  clearAcceptancestage(): ModelPipelineRunStatus;
+  getUatstage(): ModelPipelineRunStageStatus | undefined;
+  setUatstage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasUatstage(): boolean;
+  clearUatstage(): ModelPipelineRunStatus;
 
   getCapacitystage(): ModelPipelineRunStageStatus | undefined;
   setCapacitystage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
@@ -1373,10 +1342,11 @@ export class ModelPipelineRunStatus extends jspb.Message {
 
 export namespace ModelPipelineRunStatus {
   export type AsObject = {
+    stage: string,
     studyname: string,
     datastage?: ModelPipelineRunStageStatus.AsObject,
     trainingstage?: ModelPipelineRunStageStatus.AsObject,
-    acceptancestage?: ModelPipelineRunStageStatus.AsObject,
+    uatstage?: ModelPipelineRunStageStatus.AsObject,
     capacitystage?: ModelPipelineRunStageStatus.AsObject,
     prodstage?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -1407,10 +1377,10 @@ export class ModelPipelineSpec extends jspb.Message {
   hasTrainingstage(): boolean;
   clearTrainingstage(): ModelPipelineSpec;
 
-  getAcceptancestage(): AcceptanceStageSpec | undefined;
-  setAcceptancestage(value?: AcceptanceStageSpec): ModelPipelineSpec;
-  hasAcceptancestage(): boolean;
-  clearAcceptancestage(): ModelPipelineSpec;
+  getUatstage(): UATStageSpec | undefined;
+  setUatstage(value?: UATStageSpec): ModelPipelineSpec;
+  hasUatstage(): boolean;
+  clearUatstage(): ModelPipelineSpec;
 
   getCapacitystage(): CapacityStageSpec | undefined;
   setCapacitystage(value?: CapacityStageSpec): ModelPipelineSpec;
@@ -1453,7 +1423,7 @@ export namespace ModelPipelineSpec {
     description: string,
     datastage?: DataStageSpec.AsObject,
     trainingstage?: TrainingStageSpec.AsObject,
-    acceptancestage?: AcceptanceStageSpec.AsObject,
+    uatstage?: UATStageSpec.AsObject,
     capacitystage?: CapacityStageSpec.AsObject,
     releasestage?: ReleaseStageSpec.AsObject,
     folder?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -3114,6 +3084,40 @@ export namespace TrainingStageSpec {
     notebookname: string,
     labname: string,
     studyname: string,
+    minscore: number,
+    auto: boolean,
+  }
+}
+
+export class UATStageSpec extends jspb.Message {
+  getServingsitename(): string;
+  setServingsitename(value: string): UATStageSpec;
+
+  getPredictionpipelinename(): string;
+  setPredictionpipelinename(value: string): UATStageSpec;
+
+  getPredictorname(): string;
+  setPredictorname(value: string): UATStageSpec;
+
+  getMinscore(): number;
+  setMinscore(value: number): UATStageSpec;
+
+  getAuto(): boolean;
+  setAuto(value: boolean): UATStageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UATStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: UATStageSpec): UATStageSpec.AsObject;
+  static serializeBinaryToWriter(message: UATStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UATStageSpec;
+  static deserializeBinaryFromReader(message: UATStageSpec, reader: jspb.BinaryReader): UATStageSpec;
+}
+
+export namespace UATStageSpec {
+  export type AsObject = {
+    servingsitename: string,
+    predictionpipelinename: string,
+    predictorname: string,
     minscore: number,
     auto: boolean,
   }

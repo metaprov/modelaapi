@@ -20,33 +20,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
-// AcceptanceStageSpec is the desired step of the acceptance stage of the pipeline
-message AcceptanceStageSpec {
-  // The serving site for the testing
-  // +kubebuilder:default =""
-  optional string servingSiteName = 1;
-
-  // PredictionPipelineName is the name
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string predictionPipelineName = 2;
-
-  // PredictorName is the the name of the test predictor
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string predictorName = 3;
-
-  // Min score
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double minScore = 4;
-
-  // Auto defines if we move to the next stage without human intervation
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool auto = 5;
-}
-
 // AudioPipelineSpec is the specification for preprocessing audio data
 message AudioPipelineSpec {
   // Name of the datetime columns
@@ -825,10 +798,12 @@ message ModelPipelineRunStageStatus {
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
 message ModelPipelineRunStatus {
-  // +kubebuilder:validation:Optional
-  optional string studyName = 1;
+  // The current stage of the pipeline
+  optional string stage = 1;
 
-  // +kubebuilder:validation:Optional
+  // The current name of the study
+  optional string studyName = 2;
+
   // data is the status for the data stage.
   optional ModelPipelineRunStageStatus dataStage = 3;
 
@@ -838,7 +813,7 @@ message ModelPipelineRunStatus {
 
   // Staging is status for each qa stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus acceptanceStage = 5;
+  optional ModelPipelineRunStageStatus uatStage = 5;
 
   // ReleaseStage is the status for the production stage.
   // +kubebuilder:validation:Optional
@@ -894,7 +869,7 @@ message ModelPipelineSpec {
 
   // Acceptance stage is used for further testing
   // +kubebuilder:validation:Optional
-  optional AcceptanceStageSpec acceptanceStage = 7;
+  optional UATStageSpec uatStage = 7;
 
   // Capacity stage for capacity
   // +kubebuilder:validation:Optional
@@ -2057,6 +2032,33 @@ message TrainingStageSpec {
   optional double minScore = 4;
 
   // Auto defines if we move from stage to stage automatically.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool auto = 5;
+}
+
+// UATStageSpec is the specification of the user acceptance test.
+message UATStageSpec {
+  // The serving site for the testing
+  // +kubebuilder:default =""
+  optional string servingSiteName = 1;
+
+  // PredictionPipelineName is the name
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional string predictionPipelineName = 2;
+
+  // PredictorName is the the name of the test predictor
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional string predictorName = 3;
+
+  // Min score
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double minScore = 4;
+
+  // Auto defines if we move to the next stage without human intervation
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool auto = 5;

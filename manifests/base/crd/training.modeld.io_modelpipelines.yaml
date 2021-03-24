@@ -50,28 +50,6 @@ spec:
             description: ModelPipelineSpec define the desired state of the ModelPipeline
               resource.
             properties:
-              acceptanceStage:
-                description: Acceptance stage is used for further testing
-                properties:
-                  auto:
-                    default: true
-                    description: Auto defines if we move to the next stage without
-                      human intervation
-                    type: boolean
-                  minScore:
-                    default: 0
-                    description: Min score
-                    type: number
-                  predictionPipelineName:
-                    description: PredictionPipelineName is the name
-                    type: string
-                  predictorName:
-                    description: PredictorName is the the name of the test predictor
-                    type: string
-                  servingSiteName:
-                    description: The serving site for the testing
-                    type: string
-                type: object
               approverAccountName:
                 description: ApproverAccountName is the name of the approver
                 type: string
@@ -217,6 +195,28 @@ spec:
                     type: string
                   studyName:
                     description: StudyName is the name of the template
+                    type: string
+                type: object
+              uatStage:
+                description: Acceptance stage is used for further testing
+                properties:
+                  auto:
+                    default: true
+                    description: Auto defines if we move to the next stage without
+                      human intervation
+                    type: boolean
+                  minScore:
+                    default: 0
+                    description: Min score
+                    type: number
+                  predictionPipelineName:
+                    description: PredictionPipelineName is the name
+                    type: string
+                  predictorName:
+                    description: PredictorName is the the name of the test predictor
+                    type: string
+                  servingSiteName:
+                    description: The serving site for the testing
                     type: string
                 type: object
               versionName:
