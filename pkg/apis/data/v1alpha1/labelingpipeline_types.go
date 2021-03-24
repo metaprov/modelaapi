@@ -6,6 +6,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -72,8 +73,9 @@ type LabelingPipelineSpec struct {
 	// The output file of the pipeline
 	// +kubebuilder:validation:Optional
 	OutputLabelsetName *string `json:"outputLabelset,omitempty" protobuf:"bytes,5,opt,name=outputLabelset"`
-	// A cron field to schedule the data pipeline.
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	// Schedule for running the pipeline
+	// +kubebuilder:validation:Optional
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional

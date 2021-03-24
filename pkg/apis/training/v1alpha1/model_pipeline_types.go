@@ -82,9 +82,9 @@ type ModelPipelineSpec struct {
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
 	Location *data.DataLocation `json:"folder,omitempty" protobuf:"bytes,10,opt,name=folder"`
-	// Trigger is definition of the pipeline trigger
+	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Trigger *PipelineTrigger `json:"trigger,omitempty" protobuf:"bytes,11,opt,name=trigger"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,11,opt,name=schedule"`
 	// The owner account name
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`

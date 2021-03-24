@@ -84,6 +84,9 @@ type PredictionPipelineSpec struct {
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	// Schedule for running the pipeline
+	// +kubebuilder:validation:Optional
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,9,opt,name=schedule"`
 }
 
 // PredictionPipelineStatus is the observed state of a PredictionTemplate

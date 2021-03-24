@@ -6,6 +6,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -77,7 +78,7 @@ type DataPipelineSpec struct {
 	// Schedule is a cron field to schedule the data pipeline.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// Owner of this data pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"

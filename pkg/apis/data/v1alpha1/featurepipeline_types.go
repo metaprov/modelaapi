@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -89,6 +90,9 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:default:="default-data-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	// Schedule for running the pipeline
+	// +kubebuilder:validation:Optional
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,9,opt,name=schedule"`
 }
 
 // FeatureStatus defines the observed state of Feature
