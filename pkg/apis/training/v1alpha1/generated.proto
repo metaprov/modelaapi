@@ -55,15 +55,10 @@ message CapacityStageSpec {
   // +kubebuilder:validation:Optional
   optional string predictorName = 2;
 
-  // PredictionPipelineName is the name of the prediction pipeline used to score the predictor
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string predictionPipelineName = 3;
-
-  // Min score
+  // Tests is the specification of tests to run in this stage
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double minScore = 4;
+  repeated ModelTestSpec tests = 4;
 
   // Auto defines if we move from stage to stage automatically.
   // +kubebuilder:default:=true
@@ -779,10 +774,6 @@ message ModelPipelineRunStageStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 4;
 
-  // Score is the score of
-  // +kubebuilder:validation:Optional
-  optional double score = 5;
-
   // Start time is the start time of the stage
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 7;
@@ -791,9 +782,9 @@ message ModelPipelineRunStageStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 8;
 
-  // Error record the error if occurred
+  // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
-  optional string error = 9;
+  repeated ModelTestResult results = 9;
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
@@ -895,6 +886,10 @@ message ModelPipelineSpec {
   // ApproverAccountName is the name of the approver
   // +kubebuilder:validation:Optional
   optional string approverAccountName = 13;
+
+  // NotifierName is the name of the notifier to use in case of pipeline failure
+  // +kubebuilder:validation:Optional
+  optional string notifierName = 14;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -1215,6 +1210,34 @@ message ModelStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   repeated ModelCondition conditions = 24;
+}
+
+message ModelTestResult {
+  // The name of the dataset
+  optional string datasetName = 1;
+
+  // startTime is the test start time
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
+
+  // endTime is the test end time
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
+
+  // The results of running the tests
+  repeated TestScore results = 4;
+
+  // Error is a name of any error that occurred during the test.
+  optional string error = 5;
+}
+
+message ModelTestSpec {
+  // Name of the dataset used for testing
+  optional string datasetName = 1;
+
+  // Minimum scores required to pass the tests
+  repeated TestScore minScores = 2;
+
+  // Max time in seconds
+  optional int32 maxTime = 3;
 }
 
 message NNLayerParameter {
@@ -1885,6 +1908,14 @@ message SuccessiveHalvingSpec {
   optional string modality = 26;
 }
 
+message TestScore {
+  // Metric is the name of the metric
+  optional string metric = 1;
+
+  // The score needed.
+  optional double score = 2;
+}
+
 // TextPipelineSpec is the specification for preprocessing of text columns
 message TextPipelineSpec {
   // The list of test columns
@@ -2043,20 +2074,15 @@ message UATStageSpec {
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // PredictionPipelineName is the name
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string predictionPipelineName = 2;
-
   // PredictorName is the the name of the test predictor
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string predictorName = 3;
 
-  // Min score
+  // Tests is the specification of tests to run
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double minScore = 4;
+  repeated ModelTestSpec tests = 4;
 
   // Auto defines if we move to the next stage without human intervation
   // +kubebuilder:default:=true

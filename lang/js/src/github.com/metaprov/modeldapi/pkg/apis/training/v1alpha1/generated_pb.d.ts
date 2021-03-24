@@ -62,11 +62,10 @@ export class CapacityStageSpec extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): CapacityStageSpec;
 
-  getPredictionpipelinename(): string;
-  setPredictionpipelinename(value: string): CapacityStageSpec;
-
-  getMinscore(): number;
-  setMinscore(value: number): CapacityStageSpec;
+  getTestsList(): Array<ModelTestSpec>;
+  setTestsList(value: Array<ModelTestSpec>): CapacityStageSpec;
+  clearTestsList(): CapacityStageSpec;
+  addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
 
   getAuto(): boolean;
   setAuto(value: boolean): CapacityStageSpec;
@@ -83,8 +82,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     servingsitename: string,
     predictorname: string,
-    predictionpipelinename: string,
-    minscore: number,
+    testsList: Array<ModelTestSpec.AsObject>,
     auto: boolean,
   }
 }
@@ -1242,9 +1240,6 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasApprovedat(): boolean;
   clearApprovedat(): ModelPipelineRunStageStatus;
 
-  getScore(): number;
-  setScore(value: number): ModelPipelineRunStageStatus;
-
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStageStatus;
   hasStarttime(): boolean;
@@ -1255,8 +1250,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getError(): string;
-  setError(value: string): ModelPipelineRunStageStatus;
+  getResultsList(): Array<ModelTestResult>;
+  setResultsList(value: Array<ModelTestResult>): ModelPipelineRunStageStatus;
+  clearResultsList(): ModelPipelineRunStageStatus;
+  addResults(value?: ModelTestResult, index?: number): ModelTestResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStageStatus.AsObject;
@@ -1272,10 +1269,9 @@ export namespace ModelPipelineRunStageStatus {
     approved: boolean,
     approvedby: string,
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    score: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    error: string,
+    resultsList: Array<ModelTestResult.AsObject>,
   }
 }
 
@@ -1408,6 +1404,9 @@ export class ModelPipelineSpec extends jspb.Message {
   getApproveraccountname(): string;
   setApproveraccountname(value: string): ModelPipelineSpec;
 
+  getNotifiername(): string;
+  setNotifiername(value: string): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1430,6 +1429,7 @@ export namespace ModelPipelineSpec {
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     approveraccountname: string,
+    notifiername: string,
   }
 }
 
@@ -1800,6 +1800,74 @@ export namespace ModelStatus {
     imagename: string,
     forecasturi: string,
     conditionsList: Array<ModelCondition.AsObject>,
+  }
+}
+
+export class ModelTestResult extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelTestResult;
+
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelTestResult;
+  hasStarttime(): boolean;
+  clearStarttime(): ModelTestResult;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelTestResult;
+  hasEndtime(): boolean;
+  clearEndtime(): ModelTestResult;
+
+  getResultsList(): Array<TestScore>;
+  setResultsList(value: Array<TestScore>): ModelTestResult;
+  clearResultsList(): ModelTestResult;
+  addResults(value?: TestScore, index?: number): TestScore;
+
+  getError(): string;
+  setError(value: string): ModelTestResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelTestResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelTestResult): ModelTestResult.AsObject;
+  static serializeBinaryToWriter(message: ModelTestResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelTestResult;
+  static deserializeBinaryFromReader(message: ModelTestResult, reader: jspb.BinaryReader): ModelTestResult;
+}
+
+export namespace ModelTestResult {
+  export type AsObject = {
+    datasetname: string,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    resultsList: Array<TestScore.AsObject>,
+    error: string,
+  }
+}
+
+export class ModelTestSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelTestSpec;
+
+  getMinscoresList(): Array<TestScore>;
+  setMinscoresList(value: Array<TestScore>): ModelTestSpec;
+  clearMinscoresList(): ModelTestSpec;
+  addMinscores(value?: TestScore, index?: number): TestScore;
+
+  getMaxtime(): number;
+  setMaxtime(value: number): ModelTestSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelTestSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelTestSpec): ModelTestSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelTestSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelTestSpec;
+  static deserializeBinaryFromReader(message: ModelTestSpec, reader: jspb.BinaryReader): ModelTestSpec;
+}
+
+export namespace ModelTestSpec {
+  export type AsObject = {
+    datasetname: string,
+    minscoresList: Array<TestScore.AsObject>,
+    maxtime: number,
   }
 }
 
@@ -2913,6 +2981,28 @@ export namespace SuccessiveHalvingSpec {
   }
 }
 
+export class TestScore extends jspb.Message {
+  getMetric(): string;
+  setMetric(value: string): TestScore;
+
+  getScore(): number;
+  setScore(value: number): TestScore;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestScore.AsObject;
+  static toObject(includeInstance: boolean, msg: TestScore): TestScore.AsObject;
+  static serializeBinaryToWriter(message: TestScore, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestScore;
+  static deserializeBinaryFromReader(message: TestScore, reader: jspb.BinaryReader): TestScore;
+}
+
+export namespace TestScore {
+  export type AsObject = {
+    metric: string,
+    score: number,
+  }
+}
+
 export class TextPipelineSpec extends jspb.Message {
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): TextPipelineSpec;
@@ -3093,14 +3183,13 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getPredictionpipelinename(): string;
-  setPredictionpipelinename(value: string): UATStageSpec;
-
   getPredictorname(): string;
   setPredictorname(value: string): UATStageSpec;
 
-  getMinscore(): number;
-  setMinscore(value: number): UATStageSpec;
+  getTestsList(): Array<ModelTestSpec>;
+  setTestsList(value: Array<ModelTestSpec>): UATStageSpec;
+  clearTestsList(): UATStageSpec;
+  addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
 
   getAuto(): boolean;
   setAuto(value: boolean): UATStageSpec;
@@ -3116,9 +3205,8 @@ export class UATStageSpec extends jspb.Message {
 export namespace UATStageSpec {
   export type AsObject = {
     servingsitename: string,
-    predictionpipelinename: string,
     predictorname: string,
-    minscore: number,
+    testsList: Array<ModelTestSpec.AsObject>,
     auto: boolean,
   }
 }

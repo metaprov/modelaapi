@@ -60,14 +60,6 @@ spec:
                     default: true
                     description: Auto defines if we move from stage to stage automatically.
                     type: boolean
-                  minScore:
-                    default: 0
-                    description: Min score
-                    type: number
-                  predictionPipelineName:
-                    description: PredictionPipelineName is the name of the prediction
-                      pipeline used to score the predictor
-                    type: string
                   predictorName:
                     description: PredictorName is the the name of the test predictor
                     type: string
@@ -75,6 +67,75 @@ spec:
                     description: ServingSiteName is the serving site for the testing
                       during the capacity stage
                     type: string
+                  tests:
+                    default: 0
+                    description: Tests is the specification of tests to run in this
+                      stage
+                    items:
+                      properties:
+                        datasetName:
+                          description: Name of the dataset used for testing
+                          type: string
+                        maxTime:
+                          description: Max time in seconds
+                          format: int32
+                          type: integer
+                        minScores:
+                          description: Minimum scores required to pass the tests
+                          items:
+                            properties:
+                              metric:
+                                description: Metric is the name of the metric
+                                enum:
+                                - accuracy
+                                - average-precision
+                                - balanced-accuracy
+                                - brier-score-loss
+                                - f1
+                                - f1-macro
+                                - f1-micro
+                                - f1-weighted
+                                - log-loss
+                                - precision
+                                - precision-micro
+                                - precision-macro
+                                - precision-weighted
+                                - recall
+                                - recall-macro
+                                - recall-micro
+                                - recall-weighted
+                                - auc
+                                - fp
+                                - fn
+                                - tn
+                                - tp
+                                - explained_variance
+                                - mae
+                                - mse
+                                - msle
+                                - median-absolute-error
+                                - r2
+                                - adjusted-mutual-info-score
+                                - adjusted-rand-score
+                                - completeness-score
+                                - fowlkes-mallows-score
+                                - homogeneity-score
+                                - mutual-info-score
+                                - normalized-mutual-info-score
+                                - v-measure-score
+                                - rmse
+                                - unknown
+                                - mape
+                                - smape
+                                - mdape
+                                type: string
+                              score:
+                                description: The score needed.
+                                type: number
+                            type: object
+                          type: array
+                      type: object
+                    type: array
                 type: object
               dataStage:
                 description: Datastage build new dataset from the data sources.
@@ -102,6 +163,10 @@ spec:
                 - bucketName
                 - path
                 type: object
+              notifierName:
+                description: NotifierName is the name of the notifier to use in case
+                  of pipeline failure
+                type: string
               owner:
                 description: The owner account name
                 type: string
@@ -205,19 +270,80 @@ spec:
                     description: Auto defines if we move to the next stage without
                       human intervation
                     type: boolean
-                  minScore:
-                    default: 0
-                    description: Min score
-                    type: number
-                  predictionPipelineName:
-                    description: PredictionPipelineName is the name
-                    type: string
                   predictorName:
                     description: PredictorName is the the name of the test predictor
                     type: string
                   servingSiteName:
                     description: The serving site for the testing
                     type: string
+                  tests:
+                    default: 0
+                    description: Tests is the specification of tests to run
+                    items:
+                      properties:
+                        datasetName:
+                          description: Name of the dataset used for testing
+                          type: string
+                        maxTime:
+                          description: Max time in seconds
+                          format: int32
+                          type: integer
+                        minScores:
+                          description: Minimum scores required to pass the tests
+                          items:
+                            properties:
+                              metric:
+                                description: Metric is the name of the metric
+                                enum:
+                                - accuracy
+                                - average-precision
+                                - balanced-accuracy
+                                - brier-score-loss
+                                - f1
+                                - f1-macro
+                                - f1-micro
+                                - f1-weighted
+                                - log-loss
+                                - precision
+                                - precision-micro
+                                - precision-macro
+                                - precision-weighted
+                                - recall
+                                - recall-macro
+                                - recall-micro
+                                - recall-weighted
+                                - auc
+                                - fp
+                                - fn
+                                - tn
+                                - tp
+                                - explained_variance
+                                - mae
+                                - mse
+                                - msle
+                                - median-absolute-error
+                                - r2
+                                - adjusted-mutual-info-score
+                                - adjusted-rand-score
+                                - completeness-score
+                                - fowlkes-mallows-score
+                                - homogeneity-score
+                                - mutual-info-score
+                                - normalized-mutual-info-score
+                                - v-measure-score
+                                - rmse
+                                - unknown
+                                - mape
+                                - smape
+                                - mdape
+                                type: string
+                              score:
+                                description: The score needed.
+                                type: number
+                            type: object
+                          type: array
+                      type: object
+                    type: array
                 type: object
               versionName:
                 description: The product version of the resource
