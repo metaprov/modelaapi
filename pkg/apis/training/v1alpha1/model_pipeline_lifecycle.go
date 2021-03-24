@@ -403,7 +403,7 @@ func (pl *ModelPipeline) HasTrainingStudy() bool {
 }
 
 func (pl *ModelPipeline) HasCapacityStage() bool {
-	return pl.Spec.CapacityStage != nil && pl.Spec.CapacityStage.TestDatasetName != nil && *pl.Spec.CapacityStage.TestDatasetName != ""
+	return pl.Spec.CapacityStage != nil && pl.Spec.CapacityStage.PredictorName != nil && *pl.Spec.CapacityStage.PredictorName != ""
 }
 
 func (pl *ModelPipeline) MarkReady() {

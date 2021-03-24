@@ -631,7 +631,6 @@ func (model *Model) Aborted() bool {
 // ------------------ Ready
 
 func (model *Model) MarkReady() {
-	model.Status.Phase = ModelPhaseSuccess
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelReady,
 		Status: v1.ConditionTrue,

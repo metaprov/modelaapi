@@ -78,12 +78,6 @@ func Test_Archived(t *testing.T) {
 	assert.True(t, model.Archived())
 }
 
-func Test_Ready(t *testing.T) {
-	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
-	model.MarkReady()
-	assert.True(t, model.Ready())
-}
-
 func Test_Aborted(t *testing.T) {
 	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
 	model.MarkAborted()
