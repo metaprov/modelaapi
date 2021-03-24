@@ -118,7 +118,7 @@ func (pl *ModelPipeline) HasProdStage() bool {
 }
 
 func (pl *ModelPipeline) HasUatStage() bool {
-	return pl.Spec.UATStage != nil && pl.Spec.UATStage.PredictionPipelineName != nil
+	return pl.Spec.UATStage != nil && *p1.Spec.UATStage.ServingSiteName != ""
 }
 
 func (pl *ModelPipeline) HasTrainingNotebook() bool {
