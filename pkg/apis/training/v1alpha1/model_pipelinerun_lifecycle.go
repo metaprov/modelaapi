@@ -107,15 +107,27 @@ func (this *ModelPipelineRunStageStatus) RecordCompleted() {
 	this.EndTime = &now
 }
 
+func (this *ModelPipelineRunStageStatus) IsCompleted() bool {
+	return this.Phase == StageStatusPhaseCompleted
+}
+
 func (this *ModelPipelineRunStageStatus) RecordFailed() {
 	this.Phase = StageStatusPhaseFailed
 	now := metav1.Now()
 	this.ApprovedAt = &now
 }
 
+func (this *ModelPipelineRunStageStatus) IsFailed() bool {
+	return this.Phase == StageStatusPhaseFailed
+}
+
 func (this *ModelPipelineRun) MarkPreprocessingDataRunning() {
 	this.Status.DataStatus.RecordRunning()
 	this.Status.Phase = PipelinePhase_PreprocessingDataRunning
+}
+
+func (this *ModelPipelineRunStageStatus) IsRunning() bool {
+	return this.Phase == StageStatusPhaseRunning
 }
 
 func (this *ModelPipelineRun) MarkPreprocessingDataCompleted() {
