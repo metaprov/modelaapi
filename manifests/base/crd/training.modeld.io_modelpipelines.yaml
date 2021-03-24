@@ -53,16 +53,17 @@ spec:
               approverAccountName:
                 description: ApproverAccountName is the name of the approver
                 type: string
-              capacityStage:
+              baselineModelName:
+                description: BaselineModelName is the name of the model which is used
+                  to compare with this pipeline results.
+                type: string
+              capacity:
                 description: Capacity stage for capacity
                 properties:
                   auto:
                     default: true
                     description: Auto defines if we move from stage to stage automatically.
                     type: boolean
-                  predictorName:
-                    description: PredictorName is the the name of the test predictor
-                    type: string
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
                       during the capacity stage
@@ -137,10 +138,14 @@ spec:
                       type: object
                     type: array
                 type: object
-              dataStage:
+              data:
                 description: Datastage build new dataset from the data sources.
                 properties:
                   dataPipelineName:
+                    type: string
+                  datasetName:
+                    description: The name of the dataset. If the data pipeline run
+                      creates the dataset
                     type: string
                 type: object
               defaultServingSiteName:
@@ -150,7 +155,7 @@ spec:
               description:
                 description: User provided description
                 type: string
-              folder:
+              location:
                 description: Folder for the pipeline and pipeline run artifacts. The
                   folder contains all the study artifacts - metadata, reports, profile,models
                 properties:
@@ -170,7 +175,7 @@ spec:
               owner:
                 description: The owner account name
                 type: string
-              releaseStage:
+              release:
                 description: ReleaseStage stage define how to place the model into
                   production.
                 properties:
@@ -242,7 +247,7 @@ spec:
                     - cron
                     type: string
                 type: object
-              trainingStage:
+              training:
                 description: TrainingSpec stage
                 properties:
                   auto:
@@ -250,19 +255,71 @@ spec:
                     description: Auto defines if we move from stage to stage automatically.
                     type: boolean
                   labName:
-                    description: LabName is the name of the lab used for training
+                    description: LabName is the name of the lab used for training.
+                      If empty the system will use the default lab
                     type: string
                   minScore:
-                    description: Min test score needed to move to another stage
-                    type: number
+                    description: MinScore is the score needed to move to another stage.
+                      The min score is composed of a metric and a score.
+                    properties:
+                      metric:
+                        description: Metric is the name of the metric
+                        enum:
+                        - accuracy
+                        - average-precision
+                        - balanced-accuracy
+                        - brier-score-loss
+                        - f1
+                        - f1-macro
+                        - f1-micro
+                        - f1-weighted
+                        - log-loss
+                        - precision
+                        - precision-micro
+                        - precision-macro
+                        - precision-weighted
+                        - recall
+                        - recall-macro
+                        - recall-micro
+                        - recall-weighted
+                        - auc
+                        - fp
+                        - fn
+                        - tn
+                        - tp
+                        - explained_variance
+                        - mae
+                        - mse
+                        - msle
+                        - median-absolute-error
+                        - r2
+                        - adjusted-mutual-info-score
+                        - adjusted-rand-score
+                        - completeness-score
+                        - fowlkes-mallows-score
+                        - homogeneity-score
+                        - mutual-info-score
+                        - normalized-mutual-info-score
+                        - v-measure-score
+                        - rmse
+                        - unknown
+                        - mape
+                        - smape
+                        - mdape
+                        type: string
+                      score:
+                        description: The score needed.
+                        type: number
+                    type: object
                   notebookName:
                     description: NotebookName template specify the notebook
                     type: string
                   studyName:
-                    description: StudyName is the name of the template
+                    description: StudyName is the name of a study template. The study
+                      will train models on the dataset from the data stage
                     type: string
                 type: object
-              uatStage:
+              uat:
                 description: Acceptance stage is used for further testing
                 properties:
                   auto:
@@ -270,9 +327,6 @@ spec:
                     description: Auto defines if we move to the next stage without
                       human intervation
                     type: boolean
-                  predictorName:
-                    description: PredictorName is the the name of the test predictor
-                    type: string
                   servingSiteName:
                     description: The serving site for the testing
                     type: string

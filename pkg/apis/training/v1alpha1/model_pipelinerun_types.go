@@ -169,6 +169,12 @@ type ModelPipelineRunStageStatus struct {
 	Results []ModelTestResult `json:"results,omitempty" protobuf:"bytes,9,opt,name=results"`
 	// Error record error.
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
+	// the name of the generated dataset
+	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,11,opt,name=datasetName"`
+	// The name of the best model
+	ModelName string `json:"modelName,omitempty" protobuf:"bytes,12,opt,name=modelName"`
+	// The name of the study
+	StudyName string `json:"studyName,omitempty" protobuf:"bytes,13,opt,name=studyName"`
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .

@@ -65,23 +65,23 @@ type ModelPipelineSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Datastage build new dataset from the data sources.
 	// +kubebuilder:validation:Optional
-	DataStage *DataStageSpec `json:"dataStage,omitempty" protobuf:"bytes,5,opt,name=dataStage"`
+	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
 	// TrainingSpec stage
 	// +kubebuilder:validation:Optional
-	TrainingStage *TrainingStageSpec `json:"trainingStage,omitempty" protobuf:"bytes,6,opt,name=trainingStage"`
+	Training *TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,6,opt,name=training"`
 	// Acceptance stage is used for further testing
 	// +kubebuilder:validation:Optional
-	UATStage *UATStageSpec `json:"uatStage,omitempty" protobuf:"bytes,7,opt,name=uatStage"`
+	UAT *UATStageSpec `json:"uat,omitempty" protobuf:"bytes,7,opt,name=uat"`
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
-	CapacityStage *CapacityStageSpec `json:"capacityStage,omitempty" protobuf:"bytes,8,opt,name=capacityStage"`
+	Capacity *CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
 	// ReleaseStage stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
-	ReleaseStage *ReleaseStageSpec `json:"releaseStage,omitempty" protobuf:"bytes,9,opt,name=releaseStage"`
+	Release *ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,9,opt,name=release"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"folder,omitempty" protobuf:"bytes,10,opt,name=folder"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,10,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,11,opt,name=schedule"`
@@ -94,6 +94,9 @@ type ModelPipelineSpec struct {
 	// NotifierName is the name of the notifier to use in case of pipeline failure
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,14,opt,name=notifierName"`
+	// BaselineModelName is the name of the model which is used to compare with this pipeline results.
+	// +kubebuilder:validation:Optional
+	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,15,opt,name=baselineModelName"`
 }
 
 type PipelineTrigger struct {
@@ -120,8 +123,10 @@ const (
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
+	// The name of the dataset. If the data pipeline run creates the dataset
+	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// +kubebuilder:validation:Optional
-	DataPipelineName string `json:"dataPipelineName,omitempty" protobuf:"bytes,1,opt,name=dataPipelineName"`
+	DataPipelineName string `json:"dataPipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
@@ -129,18 +134,18 @@ type TrainingStageSpec struct {
 	// NotebookName template specify the notebook
 	// +kubebuilder:default =""
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,1,opt,name=notebookName"`
-	// LabName is the name of the lab used for training
+	// LabName is the name of the lab used for training. If empty the system will use the default lab
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
-	// StudyName is the name of the template
+	// StudyName is the name of a study template. The study will train models on the dataset from the data stage
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 
-	// Min test score needed to move to another stage
+	// MinScore is the score needed to move to another stage. The min score is composed of a metric and a score.
 	// +kubebuilder:validation:Optional
-	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
+	MinScore TestScore `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
@@ -154,15 +159,10 @@ type UATStageSpec struct {
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 
-	// PredictorName is the the name of the test predictor
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,3,opt,name=predictorName"`
-
 	// Tests is the specification of tests to run
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 
 	// Auto defines if we move to the next stage without human intervation
 	// +kubebuilder:default:=true
@@ -175,11 +175,6 @@ type CapacityStageSpec struct {
 	// ServingSiteName is the serving site for the testing during the capacity stage
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-
-	// PredictorName is the the name of the test predictor
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
 
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:default:=0

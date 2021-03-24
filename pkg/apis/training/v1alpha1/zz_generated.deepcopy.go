@@ -76,11 +76,6 @@ func (in *CapacityStageSpec) DeepCopyInto(out *CapacityStageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.PredictorName != nil {
-		in, out := &in.PredictorName, &out.PredictorName
-		*out = new(string)
-		**out = **in
-	}
 	if in.Tests != nil {
 		in, out := &in.Tests, &out.Tests
 		*out = make([]ModelTestSpec, len(*in))
@@ -1265,28 +1260,28 @@ func (in *ModelPipelineSpec) DeepCopyInto(out *ModelPipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.DataStage != nil {
-		in, out := &in.DataStage, &out.DataStage
+	if in.Data != nil {
+		in, out := &in.Data, &out.Data
 		*out = new(DataStageSpec)
 		**out = **in
 	}
-	if in.TrainingStage != nil {
-		in, out := &in.TrainingStage, &out.TrainingStage
+	if in.Training != nil {
+		in, out := &in.Training, &out.Training
 		*out = new(TrainingStageSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.UATStage != nil {
-		in, out := &in.UATStage, &out.UATStage
+	if in.UAT != nil {
+		in, out := &in.UAT, &out.UAT
 		*out = new(UATStageSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.CapacityStage != nil {
-		in, out := &in.CapacityStage, &out.CapacityStage
+	if in.Capacity != nil {
+		in, out := &in.Capacity, &out.Capacity
 		*out = new(CapacityStageSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.ReleaseStage != nil {
-		in, out := &in.ReleaseStage, &out.ReleaseStage
+	if in.Release != nil {
+		in, out := &in.Release, &out.Release
 		*out = new(ReleaseStageSpec)
 		(*in).DeepCopyInto(*out)
 	}
@@ -1308,6 +1303,11 @@ func (in *ModelPipelineSpec) DeepCopyInto(out *ModelPipelineSpec) {
 	}
 	if in.NotifierName != nil {
 		in, out := &in.NotifierName, &out.NotifierName
+		*out = new(string)
+		**out = **in
+	}
+	if in.BaselineModelName != nil {
+		in, out := &in.BaselineModelName, &out.BaselineModelName
 		*out = new(string)
 		**out = **in
 	}
@@ -2861,11 +2861,7 @@ func (in *TrainingStageSpec) DeepCopyInto(out *TrainingStageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.MinScore != nil {
-		in, out := &in.MinScore, &out.MinScore
-		*out = new(float64)
-		**out = **in
-	}
+	in.MinScore.DeepCopyInto(&out.MinScore)
 	if in.Auto != nil {
 		in, out := &in.Auto, &out.Auto
 		*out = new(bool)
@@ -2888,11 +2884,6 @@ func (in *UATStageSpec) DeepCopyInto(out *UATStageSpec) {
 	*out = *in
 	if in.ServingSiteName != nil {
 		in, out := &in.ServingSiteName, &out.ServingSiteName
-		*out = new(string)
-		**out = **in
-	}
-	if in.PredictorName != nil {
-		in, out := &in.PredictorName, &out.PredictorName
 		*out = new(string)
 		**out = **in
 	}

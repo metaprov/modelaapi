@@ -100,12 +100,18 @@ spec:
                     description: ApprovedBy indicates the account that approve this
                       model.
                     type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
                   error:
                     description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
                     type: string
                   phase:
                     description: Phase is the phase of the stage
@@ -189,6 +195,9 @@ spec:
                   startTime:
                     description: Start time is the start time of the stage
                     format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
                     type: string
                 type: object
               completionTime:
@@ -236,12 +245,18 @@ spec:
                     description: ApprovedBy indicates the account that approve this
                       model.
                     type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
                   error:
                     description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
                     type: string
                   phase:
                     description: Phase is the phase of the stage
@@ -325,6 +340,9 @@ spec:
                   startTime:
                     description: Start time is the start time of the stage
                     format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
                     type: string
                 type: object
               folder:
@@ -349,12 +367,18 @@ spec:
                     description: ApprovedBy indicates the account that approve this
                       model.
                     type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
                   error:
                     description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
                     type: string
                   phase:
                     description: Phase is the phase of the stage
@@ -438,6 +462,9 @@ spec:
                   startTime:
                     description: Start time is the start time of the stage
                     format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
                     type: string
                 type: object
               stage:
@@ -463,12 +490,18 @@ spec:
                     description: ApprovedBy indicates the account that approve this
                       model.
                     type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
                   error:
                     description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
                     type: string
                   phase:
                     description: Phase is the phase of the stage
@@ -552,6 +585,9 @@ spec:
                   startTime:
                     description: Start time is the start time of the stage
                     format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
                     type: string
                 type: object
               uatStage:
@@ -568,12 +604,18 @@ spec:
                     description: ApprovedBy indicates the account that approve this
                       model.
                     type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
                   error:
                     description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
                     type: string
                   phase:
                     description: Phase is the phase of the stage
@@ -657,6 +699,9 @@ spec:
                   startTime:
                     description: Start time is the start time of the stage
                     format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
                     type: string
                 type: object
             type: object

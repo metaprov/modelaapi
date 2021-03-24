@@ -50,11 +50,6 @@ message CapacityStageSpec {
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // PredictorName is the the name of the test predictor
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string predictorName = 2;
-
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
@@ -151,8 +146,11 @@ message DataSplit {
 // DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 // Data preprocessing will be done via
 message DataStageSpec {
+  // The name of the dataset. If the data pipeline run creates the dataset
+  optional string datasetName = 1;
+
   // +kubebuilder:validation:Optional
-  optional string dataPipelineName = 1;
+  optional string datapipelineName = 2;
 }
 
 // DateTimePipelineSpec is the specification for preprocessing datetime features
@@ -796,6 +794,15 @@ message ModelPipelineRunStageStatus {
 
   // Error record error.
   optional string error = 10;
+
+  // the name of the generated dataset
+  optional string datasetName = 11;
+
+  // The name of the best model
+  optional string modelName = 12;
+
+  // The name of the study
+  optional string studyName = 13;
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
@@ -863,28 +870,28 @@ message ModelPipelineSpec {
 
   // Datastage build new dataset from the data sources.
   // +kubebuilder:validation:Optional
-  optional DataStageSpec dataStage = 5;
+  optional DataStageSpec data = 5;
 
   // TrainingSpec stage
   // +kubebuilder:validation:Optional
-  optional TrainingStageSpec trainingStage = 6;
+  optional TrainingStageSpec training = 6;
 
   // Acceptance stage is used for further testing
   // +kubebuilder:validation:Optional
-  optional UATStageSpec uatStage = 7;
+  optional UATStageSpec uat = 7;
 
   // Capacity stage for capacity
   // +kubebuilder:validation:Optional
-  optional CapacityStageSpec capacityStage = 8;
+  optional CapacityStageSpec capacity = 8;
 
   // ReleaseStage stage define how to place the model into production.
   // +kubebuilder:validation:Optional
-  optional ReleaseStageSpec releaseStage = 9;
+  optional ReleaseStageSpec release = 9;
 
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation folder = 10;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 10;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
@@ -901,6 +908,10 @@ message ModelPipelineSpec {
   // NotifierName is the name of the notifier to use in case of pipeline failure
   // +kubebuilder:validation:Optional
   optional string notifierName = 14;
+
+  // BaselineModelName is the name of the model which is used to compare with this pipeline results.
+  // +kubebuilder:validation:Optional
+  optional string baselineModelName = 15;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -2068,19 +2079,19 @@ message TrainingStageSpec {
   // +kubebuilder:default =""
   optional string notebookName = 1;
 
-  // LabName is the name of the lab used for training
+  // LabName is the name of the lab used for training. If empty the system will use the default lab
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string labName = 2;
 
-  // StudyName is the name of the template
+  // StudyName is the name of a study template. The study will train models on the dataset from the data stage
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string studyName = 3;
 
-  // Min test score needed to move to another stage
+  // MinScore is the score needed to move to another stage. The min score is composed of a metric and a score.
   // +kubebuilder:validation:Optional
-  optional double minScore = 4;
+  optional TestScore minScore = 4;
 
   // Auto defines if we move from stage to stage automatically.
   // +kubebuilder:default:=true
@@ -2094,15 +2105,10 @@ message UATStageSpec {
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // PredictorName is the the name of the test predictor
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string predictorName = 3;
-
   // Tests is the specification of tests to run
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  repeated ModelTestSpec tests = 4;
+  repeated ModelTestSpec tests = 2;
 
   // Auto defines if we move to the next stage without human intervation
   // +kubebuilder:default:=true

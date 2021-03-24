@@ -59,9 +59,6 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getPredictorname(): string;
-  setPredictorname(value: string): CapacityStageSpec;
-
   getTestsList(): Array<ModelTestSpec>;
   setTestsList(value: Array<ModelTestSpec>): CapacityStageSpec;
   clearTestsList(): CapacityStageSpec;
@@ -81,7 +78,6 @@ export class CapacityStageSpec extends jspb.Message {
 export namespace CapacityStageSpec {
   export type AsObject = {
     servingsitename: string,
-    predictorname: string,
     testsList: Array<ModelTestSpec.AsObject>,
     auto: boolean,
   }
@@ -206,6 +202,9 @@ export namespace DataSplit {
 }
 
 export class DataStageSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): DataStageSpec;
+
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataStageSpec;
 
@@ -219,6 +218,7 @@ export class DataStageSpec extends jspb.Message {
 
 export namespace DataStageSpec {
   export type AsObject = {
+    datasetname: string,
     datapipelinename: string,
   }
 }
@@ -1282,6 +1282,15 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
 
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelPipelineRunStageStatus;
+
+  getModelname(): string;
+  setModelname(value: string): ModelPipelineRunStageStatus;
+
+  getStudyname(): string;
+  setStudyname(value: string): ModelPipelineRunStageStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStageStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunStageStatus): ModelPipelineRunStageStatus.AsObject;
@@ -1300,6 +1309,9 @@ export namespace ModelPipelineRunStageStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     resultsList: Array<ModelTestResult.AsObject>,
     error: string,
+    datasetname: string,
+    modelname: string,
+    studyname: string,
   }
 }
 
@@ -1391,35 +1403,35 @@ export class ModelPipelineSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): ModelPipelineSpec;
 
-  getDatastage(): DataStageSpec | undefined;
-  setDatastage(value?: DataStageSpec): ModelPipelineSpec;
-  hasDatastage(): boolean;
-  clearDatastage(): ModelPipelineSpec;
+  getData(): DataStageSpec | undefined;
+  setData(value?: DataStageSpec): ModelPipelineSpec;
+  hasData(): boolean;
+  clearData(): ModelPipelineSpec;
 
-  getTrainingstage(): TrainingStageSpec | undefined;
-  setTrainingstage(value?: TrainingStageSpec): ModelPipelineSpec;
-  hasTrainingstage(): boolean;
-  clearTrainingstage(): ModelPipelineSpec;
+  getTraining(): TrainingStageSpec | undefined;
+  setTraining(value?: TrainingStageSpec): ModelPipelineSpec;
+  hasTraining(): boolean;
+  clearTraining(): ModelPipelineSpec;
 
-  getUatstage(): UATStageSpec | undefined;
-  setUatstage(value?: UATStageSpec): ModelPipelineSpec;
-  hasUatstage(): boolean;
-  clearUatstage(): ModelPipelineSpec;
+  getUat(): UATStageSpec | undefined;
+  setUat(value?: UATStageSpec): ModelPipelineSpec;
+  hasUat(): boolean;
+  clearUat(): ModelPipelineSpec;
 
-  getCapacitystage(): CapacityStageSpec | undefined;
-  setCapacitystage(value?: CapacityStageSpec): ModelPipelineSpec;
-  hasCapacitystage(): boolean;
-  clearCapacitystage(): ModelPipelineSpec;
+  getCapacity(): CapacityStageSpec | undefined;
+  setCapacity(value?: CapacityStageSpec): ModelPipelineSpec;
+  hasCapacity(): boolean;
+  clearCapacity(): ModelPipelineSpec;
 
-  getReleasestage(): ReleaseStageSpec | undefined;
-  setReleasestage(value?: ReleaseStageSpec): ModelPipelineSpec;
-  hasReleasestage(): boolean;
-  clearReleasestage(): ModelPipelineSpec;
+  getRelease(): ReleaseStageSpec | undefined;
+  setRelease(value?: ReleaseStageSpec): ModelPipelineSpec;
+  hasRelease(): boolean;
+  clearRelease(): ModelPipelineSpec;
 
-  getFolder(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setFolder(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
-  hasFolder(): boolean;
-  clearFolder(): ModelPipelineSpec;
+  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
+  hasLocation(): boolean;
+  clearLocation(): ModelPipelineSpec;
 
   getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelPipelineSpec;
@@ -1435,6 +1447,9 @@ export class ModelPipelineSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): ModelPipelineSpec;
 
+  getBaselinemodelname(): string;
+  setBaselinemodelname(value: string): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1448,16 +1463,17 @@ export namespace ModelPipelineSpec {
     versionname: string,
     defaultservingsitename: string,
     description: string,
-    datastage?: DataStageSpec.AsObject,
-    trainingstage?: TrainingStageSpec.AsObject,
-    uatstage?: UATStageSpec.AsObject,
-    capacitystage?: CapacityStageSpec.AsObject,
-    releasestage?: ReleaseStageSpec.AsObject,
-    folder?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    data?: DataStageSpec.AsObject,
+    training?: TrainingStageSpec.AsObject,
+    uat?: UATStageSpec.AsObject,
+    capacity?: CapacityStageSpec.AsObject,
+    release?: ReleaseStageSpec.AsObject,
+    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     approveraccountname: string,
     notifiername: string,
+    baselinemodelname: string,
   }
 }
 
@@ -3193,8 +3209,10 @@ export class TrainingStageSpec extends jspb.Message {
   getStudyname(): string;
   setStudyname(value: string): TrainingStageSpec;
 
-  getMinscore(): number;
-  setMinscore(value: number): TrainingStageSpec;
+  getMinscore(): TestScore | undefined;
+  setMinscore(value?: TestScore): TrainingStageSpec;
+  hasMinscore(): boolean;
+  clearMinscore(): TrainingStageSpec;
 
   getAuto(): boolean;
   setAuto(value: boolean): TrainingStageSpec;
@@ -3212,7 +3230,7 @@ export namespace TrainingStageSpec {
     notebookname: string,
     labname: string,
     studyname: string,
-    minscore: number,
+    minscore?: TestScore.AsObject,
     auto: boolean,
   }
 }
@@ -3220,9 +3238,6 @@ export namespace TrainingStageSpec {
 export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
-
-  getPredictorname(): string;
-  setPredictorname(value: string): UATStageSpec;
 
   getTestsList(): Array<ModelTestSpec>;
   setTestsList(value: Array<ModelTestSpec>): UATStageSpec;
@@ -3243,7 +3258,6 @@ export class UATStageSpec extends jspb.Message {
 export namespace UATStageSpec {
   export type AsObject = {
     servingsitename: string,
-    predictorname: string,
     testsList: Array<ModelTestSpec.AsObject>,
     auto: boolean,
   }
