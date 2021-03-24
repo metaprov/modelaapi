@@ -89,6 +89,21 @@ spec:
                 default: false
                 description: Archived is true when the model should be archived
                 type: boolean
+              compiler:
+                description: The compiler specification
+                properties:
+                  compiler:
+                    type: string
+                  targets:
+                    description: Set one or more targets
+                    items:
+                      type: string
+                    type: array
+                type: object
+              complied:
+                default: false
+                description: Compiled is true when the model should perform a forecast
+                type: boolean
               datasetName:
                 description: DatasetName refer to the dataset object for which the
                   study is for.

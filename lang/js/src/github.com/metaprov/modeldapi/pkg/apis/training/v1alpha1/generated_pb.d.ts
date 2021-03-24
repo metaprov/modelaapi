@@ -139,6 +139,30 @@ export namespace ClassicalEstimatorSpec {
   }
 }
 
+export class CompilerSpec extends jspb.Message {
+  getCompiler(): string;
+  setCompiler(value: string): CompilerSpec;
+
+  getTargetsList(): Array<string>;
+  setTargetsList(value: Array<string>): CompilerSpec;
+  clearTargetsList(): CompilerSpec;
+  addTargets(value: string, index?: number): CompilerSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompilerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CompilerSpec): CompilerSpec.AsObject;
+  static serializeBinaryToWriter(message: CompilerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompilerSpec;
+  static deserializeBinaryFromReader(message: CompilerSpec, reader: jspb.BinaryReader): CompilerSpec;
+}
+
+export namespace CompilerSpec {
+  export type AsObject = {
+    compiler: string,
+    targetsList: Array<string>,
+  }
+}
+
 export class DataSplit extends jspb.Message {
   getAuto(): boolean;
   setAuto(value: boolean): DataSplit;
@@ -1634,6 +1658,9 @@ export class ModelSpec extends jspb.Message {
   getForecasted(): boolean;
   setForecasted(value: boolean): ModelSpec;
 
+  getCompiled(): boolean;
+  setCompiled(value: boolean): ModelSpec;
+
   getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelSpec;
   hasLocation(): boolean;
@@ -1643,6 +1670,11 @@ export class ModelSpec extends jspb.Message {
   setForecastingspec(value?: ForecastingSpec): ModelSpec;
   hasForecastingspec(): boolean;
   clearForecastingspec(): ModelSpec;
+
+  getCompiler(): CompilerSpec | undefined;
+  setCompiler(value?: CompilerSpec): ModelSpec;
+  hasCompiler(): boolean;
+  clearCompiler(): ModelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
@@ -1674,8 +1706,10 @@ export namespace ModelSpec {
     profiled: boolean,
     archived: boolean,
     forecasted: boolean,
+    compiled: boolean,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
+    compiler?: CompilerSpec.AsObject,
   }
 }
 

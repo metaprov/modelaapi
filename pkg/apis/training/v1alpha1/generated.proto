@@ -92,6 +92,14 @@ message ClassicalEstimatorSpec {
   repeated HyperParameterValue parameters = 2;
 }
 
+// List compiler spec
+message CompilerSpec {
+  optional string compiler = 1;
+
+  // Set one or more targets
+  repeated string targets = 2;
+}
+
 message DataSplit {
   // Indicate that this is an automatic split.
   // +kubebuilder:default:=true
@@ -1104,13 +1112,22 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool forecasted = 20;
 
+  // Compiled is true when the model should perform a forecast
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool compiled = 21;
+
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 21;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 22;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 22;
+  optional ForecastingSpec forecastingSpec = 23;
+
+  // The compiler specification
+  // +kubebuilder:validation:Optional
+  optional CompilerSpec compiler = 24;
 }
 
 // ModelStatus defines the observed state of the Model
