@@ -138,6 +138,8 @@ type DataProductSpec struct {
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Optional
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,14,opt,name=retriesOnFailure"`
+	// KPIs is the product kpi. This is for information porpose
+	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,opt,name=kpis"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -153,4 +155,11 @@ type DataProductList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []DataProduct `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+type KPI struct {
+	// Name is the name of the kpi
+	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Value is the desired value
+	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
 }

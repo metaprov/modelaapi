@@ -24,6 +24,8 @@ const (
 	NoneAccessType AccessType = "none"
 )
 
+// CanaryMetric is used when testing the canary
+// +kubebuilder:validation:Enum="cpu";"mem";"latency";"crash"
 type CanaryMetric string
 
 const (
@@ -32,6 +34,16 @@ const (
 	MemCanaryMetric     CanaryMetric = "mem"
 	LatencyCanaryMetric CanaryMetric = "latency"
 	CrashCanaryMetric   CanaryMetric = "crash"
+)
+
+// +kubebuilder:validation:Enum="online";"batch";"streaming"
+type PredictorType string
+
+const (
+	// Use cluster port if the predictor is an internal micro service
+	Online    PredictorType = "online"
+	Batch     PredictorType = "batch"
+	Streaming PredictorType = "streaming"
 )
 
 //==============================================================================
@@ -239,6 +251,10 @@ type PredictorSpec struct {
 	// Store is the specification of the online score.
 	// +kubebuilder:validation:Optional
 	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,23,opt,name=store"`
+	// Type is the type of predictor
+	// +kubebuilder:default:="online"
+	// +kubebuilder:validation:Optional
+	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,24,opt,name=type"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.

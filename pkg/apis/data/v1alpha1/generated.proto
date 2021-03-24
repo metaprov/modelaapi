@@ -521,6 +521,9 @@ message DataProductSpec {
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Optional
   optional int32 retriesOnFailure = 14;
+
+  // KPIs is the product kpi. This is for information porpose
+  repeated KPI kpis = 15;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -1380,6 +1383,14 @@ message ImageLocation {
   // If the value is empty, the system will not push images.
   // optional
   optional string registryConnectionName = 2;
+}
+
+message KPI {
+  // Name is the name of the kpi
+  optional string name = 1;
+
+  // Value is the desired value
+  optional double value = 2;
 }
 
 // LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.

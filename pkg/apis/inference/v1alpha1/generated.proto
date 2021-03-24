@@ -610,6 +610,11 @@ message PredictorSpec {
   // Store is the specification of the online score.
   // +kubebuilder:validation:Optional
   optional OnlineFeaturestoreSpec store = 23;
+
+  // Type is the type of predictor
+  // +kubebuilder:default:="online"
+  // +kubebuilder:validation:Optional
+  optional string type = 24;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

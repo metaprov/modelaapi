@@ -761,6 +761,11 @@ export class DataProductSpec extends jspb.Message {
   getRetriesonfailure(): number;
   setRetriesonfailure(value: number): DataProductSpec;
 
+  getKpisList(): Array<KPI>;
+  setKpisList(value: Array<KPI>): DataProductSpec;
+  clearKpisList(): DataProductSpec;
+  addKpis(value?: KPI, index?: number): KPI;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -784,6 +789,7 @@ export namespace DataProductSpec {
     notifiername: string,
     defaultworkloadclassname: string,
     retriesonfailure: number,
+    kpisList: Array<KPI.AsObject>,
   }
 }
 
@@ -2340,6 +2346,28 @@ export namespace ImageLocation {
   export type AsObject = {
     name: string,
     registryconnectionname: string,
+  }
+}
+
+export class KPI extends jspb.Message {
+  getName(): string;
+  setName(value: string): KPI;
+
+  getValue(): number;
+  setValue(value: number): KPI;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KPI.AsObject;
+  static toObject(includeInstance: boolean, msg: KPI): KPI.AsObject;
+  static serializeBinaryToWriter(message: KPI, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KPI;
+  static deserializeBinaryFromReader(message: KPI, reader: jspb.BinaryReader): KPI;
+}
+
+export namespace KPI {
+  export type AsObject = {
+    name: string,
+    value: number,
   }
 }
 

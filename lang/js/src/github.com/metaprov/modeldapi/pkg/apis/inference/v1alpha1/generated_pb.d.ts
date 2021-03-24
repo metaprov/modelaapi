@@ -1035,6 +1035,9 @@ export class PredictorSpec extends jspb.Message {
   hasStore(): boolean;
   clearStore(): PredictorSpec;
 
+  getType(): string;
+  setType(value: string): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1065,6 +1068,7 @@ export namespace PredictorSpec {
     workloadclassname: string,
     cache?: PredictionCacheSpec.AsObject,
     store?: OnlineFeaturestoreSpec.AsObject,
+    type: string,
   }
 }
 

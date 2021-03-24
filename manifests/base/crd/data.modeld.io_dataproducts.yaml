@@ -112,6 +112,18 @@ spec:
                       the value is empty, the system will not push images. optional
                     type: string
                 type: object
+              kpis:
+                description: KPIs is the product kpi. This is for information porpose
+                items:
+                  properties:
+                    name:
+                      description: Name is the name of the kpi
+                      type: string
+                    value:
+                      description: Value is the desired value
+                      type: number
+                  type: object
+                type: array
               labName:
                 description: LabName is the Lab where models of this products are
                   trained

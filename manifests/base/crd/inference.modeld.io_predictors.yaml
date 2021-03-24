@@ -200,6 +200,12 @@ spec:
                       description: 'If the deployment is canary, the metric define
                         how to evaluate the canary. Default: none'
                       items:
+                        description: CanaryMetric is used when testing the canary
+                        enum:
+                        - cpu
+                        - mem
+                        - latency
+                        - crash
                         type: string
                       type: array
                     filter:
@@ -343,6 +349,12 @@ spec:
                     description: What metric to use when comparing the candidate to
                       the current
                     items:
+                      description: CanaryMetric is used when testing the canary
+                      enum:
+                      - cpu
+                      - mem
+                      - latency
+                      - crash
                       type: string
                     type: array
                   trafficIncrement:
@@ -6985,6 +6997,14 @@ spec:
                         type: object
                     type: object
                 type: object
+              type:
+                default: online
+                description: Type is the type of predictor
+                enum:
+                - online
+                - batch
+                - streaming
+                type: string
               workloadClassName:
                 description: A reference to the workload class for this predictor
                   deployment

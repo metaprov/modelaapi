@@ -9372,7 +9372,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     owner: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     cache: (f = msg.getCache()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.toObject(includeInstance, f),
-    store: (f = msg.getStore()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.toObject(includeInstance, f)
+    store: (f = msg.getStore()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.toObject(includeInstance, f),
+    type: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9498,6 +9499,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.deserializeBinaryFromReader);
       msg.setStore(value);
+      break;
+    case 24:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -9676,6 +9681,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
       23,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 24));
+  if (f != null) {
+    writer.writeString(
+      24,
+      f
     );
   }
 };
@@ -10411,6 +10423,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasStore = function() {
   return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional string type = 24;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 24, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearType = function() {
+  return jspb.Message.setField(this, 24, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasType = function() {
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
