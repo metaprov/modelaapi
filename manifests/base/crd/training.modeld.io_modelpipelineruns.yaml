@@ -104,6 +104,9 @@ spec:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
+                  error:
+                    description: Error record error.
+                    type: string
                   phase:
                     description: Phase is the phase of the stage
                     type: string
@@ -237,6 +240,9 @@ spec:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
+                  error:
+                    description: Error record error.
+                    type: string
                   phase:
                     description: Phase is the phase of the stage
                     type: string
@@ -346,6 +352,9 @@ spec:
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
+                    type: string
+                  error:
+                    description: Error record error.
                     type: string
                   phase:
                     description: Phase is the phase of the stage
@@ -458,6 +467,9 @@ spec:
                     description: End time is the end time of the stage.
                     format: date-time
                     type: string
+                  error:
+                    description: Error record error.
+                    type: string
                   phase:
                     description: Phase is the phase of the stage
                     type: string
@@ -559,6 +571,9 @@ spec:
                   endTime:
                     description: End time is the end time of the stage.
                     format: date-time
+                    type: string
+                  error:
+                    description: Error record error.
                     type: string
                   phase:
                     description: Phase is the phase of the stage

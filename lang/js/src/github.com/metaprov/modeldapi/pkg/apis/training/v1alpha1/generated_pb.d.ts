@@ -1255,6 +1255,9 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   clearResultsList(): ModelPipelineRunStageStatus;
   addResults(value?: ModelTestResult, index?: number): ModelTestResult;
 
+  getError(): string;
+  setError(value: string): ModelPipelineRunStageStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStageStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunStageStatus): ModelPipelineRunStageStatus.AsObject;
@@ -1272,6 +1275,7 @@ export namespace ModelPipelineRunStageStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     resultsList: Array<ModelTestResult.AsObject>,
+    error: string,
   }
 }
 

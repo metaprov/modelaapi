@@ -785,6 +785,9 @@ message ModelPipelineRunStageStatus {
   // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
   repeated ModelTestResult results = 9;
+
+  // Error record error.
+  optional string error = 10;
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
