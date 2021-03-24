@@ -19,9 +19,9 @@ const (
 	// The system is performing the prediction against the predictor
 	PredictionPipelineRunPhaseRunning PredictionPipelineRunPhase = "Running"
 	// The prediction was completed successfully, and the results were uploaded to the bucket,
-	PredictionPipelineRunPhaseCompleted PredictionPipelineRunPhase = "Completed"
+	PredictionPipelineRunPhaseCompleted PredictionPipelineRunPhase = "IsCompleted"
 	// The prediction were completed successfully, and the results were uploaded to the bucket.
-	PredictionPipelineRunPhaseFailed PredictionPipelineRunPhase = "Failed"
+	PredictionPipelineRunPhaseFailed PredictionPipelineRunPhase = "IsFailed"
 )
 
 // PredictionTemplate Condition

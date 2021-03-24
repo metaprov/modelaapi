@@ -25,7 +25,7 @@ const (
 	StudyPhaseProfileSuccess     StudyPhase = "ProfileSuccess"
 	StudyPhaseProfileFailed      StudyPhase = "ProfileFailed"
 	StudyPhaseReady              StudyPhase = "Succeeded"
-	StudyPhaseFailed             StudyPhase = "Failed"
+	StudyPhaseFailed             StudyPhase = "IsFailed"
 	StudyPhaseAborted            StudyPhase = "Aborted"
 	StudyPhasePaused             StudyPhase = "Paused"
 )

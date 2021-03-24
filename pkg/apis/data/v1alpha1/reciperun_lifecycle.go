@@ -154,3 +154,13 @@ func (r *RecipeRun) MarkRunning() {
 func (r *RecipeRun) Deleted() bool {
 	return !r.ObjectMeta.DeletionTimestamp.IsZero()
 }
+
+func (in *RecipeRun) IsRunning() bool {
+	cond := in.GetCond(RecipeRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(RecipeRunPhaseRunning)
+}
+
+func (in *RecipeRun) IsFailed() bool {
+	cond := in.GetCond(RecipeRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(RecipeRunPhaseFailed)
+}

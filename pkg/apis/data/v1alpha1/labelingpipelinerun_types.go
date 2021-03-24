@@ -11,6 +11,14 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+type LabelingPipelineRunPhase string
+
+const (
+	LabelingPipelineRunPhaseRunning   LabelingPipelineRunPhase = "Running"
+	LabelingPipelineRunPhaseCompleted LabelingPipelineRunPhase = "Completed"
+	LabelingPipelineRunPhaseFailed    LabelingPipelineRunPhase = "Failed"
+)
+
 //==============================================================================
 // Label
 //==============================================================================
@@ -20,7 +28,8 @@ type LabelingPipelineRunConditionType string
 
 /// Label Condition
 const (
-	LabelingPipelineRunReady LabelingPipelineRunConditionType = "Ready"
+	LabelingPipelineRunCompleted LabelingPipelineRunConditionType = "Completed"
+	LabelingPipelineRunArchived  LabelingPipelineRunConditionType = "Archived"
 )
 
 // LabelingPipelineRunCondition describes the state of a deployment at a certain point.
@@ -78,7 +87,8 @@ type LabelingPipelineRunSpec struct {
 
 // LabelPipelineRunStatus defines the observed state of Label
 type LabelingPipelineRunStatus struct {
-
+	// The phase of the labeling pipeline run
+	Phase LabelingPipelineRunPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The Start time of the run
 	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,1,opt,name=startTime"`
 	// The End time of the run

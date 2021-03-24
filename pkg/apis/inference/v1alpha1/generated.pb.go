@@ -542,30 +542,30 @@ func (m *PredictionPipelineList) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_PredictionPipelineList proto.InternalMessageInfo
 
-func (m *PredictionPipelineRun) Reset()      { *m = PredictionPipelineRun{} }
+func (run *PredictionPipelineRun) Reset()    { *run = PredictionPipelineRun{} }
 func (*PredictionPipelineRun) ProtoMessage() {}
 func (*PredictionPipelineRun) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{18}
 }
-func (m *PredictionPipelineRun) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (run *PredictionPipelineRun) XXX_Unmarshal(b []byte) error {
+	return run.Unmarshal(b)
 }
-func (m *PredictionPipelineRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (run *PredictionPipelineRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := run.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineRun) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineRun.Merge(m, src)
+func (run *PredictionPipelineRun) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PredictionPipelineRun.Merge(run, src)
 }
-func (m *PredictionPipelineRun) XXX_Size() int {
-	return m.Size()
+func (run *PredictionPipelineRun) XXX_Size() int {
+	return run.Size()
 }
-func (m *PredictionPipelineRun) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineRun.DiscardUnknown(m)
+func (run *PredictionPipelineRun) XXX_DiscardUnknown() {
+	xxx_messageInfo_PredictionPipelineRun.DiscardUnknown(run)
 }
 
 var xxx_messageInfo_PredictionPipelineRun proto.InternalMessageInfo
@@ -2117,28 +2117,28 @@ func (m *PredictionPipelineList) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineRun) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (run *PredictionPipelineRun) Marshal() (dAtA []byte, err error) {
+	size := run.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := run.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineRun) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (run *PredictionPipelineRun) MarshalTo(dAtA []byte) (int, error) {
+	size := run.Size()
+	return run.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (run *PredictionPipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := run.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -2148,7 +2148,7 @@ func (m *PredictionPipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := run.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -2158,7 +2158,7 @@ func (m *PredictionPipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := run.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -3561,17 +3561,17 @@ func (m *PredictionPipelineList) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineRun) Size() (n int) {
-	if m == nil {
+func (run *PredictionPipelineRun) Size() (n int) {
+	if run == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = run.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = run.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = run.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -4231,14 +4231,14 @@ func (this *PredictionPipelineList) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipelineRun) String() string {
-	if this == nil {
+func (run *PredictionPipelineRun) String() string {
+	if run == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&PredictionPipelineRun{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionPipelineRunSpec", "PredictionPipelineRunSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionPipelineRunStatus", "PredictionPipelineRunStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", run.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(run.Spec.String(), "PredictionPipelineRunSpec", "PredictionPipelineRunSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(run.Status.String(), "PredictionPipelineRunStatus", "PredictionPipelineRunStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -7427,7 +7427,7 @@ func (m *PredictionPipelineList) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
+func (run *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7485,7 +7485,7 @@ func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := run.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -7518,7 +7518,7 @@ func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := run.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -7551,7 +7551,7 @@ func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := run.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

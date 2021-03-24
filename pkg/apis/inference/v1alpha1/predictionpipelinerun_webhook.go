@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 
 	"github.com/metaprov/modeldapi/pkg/apis/inference"
 	"github.com/metaprov/modeldapi/pkg/util"
@@ -17,9 +18,9 @@ import (
 // EntityRef
 //==============================================================================
 
-func (prediction *PredictionPipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (run *PredictionPipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(prediction).
+		For(run).
 		Complete()
 }
 
@@ -27,42 +28,42 @@ func (prediction *PredictionPipelineRun) SetupWebhookWithManager(mgr ctrl.Manage
 // Keys
 //==============================================================================
 
-func (prediction *PredictionPipelineRun) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+func (run *PredictionPipelineRun) RootUri() string {
+	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
 }
 
-func (prediction *PredictionPipelineRun) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootUri(), prediction.Name)
+func (run *PredictionPipelineRun) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-run.yaml", run.RootUri(), run.Name)
 }
 
-func (prediction *PredictionPipelineRun) InputKey() string {
-	return prediction.Spec.Input.Path
+func (run *PredictionPipelineRun) InputKey() string {
+	return run.Spec.Input.Path
 }
 
-func (prediction *PredictionPipelineRun) OutputKey() string {
-	return prediction.Spec.Output.Path
+func (run *PredictionPipelineRun) OutputKey() string {
+	return run.Spec.Output.Path
 }
 
 //==============================================================================
 // Validate
 //==============================================================================
 
-func (prediction *PredictionPipelineRun) PipelineName() string {
-	return prediction.ObjectMeta.Labels[PipelineLabelKey]
+func (run *PredictionPipelineRun) PipelineName() string {
+	return run.ObjectMeta.Labels[PipelineLabelKey]
 }
 
 //==============================================================================
 // Finalizer
 //==============================================================================
 
-func (prediction *PredictionPipelineRun) HasFinalizer() bool {
-	return util.HasFin(&prediction.ObjectMeta, inference.GroupName)
+func (run *PredictionPipelineRun) HasFinalizer() bool {
+	return util.HasFin(&run.ObjectMeta, inference.GroupName)
 }
-func (prediction *PredictionPipelineRun) AddFinalizer() {
-	util.AddFin(&prediction.ObjectMeta, inference.GroupName)
+func (run *PredictionPipelineRun) AddFinalizer() {
+	util.AddFin(&run.ObjectMeta, inference.GroupName)
 }
-func (prediction *PredictionPipelineRun) RemoveFinalizer() {
-	util.RemoveFin(&prediction.ObjectMeta, inference.GroupName)
+func (run *PredictionPipelineRun) RemoveFinalizer() {
+	util.RemoveFin(&run.ObjectMeta, inference.GroupName)
 }
 
 //==============================================================================
@@ -70,33 +71,33 @@ func (prediction *PredictionPipelineRun) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (prediction *PredictionPipelineRun) RepPath(root string) (string, error) {
-	return fmt.Sprintf("%s/predictions/%s.yaml", root, prediction.ObjectMeta.Name), nil
+func (run *PredictionPipelineRun) RepPath(root string) (string, error) {
+	return fmt.Sprintf("%s/predictions/%s.yaml", root, run.ObjectMeta.Name), nil
 }
 
 // Merge or update condition
 // Merge or update condition
-func (prediction *PredictionPipelineRun) CreateOrUpdateCond(cond PredictionPipelineRunCondition) {
-	i := prediction.GetCondIdx(cond.Type)
+func (run *PredictionPipelineRun) CreateOrUpdateCond(cond PredictionPipelineRunCondition) {
+	i := run.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		prediction.Status.Conditions = append(prediction.Status.Conditions, cond)
+		run.Status.Conditions = append(run.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := prediction.Status.Conditions[i]
+	current := run.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	prediction.Status.Conditions[i] = current
+	run.Status.Conditions[i] = current
 }
 
-func (prediction *PredictionPipelineRun) GetCondIdx(t PredictionPipelineRunConditionType) int {
-	for i, v := range prediction.Status.Conditions {
+func (run *PredictionPipelineRun) GetCondIdx(t PredictionPipelineRunConditionType) int {
+	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -104,8 +105,8 @@ func (prediction *PredictionPipelineRun) GetCondIdx(t PredictionPipelineRunCondi
 	return -1
 }
 
-func (prediction *PredictionPipelineRun) GetCond(t PredictionPipelineRunConditionType) PredictionPipelineRunCondition {
-	for _, v := range prediction.Status.Conditions {
+func (run *PredictionPipelineRun) GetCond(t PredictionPipelineRunConditionType) PredictionPipelineRunCondition {
+	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -119,16 +120,16 @@ func (prediction *PredictionPipelineRun) GetCond(t PredictionPipelineRunConditio
 	}
 }
 
-func (prediction *PredictionPipelineRun) IsReady() bool {
-	return prediction.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
+func (run *PredictionPipelineRun) IsReady() bool {
+	return run.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
 }
 
-func (prediction *PredictionPipelineRun) StatusString() string {
-	return string(prediction.Status.Phase)
+func (run *PredictionPipelineRun) StatusString() string {
+	return string(run.Status.Phase)
 }
 
-func (prediction *PredictionPipelineRun) Key() string {
-	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+func (run *PredictionPipelineRun) Key() string {
+	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
 }
 
 func ParsePredictionPipelineRunYaml(content []byte) (*PredictionPipelineRun, error) {
@@ -140,56 +141,80 @@ func ParsePredictionPipelineRunYaml(content []byte) (*PredictionPipelineRun, err
 	return r, nil
 }
 
-func (prediction *PredictionPipelineRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(prediction)
+func (run *PredictionPipelineRun) ToYamlFile() ([]byte, error) {
+	return yaml.Marshal(run)
 }
 
-func (prediction *PredictionPipelineRun) MarkFailed(msg string) {
-	prediction.CreateOrUpdateCond(PredictionPipelineRunCondition{
+func (run *PredictionPipelineRun) MarkFailed(msg string) {
+	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Type:    PredictionPipelineRunReady,
 		Status:  v1.ConditionFalse,
 		Reason:  string(PredictionPipelineRunPhaseFailed),
 		Message: msg,
 	})
-	prediction.Status.Phase = PredictionPipelineRunPhaseFailed
+	run.Status.Phase = PredictionPipelineRunPhaseFailed
+	now := metav1.Now()
+	run.Status.CompletionTime = &now
+
 }
 
-func (prediction *PredictionPipelineRun) MarkDone() {
-	prediction.CreateOrUpdateCond(PredictionPipelineRunCondition{
+func (run *PredictionPipelineRun) MarkDone() {
+	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Type:   PredictionPipelineRunReady,
 		Status: v1.ConditionTrue,
 		Reason: string(PredictionPipelineRunPhaseCompleted),
 	})
-	prediction.Status.Phase = PredictionPipelineRunPhaseCompleted
+	run.Status.Phase = PredictionPipelineRunPhaseCompleted
 
 }
 
-func (prediction *PredictionPipelineRun) MarkRunning() {
-	prediction.CreateOrUpdateCond(PredictionPipelineRunCondition{
+func (run *PredictionPipelineRun) MarkRunning() {
+	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Status: v1.ConditionFalse,
 		Reason: string(PredictionPipelineRunPhaseRunning),
 	})
-	prediction.Status.Phase = PredictionPipelineRunPhaseRunning
+	run.Status.Phase = PredictionPipelineRunPhaseRunning
+	now := metav1.Now()
+	if run.Status.StartTime == nil {
+		run.Status.CompletionTime = &now
+	}
 }
 
-func (prediction *PredictionPipelineRun) OpName() string {
-	return prediction.Namespace + "-" + prediction.Name
+func (run *PredictionPipelineRun) OpName() string {
+	return run.Namespace + "-" + run.Name
 }
 
-func (version *PredictionPipelineRun) MarkArchived() {
-	version.CreateOrUpdateCond(PredictionPipelineRunCondition{
+func (run *PredictionPipelineRun) MarkArchived() {
+	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Type:   PredictionPipelineRunArchived,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (version *PredictionPipelineRun) Archived() bool {
-	return version.GetCond(PredictionPipelineRunArchived).Status == v1.ConditionTrue
+func (run *PredictionPipelineRun) Archived() bool {
+	return run.GetCond(PredictionPipelineRunArchived).Status == v1.ConditionTrue
 }
 
-func (version *PredictionPipelineRun) MarkReady() {
-	version.CreateOrUpdateCond(PredictionPipelineRunCondition{
+func (run *PredictionPipelineRun) MarkComplete() {
+	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
 		Type:   PredictionPipelineRunReady,
 		Status: v1.ConditionTrue,
 	})
+	run.Status.Phase = PredictionPipelineRunPhaseCompleted
+	now := metav1.Now()
+	run.Status.CompletionTime = &now
+}
+
+func (run *PredictionPipelineRun) IsCompleted() bool {
+	return run.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
+}
+
+func (run *PredictionPipelineRun) IsRunning() bool {
+	cond := run.GetCond(PredictionPipelineRunReady)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseRunning)
+}
+
+func (run *PredictionPipelineRun) IsFailed() bool {
+	cond := run.GetCond(PredictionPipelineRunReady)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseFailed)
 }

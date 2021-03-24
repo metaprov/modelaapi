@@ -250,7 +250,7 @@ func (p *DataProduct) MarkFailed(err error) {
 	p.CreateOrUpdateCond(DataProductCondition{
 		Type:    DataProductReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "Failed",
+		Reason:  "IsFailed",
 		Message: err.Error(),
 	})
 }

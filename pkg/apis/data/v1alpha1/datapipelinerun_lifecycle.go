@@ -108,22 +108,25 @@ func (in *DataPipelineRun) Aborted() bool {
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseAborted)
 }
 
-func (in *DataPipelineRun) Completed() bool {
+func (in *DataPipelineRun) IsCompleted() bool {
 	return in.GetCond(DataPipelineRunCompleted).Status == v1.ConditionTrue
 }
 
-func (in *DataPipelineRun) Running() bool {
-	return in.GetCond(DataPipelineRunCompleted).Status == v1.ConditionFalse
+func (in *DataPipelineRun) IsRunning() bool {
+	cond := in.GetCond(DataPipelineRunCompleted)
+	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseRunning)
 }
 
-func (in *DataPipelineRun) Failed() bool {
+func (in *DataPipelineRun) IsFailed() bool {
 	cond := in.GetCond(DataPipelineRunCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(DataPipelineRunPhaseFailed)
 }
 
 func (r *DataPipelineRun) MarkRunning() {
 	now := metav1.Now()
-	r.Status.StartTime = &now
+	if r.Status.StartTime == nil {
+		r.Status.StartTime = &now
+	}
 	r.Status.Phase = DataPipelineRunPhaseRunning
 	r.CreateOrUpdateCond(DataPipelineRunCondition{
 		Type:   DataPipelineRunCompleted,
@@ -138,6 +141,10 @@ func (in *DataPipelineRun) MarkComplete() {
 		Type:   DataPipelineRunCompleted,
 		Status: v1.ConditionTrue,
 	})
+	now := metav1.Now()
+	if in.Status.CompletionTime == nil {
+		in.Status.CompletionTime = &now
+	}
 }
 
 func (in *DataPipelineRun) MarkFailed(err error) {
@@ -148,6 +155,10 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 		Reason:  string(DataPipelineRunPhaseFailed),
 		Message: err.Error(),
 	})
+	now := metav1.Now()
+	if in.Status.CompletionTime == nil {
+		in.Status.CompletionTime = &now
+	}
 }
 
 func (run *DataPipelineRun) ToYamlFile() ([]byte, error) {

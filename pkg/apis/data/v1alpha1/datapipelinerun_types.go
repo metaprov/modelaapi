@@ -25,7 +25,7 @@ type DataPipelineRunConditionType string
 
 /// DataPipelineRun Condition
 const (
-	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
+	DataPipelineRunCompleted DataPipelineRunConditionType = "IsCompleted"
 )
 
 // DataPipelineRunCondition describes the state of a data processor run at a certain point.
@@ -46,7 +46,7 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:printcolumn:name="Failure",type=string,JSONPath=`.status.conditions[?(@.type=="Failed")].message`,description="Human readable message describing the failure",priority=5
+// +kubebuilder:printcolumn:name="Failure",type=string,JSONPath=`.status.conditions[?(@.type=="IsFailed")].message`,description="Human readable message describing the failure",priority=5
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modeld,all}
 // DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {

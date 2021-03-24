@@ -56,15 +56,15 @@ func (prediction *PredictionPipeline) ValidateDelete() error {
 // defaulting
 var _ webhook.Defaulter = &PredictionPipelineRun{}
 
-func (pre *PredictionPipelineRun) Default() {
+func (run *PredictionPipelineRun) Default() {
 	// if no input bucket defined,
-	if pre.Spec.Output == nil {
-		pre.Spec.Output = &data.DataLocation{}
+	if run.Spec.Output == nil {
+		run.Spec.Output = &data.DataLocation{}
 	}
-	if pre.Spec.Output.BucketName == "" {
-		pre.Spec.Output.BucketName = pre.Spec.Input.BucketName
+	if run.Spec.Output.BucketName == "" {
+		run.Spec.Output.BucketName = run.Spec.Input.BucketName
 	}
-	if pre.Spec.Output.Path == "" { // place the output at the same location as the input
-		pre.Spec.Output.Path = pre.Spec.Input.Path + ".out.json"
+	if run.Spec.Output.Path == "" { // place the output at the same location as the input
+		run.Spec.Output.Path = run.Spec.Input.Path + ".out.json"
 	}
 }

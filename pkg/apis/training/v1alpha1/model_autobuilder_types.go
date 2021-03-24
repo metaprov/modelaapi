@@ -25,8 +25,8 @@ const (
 	ModelAutobuilderPhasePredictorRunning  ModelAutobuilderPhase = "PredictorRunning"
 	ModelAutobuilderPhasePredictorFailed   ModelAutobuilderPhase = "PredictorFailed"
 	ModelAutobuilderPhasePredictorSuccess  ModelAutobuilderPhase = "PredictorSuccess"
-	ModelAutobuilderPhaseCompleted         ModelAutobuilderPhase = "Completed"
-	ModelAutobuilderPhaseFailed            ModelAutobuilderPhase = "Failed"
+	ModelAutobuilderPhaseCompleted         ModelAutobuilderPhase = "IsCompleted"
+	ModelAutobuilderPhaseFailed            ModelAutobuilderPhase = "IsFailed"
 )
 
 // ModelAutobuilderConditionType represent that condition that a model auto builder can be in.

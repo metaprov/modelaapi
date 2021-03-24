@@ -323,7 +323,7 @@ func ParseModelYaml(content []byte) (*Model, error) {
 }
 
 const (
-	ReasonFailed         = "Failed"
+	ReasonFailed         = "IsFailed"
 	ReasonTesting        = "Testing"
 	ReasonReporting      = "Reporting"
 	ReasonProfiling      = "Profiling"
@@ -557,7 +557,7 @@ func (model *Model) MarkForecastFailed(err string) {
 }
 
 func (model *Model) MarkForecasting() {
-	model.Status.Phase = ModelPhaseForecasting
+	model.Status.Phase = ModelPhaseForecastRunning
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelForecasted,
 		Status: v1.ConditionFalse,
@@ -641,7 +641,7 @@ func (model *Model) MarkReady() {
 	model.Status.CompletionTime = &now
 }
 
-func (model *Model) Ready() bool {
+func (model *Model) IsReady() bool {
 	cond := model.GetCond(ModelReady)
 	return cond.Status == v1.ConditionTrue
 }

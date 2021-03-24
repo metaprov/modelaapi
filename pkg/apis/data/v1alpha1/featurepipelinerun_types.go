@@ -14,9 +14,9 @@ import (
 type FeautrePipelineRunPhase string
 
 const (
-	FeaturePipelineRunRunning FeautrePipelineRunPhase = "Running"
-	FeaturePipelineRunSuccess FeautrePipelineRunPhase = "Success"
-	FeaturePipelineRunFailed  FeautrePipelineRunPhase = "Failed"
+	FeaturePipelineRunPhaseRunning   FeautrePipelineRunPhase = "Running"
+	FeaturePipelineRunPhaseCompleted FeautrePipelineRunPhase = "Completed"
+	FeaturePipelineRunPhaseFailed    FeautrePipelineRunPhase = "Failed"
 )
 
 // FeaturePipelineRunConditionType
@@ -24,7 +24,8 @@ type FeaturePipelineRunConditionType string
 
 /// Feature Condition
 const (
-	FeaturePipelineRunReady FeaturePipelineRunConditionType = "Ready"
+	FeaturePipelineRunCompleted FeaturePipelineRunConditionType = "Completed"
+	FeaturePipelineRunArchived  FeaturePipelineRunConditionType = "Archived"
 )
 
 // FeaturePipelineRunCondition describes the state of a deployment at a certain point.

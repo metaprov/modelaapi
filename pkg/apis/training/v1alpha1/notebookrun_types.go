@@ -95,7 +95,7 @@ type NotebookRunSpec struct {
 type NotebookRunStatus struct {
 	// The phase of the notebook
 	// +kubebuilder:validation:Optional
-	Phase string `json:"phase" protobuf:"bytes,1,opt,name=phase"`
+	Phase NotebookRunPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// StartTime is the times that this prediction job started
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`

@@ -15,7 +15,7 @@ const (
 	ReportPhasePending ReportPhase = "Pending"
 	ReportPhaseRunning ReportPhase = "Running"
 	ReportPhaseSuccess ReportPhase = "Success"
-	ReportPhaseFailed  ReportPhase = "Failed"
+	ReportPhaseFailed  ReportPhase = "IsFailed"
 )
 
 // ReportImageName denote the name of a report image

@@ -75,7 +75,7 @@ const (
 	PipelineModelDeployed PipelineRunConditionType = "ModelDeployed"
 
 	PipelineRunReady  PipelineRunConditionType = "Ready"
-	PipelineRunFailed PipelineRunConditionType = "Failed"
+	PipelineRunFailed PipelineRunConditionType = "IsFailed"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
@@ -148,8 +148,8 @@ type StageStatusPhase string
 
 const (
 	StageStatusPhaseRunning   StageStatusPhase = "Running"
-	StageStatusPhaseCompleted StageStatusPhase = "Completed"
-	StageStatusPhaseFailed    StageStatusPhase = "Failed"
+	StageStatusPhaseCompleted StageStatusPhase = "IsCompleted"
+	StageStatusPhaseFailed    StageStatusPhase = "IsFailed"
 )
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.

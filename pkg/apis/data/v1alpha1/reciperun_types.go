@@ -9,8 +9,8 @@ type RecipeRunPhase string
 
 const (
 	RecipeRunPhaseRunning RecipeRunPhase = "Running"
-	RecipeRunPhaseSucceed RecipeRunPhase = "Completed"
-	RecipeRunPhaseFailed  RecipeRunPhase = "Failed"
+	RecipeRunPhaseSucceed RecipeRunPhase = "IsCompleted"
+	RecipeRunPhaseFailed  RecipeRunPhase = "IsFailed"
 )
 
 // Condition on the dataset
@@ -18,7 +18,7 @@ type RecipeRunConditionType string
 
 /// RecipeName Condition
 const (
-	RecipeRunCompleted RecipeConditionType = "Completed"
+	RecipeRunCompleted RecipeConditionType = "IsCompleted"
 )
 
 // RecipeRunCondition describes the state of a dataset at a certain point.

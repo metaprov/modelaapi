@@ -27,7 +27,7 @@ import (
 func (lpr *LabelingPipelineRun) AddConfiditions() {
 	lpr.Status.Conditions = make([]LabelingPipelineRunCondition, 1)
 	lpr.Status.Conditions[0] = LabelingPipelineRunCondition{
-		Type:   LabelingPipelineRunReady,
+		Type:   LabelingPipelineRunCompleted,
 		Status: v1.ConditionUnknown,
 	}
 }
@@ -138,7 +138,7 @@ func (lpr *LabelingPipelineRun) GetCond(t LabelingPipelineRunConditionType) Labe
 }
 
 func (lpr *LabelingPipelineRun) IsReady() bool {
-	return lpr.GetCond(LabelingPipelineRunReady).Status == v1.ConditionTrue
+	return lpr.GetCond(LabelingPipelineRunCompleted).Status == v1.ConditionTrue
 }
 
 func (lpr *LabelingPipelineRun) Key() string {
@@ -154,11 +154,41 @@ func ParseLabelPipelineRunYaml(content []byte) (*LabelingPipelineRun, error) {
 	return r, nil
 }
 
-func (lpr *LabelingPipelineRun) MarkReady() {
-	// update the lab state to ready
-	lpr.CreateOrUpdateCond(LabelingPipelineRunCondition{
-		Type:   LabelingPipelineRunReady,
+func (run *LabelingPipelineRun) MarkRunning() {
+	now := metav1.Now()
+	if run.Status.StartTime == nil {
+		run.Status.StartTime = &now
+	}
+	run.Status.Phase = LabelingPipelineRunPhaseRunning
+	run.CreateOrUpdateCond(LabelingPipelineRunCondition{
+		Type:   LabelingPipelineRunCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(LabelingPipelineRunPhaseRunning),
+	})
+}
+
+func (run *LabelingPipelineRun) MarkComplete() {
+	run.Status.Phase = LabelingPipelineRunPhaseCompleted
+	run.CreateOrUpdateCond(LabelingPipelineRunCondition{
+		Type:   LabelingPipelineRunCompleted,
 		Status: v1.ConditionTrue,
 	})
+	now := metav1.Now()
+	if run.Status.CompletionTime == nil {
+		run.Status.CompletionTime = &now
+	}
+}
 
+func (run *LabelingPipelineRun) MarkFailed(err error) {
+	run.Status.Phase = LabelingPipelineRunPhaseFailed
+	run.CreateOrUpdateCond(LabelingPipelineRunCondition{
+		Type:    LabelingPipelineRunCompleted,
+		Status:  v1.ConditionTrue,
+		Reason:  string(LabelingPipelineRunPhaseFailed),
+		Message: err.Error(),
+	})
+	now := metav1.Now()
+	if run.Status.CompletionTime == nil {
+		run.Status.CompletionTime = &now
+	}
 }

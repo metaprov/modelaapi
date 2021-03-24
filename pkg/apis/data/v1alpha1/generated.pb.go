@@ -1381,30 +1381,30 @@ func (m *FeaturePipelineList) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FeaturePipelineList proto.InternalMessageInfo
 
-func (m *FeaturePipelineRun) Reset()      { *m = FeaturePipelineRun{} }
+func (run *FeaturePipelineRun) Reset()    { *run = FeaturePipelineRun{} }
 func (*FeaturePipelineRun) ProtoMessage() {}
 func (*FeaturePipelineRun) Descriptor() ([]byte, []int) {
 	return fileDescriptor_42dbc13d08a8c8d6, []int{48}
 }
-func (m *FeaturePipelineRun) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+func (run *FeaturePipelineRun) XXX_Unmarshal(b []byte) error {
+	return run.Unmarshal(b)
 }
-func (m *FeaturePipelineRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (run *FeaturePipelineRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := run.MarshalToSizedBuffer(b)
 	if err != nil {
 		return nil, err
 	}
 	return b[:n], nil
 }
-func (m *FeaturePipelineRun) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_FeaturePipelineRun.Merge(m, src)
+func (run *FeaturePipelineRun) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_FeaturePipelineRun.Merge(run, src)
 }
-func (m *FeaturePipelineRun) XXX_Size() int {
-	return m.Size()
+func (run *FeaturePipelineRun) XXX_Size() int {
+	return run.Size()
 }
-func (m *FeaturePipelineRun) XXX_DiscardUnknown() {
-	xxx_messageInfo_FeaturePipelineRun.DiscardUnknown(m)
+func (run *FeaturePipelineRun) XXX_DiscardUnknown() {
+	xxx_messageInfo_FeaturePipelineRun.DiscardUnknown(run)
 }
 
 var xxx_messageInfo_FeaturePipelineRun proto.InternalMessageInfo
@@ -6136,28 +6136,28 @@ func (m *FeaturePipelineList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *FeaturePipelineRun) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
+func (run *FeaturePipelineRun) Marshal() (dAtA []byte, err error) {
+	size := run.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := run.MarshalToSizedBuffer(dAtA[:size])
 	if err != nil {
 		return nil, err
 	}
 	return dAtA[:n], nil
 }
 
-func (m *FeaturePipelineRun) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+func (run *FeaturePipelineRun) MarshalTo(dAtA []byte) (int, error) {
+	size := run.Size()
+	return run.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *FeaturePipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (run *FeaturePipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
 	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		size, err := run.Status.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6167,7 +6167,7 @@ func (m *FeaturePipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x1a
 	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		size, err := run.Spec.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -6177,7 +6177,7 @@ func (m *FeaturePipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i--
 	dAtA[i] = 0x12
 	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		size, err := run.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -9885,17 +9885,17 @@ func (m *FeaturePipelineList) Size() (n int) {
 	return n
 }
 
-func (m *FeaturePipelineRun) Size() (n int) {
-	if m == nil {
+func (run *FeaturePipelineRun) Size() (n int) {
+	if run == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = m.ObjectMeta.Size()
+	l = run.ObjectMeta.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
+	l = run.Spec.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
+	l = run.Status.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
@@ -11707,14 +11707,14 @@ func (this *FeaturePipelineList) String() string {
 	}, "")
 	return s
 }
-func (this *FeaturePipelineRun) String() string {
-	if this == nil {
+func (run *FeaturePipelineRun) String() string {
+	if run == nil {
 		return "nil"
 	}
 	s := strings.Join([]string{`&FeaturePipelineRun{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "FeaturePipelineRunSpec", "FeaturePipelineRunSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "FeaturePipelineRunStatus", "FeaturePipelineRunStatus", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", run.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(run.Spec.String(), "FeaturePipelineRunSpec", "FeaturePipelineRunSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(run.Status.String(), "FeaturePipelineRunStatus", "FeaturePipelineRunStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -21622,7 +21622,7 @@ func (m *FeaturePipelineList) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *FeaturePipelineRun) Unmarshal(dAtA []byte) error {
+func (run *FeaturePipelineRun) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -21680,7 +21680,7 @@ func (m *FeaturePipelineRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := run.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -21713,7 +21713,7 @@ func (m *FeaturePipelineRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := run.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -21746,7 +21746,7 @@ func (m *FeaturePipelineRun) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := run.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

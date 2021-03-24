@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modeldapi/pkg/apis/training"
 	"github.com/metaprov/modeldapi/pkg/util"
@@ -113,7 +112,7 @@ func (run *NotebookRun) GetCond(t NotebookRunConditionType) NotebookRunCondition
 }
 
 func (run *NotebookRun) StatusString() string {
-	return run.Status.Phase
+	return string(run.Status.Phase)
 }
 
 func (run *NotebookRun) IsReady() bool {
@@ -135,4 +134,45 @@ func ParseNotebookRunYaml(content []byte) (*NotebookRun, error) {
 
 func (run *NotebookRun) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(run)
+}
+
+func (r *NotebookRun) MarkCompleted() {
+	r.Status.Phase = NotebookRunPhaseCompleted
+	r.CreateOrUpdateCond(NotebookRunCondition{
+		Type:   NotebookRunReady,
+		Status: corev1.ConditionTrue,
+	})
+	now := metav1.Now()
+	if r.Status.CompletionTime != nil {
+		r.Status.CompletionTime = &now
+	}
+
+}
+
+func (r *NotebookRun) MarkFailed(error string) {
+	r.Status.Phase = NotebookRunPhaseFailed
+	r.CreateOrUpdateCond(NotebookRunCondition{
+		Type:    NotebookRunReady,
+		Status:  corev1.ConditionFalse,
+		Reason:  error,
+		Message: error,
+	})
+	now := metav1.Now()
+	if r.Status.CompletionTime != nil {
+		r.Status.CompletionTime = &now
+	}
+
+}
+
+func (r *NotebookRun) MarkRunning() {
+	now := metav1.Now()
+	if r.Status.StartTime != nil {
+		r.Status.StartTime = &now
+	}
+	r.Status.Phase = NotebookRunPhaseRunning
+	r.CreateOrUpdateCond(NotebookRunCondition{
+		Type:    NotebookRunReady,
+		Status:  corev1.ConditionFalse,
+		Message: string(NotebookRunPhaseRunning),
+	})
 }

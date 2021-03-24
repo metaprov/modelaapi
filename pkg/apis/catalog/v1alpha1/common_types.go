@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // ===========================================================
@@ -175,7 +176,7 @@ func MLTaskFromString(name string) (MLTask, error) {
 	case "unknown":
 		return UnknownTask, nil
 	}
-	return UnknownTask, fmt.Errorf("Failed to find MLTask for %s", name)
+	return UnknownTask, fmt.Errorf("IsFailed to find MLTask for %s", name)
 }
 
 func NewProviderNameFromString(name string) ProviderName {
@@ -1040,4 +1041,69 @@ const (
 	Git ConnectionCategory = "git"
 	// connections for git repository
 	Messaging ConnectionCategory = "messaging"
+)
+
+//==============================================================================
+// PipelineName TriggerName
+//==============================================================================
+// +kubebuilder:validation:Enum="now";"once";"hourly";"daily";"weekly";"monthly";"yearly";"cron"
+type TriggerScheduleEventType string
+
+const (
+	TriggerScheduleEventTypeNow     TriggerScheduleEventType = "now"
+	TriggerScheduleEventTypeOnce    TriggerScheduleEventType = "once"
+	TriggerScheduleEventTypeHourly  TriggerScheduleEventType = "hourly"
+	TriggerScheduleEventTypeDaily   TriggerScheduleEventType = "daily"
+	TriggerScheduleEventTypeWeekly  TriggerScheduleEventType = "weekly"
+	TriggerScheduleEventTypeMonthly TriggerScheduleEventType = "monthly"
+	TriggerScheduleEventTypeYearly  TriggerScheduleEventType = "yearly"
+	TriggerScheduleEventTypeCron    TriggerScheduleEventType = "cron"
+)
+
+// GithubEvents specify repo and the events to listen in order ot fire the pipeline
+type GithubEvents struct {
+	// The github connections used to loginto git
+	GitConnectionsName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
+	// Repository is the name of the github repository
+	Repository *string `json:"repository,omitempty" protobuf:"bytes,2,opt,name=repository"`
+	// Branch is the name of the github branch.
+	// By default the trigger listen to all branch
+	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
+	// Blobname regex is a regular expression on the blob name that changed
+	BlobNameRegex *string `json:"blobNameRegex,omitempty" protobuf:"bytes,4,opt,name=blobNameRegex"`
+	// Events is the name of the github events.
+	Events []string `json:"events,omitempty" protobuf:"bytes,5,rep,name=events"`
+}
+
+//Run Schedule is a specification for job schedule
+type RunSchedule struct {
+	// The start time of the schedule
+	// +kubebuilder:validation:Optional
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
+	// StartDay is the start day of the schedule
+	// +kubebuilder:validation:Optional
+	StartDay *metav1.Time `json:"startDay,omitempty" protobuf:"bytes,2,opt,name=startDay"`
+	// EndTime is the end time of the schedule
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Timestamp `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
+	// EndDay is the end day of the schedule
+	// +kubebuilder:validation:Optional
+	EndDay *metav1.Time `json:"endDay,omitempty" protobuf:"bytes,4,opt,name=endDay"`
+	// Cron string of the schedule.
+	// +kubebuilder:validation:Optional
+	Cron *string `json:"cron,omitempty" protobuf:"bytes,5,opt,name=cron"`
+	// +kubebuilder:validation:Optional
+	// The type of schedule events.
+	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,6,opt,name=type"`
+}
+
+type TriggerType string
+
+const (
+	TriggerTypeOnDemand        TriggerType = "on-demand"
+	TriggerTypeSchedule        TriggerType = "on-schedule"
+	TriggerTypeNewData         TriggerType = "on-new-data"
+	TriggerTypeGithubEvent     TriggerType = "on-github-event"
+	TriggerTypeConceptDrift    TriggerType = "on-concept-drift"
+	TriggerTypePrefDegragation TriggerType = "on-pref-degradation"
 )

@@ -256,7 +256,7 @@ func (b *ModelAutobuilder) MarkPredictorReady() {
 	})
 }
 
-// Completed
+// IsCompleted
 
 func (b *ModelAutobuilder) MarkComplete() {
 	b.Status.Phase = ModelAutobuilderPhaseCompleted
@@ -266,7 +266,7 @@ func (b *ModelAutobuilder) MarkComplete() {
 	})
 }
 
-// Failed
+// IsFailed
 
 func (b *ModelAutobuilder) Ready() bool {
 	return b.GetCond(ModelAutobuilderReady).Status == v1.ConditionTrue

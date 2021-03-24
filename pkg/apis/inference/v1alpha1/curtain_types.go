@@ -28,7 +28,7 @@ const (
 	// Curtain was shut down successfully
 	CurtainSuccess CurtainConditionType = "Success"
 	// Curtain has failed
-	CurtainFailed CurtainConditionType = "Failed"
+	CurtainFailed CurtainConditionType = "IsFailed"
 )
 
 // CurtainCondition describes the state of a wizard of oz at a certain point.

@@ -114,7 +114,7 @@ func (in *DataPipeline) MarkFailed(err error) {
 	in.CreateOrUpdateCond(DataPipelineCondition{
 		Type:    DataPipelineReady,
 		Status:  v1.ConditionFalse,
-		Reason:  "Failed",
+		Reason:  "IsFailed",
 		Message: err.Error(),
 	})
 }

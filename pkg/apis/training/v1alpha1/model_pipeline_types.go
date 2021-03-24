@@ -1,47 +1,11 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
-
-// GithubEvents specify repo and the events to listen in order ot fire the pipeline
-type GithubEvents struct {
-	// The github connections used to loginto git
-	GitConnectionsName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
-	// Repository is the name of the github repository
-	Repository *string `json:"repository,omitempty" protobuf:"bytes,2,opt,name=repository"`
-	// Branch is the name of the github branch.
-	// By default the trigger listen to all branch
-	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
-	// Blobname regex is a regular expression on the blob name that changed
-	BlobNameRegex *string `json:"blobNameRegex,omitempty" protobuf:"bytes,4,opt,name=blobNameRegex"`
-	// Events is the name of the github events.
-	Events []string `json:"events,omitempty" protobuf:"bytes,5,rep,name=events"`
-}
-
-//TriggerSchedule specify a cron schedule
-type TriggerSchedule struct {
-	// The start time of the schedule
-	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
-	// StartDay is the start day of the schedule
-	// +kubebuilder:validation:Optional
-	StartDay *metav1.Time `json:"startDay,omitempty" protobuf:"bytes,2,opt,name=startDay"`
-	// EndTime is the end time of the schedule
-	// +kubebuilder:validation:Optional
-	EndTime *metav1.Timestamp `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
-	// EndDay is the end day of the schedule
-	// +kubebuilder:validation:Optional
-	EndDay *metav1.Time `json:"endDay,omitempty" protobuf:"bytes,4,opt,name=endDay"`
-	// Cron string of the schedule.
-	// +kubebuilder:validation:Optional
-	Cron *string `json:"cron,omitempty" protobuf:"bytes,5,opt,name=cron"`
-	// +kubebuilder:validation:Optional
-	// The type of schedule events.
-	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,6,opt,name=type"`
-}
 
 type ModelPipelineConditionType string
 
@@ -132,42 +96,11 @@ type ModelPipelineSpec struct {
 type PipelineTrigger struct {
 	// Spec for a schedule in case that the trigger
 	// +kubebuilder:validation:Optional
-	Schedule *TriggerSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
+	Schedule *catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
 	// Definition of git hub events
 	// +kubebuilder:validation:Optional
-	GithubEvents *GithubEvents `json:"githubEvents,omitempty" protobuf:"bytes,2,opt,name=githubEvents"`
-	// Template is a template of the pipeline that will be created when the
-	// trigger fire.
-	// +kubebuilder:validation:Optional
+	GithubEvents *catalog.GithubEvents `json:"githubEvents,omitempty" protobuf:"bytes,2,opt,name=githubEvents"`
 }
-
-type TriggerType string
-
-const (
-	TriggerTypeOnDemand        TriggerType = "on-demand"
-	TriggerTypeSchedule        TriggerType = "on-schedule"
-	TriggerTypeNewData         TriggerType = "on-new-data"
-	TriggerTypeGithubEvent     TriggerType = "on-github-event"
-	TriggerTypeConceptDrift    TriggerType = "on-concept-drift"
-	TriggerTypePrefDegragation TriggerType = "on-pref-degradation"
-)
-
-//==============================================================================
-// PipelineName TriggerName
-//==============================================================================
-// +kubebuilder:validation:Enum="now";"once";"hourly";"daily";"weekly";"monthly";"yearly";"cron"
-type TriggerScheduleEventType string
-
-const (
-	TriggerScheduleEventTypeNow     TriggerScheduleEventType = "now"
-	TriggerScheduleEventTypeOnce    TriggerScheduleEventType = "once"
-	TriggerScheduleEventTypeHourly  TriggerScheduleEventType = "hourly"
-	TriggerScheduleEventTypeDaily   TriggerScheduleEventType = "daily"
-	TriggerScheduleEventTypeWeekly  TriggerScheduleEventType = "weekly"
-	TriggerScheduleEventTypeMonthly TriggerScheduleEventType = "monthly"
-	TriggerScheduleEventTypeYearly  TriggerScheduleEventType = "yearly"
-	TriggerScheduleEventTypeCron    TriggerScheduleEventType = "cron"
-)
 
 // pipline trigger condition
 // Condition on the dataset

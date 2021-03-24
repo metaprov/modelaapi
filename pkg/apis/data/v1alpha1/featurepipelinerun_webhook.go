@@ -21,28 +21,28 @@ import (
 var _ webhook.Validator = &FeaturePipelineRun{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeaturePipelineRun) ValidateCreate() error {
-	return feature.validate()
+func (run *FeaturePipelineRun) ValidateCreate() error {
+	return run.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (feature *FeaturePipelineRun) ValidateUpdate(old runtime.Object) error {
-	return feature.validate()
+func (run *FeaturePipelineRun) ValidateUpdate(old runtime.Object) error {
+	return run.validate()
 }
 
-func (feature *FeaturePipelineRun) validate() error {
+func (run *FeaturePipelineRun) validate() error {
 	return nil
 }
 
-func (r *FeaturePipelineRun) ValidateDelete() error {
+func (run *FeaturePipelineRun) ValidateDelete() error {
 	return nil
 }
 
-func (in *FeaturePipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (run *FeaturePipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(in).
+		For(run).
 		Complete()
 }
 
 // No defaults in this current release
-func (feature *FeaturePipelineRun) Default() {}
+func (run *FeaturePipelineRun) Default() {}
