@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modeldapi/pkg/apis/training"
 	"github.com/metaprov/modeldapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
@@ -53,10 +54,6 @@ func (run *ModelPipelineRun) GetCond(t PipelineRunConditionType) ModelPipelineRu
 		Reason:  "",
 		Message: "",
 	}
-}
-
-func (run *ModelPipelineRun) IsReady() bool {
-	return run.GetCond(PipelineRunReady).Status == v1.ConditionTrue
 }
 
 //==============================================================================
@@ -121,113 +118,361 @@ func (this *ModelPipelineRunStageStatus) IsFailed() bool {
 	return this.Phase == StageStatusPhaseFailed
 }
 
-func (this *ModelPipelineRun) MarkPreprocessingDataRunning() {
-	this.Status.DataStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_PreprocessingDataRunning
-}
-
 func (this *ModelPipelineRunStageStatus) IsRunning() bool {
 	return this.Phase == StageStatusPhaseRunning
 }
 
+func (this *ModelPipelineRun) MarkPreprocessingDataRunning() {
+	this.Status.DataStatus.RecordRunning()
+	this.Status.Phase = PipelinePhaseRunning
+	this.Status.Stage = ModelPipelineStageData
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRDataPipelineCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
+}
+
+func (this *ModelPipelineRun) IsPreprocessingDataRunning() bool {
+	return this.GetCond(MPRDataPipelineCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRDataPipelineCompleted).Reason == string(catalog.Running)
+}
+
 func (this *ModelPipelineRun) MarkPreprocessingDataCompleted() {
 	this.Status.DataStatus.RecordCompleted()
-	this.Status.Phase = PipelinePhase_PreprocessingCompleted
+	this.Status.Phase = PipelinePhaseRunning
+	this.Status.Stage = ModelPipelineStageData
+
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRDataPipelineCompleted,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (this *ModelPipelineRun) IsPreprocessingDataCompleted() bool {
+	return this.GetCond(MPRDataPipelineCompleted).Status == v1.ConditionTrue
 }
 
 func (this *ModelPipelineRun) MarkPreprocessingDataFailed(err error) {
 	this.Status.DataStatus.RecordError(err)
-	this.Status.Phase = PipelinePhase_PreprocessingFailed
+	this.Status.Stage = ModelPipelineStageData
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:    MPRDataPipelineCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(catalog.Failed),
+		Message: err.Error(),
+	})
 }
 
-func (this *ModelPipelineRun) MarkNotebookRunning() {
+func (this *ModelPipelineRun) IsPreprocessingDataFailed() bool {
+	return this.GetCond(MPRCapacityPredictionCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRCapacityPredictionCompleted).Reason == string(catalog.Failed)
+}
+
+func (this *ModelPipelineRun) MarkTrainingNotebookRunning() {
 	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_NotebookRunning
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRDataPipelineCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
 }
-func (this *ModelPipelineRun) MarkNotebookCompleted() {
-	this.Status.Phase = PipelinePhase_NotebookReady
 
+func (this *ModelPipelineRun) IsTrainingNotebookRunning() bool {
+	return this.GetCond(MPRTrainingNotebookCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRTrainingNotebookCompleted).Reason == string(catalog.Running)
 }
-func (this *ModelPipelineRun) MarkNotebookFailed(err error) {
-	this.Status.TrainingStatus.RecordError(err)
-	this.Status.Phase = PipelinePhase_NotebookFailed
 
+func (this *ModelPipelineRun) MarkTrainingNotebookCompleted() {
+	this.Status.TrainingStatus.RecordCompleted()
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRTrainingNotebookCompleted,
+		Status: v1.ConditionTrue,
+	})
 }
+
+func (this *ModelPipelineRun) IsTrainingNotebookCompleted() bool {
+	return this.GetCond(MPRTrainingNotebookCompleted).Status == v1.ConditionTrue
+}
+
+func (this *ModelPipelineRun) MarkTrainingNotebookFailed(err error) {
+	this.Status.TrainingStatus.RecordFailed()
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:    MPRTrainingNotebookCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(catalog.Failed),
+		Message: err.Error(),
+	})
+}
+
+func (this *ModelPipelineRun) IsTrainingNotebookFailed() bool {
+	return this.GetCond(MPRTrainingNotebookCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRTrainingNotebookCompleted).Reason == string(catalog.Failed)
+}
+
 func (this *ModelPipelineRun) MarkStudyRunning() {
 	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_StudyRunning
-
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRTrainingStudyCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
 }
+
+func (this *ModelPipelineRun) IsStudyRunning() bool {
+	return this.GetCond(MPRTrainingStudyCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRTrainingStudyCompleted).Reason == string(catalog.Running)
+}
+
 func (this *ModelPipelineRun) MarkStudyFailed(err error) {
 	this.Status.TrainingStatus.RecordFailed()
-	this.Status.Phase = PipelinePhase_StudyFailed
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRTrainingStudyCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
+}
 
+func (this *ModelPipelineRun) IsStudyFailed() bool {
+	return this.GetCond(MPRTrainingStudyCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRTrainingStudyCompleted).Reason == string(catalog.Failed)
 }
+
 func (this *ModelPipelineRun) MarkStudyCompleted() {
-	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_StudyCompleted
+	this.Status.TrainingStatus.RecordCompleted()
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRTrainingStudyCompleted,
+		Status: v1.ConditionTrue,
+	})
 }
+
+func (this *ModelPipelineRun) IsStudyCompleted() bool {
+	return this.GetCond(MPRTrainingStudyCompleted).Status == v1.ConditionTrue
+}
+
 func (this *ModelPipelineRun) MarkModelPublished() {
-	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_ModelPublished
+	this.Status.TrainingStatus.RecordCompleted()
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRTrainingModelPublished,
+		Status: v1.ConditionTrue,
+	})
 }
+
+func (this *ModelPipelineRun) IsModelPublished() bool {
+	return this.GetCond(MPRTrainingModelPublished).Status == v1.ConditionTrue
+}
+
 func (this *ModelPipelineRun) MarkTrainingApproved() {
 	this.Status.TrainingStatus.RecordCompleted()
+	this.Status.Stage = ModelPipelineStageTraining
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRTrainingApproved,
+		Status: v1.ConditionTrue,
+	})
+}
 
+func (this *ModelPipelineRun) IsTrainingApproved() bool {
+	return this.GetCond(MPRTrainingModelPublished).Status == v1.ConditionTrue
 }
-func (this *ModelPipelineRun) MarkAcceptancePredictorRunning() {
-	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_AcceptancePredictorRunning
-}
-func (this *ModelPipelineRun) MarkAcceptancePredictorCompleted() {
-	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_AcceptancePredictorCompleted
-}
-func (this *ModelPipelineRun) MarkAcceptancePrecitionRunRunning() {
-	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_AcceptancePrecitionRunRunning
 
-}
-func (this *ModelPipelineRun) MarkAcceptancePrecitionRunCompleted() {
+// Acceptance Stage
+func (this *ModelPipelineRun) MarkUATPredictorRunning() {
 	this.Status.TrainingStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_AcceptancePrecitionRunCompleted
+	this.Status.Stage = ModelPipelineStageUAT
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRUatPredictorReady,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
 }
-func (this *ModelPipelineRun) MarkAcceptancePrecitionRunFailed(err error) {
-	this.Status.TrainingStatus.RecordFailed()
-	this.Status.Phase = PipelinePhase_AcceptancePrecitionRunFailed
+
+func (this *ModelPipelineRun) IsUATPredictorRunning() bool {
+	return this.GetCond(MPRUatPredictorReady).Status == v1.ConditionFalse &&
+		this.GetCond(MPRUatPredictorReady).Reason == string(catalog.Running)
 }
-func (this *ModelPipelineRun) MarkAcceptanceApproved() {
+
+func (this *ModelPipelineRun) MarkUATPredictorReady() {
+	this.Status.TrainingStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageUAT
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRUatPredictorReady,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (this *ModelPipelineRun) IsUATPredictorReady() bool {
+	return this.GetCond(MPRUatPredictorReady).Status == v1.ConditionFalse &&
+		this.GetCond(MPRUatPredictorReady).Reason == string(catalog.Running)
+}
+
+func (this *ModelPipelineRun) MarkUATPredictionRunRunning() {
+	this.Status.UATStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageUAT
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRUatPredictionCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
+}
+
+func (this *ModelPipelineRun) IsUATPredictionRunRunning() bool {
+	return this.GetCond(MPRUatPredictorReady).Status == v1.ConditionFalse &&
+		this.GetCond(MPRUatPredictorReady).Reason == string(catalog.Running)
+}
+
+func (this *ModelPipelineRun) MarkUATPredictionRunCompleted() {
+	this.Status.UATStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageUAT
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRUatPredictionCompleted,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (this *ModelPipelineRun) IsUATPredictionRunCompleted() bool {
+	return this.GetCond(MPRUatPredictionCompleted).Status == v1.ConditionTrue
+}
+
+func (this *ModelPipelineRun) MarkUATPredictionRunFailed(err error) {
+	this.Status.UATStatus.RecordFailed()
+	this.Status.Stage = ModelPipelineStageUAT
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:    MPRUatPredictionCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(catalog.Failed),
+		Message: err.Error(),
+	})
+}
+
+func (this *ModelPipelineRun) IsUATPredictionRunFailed() bool {
+	return this.GetCond(MPRUatPredictorReady).Status == v1.ConditionFalse &&
+		this.GetCond(MPRUatPredictionCompleted).Reason == string(catalog.Failed)
+}
+
+func (this *ModelPipelineRun) MarkUATApproved() {
 	this.Status.TrainingStatus.RecordCompleted()
+	this.Status.Stage = ModelPipelineStageUAT
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRUatApproved,
+		Status: v1.ConditionTrue,
+	})
+}
 
+func (this *ModelPipelineRun) IsUATApproved() bool {
+	return this.GetCond(MPRUatPredictorReady).Status == v1.ConditionTrue
 }
-func (this *ModelPipelineRun) MarkCapacityPredictorRunnning() {
-	this.Status.CapacityStatus.RecordFailed()
-	this.Status.Phase = PipelinePhase_CapacityPredictorRunning
+
+// Capacity
+func (this *ModelPipelineRun) MarkCapacityPredictorRunning() {
+	this.Status.TrainingStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageCapacity
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRCapacityPredictorReady,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
 }
-func (this *ModelPipelineRun) MarkCapacityPredictorReady() {
-	this.Status.CapacityStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_CapacityPredictorReady
+
+func (this *ModelPipelineRun) MarkCapacityPredictorCompleted() {
+	this.Status.TrainingStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageCapacity
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRCapacityPredictorReady,
+		Status: v1.ConditionTrue,
+	})
 }
+
+func (this *ModelPipelineRun) IsPredictorCompleted() bool {
+	return this.GetCond(MPRCapacityPredictorReady).Status == v1.ConditionTrue
+}
+
 func (this *ModelPipelineRun) MarkCapacityPredictionRunRunning() {
-	this.Status.CapacityStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_CapacityPrecitionRunning
+	this.Status.TrainingStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageCapacity
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRCapacityPredictionCompleted,
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
 }
-func (this *ModelPipelineRun) MarkCapacityPrecitionRunCompleted() {
-	this.Status.CapacityStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_CapacityPrecitionRunCompleted
+
+func (this *ModelPipelineRun) IsCapacityPredictionRunRunning() bool {
+	return this.GetCond(MPRCapacityPredictionCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRCapacityPredictionCompleted).Reason == string(catalog.Running)
 }
-func (this *ModelPipelineRun) MarkCapacityPrecitionRunFailed(err error) {
-	this.Status.CapacityStatus.RecordError(err)
-	this.Status.Phase = PipelinePhase_CapacityPrecitionRunFailed
+
+func (this *ModelPipelineRun) MarkCapacityPredictionRunCompleted() {
+	this.Status.TrainingStatus.RecordRunning()
+	this.Status.Stage = ModelPipelineStageCapacity
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRCapacityPredictionCompleted,
+		Status: v1.ConditionTrue,
+	})
 }
+
+func (this *ModelPipelineRun) IsCapacityPredictionRunCompleted() bool {
+	return this.GetCond(MPRCapacityPredictionCompleted).Status == v1.ConditionTrue
+}
+
+func (this *ModelPipelineRun) MarkCapacityPredictionRunFailed(err error) {
+	this.Status.TrainingStatus.RecordFailed()
+	this.Status.Stage = ModelPipelineStageCapacity
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:    MPRCapacityPredictionCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(catalog.Failed),
+		Message: err.Error(),
+	})
+}
+
+func (this *ModelPipelineRun) IsCapacityPredictionFailed() bool {
+	return this.GetCond(MPRCapacityPredictionCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRCapacityPredictionCompleted).Reason == string(catalog.Failed)
+}
+
 func (this *ModelPipelineRun) MarkCapacityApproved() {
-	this.Status.CapacityStatus.RecordCompleted()
+	this.Status.TrainingStatus.RecordCompleted()
+	this.Status.Stage = ModelPipelineStageCapacity
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRCapacityApproved,
+		Status: v1.ConditionTrue,
+	})
 }
-func (this *ModelPipelineRun) MarkReleaseModelDeployed() {
+
+func (this *ModelPipelineRun) IsCapacityApproved() bool {
+	return this.GetCond(MPRCapacityPredictionCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRCapacityPredictionCompleted).Reason == string(catalog.Failed)
+}
+
+func (this *ModelPipelineRun) MarkReleasePredictorReady() {
 	this.Status.ReleaseStatus.RecordRunning()
-	this.Status.Phase = PipelinePhase_ReleaseModelDeployed
+	this.Status.Stage = ModelPipelineStageRelease
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRReleasePredictorReady,
+		Status: v1.ConditionTrue,
+	})
 }
-func (this *ModelPipelineRun) MarkReleaseModelLive() {
+
+func (this *ModelPipelineRun) IsReleasePredictorReady() bool {
+	return this.GetCond(MPRReleasePredictorReady).Status == v1.ConditionTrue
+}
+
+func (this *ModelPipelineRun) MarkReleaseApproved() {
 	this.Status.ReleaseStatus.RecordCompleted()
-	this.Status.Phase = PipelinePhase_ReleaseModelLive
+	this.Status.Stage = ModelPipelineStageRelease
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRReleaseApproved,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (this *ModelPipelineRun) IsReleaseApproved() bool {
+	return this.GetCond(MPRReleaseApproved).Status == v1.ConditionTrue
 }

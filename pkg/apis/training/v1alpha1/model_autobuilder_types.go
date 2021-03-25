@@ -34,7 +34,6 @@ type ModelAutobuilderConditionType string
 
 const (
 	ModelAutobuilderReady                   ModelAutobuilderConditionType = "Ready"
-	ModelAutobuilderInDb                    ModelAutobuilderConditionType = "InDb"
 	ModelAutobuilderDataProductReady        ModelAutobuilderConditionType = "DataProductReady"
 	ModelAutobuilderDataProductVersionReady ModelAutobuilderConditionType = "DataProductVersionReady"
 	ModelAutobuilderDataSourceReady         ModelAutobuilderConditionType = "DataSourceReady"

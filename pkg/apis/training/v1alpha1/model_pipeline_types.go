@@ -71,7 +71,7 @@ type ModelPipelineSpec struct {
 	TrainingStage *TrainingStageSpec `json:"trainingStage,omitempty" protobuf:"bytes,6,opt,name=trainingStage"`
 	// Acceptance stage is used for further testing
 	// +kubebuilder:validation:Optional
-	AcceptanceStage *AcceptanceStageSpec `json:"acceptanceStage,omitempty" protobuf:"bytes,7,opt,name=acceptanceStage"`
+	UATStage *UATStageSpec `json:"uatStage,omitempty" protobuf:"bytes,7,opt,name=uatStage"`
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
 	CapacityStage *CapacityStageSpec `json:"capacityStage,omitempty" protobuf:"bytes,8,opt,name=capacityStage"`
@@ -145,8 +145,8 @@ type TrainingStageSpec struct {
 	Auto *bool `json:"auto,omitempty" protobuf:"bytes,5,opt,name=auto"`
 }
 
-//AcceptanceStageSpec is the desired step of the acceptance stage of the pipeline
-type AcceptanceStageSpec struct {
+//UATStageSpec is the specification of the user acceptance test.
+type UATStageSpec struct {
 	// The serving site for the testing
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`

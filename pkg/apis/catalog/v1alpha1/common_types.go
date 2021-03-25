@@ -1107,3 +1107,11 @@ const (
 	TriggerTypeConceptDrift    TriggerType = "on-concept-drift"
 	TriggerTypePrefDegragation TriggerType = "on-pref-degradation"
 )
+
+type ConditionReason string
+
+const (
+	Failed  ConditionReason = "Failed"
+	Success ConditionReason = "Success"
+	Running ConditionReason = "Running"
+)

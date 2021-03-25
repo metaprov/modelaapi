@@ -40,15 +40,15 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-func (m *AcceptanceStageSpec) Reset()      { *m = AcceptanceStageSpec{} }
-func (*AcceptanceStageSpec) ProtoMessage() {}
-func (*AcceptanceStageSpec) Descriptor() ([]byte, []int) {
+func (m *UATStageSpec) Reset()      { *m = UATStageSpec{} }
+func (*UATStageSpec) ProtoMessage() {}
+func (*UATStageSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_26c54310f0109c27, []int{0}
 }
-func (m *AcceptanceStageSpec) XXX_Unmarshal(b []byte) error {
+func (m *UATStageSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *AcceptanceStageSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *UATStageSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -56,13 +56,13 @@ func (m *AcceptanceStageSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte,
 	}
 	return b[:n], nil
 }
-func (m *AcceptanceStageSpec) XXX_Merge(src proto.Message) {
+func (m *UATStageSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AcceptanceStageSpec.Merge(m, src)
 }
-func (m *AcceptanceStageSpec) XXX_Size() int {
+func (m *UATStageSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *AcceptanceStageSpec) XXX_DiscardUnknown() {
+func (m *UATStageSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_AcceptanceStageSpec.DiscardUnknown(m)
 }
 
@@ -2225,7 +2225,7 @@ func (m *VideoPipelineSpec) XXX_DiscardUnknown() {
 var xxx_messageInfo_VideoPipelineSpec proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*AcceptanceStageSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.AcceptanceStageSpec")
+	proto.RegisterType((*UATStageSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.UATStageSpec")
 	proto.RegisterType((*AudioPipelineSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.AudioPipelineSpec")
 	proto.RegisterType((*BacktestSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.BacktestSpec")
 	proto.RegisterType((*CapacityStageSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec")
@@ -2750,7 +2750,7 @@ var fileDescriptor_26c54310f0109c27 = []byte{
 	0xeb, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0xaa, 0x7a, 0xaf, 0x80, 0xa2, 0x83, 0x00, 0x00,
 }
 
-func (m *AcceptanceStageSpec) Marshal() (dAtA []byte, err error) {
+func (m *UATStageSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2760,12 +2760,12 @@ func (m *AcceptanceStageSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *AcceptanceStageSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *UATStageSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *AcceptanceStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *UATStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -5001,7 +5001,7 @@ func (m *ModelPipelineRunStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	i--
 	dAtA[i] = 0x32
 	{
-		size, err := m.AcceptanceStatus.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.UATStatus.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -5118,9 +5118,9 @@ func (m *ModelPipelineSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x42
 	}
-	if m.AcceptanceStage != nil {
+	if m.UATStage != nil {
 		{
-			size, err := m.AcceptanceStage.MarshalToSizedBuffer(dAtA[:i])
+			size, err := m.UATStage.MarshalToSizedBuffer(dAtA[:i])
 			if err != nil {
 				return 0, err
 			}
@@ -8131,7 +8131,7 @@ func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-func (m *AcceptanceStageSpec) Size() (n int) {
+func (m *UATStageSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -9032,7 +9032,7 @@ func (m *ModelPipelineRunStatus) Size() (n int) {
 	n += 1 + l + sovGenerated(uint64(l))
 	l = m.TrainingStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.AcceptanceStatus.Size()
+	l = m.UATStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	l = m.CapacityStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
@@ -9085,8 +9085,8 @@ func (m *ModelPipelineSpec) Size() (n int) {
 		l = m.TrainingStage.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if m.AcceptanceStage != nil {
-		l = m.AcceptanceStage.Size()
+	if m.UATStage != nil {
+		l = m.UATStage.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
 	if m.CapacityStage != nil {
@@ -10251,11 +10251,11 @@ func sovGenerated(x uint64) (n int) {
 func sozGenerated(x uint64) (n int) {
 	return sovGenerated(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (this *AcceptanceStageSpec) String() string {
+func (this *UATStageSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&AcceptanceStageSpec{`,
+	s := strings.Join([]string{`&UATStageSpec{`,
 		`ServingSiteName:` + valueToStringGenerated(this.ServingSiteName) + `,`,
 		`PredictionPipelineName:` + valueToStringGenerated(this.PredictionPipelineName) + `,`,
 		`PredictorName:` + valueToStringGenerated(this.PredictorName) + `,`,
@@ -10823,7 +10823,7 @@ func (this *ModelPipelineRunStatus) String() string {
 		`StudyName:` + fmt.Sprintf("%v", this.StudyName) + `,`,
 		`DataStatus:` + strings.Replace(strings.Replace(this.DataStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`TrainingStatus:` + strings.Replace(strings.Replace(this.TrainingStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
-		`AcceptanceStatus:` + strings.Replace(strings.Replace(this.AcceptanceStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
+		`UATStatus:` + strings.Replace(strings.Replace(this.UATStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`CapacityStatus:` + strings.Replace(strings.Replace(this.CapacityStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`ReleaseStatus:` + strings.Replace(strings.Replace(this.ReleaseStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`StartTime:` + strings.Replace(fmt.Sprintf("%v", this.StartTime), "Time", "v1.Time", 1) + `,`,
@@ -10845,7 +10845,7 @@ func (this *ModelPipelineSpec) String() string {
 		`Description:` + valueToStringGenerated(this.Description) + `,`,
 		`DataStage:` + strings.Replace(this.DataStage.String(), "DataStageSpec", "DataStageSpec", 1) + `,`,
 		`TrainingStage:` + strings.Replace(this.TrainingStage.String(), "TrainingStageSpec", "TrainingStageSpec", 1) + `,`,
-		`AcceptanceStage:` + strings.Replace(this.AcceptanceStage.String(), "AcceptanceStageSpec", "AcceptanceStageSpec", 1) + `,`,
+		`UATStage:` + strings.Replace(this.UATStage.String(), "UATStageSpec", "UATStageSpec", 1) + `,`,
 		`CapacityStage:` + strings.Replace(this.CapacityStage.String(), "CapacityStageSpec", "CapacityStageSpec", 1) + `,`,
 		`ReleaseStage:` + strings.Replace(this.ReleaseStage.String(), "ReleaseStageSpec", "ReleaseStageSpec", 1) + `,`,
 		`Location:` + strings.Replace(fmt.Sprintf("%v", this.Location), "DataLocation", "v1alpha1.DataLocation", 1) + `,`,
@@ -11515,7 +11515,7 @@ func valueToStringGenerated(v interface{}) string {
 	pv := reflect.Indirect(rv).Interface()
 	return fmt.Sprintf("*%v", pv)
 }
-func (m *AcceptanceStageSpec) Unmarshal(dAtA []byte) error {
+func (m *UATStageSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -11538,10 +11538,10 @@ func (m *AcceptanceStageSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: AcceptanceStageSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: UATStageSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AcceptanceStageSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: UATStageSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -18651,7 +18651,7 @@ func (m *ModelPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AcceptanceStatus", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field UATStatus", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -18678,7 +18678,7 @@ func (m *ModelPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.AcceptanceStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.UATStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -19144,7 +19144,7 @@ func (m *ModelPipelineSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AcceptanceStage", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field UATStage", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -19171,10 +19171,10 @@ func (m *ModelPipelineSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.AcceptanceStage == nil {
-				m.AcceptanceStage = &AcceptanceStageSpec{}
+			if m.UATStage == nil {
+				m.UATStage = &UATStageSpec{}
 			}
-			if err := m.AcceptanceStage.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.UATStage.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

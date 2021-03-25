@@ -8,31 +8,22 @@ import (
 type PipelinePhase string
 
 const (
-	PipelinePhase_PreprocessingDataRunning        PipelinePhase = "PreprocessingDataRunning"
-	PipelinePhase_PreprocessingCompleted          PipelinePhase = "PreprocessingDataCompleted"
-	PipelinePhase_PreprocessingFailed             PipelinePhase = "PreprocessingDataFailed"
-	PipelinePhase_NotebookRunning                 PipelinePhase = "NotebookRunning"
-	PipelinePhase_NotebookReady                   PipelinePhase = "NotebookCompleted"
-	PipelinePhase_NotebookFailed                  PipelinePhase = "NotebookFailed"
-	PipelinePhase_StudyRunning                    PipelinePhase = "StudyRunning"
-	PipelinePhase_StudyFailed                     PipelinePhase = "StudyFailed"
-	PipelinePhase_StudyCompleted                  PipelinePhase = "StudyCompleted"
-	PipelinePhase_ModelPublished                  PipelinePhase = "ModelPublished"
-	PipelinePhase_TrainingApproved                PipelinePhase = "TrainingApproved"
-	PipelinePhase_AcceptancePredictorRunning      PipelinePhase = "AcceptancePredictorRunning"
-	PipelinePhase_AcceptancePredictorCompleted    PipelinePhase = "AcceptancePredictorCompleted"
-	PipelinePhase_AcceptancePrecitionRunRunning   PipelinePhase = "AcceptancePrecitionRunRunning"
-	PipelinePhase_AcceptancePrecitionRunCompleted PipelinePhase = "AcceptancePrecitionRunCompleted"
-	PipelinePhase_AcceptancePrecitionRunFailed    PipelinePhase = "AcceptancePrecitionRunFailed"
-	PipelinePhase_AcceptanceApproved              PipelinePhase = "AcceptanceApproved"
-	PipelinePhase_CapacityPredictorRunning        PipelinePhase = "CapacityPredictorRunnning"
-	PipelinePhase_CapacityPredictorReady          PipelinePhase = "CapacityPredictorReady"
-	PipelinePhase_CapacityPrecitionRunning        PipelinePhase = "CapacityPredictionRunRunning"
-	PipelinePhase_CapacityPrecitionRunCompleted   PipelinePhase = "CapacityPrecitionRunCompleted"
-	PipelinePhase_CapacityPrecitionRunFailed      PipelinePhase = "CapacityPrecitionRunFailed"
-	PipelinePhase_CapcityApproved                 PipelinePhase = "CapcityApproved"
-	PipelinePhase_ReleaseModelDeployed            PipelinePhase = "ReleaseModelDeployed"
-	PipelinePhase_ReleaseModelLive                PipelinePhase = "ReleaseModelLive"
+	PipelinePhaseRunning            PipelinePhase = "Running"
+	PipelinePhaseWaitingForApproval PipelinePhase = "WaitingForApproval"
+	PipelinePhaseFailed             PipelinePhase = "Failed"
+	PipelinePhaseAborted            PipelinePhase = "Aborted"
+	PipelinePhaseCompleted          PipelinePhase = "Completed"
+)
+
+type ModelPipelineStage string
+
+const (
+	ModelPipelineStageInitial  ModelPipelineStage = "initial"
+	ModelPipelineStageData     ModelPipelineStage = "data"
+	ModelPipelineStageTraining ModelPipelineStage = "training"
+	ModelPipelineStageUAT      ModelPipelineStage = "uat"
+	ModelPipelineStageCapacity ModelPipelineStage = "capacity"
+	ModelPipelineStageRelease  ModelPipelineStage = "release"
 )
 
 // +kubebuilder:validation:Enum="data";"train";"test";"prod"
@@ -45,37 +36,25 @@ const (
 	ProdEnvName  EnvName = "prod"
 )
 
-// Condition on the dataset
+// Pipeline run condition
 type PipelineRunConditionType string
 
 /// ModelPipelineRun Condition
 const (
-	PipelineRunAvailable PipelineRunConditionType = "Available"
-	PipelineRunInDb      PipelineRunConditionType = "InDb"
-
-	// Paths stage
-	PipelineRunDataReady PipelineRunConditionType = "DataReady"
-
-	// TrainingSpec stage
-	PipelineRunTrainingNotebookReady PipelineRunConditionType = "TrainingNotebookReady"
-	PipelineRunTrainingStudyReady    PipelineRunConditionType = "TrainingStudyReady"
-	PipelineRunTrainingApproved      PipelineRunConditionType = "TrainingApproved"
-
-	// Acceptance stage
-	PipelineRunAcceptancePredictorReady  PipelineRunConditionType = "AcceptancePredictorReady"
-	PipelineRunAcceptancePredictionReady PipelineRunConditionType = "AcceptancePredictionReady"
-	PipelineRunAcceptanceApproved        PipelineRunConditionType = "AcceptanceApproved"
-
-	//Capacity
-	PipelineRunCapacityPredictorReady  PipelineRunConditionType = "CapacityPredictorReady"
-	PipelineRunCapacityPredictionReady PipelineRunConditionType = "CapacityPredictionReady"
-	PipelineRunCapacityApproved        PipelineRunConditionType = "CapacityApproved"
-
-	// Deployed
-	PipelineModelDeployed PipelineRunConditionType = "ModelDeployed"
-
-	PipelineRunReady  PipelineRunConditionType = "Ready"
-	PipelineRunFailed PipelineRunConditionType = "IsFailed"
+	MPRArchived                    PipelineRunConditionType = "Archived"
+	MPRDataPipelineCompleted       PipelineRunConditionType = "DataPipelineCompleted"
+	MPRTrainingNotebookCompleted   PipelineRunConditionType = "TrainingNotebookCompleted"
+	MPRTrainingStudyCompleted      PipelineRunConditionType = "TrainingStudyCompleted"
+	MPRTrainingModelPublished      PipelineRunConditionType = "TrainingStudyCompleted"
+	MPRTrainingApproved            PipelineRunConditionType = "TrainingApproved"
+	MPRUatPredictorReady           PipelineRunConditionType = "UATPredictorReady"
+	MPRUatPredictionCompleted      PipelineRunConditionType = "UATPredictionCompleted"
+	MPRUatApproved                 PipelineRunConditionType = "UATApproved"
+	MPRCapacityPredictorReady      PipelineRunConditionType = "CapacityPredictorReady"
+	MPRCapacityPredictionCompleted PipelineRunConditionType = "CapacityPredictionCompleted"
+	MPRCapacityApproved            PipelineRunConditionType = "CapacityApproved"
+	MPRReleasePredictorReady       PipelineRunConditionType = "ReleasePredictorReady"
+	MPRReleaseApproved             PipelineRunConditionType = "ReleaseApproved"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
@@ -148,8 +127,8 @@ type StageStatusPhase string
 
 const (
 	StageStatusPhaseRunning   StageStatusPhase = "Running"
-	StageStatusPhaseCompleted StageStatusPhase = "IsCompleted"
-	StageStatusPhaseFailed    StageStatusPhase = "IsFailed"
+	StageStatusPhaseCompleted StageStatusPhase = "Completed"
+	StageStatusPhaseFailed    StageStatusPhase = "Failed"
 )
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
@@ -182,9 +161,10 @@ type ModelPipelineRunStageStatus struct {
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
 type ModelPipelineRunStatus struct {
-	// +kubebuilder:validation:Optional
-	StudyName string `json:"studyName" protobuf:"bytes,1,opt,name=studyName"`
-	// +kubebuilder:validation:Optional
+	// The current stage of the pipeline
+	Stage ModelPipelineStage `json:"stage,omitempty" protobuf:"bytes,1,opt,name=stage"`
+	// The current name of the study
+	StudyName string `json:"studyName,omitempty" protobuf:"bytes,2,opt,name=studyName"`
 	// data is the status for the data stage.
 	DataStatus ModelPipelineRunStageStatus `json:"dataStage,omitempty" protobuf:"bytes,3,opt,name=dataStage"`
 	// +kubebuilder:validation:Optional
@@ -192,7 +172,7 @@ type ModelPipelineRunStatus struct {
 	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStage,omitempty" protobuf:"bytes,4,opt,name=trainingStage"`
 	// Staging is status for each qa stage.
 	// +kubebuilder:validation:Optional
-	AcceptanceStatus ModelPipelineRunStageStatus `json:"acceptanceStage,omitempty" protobuf:"bytes,5,rep,name=acceptanceStage"`
+	UATStatus ModelPipelineRunStageStatus `json:"uatStage,omitempty" protobuf:"bytes,5,rep,name=uatStage"`
 	// ReleaseStage is the status for the production stage.
 	// +kubebuilder:validation:Optional
 	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStage,omitempty" protobuf:"bytes,6,rep,name=capacityStage"`
