@@ -91,6 +91,9 @@ type ModelPipelineSpec struct {
 	// ApproverAccountName is the name of the approver
 	// +kubebuilder:validation:Optional
 	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,13,opt,name=approverAccountName"`
+	// NotifierName is the name of the notifier to use in case of pipeline failure
+	// +kubebuilder:validation:Optional
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,14,opt,name=notifierName"`
 }
 
 type PipelineTrigger struct {
@@ -151,20 +154,15 @@ type UATStageSpec struct {
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 
-	// PredictionPipelineName is the name
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	PredictionPipelineName *string `json:"predictionPipelineName,omitempty" protobuf:"bytes,2,opt,name=predictionPipelineName"`
-
 	// PredictorName is the the name of the test predictor
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,3,opt,name=predictorName"`
 
-	// Min score
+	// Tests is the specification of tests to run
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
+	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
 
 	// Auto defines if we move to the next stage without human intervation
 	// +kubebuilder:default:=true
@@ -183,15 +181,10 @@ type CapacityStageSpec struct {
 	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
 
-	// PredictionPipelineName is the name of the prediction pipeline used to score the predictor
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	PredictionPipelineName *string `json:"predictionPipelineName,omitempty" protobuf:"bytes,3,opt,name=predictionPipelineName"`
-
-	// Min score
+	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
+	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
 
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
@@ -224,4 +217,20 @@ type ReleaseStageSpec struct {
 type ModelPipelineStatus struct {
 	//+optional
 	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+}
+
+type ModelTestSpec struct {
+	// Name of the dataset used for testing
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
+	// Minimum scores required to pass the tests
+	MinScores []TestScore `json:"minScores,omitempty" protobuf:"bytes,2,opt,name=minScores"`
+	// Max time in seconds
+	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,3,opt,name=maxTime"`
+}
+
+type TestScore struct {
+	// Metric is the name of the metric
+	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,1,opt,name=metric"`
+	// The score needed.
+	Score *float64 `json:"score,omitempty" protobuf:"bytes,2,opt,name=score"`
 }

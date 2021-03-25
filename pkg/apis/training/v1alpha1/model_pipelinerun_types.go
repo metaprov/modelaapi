@@ -131,6 +131,19 @@ const (
 	StageStatusPhaseFailed    StageStatusPhase = "Failed"
 )
 
+type ModelTestResult struct {
+	// The name of the dataset
+	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
+	// startTime is the test start time
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
+	// endTime is the test end time
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
+	// The results of running the tests
+	Results []TestScore `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
+	// Error is a name of any error that occurred during the test.
+	Error *string `json:"error,omitempty" protobuf:"bytes,5,opt,name=error"`
+}
+
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
 type ModelPipelineRunStageStatus struct {
 	// Phase is the phase of the stage
@@ -145,18 +158,15 @@ type ModelPipelineRunStageStatus struct {
 	// ApprovedAt indicates the time of approval
 	// +kubebuilder:validation:Optional
 	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,4,opt,name=approvedAt"`
-	// Score is the score of
-	// +kubebuilder:validation:Optional
-	Score float64 `json:"score,omitempty" protobuf:"bytes,5,opt,name=score"`
 	// Start time is the start time of the stage
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,7,opt,name=startTime"`
 	// End time is the end time of the stage.
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
-	// Error record the error if occurred
+	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
-	Error *string `json:"error,omitempty" protobuf:"bytes,9,opt,name=error"`
+	Results []ModelTestResult `json:"results,omitempty" protobuf:"bytes,9,opt,name=results"`
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
