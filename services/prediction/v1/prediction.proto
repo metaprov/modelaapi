@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/predictionpipeline/v1";
+option go_package = "github.com/metaprov/modeldapi/services/prediction/v1";
 package github.com.metaprov.modeldapi.services.prediction.v1;
 
 
@@ -109,8 +109,5 @@ service PredictionService {
     rpc RunPrediction(RunPredictionRequest) returns (RunPredictionResponse) {
         option (google.api.http).post = "/api/v1/predictions/{namespace}/{name}:run";
     }
-
-    
-
 
 }
