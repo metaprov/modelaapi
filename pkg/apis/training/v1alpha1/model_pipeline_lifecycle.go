@@ -109,28 +109,27 @@ func ParsePipelineYaml(content []byte) (*ModelPipeline, error) {
 }
 
 func (pl *ModelPipeline) HasTrainingStage() bool {
-	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.StudyName != nil && *pl.Spec.TrainingStage.StudyName != ""
-
+	return pl.Spec.Training != nil && pl.Spec.Training.StudyName != nil
 }
 
 func (pl *ModelPipeline) HasProdStage() bool {
-	return pl.Spec.ReleaseStage != nil && pl.Spec.ReleaseStage.PredictorName != nil && *pl.Spec.ReleaseStage.PredictorName != ""
+	return pl.Spec.Release != nil && pl.Spec.Release.PredictorName != nil
 }
 
 func (pl *ModelPipeline) HasUatStage() bool {
-	return pl.Spec.UATStage != nil && *pl.Spec.UATStage.ServingSiteName != ""
+	return pl.Spec.Capacity != nil && len(pl.Spec.Capacity.Tests) > 0
 }
 
 func (pl *ModelPipeline) HasTrainingNotebook() bool {
-	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.NotebookName != nil && *pl.Spec.TrainingStage.NotebookName != ""
+	return pl.Spec.Training != nil && pl.Spec.Training.NotebookName != nil && *pl.Spec.Training.NotebookName != ""
 }
 
 func (pl *ModelPipeline) HasTrainingStudy() bool {
-	return pl.Spec.TrainingStage != nil && pl.Spec.TrainingStage.StudyName != nil && *pl.Spec.TrainingStage.StudyName != ""
+	return pl.Spec.Training != nil && pl.Spec.Training.StudyName != nil && *pl.Spec.Training.StudyName != ""
 }
 
 func (pl *ModelPipeline) HasCapacityStage() bool {
-	return pl.Spec.CapacityStage != nil && pl.Spec.CapacityStage.PredictorName != nil && *pl.Spec.CapacityStage.PredictorName != ""
+	return pl.Spec.Capacity != nil && len(pl.Spec.Capacity.Tests) > 0
 }
 
 func (pl *ModelPipeline) MarkReady() {
