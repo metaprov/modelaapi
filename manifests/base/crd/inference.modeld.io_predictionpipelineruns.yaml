@@ -13,8 +13,8 @@ spec:
     categories:
     - inference
     - modeld
-    kind: PredictionPipelineRun
-    listKind: PredictionPipelineRunList
+    kind: CronPrediction
+    listKind: CronPredictionList
     plural: predictionpipelineruns
     singular: predictionpipelinerun
   scope: Namespaced
@@ -47,8 +47,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PredictionPipelineRun represents a single run of the Prediction
-          Pipeline
+        description: CronPrediction represents a single run of the Prediction Pipeline
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -63,125 +62,180 @@ spec:
           metadata:
             type: object
           spec:
-            description: PredictionPipelineRunSpec represent the desired state of
-              PredictionPipelineRun
+            description: CronPredictionSpec represent the desired state of CronPrediction
             properties:
-              datasetName:
-                description: DatasetName is where we are using a dataset name. This
-                  can be dataset name
+              schedule:
+                description: Schedule is the cron schedule
                 type: string
-              input:
-                description: Input is of the input if using direct input file
+              template:
+                description: Template refer to the prediction template
                 properties:
-                  bucketName:
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
+                  spec:
+                    description: PredictionSpec represent the desired state of Prediction
+                    properties:
+                      datasetName:
+                        description: DatasetName is where we are using a dataset name.
+                          This can be dataset name
+                        type: string
+                      input:
+                        description: Input is the location of the input file if not
+                          using a dataset
+                        properties:
+                          bucketName:
+                            type: string
+                          path:
+                            description: Path to the full data file (e.g. csv file).
+                            type: string
+                        required:
+                        - bucketName
+                        - path
+                        type: object
+                      labeled:
+                        description: Labeled , true if this is labeled prediction
+                          request. Used usally for unit testing
+                        type: boolean
+                      objective:
+                        description: The objective metric used to score
+                        enum:
+                        - accuracy
+                        - average-precision
+                        - balanced-accuracy
+                        - brier-score-loss
+                        - f1
+                        - f1-macro
+                        - f1-micro
+                        - f1-weighted
+                        - log-loss
+                        - precision
+                        - precision-micro
+                        - precision-macro
+                        - precision-weighted
+                        - recall
+                        - recall-macro
+                        - recall-micro
+                        - recall-weighted
+                        - auc
+                        - fp
+                        - fn
+                        - tn
+                        - tp
+                        - explained_variance
+                        - mae
+                        - mse
+                        - msle
+                        - median-absolute-error
+                        - r2
+                        - adjusted-mutual-info-score
+                        - adjusted-rand-score
+                        - completeness-score
+                        - fowlkes-mallows-score
+                        - homogeneity-score
+                        - mutual-info-score
+                        - normalized-mutual-info-score
+                        - v-measure-score
+                        - rmse
+                        - unknown
+                        - mape
+                        - smape
+                        - mdape
+                        type: string
+                      output:
+                        description: Output is the location of the output file.
+                        properties:
+                          bucketName:
+                            type: string
+                          path:
+                            description: Path to the full data file (e.g. csv file).
+                            type: string
+                        required:
+                        - bucketName
+                        - path
+                        type: object
+                      owner:
+                        description: The owner account name
+                        type: string
+                      predictorName:
+                        description: PredictorName refer to the predictor which would
+                          predict the dataset of this prediction.
+                        maxLength: 63
+                        minLength: 1
+                        type: string
+                      schedule:
+                        description: Schedule for running the pipeline
+                        properties:
+                          cron:
+                            description: Cron string of the schedule.
+                            type: string
+                          endDay:
+                            description: EndDay is the end day of the schedule
+                            format: date-time
+                            type: string
+                          endTime:
+                            description: EndTime is the end time of the schedule
+                            properties:
+                              nanos:
+                                description: Non-negative fractions of a second at
+                                  nanosecond resolution. Negative second values with
+                                  fractions must still have non-negative nanos values
+                                  that count forward in time. Must be from 0 to 999,999,999
+                                  inclusive. This field may be limited in precision
+                                  depending on context.
+                                format: int32
+                                type: integer
+                              seconds:
+                                description: Represents seconds of UTC time since
+                                  Unix epoch 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z
+                                  to 9999-12-31T23:59:59Z inclusive.
+                                format: int64
+                                type: integer
+                            required:
+                            - nanos
+                            - seconds
+                            type: object
+                          startDay:
+                            description: StartDay is the start day of the schedule
+                            format: date-time
+                            type: string
+                          startTime:
+                            description: The start time of the schedule
+                            format: date-time
+                            type: string
+                          type:
+                            description: The type of schedule events.
+                            enum:
+                            - now
+                            - once
+                            - hourly
+                            - daily
+                            - weekly
+                            - monthly
+                            - yearly
+                            - cron
+                            type: string
+                        type: object
+                      workloadClassName:
+                        default: default-prediction-workload-class
+                        description: A reference to the workload class that is used
+                          for training
+                        type: string
+                    required:
+                    - labeled
+                    - objective
+                    - predictorName
+                    type: object
                 required:
-                - bucketName
-                - path
+                - spec
                 type: object
-              labeled:
-                description: Labeled , true if this is labeled prediction request.
-                  Used usually for unit testing
-                type: boolean
-              objective:
-                description: Objective is the objective metric used to score
-                enum:
-                - accuracy
-                - average-precision
-                - balanced-accuracy
-                - brier-score-loss
-                - f1
-                - f1-macro
-                - f1-micro
-                - f1-weighted
-                - log-loss
-                - precision
-                - precision-micro
-                - precision-macro
-                - precision-weighted
-                - recall
-                - recall-macro
-                - recall-micro
-                - recall-weighted
-                - auc
-                - fp
-                - fn
-                - tn
-                - tp
-                - explained_variance
-                - mae
-                - mse
-                - msle
-                - median-absolute-error
-                - r2
-                - adjusted-mutual-info-score
-                - adjusted-rand-score
-                - completeness-score
-                - fowlkes-mallows-score
-                - homogeneity-score
-                - mutual-info-score
-                - normalized-mutual-info-score
-                - v-measure-score
-                - rmse
-                - unknown
-                - mape
-                - smape
-                - mdape
-                type: string
-              output:
-                description: Output is the key in the bucket for storing all the prediction
-                  output
-                properties:
-                  bucketName:
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
-                required:
-                - bucketName
-                - path
-                type: object
-              owner:
-                default: no-one
-                description: Owner of the run
-                type: string
-              predictionName:
-                description: Prediction name refer to the parent prediction that created
-                  this run.
-                maxLength: 63
-                minLength: 1
-                type: string
-              predictorName:
-                description: PredictorName refer to the predictor which would predict
-                  the dataset of this prediction.
-                maxLength: 63
-                minLength: 1
-                type: string
-              workloadClassName:
-                default: default-workload-class
-                description: WorkloadClassName A reference to the workload class this
-                  is used to run this notebook
-                type: string
             required:
-            - labeled
-            - objective
-            - predictionName
-            - predictorName
+            - schedule
+            - template
             type: object
           status:
-            description: PredictionPipelineRunStatus is the observed state of a PredictionTemplate
+            description: CronPredictionStatus is the observed state of a PredictionTemplate
             properties:
-              completionTime:
-                description: CompletionTime is the time that this prediction job finished
-                format: date-time
-                type: string
               conditions:
                 items:
-                  description: PredictionPipelineCondition describes the state of
-                    PredictionTemplate
+                  description: PredictionCondition describes the state of PredictionTemplate
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
@@ -206,16 +260,6 @@ spec:
                   - type
                   type: object
                 type: array
-              phase:
-                description: The phase of the prediction
-                type: string
-              score:
-                description: PredictionPipelineRun score based on the objective.
-                type: number
-              startTime:
-                description: StartTime is the times that this prediction job started
-                format: date-time
-                type: string
             type: object
         required:
         - spec

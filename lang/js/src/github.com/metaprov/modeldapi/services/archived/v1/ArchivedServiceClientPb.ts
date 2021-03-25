@@ -596,44 +596,44 @@ export class ArchivedServiceClient {
     this.methodInfoListStudies);
   }
 
-  methodInfoListPredictionPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunRequest) => {
+  methodInfoListPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionResponse.deserializeBinary
   );
 
-  listPredictionPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunResponse>;
+  listPrediction(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionResponse>;
 
-  listPredictionPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunRequest,
+  listPrediction(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionResponse>;
 
-  listPredictionPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunRequest,
+  listPrediction(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionPipelineRunResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictionPipelineRun',
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPrediction',
         request,
         metadata || {},
-        this.methodInfoListPredictionPipelineRun,
+        this.methodInfoListPrediction,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictionPipelineRun',
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPrediction',
     request,
     metadata || {},
-    this.methodInfoListPredictionPipelineRun);
+    this.methodInfoListPrediction);
   }
 
 }

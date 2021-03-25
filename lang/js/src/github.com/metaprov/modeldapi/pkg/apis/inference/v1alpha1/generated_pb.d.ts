@@ -82,6 +82,144 @@ export namespace ChannelStatus {
   }
 }
 
+export class CronPrediction extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronPrediction;
+  hasMetadata(): boolean;
+  clearMetadata(): CronPrediction;
+
+  getSpec(): CronPredictionSpec | undefined;
+  setSpec(value?: CronPredictionSpec): CronPrediction;
+  hasSpec(): boolean;
+  clearSpec(): CronPrediction;
+
+  getStatus(): CronPredictionStatus | undefined;
+  setStatus(value?: CronPredictionStatus): CronPrediction;
+  hasStatus(): boolean;
+  clearStatus(): CronPrediction;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronPrediction.AsObject;
+  static toObject(includeInstance: boolean, msg: CronPrediction): CronPrediction.AsObject;
+  static serializeBinaryToWriter(message: CronPrediction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronPrediction;
+  static deserializeBinaryFromReader(message: CronPrediction, reader: jspb.BinaryReader): CronPrediction;
+}
+
+export namespace CronPrediction {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: CronPredictionSpec.AsObject,
+    status?: CronPredictionStatus.AsObject,
+  }
+}
+
+export class CronPredictionCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): CronPredictionCondition;
+
+  getStatus(): string;
+  setStatus(value: string): CronPredictionCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): CronPredictionCondition;
+
+  getReason(): string;
+  setReason(value: string): CronPredictionCondition;
+
+  getMessage(): string;
+  setMessage(value: string): CronPredictionCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronPredictionCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: CronPredictionCondition): CronPredictionCondition.AsObject;
+  static serializeBinaryToWriter(message: CronPredictionCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronPredictionCondition;
+  static deserializeBinaryFromReader(message: CronPredictionCondition, reader: jspb.BinaryReader): CronPredictionCondition;
+}
+
+export namespace CronPredictionCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class CronPredictionList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): CronPredictionList;
+  hasMetadata(): boolean;
+  clearMetadata(): CronPredictionList;
+
+  getItemsList(): Array<CronPrediction>;
+  setItemsList(value: Array<CronPrediction>): CronPredictionList;
+  clearItemsList(): CronPredictionList;
+  addItems(value?: CronPrediction, index?: number): CronPrediction;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronPredictionList.AsObject;
+  static toObject(includeInstance: boolean, msg: CronPredictionList): CronPredictionList.AsObject;
+  static serializeBinaryToWriter(message: CronPredictionList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronPredictionList;
+  static deserializeBinaryFromReader(message: CronPredictionList, reader: jspb.BinaryReader): CronPredictionList;
+}
+
+export namespace CronPredictionList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<CronPrediction.AsObject>,
+  }
+}
+
+export class CronPredictionSpec extends jspb.Message {
+  getSchedule(): string;
+  setSchedule(value: string): CronPredictionSpec;
+
+  getTemplate(): PredictionTemplate | undefined;
+  setTemplate(value?: PredictionTemplate): CronPredictionSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): CronPredictionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronPredictionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CronPredictionSpec): CronPredictionSpec.AsObject;
+  static serializeBinaryToWriter(message: CronPredictionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronPredictionSpec;
+  static deserializeBinaryFromReader(message: CronPredictionSpec, reader: jspb.BinaryReader): CronPredictionSpec;
+}
+
+export namespace CronPredictionSpec {
+  export type AsObject = {
+    schedule: string,
+    template?: PredictionTemplate.AsObject,
+  }
+}
+
+export class CronPredictionStatus extends jspb.Message {
+  getConditionsList(): Array<CronPredictionCondition>;
+  setConditionsList(value: Array<CronPredictionCondition>): CronPredictionStatus;
+  clearConditionsList(): CronPredictionStatus;
+  addConditions(value?: CronPredictionCondition, index?: number): CronPredictionCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronPredictionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: CronPredictionStatus): CronPredictionStatus.AsObject;
+  static serializeBinaryToWriter(message: CronPredictionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronPredictionStatus;
+  static deserializeBinaryFromReader(message: CronPredictionStatus, reader: jspb.BinaryReader): CronPredictionStatus;
+}
+
+export namespace CronPredictionStatus {
+  export type AsObject = {
+    conditionsList: Array<CronPredictionCondition.AsObject>,
+  }
+}
+
 export class Curtain extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Curtain;
@@ -406,6 +544,38 @@ export namespace OnlineFeaturestoreSpec {
   }
 }
 
+export class Prediction extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Prediction;
+  hasMetadata(): boolean;
+  clearMetadata(): Prediction;
+
+  getSpec(): PredictionSpec | undefined;
+  setSpec(value?: PredictionSpec): Prediction;
+  hasSpec(): boolean;
+  clearSpec(): Prediction;
+
+  getStatus(): PredictionStatus | undefined;
+  setStatus(value?: PredictionStatus): Prediction;
+  hasStatus(): boolean;
+  clearStatus(): Prediction;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Prediction.AsObject;
+  static toObject(includeInstance: boolean, msg: Prediction): Prediction.AsObject;
+  static serializeBinaryToWriter(message: Prediction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Prediction;
+  static deserializeBinaryFromReader(message: Prediction, reader: jspb.BinaryReader): Prediction;
+}
+
+export namespace Prediction {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: PredictionSpec.AsObject,
+    status?: PredictionStatus.AsObject,
+  }
+}
+
 export class PredictionCacheSpec extends jspb.Message {
   getActive(): boolean;
   setActive(value: boolean): PredictionCacheSpec;
@@ -466,65 +636,33 @@ export namespace PredictionChannel {
   }
 }
 
-export class PredictionPipeline extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PredictionPipeline;
-  hasMetadata(): boolean;
-  clearMetadata(): PredictionPipeline;
-
-  getSpec(): PredictionPipelineSpec | undefined;
-  setSpec(value?: PredictionPipelineSpec): PredictionPipeline;
-  hasSpec(): boolean;
-  clearSpec(): PredictionPipeline;
-
-  getStatus(): PredictionPipelineStatus | undefined;
-  setStatus(value?: PredictionPipelineStatus): PredictionPipeline;
-  hasStatus(): boolean;
-  clearStatus(): PredictionPipeline;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipeline.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipeline): PredictionPipeline.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipeline, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipeline;
-  static deserializeBinaryFromReader(message: PredictionPipeline, reader: jspb.BinaryReader): PredictionPipeline;
-}
-
-export namespace PredictionPipeline {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: PredictionPipelineSpec.AsObject,
-    status?: PredictionPipelineStatus.AsObject,
-  }
-}
-
-export class PredictionPipelineCondition extends jspb.Message {
+export class PredictionCondition extends jspb.Message {
   getType(): string;
-  setType(value: string): PredictionPipelineCondition;
+  setType(value: string): PredictionCondition;
 
   getStatus(): string;
-  setStatus(value: string): PredictionPipelineCondition;
+  setStatus(value: string): PredictionCondition;
 
   getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionPipelineCondition;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionCondition;
   hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): PredictionPipelineCondition;
+  clearLasttransitiontime(): PredictionCondition;
 
   getReason(): string;
-  setReason(value: string): PredictionPipelineCondition;
+  setReason(value: string): PredictionCondition;
 
   getMessage(): string;
-  setMessage(value: string): PredictionPipelineCondition;
+  setMessage(value: string): PredictionCondition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineCondition): PredictionPipelineCondition.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineCondition;
-  static deserializeBinaryFromReader(message: PredictionPipelineCondition, reader: jspb.BinaryReader): PredictionPipelineCondition;
+  toObject(includeInstance?: boolean): PredictionCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionCondition): PredictionCondition.AsObject;
+  static serializeBinaryToWriter(message: PredictionCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionCondition;
+  static deserializeBinaryFromReader(message: PredictionCondition, reader: jspb.BinaryReader): PredictionCondition;
 }
 
-export namespace PredictionPipelineCondition {
+export namespace PredictionCondition {
   export type AsObject = {
     type: string,
     status: string,
@@ -534,263 +672,75 @@ export namespace PredictionPipelineCondition {
   }
 }
 
-export class PredictionPipelineList extends jspb.Message {
+export class PredictionList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictionPipelineList;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictionList;
   hasMetadata(): boolean;
-  clearMetadata(): PredictionPipelineList;
+  clearMetadata(): PredictionList;
 
-  getItemsList(): Array<PredictionPipeline>;
-  setItemsList(value: Array<PredictionPipeline>): PredictionPipelineList;
-  clearItemsList(): PredictionPipelineList;
-  addItems(value?: PredictionPipeline, index?: number): PredictionPipeline;
+  getItemsList(): Array<Prediction>;
+  setItemsList(value: Array<Prediction>): PredictionList;
+  clearItemsList(): PredictionList;
+  addItems(value?: Prediction, index?: number): Prediction;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineList.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineList): PredictionPipelineList.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineList;
-  static deserializeBinaryFromReader(message: PredictionPipelineList, reader: jspb.BinaryReader): PredictionPipelineList;
+  toObject(includeInstance?: boolean): PredictionList.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionList): PredictionList.AsObject;
+  static serializeBinaryToWriter(message: PredictionList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionList;
+  static deserializeBinaryFromReader(message: PredictionList, reader: jspb.BinaryReader): PredictionList;
 }
 
-export namespace PredictionPipelineList {
+export namespace PredictionList {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<PredictionPipeline.AsObject>,
+    itemsList: Array<Prediction.AsObject>,
   }
 }
 
-export class PredictionPipelineRun extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PredictionPipelineRun;
-  hasMetadata(): boolean;
-  clearMetadata(): PredictionPipelineRun;
-
-  getSpec(): PredictionPipelineRunSpec | undefined;
-  setSpec(value?: PredictionPipelineRunSpec): PredictionPipelineRun;
-  hasSpec(): boolean;
-  clearSpec(): PredictionPipelineRun;
-
-  getStatus(): PredictionPipelineRunStatus | undefined;
-  setStatus(value?: PredictionPipelineRunStatus): PredictionPipelineRun;
-  hasStatus(): boolean;
-  clearStatus(): PredictionPipelineRun;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineRun.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineRun): PredictionPipelineRun.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineRun, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineRun;
-  static deserializeBinaryFromReader(message: PredictionPipelineRun, reader: jspb.BinaryReader): PredictionPipelineRun;
-}
-
-export namespace PredictionPipelineRun {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: PredictionPipelineRunSpec.AsObject,
-    status?: PredictionPipelineRunStatus.AsObject,
-  }
-}
-
-export class PredictionPipelineRunCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): PredictionPipelineRunCondition;
-
-  getStatus(): string;
-  setStatus(value: string): PredictionPipelineRunCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionPipelineRunCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): PredictionPipelineRunCondition;
-
-  getReason(): string;
-  setReason(value: string): PredictionPipelineRunCondition;
-
-  getMessage(): string;
-  setMessage(value: string): PredictionPipelineRunCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineRunCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineRunCondition): PredictionPipelineRunCondition.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineRunCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineRunCondition;
-  static deserializeBinaryFromReader(message: PredictionPipelineRunCondition, reader: jspb.BinaryReader): PredictionPipelineRunCondition;
-}
-
-export namespace PredictionPipelineRunCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class PredictionPipelineRunList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictionPipelineRunList;
-  hasMetadata(): boolean;
-  clearMetadata(): PredictionPipelineRunList;
-
-  getItemsList(): Array<PredictionPipelineRun>;
-  setItemsList(value: Array<PredictionPipelineRun>): PredictionPipelineRunList;
-  clearItemsList(): PredictionPipelineRunList;
-  addItems(value?: PredictionPipelineRun, index?: number): PredictionPipelineRun;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineRunList.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineRunList): PredictionPipelineRunList.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineRunList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineRunList;
-  static deserializeBinaryFromReader(message: PredictionPipelineRunList, reader: jspb.BinaryReader): PredictionPipelineRunList;
-}
-
-export namespace PredictionPipelineRunList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<PredictionPipelineRun.AsObject>,
-  }
-}
-
-export class PredictionPipelineRunSpec extends jspb.Message {
-  getPredictionname(): string;
-  setPredictionname(value: string): PredictionPipelineRunSpec;
-
+export class PredictionSpec extends jspb.Message {
   getPredictorname(): string;
-  setPredictorname(value: string): PredictionPipelineRunSpec;
+  setPredictorname(value: string): PredictionSpec;
 
   getLabeled(): boolean;
-  setLabeled(value: boolean): PredictionPipelineRunSpec;
+  setLabeled(value: boolean): PredictionSpec;
 
   getObjective(): string;
-  setObjective(value: string): PredictionPipelineRunSpec;
+  setObjective(value: string): PredictionSpec;
 
   getDatasetname(): string;
-  setDatasetname(value: string): PredictionPipelineRunSpec;
+  setDatasetname(value: string): PredictionSpec;
 
   getInput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setInput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionPipelineRunSpec;
+  setInput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
   hasInput(): boolean;
-  clearInput(): PredictionPipelineRunSpec;
+  clearInput(): PredictionSpec;
 
   getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionPipelineRunSpec;
+  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
   hasOutput(): boolean;
-  clearOutput(): PredictionPipelineRunSpec;
+  clearOutput(): PredictionSpec;
 
   getOwner(): string;
-  setOwner(value: string): PredictionPipelineRunSpec;
+  setOwner(value: string): PredictionSpec;
 
   getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): PredictionPipelineRunSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineRunSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineRunSpec): PredictionPipelineRunSpec.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineRunSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineRunSpec;
-  static deserializeBinaryFromReader(message: PredictionPipelineRunSpec, reader: jspb.BinaryReader): PredictionPipelineRunSpec;
-}
-
-export namespace PredictionPipelineRunSpec {
-  export type AsObject = {
-    predictionname: string,
-    predictorname: string,
-    labeled: boolean,
-    objective: string,
-    datasetname: string,
-    input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    owner: string,
-    workloadclassname: string,
-  }
-}
-
-export class PredictionPipelineRunStatus extends jspb.Message {
-  getScore(): number;
-  setScore(value: number): PredictionPipelineRunStatus;
-
-  getPhase(): string;
-  setPhase(value: string): PredictionPipelineRunStatus;
-
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionPipelineRunStatus;
-  hasStarttime(): boolean;
-  clearStarttime(): PredictionPipelineRunStatus;
-
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionPipelineRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): PredictionPipelineRunStatus;
-
-  getConditionsList(): Array<PredictionPipelineRunCondition>;
-  setConditionsList(value: Array<PredictionPipelineRunCondition>): PredictionPipelineRunStatus;
-  clearConditionsList(): PredictionPipelineRunStatus;
-  addConditions(value?: PredictionPipelineRunCondition, index?: number): PredictionPipelineRunCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineRunStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineRunStatus): PredictionPipelineRunStatus.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineRunStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineRunStatus;
-  static deserializeBinaryFromReader(message: PredictionPipelineRunStatus, reader: jspb.BinaryReader): PredictionPipelineRunStatus;
-}
-
-export namespace PredictionPipelineRunStatus {
-  export type AsObject = {
-    score: number,
-    phase: string,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    conditionsList: Array<PredictionPipelineRunCondition.AsObject>,
-  }
-}
-
-export class PredictionPipelineSpec extends jspb.Message {
-  getPredictorname(): string;
-  setPredictorname(value: string): PredictionPipelineSpec;
-
-  getLabeled(): boolean;
-  setLabeled(value: boolean): PredictionPipelineSpec;
-
-  getObjective(): string;
-  setObjective(value: string): PredictionPipelineSpec;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): PredictionPipelineSpec;
-
-  getInput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setInput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionPipelineSpec;
-  hasInput(): boolean;
-  clearInput(): PredictionPipelineSpec;
-
-  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionPipelineSpec;
-  hasOutput(): boolean;
-  clearOutput(): PredictionPipelineSpec;
-
-  getOwner(): string;
-  setOwner(value: string): PredictionPipelineSpec;
-
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): PredictionPipelineSpec;
+  setWorkloadclassname(value: string): PredictionSpec;
 
   getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictionPipelineSpec;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictionSpec;
   hasSchedule(): boolean;
-  clearSchedule(): PredictionPipelineSpec;
+  clearSchedule(): PredictionSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineSpec): PredictionPipelineSpec.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineSpec;
-  static deserializeBinaryFromReader(message: PredictionPipelineSpec, reader: jspb.BinaryReader): PredictionPipelineSpec;
+  toObject(includeInstance?: boolean): PredictionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionSpec;
+  static deserializeBinaryFromReader(message: PredictionSpec, reader: jspb.BinaryReader): PredictionSpec;
 }
 
-export namespace PredictionPipelineSpec {
+export namespace PredictionSpec {
   export type AsObject = {
     predictorname: string,
     labeled: boolean,
@@ -804,23 +754,43 @@ export namespace PredictionPipelineSpec {
   }
 }
 
-export class PredictionPipelineStatus extends jspb.Message {
-  getConditionsList(): Array<PredictionPipelineCondition>;
-  setConditionsList(value: Array<PredictionPipelineCondition>): PredictionPipelineStatus;
-  clearConditionsList(): PredictionPipelineStatus;
-  addConditions(value?: PredictionPipelineCondition, index?: number): PredictionPipelineCondition;
+export class PredictionStatus extends jspb.Message {
+  getConditionsList(): Array<PredictionCondition>;
+  setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
+  clearConditionsList(): PredictionStatus;
+  addConditions(value?: PredictionCondition, index?: number): PredictionCondition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionPipelineStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionPipelineStatus): PredictionPipelineStatus.AsObject;
-  static serializeBinaryToWriter(message: PredictionPipelineStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionPipelineStatus;
-  static deserializeBinaryFromReader(message: PredictionPipelineStatus, reader: jspb.BinaryReader): PredictionPipelineStatus;
+  toObject(includeInstance?: boolean): PredictionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionStatus): PredictionStatus.AsObject;
+  static serializeBinaryToWriter(message: PredictionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionStatus;
+  static deserializeBinaryFromReader(message: PredictionStatus, reader: jspb.BinaryReader): PredictionStatus;
 }
 
-export namespace PredictionPipelineStatus {
+export namespace PredictionStatus {
   export type AsObject = {
-    conditionsList: Array<PredictionPipelineCondition.AsObject>,
+    conditionsList: Array<PredictionCondition.AsObject>,
+  }
+}
+
+export class PredictionTemplate extends jspb.Message {
+  getSpec(): PredictionSpec | undefined;
+  setSpec(value?: PredictionSpec): PredictionTemplate;
+  hasSpec(): boolean;
+  clearSpec(): PredictionTemplate;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictionTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionTemplate): PredictionTemplate.AsObject;
+  static serializeBinaryToWriter(message: PredictionTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionTemplate;
+  static deserializeBinaryFromReader(message: PredictionTemplate, reader: jspb.BinaryReader): PredictionTemplate;
+}
+
+export namespace PredictionTemplate {
+  export type AsObject = {
+    spec?: PredictionSpec.AsObject,
   }
 }
 

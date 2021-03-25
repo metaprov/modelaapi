@@ -62,13 +62,9 @@ type PredictionTemplate struct {
 
 // CronPredictionSpec represent the desired state of CronPrediction
 type CronPredictionSpec struct {
-	// Prediction name refer to the parent prediction that created this run.
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
+	// Schedule is the cron schedule
 	Schedule *string `json:"schedule" protobuf:"bytes,1,opt,name=schedule"`
-	// PredictorName refer to the predictor which would predict the dataset of this prediction.
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
+	// Template refer to the prediction template
 	Template PredictionTemplate `json:"template" protobuf:"bytes,2,opt,name=template"`
 }
 

@@ -121,10 +121,150 @@ func (m *ChannelStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ChannelStatus proto.InternalMessageInfo
 
+func (m *CronPrediction) Reset()      { *m = CronPrediction{} }
+func (*CronPrediction) ProtoMessage() {}
+func (*CronPrediction) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{3}
+}
+func (m *CronPrediction) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CronPrediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *CronPrediction) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CronPrediction.Merge(m, src)
+}
+func (m *CronPrediction) XXX_Size() int {
+	return m.Size()
+}
+func (m *CronPrediction) XXX_DiscardUnknown() {
+	xxx_messageInfo_CronPrediction.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CronPrediction proto.InternalMessageInfo
+
+func (m *CronPredictionCondition) Reset()      { *m = CronPredictionCondition{} }
+func (*CronPredictionCondition) ProtoMessage() {}
+func (*CronPredictionCondition) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{4}
+}
+func (m *CronPredictionCondition) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CronPredictionCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *CronPredictionCondition) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CronPredictionCondition.Merge(m, src)
+}
+func (m *CronPredictionCondition) XXX_Size() int {
+	return m.Size()
+}
+func (m *CronPredictionCondition) XXX_DiscardUnknown() {
+	xxx_messageInfo_CronPredictionCondition.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CronPredictionCondition proto.InternalMessageInfo
+
+func (m *CronPredictionList) Reset()      { *m = CronPredictionList{} }
+func (*CronPredictionList) ProtoMessage() {}
+func (*CronPredictionList) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{5}
+}
+func (m *CronPredictionList) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CronPredictionList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *CronPredictionList) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CronPredictionList.Merge(m, src)
+}
+func (m *CronPredictionList) XXX_Size() int {
+	return m.Size()
+}
+func (m *CronPredictionList) XXX_DiscardUnknown() {
+	xxx_messageInfo_CronPredictionList.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CronPredictionList proto.InternalMessageInfo
+
+func (m *CronPredictionSpec) Reset()      { *m = CronPredictionSpec{} }
+func (*CronPredictionSpec) ProtoMessage() {}
+func (*CronPredictionSpec) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{6}
+}
+func (m *CronPredictionSpec) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CronPredictionSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *CronPredictionSpec) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CronPredictionSpec.Merge(m, src)
+}
+func (m *CronPredictionSpec) XXX_Size() int {
+	return m.Size()
+}
+func (m *CronPredictionSpec) XXX_DiscardUnknown() {
+	xxx_messageInfo_CronPredictionSpec.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CronPredictionSpec proto.InternalMessageInfo
+
+func (m *CronPredictionStatus) Reset()      { *m = CronPredictionStatus{} }
+func (*CronPredictionStatus) ProtoMessage() {}
+func (*CronPredictionStatus) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{7}
+}
+func (m *CronPredictionStatus) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CronPredictionStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *CronPredictionStatus) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CronPredictionStatus.Merge(m, src)
+}
+func (m *CronPredictionStatus) XXX_Size() int {
+	return m.Size()
+}
+func (m *CronPredictionStatus) XXX_DiscardUnknown() {
+	xxx_messageInfo_CronPredictionStatus.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CronPredictionStatus proto.InternalMessageInfo
+
 func (m *Curtain) Reset()      { *m = Curtain{} }
 func (*Curtain) ProtoMessage() {}
 func (*Curtain) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{3}
+	return fileDescriptor_01e05293855b2ecb, []int{8}
 }
 func (m *Curtain) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -152,7 +292,7 @@ var xxx_messageInfo_Curtain proto.InternalMessageInfo
 func (m *CurtainCondition) Reset()      { *m = CurtainCondition{} }
 func (*CurtainCondition) ProtoMessage() {}
 func (*CurtainCondition) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{4}
+	return fileDescriptor_01e05293855b2ecb, []int{9}
 }
 func (m *CurtainCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -180,7 +320,7 @@ var xxx_messageInfo_CurtainCondition proto.InternalMessageInfo
 func (m *CurtainList) Reset()      { *m = CurtainList{} }
 func (*CurtainList) ProtoMessage() {}
 func (*CurtainList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{5}
+	return fileDescriptor_01e05293855b2ecb, []int{10}
 }
 func (m *CurtainList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -208,7 +348,7 @@ var xxx_messageInfo_CurtainList proto.InternalMessageInfo
 func (m *CurtainSpec) Reset()      { *m = CurtainSpec{} }
 func (*CurtainSpec) ProtoMessage() {}
 func (*CurtainSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{6}
+	return fileDescriptor_01e05293855b2ecb, []int{11}
 }
 func (m *CurtainSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -236,7 +376,7 @@ var xxx_messageInfo_CurtainSpec proto.InternalMessageInfo
 func (m *CurtainStatus) Reset()      { *m = CurtainStatus{} }
 func (*CurtainStatus) ProtoMessage() {}
 func (*CurtainStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{7}
+	return fileDescriptor_01e05293855b2ecb, []int{12}
 }
 func (m *CurtainStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -264,7 +404,7 @@ var xxx_messageInfo_CurtainStatus proto.InternalMessageInfo
 func (m *CurtainTemplateSpec) Reset()      { *m = CurtainTemplateSpec{} }
 func (*CurtainTemplateSpec) ProtoMessage() {}
 func (*CurtainTemplateSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{8}
+	return fileDescriptor_01e05293855b2ecb, []int{13}
 }
 func (m *CurtainTemplateSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -292,7 +432,7 @@ var xxx_messageInfo_CurtainTemplateSpec proto.InternalMessageInfo
 func (m *DriftCheckSpec) Reset()      { *m = DriftCheckSpec{} }
 func (*DriftCheckSpec) ProtoMessage() {}
 func (*DriftCheckSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{9}
+	return fileDescriptor_01e05293855b2ecb, []int{14}
 }
 func (m *DriftCheckSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -320,7 +460,7 @@ var xxx_messageInfo_DriftCheckSpec proto.InternalMessageInfo
 func (m *ModelDeploymentSpec) Reset()      { *m = ModelDeploymentSpec{} }
 func (*ModelDeploymentSpec) ProtoMessage() {}
 func (*ModelDeploymentSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{10}
+	return fileDescriptor_01e05293855b2ecb, []int{15}
 }
 func (m *ModelDeploymentSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -348,7 +488,7 @@ var xxx_messageInfo_ModelDeploymentSpec proto.InternalMessageInfo
 func (m *ModelDeploymentStatus) Reset()      { *m = ModelDeploymentStatus{} }
 func (*ModelDeploymentStatus) ProtoMessage() {}
 func (*ModelDeploymentStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{11}
+	return fileDescriptor_01e05293855b2ecb, []int{16}
 }
 func (m *ModelDeploymentStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -376,7 +516,7 @@ var xxx_messageInfo_ModelDeploymentStatus proto.InternalMessageInfo
 func (m *OnlineFeaturestoreSpec) Reset()      { *m = OnlineFeaturestoreSpec{} }
 func (*OnlineFeaturestoreSpec) ProtoMessage() {}
 func (*OnlineFeaturestoreSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{12}
+	return fileDescriptor_01e05293855b2ecb, []int{17}
 }
 func (m *OnlineFeaturestoreSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -401,10 +541,38 @@ func (m *OnlineFeaturestoreSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_OnlineFeaturestoreSpec proto.InternalMessageInfo
 
+func (m *Prediction) Reset()      { *m = Prediction{} }
+func (*Prediction) ProtoMessage() {}
+func (*Prediction) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{18}
+}
+func (m *Prediction) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Prediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *Prediction) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Prediction.Merge(m, src)
+}
+func (m *Prediction) XXX_Size() int {
+	return m.Size()
+}
+func (m *Prediction) XXX_DiscardUnknown() {
+	xxx_messageInfo_Prediction.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Prediction proto.InternalMessageInfo
+
 func (m *PredictionCacheSpec) Reset()      { *m = PredictionCacheSpec{} }
 func (*PredictionCacheSpec) ProtoMessage() {}
 func (*PredictionCacheSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{13}
+	return fileDescriptor_01e05293855b2ecb, []int{19}
 }
 func (m *PredictionCacheSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -432,7 +600,7 @@ var xxx_messageInfo_PredictionCacheSpec proto.InternalMessageInfo
 func (m *PredictionChannel) Reset()      { *m = PredictionChannel{} }
 func (*PredictionChannel) ProtoMessage() {}
 func (*PredictionChannel) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{14}
+	return fileDescriptor_01e05293855b2ecb, []int{20}
 }
 func (m *PredictionChannel) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -457,38 +625,10 @@ func (m *PredictionChannel) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_PredictionChannel proto.InternalMessageInfo
 
-func (m *Prediction) Reset()      { *m = Prediction{} }
-func (*Prediction) ProtoMessage() {}
-func (*Prediction) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{15}
-}
-func (m *Prediction) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Prediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *Prediction) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipeline.Merge(m, src)
-}
-func (m *Prediction) XXX_Size() int {
-	return m.Size()
-}
-func (m *Prediction) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipeline.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PredictionPipeline proto.InternalMessageInfo
-
 func (m *PredictionCondition) Reset()      { *m = PredictionCondition{} }
 func (*PredictionCondition) ProtoMessage() {}
 func (*PredictionCondition) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{16}
+	return fileDescriptor_01e05293855b2ecb, []int{21}
 }
 func (m *PredictionCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -502,21 +642,21 @@ func (m *PredictionCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte,
 	return b[:n], nil
 }
 func (m *PredictionCondition) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineCondition.Merge(m, src)
+	xxx_messageInfo_PredictionCondition.Merge(m, src)
 }
 func (m *PredictionCondition) XXX_Size() int {
 	return m.Size()
 }
 func (m *PredictionCondition) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineCondition.DiscardUnknown(m)
+	xxx_messageInfo_PredictionCondition.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PredictionPipelineCondition proto.InternalMessageInfo
+var xxx_messageInfo_PredictionCondition proto.InternalMessageInfo
 
 func (m *PredictionList) Reset()      { *m = PredictionList{} }
 func (*PredictionList) ProtoMessage() {}
 func (*PredictionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{17}
+	return fileDescriptor_01e05293855b2ecb, []int{22}
 }
 func (m *PredictionList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -530,156 +670,16 @@ func (m *PredictionList) XXX_Marshal(b []byte, deterministic bool) ([]byte, erro
 	return b[:n], nil
 }
 func (m *PredictionList) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineList.Merge(m, src)
+	xxx_messageInfo_PredictionList.Merge(m, src)
 }
 func (m *PredictionList) XXX_Size() int {
 	return m.Size()
 }
 func (m *PredictionList) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineList.DiscardUnknown(m)
+	xxx_messageInfo_PredictionList.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PredictionPipelineList proto.InternalMessageInfo
-
-func (m *CronPrediction) Reset()      { *m = CronPrediction{} }
-func (*CronPrediction) ProtoMessage() {}
-func (*CronPrediction) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{18}
-}
-func (m *CronPrediction) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *CronPrediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *CronPrediction) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineRun.Merge(m, src)
-}
-func (m *CronPrediction) XXX_Size() int {
-	return m.Size()
-}
-func (m *CronPrediction) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineRun.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PredictionPipelineRun proto.InternalMessageInfo
-
-func (m *CronPredictionCondition) Reset()      { *m = CronPredictionCondition{} }
-func (*CronPredictionCondition) ProtoMessage() {}
-func (*CronPredictionCondition) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{19}
-}
-func (m *CronPredictionCondition) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *CronPredictionCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *CronPredictionCondition) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineRunCondition.Merge(m, src)
-}
-func (m *CronPredictionCondition) XXX_Size() int {
-	return m.Size()
-}
-func (m *CronPredictionCondition) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineRunCondition.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PredictionPipelineRunCondition proto.InternalMessageInfo
-
-func (m *CronPredictionList) Reset()      { *m = CronPredictionList{} }
-func (*CronPredictionList) ProtoMessage() {}
-func (*CronPredictionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{20}
-}
-func (m *CronPredictionList) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *CronPredictionList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *CronPredictionList) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineRunList.Merge(m, src)
-}
-func (m *CronPredictionList) XXX_Size() int {
-	return m.Size()
-}
-func (m *CronPredictionList) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineRunList.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PredictionPipelineRunList proto.InternalMessageInfo
-
-func (m *CronPredictionSpec) Reset()      { *m = CronPredictionSpec{} }
-func (*CronPredictionSpec) ProtoMessage() {}
-func (*CronPredictionSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{21}
-}
-func (m *CronPredictionSpec) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *CronPredictionSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *CronPredictionSpec) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineRunSpec.Merge(m, src)
-}
-func (m *CronPredictionSpec) XXX_Size() int {
-	return m.Size()
-}
-func (m *CronPredictionSpec) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineRunSpec.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PredictionPipelineRunSpec proto.InternalMessageInfo
-
-func (m *CronPredictionStatus) Reset()      { *m = CronPredictionStatus{} }
-func (*CronPredictionStatus) ProtoMessage() {}
-func (*CronPredictionStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{22}
-}
-func (m *CronPredictionStatus) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *CronPredictionStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
-	if err != nil {
-		return nil, err
-	}
-	return b[:n], nil
-}
-func (m *CronPredictionStatus) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineRunStatus.Merge(m, src)
-}
-func (m *CronPredictionStatus) XXX_Size() int {
-	return m.Size()
-}
-func (m *CronPredictionStatus) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineRunStatus.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PredictionPipelineRunStatus proto.InternalMessageInfo
+var xxx_messageInfo_PredictionList proto.InternalMessageInfo
 
 func (m *PredictionSpec) Reset()      { *m = PredictionSpec{} }
 func (*PredictionSpec) ProtoMessage() {}
@@ -698,16 +698,16 @@ func (m *PredictionSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, erro
 	return b[:n], nil
 }
 func (m *PredictionSpec) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineSpec.Merge(m, src)
+	xxx_messageInfo_PredictionSpec.Merge(m, src)
 }
 func (m *PredictionSpec) XXX_Size() int {
 	return m.Size()
 }
 func (m *PredictionSpec) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineSpec.DiscardUnknown(m)
+	xxx_messageInfo_PredictionSpec.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PredictionPipelineSpec proto.InternalMessageInfo
+var xxx_messageInfo_PredictionSpec proto.InternalMessageInfo
 
 func (m *PredictionStatus) Reset()      { *m = PredictionStatus{} }
 func (*PredictionStatus) ProtoMessage() {}
@@ -726,21 +726,49 @@ func (m *PredictionStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, er
 	return b[:n], nil
 }
 func (m *PredictionStatus) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PredictionPipelineStatus.Merge(m, src)
+	xxx_messageInfo_PredictionStatus.Merge(m, src)
 }
 func (m *PredictionStatus) XXX_Size() int {
 	return m.Size()
 }
 func (m *PredictionStatus) XXX_DiscardUnknown() {
-	xxx_messageInfo_PredictionPipelineStatus.DiscardUnknown(m)
+	xxx_messageInfo_PredictionStatus.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PredictionPipelineStatus proto.InternalMessageInfo
+var xxx_messageInfo_PredictionStatus proto.InternalMessageInfo
+
+func (m *PredictionTemplate) Reset()      { *m = PredictionTemplate{} }
+func (*PredictionTemplate) ProtoMessage() {}
+func (*PredictionTemplate) Descriptor() ([]byte, []int) {
+	return fileDescriptor_01e05293855b2ecb, []int{25}
+}
+func (m *PredictionTemplate) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *PredictionTemplate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	b = b[:cap(b)]
+	n, err := m.MarshalToSizedBuffer(b)
+	if err != nil {
+		return nil, err
+	}
+	return b[:n], nil
+}
+func (m *PredictionTemplate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PredictionTemplate.Merge(m, src)
+}
+func (m *PredictionTemplate) XXX_Size() int {
+	return m.Size()
+}
+func (m *PredictionTemplate) XXX_DiscardUnknown() {
+	xxx_messageInfo_PredictionTemplate.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PredictionTemplate proto.InternalMessageInfo
 
 func (m *Predictor) Reset()      { *m = Predictor{} }
 func (*Predictor) ProtoMessage() {}
 func (*Predictor) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{25}
+	return fileDescriptor_01e05293855b2ecb, []int{26}
 }
 func (m *Predictor) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -768,7 +796,7 @@ var xxx_messageInfo_Predictor proto.InternalMessageInfo
 func (m *PredictorCondition) Reset()      { *m = PredictorCondition{} }
 func (*PredictorCondition) ProtoMessage() {}
 func (*PredictorCondition) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{26}
+	return fileDescriptor_01e05293855b2ecb, []int{27}
 }
 func (m *PredictorCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -796,7 +824,7 @@ var xxx_messageInfo_PredictorCondition proto.InternalMessageInfo
 func (m *PredictorHealth) Reset()      { *m = PredictorHealth{} }
 func (*PredictorHealth) ProtoMessage() {}
 func (*PredictorHealth) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{27}
+	return fileDescriptor_01e05293855b2ecb, []int{28}
 }
 func (m *PredictorHealth) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -824,7 +852,7 @@ var xxx_messageInfo_PredictorHealth proto.InternalMessageInfo
 func (m *PredictorList) Reset()      { *m = PredictorList{} }
 func (*PredictorList) ProtoMessage() {}
 func (*PredictorList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{28}
+	return fileDescriptor_01e05293855b2ecb, []int{29}
 }
 func (m *PredictorList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -852,7 +880,7 @@ var xxx_messageInfo_PredictorList proto.InternalMessageInfo
 func (m *PredictorSpec) Reset()      { *m = PredictorSpec{} }
 func (*PredictorSpec) ProtoMessage() {}
 func (*PredictorSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{29}
+	return fileDescriptor_01e05293855b2ecb, []int{30}
 }
 func (m *PredictorSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -880,7 +908,7 @@ var xxx_messageInfo_PredictorSpec proto.InternalMessageInfo
 func (m *PredictorStatus) Reset()      { *m = PredictorStatus{} }
 func (*PredictorStatus) ProtoMessage() {}
 func (*PredictorStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{30}
+	return fileDescriptor_01e05293855b2ecb, []int{31}
 }
 func (m *PredictorStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -908,7 +936,7 @@ var xxx_messageInfo_PredictorStatus proto.InternalMessageInfo
 func (m *ProgressiveSpec) Reset()      { *m = ProgressiveSpec{} }
 func (*ProgressiveSpec) ProtoMessage() {}
 func (*ProgressiveSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{31}
+	return fileDescriptor_01e05293855b2ecb, []int{32}
 }
 func (m *ProgressiveSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -936,7 +964,7 @@ var xxx_messageInfo_ProgressiveSpec proto.InternalMessageInfo
 func (m *StreamingChannelSpec) Reset()      { *m = StreamingChannelSpec{} }
 func (*StreamingChannelSpec) ProtoMessage() {}
 func (*StreamingChannelSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{32}
+	return fileDescriptor_01e05293855b2ecb, []int{33}
 }
 func (m *StreamingChannelSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -964,7 +992,7 @@ var xxx_messageInfo_StreamingChannelSpec proto.InternalMessageInfo
 func (m *TableChannelSpec) Reset()      { *m = TableChannelSpec{} }
 func (*TableChannelSpec) ProtoMessage() {}
 func (*TableChannelSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_01e05293855b2ecb, []int{33}
+	return fileDescriptor_01e05293855b2ecb, []int{34}
 }
 func (m *TableChannelSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -993,6 +1021,11 @@ func init() {
 	proto.RegisterType((*BotChannelSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.BotChannelSpec")
 	proto.RegisterType((*BucketChannelSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.BucketChannelSpec")
 	proto.RegisterType((*ChannelStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus")
+	proto.RegisterType((*CronPrediction)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction")
+	proto.RegisterType((*CronPredictionCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition")
+	proto.RegisterType((*CronPredictionList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList")
+	proto.RegisterType((*CronPredictionSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec")
+	proto.RegisterType((*CronPredictionStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus")
 	proto.RegisterType((*Curtain)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain")
 	proto.RegisterType((*CurtainCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainCondition")
 	proto.RegisterType((*CurtainList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList")
@@ -1003,18 +1036,14 @@ func init() {
 	proto.RegisterType((*ModelDeploymentSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentSpec")
 	proto.RegisterType((*ModelDeploymentStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus")
 	proto.RegisterType((*OnlineFeaturestoreSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec")
+	proto.RegisterType((*Prediction)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction")
 	proto.RegisterType((*PredictionCacheSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec")
 	proto.RegisterType((*PredictionChannel)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannel")
-	proto.RegisterType((*Prediction)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction")
 	proto.RegisterType((*PredictionCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition")
 	proto.RegisterType((*PredictionList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionList")
-	proto.RegisterType((*CronPrediction)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction")
-	proto.RegisterType((*CronPredictionCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition")
-	proto.RegisterType((*CronPredictionList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList")
-	proto.RegisterType((*CronPredictionSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec")
-	proto.RegisterType((*CronPredictionStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus")
 	proto.RegisterType((*PredictionSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec")
 	proto.RegisterType((*PredictionStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus")
+	proto.RegisterType((*PredictionTemplate)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionTemplate")
 	proto.RegisterType((*Predictor)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor")
 	proto.RegisterType((*PredictorCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition")
 	proto.RegisterType((*PredictorHealth)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorHealth")
@@ -1031,193 +1060,185 @@ func init() {
 }
 
 var fileDescriptor_01e05293855b2ecb = []byte{
-	// 2972 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x5a, 0xcf, 0x6f, 0x24, 0x47,
-	0xf5, 0xdf, 0x1e, 0x7b, 0xec, 0x99, 0x9a, 0xf5, 0x8f, 0xad, 0xf5, 0x3a, 0x93, 0xfd, 0x46, 0x9e,
-	0xfd, 0x4e, 0x48, 0x48, 0x08, 0x19, 0xb3, 0x56, 0x16, 0xe2, 0x00, 0x11, 0x1e, 0x3b, 0x9b, 0xf5,
-	0xc6, 0x5e, 0x3b, 0x65, 0x2b, 0x2b, 0x10, 0x12, 0x94, 0x7b, 0xca, 0x33, 0x9d, 0xed, 0xe9, 0x6e,
-	0xba, 0x6a, 0xbc, 0x31, 0x10, 0x7e, 0xdd, 0x12, 0x81, 0x94, 0x13, 0x17, 0x8e, 0x1c, 0xf8, 0x37,
-	0xb8, 0x11, 0x0e, 0x48, 0x39, 0x20, 0xc8, 0x69, 0x94, 0x9d, 0x08, 0x09, 0x71, 0x02, 0x29, 0x08,
-	0x69, 0x25, 0x24, 0x54, 0xaf, 0xaa, 0xbb, 0xba, 0x7b, 0x66, 0x8c, 0xbd, 0x33, 0xf1, 0x01, 0xe5,
-	0x64, 0xcf, 0xfb, 0x59, 0x3f, 0xde, 0x7b, 0xf5, 0x79, 0x55, 0x8d, 0x36, 0x9b, 0x8e, 0x68, 0x75,
-	0x0e, 0x6a, 0xb6, 0xdf, 0x5e, 0x6e, 0x33, 0x41, 0x83, 0xd0, 0x3f, 0x5a, 0x6e, 0xfb, 0x0d, 0xe6,
-	0x36, 0x68, 0xe0, 0x2c, 0x07, 0xf7, 0x9a, 0xcb, 0x34, 0x70, 0xf8, 0xb2, 0xe3, 0x1d, 0xb2, 0x90,
-	0x79, 0x36, 0x5b, 0x3e, 0xba, 0x4e, 0xdd, 0xa0, 0x45, 0xaf, 0x2f, 0x37, 0x99, 0xc7, 0x42, 0x2a,
-	0x58, 0xa3, 0x16, 0x84, 0xbe, 0xf0, 0xf1, 0xaa, 0x31, 0x55, 0x8b, 0x4c, 0xd5, 0x62, 0x53, 0xb5,
-	0xe0, 0x5e, 0xb3, 0x26, 0x4d, 0xd5, 0x62, 0x53, 0xb5, 0xc8, 0xd4, 0xd5, 0xe7, 0x13, 0xa3, 0x68,
-	0xfa, 0x4d, 0x7f, 0x19, 0x2c, 0x1e, 0x74, 0x0e, 0xe1, 0x17, 0xfc, 0x80, 0xff, 0x94, 0xa7, 0xab,
-	0xaf, 0x9e, 0x72, 0xd0, 0x36, 0x15, 0xd4, 0xf5, 0x9b, 0x43, 0x87, 0x7c, 0x75, 0xe3, 0x94, 0x86,
-	0x1a, 0x54, 0xd0, 0xe1, 0x56, 0xaa, 0xf7, 0x5e, 0xe4, 0x35, 0xc7, 0x97, 0xa2, 0xcb, 0xb6, 0x1f,
-	0xca, 0x25, 0xea, 0x93, 0x79, 0xc1, 0xc8, 0xb4, 0xa9, 0xdd, 0x72, 0x3c, 0x16, 0x1e, 0x1b, 0xfb,
-	0xd2, 0xf7, 0x20, 0xad, 0xe5, 0x61, 0x5a, 0x61, 0xc7, 0x13, 0x4e, 0x9b, 0xf5, 0x29, 0x7c, 0xf9,
-	0xbf, 0x29, 0x70, 0xbb, 0xc5, 0xda, 0x34, 0xab, 0x57, 0x7d, 0xd7, 0x42, 0xb3, 0x75, 0x5f, 0xac,
-	0xb7, 0xa8, 0xe7, 0x31, 0x77, 0x2f, 0x60, 0x36, 0x7e, 0x19, 0xcd, 0xda, 0xbe, 0xe7, 0x31, 0x5b,
-	0x38, 0xbe, 0x77, 0x87, 0xb6, 0x59, 0xd9, 0xba, 0x66, 0x3d, 0x53, 0xac, 0x2f, 0xbe, 0xdf, 0xad,
-	0x5c, 0xe8, 0x75, 0x2b, 0xb3, 0xeb, 0x29, 0x2e, 0xc9, 0x48, 0xe3, 0x17, 0xd1, 0x45, 0xcf, 0x17,
-	0xce, 0xa1, 0xc3, 0x42, 0xd0, 0xce, 0x81, 0xf6, 0x82, 0xd6, 0xbe, 0x78, 0x27, 0xc1, 0x23, 0x29,
-	0xc9, 0xea, 0xcf, 0x72, 0xe8, 0x52, 0xbd, 0x63, 0xdf, 0x63, 0x63, 0x1d, 0xcf, 0x6d, 0xb4, 0x28,
-	0xb7, 0xf1, 0x80, 0x72, 0x96, 0x96, 0xd4, 0x23, 0xc3, 0xda, 0x0e, 0x52, 0xae, 0xc1, 0xc6, 0x10,
-	0x0d, 0xfc, 0x79, 0x54, 0x70, 0xbc, 0xa0, 0x23, 0x5e, 0x63, 0xc7, 0xe5, 0x09, 0xd0, 0x2e, 0x69,
-	0xed, 0x89, 0xd7, 0xd8, 0x31, 0x89, 0x99, 0x72, 0x11, 0xb8, 0x4d, 0xbd, 0x4d, 0x4f, 0xb0, 0xf0,
-	0x88, 0xba, 0xe5, 0xc9, 0x6b, 0xd6, 0x33, 0x79, 0xb3, 0x08, 0x7b, 0x09, 0x1e, 0x49, 0x49, 0x56,
-	0xdf, 0x40, 0x33, 0xd1, 0xec, 0x05, 0x15, 0x1d, 0x8e, 0xaf, 0xa1, 0x49, 0xcf, 0xcc, 0xfa, 0xa2,
-	0x36, 0x31, 0x09, 0xe3, 0x04, 0x0e, 0x7e, 0x12, 0xe5, 0x59, 0x18, 0xfa, 0xa1, 0x9e, 0xd0, 0x8c,
-	0x16, 0xc9, 0xbf, 0x22, 0x89, 0x44, 0xf1, 0xaa, 0xbf, 0xcb, 0xa1, 0xe9, 0xf5, 0x4e, 0x28, 0xa8,
-	0xe3, 0xe1, 0xef, 0xa2, 0x82, 0x8c, 0x3c, 0x39, 0x49, 0x30, 0x5b, 0x5a, 0xf9, 0x52, 0x4d, 0x05,
-	0x50, 0x2d, 0x19, 0x40, 0x26, 0x75, 0xa5, 0x74, 0xed, 0xe8, 0x7a, 0x6d, 0xe7, 0xe0, 0x4d, 0x66,
-	0x8b, 0x6d, 0x26, 0xa8, 0x59, 0x36, 0x43, 0x23, 0xb1, 0x55, 0xdc, 0x42, 0x93, 0x3c, 0x60, 0x36,
-	0x8c, 0xa8, 0xb4, 0x72, 0xb3, 0xf6, 0xc8, 0x25, 0xa2, 0xa6, 0xc7, 0x2c, 0x43, 0xc1, 0x4c, 0x5e,
-	0xfe, 0x22, 0xe0, 0x01, 0x07, 0x68, 0x8a, 0xc3, 0x42, 0xc1, 0x86, 0x94, 0x56, 0x6e, 0x8d, 0xc1,
-	0x17, 0xd8, 0xab, 0xcf, 0x6a, 0x6f, 0x53, 0xea, 0x37, 0xd1, 0x7e, 0xaa, 0x0f, 0x72, 0x68, 0x5e,
-	0x4b, 0xae, 0xfb, 0x5e, 0xc3, 0x91, 0xd1, 0x81, 0x5f, 0x44, 0x93, 0xe2, 0x38, 0x88, 0x76, 0xe9,
-	0x73, 0xd1, 0x40, 0xf7, 0x8f, 0x03, 0xf6, 0xb0, 0x5b, 0x59, 0xc8, 0xca, 0x4b, 0x3a, 0x01, 0x0d,
-	0xbc, 0x15, 0x4f, 0x40, 0x6d, 0xdf, 0x0b, 0x69, 0xb7, 0x0f, 0xbb, 0x95, 0x01, 0x75, 0xa6, 0x16,
-	0x5b, 0x4a, 0x0f, 0x0e, 0x87, 0x08, 0xbb, 0x94, 0x8b, 0xfd, 0x90, 0x7a, 0x5c, 0x79, 0x72, 0xda,
-	0x4c, 0x2f, 0xcd, 0x17, 0x4e, 0xb7, 0xc9, 0x52, 0xa3, 0xbe, 0xd8, 0xeb, 0x56, 0xf0, 0x56, 0x9f,
-	0x25, 0x32, 0xc0, 0x3a, 0x7e, 0x1a, 0x4d, 0x85, 0x8c, 0x72, 0xdf, 0x83, 0x30, 0x2f, 0x9a, 0x85,
-	0x23, 0x40, 0x25, 0x9a, 0x8b, 0x9f, 0x45, 0xd3, 0x6d, 0xc6, 0x39, 0x6d, 0xb2, 0x72, 0x1e, 0x04,
-	0xe7, 0xb4, 0xe0, 0xf4, 0xb6, 0x22, 0x93, 0x88, 0x5f, 0xfd, 0xa3, 0x85, 0x4a, 0x7a, 0xcd, 0xb6,
-	0x1c, 0x2e, 0xf0, 0xb7, 0xfb, 0x22, 0xb6, 0x76, 0xba, 0xc9, 0x48, 0x6d, 0x88, 0xd7, 0x79, 0xed,
-	0xab, 0x10, 0x51, 0x12, 0xd1, 0xda, 0x44, 0x79, 0x47, 0xb0, 0xb6, 0xdc, 0x81, 0x89, 0x67, 0x4a,
-	0x2b, 0xf5, 0xd1, 0x43, 0xc8, 0x24, 0xe1, 0xa6, 0x34, 0x4c, 0x94, 0xfd, 0xea, 0xc7, 0xb9, 0x78,
-	0x5a, 0x50, 0xdb, 0xae, 0xa3, 0x52, 0x83, 0x71, 0x3b, 0x74, 0x02, 0xb9, 0x98, 0x3a, 0x78, 0xe6,
-	0x7a, 0xdd, 0x4a, 0x69, 0xc3, 0x90, 0x49, 0x52, 0x46, 0xaa, 0x1c, 0xb1, 0x90, 0xa7, 0x6b, 0x18,
-	0xa8, 0xbc, 0x61, 0xc8, 0x24, 0x29, 0x83, 0xd7, 0xd0, 0x1c, 0x67, 0xe1, 0x91, 0xe3, 0x35, 0xb9,
-	0x23, 0x18, 0xa8, 0xa9, 0xe2, 0xf5, 0x98, 0x1e, 0xe4, 0xdc, 0x9e, 0x62, 0xef, 0x69, 0x36, 0xc9,
-	0xca, 0xe3, 0x1b, 0xa8, 0x24, 0x57, 0x8a, 0xab, 0xfa, 0xa8, 0xf7, 0xf9, 0xb2, 0x56, 0x2f, 0x6d,
-	0x18, 0x16, 0x49, 0xca, 0xe1, 0xa7, 0xd0, 0xf4, 0x7d, 0xe7, 0xfb, 0x34, 0x6c, 0xf0, 0x72, 0xfe,
-	0xda, 0x84, 0x2c, 0x97, 0x72, 0xb7, 0xef, 0x2a, 0x12, 0x89, 0x78, 0xf8, 0x8b, 0xa8, 0xf0, 0xbd,
-	0x0e, 0xe3, 0xb0, 0x06, 0x53, 0x60, 0x3a, 0xde, 0xad, 0xd7, 0x35, 0x9d, 0xc4, 0x12, 0xb8, 0x82,
-	0xf2, 0xfe, 0x7d, 0x8f, 0x85, 0xe5, 0x69, 0x10, 0x2d, 0xca, 0x55, 0xde, 0x91, 0x04, 0xa2, 0xe8,
-	0xd5, 0xf7, 0x2c, 0x34, 0x93, 0x4a, 0x65, 0xfc, 0x63, 0x84, 0xec, 0x28, 0x61, 0x78, 0xd9, 0x82,
-	0x5d, 0x7e, 0x6d, 0xf4, 0x5d, 0x8e, 0x93, 0xd0, 0x54, 0xc3, 0x98, 0xc4, 0x49, 0xc2, 0x65, 0xf5,
-	0x81, 0x85, 0x2e, 0x6b, 0xa5, 0x7d, 0xd6, 0x0e, 0x5c, 0x2a, 0x18, 0x04, 0xc0, 0xff, 0x50, 0x25,
-	0xae, 0x7e, 0x64, 0xa1, 0xd9, 0x8d, 0xd0, 0x39, 0x14, 0xeb, 0x2d, 0x66, 0xdf, 0x83, 0xe9, 0xad,
-	0xa0, 0x82, 0x1d, 0xfa, 0xde, 0x2b, 0x6f, 0x05, 0x61, 0xdf, 0xa9, 0xad, 0xe9, 0x8c, 0x73, 0xd8,
-	0xde, 0x48, 0x0e, 0x3f, 0x8b, 0x0a, 0x22, 0x64, 0xbc, 0xe5, 0xbb, 0x0d, 0x18, 0xb4, 0x55, 0x9f,
-	0xe9, 0x75, 0x2b, 0xc5, 0xfd, 0x96, 0x26, 0x92, 0x98, 0x8d, 0x5f, 0xc8, 0x40, 0x0d, 0x15, 0xd5,
-	0xf3, 0x27, 0xc3, 0x0c, 0xbc, 0x8a, 0x4a, 0x82, 0x71, 0xa1, 0x83, 0x56, 0xc7, 0x72, 0x9c, 0x0a,
-	0xfb, 0x86, 0xa5, 0xe2, 0x39, 0x21, 0x5b, 0xfd, 0x55, 0x0e, 0x5d, 0xde, 0x96, 0x8b, 0xb5, 0xc1,
-	0x02, 0xd7, 0x3f, 0x6e, 0x33, 0x4f, 0xc0, 0x3c, 0x9f, 0x43, 0x45, 0x58, 0xc3, 0x04, 0x3c, 0x81,
-	0x41, 0x6f, 0x47, 0x44, 0x62, 0xf8, 0xb8, 0x8a, 0xa6, 0xee, 0x33, 0xa7, 0xd9, 0x12, 0x1a, 0x15,
-	0x20, 0x59, 0x2a, 0xef, 0x02, 0x85, 0x68, 0x8e, 0x94, 0xb1, 0xa9, 0x47, 0xc3, 0x63, 0xa8, 0x94,
-	0x05, 0x25, 0xb3, 0x0e, 0x14, 0xa2, 0x39, 0x52, 0x86, 0xb7, 0x68, 0xc3, 0xbf, 0x0f, 0x39, 0xa3,
-	0x65, 0xf6, 0x80, 0x42, 0x34, 0x47, 0xca, 0x1c, 0x3a, 0xae, 0x88, 0x93, 0x05, 0x64, 0x6e, 0x02,
-	0x85, 0x68, 0x0e, 0x7e, 0x15, 0xcd, 0x28, 0x8b, 0xdb, 0x4c, 0x84, 0x8e, 0xcd, 0xcb, 0x05, 0x48,
-	0xd5, 0xff, 0xef, 0x75, 0x2b, 0x33, 0xeb, 0x49, 0xc6, 0xc3, 0x6e, 0xe5, 0x62, 0x92, 0x40, 0xd2,
-	0x7a, 0xd5, 0x4f, 0x26, 0xd0, 0x95, 0xec, 0xea, 0xa8, 0xfc, 0x5b, 0x46, 0x45, 0xa7, 0x4d, 0x9b,
-	0x2c, 0xb1, 0x3e, 0x97, 0xf4, 0x82, 0x17, 0x37, 0x23, 0x06, 0x31, 0x32, 0x12, 0xf4, 0x35, 0x62,
-	0x23, 0x89, 0x42, 0x17, 0x87, 0xcf, 0x46, 0x8a, 0x4b, 0x32, 0xd2, 0xb2, 0x5e, 0x41, 0x09, 0xb3,
-	0x93, 0xe5, 0x2e, 0xae, 0x57, 0x7b, 0x86, 0x45, 0x92, 0x72, 0xf2, 0x84, 0x6a, 0x05, 0x34, 0x51,
-	0xe2, 0xe2, 0x13, 0xea, 0xd6, 0xee, 0x1a, 0x88, 0x47, 0x7c, 0xfc, 0x2c, 0x2a, 0xda, 0x9d, 0x30,
-	0x64, 0x9e, 0x58, 0xbd, 0x01, 0x9b, 0x64, 0x19, 0x2c, 0xb8, 0xbb, 0x7a, 0x83, 0x18, 0x6e, 0x52,
-	0x74, 0x15, 0xf6, 0x2a, 0x25, 0xba, 0x6a, 0x44, 0x57, 0xf1, 0x21, 0x9a, 0x95, 0x07, 0xec, 0x6e,
-	0xc8, 0x1a, 0x0e, 0xc0, 0x4e, 0xd8, 0xb7, 0xb3, 0x1d, 0xdd, 0x58, 0xae, 0xcf, 0x56, 0xca, 0x0a,
-	0xc9, 0x58, 0xc5, 0xb7, 0x11, 0x6e, 0x50, 0xc7, 0x3d, 0x36, 0xa4, 0xb5, 0xa3, 0x66, 0xb9, 0x00,
-	0xf1, 0x78, 0x55, 0x8f, 0x0d, 0x6f, 0xf4, 0x49, 0x90, 0x01, 0x5a, 0x55, 0x1f, 0x2d, 0xee, 0x78,
-	0xae, 0xe3, 0xb1, 0x9b, 0x8c, 0x8a, 0x4e, 0xc8, 0xb8, 0xf0, 0x43, 0x55, 0xdd, 0xaa, 0x68, 0x8a,
-	0xda, 0xc2, 0x39, 0x52, 0x7b, 0xae, 0x23, 0x74, 0x0d, 0x28, 0x44, 0x73, 0xe4, 0x79, 0x96, 0xdc,
-	0xa9, 0xc4, 0x79, 0x36, 0x6c, 0x97, 0xaa, 0x2e, 0xba, 0x6c, 0x46, 0xb0, 0x4e, 0xed, 0xd6, 0xa7,
-	0xea, 0xed, 0xcf, 0x13, 0xe8, 0x52, 0xc2, 0x9d, 0xc2, 0xe6, 0xd8, 0x45, 0x79, 0x41, 0x0f, 0x5c,
-	0xa6, 0xab, 0xf6, 0x28, 0x87, 0xc9, 0xbe, 0xb4, 0x93, 0xe8, 0x78, 0xd4, 0x89, 0x06, 0x54, 0xa2,
-	0x9c, 0xe0, 0x06, 0x9a, 0x38, 0xf0, 0x85, 0xae, 0xe1, 0x9b, 0x23, 0xf8, 0x4a, 0xf7, 0x7a, 0xf5,
-	0x69, 0x19, 0x82, 0x75, 0x5f, 0x10, 0x69, 0x5e, 0x42, 0xe9, 0x03, 0xe8, 0x81, 0x34, 0x5e, 0xdc,
-	0x1a, 0xc5, 0x51, 0xb6, 0x8f, 0x53, 0xdb, 0xa1, 0xc8, 0x44, 0xfb, 0xc1, 0x3f, 0x44, 0x45, 0x2e,
-	0x42, 0x46, 0xdb, 0x8e, 0xd7, 0x84, 0x8c, 0x2b, 0xad, 0xec, 0x8c, 0xe0, 0x74, 0x2f, 0xb2, 0x95,
-	0xf4, 0x0b, 0x85, 0x38, 0xe6, 0x10, 0xe3, 0xb0, 0xfa, 0xd7, 0x1c, 0xc2, 0x66, 0x67, 0x77, 0x9d,
-	0x80, 0xc9, 0x28, 0x3e, 0x87, 0x33, 0x99, 0xa7, 0xce, 0xe4, 0xd7, 0x47, 0x98, 0x71, 0xff, 0xf0,
-	0x87, 0x36, 0x4a, 0x3f, 0xc8, 0x34, 0x4a, 0x7b, 0xe3, 0x75, 0x7b, 0x72, 0xcf, 0xf4, 0xaf, 0x1c,
-	0xfa, 0xbf, 0x7e, 0x25, 0xd3, 0x3e, 0xad, 0xa7, 0xda, 0xa7, 0xe5, 0x4c, 0xfb, 0x54, 0x39, 0x41,
-	0xf5, 0xb3, 0x4e, 0xea, 0xe4, 0x4e, 0xea, 0x6f, 0x16, 0x5a, 0xec, 0x5f, 0xbe, 0x73, 0x68, 0xaa,
-	0xc2, 0x74, 0x53, 0xb5, 0x3d, 0xd6, 0x70, 0x1b, 0xd2, 0x5f, 0xfd, 0x23, 0x87, 0xae, 0xf4, 0x0b,
-	0x93, 0xce, 0x79, 0x5c, 0x79, 0x1c, 0xa5, 0x92, 0x7a, 0x7f, 0xac, 0xd3, 0x25, 0x9d, 0xe1, 0x17,
-	0x20, 0x3f, 0xca, 0xe4, 0xf5, 0x1b, 0x63, 0xf7, 0x7c, 0x72, 0x6a, 0xff, 0x3b, 0x87, 0x96, 0x06,
-	0xea, 0x99, 0xec, 0xbe, 0x99, 0xca, 0xee, 0x95, 0x4c, 0x76, 0x57, 0x4f, 0xd6, 0xfe, 0x2c, 0xc1,
-	0x4f, 0x4e, 0xf0, 0xbf, 0x5b, 0xe8, 0xf1, 0x81, 0x2b, 0x78, 0x0e, 0x39, 0xde, 0x49, 0xe7, 0xf8,
-	0xee, 0xb8, 0x43, 0x6f, 0x48, 0x9a, 0xbf, 0x97, 0x1f, 0x32, 0x65, 0xc0, 0x81, 0x2f, 0xa1, 0xd9,
-	0x20, 0x66, 0x26, 0x3a, 0x0e, 0xc0, 0xc5, 0xbb, 0x29, 0x0e, 0xc9, 0x48, 0xe2, 0xaf, 0xa0, 0x19,
-	0x4d, 0xf1, 0x93, 0xb7, 0xd7, 0x97, 0x64, 0x2f, 0xb4, 0x9b, 0x64, 0x90, 0xb4, 0x9c, 0xdc, 0x30,
-	0x97, 0x1e, 0x30, 0x97, 0x35, 0x20, 0x82, 0x0a, 0x66, 0xc3, 0xb6, 0x14, 0x99, 0x44, 0x7c, 0xdc,
-	0x46, 0x45, 0x1f, 0x0a, 0x88, 0x84, 0xaa, 0x2a, 0x0c, 0x76, 0x24, 0x46, 0xd9, 0x89, 0x88, 0x0f,
-	0xbb, 0x95, 0x97, 0x1f, 0xf1, 0xa5, 0xa3, 0xa6, 0x3b, 0x33, 0xe3, 0x01, 0xee, 0x98, 0x12, 0x57,
-	0x37, 0xf9, 0xc4, 0x1d, 0xd3, 0xb0, 0x6b, 0x1b, 0x1b, 0xe5, 0xe1, 0x26, 0x1b, 0x9a, 0x95, 0x33,
-	0xdc, 0x87, 0x49, 0x1b, 0x66, 0x47, 0xa5, 0xf9, 0x2d, 0xdf, 0xa6, 0x70, 0x41, 0x02, 0x98, 0x76,
-	0x53, 0x1a, 0x25, 0xca, 0x36, 0x3e, 0x44, 0x53, 0x7e, 0x47, 0x48, 0x2f, 0xd3, 0x63, 0xf3, 0x02,
-	0x18, 0x73, 0x07, 0xac, 0x12, 0x6d, 0xdd, 0x5c, 0x17, 0x15, 0x06, 0x5f, 0x17, 0xe1, 0x75, 0x74,
-	0xe9, 0xbe, 0x1f, 0xde, 0x73, 0x7d, 0xda, 0x58, 0x77, 0x29, 0xe7, 0xb0, 0x4c, 0x45, 0x10, 0xbe,
-	0xd2, 0xeb, 0x56, 0x2e, 0xdd, 0xcd, 0x32, 0x49, 0xbf, 0x7c, 0xf5, 0x4f, 0x13, 0x83, 0x00, 0x4e,
-	0x5c, 0x3d, 0xf1, 0x93, 0x28, 0xcf, 0x65, 0x41, 0x8a, 0xae, 0x34, 0xa2, 0xb8, 0xde, 0x93, 0x44,
-	0xa2, 0x78, 0x78, 0x0d, 0xe5, 0x83, 0x16, 0xe5, 0x51, 0xbf, 0xfa, 0x5c, 0x24, 0xb4, 0x2b, 0x89,
-	0x0f, 0xbb, 0x95, 0xab, 0x03, 0x3d, 0x00, 0x97, 0x28, 0x4d, 0x7c, 0x57, 0x22, 0x6a, 0x1a, 0x0a,
-	0xa8, 0x65, 0x93, 0x67, 0xae, 0x65, 0x1a, 0x2c, 0x6b, 0x03, 0xc4, 0xd8, 0x92, 0x9d, 0xa9, 0xed,
-	0xb7, 0x03, 0x97, 0xc5, 0x95, 0x32, 0xff, 0x68, 0x9d, 0xe9, 0x7a, 0xca, 0x0a, 0xc9, 0x58, 0xc5,
-	0xbf, 0xb0, 0x52, 0x77, 0x75, 0x53, 0x50, 0x58, 0xbe, 0x39, 0xee, 0xc2, 0x72, 0xfa, 0x9b, 0xbb,
-	0xdf, 0xe7, 0x07, 0xe1, 0x27, 0x28, 0x34, 0x5f, 0xcd, 0x16, 0x0b, 0x55, 0x67, 0xae, 0x68, 0x8b,
-	0xa7, 0x2e, 0x18, 0xb9, 0xb3, 0x14, 0x8c, 0x89, 0xf3, 0x2e, 0x18, 0x93, 0x67, 0x29, 0x18, 0xf9,
-	0x73, 0x29, 0x18, 0x53, 0xe7, 0x53, 0x30, 0xa6, 0xcf, 0x52, 0x30, 0x0a, 0x67, 0x2b, 0x18, 0x38,
-	0x44, 0x05, 0x6e, 0xb7, 0x58, 0xa3, 0xe3, 0xaa, 0x62, 0x53, 0x5a, 0xd9, 0x38, 0xed, 0x7c, 0xf4,
-	0x1e, 0x9a, 0x29, 0xc9, 0x32, 0xa3, 0x6d, 0x99, 0xe3, 0x3a, 0xa2, 0x90, 0xd8, 0x4f, 0xf5, 0x37,
-	0x16, 0x2a, 0x0f, 0x6b, 0xdd, 0xf0, 0xbb, 0xe9, 0xc4, 0x53, 0x27, 0xfa, 0x78, 0xc1, 0xe4, 0xe9,
-	0xb3, 0xee, 0x0f, 0x39, 0x54, 0x8c, 0xd3, 0xe7, 0x1c, 0xc0, 0xfb, 0x9b, 0x29, 0xf0, 0x7e, 0x6b,
-	0xf4, 0x59, 0xfb, 0xe1, 0x50, 0xc0, 0x1e, 0x66, 0x00, 0xfb, 0xed, 0xb1, 0x78, 0x3b, 0x19, 0xa4,
-	0xff, 0xc5, 0x5c, 0x75, 0xf8, 0xa1, 0x01, 0xe6, 0x2f, 0xa5, 0x80, 0xf9, 0xd3, 0x19, 0x60, 0xbe,
-	0xd8, 0xaf, 0xf1, 0x19, 0x18, 0x3f, 0x19, 0x8c, 0x7f, 0x92, 0x43, 0x73, 0xf1, 0xaa, 0xdd, 0x62,
-	0xd4, 0x15, 0x2d, 0xbc, 0x81, 0xe6, 0x85, 0x2f, 0xa8, 0x6b, 0xf2, 0x81, 0xc3, 0x82, 0xe7, 0xeb,
-	0x65, 0x6d, 0x67, 0x7e, 0x3f, 0xc3, 0x27, 0x7d, 0x1a, 0xf2, 0xb0, 0x01, 0x1a, 0x61, 0xf0, 0x10,
-	0xa6, 0x56, 0x3d, 0x6f, 0x0e, 0x9b, 0xfd, 0x24, 0x93, 0xa4, 0x65, 0xcd, 0x10, 0x56, 0x6f, 0xc4,
-	0xfa, 0x13, 0x83, 0x86, 0x60, 0xf8, 0xa4, 0x4f, 0x03, 0xdf, 0x46, 0xb8, 0xcd, 0x1a, 0x0e, 0xf5,
-	0x08, 0xe3, 0x81, 0xef, 0x71, 0x16, 0x83, 0x8c, 0xc4, 0xa5, 0xf1, 0x76, 0x9f, 0x04, 0x19, 0xa0,
-	0x85, 0xb7, 0xd0, 0x82, 0xdc, 0x91, 0xcc, 0x15, 0xb3, 0x7a, 0x26, 0xcc, 0xd7, 0xcb, 0xbd, 0x6e,
-	0x65, 0x61, 0x6b, 0x00, 0x9f, 0x0c, 0xd4, 0xaa, 0x7e, 0x68, 0x21, 0x73, 0xda, 0x9e, 0x43, 0xdf,
-	0xe3, 0xa4, 0xfb, 0x9e, 0x8d, 0x71, 0x64, 0xf0, 0x90, 0x5e, 0xe7, 0x97, 0x33, 0x89, 0xa9, 0x0d,
-	0x7a, 0x34, 0xce, 0x9d, 0xe2, 0xd1, 0x78, 0x0f, 0xa1, 0x20, 0xf4, 0x1b, 0x1d, 0x5b, 0x10, 0x76,
-	0xa8, 0xb3, 0xea, 0xc9, 0xc4, 0x7a, 0xd4, 0x64, 0x7a, 0x9a, 0x82, 0x49, 0x98, 0x1e, 0x66, 0x7d,
-	0x56, 0x56, 0xcc, 0xdd, 0x58, 0x95, 0x24, 0xcc, 0xe0, 0xef, 0xa0, 0xd9, 0xc4, 0x33, 0xb1, 0x34,
-	0x3c, 0x79, 0x7a, 0xc3, 0x00, 0x05, 0x13, 0xcf, 0xce, 0xd2, 0x78, 0xc6, 0x1c, 0x7e, 0x02, 0x4d,
-	0x06, 0x7e, 0xa8, 0x40, 0x45, 0xbe, 0x5e, 0x90, 0x95, 0x69, 0xd7, 0x0f, 0x05, 0x01, 0x2a, 0x70,
-	0xa9, 0x68, 0xe9, 0x07, 0x63, 0xc5, 0xa5, 0xa2, 0x45, 0x80, 0x8a, 0xbf, 0x86, 0x10, 0xb5, 0x6d,
-	0xc6, 0xb9, 0xac, 0x58, 0xfa, 0x24, 0x7f, 0x42, 0x4e, 0x66, 0x2d, 0xa6, 0x3e, 0x4c, 0xfd, 0x22,
-	0x09, 0x79, 0xbc, 0x89, 0x0a, 0x42, 0x3f, 0xd3, 0xc2, 0xc1, 0x5e, 0x5a, 0xa9, 0x0c, 0x9a, 0xd4,
-	0xae, 0xdf, 0x88, 0x5e, 0x73, 0xeb, 0x17, 0x65, 0xa8, 0x44, 0xbf, 0x48, 0xac, 0x8e, 0x8f, 0xd0,
-	0x14, 0x04, 0x02, 0x2f, 0x17, 0x21, 0x56, 0xee, 0x8c, 0x10, 0x2b, 0x03, 0x9e, 0x1e, 0x4d, 0xd1,
-	0x02, 0x26, 0x27, 0xda, 0x1b, 0x3e, 0x46, 0xa8, 0x11, 0x3f, 0xc6, 0x96, 0x2f, 0x8e, 0xfc, 0x72,
-	0x90, 0x7e, 0xd9, 0x55, 0x81, 0x61, 0x68, 0x24, 0xe1, 0x0c, 0xbf, 0x8d, 0x4a, 0x41, 0xe8, 0x37,
-	0xe1, 0x69, 0xf7, 0x88, 0x95, 0x67, 0xc6, 0x70, 0xca, 0xc5, 0xd6, 0xc0, 0x39, 0x04, 0x7b, 0x82,
-	0x48, 0x92, 0xfe, 0xf0, 0xd7, 0xd1, 0x1c, 0x0d, 0x85, 0x73, 0x48, 0x6d, 0xc1, 0x6f, 0xfa, 0x6e,
-	0x83, 0x85, 0xe5, 0x59, 0xf5, 0xfe, 0xd7, 0xeb, 0x56, 0xe6, 0xd6, 0xd2, 0x2c, 0x92, 0x95, 0xc5,
-	0xef, 0x58, 0x68, 0x06, 0x00, 0xa7, 0x7e, 0x44, 0xe0, 0xe5, 0x39, 0xd8, 0xb8, 0xad, 0xb1, 0x40,
-	0x21, 0x6d, 0xd4, 0xd4, 0xed, 0xcd, 0xa4, 0x2b, 0x92, 0xf6, 0x8c, 0x7f, 0x6e, 0xa1, 0x59, 0x85,
-	0x4a, 0xe3, 0xc1, 0xcc, 0x7f, 0x0a, 0x83, 0x89, 0x5f, 0x55, 0x77, 0x52, 0xbe, 0x48, 0xc6, 0xb7,
-	0xac, 0x3c, 0x6d, 0xc7, 0x23, 0x2c, 0x70, 0x1d, 0x9b, 0xf2, 0xf2, 0x25, 0xc8, 0x4b, 0xd8, 0x8c,
-	0x6d, 0x43, 0x26, 0x49, 0x19, 0xfc, 0x1c, 0x2a, 0xd2, 0x8e, 0xf0, 0xb9, 0x4d, 0x5d, 0x56, 0xc6,
-	0xd0, 0xe8, 0x40, 0x8f, 0xb9, 0xd6, 0x11, 0xfe, 0x9e, 0x24, 0x12, 0xc3, 0x07, 0xfb, 0xf4, 0xad,
-	0xd8, 0xfe, 0xe5, 0x84, 0x7d, 0x43, 0x26, 0x49, 0x19, 0x03, 0xd6, 0x17, 0xce, 0x02, 0xd6, 0xaf,
-	0x9c, 0x11, 0xac, 0xfb, 0x28, 0x6f, 0x53, 0xbb, 0xc5, 0xca, 0x8b, 0x10, 0xcb, 0x77, 0xc6, 0xb3,
-	0xfa, 0xd1, 0xcb, 0xa5, 0x1a, 0x35, 0xfc, 0x24, 0xca, 0x0f, 0x0e, 0x51, 0x1e, 0x9e, 0x51, 0xcb,
-	0x8f, 0x8d, 0xfc, 0x44, 0x34, 0xf8, 0x6d, 0x56, 0xf9, 0xdc, 0x13, 0xea, 0xf6, 0x41, 0xfe, 0xc1,
-	0xcf, 0x6b, 0x30, 0x58, 0x86, 0xc5, 0x79, 0x3c, 0x01, 0x04, 0xcd, 0x01, 0x64, 0xf0, 0x5f, 0xf5,
-	0xd7, 0x53, 0x09, 0xa8, 0xa3, 0x7b, 0x88, 0x77, 0x2c, 0x54, 0x82, 0x51, 0xa9, 0xdf, 0xfa, 0x4b,
-	0x9b, 0xdd, 0x31, 0x96, 0x3c, 0x05, 0x73, 0xe3, 0xec, 0xd9, 0x36, 0xce, 0x98, 0x8c, 0x0c, 0xf3,
-	0x13, 0xff, 0x74, 0x50, 0x3f, 0xb3, 0x3d, 0x8e, 0x93, 0xfa, 0xd4, 0x6d, 0x8c, 0x1c, 0xc3, 0x42,
-	0xdb, 0xf7, 0x1c, 0x89, 0x4a, 0x28, 0x17, 0x6b, 0x42, 0x1e, 0x0b, 0x62, 0x2d, 0x7a, 0x60, 0x5d,
-	0x3e, 0x3d, 0xb0, 0xe5, 0x82, 0xb6, 0x83, 0xfa, 0x13, 0xda, 0xdf, 0xc2, 0xf6, 0x00, 0xa3, 0x64,
-	0xa0, 0x2b, 0x89, 0xfd, 0x12, 0x74, 0xb8, 0x6f, 0x82, 0x83, 0xda, 0x32, 0xd8, 0x6f, 0x3b, 0xc3,
-	0x27, 0x7d, 0x1a, 0x80, 0xfd, 0x0c, 0x6d, 0x8b, 0x0a, 0xe6, 0xd9, 0xc7, 0xfa, 0xbb, 0x07, 0x83,
-	0xfd, 0xfa, 0x24, 0xc8, 0x00, 0x2d, 0xd9, 0x00, 0xb5, 0x00, 0x1a, 0xeb, 0x46, 0x7e, 0x2c, 0x0d,
-	0x90, 0x02, 0xdb, 0xe6, 0x38, 0x54, 0xbf, 0x89, 0xf6, 0x84, 0x8f, 0x50, 0x81, 0xeb, 0x30, 0x29,
-	0x4f, 0x43, 0x28, 0x8c, 0xf4, 0xa1, 0x68, 0xf2, 0x0b, 0x5d, 0x83, 0x14, 0xe3, 0xc2, 0x19, 0xfb,
-	0xaa, 0xfe, 0xd6, 0x92, 0x59, 0x92, 0x3a, 0xbe, 0xe0, 0x03, 0x20, 0x1a, 0xb6, 0x3b, 0x81, 0x6e,
-	0x03, 0xd4, 0x07, 0x40, 0x40, 0x21, 0x9a, 0x83, 0xbf, 0x81, 0xe6, 0x45, 0x48, 0x0f, 0x0f, 0x1d,
-	0x7b, 0xd3, 0xb3, 0x43, 0x26, 0x63, 0x5f, 0x23, 0xfe, 0x05, 0x40, 0xeb, 0x19, 0x1e, 0xe9, 0x93,
-	0xee, 0xff, 0xac, 0x67, 0xe2, 0x11, 0x3f, 0xeb, 0x79, 0x1b, 0x2d, 0x0c, 0x7a, 0x58, 0x1f, 0xf9,
-	0xc3, 0xec, 0xa7, 0x12, 0x1f, 0x53, 0xe7, 0x4c, 0xf5, 0xde, 0xf7, 0x03, 0xc7, 0x36, 0x9f, 0x52,
-	0x57, 0xff, 0x69, 0xa1, 0xf9, 0xec, 0x27, 0x12, 0x23, 0xfb, 0x7e, 0x09, 0xcd, 0xc2, 0xfd, 0x95,
-	0xdf, 0x09, 0x53, 0x9f, 0x82, 0x00, 0x2c, 0xdd, 0xa0, 0x82, 0xee, 0xc5, 0x1c, 0x92, 0x91, 0x94,
-	0x47, 0x1a, 0x7c, 0x95, 0x91, 0xf8, 0xb2, 0x48, 0x7d, 0xa1, 0x16, 0x11, 0x89, 0xe1, 0x3f, 0xfa,
-	0x87, 0xe0, 0xf5, 0xda, 0xfb, 0x0f, 0x96, 0x2e, 0x7c, 0xf0, 0x60, 0xe9, 0xc2, 0x87, 0x0f, 0x96,
-	0x2e, 0xfc, 0xa4, 0xb7, 0x64, 0xbd, 0xdf, 0x5b, 0xb2, 0x3e, 0xe8, 0x2d, 0x59, 0x1f, 0xf6, 0x96,
-	0xac, 0x8f, 0x7a, 0x4b, 0xd6, 0x7b, 0x1f, 0x2f, 0x5d, 0xf8, 0x56, 0x21, 0x8a, 0xc9, 0xff, 0x04,
-	0x00, 0x00, 0xff, 0xff, 0xc9, 0xba, 0x4b, 0xc6, 0xd2, 0x31, 0x00, 0x00,
+	// 2837 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x3a, 0xcf, 0x6f, 0x1b, 0xc7,
+	0xd5, 0x5e, 0x4a, 0x94, 0xc8, 0xa1, 0x45, 0xc9, 0x63, 0xc5, 0xe6, 0xe7, 0x2f, 0x10, 0x5d, 0xa6,
+	0x49, 0x9c, 0xa6, 0xa1, 0x6a, 0x23, 0x2e, 0xa2, 0xa4, 0x4d, 0x2b, 0x4a, 0x71, 0xac, 0x58, 0x8a,
+	0x94, 0xa1, 0x90, 0x00, 0x45, 0x81, 0x76, 0xb4, 0x1c, 0x91, 0x1b, 0x91, 0xbb, 0xdb, 0xd9, 0xa1,
+	0x1c, 0xb5, 0x0d, 0xda, 0xe4, 0x50, 0x20, 0x45, 0x0f, 0x39, 0xb5, 0x87, 0x1e, 0x7a, 0xe8, 0x9f,
+	0xd1, 0x4b, 0x7b, 0x6a, 0x2e, 0x05, 0x72, 0x28, 0xd0, 0xa0, 0x28, 0x88, 0x98, 0x41, 0xd1, 0x63,
+	0x2f, 0xe9, 0xc5, 0xa7, 0x62, 0xde, 0x0c, 0x77, 0x66, 0x97, 0x94, 0x22, 0x9b, 0x8c, 0x0e, 0x85,
+	0x6f, 0xdc, 0xf7, 0x73, 0xe6, 0xbd, 0x37, 0x6f, 0xde, 0x7b, 0x43, 0xb4, 0xd1, 0xf4, 0x44, 0xab,
+	0xbb, 0x57, 0x75, 0x83, 0xce, 0x72, 0x87, 0x09, 0x1a, 0xf2, 0xe0, 0x70, 0xb9, 0x13, 0x34, 0x58,
+	0xbb, 0x41, 0x43, 0x6f, 0x39, 0x3c, 0x68, 0x2e, 0xd3, 0xd0, 0x8b, 0x96, 0x3d, 0x7f, 0x9f, 0x71,
+	0xe6, 0xbb, 0x6c, 0xf9, 0xf0, 0x3a, 0x6d, 0x87, 0x2d, 0x7a, 0x7d, 0xb9, 0xc9, 0x7c, 0xc6, 0xa9,
+	0x60, 0x8d, 0x6a, 0xc8, 0x03, 0x11, 0xe0, 0x15, 0x23, 0xaa, 0x3a, 0x10, 0x55, 0x8d, 0x45, 0x55,
+	0xc3, 0x83, 0x66, 0x55, 0x8a, 0xaa, 0xc6, 0xa2, 0xaa, 0x03, 0x51, 0x57, 0x9e, 0xb3, 0x56, 0xd1,
+	0x0c, 0x9a, 0xc1, 0x32, 0x48, 0xdc, 0xeb, 0xee, 0xc3, 0x17, 0x7c, 0xc0, 0x2f, 0xa5, 0xe9, 0xca,
+	0xab, 0xa7, 0x5c, 0xb4, 0x4b, 0x05, 0x6d, 0x07, 0xcd, 0x63, 0x97, 0x7c, 0x65, 0xfd, 0x94, 0x82,
+	0x1a, 0x54, 0xd0, 0xe3, 0xa5, 0x54, 0x0e, 0x5e, 0x88, 0xaa, 0x5e, 0x20, 0x49, 0x97, 0xdd, 0x80,
+	0x4b, 0x13, 0x0d, 0xd1, 0x3c, 0x6f, 0x68, 0x3a, 0xd4, 0x6d, 0x79, 0x3e, 0xe3, 0x47, 0x46, 0xbe,
+	0xd4, 0x3d, 0x8a, 0x6b, 0xf9, 0x38, 0x2e, 0xde, 0xf5, 0x85, 0xd7, 0x61, 0x43, 0x0c, 0xdf, 0xfc,
+	0x22, 0x86, 0xc8, 0x6d, 0xb1, 0x0e, 0x4d, 0xf3, 0x55, 0x7e, 0xe9, 0xa0, 0x62, 0x2d, 0x10, 0x6b,
+	0x2d, 0xea, 0xfb, 0xac, 0x5d, 0x0f, 0x99, 0x8b, 0x5f, 0x46, 0x45, 0x37, 0xf0, 0x7d, 0xe6, 0x0a,
+	0x2f, 0xf0, 0x5f, 0xa7, 0x1d, 0x56, 0x72, 0xae, 0x3a, 0xd7, 0xf2, 0xb5, 0x4b, 0x1f, 0xf5, 0xca,
+	0xe7, 0xfa, 0xbd, 0x72, 0x71, 0x2d, 0x81, 0x25, 0x29, 0x6a, 0xfc, 0x02, 0x3a, 0xef, 0x07, 0xc2,
+	0xdb, 0xf7, 0x18, 0x07, 0xee, 0x0c, 0x70, 0x2f, 0x6a, 0xee, 0xf3, 0xaf, 0x5b, 0x38, 0x92, 0xa0,
+	0xac, 0xbc, 0x9f, 0x41, 0x17, 0x6a, 0x5d, 0xf7, 0x80, 0x4d, 0x74, 0x3d, 0xaf, 0xa1, 0x4b, 0xd2,
+	0x8d, 0x7b, 0x34, 0x62, 0x49, 0x4a, 0xbd, 0x32, 0xac, 0xe5, 0x20, 0xa5, 0x1a, 0x64, 0x1c, 0xc3,
+	0x81, 0x9f, 0x46, 0x39, 0xcf, 0x0f, 0xbb, 0xe2, 0x0e, 0x3b, 0x2a, 0x4d, 0x01, 0x77, 0x41, 0x73,
+	0x4f, 0xdd, 0x61, 0x47, 0x24, 0x46, 0x4a, 0x23, 0x44, 0x2e, 0xf5, 0x37, 0x7c, 0xc1, 0xf8, 0x21,
+	0x6d, 0x97, 0xa6, 0xaf, 0x3a, 0xd7, 0xb2, 0xc6, 0x08, 0x75, 0x0b, 0x47, 0x12, 0x94, 0x95, 0x37,
+	0xd1, 0xdc, 0x60, 0xf7, 0x82, 0x8a, 0x6e, 0x84, 0xaf, 0xa2, 0x69, 0xdf, 0xec, 0xfa, 0xbc, 0x16,
+	0x31, 0x0d, 0xeb, 0x04, 0x0c, 0x7e, 0x02, 0x65, 0x19, 0xe7, 0x01, 0xd7, 0x1b, 0x9a, 0xd3, 0x24,
+	0xd9, 0x57, 0x24, 0x90, 0x28, 0x5c, 0xe5, 0x1f, 0x19, 0x54, 0x5c, 0xe3, 0x81, 0xbf, 0xc3, 0x59,
+	0xc3, 0x83, 0x1d, 0xe1, 0x1f, 0xa2, 0x9c, 0x0c, 0x40, 0xb9, 0x57, 0x90, 0x5e, 0xb8, 0xf1, 0x8d,
+	0xaa, 0x8a, 0xa3, 0xaa, 0x1d, 0x47, 0xe6, 0x04, 0x4b, 0xea, 0xea, 0xe1, 0xf5, 0xea, 0xf6, 0xde,
+	0xdb, 0xcc, 0x15, 0x5b, 0x4c, 0x50, 0x63, 0x3d, 0x03, 0x23, 0xb1, 0x54, 0x1c, 0xa0, 0xe9, 0x28,
+	0x64, 0x2e, 0x2c, 0xac, 0x70, 0x63, 0xab, 0xfa, 0xd0, 0x99, 0xa2, 0x9a, 0x5c, 0xba, 0x0c, 0x0c,
+	0x63, 0x0a, 0xf9, 0x45, 0x40, 0x11, 0xbe, 0x8b, 0x66, 0x22, 0x30, 0x1b, 0xb8, 0xa7, 0x70, 0x63,
+	0x7b, 0x72, 0x2a, 0x41, 0x6c, 0xad, 0xa8, 0x95, 0xce, 0xa8, 0x6f, 0xa2, 0xd5, 0x55, 0xfe, 0x9d,
+	0x41, 0x97, 0x93, 0x0c, 0x6b, 0x81, 0xdf, 0xf0, 0xc0, 0xce, 0xdf, 0x41, 0xd3, 0xe2, 0x28, 0x1c,
+	0x78, 0xf0, 0xd9, 0xc1, 0xb2, 0x77, 0x8f, 0x42, 0x76, 0xbf, 0x57, 0xfe, 0xff, 0x63, 0xd8, 0x24,
+	0x9a, 0x00, 0x23, 0xde, 0x8c, 0x77, 0xa5, 0x3c, 0xfc, 0x7c, 0x72, 0x11, 0xf7, 0x7b, 0xe5, 0x11,
+	0xa9, 0xa8, 0x1a, 0x4b, 0x4a, 0x2e, 0x15, 0x73, 0x84, 0xdb, 0x34, 0x12, 0xbb, 0x9c, 0xfa, 0x91,
+	0xd2, 0xe4, 0x75, 0x98, 0xb6, 0xd7, 0xd7, 0x4e, 0x17, 0x00, 0x92, 0xa3, 0x76, 0xa9, 0xdf, 0x2b,
+	0xe3, 0xcd, 0x21, 0x49, 0x64, 0x84, 0x74, 0xfc, 0x14, 0x9a, 0xe1, 0x8c, 0x46, 0x81, 0x0f, 0x27,
+	0x21, 0x6f, 0xcc, 0x48, 0x00, 0x4a, 0x34, 0x16, 0x3f, 0x83, 0x66, 0x3b, 0x2c, 0x8a, 0x68, 0x93,
+	0x95, 0xb2, 0x40, 0x38, 0xaf, 0x09, 0x67, 0xb7, 0x14, 0x98, 0x0c, 0xf0, 0x95, 0xbe, 0x83, 0x70,
+	0xd2, 0x74, 0x9b, 0x5e, 0x24, 0xf0, 0xf7, 0x87, 0x82, 0xba, 0x7a, 0xba, 0x3d, 0x49, 0x6e, 0x08,
+	0xe9, 0x05, 0xad, 0x32, 0x37, 0x80, 0x58, 0x01, 0xed, 0xa3, 0xac, 0x27, 0x58, 0x47, 0x3a, 0x62,
+	0xea, 0x5a, 0xe1, 0xc6, 0xc6, 0xc4, 0xc2, 0xcb, 0x9c, 0xda, 0x0d, 0x29, 0x9f, 0x28, 0x35, 0x95,
+	0x3f, 0x0c, 0x6d, 0x12, 0x72, 0xe2, 0x35, 0x94, 0x93, 0x09, 0xbd, 0xd1, 0x6d, 0xc7, 0x79, 0x41,
+	0x2e, 0xb8, 0xae, 0x61, 0x24, 0xc6, 0xe2, 0x9f, 0xa0, 0x9c, 0x60, 0x9d, 0xb0, 0x4d, 0x05, 0x9b,
+	0xc0, 0x29, 0x34, 0xcb, 0xd8, 0xd5, 0x42, 0x8d, 0xb5, 0x06, 0x10, 0x12, 0x2b, 0xac, 0xfc, 0xce,
+	0x41, 0x8b, 0xa3, 0x4e, 0x11, 0xfe, 0x85, 0x83, 0x90, 0x3b, 0x08, 0xcf, 0xa8, 0x34, 0x03, 0xc6,
+	0x24, 0x13, 0x33, 0x66, 0x1c, 0xf9, 0x26, 0x3d, 0xc5, 0xa0, 0x88, 0x58, 0x9a, 0x2b, 0x7f, 0xce,
+	0xa0, 0xd9, 0xb5, 0x2e, 0x17, 0xd4, 0x3b, 0x8b, 0x74, 0xd8, 0x4a, 0xa4, 0xc3, 0x5b, 0xe3, 0xec,
+	0x57, 0xad, 0xf9, 0xd8, 0x3c, 0x18, 0xa6, 0xf2, 0xe0, 0xed, 0x09, 0xe8, 0x3a, 0x39, 0x01, 0xde,
+	0xcb, 0xa0, 0x05, 0x4d, 0x69, 0x32, 0xdf, 0x0b, 0x89, 0xcc, 0xf7, 0xd5, 0x54, 0xe6, 0x5b, 0x4c,
+	0xd3, 0x3f, 0x4a, 0x79, 0x27, 0xa7, 0xbc, 0xbf, 0x3a, 0xa8, 0xa0, 0x6d, 0x76, 0x06, 0xb9, 0xae,
+	0x99, 0xcc, 0x75, 0xb5, 0xf1, 0x43, 0xe8, 0x98, 0x24, 0xf7, 0x59, 0x26, 0xde, 0x16, 0x64, 0xb7,
+	0xeb, 0xa8, 0xd0, 0x60, 0x91, 0xcb, 0xbd, 0x50, 0x1a, 0x53, 0x07, 0xcf, 0x7c, 0xbf, 0x57, 0x2e,
+	0xac, 0x1b, 0x30, 0xb1, 0x69, 0x24, 0xcb, 0x21, 0xe3, 0x51, 0xb2, 0xb2, 0x03, 0x96, 0x37, 0x0d,
+	0x98, 0xd8, 0x34, 0x78, 0x15, 0xcd, 0x47, 0x8c, 0x1f, 0x7a, 0x7e, 0x33, 0xf2, 0x04, 0x03, 0x36,
+	0x55, 0xd2, 0x5d, 0xd6, 0x8b, 0x9c, 0xaf, 0x2b, 0x74, 0x5d, 0xa3, 0x49, 0x9a, 0x1e, 0xdf, 0x44,
+	0x05, 0x69, 0xa9, 0x48, 0x55, 0x8d, 0xda, 0xcf, 0x17, 0x35, 0x7b, 0x61, 0xdd, 0xa0, 0x88, 0x4d,
+	0x87, 0x9f, 0x44, 0xb3, 0x77, 0xbd, 0x1f, 0x53, 0xde, 0x88, 0x4a, 0xd9, 0xab, 0x53, 0xb2, 0x88,
+	0x94, 0xde, 0x7e, 0x4b, 0x81, 0xc8, 0x00, 0x87, 0xbf, 0x8e, 0x72, 0x3f, 0xea, 0xb2, 0x08, 0x6c,
+	0x30, 0x03, 0xa2, 0x63, 0x6f, 0xbd, 0xa1, 0xe1, 0x24, 0xa6, 0xc0, 0x65, 0x94, 0x0d, 0xee, 0xfa,
+	0x8c, 0x97, 0x66, 0x81, 0x34, 0x2f, 0xad, 0xbc, 0x2d, 0x01, 0x44, 0xc1, 0x2b, 0x1f, 0x3a, 0x68,
+	0x2e, 0x71, 0x94, 0xf1, 0xcf, 0x12, 0x49, 0xd8, 0x01, 0x2f, 0xdf, 0x19, 0xdf, 0xcb, 0xa7, 0xcf,
+	0xbe, 0xf7, 0x1c, 0x74, 0x51, 0x33, 0x0d, 0x6e, 0x0f, 0x08, 0x80, 0xff, 0xa1, 0x4c, 0x5c, 0xf9,
+	0xd4, 0x41, 0xc5, 0x75, 0xee, 0xed, 0x8b, 0xb5, 0x16, 0x73, 0x0f, 0x60, 0x7b, 0x37, 0x50, 0xce,
+	0xe5, 0x81, 0xff, 0xca, 0x3b, 0x21, 0x1f, 0xea, 0x65, 0x34, 0x9c, 0x45, 0x11, 0xb8, 0x77, 0x40,
+	0x87, 0x9f, 0x41, 0x39, 0xc1, 0x59, 0xd4, 0x0a, 0xda, 0x0d, 0x58, 0xb4, 0x53, 0x9b, 0xeb, 0xf7,
+	0xca, 0xf9, 0xdd, 0x96, 0x06, 0x92, 0x18, 0x8d, 0x9f, 0x4f, 0x35, 0x60, 0x2a, 0xaa, 0x17, 0x4e,
+	0x6e, 0xbe, 0xf0, 0x0a, 0x2a, 0x08, 0x16, 0x09, 0x1d, 0xb4, 0x3a, 0x96, 0xe3, 0xa3, 0xb0, 0x6b,
+	0x50, 0x2a, 0x9e, 0x2d, 0xda, 0xca, 0x6f, 0x33, 0xe8, 0xe2, 0x96, 0x34, 0xd6, 0x3a, 0x0b, 0xdb,
+	0xc1, 0x51, 0x87, 0xf9, 0x02, 0xf6, 0xf9, 0x2c, 0xca, 0x83, 0x0d, 0xad, 0xa6, 0x0d, 0x16, 0xbd,
+	0x35, 0x00, 0x12, 0x83, 0xc7, 0x15, 0x34, 0x73, 0x97, 0x79, 0xcd, 0x96, 0xd0, 0xbd, 0x12, 0x92,
+	0xa9, 0xf2, 0x2d, 0x80, 0x10, 0x8d, 0x91, 0x34, 0x2e, 0xf5, 0x29, 0x3f, 0x82, 0x4c, 0x99, 0x53,
+	0x34, 0x6b, 0x00, 0x21, 0x1a, 0x23, 0x69, 0xa2, 0x16, 0x6d, 0x04, 0x77, 0xe1, 0xcc, 0x68, 0x9a,
+	0x3a, 0x40, 0x88, 0xc6, 0x48, 0x9a, 0x7d, 0xaf, 0x2d, 0xe2, 0xc3, 0x02, 0x34, 0xb7, 0x00, 0x42,
+	0x34, 0x06, 0xbf, 0x8a, 0xe6, 0x94, 0xc4, 0x2d, 0x26, 0xb8, 0xe7, 0x46, 0xa5, 0x1c, 0x1c, 0xd5,
+	0xaf, 0xf4, 0x7b, 0xe5, 0xb9, 0x35, 0x1b, 0x71, 0xbf, 0x57, 0x3e, 0x6f, 0x03, 0x48, 0x92, 0xaf,
+	0xf2, 0xf9, 0x14, 0x7a, 0x2c, 0x6d, 0x1d, 0x75, 0xfe, 0x96, 0x51, 0xde, 0xeb, 0xd0, 0x26, 0xb3,
+	0xec, 0x73, 0x41, 0x1b, 0x3c, 0xbf, 0x31, 0x40, 0x10, 0x43, 0x23, 0x5b, 0xe1, 0x46, 0x2c, 0xc4,
+	0x4a, 0x74, 0x71, 0xf8, 0xac, 0x27, 0xb0, 0x24, 0x45, 0x2d, 0xf3, 0x15, 0xa4, 0x30, 0xd7, 0x4e,
+	0x77, 0x71, 0xbe, 0xaa, 0x1b, 0x14, 0xb1, 0xe9, 0xe4, 0x0d, 0xd5, 0x0a, 0xa9, 0x95, 0xe2, 0xe2,
+	0x1b, 0xea, 0xf6, 0xce, 0x2a, 0x90, 0x0f, 0xf0, 0xf8, 0x19, 0x94, 0x77, 0xbb, 0x9c, 0x33, 0x5f,
+	0xac, 0xdc, 0x04, 0x27, 0x39, 0xa6, 0x43, 0xde, 0x59, 0xb9, 0x49, 0x0c, 0xd6, 0x26, 0x5d, 0x01,
+	0x5f, 0x25, 0x48, 0x57, 0x0c, 0xe9, 0x0a, 0xde, 0x47, 0x45, 0x79, 0xc1, 0x9a, 0x02, 0x0f, 0xfc,
+	0xf6, 0x60, 0x57, 0x37, 0x96, 0xf6, 0xd9, 0x4c, 0x48, 0x21, 0x29, 0xa9, 0xf8, 0x35, 0x84, 0x1b,
+	0xd4, 0x6b, 0x1f, 0x19, 0xd0, 0xea, 0x61, 0xb3, 0x94, 0x83, 0x78, 0xbc, 0xa2, 0xd7, 0x86, 0xd7,
+	0x87, 0x28, 0xc8, 0x08, 0xae, 0x4a, 0x80, 0x2e, 0x6d, 0xfb, 0x6d, 0xcf, 0x67, 0xb7, 0x18, 0x15,
+	0x5d, 0xce, 0x22, 0x11, 0x70, 0x95, 0xdd, 0x2a, 0x68, 0x86, 0xba, 0xc2, 0x3b, 0x54, 0x3e, 0xd7,
+	0x11, 0xba, 0x0a, 0x10, 0xa2, 0x31, 0xf2, 0x3e, 0xb3, 0x3d, 0x65, 0xdd, 0x67, 0xc7, 0x79, 0xa9,
+	0xf2, 0x71, 0x06, 0xa1, 0x33, 0x6d, 0xee, 0x0f, 0x12, 0x39, 0x74, 0x63, 0x22, 0x6d, 0xc5, 0xb1,
+	0x05, 0x6d, 0x94, 0x2a, 0x68, 0xef, 0x4c, 0x46, 0xdd, 0xc9, 0x35, 0x6d, 0x1b, 0x5d, 0xb4, 0x9a,
+	0x0a, 0xea, 0xb6, 0xbe, 0x54, 0x07, 0xfe, 0x6d, 0x0a, 0x5d, 0xb0, 0xd4, 0xa9, 0x21, 0x10, 0x6e,
+	0xa3, 0xac, 0xa0, 0x7b, 0xba, 0xcf, 0x1b, 0x6f, 0xdf, 0xbb, 0x52, 0x8e, 0x35, 0x5a, 0x53, 0x45,
+	0x02, 0x40, 0x89, 0x52, 0x82, 0x1b, 0x68, 0x6a, 0x2f, 0x10, 0x13, 0x70, 0x69, 0x72, 0xa8, 0x58,
+	0x9b, 0x95, 0xa7, 0xba, 0x16, 0x08, 0x22, 0xc5, 0xcb, 0xee, 0x64, 0x0f, 0x86, 0x6d, 0xda, 0x99,
+	0x9b, 0xe3, 0x28, 0x4a, 0x0f, 0x0c, 0x95, 0x3b, 0x14, 0x98, 0x68, 0x3d, 0xf8, 0xa7, 0x28, 0x1f,
+	0x09, 0xce, 0x68, 0xc7, 0xf3, 0x9b, 0x90, 0xc4, 0xc6, 0x1b, 0x0d, 0xd5, 0x07, 0xb2, 0x6c, 0xbd,
+	0x70, 0xb7, 0xc5, 0x18, 0x62, 0x14, 0x56, 0xfe, 0x95, 0x49, 0x04, 0x52, 0xdc, 0x1e, 0xbd, 0x94,
+	0x68, 0x8f, 0x9e, 0x4e, 0xb5, 0x47, 0x97, 0x1f, 0x0d, 0x85, 0x1e, 0xb8, 0x43, 0xfa, 0xbb, 0x83,
+	0x8a, 0x67, 0x3a, 0x10, 0x7a, 0x3b, 0xd9, 0x24, 0xbd, 0x32, 0x91, 0xb4, 0x74, 0x4c, 0x9f, 0xf4,
+	0xa7, 0xac, 0xbd, 0x39, 0x48, 0x45, 0x2f, 0xa1, 0xb9, 0x50, 0x41, 0x02, 0x6e, 0x95, 0x11, 0x8f,
+	0x69, 0xfe, 0xb9, 0x1d, 0x1b, 0x49, 0x92, 0xb4, 0xd2, 0xae, 0x6d, 0xba, 0xc7, 0xda, 0x4c, 0x95,
+	0x94, 0x39, 0x63, 0xd7, 0x4d, 0x05, 0x26, 0x03, 0x3c, 0xee, 0xa0, 0x7c, 0x00, 0x77, 0x80, 0xcc,
+	0x7a, 0xaa, 0x6e, 0xd8, 0x96, 0xe1, 0xbe, 0x3d, 0x00, 0xde, 0xef, 0x95, 0x5f, 0x7e, 0xc8, 0xd7,
+	0x99, 0xaa, 0xae, 0x9b, 0x8c, 0x06, 0xe8, 0x00, 0x87, 0x1a, 0xab, 0xf9, 0x13, 0x9b, 0x2a, 0x17,
+	0x65, 0x61, 0xfa, 0x0e, 0x21, 0xf2, 0x00, 0xdd, 0xaa, 0x94, 0x61, 0x7c, 0x20, 0xc5, 0x6f, 0x06,
+	0x2e, 0x05, 0x2f, 0x40, 0x7a, 0xdc, 0x90, 0x42, 0x89, 0x92, 0x8d, 0xf7, 0xd1, 0x4c, 0xd0, 0x15,
+	0x52, 0xcb, 0xcc, 0xc4, 0xb4, 0x40, 0xba, 0xda, 0x06, 0xa9, 0x44, 0x4b, 0xff, 0xc2, 0x66, 0x0e,
+	0xaf, 0xa1, 0x0b, 0x77, 0x03, 0x7e, 0xd0, 0x0e, 0x68, 0x63, 0xad, 0x4d, 0xa3, 0x08, 0xcc, 0x94,
+	0x53, 0xbe, 0xef, 0xf7, 0xca, 0x17, 0xde, 0x4a, 0x23, 0xc9, 0x30, 0x3d, 0xe6, 0xd6, 0x14, 0x31,
+	0x0f, 0xfb, 0x59, 0x3f, 0xed, 0x7e, 0xb4, 0x0f, 0xcd, 0x96, 0x48, 0xd7, 0x1f, 0x4c, 0x1f, 0xcd,
+	0x79, 0x19, 0x9e, 0x47, 0x56, 0x7e, 0xe3, 0xa0, 0x85, 0xa1, 0x71, 0xe0, 0xfb, 0xc9, 0x71, 0xa0,
+	0x3a, 0x4a, 0xaf, 0x4f, 0xe4, 0x28, 0x9d, 0xbe, 0x19, 0x7d, 0xcf, 0x41, 0x78, 0x78, 0xbe, 0x19,
+	0x57, 0x39, 0xce, 0x19, 0x54, 0x39, 0x95, 0xbf, 0x64, 0x50, 0x3e, 0x3e, 0xb2, 0x67, 0x50, 0xc2,
+	0xbd, 0x9d, 0x28, 0xe1, 0x6e, 0x8f, 0xbf, 0xb9, 0x80, 0x1f, 0x5b, 0xc1, 0xf1, 0x54, 0x05, 0xf7,
+	0xda, 0x44, 0xb4, 0x9d, 0x5c, 0xc0, 0xfd, 0x33, 0x13, 0xfb, 0x34, 0xe0, 0xe6, 0xde, 0x7d, 0x31,
+	0x71, 0xef, 0x3e, 0x95, 0xba, 0x77, 0x2f, 0x0d, 0x73, 0x3c, 0xba, 0x76, 0x4f, 0xbe, 0x76, 0x3f,
+	0xcf, 0xa0, 0xf9, 0xd8, 0x6a, 0xb7, 0x19, 0x6d, 0x8b, 0x16, 0x5e, 0x47, 0x0b, 0x22, 0x10, 0xb4,
+	0x6d, 0xc2, 0x3e, 0x02, 0x83, 0x67, 0x6b, 0x25, 0x2d, 0x67, 0x61, 0x37, 0x85, 0x27, 0x43, 0x1c,
+	0xf2, 0x82, 0x03, 0x18, 0x61, 0x30, 0xe9, 0x52, 0x56, 0xcf, 0x9a, 0x0b, 0x6e, 0xd7, 0x46, 0x92,
+	0x24, 0xad, 0x59, 0xc2, 0xca, 0xcd, 0x98, 0x7f, 0x6a, 0xd4, 0x12, 0x0c, 0x9e, 0x0c, 0x71, 0xc8,
+	0xae, 0xb0, 0xc3, 0x1a, 0x1e, 0xf5, 0x09, 0x8b, 0xc2, 0xc0, 0x8f, 0x18, 0xf8, 0x68, 0x3a, 0xd9,
+	0x15, 0x6e, 0x0d, 0x51, 0x90, 0x11, 0x5c, 0x78, 0x13, 0x2d, 0x4a, 0x8f, 0xa4, 0x7a, 0x48, 0x35,
+	0x07, 0xcc, 0xd6, 0x4a, 0xfd, 0x5e, 0x79, 0x71, 0x73, 0x04, 0x9e, 0x8c, 0xe4, 0xaa, 0x7c, 0xe2,
+	0x20, 0x73, 0xc3, 0x9f, 0x41, 0xb1, 0xe3, 0x25, 0x8b, 0x9d, 0xf5, 0x49, 0x9c, 0xe0, 0x63, 0x6a,
+	0x9d, 0x5f, 0xcf, 0x59, 0x5b, 0x1b, 0x35, 0x15, 0xce, 0x9c, 0x62, 0x2a, 0x5c, 0x47, 0x28, 0xe4,
+	0x41, 0xa3, 0xeb, 0x0a, 0xc2, 0xf6, 0xf5, 0xa9, 0x7a, 0xc2, 0xb2, 0x47, 0x55, 0x1e, 0x4f, 0x93,
+	0x30, 0x09, 0xd3, 0xcb, 0xac, 0x15, 0x65, 0xc6, 0xdc, 0x89, 0x59, 0x89, 0x25, 0x06, 0xff, 0x00,
+	0x15, 0xad, 0x39, 0xb0, 0x14, 0x3c, 0x7d, 0x7a, 0xc1, 0x30, 0x85, 0xb0, 0xe6, 0xca, 0x52, 0x78,
+	0x4a, 0x1c, 0x7e, 0x1c, 0x4d, 0x87, 0x01, 0x57, 0x85, 0x4c, 0xb6, 0x96, 0x93, 0x99, 0x69, 0x27,
+	0xe0, 0x82, 0x00, 0x14, 0xb0, 0x54, 0xb4, 0xf4, 0x44, 0x58, 0x61, 0xa9, 0x68, 0x11, 0x80, 0xe2,
+	0x6f, 0x21, 0x44, 0x5d, 0x97, 0x45, 0x91, 0xcc, 0x58, 0xba, 0x7a, 0x78, 0x5c, 0x6e, 0x66, 0x35,
+	0x86, 0xde, 0x4f, 0x7c, 0x11, 0x8b, 0x1e, 0x6f, 0x58, 0x8f, 0x85, 0x39, 0xd8, 0x54, 0x79, 0xd4,
+	0xa6, 0x76, 0x82, 0x46, 0xfc, 0xfc, 0x77, 0x7e, 0xf4, 0xd3, 0x1f, 0x3e, 0x44, 0x33, 0x10, 0x08,
+	0x51, 0x29, 0x3f, 0xf6, 0x6d, 0x3e, 0x62, 0xb6, 0x68, 0x92, 0x16, 0x20, 0x23, 0xa2, 0xb5, 0xe1,
+	0x23, 0x84, 0x1a, 0xf1, 0xb4, 0xb5, 0x74, 0x7e, 0xec, 0x4b, 0x3b, 0x39, 0xba, 0x55, 0x81, 0x61,
+	0x60, 0xc4, 0x52, 0x86, 0xdf, 0x45, 0x85, 0x90, 0x07, 0x4d, 0x98, 0xdd, 0x1e, 0xb2, 0xd2, 0xdc,
+	0x04, 0x6e, 0xb9, 0x58, 0x1a, 0x28, 0x87, 0x60, 0xb7, 0x80, 0xc4, 0xd6, 0x87, 0xbf, 0x8d, 0xe6,
+	0x29, 0x17, 0xde, 0x3e, 0x75, 0x45, 0x74, 0x2b, 0x68, 0x37, 0x18, 0x2f, 0x15, 0xd5, 0x80, 0xaf,
+	0xdf, 0x2b, 0xcf, 0xaf, 0x26, 0x51, 0x24, 0x4d, 0x8b, 0x3f, 0x70, 0xd0, 0x1c, 0x14, 0xb9, 0xba,
+	0xa5, 0x8d, 0x4a, 0xf3, 0xe0, 0xb8, 0xcd, 0xc9, 0x94, 0x61, 0x4a, 0xa8, 0xc9, 0xdb, 0x1b, 0xb6,
+	0x2a, 0x92, 0xd4, 0x8c, 0x7f, 0xe5, 0xa0, 0xa2, 0xaa, 0x84, 0xe3, 0xc5, 0x2c, 0x7c, 0x09, 0x8b,
+	0x89, 0xc7, 0xa6, 0xdb, 0x09, 0x5d, 0x24, 0xa5, 0x5b, 0x66, 0x9e, 0x8e, 0xe7, 0x13, 0x16, 0xb6,
+	0x3d, 0x97, 0x46, 0xa5, 0x0b, 0x70, 0x2e, 0xc1, 0x19, 0x5b, 0x06, 0x4c, 0x6c, 0x1a, 0xfc, 0x2c,
+	0xca, 0xd3, 0xae, 0x08, 0x22, 0x97, 0xb6, 0x59, 0x09, 0x43, 0x73, 0x05, 0xe3, 0x81, 0xd5, 0xae,
+	0x08, 0xea, 0x12, 0x48, 0x0c, 0x1e, 0xe4, 0xd3, 0x77, 0x62, 0xf9, 0x17, 0x2d, 0xf9, 0x06, 0x4c,
+	0x6c, 0x1a, 0xd3, 0x20, 0x2c, 0x3e, 0x48, 0x83, 0xf0, 0xd8, 0x03, 0x36, 0x08, 0x01, 0xca, 0xba,
+	0xd4, 0x6d, 0xb1, 0xd2, 0x25, 0x88, 0xe5, 0x09, 0x55, 0xe4, 0x83, 0x39, 0x9a, 0x5a, 0x35, 0x7c,
+	0x12, 0xa5, 0x07, 0x73, 0x94, 0x85, 0x39, 0x69, 0xe9, 0x32, 0x28, 0x7c, 0x63, 0x0c, 0x85, 0xa3,
+	0x87, 0xaf, 0x4a, 0x67, 0x5d, 0x7e, 0x12, 0xa5, 0x0a, 0x3f, 0xa7, 0x8b, 0xc1, 0x12, 0x18, 0xe7,
+	0xff, 0xac, 0x42, 0xd0, 0x5c, 0x40, 0xa6, 0xfe, 0xab, 0xfc, 0x7e, 0xc6, 0x2a, 0x75, 0x74, 0xff,
+	0xf2, 0x81, 0x83, 0x0a, 0xb0, 0x2a, 0xf5, 0xad, 0x9f, 0xd2, 0x76, 0x26, 0x98, 0xf2, 0x54, 0x99,
+	0x1b, 0x9f, 0x9e, 0x2d, 0xa3, 0x8c, 0xc9, 0xc8, 0x30, 0x9f, 0xf8, 0xbd, 0x51, 0xbd, 0xd4, 0xd6,
+	0x24, 0x6e, 0xea, 0x53, 0xb7, 0x52, 0x72, 0x0d, 0x8b, 0x9d, 0xc0, 0xf7, 0x64, 0x55, 0x42, 0x23,
+	0xb1, 0x2a, 0xe4, 0xb5, 0x20, 0x56, 0x07, 0xe3, 0xbe, 0xe5, 0xd3, 0x17, 0xb6, 0x91, 0xa0, 0x9d,
+	0xb0, 0xf6, 0xb8, 0xd6, 0xb7, 0xb8, 0x35, 0x42, 0x28, 0x19, 0xa9, 0x4a, 0xd6, 0x7e, 0x16, 0xbc,
+	0x2e, 0xef, 0x2e, 0xb8, 0xa8, 0x1d, 0x53, 0xfb, 0x6d, 0xa5, 0xf0, 0x64, 0x88, 0x03, 0x6a, 0x3f,
+	0x03, 0xdb, 0xa4, 0x82, 0xf9, 0xee, 0x91, 0x7e, 0xd8, 0x30, 0xb5, 0xdf, 0x10, 0x05, 0x19, 0xc1,
+	0x25, 0x1b, 0xa0, 0x16, 0x94, 0xc6, 0x7a, 0x78, 0x30, 0x91, 0x06, 0x48, 0x15, 0xdb, 0xe6, 0x3a,
+	0x54, 0xdf, 0x44, 0x6b, 0xc2, 0x87, 0x28, 0x17, 0xe9, 0x30, 0x29, 0xcd, 0x42, 0x28, 0x8c, 0xf5,
+	0x4f, 0x10, 0xfb, 0x8f, 0x89, 0xa6, 0x52, 0x8c, 0x13, 0x67, 0xac, 0xab, 0xf2, 0x47, 0x47, 0x9e,
+	0x92, 0xc4, 0xf5, 0x05, 0x2f, 0x7c, 0x94, 0x77, 0xba, 0xa1, 0x6e, 0x03, 0xd4, 0x0b, 0x1f, 0x40,
+	0x88, 0xc6, 0xe0, 0xef, 0xa2, 0x05, 0xc1, 0xe9, 0xfe, 0xbe, 0xe7, 0x6e, 0xf8, 0x2e, 0x67, 0x32,
+	0xf6, 0x75, 0xc5, 0xbf, 0x08, 0xd5, 0x7a, 0x0a, 0x47, 0x86, 0xa8, 0x87, 0xdf, 0xed, 0xa6, 0x1e,
+	0xf2, 0xdd, 0xee, 0x5d, 0xb4, 0x38, 0x6a, 0xcc, 0x3b, 0xf6, 0xff, 0x51, 0x9f, 0xb4, 0xfe, 0x43,
+	0x9a, 0x31, 0xd9, 0x7b, 0x37, 0x08, 0x3d, 0xd7, 0xfc, 0x83, 0xb4, 0xf2, 0x1f, 0x07, 0x2d, 0xa4,
+	0x07, 0xf6, 0x63, 0xeb, 0x7e, 0x11, 0x15, 0x61, 0x66, 0x16, 0x74, 0x79, 0xe2, 0x61, 0x02, 0xca,
+	0xd2, 0x75, 0x2a, 0x68, 0x3d, 0xc6, 0x90, 0x14, 0xa5, 0xbc, 0xd2, 0xe0, 0x8d, 0xc0, 0x7a, 0x3a,
+	0x54, 0x4f, 0xd0, 0x03, 0x20, 0x31, 0xf8, 0x87, 0xff, 0xff, 0x6b, 0xad, 0xfa, 0xd1, 0xbd, 0xa5,
+	0x73, 0x1f, 0xdf, 0x5b, 0x3a, 0xf7, 0xc9, 0xbd, 0xa5, 0x73, 0x3f, 0xef, 0x2f, 0x39, 0x1f, 0xf5,
+	0x97, 0x9c, 0x8f, 0xfb, 0x4b, 0xce, 0x27, 0xfd, 0x25, 0xe7, 0xd3, 0xfe, 0x92, 0xf3, 0xe1, 0x67,
+	0x4b, 0xe7, 0xbe, 0x97, 0x1b, 0xc4, 0xe4, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0xf5, 0x3b, 0xa2,
+	0x6f, 0xc9, 0x2e, 0x00, 0x00,
 }
 
 func (m *BotChannelSpec) Marshal() (dAtA []byte, err error) {
@@ -1324,6 +1345,238 @@ func (m *ChannelStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
 	i--
 	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *CronPrediction) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CronPrediction) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CronPrediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0x1a
+	{
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0x12
+	{
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *CronPredictionCondition) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CronPredictionCondition) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CronPredictionCondition) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	i -= len(m.Message)
+	copy(dAtA[i:], m.Message)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Message)))
+	i--
+	dAtA[i] = 0x2a
+	i -= len(m.Reason)
+	copy(dAtA[i:], m.Reason)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Reason)))
+	i--
+	dAtA[i] = 0x22
+	if m.LastTransitionTime != nil {
+		{
+			size, err := m.LastTransitionTime.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintGenerated(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1a
+	}
+	i -= len(m.Status)
+	copy(dAtA[i:], m.Status)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Status)))
+	i--
+	dAtA[i] = 0x12
+	i -= len(m.Type)
+	copy(dAtA[i:], m.Type)
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Type)))
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *CronPredictionList) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CronPredictionList) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CronPredictionList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Items) > 0 {
+		for iNdEx := len(m.Items) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Items[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintGenerated(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x12
+		}
+	}
+	{
+		size, err := m.ListMeta.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *CronPredictionSpec) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CronPredictionSpec) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CronPredictionSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Template.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0x12
+	if m.Schedule != nil {
+		i -= len(*m.Schedule)
+		copy(dAtA[i:], *m.Schedule)
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Schedule)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *CronPredictionStatus) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CronPredictionStatus) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CronPredictionStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Conditions) > 0 {
+		for iNdEx := len(m.Conditions) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Conditions[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintGenerated(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x32
+		}
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -1853,6 +2106,59 @@ func (m *OnlineFeaturestoreSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
+func (m *Prediction) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Prediction) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0x1a
+	{
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0x12
+	{
+		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
 func (m *PredictionCacheSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1964,59 +2270,6 @@ func (m *PredictionChannel) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Prediction) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Prediction) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x1a
-	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
-}
-
 func (m *PredictionCondition) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2116,328 +2369,6 @@ func (m *PredictionList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
-}
-
-func (m *CronPrediction) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *CronPrediction) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *CronPrediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x1a
-	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
-}
-
-func (m *CronPredictionCondition) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *CronPredictionCondition) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *CronPredictionCondition) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	i -= len(m.Message)
-	copy(dAtA[i:], m.Message)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Message)))
-	i--
-	dAtA[i] = 0x2a
-	i -= len(m.Reason)
-	copy(dAtA[i:], m.Reason)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Reason)))
-	i--
-	dAtA[i] = 0x22
-	if m.LastTransitionTime != nil {
-		{
-			size, err := m.LastTransitionTime.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	i -= len(m.Status)
-	copy(dAtA[i:], m.Status)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Status)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Type)
-	copy(dAtA[i:], m.Type)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Type)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
-}
-
-func (m *CronPredictionList) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *CronPredictionList) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *CronPredictionList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Items) > 0 {
-		for iNdEx := len(m.Items) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Items[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	{
-		size, err := m.ListMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
-}
-
-func (m *CronPredictionSpec) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *CronPredictionSpec) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *CronPredictionSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.WorkloadClassName != nil {
-		i -= len(*m.WorkloadClassName)
-		copy(dAtA[i:], *m.WorkloadClassName)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.WorkloadClassName)))
-		i--
-		dAtA[i] = 0x4a
-	}
-	if m.Owner != nil {
-		i -= len(*m.Owner)
-		copy(dAtA[i:], *m.Owner)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Owner)))
-		i--
-		dAtA[i] = 0x42
-	}
-	if m.Output != nil {
-		{
-			size, err := m.Output.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	if m.Input != nil {
-		{
-			size, err := m.Input.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	if m.DatasetName != nil {
-		i -= len(*m.DatasetName)
-		copy(dAtA[i:], *m.DatasetName)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.DatasetName)))
-		i--
-		dAtA[i] = 0x2a
-	}
-	if m.Objective != nil {
-		i -= len(*m.Objective)
-		copy(dAtA[i:], *m.Objective)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Objective)))
-		i--
-		dAtA[i] = 0x22
-	}
-	i--
-	if m.Labeled {
-		dAtA[i] = 1
-	} else {
-		dAtA[i] = 0
-	}
-	i--
-	dAtA[i] = 0x18
-	if m.PredictorName != nil {
-		i -= len(*m.PredictorName)
-		copy(dAtA[i:], *m.PredictorName)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.PredictorName)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.PredictionName != nil {
-		i -= len(*m.PredictionName)
-		copy(dAtA[i:], *m.PredictionName)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.PredictionName)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *CronPredictionStatus) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *CronPredictionStatus) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *CronPredictionStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Conditions) > 0 {
-		for iNdEx := len(m.Conditions) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Conditions[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x32
-		}
-	}
-	if m.CompletionTime != nil {
-		{
-			size, err := m.CompletionTime.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	if m.StartTime != nil {
-		{
-			size, err := m.StartTime.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	i -= len(m.Phase)
-	copy(dAtA[i:], m.Phase)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Phase)))
-	i--
-	dAtA[i] = 0x1a
-	i -= 8
-	encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Score))))
-	i--
-	dAtA[i] = 0x11
 	return len(dAtA) - i, nil
 }
 
@@ -2573,6 +2504,39 @@ func (m *PredictionStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x12
 		}
 	}
+	return len(dAtA) - i, nil
+}
+
+func (m *PredictionTemplate) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *PredictionTemplate) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *PredictionTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintGenerated(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
 	return len(dAtA) - i, nil
 }
 
@@ -3282,6 +3246,89 @@ func (m *ChannelStatus) Size() (n int) {
 	return n
 }
 
+func (m *CronPrediction) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.ObjectMeta.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	l = m.Spec.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	l = m.Status.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	return n
+}
+
+func (m *CronPredictionCondition) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Type)
+	n += 1 + l + sovGenerated(uint64(l))
+	l = len(m.Status)
+	n += 1 + l + sovGenerated(uint64(l))
+	if m.LastTransitionTime != nil {
+		l = m.LastTransitionTime.Size()
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	l = len(m.Reason)
+	n += 1 + l + sovGenerated(uint64(l))
+	l = len(m.Message)
+	n += 1 + l + sovGenerated(uint64(l))
+	return n
+}
+
+func (m *CronPredictionList) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.ListMeta.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	if len(m.Items) > 0 {
+		for _, e := range m.Items {
+			l = e.Size()
+			n += 1 + l + sovGenerated(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *CronPredictionSpec) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Schedule != nil {
+		l = len(*m.Schedule)
+		n += 1 + l + sovGenerated(uint64(l))
+	}
+	l = m.Template.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	return n
+}
+
+func (m *CronPredictionStatus) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Conditions) > 0 {
+		for _, e := range m.Conditions {
+			l = e.Size()
+			n += 1 + l + sovGenerated(uint64(l))
+		}
+	}
+	return n
+}
+
 func (m *Curtain) Size() (n int) {
 	if m == nil {
 		return 0
@@ -3488,6 +3535,21 @@ func (m *OnlineFeaturestoreSpec) Size() (n int) {
 	return n
 }
 
+func (m *Prediction) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.ObjectMeta.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	l = m.Spec.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	l = m.Status.Size()
+	n += 1 + l + sovGenerated(uint64(l))
+	return n
+}
+
 func (m *PredictionCacheSpec) Size() (n int) {
 	if m == nil {
 		return 0
@@ -3529,21 +3591,6 @@ func (m *PredictionChannel) Size() (n int) {
 	return n
 }
 
-func (m *Prediction) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = m.ObjectMeta.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	return n
-}
-
 func (m *PredictionCondition) Size() (n int) {
 	if m == nil {
 		return 0
@@ -3575,127 +3622,6 @@ func (m *PredictionList) Size() (n int) {
 	n += 1 + l + sovGenerated(uint64(l))
 	if len(m.Items) > 0 {
 		for _, e := range m.Items {
-			l = e.Size()
-			n += 1 + l + sovGenerated(uint64(l))
-		}
-	}
-	return n
-}
-
-func (m *CronPrediction) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = m.ObjectMeta.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Spec.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	l = m.Status.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	return n
-}
-
-func (m *CronPredictionCondition) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Type)
-	n += 1 + l + sovGenerated(uint64(l))
-	l = len(m.Status)
-	n += 1 + l + sovGenerated(uint64(l))
-	if m.LastTransitionTime != nil {
-		l = m.LastTransitionTime.Size()
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	l = len(m.Reason)
-	n += 1 + l + sovGenerated(uint64(l))
-	l = len(m.Message)
-	n += 1 + l + sovGenerated(uint64(l))
-	return n
-}
-
-func (m *CronPredictionList) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = m.ListMeta.Size()
-	n += 1 + l + sovGenerated(uint64(l))
-	if len(m.Items) > 0 {
-		for _, e := range m.Items {
-			l = e.Size()
-			n += 1 + l + sovGenerated(uint64(l))
-		}
-	}
-	return n
-}
-
-func (m *CronPredictionSpec) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.PredictionName != nil {
-		l = len(*m.PredictionName)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.PredictorName != nil {
-		l = len(*m.PredictorName)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	n += 2
-	if m.Objective != nil {
-		l = len(*m.Objective)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.DatasetName != nil {
-		l = len(*m.DatasetName)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.Input != nil {
-		l = m.Input.Size()
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.Output != nil {
-		l = m.Output.Size()
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.Owner != nil {
-		l = len(*m.Owner)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.WorkloadClassName != nil {
-		l = len(*m.WorkloadClassName)
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	return n
-}
-
-func (m *CronPredictionStatus) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	n += 9
-	l = len(m.Phase)
-	n += 1 + l + sovGenerated(uint64(l))
-	if m.StartTime != nil {
-		l = m.StartTime.Size()
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if m.CompletionTime != nil {
-		l = m.CompletionTime.Size()
-		n += 1 + l + sovGenerated(uint64(l))
-	}
-	if len(m.Conditions) > 0 {
-		for _, e := range m.Conditions {
 			l = e.Size()
 			n += 1 + l + sovGenerated(uint64(l))
 		}
@@ -3753,6 +3679,17 @@ func (m *PredictionStatus) Size() (n int) {
 			n += 1 + l + sovGenerated(uint64(l))
 		}
 	}
+	return n
+}
+
+func (m *PredictionTemplate) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.Spec.Size()
+	n += 1 + l + sovGenerated(uint64(l))
 	return n
 }
 
@@ -4052,6 +3989,74 @@ func (this *ChannelStatus) String() string {
 	}, "")
 	return s
 }
+func (this *CronPrediction) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CronPrediction{`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "CronPredictionSpec", "CronPredictionSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "CronPredictionStatus", "CronPredictionStatus", 1), `&`, ``, 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CronPredictionCondition) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CronPredictionCondition{`,
+		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
+		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
+		`LastTransitionTime:` + strings.Replace(fmt.Sprintf("%v", this.LastTransitionTime), "Time", "v1.Time", 1) + `,`,
+		`Reason:` + fmt.Sprintf("%v", this.Reason) + `,`,
+		`Message:` + fmt.Sprintf("%v", this.Message) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CronPredictionList) String() string {
+	if this == nil {
+		return "nil"
+	}
+	repeatedStringForItems := "[]CronPrediction{"
+	for _, f := range this.Items {
+		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "CronPrediction", "CronPrediction", 1), `&`, ``, 1) + ","
+	}
+	repeatedStringForItems += "}"
+	s := strings.Join([]string{`&CronPredictionList{`,
+		`ListMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ListMeta), "ListMeta", "v1.ListMeta", 1), `&`, ``, 1) + `,`,
+		`Items:` + repeatedStringForItems + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CronPredictionSpec) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&CronPredictionSpec{`,
+		`Schedule:` + valueToStringGenerated(this.Schedule) + `,`,
+		`Template:` + strings.Replace(strings.Replace(this.Template.String(), "PredictionTemplate", "PredictionTemplate", 1), `&`, ``, 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *CronPredictionStatus) String() string {
+	if this == nil {
+		return "nil"
+	}
+	repeatedStringForConditions := "[]CronPredictionCondition{"
+	for _, f := range this.Conditions {
+		repeatedStringForConditions += strings.Replace(strings.Replace(f.String(), "CronPredictionCondition", "CronPredictionCondition", 1), `&`, ``, 1) + ","
+	}
+	repeatedStringForConditions += "}"
+	s := strings.Join([]string{`&CronPredictionStatus{`,
+		`Conditions:` + repeatedStringForConditions + `,`,
+		`}`,
+	}, "")
+	return s
+}
 func (this *Curtain) String() string {
 	if this == nil {
 		return "nil"
@@ -4192,6 +4197,18 @@ func (this *OnlineFeaturestoreSpec) String() string {
 	}, "")
 	return s
 }
+func (this *Prediction) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&Prediction{`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionSpec", "PredictionSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionStatus", "PredictionStatus", 1), `&`, ``, 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
 func (this *PredictionCacheSpec) String() string {
 	if this == nil {
 		return "nil"
@@ -4212,18 +4229,6 @@ func (this *PredictionChannel) String() string {
 		`Bot:` + strings.Replace(this.Bot.String(), "BotChannelSpec", "BotChannelSpec", 1) + `,`,
 		`Bucket:` + strings.Replace(this.Bucket.String(), "BucketChannelSpec", "BucketChannelSpec", 1) + `,`,
 		`Streaming:` + strings.Replace(this.Streaming.String(), "StreamingChannelSpec", "StreamingChannelSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Prediction) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Prediction{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionSpec", "PredictionSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionStatus", "PredictionStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -4258,85 +4263,6 @@ func (this *PredictionList) String() string {
 	}, "")
 	return s
 }
-func (this *CronPrediction) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CronPrediction{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "CronPredictionSpec", "CronPredictionSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "CronPredictionStatus", "CronPredictionStatus", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CronPredictionCondition) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CronPredictionCondition{`,
-		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`LastTransitionTime:` + strings.Replace(fmt.Sprintf("%v", this.LastTransitionTime), "Time", "v1.Time", 1) + `,`,
-		`Reason:` + fmt.Sprintf("%v", this.Reason) + `,`,
-		`Message:` + fmt.Sprintf("%v", this.Message) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CronPredictionList) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForItems := "[]CronPrediction{"
-	for _, f := range this.Items {
-		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "CronPrediction", "CronPrediction", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForItems += "}"
-	s := strings.Join([]string{`&CronPredictionList{`,
-		`ListMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ListMeta), "ListMeta", "v1.ListMeta", 1), `&`, ``, 1) + `,`,
-		`Items:` + repeatedStringForItems + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CronPredictionSpec) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CronPredictionSpec{`,
-		`PredictionName:` + valueToStringGenerated(this.PredictionName) + `,`,
-		`PredictorName:` + valueToStringGenerated(this.PredictorName) + `,`,
-		`Labeled:` + fmt.Sprintf("%v", this.Labeled) + `,`,
-		`Objective:` + valueToStringGenerated(this.Objective) + `,`,
-		`DatasetName:` + valueToStringGenerated(this.DatasetName) + `,`,
-		`Input:` + strings.Replace(fmt.Sprintf("%v", this.Input), "DataLocation", "v1alpha1.DataLocation", 1) + `,`,
-		`Output:` + strings.Replace(fmt.Sprintf("%v", this.Output), "DataLocation", "v1alpha1.DataLocation", 1) + `,`,
-		`Owner:` + valueToStringGenerated(this.Owner) + `,`,
-		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CronPredictionStatus) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForConditions := "[]CronPredictionCondition{"
-	for _, f := range this.Conditions {
-		repeatedStringForConditions += strings.Replace(strings.Replace(f.String(), "CronPredictionCondition", "CronPredictionCondition", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForConditions += "}"
-	s := strings.Join([]string{`&CronPredictionStatus{`,
-		`Score:` + fmt.Sprintf("%v", this.Score) + `,`,
-		`Phase:` + fmt.Sprintf("%v", this.Phase) + `,`,
-		`StartTime:` + strings.Replace(fmt.Sprintf("%v", this.StartTime), "Time", "v1.Time", 1) + `,`,
-		`CompletionTime:` + strings.Replace(fmt.Sprintf("%v", this.CompletionTime), "Time", "v1.Time", 1) + `,`,
-		`Conditions:` + repeatedStringForConditions + `,`,
-		`}`,
-	}, "")
-	return s
-}
 func (this *PredictionSpec) String() string {
 	if this == nil {
 		return "nil"
@@ -4366,6 +4292,16 @@ func (this *PredictionStatus) String() string {
 	repeatedStringForConditions += "}"
 	s := strings.Join([]string{`&PredictionStatus{`,
 		`Conditions:` + repeatedStringForConditions + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *PredictionTemplate) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&PredictionTemplate{`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionSpec", "PredictionSpec", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -4923,6 +4859,701 @@ func (m *ChannelStatus) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Error = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CronPrediction) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CronPrediction: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CronPrediction: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ObjectMeta", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CronPredictionCondition) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CronPredictionCondition: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CronPredictionCondition: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Type", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Type = CronPredictionConditionType(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Status = k8s_io_api_core_v1.ConditionStatus(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LastTransitionTime", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.LastTransitionTime == nil {
+				m.LastTransitionTime = &v1.Time{}
+			}
+			if err := m.LastTransitionTime.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Reason", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Reason = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Message", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Message = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CronPredictionList) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CronPredictionList: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CronPredictionList: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ListMeta", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.ListMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Items", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Items = append(m.Items, CronPrediction{})
+			if err := m.Items[len(m.Items)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CronPredictionSpec) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CronPredictionSpec: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CronPredictionSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Schedule", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			s := string(dAtA[iNdEx:postIndex])
+			m.Schedule = &s
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Template", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Template.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CronPredictionStatus) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CronPredictionStatus: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CronPredictionStatus: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Conditions", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Conditions = append(m.Conditions, CronPredictionCondition{})
+			if err := m.Conditions[len(m.Conditions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -6663,6 +7294,158 @@ func (m *OnlineFeaturestoreSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
+func (m *Prediction) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Prediction: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Prediction: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ObjectMeta", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func (m *PredictionCacheSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6940,158 +7723,6 @@ func (m *PredictionChannel) Unmarshal(dAtA []byte) error {
 				m.Streaming = &StreamingChannelSpec{}
 			}
 			if err := m.Streaming.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Prediction) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Prediction: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Prediction: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ObjectMeta", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -7429,1040 +8060,6 @@ func (m *PredictionList) Unmarshal(dAtA []byte) error {
 			}
 			m.Items = append(m.Items, Prediction{})
 			if err := m.Items[len(m.Items)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CronPrediction) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CronPrediction: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CronPrediction: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ObjectMeta", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.ObjectMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CronPredictionCondition) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CronPredictionCondition: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CronPredictionCondition: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Type", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Type = CronPredictionConditionType(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Status = k8s_io_api_core_v1.ConditionStatus(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field LastTransitionTime", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.LastTransitionTime == nil {
-				m.LastTransitionTime = &v1.Time{}
-			}
-			if err := m.LastTransitionTime.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Reason", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Reason = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Message", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Message = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CronPredictionList) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CronPredictionList: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CronPredictionList: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ListMeta", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.ListMeta.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Items", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Items = append(m.Items, CronPrediction{})
-			if err := m.Items[len(m.Items)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CronPredictionSpec) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CronPredictionSpec: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CronPredictionSpec: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PredictionName", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.PredictionName = &s
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PredictorName", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.PredictorName = &s
-			iNdEx = postIndex
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labeled", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Labeled = bool(v != 0)
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Objective", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1.Metric(dAtA[iNdEx:postIndex])
-			m.Objective = &s
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DatasetName", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.DatasetName = &s
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Input", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Input == nil {
-				m.Input = &v1alpha1.DataLocation{}
-			}
-			if err := m.Input.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Output", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Output == nil {
-				m.Output = &v1alpha1.DataLocation{}
-			}
-			if err := m.Output.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Owner", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.Owner = &s
-			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field WorkloadClassName", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			s := string(dAtA[iNdEx:postIndex])
-			m.WorkloadClassName = &s
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipGenerated(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CronPredictionStatus) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowGenerated
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CronPredictionStatus: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CronPredictionStatus: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 2:
-			if wireType != 1 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Score", wireType)
-			}
-			var v uint64
-			if (iNdEx + 8) > l {
-				return io.ErrUnexpectedEOF
-			}
-			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
-			iNdEx += 8
-			m.Score = float64(math.Float64frombits(v))
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Phase", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Phase = CronPredictionPhase(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field StartTime", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.StartTime == nil {
-				m.StartTime = &v1.Time{}
-			}
-			if err := m.StartTime.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CompletionTime", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.CompletionTime == nil {
-				m.CompletionTime = &v1.Time{}
-			}
-			if err := m.CompletionTime.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Conditions", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowGenerated
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthGenerated
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Conditions = append(m.Conditions, CronPredictionCondition{})
-			if err := m.Conditions[len(m.Conditions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -8892,6 +8489,92 @@ func (m *PredictionStatus) Unmarshal(dAtA []byte) error {
 			}
 			m.Conditions = append(m.Conditions, PredictionCondition{})
 			if err := m.Conditions[len(m.Conditions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGenerated(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *PredictionTemplate) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGenerated
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: PredictionTemplate: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: PredictionTemplate: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGenerated
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthGenerated
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

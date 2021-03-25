@@ -450,45 +450,45 @@ export namespace ListStudyResponse {
   }
 }
 
-export class ListPredictionPipelineRunRequest extends jspb.Message {
+export class ListPredictionRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListPredictionPipelineRunRequest;
+  setNamespace(value: string): ListPredictionRequest;
 
   getSelectorMap(): jspb.Map<string, string>;
-  clearSelectorMap(): ListPredictionPipelineRunRequest;
+  clearSelectorMap(): ListPredictionRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListPredictionPipelineRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListPredictionPipelineRunRequest): ListPredictionPipelineRunRequest.AsObject;
-  static serializeBinaryToWriter(message: ListPredictionPipelineRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListPredictionPipelineRunRequest;
-  static deserializeBinaryFromReader(message: ListPredictionPipelineRunRequest, reader: jspb.BinaryReader): ListPredictionPipelineRunRequest;
+  toObject(includeInstance?: boolean): ListPredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPredictionRequest): ListPredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: ListPredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPredictionRequest;
+  static deserializeBinaryFromReader(message: ListPredictionRequest, reader: jspb.BinaryReader): ListPredictionRequest;
 }
 
-export namespace ListPredictionPipelineRunRequest {
+export namespace ListPredictionRequest {
   export type AsObject = {
     namespace: string,
     selectorMap: Array<[string, string]>,
   }
 }
 
-export class ListPredictionPipelineRunResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun>;
-  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun>): ListPredictionPipelineRunResponse;
-  clearItemsList(): ListPredictionPipelineRunResponse;
-  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun, index?: number): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun;
+export class ListPredictionResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction>): ListPredictionResponse;
+  clearItemsList(): ListPredictionResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction, index?: number): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListPredictionPipelineRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListPredictionPipelineRunResponse): ListPredictionPipelineRunResponse.AsObject;
-  static serializeBinaryToWriter(message: ListPredictionPipelineRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListPredictionPipelineRunResponse;
-  static deserializeBinaryFromReader(message: ListPredictionPipelineRunResponse, reader: jspb.BinaryReader): ListPredictionPipelineRunResponse;
+  toObject(includeInstance?: boolean): ListPredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPredictionResponse): ListPredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: ListPredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPredictionResponse;
+  static deserializeBinaryFromReader(message: ListPredictionResponse, reader: jspb.BinaryReader): ListPredictionResponse;
 }
 
-export namespace ListPredictionPipelineRunResponse {
+export namespace ListPredictionResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionPipelineRun.AsObject>,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject>,
   }
 }
 

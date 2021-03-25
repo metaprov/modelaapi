@@ -54,6 +54,67 @@ message ChannelStatus {
   optional string error = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
+// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="File",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=predictionpipelineruns,singular=predictionpipelinerun,categories={inference,modeld}
+// CronPrediction represents a single run of the Prediction Pipeline
+message CronPrediction {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional CronPredictionSpec spec = 2;
+
+  optional CronPredictionStatus status = 3;
+}
+
+// PredictionCondition describes the state of PredictionTemplate
+message CronPredictionCondition {
+  // Type of  condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// CronPredictionList is a list of CronPrediction
+message CronPredictionList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated CronPrediction items = 2;
+}
+
+// CronPredictionSpec represent the desired state of CronPrediction
+message CronPredictionSpec {
+  // Schedule is the cron schedule
+  optional string schedule = 1;
+
+  // Template refer to the prediction template
+  optional PredictionTemplate template = 2;
+}
+
+// CronPredictionStatus is the observed state of a PredictionTemplate
+message CronPredictionStatus {
+  // +optional
+  repeated CronPredictionCondition conditions = 6;
+}
+
 // Curtain represent an object which can be placed before or after predictor
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name"
@@ -227,6 +288,26 @@ message OnlineFeaturestoreSpec {
   optional string serviceName = 2;
 }
 
+// PredictionTemplate represents a prediction object
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
+// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="File",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=predictions,singular=prediction,categories={inference,modeld}
+message Prediction {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional PredictionSpec spec = 2;
+
+  optional PredictionStatus status = 3;
+}
+
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
 // A cache is a key value store.
 message PredictionCacheSpec {
@@ -258,28 +339,8 @@ message PredictionChannel {
   optional StreamingChannelSpec streaming = 4;
 }
 
-// PredictionTemplate represents a prediction object
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="File",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=predictionpipelines,singular=predictionpipeline,categories={inference,modeld}
-message PredictionPipeline {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional PredictionPipelineSpec spec = 2;
-
-  optional PredictionPipelineStatus status = 3;
-}
-
-// PredictionPipelineCondition describes the state of PredictionTemplate
-message PredictionPipelineCondition {
+// PredictionCondition describes the state of PredictionTemplate
+message PredictionCondition {
   // Type of  condition.
   optional string type = 1;
 
@@ -297,124 +358,15 @@ message PredictionPipelineCondition {
 }
 
 // +kubebuilder:object:root=true
-// PredictionPipelineList is a list of PredictionPipeline
-message PredictionPipelineList {
+// PredictionList is a list of Prediction
+message PredictionList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated PredictionPipeline items = 2;
+  repeated Prediction items = 2;
 }
 
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="File",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=predictionpipelineruns,singular=predictionpipelinerun,categories={inference,modeld}
-// PredictionPipelineRun represents a single run of the Prediction Pipeline
-message PredictionPipelineRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional PredictionPipelineRunSpec spec = 2;
-
-  optional PredictionPipelineRunStatus status = 3;
-}
-
-// PredictionPipelineCondition describes the state of PredictionTemplate
-message PredictionPipelineRunCondition {
-  // Type of  condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// PredictionPipelineRunList is a list of PredictionPipelineRun
-message PredictionPipelineRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated PredictionPipelineRun items = 2;
-}
-
-// PredictionPipelineRunSpec represent the desired state of PredictionPipelineRun
-message PredictionPipelineRunSpec {
-  // Prediction name refer to the parent prediction that created this run.
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
-  optional string predictionName = 1;
-
-  // PredictorName refer to the predictor which would predict the dataset of this prediction.
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
-  optional string predictorName = 2;
-
-  // Labeled , true if this is labeled prediction request.
-  // Used usually for unit testing
-  optional bool labeled = 3;
-
-  // Objective is the objective metric used to score
-  optional string objective = 4;
-
-  // DatasetName is where we are using a dataset name. This can be dataset name
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 5;
-
-  // Input is of the input if using direct input file
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 6;
-
-  // Output is the key in the bucket for storing all the prediction output
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 7;
-
-  // Owner of the run
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 8;
-
-  // WorkloadClassName A reference to the workload class this is used to run this notebook
-  // +kubebuilder:default:="default-workload-class"
-  // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
-}
-
-// PredictionPipelineRunStatus is the observed state of a PredictionTemplate
-message PredictionPipelineRunStatus {
-  // PredictionPipelineRun score based on the objective.
-  // +kubebuilder:validation:Optional
-  optional double score = 2;
-
-  // The phase of the prediction
-  // +kubebuilder:validation:Optional
-  optional string phase = 3;
-
-  // StartTime is the times that this prediction job started
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
-
-  // CompletionTime is the time that this prediction job finished
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
-
-  // +optional
-  repeated PredictionPipelineRunCondition conditions = 6;
-}
-
-// PredictionPipelineSpec represent the desired state of PredictionPipeline
-message PredictionPipelineSpec {
+// PredictionSpec represent the desired state of Prediction
+message PredictionSpec {
   // PredictorName refer to the predictor which would predict the dataset of this prediction.
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
@@ -431,10 +383,10 @@ message PredictionPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
-  // Input is the DataLocation of the input if using direct input file
+  // Input is the location of the input file if not using a dataset
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
-  // Output is the key in the bucket for storing all the prediction output
+  // Output is the location of the output file.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
@@ -452,10 +404,14 @@ message PredictionPipelineSpec {
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
 }
 
-// PredictionPipelineStatus is the observed state of a PredictionTemplate
-message PredictionPipelineStatus {
+// PredictionStatus is the observed state of a PredictionTemplate
+message PredictionStatus {
   // +optional
-  repeated PredictionPipelineCondition conditions = 2;
+  repeated PredictionCondition conditions = 2;
+}
+
+message PredictionTemplate {
+  optional PredictionSpec spec = 1;
 }
 
 // Predictor represent an PredictorName API object

@@ -112,13 +112,13 @@ message ListStudyResponse {
     repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study items = 1;
 }
 
-message ListPredictionPipelineRunRequest {
+message ListPredictionRequest {
     string namespace            = 1;
     map<string,string> selector = 2;
 } 
 
-message ListPredictionPipelineRunResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun items = 1;
+message ListPredictionResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction items = 1;
 }
 
 message ListModelAutoBuilderRequest {
@@ -167,7 +167,7 @@ service ArchivedService {
     rpc ListNotebookRuns(ListNotebookRunRequest) returns (ListNotebookRunResponse) {}    
     rpc ListReports(ListReportRequest) returns (ListReportResponse) {}    
     rpc ListStudies(ListStudyRequest) returns (ListStudyResponse) {}    
-    rpc ListPredictionPipelineRun(ListPredictionPipelineRunRequest) returns (ListPredictionPipelineRunResponse) {}
+    rpc ListPrediction(ListPredictionRequest) returns (ListPredictionResponse) {}
 }
 
 
