@@ -569,5 +569,12 @@ func (h Hierarchy) Explode() []ForecastObj {
 		}
 	}
 	return result
+}
 
+func (study *Study) IsRunning() bool {
+	return study.GetCond(StudyReady).Status != v1.ConditionTrue &&
+		study.GetCond(StudyReady).Reason != string(catalog.Failed)
+}
+
+func (study *Study) IsFailed() bool {
 }
