@@ -31,10 +31,10 @@ const (
 	RecipeRunKind           KindName = "RecipeRun"
 
 	// inference
-	PredictionPipelineKind    KindName = "PredictionPipeline"
-	PredictionPipelineRunKind KindName = "PredictionPipelineRun"
-	PredictorKind             KindName = "Predictor"
-	CurtainKind               KindName = "Curtain"
+	CronPredictionKind KindName = "CronPrediction"
+	PredictionKind     KindName = "Prediction"
+	PredictorKind      KindName = "Predictor"
+	CurtainKind        KindName = "Curtain"
 
 	// infra
 	AccountKind        KindName = "Account"
