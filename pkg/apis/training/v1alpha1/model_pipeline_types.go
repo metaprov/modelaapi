@@ -85,7 +85,9 @@ type ModelPipelineSpec struct {
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,11,opt,name=schedule"`
-	// The owner account name
+	// The owner of the run, set to the owner of the pipeline
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`
 	// ApproverAccountName is the name of the approver

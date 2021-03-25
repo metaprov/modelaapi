@@ -112,6 +112,10 @@ func (pl *ModelPipeline) HasTrainingStage() bool {
 	return pl.Spec.Training != nil && pl.Spec.Training.StudyName != nil
 }
 
+func (pl *ModelPipeline) HasDataStage() bool {
+	return pl.Spec.Data != nil && pl.Spec.Data.DataPipelineName != ""
+}
+
 func (pl *ModelPipeline) HasProdStage() bool {
 	return pl.Spec.Release != nil && pl.Spec.Release.PredictorName != nil
 }
