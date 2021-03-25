@@ -91,6 +91,7 @@ spec:
                         - path
                         type: object
                       labeled:
+                        default: false
                         description: Labeled , true if this is labeled prediction
                           request. Used usally for unit testing
                         type: boolean
@@ -218,10 +219,6 @@ spec:
                         description: A reference to the workload class that is used
                           for training
                         type: string
-                    required:
-                    - labeled
-                    - objective
-                    - predictorName
                     type: object
                 required:
                 - spec

@@ -63,12 +63,13 @@ type PredictionSpec struct {
 	// PredictorName refer to the predictor which would predict the dataset of this prediction.
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	PredictorName string `json:"predictorName" protobuf:"bytes,1,opt,name=predictorName"`
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,1,opt,name=predictorName"`
 	// Labeled , true if this is labeled prediction request.
+	// +kubebuilder:default:=false
 	// Used usally for unit testing
-	Labeled bool `json:"labeled" protobuf:"bytes,2,opt,name=labeled"`
+	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,2,opt,name=labeled"`
 	// The objective metric used to score
-	Objective *catalog.Metric `json:"objective" protobuf:"bytes,3,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,3,opt,name=objective"`
 	// DatasetName is where we are using a dataset name. This can be dataset name
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
