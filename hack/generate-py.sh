@@ -79,8 +79,8 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto \
     github.com/metaprov/modeldapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto \
     github.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto \
-    github.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline.proto \
-    github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto \
+    github.com/metaprov/modeldapi/services/prediction/v1/prediction.proto \
+    github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto \
     github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
     github.com/metaprov/modeldapi/services/predictiond/v1/predictiond.proto \
     github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto \

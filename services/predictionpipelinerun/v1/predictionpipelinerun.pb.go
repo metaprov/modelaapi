@@ -99,7 +99,7 @@ type ListPredictionPipelineRunsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Items *v1alpha1.PredictionPipelineRunList `protobuf:"bytes,1,opt,name=items,proto3" json:"items,omitempty"`
+	Items *v1alpha1.CronPredictionList `protobuf:"bytes,1,opt,name=items,proto3" json:"items,omitempty"`
 }
 
 func (x *ListPredictionPipelineRunsResponse) Reset() {
@@ -134,7 +134,7 @@ func (*ListPredictionPipelineRunsResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_predictionpipelinerun_v1_predictionpipelinerun_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ListPredictionPipelineRunsResponse) GetItems() *v1alpha1.PredictionPipelineRunList {
+func (x *ListPredictionPipelineRunsResponse) GetItems() *v1alpha1.CronPredictionList {
 	if x != nil {
 		return x.Items
 	}
@@ -184,7 +184,7 @@ type CreatePredictionPipelineRunRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item *v1alpha1.PredictionPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Item *v1alpha1.CronPrediction `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 }
 
 func (x *CreatePredictionPipelineRunRequest) Reset() {
@@ -219,7 +219,7 @@ func (*CreatePredictionPipelineRunRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_predictionpipelinerun_v1_predictionpipelinerun_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreatePredictionPipelineRunRequest) GetItem() *v1alpha1.PredictionPipelineRun {
+func (x *CreatePredictionPipelineRunRequest) GetItem() *v1alpha1.CronPrediction {
 	if x != nil {
 		return x.Item
 	}
@@ -231,7 +231,7 @@ type UpdatePredictionPipelineRunRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item *v1alpha1.PredictionPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Item *v1alpha1.CronPrediction `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 }
 
 func (x *UpdatePredictionPipelineRunRequest) Reset() {
@@ -266,7 +266,7 @@ func (*UpdatePredictionPipelineRunRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_predictionpipelinerun_v1_predictionpipelinerun_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *UpdatePredictionPipelineRunRequest) GetItem() *v1alpha1.PredictionPipelineRun {
+func (x *UpdatePredictionPipelineRunRequest) GetItem() *v1alpha1.CronPrediction {
 	if x != nil {
 		return x.Item
 	}
@@ -371,8 +371,8 @@ type GetPredictionPipelineRunResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item *v1alpha1.PredictionPipelineRun `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
-	Yaml string                          `protobuf:"bytes,2,opt,name=yaml,proto3" json:"yaml,omitempty"`
+	Item *v1alpha1.CronPrediction `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Yaml string                   `protobuf:"bytes,2,opt,name=yaml,proto3" json:"yaml,omitempty"`
 }
 
 func (x *GetPredictionPipelineRunResponse) Reset() {
@@ -407,7 +407,7 @@ func (*GetPredictionPipelineRunResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_predictionpipelinerun_v1_predictionpipelinerun_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetPredictionPipelineRunResponse) GetItem() *v1alpha1.PredictionPipelineRun {
+func (x *GetPredictionPipelineRunResponse) GetItem() *v1alpha1.CronPrediction {
 	if x != nil {
 		return x.Item
 	}
@@ -855,16 +855,16 @@ var file_github_com_metaprov_modeldapi_services_predictionpipelinerun_v1_predict
 	(*DeletePredictionPipelineRunResponse)(nil),   // 9: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DeletePredictionPipelineRunResponse
 	(*DownloadPredictionPipelineRunRequest)(nil),  // 10: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DownloadPredictionPipelineRunRequest
 	(*DownloadPredictionPipelineRunResponse)(nil), // 11: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.DownloadPredictionPipelineRunResponse
-	nil, // 12: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest.LabelsEntry
-	(*v1alpha1.PredictionPipelineRunList)(nil), // 13: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList
-	(*v1alpha1.PredictionPipelineRun)(nil),     // 14: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
+	nil,                                 // 12: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest.LabelsEntry
+	(*v1alpha1.CronPredictionList)(nil), // 13: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
+	(*v1alpha1.CronPrediction)(nil),     // 14: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
 }
 var file_github_com_metaprov_modeldapi_services_predictionpipelinerun_v1_predictionpipelinerun_proto_depIdxs = []int32{
 	12, // 0: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest.LabelsEntry
-	13, // 1: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList
-	14, // 2: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
-	14, // 3: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
-	14, // 4: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
+	13, // 1: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
+	14, // 2: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	14, // 3: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.UpdatePredictionPipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	14, // 4: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
 	0,  // 5: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService.ListPredictionPipelineRuns:input_type -> github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.ListPredictionPipelineRunsRequest
 	3,  // 6: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService.CreatePredictionPipelineRun:input_type -> github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.CreatePredictionPipelineRunRequest
 	6,  // 7: github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.PredictionPipelineRunService.GetPredictionPipelineRun:input_type -> github.com.metaprov.modeldapi.services.predictionpipelinerun.v1.GetPredictionPipelineRunRequest

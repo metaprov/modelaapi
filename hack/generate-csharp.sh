@@ -71,8 +71,8 @@ protoc \
     github.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto \
     github.com/metaprov/modeldapi/services/conversation/v1/conversation.proto \
     github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto \
-    github.com/metaprov/modeldapi/services/predictionpipeline/v1/predictionpipeline.proto \
-    github.com/metaprov/modeldapi/services/predictionpipelinerun/v1/predictionpipelinerun.proto \
+    github.com/metaprov/modeldapi/services/prediction/v1/prediction.proto \
+    github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto \
     github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
     github.com/metaprov/modeldapi/services/predictiond/v1/predictiond.proto \
     github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto \

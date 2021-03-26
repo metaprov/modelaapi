@@ -1171,7 +1171,7 @@ type ListPredictionPipelineRunResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Items []*v1alpha12.PredictionPipelineRun `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items []*v1alpha12.CronPrediction `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
 func (x *ListPredictionPipelineRunResponse) Reset() {
@@ -1206,7 +1206,7 @@ func (*ListPredictionPipelineRunResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_rawDescGZIP(), []int{22}
 }
 
-func (x *ListPredictionPipelineRunResponse) GetItems() []*v1alpha12.PredictionPipelineRun {
+func (x *ListPredictionPipelineRunResponse) GetItems() []*v1alpha12.CronPrediction {
 	if x != nil {
 		return x.Items
 	}
@@ -2063,7 +2063,7 @@ var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_goTyp
 	(*v1alpha11.Report)(nil),                  // 44: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
 	(*v1alpha11.Model)(nil),                   // 45: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
 	(*v1alpha11.Study)(nil),                   // 46: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	(*v1alpha12.PredictionPipelineRun)(nil),   // 47: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
+	(*v1alpha12.CronPrediction)(nil),          // 47: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
 	(*v1alpha11.ModelAutobuilder)(nil),        // 48: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
 	(*v1alpha11.ModelPipelineRun)(nil),        // 49: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun
 	(*v1alpha11.NotebookRun)(nil),             // 50: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun
@@ -2088,7 +2088,7 @@ var file_github_com_metaprov_modeldapi_services_archived_v1_archived_proto_depId
 	35, // 15: github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListStudyRequest.SelectorEntry
 	46, // 16: github.com.metaprov.modeldapi.services.archived.v1.ListStudyResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
 	36, // 17: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunRequest.SelectorEntry
-	47, // 18: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun
+	47, // 18: github.com.metaprov.modeldapi.services.archived.v1.ListPredictionPipelineRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
 	37, // 19: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderRequest.SelectorEntry
 	48, // 20: github.com.metaprov.modeldapi.services.archived.v1.ListModelAutoBuilderResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
 	38, // 21: github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRequest.selector:type_name -> github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunRequest.SelectorEntry

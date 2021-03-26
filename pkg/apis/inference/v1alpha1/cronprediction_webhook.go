@@ -18,7 +18,7 @@ import (
 // EntityRef
 //==============================================================================
 
-func (run *PredictionPipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (run *CronPrediction) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(run).
 		Complete()
@@ -28,19 +28,19 @@ func (run *PredictionPipelineRun) SetupWebhookWithManager(mgr ctrl.Manager) erro
 // Keys
 //==============================================================================
 
-func (run *PredictionPipelineRun) RootUri() string {
+func (run *CronPrediction) RootUri() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
 }
 
-func (run *PredictionPipelineRun) ManifestUri() string {
+func (run *CronPrediction) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-run.yaml", run.RootUri(), run.Name)
 }
 
-func (run *PredictionPipelineRun) InputKey() string {
+func (run *CronPrediction) InputKey() string {
 	return run.Spec.Input.Path
 }
 
-func (run *PredictionPipelineRun) OutputKey() string {
+func (run *CronPrediction) OutputKey() string {
 	return run.Spec.Output.Path
 }
 
@@ -48,7 +48,7 @@ func (run *PredictionPipelineRun) OutputKey() string {
 // Validate
 //==============================================================================
 
-func (run *PredictionPipelineRun) PipelineName() string {
+func (run *CronPrediction) PipelineName() string {
 	return run.ObjectMeta.Labels[PipelineLabelKey]
 }
 
@@ -56,13 +56,13 @@ func (run *PredictionPipelineRun) PipelineName() string {
 // Finalizer
 //==============================================================================
 
-func (run *PredictionPipelineRun) HasFinalizer() bool {
+func (run *CronPrediction) HasFinalizer() bool {
 	return util.HasFin(&run.ObjectMeta, inference.GroupName)
 }
-func (run *PredictionPipelineRun) AddFinalizer() {
+func (run *CronPrediction) AddFinalizer() {
 	util.AddFin(&run.ObjectMeta, inference.GroupName)
 }
-func (run *PredictionPipelineRun) RemoveFinalizer() {
+func (run *CronPrediction) RemoveFinalizer() {
 	util.RemoveFin(&run.ObjectMeta, inference.GroupName)
 }
 
@@ -71,13 +71,13 @@ func (run *PredictionPipelineRun) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (run *PredictionPipelineRun) RepPath(root string) (string, error) {
+func (run *CronPrediction) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/predictions/%s.yaml", root, run.ObjectMeta.Name), nil
 }
 
 // Merge or update condition
 // Merge or update condition
-func (run *PredictionPipelineRun) CreateOrUpdateCond(cond PredictionPipelineRunCondition) {
+func (run *CronPrediction) CreateOrUpdateCond(cond CronPredictionCondition) {
 	i := run.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -96,7 +96,7 @@ func (run *PredictionPipelineRun) CreateOrUpdateCond(cond PredictionPipelineRunC
 	run.Status.Conditions[i] = current
 }
 
-func (run *PredictionPipelineRun) GetCondIdx(t PredictionPipelineRunConditionType) int {
+func (run *CronPrediction) GetCondIdx(t CronPredictionConditionType) int {
 	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -105,14 +105,14 @@ func (run *PredictionPipelineRun) GetCondIdx(t PredictionPipelineRunConditionTyp
 	return -1
 }
 
-func (run *PredictionPipelineRun) GetCond(t PredictionPipelineRunConditionType) PredictionPipelineRunCondition {
+func (run *CronPrediction) GetCond(t CronPredictionConditionType) CronPredictionCondition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return PredictionPipelineRunCondition{
+	return CronPredictionCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -120,84 +120,44 @@ func (run *PredictionPipelineRun) GetCond(t PredictionPipelineRunConditionType) 
 	}
 }
 
-func (run *PredictionPipelineRun) IsReady() bool {
+func (run *CronPrediction) IsReady() bool {
 	return run.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
 }
 
-func (run *PredictionPipelineRun) StatusString() string {
-	return string(run.Status.Phase)
-}
-
-func (run *PredictionPipelineRun) Key() string {
+func (run *CronPrediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
 }
 
-func ParsePredictionPipelineRunYaml(content []byte) (*PredictionPipelineRun, error) {
+func ParsePredictionPipelineRunYaml(content []byte) (*CronPrediction, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*PredictionPipelineRun)
+	r := requiredObj.(*CronPrediction)
 	return r, nil
 }
 
-func (run *PredictionPipelineRun) ToYamlFile() ([]byte, error) {
+func (run *CronPrediction) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(run)
 }
-
-func (run *PredictionPipelineRun) MarkFailed(msg string) {
-	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
-		Type:    PredictionPipelineRunReady,
-		Status:  v1.ConditionFalse,
-		Reason:  string(PredictionPipelineRunPhaseFailed),
-		Message: msg,
-	})
-	run.Status.Phase = PredictionPipelineRunPhaseFailed
-	now := metav1.Now()
-	run.Status.CompletionTime = &now
-
-}
-
-func (run *PredictionPipelineRun) MarkDone() {
-	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
-		Type:   PredictionPipelineRunReady,
-		Status: v1.ConditionTrue,
-		Reason: string(PredictionPipelineRunPhaseCompleted),
-	})
-	run.Status.Phase = PredictionPipelineRunPhaseCompleted
-
-}
-
-func (run *PredictionPipelineRun) MarkRunning() {
-	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
-		Status: v1.ConditionFalse,
-		Reason: string(PredictionPipelineRunPhaseRunning),
-	})
-	run.Status.Phase = PredictionPipelineRunPhaseRunning
-	now := metav1.Now()
-	if run.Status.StartTime == nil {
-		run.Status.CompletionTime = &now
-	}
-}
-
-func (run *PredictionPipelineRun) OpName() string {
+func (run *CronPrediction) OpName() string {
 	return run.Namespace + "-" + run.Name
 }
 
-func (run *PredictionPipelineRun) MarkArchived() {
-	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
+func (run *CronPrediction) MarkArchived() {
+	run.CreateOrUpdateCond(CronPredictionCondition{
 		Type:   PredictionPipelineRunArchived,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (run *PredictionPipelineRun) Archived() bool {
+func (run *CronPrediction) Archived() bool {
 	return run.GetCond(PredictionPipelineRunArchived).Status == v1.ConditionTrue
 }
 
-func (run *PredictionPipelineRun) MarkComplete() {
-	run.CreateOrUpdateCond(PredictionPipelineRunCondition{
-		Type:   PredictionPipelineRunReady,
+func (run *CronPrediction) MarkReady() {
+	run.CreateOrUpdateCond(CronPredictionCondition{
+		Type:   CronPredictionReady,
 		Status: v1.ConditionTrue,
 	})
 	run.Status.Phase = PredictionPipelineRunPhaseCompleted
@@ -205,16 +165,16 @@ func (run *PredictionPipelineRun) MarkComplete() {
 	run.Status.CompletionTime = &now
 }
 
-func (run *PredictionPipelineRun) IsCompleted() bool {
+func (run *CronPrediction) IsCompleted() bool {
 	return run.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
 }
 
-func (run *PredictionPipelineRun) IsRunning() bool {
+func (run *CronPrediction) IsRunning() bool {
 	cond := run.GetCond(PredictionPipelineRunReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseRunning)
 }
 
-func (run *PredictionPipelineRun) IsFailed() bool {
+func (run *CronPrediction) IsFailed() bool {
 	cond := run.GetCond(PredictionPipelineRunReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseFailed)
 }

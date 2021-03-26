@@ -10,9 +10,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &PredictionPipeline{}
+var _ webhook.Defaulter = &Prediction{}
 
-func (pre *PredictionPipeline) Default() {
+func (pre *Prediction) Default() {
 	// if no input bucket defined,
 	if pre.Spec.Output == nil {
 		pre.Spec.Output = &data.DataLocation{}
@@ -26,37 +26,37 @@ func (pre *PredictionPipeline) Default() {
 }
 
 // validation
-var _ webhook.Validator = &PredictionPipeline{}
+var _ webhook.Validator = &Prediction{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (prediction *PredictionPipeline) ValidateCreate() error {
+func (prediction *Prediction) ValidateCreate() error {
 	return prediction.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (prediction *PredictionPipeline) ValidateUpdate(old runtime.Object) error {
+func (prediction *Prediction) ValidateUpdate(old runtime.Object) error {
 	return prediction.validate()
 }
 
-func (prediction *PredictionPipeline) validate() error {
+func (prediction *Prediction) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modeld.io", Kind: "PredictionPipeline"},
+		schema.GroupKind{Group: "inference.modeld.io", Kind: "Prediction"},
 		prediction.Name, allErrs)
 }
 
-func (prediction *PredictionPipeline) ValidateDelete() error {
+func (prediction *Prediction) ValidateDelete() error {
 	return nil
 }
 
 // defaulting
-var _ webhook.Defaulter = &PredictionPipelineRun{}
+var _ webhook.Defaulter = &CronPrediction{}
 
-func (run *PredictionPipelineRun) Default() {
+func (run *CronPrediction) Default() {
 	// if no input bucket defined,
 	if run.Spec.Output == nil {
 		run.Spec.Output = &data.DataLocation{}

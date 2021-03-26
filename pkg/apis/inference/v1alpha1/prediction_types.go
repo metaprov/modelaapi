@@ -8,19 +8,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// PredictionPipelineConditionType is the condition type of the prediction pipeline
-type PredictionPipelineConditionType string
+// PredictionConditionType is the condition type of the prediction pipeline
+type PredictionConditionType string
 
 /// PredictionTemplate Condition
 const (
-	PredictionReady    PredictionPipelineConditionType = "Ready"
-	PredictionArchived PredictionPipelineConditionType = "Archived"
+	PredictionCompleted PredictionConditionType = "Completed"
+	PredictionArchived  PredictionConditionType = "Archived"
 )
 
-// PredictionPipelineCondition describes the state of PredictionTemplate
-type PredictionPipelineCondition struct {
+// PredictionCondition describes the state of PredictionTemplate
+type PredictionCondition struct {
 	// Type of  condition.
-	Type PredictionPipelineConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PredictionPipelineConditionType"`
+	Type PredictionConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PredictionConditionType"`
 	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -42,24 +42,24 @@ type PredictionPipelineCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=predictionpipelines,singular=predictionpipeline,categories={inference,modeld}
-type PredictionPipeline struct {
+// +kubebuilder:resource:path=predictions,singular=prediction,categories={inference,modeld}
+type Prediction struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              PredictionPipelineSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            PredictionPipelineStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              PredictionSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            PredictionStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
-// PredictionPipelineList is a list of PredictionPipeline
-type PredictionPipelineList struct {
+// PredictionList is a list of Prediction
+type PredictionList struct {
 	metav1.TypeMeta `json:",inline" `
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []PredictionPipeline `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []Prediction `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// PredictionPipelineSpec represent the desired state of PredictionPipeline
-type PredictionPipelineSpec struct {
+// PredictionSpec represent the desired state of Prediction
+type PredictionSpec struct {
 	// PredictorName refer to the predictor which would predict the dataset of this prediction.
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
@@ -72,9 +72,9 @@ type PredictionPipelineSpec struct {
 	// DatasetName is where we are using a dataset name. This can be dataset name
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// Input is the DataLocation of the input if using direct input file
+	// Input is the location of the input file if not using a dataset
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
-	// Output is the key in the bucket for storing all the prediction output
+	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// The owner account name
@@ -89,8 +89,8 @@ type PredictionPipelineSpec struct {
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,9,opt,name=schedule"`
 }
 
-// PredictionPipelineStatus is the observed state of a PredictionTemplate
-type PredictionPipelineStatus struct {
+// PredictionStatus is the observed state of a PredictionTemplate
+type PredictionStatus struct {
 	//+optional
-	Conditions []PredictionPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

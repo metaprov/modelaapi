@@ -457,15 +457,15 @@ func (m *PredictionChannel) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_PredictionChannel proto.InternalMessageInfo
 
-func (m *PredictionPipeline) Reset()      { *m = PredictionPipeline{} }
-func (*PredictionPipeline) ProtoMessage() {}
-func (*PredictionPipeline) Descriptor() ([]byte, []int) {
+func (m *Prediction) Reset()      { *m = Prediction{} }
+func (*Prediction) ProtoMessage() {}
+func (*Prediction) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{15}
 }
-func (m *PredictionPipeline) XXX_Unmarshal(b []byte) error {
+func (m *Prediction) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipeline) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Prediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -473,27 +473,27 @@ func (m *PredictionPipeline) XXX_Marshal(b []byte, deterministic bool) ([]byte, 
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipeline) XXX_Merge(src proto.Message) {
+func (m *Prediction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipeline.Merge(m, src)
 }
-func (m *PredictionPipeline) XXX_Size() int {
+func (m *Prediction) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipeline) XXX_DiscardUnknown() {
+func (m *Prediction) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipeline.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipeline proto.InternalMessageInfo
 
-func (m *PredictionPipelineCondition) Reset()      { *m = PredictionPipelineCondition{} }
-func (*PredictionPipelineCondition) ProtoMessage() {}
-func (*PredictionPipelineCondition) Descriptor() ([]byte, []int) {
+func (m *PredictionCondition) Reset()      { *m = PredictionCondition{} }
+func (*PredictionCondition) ProtoMessage() {}
+func (*PredictionCondition) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{16}
 }
-func (m *PredictionPipelineCondition) XXX_Unmarshal(b []byte) error {
+func (m *PredictionCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *PredictionCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -501,27 +501,27 @@ func (m *PredictionPipelineCondition) XXX_Marshal(b []byte, deterministic bool) 
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineCondition) XXX_Merge(src proto.Message) {
+func (m *PredictionCondition) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineCondition.Merge(m, src)
 }
-func (m *PredictionPipelineCondition) XXX_Size() int {
+func (m *PredictionCondition) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineCondition) XXX_DiscardUnknown() {
+func (m *PredictionCondition) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineCondition.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineCondition proto.InternalMessageInfo
 
-func (m *PredictionPipelineList) Reset()      { *m = PredictionPipelineList{} }
-func (*PredictionPipelineList) ProtoMessage() {}
-func (*PredictionPipelineList) Descriptor() ([]byte, []int) {
+func (m *PredictionList) Reset()      { *m = PredictionList{} }
+func (*PredictionList) ProtoMessage() {}
+func (*PredictionList) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{17}
 }
-func (m *PredictionPipelineList) XXX_Unmarshal(b []byte) error {
+func (m *PredictionList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *PredictionList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -529,27 +529,27 @@ func (m *PredictionPipelineList) XXX_Marshal(b []byte, deterministic bool) ([]by
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineList) XXX_Merge(src proto.Message) {
+func (m *PredictionList) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineList.Merge(m, src)
 }
-func (m *PredictionPipelineList) XXX_Size() int {
+func (m *PredictionList) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineList) XXX_DiscardUnknown() {
+func (m *PredictionList) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineList.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineList proto.InternalMessageInfo
 
-func (m *PredictionPipelineRun) Reset()      { *m = PredictionPipelineRun{} }
-func (*PredictionPipelineRun) ProtoMessage() {}
-func (*PredictionPipelineRun) Descriptor() ([]byte, []int) {
+func (m *CronPrediction) Reset()      { *m = CronPrediction{} }
+func (*CronPrediction) ProtoMessage() {}
+func (*CronPrediction) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{18}
 }
-func (m *PredictionPipelineRun) XXX_Unmarshal(b []byte) error {
+func (m *CronPrediction) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineRun) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *CronPrediction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -557,27 +557,27 @@ func (m *PredictionPipelineRun) XXX_Marshal(b []byte, deterministic bool) ([]byt
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineRun) XXX_Merge(src proto.Message) {
+func (m *CronPrediction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineRun.Merge(m, src)
 }
-func (m *PredictionPipelineRun) XXX_Size() int {
+func (m *CronPrediction) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineRun) XXX_DiscardUnknown() {
+func (m *CronPrediction) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineRun.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineRun proto.InternalMessageInfo
 
-func (m *PredictionPipelineRunCondition) Reset()      { *m = PredictionPipelineRunCondition{} }
-func (*PredictionPipelineRunCondition) ProtoMessage() {}
-func (*PredictionPipelineRunCondition) Descriptor() ([]byte, []int) {
+func (m *CronPredictionCondition) Reset()      { *m = CronPredictionCondition{} }
+func (*CronPredictionCondition) ProtoMessage() {}
+func (*CronPredictionCondition) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{19}
 }
-func (m *PredictionPipelineRunCondition) XXX_Unmarshal(b []byte) error {
+func (m *CronPredictionCondition) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineRunCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *CronPredictionCondition) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -585,27 +585,27 @@ func (m *PredictionPipelineRunCondition) XXX_Marshal(b []byte, deterministic boo
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineRunCondition) XXX_Merge(src proto.Message) {
+func (m *CronPredictionCondition) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineRunCondition.Merge(m, src)
 }
-func (m *PredictionPipelineRunCondition) XXX_Size() int {
+func (m *CronPredictionCondition) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineRunCondition) XXX_DiscardUnknown() {
+func (m *CronPredictionCondition) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineRunCondition.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineRunCondition proto.InternalMessageInfo
 
-func (m *PredictionPipelineRunList) Reset()      { *m = PredictionPipelineRunList{} }
-func (*PredictionPipelineRunList) ProtoMessage() {}
-func (*PredictionPipelineRunList) Descriptor() ([]byte, []int) {
+func (m *CronPredictionList) Reset()      { *m = CronPredictionList{} }
+func (*CronPredictionList) ProtoMessage() {}
+func (*CronPredictionList) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{20}
 }
-func (m *PredictionPipelineRunList) XXX_Unmarshal(b []byte) error {
+func (m *CronPredictionList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineRunList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *CronPredictionList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -613,27 +613,27 @@ func (m *PredictionPipelineRunList) XXX_Marshal(b []byte, deterministic bool) ([
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineRunList) XXX_Merge(src proto.Message) {
+func (m *CronPredictionList) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineRunList.Merge(m, src)
 }
-func (m *PredictionPipelineRunList) XXX_Size() int {
+func (m *CronPredictionList) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineRunList) XXX_DiscardUnknown() {
+func (m *CronPredictionList) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineRunList.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineRunList proto.InternalMessageInfo
 
-func (m *PredictionPipelineRunSpec) Reset()      { *m = PredictionPipelineRunSpec{} }
-func (*PredictionPipelineRunSpec) ProtoMessage() {}
-func (*PredictionPipelineRunSpec) Descriptor() ([]byte, []int) {
+func (m *CronPredictionSpec) Reset()      { *m = CronPredictionSpec{} }
+func (*CronPredictionSpec) ProtoMessage() {}
+func (*CronPredictionSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{21}
 }
-func (m *PredictionPipelineRunSpec) XXX_Unmarshal(b []byte) error {
+func (m *CronPredictionSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineRunSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *CronPredictionSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -641,27 +641,27 @@ func (m *PredictionPipelineRunSpec) XXX_Marshal(b []byte, deterministic bool) ([
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineRunSpec) XXX_Merge(src proto.Message) {
+func (m *CronPredictionSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineRunSpec.Merge(m, src)
 }
-func (m *PredictionPipelineRunSpec) XXX_Size() int {
+func (m *CronPredictionSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineRunSpec) XXX_DiscardUnknown() {
+func (m *CronPredictionSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineRunSpec.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineRunSpec proto.InternalMessageInfo
 
-func (m *PredictionPipelineRunStatus) Reset()      { *m = PredictionPipelineRunStatus{} }
-func (*PredictionPipelineRunStatus) ProtoMessage() {}
-func (*PredictionPipelineRunStatus) Descriptor() ([]byte, []int) {
+func (m *CronPredictionStatus) Reset()      { *m = CronPredictionStatus{} }
+func (*CronPredictionStatus) ProtoMessage() {}
+func (*CronPredictionStatus) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{22}
 }
-func (m *PredictionPipelineRunStatus) XXX_Unmarshal(b []byte) error {
+func (m *CronPredictionStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineRunStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *CronPredictionStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -669,27 +669,27 @@ func (m *PredictionPipelineRunStatus) XXX_Marshal(b []byte, deterministic bool) 
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineRunStatus) XXX_Merge(src proto.Message) {
+func (m *CronPredictionStatus) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineRunStatus.Merge(m, src)
 }
-func (m *PredictionPipelineRunStatus) XXX_Size() int {
+func (m *CronPredictionStatus) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineRunStatus) XXX_DiscardUnknown() {
+func (m *CronPredictionStatus) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineRunStatus.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineRunStatus proto.InternalMessageInfo
 
-func (m *PredictionPipelineSpec) Reset()      { *m = PredictionPipelineSpec{} }
-func (*PredictionPipelineSpec) ProtoMessage() {}
-func (*PredictionPipelineSpec) Descriptor() ([]byte, []int) {
+func (m *PredictionSpec) Reset()      { *m = PredictionSpec{} }
+func (*PredictionSpec) ProtoMessage() {}
+func (*PredictionSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{23}
 }
-func (m *PredictionPipelineSpec) XXX_Unmarshal(b []byte) error {
+func (m *PredictionSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *PredictionSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -697,27 +697,27 @@ func (m *PredictionPipelineSpec) XXX_Marshal(b []byte, deterministic bool) ([]by
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineSpec) XXX_Merge(src proto.Message) {
+func (m *PredictionSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineSpec.Merge(m, src)
 }
-func (m *PredictionPipelineSpec) XXX_Size() int {
+func (m *PredictionSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineSpec) XXX_DiscardUnknown() {
+func (m *PredictionSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineSpec.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_PredictionPipelineSpec proto.InternalMessageInfo
 
-func (m *PredictionPipelineStatus) Reset()      { *m = PredictionPipelineStatus{} }
-func (*PredictionPipelineStatus) ProtoMessage() {}
-func (*PredictionPipelineStatus) Descriptor() ([]byte, []int) {
+func (m *PredictionStatus) Reset()      { *m = PredictionStatus{} }
+func (*PredictionStatus) ProtoMessage() {}
+func (*PredictionStatus) Descriptor() ([]byte, []int) {
 	return fileDescriptor_01e05293855b2ecb, []int{24}
 }
-func (m *PredictionPipelineStatus) XXX_Unmarshal(b []byte) error {
+func (m *PredictionStatus) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *PredictionPipelineStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *PredictionStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -725,13 +725,13 @@ func (m *PredictionPipelineStatus) XXX_Marshal(b []byte, deterministic bool) ([]
 	}
 	return b[:n], nil
 }
-func (m *PredictionPipelineStatus) XXX_Merge(src proto.Message) {
+func (m *PredictionStatus) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PredictionPipelineStatus.Merge(m, src)
 }
-func (m *PredictionPipelineStatus) XXX_Size() int {
+func (m *PredictionStatus) XXX_Size() int {
 	return m.Size()
 }
-func (m *PredictionPipelineStatus) XXX_DiscardUnknown() {
+func (m *PredictionStatus) XXX_DiscardUnknown() {
 	xxx_messageInfo_PredictionPipelineStatus.DiscardUnknown(m)
 }
 
@@ -1005,16 +1005,16 @@ func init() {
 	proto.RegisterType((*OnlineFeaturestoreSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec")
 	proto.RegisterType((*PredictionCacheSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec")
 	proto.RegisterType((*PredictionChannel)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannel")
-	proto.RegisterType((*PredictionPipeline)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipeline")
-	proto.RegisterType((*PredictionPipelineCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineCondition")
-	proto.RegisterType((*PredictionPipelineList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineList")
-	proto.RegisterType((*PredictionPipelineRun)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRun")
-	proto.RegisterType((*PredictionPipelineRunCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunCondition")
-	proto.RegisterType((*PredictionPipelineRunList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunList")
-	proto.RegisterType((*PredictionPipelineRunSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunSpec")
-	proto.RegisterType((*PredictionPipelineRunStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineRunStatus")
-	proto.RegisterType((*PredictionPipelineSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineSpec")
-	proto.RegisterType((*PredictionPipelineStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionPipelineStatus")
+	proto.RegisterType((*Prediction)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction")
+	proto.RegisterType((*PredictionCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition")
+	proto.RegisterType((*PredictionList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionList")
+	proto.RegisterType((*CronPrediction)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction")
+	proto.RegisterType((*CronPredictionCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition")
+	proto.RegisterType((*CronPredictionList)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList")
+	proto.RegisterType((*CronPredictionSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec")
+	proto.RegisterType((*CronPredictionStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus")
+	proto.RegisterType((*PredictionSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec")
+	proto.RegisterType((*PredictionStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus")
 	proto.RegisterType((*Predictor)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor")
 	proto.RegisterType((*PredictorCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition")
 	proto.RegisterType((*PredictorHealth)(nil), "github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorHealth")
@@ -1964,7 +1964,7 @@ func (m *PredictionChannel) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipeline) Marshal() (dAtA []byte, err error) {
+func (m *Prediction) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -1974,12 +1974,12 @@ func (m *PredictionPipeline) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipeline) MarshalTo(dAtA []byte) (int, error) {
+func (m *Prediction) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipeline) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Prediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2017,7 +2017,7 @@ func (m *PredictionPipeline) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineCondition) Marshal() (dAtA []byte, err error) {
+func (m *PredictionCondition) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2027,12 +2027,12 @@ func (m *PredictionPipelineCondition) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineCondition) MarshalTo(dAtA []byte) (int, error) {
+func (m *PredictionCondition) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineCondition) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *PredictionCondition) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2072,7 +2072,7 @@ func (m *PredictionPipelineCondition) MarshalToSizedBuffer(dAtA []byte) (int, er
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineList) Marshal() (dAtA []byte, err error) {
+func (m *PredictionList) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2082,12 +2082,12 @@ func (m *PredictionPipelineList) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineList) MarshalTo(dAtA []byte) (int, error) {
+func (m *PredictionList) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *PredictionList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2119,7 +2119,7 @@ func (m *PredictionPipelineList) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineRun) Marshal() (dAtA []byte, err error) {
+func (m *CronPrediction) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2129,12 +2129,12 @@ func (m *PredictionPipelineRun) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineRun) MarshalTo(dAtA []byte) (int, error) {
+func (m *CronPrediction) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *CronPrediction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2172,7 +2172,7 @@ func (m *PredictionPipelineRun) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineRunCondition) Marshal() (dAtA []byte, err error) {
+func (m *CronPredictionCondition) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2182,12 +2182,12 @@ func (m *PredictionPipelineRunCondition) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineRunCondition) MarshalTo(dAtA []byte) (int, error) {
+func (m *CronPredictionCondition) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineRunCondition) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *CronPredictionCondition) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2227,7 +2227,7 @@ func (m *PredictionPipelineRunCondition) MarshalToSizedBuffer(dAtA []byte) (int,
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineRunList) Marshal() (dAtA []byte, err error) {
+func (m *CronPredictionList) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2237,12 +2237,12 @@ func (m *PredictionPipelineRunList) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineRunList) MarshalTo(dAtA []byte) (int, error) {
+func (m *CronPredictionList) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineRunList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *CronPredictionList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2274,7 +2274,7 @@ func (m *PredictionPipelineRunList) MarshalToSizedBuffer(dAtA []byte) (int, erro
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineRunSpec) Marshal() (dAtA []byte, err error) {
+func (m *CronPredictionSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2284,12 +2284,12 @@ func (m *PredictionPipelineRunSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineRunSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *CronPredictionSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineRunSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *CronPredictionSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2371,7 +2371,7 @@ func (m *PredictionPipelineRunSpec) MarshalToSizedBuffer(dAtA []byte) (int, erro
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineRunStatus) Marshal() (dAtA []byte, err error) {
+func (m *CronPredictionStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2381,12 +2381,12 @@ func (m *PredictionPipelineRunStatus) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineRunStatus) MarshalTo(dAtA []byte) (int, error) {
+func (m *CronPredictionStatus) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineRunStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *CronPredictionStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2441,7 +2441,7 @@ func (m *PredictionPipelineRunStatus) MarshalToSizedBuffer(dAtA []byte) (int, er
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineSpec) Marshal() (dAtA []byte, err error) {
+func (m *PredictionSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2451,12 +2451,12 @@ func (m *PredictionPipelineSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *PredictionSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *PredictionSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -2539,7 +2539,7 @@ func (m *PredictionPipelineSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
-func (m *PredictionPipelineStatus) Marshal() (dAtA []byte, err error) {
+func (m *PredictionStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2549,12 +2549,12 @@ func (m *PredictionPipelineStatus) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *PredictionPipelineStatus) MarshalTo(dAtA []byte) (int, error) {
+func (m *PredictionStatus) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *PredictionPipelineStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *PredictionStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -3529,7 +3529,7 @@ func (m *PredictionChannel) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipeline) Size() (n int) {
+func (m *Prediction) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3544,7 +3544,7 @@ func (m *PredictionPipeline) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineCondition) Size() (n int) {
+func (m *PredictionCondition) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3565,7 +3565,7 @@ func (m *PredictionPipelineCondition) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineList) Size() (n int) {
+func (m *PredictionList) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3582,7 +3582,7 @@ func (m *PredictionPipelineList) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineRun) Size() (n int) {
+func (m *CronPrediction) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3597,7 +3597,7 @@ func (m *PredictionPipelineRun) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineRunCondition) Size() (n int) {
+func (m *CronPredictionCondition) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3618,7 +3618,7 @@ func (m *PredictionPipelineRunCondition) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineRunList) Size() (n int) {
+func (m *CronPredictionList) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3635,7 +3635,7 @@ func (m *PredictionPipelineRunList) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineRunSpec) Size() (n int) {
+func (m *CronPredictionSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3677,7 +3677,7 @@ func (m *PredictionPipelineRunSpec) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineRunStatus) Size() (n int) {
+func (m *CronPredictionStatus) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3703,7 +3703,7 @@ func (m *PredictionPipelineRunStatus) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineSpec) Size() (n int) {
+func (m *PredictionSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -3741,7 +3741,7 @@ func (m *PredictionPipelineSpec) Size() (n int) {
 	return n
 }
 
-func (m *PredictionPipelineStatus) Size() (n int) {
+func (m *PredictionStatus) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -4216,23 +4216,23 @@ func (this *PredictionChannel) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipeline) String() string {
+func (this *Prediction) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&PredictionPipeline{`,
+	s := strings.Join([]string{`&Prediction{`,
 		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionPipelineSpec", "PredictionPipelineSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionPipelineStatus", "PredictionPipelineStatus", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionSpec", "PredictionSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionStatus", "PredictionStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
 }
-func (this *PredictionPipelineCondition) String() string {
+func (this *PredictionCondition) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&PredictionPipelineCondition{`,
+	s := strings.Join([]string{`&PredictionCondition{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
 		`LastTransitionTime:` + strings.Replace(fmt.Sprintf("%v", this.LastTransitionTime), "Time", "v1.Time", 1) + `,`,
@@ -4242,39 +4242,39 @@ func (this *PredictionPipelineCondition) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipelineList) String() string {
+func (this *PredictionList) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForItems := "[]PredictionPipeline{"
+	repeatedStringForItems := "[]Prediction{"
 	for _, f := range this.Items {
-		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "PredictionPipeline", "PredictionPipeline", 1), `&`, ``, 1) + ","
+		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "Prediction", "Prediction", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForItems += "}"
-	s := strings.Join([]string{`&PredictionPipelineList{`,
+	s := strings.Join([]string{`&PredictionList{`,
 		`ListMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ListMeta), "ListMeta", "v1.ListMeta", 1), `&`, ``, 1) + `,`,
 		`Items:` + repeatedStringForItems + `,`,
 		`}`,
 	}, "")
 	return s
 }
-func (this *PredictionPipelineRun) String() string {
+func (this *CronPrediction) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&PredictionPipelineRun{`,
+	s := strings.Join([]string{`&CronPrediction{`,
 		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "PredictionPipelineRunSpec", "PredictionPipelineRunSpec", 1), `&`, ``, 1) + `,`,
-		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "PredictionPipelineRunStatus", "PredictionPipelineRunStatus", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "CronPredictionSpec", "CronPredictionSpec", 1), `&`, ``, 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "CronPredictionStatus", "CronPredictionStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
 }
-func (this *PredictionPipelineRunCondition) String() string {
+func (this *CronPredictionCondition) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&PredictionPipelineRunCondition{`,
+	s := strings.Join([]string{`&CronPredictionCondition{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
 		`LastTransitionTime:` + strings.Replace(fmt.Sprintf("%v", this.LastTransitionTime), "Time", "v1.Time", 1) + `,`,
@@ -4284,27 +4284,27 @@ func (this *PredictionPipelineRunCondition) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipelineRunList) String() string {
+func (this *CronPredictionList) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForItems := "[]PredictionPipelineRun{"
+	repeatedStringForItems := "[]CronPrediction{"
 	for _, f := range this.Items {
-		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "PredictionPipelineRun", "PredictionPipelineRun", 1), `&`, ``, 1) + ","
+		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "CronPrediction", "CronPrediction", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForItems += "}"
-	s := strings.Join([]string{`&PredictionPipelineRunList{`,
+	s := strings.Join([]string{`&CronPredictionList{`,
 		`ListMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ListMeta), "ListMeta", "v1.ListMeta", 1), `&`, ``, 1) + `,`,
 		`Items:` + repeatedStringForItems + `,`,
 		`}`,
 	}, "")
 	return s
 }
-func (this *PredictionPipelineRunSpec) String() string {
+func (this *CronPredictionSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&PredictionPipelineRunSpec{`,
+	s := strings.Join([]string{`&CronPredictionSpec{`,
 		`PredictionName:` + valueToStringGenerated(this.PredictionName) + `,`,
 		`PredictorName:` + valueToStringGenerated(this.PredictorName) + `,`,
 		`Labeled:` + fmt.Sprintf("%v", this.Labeled) + `,`,
@@ -4318,16 +4318,16 @@ func (this *PredictionPipelineRunSpec) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipelineRunStatus) String() string {
+func (this *CronPredictionStatus) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForConditions := "[]PredictionPipelineRunCondition{"
+	repeatedStringForConditions := "[]CronPredictionCondition{"
 	for _, f := range this.Conditions {
-		repeatedStringForConditions += strings.Replace(strings.Replace(f.String(), "PredictionPipelineRunCondition", "PredictionPipelineRunCondition", 1), `&`, ``, 1) + ","
+		repeatedStringForConditions += strings.Replace(strings.Replace(f.String(), "CronPredictionCondition", "CronPredictionCondition", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForConditions += "}"
-	s := strings.Join([]string{`&PredictionPipelineRunStatus{`,
+	s := strings.Join([]string{`&CronPredictionStatus{`,
 		`Score:` + fmt.Sprintf("%v", this.Score) + `,`,
 		`Phase:` + fmt.Sprintf("%v", this.Phase) + `,`,
 		`StartTime:` + strings.Replace(fmt.Sprintf("%v", this.StartTime), "Time", "v1.Time", 1) + `,`,
@@ -4337,11 +4337,11 @@ func (this *PredictionPipelineRunStatus) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipelineSpec) String() string {
+func (this *PredictionSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&PredictionPipelineSpec{`,
+	s := strings.Join([]string{`&PredictionSpec{`,
 		`PredictorName:` + fmt.Sprintf("%v", this.PredictorName) + `,`,
 		`Labeled:` + fmt.Sprintf("%v", this.Labeled) + `,`,
 		`Objective:` + valueToStringGenerated(this.Objective) + `,`,
@@ -4355,16 +4355,16 @@ func (this *PredictionPipelineSpec) String() string {
 	}, "")
 	return s
 }
-func (this *PredictionPipelineStatus) String() string {
+func (this *PredictionStatus) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForConditions := "[]PredictionPipelineCondition{"
+	repeatedStringForConditions := "[]PredictionCondition{"
 	for _, f := range this.Conditions {
-		repeatedStringForConditions += strings.Replace(strings.Replace(f.String(), "PredictionPipelineCondition", "PredictionPipelineCondition", 1), `&`, ``, 1) + ","
+		repeatedStringForConditions += strings.Replace(strings.Replace(f.String(), "PredictionCondition", "PredictionCondition", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForConditions += "}"
-	s := strings.Join([]string{`&PredictionPipelineStatus{`,
+	s := strings.Join([]string{`&PredictionStatus{`,
 		`Conditions:` + repeatedStringForConditions + `,`,
 		`}`,
 	}, "")
@@ -6967,7 +6967,7 @@ func (m *PredictionChannel) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipeline) Unmarshal(dAtA []byte) error {
+func (m *Prediction) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -6990,10 +6990,10 @@ func (m *PredictionPipeline) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipeline: wiretype end group for non-group")
+			return fmt.Errorf("proto: Prediction: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipeline: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Prediction: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -7119,7 +7119,7 @@ func (m *PredictionPipeline) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineCondition) Unmarshal(dAtA []byte) error {
+func (m *PredictionCondition) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7142,10 +7142,10 @@ func (m *PredictionPipelineCondition) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineCondition: wiretype end group for non-group")
+			return fmt.Errorf("proto: PredictionCondition: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineCondition: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: PredictionCondition: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -7178,7 +7178,7 @@ func (m *PredictionPipelineCondition) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = PredictionPipelineConditionType(dAtA[iNdEx:postIndex])
+			m.Type = PredictionConditionType(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -7336,7 +7336,7 @@ func (m *PredictionPipelineCondition) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineList) Unmarshal(dAtA []byte) error {
+func (m *PredictionList) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7359,10 +7359,10 @@ func (m *PredictionPipelineList) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineList: wiretype end group for non-group")
+			return fmt.Errorf("proto: PredictionList: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineList: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: PredictionList: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -7427,7 +7427,7 @@ func (m *PredictionPipelineList) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Items = append(m.Items, PredictionPipeline{})
+			m.Items = append(m.Items, Prediction{})
 			if err := m.Items[len(m.Items)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -7456,7 +7456,7 @@ func (m *PredictionPipelineList) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
+func (m *CronPrediction) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7479,10 +7479,10 @@ func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineRun: wiretype end group for non-group")
+			return fmt.Errorf("proto: CronPrediction: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineRun: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: CronPrediction: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -7608,7 +7608,7 @@ func (m *PredictionPipelineRun) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineRunCondition) Unmarshal(dAtA []byte) error {
+func (m *CronPredictionCondition) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7631,10 +7631,10 @@ func (m *PredictionPipelineRunCondition) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineRunCondition: wiretype end group for non-group")
+			return fmt.Errorf("proto: CronPredictionCondition: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineRunCondition: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: CronPredictionCondition: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -7667,7 +7667,7 @@ func (m *PredictionPipelineRunCondition) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = PredictionPipelineRunConditionType(dAtA[iNdEx:postIndex])
+			m.Type = CronPredictionConditionType(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -7825,7 +7825,7 @@ func (m *PredictionPipelineRunCondition) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineRunList) Unmarshal(dAtA []byte) error {
+func (m *CronPredictionList) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7848,10 +7848,10 @@ func (m *PredictionPipelineRunList) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineRunList: wiretype end group for non-group")
+			return fmt.Errorf("proto: CronPredictionList: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineRunList: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: CronPredictionList: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -7916,7 +7916,7 @@ func (m *PredictionPipelineRunList) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Items = append(m.Items, PredictionPipelineRun{})
+			m.Items = append(m.Items, CronPrediction{})
 			if err := m.Items[len(m.Items)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -7945,7 +7945,7 @@ func (m *PredictionPipelineRunList) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineRunSpec) Unmarshal(dAtA []byte) error {
+func (m *CronPredictionSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -7968,10 +7968,10 @@ func (m *PredictionPipelineRunSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineRunSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: CronPredictionSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineRunSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: CronPredictionSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -8288,7 +8288,7 @@ func (m *PredictionPipelineRunSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineRunStatus) Unmarshal(dAtA []byte) error {
+func (m *CronPredictionStatus) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -8311,10 +8311,10 @@ func (m *PredictionPipelineRunStatus) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineRunStatus: wiretype end group for non-group")
+			return fmt.Errorf("proto: CronPredictionStatus: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineRunStatus: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: CronPredictionStatus: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 2:
@@ -8358,7 +8358,7 @@ func (m *PredictionPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Phase = PredictionPipelineRunPhase(dAtA[iNdEx:postIndex])
+			m.Phase = CronPredictionPhase(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -8461,7 +8461,7 @@ func (m *PredictionPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Conditions = append(m.Conditions, PredictionPipelineRunCondition{})
+			m.Conditions = append(m.Conditions, CronPredictionCondition{})
 			if err := m.Conditions[len(m.Conditions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -8490,7 +8490,7 @@ func (m *PredictionPipelineRunStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineSpec) Unmarshal(dAtA []byte) error {
+func (m *PredictionSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -8513,10 +8513,10 @@ func (m *PredictionPipelineSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: PredictionSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: PredictionSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -8832,7 +8832,7 @@ func (m *PredictionPipelineSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PredictionPipelineStatus) Unmarshal(dAtA []byte) error {
+func (m *PredictionStatus) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -8855,10 +8855,10 @@ func (m *PredictionPipelineStatus) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: PredictionPipelineStatus: wiretype end group for non-group")
+			return fmt.Errorf("proto: PredictionStatus: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PredictionPipelineStatus: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: PredictionStatus: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 2:
@@ -8890,7 +8890,7 @@ func (m *PredictionPipelineStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Conditions = append(m.Conditions, PredictionPipelineCondition{})
+			m.Conditions = append(m.Conditions, PredictionCondition{})
 			if err := m.Conditions[len(m.Conditions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
