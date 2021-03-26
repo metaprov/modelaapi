@@ -1115,3 +1115,24 @@ const (
 	Success ConditionReason = "Success"
 	Running ConditionReason = "Running"
 )
+
+type HardwareTarget string
+
+const (
+	HardwareTargetAMDEPYC2           HardwareTarget = "amd-epyc-2"
+	HardwareTargetARMA53             HardwareTarget = "arma-53"
+	HardwareTargetARMA72             HardwareTarget = "arma-72"
+	HardwareTargetIntelCascadeLake   HardwareTarget = "intel-cascade-lake"
+	HardwareTargetIntelBroadwell     HardwareTarget = "intel-broadwell"
+	HardwareTargetIntelSkylake       HardwareTarget = "intel-skylake"
+	HardwareTargetTeslaV100          HardwareTarget = "tesla-v100"
+	HardwareTargetTeslaK80           HardwareTarget = "tesla-k80"
+	HardwareTargetT4                 HardwareTarget = "t4"
+	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modeld-b"
+)
+
+type CompilerName string
+
+const (
+	CompilerNameTVM CompilerName = "tvm"
+)

@@ -207,12 +207,19 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,20,opt,name=forecasted"`
+	// Compiled is true when the model should perform a forecast
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Complied *bool `json:"complied,omitempty" protobuf:"bytes,21,opt,name=compiled"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,21,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,22,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,22,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,23,opt,name=forecastingSpec"`
+	// The compiler specification
+	// +kubebuilder:validation:Optional
+	Compiler *CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,24,opt,name=compiler"`
 }
 
 type EnsembleSpec struct {
@@ -621,4 +628,11 @@ type DimensionValue struct {
 	Key *string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	// Value if the partition value
 	Value *string `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
+}
+
+// List compiler spec
+type CompilerSpec struct {
+	Compiler *catalog.CompilerName `json:"compiler,omitempty" protobuf:"bytes,1,opt,name=compiler"`
+	// Set one or more targets
+	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,opt,name=targets"`
 }
