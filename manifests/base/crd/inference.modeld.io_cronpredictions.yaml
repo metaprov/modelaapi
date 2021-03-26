@@ -6,7 +6,7 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.5.0
   creationTimestamp: null
-  name: Predictions.inference.modeld.io
+  name: cronpredictions.inference.modeld.io
 spec:
   group: inference.modeld.io
   names:
@@ -15,8 +15,8 @@ spec:
     - modeld
     kind: CronPrediction
     listKind: CronPredictionList
-    plural: Predictions
-    singular: Prediction
+    plural: cronpredictions
+    singular: cronprediction
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

@@ -27,12 +27,9 @@ spec:
       name: Predictor
       type: string
     - jsonPath: .spec.datasetName
-      name: Bucket
+      name: Dataset
       type: string
-    - jsonPath: .spec.datasetName
-      name: File
-      type: string
-    - jsonPath: .spec.datasetName
+    - jsonPath: .spec.labeled
       name: Labeled
       type: string
     - jsonPath: .status.score
