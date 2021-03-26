@@ -91,8 +91,7 @@ func (this *ModelPipelineRunStageStatus) RecordRunning() {
 }
 
 func (this *ModelPipelineRunStageStatus) RecordError(err error) {
-	str := err.Error()
-	this.Error = &str
+	this.Error = err.Error()
 	this.Phase = StageStatusPhaseRunning
 	now := metav1.Now()
 	this.ApprovedAt = &now

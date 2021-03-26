@@ -167,6 +167,8 @@ type ModelPipelineRunStageStatus struct {
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
 	Results []ModelTestResult `json:"results,omitempty" protobuf:"bytes,9,opt,name=results"`
+	// Error record error.
+	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
