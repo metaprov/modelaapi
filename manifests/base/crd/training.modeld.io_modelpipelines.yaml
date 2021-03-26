@@ -173,7 +173,9 @@ spec:
                   of pipeline failure
                 type: string
               owner:
-                description: The owner account name
+                default: no-one
+                description: The owner of the run, set to the owner of the pipeline
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               release:
                 description: ReleaseStage stage define how to place the model into

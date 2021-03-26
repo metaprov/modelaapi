@@ -407,8 +407,17 @@ message PredictionSpec {
 
 // PredictionStatus is the observed state of a PredictionTemplate
 message PredictionStatus {
+  // StartTime is the start time of the prediction.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+
+  // EndTime is the end time of the prediction.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
+
+  // Phase is the current phase of the prediction
+  optional string phase = 3;
+
   // +optional
-  repeated PredictionCondition conditions = 2;
+  repeated PredictionCondition conditions = 4;
 }
 
 message PredictionTemplate {

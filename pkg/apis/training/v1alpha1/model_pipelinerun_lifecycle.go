@@ -255,8 +255,6 @@ func (this *ModelPipelineRun) IsStudyCompleted() bool {
 	return this.GetCond(MPRTrainingStudyCompleted).Status == v1.ConditionTrue
 }
 
-
-
 func (this *ModelPipelineRun) MarkModelPublished() {
 	this.Status.TrainingStatus.RecordCompleted()
 	this.Status.Stage = ModelPipelineStageTraining

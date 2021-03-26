@@ -212,6 +212,10 @@ spec:
           status:
             description: PredictionStatus is the observed state of a PredictionTemplate
             properties:
+              completionTime:
+                description: EndTime is the end time of the prediction.
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: PredictionCondition describes the state of PredictionTemplate
@@ -239,6 +243,13 @@ spec:
                   - type
                   type: object
                 type: array
+              phase:
+                description: Phase is the current phase of the prediction
+                type: string
+              startTime:
+                description: StartTime is the start time of the prediction.
+                format: date-time
+                type: string
             type: object
         required:
         - spec
