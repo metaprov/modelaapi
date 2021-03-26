@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2019.
- *
- * Metaprov.com
- */
-
+// +groupName=team.modeld.io
 // +kubebuilder:object:generate=true
 package v1alpha1
