@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/predictionpipeline/v1";
+package github.com.metaprov.modeldapi.services.prediction.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListPredictionsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListPredictionsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionList items = 1;
+}
+
+
+message CreatePredictionResponse {}
+
+message CreatePredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+}
+
+message UpdatePredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+}
+
+message UpdatePredictionResponse {
+
+}
+
+message GetPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetPredictionResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    string yaml = 2;
+
+}
+
+message DeletePredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeletePredictionResponse {
+
+}
+
+message DownloadPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message DownloadPredictionResponse {
+    bytes raw = 1;
+
+}
+
+
+message RunPredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+}
+
+message RunPredictionResponse {
+    
+}
+
+
+service PredictionService {
+
+    rpc ListPredictions(ListPredictionsRequest) returns (ListPredictionsResponse) {
+        option (google.api.http).get = "/v1/predictions";
+    }
+
+    rpc CreatePrediction(CreatePredictionRequest) returns (CreatePredictionResponse) {
+        option (google.api.http) = {
+			post: "/v1/predictions"
+			body: "*"
+		};
+    }
+
+    rpc GetPrediction(GetPredictionRequest) returns (GetPredictionResponse) {
+        option (google.api.http).get = "/v1/{namespace}/predictions/{name}";
+    }
+
+    rpc UpdatePrediction(UpdatePredictionRequest) returns (UpdatePredictionResponse) {
+        option (google.api.http) = {
+			put: "/v1/{prediction.metadata.namespace}predictions/{prediction.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeletePrediction(DeletePredictionRequest) returns (DeletePredictionResponse) {
+        option (google.api.http).delete = "/v1/predictions/{name}";
+    }
+
+    rpc Download(DownloadPredictionRequest) returns (DownloadPredictionResponse) {
+        option (google.api.http).get = "/api/v1alpha1/{namespace}/predictions/{name}:download";
+    }
+
+    rpc RunPrediction(RunPredictionRequest) returns (RunPredictionResponse) {
+        option (google.api.http).post = "/api/v1/predictions/{namespace}/{name}:run";
+    }
+
+    
+
+
+}

@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/cronprediction/v1";
+package github.com.metaprov.modeldapi.services.cronprediction.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListCronPredictionsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListCronPredictionsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList items = 1;
+}
+
+message CreateCronPredictionResponse {}
+
+message CreateCronPredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+}
+
+message UpdateCronPredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+}
+
+message UpdateCronPredictionResponse {
+
+}
+
+message GetCronPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetCronPredictionResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteCronPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteCronPredictionResponse {
+
+}
+
+message DownloadCronPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message DownloadCronPredictionResponse {
+    bytes raw = 1;
+
+}
+
+
+service CronPredictionService {
+
+    rpc ListCronPredictions(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {
+        option (google.api.http).get = "/v1/cronpredictions";
+    }
+
+    rpc CreateCronPrediction(CreateCronPredictionRequest) returns (CreateCronPredictionResponse) {
+        option (google.api.http) = {
+			post: "/v1/cronpredictions"
+			body: "*"
+		};
+    }
+
+    rpc GetCronPrediction(GetCronPredictionRequest) returns (GetCronPredictionResponse) {
+        option (google.api.http).get = "/v1/cronpredictions/{name}";
+    }
+
+    rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (UpdateCronPredictionResponse) {
+        option (google.api.http) = {
+			put: "/v1/cronpredictions/{cronprediction.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteCronPrediction(DeleteCronPredictionRequest) returns (DeleteCronPredictionResponse) {
+        option (google.api.http).delete = "/v1/cronpredictions/{name}";
+    }
+
+    rpc Download(DownloadCronPredictionRequest) returns (DownloadCronPredictionResponse) {
+        option (google.api.http).get = "/api/v1alpha1/cronpredictions/{name}:download";
+    }
+
+
+}
