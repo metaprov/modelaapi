@@ -8,6 +8,16 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// ModelPhase is the current phase of a model
+type PredictionPhase string
+
+const (
+	PredictionPhasePending   PredictionPhase = "Pending"
+	PredictionPhaseRunning   PredictionPhase = "Running"
+	PredictionPhaseFailed    PredictionPhase = "Failed"
+	PredictionPhaseCompleted PredictionPhase = "Completed"
+)
+
 // PredictionConditionType is the condition type of the prediction pipeline
 type PredictionConditionType string
 
@@ -92,6 +102,7 @@ type PredictionSpec struct {
 
 // PredictionStatus is the observed state of a PredictionTemplate
 type PredictionStatus struct {
+	Phase string `json:"phase,omitempty" protobuf:"bytes,1,rep,name=phase"`
 	//+optional
 	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

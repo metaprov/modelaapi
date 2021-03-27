@@ -54,17 +54,9 @@ func (prediction *Prediction) ValidateDelete() error {
 }
 
 // defaulting
-var _ webhook.Defaulter = &CronPrediction{}
+var _ webhook.Defaulter = &Prediction{}
 
 func (run *CronPrediction) Default() {
 	// if no input bucket defined,
-	if run.Spec.Output == nil {
-		run.Spec.Output = &data.DataLocation{}
-	}
-	if run.Spec.Output.BucketName == "" {
-		run.Spec.Output.BucketName = run.Spec.Input.BucketName
-	}
-	if run.Spec.Output.Path == "" { // place the output at the same location as the input
-		run.Spec.Output.Path = run.Spec.Input.Path + ".out.json"
-	}
+
 }

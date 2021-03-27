@@ -152,9 +152,9 @@ func (prediction *Prediction) MarkFailed(msg string) {
 	})
 }
 
-func (prediction *Prediction) MarkReady() {
+func (prediction *Prediction) MarkCompleted() {
 	prediction.CreateOrUpdateCond(PredictionCondition{
-		Type:   PredictionReady,
+		Type:   PredictionCompleted,
 		Status: v1.ConditionTrue,
 	})
 }
@@ -176,24 +176,14 @@ func (version *Prediction) Archived() bool {
 
 func (run *Prediction) MarkFailed(msg string) {
 	run.CreateOrUpdateCond(PredictionCondition{
-		Type:    PredictionPipelineRunReady,
+		Type:    PredictionCompleted,
 		Status:  v1.ConditionFalse,
-		Reason:  string(PredictionPipelineRunPhaseFailed),
+		Reason:  string(PredictionCompleted),
 		Message: msg,
 	})
-	run.Status.Phase = PredictionPipelineRunPhaseFailed
+	run.Status.Phase = PredictionPhaseFailed
 	now := metav1.Now()
 	run.Status.CompletionTime = &now
-
-}
-
-func (run *Prediction) MarkDone() {
-	run.CreateOrUpdateCond(PredictionCondition{
-		Type:   PredictionPipelineRunReady,
-		Status: v1.ConditionTrue,
-		Reason: string(PredictionPipelineRunPhaseCompleted),
-	})
-	run.Status.Phase = PredictionPipelineRunPhaseCompleted
 
 }
 
@@ -202,7 +192,7 @@ func (run *Prediction) MarkRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(PredictionRunning),
 	})
-	run.Status.Phase = PredictionPipelineRunPhaseRunning
+	run.Status.Phase = PredictionPhaseRunning
 	now := metav1.Now()
 	if run.Status.StartTime == nil {
 		run.Status.CompletionTime = &now

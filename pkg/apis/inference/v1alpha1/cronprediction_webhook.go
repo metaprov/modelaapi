@@ -37,11 +37,11 @@ func (run *CronPrediction) ManifestUri() string {
 }
 
 func (run *CronPrediction) InputKey() string {
-	return run.Spec.Input.Path
+	return run.Spec.Template.Spec.Input.Path
 }
 
 func (run *CronPrediction) OutputKey() string {
-	return run.Spec.Output.Path
+	return run.Spec.Template.Spec.Output.Path
 }
 
 //==============================================================================
@@ -121,14 +121,14 @@ func (run *CronPrediction) GetCond(t CronPredictionConditionType) CronPrediction
 }
 
 func (run *CronPrediction) IsReady() bool {
-	return run.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
+	return run.GetCond(CronPredictionReady).Status == v1.ConditionTrue
 }
 
 func (run *CronPrediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
 }
 
-func ParsePredictionPipelineRunYaml(content []byte) (*CronPrediction, error) {
+func ParseCronPredictionYaml(content []byte) (*CronPrediction, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err
@@ -146,13 +146,13 @@ func (run *CronPrediction) OpName() string {
 
 func (run *CronPrediction) MarkArchived() {
 	run.CreateOrUpdateCond(CronPredictionCondition{
-		Type:   PredictionPipelineRunArchived,
+		Type:   CronPredictionArchived,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (run *CronPrediction) Archived() bool {
-	return run.GetCond(PredictionPipelineRunArchived).Status == v1.ConditionTrue
+	return run.GetCond(CronPredictionArchived).Status == v1.ConditionTrue
 }
 
 func (run *CronPrediction) MarkReady() {
@@ -160,21 +160,18 @@ func (run *CronPrediction) MarkReady() {
 		Type:   CronPredictionReady,
 		Status: v1.ConditionTrue,
 	})
-	run.Status.Phase = PredictionPipelineRunPhaseCompleted
-	now := metav1.Now()
-	run.Status.CompletionTime = &now
 }
 
 func (run *CronPrediction) IsCompleted() bool {
-	return run.GetCond(PredictionPipelineRunReady).Status == v1.ConditionTrue
+	return run.GetCond(CronPredictionReady).Status == v1.ConditionTrue
 }
 
 func (run *CronPrediction) IsRunning() bool {
-	cond := run.GetCond(PredictionPipelineRunReady)
+	cond := run.GetCond(CronPredictionReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseRunning)
 }
 
 func (run *CronPrediction) IsFailed() bool {
-	cond := run.GetCond(PredictionPipelineRunReady)
+	cond := run.GetCond(CronPredictionReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseFailed)
 }
