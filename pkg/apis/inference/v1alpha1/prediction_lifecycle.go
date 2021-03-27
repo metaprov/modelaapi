@@ -3,7 +3,6 @@ package v1alpha1
 import (
 	"fmt"
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-
 	"github.com/metaprov/modeldapi/pkg/apis/inference"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -157,6 +156,11 @@ func (prediction *Prediction) MarkCompleted() {
 		Type:   PredictionCompleted,
 		Status: v1.ConditionTrue,
 	})
+	prediction.Status.Phase = PredictionPhaseCompleted
+	now := metav1.Now()
+	if prediction.Status.CompletionTime == nil {
+		prediction.Status.CompletionTime = &now
+	}
 }
 
 func (prediction *Prediction) OpName() string {
@@ -174,23 +178,10 @@ func (version *Prediction) Archived() bool {
 	return version.GetCond(PredictionArchived).Status == v1.ConditionTrue
 }
 
-func (run *Prediction) MarkFailed(msg string) {
-	run.CreateOrUpdateCond(PredictionCondition{
-		Type:    PredictionCompleted,
-		Status:  v1.ConditionFalse,
-		Reason:  string(PredictionCompleted),
-		Message: msg,
-	})
-	run.Status.Phase = PredictionPhaseFailed
-	now := metav1.Now()
-	run.Status.CompletionTime = &now
-
-}
-
 func (run *Prediction) MarkRunning() {
 	run.CreateOrUpdateCond(PredictionCondition{
 		Status: v1.ConditionFalse,
-		Reason: string(PredictionRunning),
+		Reason: string(catalog.Running),
 	})
 	run.Status.Phase = PredictionPhaseRunning
 	now := metav1.Now()
