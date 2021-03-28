@@ -41,20 +41,12 @@ type PipelineRunConditionType string
 
 /// ModelPipelineRun Condition
 const (
-	MPRArchived                    PipelineRunConditionType = "Archived"
-	MPRDataPipelineCompleted       PipelineRunConditionType = "DataPipelineCompleted"
-	MPRTrainingNotebookCompleted   PipelineRunConditionType = "TrainingNotebookCompleted"
-	MPRTrainingStudyCompleted      PipelineRunConditionType = "TrainingStudyCompleted"
-	MPRTrainingModelPublished      PipelineRunConditionType = "TrainingModelPublished"
-	MPRTrainingApproved            PipelineRunConditionType = "TrainingApproved"
-	MPRUatPredictorReady           PipelineRunConditionType = "UATPredictorReady"
-	MPRUatPredictionCompleted      PipelineRunConditionType = "UATTestCompleted"
-	MPRUatApproved                 PipelineRunConditionType = "UATApproved"
-	MPRCapacityPredictorReady      PipelineRunConditionType = "CapacityPredictorReady"
-	MPRCapacityPredictionCompleted PipelineRunConditionType = "CapacityTestCompleted"
-	MPRCapacityApproved            PipelineRunConditionType = "CapacityApproved"
-	MPRReleasePredictorReady       PipelineRunConditionType = "ReleasePredictorReady"
-	MPRReleaseApproved             PipelineRunConditionType = "ReleaseApproved"
+	MPRArchived               PipelineRunConditionType = "Archived"
+	MPRDataStageCompleted     PipelineRunConditionType = "DataStageCompleted"
+	MPRTrainingStageCmpleted  PipelineRunConditionType = "TrainingStageCompleted"
+	MPRUATCompleted           PipelineRunConditionType = "UATStageCompleted"
+	MPRCapacityStageCompleted PipelineRunConditionType = "CapacityStageCompleted"
+	MPRModelReleased          PipelineRunConditionType = "ModelReleased"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
