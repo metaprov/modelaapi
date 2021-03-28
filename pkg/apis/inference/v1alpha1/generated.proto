@@ -103,7 +103,9 @@ message CronPredictionList {
 // CronPredictionSpec represent the desired state of CronPrediction
 message CronPredictionSpec {
   // Schedule is the cron schedule
-  optional string schedule = 1;
+  // Schedule for running the pipeline
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
 
   // Template refer to the prediction template
   optional PredictionTemplate template = 2;
@@ -376,10 +378,6 @@ message PredictionSpec {
   // Used usally for unit testing
   optional bool labeled = 2;
 
-  // The objective metric used to score
-  optional string objective = 3;
-
-  // DatasetName is where we are using a dataset name. This can be dataset name
   // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
@@ -390,18 +388,17 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
+  // Tests is the list of metrics that we need to measure if we are running a labeled prediction
+  repeated string results = 7;
+
   // The owner account name
   // +kubebuilder:validation:Optional
-  optional string owner = 7;
+  optional string owner = 8;
 
   // A reference to the workload class that is used for training
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
-
-  // Schedule for running the pipeline
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
+  optional string workloadClassName = 9;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate
@@ -415,8 +412,12 @@ message PredictionStatus {
   // Phase is the current phase of the prediction
   optional string phase = 3;
 
+  // Results is the results of running the prediction with a labeled dataset
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement results = 4;
+
   // +optional
-  repeated PredictionCondition conditions = 4;
+  repeated PredictionCondition conditions = 5;
 }
 
 message PredictionTemplate {

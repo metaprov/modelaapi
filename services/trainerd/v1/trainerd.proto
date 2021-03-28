@@ -6,6 +6,7 @@ package github.com.metaprov.modeldapi.services.trainerd.v1;
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 
 
@@ -36,7 +37,7 @@ message TrainRequest {
 }
 
 message TrainResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement result = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement result = 1;
     // The location in the bucket of the trained bin model
     string weightsCloudUri = 2;
     // The location in the bucket of the cloud manifest.
@@ -67,9 +68,9 @@ message TestRequest {
 
 message TestResponse {
     // measurements on the training set
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement train_result = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement train_result = 1;
     // measurements on the testing set
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement test_result = 2;
+    repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement test_result = 2;
     // The location in the bucket of the trained bin model
     string modelWeightsCloudUri = 3;
     // The location in the bucket of the cloud manifest.

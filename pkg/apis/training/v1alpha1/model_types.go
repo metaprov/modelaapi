@@ -34,16 +34,6 @@ const (
 	ModelPhaseFailedForecast  ModelPhase = "FailedForecast"
 )
 
-// Measurement is a value for a specific metric
-type Measurement struct {
-	// The metric type name (e.g. F1 / Accuracy)
-	// +kubebuilder:validation:Required
-	Metric *catalog.Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
-	// The value for this model
-	// +kubebuilder:validation:Required
-	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
-}
-
 // ModelConditionType is a condition on a model
 type ModelConditionType string
 
@@ -275,10 +265,10 @@ type ModelStatus struct {
 	Best bool `json:"best,omitempty" protobuf:"bytes,11,opt,name=best"`
 	// TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set
 	// +kubebuilder:validation:Optional
-	TrainResult []Measurement `json:"trainResult,omitempty" protobuf:"bytes,12,rep,name=trainResult"`
+	TrainResult []catalog.Measurement `json:"trainResult,omitempty" protobuf:"bytes,12,rep,name=trainResult"`
 	// TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
 	// +kubebuilder:validation:Optional
-	TestResult []Measurement `json:"testResult,omitempty" protobuf:"bytes,13,rep,name=testResult"`
+	TestResult []catalog.Measurement `json:"testResult,omitempty" protobuf:"bytes,13,rep,name=testResult"`
 	// Phase is the phase of the model
 	// +kubebuilder:validation:Optional
 	Phase ModelPhase `json:"phase" protobuf:"bytes,14,opt,name=phase"`

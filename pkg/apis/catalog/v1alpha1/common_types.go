@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -1136,3 +1137,13 @@ type CompilerName string
 const (
 	CompilerNameTVM CompilerName = "tvm"
 )
+
+// Measurement is a value for a specific metric
+type Measurement struct {
+	// The metric type name (e.g. F1 / Accuracy)
+	// +kubebuilder:validation:Required
+	Metric *Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
+	// The value for this model
+	// +kubebuilder:validation:Required
+	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
+}

@@ -77,9 +77,6 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=false
 	// Used usally for unit testing
 	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,2,opt,name=labeled"`
-	// The objective metric used to score
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,3,opt,name=objective"`
-	// DatasetName is where we are using a dataset name. This can be dataset name
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Input is the location of the input file if not using a dataset
@@ -87,16 +84,15 @@ type PredictionSpec struct {
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
+	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
+	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,opt,name=results"`
 	// The owner account name
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 	// A reference to the workload class that is used for training
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
-	// Schedule for running the pipeline
-	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,9,opt,name=schedule"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate
@@ -107,6 +103,9 @@ type PredictionStatus struct {
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,2,opt,name=completionTime"`
 	// Phase is the current phase of the prediction
 	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
+	// Results is the results of running the prediction with a labeled dataset
+	// +kubebuilder:validation:Optional
+	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
 	//+optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 }

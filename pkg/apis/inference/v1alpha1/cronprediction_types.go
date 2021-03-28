@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -63,7 +64,9 @@ type PredictionTemplate struct {
 // CronPredictionSpec represent the desired state of CronPrediction
 type CronPredictionSpec struct {
 	// Schedule is the cron schedule
-	Schedule *string `json:"schedule" protobuf:"bytes,1,opt,name=schedule"`
+	// Schedule for running the pipeline
+	// +kubebuilder:validation:Optional
+	Schedule *catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
 	// Template refer to the prediction template
 	Template PredictionTemplate `json:"template" protobuf:"bytes,2,opt,name=template"`
 }

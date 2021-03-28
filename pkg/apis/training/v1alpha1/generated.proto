@@ -366,17 +366,6 @@ message Level {
   repeated string distinc = 5;
 }
 
-// Measurement is a value for a specific metric
-message Measurement {
-  // The metric type name (e.g. F1 / Accuracy)
-  // +kubebuilder:validation:Required
-  optional string metric = 1;
-
-  // The value for this model
-  // +kubebuilder:validation:Required
-  optional double value = 2;
-}
-
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -1195,11 +1184,11 @@ message ModelStatus {
 
   // TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set
   // +kubebuilder:validation:Optional
-  repeated Measurement trainResult = 12;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement trainResult = 12;
 
   // TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
   // +kubebuilder:validation:Optional
-  repeated Measurement testResult = 13;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement testResult = 13;
 
   // Phase is the phase of the model
   // +kubebuilder:validation:Optional
@@ -1256,7 +1245,7 @@ message ModelTestResult {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
   // The results of running the tests
-  repeated TestScore results = 4;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement results = 4;
 
   // Error is a name of any error that occurred during the test.
   optional string error = 5;

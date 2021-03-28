@@ -3,6 +3,7 @@ import * as jspb from 'google-protobuf'
 import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../k8s.io/api/core/v1/generated_pb';
 
 
@@ -73,10 +74,10 @@ export namespace TrainRequest {
 }
 
 export class TrainResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement>;
-  setResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement>): TrainResponse;
+  getResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TrainResponse;
   clearResultList(): TrainResponse;
-  addResult(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement;
+  addResult(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getWeightsclouduri(): string;
   setWeightsclouduri(value: string): TrainResponse;
@@ -100,7 +101,7 @@ export class TrainResponse extends jspb.Message {
 
 export namespace TrainResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.AsObject>,
+    resultList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     weightsclouduri: string,
     manifestclouduri: string,
     logsclouduri: string,
@@ -175,15 +176,15 @@ export namespace TestRequest {
 }
 
 export class TestResponse extends jspb.Message {
-  getTrainResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement>;
-  setTrainResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement>): TestResponse;
+  getTrainResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTrainResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
   clearTrainResultList(): TestResponse;
-  addTrainResult(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement;
+  addTrainResult(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getTestResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement>;
-  setTestResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement>): TestResponse;
+  getTestResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTestResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
   clearTestResultList(): TestResponse;
-  addTestResult(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement;
+  addTestResult(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getModelweightsclouduri(): string;
   setModelweightsclouduri(value: string): TestResponse;
@@ -219,8 +220,8 @@ export class TestResponse extends jspb.Message {
 
 export namespace TestResponse {
   export type AsObject = {
-    trainResultList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.AsObject>,
-    testResultList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.AsObject>,
+    trainResultList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    testResultList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     modelweightsclouduri: string,
     modelmanifestclouduri: string,
     modellogsclouduri: string,

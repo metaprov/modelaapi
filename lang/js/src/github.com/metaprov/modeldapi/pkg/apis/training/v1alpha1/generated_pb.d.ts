@@ -627,28 +627,6 @@ export namespace Level {
   }
 }
 
-export class Measurement extends jspb.Message {
-  getMetric(): string;
-  setMetric(value: string): Measurement;
-
-  getValue(): number;
-  setValue(value: number): Measurement;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Measurement.AsObject;
-  static toObject(includeInstance: boolean, msg: Measurement): Measurement.AsObject;
-  static serializeBinaryToWriter(message: Measurement, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Measurement;
-  static deserializeBinaryFromReader(message: Measurement, reader: jspb.BinaryReader): Measurement;
-}
-
-export namespace Measurement {
-  export type AsObject = {
-    metric: string,
-    value: number,
-  }
-}
-
 export class Model extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Model;
@@ -1775,15 +1753,15 @@ export class ModelStatus extends jspb.Message {
   getBest(): boolean;
   setBest(value: boolean): ModelStatus;
 
-  getTrainresultList(): Array<Measurement>;
-  setTrainresultList(value: Array<Measurement>): ModelStatus;
+  getTrainresultList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTrainresultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
   clearTrainresultList(): ModelStatus;
-  addTrainresult(value?: Measurement, index?: number): Measurement;
+  addTrainresult(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
-  getTestresultList(): Array<Measurement>;
-  setTestresultList(value: Array<Measurement>): ModelStatus;
+  getTestresultList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setTestresultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelStatus;
   clearTestresultList(): ModelStatus;
-  addTestresult(value?: Measurement, index?: number): Measurement;
+  addTestresult(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getPhase(): string;
   setPhase(value: string): ModelStatus;
@@ -1841,8 +1819,8 @@ export namespace ModelStatus {
     testscore: number,
     cost: number,
     best: boolean,
-    trainresultList: Array<Measurement.AsObject>,
-    testresultList: Array<Measurement.AsObject>,
+    trainresultList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    testresultList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     phase: string,
     reportname: string,
     manifesturi: string,
@@ -1871,10 +1849,10 @@ export class ModelTestResult extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelTestResult;
 
-  getResultsList(): Array<TestScore>;
-  setResultsList(value: Array<TestScore>): ModelTestResult;
+  getResultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setResultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelTestResult;
   clearResultsList(): ModelTestResult;
-  addResults(value?: TestScore, index?: number): TestScore;
+  addResults(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getError(): string;
   setError(value: string): ModelTestResult;
@@ -1892,7 +1870,7 @@ export namespace ModelTestResult {
     datasetname: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resultsList: Array<TestScore.AsObject>,
+    resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     error: string,
   }
 }

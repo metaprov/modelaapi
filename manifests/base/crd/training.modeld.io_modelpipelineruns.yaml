@@ -135,9 +135,10 @@ spec:
                         results:
                           description: The results of running the tests
                           items:
+                            description: Measurement is a value for a specific metric
                             properties:
                               metric:
-                                description: Metric is the name of the metric
+                                description: The metric type name (e.g. F1 / Accuracy)
                                 enum:
                                 - accuracy
                                 - average-precision
@@ -181,9 +182,12 @@ spec:
                                 - smape
                                 - mdape
                                 type: string
-                              score:
-                                description: The score needed.
+                              value:
+                                description: The value for this model
                                 type: number
+                            required:
+                            - metric
+                            - value
                             type: object
                           type: array
                         startTime:
@@ -280,9 +284,10 @@ spec:
                         results:
                           description: The results of running the tests
                           items:
+                            description: Measurement is a value for a specific metric
                             properties:
                               metric:
-                                description: Metric is the name of the metric
+                                description: The metric type name (e.g. F1 / Accuracy)
                                 enum:
                                 - accuracy
                                 - average-precision
@@ -326,9 +331,12 @@ spec:
                                 - smape
                                 - mdape
                                 type: string
-                              score:
-                                description: The score needed.
+                              value:
+                                description: The value for this model
                                 type: number
+                            required:
+                            - metric
+                            - value
                             type: object
                           type: array
                         startTime:
@@ -402,9 +410,10 @@ spec:
                         results:
                           description: The results of running the tests
                           items:
+                            description: Measurement is a value for a specific metric
                             properties:
                               metric:
-                                description: Metric is the name of the metric
+                                description: The metric type name (e.g. F1 / Accuracy)
                                 enum:
                                 - accuracy
                                 - average-precision
@@ -448,9 +457,12 @@ spec:
                                 - smape
                                 - mdape
                                 type: string
-                              score:
-                                description: The score needed.
+                              value:
+                                description: The value for this model
                                 type: number
+                            required:
+                            - metric
+                            - value
                             type: object
                           type: array
                         startTime:
@@ -525,9 +537,10 @@ spec:
                         results:
                           description: The results of running the tests
                           items:
+                            description: Measurement is a value for a specific metric
                             properties:
                               metric:
-                                description: Metric is the name of the metric
+                                description: The metric type name (e.g. F1 / Accuracy)
                                 enum:
                                 - accuracy
                                 - average-precision
@@ -571,9 +584,12 @@ spec:
                                 - smape
                                 - mdape
                                 type: string
-                              score:
-                                description: The score needed.
+                              value:
+                                description: The value for this model
                                 type: number
+                            required:
+                            - metric
+                            - value
                             type: object
                           type: array
                         startTime:
@@ -639,9 +655,10 @@ spec:
                         results:
                           description: The results of running the tests
                           items:
+                            description: Measurement is a value for a specific metric
                             properties:
                               metric:
-                                description: Metric is the name of the metric
+                                description: The metric type name (e.g. F1 / Accuracy)
                                 enum:
                                 - accuracy
                                 - average-precision
@@ -685,9 +702,12 @@ spec:
                                 - smape
                                 - mdape
                                 type: string
-                              score:
-                                description: The score needed.
+                              value:
+                                description: The value for this model
                                 type: number
+                            required:
+                            - metric
+                            - value
                             type: object
                           type: array
                         startTime:

@@ -612,6 +612,28 @@ export namespace MachineClassCost {
   }
 }
 
+export class Measurement extends jspb.Message {
+  getMetric(): string;
+  setMetric(value: string): Measurement;
+
+  getValue(): number;
+  setValue(value: number): Measurement;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Measurement.AsObject;
+  static toObject(includeInstance: boolean, msg: Measurement): Measurement.AsObject;
+  static serializeBinaryToWriter(message: Measurement, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Measurement;
+  static deserializeBinaryFromReader(message: Measurement, reader: jspb.BinaryReader): Measurement;
+}
+
+export namespace Measurement {
+  export type AsObject = {
+    metric: string,
+    value: number,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;

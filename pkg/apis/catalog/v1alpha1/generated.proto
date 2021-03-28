@@ -326,6 +326,17 @@ message MachineClassCost {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
 }
 
+// Measurement is a value for a specific metric
+message Measurement {
+  // The metric type name (e.g. F1 / Accuracy)
+  // +kubebuilder:validation:Required
+  optional string metric = 1;
+
+  // The value for this model
+  // +kubebuilder:validation:Required
+  optional double value = 2;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {

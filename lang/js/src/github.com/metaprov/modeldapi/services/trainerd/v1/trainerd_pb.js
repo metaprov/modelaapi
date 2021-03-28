@@ -21,6 +21,8 @@ var github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb = require(
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb);
 var github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb);
+var github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest', null, global);
@@ -824,7 +826,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.prototype
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     weightsclouduri: jspb.Message.getFieldWithDefault(msg, 2, ""),
     manifestclouduri: jspb.Message.getFieldWithDefault(msg, 3, ""),
     logsclouduri: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -866,8 +868,8 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
       msg.addResult(value);
       break;
     case 2:
@@ -920,7 +922,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.serialize
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
   f = message.getWeightsclouduri();
@@ -955,17 +957,17 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.serialize
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement result = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement result = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>}
  */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse} returns this
 */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.prototype.setResultList = function(value) {
@@ -974,12 +976,12 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.prototype
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement}
  */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
 };
 
 
@@ -1645,9 +1647,9 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     trainResultList: jspb.Message.toObjectList(msg.getTrainResultList(),
-    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     testResultList: jspb.Message.toObjectList(msg.getTestResultList(),
-    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     modelweightsclouduri: jspb.Message.getFieldWithDefault(msg, 3, ""),
     modelmanifestclouduri: jspb.Message.getFieldWithDefault(msg, 4, ""),
     modellogsclouduri: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -1693,13 +1695,13 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
       msg.addTrainResult(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
       msg.addTestResult(value);
       break;
     case 3:
@@ -1768,7 +1770,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.serializeB
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
   f = message.getTestResultList();
@@ -1776,7 +1778,7 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.serializeB
     writer.writeRepeatedMessage(
       2,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
     );
   }
   f = message.getModelweightsclouduri();
@@ -1839,17 +1841,17 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.serializeB
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement train_result = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement train_result = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>}
  */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.getTrainResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.setTrainResultList = function(value) {
@@ -1858,12 +1860,12 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement}
  */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.addTrainResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
 };
 
 
@@ -1877,17 +1879,17 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement test_result = 2;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement test_result = 2;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>}
  */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.getTestResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Measurement, 2));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 2));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse} returns this
 */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.setTestResultList = function(value) {
@@ -1896,12 +1898,12 @@ proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement}
  */
 proto.github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.prototype.addTestResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Measurement, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
 };
 
 

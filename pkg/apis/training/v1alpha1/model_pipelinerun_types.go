@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -131,7 +132,7 @@ type ModelTestResult struct {
 	// endTime is the test end time
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
 	// The results of running the tests
-	Results []TestScore `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
+	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
 	// Error is a name of any error that occurred during the test.
 	Error *string `json:"error,omitempty" protobuf:"bytes,5,opt,name=error"`
 }

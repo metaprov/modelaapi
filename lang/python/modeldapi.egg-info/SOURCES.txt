@@ -72,6 +72,8 @@ github/com/metaprov/modeldapi/services/conversation/__init__.py
 github/com/metaprov/modeldapi/services/conversation/v1/__init__.py
 github/com/metaprov/modeldapi/services/conversation/v1/conversation_pb2.py
 github/com/metaprov/modeldapi/services/conversation/v1/conversation_pb2_grpc.py
+github/com/metaprov/modeldapi/services/cronprediction/v1/cronprediction_pb2.py
+github/com/metaprov/modeldapi/services/cronprediction/v1/cronprediction_pb2_grpc.py
 github/com/metaprov/modeldapi/services/curtain/__init__.py
 github/com/metaprov/modeldapi/services/curtain/v1/__init__.py
 github/com/metaprov/modeldapi/services/curtain/v1/curtain_pb2.py
@@ -180,6 +182,8 @@ github/com/metaprov/modeldapi/services/postmortem/__init__.py
 github/com/metaprov/modeldapi/services/postmortem/v1/__init__.py
 github/com/metaprov/modeldapi/services/postmortem/v1/postmortem_pb2.py
 github/com/metaprov/modeldapi/services/postmortem/v1/postmortem_pb2_grpc.py
+github/com/metaprov/modeldapi/services/prediction/v1/prediction_pb2.py
+github/com/metaprov/modeldapi/services/prediction/v1/prediction_pb2_grpc.py
 github/com/metaprov/modeldapi/services/predictiond/__init__.py
 github/com/metaprov/modeldapi/services/predictiond/v1/__init__.py
 github/com/metaprov/modeldapi/services/predictiond/v1/predictiond_pb2.py

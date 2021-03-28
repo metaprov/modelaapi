@@ -177,8 +177,10 @@ export namespace CronPredictionList {
 }
 
 export class CronPredictionSpec extends jspb.Message {
-  getSchedule(): string;
-  setSchedule(value: string): CronPredictionSpec;
+  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronPredictionSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): CronPredictionSpec;
 
   getTemplate(): PredictionTemplate | undefined;
   setTemplate(value?: PredictionTemplate): CronPredictionSpec;
@@ -195,7 +197,7 @@ export class CronPredictionSpec extends jspb.Message {
 
 export namespace CronPredictionSpec {
   export type AsObject = {
-    schedule: string,
+    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     template?: PredictionTemplate.AsObject,
   }
 }
@@ -705,9 +707,6 @@ export class PredictionSpec extends jspb.Message {
   getLabeled(): boolean;
   setLabeled(value: boolean): PredictionSpec;
 
-  getObjective(): string;
-  setObjective(value: string): PredictionSpec;
-
   getDatasetname(): string;
   setDatasetname(value: string): PredictionSpec;
 
@@ -721,16 +720,16 @@ export class PredictionSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
+  getResultsList(): Array<string>;
+  setResultsList(value: Array<string>): PredictionSpec;
+  clearResultsList(): PredictionSpec;
+  addResults(value: string, index?: number): PredictionSpec;
+
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): PredictionSpec;
-
-  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): PredictionSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
@@ -744,13 +743,12 @@ export namespace PredictionSpec {
   export type AsObject = {
     predictorname: string,
     labeled: boolean,
-    objective: string,
     datasetname: string,
     input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    resultsList: Array<string>,
     owner: string,
     workloadclassname: string,
-    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
 
@@ -767,6 +765,11 @@ export class PredictionStatus extends jspb.Message {
 
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
+
+  getResultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setResultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): PredictionStatus;
+  clearResultsList(): PredictionStatus;
+  addResults(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
@@ -786,6 +789,7 @@ export namespace PredictionStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
+    resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }
