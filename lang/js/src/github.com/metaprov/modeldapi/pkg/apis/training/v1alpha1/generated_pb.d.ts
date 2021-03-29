@@ -1304,30 +1304,30 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getStudyname(): string;
   setStudyname(value: string): ModelPipelineRunStatus;
 
-  getDatastage(): ModelPipelineRunStageStatus | undefined;
-  setDatastage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasDatastage(): boolean;
-  clearDatastage(): ModelPipelineRunStatus;
+  getDatastatus(): ModelPipelineRunStageStatus | undefined;
+  setDatastatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasDatastatus(): boolean;
+  clearDatastatus(): ModelPipelineRunStatus;
 
-  getTrainingstage(): ModelPipelineRunStageStatus | undefined;
-  setTrainingstage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasTrainingstage(): boolean;
-  clearTrainingstage(): ModelPipelineRunStatus;
+  getTrainingstatus(): ModelPipelineRunStageStatus | undefined;
+  setTrainingstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasTrainingstatus(): boolean;
+  clearTrainingstatus(): ModelPipelineRunStatus;
 
-  getUatstage(): ModelPipelineRunStageStatus | undefined;
-  setUatstage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasUatstage(): boolean;
-  clearUatstage(): ModelPipelineRunStatus;
+  getUatstatus(): ModelPipelineRunStageStatus | undefined;
+  setUatstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasUatstatus(): boolean;
+  clearUatstatus(): ModelPipelineRunStatus;
 
-  getCapacitystage(): ModelPipelineRunStageStatus | undefined;
-  setCapacitystage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasCapacitystage(): boolean;
-  clearCapacitystage(): ModelPipelineRunStatus;
+  getCapacitystatus(): ModelPipelineRunStageStatus | undefined;
+  setCapacitystatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasCapacitystatus(): boolean;
+  clearCapacitystatus(): ModelPipelineRunStatus;
 
-  getProdstage(): ModelPipelineRunStageStatus | undefined;
-  setProdstage(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasProdstage(): boolean;
-  clearProdstage(): ModelPipelineRunStatus;
+  getProdstatus(): ModelPipelineRunStageStatus | undefined;
+  setProdstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasProdstatus(): boolean;
+  clearProdstatus(): ModelPipelineRunStatus;
 
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
@@ -1362,11 +1362,11 @@ export namespace ModelPipelineRunStatus {
   export type AsObject = {
     stage: string,
     studyname: string,
-    datastage?: ModelPipelineRunStageStatus.AsObject,
-    trainingstage?: ModelPipelineRunStageStatus.AsObject,
-    uatstage?: ModelPipelineRunStageStatus.AsObject,
-    capacitystage?: ModelPipelineRunStageStatus.AsObject,
-    prodstage?: ModelPipelineRunStageStatus.AsObject,
+    datastatus?: ModelPipelineRunStageStatus.AsObject,
+    trainingstatus?: ModelPipelineRunStageStatus.AsObject,
+    uatstatus?: ModelPipelineRunStageStatus.AsObject,
+    capacitystatus?: ModelPipelineRunStageStatus.AsObject,
+    prodstatus?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
@@ -1405,10 +1405,10 @@ export class ModelPipelineSpec extends jspb.Message {
   hasCapacity(): boolean;
   clearCapacity(): ModelPipelineSpec;
 
-  getRelease(): ReleaseStageSpec | undefined;
-  setRelease(value?: ReleaseStageSpec): ModelPipelineSpec;
-  hasRelease(): boolean;
-  clearRelease(): ModelPipelineSpec;
+  getProd(): ProdStageSpec | undefined;
+  setProd(value?: ProdStageSpec): ModelPipelineSpec;
+  hasProd(): boolean;
+  clearProd(): ModelPipelineSpec;
 
   getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
@@ -1449,7 +1449,7 @@ export namespace ModelPipelineSpec {
     training?: TrainingStageSpec.AsObject,
     uat?: UATStageSpec.AsObject,
     capacity?: CapacityStageSpec.AsObject,
-    release?: ReleaseStageSpec.AsObject,
+    prod?: ProdStageSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
@@ -2421,28 +2421,28 @@ export namespace PreprocessingSpec {
   }
 }
 
-export class ReleaseStageSpec extends jspb.Message {
+export class ProdStageSpec extends jspb.Message {
   getServingsitename(): string;
-  setServingsitename(value: string): ReleaseStageSpec;
+  setServingsitename(value: string): ProdStageSpec;
 
   getPredictorname(): string;
-  setPredictorname(value: string): ReleaseStageSpec;
+  setPredictorname(value: string): ProdStageSpec;
 
   getWeight(): number;
-  setWeight(value: number): ReleaseStageSpec;
+  setWeight(value: number): ProdStageSpec;
 
   getAuto(): boolean;
-  setAuto(value: boolean): ReleaseStageSpec;
+  setAuto(value: boolean): ProdStageSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ReleaseStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ReleaseStageSpec): ReleaseStageSpec.AsObject;
-  static serializeBinaryToWriter(message: ReleaseStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ReleaseStageSpec;
-  static deserializeBinaryFromReader(message: ReleaseStageSpec, reader: jspb.BinaryReader): ReleaseStageSpec;
+  toObject(includeInstance?: boolean): ProdStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ProdStageSpec): ProdStageSpec.AsObject;
+  static serializeBinaryToWriter(message: ProdStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProdStageSpec;
+  static deserializeBinaryFromReader(message: ProdStageSpec, reader: jspb.BinaryReader): ProdStageSpec;
 }
 
-export namespace ReleaseStageSpec {
+export namespace ProdStageSpec {
   export type AsObject = {
     servingsitename: string,
     predictorname: string,

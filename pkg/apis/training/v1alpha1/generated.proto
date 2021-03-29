@@ -808,23 +808,23 @@ message ModelPipelineRunStatus {
   optional string studyName = 2;
 
   // data is the status for the data stage.
-  optional ModelPipelineRunStageStatus dataStage = 3;
+  optional ModelPipelineRunStageStatus dataStatus = 3;
 
   // +kubebuilder:validation:Optional
   // dev is the status for the dev stage.
-  optional ModelPipelineRunStageStatus trainingStage = 4;
+  optional ModelPipelineRunStageStatus trainingStatus = 4;
 
   // Staging is status for each qa stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus uatStage = 5;
+  optional ModelPipelineRunStageStatus uatStatus = 5;
 
-  // ReleaseStage is the status for the production stage.
+  // CapacityStatus is the status for the capacity stage.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus capacityStage = 6;
+  optional ModelPipelineRunStageStatus capacityStatus = 6;
 
-  // ReleaseStage is the status for the production stage.
+  // ProdStatus is the status for the prod stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus prodStage = 7;
+  optional ModelPipelineRunStageStatus prodStatus = 7;
 
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 8;
@@ -880,7 +880,7 @@ message ModelPipelineSpec {
 
   // ReleaseStage stage define how to place the model into production.
   // +kubebuilder:validation:Optional
-  optional ReleaseStageSpec release = 9;
+  optional ProdStageSpec prod = 9;
 
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
@@ -1535,8 +1535,8 @@ message PreprocessingSpec {
   optional bool imbalanced = 10;
 }
 
-// ReleaseStageSpec is the predictor name that would host the model
-message ReleaseStageSpec {
+// ProdStageSpec is the predictor name that would host the model
+message ProdStageSpec {
   // ServingSiteName is the serving site for the release
   // +kubebuilder:default =""
   optional string servingSiteName = 1;

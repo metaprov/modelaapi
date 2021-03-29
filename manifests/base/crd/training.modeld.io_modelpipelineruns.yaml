@@ -86,8 +86,8 @@ spec:
             description: ModelPipelineRunStatus is the observed state of the ModelPipelineRun
               resource .
             properties:
-              capacityStage:
-                description: ReleaseStage is the status for the production stage.
+              capacityStatus:
+                description: CapacityStatus is the status for the capacity stage.
                 properties:
                   approved:
                     description: Approved indicates that the stage is approved.
@@ -235,7 +235,7 @@ spec:
                   - type
                   type: object
                 type: array
-              dataStage:
+              dataStatus:
                 description: data is the status for the data stage.
                 properties:
                   approved:
@@ -361,8 +361,8 @@ spec:
               phase:
                 description: The phase of the pipeline run
                 type: string
-              prodStage:
-                description: ReleaseStage is the status for the production stage.
+              prodStatus:
+                description: ProdStatus is the status for the prod stage
                 properties:
                   approved:
                     description: Approved indicates that the stage is approved.
@@ -488,7 +488,7 @@ spec:
               studyName:
                 description: The current name of the study
                 type: string
-              trainingStage:
+              trainingStatus:
                 description: dev is the status for the dev stage.
                 properties:
                   approved:
@@ -606,7 +606,7 @@ spec:
                     description: The name of the study
                     type: string
                 type: object
-              uatStage:
+              uatStatus:
                 description: Staging is status for each qa stage.
                 properties:
                   approved:
