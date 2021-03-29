@@ -1748,15 +1748,15 @@ func (m *PreprocessingSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_PreprocessingSpec proto.InternalMessageInfo
 
-func (m *ReleaseStageSpec) Reset()      { *m = ReleaseStageSpec{} }
-func (*ReleaseStageSpec) ProtoMessage() {}
-func (*ReleaseStageSpec) Descriptor() ([]byte, []int) {
+func (m *ProdStageSpec) Reset()      { *m = ProdStageSpec{} }
+func (*ProdStageSpec) ProtoMessage() {}
+func (*ProdStageSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_26c54310f0109c27, []int{61}
 }
-func (m *ReleaseStageSpec) XXX_Unmarshal(b []byte) error {
+func (m *ProdStageSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *ReleaseStageSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *ProdStageSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -1764,13 +1764,13 @@ func (m *ReleaseStageSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, er
 	}
 	return b[:n], nil
 }
-func (m *ReleaseStageSpec) XXX_Merge(src proto.Message) {
+func (m *ProdStageSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ReleaseStageSpec.Merge(m, src)
 }
-func (m *ReleaseStageSpec) XXX_Size() int {
+func (m *ProdStageSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *ReleaseStageSpec) XXX_DiscardUnknown() {
+func (m *ProdStageSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_ReleaseStageSpec.DiscardUnknown(m)
 }
 
@@ -2370,7 +2370,7 @@ func init() {
 	proto.RegisterType((*NumericPipelineSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NumericPipelineSpec")
 	proto.RegisterType((*PipelineTrigger)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PipelineTrigger")
 	proto.RegisterType((*PreprocessingSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec")
-	proto.RegisterType((*ReleaseStageSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec")
+	proto.RegisterType((*ProdStageSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec")
 	proto.RegisterType((*Report)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report")
 	proto.RegisterType((*ReportCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportCondition")
 	proto.RegisterType((*ReportList)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportList")
@@ -5060,7 +5060,7 @@ func (m *ModelPipelineRunStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 		dAtA[i] = 0x42
 	}
 	{
-		size, err := m.ReleaseStatus.MarshalToSizedBuffer(dAtA[:i])
+		size, err := m.ProdStatus.MarshalToSizedBuffer(dAtA[:i])
 		if err != nil {
 			return 0, err
 		}
@@ -5192,9 +5192,9 @@ func (m *ModelPipelineSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x52
 	}
-	if m.Release != nil {
+	if m.Prod != nil {
 		{
-			size, err := m.Release.MarshalToSizedBuffer(dAtA[:i])
+			size, err := m.Prod.MarshalToSizedBuffer(dAtA[:i])
 			if err != nil {
 				return 0, err
 			}
@@ -6999,7 +6999,7 @@ func (m *PreprocessingSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ReleaseStageSpec) Marshal() (dAtA []byte, err error) {
+func (m *ProdStageSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -7009,12 +7009,12 @@ func (m *ReleaseStageSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ReleaseStageSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *ProdStageSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *ReleaseStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *ProdStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -9369,7 +9369,7 @@ func (m *ModelPipelineRunStatus) Size() (n int) {
 	n += 1 + l + sovGenerated(uint64(l))
 	l = m.CapacityStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
-	l = m.ReleaseStatus.Size()
+	l = m.ProdStatus.Size()
 	n += 1 + l + sovGenerated(uint64(l))
 	if m.StartTime != nil {
 		l = m.StartTime.Size()
@@ -9426,8 +9426,8 @@ func (m *ModelPipelineSpec) Size() (n int) {
 		l = m.Capacity.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if m.Release != nil {
-		l = m.Release.Size()
+	if m.Prod != nil {
+		l = m.Prod.Size()
 		n += 1 + l + sovGenerated(uint64(l))
 	}
 	if m.Location != nil {
@@ -10114,7 +10114,7 @@ func (m *PreprocessingSpec) Size() (n int) {
 	return n
 }
 
-func (m *ReleaseStageSpec) Size() (n int) {
+func (m *ProdStageSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -11263,7 +11263,7 @@ func (this *ModelPipelineRunStatus) String() string {
 		`TrainingStatus:` + strings.Replace(strings.Replace(this.TrainingStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`UATStatus:` + strings.Replace(strings.Replace(this.UATStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`CapacityStatus:` + strings.Replace(strings.Replace(this.CapacityStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
-		`ReleaseStatus:` + strings.Replace(strings.Replace(this.ReleaseStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
+		`ProdStatus:` + strings.Replace(strings.Replace(this.ProdStatus.String(), "ModelPipelineRunStageStatus", "ModelPipelineRunStageStatus", 1), `&`, ``, 1) + `,`,
 		`StartTime:` + strings.Replace(fmt.Sprintf("%v", this.StartTime), "Time", "v1.Time", 1) + `,`,
 		`CompletionTime:` + strings.Replace(fmt.Sprintf("%v", this.CompletionTime), "Time", "v1.Time", 1) + `,`,
 		`Phase:` + fmt.Sprintf("%v", this.Phase) + `,`,
@@ -11285,7 +11285,7 @@ func (this *ModelPipelineSpec) String() string {
 		`Training:` + strings.Replace(this.Training.String(), "TrainingStageSpec", "TrainingStageSpec", 1) + `,`,
 		`UAT:` + strings.Replace(this.UAT.String(), "UATStageSpec", "UATStageSpec", 1) + `,`,
 		`Capacity:` + strings.Replace(this.Capacity.String(), "CapacityStageSpec", "CapacityStageSpec", 1) + `,`,
-		`Release:` + strings.Replace(this.Release.String(), "ReleaseStageSpec", "ReleaseStageSpec", 1) + `,`,
+		`Prod:` + strings.Replace(this.Prod.String(), "ProdStageSpec", "ProdStageSpec", 1) + `,`,
 		`Location:` + strings.Replace(fmt.Sprintf("%v", this.Location), "DataLocation", "v1alpha1.DataLocation", 1) + `,`,
 		`Schedule:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Schedule), "RunSchedule", "v1alpha11.RunSchedule", 1), `&`, ``, 1) + `,`,
 		`Owner:` + valueToStringGenerated(this.Owner) + `,`,
@@ -11685,11 +11685,11 @@ func (this *PreprocessingSpec) String() string {
 	}, "")
 	return s
 }
-func (this *ReleaseStageSpec) String() string {
+func (this *ProdStageSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&ReleaseStageSpec{`,
+	s := strings.Join([]string{`&ProdStageSpec{`,
 		`ServingSiteName:` + valueToStringGenerated(this.ServingSiteName) + `,`,
 		`PredictorName:` + valueToStringGenerated(this.PredictorName) + `,`,
 		`Weight:` + valueToStringGenerated(this.Weight) + `,`,
@@ -19230,7 +19230,7 @@ func (m *ModelPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ReleaseStatus", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field ProdStatus", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -19257,7 +19257,7 @@ func (m *ModelPipelineRunStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := m.ReleaseStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.ProdStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -19729,7 +19729,7 @@ func (m *ModelPipelineSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 9:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Release", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Prod", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -19756,10 +19756,10 @@ func (m *ModelPipelineSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.Release == nil {
-				m.Release = &ReleaseStageSpec{}
+			if m.Prod == nil {
+				m.Prod = &ProdStageSpec{}
 			}
-			if err := m.Release.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Prod.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -25306,7 +25306,7 @@ func (m *PreprocessingSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ReleaseStageSpec) Unmarshal(dAtA []byte) error {
+func (m *ProdStageSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -25329,10 +25329,10 @@ func (m *ReleaseStageSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ReleaseStageSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: ProdStageSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ReleaseStageSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ProdStageSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:

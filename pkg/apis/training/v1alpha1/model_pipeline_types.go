@@ -77,7 +77,7 @@ type ModelPipelineSpec struct {
 	Capacity *CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
 	// ReleaseStage stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
-	Release *ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,9,opt,name=release"`
+	Prod *ProdStageSpec `json:"prod,omitempty" protobuf:"bytes,9,opt,name=prod"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
@@ -197,8 +197,8 @@ type CapacityStageSpec struct {
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
-//ReleaseStageSpec is the predictor name that would host the model
-type ReleaseStageSpec struct {
+//ProdStageSpec is the predictor name that would host the model
+type ProdStageSpec struct {
 	// ServingSiteName is the serving site for the release
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`

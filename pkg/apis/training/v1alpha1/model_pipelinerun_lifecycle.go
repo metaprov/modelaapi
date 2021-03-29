@@ -323,52 +323,52 @@ func (this *ModelPipelineRun) IsCapacityStageFailed() bool {
 }
 
 ////////////////////////////////////////////////////////////
-// Release Stage
+// Prod Stage
 ////////////////////////////////////////////////////////////
 
-func (this *ModelPipelineRun) MarkReleaseStageRunning() {
+func (this *ModelPipelineRun) MarkProdStageRunning() {
 	this.Status.DataStatus.RecordRunning()
 	this.Status.Phase = PipelinePhaseRunning
-	this.Status.Stage = ModelPipelineStageRelease
+	this.Status.Stage = ModelPipelineStageProd
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:   MPRModelReleased,
+		Type:   MPRProdCompleted,
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
 }
 
-func (this *ModelPipelineRun) IsReleaseStageRunning() bool {
-	return this.GetCond(MPRModelReleased).Status == v1.ConditionFalse &&
-		this.GetCond(MPRModelReleased).Reason == string(catalog.Running)
+func (this *ModelPipelineRun) IsProdStageRunning() bool {
+	return this.GetCond(MPRProdCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRProdCompleted).Reason == string(catalog.Running)
 }
 
-func (this *ModelPipelineRun) MarkReleaseStageCompleted() {
+func (this *ModelPipelineRun) MarkProdStageCompleted() {
 	this.Status.DataStatus.RecordCompleted()
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageUAT
 
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:   MPRModelReleased,
+		Type:   MPRProdCompleted,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (this *ModelPipelineRun) IsReleaseStageCompleted() bool {
-	return this.GetCond(MPRModelReleased).Status == v1.ConditionTrue
+func (this *ModelPipelineRun) IsProdStageCompleted() bool {
+	return this.GetCond(MPRProdCompleted).Status == v1.ConditionTrue
 }
 
-func (this *ModelPipelineRun) MarkReleaseStageFailed(err error) {
+func (this *ModelPipelineRun) MarkProdStageFailed(err error) {
 	this.Status.DataStatus.RecordError(err)
 	this.Status.Stage = ModelPipelineStageUAT
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:    MPRModelReleased,
+		Type:    MPRProdCompleted,
 		Status:  v1.ConditionFalse,
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
 	})
 }
 
-func (this *ModelPipelineRun) IsReleaseStageFailed() bool {
-	return this.GetCond(MPRModelReleased).Status == v1.ConditionFalse &&
-		this.GetCond(MPRModelReleased).Reason == string(catalog.Failed)
+func (this *ModelPipelineRun) IsProdStageFailed() bool {
+	return this.GetCond(MPRProdCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRProdCompleted).Reason == string(catalog.Failed)
 }

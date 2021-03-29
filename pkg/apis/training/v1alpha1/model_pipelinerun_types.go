@@ -24,7 +24,7 @@ const (
 	ModelPipelineStageTraining ModelPipelineStage = "training"
 	ModelPipelineStageUAT      ModelPipelineStage = "uat"
 	ModelPipelineStageCapacity ModelPipelineStage = "capacity"
-	ModelPipelineStageRelease  ModelPipelineStage = "release"
+	ModelPipelineStageProd     ModelPipelineStage = "prod"
 )
 
 // +kubebuilder:validation:Enum="data";"train";"test";"prod"
@@ -47,7 +47,7 @@ const (
 	MPRTrainingStageCmpleted  PipelineRunConditionType = "TrainingStageCompleted"
 	MPRUATCompleted           PipelineRunConditionType = "UATStageCompleted"
 	MPRCapacityStageCompleted PipelineRunConditionType = "CapacityStageCompleted"
-	MPRModelReleased          PipelineRunConditionType = "ModelReleased"
+	MPRProdCompleted          PipelineRunConditionType = "ProdStageCompleted"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
@@ -177,19 +177,19 @@ type ModelPipelineRunStatus struct {
 	// The current name of the study
 	StudyName string `json:"studyName,omitempty" protobuf:"bytes,2,opt,name=studyName"`
 	// data is the status for the data stage.
-	DataStatus ModelPipelineRunStageStatus `json:"dataStage,omitempty" protobuf:"bytes,3,opt,name=dataStage"`
+	DataStatus ModelPipelineRunStageStatus `json:"dataStatus,omitempty" protobuf:"bytes,3,opt,name=dataStatus"`
 	// +kubebuilder:validation:Optional
 	// dev is the status for the dev stage.
-	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStage,omitempty" protobuf:"bytes,4,opt,name=trainingStage"`
+	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStatus,omitempty" protobuf:"bytes,4,opt,name=trainingStatus"`
 	// Staging is status for each qa stage.
 	// +kubebuilder:validation:Optional
-	UATStatus ModelPipelineRunStageStatus `json:"uatStage,omitempty" protobuf:"bytes,5,rep,name=uatStage"`
-	// ReleaseStage is the status for the production stage.
+	UATStatus ModelPipelineRunStageStatus `json:"uatStatus,omitempty" protobuf:"bytes,5,rep,name=uatStatus"`
+	// CapacityStatus is the status for the capacity stage.
 	// +kubebuilder:validation:Optional
-	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStage,omitempty" protobuf:"bytes,6,rep,name=capacityStage"`
-	// ReleaseStage is the status for the production stage.
+	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStatus,omitempty" protobuf:"bytes,6,rep,name=capacityStatus"`
+	// ProdStatus is the status for the prod stage
 	// +kubebuilder:validation:Optional
-	ReleaseStatus ModelPipelineRunStageStatus `json:"prodStage,omitempty" protobuf:"bytes,7,rep,name=prodStage"`
+	ProdStatus ModelPipelineRunStageStatus `json:"prodStatus,omitempty" protobuf:"bytes,7,rep,name=prodStatus"`
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,8,opt,name=startTime"`
 	// +kubebuilder:validation:Optional

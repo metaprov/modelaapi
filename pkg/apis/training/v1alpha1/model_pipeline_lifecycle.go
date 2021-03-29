@@ -117,7 +117,7 @@ func (pl *ModelPipeline) HasDataStage() bool {
 }
 
 func (pl *ModelPipeline) HasProdStage() bool {
-	return pl.Spec.Release != nil && pl.Spec.Release.PredictorName != nil
+	return pl.Spec.Prod != nil && pl.Spec.Prod.PredictorName != nil
 }
 
 func (pl *ModelPipeline) HasUatStage() bool {
