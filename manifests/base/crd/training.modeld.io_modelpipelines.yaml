@@ -137,6 +137,11 @@ spec:
                           type: array
                       type: object
                     type: array
+                  workloadClassName:
+                    default: default-prediction-workload-class
+                    description: A reference to the workload class that is used for
+                      running the prediction
+                    type: string
                 type: object
               data:
                 description: Datastage build new dataset from the data sources.
@@ -400,6 +405,11 @@ spec:
                           type: array
                       type: object
                     type: array
+                  workloadClassName:
+                    default: default-prediction-workload-class
+                    description: A reference to the workload class that is used for
+                      running the prediction
+                    type: string
                 type: object
               versionName:
                 description: The product version of the resource

@@ -169,7 +169,11 @@ type UATStageSpec struct {
 	// Auto defines if we move to the next stage without human intervation
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,5,opt,name=auto"`
+	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
+	// A reference to the workload class that is used for running the prediction
+	// +kubebuilder:default:="default-prediction-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
@@ -181,12 +185,16 @@ type CapacityStageSpec struct {
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,5,opt,name=auto"`
+	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
+	// A reference to the workload class that is used for running the prediction
+	// +kubebuilder:default:="default-prediction-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 //ReleaseStageSpec is the predictor name that would host the model
@@ -194,16 +202,13 @@ type ReleaseStageSpec struct {
 	// ServingSiteName is the serving site for the release
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-
 	// PredictorName he release predictor. The predictor will be created if it does not exist.
 	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
-
 	// Weight is the weight of the model.
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	Weight *float64 `json:"weight,omitempty" protobuf:"bytes,3,opt,name=weight"`
-
 	// Auto defines if we move from stage to stage automatically.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

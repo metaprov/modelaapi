@@ -67,6 +67,9 @@ export class CapacityStageSpec extends jspb.Message {
   getAuto(): boolean;
   setAuto(value: boolean): CapacityStageSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): CapacityStageSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CapacityStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CapacityStageSpec): CapacityStageSpec.AsObject;
@@ -80,6 +83,7 @@ export namespace CapacityStageSpec {
     servingsitename: string,
     testsList: Array<ModelTestSpec.AsObject>,
     auto: boolean,
+    workloadclassname: string,
   }
 }
 
@@ -3225,6 +3229,9 @@ export class UATStageSpec extends jspb.Message {
   getAuto(): boolean;
   setAuto(value: boolean): UATStageSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): UATStageSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UATStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: UATStageSpec): UATStageSpec.AsObject;
@@ -3238,6 +3245,7 @@ export namespace UATStageSpec {
     servingsitename: string,
     testsList: Array<ModelTestSpec.AsObject>,
     auto: boolean,
+    workloadclassname: string,
   }
 }
 

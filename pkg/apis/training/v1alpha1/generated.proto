@@ -53,12 +53,17 @@ message CapacityStageSpec {
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  repeated ModelTestSpec tests = 4;
+  repeated ModelTestSpec tests = 2;
 
   // Auto defines if we move from stage to stage automatically.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 5;
+  optional bool auto = 3;
+
+  // A reference to the workload class that is used for running the prediction
+  // +kubebuilder:default:="default-prediction-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 4;
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns
@@ -2104,7 +2109,12 @@ message UATStageSpec {
   // Auto defines if we move to the next stage without human intervation
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 5;
+  optional bool auto = 3;
+
+  // A reference to the workload class that is used for running the prediction
+  // +kubebuilder:default:="default-prediction-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 4;
 }
 
 // VideoPipelineSpec is the specification for preprocessing video data
