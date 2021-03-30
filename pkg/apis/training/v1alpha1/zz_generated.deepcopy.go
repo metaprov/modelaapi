@@ -1448,6 +1448,11 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ModelVersion != nil {
+		in, out := &in.ModelVersion, &out.ModelVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.StudyName != nil {
 		in, out := &in.StudyName, &out.StudyName
 		*out = new(string)
@@ -2437,6 +2442,11 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	*out = *in
 	if in.VersionName != nil {
 		in, out := &in.VersionName, &out.VersionName
+		*out = new(string)
+		**out = **in
+	}
+	if in.ModelVersion != nil {
+		in, out := &in.ModelVersion, &out.ModelVersion
 		*out = new(string)
 		**out = **in
 	}

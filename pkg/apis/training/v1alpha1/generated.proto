@@ -1029,112 +1029,116 @@ message ModelSpec {
   // +kubebuilder:validation:MinLength=1
   optional string versionName = 2;
 
+  // ModelVersion is a semver version of a model
+  // +kubebuilder:validation:Required
+  optional string modelVersion = 3;
+
   // StudyName reference the study for this model. IF empty, the model is stand alone
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  optional string studyName = 3;
+  optional string studyName = 4;
 
   // DatasetName refer to the dataset object for which the study is for.
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:MaxLength=63
-  optional string datasetName = 4;
+  optional string datasetName = 5;
 
   // Task is the machine learning task (regression, classification).
   // The task is generated from the study task
   // +kubebuilder:validation:Required
-  optional string task = 5;
+  optional string task = 6;
 
   // Objective is the metric by which the system compare models
   // Default: based on the task. classification is logloss. Regression is rmse
   // +kubebuilder:validation:Required
-  optional string objective = 6;
+  optional string objective = 7;
 
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
   // Default: All preprocessing will be created automatically
   // +kubebuilder:validation:Optional
-  optional PreprocessingSpec preprocessing = 7;
+  optional PreprocessingSpec preprocessing = 8;
 
   // Estimator is a specification of the ML algorithm and its hyper parameters.
   // +kubebuilder:validation:Optional
-  optional ClassicalEstimatorSpec estimator = 8;
+  optional ClassicalEstimatorSpec estimator = 9;
 
   // Dnn is a specification of the DNN estimator specification. Not supported for this release.
   // +kubebuilder:validation:Optional
-  optional DeepEstimatorSpec dnn = 9;
+  optional DeepEstimatorSpec dnn = 10;
 
   // If this is an ensemble model, specify the ensemble
   // Default: None
   // +kubebuilder:validation:Optional
-  optional EnsembleSpec ensemble = 10;
+  optional EnsembleSpec ensemble = 11;
 
   // TrainingSpec is the desired training settings
   // +kubebuilder:validation:Optional
-  optional TrainingSpec training = 11;
+  optional TrainingSpec training = 12;
 
   // Tested indicate if this model should be testedActual. Default is false.
   // The study controller will set this to true if a model is the best model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool tested = 12;
+  optional bool tested = 13;
 
   // Aborted indicate the desire to abort the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 13;
+  optional bool aborted = 14;
 
   // Published is set when we want to wrap the model in a docker container
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool published = 14;
+  optional bool published = 15;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pushed = 15;
+  optional bool pushed = 16;
 
   // Reported is set when a report should be created for this model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool reported = 16;
+  optional bool reported = 17;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 17;
+  optional bool paused = 18;
 
   // Profiled is set when we want to create model profile.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool profiled = 18;
+  optional bool profiled = 19;
 
   // Archived is true when the model should be archived
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool archived = 19;
+  optional bool archived = 20;
 
   // Forecasted is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool forecasted = 20;
+  optional bool forecasted = 21;
 
   // Compiled is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool compiled = 21;
+  optional bool compiled = 22;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 22;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 23;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 23;
+  optional ForecastingSpec forecastingSpec = 24;
 
   // The compiler specification
   // +kubebuilder:validation:Optional
-  optional CompilerSpec compiler = 24;
+  optional CompilerSpec compiler = 25;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -1723,29 +1727,35 @@ message StudySpec {
   // +kubebuilder:validation:MinLength=1
   optional string versionName = 1;
 
+  // ModelVersion is the semver version of the resulting model.
+  // Note that multiplie models can have the same version
+  // +kubebuilder:validation:MaxLength=63
+  // +kubebuilder:validation:MinLength=1
+  optional string modelVersion = 2;
+
   // Description is user provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 2;
+  optional string description = 3;
 
   // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference labRef = 3;
+  optional k8s.io.api.core.v1.ObjectReference labRef = 4;
 
   // DatasetName refer to the dataset object for which the study is for.
   // +kubebuilder:default:=""
   // Required.
-  optional string datasetName = 4;
+  optional string datasetName = 5;
 
   // Task specify the machine learning task (e.g classification).
   // This must match the task of the data product.
   // Required.
-  optional string task = 5;
+  optional string task = 6;
 
   // Objective is the objective defined how the study controller will compare model performance.
   // +kubebuilder:validation:Optional
-  optional string objective = 6;
+  optional string objective = 7;
 
   // Search defines the model search
   // +kubebuilder:validation:Optional

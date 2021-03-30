@@ -353,6 +353,9 @@ spec:
                 - bucketName
                 - path
                 type: object
+              modelVersion:
+                description: ModelVersion is a semver version of a model
+                type: string
               objective:
                 description: 'Objective is the metric by which the system compare
                   models Default: based on the task. classification is logloss. Regression
@@ -955,6 +958,7 @@ spec:
                 type: string
             required:
             - datasetName
+            - modelVersion
             - objective
             - studyName
             - task

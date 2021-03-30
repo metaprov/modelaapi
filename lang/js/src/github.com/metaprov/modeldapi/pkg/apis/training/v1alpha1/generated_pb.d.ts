@@ -1592,6 +1592,9 @@ export class ModelSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ModelSpec;
 
+  getModelversion(): string;
+  setModelversion(value: string): ModelSpec;
+
   getStudyname(): string;
   setStudyname(value: string): ModelSpec;
 
@@ -1686,6 +1689,7 @@ export namespace ModelSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
+    modelversion: string,
     studyname: string,
     datasetname: string,
     task: string,
@@ -2735,6 +2739,9 @@ export class StudySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): StudySpec;
 
+  getModelversion(): string;
+  setModelversion(value: string): StudySpec;
+
   getDescription(): string;
   setDescription(value: string): StudySpec;
 
@@ -2814,6 +2821,7 @@ export class StudySpec extends jspb.Message {
 export namespace StudySpec {
   export type AsObject = {
     versionname: string,
+    modelversion: string,
     description: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,

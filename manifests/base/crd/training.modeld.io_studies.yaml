@@ -239,6 +239,12 @@ spec:
                 description: Set to true if you want the system to create a docker
                   model image, at the end of training.
                 type: boolean
+              modelVersion:
+                description: ModelVersion is the semver version of the resulting model.
+                  Note that multiplie models can have the same version
+                maxLength: 63
+                minLength: 1
+                type: string
               objective:
                 description: Objective is the objective defined how the study controller
                   will compare model performance.
@@ -1072,6 +1078,7 @@ spec:
                 type: string
             required:
             - datasetName
+            - modelVersion
             - task
             - versionName
             type: object

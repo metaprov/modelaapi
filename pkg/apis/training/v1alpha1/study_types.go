@@ -274,25 +274,30 @@ type StudySpec struct {
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
+	// ModelVersion is the semver version of the resulting model.
+	// Note that multiplie models can have the same version
+	// +kubebuilder:validation:MaxLength=63
+	// +kubebuilder:validation:MinLength=1
+	ModelVersion *string `json:"modelVersion" protobuf:"bytes,2,opt,name=modelVersion"`
 	// Description is user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
 	// +kubebuilder:validation:Optional
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,4,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:default:=""
 	// Required.
-	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName" protobuf:"bytes,5,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
 	// This must match the task of the data product.
 	// Required.
-	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
+	Task *catalog.MLTask `json:"task" protobuf:"bytes,6,opt,name=task"`
 	// Objective is the objective defined how the study controller will compare model performance.
 	// +kubebuilder:validation:Optional
-	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,6,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
 	// Search defines the model search
 	// +kubebuilder:validation:Optional
 	Search *ModelSearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
