@@ -56,6 +56,36 @@ message DeleteModelPipelineRunResponse {
 
 }
 
+message ApproveModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    string stage     = 3;
+    string account   = 4;
+
+}
+
+message ApproveModelPipelineRunResponse {
+
+}
+
+
+message DenyModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+    string stage     = 3;
+    string account   = 4;
+
+}
+
+message DenyModelPipelineRunResponse {
+
+}
+
+
+
+
+
+
 
 service ModelPipelineRunService {
     rpc ListModelPipelineRuns(ListModelPipelineRunsRequest) returns (ListModelPipelineRunsResponse) {
@@ -80,5 +110,15 @@ service ModelPipelineRunService {
     rpc DeleteModelPipelineRun(DeleteModelPipelineRunRequest) returns (DeleteModelPipelineRunResponse) {
         option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}";
     }
+
+    rpc ApproveModelPipelineRun(ApproveModelPipelineRunRequest) returns (ApproveModelPipelineRunResponse) {
+        option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}:approve";
+    }
+
+    rpc DenyModelPipelineRun(DenyModelPipelineRunRequest) returns (DenyModelPipelineRunResponse) {
+        option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}:approve";
+    }
+
+
 
 }

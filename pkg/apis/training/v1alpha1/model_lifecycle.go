@@ -354,7 +354,7 @@ func (model *Model) MarkTraining() {
 	model.Status.Phase = ModelPhaseTrainRunning
 }
 
-func (model *Model) MarkTrained(ms []Measurement) {
+func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	now := metav1.Now()
 	model.Status.TrainCompletionTime = &now
 	model.Status.TrainResult = ms
@@ -377,7 +377,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	model.Status.TrainCompletionTime = &now
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
-	model.Status.TrainResult = make([]Measurement, 0)
+	model.Status.TrainResult = make([]catalog.Measurement, 0)
 
 }
 

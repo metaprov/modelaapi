@@ -149,10 +149,10 @@ type TrainingStageSpec struct {
 	// +kubebuilder:validation:Optional
 	MinScore TestScore `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
 
-	// Auto defines if we move from stage to stage automatically.
-	// +kubebuilder:default:=true
+	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,5,opt,name=auto"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
 }
 
 //UATStageSpec is the specification of the user acceptance test.
@@ -187,10 +187,10 @@ type CapacityStageSpec struct {
 	// +kubebuilder:validation:Optional
 	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 
-	// Auto defines if we move from stage to stage automatically.
-	// +kubebuilder:default:=true
+	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
 	// A reference to the workload class that is used for running the prediction
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
@@ -209,10 +209,10 @@ type ProdStageSpec struct {
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	Weight *float64 `json:"weight,omitempty" protobuf:"bytes,3,opt,name=weight"`
-	// Auto defines if we move from stage to stage automatically.
-	// +kubebuilder:default:=true
+	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,4,opt,name=auto"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

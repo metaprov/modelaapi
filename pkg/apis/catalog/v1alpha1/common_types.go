@@ -1112,9 +1112,12 @@ const (
 type ConditionReason string
 
 const (
-	Failed  ConditionReason = "Failed"
-	Success ConditionReason = "Success"
-	Running ConditionReason = "Running"
+	Failed             ConditionReason = "Failed"
+	Success            ConditionReason = "Success"
+	Running            ConditionReason = "Running"
+	WaitingForApproval ConditionReason = "WaitingForApproval"
+	Approved           ConditionReason = "Approved"
+	Denied             ConditionReason = "Denied"
 )
 
 type HardwareTarget string
