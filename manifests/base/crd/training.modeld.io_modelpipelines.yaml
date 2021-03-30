@@ -60,9 +60,10 @@ spec:
               capacity:
                 description: Capacity stage for capacity
                 properties:
-                  auto:
-                    default: true
-                    description: Auto defines if we move from stage to stage automatically.
+                  manualApproval:
+                    default: false
+                    description: ManualApproval dentoes if we need manual apporval
+                      before advancing to further stages in the pipeline
                     type: boolean
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
@@ -186,9 +187,10 @@ spec:
                 description: ReleaseStage stage define how to place the model into
                   production.
                 properties:
-                  auto:
-                    default: true
-                    description: Auto defines if we move from stage to stage automatically.
+                  manualApproval:
+                    default: false
+                    description: ManualApproval dentoes if we need manual apporval
+                      before advancing to further stages in the pipeline
                     type: boolean
                   predictorName:
                     description: PredictorName he release predictor. The predictor
@@ -257,14 +259,15 @@ spec:
               training:
                 description: TrainingSpec stage
                 properties:
-                  auto:
-                    default: true
-                    description: Auto defines if we move from stage to stage automatically.
-                    type: boolean
                   labName:
                     description: LabName is the name of the lab used for training.
                       If empty the system will use the default lab
                     type: string
+                  manualApproval:
+                    default: false
+                    description: ManualApproval dentoes if we need manual apporval
+                      before advancing to further stages in the pipeline
+                    type: boolean
                   minScore:
                     description: MinScore is the score needed to move to another stage.
                       The min score is composed of a metric and a score.

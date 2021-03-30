@@ -2253,7 +2253,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
     servingsitename: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec.toObject, includeInstance),
-    auto: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    manualapproval: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
@@ -2300,9 +2300,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec.deserializeBinaryFromReader);
       msg.addTests(value);
       break;
-    case 3:
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAuto(value);
+      msg.setManualapproval(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -2352,10 +2352,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeBool(
-      3,
+      5,
       f
     );
   }
@@ -2444,11 +2444,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
 
 
 /**
- * optional bool auto = 3;
+ * optional bool manualApproval = 5;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.getAuto = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.getManualapproval = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -2456,8 +2456,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.setAuto = function(value) {
-  return jspb.Message.setField(this, 3, value);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.setManualapproval = function(value) {
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -2465,8 +2465,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.clearAuto = function() {
-  return jspb.Message.setField(this, 3, undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.clearManualapproval = function() {
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -2474,8 +2474,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.hasAuto = function() {
-  return jspb.Message.getField(this, 3) != null;
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CapacityStageSpec.prototype.hasManualapproval = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -24262,7 +24262,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.toO
     servingsitename: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     weight: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    auto: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+    manualapproval: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -24313,7 +24313,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.des
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAuto(value);
+      msg.setManualapproval(value);
       break;
     default:
       reader.skipField();
@@ -24484,10 +24484,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
 
 
 /**
- * optional bool auto = 4;
+ * optional bool manualApproval = 4;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.getAuto = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.getManualapproval = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -24496,7 +24496,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.setAuto = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.setManualapproval = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -24505,7 +24505,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.clearAuto = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.clearManualapproval = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -24514,7 +24514,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.hasAuto = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.hasManualapproval = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -31538,7 +31538,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
     labname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     studyname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     minscore: (f = msg.getMinscore()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TestScore.toObject(includeInstance, f),
-    auto: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
+    manualapproval: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -31594,7 +31594,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAuto(value);
+      msg.setManualapproval(value);
       break;
     default:
       reader.skipField();
@@ -31810,10 +31810,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
 
 
 /**
- * optional bool auto = 5;
+ * optional bool manualApproval = 5;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getAuto = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getManualapproval = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -31822,7 +31822,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setAuto = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setManualapproval = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -31831,7 +31831,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearAuto = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearManualapproval = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -31840,7 +31840,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasAuto = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasManualapproval = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

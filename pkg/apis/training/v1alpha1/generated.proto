@@ -55,10 +55,10 @@ message CapacityStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelTestSpec tests = 2;
 
-  // Auto defines if we move from stage to stage automatically.
-  // +kubebuilder:default:=true
+  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool auto = 3;
+  optional bool manualApproval = 5;
 
   // A reference to the workload class that is used for running the prediction
   // +kubebuilder:default:="default-prediction-workload-class"
@@ -1550,10 +1550,10 @@ message ProdStageSpec {
   // +kubebuilder:validation:Optional
   optional double weight = 3;
 
-  // Auto defines if we move from stage to stage automatically.
-  // +kubebuilder:default:=true
+  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool auto = 4;
+  optional bool manualApproval = 4;
 }
 
 // +kubebuilder:object:root=true
@@ -2089,10 +2089,10 @@ message TrainingStageSpec {
   // +kubebuilder:validation:Optional
   optional TestScore minScore = 4;
 
-  // Auto defines if we move from stage to stage automatically.
-  // +kubebuilder:default:=true
+  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool auto = 5;
+  optional bool manualApproval = 5;
 }
 
 // UATStageSpec is the specification of the user acceptance test.

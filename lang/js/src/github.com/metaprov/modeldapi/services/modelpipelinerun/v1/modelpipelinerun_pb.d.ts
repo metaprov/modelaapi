@@ -210,3 +210,91 @@ export namespace DeleteModelPipelineRunResponse {
   }
 }
 
+export class ApproveModelPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ApproveModelPipelineRunRequest;
+
+  getName(): string;
+  setName(value: string): ApproveModelPipelineRunRequest;
+
+  getStage(): string;
+  setStage(value: string): ApproveModelPipelineRunRequest;
+
+  getAccount(): string;
+  setAccount(value: string): ApproveModelPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApproveModelPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ApproveModelPipelineRunRequest): ApproveModelPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ApproveModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApproveModelPipelineRunRequest;
+  static deserializeBinaryFromReader(message: ApproveModelPipelineRunRequest, reader: jspb.BinaryReader): ApproveModelPipelineRunRequest;
+}
+
+export namespace ApproveModelPipelineRunRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    stage: string,
+    account: string,
+  }
+}
+
+export class ApproveModelPipelineRunResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApproveModelPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ApproveModelPipelineRunResponse): ApproveModelPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ApproveModelPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApproveModelPipelineRunResponse;
+  static deserializeBinaryFromReader(message: ApproveModelPipelineRunResponse, reader: jspb.BinaryReader): ApproveModelPipelineRunResponse;
+}
+
+export namespace ApproveModelPipelineRunResponse {
+  export type AsObject = {
+  }
+}
+
+export class DenyModelPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DenyModelPipelineRunRequest;
+
+  getName(): string;
+  setName(value: string): DenyModelPipelineRunRequest;
+
+  getStage(): string;
+  setStage(value: string): DenyModelPipelineRunRequest;
+
+  getAccount(): string;
+  setAccount(value: string): DenyModelPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DenyModelPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DenyModelPipelineRunRequest): DenyModelPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: DenyModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DenyModelPipelineRunRequest;
+  static deserializeBinaryFromReader(message: DenyModelPipelineRunRequest, reader: jspb.BinaryReader): DenyModelPipelineRunRequest;
+}
+
+export namespace DenyModelPipelineRunRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    stage: string,
+    account: string,
+  }
+}
+
+export class DenyModelPipelineRunResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DenyModelPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DenyModelPipelineRunResponse): DenyModelPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: DenyModelPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DenyModelPipelineRunResponse;
+  static deserializeBinaryFromReader(message: DenyModelPipelineRunResponse, reader: jspb.BinaryReader): DenyModelPipelineRunResponse;
+}
+
+export namespace DenyModelPipelineRunResponse {
+  export type AsObject = {
+  }
+}
+

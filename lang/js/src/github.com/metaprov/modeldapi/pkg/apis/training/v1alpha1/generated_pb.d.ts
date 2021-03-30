@@ -64,8 +64,8 @@ export class CapacityStageSpec extends jspb.Message {
   clearTestsList(): CapacityStageSpec;
   addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
 
-  getAuto(): boolean;
-  setAuto(value: boolean): CapacityStageSpec;
+  getManualapproval(): boolean;
+  setManualapproval(value: boolean): CapacityStageSpec;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): CapacityStageSpec;
@@ -82,7 +82,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     servingsitename: string,
     testsList: Array<ModelTestSpec.AsObject>,
-    auto: boolean,
+    manualapproval: boolean,
     workloadclassname: string,
   }
 }
@@ -2431,8 +2431,8 @@ export class ProdStageSpec extends jspb.Message {
   getWeight(): number;
   setWeight(value: number): ProdStageSpec;
 
-  getAuto(): boolean;
-  setAuto(value: boolean): ProdStageSpec;
+  getManualapproval(): boolean;
+  setManualapproval(value: boolean): ProdStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProdStageSpec.AsObject;
@@ -2447,7 +2447,7 @@ export namespace ProdStageSpec {
     servingsitename: string,
     predictorname: string,
     weight: number,
-    auto: boolean,
+    manualapproval: boolean,
   }
 }
 
@@ -3196,8 +3196,8 @@ export class TrainingStageSpec extends jspb.Message {
   hasMinscore(): boolean;
   clearMinscore(): TrainingStageSpec;
 
-  getAuto(): boolean;
-  setAuto(value: boolean): TrainingStageSpec;
+  getManualapproval(): boolean;
+  setManualapproval(value: boolean): TrainingStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingStageSpec.AsObject;
@@ -3213,7 +3213,7 @@ export namespace TrainingStageSpec {
     labname: string,
     studyname: string,
     minscore?: TestScore.AsObject,
-    auto: boolean,
+    manualapproval: boolean,
   }
 }
 

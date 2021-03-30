@@ -83,8 +83,8 @@ func (in *CapacityStageSpec) DeepCopyInto(out *CapacityStageSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Auto != nil {
-		in, out := &in.Auto, &out.Auto
+	if in.ManualApproval != nil {
+		in, out := &in.ManualApproval, &out.ManualApproval
 		*out = new(bool)
 		**out = **in
 	}
@@ -2178,8 +2178,8 @@ func (in *ProdStageSpec) DeepCopyInto(out *ProdStageSpec) {
 		*out = new(float64)
 		**out = **in
 	}
-	if in.Auto != nil {
-		in, out := &in.Auto, &out.Auto
+	if in.ManualApproval != nil {
+		in, out := &in.ManualApproval, &out.ManualApproval
 		*out = new(bool)
 		**out = **in
 	}
@@ -2842,8 +2842,8 @@ func (in *TrainingStageSpec) DeepCopyInto(out *TrainingStageSpec) {
 		**out = **in
 	}
 	in.MinScore.DeepCopyInto(&out.MinScore)
-	if in.Auto != nil {
-		in, out := &in.Auto, &out.Auto
+	if in.ManualApproval != nil {
+		in, out := &in.ManualApproval, &out.ManualApproval
 		*out = new(bool)
 		**out = **in
 	}

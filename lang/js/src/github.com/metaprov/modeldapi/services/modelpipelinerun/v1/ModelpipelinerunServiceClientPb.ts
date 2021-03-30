@@ -235,5 +235,85 @@ export class ModelPipelineRunServiceClient {
     this.methodInfoDeleteModelPipelineRun);
   }
 
+  methodInfoApproveModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunResponse,
+    (request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunResponse.deserializeBinary
+  );
+
+  approveModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunResponse>;
+
+  approveModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunResponse>;
+
+  approveModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ApproveModelPipelineRunResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ApproveModelPipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoApproveModelPipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ApproveModelPipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoApproveModelPipelineRun);
+  }
+
+  methodInfoDenyModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunResponse,
+    (request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunResponse.deserializeBinary
+  );
+
+  denyModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunResponse>;
+
+  denyModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunResponse>;
+
+  denyModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.DenyModelPipelineRunResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoDenyModelPipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoDenyModelPipelineRun);
+  }
+
 }
 
