@@ -16,7 +16,7 @@ import (
 func Test_Trained(t *testing.T) {
 	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
 	metric := catalog.F1Binary
-	model.MarkTrained([]Measurement{{
+	model.MarkTrained([]catalog.Measurement{{
 		Metric: &metric,
 		Value:  nil,
 	}})
@@ -31,7 +31,7 @@ func Test_Training(t *testing.T) {
 func Test_Failed_Testing(t *testing.T) {
 	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
 	metric := catalog.F1Binary
-	model.MarkTrained([]Measurement{{
+	model.MarkTrained([]catalog.Measurement{{
 		Metric: &metric,
 		Value:  nil,
 	}})
