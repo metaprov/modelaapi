@@ -634,6 +634,46 @@ export namespace Measurement {
   }
 }
 
+export class ModelDeploymentSpec extends jspb.Message {
+  getModelname(): string;
+  setModelname(value: string): ModelDeploymentSpec;
+
+  getWeight(): number;
+  setWeight(value: number): ModelDeploymentSpec;
+
+  getCanary(): boolean;
+  setCanary(value: boolean): ModelDeploymentSpec;
+
+  getShadow(): boolean;
+  setShadow(value: boolean): ModelDeploymentSpec;
+
+  getFilter(): string;
+  setFilter(value: string): ModelDeploymentSpec;
+
+  getCanarymetricsList(): Array<string>;
+  setCanarymetricsList(value: Array<string>): ModelDeploymentSpec;
+  clearCanarymetricsList(): ModelDeploymentSpec;
+  addCanarymetrics(value: string, index?: number): ModelDeploymentSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelDeploymentSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelDeploymentSpec): ModelDeploymentSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelDeploymentSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelDeploymentSpec;
+  static deserializeBinaryFromReader(message: ModelDeploymentSpec, reader: jspb.BinaryReader): ModelDeploymentSpec;
+}
+
+export namespace ModelDeploymentSpec {
+  export type AsObject = {
+    modelname: string,
+    weight: number,
+    canary: boolean,
+    shadow: boolean,
+    filter: string,
+    canarymetricsList: Array<string>,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;

@@ -24261,7 +24261,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.toO
   var f, obj = {
     servingsitename: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    weight: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    template: (f = msg.getTemplate()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f),
     manualapproval: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
@@ -24308,8 +24308,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.des
       msg.setPredictorname(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setWeight(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.deserializeBinaryFromReader);
+      msg.setTemplate(value);
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -24358,11 +24359,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.ser
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = message.getTemplate();
   if (f != null) {
-    writer.writeDouble(
+    writer.writeMessage(
       3,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
@@ -24448,29 +24450,30 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
 
 
 /**
- * optional double weight = 3;
- * @return {number}
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec template = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.getWeight = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.getTemplate = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, 3));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.setWeight = function(value) {
-  return jspb.Message.setField(this, 3, value);
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.setTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.clearWeight = function() {
-  return jspb.Message.setField(this, 3, undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.clearTemplate = function() {
+  return this.setTemplate(undefined);
 };
 
 
@@ -24478,7 +24481,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.hasWeight = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.hasTemplate = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

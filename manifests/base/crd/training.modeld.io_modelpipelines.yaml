@@ -199,10 +199,43 @@ spec:
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release
                     type: string
-                  weight:
-                    default: 100
+                  template:
                     description: Weight is the weight of the model.
-                    type: number
+                    properties:
+                      canary:
+                        description: 'Denotes if this deployment is canary. This must
+                          be false for the prod deployment. Default: false'
+                        type: boolean
+                      canaryMetrics:
+                        description: 'If the deployment is canary, the metric define
+                          how to evaluate the canary. Default: none'
+                        items:
+                          description: CanaryMetric is used when testing the canary
+                          enum:
+                          - cpu
+                          - mem
+                          - latency
+                          - crash
+                          type: string
+                        type: array
+                      filter:
+                        description: Filter donotes a selection on the model
+                        type: string
+                      modelName:
+                        description: The model serving the prediction
+                        type: string
+                      shadow:
+                        description: 'Denotes if the model is a shadow. This must
+                          be false for the prod deployment. Default: false'
+                        type: boolean
+                      weight:
+                        description: 'How much traffic to the current model Default:
+                          100.'
+                        format: int32
+                        maximum: 100
+                        minimum: 0
+                        type: integer
+                    type: object
                 type: object
               schedule:
                 description: Schedule for running the pipeline

@@ -2173,10 +2173,10 @@ func (in *ProdStageSpec) DeepCopyInto(out *ProdStageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Weight != nil {
-		in, out := &in.Weight, &out.Weight
-		*out = new(float64)
-		**out = **in
+	if in.Template != nil {
+		in, out := &in.Template, &out.Template
+		*out = new(catalogv1alpha1.ModelDeploymentSpec)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ManualApproval != nil {
 		in, out := &in.ManualApproval, &out.ManualApproval

@@ -2428,8 +2428,10 @@ export class ProdStageSpec extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ProdStageSpec;
 
-  getWeight(): number;
-  setWeight(value: number): ProdStageSpec;
+  getTemplate(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec | undefined;
+  setTemplate(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec): ProdStageSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): ProdStageSpec;
 
   getManualapproval(): boolean;
   setManualapproval(value: boolean): ProdStageSpec;
@@ -2446,7 +2448,7 @@ export namespace ProdStageSpec {
   export type AsObject = {
     servingsitename: string,
     predictorname: string,
-    weight: number,
+    template?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
   }
 }

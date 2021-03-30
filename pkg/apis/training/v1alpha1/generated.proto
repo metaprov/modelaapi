@@ -1546,9 +1546,8 @@ message ProdStageSpec {
   optional string predictorName = 2;
 
   // Weight is the weight of the model.
-  // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional double weight = 3;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec template = 3;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=false

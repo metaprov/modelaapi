@@ -337,6 +337,38 @@ message Measurement {
   optional double value = 2;
 }
 
+// The desired state of the model.
+message ModelDeploymentSpec {
+  // The model serving the prediction
+  optional string modelName = 1;
+
+  // How much traffic to the current model
+  // Default: 100.
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Maximum=100
+  // +kubebuilder:validation:Minimum=0
+  optional int32 weight = 4;
+
+  // Denotes if this deployment is canary. This must be false for the prod deployment.
+  // Default: false
+  // +kubebuilder:validation:Optional
+  optional bool canary = 5;
+
+  // Denotes if the model is a shadow. This must be false for the prod deployment.
+  // Default: false
+  // +kubebuilder:validation:Optional
+  optional bool shadow = 6;
+
+  // Filter donotes a selection on the model
+  // +kubebuilder:validation:Optional
+  optional string filter = 7;
+
+  // If the deployment is canary, the metric define how to evaluate the canary.
+  // Default: none
+  // +kubebuilder:validation:Optional
+  repeated string canaryMetrics = 8;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {

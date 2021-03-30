@@ -436,46 +436,6 @@ export namespace DriftCheckSpec {
   }
 }
 
-export class ModelDeploymentSpec extends jspb.Message {
-  getModelname(): string;
-  setModelname(value: string): ModelDeploymentSpec;
-
-  getWeight(): number;
-  setWeight(value: number): ModelDeploymentSpec;
-
-  getCanary(): boolean;
-  setCanary(value: boolean): ModelDeploymentSpec;
-
-  getShadow(): boolean;
-  setShadow(value: boolean): ModelDeploymentSpec;
-
-  getFilter(): string;
-  setFilter(value: string): ModelDeploymentSpec;
-
-  getCanarymetricsList(): Array<string>;
-  setCanarymetricsList(value: Array<string>): ModelDeploymentSpec;
-  clearCanarymetricsList(): ModelDeploymentSpec;
-  addCanarymetrics(value: string, index?: number): ModelDeploymentSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelDeploymentSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelDeploymentSpec): ModelDeploymentSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelDeploymentSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelDeploymentSpec;
-  static deserializeBinaryFromReader(message: ModelDeploymentSpec, reader: jspb.BinaryReader): ModelDeploymentSpec;
-}
-
-export namespace ModelDeploymentSpec {
-  export type AsObject = {
-    modelname: string,
-    weight: number,
-    canary: boolean,
-    shadow: boolean,
-    filter: string,
-    canarymetricsList: Array<string>,
-  }
-}
-
 export class ModelDeploymentStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): ModelDeploymentStatus;
@@ -972,10 +932,10 @@ export class PredictorSpec extends jspb.Message {
   hasTemplate(): boolean;
   clearTemplate(): PredictorSpec;
 
-  getModelsList(): Array<ModelDeploymentSpec>;
-  setModelsList(value: Array<ModelDeploymentSpec>): PredictorSpec;
+  getModelsList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>;
+  setModelsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
   clearModelsList(): PredictorSpec;
-  addModels(value?: ModelDeploymentSpec, index?: number): ModelDeploymentSpec;
+  addModels(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
 
   getDriftcheck(): DriftCheckSpec | undefined;
   setDriftcheck(value?: DriftCheckSpec): PredictorSpec;
@@ -1045,7 +1005,7 @@ export namespace PredictorSpec {
     path: string,
     accesstype: string,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplate.AsObject,
-    modelsList: Array<ModelDeploymentSpec.AsObject>,
+    modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     driftcheck?: DriftCheckSpec.AsObject,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder: string,

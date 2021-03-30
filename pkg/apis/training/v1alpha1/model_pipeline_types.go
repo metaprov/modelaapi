@@ -206,9 +206,8 @@ type ProdStageSpec struct {
 	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
 	// Weight is the weight of the model.
-	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	Weight *float64 `json:"weight,omitempty" protobuf:"bytes,3,opt,name=weight"`
+	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

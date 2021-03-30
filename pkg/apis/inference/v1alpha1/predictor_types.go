@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -22,18 +23,6 @@ const (
 	MeshAccessType AccessType = "mesh"
 	// Use none if the desired port is none
 	NoneAccessType AccessType = "none"
-)
-
-// CanaryMetric is used when testing the canary
-// +kubebuilder:validation:Enum="cpu";"mem";"latency";"crash"
-type CanaryMetric string
-
-const (
-	// Use cluster port if the predictor is an internal micro service
-	CpuCanaryMetric     CanaryMetric = "cpu"
-	MemCanaryMetric     CanaryMetric = "mem"
-	LatencyCanaryMetric CanaryMetric = "latency"
-	CrashCanaryMetric   CanaryMetric = "crash"
 )
 
 // +kubebuilder:validation:Enum="online";"batch";"streaming"
@@ -111,33 +100,6 @@ type DriftCheckSpec struct {
 	TestDatasetName string `json:"testDataset,omitempty" protobuf:"bytes,4,opt,name=testDataset"`
 }
 
-// The desired state of the model.
-type ModelDeploymentSpec struct {
-	// The model serving the prediction
-	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
-	// How much traffic to the current model
-	// Default: 100.
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Maximum=100
-	// +kubebuilder:validation:Minimum=0
-	Weight *int32 `json:"weight,omitempty" protobuf:"varint,4,opt,name=weight"`
-	// Denotes if this deployment is canary. This must be false for the prod deployment.
-	// Default: false
-	// +kubebuilder:validation:Optional
-	Canary *bool `json:"canary,omitempty" protobuf:"bytes,5,opt,name=canary"`
-	// Denotes if the model is a shadow. This must be false for the prod deployment.
-	// Default: false
-	// +kubebuilder:validation:Optional
-	Shadow *bool `json:"shadow,omitempty" protobuf:"bytes,6,opt,name=shadow"`
-	// Filter donotes a selection on the model
-	// +kubebuilder:validation:Optional
-	Filter *string `json:"filter,omitempty" protobuf:"bytes,7,opt,name=filter"`
-	// If the deployment is canary, the metric define how to evaluate the canary.
-	// Default: none
-	// +kubebuilder:validation:Optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,8,rep,name=canaryMetrics"`
-}
-
 type ModelDeploymentStatus struct {
 	// The model image name
 	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
@@ -172,7 +134,7 @@ type ProgressiveSpec struct {
 	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,2,opt,name=trafficIncrement"`
 	// What metric to use when comparing the candidate to the current
 	// +kubebuilder:validation:Optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,opt,name=canaryMetrics"`
+	CanaryMetrics []catalog.CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,opt,name=canaryMetrics"`
 }
 
 // PredictorSpec define the desired state of the predictor
@@ -205,7 +167,7 @@ type PredictorSpec struct {
 	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,8,opt,name=template"`
 	// Production model deployment
 	// +kubebuilder:validation:Optional
-	Models []ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,9,opt,name=models"`
+	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,9,opt,name=models"`
 	// How much do we increment the warm up traffic
 	// +kubebuilder:validation:Optional
 	DriftCheck *DriftCheckSpec `json:"driftCheck,omitempty" protobuf:"bytes,12,opt,name=driftCheck"`
