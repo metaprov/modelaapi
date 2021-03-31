@@ -208,10 +208,12 @@ type ProdStageSpec struct {
 	// Weight is the weight of the model.
 	// +kubebuilder:validation:Optional
 	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
-	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
+	// Tests is the List of tests to run against the deployed model before moving production traffic to the model
+	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

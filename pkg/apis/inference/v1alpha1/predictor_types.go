@@ -100,25 +100,6 @@ type DriftCheckSpec struct {
 	TestDatasetName string `json:"testDataset,omitempty" protobuf:"bytes,4,opt,name=testDataset"`
 }
 
-type ModelDeploymentStatus struct {
-	// The model image name
-	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
-	// The deployment name that serves this model
-	DeploymentName string `json:"deploymentName,omitempty" protobuf:"bytes,2,opt,name=deploymentName"`
-	// The service name that serves this model
-	ServiceName string `json:"serviceName,omitempty" protobuf:"bytes,3,opt,name=serviceName"`
-	// the name of the horizonal pod autoscaler, if autoscaling is true
-	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`
-	// P95 latency
-	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
-	// P95 latency
-	P99 float64 `json:"p9,omitempty" protobuf:"bytes,6,opt,name=current99"`
-	// Last current prediction
-	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,7,opt,name=lastPrediction"`
-
-	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,8,opt,name=dailyPredictionAvg"`
-}
-
 type ProgressiveSpec struct {
 	// How long in seconds does the warm up period started
 	// This is used only during progressive deployment
@@ -244,7 +225,7 @@ type OnlineFeaturestoreSpec struct {
 type PredictorStatus struct {
 	// Model one status
 	// +kubebuilder:validation:Optional
-	ModelStatuses []ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,opt,name=modelStatus"`
+	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,opt,name=modelStatus"`
 
 	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 	// When was the last check attempt
