@@ -11,18 +11,18 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// +kubebuilder:validation:Enum="administrator";"data-scientist";"data-engineer";"data-operations";"sponsor";"end-user";"domain-expert"
-//RoleName is the type of role a user can have
+// +kubebuilder:validation:Enum="analyst";"data-scientist";"data-engineer";"data-steward";"product-manager";"risk-manager";"software-engineer"
+// RoleName is the type of role a user can have
 type RoleName string
 
 const (
-	Administrator RoleName = "administrator"
-	DataScientist RoleName = "data-scientist"
-	DataEngineer  RoleName = "data-engineer"
-	Ops           RoleName = "data-operations"
-	Sponsor       RoleName = "sponsor"
-	EndUser       RoleName = "end-user"
-	DomainExpert  RoleName = "domain-expert"
+	DataAnalyst      RoleName = "analyst"
+	DataScientist    RoleName = "data-scientist"
+	DataEngineer     RoleName = "data-engineer"
+	DataSteward      RoleName = "data-steward"
+	ProductManager   RoleName = "product-manager"
+	RiskManager      RoleName = "risk-manager"
+	SoftwareEngineer RoleName = "software-engineer"
 )
 
 // UserRoleClass specify the RBAC premission for a specific user role.

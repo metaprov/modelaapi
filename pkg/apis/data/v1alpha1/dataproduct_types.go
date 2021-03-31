@@ -67,7 +67,13 @@ type GitLocation struct {
 	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
 	// URL of the stakeholder
 	// +kubebuilder:validation:MaxLength=256
-	URL string `json:"url,omitempty" protobuf:"bytes,2,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,2,opt,name=url"`
+	// Branch in git repo
+	// +kubebuilder:validation:MaxLength=256
+	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
+	// Private is True if the repository is private.
+	// +kubebuilder:validation:MaxLength=256
+	Private *bool `json:"private,omitempty" protobuf:"bytes,4,opt,name=private"`
 }
 
 type ImageLocation struct {
