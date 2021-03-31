@@ -177,6 +177,12 @@ export namespace CronPredictionList {
 }
 
 export class CronPredictionSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): CronPredictionSpec;
+
+  getOwner(): string;
+  setOwner(value: string): CronPredictionSpec;
+
   getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronPredictionSpec;
   hasSchedule(): boolean;
@@ -197,6 +203,8 @@ export class CronPredictionSpec extends jspb.Message {
 
 export namespace CronPredictionSpec {
   export type AsObject = {
+    versionname: string,
+    owner: string,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     template?: PredictionTemplate.AsObject,
   }
@@ -661,6 +669,9 @@ export namespace PredictionList {
 }
 
 export class PredictionSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): PredictionSpec;
+
   getPredictorname(): string;
   setPredictorname(value: string): PredictionSpec;
 
@@ -701,6 +712,7 @@ export class PredictionSpec extends jspb.Message {
 
 export namespace PredictionSpec {
   export type AsObject = {
+    versionname: string,
     predictorname: string,
     labeled: boolean,
     datasetname: string,

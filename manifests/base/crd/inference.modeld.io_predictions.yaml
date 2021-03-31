@@ -152,6 +152,9 @@ spec:
                   - mdape
                   type: string
                 type: array
+              versionName:
+                description: VersionName is the data product version of the data pipeline
+                type: string
               workloadClassName:
                 default: default-prediction-workload-class
                 description: A reference to the workload class that is used for training

@@ -64,6 +64,9 @@ spec:
           spec:
             description: CronPredictionSpec represent the desired state of CronPrediction
             properties:
+              owner:
+                description: The owner account name
+                type: string
               schedule:
                 description: Schedule is the cron schedule Schedule for running the
                   pipeline
@@ -214,6 +217,10 @@ spec:
                           - mdape
                           type: string
                         type: array
+                      versionName:
+                        description: VersionName is the data product version of the
+                          data pipeline
+                        type: string
                       workloadClassName:
                         default: default-prediction-workload-class
                         description: A reference to the workload class that is used
@@ -223,6 +230,9 @@ spec:
                 required:
                 - spec
                 type: object
+              versionName:
+                description: VersionName is the data product version of the data pipeline
+                type: string
             required:
             - template
             type: object
