@@ -1165,27 +1165,83 @@ const (
 
 // The desired state of the model.
 type ModelDeploymentSpec struct {
-	// The model serving the prediction
+	// ModelName is the name of the model. The name must be unique within
+	// +kubebuilder:validation:Required
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
-	// How much traffic to the current model
+	// The version of the model. Note that a single predictor might serve different models
+	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
+	// How much traffic this deployment model should serve.
 	// Default: 100.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
-	Weight *int32 `json:"weight,omitempty" protobuf:"varint,4,opt,name=weight"`
-	// Denotes if this deployment is canary. This must be false for the prod deployment.
+	MaxTraffic *int32 `json:"weight,omitempty" protobuf:"varint,3,opt,name=weight"`
+	// Traffic is the current amount of production traffic served by this model.
+	// +kubebuilder:validation:Maximum=100
+	// +kubebuilder:validation:Minimum=0
+	// Default: 100.
+	// +kubebuilder:validation:Optional
+	Traffic *int32 `json:"weight,omitempty" protobuf:"varint,4,opt,name=weight"`
+	// Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
 	// Default: false
 	// +kubebuilder:validation:Optional
 	Canary *bool `json:"canary,omitempty" protobuf:"bytes,5,opt,name=canary"`
-	// Denotes if the model is a shadow. This must be false for the prod deployment.
+	// Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
+	// served back to the client
 	// Default: false
 	// +kubebuilder:validation:Optional
 	Shadow *bool `json:"shadow,omitempty" protobuf:"bytes,6,opt,name=shadow"`
-	// Filter donotes a selection on the model
+	// A released model is a model that should serve production traffic.
+	// Default: false
 	// +kubebuilder:validation:Optional
-	Filter *string `json:"filter,omitempty" protobuf:"bytes,7,opt,name=filter"`
+	Released *bool `json:"released,omitempty" protobuf:"bytes,7,opt,name=released"`
+	// a deployed model is a model whose containers are up, but does not serve production traffic.
+	// Default: false
+	// +kubebuilder:validation:Optional
+	Deployed *bool `json:"deployed,omitempty" protobuf:"bytes,8,opt,name=deployed"`
+	// TrafficSelector is a filter on the traffic to this model
+	// +kubebuilder:validation:Optional
+	TrafficSelector *string `json:"traficSelector,omitempty" protobuf:"bytes,9,opt,name=trafficSelector"`
 	// If the deployment is canary, the metric define how to evaluate the canary.
 	// Default: none
 	// +kubebuilder:validation:Optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,8,rep,name=canaryMetrics"`
+	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,10,rep,name=canaryMetrics"`
 }
+
+type ModelDeploymentStatus struct {
+	// The model image name
+	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
+	// The deployment name that serves this model
+	DeploymentName string `json:"deploymentName,omitempty" protobuf:"bytes,2,opt,name=deploymentName"`
+	// The service name that serves this model
+	ServiceName string `json:"serviceName,omitempty" protobuf:"bytes,3,opt,name=serviceName"`
+	// the name of the horizonal pod autoscaler, if autoscaling is true
+	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`
+	// P95 latency
+	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
+	// P99 is the 99% latency of the model
+	P99 float64 `json:"p9,omitempty" protobuf:"bytes,6,opt,name=current99"`
+	// Last current prediction
+	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,7,opt,name=lastPrediction"`
+
+	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,8,opt,name=dailyPredictionAvg"`
+	// LastFailure is the last faiure that occur with the model
+	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,9,opt,name=lastFailure"`
+	// Phase is the current phase of this model deployment
+	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,10,opt,name=phase"`
+	// DeployedAt is the last time that this model was deployed
+	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,11,opt,name=deployedAt"`
+	// ReleasedAt is the time that this model was released
+	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,12,opt,name=releasedAt"`
+}
+
+type ModelDeploymentPhase string
+
+const (
+	ModelDeploymentPhaseDeploying ModelDeploymentPhase = "Deploying"
+	ModelDeploymentPhaseDeployed  ModelDeploymentPhase = "Deployed"
+	ModelDeploymentPhaseShadowing ModelDeploymentPhase = "Shadowing"
+	ModelDeploymentPhaseReleasing ModelDeploymentPhase = "Releasing"
+	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
+	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
+)

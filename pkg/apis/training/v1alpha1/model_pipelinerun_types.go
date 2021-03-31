@@ -47,7 +47,8 @@ const (
 	MPRTrainingStageCmpleted  PipelineRunConditionType = "TrainingStageCompleted"
 	MPRUATCompleted           PipelineRunConditionType = "UATStageCompleted"
 	MPRCapacityStageCompleted PipelineRunConditionType = "CapacityStageCompleted"
-	MPRProdCompleted          PipelineRunConditionType = "ProdStageCompleted"
+	MPRModelDeployed          PipelineRunConditionType = "ModelDeployed"
+	MPRModelReleased          PipelineRunConditionType = "ModelReleased"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
