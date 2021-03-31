@@ -2312,6 +2312,12 @@ export class GitLocation extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): GitLocation;
 
+  getBranch(): string;
+  setBranch(value: string): GitLocation;
+
+  getPrivate(): boolean;
+  setPrivate(value: boolean): GitLocation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GitLocation.AsObject;
   static toObject(includeInstance: boolean, msg: GitLocation): GitLocation.AsObject;
@@ -2324,6 +2330,8 @@ export namespace GitLocation {
   export type AsObject = {
     gitconnectionname: string,
     url: string,
+    branch: string,
+    pb_private: boolean,
   }
 }
 

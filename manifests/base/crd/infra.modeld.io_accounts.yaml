@@ -91,13 +91,13 @@ spec:
                     role:
                       description: The role in relation to the entity.
                       enum:
-                      - administrator
+                      - analyst
                       - data-scientist
                       - data-engineer
-                      - data-operations
-                      - sponsor
-                      - end-user
-                      - domain-expert
+                      - data-steward
+                      - product-manager
+                      - risk-manager
+                      - software-engineer
                       type: string
                   type: object
                 type: array
@@ -123,13 +123,13 @@ spec:
                     role:
                       description: The role in relation to the entity.
                       enum:
-                      - administrator
+                      - analyst
                       - data-scientist
                       - data-engineer
-                      - data-operations
-                      - sponsor
-                      - end-user
-                      - domain-expert
+                      - data-steward
+                      - product-manager
+                      - risk-manager
+                      - software-engineer
                       type: string
                   type: object
                 type: array
@@ -149,13 +149,13 @@ spec:
                     role:
                       description: The role in relation to the entity.
                       enum:
-                      - administrator
+                      - analyst
                       - data-scientist
                       - data-engineer
-                      - data-operations
-                      - sponsor
-                      - end-user
-                      - domain-expert
+                      - data-steward
+                      - product-manager
+                      - risk-manager
+                      - software-engineer
                       type: string
                   type: object
                 type: array

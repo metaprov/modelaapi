@@ -72,7 +72,6 @@ type GitLocation struct {
 	// +kubebuilder:validation:MaxLength=256
 	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
 	// Private is True if the repository is private.
-	// +kubebuilder:validation:MaxLength=256
 	Private *bool `json:"private,omitempty" protobuf:"bytes,4,opt,name=private"`
 }
 

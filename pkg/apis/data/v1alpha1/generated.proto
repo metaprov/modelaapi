@@ -1370,6 +1370,13 @@ message GitLocation {
   // URL of the stakeholder
   // +kubebuilder:validation:MaxLength=256
   optional string url = 2;
+
+  // Branch in git repo
+  // +kubebuilder:validation:MaxLength=256
+  optional string branch = 3;
+
+  // Private is True if the repository is private.
+  optional bool private = 4;
 }
 
 message ImageLocation {

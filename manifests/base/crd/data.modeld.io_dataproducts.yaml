@@ -90,9 +90,16 @@ spec:
                 description: GitLocation is the github repository for all the artifacts
                   for this product
                 properties:
+                  branch:
+                    description: Branch in git repo
+                    maxLength: 256
+                    type: string
                   gitConnectionName:
                     description: GitConnectionName
                     type: string
+                  private:
+                    description: Private is True if the repository is private.
+                    type: boolean
                   url:
                     description: URL of the stakeholder
                     maxLength: 256
@@ -166,13 +173,13 @@ spec:
                       items:
                         description: RoleName is the type of role a user can have
                         enum:
-                        - administrator
+                        - analyst
                         - data-scientist
                         - data-engineer
-                        - data-operations
-                        - sponsor
-                        - end-user
-                        - domain-expert
+                        - data-steward
+                        - product-manager
+                        - risk-manager
+                        - software-engineer
                         type: string
                       type: array
                   type: object

@@ -23378,7 +23378,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.toObject = function(includeInstance, msg) {
   var f, obj = {
     gitconnectionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    url: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    branch: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    pb_private: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23423,6 +23425,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.deseriali
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBranch(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPrivate(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -23463,6 +23473,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.serialize
   if (f != null) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -23538,6 +23562,78 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasUrl = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string branch = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.getBranch = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.setBranch = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.clearBranch = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasBranch = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool private = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.getPrivate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.setPrivate = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.clearPrivate = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.GitLocation.prototype.hasPrivate = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
