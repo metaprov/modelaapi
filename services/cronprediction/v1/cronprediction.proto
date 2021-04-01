@@ -52,13 +52,13 @@ message DeleteCronPredictionResponse {
 
 }
 
-message RunPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+message RunCronPredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 
-message RunPredictionResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+message RunCronPredictionResponse {
+    
 }
 
 
@@ -90,7 +90,7 @@ service CronPredictionService {
         option (google.api.http).delete = "/v1/cronpredictions/{name}";
     }
 
-    rpc RunPrediction(RunPredictionRequest) returns (RunPredictionResponse) {
+    rpc RunPrediction(RunCronPredictionRequest) returns (RunCronPredictionResponse) {
         option (google.api.http).post = "/v1/cronpredictions/{name}:run";
     }
 

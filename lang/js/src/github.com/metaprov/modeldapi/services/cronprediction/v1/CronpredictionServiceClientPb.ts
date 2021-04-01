@@ -236,28 +236,28 @@ export class CronPredictionServiceClient {
   }
 
   methodInfoRunPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest) => {
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse,
+    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse.deserializeBinary
   );
 
   runPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse>;
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
 
   runPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest,
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse>;
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
 
   runPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest,
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

@@ -41,8 +41,8 @@ class CronPredictionServiceStub(object):
                 )
         self.RunPrediction = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunPredictionResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionResponse.FromString,
                 )
 
 
@@ -115,8 +115,8 @@ def add_CronPredictionServiceServicer_to_server(servicer, server):
             ),
             'RunPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.RunPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunPredictionResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -225,7 +225,7 @@ class CronPredictionService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunPredictionResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

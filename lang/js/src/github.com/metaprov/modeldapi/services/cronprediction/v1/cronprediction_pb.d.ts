@@ -200,43 +200,37 @@ export namespace DeleteCronPredictionResponse {
   }
 }
 
-export class RunPredictionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): RunPredictionRequest;
+export class RunCronPredictionRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): RunCronPredictionRequest;
   hasItem(): boolean;
-  clearItem(): RunPredictionRequest;
+  clearItem(): RunCronPredictionRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunPredictionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RunPredictionRequest): RunPredictionRequest.AsObject;
-  static serializeBinaryToWriter(message: RunPredictionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunPredictionRequest;
-  static deserializeBinaryFromReader(message: RunPredictionRequest, reader: jspb.BinaryReader): RunPredictionRequest;
+  toObject(includeInstance?: boolean): RunCronPredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RunCronPredictionRequest): RunCronPredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: RunCronPredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunCronPredictionRequest;
+  static deserializeBinaryFromReader(message: RunCronPredictionRequest, reader: jspb.BinaryReader): RunCronPredictionRequest;
 }
 
-export namespace RunPredictionRequest {
+export namespace RunCronPredictionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
   }
 }
 
-export class RunPredictionResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): RunPredictionResponse;
-  hasItem(): boolean;
-  clearItem(): RunPredictionResponse;
-
+export class RunCronPredictionResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunPredictionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RunPredictionResponse): RunPredictionResponse.AsObject;
-  static serializeBinaryToWriter(message: RunPredictionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunPredictionResponse;
-  static deserializeBinaryFromReader(message: RunPredictionResponse, reader: jspb.BinaryReader): RunPredictionResponse;
+  toObject(includeInstance?: boolean): RunCronPredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RunCronPredictionResponse): RunCronPredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: RunCronPredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunCronPredictionResponse;
+  static deserializeBinaryFromReader(message: RunCronPredictionResponse, reader: jspb.BinaryReader): RunCronPredictionResponse;
 }
 
-export namespace RunPredictionResponse {
+export namespace RunCronPredictionResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
   }
 }
 
