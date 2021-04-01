@@ -444,6 +444,32 @@ export namespace DriftCheckSpec {
   }
 }
 
+export class OnlineChannelSpec extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): OnlineChannelSpec;
+
+  getPath(): string;
+  setPath(value: string): OnlineChannelSpec;
+
+  getAccesstype(): string;
+  setAccesstype(value: string): OnlineChannelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OnlineChannelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: OnlineChannelSpec): OnlineChannelSpec.AsObject;
+  static serializeBinaryToWriter(message: OnlineChannelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OnlineChannelSpec;
+  static deserializeBinaryFromReader(message: OnlineChannelSpec, reader: jspb.BinaryReader): OnlineChannelSpec;
+}
+
+export namespace OnlineChannelSpec {
+  export type AsObject = {
+    port: number,
+    path: string,
+    accesstype: string,
+  }
+}
+
 export class OnlineFeaturestoreSpec extends jspb.Message {
   getActive(): boolean;
   setActive(value: boolean): OnlineFeaturestoreSpec;
@@ -520,37 +546,43 @@ export namespace PredictionCacheSpec {
   }
 }
 
-export class PredictionChannel extends jspb.Message {
+export class PredictionChannels extends jspb.Message {
+  getOnline(): OnlineChannelSpec | undefined;
+  setOnline(value?: OnlineChannelSpec): PredictionChannels;
+  hasOnline(): boolean;
+  clearOnline(): PredictionChannels;
+
   getTable(): TableChannelSpec | undefined;
-  setTable(value?: TableChannelSpec): PredictionChannel;
+  setTable(value?: TableChannelSpec): PredictionChannels;
   hasTable(): boolean;
-  clearTable(): PredictionChannel;
+  clearTable(): PredictionChannels;
 
   getBot(): BotChannelSpec | undefined;
-  setBot(value?: BotChannelSpec): PredictionChannel;
+  setBot(value?: BotChannelSpec): PredictionChannels;
   hasBot(): boolean;
-  clearBot(): PredictionChannel;
+  clearBot(): PredictionChannels;
 
   getBucket(): BucketChannelSpec | undefined;
-  setBucket(value?: BucketChannelSpec): PredictionChannel;
+  setBucket(value?: BucketChannelSpec): PredictionChannels;
   hasBucket(): boolean;
-  clearBucket(): PredictionChannel;
+  clearBucket(): PredictionChannels;
 
   getStreaming(): StreamingChannelSpec | undefined;
-  setStreaming(value?: StreamingChannelSpec): PredictionChannel;
+  setStreaming(value?: StreamingChannelSpec): PredictionChannels;
   hasStreaming(): boolean;
-  clearStreaming(): PredictionChannel;
+  clearStreaming(): PredictionChannels;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionChannel.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionChannel): PredictionChannel.AsObject;
-  static serializeBinaryToWriter(message: PredictionChannel, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionChannel;
-  static deserializeBinaryFromReader(message: PredictionChannel, reader: jspb.BinaryReader): PredictionChannel;
+  toObject(includeInstance?: boolean): PredictionChannels.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionChannels): PredictionChannels.AsObject;
+  static serializeBinaryToWriter(message: PredictionChannels, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionChannels;
+  static deserializeBinaryFromReader(message: PredictionChannels, reader: jspb.BinaryReader): PredictionChannels;
 }
 
-export namespace PredictionChannel {
+export namespace PredictionChannels {
   export type AsObject = {
+    online?: OnlineChannelSpec.AsObject,
     table?: TableChannelSpec.AsObject,
     bot?: BotChannelSpec.AsObject,
     bucket?: BucketChannelSpec.AsObject,
@@ -914,15 +946,15 @@ export class PredictorSpec extends jspb.Message {
   getArtifactsfolder(): string;
   setArtifactsfolder(value: string): PredictorSpec;
 
-  getInputchannelsList(): Array<PredictionChannel>;
-  setInputchannelsList(value: Array<PredictionChannel>): PredictorSpec;
-  clearInputchannelsList(): PredictorSpec;
-  addInputchannels(value?: PredictionChannel, index?: number): PredictionChannel;
+  getInput(): PredictionChannels | undefined;
+  setInput(value?: PredictionChannels): PredictorSpec;
+  hasInput(): boolean;
+  clearInput(): PredictorSpec;
 
-  getOutputchannelsList(): Array<PredictionChannel>;
-  setOutputchannelsList(value: Array<PredictionChannel>): PredictorSpec;
-  clearOutputchannelsList(): PredictorSpec;
-  addOutputchannels(value?: PredictionChannel, index?: number): PredictionChannel;
+  getOutput(): PredictionChannels | undefined;
+  setOutput(value?: PredictionChannels): PredictorSpec;
+  hasOutput(): boolean;
+  clearOutput(): PredictorSpec;
 
   getMinreplicas(): number;
   setMinreplicas(value: number): PredictorSpec;
@@ -973,8 +1005,8 @@ export namespace PredictorSpec {
     driftcheck?: DriftCheckSpec.AsObject,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder: string,
-    inputchannelsList: Array<PredictionChannel.AsObject>,
-    outputchannelsList: Array<PredictionChannel.AsObject>,
+    input?: PredictionChannels.AsObject,
+    output?: PredictionChannels.AsObject,
     minreplicas: number,
     autoscale: boolean,
     maxreplicas: number,

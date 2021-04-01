@@ -231,6 +231,25 @@ message DriftCheckSpec {
   optional string testDataset = 4;
 }
 
+message OnlineChannelSpec {
+  // Service port specify the predictor port.
+  // Default: 8080
+  // +kubebuilder:validation:Optional
+  optional int32 port = 5;
+
+  // This is the path relative to the ingress path
+  // +kubebuilder:validation:MaxLength=256
+  // +kubebuilder:validation:MinLength=1
+  // Default: /predict
+  // +kubebuilder:validation:Optional
+  optional string path = 6;
+
+  // The access method specified how external clients will access the predictor
+  // Default: ClusterPort
+  // +kubebuilder:validation:Optional
+  optional string accessType = 7;
+}
+
 // A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
 message OnlineFeaturestoreSpec {
   // Active indicate if the cache is active
@@ -274,22 +293,26 @@ message PredictionCacheSpec {
 }
 
 // The specific of a prediction channel
-message PredictionChannel {
-  // Define a prediction via table
+message PredictionChannels {
+  // Online is a  deployment of the predictor as a microservice.
   // +kubebuilder:validation:Optional
-  optional TableChannelSpec table = 1;
+  optional OnlineChannelSpec online = 1;
 
-  // Define a prediction via a bot
+  // Table is a channel that uses RDBMS for input and output
   // +kubebuilder:validation:Optional
-  optional BotChannelSpec bot = 2;
+  optional TableChannelSpec table = 2;
 
-  // Define a prediction via a bot
+  // Bot is a channel that uses chats for input and output
   // +kubebuilder:validation:Optional
-  optional BucketChannelSpec bucket = 3;
+  optional BotChannelSpec bot = 3;
 
-  // Define a streaming spec for the predictor
+  // Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
   // +kubebuilder:validation:Optional
-  optional StreamingChannelSpec streaming = 4;
+  optional BucketChannelSpec bucket = 4;
+
+  // Define a streaming channel for the predictor
+  // +kubebuilder:validation:Optional
+  optional StreamingChannelSpec streaming = 5;
 }
 
 // PredictionCondition describes the state of PredictionTemplate
@@ -494,11 +517,11 @@ message PredictorSpec {
 
   // set of input channel, the predictor will watch those channels for predictions
   // +kubebuilder:validation:Optional
-  repeated PredictionChannel inputChannels = 15;
+  optional PredictionChannels input = 15;
 
   // set of output channels, the predictor will
   // +kubebuilder:validation:Optional
-  repeated PredictionChannel outputChannels = 16;
+  optional PredictionChannels output = 16;
 
   // Min num of replicates
   // +kubebuilder:validation:Optional

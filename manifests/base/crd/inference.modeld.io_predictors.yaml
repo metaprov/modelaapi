@@ -110,71 +110,96 @@ spec:
                     description: The drift threshold.
                     type: number
                 type: object
-              inputChannels:
+              input:
                 description: set of input channel, the predictor will watch those
                   channels for predictions
-                items:
-                  description: The specific of a prediction channel
-                  properties:
-                    bot:
-                      description: Define a prediction via a bot
-                      properties:
-                        connectionName:
-                          description: the connection to the messaging provider Required,
-                          type: string
-                        notifierName:
-                          description: The name of the notifier that will be used
-                            by the prediction bot. Required
-                          type: string
-                      type: object
-                    bucket:
-                      description: Define a prediction via a bot
-                      properties:
-                        connectionName:
-                          description: the connection to the cloud provider Required,
-                          type: string
-                        databaseConnectionName:
-                          description: Required,
-                          type: string
-                        inputKey:
-                          description: The location of the input or the output Required,
-                          type: string
-                        scanInterval:
-                          description: In seconds, the interval.
-                          format: int32
-                          type: integer
-                      type: object
-                    streaming:
-                      description: Define a streaming spec for the predictor
-                      properties:
-                        connectionName:
-                          description: StorageConnection name to the streaming provider
-                          type: string
-                        inputKey:
-                          description: the streaming topic (input or output)
-                          type: string
-                      type: object
-                    table:
-                      description: Define a prediction via table
-                      properties:
-                        connectionName:
-                          description: connection to the database provider
-                          type: string
-                        datasourceName:
-                          description: Options, this is the datasource containing
-                            the table schema
-                          type: string
-                        scanInterval:
-                          description: In seconds, the interval.
-                          format: int32
-                          type: integer
-                        tableName:
-                          description: The table name. Optional Default to the predictor
-                            name
-                          type: string
-                      type: object
-                  type: object
-                type: array
+                properties:
+                  bot:
+                    description: Bot is a channel that uses chats for input and output
+                    properties:
+                      connectionName:
+                        description: the connection to the messaging provider Required,
+                        type: string
+                      notifierName:
+                        description: The name of the notifier that will be used by
+                          the prediction bot. Required
+                        type: string
+                    type: object
+                  bucket:
+                    description: Bucket is a channel where predictions are placed
+                      in a bucket folder and results are placed in another folder
+                    properties:
+                      connectionName:
+                        description: the connection to the cloud provider Required,
+                        type: string
+                      databaseConnectionName:
+                        description: Required,
+                        type: string
+                      inputKey:
+                        description: The location of the input or the output Required,
+                        type: string
+                      scanInterval:
+                        description: In seconds, the interval.
+                        format: int32
+                        type: integer
+                    type: object
+                  online:
+                    description: Online is a  deployment of the predictor as a microservice.
+                    properties:
+                      accessType:
+                        description: 'The access method specified how external clients
+                          will access the predictor Default: ClusterPort'
+                        enum:
+                        - cluster-port
+                        - node-port
+                        - load-balancer
+                        - ingress
+                        - mesh
+                        - none
+                        type: string
+                      path:
+                        description: 'This is the path relative to the ingress path
+                          Default: /predict'
+                        maxLength: 256
+                        minLength: 1
+                        type: string
+                      port:
+                        description: 'Service port specify the predictor port. Default:
+                          8080'
+                        format: int32
+                        type: integer
+                    type: object
+                  streaming:
+                    description: Define a streaming channel for the predictor
+                    properties:
+                      connectionName:
+                        description: StorageConnection name to the streaming provider
+                        type: string
+                      inputKey:
+                        description: the streaming topic (input or output)
+                        type: string
+                    type: object
+                  table:
+                    description: Table is a channel that uses RDBMS for input and
+                      output
+                    properties:
+                      connectionName:
+                        description: connection to the database provider
+                        type: string
+                      datasourceName:
+                        description: Options, this is the datasource containing the
+                          table schema
+                        type: string
+                      scanInterval:
+                        description: In seconds, the interval.
+                        format: int32
+                        type: integer
+                      tableName:
+                        description: The table name. Optional Default to the predictor
+                          name
+                        type: string
+                    type: object
+                type: object
               maxReplicas:
                 default: 1
                 description: Max num of replicates. Used during auto scaling
@@ -251,70 +276,95 @@ spec:
                       type: string
                   type: object
                 type: array
-              outputChannels:
+              output:
                 description: set of output channels, the predictor will
-                items:
-                  description: The specific of a prediction channel
-                  properties:
-                    bot:
-                      description: Define a prediction via a bot
-                      properties:
-                        connectionName:
-                          description: the connection to the messaging provider Required,
-                          type: string
-                        notifierName:
-                          description: The name of the notifier that will be used
-                            by the prediction bot. Required
-                          type: string
-                      type: object
-                    bucket:
-                      description: Define a prediction via a bot
-                      properties:
-                        connectionName:
-                          description: the connection to the cloud provider Required,
-                          type: string
-                        databaseConnectionName:
-                          description: Required,
-                          type: string
-                        inputKey:
-                          description: The location of the input or the output Required,
-                          type: string
-                        scanInterval:
-                          description: In seconds, the interval.
-                          format: int32
-                          type: integer
-                      type: object
-                    streaming:
-                      description: Define a streaming spec for the predictor
-                      properties:
-                        connectionName:
-                          description: StorageConnection name to the streaming provider
-                          type: string
-                        inputKey:
-                          description: the streaming topic (input or output)
-                          type: string
-                      type: object
-                    table:
-                      description: Define a prediction via table
-                      properties:
-                        connectionName:
-                          description: connection to the database provider
-                          type: string
-                        datasourceName:
-                          description: Options, this is the datasource containing
-                            the table schema
-                          type: string
-                        scanInterval:
-                          description: In seconds, the interval.
-                          format: int32
-                          type: integer
-                        tableName:
-                          description: The table name. Optional Default to the predictor
-                            name
-                          type: string
-                      type: object
-                  type: object
-                type: array
+                properties:
+                  bot:
+                    description: Bot is a channel that uses chats for input and output
+                    properties:
+                      connectionName:
+                        description: the connection to the messaging provider Required,
+                        type: string
+                      notifierName:
+                        description: The name of the notifier that will be used by
+                          the prediction bot. Required
+                        type: string
+                    type: object
+                  bucket:
+                    description: Bucket is a channel where predictions are placed
+                      in a bucket folder and results are placed in another folder
+                    properties:
+                      connectionName:
+                        description: the connection to the cloud provider Required,
+                        type: string
+                      databaseConnectionName:
+                        description: Required,
+                        type: string
+                      inputKey:
+                        description: The location of the input or the output Required,
+                        type: string
+                      scanInterval:
+                        description: In seconds, the interval.
+                        format: int32
+                        type: integer
+                    type: object
+                  online:
+                    description: Online is a  deployment of the predictor as a microservice.
+                    properties:
+                      accessType:
+                        description: 'The access method specified how external clients
+                          will access the predictor Default: ClusterPort'
+                        enum:
+                        - cluster-port
+                        - node-port
+                        - load-balancer
+                        - ingress
+                        - mesh
+                        - none
+                        type: string
+                      path:
+                        description: 'This is the path relative to the ingress path
+                          Default: /predict'
+                        maxLength: 256
+                        minLength: 1
+                        type: string
+                      port:
+                        description: 'Service port specify the predictor port. Default:
+                          8080'
+                        format: int32
+                        type: integer
+                    type: object
+                  streaming:
+                    description: Define a streaming channel for the predictor
+                    properties:
+                      connectionName:
+                        description: StorageConnection name to the streaming provider
+                        type: string
+                      inputKey:
+                        description: the streaming topic (input or output)
+                        type: string
+                    type: object
+                  table:
+                    description: Table is a channel that uses RDBMS for input and
+                      output
+                    properties:
+                      connectionName:
+                        description: connection to the database provider
+                        type: string
+                      datasourceName:
+                        description: Options, this is the datasource containing the
+                          table schema
+                        type: string
+                      scanInterval:
+                        description: In seconds, the interval.
+                        format: int32
+                        type: integer
+                      tableName:
+                        description: The table name. Optional Default to the predictor
+                          name
+                        type: string
+                    type: object
+                type: object
               owner:
                 default: no-one
                 description: The owner account name

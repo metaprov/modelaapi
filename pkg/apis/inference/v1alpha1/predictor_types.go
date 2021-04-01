@@ -163,10 +163,10 @@ type PredictorSpec struct {
 	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,14,opt,name=artifactsFolder"`
 	// set of input channel, the predictor will watch those channels for predictions
 	// +kubebuilder:validation:Optional
-	InputChannels []PredictionChannel `json:"inputChannels,omitempty" protobuf:"bytes,15,opt,name=inputChannels"`
+	Input PredictionChannels `json:"input,omitempty" protobuf:"bytes,15,opt,name=input"`
 	// set of output channels, the predictor will
 	// +kubebuilder:validation:Optional
-	OutputChannels []PredictionChannel `json:"outputChannels,omitempty" protobuf:"bytes,16,opt,name=outputChannels"`
+	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,16,opt,name=output"`
 	// Min num of replicates
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
@@ -250,19 +250,39 @@ type PredictorHealth struct {
 }
 
 // The specific of a prediction channel
-type PredictionChannel struct {
-	// Define a prediction via table
+type PredictionChannels struct {
+	// Online is a  deployment of the predictor as a microservice.
 	// +kubebuilder:validation:Optional
-	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,1,opt,name=table"`
-	// Define a prediction via a bot
+	Online *OnlineChannelSpec `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
+	// Table is a channel that uses RDBMS for input and output
 	// +kubebuilder:validation:Optional
-	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,2,opt,name=bot"`
-	// Define a prediction via a bot
+	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
+	// Bot is a channel that uses chats for input and output
 	// +kubebuilder:validation:Optional
-	Bucket *BucketChannelSpec `json:"bucket,omitempty" protobuf:"bytes,3,opt,name=bucket"`
-	// Define a streaming spec for the predictor
+	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,3,opt,name=bot"`
+	// Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
 	// +kubebuilder:validation:Optional
-	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,4,opt,name=streaming"`
+	Bucket *BucketChannelSpec `json:"bucket,omitempty" protobuf:"bytes,4,opt,name=bucket"`
+	// Define a streaming channel for the predictor
+	// +kubebuilder:validation:Optional
+	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,5,opt,name=streaming"`
+}
+
+type OnlineChannelSpec struct {
+	// Service port specify the predictor port.
+	// Default: 8080
+	// +kubebuilder:validation:Optional
+	Port *int32 `json:"port,omitempty" protobuf:"varint,5,opt,name=port"`
+	// This is the path relative to the ingress path
+	// +kubebuilder:validation:MaxLength=256
+	// +kubebuilder:validation:MinLength=1
+	// Default: /predict
+	// +kubebuilder:validation:Optional
+	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
+	// The access method specified how external clients will access the predictor
+	// Default: ClusterPort
+	// +kubebuilder:validation:Optional
+	AccessType *AccessType `json:"accessType,omitempty" protobuf:"bytes,7,opt,name=accessType"`
 }
 
 type StreamingChannelSpec struct {
