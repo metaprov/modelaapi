@@ -331,37 +331,37 @@ func (this *ModelPipelineRun) MarkProdStageRunning() {
 	this.Status.Phase = PipelinePhaseRunning
 	this.Status.Stage = ModelPipelineStageProd
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:   MPRProdCompleted,
+		Type:   MPRModelReleased,
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
 }
 
 func (this *ModelPipelineRun) IsProdStageRunning() bool {
-	return this.GetCond(MPRProdCompleted).Status == v1.ConditionFalse &&
-		this.GetCond(MPRProdCompleted).Reason == string(catalog.Running)
+	return this.GetCond(MPRModelReleased).Status == v1.ConditionFalse &&
+		this.GetCond(MPRModelReleased).Reason == string(catalog.Running)
 }
 
 func (this *ModelPipelineRun) MarkProdStageCompleted() {
 	this.Status.DataStatus.RecordCompleted()
 	this.Status.Phase = PipelinePhaseRunning
-	this.Status.Stage = ModelPipelineStageUAT
+	this.Status.Stage = ModelPipelineStageProd
 
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:   MPRProdCompleted,
+		Type:   MPRModelReleased,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (this *ModelPipelineRun) IsProdStageCompleted() bool {
-	return this.GetCond(MPRProdCompleted).Status == v1.ConditionTrue
+	return this.GetCond(MPRModelReleased).Status == v1.ConditionTrue
 }
 
 func (this *ModelPipelineRun) MarkProdStageFailed(err error) {
 	this.Status.DataStatus.RecordError(err)
-	this.Status.Stage = ModelPipelineStageUAT
+	this.Status.Stage = ModelPipelineStageProd
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:    MPRProdCompleted,
+		Type:    MPRModelReleased,
 		Status:  v1.ConditionFalse,
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
@@ -369,6 +369,6 @@ func (this *ModelPipelineRun) MarkProdStageFailed(err error) {
 }
 
 func (this *ModelPipelineRun) IsProdStageFailed() bool {
-	return this.GetCond(MPRProdCompleted).Status == v1.ConditionFalse &&
-		this.GetCond(MPRProdCompleted).Reason == string(catalog.Failed)
+	return this.GetCond(MPRModelReleased).Status == v1.ConditionFalse &&
+		this.GetCond(MPRModelReleased).Reason == string(catalog.Failed)
 }
