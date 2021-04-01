@@ -39,11 +39,6 @@ class CronPredictionServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionResponse.FromString,
                 )
-        self.Download = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/Download',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DownloadCronPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DownloadCronPredictionResponse.FromString,
-                )
 
 
 class CronPredictionServiceServicer(object):
@@ -79,12 +74,6 @@ class CronPredictionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Download(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_CronPredictionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -112,11 +101,6 @@ def add_CronPredictionServiceServicer_to_server(servicer, server):
                     servicer.DeleteCronPrediction,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionResponse.SerializeToString,
-            ),
-            'Download': grpc.unary_unary_rpc_method_handler(
-                    servicer.Download,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DownloadCronPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DownloadCronPredictionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -210,22 +194,5 @@ class CronPredictionService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Download(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/Download',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DownloadCronPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DownloadCronPredictionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

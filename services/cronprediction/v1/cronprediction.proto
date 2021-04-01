@@ -52,17 +52,6 @@ message DeleteCronPredictionResponse {
 
 }
 
-message DownloadCronPredictionRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-// Answer the report in base 64
-message DownloadCronPredictionResponse {
-    bytes raw = 1;
-
-}
-
 
 service CronPredictionService {
 
@@ -92,9 +81,6 @@ service CronPredictionService {
         option (google.api.http).delete = "/v1/cronpredictions/{name}";
     }
 
-    rpc Download(DownloadCronPredictionRequest) returns (DownloadCronPredictionResponse) {
-        option (google.api.http).get = "/api/v1alpha1/cronpredictions/{name}:download";
-    }
-
+  
 
 }

@@ -235,45 +235,5 @@ export class CronPredictionServiceClient {
     this.methodInfoDeleteCronPrediction);
   }
 
-  methodInfoDownload = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionResponse.deserializeBinary
-  );
-
-  download(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionResponse>;
-
-  download(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionResponse>;
-
-  download(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DownloadCronPredictionResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/Download',
-        request,
-        metadata || {},
-        this.methodInfoDownload,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/Download',
-    request,
-    metadata || {},
-    this.methodInfoDownload);
-  }
-
 }
 
