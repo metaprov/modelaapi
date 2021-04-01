@@ -93,8 +93,6 @@ service CronPredictionService {
     rpc RunPrediction(RunCronPredictionRequest) returns (RunCronPredictionResponse) {
         option (google.api.http).post = "/v1/cronpredictions/{name}:run";
     }
-
-
   
 
 }
