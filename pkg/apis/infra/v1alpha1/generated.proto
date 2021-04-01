@@ -173,6 +173,62 @@ message AliCloudSpec {
   optional string host = 4;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modeld}
+message ApiToken {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ApiTokenSpec spec = 2;
+
+  optional ApiTokenStatus status = 3;
+}
+
+// ApiTokenCondition describes the state of the license at a certain point.
+message ApiTokenCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// ApiTokenList is a list of ApiTokens
+message ApiTokenList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ApiToken items = 2;
+}
+
+// ApiTokenSpec defines the desired state of ApiToken
+message ApiTokenSpec {
+  // User provided description
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  optional string owner = 6;
+}
+
+// ApiTokenStatus is the observed state of a ApiToken
+message ApiTokenStatus {
+  // +optional
+  repeated ApiTokenCondition conditions = 1;
+}
+
 // =================== Definitions of spec files for each type
 // AthenaSpec defines the connection to Athena db
 message AthenaSpec {

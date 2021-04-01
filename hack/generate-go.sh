@@ -44,6 +44,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          k8s.io/apimachinery/pkg/runtime/generated.proto \
          github.com/gogo/protobuf/gogoproto/gogo.proto \
          github.com/metaprov/modeldapi/services/account/v1/account.proto \
+         github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto \
          github.com/metaprov/modeldapi/services/archived/v1/archived.proto \
          github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto \
          github.com/metaprov/modeldapi/services/cloudsd/v1/cloudsd.proto \

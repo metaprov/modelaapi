@@ -1,0 +1,148 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/apitoken/v1";
+
+package github.com.metaprov.modeldapi.services.apitoken.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListApiTokensRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListApiTokensResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiTokenList items = 1;   
+}
+
+message ApiTokenResponse {}
+
+message CreateApiTokenRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken  item = 1;
+    string password = 2;    
+}
+
+message CreateApiTokenResponse {
+
+}
+
+message UpdateApiTokenRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+}
+
+message UpdateApiTokenResponse {
+
+}
+
+message GetApiTokenRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetApiTokenResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetApiTokenNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetApiTokenNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteApiTokenRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteApiTokenResponse {}
+
+
+message ApiTokenCreateResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message ApiTokenLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message ApiTokenLoginResponse {
+    string token = 1; // jwt token
+}
+
+
+message ApiTokenGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message ApiTokenLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+
+
+
+service ApiTokenService {
+    rpc ListApiTokens(ListApiTokensRequest) returns (ListApiTokensResponse) {
+        option (google.api.http).get = "/v1/apitokens";
+    }
+    rpc CreateApiToken(CreateApiTokenRequest) returns (CreateApiTokenResponse) {
+        option (google.api.http) = {
+			post: "/v1/apitokens"
+			body: "apitoken"
+		};
+    }
+    rpc GetApiToken(GetApiTokenRequest) returns (GetApiTokenResponse) {
+        option (google.api.http).get = "/v1/{namespace}/apitokens/{name}";
+    }
+    rpc UpdateApiToken(UpdateApiTokenRequest) returns (UpdateApiTokenResponse) {
+        option (google.api.http) = {
+			put: "/v1/{apitoken.metadata.namespace}/apitokens//{apitoken.metadata.name}"
+			body: "apitoken"
+		};
+    }
+
+    rpc DeleteApiToken(DeleteApiTokenRequest) returns (DeleteApiTokenResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/apitokens/{name}";
+    }
+
+}
