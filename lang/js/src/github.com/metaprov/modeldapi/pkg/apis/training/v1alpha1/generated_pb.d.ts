@@ -2440,6 +2440,11 @@ export class ProdStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): ProdStageSpec;
 
+  getTestsList(): Array<ModelTestSpec>;
+  setTestsList(value: Array<ModelTestSpec>): ProdStageSpec;
+  clearTestsList(): ProdStageSpec;
+  addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProdStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ProdStageSpec): ProdStageSpec.AsObject;
@@ -2454,6 +2459,7 @@ export namespace ProdStageSpec {
     predictorname: string,
     template?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
+    testsList: Array<ModelTestSpec.AsObject>,
   }
 }
 

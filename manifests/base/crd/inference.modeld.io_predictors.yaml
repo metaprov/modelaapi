@@ -193,8 +193,9 @@ spec:
                   description: The desired state of the model.
                   properties:
                     canary:
-                      description: 'Denotes if this deployment is canary. This must
-                        be false for the prod deployment. Default: false'
+                      description: 'Canary denotes if this deployment is staged release.
+                        A staged release will serve traffic in incerements Default:
+                        false'
                       type: boolean
                     canaryMetrics:
                       description: 'If the deployment is canary, the metric define
@@ -208,23 +209,46 @@ spec:
                         - crash
                         type: string
                       type: array
-                    filter:
-                      description: Filter donotes a selection on the model
-                      type: string
-                    modelName:
-                      description: The model serving the prediction
-                      type: string
-                    shadow:
-                      description: 'Denotes if the model is a shadow. This must be
-                        false for the prod deployment. Default: false'
+                    deployed:
+                      description: 'a deployed model is a model whose containers are
+                        up, but does not serve production traffic. Default: false'
                       type: boolean
-                    weight:
-                      description: 'How much traffic to the current model Default:
-                        100.'
+                    maxTraffic:
+                      description: 'How much traffic this deployment model should
+                        serve. Default: 100.'
                       format: int32
                       maximum: 100
                       minimum: 0
                       type: integer
+                    modelName:
+                      description: ModelName is the name of the model. The name must
+                        be unique within
+                      type: string
+                    modelVersion:
+                      description: The version of the model. Note that a single predictor
+                        might serve different models
+                      type: string
+                    released:
+                      description: 'A released model is a model that should serve
+                        production traffic. Default: false'
+                      type: boolean
+                    shadow:
+                      description: 'Shadow denotes if the model is running in shadow
+                        mode. a shadow model face the production traffic, however,
+                        the predictions are not served back to the client Default:
+                        false'
+                      type: boolean
+                    traffic:
+                      description: 'Traffic is the current amount of production traffic
+                        served by this model. Default: 100.'
+                      format: int32
+                      maximum: 100
+                      minimum: 0
+                      type: integer
+                    trafficSelector:
+                      description: TrafficSelector is a filter on the traffic to this
+                        model
+                      type: string
                   type: object
                 type: array
               outputChannels:
@@ -7071,6 +7095,11 @@ spec:
                     dailyPredictionAvg:
                       format: int32
                       type: integer
+                    deployedAt:
+                      description: DeployedAt is the last time that this model was
+                        deployed
+                      format: date-time
+                      type: string
                     deploymentName:
                       description: The deployment name that serves this model
                       type: string
@@ -7081,16 +7110,27 @@ spec:
                     imageName:
                       description: The model image name
                       type: string
-                    lastPrediction:
-                      description: Last current prediction
+                    lastFailure:
+                      description: LastFailure is the last faiure that occur with
+                        the model
+                      type: string
+                    lastPredictionTime:
+                      description: Last prediction time is the time of the last prediction
                       format: date-time
                       type: string
-                    p9:
-                      description: P95 latency
-                      type: number
                     p95:
                       description: P95 latency
                       type: number
+                    p99:
+                      description: P99 is the 99% latency of the model
+                      type: number
+                    phase:
+                      description: Phase is the current phase of this model deployment
+                      type: string
+                    releasedAt:
+                      description: ReleasedAt is the time that this model was released
+                      format: date-time
+                      type: string
                     serviceName:
                       description: The service name that serves this model
                       type: string

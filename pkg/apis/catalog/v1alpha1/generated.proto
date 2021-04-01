@@ -339,34 +339,93 @@ message Measurement {
 
 // The desired state of the model.
 message ModelDeploymentSpec {
-  // The model serving the prediction
+  // ModelName is the name of the model. The name must be unique within
+  // +kubebuilder:validation:Required
   optional string modelName = 1;
 
-  // How much traffic to the current model
+  // The version of the model. Note that a single predictor might serve different models
+  optional string modelVersion = 2;
+
+  // How much traffic this deployment model should serve.
   // Default: 100.
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Minimum=0
-  optional int32 weight = 4;
+  optional int32 maxTraffic = 3;
 
-  // Denotes if this deployment is canary. This must be false for the prod deployment.
+  // Traffic is the current amount of production traffic served by this model.
+  // +kubebuilder:validation:Maximum=100
+  // +kubebuilder:validation:Minimum=0
+  // Default: 100.
+  // +kubebuilder:validation:Optional
+  optional int32 traffic = 4;
+
+  // Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
   // Default: false
   // +kubebuilder:validation:Optional
   optional bool canary = 5;
 
-  // Denotes if the model is a shadow. This must be false for the prod deployment.
+  // Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
+  // served back to the client
   // Default: false
   // +kubebuilder:validation:Optional
   optional bool shadow = 6;
 
-  // Filter donotes a selection on the model
+  // A released model is a model that should serve production traffic.
+  // Default: false
   // +kubebuilder:validation:Optional
-  optional string filter = 7;
+  optional bool released = 7;
+
+  // a deployed model is a model whose containers are up, but does not serve production traffic.
+  // Default: false
+  // +kubebuilder:validation:Optional
+  optional bool deployed = 8;
+
+  // TrafficSelector is a filter on the traffic to this model
+  // +kubebuilder:validation:Optional
+  optional string trafficSelector = 9;
 
   // If the deployment is canary, the metric define how to evaluate the canary.
   // Default: none
   // +kubebuilder:validation:Optional
-  repeated string canaryMetrics = 8;
+  repeated string canaryMetrics = 10;
+}
+
+message ModelDeploymentStatus {
+  // The model image name
+  optional string imageName = 1;
+
+  // The deployment name that serves this model
+  optional string deploymentName = 2;
+
+  // The service name that serves this model
+  optional string serviceName = 3;
+
+  // the name of the horizonal pod autoscaler, if autoscaling is true
+  optional string hpaName = 4;
+
+  // P95 latency
+  optional double current95 = 5;
+
+  // P99 is the 99% latency of the model
+  optional double current99 = 6;
+
+  // Last prediction time is the time of the last prediction
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPredictionTime = 7;
+
+  optional int32 dailyPredictionAvg = 8;
+
+  // LastFailure is the last faiure that occur with the model
+  optional string lastFailure = 9;
+
+  // Phase is the current phase of this model deployment
+  optional string phase = 10;
+
+  // DeployedAt is the last time that this model was deployed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 11;
+
+  // ReleasedAt is the time that this model was released
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 12;
 }
 
 // Pretrained model contain the metadata about a pretrained model

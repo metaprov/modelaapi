@@ -1553,10 +1553,13 @@ message ProdStageSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec template = 3;
 
-  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
+  // ManualApproval dentoes if we need manual approval before advancing from deployed to released
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 4;
+
+  // Tests is the List of tests to run against the deployed model before moving production traffic to the model
+  repeated ModelTestSpec tests = 5;
 }
 
 // +kubebuilder:object:root=true

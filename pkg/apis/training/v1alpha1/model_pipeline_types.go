@@ -213,7 +213,7 @@ type ProdStageSpec struct {
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// Tests is the List of tests to run against the deployed model before moving production traffic to the model
-	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

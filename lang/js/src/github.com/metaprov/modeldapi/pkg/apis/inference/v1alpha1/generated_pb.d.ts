@@ -444,54 +444,6 @@ export namespace DriftCheckSpec {
   }
 }
 
-export class ModelDeploymentStatus extends jspb.Message {
-  getImagename(): string;
-  setImagename(value: string): ModelDeploymentStatus;
-
-  getDeploymentname(): string;
-  setDeploymentname(value: string): ModelDeploymentStatus;
-
-  getServicename(): string;
-  setServicename(value: string): ModelDeploymentStatus;
-
-  getHpaname(): string;
-  setHpaname(value: string): ModelDeploymentStatus;
-
-  getCurrent95(): number;
-  setCurrent95(value: number): ModelDeploymentStatus;
-
-  getCurrent99(): number;
-  setCurrent99(value: number): ModelDeploymentStatus;
-
-  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
-  hasLastprediction(): boolean;
-  clearLastprediction(): ModelDeploymentStatus;
-
-  getDailypredictionavg(): number;
-  setDailypredictionavg(value: number): ModelDeploymentStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
-  static serializeBinaryToWriter(message: ModelDeploymentStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelDeploymentStatus;
-  static deserializeBinaryFromReader(message: ModelDeploymentStatus, reader: jspb.BinaryReader): ModelDeploymentStatus;
-}
-
-export namespace ModelDeploymentStatus {
-  export type AsObject = {
-    imagename: string,
-    deploymentname: string,
-    servicename: string,
-    hpaname: string,
-    current95: number,
-    current99: number,
-    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    dailypredictionavg: number,
-  }
-}
-
 export class OnlineFeaturestoreSpec extends jspb.Message {
   getActive(): boolean;
   setActive(value: boolean): OnlineFeaturestoreSpec;
@@ -1035,10 +987,10 @@ export namespace PredictorSpec {
 }
 
 export class PredictorStatus extends jspb.Message {
-  getModelstatusList(): Array<ModelDeploymentStatus>;
-  setModelstatusList(value: Array<ModelDeploymentStatus>): PredictorStatus;
+  getModelstatusList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>;
+  setModelstatusList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>): PredictorStatus;
   clearModelstatusList(): PredictorStatus;
-  addModelstatus(value?: ModelDeploymentStatus, index?: number): ModelDeploymentStatus;
+  addModelstatus(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1076,7 +1028,7 @@ export class PredictorStatus extends jspb.Message {
 
 export namespace PredictorStatus {
   export type AsObject = {
-    modelstatusList: Array<ModelDeploymentStatus.AsObject>,
+    modelstatusList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.AsObject>,
     conditionsList: Array<PredictorCondition.AsObject>,
     monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
     monitorlastscore: number,

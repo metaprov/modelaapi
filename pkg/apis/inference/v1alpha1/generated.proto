@@ -231,31 +231,6 @@ message DriftCheckSpec {
   optional string testDataset = 4;
 }
 
-message ModelDeploymentStatus {
-  // The model image name
-  optional string imageName = 1;
-
-  // The deployment name that serves this model
-  optional string deploymentName = 2;
-
-  // The service name that serves this model
-  optional string serviceName = 3;
-
-  // the name of the horizonal pod autoscaler, if autoscaling is true
-  optional string hpaName = 4;
-
-  // P95 latency
-  optional double current95 = 5;
-
-  // P95 latency
-  optional double current99 = 6;
-
-  // Last current prediction
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 7;
-
-  optional int32 dailyPredictionAvg = 8;
-}
-
 // A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
 message OnlineFeaturestoreSpec {
   // Active indicate if the cache is active
@@ -569,7 +544,7 @@ message PredictorSpec {
 message PredictorStatus {
   // Model one status
   // +kubebuilder:validation:Optional
-  repeated ModelDeploymentStatus modelStatus = 1;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus modelStatus = 1;
 
   repeated PredictorCondition conditions = 2;
 

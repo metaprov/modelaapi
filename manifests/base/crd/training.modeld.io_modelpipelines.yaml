@@ -189,8 +189,8 @@ spec:
                 properties:
                   manualApproval:
                     default: false
-                    description: ManualApproval dentoes if we need manual apporval
-                      before advancing to further stages in the pipeline
+                    description: ManualApproval dentoes if we need manual approval
+                      before advancing from deployed to released
                     type: boolean
                   predictorName:
                     description: PredictorName he release predictor. The predictor
@@ -203,8 +203,9 @@ spec:
                     description: Weight is the weight of the model.
                     properties:
                       canary:
-                        description: 'Denotes if this deployment is canary. This must
-                          be false for the prod deployment. Default: false'
+                        description: 'Canary denotes if this deployment is staged
+                          release. A staged release will serve traffic in incerements
+                          Default: false'
                         type: boolean
                       canaryMetrics:
                         description: 'If the deployment is canary, the metric define
@@ -218,24 +219,116 @@ spec:
                           - crash
                           type: string
                         type: array
-                      filter:
-                        description: Filter donotes a selection on the model
-                        type: string
-                      modelName:
-                        description: The model serving the prediction
-                        type: string
-                      shadow:
-                        description: 'Denotes if the model is a shadow. This must
-                          be false for the prod deployment. Default: false'
+                      deployed:
+                        description: 'a deployed model is a model whose containers
+                          are up, but does not serve production traffic. Default:
+                          false'
                         type: boolean
-                      weight:
-                        description: 'How much traffic to the current model Default:
-                          100.'
+                      maxTraffic:
+                        description: 'How much traffic this deployment model should
+                          serve. Default: 100.'
                         format: int32
                         maximum: 100
                         minimum: 0
                         type: integer
+                      modelName:
+                        description: ModelName is the name of the model. The name
+                          must be unique within
+                        type: string
+                      modelVersion:
+                        description: The version of the model. Note that a single
+                          predictor might serve different models
+                        type: string
+                      released:
+                        description: 'A released model is a model that should serve
+                          production traffic. Default: false'
+                        type: boolean
+                      shadow:
+                        description: 'Shadow denotes if the model is running in shadow
+                          mode. a shadow model face the production traffic, however,
+                          the predictions are not served back to the client Default:
+                          false'
+                        type: boolean
+                      traffic:
+                        description: 'Traffic is the current amount of production
+                          traffic served by this model. Default: 100.'
+                        format: int32
+                        maximum: 100
+                        minimum: 0
+                        type: integer
+                      trafficSelector:
+                        description: TrafficSelector is a filter on the traffic to
+                          this model
+                        type: string
                     type: object
+                  tests:
+                    description: Tests is the List of tests to run against the deployed
+                      model before moving production traffic to the model
+                    items:
+                      properties:
+                        datasetName:
+                          description: Name of the dataset used for testing
+                          type: string
+                        maxTime:
+                          description: Max time in seconds
+                          format: int32
+                          type: integer
+                        minScores:
+                          description: Minimum scores required to pass the tests
+                          items:
+                            properties:
+                              metric:
+                                description: Metric is the name of the metric
+                                enum:
+                                - accuracy
+                                - average-precision
+                                - balanced-accuracy
+                                - brier-score-loss
+                                - f1
+                                - f1-macro
+                                - f1-micro
+                                - f1-weighted
+                                - log-loss
+                                - precision
+                                - precision-micro
+                                - precision-macro
+                                - precision-weighted
+                                - recall
+                                - recall-macro
+                                - recall-micro
+                                - recall-weighted
+                                - auc
+                                - fp
+                                - fn
+                                - tn
+                                - tp
+                                - explained_variance
+                                - mae
+                                - mse
+                                - msle
+                                - median-absolute-error
+                                - r2
+                                - adjusted-mutual-info-score
+                                - adjusted-rand-score
+                                - completeness-score
+                                - fowlkes-mallows-score
+                                - homogeneity-score
+                                - mutual-info-score
+                                - normalized-mutual-info-score
+                                - v-measure-score
+                                - rmse
+                                - unknown
+                                - mape
+                                - smape
+                                - mdape
+                                type: string
+                              score:
+                                description: The score needed.
+                                type: number
+                            type: object
+                          type: array
+                      type: object
+                    type: array
                 type: object
               schedule:
                 description: Schedule for running the pipeline

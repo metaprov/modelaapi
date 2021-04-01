@@ -1402,7 +1402,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -24276,6 +24276,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -24310,7 +24317,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.toO
     servingsitename: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     predictorname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f),
-    manualapproval: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+    manualapproval: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+    testsList: jspb.Message.toObjectList(msg.getTestsList(),
+    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -24363,6 +24372,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.des
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setManualapproval(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec.deserializeBinaryFromReader);
+      msg.addTests(value);
       break;
     default:
       reader.skipField();
@@ -24420,6 +24434,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.ser
     writer.writeBool(
       4,
       f
+    );
+  }
+  f = message.getTestsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec.serializeBinaryToWriter
     );
   }
 };
@@ -24567,6 +24589,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.pro
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.hasManualapproval = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated ModelTestSpec tests = 5;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.getTestsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.setTestsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.addTests = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestSpec, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ProdStageSpec.prototype.clearTestsList = function() {
+  return this.setTestsList([]);
 };
 
 

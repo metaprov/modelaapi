@@ -1175,13 +1175,13 @@ type ModelDeploymentSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
-	MaxTraffic *int32 `json:"weight,omitempty" protobuf:"varint,3,opt,name=weight"`
+	MaxTraffic *int32 `json:"maxTraffic,omitempty" protobuf:"varint,3,opt,name=maxTraffic"`
 	// Traffic is the current amount of production traffic served by this model.
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Minimum=0
 	// Default: 100.
 	// +kubebuilder:validation:Optional
-	Traffic *int32 `json:"weight,omitempty" protobuf:"varint,4,opt,name=weight"`
+	Traffic *int32 `json:"traffic,omitempty" protobuf:"varint,4,opt,name=traffic"`
 	// Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
 	// Default: false
 	// +kubebuilder:validation:Optional
@@ -1201,7 +1201,7 @@ type ModelDeploymentSpec struct {
 	Deployed *bool `json:"deployed,omitempty" protobuf:"bytes,8,opt,name=deployed"`
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
-	TrafficSelector *string `json:"traficSelector,omitempty" protobuf:"bytes,9,opt,name=trafficSelector"`
+	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,9,opt,name=trafficSelector"`
 	// If the deployment is canary, the metric define how to evaluate the canary.
 	// Default: none
 	// +kubebuilder:validation:Optional
@@ -1220,9 +1220,9 @@ type ModelDeploymentStatus struct {
 	// P95 latency
 	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
 	// P99 is the 99% latency of the model
-	P99 float64 `json:"p9,omitempty" protobuf:"bytes,6,opt,name=current99"`
-	// Last current prediction
-	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,7,opt,name=lastPrediction"`
+	P99 float64 `json:"p99,omitempty" protobuf:"bytes,6,opt,name=current99"`
+	// Last prediction time is the time of the last prediction
+	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,7,opt,name=lastPredictionTime"`
 
 	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,8,opt,name=dailyPredictionAvg"`
 	// LastFailure is the last faiure that occur with the model

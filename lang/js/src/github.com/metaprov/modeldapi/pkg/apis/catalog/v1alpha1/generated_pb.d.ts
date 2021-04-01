@@ -638,8 +638,14 @@ export class ModelDeploymentSpec extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelDeploymentSpec;
 
-  getWeight(): number;
-  setWeight(value: number): ModelDeploymentSpec;
+  getModelversion(): string;
+  setModelversion(value: string): ModelDeploymentSpec;
+
+  getMaxtraffic(): number;
+  setMaxtraffic(value: number): ModelDeploymentSpec;
+
+  getTraffic(): number;
+  setTraffic(value: number): ModelDeploymentSpec;
 
   getCanary(): boolean;
   setCanary(value: boolean): ModelDeploymentSpec;
@@ -647,8 +653,14 @@ export class ModelDeploymentSpec extends jspb.Message {
   getShadow(): boolean;
   setShadow(value: boolean): ModelDeploymentSpec;
 
-  getFilter(): string;
-  setFilter(value: string): ModelDeploymentSpec;
+  getReleased(): boolean;
+  setReleased(value: boolean): ModelDeploymentSpec;
+
+  getDeployed(): boolean;
+  setDeployed(value: boolean): ModelDeploymentSpec;
+
+  getTrafficselector(): string;
+  setTrafficselector(value: string): ModelDeploymentSpec;
 
   getCanarymetricsList(): Array<string>;
   setCanarymetricsList(value: Array<string>): ModelDeploymentSpec;
@@ -666,11 +678,83 @@ export class ModelDeploymentSpec extends jspb.Message {
 export namespace ModelDeploymentSpec {
   export type AsObject = {
     modelname: string,
-    weight: number,
+    modelversion: string,
+    maxtraffic: number,
+    traffic: number,
     canary: boolean,
     shadow: boolean,
-    filter: string,
+    released: boolean,
+    deployed: boolean,
+    trafficselector: string,
     canarymetricsList: Array<string>,
+  }
+}
+
+export class ModelDeploymentStatus extends jspb.Message {
+  getImagename(): string;
+  setImagename(value: string): ModelDeploymentStatus;
+
+  getDeploymentname(): string;
+  setDeploymentname(value: string): ModelDeploymentStatus;
+
+  getServicename(): string;
+  setServicename(value: string): ModelDeploymentStatus;
+
+  getHpaname(): string;
+  setHpaname(value: string): ModelDeploymentStatus;
+
+  getCurrent95(): number;
+  setCurrent95(value: number): ModelDeploymentStatus;
+
+  getCurrent99(): number;
+  setCurrent99(value: number): ModelDeploymentStatus;
+
+  getLastpredictiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastpredictiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasLastpredictiontime(): boolean;
+  clearLastpredictiontime(): ModelDeploymentStatus;
+
+  getDailypredictionavg(): number;
+  setDailypredictionavg(value: number): ModelDeploymentStatus;
+
+  getLastfailure(): string;
+  setLastfailure(value: string): ModelDeploymentStatus;
+
+  getPhase(): string;
+  setPhase(value: string): ModelDeploymentStatus;
+
+  getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasDeployedat(): boolean;
+  clearDeployedat(): ModelDeploymentStatus;
+
+  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasReleasedat(): boolean;
+  clearReleasedat(): ModelDeploymentStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelDeploymentStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelDeploymentStatus;
+  static deserializeBinaryFromReader(message: ModelDeploymentStatus, reader: jspb.BinaryReader): ModelDeploymentStatus;
+}
+
+export namespace ModelDeploymentStatus {
+  export type AsObject = {
+    imagename: string,
+    deploymentname: string,
+    servicename: string,
+    hpaname: string,
+    current95: number,
+    current99: number,
+    lastpredictiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    dailypredictionavg: number,
+    lastfailure: string,
+    phase: string,
+    deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
