@@ -242,37 +242,3 @@ export namespace DownloadPredictionResponse {
   }
 }
 
-export class RunPredictionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction): RunPredictionRequest;
-  hasItem(): boolean;
-  clearItem(): RunPredictionRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunPredictionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RunPredictionRequest): RunPredictionRequest.AsObject;
-  static serializeBinaryToWriter(message: RunPredictionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunPredictionRequest;
-  static deserializeBinaryFromReader(message: RunPredictionRequest, reader: jspb.BinaryReader): RunPredictionRequest;
-}
-
-export namespace RunPredictionRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction.AsObject,
-  }
-}
-
-export class RunPredictionResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunPredictionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RunPredictionResponse): RunPredictionResponse.AsObject;
-  static serializeBinaryToWriter(message: RunPredictionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunPredictionResponse;
-  static deserializeBinaryFromReader(message: RunPredictionResponse, reader: jspb.BinaryReader): RunPredictionResponse;
-}
-
-export namespace RunPredictionResponse {
-  export type AsObject = {
-  }
-}
-

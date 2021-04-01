@@ -65,13 +65,6 @@ message DownloadPredictionResponse {
 }
 
 
-message RunPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
-}
-
-message RunPredictionResponse {
-    
-}
 
 
 service PredictionService {
@@ -106,8 +99,5 @@ service PredictionService {
         option (google.api.http).get = "/api/v1alpha1/{namespace}/predictions/{name}:download";
     }
 
-    rpc RunPrediction(RunPredictionRequest) returns (RunPredictionResponse) {
-        option (google.api.http).post = "/api/v1/predictions/{namespace}/{name}:run";
-    }
-
+    
 }

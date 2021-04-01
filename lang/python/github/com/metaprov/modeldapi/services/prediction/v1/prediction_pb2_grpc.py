@@ -44,11 +44,6 @@ class PredictionServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionResponse.FromString,
                 )
-        self.RunPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.prediction.v1.PredictionService/RunPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.RunPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.RunPredictionResponse.FromString,
-                )
 
 
 class PredictionServiceServicer(object):
@@ -90,12 +85,6 @@ class PredictionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RunPrediction(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_PredictionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -128,11 +117,6 @@ def add_PredictionServiceServicer_to_server(servicer, server):
                     servicer.Download,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionResponse.SerializeToString,
-            ),
-            'RunPrediction': grpc.unary_unary_rpc_method_handler(
-                    servicer.RunPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.RunPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.RunPredictionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -243,22 +227,5 @@ class PredictionService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.prediction.v1.PredictionService/Download',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.DownloadPredictionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RunPrediction(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.prediction.v1.PredictionService/RunPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.RunPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_prediction_dot_v1_dot_prediction__pb2.RunPredictionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

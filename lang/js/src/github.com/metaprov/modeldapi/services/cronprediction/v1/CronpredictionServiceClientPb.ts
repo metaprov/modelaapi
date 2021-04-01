@@ -235,5 +235,45 @@ export class CronPredictionServiceClient {
     this.methodInfoDeleteCronPrediction);
   }
 
+  methodInfoRunPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse,
+    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse.deserializeBinary
+  );
+
+  runPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse>;
+
+  runPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse>;
+
+  runPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunPredictionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
+        request,
+        metadata || {},
+        this.methodInfoRunPrediction,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
+    request,
+    metadata || {},
+    this.methodInfoRunPrediction);
+  }
+
 }
 
