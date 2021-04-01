@@ -618,3 +618,45 @@ export namespace ListNotebookRunResponse {
   }
 }
 
+export class ListCronPredictionsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListCronPredictionsRequest;
+
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): ListCronPredictionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCronPredictionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCronPredictionsRequest): ListCronPredictionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListCronPredictionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCronPredictionsRequest;
+  static deserializeBinaryFromReader(message: ListCronPredictionsRequest, reader: jspb.BinaryReader): ListCronPredictionsRequest;
+}
+
+export namespace ListCronPredictionsRequest {
+  export type AsObject = {
+    namespace: string,
+    selectorMap: Array<[string, string]>,
+  }
+}
+
+export class ListCronPredictionsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction>): ListCronPredictionsResponse;
+  clearItemsList(): ListCronPredictionsResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction, index?: number): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCronPredictionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCronPredictionsResponse): ListCronPredictionsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListCronPredictionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCronPredictionsResponse;
+  static deserializeBinaryFromReader(message: ListCronPredictionsResponse, reader: jspb.BinaryReader): ListCronPredictionsResponse;
+}
+
+export namespace ListCronPredictionsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject>,
+  }
+}
+

@@ -148,6 +148,16 @@ message ListNotebookRunResponse {
     repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun items = 1;
 }
 
+message ListCronPredictionsRequest {
+    string namespace            = 1;
+    map<string,string> selector = 2;
+}
+
+message ListCronPredictionsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction items = 1;
+}
+
+
 
 service ArchivedService {
     // Record all objects in a blob
@@ -168,6 +178,8 @@ service ArchivedService {
     rpc ListReports(ListReportRequest) returns (ListReportResponse) {}    
     rpc ListStudies(ListStudyRequest) returns (ListStudyResponse) {}    
     rpc ListPrediction(ListPredictionRequest) returns (ListPredictionResponse) {}
+    rpc ListCronPrediction(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {}
+
 }
 
 

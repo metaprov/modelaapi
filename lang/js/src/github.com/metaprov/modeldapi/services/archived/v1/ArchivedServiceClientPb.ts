@@ -636,5 +636,45 @@ export class ArchivedServiceClient {
     this.methodInfoListPrediction);
   }
 
+  methodInfoListCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsResponse.deserializeBinary
+  );
+
+  listCronPrediction(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsResponse>;
+
+  listCronPrediction(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsResponse>;
+
+  listCronPrediction(
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListCronPredictionsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCronPrediction',
+        request,
+        metadata || {},
+        this.methodInfoListCronPrediction,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCronPrediction',
+    request,
+    metadata || {},
+    this.methodInfoListCronPrediction);
+  }
+
 }
 
