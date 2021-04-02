@@ -460,6 +460,28 @@ export namespace IntParameter {
   }
 }
 
+export class Lib extends jspb.Message {
+  getFrameworks(): string;
+  setFrameworks(value: string): Lib;
+
+  getVersion(): string;
+  setVersion(value: string): Lib;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Lib.AsObject;
+  static toObject(includeInstance: boolean, msg: Lib): Lib.AsObject;
+  static serializeBinaryToWriter(message: Lib, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Lib;
+  static deserializeBinaryFromReader(message: Lib, reader: jspb.BinaryReader): Lib;
+}
+
+export namespace Lib {
+  export type AsObject = {
+    frameworks: string,
+    version: string,
+  }
+}
+
 export class MLFramework extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): MLFramework;
@@ -1171,6 +1193,22 @@ export class WorkloadClassSpec extends jspb.Message {
   hasPodtemplate(): boolean;
   clearPodtemplate(): WorkloadClassSpec;
 
+  getFrameworksList(): Array<string>;
+  setFrameworksList(value: Array<string>): WorkloadClassSpec;
+  clearFrameworksList(): WorkloadClassSpec;
+  addFrameworks(value: string, index?: number): WorkloadClassSpec;
+
+  getLibsList(): Array<Lib>;
+  setLibsList(value: Array<Lib>): WorkloadClassSpec;
+  clearLibsList(): WorkloadClassSpec;
+  addLibs(value?: Lib, index?: number): Lib;
+
+  getOs(): string;
+  setOs(value: string): WorkloadClassSpec;
+
+  getOsversion(): string;
+  setOsversion(value: string): WorkloadClassSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkloadClassSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WorkloadClassSpec): WorkloadClassSpec.AsObject;
@@ -1189,6 +1227,10 @@ export namespace WorkloadClassSpec {
     mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
     gpu: number,
     podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
+    frameworksList: Array<string>,
+    libsList: Array<Lib.AsObject>,
+    os: string,
+    osversion: string,
   }
 }
 

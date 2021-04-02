@@ -60,10 +60,26 @@ spec:
               dataImage:
                 description: DataImage is the container image used to data tasks
                 type: string
+              frameworks:
+                description: List of ml frameworks supported by the data container
+                items:
+                  type: string
+                type: array
               gpu:
                 description: Number of gpus of this workload
                 format: int32
                 type: integer
+              libs:
+                description: Libs is the list of python library supported by the data
+                  container
+                items:
+                  properties:
+                    name:
+                      type: string
+                    version:
+                      type: string
+                  type: object
+                type: array
               mem:
                 anyOf:
                 - type: integer
@@ -71,6 +87,12 @@ spec:
                 description: Memory is the amount of memory offered by thie template
                 pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
                 x-kubernetes-int-or-string: true
+              os:
+                description: OS is the name of the os
+                type: string
+              osVersion:
+                description: OSVersion is the version of the os
+                type: string
               podTemplate:
                 description: Template is the Pod specification for new trainers from
                   this workload class.

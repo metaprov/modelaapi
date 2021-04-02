@@ -1801,6 +1801,26 @@ export class ModelStatus extends jspb.Message {
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
 
+  getTraindataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTraindataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
+  hasTraindataset(): boolean;
+  clearTraindataset(): ModelStatus;
+
+  getTestdataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTestdataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
+  hasTestdataset(): boolean;
+  clearTestdataset(): ModelStatus;
+
+  getValidationdataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setValidationdataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
+  hasValidationdataset(): boolean;
+  clearValidationdataset(): ModelStatus;
+
+  getResourceconsumed(): ResourceConsumption | undefined;
+  setResourceconsumed(value?: ResourceConsumption): ModelStatus;
+  hasResourceconsumed(): boolean;
+  clearResourceconsumed(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -1839,6 +1859,10 @@ export namespace ModelStatus {
     misclassuri: string,
     imagename: string,
     forecasturi: string,
+    traindataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    resourceconsumed?: ResourceConsumption.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -2644,6 +2668,32 @@ export namespace ReportStatus {
     phase: string,
     uri: string,
     conditionsList: Array<ReportCondition.AsObject>,
+  }
+}
+
+export class ResourceConsumption extends jspb.Message {
+  getCpu(): number;
+  setCpu(value: number): ResourceConsumption;
+
+  getMem(): number;
+  setMem(value: number): ResourceConsumption;
+
+  getGpu(): number;
+  setGpu(value: number): ResourceConsumption;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResourceConsumption.AsObject;
+  static toObject(includeInstance: boolean, msg: ResourceConsumption): ResourceConsumption.AsObject;
+  static serializeBinaryToWriter(message: ResourceConsumption, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResourceConsumption;
+  static deserializeBinaryFromReader(message: ResourceConsumption, reader: jspb.BinaryReader): ResourceConsumption;
+}
+
+export namespace ResourceConsumption {
+  export type AsObject = {
+    cpu: number,
+    mem: number,
+    gpu: number,
   }
 }
 

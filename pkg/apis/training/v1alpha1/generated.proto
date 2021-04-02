@@ -1237,10 +1237,22 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string forecastUri = 23;
 
+  // TrainDatasetLocation is the location of the train dataset
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 24;
+
+  // TestDatasetLocation is the location of the test dataset used to test this model
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 25;
+
+  // ValidationDatasetLocation is the location of the dataset used for validation
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 26;
+
+  // ResourceConsumed is the avg resource consumed during the training of the model
+  optional ResourceConsumption resourceConsumed = 27;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 24;
+  repeated ModelCondition conditions = 28;
 }
 
 message ModelTestResult {
@@ -1668,6 +1680,15 @@ message ReportStatus {
 
   // +optional
   repeated ReportCondition conditions = 6;
+}
+
+// PreformanceStatus containt the avg resource consumption
+message ResourceConsumption {
+  optional int32 cpu = 1;
+
+  optional int32 mem = 2;
+
+  optional int32 gpu = 3;
 }
 
 // +kubebuilder:subresource:status

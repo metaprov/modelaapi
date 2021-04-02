@@ -300,10 +300,18 @@ type ModelStatus struct {
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,23,opt,name=forecastUri"`
+	// TrainDatasetLocation is the location of the train dataset
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,24,opt,name=trainDataset"`
+	// TestDatasetLocation is the location of the test dataset used to test this model
+	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,25,opt,name=testDataset"`
+	// ValidationDatasetLocation is the location of the dataset used for validation
+	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,26,opt,name=validationDataset"`
+	//ResourceConsumed is the avg resource consumed during the training of the model
+	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,27,opt,name=resourceConsumed"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,24,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,28,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -545,6 +553,13 @@ type AudioPipelineSpec struct {
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
 	Featurizer *catalog.AudioFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,2,opt,name=featurizer"`
+}
+
+// PreformanceStatus containt the avg resource consumption
+type ResourceConsumption struct {
+	Cpu int32 `json:"cpu,omitempty" protobuf:"varint,1,opt,name=cpu"`
+	Mem int32 `json:"mem,omitempty" protobuf:"varint,2,opt,name=mem"`
+	Gpu int32 `json:"gpu,omitempty" protobuf:"varint,3,opt,name=gpu"`
 }
 
 // ForecastingSpec

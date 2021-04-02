@@ -45,6 +45,14 @@ type WorkloadClassSpec struct {
 	// Template is the Pod specification for new trainers from this workload class.
 	// +kubebuilder:validation:Required
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,8,opt,name=podTemplate"`
+	// List of ml frameworks supported by the data container
+	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,9,opt,name=frameworks"`
+	// Libs is the list of python library supported by the data container
+	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,10,opt,name=libs"`
+	// OS is the name of the os
+	OS string `json:"os,omitempty" protobuf:"bytes,11,opt,name=os"`
+	// OSVersion is the version of the os
+	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,12,opt,name=osVersion"`
 }
 
 //==============================================================================
@@ -57,4 +65,9 @@ type WorkloadClassList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []WorkloadClass `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+type Lib struct {
+	Name    string `json:"name,omitempty" protobuf:"bytes,1,opt,name=frameworks"`
+	Version string `json:"version,omitempty" protobuf:"bytes,2,opt,name=version"`
 }

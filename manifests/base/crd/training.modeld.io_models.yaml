@@ -1040,6 +1040,20 @@ spec:
               reportName:
                 description: ReportName is a reference to the model report
                 type: string
+              resourceConsumed:
+                description: ResourceConsumed is the avg resource consumed during
+                  the training of the model
+                properties:
+                  cpu:
+                    format: int32
+                    type: integer
+                  gpu:
+                    format: int32
+                    type: integer
+                  mem:
+                    format: int32
+                    type: integer
+                type: object
               startTime:
                 description: StartTime represents time when the model is first handled
                   by the model controller
@@ -1051,6 +1065,19 @@ spec:
                   It is represented in RFC3339 form and is in UTC.
                 format: date-time
                 type: string
+              testDataset:
+                description: TestDatasetLocation is the location of the test dataset
+                  used to test this model
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               testResult:
                 description: TestResult is the results of training the model (pipeline)
                   on the full training set, and test it on the test set
@@ -1125,6 +1152,18 @@ spec:
                   training
                 format: date-time
                 type: string
+              trainDataset:
+                description: TrainDatasetLocation is the location of the train dataset
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               trainResult:
                 description: TrainResult is the results of training the model (pipeline)
                   on the full training set, and test it on the training set
@@ -1193,6 +1232,19 @@ spec:
                   training.
                 format: date-time
                 type: string
+              validationDataset:
+                description: ValidationDatasetLocation is the location of the dataset
+                  used for validation
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               weightsUri:
                 description: WeightsUri is the URI of the model binary file.
                 type: string
