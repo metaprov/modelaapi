@@ -216,6 +216,14 @@ type ColumnStatistics struct {
 	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
 	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
 	Skew bool `json:"skew,omitempty" protobuf:"varint,23,opt,name=skew"`
+	// Completeness is the ratio between non null to null
+	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,24,opt,name=completeness"`
+	// The ratio between distinc to total
+	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,25,opt,name=distinctValueCount"`
+	// The ratio between most freq value to total
+	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,26,opt,name=mostFreqValuesRatio"`
+	// Used for text attributes
+	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,27,opt,name=indexOfPeculiarity"`
 }
 
 // DatasetTemplate is  used to generate new datasets

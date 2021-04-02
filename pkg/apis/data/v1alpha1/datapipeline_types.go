@@ -71,10 +71,9 @@ type DataPipelineSpec struct {
 	// RecipeNames is the recipe for this pipeline.
 	// +kubebuilder:validation:Optional
 	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
-	// +kubebuilder:default =""
-	// The output file of the pipeline
+	// The output definition
 	// +kubebuilder:validation:Optional
-	OutputDatasetName *string `json:"outputDatasetName,omitempty" protobuf:"bytes,5,opt,name=outputDatasetName"`
+	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,5,opt,name=output"`
 	// Schedule is a cron field to schedule the data pipeline.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
@@ -95,3 +94,29 @@ type DataPipelineStatus struct {
 	//+optional
 	Conditions []DataPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
 }
+
+// DataOutputSpec is the definition of the out file.
+type DataOutputSpec struct {
+	// DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,rep,name=datasetName"`
+	// Location of the generated data
+	// +kubebuilder:validation:Optional
+	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,rep,name=location"`
+	// Format is the format of the output data
+	// +kubebuilder:default:="csv"
+	// +kubebuilder:validation:Optional
+	Format *catalog.DataFormat `json:"format,omitempty" protobuf:"bytes,3,rep,name=format"`
+	//Action define how the new data will be created
+	// +kubebuilder:default:="create"
+	// +kubebuilder:validation:Optional
+	Action *OutputFileAction `json:"action,omitempty" protobuf:"bytes,4,rep,name=action"`
+}
+
+type OutputFileAction string
+
+const (
+	OutputFileActionCreate   OutputFileAction = "create"
+	OutputFileActionOverride OutputFileAction = "override"
+)

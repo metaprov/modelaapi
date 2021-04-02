@@ -218,9 +218,16 @@ spec:
                       description: Hold the statistical parameters about a single
                         attribute
                       properties:
+                        completeness:
+                          description: Completeness is the ratio between non null
+                            to null
+                          type: number
                         distinc:
                           format: int32
                           type: integer
+                        distinctValueCount:
+                          description: The ratio between distinc to total
+                          type: number
                         highCorr:
                           description: This column has high corrolation with another
                             feature and should be dropped. The value is set during
@@ -236,6 +243,9 @@ spec:
                           type: boolean
                         importance:
                           description: The feature importance
+                          type: number
+                        indexOfPeculiarity:
+                          description: Used for text attributes
                           type: number
                         invalid:
                           description: The number of invalid values
@@ -258,6 +268,9 @@ spec:
                           description: The number of missing values
                           format: int32
                           type: integer
+                        mostFreqValuesRatio:
+                          description: The ratio between most freq value to total
+                          type: number
                         name:
                           description: FileName is the name of the column
                           type: string

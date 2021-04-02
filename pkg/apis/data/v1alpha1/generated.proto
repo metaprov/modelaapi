@@ -217,6 +217,18 @@ message ColumnStatistics {
   // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
   // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
   optional bool skew = 23;
+
+  // Completeness is the ratio between non null to null
+  optional double completeness = 24;
+
+  // The ratio between distinc to total
+  optional double distinctValueCount = 25;
+
+  // The ratio between most freq value to total
+  optional double mostFreqValuesRatio = 26;
+
+  // Used for text attributes
+  optional double indexOfPeculiarity = 27;
 }
 
 // data reference contain pointers to the actual data objects
@@ -226,6 +238,28 @@ message DataLocation {
   // Path to the full data file (e.g. csv file).
   // +required
   optional string path = 2;
+}
+
+// DataOutputSpec is the definition of the out file.
+message DataOutputSpec {
+  // DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // Location of the generated data
+  // +kubebuilder:validation:Optional
+  optional DataLocation location = 2;
+
+  // Format is the format of the output data
+  // +kubebuilder:default:="csv"
+  // +kubebuilder:validation:Optional
+  optional string format = 3;
+
+  // Action define how the new data will be created
+  // +kubebuilder:default:="create"
+  // +kubebuilder:validation:Optional
+  optional string action = 4;
 }
 
 // +kubebuilder:object:root=true
@@ -380,10 +414,9 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   repeated string recipeNames = 4;
 
-  // +kubebuilder:default =""
-  // The output file of the pipeline
+  // The output definition
   // +kubebuilder:validation:Optional
-  optional string outputDatasetName = 5;
+  optional DataOutputSpec output = 5;
 
   // Schedule is a cron field to schedule the data pipeline.
   // +kubebuilder:default =""

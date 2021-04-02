@@ -219,6 +219,18 @@ export class ColumnStatistics extends jspb.Message {
   getSkew(): boolean;
   setSkew(value: boolean): ColumnStatistics;
 
+  getCompleteness(): number;
+  setCompleteness(value: number): ColumnStatistics;
+
+  getDistinctvaluecount(): number;
+  setDistinctvaluecount(value: number): ColumnStatistics;
+
+  getMostfreqvaluesratio(): number;
+  setMostfreqvaluesratio(value: number): ColumnStatistics;
+
+  getIndexofpeculiarity(): number;
+  setIndexofpeculiarity(value: number): ColumnStatistics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
@@ -250,6 +262,10 @@ export namespace ColumnStatistics {
     highcred: boolean,
     highcorr: boolean,
     skew: boolean,
+    completeness: number,
+    distinctvaluecount: number,
+    mostfreqvaluesratio: number,
+    indexofpeculiarity: number,
   }
 }
 
@@ -272,6 +288,38 @@ export namespace DataLocation {
   export type AsObject = {
     bucketname: string,
     path: string,
+  }
+}
+
+export class DataOutputSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): DataOutputSpec;
+
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): DataOutputSpec;
+  hasLocation(): boolean;
+  clearLocation(): DataOutputSpec;
+
+  getFormat(): string;
+  setFormat(value: string): DataOutputSpec;
+
+  getAction(): string;
+  setAction(value: string): DataOutputSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataOutputSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DataOutputSpec): DataOutputSpec.AsObject;
+  static serializeBinaryToWriter(message: DataOutputSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataOutputSpec;
+  static deserializeBinaryFromReader(message: DataOutputSpec, reader: jspb.BinaryReader): DataOutputSpec;
+}
+
+export namespace DataOutputSpec {
+  export type AsObject = {
+    datasetname: string,
+    location?: DataLocation.AsObject,
+    format: string,
+    action: string,
   }
 }
 
@@ -562,8 +610,10 @@ export class DataPipelineSpec extends jspb.Message {
   clearRecipenamesList(): DataPipelineSpec;
   addRecipenames(value: string, index?: number): DataPipelineSpec;
 
-  getOutputdatasetname(): string;
-  setOutputdatasetname(value: string): DataPipelineSpec;
+  getOutput(): DataOutputSpec | undefined;
+  setOutput(value?: DataOutputSpec): DataPipelineSpec;
+  hasOutput(): boolean;
+  clearOutput(): DataPipelineSpec;
 
   getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DataPipelineSpec;
@@ -590,7 +640,7 @@ export namespace DataPipelineSpec {
     description: string,
     inputdatasetsList: Array<string>,
     recipenamesList: Array<string>,
-    outputdatasetname: string,
+    output?: DataOutputSpec.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,

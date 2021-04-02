@@ -58,9 +58,59 @@ spec:
                 items:
                   type: string
                 type: array
-              outputDatasetName:
-                description: The output file of the pipeline
-                type: string
+              output:
+                description: The output definition
+                properties:
+                  action:
+                    default: create
+                    description: Action define how the new data will be created
+                    type: string
+                  datasetName:
+                    default: ""
+                    description: DatasetName is the name of the dataset that will
+                      be created. if nil, the system will not create the dataset.
+                    type: string
+                  format:
+                    default: csv
+                    description: Format is the format of the output data
+                    enum:
+                    - url
+                    - path
+                    - password
+                    - time
+                    - count
+                    - interval
+                    - nominal
+                    - email
+                    - creditCard
+                    - uuid
+                    - uuid5
+                    - uuid
+                    - base64
+                    - latitude
+                    - longtitude
+                    - dns
+                    - ip4
+                    - ip6
+                    - ssn
+                    - alpha
+                    - alphanumeric
+                    - none
+                    - unknown
+                    type: string
+                  location:
+                    description: Location of the generated data
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        description: Path to the full data file (e.g. csv file).
+                        type: string
+                    required:
+                    - bucketName
+                    - path
+                    type: object
+                type: object
               owner:
                 default: no-one
                 description: Owner of this data pipeline
