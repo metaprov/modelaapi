@@ -349,6 +349,11 @@ export class ApiTokenSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): ApiTokenSpec;
 
+  getScopesList(): Array<Scope>;
+  setScopesList(value: Array<Scope>): ApiTokenSpec;
+  clearScopesList(): ApiTokenSpec;
+  addScopes(value?: Scope, index?: number): Scope;
+
   getOwner(): string;
   setOwner(value: string): ApiTokenSpec;
 
@@ -363,6 +368,7 @@ export class ApiTokenSpec extends jspb.Message {
 export namespace ApiTokenSpec {
   export type AsObject = {
     description: string,
+    scopesList: Array<Scope.AsObject>,
     owner: string,
   }
 }
@@ -2038,6 +2044,30 @@ export namespace RedShiftSpec {
     database: string,
     username: string,
     password: string,
+  }
+}
+
+export class Scope extends jspb.Message {
+  getName(): string;
+  setName(value: string): Scope;
+
+  getActionsList(): Array<string>;
+  setActionsList(value: Array<string>): Scope;
+  clearActionsList(): Scope;
+  addActions(value: string, index?: number): Scope;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Scope.AsObject;
+  static toObject(includeInstance: boolean, msg: Scope): Scope.AsObject;
+  static serializeBinaryToWriter(message: Scope, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Scope;
+  static deserializeBinaryFromReader(message: Scope, reader: jspb.BinaryReader): Scope;
+}
+
+export namespace Scope {
+  export type AsObject = {
+    name: string,
+    actionsList: Array<string>,
   }
 }
 

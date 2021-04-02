@@ -223,7 +223,7 @@ func (in *DataOutputSpec) DeepCopyInto(out *DataOutputSpec) {
 	}
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
-		*out = new(catalogv1alpha1.DataFormat)
+		*out = new(catalogv1alpha1.DatastoreType)
 		**out = **in
 	}
 	if in.Action != nil {

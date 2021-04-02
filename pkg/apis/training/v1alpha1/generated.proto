@@ -51,7 +51,6 @@ message CapacityStageSpec {
   optional string servingSiteName = 1;
 
   // Tests is the specification of tests to run in this stage
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   repeated ModelTestSpec tests = 2;
 
@@ -1571,6 +1570,7 @@ message ProdStageSpec {
   optional bool manualApproval = 4;
 
   // Tests is the List of tests to run against the deployed model before moving production traffic to the model
+  // +kubebuilder:validation:Optional
   repeated ModelTestSpec tests = 5;
 }
 
@@ -2135,7 +2135,6 @@ message UATStageSpec {
   optional string servingSiteName = 1;
 
   // Tests is the specification of tests to run
-  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   repeated ModelTestSpec tests = 2;
 

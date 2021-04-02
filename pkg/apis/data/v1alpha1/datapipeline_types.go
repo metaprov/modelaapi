@@ -107,7 +107,7 @@ type DataOutputSpec struct {
 	// Format is the format of the output data
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
-	Format *catalog.DataFormat `json:"format,omitempty" protobuf:"bytes,3,rep,name=format"`
+	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,rep,name=format"`
 	//Action define how the new data will be created
 	// +kubebuilder:default:="create"
 	// +kubebuilder:validation:Optional

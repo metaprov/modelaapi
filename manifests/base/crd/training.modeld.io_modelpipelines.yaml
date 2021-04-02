@@ -70,7 +70,6 @@ spec:
                       during the capacity stage
                     type: string
                   tests:
-                    default: 0
                     description: Tests is the specification of tests to run in this
                       stage
                     items:
@@ -467,7 +466,6 @@ spec:
                     description: The serving site for the testing
                     type: string
                   tests:
-                    default: 0
                     description: Tests is the specification of tests to run
                     items:
                       properties:

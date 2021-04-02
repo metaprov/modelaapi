@@ -25,14 +25,14 @@ resources:
   - data.modeld.io_recipes.yaml
   - data.modeld.io_reciperuns.yaml
   - inference.modeld.io_curtains.yaml
-  - inference.modeld.io_prediction.yaml
+  - inference.modeld.io_predictions.yaml
   - inference.modeld.io_cronpredictions.yaml
   - inference.modeld.io_predictors.yaml
   - infra.modeld.io_accounts.yaml
+  - infra.modeld.io_apitokens.yaml
   - infra.modeld.io_connections.yaml
   - infra.modeld.io_labs.yaml
-  - infra.modeld.io_licenses.yaml
-  - infra.modeld.io_machineimages.yaml
+  - infra.modeld.io_licenses.yaml  
   - infra.modeld.io_notifiers.yaml
   - infra.modeld.io_servingsites.yaml
   - infra.modeld.io_tenants.yaml

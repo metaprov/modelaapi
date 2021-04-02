@@ -74,29 +74,17 @@ spec:
                     default: csv
                     description: Format is the format of the output data
                     enum:
-                    - url
-                    - path
-                    - password
-                    - time
-                    - count
-                    - interval
-                    - nominal
-                    - email
-                    - creditCard
-                    - uuid
-                    - uuid5
-                    - uuid
-                    - base64
-                    - latitude
-                    - longtitude
-                    - dns
-                    - ip4
-                    - ip6
-                    - ssn
-                    - alpha
-                    - alphanumeric
-                    - none
-                    - unknown
+                    - csv
+                    - json
+                    - parquet
+                    - tde
+                    - sql
+                    - table
+                    - fwf
+                    - excel
+                    - sas
+                    - spss
+                    - auto
                     type: string
                   location:
                     description: Location of the generated data

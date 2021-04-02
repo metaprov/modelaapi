@@ -54,8 +54,12 @@ type ApiTokenSpec struct {
 	// User provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	Owner       *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
+	// Scopes is the list of scopes for this token.
+	Scopes []Scope `json:"scopes,omitempty" protobuf:"bytes,2,opt,name=scopes"`
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }
 
 // ApiTokenStatus is the observed state of a ApiToken
@@ -63,3 +67,18 @@ type ApiTokenStatus struct {
 	//+optional
 	Conditions []ApiTokenCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
 }
+
+type Scope struct {
+	// +kubebuilder:validation:Optional
+	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// +kubebuilder:validation:Optional
+	Actions []ScopeVerb `json:"actions,omitempty" protobuf:"bytes,2,opt,name=actions"`
+}
+
+type ScopeVerb string
+
+const (
+	ScopeVerbRead  ScopeVerb = "read"
+	ScopeVerbWrite ScopeVerb = "write"
+	ScopeVerbList  ScopeVerb = "list"
+)

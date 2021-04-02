@@ -218,9 +218,14 @@ message ApiTokenSpec {
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 1;
 
-  optional string owner = 6;
+  // Scopes is the list of scopes for this token.
+  repeated Scope scopes = 2;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string owner = 3;
 }
 
 // ApiTokenStatus is the observed state of a ApiToken
@@ -1092,6 +1097,14 @@ message RedShiftSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
+}
+
+message Scope {
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // +kubebuilder:validation:Optional
+  repeated string actions = 2;
 }
 
 // ServingSite is a namespace used for serving

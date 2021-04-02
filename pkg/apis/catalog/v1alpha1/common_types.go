@@ -799,17 +799,21 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 // ==================================================
 // DataEnv source
 // ==================================================
-// +kubebuilder:validation:Enum="csv";"sql";"table";"fwf";"excel";"none";"auto";
+// +kubebuilder:validation:Enum="csv";"json";"parquet";"tde";"sql";"table";"fwf";"excel";"sas";"spss";"auto";
 type DatastoreType string
 
 const (
-	Csv   DatastoreType = "csv"
-	Sql   DatastoreType = "sql"
-	Table DatastoreType = "table"
-	Fwf   DatastoreType = "fwf"
-	Excel DatastoreType = "excel"
-	None  DatastoreType = "none"
-	Auto  DatastoreType = "auto"
+	Csv     DatastoreType = "csv"
+	Json    DatastoreType = "json"
+	Parquet DatastoreType = "parquet"
+	Sas     DatastoreType = "sas"
+	Spss    DatastoreType = "spss"
+	Tde     DatastoreType = "tde"
+	Sql     DatastoreType = "sql"
+	Table   DatastoreType = "table"
+	Fwf     DatastoreType = "fwf"
+	Excel   DatastoreType = "excel"
+	Auto    DatastoreType = "auto"
 )
 
 // ==================================================

@@ -162,7 +162,6 @@ type UATStageSpec struct {
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 
 	// Tests is the specification of tests to run
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 
@@ -181,12 +180,9 @@ type CapacityStageSpec struct {
 	// ServingSiteName is the serving site for the testing during the capacity stage
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-
 	// Tests is the specification of tests to run in this stage
-	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
-
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -213,6 +209,7 @@ type ProdStageSpec struct {
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// Tests is the List of tests to run against the deployed model before moving production traffic to the model
+	// +kubebuilder:validation:Optional
 	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
 }
 

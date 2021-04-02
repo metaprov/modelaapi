@@ -53,7 +53,20 @@ spec:
                 description: User provided description
                 type: string
               owner:
+                default: ""
                 type: string
+              scopes:
+                description: Scopes is the list of scopes for this token.
+                items:
+                  properties:
+                    actions:
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      type: string
+                  type: object
+                type: array
             type: object
           status:
             description: ApiTokenStatus is the observed state of a ApiToken
