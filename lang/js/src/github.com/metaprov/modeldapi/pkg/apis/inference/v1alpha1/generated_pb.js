@@ -303,7 +303,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3532,13 +3532,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList.prot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.repeatedFields_ = [5];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3574,9 +3567,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.toOb
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    wizardsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     question: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    notifiername: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3629,15 +3622,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.dese
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasetname(value);
       break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addWizards(value);
-      break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setQuestion(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNotifiername(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -3698,13 +3691,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.seri
       f
     );
   }
-  f = message.getWizardsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      5,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeString(
@@ -3716,6 +3702,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.seri
   if (f != null) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -3867,43 +3860,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prot
 
 
 /**
- * repeated string wizards = 5;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.getWizardsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.setWizardsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.addWizards = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.clearWizardsList = function() {
-  return this.setWizardsList([]);
-};
-
-
-/**
  * optional string question = 6;
  * @return {string}
  */
@@ -3940,10 +3896,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prot
 
 
 /**
- * optional string owner = 7;
+ * optional string notifierName = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.getOwner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.getNotifiername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -3952,7 +3908,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.setNotifiername = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -3961,7 +3917,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.clearOwner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.clearNotifiername = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -3970,8 +3926,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.hasNotifiername = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string owner = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainSpec.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -8650,7 +8642,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorList.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.repeatedFields_ = [9];
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.repeatedFields_ = [5];
 
 
 
@@ -8683,12 +8675,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     productref: (f = msg.getProductref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    port: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    accesstype: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && k8s_io_api_core_v1_generated_pb.PodTemplate.toObject(includeInstance, f),
     modelsList: jspb.Message.toObjectList(msg.getModelsList(),
     github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject, includeInstance),
@@ -8704,7 +8693,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     workloadclassname: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     cache: (f = msg.getCache()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.toObject(includeInstance, f),
     store: (f = msg.getStore()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.toObject(includeInstance, f),
-    type: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f
+    forewardcurtain: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+    backwardcurtain: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
+    type: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8741,38 +8732,26 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 3:
+    case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setProductref(value);
       break;
-    case 4:
+    case 3:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setServingsiteref(value);
       break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPort(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAccesstype(value);
-      break;
-    case 8:
+    case 4:
       var value = new k8s_io_api_core_v1_generated_pb.PodTemplate;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.PodTemplate.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
-    case 9:
+    case 5:
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.deserializeBinaryFromReader);
       msg.addModels(value);
@@ -8833,6 +8812,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       break;
     case 24:
       var value = /** @type {string} */ (reader.readString());
+      msg.setForewardcurtain(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBackwardcurtain(value);
+      break;
+    case 26:
+      var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
     default:
@@ -8864,17 +8851,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getProductref();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -8882,36 +8869,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
   f = message.getServingsiteref();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeInt32(
-      5,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeString(
-      7,
-      f
     );
   }
   f = message.getTemplate();
   if (f != null) {
     writer.writeMessage(
-      8,
+      4,
       f,
       k8s_io_api_core_v1_generated_pb.PodTemplate.serializeBinaryToWriter
     );
@@ -8919,7 +8885,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
   f = message.getModelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      5,
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.serializeBinaryToWriter
     );
@@ -9021,15 +8987,29 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 25));
+  if (f != null) {
+    writer.writeString(
+      25,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeString(
+      26,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string description = 2;
+ * optional string description = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -9038,7 +9018,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -9047,7 +9027,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -9056,17 +9036,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference productRef = 3;
+ * optional k8s.io.api.core.v1.ObjectReference productRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getProductref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -9075,7 +9055,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setProductref = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -9093,17 +9073,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasProductref = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 4;
+ * optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 3;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getServingsiteref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
@@ -9112,7 +9092,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setServingsiteref = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -9130,125 +9110,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasServingsiteref = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 port = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getPort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setPort = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearPort = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasPort = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string path = 6;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setPath = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearPath = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasPath = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional string accessType = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getAccesstype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setAccesstype = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearAccesstype = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasAccesstype = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.PodTemplate template = 8;
+ * optional k8s.io.api.core.v1.PodTemplate template = 4;
  * @return {?proto.k8s.io.api.core.v1.PodTemplate}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getTemplate = function() {
   return /** @type{?proto.k8s.io.api.core.v1.PodTemplate} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplate, 8));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplate, 4));
 };
 
 
@@ -9257,7 +9129,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setTemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -9275,17 +9147,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasTemplate = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 9;
+ * repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 5;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getModelsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, 9));
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, 5));
 };
 
 
@@ -9294,7 +9166,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setModelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -9304,7 +9176,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.addModels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec, opt_index);
 };
 
 
@@ -9756,10 +9628,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional string type = 24;
+ * optional string forewardCurtain = 24;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getForewardcurtain = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
 };
 
@@ -9768,7 +9640,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setType = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setForewardcurtain = function(value) {
   return jspb.Message.setField(this, 24, value);
 };
 
@@ -9777,7 +9649,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearForewardcurtain = function() {
   return jspb.Message.setField(this, 24, undefined);
 };
 
@@ -9786,8 +9658,80 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasForewardcurtain = function() {
   return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional string backwardCurtain = 25;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getBackwardcurtain = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setBackwardcurtain = function(value) {
+  return jspb.Message.setField(this, 25, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearBackwardcurtain = function() {
+  return jspb.Message.setField(this, 25, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasBackwardcurtain = function() {
+  return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional string type = 26;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearType = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasType = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 

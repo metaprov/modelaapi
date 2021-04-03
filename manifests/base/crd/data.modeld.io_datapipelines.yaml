@@ -104,10 +104,21 @@ spec:
                 description: Owner of this data pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-              recipeNames:
-                description: RecipeNames is the recipe for this pipeline.
+              recipeOrder:
+                description: RecipeOrder defines the list of recipes and the order
+                  they need to run
                 items:
-                  type: string
+                  properties:
+                    Dependents:
+                      description: Dependents is the list of recipe that need to run
+                        after this recipe.
+                      items:
+                        type: string
+                      type: array
+                    recipeName:
+                      description: RecipeName is the name of the recipe to run
+                      type: string
+                  type: object
                 type: array
               schedule:
                 description: Schedule is a cron field to schedule the data pipeline.

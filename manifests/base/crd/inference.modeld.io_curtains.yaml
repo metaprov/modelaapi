@@ -55,27 +55,37 @@ spec:
             description: CurtainSpec define the desired state of a Curtain
             properties:
               datasetName:
-                description: The dataset that store the wizard answers
+                default: ""
+                description: The dataset that store the human answers
                 type: string
               description:
+                default: ""
                 description: User provided description
                 type: string
+              notifierName:
+                default: ""
+                description: NotifierName is used to converse with the human.
+                maxLength: 256
+                type: string
               owner:
+                default: '''no-one'''
                 description: The owner account name
                 type: string
               question:
-                description: Question to ask the wizard
+                default: ""
+                description: Question to ask the human.
                 maxLength: 256
                 type: string
               servingsiteName:
+                default: ""
                 description: The product of the resource
                 type: string
               versionName:
+                default: ""
                 description: User provided description
                 type: string
               wizards:
-                description: The wizards him self. This is a reference to one or more
-                  wizards objects.
+                description: The accounts of the human which can answer the prediction.
                 items:
                   type: string
                 type: array

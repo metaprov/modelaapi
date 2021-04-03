@@ -18,7 +18,7 @@ const (
 // RecipeCondition describes the state of a dataset at a certain point.
 type RecipeCondition struct {
 	Type RecipeConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=RecipeConditionType"`
-	// Status of the condition, one of True, False, AutoScaler.
+	// Status of the condition, one of True, False, Unknown.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
 	// +kubebuilder:validation:Optional
@@ -394,11 +394,16 @@ const (
 
 type RecipeSampleSpec struct {
 	//Type is the sampling type
+	//Default is random
+	// +kubebuilder:default:="random"
+	// +kubebuilder:validation:Optional
 	Type SamplingType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Rows is the number of rows. Default is 500
+	// +kubebuilder:default:=500
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,2,opt,name=rows"`
 	// Filter formula. Valid only if the sample is a filter.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Filter *string `json:"string,omitempty" protobuf:"bytes,3,opt,name=filter"`
 }
@@ -406,12 +411,15 @@ type RecipeSampleSpec struct {
 // RecipeInputSpec specify the input for a recipe
 type RecipeInputSpec struct {
 	// DatasetName is the name of the dataset
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// Location is the folder of the actual data resides.
+	// Location is the folder of the actual data resides, if not using dataset
 	// +required.
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Format is the dataset format
-	Format *v1alpha1.DataFormat `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	// +kubebuilder:default:=csv
+	Format *v1alpha1.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
 // RecipeOutputSpec for the recipe output
@@ -419,12 +427,10 @@ type RecipeOutputSpec struct {
 	// CreateDataset if true, create a new dataset when the recipe is done.
 	// +kubebuilder:validation:Optional
 	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,1,opt,name=createDataset"`
-
 	// DatasetName is the name of the dataset output to the recipe
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
-
 	// Location is the data location folder of the actual data resides.
-	// +required.
+	// +kubebuilder:validation:Required
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }

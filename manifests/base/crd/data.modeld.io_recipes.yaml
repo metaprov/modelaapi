@@ -60,37 +60,28 @@ spec:
                 description: Input is the input recipe spec
                 properties:
                   datasetName:
+                    default: ""
                     description: DatasetName is the name of the dataset
                     type: string
                   format:
+                    default: csv
                     description: Format is the dataset format
                     enum:
-                    - url
-                    - path
-                    - password
-                    - time
-                    - count
-                    - interval
-                    - nominal
-                    - email
-                    - creditCard
-                    - uuid
-                    - uuid5
-                    - uuid
-                    - base64
-                    - latitude
-                    - longtitude
-                    - dns
-                    - ip4
-                    - ip6
-                    - ssn
-                    - alpha
-                    - alphanumeric
-                    - none
-                    - unknown
+                    - csv
+                    - json
+                    - parquet
+                    - tde
+                    - sql
+                    - table
+                    - fwf
+                    - excel
+                    - sas
+                    - spss
+                    - auto
                     type: string
                   location:
-                    description: Location is the folder of the actual data resides.
+                    description: Location is the folder of the actual data resides,
+                      if not using dataset
                     properties:
                       bucketName:
                         type: string
@@ -136,14 +127,17 @@ spec:
                   recipe
                 properties:
                   rows:
+                    default: 500
                     description: Rows is the number of rows. Default is 500
                     format: int32
                     type: integer
                   string:
+                    default: ""
                     description: Filter formula. Valid only if the sample is a filter.
                     type: string
                   type:
-                    description: Type is the sampling type
+                    default: random
+                    description: Type is the sampling type Default is random
                     type: string
                 type: object
               steps:
@@ -201,7 +195,7 @@ spec:
                       description: The reason for the condition's last transition.
                       type: string
                     status:
-                      description: Status of the condition, one of True, False, AutoScaler.
+                      description: Status of the condition, one of True, False, Unknown.
                       type: string
                     type:
                       description: RecipeConditionType is the condition on the Recipe

@@ -337,13 +337,11 @@ export class CurtainSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): CurtainSpec;
 
-  getWizardsList(): Array<string>;
-  setWizardsList(value: Array<string>): CurtainSpec;
-  clearWizardsList(): CurtainSpec;
-  addWizards(value: string, index?: number): CurtainSpec;
-
   getQuestion(): string;
   setQuestion(value: string): CurtainSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): CurtainSpec;
 
   getOwner(): string;
   setOwner(value: string): CurtainSpec;
@@ -362,8 +360,8 @@ export namespace CurtainSpec {
     versionname: string,
     servingsitename: string,
     datasetname: string,
-    wizardsList: Array<string>,
     question: string,
+    notifiername: string,
     owner: string,
   }
 }
@@ -914,15 +912,6 @@ export class PredictorSpec extends jspb.Message {
   hasServingsiteref(): boolean;
   clearServingsiteref(): PredictorSpec;
 
-  getPort(): number;
-  setPort(value: number): PredictorSpec;
-
-  getPath(): string;
-  setPath(value: string): PredictorSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): PredictorSpec;
-
   getTemplate(): k8s_io_api_core_v1_generated_pb.PodTemplate | undefined;
   setTemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplate): PredictorSpec;
   hasTemplate(): boolean;
@@ -981,6 +970,12 @@ export class PredictorSpec extends jspb.Message {
   hasStore(): boolean;
   clearStore(): PredictorSpec;
 
+  getForewardcurtain(): string;
+  setForewardcurtain(value: string): PredictorSpec;
+
+  getBackwardcurtain(): string;
+  setBackwardcurtain(value: string): PredictorSpec;
+
   getType(): string;
   setType(value: string): PredictorSpec;
 
@@ -997,9 +992,6 @@ export namespace PredictorSpec {
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    port: number,
-    path: string,
-    accesstype: string,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplate.AsObject,
     modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     driftcheck?: DriftCheckSpec.AsObject,
@@ -1014,6 +1006,8 @@ export namespace PredictorSpec {
     workloadclassname: string,
     cache?: PredictionCacheSpec.AsObject,
     store?: OnlineFeaturestoreSpec.AsObject,
+    forewardcurtain: string,
+    backwardcurtain: string,
     type: string,
   }
 }

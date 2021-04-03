@@ -30,39 +30,45 @@ type DataSourceCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-type Table struct {
-	// +kubebuilder:validation:MaxLength=64
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// User provided description
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+type TableSpec struct {
 	// The actual query. this is required.
 	// +kubebuilder:validation:Optional
-	Query *string `json:"query,omitempty" protobuf:"bytes,3,opt,name=query"`
-	// Type of server
+	Query *string `json:"query,omitempty" protobuf:"bytes,1,opt,name=query"`
+	// TableName refer to whole table
 	// +kubebuilder:validation:Optional
-	ServerType *DatabaseServerType `json:"serverType,omitempty" protobuf:"bytes,4,opt,name=serverType"`
-	// ConnectionString to connect to the database server
-	// +kubebuilder:validation:MaxLength=128
-	// +kubebuilder:validation:Optional
-	ConnectionString *string `json:"connectionString,omitempty" protobuf:"bytes,5,opt,name=connectionString"`
+	TableName *string `json:"tableName,omitempty" protobuf:"bytes,2,opt,name=tableName"`
 	// Connection refer to a connection object that point to secret
 	// +kubebuilder:validation:Optional
-	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,6,opt,name=connectionRef"`
-	// The version of the server.
+	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,3,opt,name=connectionRef"`
+}
+
+type StreamSpec struct {
+	// Topic is the stream topic
 	// +kubebuilder:validation:Optional
-	ServerVersion *string `json:"serverVersion,omitempty" protobuf:"bytes,7,opt,name=serverVersion"`
+	Topic *string `json:"topic,omitempty" protobuf:"bytes,1,opt,name=topic"`
+	// Connection refer to a connection object that point to secret
+	// +kubebuilder:validation:Optional
+	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
+}
+
+type ApiSpec struct {
+	// URI is the uri of the api
+	// +kubebuilder:validation:Optional
+	URI *string `json:"topic,omitempty" protobuf:"bytes,1,opt,name=topic"`
+	// Connection refer to a connection object that point to secret
+	// +kubebuilder:validation:Optional
+	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
 }
 
 // the data source type
-// +kubebuilder:validation:Enum="flatfile";"table";
+// +kubebuilder:validation:Enum="flatfile";"table";"stream";"api"
 type DataSourceType string
 
 const (
 	FlatFileDataSource DataSourceType = "flatfile"
 	TableDataSource    DataSourceType = "table"
+	StreamDataSource   DataSourceType = "stream"
+	ApiDataSource      DataSourceType = "api"
 )
 
 // +kubebuilder:validation:Enum="double-quote";"single-quote";
@@ -272,10 +278,12 @@ type Column struct {
 	// Enforce that all the items in the list are unique
 	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"bytes,26,opt,name=uniqueItems"`
-	// True if this column is used as the time axis in time series foreacst
+	// TimeColumn is true if this column is used as the time axis in time series foreacst
 	// Default is false.
 	// +kubebuilder:validation:Optional
 	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"bytes,27,opt,name=timeColumn"`
+	// PreservePrivacy is true if the column content should not be exposed due to privacy concerns
+	PreservePrivacy *bool `json:"preservePrivacy,omitempty" protobuf:"bytes,28,opt,name=preservePrivacy"`
 }
 
 func (in *Column) Validate() (bool, []metav1.StatusCause) {
@@ -322,11 +330,17 @@ type DataSourceSpec struct {
 	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,rep,name=file"`
 	// Table access specification if the data source is a table
 	// +kubebuilder:validation:Optional
-	Table *Table `json:"table,omitempty" protobuf:"bytes,7,rep,name=table"`
+	Table *TableSpec `json:"table,omitempty" protobuf:"bytes,7,rep,name=table"`
+	// Stream define the specification of the stream
+	// +kubebuilder:validation:Optional
+	Stream *StreamSpec `json:"stream,omitempty" protobuf:"bytes,8,rep,name=stream"`
+	// Api define the specification of the api
+	// +kubebuilder:validation:Optional
+	Api *ApiSpec `json:"api,omitempty" protobuf:"bytes,9,rep,name=api"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,10,opt,name=owner"`
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

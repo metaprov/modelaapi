@@ -90,16 +90,16 @@ type DataPipelineRunSpec struct {
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
 type DataPipelineRunStatus struct {
-	// Pointers to the done datasets
-	Inputs []string `json:"inputs" protobuf:"bytes,1,rep,name=inputs"`
+	// RecipeRuns is the names of the recipe runs that occur during running of the pipeline.
+	RecipeRuns []string `json:"recipeRuns" protobuf:"bytes,1,rep,name=recipeRuns"`
 	// the resulting dataset from the flow
-	Output string `json:"output" protobuf:"bytes,2,opt,name=output"`
+	Output DataLocation `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
 	Phase DataPipelineRunPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
-	// StartTime is the times that this data pipeline started
+	// StartTime is the start time of the pipeline
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,4,opt,name=startTime"`
-	// CompletionTime is the time that this pipeline finishes
+	// CompletionTime is the end time of the pipeline
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,5,opt,name=completionTime"`
 	//+optional

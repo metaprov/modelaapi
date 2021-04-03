@@ -67,11 +67,6 @@ spec:
                 description: Type name of the column key, this column is the key column
                   in the entity.
                 type: string
-              name:
-                description: FileName specify the name of the attribute
-                maxLength: 64
-                minLength: 1
-                type: string
               owner:
                 default: no-one
                 description: The feature owner
@@ -86,6 +81,9 @@ spec:
           status:
             description: FeatureStatus defines the observed state of Feature
             properties:
+              completeness:
+                description: Completeness is the ratio between non null to null
+                type: number
               conditions:
                 items:
                   description: FeatureCondition describes the state of a deployment
@@ -114,6 +112,37 @@ spec:
                   - type
                   type: object
                 type: array
+              distinc:
+                format: int32
+                type: integer
+              distinctValueCount:
+                description: The ratio between distinc to total
+                type: number
+              highCorr:
+                description: This column has high corrolation with another feature
+                  and should be dropped. The value is set during the profile process.
+                type: boolean
+              highCred:
+                description: This column has high cardinality and should be ignored.
+                  The value is set during the profile process.
+                type: boolean
+              ignored:
+                description: Should this column be ignored, as specified by the user.
+                  This value is derived from the schema
+                type: boolean
+              importance:
+                description: The feature importance
+                type: number
+              indexOfPeculiarity:
+                description: Used for text attributes
+                type: number
+              invalid:
+                description: The number of invalid values
+                format: int32
+                type: integer
+              kurtosis:
+                description: Kurtosis is the standard deviation value of the attribute
+                type: number
               max:
                 description: Max is the maximum value of the attribute
                 type: number
@@ -123,29 +152,46 @@ spec:
               min:
                 description: Min is the minimum value of the attribute
                 type: number
-              name:
-                description: FileName is the name of the attribute
-                type: string
-              nulls:
-                description: Nulls is the numbers of zeros in the feature
+              missing:
+                description: The number of missing values
                 format: int32
                 type: integer
-              p01:
-                description: P01 is the numbers of values in the first precent
+              mostFreqValuesRatio:
+                description: The ratio between most freq value to total
                 type: number
-              p99:
-                description: P99 is the numbers of values
+              nullable:
+                description: Is this column is nullable. This value is derived from
+                  the schema.
+                type: boolean
+              p25:
+                description: Pct25 is the 25 precent point
                 type: number
-              sha256:
-                description: Sha256 contains the signature of
-                type: string
+              p50:
+                description: Pct50 is the median
+                type: number
+              p75:
+                description: Pct75 is the 75% point
+                type: number
+              skew:
+                description: Mark that this column is skewed and would require a power
+                  transform If skewness is less than -1 or greater than 1, the distribution
+                  is highly skewed. If skewness is between -1 and -0.5 or between
+                  0.5 and 1, the distribution is moderately skewed. If skewness is
+                  between -0.5 and 0.5, the distribution is approximately symmetric
+                type: boolean
+              skewness:
+                description: Skewness is the standard deviation value of the attribute
+                type: number
               stddev:
                 description: StdDev is the standard deviation value of the attribute
                 type: number
+              target:
+                description: Is this the target attribute, the value is derived from
+                  the schema
+                type: boolean
               zeros:
                 description: Zeros is the numbers of zeros in the feature
-                format: int32
-                type: integer
+                type: number
             type: object
         required:
         - metadata

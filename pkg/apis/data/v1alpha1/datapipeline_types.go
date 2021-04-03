@@ -68,9 +68,9 @@ type DataPipelineSpec struct {
 	// InputDatasets is the collection of input dataset names to the data pipelines
 	// +kubebuilder:validation:Optional
 	InputDatasets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputDatasets"`
-	// RecipeNames is the recipe for this pipeline.
+	// RecipeOrder defines the list of recipes and the order they need to run
 	// +kubebuilder:validation:Optional
-	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`
+	RecipeOrder []RecipePartSpec `json:"recipeOrder,omitempty" protobuf:"bytes,4,rep,name=recipeOrder"`
 	// The output definition
 	// +kubebuilder:validation:Optional
 	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,5,opt,name=output"`
@@ -112,6 +112,13 @@ type DataOutputSpec struct {
 	// +kubebuilder:default:="create"
 	// +kubebuilder:validation:Optional
 	Action *OutputFileAction `json:"action,omitempty" protobuf:"bytes,4,rep,name=action"`
+}
+
+type RecipePartSpec struct {
+	// RecipeName is the name of the recipe to run
+	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,1,rep,name=recipeName"`
+	// Dependents is the list of recipe that need to run after this recipe.
+	Dependents []string `json:"Dependents,omitempty" protobuf:"bytes,2,rep,name=Dependents"`
 }
 
 type OutputFileAction string

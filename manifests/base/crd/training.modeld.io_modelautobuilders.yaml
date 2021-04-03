@@ -107,6 +107,51 @@ spec:
                 description: The spec of the data source, if none, the runner will
                   infer the schema, and will create a new schema with
                 properties:
+                  api:
+                    description: Api define the specification of the api
+                    properties:
+                      connectionRef:
+                        description: Connection refer to a connection object that
+                          point to secret
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      topic:
+                        description: URI is the uri of the api
+                        type: string
+                    type: object
                   description:
                     description: User provided description of the data source
                     maxLength: 512
@@ -326,12 +371,17 @@ spec:
                               description: PrimaryKey denotes if this column is part
                                 of the file key.
                               type: boolean
+                            preservePrivacy:
+                              description: PreservePrivacy is true if the column content
+                                should not be exposed due to privacy concerns
+                              type: boolean
                             required:
                               description: Required
                               type: boolean
                             timeColumn:
-                              description: True if this column is used as the time
-                                axis in time series foreacst Default is false.
+                              description: TimeColumn is true if this column is used
+                                as the time axis in time series foreacst Default is
+                                false.
                               type: boolean
                             title:
                               description: Title
@@ -390,6 +440,51 @@ spec:
                             type: string
                         type: object
                     type: object
+                  stream:
+                    description: Stream define the specification of the stream
+                    properties:
+                      connectionRef:
+                        description: Connection refer to a connection object that
+                          point to secret
+                        properties:
+                          apiVersion:
+                            description: API version of the referent.
+                            type: string
+                          fieldPath:
+                            description: 'If referring to a piece of an object instead
+                              of an entire object, this string should contain a valid
+                              JSON/Go field access statement, such as desiredState.manifest.containers[2].
+                              For example, if the object reference is to a container
+                              within a pod, this would take on a value like: "spec.containers{name}"
+                              (where "name" refers to the name of the container that
+                              triggered the event) or if no container name is specified
+                              "spec.containers[2]" (container with index 2 in this
+                              pod). This syntax is chosen only to have some well-defined
+                              way of referencing a part of an object. TODO: this design
+                              is not final and this field is subject to change in
+                              the future.'
+                            type: string
+                          kind:
+                            description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                            type: string
+                          name:
+                            description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                            type: string
+                          namespace:
+                            description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                            type: string
+                          resourceVersion:
+                            description: 'Specific resourceVersion to which this reference
+                              is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                            type: string
+                          uid:
+                            description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                            type: string
+                        type: object
+                      topic:
+                        description: Topic is the stream topic
+                        type: string
+                    type: object
                   table:
                     description: Table access specification if the data source is
                       a table
@@ -432,30 +527,11 @@ spec:
                             description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                             type: string
                         type: object
-                      connectionString:
-                        description: ConnectionString to connect to the database server
-                        maxLength: 128
-                        type: string
-                      description:
-                        description: User provided description
-                        type: string
                       query:
                         description: The actual query. this is required.
                         type: string
-                      serverType:
-                        description: Type of server
-                        enum:
-                        - sqlserver
-                        - mysql
-                        - postgress
-                        - sqlite
-                        type: string
-                      serverVersion:
-                        description: The version of the server.
-                        type: string
-                      versionName:
-                        maxLength: 64
-                        pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                      tableName:
+                        description: TableName refer to whole table
                         type: string
                     type: object
                   type:
@@ -463,6 +539,8 @@ spec:
                     enum:
                     - flatfile
                     - table
+                    - stream
+                    - api
                     type: string
                   versionName:
                     default: ""

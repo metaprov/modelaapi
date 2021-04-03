@@ -25,6 +25,16 @@ message AggregationSpec {
   repeated FeatureAggrSpec aggregations = 2;
 }
 
+message ApiSpec {
+  // URI is the uri of the api
+  // +kubebuilder:validation:Optional
+  optional string topic = 1;
+
+  // Connection refer to a connection object that point to secret
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
+}
+
 message Column {
   // FileName specify the name of the attribute
   // +kubebuilder:validation:MaxLength=63
@@ -141,10 +151,13 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool uniqueItems = 26;
 
-  // True if this column is used as the time axis in time series foreacst
+  // TimeColumn is true if this column is used as the time axis in time series foreacst
   // Default is false.
   // +kubebuilder:validation:Optional
   optional bool timeColumn = 27;
+
+  // PreservePrivacy is true if the column content should not be exposed due to privacy concerns
+  optional bool preservePrivacy = 28;
 }
 
 // Hold the statistical parameters about a single attribute
@@ -373,20 +386,20 @@ message DataPipelineRunSpec {
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
 message DataPipelineRunStatus {
-  // Pointers to the done datasets
-  repeated string inputs = 1;
+  // RecipeRuns is the names of the recipe runs that occur during running of the pipeline.
+  repeated string recipeRuns = 1;
 
   // the resulting dataset from the flow
-  optional string output = 2;
+  optional DataLocation output = 2;
 
   // the phase of the run
   optional string phase = 3;
 
-  // StartTime is the times that this data pipeline started
+  // StartTime is the start time of the pipeline
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
 
-  // CompletionTime is the time that this pipeline finishes
+  // CompletionTime is the end time of the pipeline
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
 
@@ -410,9 +423,9 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   repeated string inputDatasets = 3;
 
-  // RecipeNames is the recipe for this pipeline.
+  // RecipeOrder defines the list of recipes and the order they need to run
   // +kubebuilder:validation:Optional
-  repeated string recipeNames = 4;
+  repeated RecipePartSpec recipeOrder = 4;
 
   // The output definition
   // +kubebuilder:validation:Optional
@@ -720,12 +733,20 @@ message DataSourceSpec {
 
   // Table access specification if the data source is a table
   // +kubebuilder:validation:Optional
-  optional Table table = 7;
+  optional TableSpec table = 7;
+
+  // Stream define the specification of the stream
+  // +kubebuilder:validation:Optional
+  optional StreamSpec stream = 8;
+
+  // Api define the specification of the api
+  // +kubebuilder:validation:Optional
+  optional ApiSpec api = 9;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 10;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec
@@ -1207,11 +1228,6 @@ message FeatureSpec {
   // +kubebuilder:validation:MaxLength=512
   optional string description = 3;
 
-  // FileName specify the name of the attribute
-  // +kubebuilder:validation:MaxLength=64
-  // +kubebuilder:validation:MinLength=1
-  optional string name = 4;
-
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:validation:Optional
   optional string keyColumn = 5;
@@ -1235,45 +1251,83 @@ message FeatureSpec {
 
 // FeatureStatus defines the observed state of Feature
 message FeatureStatus {
-  // Sha256 contains the signature of
-  // +kubebuilder:validation:Optional
-  optional string sha256 = 2;
-
-  // FileName is the name of the attribute
-  // +kubebuilder:validation:Optional
-  optional string name = 3;
-
   // Min is the minimum value of the attribute
-  // +kubebuilder:validation:Optional
-  optional double min = 4;
+  optional double min = 2;
 
   // Max is the maximum value of the attribute
-  // +kubebuilder:validation:Optional
-  optional double max = 5;
+  optional double max = 3;
 
   // Mean is the mean value of the attribute
-  // +kubebuilder:validation:Optional
-  optional double mean = 6;
-
-  // Zeros is the numbers of zeros in the feature
-  // +kubebuilder:validation:Optional
-  optional int32 zeros = 7;
-
-  // Nulls is the numbers of zeros in the feature
-  // +kubebuilder:validation:Optional
-  optional int32 nulls = 8;
-
-  // P01 is the numbers of values in the first precent
-  // +kubebuilder:validation:Optional
-  optional double p01 = 9;
-
-  // P99 is the numbers of values
-  // +kubebuilder:validation:Optional
-  optional double p99 = 10;
+  optional double mean = 4;
 
   // StdDev is the standard deviation value of the attribute
-  // +kubebuilder:validation:Optional
-  optional double stddev = 11;
+  optional double stddev = 5;
+
+  // Skewness is the standard deviation value of the attribute
+  optional double skewness = 6;
+
+  // Kurtosis is the standard deviation value of the attribute
+  optional double kurtosis = 7;
+
+  // Zeros is the numbers of zeros in the feature
+  optional double zeros = 8;
+
+  // Pct25 is the 25 precent point
+  optional double p25 = 10;
+
+  // Pct50 is the median
+  optional double p50 = 11;
+
+  // Pct75 is the 75% point
+  optional double p75 = 12;
+
+  // The number of missing values
+  optional int32 missing = 14;
+
+  // The number of invalid values
+  optional int32 invalid = 15;
+
+  // Is this the target attribute, the value is derived from the schema
+  optional bool target = 16;
+
+  // The feature importance
+  optional double importance = 17;
+
+  optional int32 distinc = 18;
+
+  // Should this column be ignored, as specified by the user.
+  // This value is derived from the schema
+  optional bool ignored = 19;
+
+  // Is this column is nullable.
+  // This value is derived from the schema.
+  optional bool nullable = 20;
+
+  // This column has high cardinality and should be ignored.
+  // The value is set during the profile process.
+  optional bool highCred = 21;
+
+  // This column has high corrolation with another feature and should be dropped.
+  // The value is set during the profile process.
+  optional bool highCorr = 22;
+
+  // Mark that this column is skewed and would require a power transform
+  // If skewness is less than -1 or greater than 1, the distribution is highly skewed.
+  // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
+  // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
+  optional bool skew = 23;
+
+  // Completeness is the ratio between non null to null
+  optional double completeness = 24;
+
+  // The ratio between distinc to total
+  optional double distinctValueCount = 25;
+
+  // The ratio between most freq value to total
+  optional double mostFreqValuesRatio = 26;
+
+  // Used for text attributes
+  optional double indexOfPeculiarity = 27;
 
   // +optional
   repeated FeatureCondition conditions = 13;
@@ -1634,7 +1688,7 @@ message Recipe {
 message RecipeCondition {
   optional string type = 1;
 
-  // Status of the condition, one of True, False, AutoScaler.
+  // Status of the condition, one of True, False, Unknown.
   optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
@@ -1653,13 +1707,16 @@ message RecipeCondition {
 // RecipeInputSpec specify the input for a recipe
 message RecipeInputSpec {
   // DatasetName is the name of the dataset
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string datasetName = 1;
 
-  // Location is the folder of the actual data resides.
+  // Location is the folder of the actual data resides, if not using dataset
   // +required.
   optional DataLocation location = 2;
 
   // Format is the dataset format
+  // +kubebuilder:default:=csv
   optional string format = 3;
 }
 
@@ -1682,8 +1739,16 @@ message RecipeOutputSpec {
   optional string datasetName = 2;
 
   // Location is the data location folder of the actual data resides.
-  // +required.
+  // +kubebuilder:validation:Required
   optional DataLocation location = 3;
+}
+
+message RecipePartSpec {
+  // RecipeName is the name of the recipe to run
+  optional string recipeName = 1;
+
+  // Dependents is the list of recipe that need to run after this recipe.
+  repeated string Dependents = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -1773,13 +1838,18 @@ message RecipeRunStatus {
 
 message RecipeSampleSpec {
   // Type is the sampling type
+  // Default is random
+  // +kubebuilder:default:="random"
+  // +kubebuilder:validation:Optional
   optional string type = 1;
 
   // Rows is the number of rows. Default is 500
+  // +kubebuilder:default:=500
   // +kubebuilder:validation:Optional
   optional int32 rows = 2;
 
   // Filter formula. Valid only if the sample is a filter.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string filter = 3;
 }
@@ -1880,36 +1950,28 @@ message StakeHolder {
   repeated string roles = 2;
 }
 
-message Table {
-  // +kubebuilder:validation:MaxLength=64
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  optional string versionName = 1;
-
-  // User provided description
-  // +kubebuilder:default =""
+message StreamSpec {
+  // Topic is the stream topic
   // +kubebuilder:validation:Optional
-  optional string description = 2;
-
-  // The actual query. this is required.
-  // +kubebuilder:validation:Optional
-  optional string query = 3;
-
-  // Type of server
-  // +kubebuilder:validation:Optional
-  optional string serverType = 4;
-
-  // ConnectionString to connect to the database server
-  // +kubebuilder:validation:MaxLength=128
-  // +kubebuilder:validation:Optional
-  optional string connectionString = 5;
+  optional string topic = 1;
 
   // Connection refer to a connection object that point to secret
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 6;
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
+}
 
-  // The version of the server.
+message TableSpec {
+  // The actual query. this is required.
   // +kubebuilder:validation:Optional
-  optional string serverVersion = 7;
+  optional string query = 1;
+
+  // TableName refer to whole table
+  // +kubebuilder:validation:Optional
+  optional string tableName = 2;
+
+  // Connection refer to a connection object that point to secret
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference connectionRef = 3;
 }
 
 message TimeSeriesSchema {

@@ -31,6 +31,30 @@ export namespace AggregationSpec {
   }
 }
 
+export class ApiSpec extends jspb.Message {
+  getTopic(): string;
+  setTopic(value: string): ApiSpec;
+
+  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ApiSpec;
+  hasConnectionref(): boolean;
+  clearConnectionref(): ApiSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiSpec): ApiSpec.AsObject;
+  static serializeBinaryToWriter(message: ApiSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiSpec;
+  static deserializeBinaryFromReader(message: ApiSpec, reader: jspb.BinaryReader): ApiSpec;
+}
+
+export namespace ApiSpec {
+  export type AsObject = {
+    topic: string,
+    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+  }
+}
+
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -115,6 +139,9 @@ export class Column extends jspb.Message {
   getTimecolumn(): boolean;
   setTimecolumn(value: boolean): Column;
 
+  getPreserveprivacy(): boolean;
+  setPreserveprivacy(value: boolean): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -152,6 +179,7 @@ export namespace Column {
     minitems: number,
     uniqueitems: boolean,
     timecolumn: boolean,
+    preserveprivacy: boolean,
   }
 }
 
@@ -548,13 +576,15 @@ export namespace DataPipelineRunSpec {
 }
 
 export class DataPipelineRunStatus extends jspb.Message {
-  getInputsList(): Array<string>;
-  setInputsList(value: Array<string>): DataPipelineRunStatus;
-  clearInputsList(): DataPipelineRunStatus;
-  addInputs(value: string, index?: number): DataPipelineRunStatus;
+  getReciperunsList(): Array<string>;
+  setReciperunsList(value: Array<string>): DataPipelineRunStatus;
+  clearReciperunsList(): DataPipelineRunStatus;
+  addReciperuns(value: string, index?: number): DataPipelineRunStatus;
 
-  getOutput(): string;
-  setOutput(value: string): DataPipelineRunStatus;
+  getOutput(): DataLocation | undefined;
+  setOutput(value?: DataLocation): DataPipelineRunStatus;
+  hasOutput(): boolean;
+  clearOutput(): DataPipelineRunStatus;
 
   getPhase(): string;
   setPhase(value: string): DataPipelineRunStatus;
@@ -584,8 +614,8 @@ export class DataPipelineRunStatus extends jspb.Message {
 
 export namespace DataPipelineRunStatus {
   export type AsObject = {
-    inputsList: Array<string>,
-    output: string,
+    reciperunsList: Array<string>,
+    output?: DataLocation.AsObject,
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -605,10 +635,10 @@ export class DataPipelineSpec extends jspb.Message {
   clearInputdatasetsList(): DataPipelineSpec;
   addInputdatasets(value: string, index?: number): DataPipelineSpec;
 
-  getRecipenamesList(): Array<string>;
-  setRecipenamesList(value: Array<string>): DataPipelineSpec;
-  clearRecipenamesList(): DataPipelineSpec;
-  addRecipenames(value: string, index?: number): DataPipelineSpec;
+  getRecipeorderList(): Array<RecipePartSpec>;
+  setRecipeorderList(value: Array<RecipePartSpec>): DataPipelineSpec;
+  clearRecipeorderList(): DataPipelineSpec;
+  addRecipeorder(value?: RecipePartSpec, index?: number): RecipePartSpec;
 
   getOutput(): DataOutputSpec | undefined;
   setOutput(value?: DataOutputSpec): DataPipelineSpec;
@@ -639,7 +669,7 @@ export namespace DataPipelineSpec {
     versionname: string,
     description: string,
     inputdatasetsList: Array<string>,
-    recipenamesList: Array<string>,
+    recipeorderList: Array<RecipePartSpec.AsObject>,
     output?: DataOutputSpec.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
@@ -1130,10 +1160,20 @@ export class DataSourceSpec extends jspb.Message {
   hasFile(): boolean;
   clearFile(): DataSourceSpec;
 
-  getTable(): Table | undefined;
-  setTable(value?: Table): DataSourceSpec;
+  getTable(): TableSpec | undefined;
+  setTable(value?: TableSpec): DataSourceSpec;
   hasTable(): boolean;
   clearTable(): DataSourceSpec;
+
+  getStream(): StreamSpec | undefined;
+  setStream(value?: StreamSpec): DataSourceSpec;
+  hasStream(): boolean;
+  clearStream(): DataSourceSpec;
+
+  getApi(): ApiSpec | undefined;
+  setApi(value?: ApiSpec): DataSourceSpec;
+  hasApi(): boolean;
+  clearApi(): DataSourceSpec;
 
   getOwner(): string;
   setOwner(value: string): DataSourceSpec;
@@ -1154,7 +1194,9 @@ export namespace DataSourceSpec {
     schema?: Schema.AsObject,
     type: string,
     file?: FlatFileSpec.AsObject,
-    table?: Table.AsObject,
+    table?: TableSpec.AsObject,
+    stream?: StreamSpec.AsObject,
+    api?: ApiSpec.AsObject,
     owner: string,
   }
 }
@@ -2051,9 +2093,6 @@ export class FeatureSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): FeatureSpec;
 
-  getName(): string;
-  setName(value: string): FeatureSpec;
-
   getKeycolumn(): string;
   setKeycolumn(value: string): FeatureSpec;
 
@@ -2082,7 +2121,6 @@ export namespace FeatureSpec {
     owner: string,
     versionname: string,
     description: string,
-    name: string,
     keycolumn: string,
     timestampcolumn: string,
     featurecolumn: string,
@@ -2092,12 +2130,6 @@ export namespace FeatureSpec {
 }
 
 export class FeatureStatus extends jspb.Message {
-  getSha256(): string;
-  setSha256(value: string): FeatureStatus;
-
-  getName(): string;
-  setName(value: string): FeatureStatus;
-
   getMin(): number;
   setMin(value: number): FeatureStatus;
 
@@ -2107,20 +2139,68 @@ export class FeatureStatus extends jspb.Message {
   getMean(): number;
   setMean(value: number): FeatureStatus;
 
+  getStddev(): number;
+  setStddev(value: number): FeatureStatus;
+
+  getSkewness(): number;
+  setSkewness(value: number): FeatureStatus;
+
+  getKurtosis(): number;
+  setKurtosis(value: number): FeatureStatus;
+
   getZeros(): number;
   setZeros(value: number): FeatureStatus;
 
-  getNulls(): number;
-  setNulls(value: number): FeatureStatus;
+  getP25(): number;
+  setP25(value: number): FeatureStatus;
 
-  getP01(): number;
-  setP01(value: number): FeatureStatus;
+  getP50(): number;
+  setP50(value: number): FeatureStatus;
 
-  getP99(): number;
-  setP99(value: number): FeatureStatus;
+  getP75(): number;
+  setP75(value: number): FeatureStatus;
 
-  getStddev(): number;
-  setStddev(value: number): FeatureStatus;
+  getMissing(): number;
+  setMissing(value: number): FeatureStatus;
+
+  getInvalid(): number;
+  setInvalid(value: number): FeatureStatus;
+
+  getTarget(): boolean;
+  setTarget(value: boolean): FeatureStatus;
+
+  getImportance(): number;
+  setImportance(value: number): FeatureStatus;
+
+  getDistinc(): number;
+  setDistinc(value: number): FeatureStatus;
+
+  getIgnored(): boolean;
+  setIgnored(value: boolean): FeatureStatus;
+
+  getNullable(): boolean;
+  setNullable(value: boolean): FeatureStatus;
+
+  getHighcred(): boolean;
+  setHighcred(value: boolean): FeatureStatus;
+
+  getHighcorr(): boolean;
+  setHighcorr(value: boolean): FeatureStatus;
+
+  getSkew(): boolean;
+  setSkew(value: boolean): FeatureStatus;
+
+  getCompleteness(): number;
+  setCompleteness(value: number): FeatureStatus;
+
+  getDistinctvaluecount(): number;
+  setDistinctvaluecount(value: number): FeatureStatus;
+
+  getMostfreqvaluesratio(): number;
+  setMostfreqvaluesratio(value: number): FeatureStatus;
+
+  getIndexofpeculiarity(): number;
+  setIndexofpeculiarity(value: number): FeatureStatus;
 
   getConditionsList(): Array<FeatureCondition>;
   setConditionsList(value: Array<FeatureCondition>): FeatureStatus;
@@ -2137,16 +2217,30 @@ export class FeatureStatus extends jspb.Message {
 
 export namespace FeatureStatus {
   export type AsObject = {
-    sha256: string,
-    name: string,
     min: number,
     max: number,
     mean: number,
-    zeros: number,
-    nulls: number,
-    p01: number,
-    p99: number,
     stddev: number,
+    skewness: number,
+    kurtosis: number,
+    zeros: number,
+    p25: number,
+    p50: number,
+    p75: number,
+    missing: number,
+    invalid: number,
+    target: boolean,
+    importance: number,
+    distinc: number,
+    ignored: boolean,
+    nullable: boolean,
+    highcred: boolean,
+    highcorr: boolean,
+    skew: boolean,
+    completeness: number,
+    distinctvaluecount: number,
+    mostfreqvaluesratio: number,
+    indexofpeculiarity: number,
     conditionsList: Array<FeatureCondition.AsObject>,
   }
 }
@@ -2945,6 +3039,30 @@ export namespace RecipeOutputSpec {
   }
 }
 
+export class RecipePartSpec extends jspb.Message {
+  getRecipename(): string;
+  setRecipename(value: string): RecipePartSpec;
+
+  getDependentsList(): Array<string>;
+  setDependentsList(value: Array<string>): RecipePartSpec;
+  clearDependentsList(): RecipePartSpec;
+  addDependents(value: string, index?: number): RecipePartSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecipePartSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RecipePartSpec): RecipePartSpec.AsObject;
+  static serializeBinaryToWriter(message: RecipePartSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecipePartSpec;
+  static deserializeBinaryFromReader(message: RecipePartSpec, reader: jspb.BinaryReader): RecipePartSpec;
+}
+
+export namespace RecipePartSpec {
+  export type AsObject = {
+    recipename: string,
+    dependentsList: Array<string>,
+  }
+}
+
 export class RecipeRun extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): RecipeRun;
@@ -3341,47 +3459,55 @@ export namespace StakeHolder {
   }
 }
 
-export class Table extends jspb.Message {
-  getVersionname(): string;
-  setVersionname(value: string): Table;
-
-  getDescription(): string;
-  setDescription(value: string): Table;
-
-  getQuery(): string;
-  setQuery(value: string): Table;
-
-  getServertype(): string;
-  setServertype(value: string): Table;
-
-  getConnectionstring(): string;
-  setConnectionstring(value: string): Table;
+export class StreamSpec extends jspb.Message {
+  getTopic(): string;
+  setTopic(value: string): StreamSpec;
 
   getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): Table;
+  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StreamSpec;
   hasConnectionref(): boolean;
-  clearConnectionref(): Table;
-
-  getServerversion(): string;
-  setServerversion(value: string): Table;
+  clearConnectionref(): StreamSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Table.AsObject;
-  static toObject(includeInstance: boolean, msg: Table): Table.AsObject;
-  static serializeBinaryToWriter(message: Table, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Table;
-  static deserializeBinaryFromReader(message: Table, reader: jspb.BinaryReader): Table;
+  toObject(includeInstance?: boolean): StreamSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamSpec): StreamSpec.AsObject;
+  static serializeBinaryToWriter(message: StreamSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamSpec;
+  static deserializeBinaryFromReader(message: StreamSpec, reader: jspb.BinaryReader): StreamSpec;
 }
 
-export namespace Table {
+export namespace StreamSpec {
   export type AsObject = {
-    versionname: string,
-    description: string,
-    query: string,
-    servertype: string,
-    connectionstring: string,
+    topic: string,
     connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    serverversion: string,
+  }
+}
+
+export class TableSpec extends jspb.Message {
+  getQuery(): string;
+  setQuery(value: string): TableSpec;
+
+  getTablename(): string;
+  setTablename(value: string): TableSpec;
+
+  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TableSpec;
+  hasConnectionref(): boolean;
+  clearConnectionref(): TableSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TableSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TableSpec): TableSpec.AsObject;
+  static serializeBinaryToWriter(message: TableSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TableSpec;
+  static deserializeBinaryFromReader(message: TableSpec, reader: jspb.BinaryReader): TableSpec;
+}
+
+export namespace TableSpec {
+  export type AsObject = {
+    query: string,
+    tablename: string,
+    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

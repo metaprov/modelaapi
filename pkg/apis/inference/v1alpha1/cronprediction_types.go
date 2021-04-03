@@ -68,12 +68,13 @@ type CronPredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The owner account name
+	// +kubebuilder:default ="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
 	// Schedule is the cron schedule
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule *catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// Template refer to the prediction template
 	Template PredictionTemplate `json:"template" protobuf:"bytes,4,opt,name=template"`
 }

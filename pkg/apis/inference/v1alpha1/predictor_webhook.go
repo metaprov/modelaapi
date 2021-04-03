@@ -13,14 +13,6 @@ var _ webhook.Defaulter = &Predictor{}
 func (predictor *Predictor) Default() {
 	// add the finalizer if we are not about to get deleted.
 
-	if predictor.Spec.Owner == nil {
-		predictor.Spec.Owner = util.StrPtr("")
-	}
-
-	if predictor.Spec.Port == nil {
-		predictor.Spec.Port = util.Int32Ptr(3000)
-	}
-
 	if predictor.Spec.ProductRef == nil {
 		predictor.Spec.ProductRef = &v1.ObjectReference{
 			Namespace: "default-tenant",

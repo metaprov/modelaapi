@@ -153,11 +153,7 @@ func (in *CronPredictionSpec) DeepCopyInto(out *CronPredictionSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(catalogv1alpha1.RunSchedule)
-		(*in).DeepCopyInto(*out)
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	in.Template.DeepCopyInto(&out.Template)
 }
 
@@ -284,10 +280,30 @@ func (in *CurtainSpec) DeepCopyInto(out *CurtainSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Wizards != nil {
-		in, out := &in.Wizards, &out.Wizards
+	if in.ServingSiteName != nil {
+		in, out := &in.ServingSiteName, &out.ServingSiteName
+		*out = new(string)
+		**out = **in
+	}
+	if in.DatasetName != nil {
+		in, out := &in.DatasetName, &out.DatasetName
+		*out = new(string)
+		**out = **in
+	}
+	if in.wizards != nil {
+		in, out := &in.wizards, &out.wizards
 		*out = make([]string, len(*in))
 		copy(*out, *in)
+	}
+	if in.Question != nil {
+		in, out := &in.Question, &out.Question
+		*out = new(string)
+		**out = **in
+	}
+	if in.NotifierName != nil {
+		in, out := &in.NotifierName, &out.NotifierName
+		*out = new(string)
+		**out = **in
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
@@ -797,21 +813,6 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
-	if in.Port != nil {
-		in, out := &in.Port, &out.Port
-		*out = new(int32)
-		**out = **in
-	}
-	if in.Path != nil {
-		in, out := &in.Path, &out.Path
-		*out = new(string)
-		**out = **in
-	}
-	if in.AccessType != nil {
-		in, out := &in.AccessType, &out.AccessType
-		*out = new(AccessType)
-		**out = **in
-	}
 	if in.Template != nil {
 		in, out := &in.Template, &out.Template
 		*out = new(v1.PodTemplate)
@@ -875,6 +876,16 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		in, out := &in.Store, &out.Store
 		*out = new(OnlineFeaturestoreSpec)
 		(*in).DeepCopyInto(*out)
+	}
+	if in.ForewardCurtainName != nil {
+		in, out := &in.ForewardCurtainName, &out.ForewardCurtainName
+		*out = new(string)
+		**out = **in
+	}
+	if in.BackwardCurtainName != nil {
+		in, out := &in.BackwardCurtainName, &out.BackwardCurtainName
+		*out = new(string)
+		**out = **in
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type

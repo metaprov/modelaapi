@@ -108,6 +108,7 @@ message CronPredictionSpec {
   optional string versionName = 1;
 
   // The owner account name
+  // +kubebuilder:default ="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 2;
 
@@ -172,32 +173,39 @@ message CurtainList {
 // CurtainSpec define the desired state of a Curtain
 message CurtainSpec {
   // User provided description
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 1;
 
   // User provided description
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
   // The product of the resource
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string servingsiteName = 3;
 
-  // The dataset that store the wizard answers
+  // The dataset that store the human answers
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 
-  // The wizards him self. This is a reference to one or more wizards objects.
-  repeated string wizards = 5;
-
-  // Question to ask the wizard
+  // Question to ask the human.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   optional string question = 6;
 
+  // NotifierName is used to converse with the human.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:MaxLength=256
+  optional string notifierName = 7;
+
   // The owner account name
+  // +kubebuilder:default:='no-one'
   // +kubebuilder:validation:Optional
-  optional string owner = 7;
+  optional string owner = 8;
 }
 
 // CurtainStatus contain the observed state of the Curtain object.
@@ -466,39 +474,22 @@ message PredictorSpec {
   // User provided description
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:default =""
-  optional string description = 2;
+  optional string description = 1;
 
   // The product that this predictor serve.
-  optional k8s.io.api.core.v1.ObjectReference productRef = 3;
+  optional k8s.io.api.core.v1.ObjectReference productRef = 2;
 
   // The serving site that hosts this predictor and the models
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 4;
-
-  // Service port specify the predictor port.
-  // Default: 8080
-  // +kubebuilder:validation:Optional
-  optional int32 port = 5;
-
-  // This is the path relative to the ingress path
-  // +kubebuilder:validation:MaxLength=256
-  // +kubebuilder:validation:MinLength=1
-  // Default: /predict
-  // +kubebuilder:validation:Optional
-  optional string path = 6;
-
-  // The access method specified how external clients will access the predictor
-  // Default: ClusterPort
-  // +kubebuilder:validation:Optional
-  optional string accessType = 7;
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 3;
 
   // A template for the predictor pod. The system will create the deployment based on this template.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.PodTemplate template = 8;
+  optional k8s.io.api.core.v1.PodTemplate template = 4;
 
-  // Production model deployment
+  // Models is the list of models
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 9;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 5;
 
   // How much do we increment the warm up traffic
   // +kubebuilder:validation:Optional
@@ -519,7 +510,7 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional PredictionChannels input = 15;
 
-  // set of output channels, the predictor will
+  // set of output channels, the predictor will output the result on any channel that is active in the output
   // +kubebuilder:validation:Optional
   optional PredictionChannels output = 16;
 
@@ -553,14 +544,22 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional PredictionCacheSpec cache = 22;
 
-  // Store is the specification of the online score.
+  // Store is the specification of the online data store.
   // +kubebuilder:validation:Optional
   optional OnlineFeaturestoreSpec store = 23;
+
+  // The forward curtain recieve the prediction request before the prediction.
+  // +kubebuilder:validation:Optional
+  optional string forewardCurtain = 24;
+
+  // The backward curtain recieve the curtain after the prediction.
+  // +kubebuilder:validation:Optional
+  optional string backwardCurtain = 25;
 
   // Type is the type of predictor
   // +kubebuilder:default:="online"
   // +kubebuilder:validation:Optional
-  optional string type = 24;
+  optional string type = 26;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

@@ -123,32 +123,18 @@ type PredictorSpec struct {
 	// User provided description
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default =""
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// The product that this predictor serve.
-	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
+	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,2,opt,name=productRef"`
 	// The serving site that hosts this predictor and the models
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
-	// Service port specify the predictor port.
-	// Default: 8080
-	// +kubebuilder:validation:Optional
-	Port *int32 `json:"port,omitempty" protobuf:"varint,5,opt,name=port"`
-	// This is the path relative to the ingress path
-	// +kubebuilder:validation:MaxLength=256
-	// +kubebuilder:validation:MinLength=1
-	// Default: /predict
-	// +kubebuilder:validation:Optional
-	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
-	// The access method specified how external clients will access the predictor
-	// Default: ClusterPort
-	// +kubebuilder:validation:Optional
-	AccessType *AccessType `json:"accessType,omitempty" protobuf:"bytes,7,opt,name=accessType"`
+	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,3,opt,name=servingsiteRef"`
 	// A template for the predictor pod. The system will create the deployment based on this template.
 	// +kubebuilder:validation:Optional
-	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,8,opt,name=template"`
-	// Production model deployment
+	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
+	// Models is the list of models
 	// +kubebuilder:validation:Optional
-	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,9,opt,name=models"`
+	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,5,opt,name=models"`
 	// How much do we increment the warm up traffic
 	// +kubebuilder:validation:Optional
 	DriftCheck *DriftCheckSpec `json:"driftCheck,omitempty" protobuf:"bytes,12,opt,name=driftCheck"`
@@ -164,7 +150,7 @@ type PredictorSpec struct {
 	// set of input channel, the predictor will watch those channels for predictions
 	// +kubebuilder:validation:Optional
 	Input PredictionChannels `json:"input,omitempty" protobuf:"bytes,15,opt,name=input"`
-	// set of output channels, the predictor will
+	// set of output channels, the predictor will output the result on any channel that is active in the output
 	// +kubebuilder:validation:Optional
 	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,16,opt,name=output"`
 	// Min num of replicates
@@ -191,13 +177,19 @@ type PredictorSpec struct {
 	// Cache is the specification of prediction cache
 	// +kubebuilder:validation:Optional
 	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,22,opt,name=cache"`
-	// Store is the specification of the online score.
+	// Store is the specification of the online data store.
 	// +kubebuilder:validation:Optional
 	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,23,opt,name=store"`
+	// The forward curtain recieve the prediction request before the prediction.
+	// +kubebuilder:validation:Optional
+	ForewardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,24,opt,name=forewardCurtain"`
+	// The backward curtain recieve the curtain after the prediction.
+	// +kubebuilder:validation:Optional
+	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,25,opt,name=backwardCurtain"`
 	// Type is the type of predictor
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
-	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,24,opt,name=type"`
+	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,26,opt,name=type"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.

@@ -72,26 +72,35 @@ type CurtainList struct {
 // CurtainSpec define the desired state of a Curtain
 type CurtainSpec struct {
 	// User provided description
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// User provided description
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// The product of the resource
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ServingSiteName string `json:"servingsiteName,omitempty" protobuf:"bytes,3,opt,name=servingsiteName"`
-	// The dataset that store the wizard answers
+	ServingSiteName *string `json:"servingsiteName,omitempty" protobuf:"bytes,3,opt,name=servingsiteName"`
+	// The dataset that store the human answers
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
-	// The wizards him self. This is a reference to one or more wizards objects.
-	Wizards []string `json:"wizards,omitempty" protobuf:"bytes,5,rep,name=wizards"`
-	// Question to ask the wizard
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
+	// The accounts of the human which can answer the prediction.
+	wizards []string `json:"wizards,omitempty" protobuf:"bytes,5,rep,name=wizards"`
+	// Question to ask the human.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
-	Question string `json:"question,omitempty" protobuf:"bytes,6,opt,name=question"`
+	Question *string `json:"question,omitempty" protobuf:"bytes,6,opt,name=question"`
+	// NotifierName is used to converse with the human.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:MaxLength=256
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,7,opt,name=notifierName"`
 	// The owner account name
+	// +kubebuilder:default:='no-one'
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }
 
 // CurtainStatus contain the observed state of the Curtain object.

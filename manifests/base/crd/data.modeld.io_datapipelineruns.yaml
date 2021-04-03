@@ -88,7 +88,7 @@ spec:
             description: DataPipelineRunStatus defines the observed state of DataPipelineRun
             properties:
               completionTime:
-                description: CompletionTime is the time that this pipeline finishes
+                description: CompletionTime is the end time of the pipeline
                 format: date-time
                 type: string
               conditions:
@@ -119,25 +119,35 @@ spec:
                   - type
                   type: object
                 type: array
-              inputs:
-                description: Pointers to the done datasets
-                items:
-                  type: string
-                type: array
               output:
                 description: the resulting dataset from the flow
-                type: string
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               phase:
                 description: the phase of the run
                 type: string
+              recipeRuns:
+                description: RecipeRuns is the names of the recipe runs that occur
+                  during running of the pipeline.
+                items:
+                  type: string
+                type: array
               startTime:
-                description: StartTime is the times that this data pipeline started
+                description: StartTime is the start time of the pipeline
                 format: date-time
                 type: string
             required:
-            - inputs
             - output
             - phase
+            - recipeRuns
             type: object
         required:
         - metadata

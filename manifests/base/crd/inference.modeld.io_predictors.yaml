@@ -58,17 +58,6 @@ spec:
           spec:
             description: PredictorSpec define the desired state of the predictor
             properties:
-              accessType:
-                description: 'The access method specified how external clients will
-                  access the predictor Default: ClusterPort'
-                enum:
-                - cluster-port
-                - node-port
-                - load-balancer
-                - ingress
-                - mesh
-                - none
-                type: string
               artifactsFolder:
                 description: The key in the bucket for storing all the predictor artifacts.
                 maxLength: 512
@@ -79,6 +68,9 @@ spec:
                 description: Does the current model pods needs autoscaling. If yes
                   we will use HPA.
                 type: boolean
+              backwardCurtain:
+                description: The backward curtain recieve the curtain after the prediction.
+                type: string
               cache:
                 description: Cache is the specification of prediction cache
                 properties:
@@ -110,6 +102,10 @@ spec:
                     description: The drift threshold.
                     type: number
                 type: object
+              forwardCurtain:
+                description: The forward curtain recieve the prediction request before
+                  the prediction.
+                type: string
               input:
                 description: set of input channel, the predictor will watch those
                   channels for predictions
@@ -213,7 +209,7 @@ spec:
                 minimum: 1
                 type: integer
               models:
-                description: Production model deployment
+                description: Models is the list of models
                 items:
                   description: The desired state of the model.
                   properties:
@@ -277,7 +273,8 @@ spec:
                   type: object
                 type: array
               output:
-                description: set of output channels, the predictor will
+                description: set of output channels, the predictor will output the
+                  result on any channel that is active in the output
                 properties:
                   bot:
                     description: Bot is a channel that uses chats for input and output
@@ -369,16 +366,6 @@ spec:
                 default: no-one
                 description: The owner account name
                 type: string
-              path:
-                description: 'This is the path relative to the ingress path Default:
-                  /predict'
-                maxLength: 256
-                minLength: 1
-                type: string
-              port:
-                description: 'Service port specify the predictor port. Default: 8080'
-                format: int32
-                type: integer
               productRef:
                 description: The product that this predictor serve.
                 properties:
@@ -483,7 +470,7 @@ spec:
                     type: string
                 type: object
               store:
-                description: Store is the specification of the online score.
+                description: Store is the specification of the online data store.
                 properties:
                   active:
                     default: false
