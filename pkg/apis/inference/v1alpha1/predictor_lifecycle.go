@@ -156,7 +156,7 @@ func (r *Predictor) ConstructService(name string) *v1.Service {
 			Ports: []v1.ServicePort{
 				{
 					Name: "grpc",
-					Port: *r.Spec.Port,
+					Port: *r.Spec.Input.Online.Port,
 					TargetPort: intstr.IntOrString{
 						Type:   0,
 						IntVal: 8080,
@@ -167,29 +167,29 @@ func (r *Predictor) ConstructService(name string) *v1.Service {
 		},
 	}
 
-	if *r.Spec.AccessType == ClusterPortAccessType {
+	if *r.Spec.Input.Online.AccessType == ClusterPortAccessType {
 		result.Spec.Type = v1.ServiceTypeClusterIP
 	}
 
-	if *r.Spec.AccessType == NodePortAccessType {
+	if *r.Spec.Input.Online.AccessType == NodePortAccessType {
 		result.Spec.Type = v1.ServiceTypeNodePort
 
 	}
 
-	if *r.Spec.AccessType == LoadBalancerAccessType {
+	if *r.Spec.Input.Online.AccessType == LoadBalancerAccessType {
 		result.Spec.Type = v1.ServiceTypeLoadBalancer
 	}
 
-	if *r.Spec.AccessType == IngressAccessType {
+	if *r.Spec.Input.Online.AccessType == IngressAccessType {
 		result.Spec.Type = v1.ServiceTypeClusterIP
 	}
 
 	// For mesh we still use cluster ip. Since we would access it from the mesh.
-	if *r.Spec.AccessType == MeshAccessType {
+	if *r.Spec.Input.Online.AccessType == MeshAccessType {
 		result.Spec.Type = v1.ServiceTypeClusterIP
 	}
 
-	if *r.Spec.AccessType == NoneAccessType {
+	if *r.Spec.Input.Online.AccessType == NoneAccessType {
 
 	}
 
@@ -204,11 +204,11 @@ func (r *Predictor) ConstructIngressRule(fdqn string, serviceName string) *nwv1b
 			HTTP: &nwv1beta1.HTTPIngressRuleValue{
 				Paths: []nwv1beta1.HTTPIngressPath{
 					{
-						Path: *r.Spec.Path,
+						Path: *r.Spec.Input.Online.Path,
 						Backend: nwv1beta1.IngressBackend{
 							ServiceName: serviceName,
 							ServicePort: intstr.IntOrString{
-								IntVal: *r.Spec.Port,
+								IntVal: *r.Spec.Input.Online.Port,
 							},
 						},
 					},
