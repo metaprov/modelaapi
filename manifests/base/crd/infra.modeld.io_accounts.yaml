@@ -91,13 +91,15 @@ spec:
                     role:
                       description: The role in relation to the entity.
                       enum:
-                      - analyst
+                      - administrator
+                      - data-analyst
                       - data-scientist
                       - data-engineer
                       - data-steward
                       - product-manager
                       - risk-manager
                       - software-engineer
+                      - ml-engineer
                       type: string
                   type: object
                 type: array
@@ -123,13 +125,15 @@ spec:
                     role:
                       description: The role in relation to the entity.
                       enum:
-                      - analyst
+                      - administrator
+                      - data-analyst
                       - data-scientist
                       - data-engineer
                       - data-steward
                       - product-manager
                       - risk-manager
                       - software-engineer
+                      - ml-engineer
                       type: string
                   type: object
                 type: array
@@ -149,13 +153,15 @@ spec:
                     role:
                       description: The role in relation to the entity.
                       enum:
-                      - analyst
+                      - administrator
+                      - data-analyst
                       - data-scientist
                       - data-engineer
                       - data-steward
                       - product-manager
                       - risk-manager
                       - software-engineer
+                      - ml-engineer
                       type: string
                   type: object
                 type: array

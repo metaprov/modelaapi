@@ -173,13 +173,15 @@ spec:
                       items:
                         description: RoleName is the type of role a user can have
                         enum:
-                        - analyst
+                        - administrator
+                        - data-analyst
                         - data-scientist
                         - data-engineer
                         - data-steward
                         - product-manager
                         - risk-manager
                         - software-engineer
+                        - ml-engineer
                         type: string
                       type: array
                   type: object

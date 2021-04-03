@@ -11,17 +11,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// +kubebuilder:validation:Enum="analyst";"data-scientist";"data-engineer";"data-steward";"product-manager";"risk-manager";"software-engineer"
+// +kubebuilder:validation:Enum="administrator";"data-analyst";"data-scientist";"data-engineer";"data-steward";"product-manager";"risk-manager";"software-engineer";"ml-engineer"
 // RoleName is the type of role a user can have
 type RoleName string
 
 const (
-	DataAnalyst      RoleName = "analyst"
+	Administrator    RoleName = "administrator"
+	DataAnalyst      RoleName = "data-analyst"
 	DataScientist    RoleName = "data-scientist"
 	DataEngineer     RoleName = "data-engineer"
 	DataSteward      RoleName = "data-steward"
 	ProductManager   RoleName = "product-manager"
 	RiskManager      RoleName = "risk-manager"
+	MLEngineer       RoleName = "ml-engineer"
 	SoftwareEngineer RoleName = "software-engineer"
 )
 
