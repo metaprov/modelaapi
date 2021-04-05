@@ -33,7 +33,7 @@ type AlertCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modeld}
+// +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
 type Alert struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
