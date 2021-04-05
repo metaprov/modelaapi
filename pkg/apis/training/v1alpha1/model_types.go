@@ -308,10 +308,13 @@ type ModelStatus struct {
 	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,26,opt,name=validationDataset"`
 	//ResourceConsumed is the avg resource consumed during the training of the model
 	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,27,opt,name=resourceConsumed"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,28,opt,name=observedGeneration"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,28,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,29,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

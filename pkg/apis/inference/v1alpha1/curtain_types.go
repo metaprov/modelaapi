@@ -105,8 +105,11 @@ type CurtainSpec struct {
 
 // CurtainStatus contain the observed state of the Curtain object.
 type CurtainStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []CurtainCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []CurtainCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
 type CurtainTemplateSpec struct {

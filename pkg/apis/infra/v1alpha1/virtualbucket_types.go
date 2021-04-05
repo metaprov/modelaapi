@@ -75,6 +75,9 @@ type VirtualBucketSpec struct {
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
 type VirtualBucketStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []VirtualBucketCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []VirtualBucketCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

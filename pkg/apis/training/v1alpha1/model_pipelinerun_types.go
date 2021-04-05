@@ -198,8 +198,11 @@ type ModelPipelineRunStatus struct {
 	// The phase of the pipeline run
 	// +kubebuilder:validation:Optional
 	Phase PipelinePhase `json:"phase" protobuf:"bytes,10,opt,name=phase"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,11,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,12,rep,name=conditions"`
 	// Folder for pipeline run artifacts. This is assigned by the system
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional

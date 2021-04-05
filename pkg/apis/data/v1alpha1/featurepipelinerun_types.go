@@ -98,6 +98,9 @@ type FeaturePipelineRunStatus struct {
 	// The phase of the dataset processing
 	// +kubebuilder:validation:Optional
 	Phase FeautrePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	//+optional
-	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 }

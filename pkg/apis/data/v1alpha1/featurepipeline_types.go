@@ -99,8 +99,11 @@ type FeaturePipelineSpec struct {
 type FeaturePipelineStatus struct {
 	// Store the avg cost of running this pipeline
 	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,1,rep,name=averageCost"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	//+optional
-	Conditions []FeaturePipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []FeaturePipelineCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

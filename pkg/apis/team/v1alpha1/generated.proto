@@ -101,8 +101,12 @@ message ConversationSpec {
 
 // ConversationStatus is the current status of the conversation
 message ConversationStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated ConversationCondition conditions = 1;
+  repeated ConversationCondition conditions = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -185,8 +189,12 @@ message PostMortemSpec {
 
 // PostMortemStatus defines the actual state of a PostMortem
 message PostMortemStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated PostMortemCondition conditions = 1;
+  repeated PostMortemCondition conditions = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -249,8 +257,12 @@ message RunBookSpec {
 
 // RunBookStatus defines the actual state of a RunBook
 message RunBookStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated RunBookCondition conditions = 1;
+  repeated RunBookCondition conditions = 2;
 }
 
 // TimeLineEvent

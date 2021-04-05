@@ -110,6 +110,9 @@ type PredictionStatus struct {
 	// Results is the results of running the prediction with a labeled dataset
 	// +kubebuilder:validation:Optional
 	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,5,opt,name=observedGeneration"`
 	//+optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
 }

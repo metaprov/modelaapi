@@ -77,6 +77,9 @@ type NotifierSpec struct {
 
 // NotifierStatus is the observed state of a Notifier
 type NotifierStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []NotifierCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

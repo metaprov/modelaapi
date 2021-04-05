@@ -154,9 +154,85 @@ message AccountSpec {
 
 // AccountStatus defines the actual state of the api object
 message AccountStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // Represents the latest available observations of a account state.
   // +optional
-  repeated AccountCondition conditions = 1;
+  repeated AccountCondition conditions = 2;
+}
+
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modeld}
+message Alert {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional AlertSpec spec = 2;
+
+  optional AlertStatus status = 3;
+}
+
+// AlertCondition describes the state of the license at a certain point.
+message AlertCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// AlertList is a list of Alerts
+message AlertList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Alert items = 2;
+}
+
+// AlertSpec defines the desired state of Alert
+message AlertSpec {
+  // User provided description
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 1;
+
+  // Scopes is the list of scopes for this token.
+  optional string level = 2;
+
+  // The subject entity
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
+
+  // +kubebuilder:default:=""
+  // NotifierName is the name of the notifier used to fire the alert.
+  optional string notifierName = 4;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string owner = 5;
+}
+
+// AlertStatus is the observed state of a Alert
+message AlertStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
+  // +optional
+  repeated AlertCondition conditions = 2;
 }
 
 message AliCloudSpec {
@@ -230,8 +306,12 @@ message ApiTokenSpec {
 
 // ApiTokenStatus is the observed state of a ApiToken
 message ApiTokenStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated ApiTokenCondition conditions = 1;
+  repeated ApiTokenCondition conditions = 2;
 }
 
 // =================== Definitions of spec files for each type
@@ -517,8 +597,12 @@ message ConnectionSpec {
 
 // ConnectionStatus is the observed state of a Connection
 message ConnectionStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated ConnectionCondition conditions = 1;
+  repeated ConnectionCondition conditions = 2;
 }
 
 message DigitalOceanSpec {
@@ -684,8 +768,12 @@ message LabSpec {
 
 // LabStatus is the observed state of a Lab
 message LabStatus {
+  // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  repeated LabCondition conditions = 1;
+  optional int64 observedGeneration = 1;
+
+  // +kubebuilder:validation:Optional
+  repeated LabCondition conditions = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -815,9 +903,13 @@ message LicenseSpec {
 
 // LicenseStatus is the observed state of a License
 message LicenseStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // Represents the latest available observations of a license state.
   // +optional
-  repeated LicenseCondition conditions = 1;
+  repeated LicenseCondition conditions = 2;
 }
 
 message LinodeSpec {
@@ -982,8 +1074,12 @@ message NotifierSpec {
 
 // NotifierStatus is the observed state of a Notifier
 message NotifierStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated NotifierCondition conditions = 1;
+  repeated NotifierCondition conditions = 2;
 }
 
 message OdbcSpec {
@@ -1201,26 +1297,30 @@ message ServingSiteSpec {
 }
 
 message ServingSiteStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated ServingSiteCondition conditions = 1;
+  repeated ServingSiteCondition conditions = 2;
 
   // active predictors
-  optional int32 activePredictors = 2;
+  optional int32 activePredictors = 3;
 
   // inactive predictors
-  optional int32 inactivePredictors = 3;
+  optional int32 inactivePredictors = 4;
 
   // total predictors service failed
-  optional int32 totalPredictorServiceFailed = 4;
+  optional int32 totalPredictorServiceFailed = 5;
 
   // total predictors with data drift failed
-  optional int32 totalPredictorDataDriftFailed = 5;
+  optional int32 totalPredictorDataDriftFailed = 6;
 
   // total predictors accuracy failed
-  optional int32 totalPredictorAccuracyFailed = 6;
+  optional int32 totalPredictorAccuracyFailed = 7;
 
   // Last 7 days predictions
-  repeated int32 lastDailyPredictions = 7;
+  repeated int32 lastDailyPredictions = 8;
 }
 
 message SlackSpec {
@@ -1340,8 +1440,12 @@ message TenantSpec {
 
 // TenantStatus defines the actual state of a Tenant
 message TenantStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated TenantCondition conditions = 1;
+  repeated TenantCondition conditions = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -1413,8 +1517,12 @@ message VirtualBucketSpec {
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
 message VirtualBucketStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated VirtualBucketCondition conditions = 1;
+  repeated VirtualBucketCondition conditions = 2;
 }
 
 message VirtualCluster {
@@ -1511,15 +1619,19 @@ message VirtualClusterSpec {
 }
 
 message VirtualClusterStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  optional int32 availableNodes = 1;
+  optional int32 availableNodes = 2;
 
   // Number of available Gpus
   // +optional
-  optional int32 availableGpus = 2;
+  optional int32 availableGpus = 3;
 
   // +optional
-  repeated VirtualClusterCondition conditions = 3;
+  repeated VirtualClusterCondition conditions = 4;
 }
 
 // +kubebuilder:object:root=true
@@ -1586,8 +1698,12 @@ message VirtualVolumeSpec {
 }
 
 message VirtualVolumeStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated VirtualVolumeCondition conditions = 1;
+  repeated VirtualVolumeCondition conditions = 2;
 }
 
 message WebhookSpec {

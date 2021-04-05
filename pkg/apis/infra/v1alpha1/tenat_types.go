@@ -83,6 +83,9 @@ type TenantSpec struct {
 
 // TenantStatus defines the actual state of a Tenant
 type TenantStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []TenantCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []TenantCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

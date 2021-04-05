@@ -87,6 +87,9 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	//ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

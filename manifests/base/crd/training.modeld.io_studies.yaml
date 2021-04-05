@@ -1141,6 +1141,11 @@ spec:
                 description: Total models created for the study
                 format: int32
                 type: integer
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               phase:
                 description: The phase of the study
                 type: string

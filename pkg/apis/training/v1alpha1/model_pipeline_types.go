@@ -215,8 +215,11 @@ type ProdStageSpec struct {
 
 // ModelPipelineStatus define the observed state of the pipeline
 type ModelPipelineStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
 type ModelTestSpec struct {

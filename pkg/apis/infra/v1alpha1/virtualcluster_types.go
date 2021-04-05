@@ -105,13 +105,16 @@ type VirtualClusterSpec struct {
 }
 
 type VirtualClusterStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	AvailableNodes *int32 `json:"availableNodes" protobuf:"varint,1,opt,name=availableNodes"`
+	AvailableNodes *int32 `json:"availableNodes" protobuf:"varint,2,opt,name=availableNodes"`
 	// Number of available Gpus
 	//+optional
-	AvailableGpus *int32 `json:"availableGpus" protobuf:"varint,2,opt,name=availableGpus"`
+	AvailableGpus *int32 `json:"availableGpus" protobuf:"varint,3,opt,name=availableGpus"`
 	//+optional
-	Conditions []VirtualClusterCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []VirtualClusterCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

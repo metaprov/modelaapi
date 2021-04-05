@@ -599,6 +599,9 @@ export class DataPipelineRunStatus extends jspb.Message {
   hasCompletiontime(): boolean;
   clearCompletiontime(): DataPipelineRunStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DataPipelineRunStatus;
+
   getConditionsList(): Array<DataPipelineRunCondition>;
   setConditionsList(value: Array<DataPipelineRunCondition>): DataPipelineRunStatus;
   clearConditionsList(): DataPipelineRunStatus;
@@ -619,6 +622,7 @@ export namespace DataPipelineRunStatus {
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
     conditionsList: Array<DataPipelineRunCondition.AsObject>,
   }
 }
@@ -656,6 +660,9 @@ export class DataPipelineSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): DataPipelineSpec;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DataPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineSpec): DataPipelineSpec.AsObject;
@@ -674,6 +681,7 @@ export namespace DataPipelineSpec {
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,
+    observedgeneration: number,
   }
 }
 
@@ -874,6 +882,9 @@ export namespace DataProductSpec {
 }
 
 export class DataProductStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DataProductStatus;
+
   getConditionsList(): Array<DataProductCondition>;
   setConditionsList(value: Array<DataProductCondition>): DataProductStatus;
   clearConditionsList(): DataProductStatus;
@@ -889,6 +900,7 @@ export class DataProductStatus extends jspb.Message {
 
 export namespace DataProductStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<DataProductCondition.AsObject>,
   }
 }
@@ -1024,6 +1036,9 @@ export namespace DataProductVersionSpec {
 }
 
 export class DataProductVersionStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DataProductVersionStatus;
+
   getConditionsList(): Array<DataProductVersionCondition>;
   setConditionsList(value: Array<DataProductVersionCondition>): DataProductVersionStatus;
   clearConditionsList(): DataProductVersionStatus;
@@ -1039,6 +1054,7 @@ export class DataProductVersionStatus extends jspb.Message {
 
 export namespace DataProductVersionStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<DataProductVersionCondition.AsObject>,
   }
 }
@@ -1202,6 +1218,9 @@ export namespace DataSourceSpec {
 }
 
 export class DataSourceStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DataSourceStatus;
+
   getConditionsList(): Array<DataSourceCondition>;
   setConditionsList(value: Array<DataSourceCondition>): DataSourceStatus;
   clearConditionsList(): DataSourceStatus;
@@ -1217,6 +1236,7 @@ export class DataSourceStatus extends jspb.Message {
 
 export namespace DataSourceStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<DataSourceCondition.AsObject>,
   }
 }
@@ -1428,6 +1448,9 @@ export class DatasetStatus extends jspb.Message {
   hasSigs(): boolean;
   clearSigs(): DatasetStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -1449,6 +1472,7 @@ export namespace DatasetStatus {
     profileuri: string,
     imbalanced: boolean,
     sigs?: Signatures.AsObject,
+    observedgeneration: number,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
@@ -1606,6 +1630,9 @@ export namespace EntitySpec {
 }
 
 export class EntityStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): EntityStatus;
+
   getConditionsList(): Array<EntityCondition>;
   setConditionsList(value: Array<EntityCondition>): EntityStatus;
   clearConditionsList(): EntityStatus;
@@ -1621,6 +1648,7 @@ export class EntityStatus extends jspb.Message {
 
 export namespace EntityStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<EntityCondition.AsObject>,
   }
 }
@@ -1981,6 +2009,9 @@ export class FeaturePipelineRunStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): FeaturePipelineRunStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): FeaturePipelineRunStatus;
+
   getConditionsList(): Array<FeaturePipelineRunCondition>;
   setConditionsList(value: Array<FeaturePipelineRunCondition>): FeaturePipelineRunStatus;
   clearConditionsList(): FeaturePipelineRunStatus;
@@ -1999,6 +2030,7 @@ export namespace FeaturePipelineRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
+    observedgeneration: number,
     conditionsList: Array<FeaturePipelineRunCondition.AsObject>,
   }
 }
@@ -2063,6 +2095,9 @@ export class FeaturePipelineStatus extends jspb.Message {
   getAveragecost(): number;
   setAveragecost(value: number): FeaturePipelineStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): FeaturePipelineStatus;
+
   getConditionsList(): Array<FeaturePipelineCondition>;
   setConditionsList(value: Array<FeaturePipelineCondition>): FeaturePipelineStatus;
   clearConditionsList(): FeaturePipelineStatus;
@@ -2079,6 +2114,7 @@ export class FeaturePipelineStatus extends jspb.Message {
 export namespace FeaturePipelineStatus {
   export type AsObject = {
     averagecost: number,
+    observedgeneration: number,
     conditionsList: Array<FeaturePipelineCondition.AsObject>,
   }
 }
@@ -2202,6 +2238,9 @@ export class FeatureStatus extends jspb.Message {
   getIndexofpeculiarity(): number;
   setIndexofpeculiarity(value: number): FeatureStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): FeatureStatus;
+
   getConditionsList(): Array<FeatureCondition>;
   setConditionsList(value: Array<FeatureCondition>): FeatureStatus;
   clearConditionsList(): FeatureStatus;
@@ -2241,6 +2280,7 @@ export namespace FeatureStatus {
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
     indexofpeculiarity: number,
+    observedgeneration: number,
     conditionsList: Array<FeatureCondition.AsObject>,
   }
 }
@@ -2372,6 +2412,9 @@ export namespace FeaturesetSpec {
 }
 
 export class FeaturesetStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): FeaturesetStatus;
+
   getConditionsList(): Array<FeaturesetCondition>;
   setConditionsList(value: Array<FeaturesetCondition>): FeaturesetStatus;
   clearConditionsList(): FeaturesetStatus;
@@ -2387,6 +2430,7 @@ export class FeaturesetStatus extends jspb.Message {
 
 export namespace FeaturesetStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<FeaturesetCondition.AsObject>,
   }
 }
@@ -2755,6 +2799,9 @@ export class LabelingPipelineRunStatus extends jspb.Message {
   hasCompletiontime(): boolean;
   clearCompletiontime(): LabelingPipelineRunStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): LabelingPipelineRunStatus;
+
   getConditionsList(): Array<LabelingPipelineRunCondition>;
   setConditionsList(value: Array<LabelingPipelineRunCondition>): LabelingPipelineRunStatus;
   clearConditionsList(): LabelingPipelineRunStatus;
@@ -2773,6 +2820,7 @@ export namespace LabelingPipelineRunStatus {
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
     conditionsList: Array<LabelingPipelineRunCondition.AsObject>,
   }
 }
@@ -2830,6 +2878,9 @@ export namespace LabelingPipelineSpec {
 }
 
 export class LabelingPipelineStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): LabelingPipelineStatus;
+
   getConditionsList(): Array<LabelingPipelineCondition>;
   setConditionsList(value: Array<LabelingPipelineCondition>): LabelingPipelineStatus;
   clearConditionsList(): LabelingPipelineStatus;
@@ -2845,6 +2896,7 @@ export class LabelingPipelineStatus extends jspb.Message {
 
 export namespace LabelingPipelineStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<LabelingPipelineCondition.AsObject>,
   }
 }
@@ -3207,6 +3259,9 @@ export class RecipeRunStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): RecipeRunStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): RecipeRunStatus;
+
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeRunStatus;
   clearConditionsList(): RecipeRunStatus;
@@ -3225,6 +3280,7 @@ export namespace RecipeRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
+    observedgeneration: number,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }
@@ -3285,6 +3341,9 @@ export class RecipeSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): RecipeSpec;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): RecipeSpec;
+
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): RecipeSpec;
 
@@ -3305,6 +3364,7 @@ export namespace RecipeSpec {
     stepsList: Array<RecipeStep.AsObject>,
     output?: RecipeOutputSpec.AsObject,
     sample?: RecipeSampleSpec.AsObject,
+    observedgeneration: number,
     workloadclassname: string,
   }
 }

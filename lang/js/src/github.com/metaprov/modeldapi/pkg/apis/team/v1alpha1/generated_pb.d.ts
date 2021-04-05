@@ -193,6 +193,9 @@ export namespace ConversationSpec {
 }
 
 export class ConversationStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ConversationStatus;
+
   getConditionsList(): Array<ConversationCondition>;
   setConditionsList(value: Array<ConversationCondition>): ConversationStatus;
   clearConditionsList(): ConversationStatus;
@@ -208,6 +211,7 @@ export class ConversationStatus extends jspb.Message {
 
 export namespace ConversationStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<ConversationCondition.AsObject>,
   }
 }
@@ -363,6 +367,9 @@ export namespace PostMortemSpec {
 }
 
 export class PostMortemStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): PostMortemStatus;
+
   getConditionsList(): Array<PostMortemCondition>;
   setConditionsList(value: Array<PostMortemCondition>): PostMortemStatus;
   clearConditionsList(): PostMortemStatus;
@@ -378,6 +385,7 @@ export class PostMortemStatus extends jspb.Message {
 
 export namespace PostMortemStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<PostMortemCondition.AsObject>,
   }
 }
@@ -513,6 +521,9 @@ export namespace RunBookSpec {
 }
 
 export class RunBookStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): RunBookStatus;
+
   getConditionsList(): Array<RunBookCondition>;
   setConditionsList(value: Array<RunBookCondition>): RunBookStatus;
   clearConditionsList(): RunBookStatus;
@@ -528,6 +539,7 @@ export class RunBookStatus extends jspb.Message {
 
 export namespace RunBookStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<RunBookCondition.AsObject>,
   }
 }

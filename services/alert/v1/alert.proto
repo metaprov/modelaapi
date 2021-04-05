@@ -1,0 +1,148 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/alert/v1";
+
+package github.com.metaprov.modeldapi.services.alert.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListAlertsRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListAlertsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertList items = 1;   
+}
+
+message AlertResponse {}
+
+message CreateAlertRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert  item = 1;
+    string password = 2;    
+}
+
+message CreateAlertResponse {
+
+}
+
+message UpdateAlertRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+}
+
+message UpdateAlertResponse {
+
+}
+
+message GetAlertRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetAlertResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetAlertNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetAlertNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteAlertRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteAlertResponse {}
+
+
+message AlertCreateResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message AlertLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message AlertLoginResponse {
+    string token = 1; // jwt token
+}
+
+
+message AlertGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message AlertLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+
+
+
+service AlertService {
+    rpc ListAlerts(ListAlertsRequest) returns (ListAlertsResponse) {
+        option (google.api.http).get = "/v1/alerts";
+    }
+    rpc CreateAlert(CreateAlertRequest) returns (CreateAlertResponse) {
+        option (google.api.http) = {
+			post: "/v1/alerts"
+			body: "alert"
+		};
+    }
+    rpc GetAlert(GetAlertRequest) returns (GetAlertResponse) {
+        option (google.api.http).get = "/v1/{namespace}/alerts/{name}";
+    }
+    rpc UpdateAlert(UpdateAlertRequest) returns (UpdateAlertResponse) {
+        option (google.api.http) = {
+			put: "/v1/{alert.metadata.namespace}/alerts//{alert.metadata.name}"
+			body: "alert"
+		};
+    }
+
+    rpc DeleteAlert(DeleteAlertRequest) returns (DeleteAlertResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/alerts/{name}";
+    }
+
+}

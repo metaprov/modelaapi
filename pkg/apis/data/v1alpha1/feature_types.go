@@ -145,6 +145,9 @@ type FeatureStatus struct {
 	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,26,opt,name=mostFreqValuesRatio"`
 	// Used for text attributes
 	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,27,opt,name=indexOfPeculiarity"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,28,opt,name=observedGeneration"`
 	//+optional
-	Conditions []FeatureCondition `json:"conditions,omitempty" protobuf:"bytes,13,rep,name=conditions"`
+	Conditions []FeatureCondition `json:"conditions,omitempty" protobuf:"bytes,29,rep,name=conditions"`
 }

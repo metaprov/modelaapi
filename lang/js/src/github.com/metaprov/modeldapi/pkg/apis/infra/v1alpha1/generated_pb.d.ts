@@ -202,6 +202,9 @@ export namespace AccountSpec {
 }
 
 export class AccountStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): AccountStatus;
+
   getConditionsList(): Array<AccountCondition>;
   setConditionsList(value: Array<AccountCondition>): AccountStatus;
   clearConditionsList(): AccountStatus;
@@ -217,7 +220,162 @@ export class AccountStatus extends jspb.Message {
 
 export namespace AccountStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<AccountCondition.AsObject>,
+  }
+}
+
+export class Alert extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Alert;
+  hasMetadata(): boolean;
+  clearMetadata(): Alert;
+
+  getSpec(): AlertSpec | undefined;
+  setSpec(value?: AlertSpec): Alert;
+  hasSpec(): boolean;
+  clearSpec(): Alert;
+
+  getStatus(): AlertStatus | undefined;
+  setStatus(value?: AlertStatus): Alert;
+  hasStatus(): boolean;
+  clearStatus(): Alert;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Alert.AsObject;
+  static toObject(includeInstance: boolean, msg: Alert): Alert.AsObject;
+  static serializeBinaryToWriter(message: Alert, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Alert;
+  static deserializeBinaryFromReader(message: Alert, reader: jspb.BinaryReader): Alert;
+}
+
+export namespace Alert {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: AlertSpec.AsObject,
+    status?: AlertStatus.AsObject,
+  }
+}
+
+export class AlertCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): AlertCondition;
+
+  getStatus(): string;
+  setStatus(value: string): AlertCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): AlertCondition;
+
+  getReason(): string;
+  setReason(value: string): AlertCondition;
+
+  getMessage(): string;
+  setMessage(value: string): AlertCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AlertCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: AlertCondition): AlertCondition.AsObject;
+  static serializeBinaryToWriter(message: AlertCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlertCondition;
+  static deserializeBinaryFromReader(message: AlertCondition, reader: jspb.BinaryReader): AlertCondition;
+}
+
+export namespace AlertCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class AlertList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): AlertList;
+  hasMetadata(): boolean;
+  clearMetadata(): AlertList;
+
+  getItemsList(): Array<Alert>;
+  setItemsList(value: Array<Alert>): AlertList;
+  clearItemsList(): AlertList;
+  addItems(value?: Alert, index?: number): Alert;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AlertList.AsObject;
+  static toObject(includeInstance: boolean, msg: AlertList): AlertList.AsObject;
+  static serializeBinaryToWriter(message: AlertList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlertList;
+  static deserializeBinaryFromReader(message: AlertList, reader: jspb.BinaryReader): AlertList;
+}
+
+export namespace AlertList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Alert.AsObject>,
+  }
+}
+
+export class AlertSpec extends jspb.Message {
+  getDescription(): string;
+  setDescription(value: string): AlertSpec;
+
+  getLevel(): string;
+  setLevel(value: string): AlertSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AlertSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): AlertSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): AlertSpec;
+
+  getOwner(): string;
+  setOwner(value: string): AlertSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AlertSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AlertSpec): AlertSpec.AsObject;
+  static serializeBinaryToWriter(message: AlertSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlertSpec;
+  static deserializeBinaryFromReader(message: AlertSpec, reader: jspb.BinaryReader): AlertSpec;
+}
+
+export namespace AlertSpec {
+  export type AsObject = {
+    description: string,
+    level: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifiername: string,
+    owner: string,
+  }
+}
+
+export class AlertStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): AlertStatus;
+
+  getConditionsList(): Array<AlertCondition>;
+  setConditionsList(value: Array<AlertCondition>): AlertStatus;
+  clearConditionsList(): AlertStatus;
+  addConditions(value?: AlertCondition, index?: number): AlertCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AlertStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: AlertStatus): AlertStatus.AsObject;
+  static serializeBinaryToWriter(message: AlertStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlertStatus;
+  static deserializeBinaryFromReader(message: AlertStatus, reader: jspb.BinaryReader): AlertStatus;
+}
+
+export namespace AlertStatus {
+  export type AsObject = {
+    observedgeneration: number,
+    conditionsList: Array<AlertCondition.AsObject>,
   }
 }
 
@@ -374,6 +532,9 @@ export namespace ApiTokenSpec {
 }
 
 export class ApiTokenStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ApiTokenStatus;
+
   getConditionsList(): Array<ApiTokenCondition>;
   setConditionsList(value: Array<ApiTokenCondition>): ApiTokenStatus;
   clearConditionsList(): ApiTokenStatus;
@@ -389,6 +550,7 @@ export class ApiTokenStatus extends jspb.Message {
 
 export namespace ApiTokenStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<ApiTokenCondition.AsObject>,
   }
 }
@@ -884,6 +1046,9 @@ export namespace ConnectionSpec {
 }
 
 export class ConnectionStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ConnectionStatus;
+
   getConditionsList(): Array<ConnectionCondition>;
   setConditionsList(value: Array<ConnectionCondition>): ConnectionStatus;
   clearConditionsList(): ConnectionStatus;
@@ -899,6 +1064,7 @@ export class ConnectionStatus extends jspb.Message {
 
 export namespace ConnectionStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<ConnectionCondition.AsObject>,
   }
 }
@@ -1238,6 +1404,9 @@ export namespace LabSpec {
 }
 
 export class LabStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): LabStatus;
+
   getConditionsList(): Array<LabCondition>;
   setConditionsList(value: Array<LabCondition>): LabStatus;
   clearConditionsList(): LabStatus;
@@ -1253,6 +1422,7 @@ export class LabStatus extends jspb.Message {
 
 export namespace LabStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<LabCondition.AsObject>,
   }
 }
@@ -1450,6 +1620,9 @@ export namespace LicenseSpec {
 }
 
 export class LicenseStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): LicenseStatus;
+
   getConditionsList(): Array<LicenseCondition>;
   setConditionsList(value: Array<LicenseCondition>): LicenseStatus;
   clearConditionsList(): LicenseStatus;
@@ -1465,6 +1638,7 @@ export class LicenseStatus extends jspb.Message {
 
 export namespace LicenseStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<LicenseCondition.AsObject>,
   }
 }
@@ -1798,6 +1972,9 @@ export namespace NotifierSpec {
 }
 
 export class NotifierStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): NotifierStatus;
+
   getConditionsList(): Array<NotifierCondition>;
   setConditionsList(value: Array<NotifierCondition>): NotifierStatus;
   clearConditionsList(): NotifierStatus;
@@ -1813,6 +1990,7 @@ export class NotifierStatus extends jspb.Message {
 
 export namespace NotifierStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<NotifierCondition.AsObject>,
   }
 }
@@ -2218,6 +2396,9 @@ export namespace ServingSiteSpec {
 }
 
 export class ServingSiteStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ServingSiteStatus;
+
   getConditionsList(): Array<ServingSiteCondition>;
   setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
   clearConditionsList(): ServingSiteStatus;
@@ -2253,6 +2434,7 @@ export class ServingSiteStatus extends jspb.Message {
 
 export namespace ServingSiteStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<ServingSiteCondition.AsObject>,
     activepredictors: number,
     inactivepredictors: number,
@@ -2504,6 +2686,9 @@ export namespace TenantSpec {
 }
 
 export class TenantStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): TenantStatus;
+
   getConditionsList(): Array<TenantCondition>;
   setConditionsList(value: Array<TenantCondition>): TenantStatus;
   clearConditionsList(): TenantStatus;
@@ -2519,6 +2704,7 @@ export class TenantStatus extends jspb.Message {
 
 export namespace TenantStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<TenantCondition.AsObject>,
   }
 }
@@ -2650,6 +2836,9 @@ export namespace VirtualBucketSpec {
 }
 
 export class VirtualBucketStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): VirtualBucketStatus;
+
   getConditionsList(): Array<VirtualBucketCondition>;
   setConditionsList(value: Array<VirtualBucketCondition>): VirtualBucketStatus;
   clearConditionsList(): VirtualBucketStatus;
@@ -2665,6 +2854,7 @@ export class VirtualBucketStatus extends jspb.Message {
 
 export namespace VirtualBucketStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<VirtualBucketCondition.AsObject>,
   }
 }
@@ -2814,6 +3004,9 @@ export namespace VirtualClusterSpec {
 }
 
 export class VirtualClusterStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): VirtualClusterStatus;
+
   getAvailablenodes(): number;
   setAvailablenodes(value: number): VirtualClusterStatus;
 
@@ -2835,6 +3028,7 @@ export class VirtualClusterStatus extends jspb.Message {
 
 export namespace VirtualClusterStatus {
   export type AsObject = {
+    observedgeneration: number,
     availablenodes: number,
     availablegpus: number,
     conditionsList: Array<VirtualClusterCondition.AsObject>,
@@ -2968,6 +3162,9 @@ export namespace VirtualVolumeSpec {
 }
 
 export class VirtualVolumeStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): VirtualVolumeStatus;
+
   getConditionsList(): Array<VirtualVolumeCondition>;
   setConditionsList(value: Array<VirtualVolumeCondition>): VirtualVolumeStatus;
   clearConditionsList(): VirtualVolumeStatus;
@@ -2983,6 +3180,7 @@ export class VirtualVolumeStatus extends jspb.Message {
 
 export namespace VirtualVolumeStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<VirtualVolumeCondition.AsObject>,
   }
 }

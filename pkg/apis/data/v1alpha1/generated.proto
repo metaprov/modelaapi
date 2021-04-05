@@ -403,8 +403,12 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 8;
+
   // +optional
-  repeated DataPipelineRunCondition conditions = 6;
+  repeated DataPipelineRunCondition conditions = 7;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -446,6 +450,10 @@ message DataPipelineSpec {
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 9;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -574,9 +582,13 @@ message DataProductSpec {
 
 // DataProductStatus defines the observed state of DataProduct
 message DataProductStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
   // The conditions of the product.
   // +optional
-  repeated DataProductCondition conditions = 1;
+  repeated DataProductCondition conditions = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -655,9 +667,13 @@ message DataProductVersionSpec {
 
 // DataProductVersionStatus defines the observed state of DataProductVersion
 message DataProductVersionStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
   // Represents the latest available observations of a dataset state.
   // +optional
-  repeated DataProductVersionCondition conditions = 1;
+  repeated DataProductVersionCondition conditions = 2;
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema
@@ -751,6 +767,10 @@ message DataSourceSpec {
 
 // FlatFileStatus defines the observed state of FlatFileSpec
 message DataSourceStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
   repeated DataSourceCondition conditions = 2;
 }
@@ -901,9 +921,13 @@ message DatasetStatus {
   // Sha256 sig of the files
   optional Signatures sigs = 6;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 9;
+
   // Represents the latest available observations of a dataset state.
   // +optional
-  repeated DatasetCondition conditions = 7;
+  repeated DatasetCondition conditions = 8;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -976,8 +1000,12 @@ message EntitySpec {
 
 // EntityStatus defines the observed state of Entity
 message EntityStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated EntityCondition conditions = 1;
+  repeated EntityCondition conditions = 2;
 }
 
 // Feature represent a single feature in the feature store.
@@ -1155,8 +1183,12 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 4;
+
   // +optional
-  repeated FeaturePipelineRunCondition conditions = 4;
+  repeated FeaturePipelineRunCondition conditions = 5;
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
@@ -1207,8 +1239,12 @@ message FeaturePipelineStatus {
   // Store the avg cost of running this pipeline
   optional double averageCost = 1;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 2;
+
   // +optional
-  repeated FeaturePipelineCondition conditions = 2;
+  repeated FeaturePipelineCondition conditions = 3;
 }
 
 // FeatureSpec contain the desired state of a Feature
@@ -1329,8 +1365,12 @@ message FeatureStatus {
   // Used for text attributes
   optional double indexOfPeculiarity = 27;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 28;
+
   // +optional
-  repeated FeatureCondition conditions = 13;
+  repeated FeatureCondition conditions = 29;
 }
 
 // Featureset represents a featureset object
@@ -1398,8 +1438,12 @@ message FeaturesetSpec {
 
 // FeaturesetStatus defines the observed state of Featureset
 message FeaturesetStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated FeaturesetCondition conditions = 1;
+  repeated FeaturesetCondition conditions = 2;
 }
 
 message FlatFileSpec {
@@ -1600,8 +1644,12 @@ message LabelingPipelineRunStatus {
   // The End time of the run
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 4;
+
   // +optional
-  repeated LabelingPipelineRunCondition conditions = 4;
+  repeated LabelingPipelineRunCondition conditions = 5;
 }
 
 // LabelingPipelineSpec defines the desired state of a LabelingPipeline
@@ -1643,8 +1691,12 @@ message LabelingPipelineSpec {
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
 message LabelingPipelineStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated LabelingPipelineCondition conditions = 1;
+  repeated LabelingPipelineCondition conditions = 2;
 }
 
 message MaterializationSpec {
@@ -1831,9 +1883,13 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 4;
+
   // Represents the latest available observations of a dataset state.
   // +optional
-  repeated RecipeCondition conditions = 4;
+  repeated RecipeCondition conditions = 5;
 }
 
 message RecipeSampleSpec {
@@ -1885,9 +1941,13 @@ message RecipeSpec {
   // +kubebuilder:validation:Optional
   optional RecipeSampleSpec sample = 7;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 8;
+
   // WorkloadClassName is the name of the workload used to execute this recipe
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional string workloadClassName = 9;
 }
 
 // RecipeStatus defines the observed state of Recipe

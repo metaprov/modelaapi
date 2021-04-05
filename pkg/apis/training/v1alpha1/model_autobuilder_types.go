@@ -220,6 +220,9 @@ type ModelAutobuilderStatus struct {
 	// CompletionTime is the time that this prediction job finished
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,18,opt,name=completionTime"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,19,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,19,rep,name=conditions"`
+	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,20,rep,name=conditions"`
 }

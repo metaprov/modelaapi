@@ -84,6 +84,9 @@ type ConversationSpec struct {
 
 //ConversationStatus is the current status of the conversation
 type ConversationStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ConversationCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []ConversationCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

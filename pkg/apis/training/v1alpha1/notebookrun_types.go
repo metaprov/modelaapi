@@ -102,9 +102,12 @@ type NotebookRunStatus struct {
 	// CompletionTime is the time that this prediction job finished
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	// Represents the latest available observations of a notebook run state.
 	//+optional
-	Conditions []NotebookRunCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []NotebookRunCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 }
 
 // NotebookVarValue is an assignment of value to the notebook var

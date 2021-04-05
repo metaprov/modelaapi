@@ -166,6 +166,11 @@ spec:
               imbalanced:
                 description: Based on the actual data, treat this dataset as imbalanced.
                 type: boolean
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               phase:
                 description: The phase of the dataset processing
                 type: string

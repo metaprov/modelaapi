@@ -102,6 +102,9 @@ type DataPipelineRunStatus struct {
 	// CompletionTime is the end time of the pipeline
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,5,opt,name=completionTime"`
+	//ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	//+optional
-	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
 }

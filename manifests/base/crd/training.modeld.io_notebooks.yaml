@@ -171,6 +171,11 @@ spec:
               image:
                 description: Image is the name of the image after publication
                 type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               uri:
                 description: The URI of the notebook in the bucket.
                 type: string

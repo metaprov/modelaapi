@@ -178,8 +178,11 @@ type ConnectionSpec struct {
 
 // ConnectionStatus is the observed state of a Connection
 type ConnectionStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ConnectionCondition `json:"conditions,omitempty" protobuf:"bytes,1,opt,name=conditions"`
+	Conditions []ConnectionCondition `json:"conditions,omitempty" protobuf:"bytes,2,opt,name=conditions"`
 }
 
 // =================== Definitions of spec files for each type

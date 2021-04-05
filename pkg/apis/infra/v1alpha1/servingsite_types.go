@@ -101,18 +101,21 @@ type ServingSiteSpec struct {
 }
 
 type ServingSiteStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ServingSiteCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []ServingSiteCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 	// active predictors
-	ActivePredictors int32 `json:"activePredictors,omitempty" protobuf:"varint,2,rep,name=activePredictors"`
+	ActivePredictors int32 `json:"activePredictors,omitempty" protobuf:"varint,3,rep,name=activePredictors"`
 	// inactive predictors
-	InactivePredictors int32 `json:"inactivePredictors,omitempty" protobuf:"varint,3,rep,name=inactivePredictors"`
+	InactivePredictors int32 `json:"inactivePredictors,omitempty" protobuf:"varint,4,rep,name=inactivePredictors"`
 	// total predictors service failed
-	TotalPredictorServiceFailed int32 `json:"totalPredictorServiceFailed,omitempty" protobuf:"varint,4,rep,name=totalPredictorServiceFailed"`
+	TotalPredictorServiceFailed int32 `json:"totalPredictorServiceFailed,omitempty" protobuf:"varint,5,rep,name=totalPredictorServiceFailed"`
 	// total predictors with data drift failed
-	TotalPredictorDataDriftFailed int32 `json:"totalPredictorDataDriftFailed,omitempty" protobuf:"varint,5,rep,name=totalPredictorDataDriftFailed"`
+	TotalPredictorDataDriftFailed int32 `json:"totalPredictorDataDriftFailed,omitempty" protobuf:"varint,6,rep,name=totalPredictorDataDriftFailed"`
 	// total predictors accuracy failed
-	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,6,rep,name=totalPredictorAccuracyFailed"`
+	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,7,rep,name=totalPredictorAccuracyFailed"`
 	// Last 7 days predictions
-	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,7,rep,name=lastDailyPredictions"`
+	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
 }

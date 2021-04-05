@@ -390,9 +390,12 @@ type StudyStatus struct {
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,23,opt,name=reportName"`
 	// The phase of the study
 	Phase StudyPhase `json:"phase" protobuf:"bytes,24,opt,name=phase"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,25,opt,name=observedGeneration"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
-	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,25,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,26,rep,name=conditions"`
 }
 
 // model cv results

@@ -144,9 +144,12 @@ type DatasetStatus struct {
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,5,opt,name=imbalanced"`
 	// Sha256 sig of the files
 	Sigs Signatures `json:"sigs,omitempty" protobuf:"bytes,6,opt,name=sigs"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
 	// Represents the latest available observations of a dataset state.
 	//+optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

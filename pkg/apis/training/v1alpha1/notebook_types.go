@@ -112,7 +112,10 @@ type NotebookStatus struct {
 	// The URI of the notebook in the bucket.
 	// +kubebuilder:validation:Optional
 	URI string `json:"uri,omitempty" protobuf:"bytes,2,opt,name=uri"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// Represents the latest available observations of a notebook state.
 	//+optional
-	Conditions []NotebookCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []NotebookCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

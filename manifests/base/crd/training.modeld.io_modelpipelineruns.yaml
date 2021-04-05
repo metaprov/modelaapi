@@ -358,6 +358,11 @@ spec:
                   the system The folder contains all the pipeline artifacts - metadata,
                   logs
                 type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               phase:
                 description: The phase of the pipeline run
                 type: string

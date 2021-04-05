@@ -7199,6 +7199,11 @@ spec:
               monitorLastScore:
                 description: What was the last score
                 type: number
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               statuses:
                 description: The channels
                 items:

@@ -2036,7 +2036,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.repeatedFields_ = [2];
 
 
 
@@ -2069,6 +2069,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition.toObject, includeInstance)
   };
@@ -2108,6 +2109,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.de
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setObservedgeneration(value);
+      break;
+    case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -2141,10 +2146,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition.serializeBinaryToWriter
     );
@@ -2153,12 +2165,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.se
 
 
 /**
- * repeated ConversationCondition conditions = 1;
+ * optional int64 observedGeneration = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated ConversationCondition conditions = 2;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition, 2));
 };
 
 
@@ -2167,7 +2215,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -2177,7 +2225,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition, opt_index);
 };
 
 
@@ -3515,7 +3563,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.repeatedFields_ = [2];
 
 
 
@@ -3548,6 +3596,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition.toObject, includeInstance)
   };
@@ -3587,6 +3636,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setObservedgeneration(value);
+      break;
+    case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -3620,10 +3673,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition.serializeBinaryToWriter
     );
@@ -3632,12 +3692,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.seri
 
 
 /**
- * repeated PostMortemCondition conditions = 1;
+ * optional int64 observedGeneration = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated PostMortemCondition conditions = 2;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition, 2));
 };
 
 
@@ -3646,7 +3742,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -3656,7 +3752,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition, opt_index);
 };
 
 
@@ -4783,7 +4879,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.repeatedFields_ = [2];
 
 
 
@@ -4816,6 +4912,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition.toObject, includeInstance)
   };
@@ -4855,6 +4952,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.deseria
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setObservedgeneration(value);
+      break;
+    case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -4888,10 +4989,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition.serializeBinaryToWriter
     );
@@ -4900,12 +5008,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.seriali
 
 
 /**
- * repeated RunBookCondition conditions = 1;
+ * optional int64 observedGeneration = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated RunBookCondition conditions = 2;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition, 2));
 };
 
 
@@ -4914,7 +5058,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -4924,7 +5068,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition, opt_index);
 };
 
 

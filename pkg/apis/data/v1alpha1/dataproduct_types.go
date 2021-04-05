@@ -149,9 +149,12 @@ type DataProductSpec struct {
 
 // DataProductStatus defines the observed state of DataProduct
 type DataProductStatus struct {
+	//ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// The conditions of the product.
 	//+optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

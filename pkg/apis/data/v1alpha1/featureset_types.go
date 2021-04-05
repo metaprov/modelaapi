@@ -82,6 +82,9 @@ type FeaturesetList struct {
 
 // FeaturesetStatus defines the observed state of Featureset
 type FeaturesetStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []FeaturesetCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []FeaturesetCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

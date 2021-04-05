@@ -211,6 +211,9 @@ export namespace CronPredictionSpec {
 }
 
 export class CronPredictionStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): CronPredictionStatus;
+
   getConditionsList(): Array<CronPredictionCondition>;
   setConditionsList(value: Array<CronPredictionCondition>): CronPredictionStatus;
   clearConditionsList(): CronPredictionStatus;
@@ -226,6 +229,7 @@ export class CronPredictionStatus extends jspb.Message {
 
 export namespace CronPredictionStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<CronPredictionCondition.AsObject>,
   }
 }
@@ -367,6 +371,9 @@ export namespace CurtainSpec {
 }
 
 export class CurtainStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): CurtainStatus;
+
   getConditionsList(): Array<CurtainCondition>;
   setConditionsList(value: Array<CurtainCondition>): CurtainStatus;
   clearConditionsList(): CurtainStatus;
@@ -382,6 +389,7 @@ export class CurtainStatus extends jspb.Message {
 
 export namespace CurtainStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<CurtainCondition.AsObject>,
   }
 }
@@ -725,6 +733,9 @@ export class PredictionStatus extends jspb.Message {
   clearResultsList(): PredictionStatus;
   addResults(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -744,6 +755,7 @@ export namespace PredictionStatus {
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    observedgeneration: number,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }
@@ -1039,6 +1051,9 @@ export class PredictorStatus extends jspb.Message {
   hasHealth(): boolean;
   clearHealth(): PredictorStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): PredictorStatus;
+
   getStatusesList(): Array<ChannelStatus>;
   setStatusesList(value: Array<ChannelStatus>): PredictorStatus;
   clearStatusesList(): PredictorStatus;
@@ -1060,6 +1075,7 @@ export namespace PredictorStatus {
     monitorlastscore: number,
     monitorlastlatency: number,
     health?: PredictorHealth.AsObject,
+    observedgeneration: number,
     statusesList: Array<ChannelStatus.AsObject>,
   }
 }

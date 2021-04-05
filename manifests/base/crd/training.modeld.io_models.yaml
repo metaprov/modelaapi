@@ -1030,6 +1030,11 @@ spec:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing
                 type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               phase:
                 description: Phase is the phase of the model
                 type: string

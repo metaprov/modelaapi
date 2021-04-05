@@ -123,8 +123,12 @@ message CronPredictionSpec {
 
 // CronPredictionStatus is the observed state of a PredictionTemplate
 message CronPredictionStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated CronPredictionCondition conditions = 6;
+  repeated CronPredictionCondition conditions = 2;
 }
 
 // Curtain represent an object which can be placed before or after predictor
@@ -210,8 +214,12 @@ message CurtainSpec {
 
 // CurtainStatus contain the observed state of the Curtain object.
 message CurtainStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated CurtainCondition conditions = 1;
+  repeated CurtainCondition conditions = 2;
 }
 
 message CurtainTemplateSpec {
@@ -404,8 +412,12 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement results = 4;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 5;
+
   // +optional
-  repeated PredictionCondition conditions = 5;
+  repeated PredictionCondition conditions = 6;
 }
 
 message PredictionTemplate {
@@ -582,8 +594,12 @@ message PredictorStatus {
   // The Health of the predictor
   optional PredictorHealth health = 6;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 7;
+
   // The channels
-  repeated ChannelStatus statuses = 7;
+  repeated ChannelStatus statuses = 8;
 }
 
 message ProgressiveSpec {

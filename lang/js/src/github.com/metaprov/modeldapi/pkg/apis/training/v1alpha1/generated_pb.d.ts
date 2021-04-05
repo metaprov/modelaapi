@@ -911,6 +911,9 @@ export class ModelAutobuilderStatus extends jspb.Message {
   hasCompletiontime(): boolean;
   clearCompletiontime(): ModelAutobuilderStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelAutobuilderStatus;
+
   getConditionsList(): Array<ModelAutobuilderCondition>;
   setConditionsList(value: Array<ModelAutobuilderCondition>): ModelAutobuilderStatus;
   clearConditionsList(): ModelAutobuilderStatus;
@@ -943,6 +946,7 @@ export namespace ModelAutobuilderStatus {
     estimator?: ClassicalEstimatorSpec.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
     conditionsList: Array<ModelAutobuilderCondition.AsObject>,
   }
 }
@@ -1342,6 +1346,9 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): ModelPipelineRunStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelPipelineRunStatus;
+
   getConditionsList(): Array<ModelPipelineRunCondition>;
   setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
   clearConditionsList(): ModelPipelineRunStatus;
@@ -1370,6 +1377,7 @@ export namespace ModelPipelineRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
+    observedgeneration: number,
     conditionsList: Array<ModelPipelineRunCondition.AsObject>,
     evalmetrics: string,
   }
@@ -1460,6 +1468,9 @@ export namespace ModelPipelineSpec {
 }
 
 export class ModelPipelineStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelPipelineStatus;
+
   getConditionsList(): Array<ModelPipelineCondition>;
   setConditionsList(value: Array<ModelPipelineCondition>): ModelPipelineStatus;
   clearConditionsList(): ModelPipelineStatus;
@@ -1475,6 +1486,7 @@ export class ModelPipelineStatus extends jspb.Message {
 
 export namespace ModelPipelineStatus {
   export type AsObject = {
+    observedgeneration: number,
     conditionsList: Array<ModelPipelineCondition.AsObject>,
   }
 }
@@ -1821,6 +1833,9 @@ export class ModelStatus extends jspb.Message {
   hasResourceconsumed(): boolean;
   clearResourceconsumed(): ModelStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -1863,6 +1878,7 @@ export namespace ModelStatus {
     testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     resourceconsumed?: ResourceConsumption.AsObject,
+    observedgeneration: number,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -2195,6 +2211,9 @@ export class NotebookRunStatus extends jspb.Message {
   hasCompletiontime(): boolean;
   clearCompletiontime(): NotebookRunStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): NotebookRunStatus;
+
   getConditionsList(): Array<NotebookRunCondition>;
   setConditionsList(value: Array<NotebookRunCondition>): NotebookRunStatus;
   clearConditionsList(): NotebookRunStatus;
@@ -2213,6 +2232,7 @@ export namespace NotebookRunStatus {
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
     conditionsList: Array<NotebookRunCondition.AsObject>,
   }
 }
@@ -2284,6 +2304,9 @@ export class NotebookStatus extends jspb.Message {
   getUri(): string;
   setUri(value: string): NotebookStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): NotebookStatus;
+
   getConditionsList(): Array<NotebookCondition>;
   setConditionsList(value: Array<NotebookCondition>): NotebookStatus;
   clearConditionsList(): NotebookStatus;
@@ -2301,6 +2324,7 @@ export namespace NotebookStatus {
   export type AsObject = {
     image: string,
     uri: string,
+    observedgeneration: number,
     conditionsList: Array<NotebookCondition.AsObject>,
   }
 }
@@ -2648,6 +2672,9 @@ export class ReportStatus extends jspb.Message {
   getUri(): string;
   setUri(value: string): ReportStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ReportStatus;
+
   getConditionsList(): Array<ReportCondition>;
   setConditionsList(value: Array<ReportCondition>): ReportStatus;
   clearConditionsList(): ReportStatus;
@@ -2667,6 +2694,7 @@ export namespace ReportStatus {
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     uri: string,
+    observedgeneration: number,
     conditionsList: Array<ReportCondition.AsObject>,
   }
 }
@@ -2981,6 +3009,9 @@ export class StudyStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): StudyStatus;
 
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3019,6 +3050,7 @@ export namespace StudyStatus {
     profileuri: string,
     reportname: string,
     phase: string,
+    observedgeneration: number,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

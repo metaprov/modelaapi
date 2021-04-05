@@ -88,6 +88,9 @@ type LabelingPipelineSpec struct {
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
 type LabelingPipelineStatus struct {
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []LabelingPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []LabelingPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

@@ -93,6 +93,9 @@ type LabelingPipelineRunStatus struct {
 	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,2,opt,name=startTime"`
 	// The End time of the run
 	CompletionTime *metav1.Time `json:"completionTime" protobuf:"bytes,3,opt,name=completionTime"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	//+optional
-	Conditions []LabelingPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []LabelingPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 }

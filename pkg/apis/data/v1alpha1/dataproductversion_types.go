@@ -87,7 +87,10 @@ type DataProductVersionSpec struct {
 
 // DataProductVersionStatus defines the observed state of DataProductVersion
 type DataProductVersionStatus struct {
+	//ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// Represents the latest available observations of a dataset state.
 	//+optional
-	Conditions []DataProductVersionCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []DataProductVersionCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }

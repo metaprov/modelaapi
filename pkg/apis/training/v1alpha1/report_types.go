@@ -203,6 +203,9 @@ type ReportStatus struct {
 	// URI is the report uri in the bucket
 	// +kubebuilder:validation:Optional
 	URI string `json:"uri,omitempty" protobuf:"bytes,5,opt,name=uri"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
 }

@@ -228,8 +228,11 @@ type PredictorStatus struct {
 	MonitorLastLatency float64 `json:"monitorLastLatency,omitempty" protobuf:"bytes,5,opt,name=monitorLastLatency"`
 	// The Health of the predictor
 	Health PredictorHealth `json:"health,omitempty" protobuf:"bytes,6,opt,name=health"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
 	// The channels
-	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,7,opt,name=statuses"`
+	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,8,opt,name=statuses"`
 }
 
 type PredictorHealth struct {

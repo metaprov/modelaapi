@@ -614,8 +614,12 @@ message ModelAutobuilderStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 18;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 19;
+
   // +optional
-  repeated ModelAutobuilderCondition conditions = 19;
+  repeated ModelAutobuilderCondition conditions = 20;
 }
 
 // ModelCondition describes the state of a model at a certain point.
@@ -835,8 +839,12 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 10;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 11;
+
   // +optional
-  repeated ModelPipelineRunCondition conditions = 11;
+  repeated ModelPipelineRunCondition conditions = 12;
 
   // Folder for pipeline run artifacts. This is assigned by the system
   // The folder contains all the pipeline artifacts - metadata, logs
@@ -911,8 +919,12 @@ message ModelPipelineSpec {
 
 // ModelPipelineStatus define the observed state of the pipeline
 message ModelPipelineStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // +optional
-  repeated ModelPipelineCondition conditions = 1;
+  repeated ModelPipelineCondition conditions = 2;
 }
 
 // model cv results
@@ -1248,10 +1260,14 @@ message ModelStatus {
   // ResourceConsumed is the avg resource consumed during the training of the model
   optional ResourceConsumption resourceConsumed = 27;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 28;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 28;
+  repeated ModelCondition conditions = 29;
 }
 
 message ModelTestResult {
@@ -1407,9 +1423,13 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 4;
+
   // Represents the latest available observations of a notebook run state.
   // +optional
-  repeated NotebookRunCondition conditions = 4;
+  repeated NotebookRunCondition conditions = 5;
 }
 
 // NotebookSpec is the desired state of the notebook resource.
@@ -1471,9 +1491,13 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional string uri = 2;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
   // Represents the latest available observations of a notebook state.
   // +optional
-  repeated NotebookCondition conditions = 3;
+  repeated NotebookCondition conditions = 4;
 }
 
 // NotebookVarValue is an assignment of value to the notebook var
@@ -1678,8 +1702,12 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional string uri = 5;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 6;
+
   // +optional
-  repeated ReportCondition conditions = 6;
+  repeated ReportCondition conditions = 7;
 }
 
 // PreformanceStatus containt the avg resource consumption
@@ -1908,9 +1936,13 @@ message StudyStatus {
   // The phase of the study
   optional string phase = 24;
 
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 25;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
-  repeated StudyCondition conditions = 25;
+  repeated StudyCondition conditions = 26;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm
