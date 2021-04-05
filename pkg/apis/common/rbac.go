@@ -48,6 +48,7 @@ const (
 	VirtualClusterKind KindName = "VirtualCluster"
 	VirtualVolumeKind  KindName = "VirtualVolume"
 	ApiTokenKind       KindName = "ApiToken"
+	AlertKind          KindName = "Alert"
 
 	// Training kind
 	ModelKind            KindName = "Model"
