@@ -48,6 +48,8 @@ github/com/metaprov/modeldapi/services/account/__init__.py
 github/com/metaprov/modeldapi/services/account/v1/__init__.py
 github/com/metaprov/modeldapi/services/account/v1/account_pb2.py
 github/com/metaprov/modeldapi/services/account/v1/account_pb2_grpc.py
+github/com/metaprov/modeldapi/services/alert/v1/alert_pb2.py
+github/com/metaprov/modeldapi/services/alert/v1/alert_pb2_grpc.py
 github/com/metaprov/modeldapi/services/apitoken/v1/apitoken_pb2.py
 github/com/metaprov/modeldapi/services/apitoken/v1/apitoken_pb2_grpc.py
 github/com/metaprov/modeldapi/services/archived/__init__.py
