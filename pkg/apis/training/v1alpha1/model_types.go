@@ -32,6 +32,11 @@ const (
 	ModelPhaseForecastRunning ModelPhase = "ForecastRunning"
 	ModelPhaseForecasted      ModelPhase = "Forecasted"
 	ModelPhaseFailedForecast  ModelPhase = "FailedForecast"
+	ModelPhaseUat             ModelPhase = "UAT"
+	ModelPhaseProd            ModelPhase = "Prod"
+	ModelPhaseStale           ModelPhase = "Stale"
+	ModelPhaseMaintaince      ModelPhase = "Maintainance"
+	ModelPhaseRetired         ModelPhase = "Retired"
 )
 
 // ModelConditionType is a condition on a model
@@ -63,6 +68,16 @@ const (
 	ModelPaused ModelConditionType = "Paused"
 	//
 	ModelForecasted ModelConditionType = "Forecasted"
+	// The model is under testing
+	ModelUat ModelConditionType = "UAT"
+	// The model is in production
+	ModelProd ModelConditionType = "Prod"
+	// The model is stale
+	ModelStale ModelConditionType = "Stale"
+	// The model is in maintance
+	ModelMaintaince ModelConditionType = "Maintainance"
+	// The model is in retired
+	ModelRetired ModelConditionType = "Retired"
 )
 
 // ModelCondition describes the state of a model at a certain point.
