@@ -17,15 +17,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
-// Alert is an alert that was raised during the incident
-message Alert {
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
-}
-
 // Commnet represents a single comment in the conversation
 message Comment {
   // ID is the comment ID. Used when replying to a comment.
@@ -165,7 +156,7 @@ message PostMortemSpec {
 
   // Alerts
   // +kubebuilder:validation:Optional
-  repeated Alert alert = 4;
+  repeated RaisedAlert alert = 4;
 
   // Timeline is the list of events that happed during the events
   // +kubebuilder:validation:Optional
@@ -195,6 +186,15 @@ message PostMortemStatus {
 
   // +optional
   repeated PostMortemCondition conditions = 2;
+}
+
+// Alert is an alert that was raised during the incident
+message RaisedAlert {
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
 // +kubebuilder:object:root=true

@@ -6,30 +6,6 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class Alert extends jspb.Message {
-  getName(): string;
-  setName(value: string): Alert;
-
-  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): Alert;
-  hasAt(): boolean;
-  clearAt(): Alert;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Alert.AsObject;
-  static toObject(includeInstance: boolean, msg: Alert): Alert.AsObject;
-  static serializeBinaryToWriter(message: Alert, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Alert;
-  static deserializeBinaryFromReader(message: Alert, reader: jspb.BinaryReader): Alert;
-}
-
-export namespace Alert {
-  export type AsObject = {
-    name: string,
-    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-  }
-}
-
 export class Comment extends jspb.Message {
   getId(): string;
   setId(value: string): Comment;
@@ -326,10 +302,10 @@ export class PostMortemSpec extends jspb.Message {
   clearHandledbyList(): PostMortemSpec;
   addHandledby(value?: k8s_io_api_core_v1_generated_pb.ObjectReference, index?: number): k8s_io_api_core_v1_generated_pb.ObjectReference;
 
-  getAlertList(): Array<Alert>;
-  setAlertList(value: Array<Alert>): PostMortemSpec;
+  getAlertList(): Array<RaisedAlert>;
+  setAlertList(value: Array<RaisedAlert>): PostMortemSpec;
   clearAlertList(): PostMortemSpec;
-  addAlert(value?: Alert, index?: number): Alert;
+  addAlert(value?: RaisedAlert, index?: number): RaisedAlert;
 
   getTimelineList(): Array<TimeLineEvent>;
   setTimelineList(value: Array<TimeLineEvent>): PostMortemSpec;
@@ -358,7 +334,7 @@ export namespace PostMortemSpec {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     locationref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     handledbyList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
-    alertList: Array<Alert.AsObject>,
+    alertList: Array<RaisedAlert.AsObject>,
     timelineList: Array<TimeLineEvent.AsObject>,
     rootcause: string,
     summary: string,
@@ -387,6 +363,30 @@ export namespace PostMortemStatus {
   export type AsObject = {
     observedgeneration: number,
     conditionsList: Array<PostMortemCondition.AsObject>,
+  }
+}
+
+export class RaisedAlert extends jspb.Message {
+  getName(): string;
+  setName(value: string): RaisedAlert;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RaisedAlert;
+  hasAt(): boolean;
+  clearAt(): RaisedAlert;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RaisedAlert.AsObject;
+  static toObject(includeInstance: boolean, msg: RaisedAlert): RaisedAlert.AsObject;
+  static serializeBinaryToWriter(message: RaisedAlert, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RaisedAlert;
+  static deserializeBinaryFromReader(message: RaisedAlert, reader: jspb.BinaryReader): RaisedAlert;
+}
+
+export namespace RaisedAlert {
+  export type AsObject = {
+    name: string,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

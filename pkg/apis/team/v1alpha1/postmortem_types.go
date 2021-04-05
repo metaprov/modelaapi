@@ -69,7 +69,7 @@ type TimeLineEvent struct {
 }
 
 // Alert is an alert that was raised during the incident
-type Alert struct {
+type RaisedAlert struct {
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// +kubebuilder:validation:Optional
@@ -89,7 +89,7 @@ type PostMortemSpec struct {
 	HandledBy []v1.ObjectReference `json:"handledBy" protobuf:"bytes,3,rep,name=handledBy"`
 	// Alerts
 	// +kubebuilder:validation:Optional
-	Alerts []Alert `json:"alerts" protobuf:"bytes,4,rep,name=alert"`
+	Alerts []RaisedAlert `json:"alerts" protobuf:"bytes,4,rep,name=alert"`
 	// Timeline is the list of events that happed during the events
 	// +kubebuilder:validation:Optional
 	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,5,rep,name=timeline"`
