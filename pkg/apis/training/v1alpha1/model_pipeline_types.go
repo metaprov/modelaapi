@@ -125,30 +125,50 @@ const (
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
-	// The name of the dataset. If the data pipeline run creates the dataset
-	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
+	// LabName is the name of the lab used for data pipeline execution. If empty the system will use the default lab
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DataPipelineName string `json:"dataPipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,1,opt,name=labName"`
+	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
+	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
+	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
+	// The location of the data to use for this pipeline
+	// +kubebuilder:validation:Optional
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	// The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
+	// based on the file in the location.
+	// +kubebuilder:validation:Optional
+	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,4,opt,name=datasourceName"`
+	// If Not null, run a docker image is used in order to generate the data.
+	// The data must reside in location after the container run
+	// +kubebuilder:validation:Optional
+	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,5,opt,name=dockerImage"`
+	// If Not null, contain a reference to an existing datasource in the system
+	// +kubebuilder:validation:Optional
+	SourceDatasetName *string `json:"sourceDatasetName,omitempty" protobuf:"bytes,6,opt,name=sourceDatasetName"`
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
 type TrainingStageSpec struct {
-	// NotebookName template specify the notebook
+	// NotebookName specify the notebook to run before training.
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,1,opt,name=notebookName"`
-	// LabName is the name of the lab used for training. If empty the system will use the default lab
+	// LabName is the name of the lab used for training. If empty, the system will use the default lab assigned to the data product
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
-	// StudyName is the name of a study template. The study will train models on the dataset from the data stage
+	// StudyName is the name of a study template. The actual study will clone the study template and will
+	// use the dataset created in the data stage.
 	// +kubebuilder:default =""
+	// +kubebuilder:validation:Required
+	StudyTemplateName *string `json:"studyTemplateName,omitempty" protobuf:"bytes,3,opt,name=studyTemplateName"`
+	// Smoke is the expectation on the result from testing the model during training.
+	// If the model cannot pass this smoke test, the system will fail the pipeline
+	// If the smoke is empty, the system does not perform the test
 	// +kubebuilder:validation:Optional
-	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
-
-	// MinScore is the score needed to move to another stage. The min score is composed of a metric and a score.
-	// +kubebuilder:validation:Optional
-	MinScore TestScore `json:"minScore,omitempty" protobuf:"bytes,4,opt,name=minScore"`
-
+	Smoke *Expectation `json:"smoke,omitempty" protobuf:"bytes,4,opt,name=smoke"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -157,19 +177,19 @@ type TrainingStageSpec struct {
 
 //UATStageSpec is the specification of the user acceptance test.
 type UATStageSpec struct {
-	// The serving site for the testing
+	// The serving site (name space) used for running the uat tests. If the serving site is empty, the system
+	// will skip the uat stage
 	// +kubebuilder:default =""
-	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-
-	// Tests is the specification of tests to run
 	// +kubebuilder:validation:Optional
-	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
-
-	// Auto defines if we move to the next stage without human intervation
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
+	// Tests defines the machine learning test cases to run against the new trained model.
+	// +kubebuilder:validation:Optional
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,3,opt,name=auto"`
-	// A reference to the workload class that is used for running the prediction
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
+	// WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
@@ -178,39 +198,41 @@ type UATStageSpec struct {
 // CapacityStageSpec is the desired state of the capcity testing.
 type CapacityStageSpec struct {
 	// ServingSiteName is the serving site for the testing during the capacity stage
+	// If the serving site is empty or null, the system will skip the capacity stage unit tests.
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
 	// A reference to the workload class that is used for running the prediction
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
-//ProdStageSpec is the predictor name that would host the model
+//ProdStageSpec define the testing and relesing the resulting model to production.
 type ProdStageSpec struct {
-	// ServingSiteName is the serving site for the release
+	// ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
 	// +kubebuilder:default =""
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
-	// PredictorName he release predictor. The predictor will be created if it does not exist.
+	// PredictorName is the release predictor. The predictor will be created if it does not exist.
 	// +kubebuilder:validation:Optional
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
-	// Weight is the weight of the model.
+	// Template defines the default model deployment for this model
 	// +kubebuilder:validation:Optional
 	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
 	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
-	// +kubebuilder:default:=false
+	// By default a user is needed to apporve the release to production
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
-	// Tests is the List of tests to run against the deployed model before moving production traffic to the model
+	// Tests is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
-	Tests []ModelTestSpec `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -218,22 +240,30 @@ type ModelPipelineStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	//+optional
+	// Condition is the list of the condition of the pipeline.
+	// +kubebuilder:validation:Optional
 	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
-type ModelTestSpec struct {
-	// Name of the dataset used for testing
+type Expectation struct {
+	// DatasetName is the name of the test dataset.
+	// +kubebuilder:validation:Required
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// Minimum scores required to pass the tests
-	MinScores []TestScore `json:"minScores,omitempty" protobuf:"bytes,2,opt,name=minScores"`
-	// Max time in seconds
-	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,3,opt,name=maxTime"`
+	// Metric is the name of the metric
+	// +kubebuilder:validation:Required
+	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,2,opt,name=metric"`
+	// Op is the operator used during comparison
+	// +kubebuilder:validation:Required
+	Op Op `json:"op,omitempty" protobuf:"bytes,3,opt,name=op"`
+	// Score is the expected score
+	// +kubebuilder:validation:Required
+	Score *float64 `json:"score,omitempty" protobuf:"bytes,4,opt,name=score"`
 }
 
-type TestScore struct {
-	// Metric is the name of the metric
-	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,1,opt,name=metric"`
-	// The score needed.
-	Score *float64 `json:"score,omitempty" protobuf:"bytes,2,opt,name=score"`
-}
+type Op string
+
+const (
+	LT Op = "lt"
+	EQ Op = "eq"
+	GT Op = "gt"
+)

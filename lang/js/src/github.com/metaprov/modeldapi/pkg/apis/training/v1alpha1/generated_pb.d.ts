@@ -59,10 +59,10 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getTestsList(): Array<ModelTestSpec>;
-  setTestsList(value: Array<ModelTestSpec>): CapacityStageSpec;
+  getTestsList(): Array<Expectation>;
+  setTestsList(value: Array<Expectation>): CapacityStageSpec;
   clearTestsList(): CapacityStageSpec;
-  addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
+  addTests(value?: Expectation, index?: number): Expectation;
 
   getManualapproval(): boolean;
   setManualapproval(value: boolean): CapacityStageSpec;
@@ -81,7 +81,7 @@ export class CapacityStageSpec extends jspb.Message {
 export namespace CapacityStageSpec {
   export type AsObject = {
     servingsitename: string,
-    testsList: Array<ModelTestSpec.AsObject>,
+    testsList: Array<Expectation.AsObject>,
     manualapproval: boolean,
     workloadclassname: string,
   }
@@ -206,11 +206,25 @@ export namespace DataSplit {
 }
 
 export class DataStageSpec extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): DataStageSpec;
+  getLabname(): string;
+  setLabname(value: string): DataStageSpec;
 
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataStageSpec;
+
+  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DataStageSpec;
+  hasLocation(): boolean;
+  clearLocation(): DataStageSpec;
+
+  getDatasourcename(): string;
+  setDatasourcename(value: string): DataStageSpec;
+
+  getDockerimage(): string;
+  setDockerimage(value: string): DataStageSpec;
+
+  getSourcedatasetname(): string;
+  setSourcedatasetname(value: string): DataStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataStageSpec.AsObject;
@@ -222,8 +236,12 @@ export class DataStageSpec extends jspb.Message {
 
 export namespace DataStageSpec {
   export type AsObject = {
-    datasetname: string,
+    labname: string,
     datapipelinename: string,
+    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    datasourcename: string,
+    dockerimage: string,
+    sourcedatasetname: string,
   }
 }
 
@@ -390,6 +408,36 @@ export class EnsembleSpec extends jspb.Message {
 export namespace EnsembleSpec {
   export type AsObject = {
     baseList: Array<string>,
+  }
+}
+
+export class Expectation extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): Expectation;
+
+  getMetric(): string;
+  setMetric(value: string): Expectation;
+
+  getOp(): string;
+  setOp(value: string): Expectation;
+
+  getScore(): number;
+  setScore(value: number): Expectation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Expectation.AsObject;
+  static toObject(includeInstance: boolean, msg: Expectation): Expectation.AsObject;
+  static serializeBinaryToWriter(message: Expectation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Expectation;
+  static deserializeBinaryFromReader(message: Expectation, reader: jspb.BinaryReader): Expectation;
+}
+
+export namespace Expectation {
+  export type AsObject = {
+    datasetname: string,
+    metric: string,
+    op: string,
+    score: number,
   }
 }
 
@@ -1923,34 +1971,6 @@ export namespace ModelTestResult {
   }
 }
 
-export class ModelTestSpec extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelTestSpec;
-
-  getMinscoresList(): Array<TestScore>;
-  setMinscoresList(value: Array<TestScore>): ModelTestSpec;
-  clearMinscoresList(): ModelTestSpec;
-  addMinscores(value?: TestScore, index?: number): TestScore;
-
-  getMaxtime(): number;
-  setMaxtime(value: number): ModelTestSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelTestSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelTestSpec): ModelTestSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelTestSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelTestSpec;
-  static deserializeBinaryFromReader(message: ModelTestSpec, reader: jspb.BinaryReader): ModelTestSpec;
-}
-
-export namespace ModelTestSpec {
-  export type AsObject = {
-    datasetname: string,
-    minscoresList: Array<TestScore.AsObject>,
-    maxtime: number,
-  }
-}
-
 export class NNLayerParameter extends jspb.Message {
   getName(): string;
   setName(value: string): NNLayerParameter;
@@ -2488,10 +2508,10 @@ export class ProdStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): ProdStageSpec;
 
-  getTestsList(): Array<ModelTestSpec>;
-  setTestsList(value: Array<ModelTestSpec>): ProdStageSpec;
+  getTestsList(): Array<Expectation>;
+  setTestsList(value: Array<Expectation>): ProdStageSpec;
   clearTestsList(): ProdStageSpec;
-  addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
+  addTests(value?: Expectation, index?: number): Expectation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProdStageSpec.AsObject;
@@ -2507,7 +2527,7 @@ export namespace ProdStageSpec {
     predictorname: string,
     template?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
-    testsList: Array<ModelTestSpec.AsObject>,
+    testsList: Array<Expectation.AsObject>,
   }
 }
 
@@ -3115,28 +3135,6 @@ export namespace SuccessiveHalvingSpec {
   }
 }
 
-export class TestScore extends jspb.Message {
-  getMetric(): string;
-  setMetric(value: string): TestScore;
-
-  getScore(): number;
-  setScore(value: number): TestScore;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TestScore.AsObject;
-  static toObject(includeInstance: boolean, msg: TestScore): TestScore.AsObject;
-  static serializeBinaryToWriter(message: TestScore, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TestScore;
-  static deserializeBinaryFromReader(message: TestScore, reader: jspb.BinaryReader): TestScore;
-}
-
-export namespace TestScore {
-  export type AsObject = {
-    metric: string,
-    score: number,
-  }
-}
-
 export class TextPipelineSpec extends jspb.Message {
   getColumnsList(): Array<string>;
   setColumnsList(value: Array<string>): TextPipelineSpec;
@@ -3286,13 +3284,13 @@ export class TrainingStageSpec extends jspb.Message {
   getLabname(): string;
   setLabname(value: string): TrainingStageSpec;
 
-  getStudyname(): string;
-  setStudyname(value: string): TrainingStageSpec;
+  getStudytemplatename(): string;
+  setStudytemplatename(value: string): TrainingStageSpec;
 
-  getMinscore(): TestScore | undefined;
-  setMinscore(value?: TestScore): TrainingStageSpec;
-  hasMinscore(): boolean;
-  clearMinscore(): TrainingStageSpec;
+  getSmoke(): Expectation | undefined;
+  setSmoke(value?: Expectation): TrainingStageSpec;
+  hasSmoke(): boolean;
+  clearSmoke(): TrainingStageSpec;
 
   getManualapproval(): boolean;
   setManualapproval(value: boolean): TrainingStageSpec;
@@ -3309,8 +3307,8 @@ export namespace TrainingStageSpec {
   export type AsObject = {
     notebookname: string,
     labname: string,
-    studyname: string,
-    minscore?: TestScore.AsObject,
+    studytemplatename: string,
+    smoke?: Expectation.AsObject,
     manualapproval: boolean,
   }
 }
@@ -3319,13 +3317,13 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getTestsList(): Array<ModelTestSpec>;
-  setTestsList(value: Array<ModelTestSpec>): UATStageSpec;
+  getTestsList(): Array<Expectation>;
+  setTestsList(value: Array<Expectation>): UATStageSpec;
   clearTestsList(): UATStageSpec;
-  addTests(value?: ModelTestSpec, index?: number): ModelTestSpec;
+  addTests(value?: Expectation, index?: number): Expectation;
 
-  getAuto(): boolean;
-  setAuto(value: boolean): UATStageSpec;
+  getManualapproval(): boolean;
+  setManualapproval(value: boolean): UATStageSpec;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): UATStageSpec;
@@ -3341,8 +3339,8 @@ export class UATStageSpec extends jspb.Message {
 export namespace UATStageSpec {
   export type AsObject = {
     servingsitename: string,
-    testsList: Array<ModelTestSpec.AsObject>,
-    auto: boolean,
+    testsList: Array<Expectation.AsObject>,
+    manualapproval: boolean,
     workloadclassname: string,
   }
 }

@@ -67,7 +67,8 @@ spec:
                     type: boolean
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
-                      during the capacity stage
+                      during the capacity stage If the serving site is empty or null,
+                      the system will skip the capacity stage unit tests.
                     type: string
                   tests:
                     description: Tests is the specification of tests to run in this
@@ -75,66 +76,59 @@ spec:
                     items:
                       properties:
                         datasetName:
-                          description: Name of the dataset used for testing
+                          description: DatasetName is the name of the test dataset.
                           type: string
-                        maxTime:
-                          description: Max time in seconds
-                          format: int32
-                          type: integer
-                        minScores:
-                          description: Minimum scores required to pass the tests
-                          items:
-                            properties:
-                              metric:
-                                description: Metric is the name of the metric
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              score:
-                                description: The score needed.
-                                type: number
-                            type: object
-                          type: array
+                        metric:
+                          description: Metric is the name of the metric
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        op:
+                          description: Op is the operator used during comparison
+                          type: string
+                        score:
+                          description: Score is the expected score
+                          type: number
                       type: object
                     type: array
                   workloadClassName:
@@ -147,10 +141,38 @@ spec:
                 description: Datastage build new dataset from the data sources.
                 properties:
                   dataPipelineName:
+                    description: If not null, run the data pipeline and create a dataset.
+                      else, use the data in the data location
                     type: string
-                  datasetName:
-                    description: The name of the dataset. If the data pipeline run
-                      creates the dataset
+                  datasourceName:
+                    description: The data source name for the data in the location.
+                      The data source will be used to create a new dataset for this
+                      pipeline based on the file in the location.
+                    type: string
+                  dockerImage:
+                    description: If Not null, run a docker image is used in order
+                      to generate the data. The data must reside in location after
+                      the container run
+                    type: string
+                  labName:
+                    description: LabName is the name of the lab used for data pipeline
+                      execution. If empty the system will use the default lab
+                    type: string
+                  location:
+                    description: The location of the data to use for this pipeline
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        description: Path to the full data file (e.g. csv file).
+                        type: string
+                    required:
+                    - bucketName
+                    - path
+                    type: object
+                  sourceDatasetName:
+                    description: If Not null, contain a reference to an existing datasource
+                      in the system
                     type: string
                 type: object
               defaultServingSiteName:
@@ -187,19 +209,22 @@ spec:
                   production.
                 properties:
                   manualApproval:
-                    default: false
+                    default: true
                     description: ManualApproval dentoes if we need manual approval
-                      before advancing from deployed to released
+                      before advancing from deployed to released By default a user
+                      is needed to apporve the release to production
                     type: boolean
                   predictorName:
-                    description: PredictorName he release predictor. The predictor
+                    description: PredictorName is the release predictor. The predictor
                       will be created if it does not exist.
                     type: string
                   servingSiteName:
-                    description: ServingSiteName is the serving site for the release
+                    description: ServingSiteName is the serving site for the release,
+                      if empty, the system will use the default serving site name
                     type: string
                   template:
-                    description: Weight is the weight of the model.
+                    description: Template defines the default model deployment for
+                      this model
                     properties:
                       canary:
                         description: 'Canary denotes if this deployment is staged
@@ -261,71 +286,64 @@ spec:
                         type: string
                     type: object
                   tests:
-                    description: Tests is the List of tests to run against the deployed
-                      model before moving production traffic to the model
+                    description: Tests is the List of expectation run against the
+                      deployed model before moving production traffic to the model
                     items:
                       properties:
                         datasetName:
-                          description: Name of the dataset used for testing
+                          description: DatasetName is the name of the test dataset.
                           type: string
-                        maxTime:
-                          description: Max time in seconds
-                          format: int32
-                          type: integer
-                        minScores:
-                          description: Minimum scores required to pass the tests
-                          items:
-                            properties:
-                              metric:
-                                description: Metric is the name of the metric
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              score:
-                                description: The score needed.
-                                type: number
-                            type: object
-                          type: array
+                        metric:
+                          description: Metric is the name of the metric
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        op:
+                          description: Op is the operator used during comparison
+                          type: string
+                        score:
+                          description: Score is the expected score
+                          type: number
                       type: object
                     type: array
                 type: object
@@ -386,17 +404,26 @@ spec:
                 properties:
                   labName:
                     description: LabName is the name of the lab used for training.
-                      If empty the system will use the default lab
+                      If empty, the system will use the default lab assigned to the
+                      data product
                     type: string
                   manualApproval:
                     default: false
                     description: ManualApproval dentoes if we need manual apporval
                       before advancing to further stages in the pipeline
                     type: boolean
-                  minScore:
-                    description: MinScore is the score needed to move to another stage.
-                      The min score is composed of a metric and a score.
+                  notebookName:
+                    description: NotebookName specify the notebook to run before training.
+                    type: string
+                  smoke:
+                    description: Smoke is the expectation on the result from testing
+                      the model during training. If the model cannot pass this smoke
+                      test, the system will fail the pipeline If the smoke is empty,
+                      the system does not perform the test
                     properties:
+                      datasetName:
+                        description: DatasetName is the name of the test dataset.
+                        type: string
                       metric:
                         description: Metric is the name of the metric
                         enum:
@@ -442,100 +469,97 @@ spec:
                         - smape
                         - mdape
                         type: string
+                      op:
+                        description: Op is the operator used during comparison
+                        type: string
                       score:
-                        description: The score needed.
+                        description: Score is the expected score
                         type: number
                     type: object
-                  notebookName:
-                    description: NotebookName template specify the notebook
-                    type: string
-                  studyName:
-                    description: StudyName is the name of a study template. The study
-                      will train models on the dataset from the data stage
+                  studyTemplateName:
+                    description: StudyName is the name of a study template. The actual
+                      study will clone the study template and will use the dataset
+                      created in the data stage.
                     type: string
                 type: object
               uat:
                 description: Acceptance stage is used for further testing
                 properties:
-                  auto:
+                  manualApproval:
                     default: true
-                    description: Auto defines if we move to the next stage without
-                      human intervation
+                    description: ManualApproval dentoes if we need manual apporval
+                      before advancing to further stages in the pipeline
                     type: boolean
                   servingSiteName:
-                    description: The serving site for the testing
+                    description: The serving site (name space) used for running the
+                      uat tests. If the serving site is empty, the system will skip
+                      the uat stage
                     type: string
                   tests:
-                    description: Tests is the specification of tests to run
+                    description: Tests defines the machine learning test cases to
+                      run against the new trained model.
                     items:
                       properties:
                         datasetName:
-                          description: Name of the dataset used for testing
+                          description: DatasetName is the name of the test dataset.
                           type: string
-                        maxTime:
-                          description: Max time in seconds
-                          format: int32
-                          type: integer
-                        minScores:
-                          description: Minimum scores required to pass the tests
-                          items:
-                            properties:
-                              metric:
-                                description: Metric is the name of the metric
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              score:
-                                description: The score needed.
-                                type: number
-                            type: object
-                          type: array
+                        metric:
+                          description: Metric is the name of the metric
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        op:
+                          description: Op is the operator used during comparison
+                          type: string
+                        score:
+                          description: Score is the expected score
+                          type: number
                       type: object
                     type: array
                   workloadClassName:
                     default: default-prediction-workload-class
-                    description: A reference to the workload class that is used for
-                      running the prediction
+                    description: WorkloadClassName is a reference to the workload
+                      class that is used for running the tests in the serving site.
                     type: string
                 type: object
               versionName:
@@ -546,6 +570,7 @@ spec:
             description: ModelPipelineStatus define the observed state of the pipeline
             properties:
               conditions:
+                description: Condition is the list of the condition of the pipeline.
                 items:
                   description: ModelPipelineCondition describes the state of a pipeline
                     at a certain point.

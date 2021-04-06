@@ -47,17 +47,18 @@ message BacktestSpec {
 // CapacityStageSpec is the desired state of the capcity testing.
 message CapacityStageSpec {
   // ServingSiteName is the serving site for the testing during the capacity stage
+  // If the serving site is empty or null, the system will skip the capacity stage unit tests.
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated ModelTestSpec tests = 2;
+  repeated Expectation tests = 2;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool manualApproval = 5;
+  optional bool manualApproval = 3;
 
   // A reference to the workload class that is used for running the prediction
   // +kubebuilder:default:="default-prediction-workload-class"
@@ -150,11 +151,33 @@ message DataSplit {
 // DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 // Data preprocessing will be done via
 message DataStageSpec {
-  // The name of the dataset. If the data pipeline run creates the dataset
-  optional string datasetName = 1;
+  // LabName is the name of the lab used for data pipeline execution. If empty the system will use the default lab
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional string labName = 1;
 
+  // If not null, run the data pipeline and create a dataset. else, use the data in the data location
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string datapipelineName = 2;
+
+  // The location of the data to use for this pipeline
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 3;
+
+  // The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
+  // based on the file in the location.
+  // +kubebuilder:validation:Optional
+  optional string datasourceName = 4;
+
+  // If Not null, run a docker image is used in order to generate the data.
+  // The data must reside in location after the container run
+  // +kubebuilder:validation:Optional
+  optional string dockerImage = 5;
+
+  // If Not null, contain a reference to an existing datasource in the system
+  // +kubebuilder:validation:Optional
+  optional string sourceDatasetName = 6;
 }
 
 // DateTimePipelineSpec is the specification for preprocessing datetime features
@@ -237,6 +260,24 @@ message EnsembleSpec {
   // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
   // +kubebuilder:validation:Optional
   repeated string base = 2;
+}
+
+message Expectation {
+  // DatasetName is the name of the test dataset.
+  // +kubebuilder:validation:Required
+  optional string datasetName = 1;
+
+  // Metric is the name of the metric
+  // +kubebuilder:validation:Required
+  optional string metric = 2;
+
+  // Op is the operator used during comparison
+  // +kubebuilder:validation:Required
+  optional string op = 3;
+
+  // Score is the expected score
+  // +kubebuilder:validation:Required
+  optional double score = 4;
 }
 
 // A definition for a single forecast
@@ -923,7 +964,8 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // Condition is the list of the condition of the pipeline.
+  // +kubebuilder:validation:Optional
   repeated ModelPipelineCondition conditions = 2;
 }
 
@@ -1287,17 +1329,6 @@ message ModelTestResult {
   optional string error = 5;
 }
 
-message ModelTestSpec {
-  // Name of the dataset used for testing
-  optional string datasetName = 1;
-
-  // Minimum scores required to pass the tests
-  repeated TestScore minScores = 2;
-
-  // Max time in seconds
-  optional int32 maxTime = 3;
-}
-
 message NNLayerParameter {
   optional string name = 1;
 
@@ -1574,28 +1605,29 @@ message PreprocessingSpec {
   optional bool imbalanced = 10;
 }
 
-// ProdStageSpec is the predictor name that would host the model
+// ProdStageSpec define the testing and relesing the resulting model to production.
 message ProdStageSpec {
-  // ServingSiteName is the serving site for the release
+  // ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
   // +kubebuilder:default =""
   optional string servingSiteName = 1;
 
-  // PredictorName he release predictor. The predictor will be created if it does not exist.
+  // PredictorName is the release predictor. The predictor will be created if it does not exist.
   // +kubebuilder:validation:Optional
   optional string predictorName = 2;
 
-  // Weight is the weight of the model.
+  // Template defines the default model deployment for this model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec template = 3;
 
   // ManualApproval dentoes if we need manual approval before advancing from deployed to released
-  // +kubebuilder:default:=false
+  // By default a user is needed to apporve the release to production
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 4;
 
-  // Tests is the List of tests to run against the deployed model before moving production traffic to the model
+  // Tests is the List of expectation run against the deployed model before moving production traffic to the model
   // +kubebuilder:validation:Optional
-  repeated ModelTestSpec tests = 5;
+  repeated Expectation tests = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2000,14 +2032,6 @@ message SuccessiveHalvingSpec {
   optional string modality = 26;
 }
 
-message TestScore {
-  // Metric is the name of the metric
-  optional string metric = 1;
-
-  // The score needed.
-  optional double score = 2;
-}
-
 // TextPipelineSpec is the specification for preprocessing of text columns
 message TextPipelineSpec {
   // The list of test columns
@@ -2136,23 +2160,27 @@ message TrainingSpec {
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
 message TrainingStageSpec {
-  // NotebookName template specify the notebook
+  // NotebookName specify the notebook to run before training.
   // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
   optional string notebookName = 1;
 
-  // LabName is the name of the lab used for training. If empty the system will use the default lab
+  // LabName is the name of the lab used for training. If empty, the system will use the default lab assigned to the data product
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string labName = 2;
 
-  // StudyName is the name of a study template. The study will train models on the dataset from the data stage
+  // StudyName is the name of a study template. The actual study will clone the study template and will
+  // use the dataset created in the data stage.
   // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string studyName = 3;
+  // +kubebuilder:validation:Required
+  optional string studyTemplateName = 3;
 
-  // MinScore is the score needed to move to another stage. The min score is composed of a metric and a score.
+  // Smoke is the expectation on the result from testing the model during training.
+  // If the model cannot pass this smoke test, the system will fail the pipeline
+  // If the smoke is empty, the system does not perform the test
   // +kubebuilder:validation:Optional
-  optional TestScore minScore = 4;
+  optional Expectation smoke = 4;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=false
@@ -2162,20 +2190,22 @@ message TrainingStageSpec {
 
 // UATStageSpec is the specification of the user acceptance test.
 message UATStageSpec {
-  // The serving site for the testing
+  // The serving site (name space) used for running the uat tests. If the serving site is empty, the system
+  // will skip the uat stage
   // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
   optional string servingSiteName = 1;
 
-  // Tests is the specification of tests to run
+  // Tests defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  repeated ModelTestSpec tests = 2;
+  repeated Expectation tests = 2;
 
-  // Auto defines if we move to the next stage without human intervation
+  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool auto = 3;
+  optional bool manualApproval = 3;
 
-  // A reference to the workload class that is used for running the prediction
+  // WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 4;
