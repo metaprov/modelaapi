@@ -774,22 +774,22 @@ message ModelPipelineRunList {
 
 // ModelPipelineRunSpec is the desired state of the ModelPipelineRun resource
 message ModelPipelineRunSpec {
-  // User provided description
+  // VersionName is the data product version of the run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // User provided description
+  // Description is the user provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // TriggerName denote the trigger that fired this pipeline run
+  // TriggerName denotes the trigger that fired this pipeline run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string triggerName = 3;
 
-  // PipelineName is the name of the pipeline specification for this pipeline
+  // PipelineName is the name of the ModelPipeline for this pipeline
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string pipelineName = 4;
@@ -851,14 +851,15 @@ message ModelPipelineRunStatus {
   // The current name of the study
   optional string studyName = 2;
 
+  // DataStatus is the status of the data stage
   // data is the status for the data stage.
   optional ModelPipelineRunStageStatus dataStatus = 3;
 
+  // TrainingStatus is the status for the training stage
   // +kubebuilder:validation:Optional
-  // dev is the status for the dev stage.
   optional ModelPipelineRunStageStatus trainingStatus = 4;
 
-  // Staging is status for each qa stage.
+  // UATStatus is the status of the uat stage
   // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus uatStatus = 5;
 

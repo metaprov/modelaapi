@@ -27,14 +27,15 @@ const (
 	ModelPipelineStageProd     ModelPipelineStage = "prod"
 )
 
-// +kubebuilder:validation:Enum="data";"train";"test";"prod"
+// +kubebuilder:validation:Enum="data";"train";"uat";"capacity";"prod";
 type EnvName string
 
 const (
-	DataEnvName  EnvName = "data"
-	TrainEnvName EnvName = "training"
-	TestEnvName  EnvName = "staging"
-	ProdEnvName  EnvName = "prod"
+	DataEnvName     EnvName = "data"
+	TrainEnvName    EnvName = "training"
+	UatEnvName      EnvName = "uat"
+	CapacityEnvName EnvName = "capacity"
+	ProdEnvName     EnvName = "prod"
 )
 
 // Pipeline run condition
@@ -95,19 +96,19 @@ type ModelPipelineRunList struct {
 
 // ModelPipelineRunSpec is the desired state of the ModelPipelineRun resource
 type ModelPipelineRunSpec struct {
-	// User provided description
+	// VersionName is the data product version of the run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// User provided description
+	// Description is the user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// TriggerName denote the trigger that fired this pipeline run
+	// TriggerName denotes the trigger that fired this pipeline run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TriggerName *string `json:"triggerName,omitempty" protobuf:"bytes,3,opt,name=triggerName"`
-	// PipelineName is the name of the pipeline specification for this pipeline
+	// PipelineName is the name of the ModelPipeline for this pipeline
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	PipelineName *string `json:"pipelineName,omitempty" protobuf:"bytes,4,opt,name=pipelineName"`
@@ -177,12 +178,13 @@ type ModelPipelineRunStatus struct {
 	Stage ModelPipelineStage `json:"stage,omitempty" protobuf:"bytes,1,opt,name=stage"`
 	// The current name of the study
 	StudyName string `json:"studyName,omitempty" protobuf:"bytes,2,opt,name=studyName"`
+	// DataStatus is the status of the data stage
 	// data is the status for the data stage.
 	DataStatus ModelPipelineRunStageStatus `json:"dataStatus,omitempty" protobuf:"bytes,3,opt,name=dataStatus"`
+	// TrainingStatus is the status for the training stage
 	// +kubebuilder:validation:Optional
-	// dev is the status for the dev stage.
 	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStatus,omitempty" protobuf:"bytes,4,opt,name=trainingStatus"`
-	// Staging is status for each qa stage.
+	// UATStatus is the status of the uat stage
 	// +kubebuilder:validation:Optional
 	UATStatus ModelPipelineRunStageStatus `json:"uatStatus,omitempty" protobuf:"bytes,5,rep,name=uatStatus"`
 	// CapacityStatus is the status for the capacity stage.
