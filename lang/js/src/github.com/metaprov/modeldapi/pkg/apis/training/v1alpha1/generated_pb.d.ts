@@ -1935,20 +1935,11 @@ export class ModelTestResult extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): ModelTestResult;
 
-  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelTestResult;
-  hasStarttime(): boolean;
-  clearStarttime(): ModelTestResult;
+  getMetric(): string;
+  setMetric(value: string): ModelTestResult;
 
-  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelTestResult;
-  hasEndtime(): boolean;
-  clearEndtime(): ModelTestResult;
-
-  getResultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setResultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): ModelTestResult;
-  clearResultsList(): ModelTestResult;
-  addResults(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  getValue(): number;
+  setValue(value: number): ModelTestResult;
 
   getError(): string;
   setError(value: string): ModelTestResult;
@@ -1964,9 +1955,8 @@ export class ModelTestResult extends jspb.Message {
 export namespace ModelTestResult {
   export type AsObject = {
     datasetname: string,
-    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    metric: string,
+    value: number,
     error: string,
   }
 }

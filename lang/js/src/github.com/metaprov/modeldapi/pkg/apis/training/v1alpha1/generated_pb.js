@@ -1066,7 +1066,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -19972,13 +19972,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.repeatedFields_ = [4];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -20011,10 +20004,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.p
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.toObject = function(includeInstance, msg) {
   var f, obj = {
     datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
+    metric: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    value: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     error: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
@@ -20057,19 +20048,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.d
       msg.setDatasetname(value);
       break;
     case 2:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setStarttime(value);
-      break;
-    case 3:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setEndtime(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetric(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.deserializeBinaryFromReader);
-      msg.addResults(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setValue(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -20111,28 +20095,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.s
       f
     );
   }
-  f = message.getStarttime();
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       2,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getEndtime();
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeDouble(
       4,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
@@ -20182,30 +20156,29 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.p
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ * optional string metric = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.getStarttime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.getMetric = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.setStarttime = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.setMetric = function(value) {
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.clearStarttime = function() {
-  return this.setStarttime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.clearMetric = function() {
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -20213,36 +20186,35 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.hasStarttime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.hasMetric = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ * optional double value = 4;
+ * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.getEndtime = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.setEndtime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.setValue = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.clearEndtime = function() {
-  return this.setEndtime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.clearValue = function() {
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -20250,46 +20222,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.hasEndtime = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement results = 4;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, 4));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

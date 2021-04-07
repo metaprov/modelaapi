@@ -126,15 +126,14 @@ const (
 	StageStatusPhaseFailed    StageStatusPhase = "Failed"
 )
 
+// Model Test Result holds the results for a single metric on a single dataset
 type ModelTestResult struct {
 	// The name of the dataset
 	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// startTime is the test start time
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// endTime is the test end time
-	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
-	// The results of running the tests
-	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
+	// Metric is the name of the metric measured
+	Metric catalog.Metric `json:"result,omitempty" protobuf:"bytes,2,opt,name=metric"`
+	// Value is the value of the metric
+	Value float64 `json:"value,omitempty" protobuf:"bytes,4,opt,name=value"`
 	// Error is a name of any error that occurred during the test.
 	Error *string `json:"error,omitempty" protobuf:"bytes,5,opt,name=error"`
 }

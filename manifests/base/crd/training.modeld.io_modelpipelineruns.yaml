@@ -120,80 +120,64 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
                       properties:
                         datasetName:
                           description: The name of the dataset
-                          type: string
-                        endTime:
-                          description: endTime is the test end time
-                          format: date-time
                           type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
-                        results:
-                          description: The results of running the tests
-                          items:
-                            description: Measurement is a value for a specific metric
-                            properties:
-                              metric:
-                                description: The metric type name (e.g. F1 / Accuracy)
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              value:
-                                description: The value for this model
-                                type: number
-                            required:
-                            - metric
-                            - value
-                            type: object
-                          type: array
-                        startTime:
-                          description: startTime is the test start time
-                          format: date-time
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
                           type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
                       type: object
                     type: array
                   startTime:
@@ -270,80 +254,64 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
                       properties:
                         datasetName:
                           description: The name of the dataset
-                          type: string
-                        endTime:
-                          description: endTime is the test end time
-                          format: date-time
                           type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
-                        results:
-                          description: The results of running the tests
-                          items:
-                            description: Measurement is a value for a specific metric
-                            properties:
-                              metric:
-                                description: The metric type name (e.g. F1 / Accuracy)
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              value:
-                                description: The value for this model
-                                type: number
-                            required:
-                            - metric
-                            - value
-                            type: object
-                          type: array
-                        startTime:
-                          description: startTime is the test start time
-                          format: date-time
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
                           type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
                       type: object
                     type: array
                   startTime:
@@ -401,80 +369,64 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
                       properties:
                         datasetName:
                           description: The name of the dataset
-                          type: string
-                        endTime:
-                          description: endTime is the test end time
-                          format: date-time
                           type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
-                        results:
-                          description: The results of running the tests
-                          items:
-                            description: Measurement is a value for a specific metric
-                            properties:
-                              metric:
-                                description: The metric type name (e.g. F1 / Accuracy)
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              value:
-                                description: The value for this model
-                                type: number
-                            required:
-                            - metric
-                            - value
-                            type: object
-                          type: array
-                        startTime:
-                          description: startTime is the test start time
-                          format: date-time
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
                           type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
                       type: object
                     type: array
                   startTime:
@@ -528,80 +480,64 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
                       properties:
                         datasetName:
                           description: The name of the dataset
-                          type: string
-                        endTime:
-                          description: endTime is the test end time
-                          format: date-time
                           type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
-                        results:
-                          description: The results of running the tests
-                          items:
-                            description: Measurement is a value for a specific metric
-                            properties:
-                              metric:
-                                description: The metric type name (e.g. F1 / Accuracy)
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              value:
-                                description: The value for this model
-                                type: number
-                            required:
-                            - metric
-                            - value
-                            type: object
-                          type: array
-                        startTime:
-                          description: startTime is the test start time
-                          format: date-time
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
                           type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
                       type: object
                     type: array
                   startTime:
@@ -646,80 +582,64 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
                       properties:
                         datasetName:
                           description: The name of the dataset
-                          type: string
-                        endTime:
-                          description: endTime is the test end time
-                          format: date-time
                           type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
-                        results:
-                          description: The results of running the tests
-                          items:
-                            description: Measurement is a value for a specific metric
-                            properties:
-                              metric:
-                                description: The metric type name (e.g. F1 / Accuracy)
-                                enum:
-                                - accuracy
-                                - average-precision
-                                - balanced-accuracy
-                                - brier-score-loss
-                                - f1
-                                - f1-macro
-                                - f1-micro
-                                - f1-weighted
-                                - log-loss
-                                - precision
-                                - precision-micro
-                                - precision-macro
-                                - precision-weighted
-                                - recall
-                                - recall-macro
-                                - recall-micro
-                                - recall-weighted
-                                - auc
-                                - fp
-                                - fn
-                                - tn
-                                - tp
-                                - explained_variance
-                                - mae
-                                - mse
-                                - msle
-                                - median-absolute-error
-                                - r2
-                                - adjusted-mutual-info-score
-                                - adjusted-rand-score
-                                - completeness-score
-                                - fowlkes-mallows-score
-                                - homogeneity-score
-                                - mutual-info-score
-                                - normalized-mutual-info-score
-                                - v-measure-score
-                                - rmse
-                                - unknown
-                                - mape
-                                - smape
-                                - mdape
-                                type: string
-                              value:
-                                description: The value for this model
-                                type: number
-                            required:
-                            - metric
-                            - value
-                            type: object
-                          type: array
-                        startTime:
-                          description: startTime is the test start time
-                          format: date-time
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
                           type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
                       type: object
                     type: array
                   startTime:

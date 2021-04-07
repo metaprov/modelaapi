@@ -1313,18 +1313,16 @@ message ModelStatus {
   repeated ModelCondition conditions = 29;
 }
 
+// Model Test Result holds the results for a single metric on a single dataset
 message ModelTestResult {
   // The name of the dataset
   optional string datasetName = 1;
 
-  // startTime is the test start time
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
+  // Metric is the name of the metric measured
+  optional string metric = 2;
 
-  // endTime is the test end time
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
-
-  // The results of running the tests
-  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement results = 4;
+  // Value is the value of the metric
+  optional double value = 4;
 
   // Error is a name of any error that occurred during the test.
   optional string error = 5;
