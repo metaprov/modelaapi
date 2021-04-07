@@ -109,11 +109,11 @@ func ParsePipelineYaml(content []byte) (*ModelPipeline, error) {
 }
 
 func (pl *ModelPipeline) HasTrainingStage() bool {
-	return pl.Spec.Training != nil && pl.Spec.Training.StudyName != nil
+	return pl.Spec.Training != nil && pl.Spec.Training.StudyTemplateName != nil
 }
 
 func (pl *ModelPipeline) HasDataStage() bool {
-	return pl.Spec.Data != nil && pl.Spec.Data.DataPipelineName != ""
+	return pl.Spec.Data != nil && pl.Spec.Data.DataPipelineName != nil && *pl.Spec.Data.DataPipelineName != ""
 }
 
 func (pl *ModelPipeline) HasProdStage() bool {
@@ -129,7 +129,7 @@ func (pl *ModelPipeline) HasTrainingNotebook() bool {
 }
 
 func (pl *ModelPipeline) HasTrainingStudy() bool {
-	return pl.Spec.Training != nil && pl.Spec.Training.StudyName != nil && *pl.Spec.Training.StudyName != ""
+	return pl.Spec.Training != nil && pl.Spec.Training.StudyTemplateName != nil && *pl.Spec.Training.StudyTemplateName != ""
 }
 
 func (pl *ModelPipeline) HasCapacityStage() bool {
