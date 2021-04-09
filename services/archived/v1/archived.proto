@@ -1613,17 +1613,11 @@ service ArchivedService {
     rpc UpdateRecipeRun(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
     rpc DeleteRecipeRun(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListModelAutoBuilders(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {}
-    rpc GetModelAutoBuilder(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutoBuilder) {}
-    rpc CreateModelAutoBuilder(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutoBuilder) {}
-    rpc UpdateModelAutoBuilder(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutoBuilder) {}
-    rpc DeleteModelAutoBuilder(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
-
-    rpc ListModels(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {}
-    rpc GetModel(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
-    rpc CreateModel(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
-    rpc UpdateModel(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
-    rpc DeleteModel(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+    rpc ListModelAutobuilders(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {}
+    rpc GetModelAutobuilder(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
+    rpc CreateModelAutobuilder(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
+    rpc UpdateModelAutobuilder(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
+    rpc DeleteModelAutobuilder(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
 
     rpc ListModelPipelines(ListModelPipelinesRequest) returns (ListModelPipelinesResponse) {}
     rpc GetModelPipeline(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
@@ -1686,21 +1680,21 @@ service ArchivedService {
     rpc DeleteCurtain(DeleteCurtainRequest) returns (google.protobuf.Empty) {}
 
     rpc ListConversations(ListConversationsRequest) returns (ListConversationsResponse) {}
-    rpc GetConversation(GetConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Conversation) {}
-    rpc CreateConversation(CreateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Conversation) {}
-    rpc UpdateConversation(UpdateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Conversation) {}
+    rpc GetConversation(GetConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation) {}
+    rpc CreateConversation(CreateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation) {}
+    rpc UpdateConversation(UpdateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation) {}
     rpc DeleteConversation(DeleteConversationRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPostMortems(ListPostMortemsRequest) returns (ListPostMortemsResponse) {}
-    rpc GetPostMortem(GetPostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PostMortem) {}
-    rpc CreatePostMortem(CreatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PostMortem) {}
-    rpc UpdatePostMortem(UpdatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PostMortem) {}
+    rpc GetPostMortem(GetPostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}
+    rpc CreatePostMortem(CreatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}
+    rpc UpdatePostMortem(UpdatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}
     rpc DeletePostMortem(DeletePostMortemRequest) returns (google.protobuf.Empty) {}
 
     rpc ListRunBooks(ListRunbooksRequest) returns (ListRunbooksResponse) {}
-    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Runbook) {}
-    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Runbook) {}
-    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Runbook) {}
+    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook) {}
+    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook) {}
+    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook) {}
     rpc DeleteRunBook(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
 
 
