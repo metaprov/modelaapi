@@ -269,11 +269,11 @@ message GetServingsiteRequest {
 }
 
 message CreateServingsiteRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Servingsite item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
 }
 
 message UpdateServingsiteRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Servingsite item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
 }
 
 message DeleteServingsiteRequest {
@@ -599,7 +599,7 @@ message ListDatasourcesRequest {
 }
 
 message ListDatasourcesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Datasource items = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource items = 1;
     string next_page_token = 2;
 }
 
@@ -609,11 +609,11 @@ message GetDatasourceRequest {
 }
 
 message CreateDatasourceRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Datasource item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message UpdateDatasourceRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Datasource item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message DeleteDatasourceRequest {
@@ -1416,7 +1416,7 @@ message ListRunbooksRequest {
 }
 
 message ListRunbooksResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook items = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook items = 1;
     string next_page_token = 2;
 }
 
@@ -1426,11 +1426,11 @@ message GetRunbookRequest {
 }
 
 message CreateRunbookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
 }
 
 message UpdateRunbookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
 }
 
 message DeleteRunbookRequest {
