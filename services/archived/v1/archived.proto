@@ -259,7 +259,7 @@ message ListServingsitesRequest {
 }
 
 message ListServingsitesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Servingsite items = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite items = 1;
     string next_page_token = 2;
 }
 
@@ -1226,7 +1226,7 @@ message CreateCronPredictionRequest {
 }
 
 message UpdateCronPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 message DeleteCronPredictionRequest {
@@ -1260,7 +1260,7 @@ message CreateCurtainRequest {
 }
 
 message UpdateCurtainRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.Curtain item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
 }
 
 message DeleteCurtainRequest {
@@ -1294,7 +1294,7 @@ message CreatePredictionRequest {
 }
 
 message UpdatePredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
 }
 
 message DeletePredictionRequest {
@@ -1328,7 +1328,7 @@ message CreatePredictorRequest {
 }
 
 message UpdatePredictorRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
 }
 
 message DeletePredictorRequest {
