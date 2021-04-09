@@ -2,6 +2,11 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.services.archived.v1 import archived_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
@@ -15,148 +20,1860 @@ class ArchivedServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.RecordObject = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordObject',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordObjectRequest.SerializeToString,
+        self.ListAccounts = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListAccounts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+                )
+        self.GetAccount = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+                )
+        self.CreateAccount = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+                )
+        self.UpdateAccount = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+                )
+        self.DeleteAccount = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.GetObject = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetObject',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetObjectRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetObjectResponse.FromString,
+        self.ListAlerts = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListAlerts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
                 )
-        self.ListObjects = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListObjects',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListObjectRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListObjectResponse.FromString,
+        self.GetAlert = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
                 )
-        self.DeleteObject = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteObject',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteObjectRequest.SerializeToString,
+        self.CreateAlert = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+                )
+        self.UpdateAlert = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+                )
+        self.DeleteAlert = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteAlertRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListApiTokens = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListApiTokens',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+                )
+        self.GetApiToken = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+                )
+        self.CreateApiToken = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+                )
+        self.UpdateApiToken = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+                )
+        self.DeleteApiToken = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteApiTokenRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListConnections = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListConnections',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+                )
+        self.GetConnection = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetConnectionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+                )
+        self.CreateConnection = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateConnectionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+                )
+        self.UpdateConnection = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateConnectionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+                )
+        self.DeleteConnection = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteConnectionRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListLabs = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabs',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+                )
+        self.GetLab = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetLabRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+                )
+        self.CreateLab = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateLabRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+                )
+        self.UpdateLab = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateLabRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+                )
+        self.DeleteLab = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteLabRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListLicenses = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLicenses',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLicensesResponse.FromString,
+                )
+        self.GetLicense = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetLicenseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+                )
+        self.CreateLicense = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateLicenseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+                )
+        self.UpdateLicense = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateLicenseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+                )
+        self.DeleteLicense = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteLicenseRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListNotifiers = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotifiers',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotifiersResponse.FromString,
+                )
+        self.GetNotifier = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+                )
+        self.CreateNotifier = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+                )
+        self.UpdateNotifier = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+                )
+        self.DeleteNotifier = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteNotifierRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListServingSites = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListServingSites',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListServingsitesResponse.FromString,
+                )
+        self.GetServingSite = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+                )
+        self.CreateServingSite = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+                )
+        self.UpdateServingSite = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+                )
+        self.DeleteServingSite = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListTenants = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListTenants',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListTenantsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListTenantsResponse.FromString,
+                )
+        self.GetTenant = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+                )
+        self.CreateTenant = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+                )
+        self.UpdateTenant = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+                )
+        self.DeleteTenant = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListVirtualBuckets = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListVirtualBuckets',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualBucketsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualBucketsResponse.FromString,
+                )
+        self.GetVirtualBucket = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+                )
+        self.CreateVirtualBucket = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+                )
+        self.UpdateVirtualBucket = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+                )
+        self.DeleteVirtualBucket = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListVirtualClusters = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListVirtualClusters',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualClustersRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualClustersResponse.FromString,
+                )
+        self.GetVirtualCluster = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+                )
+        self.CreateVirtualCluster = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+                )
+        self.UpdateVirtualCluster = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+                )
+        self.DeleteVirtualCluster = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListVirtualVolumes = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListVirtualVolumes',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualVolumesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualVolumesResponse.FromString,
+                )
+        self.GetVirtualVolume = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+                )
+        self.CreateVirtualVolume = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+                )
+        self.UpdateVirtualVolume = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+                )
+        self.DeleteVirtualVolume = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListDataPipelines = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelinesResponse.FromString,
+                )
+        self.GetDataPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+                )
+        self.CreateDataPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+                )
+        self.UpdateDataPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+                )
+        self.DeleteDataPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListDataPipelineRuns = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataPipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelineRunsResponse.FromString,
+                )
+        self.GetDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+                )
+        self.CreateDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+                )
+        self.UpdateDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+                )
+        self.DeleteDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListDataProducts = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataProducts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductsResponse.FromString,
+                )
+        self.GetDataProduct = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+                )
+        self.CreateDataProduct = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+                )
+        self.UpdateDataProduct = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+                )
+        self.DeleteDataProduct = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListDataProductVersions = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataProductVersions',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductVersionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductVersionsResponse.FromString,
+                )
+        self.GetDataProductVersion = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+                )
+        self.CreateDataProductVersion = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+                )
+        self.UpdateDataProductVersion = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+                )
+        self.DeleteDataProductVersion = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDatasets = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDatasets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetsResponse.FromString,
                 )
-        self.ListFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturePipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelineRunResponse.FromString,
+        self.GetDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
                 )
-        self.ListLabelingPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunResponse.FromString,
+        self.CreateDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
                 )
-        self.ListRecipeRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipeRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunResponse.FromString,
+        self.UpdateDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
                 )
-        self.ListModelAutoBuilders = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelAutoBuilders',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutoBuilderRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutoBuilderResponse.FromString,
+        self.DeleteDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.ListModels = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModels',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelResponse.FromString,
+        self.ListDataSources = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataSources',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasourcesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasourcesResponse.FromString,
+                )
+        self.GetDataSource = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+                )
+        self.CreateDataSource = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+                )
+        self.UpdateDataSource = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+                )
+        self.DeleteDataSource = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListEntities = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListEntities',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListEntitiesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListEntitiesResponse.FromString,
+                )
+        self.GetEntity = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+                )
+        self.CreateEntity = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+                )
+        self.UpdateEntity = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+                )
+        self.DeleteEntity = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListFeatures = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeatures',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesResponse.FromString,
+                )
+        self.GetFeature = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+                )
+        self.CreateFeature = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+                )
+        self.UpdateFeature = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+                )
+        self.DeleteFeature = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListFeaturePipelines = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturePipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelinesResponse.FromString,
+                )
+        self.GetFeaturePipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+                )
+        self.CreateFeaturePipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+                )
+        self.UpdateFeaturePipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+                )
+        self.DeleteFeaturePipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListFeaturesets = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturesets',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesetsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesetsResponse.FromString,
+                )
+        self.GetFeatureset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+                )
+        self.CreateFeatureset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+                )
+        self.UpdateFeatureset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+                )
+        self.DeleteFeatureset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListLabelingPipelines = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelinesResponse.FromString,
+                )
+        self.GetLabelingPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+                )
+        self.CreateLabelingPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+                )
+        self.UpdateLabelingPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+                )
+        self.DeleteLabelingPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListLabelingPipelineRuns = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunsResponse.FromString,
+                )
+        self.GetLabelingPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+                )
+        self.CreateLabelingPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+                )
+        self.UpdateLabelingPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+                )
+        self.DeleteLabelingPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListRecipes = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipes',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipesResponse.FromString,
+                )
+        self.GetRecipe = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+                )
+        self.CreateRecipe = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+                )
+        self.UpdateRecipe = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+                )
+        self.DeleteRecipe = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListRecipeRuns = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipeRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunsResponse.FromString,
+                )
+        self.GetRecipeRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+                )
+        self.CreateRecipeRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+                )
+        self.UpdateRecipeRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+                )
+        self.DeleteRecipeRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListModelAutobuilders = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelAutobuilders',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutobuildersRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutobuildersResponse.FromString,
+                )
+        self.GetModelAutobuilder = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+                )
+        self.CreateModelAutobuilder = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+                )
+        self.UpdateModelAutobuilder = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+                )
+        self.DeleteModelAutobuilder = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListModelPipelines = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelinesResponse.FromString,
+                )
+        self.GetModelPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+                )
+        self.CreateModelPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+                )
+        self.UpdateModelPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+                )
+        self.DeleteModelPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListModelPipelineRuns = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelPipelineRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunsResponse.FromString,
+                )
+        self.GetModelPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+                )
+        self.CreateModelPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+                )
+        self.UpdateModelPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+                )
+        self.DeleteModelPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListNotebooks = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotebooks',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebooksRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebooksResponse.FromString,
+                )
+        self.GetNotebook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+                )
+        self.CreateNotebook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+                )
+        self.UpdateNotebook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+                )
+        self.DeleteNotebook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListNotebookRuns = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotebookRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunsResponse.FromString,
+                )
+        self.GetNotebookRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+                )
+        self.CreateNotebookRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+                )
+        self.UpdateNotebookRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+                )
+        self.DeleteNotebookRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListReports = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListReports',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportsResponse.FromString,
+                )
+        self.GetReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+                )
+        self.CreateReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+                )
+        self.UpdateReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+                )
+        self.DeleteReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListStudies = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListStudies',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudyResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudiesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudiesResponse.FromString,
                 )
-        self.ListPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionResponse.FromString,
+        self.GetStudy = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
                 )
-        self.ListCronPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCronPrediction',
+        self.CreateStudy = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+                )
+        self.UpdateStudy = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+                )
+        self.DeleteStudy = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListCronPredictions = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCronPredictions',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCronPredictionsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCronPredictionsResponse.FromString,
+                )
+        self.GetCronPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+                )
+        self.CreateCronPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+                )
+        self.UpdateCronPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+                )
+        self.DeleteCronPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteCronPredictionRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListPredictions = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictions',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionsResponse.FromString,
+                )
+        self.GetPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+                )
+        self.CreatePrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreatePrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+                )
+        self.UpdatePrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdatePrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+                )
+        self.DeletePrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeletePrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePredictionRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListPredictors = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictors',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictorsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictorsResponse.FromString,
+                )
+        self.GetPredictor = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetPredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+                )
+        self.CreatePredictor = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreatePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+                )
+        self.UpdatePredictor = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdatePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+                )
+        self.DeletePredictor = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeletePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePredictorRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListCurtains = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCurtains',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCurtainsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCurtainsResponse.FromString,
+                )
+        self.GetCurtain = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetCurtainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+                )
+        self.CreateCurtain = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateCurtainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+                )
+        self.UpdateCurtain = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateCurtainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+                )
+        self.DeleteCurtain = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteCurtainRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListConversations = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListConversations',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListConversationsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListConversationsResponse.FromString,
+                )
+        self.GetConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetConversation',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetConversationRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+                )
+        self.CreateConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateConversation',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateConversationRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+                )
+        self.UpdateConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateConversation',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateConversationRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+                )
+        self.DeleteConversation = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteConversation',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteConversationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListPostMortems = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPostMortems',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPostMortemsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPostMortemsResponse.FromString,
+                )
+        self.GetPostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetPostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+                )
+        self.CreatePostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreatePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+                )
+        self.UpdatePostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdatePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+                )
+        self.DeletePostMortem = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeletePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePostMortemRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListRunBooks = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRunBooks',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRunbooksRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRunbooksResponse.FromString,
+                )
+        self.GetRunBook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetRunbookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+                )
+        self.CreateRunBook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateRunbookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+                )
+        self.UpdateRunBook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateRunbookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+                )
+        self.DeleteRunBook = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteRunbookRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
 
 class ArchivedServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def RecordObject(self, request, context):
-        """Record all objects in a blob
+    def ListAccounts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAccount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAccount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAccount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAlerts(self, request, context):
+        """alerts
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetObject(self, request, context):
+    def GetAlert(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListObjects(self, request, context):
+    def CreateAlert(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteObject(self, request, context):
+    def UpdateAlert(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAlert(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListApiTokens(self, request, context):
+        """api token
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetApiToken(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateApiToken(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateApiToken(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteApiToken(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListConnections(self, request, context):
+        """connection
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetConnection(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateConnection(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateConnection(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteConnection(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListLabs(self, request, context):
+        """lab
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLab(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateLab(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateLab(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLab(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListLicenses(self, request, context):
+        """license
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLicense(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateLicense(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateLicense(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLicense(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListNotifiers(self, request, context):
+        """notifer
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetNotifier(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateNotifier(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateNotifier(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteNotifier(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListServingSites(self, request, context):
+        """servingsite
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetServingSite(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateServingSite(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateServingSite(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteServingSite(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTenants(self, request, context):
+        """servingsite
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTenant(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateTenant(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateTenant(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteTenant(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListVirtualBuckets(self, request, context):
+        """virtual bucket
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetVirtualBucket(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateVirtualBucket(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateVirtualBucket(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteVirtualBucket(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListVirtualClusters(self, request, context):
+        """virtual cluster
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetVirtualCluster(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateVirtualCluster(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateVirtualCluster(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteVirtualCluster(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListVirtualVolumes(self, request, context):
+        """virtual volume
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetVirtualVolume(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateVirtualVolume(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateVirtualVolume(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteVirtualVolume(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataPipelines(self, request, context):
+        """data pipeline
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDataPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDataPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDataPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDataPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataPipelineRuns(self, request, context):
+        """data pipeline run
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataProducts(self, request, context):
+        """data pipeline run
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDataProduct(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDataProduct(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDataProduct(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDataProduct(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataProductVersions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDataProductVersion(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDataProductVersion(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDataProductVersion(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDataProductVersion(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDatasets(self, request, context):
-        """records the operational objects
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListFeaturePipelineRun(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListLabelingPipelineRun(self, request, context):
+    def GetDataset(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListRecipeRun(self, request, context):
+    def CreateDataset(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListModelAutoBuilders(self, request, context):
+    def UpdateDataset(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListModels(self, request, context):
+    def DeleteDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataSources(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDataSource(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDataSource(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDataSource(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDataSource(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListEntities(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetEntity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateEntity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateEntity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteEntity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListFeatures(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFeature(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateFeature(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFeature(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteFeature(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListFeaturePipelines(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFeaturePipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateFeaturePipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFeaturePipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteFeaturePipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListFeaturesets(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFeatureset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateFeatureset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFeatureset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteFeatureset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListLabelingPipelines(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLabelingPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateLabelingPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateLabelingPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLabelingPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListLabelingPipelineRuns(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLabelingPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateLabelingPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateLabelingPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLabelingPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRecipes(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRecipe(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateRecipe(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateRecipe(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteRecipe(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRecipeRuns(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRecipeRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateRecipeRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateRecipeRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteRecipeRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListModelAutobuilders(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetModelAutobuilder(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateModelAutobuilder(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateModelAutobuilder(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteModelAutobuilder(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListModelPipelines(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetModelPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateModelPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateModelPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteModelPipeline(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -168,7 +1885,85 @@ class ArchivedServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetModelPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateModelPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateModelPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteModelPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListNotebooks(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetNotebook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateNotebook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateNotebook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteNotebook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListNotebookRuns(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetNotebookRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateNotebookRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateNotebookRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteNotebookRun(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -180,19 +1975,265 @@ class ArchivedServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListStudies(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListPrediction(self, request, context):
+    def GetStudy(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListCronPrediction(self, request, context):
+    def CreateStudy(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateStudy(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteStudy(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCronPredictions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCronPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCronPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCronPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCronPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListPredictions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreatePrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeletePrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListPredictors(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPredictor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreatePredictor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePredictor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeletePredictor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCurtains(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCurtain(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCurtain(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCurtain(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCurtain(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListConversations(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetConversation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateConversation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateConversation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteConversation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListPostMortems(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPostMortem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreatePostMortem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePostMortem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeletePostMortem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRunBooks(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRunBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateRunBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateRunBook(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteRunBook(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -201,85 +2242,1005 @@ class ArchivedServiceServicer(object):
 
 def add_ArchivedServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'RecordObject': grpc.unary_unary_rpc_method_handler(
-                    servicer.RecordObject,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordObjectRequest.FromString,
+            'ListAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAccounts,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.SerializeToString,
+            ),
+            'GetAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAccount,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
+            ),
+            'CreateAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAccount,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
+            ),
+            'UpdateAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccount,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
+            ),
+            'DeleteAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAccount,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'GetObject': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetObject,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetObjectRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetObjectResponse.SerializeToString,
+            'ListAlerts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAlerts,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.SerializeToString,
             ),
-            'ListObjects': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListObjects,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListObjectRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListObjectResponse.SerializeToString,
+            'GetAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAlert,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
             ),
-            'DeleteObject': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteObject,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteObjectRequest.FromString,
+            'CreateAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAlert,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
+            ),
+            'UpdateAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAlert,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
+            ),
+            'DeleteAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAlert,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteAlertRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListApiTokens': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListApiTokens,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.SerializeToString,
+            ),
+            'GetApiToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetApiToken,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
+            ),
+            'CreateApiToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateApiToken,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
+            ),
+            'UpdateApiToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateApiToken,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
+            ),
+            'DeleteApiToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteApiToken,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteApiTokenRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListConnections,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.SerializeToString,
+            ),
+            'GetConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetConnection,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetConnectionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
+            ),
+            'CreateConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateConnection,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateConnectionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
+            ),
+            'UpdateConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateConnection,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateConnectionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
+            ),
+            'DeleteConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteConnection,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteConnectionRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListLabs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLabs,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.SerializeToString,
+            ),
+            'GetLab': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLab,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetLabRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
+            ),
+            'CreateLab': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateLab,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateLabRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
+            ),
+            'UpdateLab': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLab,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateLabRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
+            ),
+            'DeleteLab': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLab,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteLabRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListLicenses': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLicenses,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLicensesResponse.SerializeToString,
+            ),
+            'GetLicense': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLicense,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetLicenseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
+            ),
+            'CreateLicense': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateLicense,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateLicenseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
+            ),
+            'UpdateLicense': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLicense,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateLicenseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
+            ),
+            'DeleteLicense': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLicense,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteLicenseRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListNotifiers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNotifiers,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotifiersResponse.SerializeToString,
+            ),
+            'GetNotifier': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNotifier,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
+            ),
+            'CreateNotifier': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNotifier,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
+            ),
+            'UpdateNotifier': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateNotifier,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
+            ),
+            'DeleteNotifier': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNotifier,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteNotifierRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListServingSites': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListServingSites,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListServingsitesResponse.SerializeToString,
+            ),
+            'GetServingSite': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetServingSite,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
+            ),
+            'CreateServingSite': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateServingSite,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
+            ),
+            'UpdateServingSite': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateServingSite,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
+            ),
+            'DeleteServingSite': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteServingSite,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListTenants': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTenants,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListTenantsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListTenantsResponse.SerializeToString,
+            ),
+            'GetTenant': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTenant,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
+            ),
+            'CreateTenant': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateTenant,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
+            ),
+            'UpdateTenant': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTenant,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
+            ),
+            'DeleteTenant': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteTenant,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListVirtualBuckets': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListVirtualBuckets,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualBucketsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualBucketsResponse.SerializeToString,
+            ),
+            'GetVirtualBucket': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetVirtualBucket,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
+            ),
+            'CreateVirtualBucket': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateVirtualBucket,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
+            ),
+            'UpdateVirtualBucket': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateVirtualBucket,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
+            ),
+            'DeleteVirtualBucket': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteVirtualBucket,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListVirtualClusters': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListVirtualClusters,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualClustersRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualClustersResponse.SerializeToString,
+            ),
+            'GetVirtualCluster': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetVirtualCluster,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
+            ),
+            'CreateVirtualCluster': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateVirtualCluster,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
+            ),
+            'UpdateVirtualCluster': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateVirtualCluster,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
+            ),
+            'DeleteVirtualCluster': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteVirtualCluster,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListVirtualVolumes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListVirtualVolumes,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualVolumesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualVolumesResponse.SerializeToString,
+            ),
+            'GetVirtualVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetVirtualVolume,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
+            ),
+            'CreateVirtualVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateVirtualVolume,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
+            ),
+            'UpdateVirtualVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateVirtualVolume,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
+            ),
+            'DeleteVirtualVolume': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteVirtualVolume,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListDataPipelines': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataPipelines,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelinesResponse.SerializeToString,
+            ),
+            'GetDataPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
+            ),
+            'CreateDataPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
+            ),
+            'UpdateDataPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDataPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
+            ),
+            'DeleteDataPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListDataPipelineRuns': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataPipelineRuns,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelineRunsResponse.SerializeToString,
+            ),
+            'GetDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
+            ),
+            'CreateDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
+            ),
+            'UpdateDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
+            ),
+            'DeleteDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListDataProducts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataProducts,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductsResponse.SerializeToString,
+            ),
+            'GetDataProduct': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataProduct,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
+            ),
+            'CreateDataProduct': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataProduct,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
+            ),
+            'UpdateDataProduct': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDataProduct,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
+            ),
+            'DeleteDataProduct': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataProduct,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListDataProductVersions': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataProductVersions,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductVersionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductVersionsResponse.SerializeToString,
+            ),
+            'GetDataProductVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataProductVersion,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
+            ),
+            'CreateDataProductVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataProductVersion,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
+            ),
+            'UpdateDataProductVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDataProductVersion,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
+            ),
+            'DeleteDataProductVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataProductVersion,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDatasets': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDatasets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetsResponse.SerializeToString,
             ),
-            'ListFeaturePipelineRun': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListFeaturePipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelineRunResponse.SerializeToString,
+            'GetDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
             ),
-            'ListLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListLabelingPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunResponse.SerializeToString,
+            'CreateDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
             ),
-            'ListRecipeRun': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListRecipeRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunResponse.SerializeToString,
+            'UpdateDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
             ),
-            'ListModelAutoBuilders': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListModelAutoBuilders,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutoBuilderRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutoBuilderResponse.SerializeToString,
+            'DeleteDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'ListModels': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListModels,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelResponse.SerializeToString,
+            'ListDataSources': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataSources,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasourcesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasourcesResponse.SerializeToString,
+            ),
+            'GetDataSource': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataSource,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
+            ),
+            'CreateDataSource': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataSource,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
+            ),
+            'UpdateDataSource': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDataSource,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
+            ),
+            'DeleteDataSource': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataSource,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListEntities': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListEntities,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListEntitiesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListEntitiesResponse.SerializeToString,
+            ),
+            'GetEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetEntity,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
+            ),
+            'CreateEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateEntity,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
+            ),
+            'UpdateEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateEntity,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
+            ),
+            'DeleteEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteEntity,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListFeatures': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListFeatures,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesResponse.SerializeToString,
+            ),
+            'GetFeature': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFeature,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
+            ),
+            'CreateFeature': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateFeature,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
+            ),
+            'UpdateFeature': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFeature,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
+            ),
+            'DeleteFeature': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteFeature,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListFeaturePipelines': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListFeaturePipelines,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelinesResponse.SerializeToString,
+            ),
+            'GetFeaturePipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFeaturePipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
+            ),
+            'CreateFeaturePipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateFeaturePipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
+            ),
+            'UpdateFeaturePipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFeaturePipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
+            ),
+            'DeleteFeaturePipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteFeaturePipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListFeaturesets': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListFeaturesets,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesetsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesetsResponse.SerializeToString,
+            ),
+            'GetFeatureset': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFeatureset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
+            ),
+            'CreateFeatureset': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateFeatureset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
+            ),
+            'UpdateFeatureset': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFeatureset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
+            ),
+            'DeleteFeatureset': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteFeatureset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListLabelingPipelines': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLabelingPipelines,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelinesResponse.SerializeToString,
+            ),
+            'GetLabelingPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLabelingPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
+            ),
+            'CreateLabelingPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateLabelingPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
+            ),
+            'UpdateLabelingPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLabelingPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
+            ),
+            'DeleteLabelingPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLabelingPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListLabelingPipelineRuns': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLabelingPipelineRuns,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunsResponse.SerializeToString,
+            ),
+            'GetLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLabelingPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
+            ),
+            'CreateLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateLabelingPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
+            ),
+            'UpdateLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLabelingPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
+            ),
+            'DeleteLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLabelingPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListRecipes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRecipes,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipesResponse.SerializeToString,
+            ),
+            'GetRecipe': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecipe,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
+            ),
+            'CreateRecipe': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateRecipe,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
+            ),
+            'UpdateRecipe': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateRecipe,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
+            ),
+            'DeleteRecipe': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteRecipe,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListRecipeRuns': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRecipeRuns,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunsResponse.SerializeToString,
+            ),
+            'GetRecipeRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecipeRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
+            ),
+            'CreateRecipeRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateRecipeRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
+            ),
+            'UpdateRecipeRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateRecipeRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
+            ),
+            'DeleteRecipeRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteRecipeRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListModelAutobuilders': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListModelAutobuilders,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutobuildersRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutobuildersResponse.SerializeToString,
+            ),
+            'GetModelAutobuilder': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetModelAutobuilder,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
+            ),
+            'CreateModelAutobuilder': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateModelAutobuilder,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
+            ),
+            'UpdateModelAutobuilder': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateModelAutobuilder,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
+            ),
+            'DeleteModelAutobuilder': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteModelAutobuilder,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListModelPipelines': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListModelPipelines,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelinesResponse.SerializeToString,
+            ),
+            'GetModelPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetModelPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
+            ),
+            'CreateModelPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateModelPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
+            ),
+            'UpdateModelPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateModelPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
+            ),
+            'DeleteModelPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteModelPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListModelPipelineRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModelPipelineRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunsResponse.SerializeToString,
+            ),
+            'GetModelPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetModelPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
+            ),
+            'CreateModelPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateModelPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
+            ),
+            'UpdateModelPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateModelPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
+            ),
+            'DeleteModelPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteModelPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListNotebooks': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNotebooks,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebooksRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebooksResponse.SerializeToString,
+            ),
+            'GetNotebook': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNotebook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
+            ),
+            'CreateNotebook': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNotebook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
+            ),
+            'UpdateNotebook': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateNotebook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
+            ),
+            'DeleteNotebook': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNotebook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListNotebookRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNotebookRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunsResponse.SerializeToString,
+            ),
+            'GetNotebookRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNotebookRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
+            ),
+            'CreateNotebookRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNotebookRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
+            ),
+            'UpdateNotebookRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateNotebookRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
+            ),
+            'DeleteNotebookRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNotebookRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListReports': grpc.unary_unary_rpc_method_handler(
                     servicer.ListReports,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportsResponse.SerializeToString,
+            ),
+            'GetReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
+            ),
+            'CreateReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
+            ),
+            'UpdateReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
+            ),
+            'DeleteReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListStudies': grpc.unary_unary_rpc_method_handler(
                     servicer.ListStudies,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudiesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudiesResponse.SerializeToString,
             ),
-            'ListPrediction': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionResponse.SerializeToString,
+            'GetStudy': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStudy,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
             ),
-            'ListCronPrediction': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListCronPrediction,
+            'CreateStudy': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateStudy,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
+            ),
+            'UpdateStudy': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateStudy,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
+            ),
+            'DeleteStudy': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteStudy,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListCronPredictions': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCronPredictions,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCronPredictionsRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCronPredictionsResponse.SerializeToString,
+            ),
+            'GetCronPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCronPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
+            ),
+            'CreateCronPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCronPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
+            ),
+            'UpdateCronPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCronPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
+            ),
+            'DeleteCronPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCronPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteCronPredictionRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListPredictions': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPredictions,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionsResponse.SerializeToString,
+            ),
+            'GetPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
+            ),
+            'CreatePrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreatePrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
+            ),
+            'UpdatePrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
+            ),
+            'DeletePrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeletePrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePredictionRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListPredictors': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPredictors,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictorsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictorsResponse.SerializeToString,
+            ),
+            'GetPredictor': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPredictor,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
+            ),
+            'CreatePredictor': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreatePredictor,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
+            ),
+            'UpdatePredictor': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePredictor,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
+            ),
+            'DeletePredictor': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeletePredictor,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePredictorRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListCurtains': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCurtains,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCurtainsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCurtainsResponse.SerializeToString,
+            ),
+            'GetCurtain': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCurtain,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetCurtainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
+            ),
+            'CreateCurtain': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCurtain,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateCurtainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
+            ),
+            'UpdateCurtain': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCurtain,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateCurtainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
+            ),
+            'DeleteCurtain': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCurtain,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteCurtainRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListConversations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListConversations,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListConversationsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListConversationsResponse.SerializeToString,
+            ),
+            'GetConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetConversation,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetConversationRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.SerializeToString,
+            ),
+            'CreateConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateConversation,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateConversationRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.SerializeToString,
+            ),
+            'UpdateConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateConversation,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateConversationRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.SerializeToString,
+            ),
+            'DeleteConversation': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteConversation,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteConversationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListPostMortems': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPostMortems,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPostMortemsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPostMortemsResponse.SerializeToString,
+            ),
+            'GetPostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
+            ),
+            'CreatePostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreatePostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
+            ),
+            'UpdatePostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
+            ),
+            'DeletePostMortem': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeletePostMortem,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePostMortemRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListRunBooks': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRunBooks,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRunbooksRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRunbooksResponse.SerializeToString,
+            ),
+            'GetRunBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRunBook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetRunbookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
+            ),
+            'CreateRunBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateRunBook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateRunbookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
+            ),
+            'UpdateRunBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateRunBook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateRunbookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
+            ),
+            'DeleteRunBook': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteRunBook,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteRunbookRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -292,7 +3253,7 @@ class ArchivedService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def RecordObject(request,
+    def ListAccounts(request,
             target,
             options=(),
             channel_credentials=None,
@@ -302,14 +3263,82 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/RecordObject',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.RecordObjectRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListAccounts',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetAccount',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateAccount',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateAccount',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteAccount',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetObject(request,
+    def ListAlerts(request,
             target,
             options=(),
             channel_credentials=None,
@@ -319,14 +3348,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetObject',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetObjectRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetObjectResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListAlerts',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListObjects(request,
+    def GetAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -336,14 +3365,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListObjects',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListObjectRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListObjectResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetAlert',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteObject(request,
+    def CreateAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -353,8 +3382,1232 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteObject',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteObjectRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateAlert',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAlert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateAlert',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAlert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteAlert',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteAlertRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListApiTokens(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListApiTokens',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetApiToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetApiToken',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateApiToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateApiToken',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateApiToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateApiToken',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteApiToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteApiToken',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteApiTokenRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListConnections',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetConnection',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetConnectionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateConnection',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateConnectionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateConnection',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateConnectionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteConnection',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteConnectionRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListLabs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabs',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLab(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLab',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetLabRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateLab(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLab',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateLabRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateLab(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLab',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateLabRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteLab(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLab',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteLabRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListLicenses(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLicenses',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLicensesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLicense(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLicense',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetLicenseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateLicense(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLicense',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateLicenseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateLicense(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLicense',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateLicenseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteLicense(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLicense',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteLicenseRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListNotifiers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotifiers',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotifiersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNotifier(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetNotifier',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateNotifier(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateNotifier',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateNotifier(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateNotifier',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteNotifier(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteNotifier',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteNotifierRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListServingSites(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListServingSites',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListServingsitesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetServingSite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetServingSite',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateServingSite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateServingSite',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateServingSite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateServingSite',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteServingSite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteServingSite',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTenants(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListTenants',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListTenantsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListTenantsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTenant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetTenant',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateTenant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateTenant',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateTenant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateTenant',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteTenant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteTenant',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListVirtualBuckets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListVirtualBuckets',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualBucketsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualBucketsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetVirtualBucket(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateVirtualBucket(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateVirtualBucket(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteVirtualBucket(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListVirtualClusters(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListVirtualClusters',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualClustersRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualClustersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetVirtualCluster(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateVirtualCluster(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateVirtualCluster(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteVirtualCluster(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListVirtualVolumes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListVirtualVolumes',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualVolumesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListVirtualVolumesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetVirtualVolume(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateVirtualVolume(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateVirtualVolume(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteVirtualVolume(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListDataPipelines(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataPipelines',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelinesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDataPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDataPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDataPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListDataPipelineRuns(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataPipelineRuns',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataPipelineRunsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListDataProducts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataProducts',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDataProduct(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataProduct',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDataProduct(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataProduct',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDataProduct(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataProduct',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataProduct(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataProduct',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListDataProductVersions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataProductVersions',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductVersionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDataProductVersionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDataProductVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDataProductVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDataProductVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataProductVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -371,13 +4624,13 @@ class ArchivedService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDatasets',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasetsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListFeaturePipelineRun(request,
+    def GetDataset(request,
             target,
             options=(),
             channel_credentials=None,
@@ -387,14 +4640,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturePipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListLabelingPipelineRun(request,
+    def CreateDataset(request,
             target,
             options=(),
             channel_credentials=None,
@@ -404,14 +4657,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListRecipeRun(request,
+    def UpdateDataset(request,
             target,
             options=(),
             channel_credentials=None,
@@ -421,14 +4674,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipeRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListModelAutoBuilders(request,
+    def DeleteDataset(request,
             target,
             options=(),
             channel_credentials=None,
@@ -438,14 +4691,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelAutoBuilders',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutoBuilderRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutoBuilderResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListModels(request,
+    def ListDataSources(request,
             target,
             options=(),
             channel_credentials=None,
@@ -455,9 +4708,927 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModels',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListDataSources',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasourcesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListDatasourcesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDataSource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetDataSource',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDataSource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateDataSource',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDataSource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateDataSource',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataSource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteDataSource',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListEntities(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListEntities',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListEntitiesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListEntitiesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetEntity',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateEntity',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateEntity',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteEntity',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListFeatures(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeatures',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetFeature(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetFeature',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateFeature(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateFeature',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateFeature(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateFeature',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteFeature(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteFeature',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListFeaturePipelines(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturePipelines',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturePipelinesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetFeaturePipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateFeaturePipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateFeaturePipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteFeaturePipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListFeaturesets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListFeaturesets',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesetsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListFeaturesetsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetFeatureset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetFeatureset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateFeatureset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateFeatureset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateFeatureset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateFeatureset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteFeatureset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteFeatureset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListLabelingPipelines(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelines',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelinesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLabelingPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateLabelingPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateLabelingPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteLabelingPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListLabelingPipelineRuns(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListLabelingPipelineRuns',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListLabelingPipelineRunsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLabelingPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateLabelingPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateLabelingPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteLabelingPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListRecipes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipes',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRecipe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetRecipe',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateRecipe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateRecipe',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateRecipe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateRecipe',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteRecipe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteRecipe',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListRecipeRuns(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRecipeRuns',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRecipeRunsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRecipeRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetRecipeRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateRecipeRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateRecipeRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateRecipeRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateRecipeRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteRecipeRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteRecipeRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListModelAutobuilders(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelAutobuilders',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutobuildersRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelAutobuildersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetModelAutobuilder(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateModelAutobuilder(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateModelAutobuilder(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteModelAutobuilder(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListModelPipelines(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelPipelines',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelinesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetModelPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetModelPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateModelPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateModelPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateModelPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateModelPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteModelPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteModelPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -473,8 +5644,161 @@ class ArchivedService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListModelPipelineRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListModelPipelineRunsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetModelPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateModelPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateModelPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteModelPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListNotebooks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotebooks',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebooksRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebooksResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNotebook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetNotebook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateNotebook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateNotebook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateNotebook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateNotebook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteNotebook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteNotebook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -490,8 +5814,76 @@ class ArchivedService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListNotebookRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListNotebookRunsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNotebookRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetNotebookRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateNotebookRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateNotebookRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateNotebookRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateNotebookRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteNotebookRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteNotebookRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -507,8 +5899,76 @@ class ArchivedService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListReports',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListReportsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -524,13 +5984,13 @@ class ArchivedService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListStudies',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudyResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudiesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListStudiesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListPrediction(request,
+    def GetStudy(request,
             target,
             options=(),
             channel_credentials=None,
@@ -540,14 +6000,14 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetStudy',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListCronPrediction(request,
+    def CreateStudy(request,
             target,
             options=(),
             channel_credentials=None,
@@ -557,8 +6017,637 @@ class ArchivedService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCronPrediction',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateStudy',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateStudy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateStudy',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteStudy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteStudy',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteServingsiteRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCronPredictions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCronPredictions',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCronPredictionsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCronPredictionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCronPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetCronPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCronPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateCronPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCronPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateCronPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCronPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteCronPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteCronPredictionRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListPredictions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictions',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreatePrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreatePrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdatePrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdatePrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeletePrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeletePrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePredictionRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListPredictors(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPredictors',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictorsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPredictorsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPredictor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetPredictor',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreatePredictor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreatePredictor',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdatePredictor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdatePredictor',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeletePredictor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeletePredictor',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePredictorRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCurtains(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListCurtains',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCurtainsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListCurtainsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCurtain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetCurtain',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetCurtainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCurtain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateCurtain',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateCurtainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCurtain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateCurtain',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateCurtainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCurtain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteCurtain',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteCurtainRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListConversations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListConversations',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListConversationsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListConversationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetConversation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetConversation',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetConversationRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateConversation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateConversation',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateConversationRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateConversation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateConversation',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateConversationRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteConversation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteConversation',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteConversationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListPostMortems(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListPostMortems',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPostMortemsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListPostMortemsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPostMortem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetPostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetPostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreatePostMortem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreatePostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreatePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdatePostMortem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdatePostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdatePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeletePostMortem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeletePostMortem',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeletePostMortemRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListRunBooks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/ListRunBooks',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRunbooksRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.ListRunbooksResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRunBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/GetRunBook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.GetRunbookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateRunBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/CreateRunBook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.CreateRunbookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateRunBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/UpdateRunBook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.UpdateRunbookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteRunBook(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.archived.v1.ArchivedService/DeleteRunBook',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_archived_dot_v1_dot_archived__pb2.DeleteRunbookRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
