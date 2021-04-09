@@ -1409,32 +1409,31 @@ message DeletePostMortemRequest {
 // RunBook
 ////////////////////////////////////////////////////////////////
 
-message ListConversationsRequest {
+message ListRunbooksRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListConversationsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 1;
+message ListRunbooksResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook items = 1;
     string next_page_token = 2;
 }
 
-message GetConversationRequest {
+message GetRunbookRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateConversationRequest {
-    string namespace = 1;
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+message CreateRunbookRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook item = 1;
 }
 
-message UpdateConversationRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+message UpdateRunbookRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook item = 1;
 }
 
-message DeleteConversationRequest {
+message DeleteRunbookRequest {
     string namespace = 1;
     string name = 2;
 }
