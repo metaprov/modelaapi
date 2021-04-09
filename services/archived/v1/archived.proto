@@ -1692,9 +1692,9 @@ service ArchivedService {
     rpc DeletePostMortem(DeletePostMortemRequest) returns (google.protobuf.Empty) {}
 
     rpc ListRunBooks(ListRunbooksRequest) returns (ListRunbooksResponse) {}
-    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook) {}
-    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook) {}
-    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Runbook) {}
+    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook) {}
+    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook) {}
+    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook) {}
     rpc DeleteRunBook(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
 
 
