@@ -1443,144 +1443,267 @@ message DeleteRunbookRequest {
 
 
 service ArchivedService {
-    rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=tenants/*}/books"
-        };
-    }
+    rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {}
+    rpc GetAccount(GetAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) { }
+    rpc CreateAccount(CreateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {}
+    rpc UpdateAccount(UpdateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {}
+    rpc DeleteAccount(DeleteAccountRequest) returns (google.protobuf.Empty) {}
 
-    rpc GetAccount(GetAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {
-        option (google.api.http) = {
-            get: "/v1/{name=tenants/*/accounts/*}"
-        };
-    }
+    // alerts
+    rpc ListAlerts(ListAccountsRequest) returns (ListAccountsResponse) {}
+    rpc GetAlert(GetAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {}
+    rpc CreateAlert(CreateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) { }
+    rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {}
+    rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {}
 
-    rpc CreateAccount(CreateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {
-        option (google.api.http) = {
-            post: "/v1/accounts"
-            body: "account"
-        };
-    }
+    // api token
+    rpc ListApiTokens(ListAccountsRequest) returns (ListAccountsResponse) {}
+    rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) { }
+    rpc CreateApiToken(CreateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {}
+    rpc UpdateApiToken(UpdateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {}
+    rpc DeleteApiToken(DeleteApiTokenRequest) returns (google.protobuf.Empty) {}
 
-    rpc UpdateAccount(UpdateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {
-        option (google.api.http) = {
-            patch: "/v1/{book.name=tenants/*/accounts/*}"
-            body: "account"
-        };
-    }
+    // connection
+    rpc ListConnections(ListAccountsRequest) returns (ListAccountsResponse) {}
+    rpc GetConnection(GetConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {}
+    rpc CreateConnection(CreateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {}
+    rpc UpdateConnection(UpdateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {}
+    rpc DeleteConnection(DeleteConnectionRequest) returns (google.protobuf.Empty) {}
+
+    // lab
+    rpc ListLabs(ListAccountsRequest) returns (ListAccountsResponse) {}
+    rpc GetLab(GetLabRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab) {}
+    rpc CreateLab(CreateLabRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab) {}
+    rpc UpdateLab(UpdateLabRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab) {}
+    rpc DeleteLab(DeleteLabRequest) returns (google.protobuf.Empty) {}
+
+    // license
+    rpc ListLicenses(ListAccountsRequest) returns (ListLicensesResponse) {}
+    rpc GetLicense(GetLicenseRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License) {}
+    rpc CreateLicense(CreateLicenseRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License) {}
+    rpc UpdateLicense(UpdateLicenseRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License) {}
+    rpc DeleteLicense(DeleteLicenseRequest) returns (google.protobuf.Empty) {}
+
+    // notifer
+    rpc ListNotifiers(ListAccountsRequest) returns (ListNotifiersResponse) {}
+    rpc GetNotifier(GetNotifierRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier) {}
+    rpc CreateNotifier(CreateNotifierRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier) {}
+    rpc UpdateNotifier(UpdateNotifierRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier) {}
+    rpc DeleteNotifier(DeleteNotifierRequest) returns (google.protobuf.Empty) {}
+
+    // servingsite
+    rpc ListServingSites(ListAccountsRequest) returns (ListServingsitesResponse) {}
+    rpc GetServingSite(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite) {}
+    rpc CreateServingSite(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite) {}
+    rpc UpdateServingSite(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite) {}
+    rpc DeleteServingSite(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // servingsite
+    rpc ListTenants(ListTenantsRequest) returns (ListTenantsResponse) {}
+    rpc GetTenant(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant) {}
+    rpc CreateTenant(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant) {}
+    rpc UpdateTenant(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant) {}
+    rpc DeleteTenant(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // virtual bucket
+    rpc ListVirtualBuckets(ListVirtualBucketsRequest) returns (ListVirtualBucketsResponse) {}
+    rpc GetVirtualBucket(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
+    rpc CreateVirtualBucket(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
+    rpc UpdateVirtualBucket(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
+    rpc DeleteVirtualBucket(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // virtual cluster
+    rpc ListVirtualClusters(ListVirtualClustersRequest) returns (ListVirtualClustersResponse) {}
+    rpc GetVirtualCluster(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
+    rpc CreateVirtualCluster(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
+    rpc UpdateVirtualCluster(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
+    rpc DeleteVirtualCluster(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // virtual volume
+    rpc ListVirtualVolumes(ListVirtualVolumesRequest) returns (ListVirtualVolumesResponse) {}
+    rpc GetVirtualVolume(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
+    rpc CreateVirtualVolume(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
+    rpc UpdateVirtualVolume(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
+    rpc DeleteVirtualVolume(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // data pipeline
+    rpc ListDataPipelines(ListDataPipelinesRequest) returns (ListDataPipelinesResponse) {}
+    rpc GetDataPipeline(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline) {}
+    rpc CreateDataPipeline(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline) {}
+    rpc UpdateDataPipeline(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline) {}
+    rpc DeleteDataPipeline(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // data pipeline run
+    rpc ListDataPipelineRuns(ListDataPipelineRunsRequest) returns (ListDataPipelineRunsResponse) {}
+    rpc GetDataPipelineRun(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
+    rpc CreateDataPipelineRun(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
+    rpc UpdateDataPipelineRun(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
+    rpc DeleteDataPipelineRun(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    // data pipeline run
+    rpc ListDataProducts(ListDataProductsRequest) returns (ListDataProductsResponse) {}
+    rpc GetDataProduct(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct) {}
+    rpc CreateDataProduct(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct) {}
+    rpc UpdateDataProduct(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct) {}
+    rpc DeleteDataProduct(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListDataProductVersions(ListDataProductVersionsRequest) returns (ListDataProductVersionsResponse) {}
+    rpc GetDataProductVersion(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
+    rpc CreateDataProductVersion(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
+    rpc UpdateDataProductVersion(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
+    rpc DeleteDataProductVersion(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse) {}
+    rpc GetDataset(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset) {}
+    rpc CreateDataset(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset) {}
+    rpc UpdateDataset(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset) {}
+    rpc DeleteDataset(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListDataSources(ListDatasourcesRequest) returns (ListDatasourcesResponse) {}
+    rpc GetDataSource(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource) {}
+    rpc CreateDataSource(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource) {}
+    rpc UpdateDataSource(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource) {}
+    rpc DeleteDataSource(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListEntities(ListEntitiesRequest) returns (ListEntitiesResponse) {}
+    rpc GetEntity(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity) {}
+    rpc CreateEntity(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity) {}
+    rpc UpdateEntity(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity) {}
+    rpc DeleteEntity(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListFeatures(ListFeaturesRequest) returns (ListFeaturesResponse) {}
+    rpc GetFeature(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature) {}
+    rpc CreateFeature(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature) {}
+    rpc UpdateFeature(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature) {}
+    rpc DeleteFeature(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListFeaturePipelines(ListFeaturePipelinesRequest) returns (ListFeaturePipelinesResponse) {}
+    rpc GetFeaturePipeline(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
+    rpc CreateFeaturePipeline(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
+    rpc UpdateFeaturePipeline(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
+    rpc DeleteFeaturePipeline(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListFeaturesets(ListFeaturesetsRequest) returns (ListFeaturesetsResponse) {}
+    rpc GetFeatureset(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc CreateFeatureset(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc UpdateFeatureset(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc DeleteFeatureset(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListLabelingPipelines(ListLabelingPipelinesRequest) returns (ListLabelingPipelinesResponse) {}
+    rpc GetLabelingPipeline(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
+    rpc CreateLabelingPipeline(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
+    rpc UpdateLabelingPipeline(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
+    rpc DeleteLabelingPipeline(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListLabelingPipelineRuns(ListLabelingPipelineRunsRequest) returns (ListLabelingPipelineRunsResponse) {}
+    rpc GetLabelingPipelineRun(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
+    rpc CreateLabelingPipelineRun(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
+    rpc UpdateLabelingPipelineRun(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
+    rpc DeleteLabelingPipelineRun(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListRecipes(ListRecipesRequest) returns (ListRecipesResponse) {}
+    rpc GetRecipe(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe) {}
+    rpc CreateRecipe(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe) {}
+    rpc UpdateRecipe(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe) {}
+    rpc DeleteRecipe(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListRecipeRuns(ListRecipeRunsRequest) returns (ListRecipeRunsResponse) {}
+    rpc GetRecipeRun(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
+    rpc CreateRecipeRun(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
+    rpc UpdateRecipeRun(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
+    rpc DeleteRecipeRun(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListModelAutoBuilders(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {}
+    rpc GetModelAutoBuilder(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutoBuilder) {}
+    rpc CreateModelAutoBuilder(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutoBuilder) {}
+    rpc UpdateModelAutoBuilder(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutoBuilder) {}
+    rpc DeleteModelAutoBuilder(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListModels(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {}
+    rpc GetModel(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc CreateModel(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc UpdateModel(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc DeleteModel(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListModelPipelines(ListModelPipelinesRequest) returns (ListModelPipelinesResponse) {}
+    rpc GetModelPipeline(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
+    rpc CreateModelPipeline(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
+    rpc UpdateModelPipeline(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
+    rpc DeleteModelPipeline(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListModelPipelineRuns(ListModelPipelineRunsRequest) returns (ListModelPipelineRunsResponse) {}
+    rpc GetModelPipelineRun(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
+    rpc CreateModelPipelineRun(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
+    rpc UpdateModelPipelineRun(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
+    rpc DeleteModelPipelineRun(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListNotebooks(ListNotebooksRequest) returns (ListNotebooksResponse) {}
+    rpc GetNotebook(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook) {}
+    rpc CreateNotebook(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook) {}
+    rpc UpdateNotebook(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook) {}
+    rpc DeleteNotebook(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListNotebookRuns(ListNotebookRunsRequest) returns (ListNotebookRunsResponse) {}
+    rpc GetNotebookRun(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun) {}
+    rpc CreateNotebookRun(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun) {}
+    rpc UpdateNotebookRun(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun) {}
+    rpc DeleteNotebookRun(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListReports(ListReportsRequest) returns (ListReportsResponse) {}
+    rpc GetReport(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
+    rpc CreateReport(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
+    rpc UpdateReport(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
+    rpc DeleteReport(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListStudies(ListStudiesRequest) returns (ListStudiesResponse) {}
+    rpc GetStudy(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
+    rpc CreateStudy(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
+    rpc UpdateStudy(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
+    rpc DeleteStudy(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListCronPredictions(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {}
+    rpc GetCronPrediction(GetCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
+    rpc CreateCronPrediction(CreateCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
+    rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
+    rpc DeleteCronPrediction(DeleteCronPredictionRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListPredictions(ListPredictionsRequest) returns (ListPredictionsResponse) {}
+    rpc GetPrediction(GetPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction) {}
+    rpc CreatePrediction(CreatePredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction) {}
+    rpc UpdatePrediction(UpdatePredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction) {}
+    rpc DeletePrediction(DeletePredictionRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {}
+    rpc GetPredictor(GetPredictorRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor) {}
+    rpc CreatePredictor(CreatePredictorRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor) {}
+    rpc UpdatePredictor(UpdatePredictorRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor) {}
+    rpc DeletePredictor(DeletePredictorRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListCurtains(ListCurtainsRequest) returns (ListCurtainsResponse) {}
+    rpc GetCurtain(GetCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
+    rpc CreateCurtain(CreateCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
+    rpc UpdateCurtain(UpdateCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
+    rpc DeleteCurtain(DeleteCurtainRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListConversations(ListConversationsRequest) returns (ListConversationsResponse) {}
+    rpc GetConversation(GetConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Conversation) {}
+    rpc CreateConversation(CreateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Conversation) {}
+    rpc UpdateConversation(UpdateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Conversation) {}
+    rpc DeleteConversation(DeleteConversationRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListPostMortems(ListPostMortemsRequest) returns (ListPostMortemsResponse) {}
+    rpc GetPostMortem(GetPostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PostMortem) {}
+    rpc CreatePostMortem(CreatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PostMortem) {}
+    rpc UpdatePostMortem(UpdatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PostMortem) {}
+    rpc DeletePostMortem(DeletePostMortemRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListRunBooks(ListRunbooksRequest) returns (ListRunbooksResponse) {}
+    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Runbook) {}
+    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Runbook) {}
+    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Runbook) {}
+    rpc DeleteRunBook(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
 
 
-    rpc DeleteAccount(DeleteAccountRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=tenants/*/accounts/*}"
-        };
-    }
-
-
-    rpc ListAlerts(ListAccountsRequest) returns (ListAccountsResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=tenants/*}/connections"
-        };
-    }
-
-    rpc GetAlert(GetAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {
-        option (google.api.http) = {
-            get: "/v1/{name=tenants/*/connections/*}"
-        };
-    }
-
-    rpc CreateAlert(CreateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {
-        option (google.api.http) = {
-            post: "/v1/accounts"
-            body: "connection"
-        };
-    }
-
-
-    rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {
-        option (google.api.http) = {
-            patch: "/v1/{book.name=tenants/*/connections/*}"
-            body: "connection"
-        };
-    }
-
-    rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=tenants/*/connections/*}"
-        };
-    }
-
-    /////////////////////////////////////////////
-    // Api token
-    ////////////////////////////////////////////
-
-    rpc ListApiTokens(ListAccountsRequest) returns (ListAccountsResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=tenants/*}/connections"
-        };
-    }
-
-    rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {
-        option (google.api.http) = {
-            get: "/v1/{name=tenants/*/connections/*}"
-        };
-    }
-
-    rpc CreateApiToken(CreateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {
-        option (google.api.http) = {
-            post: "/v1/accounts"
-            body: "connection"
-        };
-    }
-
-    rpc UpdateApiToken(UpdateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {
-        option (google.api.http) = {
-            patch: "/v1/{book.name=tenants/*/connections/*}"
-            body: "connection"
-        };
-    }
-
-    rpc DeleteApiToken(DeleteApiTokenRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=tenants/*/connections/*}"
-        };
-    }
-
-    /////////////////////////////////////////////
-    // Connection
-    ////////////////////////////////////////////
-
-    rpc ListConnections(ListAccountsRequest) returns (ListAccountsResponse) {
-        option (google.api.http) = {
-            get: "/v1/{parent=tenants/*}/connections"
-        };
-    }
-
-    rpc GetConnection(GetConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {
-        option (google.api.http) = {
-            get: "/v1/{name=tenants/*/connections/*}"
-        };
-    }
-
-    rpc CreateConnection(CreateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {
-        option (google.api.http) = {
-            post: "/v1/accounts"
-            body: "connection"
-        };
-    }
-
-    rpc UpdateConnection(UpdateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {
-        option (google.api.http) = {
-            patch: "/v1/{book.name=tenants/*/connections/*}"
-            body: "connection"
-        };
-    }
-
-    rpc DeleteConnection(DeleteConnectionRequest) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-            delete: "/v1/{name=tenants/*/connections/*}"
-        };
-    }
 
 }
 
