@@ -10,43 +10,1437 @@ import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto
 import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
 import "google/protobuf/empty.proto";
 
+//////////////////////////////////////////////////////
+/// Accounts
+//////////////////////////////////////////////////////
 
 message ListAccountsRequest {
-    // The account namespace
-    string namespace = 1;
-    // The maximum number of items to return.
-    int32 page_size = 2;
-    string page_token = 3;
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
 }
 
 message ListAccountsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account accounts = 1;
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account items = 1;
     string next_page_token = 2;
 }
 
 message GetAccountRequest {
-    // The field will contain name of the resource requested, for example:
-    // "shelves/shelf1/books/book2"
     string namespace = 1;
     string name = 2;
 }
 
 message CreateAccountRequest {
-    string namespace = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account account = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
 }
 
-
 message UpdateAccountRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account account = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 2;
 }
 
 message DeleteAccountRequest {
-    // The resource name of the book to be deleted, for example:
-    // "shelves/shelf1/books/book2"
     string namespace = 1;
     string name = 2;
 }
+
+//////////////////////////////////////////////////////
+/// Alerts
+//////////////////////////////////////////////////////
+
+message ListAlertsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListAlertsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert items = 1;
+    string next_page_token = 2;
+}
+
+message GetAlertRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateAlertRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+}
+
+message UpdateAlertRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert item = 2;
+}
+
+message DeleteAlertRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+//////////////////////////////////////////////////////
+/// ApiTokens
+//////////////////////////////////////////////////////
+
+message ListApiTokensRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListApiTokensResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken items = 1;
+    string next_page_token = 2;
+}
+
+message GetApiTokenRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateApiTokenRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+}
+
+message UpdateApiTokenRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken item = 2;
+}
+
+message DeleteApiTokenRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+//////////////////////////////////////////////////////
+/// Connections
+//////////////////////////////////////////////////////
+
+message ListConnectionsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListConnectionsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection items = 1;
+    string next_page_token = 2;
+}
+
+message GetConnectionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateConnectionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 2;
+}
+
+message UpdateConnectionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 2;
+}
+
+message DeleteConnectionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+//////////////////////////////////////////////
+// Lab
+//////////////////////////////////////////////
+
+
+message ListLabsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListLabsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab items = 1;
+    string next_page_token = 2;
+}
+
+message GetLabRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateLabRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+}
+
+message UpdateLabRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+}
+
+message DeleteLabRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+//////////////////////////////////////////////////////////
+// License
+//////////////////////////////////////////////////////////
+
+
+
+
+message ListLicensesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListLicensesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License items = 1;
+    string next_page_token = 2;
+}
+
+message GetLicenseRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateLicenseRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+}
+
+message UpdateLicenseRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+}
+
+message DeleteLicenseRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+//////////////////////////////////////////////////////////
+// Notifier
+//////////////////////////////////////////////////////////
+
+
+message ListNotifiersRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListNotifiersResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier items = 1;
+    string next_page_token = 2;
+}
+
+message GetNotifierRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateNotifierRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+}
+
+message UpdateNotifierRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+}
+
+message DeleteNotifierRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+////////////////////////////////////////////////////////////////
+// Serving Site
+////////////////////////////////////////////////////////////////
+
+
+message ListServingsitesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListServingsitesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Servingsite items = 1;
+    string next_page_token = 2;
+}
+
+message GetServingsiteRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateServingsiteRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Servingsite item = 1;
+}
+
+message UpdateServingsiteRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Servingsite item = 1;
+}
+
+message DeleteServingsiteRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// Tenant
+////////////////////////////////////////////////////////////////
+message ListTenantsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListTenantsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant items = 1;
+    string next_page_token = 2;
+}
+
+message GetTenantRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateTenantRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+}
+
+message UpdateTenantRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+}
+
+message DeleteTenantRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// VirtualBucket
+////////////////////////////////////////////////////////////////
+message ListVirtualBucketsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListVirtualBucketsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket items = 1;
+    string next_page_token = 2;
+}
+
+message GetVirtualBucketRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateVirtualBucketRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+}
+
+message UpdateVirtualBucketRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+}
+
+message DeleteVirtualBucketRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// VirtualCluster
+////////////////////////////////////////////////////////////////
+message ListVirtualClustersRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListVirtualClustersResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster items = 1;
+    string next_page_token = 2;
+}
+
+message GetVirtualClusterRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateVirtualClusterRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+}
+
+message UpdateVirtualClusterRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+}
+
+message DeleteVirtualClusterRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+////////////////////////////////////////////////////////////////
+// VirtualVolume
+////////////////////////////////////////////////////////////////
+
+message ListVirtualVolumesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListVirtualVolumesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume items = 1;
+    string next_page_token = 2;
+}
+
+message GetVirtualVolumeRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateVirtualVolumeRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+}
+
+message UpdateVirtualVolumeRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+}
+
+message DeleteVirtualVolumeRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// DataPipeline
+////////////////////////////////////////////////////////////////
+
+message ListDataPipelinesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListDataPipelinesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline items = 1;
+    string next_page_token = 2;
+}
+
+message GetDataPipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateDataPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+}
+
+message UpdateDataPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+}
+
+message DeleteDataPipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// DataPipelineRun
+////////////////////////////////////////////////////////////////
+
+message ListDataPipelineRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListDataPipelineRunsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetDataPipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateDataPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+}
+
+message UpdateDataPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+}
+
+message DeleteDataPipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// DataProduct
+////////////////////////////////////////////////////////////////
+
+message ListDataProductsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListDataProductsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct items = 1;
+    string next_page_token = 2;
+}
+
+message GetDataProductRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateDataProductRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+}
+
+message UpdateDataProductRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+}
+
+message DeleteDataProductRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// DataProductVersion
+////////////////////////////////////////////////////////////////
+
+message ListDataProductVersionsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListDataProductVersionsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion items = 1;
+    string next_page_token = 2;
+}
+
+message GetDataProductVersionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateDataProductVersionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+}
+
+message UpdateDataProductVersionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+}
+
+message DeleteDataProductVersionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+    
+
+////////////////////////////////////////////////////////////////
+// DataSet
+////////////////////////////////////////////////////////////////
+
+message ListDatasetsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListDatasetsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset items = 1;
+    string next_page_token = 2;
+}
+
+message GetDatasetRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateDatasetRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+}
+
+message UpdateDatasetRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+}
+
+message DeleteDatasetRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// DataSource
+////////////////////////////////////////////////////////////////
+
+message ListDatasourcesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListDatasourcesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Datasource items = 1;
+    string next_page_token = 2;
+}
+
+message GetDatasourceRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateDatasourceRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Datasource item = 1;
+}
+
+message UpdateDatasourceRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Datasource item = 1;
+}
+
+message DeleteDatasourceRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Entity
+////////////////////////////////////////////////////////////////
+
+message ListEntitiesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListEntitiesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity items = 1;
+    string next_page_token = 2;
+}
+
+message GetEntityRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateEntityRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity item = 1;
+}
+
+message UpdateEntityRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity item = 1;
+}
+
+message DeleteEntityRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Feature
+////////////////////////////////////////////////////////////////
+
+message ListFeaturesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListFeaturesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature items = 1;
+    string next_page_token = 2;
+}
+
+message GetFeatureRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateFeatureRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+}
+
+message UpdateFeatureRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+}
+
+message DeleteFeatureRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// FeaturePipeline
+////////////////////////////////////////////////////////////////
+
+message ListFeaturePipelinesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListFeaturePipelinesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline items = 1;
+    string next_page_token = 2;
+}
+
+message GetFeaturePipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateFeaturePipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+}
+
+message UpdateFeaturePipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+}
+
+message DeleteFeaturePipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// FeaturePipelineRun
+////////////////////////////////////////////////////////////////
+
+message ListFeaturePipelineRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListFeaturePipelineRunsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetFeaturePipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateFeaturePipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+}
+
+message UpdateFeaturePipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+}
+
+message DeleteFeaturePipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// Featureset
+////////////////////////////////////////////////////////////////
+
+message ListFeaturesetsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListFeaturesetsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset items = 1;
+    string next_page_token = 2;
+}
+
+message GetFeaturesetRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateFeaturesetRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset item = 1;
+}
+
+message UpdateFeaturesetRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset item = 1;
+}
+
+message DeleteFeaturesetRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// LabelingPipeline
+////////////////////////////////////////////////////////////////
+message ListLabelingPipelinesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListLabelingPipelinesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline items = 1;
+    string next_page_token = 2;
+}
+
+message GetLabelingPipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateLabelingPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+}
+
+message UpdateLabelingPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+}
+
+message DeleteLabelingPipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// LabelingPipelineRun
+////////////////////////////////////////////////////////////////
+
+message ListLabelingPipelineRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListLabelingPipelineRunsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetLabelingPipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateLabelingPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
+}
+
+message UpdateLabelingPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
+}
+
+message DeleteLabelingPipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Recipe
+////////////////////////////////////////////////////////////////
+
+message ListRecipesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListRecipesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe items = 1;
+    string next_page_token = 2;
+}
+
+message GetRecipeRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateRecipeRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+}
+
+message UpdateRecipeRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+}
+
+message DeleteRecipeRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// RecipeRun
+////////////////////////////////////////////////////////////////
+message ListRecipeRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListRecipeRunsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetRecipeRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateRecipeRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+}
+
+message UpdateRecipeRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+}
+
+message DeleteRecipeRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// ModelAutobuilder
+////////////////////////////////////////////////////////////////
+
+message ListModelAutobuildersRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListModelAutobuildersResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
+    string next_page_token = 2;
+}
+
+message GetModelAutobuilderRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateModelAutobuilderRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+}
+
+message UpdateModelAutobuilderRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+}
+
+message DeleteModelAutobuilderRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Model
+////////////////////////////////////////////////////////////////
+
+
+message ListModelsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListModelsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model items = 1;
+    string next_page_token = 2;
+}
+
+message GetModelRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateModelRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
+}
+
+message UpdateModelRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
+}
+
+message DeleteModelRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// ModelPipeline
+////////////////////////////////////////////////////////////////
+
+message ListModelPipelinesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListModelPipelinesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline items = 1;
+    string next_page_token = 2;
+}
+
+message GetModelPipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateModelPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+}
+
+message UpdateModelPipelineRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+}
+
+message DeleteModelPipelineRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// ModelPipelineRun
+////////////////////////////////////////////////////////////////
+
+message ListModelPipelineRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListModelPipelineRunsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetModelPipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateModelPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+}
+
+message UpdateModelPipelineRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+}
+
+message DeleteModelPipelineRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// Notebook
+////////////////////////////////////////////////////////////////
+
+message ListNotebooksRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListNotebooksResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook items = 1;
+    string next_page_token = 2;
+}
+
+message GetNotebookRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateNotebookRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+}
+
+message UpdateNotebookRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+}
+
+message DeleteNotebookRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+////////////////////////////////////////////////////////////////
+// NotebookRun
+////////////////////////////////////////////////////////////////
+
+message ListNotebookRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListNotebookRunsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetNotebookRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateNotebookRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+}
+
+message UpdateNotebookRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+}
+
+message DeleteNotebookRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Report
+////////////////////////////////////////////////////////////////
+
+message ListReportsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListReportsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report items = 1;
+    string next_page_token = 2;
+}
+
+message GetReportRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 1;
+}
+
+message UpdateReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 1;
+}
+
+message DeleteReportRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Study
+////////////////////////////////////////////////////////////////
+
+message ListStudiesRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListStudiesResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study items = 1;
+    string next_page_token = 2;
+}
+
+message GetStudyRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateStudyRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+}
+
+message UpdateStudyRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+}
+
+message DeleteStudyRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// CronPrediction
+////////////////////////////////////////////////////////////////
+
+message ListCronPredictionsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListCronPredictionsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction items = 1;
+    string next_page_token = 2;
+}
+
+message GetCronPredictionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateCronPredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+}
+
+message UpdateCronPredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.CronPrediction item = 1;
+}
+
+message DeleteCronPredictionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Curtain
+////////////////////////////////////////////////////////////////
+
+message ListCurtainsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListCurtainsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain items = 1;
+    string next_page_token = 2;
+}
+
+message GetCurtainRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateCurtainRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+}
+
+message UpdateCurtainRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.Curtain item = 1;
+}
+
+message DeleteCurtainRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Prediction
+////////////////////////////////////////////////////////////////
+
+message ListPredictionsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListPredictionsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction items = 1;
+    string next_page_token = 2;
+}
+
+message GetPredictionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreatePredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+}
+
+message UpdatePredictionRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.Prediction item = 1;
+}
+
+message DeletePredictionRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Predictor
+////////////////////////////////////////////////////////////////
+
+message ListPredictorsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListPredictorsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor items = 1;
+    string next_page_token = 2;
+}
+
+message GetPredictorRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreatePredictorRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+}
+
+message UpdatePredictorRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infernece.v1alpha1.Predictor item = 1;
+}
+
+message DeletePredictorRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Conversation
+////////////////////////////////////////////////////////////////
+
+message ListConversationsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListConversationsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 1;
+    string next_page_token = 2;
+}
+
+message GetConversationRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateConversationRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+}
+
+message UpdateConversationRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+}
+
+message DeleteConversationRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// PostMortem
+////////////////////////////////////////////////////////////////
+
+message ListPostMortemsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListPostMortemsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem items = 1;
+    string next_page_token = 2;
+}
+
+message GetPostMortemRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreatePostMortemRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+}
+
+message UpdatePostMortemRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+}
+
+message DeletePostMortemRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+////////////////////////////////////////////////////////////////
+// RunBook
+////////////////////////////////////////////////////////////////
+
+message ListConversationsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListConversationsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 1;
+    string next_page_token = 2;
+}
+
+message GetConversationRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateConversationRequest {
+    string namespace = 1;
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+}
+
+message UpdateConversationRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+}
+
+message DeleteConversationRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
 
 
 service ArchivedService {
@@ -69,7 +1463,6 @@ service ArchivedService {
         };
     }
 
-    // Updates a book.
     rpc UpdateAccount(UpdateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {
         option (google.api.http) = {
             patch: "/v1/{book.name=tenants/*/accounts/*}"
@@ -77,7 +1470,7 @@ service ArchivedService {
         };
     }
 
-    // Deletes a book.
+
     rpc DeleteAccount(DeleteAccountRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=tenants/*/accounts/*}"
@@ -85,6 +1478,110 @@ service ArchivedService {
     }
 
 
+    rpc ListAlerts(ListAccountsRequest) returns (ListAccountsResponse) {
+        option (google.api.http) = {
+            get: "/v1/{parent=tenants/*}/connections"
+        };
+    }
+
+    rpc GetAlert(GetAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {
+        option (google.api.http) = {
+            get: "/v1/{name=tenants/*/connections/*}"
+        };
+    }
+
+    rpc CreateAlert(CreateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {
+        option (google.api.http) = {
+            post: "/v1/accounts"
+            body: "connection"
+        };
+    }
+
+
+    rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {
+        option (google.api.http) = {
+            patch: "/v1/{book.name=tenants/*/connections/*}"
+            body: "connection"
+        };
+    }
+
+    rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/{name=tenants/*/connections/*}"
+        };
+    }
+
+    /////////////////////////////////////////////
+    // Api token
+    ////////////////////////////////////////////
+
+    rpc ListApiTokens(ListAccountsRequest) returns (ListAccountsResponse) {
+        option (google.api.http) = {
+            get: "/v1/{parent=tenants/*}/connections"
+        };
+    }
+
+    rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {
+        option (google.api.http) = {
+            get: "/v1/{name=tenants/*/connections/*}"
+        };
+    }
+
+    rpc CreateApiToken(CreateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {
+        option (google.api.http) = {
+            post: "/v1/accounts"
+            body: "connection"
+        };
+    }
+
+    rpc UpdateApiToken(UpdateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {
+        option (google.api.http) = {
+            patch: "/v1/{book.name=tenants/*/connections/*}"
+            body: "connection"
+        };
+    }
+
+    rpc DeleteApiToken(DeleteApiTokenRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/{name=tenants/*/connections/*}"
+        };
+    }
+
+    /////////////////////////////////////////////
+    // Connection
+    ////////////////////////////////////////////
+
+    rpc ListConnections(ListAccountsRequest) returns (ListAccountsResponse) {
+        option (google.api.http) = {
+            get: "/v1/{parent=tenants/*}/connections"
+        };
+    }
+
+    rpc GetConnection(GetConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {
+        option (google.api.http) = {
+            get: "/v1/{name=tenants/*/connections/*}"
+        };
+    }
+
+    rpc CreateConnection(CreateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {
+        option (google.api.http) = {
+            post: "/v1/accounts"
+            body: "connection"
+        };
+    }
+
+    rpc UpdateConnection(UpdateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {
+        option (google.api.http) = {
+            patch: "/v1/{book.name=tenants/*/connections/*}"
+            body: "connection"
+        };
+    }
+
+    rpc DeleteConnection(DeleteConnectionRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/{name=tenants/*/connections/*}"
+        };
+    }
 
 }
 
