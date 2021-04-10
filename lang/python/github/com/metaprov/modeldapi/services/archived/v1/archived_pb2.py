@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modeldapi/services/archived/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"O\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListAccountsResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"d\n\x14UpdateAccountRequest\x12L\n\x04item\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"z\n\x12ListAlertsResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"`\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"`\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x02 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListApiTokensResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"f\n\x15UpdateApiTokenRequest\x12M\n\x04item\x18\x02 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n\x17ListConnectionsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"j\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"j\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"K\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n\x10ListLabsResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\\\n\x10\x43reateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\\\n\x10UpdateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListLicensesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListLicensesResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"d\n\x14UpdateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"7\n\x14\x44\x65leteLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListNotifiersResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListServingsitesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x18ListServingsitesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x18\x43reateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"l\n\x18UpdateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\";\n\x18\x44\x65leteServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x13ListTenantsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"b\n\x13UpdateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8a\x01\n\x1aListVirtualBucketsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"p\n\x1aUpdateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"V\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8c\x01\n\x1bListVirtualClustersResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x1b\x43reateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"r\n\x1bUpdateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListVirtualVolumesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8a\x01\n\x1aListVirtualVolumesResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualVolumeRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"p\n\x1aUpdateVirtualVolumeRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"=\n\x1a\x44\x65leteVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"T\n\x18ListDataPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n\x19ListDataPipelinesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"m\n\x19UpdateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"<\n\x19\x44\x65leteDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\x1bListDataPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1cListDataPipelineRunsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"<\n\x19GetDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1c\x43reateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"s\n\x1cUpdateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"?\n\x1c\x44\x65leteDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x85\x01\n\x18ListDataProductsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Z\n\x1eListDataProductVersionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1fListDataProductVersionsResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"?\n\x1cGetDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1f\x43reateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"y\n\x1fUpdateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"B\n\x1f\x44\x65leteDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListDatasetsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"c\n\x14UpdateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListDatasourcesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListDatasourcesResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"i\n\x17UpdateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\":\n\x17\x44\x65leteDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x14ListEntitiesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListFeaturesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListFeaturesResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"c\n\x14UpdateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"7\n\x14\x44\x65leteFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\x1bListFeaturePipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1cListFeaturePipelinesResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"<\n\x19GetFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1c\x43reateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"s\n\x1cUpdateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"?\n\x1c\x44\x65leteFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Z\n\x1eListFeaturePipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1fListFeaturePipelineRunsResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"?\n\x1cGetFeaturePipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1f\x43reateFeaturePipelineRunRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"y\n\x1fUpdateFeaturePipelineRunRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"B\n\x1f\x44\x65leteFeaturePipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListFeaturesetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListFeaturesetsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reateFeaturesetRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"i\n\x17UpdateFeaturesetRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\":\n\x17\x44\x65leteFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListLabelingPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8f\x01\n\x1dListLabelingPipelinesResponse\x12U\n\x05items\x18\x01 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x1d\x43reateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"u\n\x1dUpdateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"@\n\x1d\x44\x65leteLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"[\n\x1fListLabelingPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x95\x01\n ListLabelingPipelineRunsResponse\x12X\n\x05items\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"@\n\x1dGetLabelingPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n CreateLabelingPipelineRunRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"{\n UpdateLabelingPipelineRunRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"C\n DeleteLabelingPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"{\n\x13ListRecipesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"a\n\x13UpdateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListRecipeRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x81\x01\n\x16ListRecipeRunsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"g\n\x16\x43reateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"g\n\x16UpdateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"9\n\x16\x44\x65leteRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListModelAutobuildersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1dListModelAutobuildersResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1d\x43reateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"y\n\x1dUpdateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"@\n\x1d\x44\x65leteModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x12ListModelsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListModelPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1aListModelPipelinesResponse\x12V\n\x05items\x18\x01 \x03(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetModelPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1a\x43reateModelPipelineRequest\x12U\n\x04item\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"s\n\x1aUpdateModelPipelineRequest\x12U\n\x04item\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"=\n\x1a\x44\x65leteModelPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListModelPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1dListModelPipelineRunsResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1d\x43reateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"y\n\x1dUpdateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"@\n\x1d\x44\x65leteModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListNotebooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x15ListNotebooksResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x15\x43reateNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"i\n\x15UpdateNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"8\n\x15\x44\x65leteNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListNotebookRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x89\x01\n\x18ListNotebookRunsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x18\x43reateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"o\n\x18UpdateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\";\n\x18\x44\x65leteNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x7f\n\x13ListReportsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"e\n\x13\x43reateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"e\n\x13UpdateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"6\n\x13\x44\x65leteReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListStudiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x13ListStudiesResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"c\n\x12UpdateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"5\n\x12\x44\x65leteStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"V\n\x1aListCronPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x90\x01\n\x1bListCronPredictionsResponse\x12X\n\x05items\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x18GetCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x1b\x43reateCronPredictionRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"v\n\x1bUpdateCronPredictionRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\">\n\x1b\x44\x65leteCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListCurtainsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x82\x01\n\x14ListCurtainsResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x14\x43reateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"h\n\x14UpdateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"7\n\x14\x44\x65leteCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n\x17ListPredictionsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x17\x43reatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"n\n\x17UpdatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\":\n\x17\x44\x65letePredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListPredictorsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x16ListPredictorsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x16\x43reatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"l\n\x16UpdatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"9\n\x16\x44\x65letePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"T\n\x18ListConversationsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n\x19ListConversationsResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"m\n\x19UpdateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"<\n\x19\x44\x65leteConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListPostMortemsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListRunbooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListRunbooksResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"c\n\x14UpdateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"7\n\x14\x44\x65leteRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xd0\xf9\x01\n\x0f\x41rchivedService\x12\xa3\x01\n\x0cListAccounts\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListAccountsRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListAccountsResponse\"\x00\x12\x95\x01\n\nGetAccount\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetAccountRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rCreateAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateAccountRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rUpdateAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateAccountRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12s\n\rDeleteAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteAccountRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListAlerts\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListAlertsRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListAlertsResponse\"\x00\x12\x8f\x01\n\x08GetAlert\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.GetAlertRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0b\x43reateAlert\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.CreateAlertRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0bUpdateAlert\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.UpdateAlertRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12o\n\x0b\x44\x65leteAlert\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.DeleteAlertRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListApiTokens\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListApiTokensResponse\"\x00\x12\x98\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.GetApiTokenRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12\x9e\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modeldapi.services.archived.v1.CreateApiTokenRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12\x9e\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modeldapi.services.archived.v1.UpdateApiTokenRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12u\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modeldapi.services.archived.v1.DeleteApiTokenRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListConnections\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListConnectionsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListConnectionsResponse\"\x00\x12\x9e\x01\n\rGetConnection\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetConnectionRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10\x43reateConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreateConnectionRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10UpdateConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdateConnectionRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12y\n\x10\x44\x65leteConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeleteConnectionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x97\x01\n\x08ListLabs\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.ListLabsRequest\x1a\x44.github.com.metaprov.modeldapi.services.archived.v1.ListLabsResponse\"\x00\x12\x89\x01\n\x06GetLab\x12\x41.github.com.metaprov.modeldapi.services.archived.v1.GetLabRequest\x1a:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tCreateLab\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.CreateLabRequest\x1a:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tUpdateLab\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.UpdateLabRequest\x1a:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12k\n\tDeleteLab\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.DeleteLabRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListLicenses\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListLicensesRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListLicensesResponse\"\x00\x12\x95\x01\n\nGetLicense\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetLicenseRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rCreateLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateLicenseRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rUpdateLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateLicenseRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"\x00\x12s\n\rDeleteLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteLicenseRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListNotifiers\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListNotifiersResponse\"\x00\x12\x98\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.GetNotifierRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modeldapi.services.archived.v1.CreateNotifierRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modeldapi.services.archived.v1.UpdateNotifierRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12u\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modeldapi.services.archived.v1.DeleteNotifierRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListServingSites\x12K.github.com.metaprov.modeldapi.services.archived.v1.ListServingsitesRequest\x1aL.github.com.metaprov.modeldapi.services.archived.v1.ListServingsitesResponse\"\x00\x12\xa1\x01\n\x0eGetServingSite\x12I.github.com.metaprov.modeldapi.services.archived.v1.GetServingsiteRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11\x43reateServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.CreateServingsiteRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11UpdateServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.UpdateServingsiteRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12{\n\x11\x44\x65leteServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.DeleteServingsiteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListTenants\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListTenantsRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListTenantsResponse\"\x00\x12\x92\x01\n\tGetTenant\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetTenantRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0c\x43reateTenant\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateTenantRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0cUpdateTenant\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateTenantRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12q\n\x0c\x44\x65leteTenant\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteTenantRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListVirtualBuckets\x12M.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualBucketsRequest\x1aN.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualBucketsResponse\"\x00\x12\xa7\x01\n\x10GetVirtualBucket\x12K.github.com.metaprov.modeldapi.services.archived.v1.GetVirtualBucketRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13\x43reateVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.CreateVirtualBucketRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13UpdateVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.UpdateVirtualBucketRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\x7f\n\x13\x44\x65leteVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.DeleteVirtualBucketRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb8\x01\n\x13ListVirtualClusters\x12N.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualClustersRequest\x1aO.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualClustersResponse\"\x00\x12\xaa\x01\n\x11GetVirtualCluster\x12L.github.com.metaprov.modeldapi.services.archived.v1.GetVirtualClusterRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x00\x12\xb0\x01\n\x14\x43reateVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.CreateVirtualClusterRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x00\x12\xb0\x01\n\x14UpdateVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.UpdateVirtualClusterRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x00\x12\x81\x01\n\x14\x44\x65leteVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.DeleteVirtualClusterRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListVirtualVolumes\x12M.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualVolumesRequest\x1aN.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualVolumesResponse\"\x00\x12\xa7\x01\n\x10GetVirtualVolume\x12K.github.com.metaprov.modeldapi.services.archived.v1.GetVirtualVolumeRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x00\x12\xad\x01\n\x13\x43reateVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.CreateVirtualVolumeRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x00\x12\xad\x01\n\x13UpdateVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.UpdateVirtualVolumeRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x00\x12\x7f\n\x13\x44\x65leteVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.DeleteVirtualVolumeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb2\x01\n\x11ListDataPipelines\x12L.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelinesRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelinesResponse\"\x00\x12\xa3\x01\n\x0fGetDataPipeline\x12J.github.com.metaprov.modeldapi.services.archived.v1.GetDataPipelineRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12\x43reateDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.CreateDataPipelineRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12UpdateDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataPipelineRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12}\n\x12\x44\x65leteDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbb\x01\n\x14ListDataPipelineRuns\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelineRunsRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelineRunsResponse\"\x00\x12\xac\x01\n\x12GetDataPipelineRun\x12M.github.com.metaprov.modeldapi.services.archived.v1.GetDataPipelineRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15\x43reateDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.CreateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15UpdateDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\x83\x01\n\x15\x44\x65leteDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListDataProducts\x12K.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductsRequest\x1aL.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductsResponse\"\x00\x12\xa0\x01\n\x0eGetDataProduct\x12I.github.com.metaprov.modeldapi.services.archived.v1.GetDataProductRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11\x43reateDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.CreateDataProductRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11UpdateDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataProductRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12{\n\x11\x44\x65leteDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataProductRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc4\x01\n\x17ListDataProductVersions\x12R.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductVersionsRequest\x1aS.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductVersionsResponse\"\x00\x12\xb5\x01\n\x15GetDataProductVersion\x12P.github.com.metaprov.modeldapi.services.archived.v1.GetDataProductVersionRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18\x43reateDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.CreateDataProductVersionRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18UpdateDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataProductVersionRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\x89\x01\n\x18\x44\x65leteDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataProductVersionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListDatasets\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetsRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetsResponse\"\x00\x12\x94\x01\n\nGetDataset\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetDatasetRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rCreateDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateDatasetRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rUpdateDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateDatasetRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12s\n\rDeleteDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteDatasetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListDataSources\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListDatasourcesRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListDatasourcesResponse\"\x00\x12\x9d\x01\n\rGetDataSource\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetDatasourceRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10\x43reateDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreateDatasourceRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10UpdateDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdateDatasourceRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12y\n\x10\x44\x65leteDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeleteDatasourceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListEntities\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListEntitiesRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListEntitiesResponse\"\x00\x12\x91\x01\n\tGetEntity\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetEntityRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0c\x43reateEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateEntityRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0cUpdateEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateEntityRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12q\n\x0c\x44\x65leteEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteEntityRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListFeatures\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesResponse\"\x00\x12\x94\x01\n\nGetFeature\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetFeatureRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x00\x12\x9a\x01\n\rCreateFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateFeatureRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x00\x12\x9a\x01\n\rUpdateFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeatureRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x00\x12s\n\rDeleteFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeatureRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbb\x01\n\x14ListFeaturePipelines\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelinesRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelinesResponse\"\x00\x12\xac\x01\n\x12GetFeaturePipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.GetFeaturePipelineRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x00\x12\xb2\x01\n\x15\x43reateFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.CreateFeaturePipelineRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x00\x12\xb2\x01\n\x15UpdateFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeaturePipelineRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x00\x12\x83\x01\n\x15\x44\x65leteFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeaturePipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListFeaturesets\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesetsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesetsResponse\"\x00\x12\x9d\x01\n\rGetFeatureset\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetFeaturesetRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"\x00\x12\xa3\x01\n\x10\x43reateFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreateFeaturesetRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"\x00\x12\xa3\x01\n\x10UpdateFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeaturesetRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"\x00\x12y\n\x10\x44\x65leteFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeaturesetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListLabelingPipelines\x12P.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelinesRequest\x1aQ.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelinesResponse\"\x00\x12\xaf\x01\n\x13GetLabelingPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.GetLabelingPipelineRequest\x1a\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"\x00\x12\xb5\x01\n\x16\x43reateLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.CreateLabelingPipelineRequest\x1a\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"\x00\x12\xb5\x01\n\x16UpdateLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.UpdateLabelingPipelineRequest\x1a\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"\x00\x12\x85\x01\n\x16\x44\x65leteLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.DeleteLabelingPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc7\x01\n\x18ListLabelingPipelineRuns\x12S.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunsRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunsResponse\"\x00\x12\xb8\x01\n\x16GetLabelingPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.GetLabelingPipelineRunRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\x00\x12\xbe\x01\n\x19\x43reateLabelingPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.CreateLabelingPipelineRunRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\x00\x12\xbe\x01\n\x19UpdateLabelingPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.UpdateLabelingPipelineRunRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\x00\x12\x8b\x01\n\x19\x44\x65leteLabelingPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.DeleteLabelingPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListRecipes\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListRecipesRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListRecipesResponse\"\x00\x12\x91\x01\n\tGetRecipe\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetRecipeRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0c\x43reateRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateRecipeRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0cUpdateRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateRecipeRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12q\n\x0c\x44\x65leteRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteRecipeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListRecipeRuns\x12I.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunsRequest\x1aJ.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunsResponse\"\x00\x12\x9a\x01\n\x0cGetRecipeRun\x12G.github.com.metaprov.modeldapi.services.archived.v1.GetRecipeRunRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0f\x43reateRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.CreateRecipeRunRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0fUpdateRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.UpdateRecipeRunRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12w\n\x0f\x44\x65leteRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.DeleteRecipeRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListModelAutobuilders\x12P.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutobuildersRequest\x1aQ.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutobuildersResponse\"\x00\x12\xb3\x01\n\x13GetModelAutobuilder\x12N.github.com.metaprov.modeldapi.services.archived.v1.GetModelAutobuilderRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\x00\x12\xb9\x01\n\x16\x43reateModelAutobuilder\x12Q.github.com.metaprov.modeldapi.services.archived.v1.CreateModelAutobuilderRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\x00\x12\xb9\x01\n\x16UpdateModelAutobuilder\x12Q.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelAutobuilderRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\x00\x12\x85\x01\n\x16\x44\x65leteModelAutobuilder\x12Q.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelAutobuilderRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListModelPipelines\x12M.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelinesRequest\x1aN.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelinesResponse\"\x00\x12\xaa\x01\n\x10GetModelPipeline\x12K.github.com.metaprov.modeldapi.services.archived.v1.GetModelPipelineRequest\x1aG.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"\x00\x12\xb0\x01\n\x13\x43reateModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.CreateModelPipelineRequest\x1aG.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"\x00\x12\xb0\x01\n\x13UpdateModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelPipelineRequest\x1aG.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"\x00\x12\x7f\n\x13\x44\x65leteModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListModelPipelineRuns\x12P.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunsRequest\x1aQ.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunsResponse\"\x00\x12\xb3\x01\n\x13GetModelPipelineRun\x12N.github.com.metaprov.modeldapi.services.archived.v1.GetModelPipelineRunRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\x00\x12\xb9\x01\n\x16\x43reateModelPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.CreateModelPipelineRunRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\x00\x12\xb9\x01\n\x16UpdateModelPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelPipelineRunRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\x00\x12\x85\x01\n\x16\x44\x65leteModelPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListNotebooks\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListNotebooksRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListNotebooksResponse\"\x00\x12\x9b\x01\n\x0bGetNotebook\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.GetNotebookRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x00\x12\xa1\x01\n\x0e\x43reateNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.CreateNotebookRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x00\x12\xa1\x01\n\x0eUpdateNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.UpdateNotebookRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x00\x12u\n\x0e\x44\x65leteNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.DeleteNotebookRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListNotebookRuns\x12K.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunsRequest\x1aL.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunsResponse\"\x00\x12\xa4\x01\n\x0eGetNotebookRun\x12I.github.com.metaprov.modeldapi.services.archived.v1.GetNotebookRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"\x00\x12\xaa\x01\n\x11\x43reateNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.CreateNotebookRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"\x00\x12\xaa\x01\n\x11UpdateNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.UpdateNotebookRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"\x00\x12{\n\x11\x44\x65leteNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.DeleteNotebookRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListReports\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListReportsRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListReportsResponse\"\x00\x12\x95\x01\n\tGetReport\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetReportRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0c\x43reateReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateReportRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0cUpdateReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateReportRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\x00\x12q\n\x0c\x44\x65leteReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteReportRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListStudies\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListStudiesRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListStudiesResponse\"\x00\x12\x92\x01\n\x08GetStudy\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.GetStudyRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0b\x43reateStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.CreateStudyRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0bUpdateStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.UpdateStudyRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x00\x12o\n\x0b\x44\x65leteStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.DeleteStudyRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb8\x01\n\x13ListCronPredictions\x12N.github.com.metaprov.modeldapi.services.archived.v1.ListCronPredictionsRequest\x1aO.github.com.metaprov.modeldapi.services.archived.v1.ListCronPredictionsResponse\"\x00\x12\xae\x01\n\x11GetCronPrediction\x12L.github.com.metaprov.modeldapi.services.archived.v1.GetCronPredictionRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x00\x12\xb4\x01\n\x14\x43reateCronPrediction\x12O.github.com.metaprov.modeldapi.services.archived.v1.CreateCronPredictionRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x00\x12\xb4\x01\n\x14UpdateCronPrediction\x12O.github.com.metaprov.modeldapi.services.archived.v1.UpdateCronPredictionRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x00\x12\x81\x01\n\x14\x44\x65leteCronPrediction\x12O.github.com.metaprov.modeldapi.services.archived.v1.DeleteCronPredictionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPredictions\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionsResponse\"\x00\x12\xa2\x01\n\rGetPrediction\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetPredictionRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10\x43reatePrediction\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreatePredictionRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10UpdatePrediction\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdatePredictionRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12y\n\x10\x44\x65letePrediction\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeletePredictionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListPredictors\x12I.github.com.metaprov.modeldapi.services.archived.v1.ListPredictorsRequest\x1aJ.github.com.metaprov.modeldapi.services.archived.v1.ListPredictorsResponse\"\x00\x12\x9f\x01\n\x0cGetPredictor\x12G.github.com.metaprov.modeldapi.services.archived.v1.GetPredictorRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0f\x43reatePredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.CreatePredictorRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0fUpdatePredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.UpdatePredictorRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12w\n\x0f\x44\x65letePredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.DeletePredictorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListCurtains\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListCurtainsRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListCurtainsResponse\"\x00\x12\x99\x01\n\nGetCurtain\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetCurtainRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x00\x12\x9f\x01\n\rCreateCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateCurtainRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x00\x12\x9f\x01\n\rUpdateCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateCurtainRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x00\x12s\n\rDeleteCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteCurtainRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb2\x01\n\x11ListConversations\x12L.github.com.metaprov.modeldapi.services.archived.v1.ListConversationsRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.ListConversationsResponse\"\x00\x12\xa3\x01\n\x0fGetConversation\x12J.github.com.metaprov.modeldapi.services.archived.v1.GetConversationRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x00\x12\xa9\x01\n\x12\x43reateConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.CreateConversationRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x00\x12\xa9\x01\n\x12UpdateConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.UpdateConversationRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x00\x12}\n\x12\x44\x65leteConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.DeleteConversationRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPostMortems\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListPostMortemsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListPostMortemsResponse\"\x00\x12\x9d\x01\n\rGetPostMortem\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetPostMortemRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10\x43reatePostMortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreatePostMortemRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10UpdatePostMortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdatePostMortemRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12y\n\x10\x44\x65letePostMortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeletePostMortemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListRunBooks\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListRunbooksRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListRunbooksResponse\"\x00\x12\x94\x01\n\nGetRunBook\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetRunbookRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rCreateRunBook\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateRunbookRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rUpdateRunBook\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateRunbookRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12s\n\rDeleteRunBook\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteRunbookRequest\x1a\x16.google.protobuf.Empty\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modeldapi/services/archived/v1/archived.proto\x12\x32github.com.metaprov.modeldapi.services.archived.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1bgoogle/protobuf/empty.proto\"O\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListAccountsResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"d\n\x14UpdateAccountRequest\x12L\n\x04item\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"z\n\x12ListAlertsResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"`\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"`\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x02 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListApiTokensResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"f\n\x15UpdateApiTokenRequest\x12M\n\x04item\x18\x02 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x84\x01\n\x17ListConnectionsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"j\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"j\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"K\n\x0fListLabsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n\x10ListLabsResponse\x12I\n\x05items\x18\x01 \x03(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"0\n\rGetLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\\\n\x10\x43reateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\\\n\x10UpdateLabRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"3\n\x10\x44\x65leteLabRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListLicensesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x14ListLicensesResponse\x12M\n\x05items\x18\x01 \x03(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"d\n\x14\x43reateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"d\n\x14UpdateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"7\n\x14\x44\x65leteLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x15ListNotifiersResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListServingsitesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x18ListServingsitesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x18\x43reateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"l\n\x18UpdateServingsiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\";\n\x18\x44\x65leteServingsiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x13ListTenantsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"b\n\x13UpdateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8a\x01\n\x1aListVirtualBucketsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"p\n\x1aUpdateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"V\n\x1aListVirtualClustersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8c\x01\n\x1bListVirtualClustersResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x18GetVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x1b\x43reateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"r\n\x1bUpdateVirtualClusterRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\">\n\x1b\x44\x65leteVirtualClusterRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListVirtualVolumesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8a\x01\n\x1aListVirtualVolumesResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualVolumeRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"p\n\x1aUpdateVirtualVolumeRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"=\n\x1a\x44\x65leteVirtualVolumeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"T\n\x18ListDataPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n\x19ListDataPipelinesResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"m\n\x19UpdateDataPipelineRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"<\n\x19\x44\x65leteDataPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\x1bListDataPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1cListDataPipelineRunsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"<\n\x19GetDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1c\x43reateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"s\n\x1cUpdateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"?\n\x1c\x44\x65leteDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x85\x01\n\x18ListDataProductsResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Z\n\x1eListDataProductVersionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1fListDataProductVersionsResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"?\n\x1cGetDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1f\x43reateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"y\n\x1fUpdateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"B\n\x1f\x44\x65leteDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListDatasetsResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"c\n\x14UpdateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListDatasourcesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListDatasourcesResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"i\n\x17UpdateDatasourceRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\":\n\x17\x44\x65leteDatasourceRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"|\n\x14ListEntitiesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListFeaturesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListFeaturesResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"c\n\x14UpdateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"7\n\x14\x44\x65leteFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\x1bListFeaturePipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1cListFeaturePipelinesResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"<\n\x19GetFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1c\x43reateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"s\n\x1cUpdateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"?\n\x1c\x44\x65leteFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Z\n\x1eListFeaturePipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1fListFeaturePipelineRunsResponse\x12W\n\x05items\x18\x01 \x03(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"?\n\x1cGetFeaturePipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1f\x43reateFeaturePipelineRunRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"y\n\x1fUpdateFeaturePipelineRunRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"B\n\x1f\x44\x65leteFeaturePipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListFeaturesetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListFeaturesetsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reateFeaturesetRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"i\n\x17UpdateFeaturesetRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\":\n\x17\x44\x65leteFeaturesetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListLabelingPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8f\x01\n\x1dListLabelingPipelinesResponse\x12U\n\x05items\x18\x01 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x1d\x43reateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"u\n\x1dUpdateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"@\n\x1d\x44\x65leteLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"[\n\x1fListLabelingPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x95\x01\n ListLabelingPipelineRunsResponse\x12X\n\x05items\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"@\n\x1dGetLabelingPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n CreateLabelingPipelineRunRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"{\n UpdateLabelingPipelineRunRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"C\n DeleteLabelingPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"{\n\x13ListRecipesResponse\x12K\n\x05items\x18\x01 \x03(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13\x43reateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"a\n\x13UpdateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListRecipeRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x81\x01\n\x16ListRecipeRunsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"g\n\x16\x43reateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"g\n\x16UpdateRecipeRunRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"9\n\x16\x44\x65leteRecipeRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListModelAutobuildersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1dListModelAutobuildersResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1d\x43reateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"y\n\x1dUpdateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"@\n\x1d\x44\x65leteModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"M\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x12ListModelsResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x19ListModelPipelinesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x8d\x01\n\x1aListModelPipelinesResponse\x12V\n\x05items\x18\x01 \x03(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x17GetModelPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1a\x43reateModelPipelineRequest\x12U\n\x04item\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"s\n\x1aUpdateModelPipelineRequest\x12U\n\x04item\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"=\n\x1a\x44\x65leteModelPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"X\n\x1cListModelPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x93\x01\n\x1dListModelPipelineRunsResponse\x12Y\n\x05items\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"=\n\x1aGetModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x1d\x43reateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"y\n\x1dUpdateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"@\n\x1d\x44\x65leteModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"P\n\x14ListNotebooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x15ListNotebooksResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x12GetNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x15\x43reateNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"i\n\x15UpdateNotebookRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"8\n\x15\x44\x65leteNotebookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"S\n\x17ListNotebookRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x89\x01\n\x18ListNotebookRunsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"8\n\x15GetNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x18\x43reateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"o\n\x18UpdateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\";\n\x18\x44\x65leteNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x7f\n\x13ListReportsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"e\n\x13\x43reateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"e\n\x13UpdateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"6\n\x13\x44\x65leteReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"N\n\x12ListStudiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"~\n\x13ListStudiesResponse\x12N\n\x05items\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x0fGetStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"c\n\x12UpdateStudyRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"5\n\x12\x44\x65leteStudyRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"V\n\x1aListCronPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x90\x01\n\x1bListCronPredictionsResponse\x12X\n\x05items\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x18GetCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x1b\x43reateCronPredictionRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"v\n\x1bUpdateCronPredictionRequest\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\">\n\x1b\x44\x65leteCronPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListCurtainsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x82\x01\n\x14ListCurtainsResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x14\x43reateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"h\n\x14UpdateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"7\n\x14\x44\x65leteCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x88\x01\n\x17ListPredictionsResponse\x12T\n\x05items\x18\x01 \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x17\x43reatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"n\n\x17UpdatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\":\n\x17\x44\x65letePredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"Q\n\x15ListPredictorsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x86\x01\n\x16ListPredictorsResponse\x12S\n\x05items\x18\x01 \x03(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x16\x43reatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"l\n\x16UpdatePredictorRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"9\n\x16\x44\x65letePredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"T\n\x18ListConversationsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x87\x01\n\x19ListConversationsResponse\x12Q\n\x05items\x18\x01 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x16GetConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x19\x43reateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"m\n\x19UpdateConversationRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"<\n\x19\x44\x65leteConversationRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"R\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n\x17ListPostMortemsResponse\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"O\n\x13ListRunbooksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"}\n\x14ListRunbooksResponse\x12L\n\x05items\x18\x01 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"4\n\x11GetRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x14\x43reateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"c\n\x14UpdateRunbookRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"7\n\x14\x44\x65leteRunbookRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xb3\x86\x02\n\x0f\x41rchivedService\x12\xa3\x01\n\x0cListAccounts\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListAccountsRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListAccountsResponse\"\x00\x12\x95\x01\n\nGetAccount\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetAccountRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rCreateAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateAccountRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12\x9b\x01\n\rUpdateAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateAccountRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account\"\x00\x12s\n\rDeleteAccount\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteAccountRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListAlerts\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListAlertsRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListAlertsResponse\"\x00\x12\x8f\x01\n\x08GetAlert\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.GetAlertRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0b\x43reateAlert\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.CreateAlertRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12\x95\x01\n\x0bUpdateAlert\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.UpdateAlertRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert\"\x00\x12o\n\x0b\x44\x65leteAlert\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.DeleteAlertRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListApiTokens\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListApiTokensResponse\"\x00\x12\x98\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.GetApiTokenRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12\x9e\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modeldapi.services.archived.v1.CreateApiTokenRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12\x9e\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modeldapi.services.archived.v1.UpdateApiTokenRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken\"\x00\x12u\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modeldapi.services.archived.v1.DeleteApiTokenRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListConnections\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListConnectionsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListConnectionsResponse\"\x00\x12\x9e\x01\n\rGetConnection\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetConnectionRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10\x43reateConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreateConnectionRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12\xa4\x01\n\x10UpdateConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdateConnectionRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\"\x00\x12y\n\x10\x44\x65leteConnection\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeleteConnectionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x97\x01\n\x08ListLabs\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.ListLabsRequest\x1a\x44.github.com.metaprov.modeldapi.services.archived.v1.ListLabsResponse\"\x00\x12\x89\x01\n\x06GetLab\x12\x41.github.com.metaprov.modeldapi.services.archived.v1.GetLabRequest\x1a:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tCreateLab\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.CreateLabRequest\x1a:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12\x8f\x01\n\tUpdateLab\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.UpdateLabRequest\x1a:.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab\"\x00\x12k\n\tDeleteLab\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.DeleteLabRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListLicenses\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListLicensesRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListLicensesResponse\"\x00\x12\x95\x01\n\nGetLicense\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetLicenseRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rCreateLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateLicenseRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"\x00\x12\x9b\x01\n\rUpdateLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateLicenseRequest\x1a>.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License\"\x00\x12s\n\rDeleteLicense\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteLicenseRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListNotifiers\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListNotifiersResponse\"\x00\x12\x98\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.GetNotifierRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modeldapi.services.archived.v1.CreateNotifierRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12\x9e\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modeldapi.services.archived.v1.UpdateNotifierRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier\"\x00\x12u\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modeldapi.services.archived.v1.DeleteNotifierRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListServingSites\x12K.github.com.metaprov.modeldapi.services.archived.v1.ListServingsitesRequest\x1aL.github.com.metaprov.modeldapi.services.archived.v1.ListServingsitesResponse\"\x00\x12\xa1\x01\n\x0eGetServingSite\x12I.github.com.metaprov.modeldapi.services.archived.v1.GetServingsiteRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11\x43reateServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.CreateServingsiteRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12\xa7\x01\n\x11UpdateServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.UpdateServingsiteRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite\"\x00\x12{\n\x11\x44\x65leteServingSite\x12L.github.com.metaprov.modeldapi.services.archived.v1.DeleteServingsiteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListTenants\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListTenantsRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListTenantsResponse\"\x00\x12\x92\x01\n\tGetTenant\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetTenantRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0c\x43reateTenant\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateTenantRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12\x98\x01\n\x0cUpdateTenant\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateTenantRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant\"\x00\x12q\n\x0c\x44\x65leteTenant\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteTenantRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListVirtualBuckets\x12M.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualBucketsRequest\x1aN.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualBucketsResponse\"\x00\x12\xa7\x01\n\x10GetVirtualBucket\x12K.github.com.metaprov.modeldapi.services.archived.v1.GetVirtualBucketRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13\x43reateVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.CreateVirtualBucketRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\xad\x01\n\x13UpdateVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.UpdateVirtualBucketRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x00\x12\x7f\n\x13\x44\x65leteVirtualBucket\x12N.github.com.metaprov.modeldapi.services.archived.v1.DeleteVirtualBucketRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb8\x01\n\x13ListVirtualClusters\x12N.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualClustersRequest\x1aO.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualClustersResponse\"\x00\x12\xaa\x01\n\x11GetVirtualCluster\x12L.github.com.metaprov.modeldapi.services.archived.v1.GetVirtualClusterRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x00\x12\xb0\x01\n\x14\x43reateVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.CreateVirtualClusterRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x00\x12\xb0\x01\n\x14UpdateVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.UpdateVirtualClusterRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\x00\x12\x81\x01\n\x14\x44\x65leteVirtualCluster\x12O.github.com.metaprov.modeldapi.services.archived.v1.DeleteVirtualClusterRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListVirtualVolumes\x12M.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualVolumesRequest\x1aN.github.com.metaprov.modeldapi.services.archived.v1.ListVirtualVolumesResponse\"\x00\x12\xa7\x01\n\x10GetVirtualVolume\x12K.github.com.metaprov.modeldapi.services.archived.v1.GetVirtualVolumeRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x00\x12\xad\x01\n\x13\x43reateVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.CreateVirtualVolumeRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x00\x12\xad\x01\n\x13UpdateVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.UpdateVirtualVolumeRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x00\x12\x7f\n\x13\x44\x65leteVirtualVolume\x12N.github.com.metaprov.modeldapi.services.archived.v1.DeleteVirtualVolumeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb2\x01\n\x11ListDataPipelines\x12L.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelinesRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelinesResponse\"\x00\x12\xa3\x01\n\x0fGetDataPipeline\x12J.github.com.metaprov.modeldapi.services.archived.v1.GetDataPipelineRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12\x43reateDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.CreateDataPipelineRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12\xa9\x01\n\x12UpdateDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataPipelineRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"\x00\x12}\n\x12\x44\x65leteDataPipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbb\x01\n\x14ListDataPipelineRuns\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelineRunsRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListDataPipelineRunsResponse\"\x00\x12\xac\x01\n\x12GetDataPipelineRun\x12M.github.com.metaprov.modeldapi.services.archived.v1.GetDataPipelineRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15\x43reateDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.CreateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\xb2\x01\n\x15UpdateDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataPipelineRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x00\x12\x83\x01\n\x15\x44\x65leteDataPipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListDataProducts\x12K.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductsRequest\x1aL.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductsResponse\"\x00\x12\xa0\x01\n\x0eGetDataProduct\x12I.github.com.metaprov.modeldapi.services.archived.v1.GetDataProductRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11\x43reateDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.CreateDataProductRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12\xa6\x01\n\x11UpdateDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataProductRequest\x1a\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\"\x00\x12{\n\x11\x44\x65leteDataProduct\x12L.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataProductRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc4\x01\n\x17ListDataProductVersions\x12R.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductVersionsRequest\x1aS.github.com.metaprov.modeldapi.services.archived.v1.ListDataProductVersionsResponse\"\x00\x12\xb5\x01\n\x15GetDataProductVersion\x12P.github.com.metaprov.modeldapi.services.archived.v1.GetDataProductVersionRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18\x43reateDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.CreateDataProductVersionRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\xbb\x01\n\x18UpdateDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.UpdateDataProductVersionRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\"\x00\x12\x89\x01\n\x18\x44\x65leteDataProductVersion\x12S.github.com.metaprov.modeldapi.services.archived.v1.DeleteDataProductVersionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListDatasets\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetsRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListDatasetsResponse\"\x00\x12\x94\x01\n\nGetDataset\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetDatasetRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rCreateDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateDatasetRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12\x9a\x01\n\rUpdateDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateDatasetRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x00\x12s\n\rDeleteDataset\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteDatasetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListDataSources\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListDatasourcesRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListDatasourcesResponse\"\x00\x12\x9d\x01\n\rGetDataSource\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetDatasourceRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10\x43reateDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreateDatasourceRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12\xa3\x01\n\x10UpdateDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdateDatasourceRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\"\x00\x12y\n\x10\x44\x65leteDataSource\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeleteDatasourceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListEntities\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListEntitiesRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListEntitiesResponse\"\x00\x12\x91\x01\n\tGetEntity\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetEntityRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0c\x43reateEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateEntityRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12\x97\x01\n\x0cUpdateEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateEntityRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity\"\x00\x12q\n\x0c\x44\x65leteEntity\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteEntityRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListFeatures\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesResponse\"\x00\x12\x94\x01\n\nGetFeature\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetFeatureRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x00\x12\x9a\x01\n\rCreateFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateFeatureRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x00\x12\x9a\x01\n\rUpdateFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeatureRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature\"\x00\x12s\n\rDeleteFeature\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeatureRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbb\x01\n\x14ListFeaturePipelines\x12O.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelinesRequest\x1aP.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelinesResponse\"\x00\x12\xac\x01\n\x12GetFeaturePipeline\x12M.github.com.metaprov.modeldapi.services.archived.v1.GetFeaturePipelineRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x00\x12\xb2\x01\n\x15\x43reateFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.CreateFeaturePipelineRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x00\x12\xb2\x01\n\x15UpdateFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeaturePipelineRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x00\x12\x83\x01\n\x15\x44\x65leteFeaturePipeline\x12P.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeaturePipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc4\x01\n\x17ListFeaturePipelineRuns\x12R.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunsRequest\x1aS.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturePipelineRunsResponse\"\x00\x12\xb5\x01\n\x15GetFeaturePipelineRun\x12P.github.com.metaprov.modeldapi.services.archived.v1.GetFeaturePipelineRunRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"\x00\x12\xbb\x01\n\x18\x43reateFeaturePipelineRun\x12S.github.com.metaprov.modeldapi.services.archived.v1.CreateFeaturePipelineRunRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"\x00\x12\xbb\x01\n\x18UpdateFeaturePipelineRun\x12S.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeaturePipelineRunRequest\x1aH.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun\"\x00\x12\x89\x01\n\x18\x44\x65leteFeaturePipelineRun\x12S.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeaturePipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListFeaturesets\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesetsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListFeaturesetsResponse\"\x00\x12\x9d\x01\n\rGetFeatureset\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetFeaturesetRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"\x00\x12\xa3\x01\n\x10\x43reateFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreateFeaturesetRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"\x00\x12\xa3\x01\n\x10UpdateFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdateFeaturesetRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset\"\x00\x12y\n\x10\x44\x65leteFeatureset\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeleteFeaturesetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListLabelingPipelines\x12P.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelinesRequest\x1aQ.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelinesResponse\"\x00\x12\xaf\x01\n\x13GetLabelingPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.GetLabelingPipelineRequest\x1a\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"\x00\x12\xb5\x01\n\x16\x43reateLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.CreateLabelingPipelineRequest\x1a\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"\x00\x12\xb5\x01\n\x16UpdateLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.UpdateLabelingPipelineRequest\x1a\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\"\x00\x12\x85\x01\n\x16\x44\x65leteLabelingPipeline\x12Q.github.com.metaprov.modeldapi.services.archived.v1.DeleteLabelingPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xc7\x01\n\x18ListLabelingPipelineRuns\x12S.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunsRequest\x1aT.github.com.metaprov.modeldapi.services.archived.v1.ListLabelingPipelineRunsResponse\"\x00\x12\xb8\x01\n\x16GetLabelingPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.GetLabelingPipelineRunRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\x00\x12\xbe\x01\n\x19\x43reateLabelingPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.CreateLabelingPipelineRunRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\x00\x12\xbe\x01\n\x19UpdateLabelingPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.UpdateLabelingPipelineRunRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun\"\x00\x12\x8b\x01\n\x19\x44\x65leteLabelingPipelineRun\x12T.github.com.metaprov.modeldapi.services.archived.v1.DeleteLabelingPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListRecipes\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListRecipesRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListRecipesResponse\"\x00\x12\x91\x01\n\tGetRecipe\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetRecipeRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0c\x43reateRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateRecipeRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12\x97\x01\n\x0cUpdateRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateRecipeRequest\x1a<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x00\x12q\n\x0c\x44\x65leteRecipe\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteRecipeRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListRecipeRuns\x12I.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunsRequest\x1aJ.github.com.metaprov.modeldapi.services.archived.v1.ListRecipeRunsResponse\"\x00\x12\x9a\x01\n\x0cGetRecipeRun\x12G.github.com.metaprov.modeldapi.services.archived.v1.GetRecipeRunRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0f\x43reateRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.CreateRecipeRunRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12\xa0\x01\n\x0fUpdateRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.UpdateRecipeRunRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\"\x00\x12w\n\x0f\x44\x65leteRecipeRun\x12J.github.com.metaprov.modeldapi.services.archived.v1.DeleteRecipeRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListModelAutobuilders\x12P.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutobuildersRequest\x1aQ.github.com.metaprov.modeldapi.services.archived.v1.ListModelAutobuildersResponse\"\x00\x12\xb3\x01\n\x13GetModelAutobuilder\x12N.github.com.metaprov.modeldapi.services.archived.v1.GetModelAutobuilderRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\x00\x12\xb9\x01\n\x16\x43reateModelAutobuilder\x12Q.github.com.metaprov.modeldapi.services.archived.v1.CreateModelAutobuilderRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\x00\x12\xb9\x01\n\x16UpdateModelAutobuilder\x12Q.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelAutobuilderRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder\"\x00\x12\x85\x01\n\x16\x44\x65leteModelAutobuilder\x12Q.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelAutobuilderRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb5\x01\n\x12ListModelPipelines\x12M.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelinesRequest\x1aN.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelinesResponse\"\x00\x12\xaa\x01\n\x10GetModelPipeline\x12K.github.com.metaprov.modeldapi.services.archived.v1.GetModelPipelineRequest\x1aG.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"\x00\x12\xb0\x01\n\x13\x43reateModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.CreateModelPipelineRequest\x1aG.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"\x00\x12\xb0\x01\n\x13UpdateModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelPipelineRequest\x1aG.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline\"\x00\x12\x7f\n\x13\x44\x65leteModelPipeline\x12N.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelPipelineRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xbe\x01\n\x15ListModelPipelineRuns\x12P.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunsRequest\x1aQ.github.com.metaprov.modeldapi.services.archived.v1.ListModelPipelineRunsResponse\"\x00\x12\xb3\x01\n\x13GetModelPipelineRun\x12N.github.com.metaprov.modeldapi.services.archived.v1.GetModelPipelineRunRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\x00\x12\xb9\x01\n\x16\x43reateModelPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.CreateModelPipelineRunRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\x00\x12\xb9\x01\n\x16UpdateModelPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelPipelineRunRequest\x1aJ.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun\"\x00\x12\x85\x01\n\x16\x44\x65leteModelPipelineRun\x12Q.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelPipelineRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa6\x01\n\rListNotebooks\x12H.github.com.metaprov.modeldapi.services.archived.v1.ListNotebooksRequest\x1aI.github.com.metaprov.modeldapi.services.archived.v1.ListNotebooksResponse\"\x00\x12\x9b\x01\n\x0bGetNotebook\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.GetNotebookRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x00\x12\xa1\x01\n\x0e\x43reateNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.CreateNotebookRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x00\x12\xa1\x01\n\x0eUpdateNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.UpdateNotebookRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook\"\x00\x12u\n\x0e\x44\x65leteNotebook\x12I.github.com.metaprov.modeldapi.services.archived.v1.DeleteNotebookRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xaf\x01\n\x10ListNotebookRuns\x12K.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunsRequest\x1aL.github.com.metaprov.modeldapi.services.archived.v1.ListNotebookRunsResponse\"\x00\x12\xa4\x01\n\x0eGetNotebookRun\x12I.github.com.metaprov.modeldapi.services.archived.v1.GetNotebookRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"\x00\x12\xaa\x01\n\x11\x43reateNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.CreateNotebookRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"\x00\x12\xaa\x01\n\x11UpdateNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.UpdateNotebookRunRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun\"\x00\x12{\n\x11\x44\x65leteNotebookRun\x12L.github.com.metaprov.modeldapi.services.archived.v1.DeleteNotebookRunRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListReports\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListReportsRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListReportsResponse\"\x00\x12\x95\x01\n\tGetReport\x12\x44.github.com.metaprov.modeldapi.services.archived.v1.GetReportRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0c\x43reateReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.CreateReportRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\x00\x12\x9b\x01\n\x0cUpdateReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.UpdateReportRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\"\x00\x12q\n\x0c\x44\x65leteReport\x12G.github.com.metaprov.modeldapi.services.archived.v1.DeleteReportRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa0\x01\n\x0bListStudies\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.ListStudiesRequest\x1aG.github.com.metaprov.modeldapi.services.archived.v1.ListStudiesResponse\"\x00\x12\x92\x01\n\x08GetStudy\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.GetStudyRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0b\x43reateStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.CreateStudyRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x00\x12\x98\x01\n\x0bUpdateStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.UpdateStudyRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\"\x00\x12o\n\x0b\x44\x65leteStudy\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.DeleteStudyRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x9d\x01\n\nListModels\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.ListModelsRequest\x1a\x46.github.com.metaprov.modeldapi.services.archived.v1.ListModelsResponse\"\x00\x12\x92\x01\n\x08GetModel\x12\x43.github.com.metaprov.modeldapi.services.archived.v1.GetModelRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x00\x12\x98\x01\n\x0b\x43reateModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.CreateModelRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x00\x12\x98\x01\n\x0bUpdateModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.UpdateModelRequest\x1a?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x00\x12o\n\x0b\x44\x65leteModel\x12\x46.github.com.metaprov.modeldapi.services.archived.v1.DeleteModelRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb8\x01\n\x13ListCronPredictions\x12N.github.com.metaprov.modeldapi.services.archived.v1.ListCronPredictionsRequest\x1aO.github.com.metaprov.modeldapi.services.archived.v1.ListCronPredictionsResponse\"\x00\x12\xae\x01\n\x11GetCronPrediction\x12L.github.com.metaprov.modeldapi.services.archived.v1.GetCronPredictionRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x00\x12\xb4\x01\n\x14\x43reateCronPrediction\x12O.github.com.metaprov.modeldapi.services.archived.v1.CreateCronPredictionRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x00\x12\xb4\x01\n\x14UpdateCronPrediction\x12O.github.com.metaprov.modeldapi.services.archived.v1.UpdateCronPredictionRequest\x1aI.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction\"\x00\x12\x81\x01\n\x14\x44\x65leteCronPrediction\x12O.github.com.metaprov.modeldapi.services.archived.v1.DeleteCronPredictionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPredictions\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListPredictionsResponse\"\x00\x12\xa2\x01\n\rGetPrediction\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetPredictionRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10\x43reatePrediction\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreatePredictionRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12\xa8\x01\n\x10UpdatePrediction\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdatePredictionRequest\x1a\x45.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction\"\x00\x12y\n\x10\x44\x65letePrediction\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeletePredictionRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa9\x01\n\x0eListPredictors\x12I.github.com.metaprov.modeldapi.services.archived.v1.ListPredictorsRequest\x1aJ.github.com.metaprov.modeldapi.services.archived.v1.ListPredictorsResponse\"\x00\x12\x9f\x01\n\x0cGetPredictor\x12G.github.com.metaprov.modeldapi.services.archived.v1.GetPredictorRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0f\x43reatePredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.CreatePredictorRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12\xa5\x01\n\x0fUpdatePredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.UpdatePredictorRequest\x1a\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\"\x00\x12w\n\x0f\x44\x65letePredictor\x12J.github.com.metaprov.modeldapi.services.archived.v1.DeletePredictorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListCurtains\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListCurtainsRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListCurtainsResponse\"\x00\x12\x99\x01\n\nGetCurtain\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetCurtainRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x00\x12\x9f\x01\n\rCreateCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateCurtainRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x00\x12\x9f\x01\n\rUpdateCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateCurtainRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain\"\x00\x12s\n\rDeleteCurtain\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteCurtainRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xb2\x01\n\x11ListConversations\x12L.github.com.metaprov.modeldapi.services.archived.v1.ListConversationsRequest\x1aM.github.com.metaprov.modeldapi.services.archived.v1.ListConversationsResponse\"\x00\x12\xa3\x01\n\x0fGetConversation\x12J.github.com.metaprov.modeldapi.services.archived.v1.GetConversationRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x00\x12\xa9\x01\n\x12\x43reateConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.CreateConversationRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x00\x12\xa9\x01\n\x12UpdateConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.UpdateConversationRequest\x1a\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\x00\x12}\n\x12\x44\x65leteConversation\x12M.github.com.metaprov.modeldapi.services.archived.v1.DeleteConversationRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xac\x01\n\x0fListPostMortems\x12J.github.com.metaprov.modeldapi.services.archived.v1.ListPostMortemsRequest\x1aK.github.com.metaprov.modeldapi.services.archived.v1.ListPostMortemsResponse\"\x00\x12\x9d\x01\n\rGetPostMortem\x12H.github.com.metaprov.modeldapi.services.archived.v1.GetPostMortemRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10\x43reatePostMortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.CreatePostMortemRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12\xa3\x01\n\x10UpdatePostMortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.UpdatePostMortemRequest\x1a@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x00\x12y\n\x10\x44\x65letePostMortem\x12K.github.com.metaprov.modeldapi.services.archived.v1.DeletePostMortemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\xa3\x01\n\x0cListRunBooks\x12G.github.com.metaprov.modeldapi.services.archived.v1.ListRunbooksRequest\x1aH.github.com.metaprov.modeldapi.services.archived.v1.ListRunbooksResponse\"\x00\x12\x94\x01\n\nGetRunBook\x12\x45.github.com.metaprov.modeldapi.services.archived.v1.GetRunbookRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rCreateRunBook\x12H.github.com.metaprov.modeldapi.services.archived.v1.CreateRunbookRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12\x9a\x01\n\rUpdateRunBook\x12H.github.com.metaprov.modeldapi.services.archived.v1.UpdateRunbookRequest\x1a=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x00\x12s\n\rDeleteRunBook\x12H.github.com.metaprov.modeldapi.services.archived.v1.DeleteRunbookRequest\x1a\x16.google.protobuf.Empty\"\x00\x42\x34Z2github.com/metaprov/modeldapi/services/archived/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -11721,7 +11721,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=23900,
-  serialized_end=55852,
+  serialized_end=57487,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccounts',
@@ -12774,9 +12774,59 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ListFeaturePipelineRuns',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListFeaturePipelineRuns',
+    index=105,
+    containing_service=None,
+    input_type=_LISTFEATUREPIPELINERUNSREQUEST,
+    output_type=_LISTFEATUREPIPELINERUNSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetFeaturePipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetFeaturePipelineRun',
+    index=106,
+    containing_service=None,
+    input_type=_GETFEATUREPIPELINERUNREQUEST,
+    output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINERUN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateFeaturePipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateFeaturePipelineRun',
+    index=107,
+    containing_service=None,
+    input_type=_CREATEFEATUREPIPELINERUNREQUEST,
+    output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINERUN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateFeaturePipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateFeaturePipelineRun',
+    index=108,
+    containing_service=None,
+    input_type=_UPDATEFEATUREPIPELINERUNREQUEST,
+    output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINERUN,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteFeaturePipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteFeaturePipelineRun',
+    index=109,
+    containing_service=None,
+    input_type=_DELETEFEATUREPIPELINERUNREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ListFeaturesets',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListFeaturesets',
-    index=105,
+    index=110,
     containing_service=None,
     input_type=_LISTFEATURESETSREQUEST,
     output_type=_LISTFEATURESETSRESPONSE,
@@ -12786,7 +12836,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetFeatureset',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetFeatureset',
-    index=106,
+    index=111,
     containing_service=None,
     input_type=_GETFEATURESETREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURESET,
@@ -12796,7 +12846,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateFeatureset',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateFeatureset',
-    index=107,
+    index=112,
     containing_service=None,
     input_type=_CREATEFEATURESETREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURESET,
@@ -12806,7 +12856,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateFeatureset',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateFeatureset',
-    index=108,
+    index=113,
     containing_service=None,
     input_type=_UPDATEFEATURESETREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURESET,
@@ -12816,7 +12866,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteFeatureset',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteFeatureset',
-    index=109,
+    index=114,
     containing_service=None,
     input_type=_DELETEFEATURESETREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -12826,7 +12876,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListLabelingPipelines',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListLabelingPipelines',
-    index=110,
+    index=115,
     containing_service=None,
     input_type=_LISTLABELINGPIPELINESREQUEST,
     output_type=_LISTLABELINGPIPELINESRESPONSE,
@@ -12836,7 +12886,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetLabelingPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetLabelingPipeline',
-    index=111,
+    index=116,
     containing_service=None,
     input_type=_GETLABELINGPIPELINEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINE,
@@ -12846,7 +12896,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateLabelingPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateLabelingPipeline',
-    index=112,
+    index=117,
     containing_service=None,
     input_type=_CREATELABELINGPIPELINEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINE,
@@ -12856,7 +12906,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateLabelingPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateLabelingPipeline',
-    index=113,
+    index=118,
     containing_service=None,
     input_type=_UPDATELABELINGPIPELINEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINE,
@@ -12866,7 +12916,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteLabelingPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteLabelingPipeline',
-    index=114,
+    index=119,
     containing_service=None,
     input_type=_DELETELABELINGPIPELINEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -12876,7 +12926,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListLabelingPipelineRuns',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListLabelingPipelineRuns',
-    index=115,
+    index=120,
     containing_service=None,
     input_type=_LISTLABELINGPIPELINERUNSREQUEST,
     output_type=_LISTLABELINGPIPELINERUNSRESPONSE,
@@ -12886,7 +12936,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetLabelingPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetLabelingPipelineRun',
-    index=116,
+    index=121,
     containing_service=None,
     input_type=_GETLABELINGPIPELINERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINERUN,
@@ -12896,7 +12946,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateLabelingPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateLabelingPipelineRun',
-    index=117,
+    index=122,
     containing_service=None,
     input_type=_CREATELABELINGPIPELINERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINERUN,
@@ -12906,7 +12956,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateLabelingPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateLabelingPipelineRun',
-    index=118,
+    index=123,
     containing_service=None,
     input_type=_UPDATELABELINGPIPELINERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINERUN,
@@ -12916,7 +12966,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteLabelingPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteLabelingPipelineRun',
-    index=119,
+    index=124,
     containing_service=None,
     input_type=_DELETELABELINGPIPELINERUNREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -12926,7 +12976,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListRecipes',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListRecipes',
-    index=120,
+    index=125,
     containing_service=None,
     input_type=_LISTRECIPESREQUEST,
     output_type=_LISTRECIPESRESPONSE,
@@ -12936,7 +12986,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetRecipe',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetRecipe',
-    index=121,
+    index=126,
     containing_service=None,
     input_type=_GETRECIPEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPE,
@@ -12946,7 +12996,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateRecipe',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateRecipe',
-    index=122,
+    index=127,
     containing_service=None,
     input_type=_CREATERECIPEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPE,
@@ -12956,7 +13006,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateRecipe',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateRecipe',
-    index=123,
+    index=128,
     containing_service=None,
     input_type=_UPDATERECIPEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPE,
@@ -12966,7 +13016,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteRecipe',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteRecipe',
-    index=124,
+    index=129,
     containing_service=None,
     input_type=_DELETERECIPEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -12976,7 +13026,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListRecipeRuns',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListRecipeRuns',
-    index=125,
+    index=130,
     containing_service=None,
     input_type=_LISTRECIPERUNSREQUEST,
     output_type=_LISTRECIPERUNSRESPONSE,
@@ -12986,7 +13036,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetRecipeRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetRecipeRun',
-    index=126,
+    index=131,
     containing_service=None,
     input_type=_GETRECIPERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN,
@@ -12996,7 +13046,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateRecipeRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateRecipeRun',
-    index=127,
+    index=132,
     containing_service=None,
     input_type=_CREATERECIPERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN,
@@ -13006,7 +13056,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateRecipeRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateRecipeRun',
-    index=128,
+    index=133,
     containing_service=None,
     input_type=_UPDATERECIPERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._RECIPERUN,
@@ -13016,7 +13066,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteRecipeRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteRecipeRun',
-    index=129,
+    index=134,
     containing_service=None,
     input_type=_DELETERECIPERUNREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13026,7 +13076,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListModelAutobuilders',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelAutobuilders',
-    index=130,
+    index=135,
     containing_service=None,
     input_type=_LISTMODELAUTOBUILDERSREQUEST,
     output_type=_LISTMODELAUTOBUILDERSRESPONSE,
@@ -13036,7 +13086,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetModelAutobuilder',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetModelAutobuilder',
-    index=131,
+    index=136,
     containing_service=None,
     input_type=_GETMODELAUTOBUILDERREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELAUTOBUILDER,
@@ -13046,7 +13096,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateModelAutobuilder',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateModelAutobuilder',
-    index=132,
+    index=137,
     containing_service=None,
     input_type=_CREATEMODELAUTOBUILDERREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELAUTOBUILDER,
@@ -13056,7 +13106,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateModelAutobuilder',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateModelAutobuilder',
-    index=133,
+    index=138,
     containing_service=None,
     input_type=_UPDATEMODELAUTOBUILDERREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELAUTOBUILDER,
@@ -13066,7 +13116,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteModelAutobuilder',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteModelAutobuilder',
-    index=134,
+    index=139,
     containing_service=None,
     input_type=_DELETEMODELAUTOBUILDERREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13076,7 +13126,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListModelPipelines',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelPipelines',
-    index=135,
+    index=140,
     containing_service=None,
     input_type=_LISTMODELPIPELINESREQUEST,
     output_type=_LISTMODELPIPELINESRESPONSE,
@@ -13086,7 +13136,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetModelPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetModelPipeline',
-    index=136,
+    index=141,
     containing_service=None,
     input_type=_GETMODELPIPELINEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINE,
@@ -13096,7 +13146,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateModelPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateModelPipeline',
-    index=137,
+    index=142,
     containing_service=None,
     input_type=_CREATEMODELPIPELINEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINE,
@@ -13106,7 +13156,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateModelPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateModelPipeline',
-    index=138,
+    index=143,
     containing_service=None,
     input_type=_UPDATEMODELPIPELINEREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINE,
@@ -13116,7 +13166,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteModelPipeline',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteModelPipeline',
-    index=139,
+    index=144,
     containing_service=None,
     input_type=_DELETEMODELPIPELINEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13126,7 +13176,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListModelPipelineRuns',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModelPipelineRuns',
-    index=140,
+    index=145,
     containing_service=None,
     input_type=_LISTMODELPIPELINERUNSREQUEST,
     output_type=_LISTMODELPIPELINERUNSRESPONSE,
@@ -13136,7 +13186,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetModelPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetModelPipelineRun',
-    index=141,
+    index=146,
     containing_service=None,
     input_type=_GETMODELPIPELINERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN,
@@ -13146,7 +13196,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateModelPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateModelPipelineRun',
-    index=142,
+    index=147,
     containing_service=None,
     input_type=_CREATEMODELPIPELINERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN,
@@ -13156,7 +13206,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateModelPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateModelPipelineRun',
-    index=143,
+    index=148,
     containing_service=None,
     input_type=_UPDATEMODELPIPELINERUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN,
@@ -13166,7 +13216,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteModelPipelineRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteModelPipelineRun',
-    index=144,
+    index=149,
     containing_service=None,
     input_type=_DELETEMODELPIPELINERUNREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13176,7 +13226,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListNotebooks',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListNotebooks',
-    index=145,
+    index=150,
     containing_service=None,
     input_type=_LISTNOTEBOOKSREQUEST,
     output_type=_LISTNOTEBOOKSRESPONSE,
@@ -13186,7 +13236,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetNotebook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetNotebook',
-    index=146,
+    index=151,
     containing_service=None,
     input_type=_GETNOTEBOOKREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK,
@@ -13196,7 +13246,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateNotebook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateNotebook',
-    index=147,
+    index=152,
     containing_service=None,
     input_type=_CREATENOTEBOOKREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK,
@@ -13206,7 +13256,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateNotebook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateNotebook',
-    index=148,
+    index=153,
     containing_service=None,
     input_type=_UPDATENOTEBOOKREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOK,
@@ -13216,7 +13266,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteNotebook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteNotebook',
-    index=149,
+    index=154,
     containing_service=None,
     input_type=_DELETENOTEBOOKREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13226,7 +13276,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListNotebookRuns',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListNotebookRuns',
-    index=150,
+    index=155,
     containing_service=None,
     input_type=_LISTNOTEBOOKRUNSREQUEST,
     output_type=_LISTNOTEBOOKRUNSRESPONSE,
@@ -13236,7 +13286,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetNotebookRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetNotebookRun',
-    index=151,
+    index=156,
     containing_service=None,
     input_type=_GETNOTEBOOKRUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKRUN,
@@ -13246,7 +13296,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateNotebookRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateNotebookRun',
-    index=152,
+    index=157,
     containing_service=None,
     input_type=_CREATENOTEBOOKRUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKRUN,
@@ -13256,7 +13306,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateNotebookRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateNotebookRun',
-    index=153,
+    index=158,
     containing_service=None,
     input_type=_UPDATENOTEBOOKRUNREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKRUN,
@@ -13266,7 +13316,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteNotebookRun',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteNotebookRun',
-    index=154,
+    index=159,
     containing_service=None,
     input_type=_DELETENOTEBOOKRUNREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13276,7 +13326,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListReports',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListReports',
-    index=155,
+    index=160,
     containing_service=None,
     input_type=_LISTREPORTSREQUEST,
     output_type=_LISTREPORTSRESPONSE,
@@ -13286,7 +13336,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetReport',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetReport',
-    index=156,
+    index=161,
     containing_service=None,
     input_type=_GETREPORTREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT,
@@ -13296,7 +13346,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateReport',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateReport',
-    index=157,
+    index=162,
     containing_service=None,
     input_type=_CREATEREPORTREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT,
@@ -13306,7 +13356,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateReport',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateReport',
-    index=158,
+    index=163,
     containing_service=None,
     input_type=_UPDATEREPORTREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT,
@@ -13316,7 +13366,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteReport',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteReport',
-    index=159,
+    index=164,
     containing_service=None,
     input_type=_DELETEREPORTREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13326,7 +13376,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListStudies',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListStudies',
-    index=160,
+    index=165,
     containing_service=None,
     input_type=_LISTSTUDIESREQUEST,
     output_type=_LISTSTUDIESRESPONSE,
@@ -13336,7 +13386,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetStudy',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetStudy',
-    index=161,
+    index=166,
     containing_service=None,
     input_type=_GETSTUDYREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY,
@@ -13346,7 +13396,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateStudy',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateStudy',
-    index=162,
+    index=167,
     containing_service=None,
     input_type=_CREATESTUDYREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY,
@@ -13356,7 +13406,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateStudy',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateStudy',
-    index=163,
+    index=168,
     containing_service=None,
     input_type=_UPDATESTUDYREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY,
@@ -13366,7 +13416,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteStudy',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteStudy',
-    index=164,
+    index=169,
     containing_service=None,
     input_type=_DELETESTUDYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13374,9 +13424,59 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ListModels',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListModels',
+    index=170,
+    containing_service=None,
+    input_type=_LISTMODELSREQUEST,
+    output_type=_LISTMODELSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetModel',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetModel',
+    index=171,
+    containing_service=None,
+    input_type=_GETMODELREQUEST,
+    output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateModel',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateModel',
+    index=172,
+    containing_service=None,
+    input_type=_CREATEMODELREQUEST,
+    output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateModel',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateModel',
+    index=173,
+    containing_service=None,
+    input_type=_UPDATEMODELREQUEST,
+    output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteModel',
+    full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteModel',
+    index=174,
+    containing_service=None,
+    input_type=_DELETEMODELREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ListCronPredictions',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListCronPredictions',
-    index=165,
+    index=175,
     containing_service=None,
     input_type=_LISTCRONPREDICTIONSREQUEST,
     output_type=_LISTCRONPREDICTIONSRESPONSE,
@@ -13386,7 +13486,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetCronPrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetCronPrediction',
-    index=166,
+    index=176,
     containing_service=None,
     input_type=_GETCRONPREDICTIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION,
@@ -13396,7 +13496,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateCronPrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateCronPrediction',
-    index=167,
+    index=177,
     containing_service=None,
     input_type=_CREATECRONPREDICTIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION,
@@ -13406,7 +13506,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateCronPrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateCronPrediction',
-    index=168,
+    index=178,
     containing_service=None,
     input_type=_UPDATECRONPREDICTIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CRONPREDICTION,
@@ -13416,7 +13516,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteCronPrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteCronPrediction',
-    index=169,
+    index=179,
     containing_service=None,
     input_type=_DELETECRONPREDICTIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13426,7 +13526,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListPredictions',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListPredictions',
-    index=170,
+    index=180,
     containing_service=None,
     input_type=_LISTPREDICTIONSREQUEST,
     output_type=_LISTPREDICTIONSRESPONSE,
@@ -13436,7 +13536,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetPrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetPrediction',
-    index=171,
+    index=181,
     containing_service=None,
     input_type=_GETPREDICTIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTION,
@@ -13446,7 +13546,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreatePrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreatePrediction',
-    index=172,
+    index=182,
     containing_service=None,
     input_type=_CREATEPREDICTIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTION,
@@ -13456,7 +13556,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdatePrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdatePrediction',
-    index=173,
+    index=183,
     containing_service=None,
     input_type=_UPDATEPREDICTIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTION,
@@ -13466,7 +13566,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeletePrediction',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeletePrediction',
-    index=174,
+    index=184,
     containing_service=None,
     input_type=_DELETEPREDICTIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13476,7 +13576,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListPredictors',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListPredictors',
-    index=175,
+    index=185,
     containing_service=None,
     input_type=_LISTPREDICTORSREQUEST,
     output_type=_LISTPREDICTORSRESPONSE,
@@ -13486,7 +13586,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetPredictor',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetPredictor',
-    index=176,
+    index=186,
     containing_service=None,
     input_type=_GETPREDICTORREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR,
@@ -13496,7 +13596,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreatePredictor',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreatePredictor',
-    index=177,
+    index=187,
     containing_service=None,
     input_type=_CREATEPREDICTORREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR,
@@ -13506,7 +13606,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdatePredictor',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdatePredictor',
-    index=178,
+    index=188,
     containing_service=None,
     input_type=_UPDATEPREDICTORREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR,
@@ -13516,7 +13616,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeletePredictor',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeletePredictor',
-    index=179,
+    index=189,
     containing_service=None,
     input_type=_DELETEPREDICTORREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13526,7 +13626,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListCurtains',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListCurtains',
-    index=180,
+    index=190,
     containing_service=None,
     input_type=_LISTCURTAINSREQUEST,
     output_type=_LISTCURTAINSRESPONSE,
@@ -13536,7 +13636,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetCurtain',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetCurtain',
-    index=181,
+    index=191,
     containing_service=None,
     input_type=_GETCURTAINREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN,
@@ -13546,7 +13646,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateCurtain',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateCurtain',
-    index=182,
+    index=192,
     containing_service=None,
     input_type=_CREATECURTAINREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN,
@@ -13556,7 +13656,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateCurtain',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateCurtain',
-    index=183,
+    index=193,
     containing_service=None,
     input_type=_UPDATECURTAINREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._CURTAIN,
@@ -13566,7 +13666,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteCurtain',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteCurtain',
-    index=184,
+    index=194,
     containing_service=None,
     input_type=_DELETECURTAINREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13576,7 +13676,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListConversations',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListConversations',
-    index=185,
+    index=195,
     containing_service=None,
     input_type=_LISTCONVERSATIONSREQUEST,
     output_type=_LISTCONVERSATIONSRESPONSE,
@@ -13586,7 +13686,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetConversation',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetConversation',
-    index=186,
+    index=196,
     containing_service=None,
     input_type=_GETCONVERSATIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._CONVERSATION,
@@ -13596,7 +13696,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateConversation',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateConversation',
-    index=187,
+    index=197,
     containing_service=None,
     input_type=_CREATECONVERSATIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._CONVERSATION,
@@ -13606,7 +13706,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateConversation',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateConversation',
-    index=188,
+    index=198,
     containing_service=None,
     input_type=_UPDATECONVERSATIONREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._CONVERSATION,
@@ -13616,7 +13716,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteConversation',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteConversation',
-    index=189,
+    index=199,
     containing_service=None,
     input_type=_DELETECONVERSATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13626,7 +13726,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListPostMortems',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListPostMortems',
-    index=190,
+    index=200,
     containing_service=None,
     input_type=_LISTPOSTMORTEMSREQUEST,
     output_type=_LISTPOSTMORTEMSRESPONSE,
@@ -13636,7 +13736,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetPostMortem',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetPostMortem',
-    index=191,
+    index=201,
     containing_service=None,
     input_type=_GETPOSTMORTEMREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM,
@@ -13646,7 +13746,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreatePostMortem',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreatePostMortem',
-    index=192,
+    index=202,
     containing_service=None,
     input_type=_CREATEPOSTMORTEMREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM,
@@ -13656,7 +13756,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdatePostMortem',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdatePostMortem',
-    index=193,
+    index=203,
     containing_service=None,
     input_type=_UPDATEPOSTMORTEMREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._POSTMORTEM,
@@ -13666,7 +13766,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeletePostMortem',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeletePostMortem',
-    index=194,
+    index=204,
     containing_service=None,
     input_type=_DELETEPOSTMORTEMREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -13676,7 +13776,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListRunBooks',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.ListRunBooks',
-    index=195,
+    index=205,
     containing_service=None,
     input_type=_LISTRUNBOOKSREQUEST,
     output_type=_LISTRUNBOOKSRESPONSE,
@@ -13686,7 +13786,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetRunBook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.GetRunBook',
-    index=196,
+    index=206,
     containing_service=None,
     input_type=_GETRUNBOOKREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._RUNBOOK,
@@ -13696,7 +13796,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateRunBook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.CreateRunBook',
-    index=197,
+    index=207,
     containing_service=None,
     input_type=_CREATERUNBOOKREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._RUNBOOK,
@@ -13706,7 +13806,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateRunBook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.UpdateRunBook',
-    index=198,
+    index=208,
     containing_service=None,
     input_type=_UPDATERUNBOOKREQUEST,
     output_type=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._RUNBOOK,
@@ -13716,7 +13816,7 @@ _ARCHIVEDSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteRunBook',
     full_name='github.com.metaprov.modeldapi.services.archived.v1.ArchivedService.DeleteRunBook',
-    index=199,
+    index=209,
     containing_service=None,
     input_type=_DELETERUNBOOKREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,

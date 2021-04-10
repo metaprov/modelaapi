@@ -1583,6 +1583,14 @@ service ArchivedService {
     rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
     rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (google.protobuf.Empty) {}
 
+
+    rpc ListFeaturePipelineRuns(ListFeaturePipelineRunsRequest) returns (ListFeaturePipelineRunsResponse) {}
+    rpc GetFeaturePipelineRun(GetFeaturePipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
+    rpc CreateFeaturePipelineRun(CreateFeaturePipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
+    rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
+    rpc DeleteFeaturePipelineRun(DeleteFeaturePipelineRunRequest) returns (google.protobuf.Empty) {}
+
+
     rpc ListFeaturesets(ListFeaturesetsRequest) returns (ListFeaturesetsResponse) {}
     rpc GetFeatureset(GetFeaturesetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
     rpc CreateFeatureset(CreateFeaturesetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
@@ -1654,6 +1662,13 @@ service ArchivedService {
     rpc CreateStudy(CreateStudyRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
     rpc UpdateStudy(UpdateStudyRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
     rpc DeleteStudy(DeleteStudyRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListModels(ListModelsRequest) returns (ListModelsResponse) {}
+    rpc GetModel(GetModelRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc CreateModel(CreateModelRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc UpdateModel(UpdateModelRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc DeleteModel(DeleteModelRequest) returns (google.protobuf.Empty) {}
+
 
     rpc ListCronPredictions(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {}
     rpc GetCronPrediction(GetCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
