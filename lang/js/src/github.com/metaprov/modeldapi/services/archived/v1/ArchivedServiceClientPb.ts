@@ -242,28 +242,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListAlerts = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsResponse.deserializeBinary
   );
 
   listAlerts(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsResponse>;
 
   listAlerts(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsResponse>;
 
   listAlerts(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAlertsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -442,28 +442,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListApiTokens = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensResponse.deserializeBinary
   );
 
   listApiTokens(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensResponse>;
 
   listApiTokens(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensResponse>;
 
   listApiTokens(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListApiTokensResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -642,28 +642,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListConnections = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsResponse.deserializeBinary
   );
 
   listConnections(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsResponse>;
 
   listConnections(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsResponse>;
 
   listConnections(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListConnectionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -842,28 +842,28 @@ export class ArchivedServiceClient {
   }
 
   methodInfoListLabs = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsResponse,
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsResponse.deserializeBinary
   );
 
   listLabs(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsResponse>;
 
   listLabs(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse>;
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsResponse>;
 
   listLabs(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLabsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -1043,24 +1043,24 @@ export class ArchivedServiceClient {
 
   methodInfoListLicenses = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesResponse.deserializeBinary
   );
 
   listLicenses(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesResponse>;
 
   listLicenses(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesResponse>;
 
   listLicenses(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListLicensesResponse) => void) {
@@ -1243,24 +1243,24 @@ export class ArchivedServiceClient {
 
   methodInfoListNotifiers = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersResponse.deserializeBinary
   );
 
   listNotifiers(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersResponse>;
 
   listNotifiers(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersResponse>;
 
   listNotifiers(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListNotifiersResponse) => void) {
@@ -1443,24 +1443,24 @@ export class ArchivedServiceClient {
 
   methodInfoListServingSites = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesResponse,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesResponse.deserializeBinary
   );
 
   listServingSites(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesResponse>;
 
   listServingSites(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesResponse>;
 
   listServingSites(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListAccountsRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.ListServingsitesResponse) => void) {
@@ -1683,24 +1683,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetTenant = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetTenantRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinary
   );
 
   getTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   getTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   getTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void) {
@@ -1723,24 +1723,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateTenantRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinary
   );
 
   createTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   createTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   createTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void) {
@@ -1763,24 +1763,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateTenantRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinary
   );
 
   updateTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   updateTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   updateTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void) {
@@ -1803,24 +1803,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteTenant = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteTenantRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteTenant(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -1883,24 +1883,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualBucketRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinary
   );
 
   getVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   getVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   getVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void) {
@@ -1923,24 +1923,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualBucketRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinary
   );
 
   createVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   createVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   createVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void) {
@@ -1963,24 +1963,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualBucketRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinary
   );
 
   updateVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   updateVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   updateVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void) {
@@ -2003,24 +2003,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualBucketRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -2083,24 +2083,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualClusterRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.deserializeBinary
   );
 
   getVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   getVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   getVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void) {
@@ -2123,24 +2123,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualClusterRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.deserializeBinary
   );
 
   createVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   createVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   createVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void) {
@@ -2163,24 +2163,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualClusterRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.deserializeBinary
   );
 
   updateVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   updateVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   updateVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void) {
@@ -2203,24 +2203,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualClusterRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualCluster(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -2283,24 +2283,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.deserializeBinary
   );
 
   getVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   getVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   getVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void) {
@@ -2323,24 +2323,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.deserializeBinary
   );
 
   createVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   createVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   createVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void) {
@@ -2363,24 +2363,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.deserializeBinary
   );
 
   updateVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   updateVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   updateVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void) {
@@ -2403,24 +2403,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualVolumeRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualVolume(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -2483,24 +2483,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinary
   );
 
   getDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   getDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   getDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void) {
@@ -2523,24 +2523,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinary
   );
 
   createDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   createDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   createDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void) {
@@ -2563,24 +2563,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.deserializeBinary
   );
 
   updateDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   updateDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   updateDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void) {
@@ -2603,24 +2603,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -2683,24 +2683,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.deserializeBinary
   );
 
   getDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   getDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   getDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void) {
@@ -2723,24 +2723,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.deserializeBinary
   );
 
   createDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   createDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   createDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void) {
@@ -2763,24 +2763,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.deserializeBinary
   );
 
   updateDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   updateDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   updateDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void) {
@@ -2803,24 +2803,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRunRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -2883,24 +2883,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinary
   );
 
   getDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   getDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   getDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void) {
@@ -2923,24 +2923,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinary
   );
 
   createDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   createDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   createDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void) {
@@ -2963,24 +2963,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinary
   );
 
   updateDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   updateDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   updateDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void) {
@@ -3003,24 +3003,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataProduct(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -3083,24 +3083,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductVersionRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinary
   );
 
   getDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   getDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   getDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void) {
@@ -3123,24 +3123,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductVersionRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinary
   );
 
   createDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   createDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   createDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void) {
@@ -3163,24 +3163,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductVersionRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinary
   );
 
   updateDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   updateDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   updateDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void) {
@@ -3203,24 +3203,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductVersionRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -3283,24 +3283,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetDataset = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasetRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinary
   );
 
   getDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   getDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   getDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void) {
@@ -3323,24 +3323,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasetRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinary
   );
 
   createDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   createDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   createDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void) {
@@ -3363,24 +3363,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasetRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinary
   );
 
   updateDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   updateDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   updateDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void) {
@@ -3403,24 +3403,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteDataset = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasetRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -3483,24 +3483,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasourceRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinary
   );
 
   getDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasourceRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   getDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   getDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void) {
@@ -3523,24 +3523,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasourceRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinary
   );
 
   createDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasourceRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   createDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   createDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void) {
@@ -3563,24 +3563,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasourceRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinary
   );
 
   updateDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasourceRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   updateDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   updateDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void) {
@@ -3603,24 +3603,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasourceRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasourceRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataSource(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -3683,24 +3683,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetEntity = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetEntityRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinary
   );
 
   getEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   getEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   getEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void) {
@@ -3723,24 +3723,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateEntity = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateEntityRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinary
   );
 
   createEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   createEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   createEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void) {
@@ -3763,24 +3763,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateEntity = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateEntityRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinary
   );
 
   updateEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   updateEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   updateEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void) {
@@ -3803,24 +3803,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteEntity = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteEntityRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteEntity(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -3883,24 +3883,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetFeature = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeatureRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinary
   );
 
   getFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   getFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   getFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void) {
@@ -3923,24 +3923,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeatureRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinary
   );
 
   createFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   createFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   createFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void) {
@@ -3963,24 +3963,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeatureRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinary
   );
 
   updateFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   updateFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   updateFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void) {
@@ -4003,24 +4003,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteFeature = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeatureRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeature(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -4083,24 +4083,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturePipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.deserializeBinary
   );
 
   getFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   getFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   getFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void) {
@@ -4123,24 +4123,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturePipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.deserializeBinary
   );
 
   createFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   createFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   createFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void) {
@@ -4163,24 +4163,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturePipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.deserializeBinary
   );
 
   updateFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   updateFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   updateFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void) {
@@ -4203,24 +4203,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturePipelineRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeaturePipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -4283,24 +4283,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturesetRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.deserializeBinary
   );
 
   getFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   getFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   getFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void) {
@@ -4323,24 +4323,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturesetRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.deserializeBinary
   );
 
   createFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   createFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   createFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void) {
@@ -4363,24 +4363,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturesetRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.deserializeBinary
   );
 
   updateFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   updateFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   updateFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void) {
@@ -4403,24 +4403,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturesetRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeatureset(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -4483,24 +4483,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.deserializeBinary
   );
 
   getLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   getLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   getLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void) {
@@ -4523,24 +4523,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.deserializeBinary
   );
 
   createLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   createLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   createLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void) {
@@ -4563,24 +4563,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.deserializeBinary
   );
 
   updateLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   updateLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   updateLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void) {
@@ -4603,24 +4603,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteLabelingPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -4683,24 +4683,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.deserializeBinary
   );
 
   getLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   getLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   getLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void) {
@@ -4723,24 +4723,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.deserializeBinary
   );
 
   createLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   createLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   createLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void) {
@@ -4763,24 +4763,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun.deserializeBinary
   );
 
   updateLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   updateLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   updateLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void) {
@@ -4803,24 +4803,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -4883,24 +4883,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.deserializeBinary
   );
 
   getRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   getRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   getRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void) {
@@ -4923,24 +4923,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.deserializeBinary
   );
 
   createRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   createRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   createRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void) {
@@ -4963,24 +4963,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.deserializeBinary
   );
 
   updateRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   updateRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   updateRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void) {
@@ -5003,24 +5003,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteRecipe(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -5083,24 +5083,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.deserializeBinary
   );
 
   getRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   getRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   getRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void) {
@@ -5123,24 +5123,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.deserializeBinary
   );
 
   createRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   createRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   createRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void) {
@@ -5163,24 +5163,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.deserializeBinary
   );
 
   updateRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   updateRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   updateRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void) {
@@ -5203,24 +5203,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRunRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteRecipeRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -5283,24 +5283,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinary
   );
 
   getModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   getModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   getModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void) {
@@ -5323,24 +5323,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinary
   );
 
   createModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   createModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   createModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void) {
@@ -5363,24 +5363,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinary
   );
 
   updateModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   updateModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   updateModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void) {
@@ -5403,24 +5403,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -5483,24 +5483,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.deserializeBinary
   );
 
   getModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   getModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   getModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void) {
@@ -5523,24 +5523,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.deserializeBinary
   );
 
   createModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   createModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   createModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void) {
@@ -5563,24 +5563,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline.deserializeBinary
   );
 
   updateModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   updateModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   updateModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void) {
@@ -5603,24 +5603,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModelPipeline(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -5683,24 +5683,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.deserializeBinary
   );
 
   getModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   getModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   getModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void) {
@@ -5723,24 +5723,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.deserializeBinary
   );
 
   createModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   createModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   createModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void) {
@@ -5763,24 +5763,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun.deserializeBinary
   );
 
   updateModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   updateModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   updateModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void) {
@@ -5803,24 +5803,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRunRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModelPipelineRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -5883,24 +5883,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.deserializeBinary
   );
 
   getNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   getNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   getNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void) {
@@ -5923,24 +5923,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.deserializeBinary
   );
 
   createNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   createNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   createNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void) {
@@ -5963,24 +5963,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.deserializeBinary
   );
 
   updateNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   updateNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   updateNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void) {
@@ -6003,24 +6003,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteNotebook(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -6083,24 +6083,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.deserializeBinary
   );
 
   getNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   getNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   getNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void) {
@@ -6123,24 +6123,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.deserializeBinary
   );
 
   createNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   createNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   createNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void) {
@@ -6163,24 +6163,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRunRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.deserializeBinary
   );
 
   updateNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   updateNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   updateNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void) {
@@ -6203,24 +6203,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRunRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteNotebookRun(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -6283,24 +6283,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetReport = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetReportRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinary
   );
 
   getReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetReportRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   getReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   getReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void) {
@@ -6323,24 +6323,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateReport = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateReportRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinary
   );
 
   createReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateReportRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   createReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   createReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void) {
@@ -6363,24 +6363,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateReport = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateReportRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.deserializeBinary
   );
 
   updateReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateReportRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   updateReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   updateReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void) {
@@ -6403,24 +6403,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteReport = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteReportRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteReportRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteReport(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
@@ -6483,24 +6483,24 @@ export class ArchivedServiceClient {
 
   methodInfoGetStudy = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetStudyRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinary
   );
 
   getStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   getStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   getStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void) {
@@ -6523,24 +6523,24 @@ export class ArchivedServiceClient {
 
   methodInfoCreateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateStudyRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinary
   );
 
   createStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   createStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   createStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void) {
@@ -6563,24 +6563,24 @@ export class ArchivedServiceClient {
 
   methodInfoUpdateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateStudyRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinary
   );
 
   updateStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   updateStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   updateStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void) {
@@ -6603,24 +6603,24 @@ export class ArchivedServiceClient {
 
   methodInfoDeleteStudy = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest) => {
+    (request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteStudyRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
   deleteStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteStudy(
-    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteServingsiteRequest,
+    request: github_com_metaprov_modeldapi_services_archived_v1_archived_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
