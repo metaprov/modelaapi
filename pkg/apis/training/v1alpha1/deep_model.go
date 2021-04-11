@@ -122,9 +122,9 @@ const (
 	LayerNameUpSampling2D NNLayerName = "upsampling-2d"
 	LayerNameUpSampling3D NNLayerName = "upsampling-3d"
 
-	LayerNameZeroPadding1D NNLayerName = "ZeroPadding1D"
-	LayerNameZeroPadding2D NNLayerName = "ZeroPadding2D"
-	LayerNameZeroPadding3D NNLayerName = "ZeroPadding3D"
+	LayerNameZeroPadding1D NNLayerName = "zero-padding-1D"
+	LayerNameZeroPadding2D NNLayerName = "zaero-padding-2D"
+	LayerNameZeroPadding3D NNLayerName = "zero-padding-3D"
 
 	// VirtualClustering
 	LayerNameMaxVirtualClustering1D   NNLayerName = "max-pooling-1D"
@@ -147,32 +147,30 @@ const (
 	LayerNameLocallyConnected1D NNLayerName = "locallly-conntected-1d"
 	LayerNameLocallyConnected2D NNLayerName = "localy-connected-2d"
 
-	LayerNameSimpleRNN     NNLayerName = "SimpleRNN"
-	LayerNameGRU           NNLayerName = "GRU"
-	LayerNameLSTM          NNLayerName = "LSTM"
-	LayerNameConvLSTM2D    NNLayerName = "LSTM2D"
-	LayerNameSimpleRNNCell NNLayerName = "SimpleRNNCell"
-	LayerNameGRUCell       NNLayerName = "GRUCell"
-	LayerNameLSTMCell      NNLayerName = "LSTMCell"
-	LayerNameCuDNNGRU      NNLayerName = "CuDNNGRU"
-	LayerNameCuDNNLSTM     NNLayerName = "CuDNNLSTM"
+	LayerNameSimpleRNN     NNLayerName = "simple-rnn"
+	LayerNameGRU           NNLayerName = "gru"
+	LayerNameLSTM          NNLayerName = "lstm"
+	LayerNameConvLSTM2D    NNLayerName = "lstm-2d"
+	LayerNameSimpleRNNCell NNLayerName = "simple-rnn-cell"
+	LayerNameGRUCell       NNLayerName = "gru-cell"
+	LayerNameLSTMCell      NNLayerName = "lstm-cell"
+	LayerNameCuDNNGRU      NNLayerName = "cudnngru"
+	LayerNameCuDNNLSTM     NNLayerName = "cu-dnn-lstm"
 
 	// -------- Embedding --------
-	LayerNameEmbedding NNLayerName = "Embedding"
+	LayerNameEmbedding NNLayerName = "embedding"
 
 	// -------- Advanced Activations --------
-	LayerNameLeakyReLU       NNLayerName = "LeakyReLU"
-	LayerNamePReLU           NNLayerName = "PReLU"
-	LayerNameELU             NNLayerName = "ELU"
-	LayerNameThresholdedReLU NNLayerName = "ThresholdedReLU"
-	LayerNameSoftmax         NNLayerName = "Softmax"
-	LayerNameReLU            NNLayerName = "ReLU"
-
-	LayerNameBatchNormalization NNLayerName = "BatchNormalization"
-
-	LayerNameGaussianNoise   NNLayerName = "GaussianNoise"
-	LayerNameGaussianDropout NNLayerName = "GaussianDropout"
-	LayerNameAlphaDropout    NNLayerName = "AlphaDropout"
+	LayerNameLeakyReLU          NNLayerName = "leaky-relru"
+	LayerNamePReLU              NNLayerName = "prelu"
+	LayerNameELU                NNLayerName = "elu"
+	LayerNameThresholdedReLU    NNLayerName = "treshold-relu"
+	LayerNameSoftmax            NNLayerName = "softmax"
+	LayerNameReLU               NNLayerName = "relu"
+	LayerNameBatchNormalization NNLayerName = "batch-normalization"
+	LayerNameGaussianNoise      NNLayerName = "gaussian-noise"
+	LayerNameGaussianDropout    NNLayerName = "gaussian-dropout"
+	LayerNameAlphaDropout       NNLayerName = "alpha-dropout"
 )
 
 type DNNTypeName string
@@ -189,41 +187,39 @@ type NNLayerParameter struct {
 }
 
 type DeepEstimatorLayer struct {
-	// FileName is the name of the layer
+	// Name is the name of the layer
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
-	// The type if the layer type
+	// Type is the type of the layers
 	Type NNLayerName `json:"type" protobuf:"bytes,2,opt,name=type"`
 	// Parameters are the hyper parameters of this layer
-	Parameters []*NNLayerParameter `json:"parameters" protobuf:"bytes,3,opt,name=parameters"`
-	// Input layers are the layer input to this layer
+	Parameters []NNLayerParameter `json:"parameters" protobuf:"bytes,3,opt,name=parameters"`
+	// InputLayers are the layer input to this layer
 	InputLayers []string `json:"inputLayers" protobuf:"bytes,4,opt,name=inputLayers"`
 }
 
-// romeo.kienzler@ch.ibm.com
-
 type DeepEstimatorSpec struct {
-	// Architecture is the dnn architue
-	//+optional
-	Architecture []DeepEstimatorLayer `json:"architecture" protobuf:"bytes,1,rep,name=architecture"`
+	// Layers is the dnn architecture
+	// +kubebuilder:validation:Optional
+	Layers []DeepEstimatorLayer `json:"layers,omitempty" protobuf:"bytes,1,rep,name=layers"`
 	// The type of the dnn
-	//+optional
-	Type DNNTypeName `json:"type" protobuf:"bytes,2,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Type *DNNTypeName `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Batch size specify about
-	//+optional
-	BatchSize *int32 `json:"batchSize" protobuf:"varint,3,opt,name=batchSize"`
+	// +kubebuilder:validation:Optional
+	BatchSize *int32 `json:"batchSize,omitempty" protobuf:"varint,3,opt,name=batchSize"`
 	// Budget size specify about
-	//+optional
-	Epochs *int32 `json:"epochs" protobuf:"varint,4,opt,name=epochs"`
+	// +kubebuilder:validation:Optional
+	Epochs *int32 `json:"epochs,omitempty" protobuf:"varint,4,opt,name=epochs"`
 	// ValidationSplit specify about
-	//+optional
-	ValidationSplit *int32 `json:"validationSplit" protobuf:"varint,5,opt,name=validationSplit"`
+	// +kubebuilder:validation:Optional
+	ValidationSplit *int32 `json:"validationSplit,omitempty" protobuf:"varint,5,opt,name=validationSplit"`
 	// Is this a seq model
-	//+optional
-	IsSeq *bool `json:"isSeq" protobuf:"bytes,6,opt,name=isSeq"`
+	// +kubebuilder:validation:Optional
+	Seq *bool `json:"isSeq,omitempty" protobuf:"bytes,6,opt,name=isSeq"`
 	// Gpus denote of gpu for trainer, any number more than 1 denote distribute training
-	//+optional
-	Gpus *int32 `json:"gpus" protobuf:"varint,7,opt,name=gpus"`
+	// +kubebuilder:validation:Optional
+	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,7,opt,name=gpus"`
 	// compile
-	//+optional
-	Loss string `json:"loss" protobuf:"bytes,8,opt,name=loss"`
+	// +kubebuilder:validation:Optional
+	Loss string `json:"loss,omitempty" protobuf:"bytes,8,opt,name=loss"`
 }

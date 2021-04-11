@@ -13702,7 +13702,7 @@ func schema_pkg_apis_training_v1alpha1_DeepEstimatorSpec(ref common.ReferenceCal
 				Properties: map[string]spec.Schema{
 					"architecture": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Architecture is the dnn architue",
+							Description: "Layers is the dnn architue",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -23370,7 +23370,7 @@ func schema_k8sio_api_core_v1_NodeSystemInfo(ref common.ReferenceCallback) commo
 					},
 					"architecture": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The Architecture reported by the node",
+							Description: "The Layers reported by the node",
 							Default:     "",
 							Type:        []string{"string"},
 							Format:      "",

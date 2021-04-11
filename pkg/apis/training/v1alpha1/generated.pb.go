@@ -3410,9 +3410,9 @@ func (m *DeepEstimatorSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x38
 	}
-	if m.IsSeq != nil {
+	if m.Seq != nil {
 		i--
-		if *m.IsSeq {
+		if *m.Seq {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
@@ -3440,10 +3440,10 @@ func (m *DeepEstimatorSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Type)))
 	i--
 	dAtA[i] = 0x12
-	if len(m.Architecture) > 0 {
-		for iNdEx := len(m.Architecture) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.Layers) > 0 {
+		for iNdEx := len(m.Layers) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.Architecture[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.Layers[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -8852,8 +8852,8 @@ func (m *DeepEstimatorSpec) Size() (n int) {
 	}
 	var l int
 	_ = l
-	if len(m.Architecture) > 0 {
-		for _, e := range m.Architecture {
+	if len(m.Layers) > 0 {
+		for _, e := range m.Layers {
 			l = e.Size()
 			n += 1 + l + sovGenerated(uint64(l))
 		}
@@ -8869,7 +8869,7 @@ func (m *DeepEstimatorSpec) Size() (n int) {
 	if m.ValidationSplit != nil {
 		n += 1 + sovGenerated(uint64(*m.ValidationSplit))
 	}
-	if m.IsSeq != nil {
+	if m.Seq != nil {
 		n += 2
 	}
 	if m.Gpus != nil {
@@ -11011,17 +11011,17 @@ func (this *DeepEstimatorSpec) String() string {
 		return "nil"
 	}
 	repeatedStringForArchitecture := "[]DeepEstimatorLayer{"
-	for _, f := range this.Architecture {
+	for _, f := range this.Layers {
 		repeatedStringForArchitecture += strings.Replace(strings.Replace(f.String(), "DeepEstimatorLayer", "DeepEstimatorLayer", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForArchitecture += "}"
 	s := strings.Join([]string{`&DeepEstimatorSpec{`,
-		`Architecture:` + repeatedStringForArchitecture + `,`,
+		`Layers:` + repeatedStringForArchitecture + `,`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`BatchSize:` + valueToStringGenerated(this.BatchSize) + `,`,
 		`Epochs:` + valueToStringGenerated(this.Epochs) + `,`,
 		`ValidationSplit:` + valueToStringGenerated(this.ValidationSplit) + `,`,
-		`IsSeq:` + valueToStringGenerated(this.IsSeq) + `,`,
+		`Seq:` + valueToStringGenerated(this.Seq) + `,`,
 		`Gpus:` + valueToStringGenerated(this.Gpus) + `,`,
 		`Loss:` + fmt.Sprintf("%v", this.Loss) + `,`,
 		`}`,
@@ -13806,7 +13806,7 @@ func (m *DeepEstimatorSpec) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Architecture", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Layers", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -13833,8 +13833,8 @@ func (m *DeepEstimatorSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Architecture = append(m.Architecture, DeepEstimatorLayer{})
-			if err := m.Architecture[len(m.Architecture)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Layers = append(m.Layers, DeepEstimatorLayer{})
+			if err := m.Layers[len(m.Layers)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -13932,7 +13932,7 @@ func (m *DeepEstimatorSpec) Unmarshal(dAtA []byte) error {
 			m.ValidationSplit = &v
 		case 6:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IsSeq", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Seq", wireType)
 			}
 			var v int
 			for shift := uint(0); ; shift += 7 {
@@ -13950,7 +13950,7 @@ func (m *DeepEstimatorSpec) Unmarshal(dAtA []byte) error {
 				}
 			}
 			b := bool(v != 0)
-			m.IsSeq = &b
+			m.Seq = &b
 		case 7:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Gpus", wireType)
