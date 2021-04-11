@@ -21,14 +21,8 @@ type CurtainConditionType string
 
 /// Curtain Condition
 const (
-	// Setting up the resources to operator the curtain.
-	CurtainPending CurtainConditionType = "Pending"
-	// Curtain is ready to accecpt prediction request.
-	CurtainReady CurtainConditionType = "Ready"
-	// Curtain was shut down successfully
-	CurtainSuccess CurtainConditionType = "Success"
-	// Curtain has failed
-	CurtainFailed CurtainConditionType = "IsFailed"
+	CurtainReady    CurtainConditionType = "Ready"
+	CurtainArchived CurtainConditionType = "Archived"
 )
 
 // CurtainCondition describes the state of a wizard of oz at a certain point.

@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modeldapi/pkg/apis/training"
 	"github.com/metaprov/modeldapi/pkg/util"
@@ -146,6 +147,14 @@ func (r *NotebookRun) MarkCompleted() {
 	if r.Status.CompletionTime != nil {
 		r.Status.CompletionTime = &now
 	}
+
+}
+
+func (r *NotebookRun) MarkArchived() {
+	r.CreateOrUpdateCond(NotebookRunCondition{
+		Type:   NotebookRunArchived,
+		Status: corev1.ConditionTrue,
+	})
 
 }
 

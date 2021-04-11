@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/metaprov/modeldapi/pkg/apis/infra"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -125,6 +126,13 @@ func (connection *Connection) IsReady() bool {
 func (connection *Connection) MarkReady() {
 	connection.CreateOrUpdateCond(ConnectionCondition{
 		Type:   ConnectionReady,
+		Status: corev1.ConditionTrue,
+	})
+}
+
+func (connection *Connection) MarkArchived() {
+	connection.CreateOrUpdateCond(ConnectionCondition{
+		Type:   ConnectionArchived,
 		Status: corev1.ConditionTrue,
 	})
 }

@@ -130,6 +130,13 @@ func (r *RecipeRun) MarkCompleted() {
 	})
 }
 
+func (r *RecipeRun) MarkArchived() {
+	r.CreateOrUpdateCond(RecipeCondition{
+		Type:   RecipeArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
 func (r *RecipeRun) MarkFailed(error string) {
 	r.Status.Phase = RecipeRunPhaseFailed
 	r.CreateOrUpdateCond(RecipeCondition{

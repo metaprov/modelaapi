@@ -113,6 +113,8 @@ const (
 	ReportReady ReportConditionType = "Ready"
 	// If the notifier is valid, the report was sent
 	ReportSent ReportConditionType = "Sent"
+
+	ReportArchived ReportConditionType = "Archived"
 )
 
 // ReportCondition describes the state of a ReportName at a certain point.

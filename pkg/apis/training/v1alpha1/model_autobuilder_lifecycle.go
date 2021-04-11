@@ -235,6 +235,13 @@ func (b *ModelAutobuilder) MarkPredictorRunning() {
 	})
 }
 
+func (b *ModelAutobuilder) MarkArchived() {
+	b.CreateOrUpdateCond(ModelAutobuilderCondition{
+		Type:   ModelAutobuilderArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
 func (b *ModelAutobuilder) PredictorReady() bool {
 	return b.GetCond(ModelAutobuilderPredictorReady).Status == v1.ConditionTrue
 }

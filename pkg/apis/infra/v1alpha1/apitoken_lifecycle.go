@@ -25,10 +25,6 @@ func (notifier *ApiToken) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 //==============================================================================
-// Validation
-//==============================================================================
-
-//==============================================================================
 // Finalizer
 //==============================================================================
 
@@ -106,4 +102,11 @@ func ParseApiTokenYaml(content []byte) (*ApiToken, error) {
 
 func (notifier *ApiToken) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(notifier)
+}
+
+func (token *ApiToken) MarkArchived() {
+	token.CreateOrUpdateCond(ApiTokenCondition{
+		Type:   ApiTokenArchived,
+		Status: v1.ConditionTrue,
+	})
 }

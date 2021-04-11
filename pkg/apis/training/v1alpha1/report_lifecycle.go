@@ -197,6 +197,13 @@ func (report *Report) MarkRunning() {
 	})
 }
 
+func (report *Report) MarkArchived() {
+	report.CreateOrUpdateCond(ReportCondition{
+		Type:   ReportArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
 func (report *Report) MarkReportFailed(err string) {
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:    ReportReady,

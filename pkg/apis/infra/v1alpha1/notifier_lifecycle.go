@@ -11,6 +11,7 @@ import (
 
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
+	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -106,4 +107,11 @@ func ParseNotifierYaml(content []byte) (*Notifier, error) {
 
 func (notifier *Notifier) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(notifier)
+}
+
+func (notifier *Notifier) MarkArchived() {
+	notifier.CreateOrUpdateCond(NotifierCondition{
+		Type:   NotifierArchived,
+		Status: corev1.ConditionTrue,
+	})
 }

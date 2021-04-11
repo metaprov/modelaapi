@@ -125,3 +125,11 @@ func ParseVirtualClusterYaml(content []byte) (*VirtualCluster, error) {
 func (vcluster *VirtualCluster) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(vcluster)
 }
+
+
+func (vcluster *VirtualCluster) MarkArchived() {
+	vcluster.CreateOrUpdateCond(VirtualClusterCondition{
+		Type:   VirtualClusterArchived,
+		Status: v1.ConditionTrue,
+	})
+}

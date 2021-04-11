@@ -25,7 +25,8 @@ type DataPipelineRunConditionType string
 
 /// DataPipelineRun Condition
 const (
-	DataPipelineRunCompleted DataPipelineRunConditionType = "IsCompleted"
+	DataPipelineRunCompleted DataPipelineRunConditionType = "Completed"
+	DataPipelineRunArchived  DataPipelineRunConditionType = "Archived"
 )
 
 // DataPipelineRunCondition describes the state of a data processor run at a certain point.
