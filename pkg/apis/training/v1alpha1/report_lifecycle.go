@@ -204,6 +204,11 @@ func (report *Report) MarkSaved() {
 	})
 }
 
+func (report *Report) IsSaved() bool {
+	cond := report.GetCond(ReportSaved)
+	return cond.Status == v1.ConditionTrue
+}
+
 func (report *Report) MarkReportFailed(err string) {
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:    ReportReady,

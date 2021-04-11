@@ -377,3 +377,15 @@ func (this *ModelPipelineRun) IsProdStageFailed() bool {
 	return this.GetCond(MPRModelReleased).Status == v1.ConditionFalse &&
 		this.GetCond(MPRModelReleased).Reason == string(catalog.Failed)
 }
+
+func (this *ModelPipelineRun) MarkSaved() {
+	this.CreateOrUpdateCond(ModelPipelineRunCondition{
+		Type:   MPRSaved,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (this *ModelPipelineRun) IsSaved() bool {
+	cond := this.GetCond(MPRSaved)
+	return cond.Status == v1.ConditionTrue
+}

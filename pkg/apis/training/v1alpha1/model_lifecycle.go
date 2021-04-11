@@ -673,6 +673,18 @@ func (model *Model) IsSaved() bool {
 	return cond.Status == v1.ConditionTrue
 }
 
+func (model *Model) MarkArchived() {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) IsArchived() bool {
+	cond := model.GetCond(ModelArchived)
+	return cond.Status == v1.ConditionTrue
+}
+
 func (model *Model) InitModelFromStudy(study *Study) {
 	model.Namespace = study.Namespace
 	*model.Spec.Training = *study.Spec.Training.DeepCopy()

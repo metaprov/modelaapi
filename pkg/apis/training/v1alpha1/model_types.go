@@ -58,8 +58,10 @@ const (
 	ModelProfiled ModelConditionType = "Profiled"
 	// Execution of the model completed successful
 	ModelReady ModelConditionType = "Ready"
-	// The model artifact were archived in the bucket.
+	// The model artifact were saved to the database
 	ModelSaved ModelConditionType = "Saved"
+	// The model artifact were archived in the bucket.
+	ModelArchived ModelConditionType = "Archived"
 	// True if the model is active and serving prediction
 	ModelServing ModelConditionType = "Serving"
 	// Training was aborted
