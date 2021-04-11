@@ -196,50 +196,50 @@ message DateTimePipelineSpec {
 }
 
 message DeepEstimatorLayer {
-  // FileName is the name of the layer
+  // Name is the name of the layer
   optional string name = 1;
 
-  // The type if the layer type
+  // Type is the type of the layers
   optional string type = 2;
 
   // Parameters are the hyper parameters of this layer
   repeated NNLayerParameter parameters = 3;
 
-  // Input layers are the layer input to this layer
+  // InputLayers are the layer input to this layer
   repeated string inputLayers = 4;
 }
 
 message DeepEstimatorSpec {
-  // Architecture is the dnn architue
-  // +optional
-  repeated DeepEstimatorLayer architecture = 1;
+  // Layers is the dnn architecture
+  // +kubebuilder:validation:Optional
+  repeated DeepEstimatorLayer layers = 1;
 
   // The type of the dnn
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string type = 2;
 
   // Batch size specify about
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 batchSize = 3;
 
   // Budget size specify about
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 epochs = 4;
 
   // ValidationSplit specify about
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 validationSplit = 5;
 
   // Is this a seq model
-  // +optional
+  // +kubebuilder:validation:Optional
   optional bool isSeq = 6;
 
   // Gpus denote of gpu for trainer, any number more than 1 denote distribute training
-  // +optional
+  // +kubebuilder:validation:Optional
   optional int32 gpus = 7;
 
   // compile
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string loss = 8;
 }
 

@@ -310,14 +310,8 @@ func (in *DeepEstimatorLayer) DeepCopyInto(out *DeepEstimatorLayer) {
 	*out = *in
 	if in.Parameters != nil {
 		in, out := &in.Parameters, &out.Parameters
-		*out = make([]*NNLayerParameter, len(*in))
-		for i := range *in {
-			if (*in)[i] != nil {
-				in, out := &(*in)[i], &(*out)[i]
-				*out = new(NNLayerParameter)
-				**out = **in
-			}
-		}
+		*out = make([]NNLayerParameter, len(*in))
+		copy(*out, *in)
 	}
 	if in.InputLayers != nil {
 		in, out := &in.InputLayers, &out.InputLayers
@@ -345,6 +339,11 @@ func (in *DeepEstimatorSpec) DeepCopyInto(out *DeepEstimatorSpec) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
+	}
+	if in.Type != nil {
+		in, out := &in.Type, &out.Type
+		*out = new(DNNTypeName)
+		**out = **in
 	}
 	if in.BatchSize != nil {
 		in, out := &in.BatchSize, &out.BatchSize

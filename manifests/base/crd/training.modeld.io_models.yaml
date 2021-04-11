@@ -114,42 +114,6 @@ spec:
                 description: Dnn is a specification of the DNN estimator specification.
                   Not supported for this release.
                 properties:
-                  architecture:
-                    description: Architecture is the dnn architue
-                    items:
-                      properties:
-                        inputLayers:
-                          description: Input layers are the layer input to this layer
-                          items:
-                            type: string
-                          type: array
-                        name:
-                          description: FileName is the name of the layer
-                          type: string
-                        parameters:
-                          description: Parameters are the hyper parameters of this
-                            layer
-                          items:
-                            properties:
-                              name:
-                                type: string
-                              value:
-                                type: string
-                            required:
-                            - name
-                            - value
-                            type: object
-                          type: array
-                        type:
-                          description: The type if the layer type
-                          type: string
-                      required:
-                      - inputLayers
-                      - name
-                      - parameters
-                      - type
-                      type: object
-                    type: array
                   batchSize:
                     description: Batch size specify about
                     format: int32
@@ -166,6 +130,42 @@ spec:
                   isSeq:
                     description: Is this a seq model
                     type: boolean
+                  layers:
+                    description: Layers is the dnn architecture
+                    items:
+                      properties:
+                        inputLayers:
+                          description: InputLayers are the layer input to this layer
+                          items:
+                            type: string
+                          type: array
+                        name:
+                          description: Name is the name of the layer
+                          type: string
+                        parameters:
+                          description: Parameters are the hyper parameters of this
+                            layer
+                          items:
+                            properties:
+                              name:
+                                type: string
+                              value:
+                                type: string
+                            required:
+                            - name
+                            - value
+                            type: object
+                          type: array
+                        type:
+                          description: Type is the type of the layers
+                          type: string
+                      required:
+                      - inputLayers
+                      - name
+                      - parameters
+                      - type
+                      type: object
+                    type: array
                   loss:
                     description: compile
                     type: string

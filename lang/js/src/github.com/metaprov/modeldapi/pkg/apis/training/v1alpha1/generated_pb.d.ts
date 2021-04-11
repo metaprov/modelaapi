@@ -308,10 +308,10 @@ export namespace DeepEstimatorLayer {
 }
 
 export class DeepEstimatorSpec extends jspb.Message {
-  getArchitectureList(): Array<DeepEstimatorLayer>;
-  setArchitectureList(value: Array<DeepEstimatorLayer>): DeepEstimatorSpec;
-  clearArchitectureList(): DeepEstimatorSpec;
-  addArchitecture(value?: DeepEstimatorLayer, index?: number): DeepEstimatorLayer;
+  getLayersList(): Array<DeepEstimatorLayer>;
+  setLayersList(value: Array<DeepEstimatorLayer>): DeepEstimatorSpec;
+  clearLayersList(): DeepEstimatorSpec;
+  addLayers(value?: DeepEstimatorLayer, index?: number): DeepEstimatorLayer;
 
   getType(): string;
   setType(value: string): DeepEstimatorSpec;
@@ -344,7 +344,7 @@ export class DeepEstimatorSpec extends jspb.Message {
 
 export namespace DeepEstimatorSpec {
   export type AsObject = {
-    architectureList: Array<DeepEstimatorLayer.AsObject>,
+    layersList: Array<DeepEstimatorLayer.AsObject>,
     type: string,
     batchsize: number,
     epochs: number,

@@ -4602,7 +4602,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    architectureList: jspb.Message.toObjectList(msg.getArchitectureList(),
+    layersList: jspb.Message.toObjectList(msg.getLayersList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer.toObject, includeInstance),
     type: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     batchsize: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
@@ -4650,7 +4650,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer.deserializeBinaryFromReader);
-      msg.addArchitecture(value);
+      msg.addLayers(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -4709,7 +4709,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getArchitectureList();
+  f = message.getLayersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -4770,10 +4770,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
 
 
 /**
- * repeated DeepEstimatorLayer architecture = 1;
+ * repeated DeepEstimatorLayer layers = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.getArchitectureList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.getLayersList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer, 1));
 };
@@ -4783,7 +4783,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
  * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.setArchitectureList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.setLayersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -4793,7 +4793,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.addArchitecture = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.addLayers = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorLayer, opt_index);
 };
 
@@ -4802,8 +4802,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.clearArchitectureList = function() {
-  return this.setArchitectureList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeepEstimatorSpec.prototype.clearLayersList = function() {
+  return this.setLayersList([]);
 };
 
 
