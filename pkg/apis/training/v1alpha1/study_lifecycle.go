@@ -395,14 +395,14 @@ func (study *Study) Ready() bool {
 	return study.GetCond(StudyReady).Status == v1.ConditionTrue
 }
 
-func (study *Study) MarkArchived() {
+func (study *Study) MarkSaved() {
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudySaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (study *Study) Archived() bool {
+func (study *Study) Saved() bool {
 	return study.GetCond(StudySaved).Status == v1.ConditionTrue
 }
 

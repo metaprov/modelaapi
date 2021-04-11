@@ -18,6 +18,10 @@ func (pl *ModelPipeline) Default() {
 
 }
 
+func (run *ModelPipelineRun) ValidateDelete() error {
+	return nil
+}
+
 // validation
 var _ webhook.Validator = &ModelPipeline{}
 

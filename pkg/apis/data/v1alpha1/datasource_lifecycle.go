@@ -277,13 +277,13 @@ func (sc *DataSource) MarkReady() {
 
 }
 
-func (sc *DataSource) MarkArchived() {
+func (sc *DataSource) MarkSaved() {
 	sc.CreateOrUpdateCond(DataSourceCondition{
 		Type:   DatasourceSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (sc *DataSource) Archived() bool {
+func (sc *DataSource) Saved() bool {
 	return sc.GetCond(DatasourceSaved).Status == v1.ConditionTrue
 }

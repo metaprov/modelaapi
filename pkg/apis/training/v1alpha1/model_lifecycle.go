@@ -661,14 +661,14 @@ func (model *Model) MarkPaused() {
 
 /////////////////////////////// Archive
 
-func (model *Model) MarkArchived() {
+func (model *Model) MarkSaved() {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (model *Model) Archived() bool {
+func (model *Model) IsSaved() bool {
 	cond := model.GetCond(ModelSaved)
 	return cond.Status == v1.ConditionTrue
 }

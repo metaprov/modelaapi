@@ -34,6 +34,7 @@ const (
 	DatasetProfiled  DatasetConditionType = "Profiled"
 	DatasetIngested  DatasetConditionType = "Ingested"
 	DatasetSaved     DatasetConditionType = "Saved"
+	DatasetArchived  DatasetConditionType = "Archived"
 	DatasetReady     DatasetConditionType = "Ready"
 )
 

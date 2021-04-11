@@ -82,10 +82,6 @@ type ModelPipelineRun struct {
 	Status ModelPipelineRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-func (run *ModelPipelineRun) ValidateDelete() error {
-	return nil
-}
-
 // +kubebuilder:object:root=true
 // ModelPipelineRunList represent list of pipelineruns
 type ModelPipelineRunList struct {

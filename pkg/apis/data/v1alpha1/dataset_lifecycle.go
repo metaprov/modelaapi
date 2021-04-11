@@ -320,12 +320,23 @@ func (dataset *Dataset) MarkReady() {
 
 func (dataset *Dataset) MarkArchived() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetArchived,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (dataset *Dataset) MarkSaved() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:   DatasetSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (dataset *Dataset) Archived() bool {
+	return dataset.GetCond(DatasetArchived).Status == v1.ConditionTrue
+}
+
+func (dataset *Dataset) Saved() bool {
 	return dataset.GetCond(DatasetSaved).Status == v1.ConditionTrue
 }
 

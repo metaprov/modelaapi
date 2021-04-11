@@ -121,13 +121,13 @@ func (runbook *RunBook) MarkReady() {
 	})
 }
 
-func (runbook *RunBook) MarkArchived() {
+func (runbook *RunBook) MarkSaved() {
 	runbook.CreateOrUpdateCond(RunBookCondition{
-		Type:   RunBookArchived,
+		Type:   RunBookSaved,
 		Status: corev1.ConditionTrue,
 	})
 }
 
-func (runbook *RunBook) Archived() bool {
-	return runbook.GetCond(RunBookArchived).Status == corev1.ConditionTrue
+func (runbook *RunBook) Saved() bool {
+	return runbook.GetCond(RunBookSaved).Status == corev1.ConditionTrue
 }

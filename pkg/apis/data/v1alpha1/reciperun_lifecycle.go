@@ -171,3 +171,8 @@ func (in *RecipeRun) IsFailed() bool {
 	cond := in.GetCond(RecipeRunCompleted)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(RecipeRunPhaseFailed)
 }
+
+func (in *RecipeRun) IsSaved() bool {
+	cond := in.GetCond(RecipeRunSaved)
+	return cond.Status == v1.ConditionTrue
+}

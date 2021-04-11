@@ -74,8 +74,8 @@ func Test_Failed(t *testing.T) {
 
 func Test_Archived(t *testing.T) {
 	model := NewModel("ns", "name", "bucket", "", "schema", catalog.BinaryClassification)
-	model.MarkArchived()
-	assert.True(t, model.Archived())
+	model.MarkSaved()
+	assert.True(t, model.IsSaved())
 }
 
 func Test_Aborted(t *testing.T) {

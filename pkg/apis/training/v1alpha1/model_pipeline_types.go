@@ -110,18 +110,6 @@ type PipelineTrigger struct {
 	GithubEvents *catalog.GithubEvents `json:"githubEvents,omitempty" protobuf:"bytes,2,opt,name=githubEvents"`
 }
 
-// pipline trigger condition
-// Condition on the dataset
-type PipelineTriggerConditionType string
-
-/// ModelPipelineTrigger Condition
-const (
-	PipelineTriggerReady      PipelineTriggerConditionType = "Ready"
-	PipelineTriggerInArchived PipelineTriggerConditionType = "Archived"
-	PipelineTriggerCreating   PipelineTriggerConditionType = "Progressing"
-	PipelineTriggerFailure    PipelineTriggerConditionType = "PipelineTriggerFailure"
-)
-
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
