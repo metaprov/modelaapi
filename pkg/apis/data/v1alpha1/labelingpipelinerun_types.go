@@ -29,7 +29,7 @@ type LabelingPipelineRunConditionType string
 /// Label Condition
 const (
 	LabelingPipelineRunCompleted LabelingPipelineRunConditionType = "Completed"
-	LabelingPipelineRunArchived  LabelingPipelineRunConditionType = "Archived"
+	LabelingPipelineRunSaved     LabelingPipelineRunConditionType = "Saved"
 )
 
 // LabelingPipelineRunCondition describes the state of a deployment at a certain point.

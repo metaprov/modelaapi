@@ -121,11 +121,11 @@ func (conv *Conversation) MarkReady() {
 
 func (conv *Conversation) MarkArchived() {
 	conv.CreateOrUpdateCond(ConversationCondition{
-		Type:   ConversationArchived,
+		Type:   ConversationSaved,
 		Status: corev1.ConditionTrue,
 	})
 }
 
 func (conv *Conversation) Archived() bool {
-	return conv.GetCond(ConversationArchived).Status == corev1.ConditionTrue
+	return conv.GetCond(ConversationSaved).Status == corev1.ConditionTrue
 }

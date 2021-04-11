@@ -16,8 +16,8 @@ type RunBookConditionType string
 
 /// RunBookReady Condition
 const (
-	RunBookReady    RunBookConditionType = "Ready"
-	RunBookArchived RunBookConditionType = "Archived"
+	RunBookReady RunBookConditionType = "Ready"
+	RunBookSaved RunBookConditionType = "Saved"
 )
 
 // RunBookCondition describes the state of a RunBook at a certain point.

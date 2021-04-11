@@ -10,8 +10,8 @@ type AlertConditionType string
 
 /// Alert Condition
 const (
-	AlertReady    AlertConditionType = "Ready"
-	AlertArchived AlertConditionType = "Archived"
+	AlertReady AlertConditionType = "Ready"
+	AlertSaved AlertConditionType = "Saved"
 )
 
 // AlertCondition describes the state of the license at a certain point.

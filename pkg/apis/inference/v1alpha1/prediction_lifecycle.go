@@ -167,15 +167,15 @@ func (prediction *Prediction) OpName() string {
 	return prediction.Namespace + "-" + prediction.Name
 }
 
-func (version *Prediction) MarkArchived() {
+func (version *Prediction) MarkSaved() {
 	version.CreateOrUpdateCond(PredictionCondition{
-		Type:   PredictionArchived,
+		Type:   PredictionSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (version *Prediction) Archived() bool {
-	return version.GetCond(PredictionArchived).Status == v1.ConditionTrue
+func (version *Prediction) IsSaved() bool {
+	return version.GetCond(PredictionSaved).Status == v1.ConditionTrue
 }
 
 func (run *Prediction) MarkRunning() {

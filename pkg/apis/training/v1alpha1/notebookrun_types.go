@@ -21,8 +21,8 @@ type NotebookRunConditionType string
 
 /// NotebookRun Condition
 const (
-	NotebookRunReady    NotebookRunConditionType = "Ready"
-	NotebookRunArchived NotebookRunConditionType = "Archived"
+	NotebookRunReady NotebookRunConditionType = "Ready"
+	NotebookRunSaved NotebookRunConditionType = "Saved"
 )
 
 type NotebookRunPhase string

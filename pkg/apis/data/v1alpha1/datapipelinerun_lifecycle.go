@@ -77,6 +77,10 @@ func (w *DataPipelineRun) IsReady() bool {
 	return w.GetCond(DataPipelineRunCompleted).Status == v1.ConditionTrue
 }
 
+func (w *DataPipelineRun) IsSaved() bool {
+	return w.GetCond(DataPipelineRunSaved).Status == v1.ConditionTrue
+}
+
 func (run *DataPipelineRun) StatusString() string {
 	return string(run.Status.Phase)
 }
@@ -163,4 +167,11 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 
 func (run *DataPipelineRun) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(run)
+}
+
+func (in *DataPipelineRun) MarkSaved() {
+	in.CreateOrUpdateCond(DataPipelineRunCondition{
+		Type:   DataPipelineRunSaved,
+		Status: v1.ConditionTrue,
+	})
 }

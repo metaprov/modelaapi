@@ -111,7 +111,7 @@ func (notifier *Notifier) ToYamlFile() ([]byte, error) {
 
 func (notifier *Notifier) MarkArchived() {
 	notifier.CreateOrUpdateCond(NotifierCondition{
-		Type:   NotifierArchived,
+		Type:   NotifierSaved,
 		Status: corev1.ConditionTrue,
 	})
 }

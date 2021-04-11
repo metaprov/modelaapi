@@ -273,15 +273,15 @@ func (r *Predictor) ConstructDeployment(image string, name string, cachePath str
 
 }
 
-func (predictor *Predictor) MarkArchived() {
+func (predictor *Predictor) MarkSaved() {
 	predictor.CreateOrUpdateCond(PredictorCondition{
-		Type:   PredictorArchived,
+		Type:   PredictorSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (predictor *Predictor) Archived() bool {
-	return predictor.GetCond(PredictorArchived).Status == v1.ConditionTrue
+func (predictor *Predictor) IsSaved() bool {
+	return predictor.GetCond(PredictorSaved).Status == v1.ConditionTrue
 }
 
 func (predictor *Predictor) MarkReady() {

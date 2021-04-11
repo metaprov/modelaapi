@@ -663,13 +663,13 @@ func (model *Model) MarkPaused() {
 
 func (model *Model) MarkArchived() {
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelArchived,
+		Type:   ModelSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (model *Model) Archived() bool {
-	cond := model.GetCond(ModelArchived)
+	cond := model.GetCond(ModelSaved)
 	return cond.Status == v1.ConditionTrue
 }
 

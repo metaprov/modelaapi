@@ -167,11 +167,11 @@ func (feature *Feature) MarkReady() {
 
 func (feature *Feature) MarkArchived() {
 	feature.CreateOrUpdateCond(FeatureCondition{
-		Type:   FeatureArchived,
+		Type:   FeatureSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (feature *Feature) Archived() bool {
-	return feature.GetCond(FeatureArchived).Status == v1.ConditionTrue
+	return feature.GetCond(FeatureSaved).Status == v1.ConditionTrue
 }

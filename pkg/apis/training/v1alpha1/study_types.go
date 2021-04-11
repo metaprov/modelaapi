@@ -68,7 +68,7 @@ const (
 	// True after we profiled the study
 	StudyPaused StudyConditionType = "Paused"
 	// Study saved in database
-	StudyArchived StudyConditionType = "Archived"
+	StudySaved StudyConditionType = "Saved"
 	// Study ready state
 	StudyReady StudyConditionType = "Ready"
 	// Study is partitioned based on the partition key

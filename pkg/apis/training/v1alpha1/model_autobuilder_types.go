@@ -40,7 +40,7 @@ const (
 	ModelAutobuilderDatasetReady            ModelAutobuilderConditionType = "DatasetReady"
 	ModelAutobuilderStudyReady              ModelAutobuilderConditionType = "StudyReady"
 	ModelAutobuilderPredictorReady          ModelAutobuilderConditionType = "PredictorReady"
-	ModelAutobuilderArchived                ModelAutobuilderConditionType = "Archived"
+	ModelAutobuilderSaved                   ModelAutobuilderConditionType = "Saved"
 )
 
 // ModelAutobuilderCondition describes the state of a pipeline at a certain point.

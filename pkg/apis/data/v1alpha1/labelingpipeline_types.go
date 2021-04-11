@@ -16,8 +16,8 @@ type LabelingPipelineConditionType string
 
 /// LabelingPipeline Condition
 const (
-	LabelPipelineReady    LabelingPipelineConditionType = "Ready"
-	LabelPipelineArchived LabelingPipelineConditionType = "Archived"
+	LabelPipelineReady LabelingPipelineConditionType = "Ready"
+	LabelPipelineSaved LabelingPipelineConditionType = "Saved"
 )
 
 // LabelingPipelineCondition describes the state of a wrangler at a certain point.

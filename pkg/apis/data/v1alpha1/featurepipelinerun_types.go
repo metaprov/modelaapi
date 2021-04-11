@@ -25,7 +25,7 @@ type FeaturePipelineRunConditionType string
 /// Feature Condition
 const (
 	FeaturePipelineRunCompleted FeaturePipelineRunConditionType = "Completed"
-	FeaturePipelineRunArchived  FeaturePipelineRunConditionType = "Archived"
+	FeaturePipelineRunSaved     FeaturePipelineRunConditionType = "Saved"
 )
 
 // FeaturePipelineRunCondition describes the state of a deployment at a certain point.

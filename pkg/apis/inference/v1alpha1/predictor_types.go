@@ -44,8 +44,8 @@ type PredictorConditionType string
 
 /// Predictor Condition
 const (
-	PredictorReady    PredictorConditionType = "Ready"
-	PredictorArchived PredictorConditionType = "Archived"
+	PredictorReady PredictorConditionType = "Ready"
+	PredictorSaved PredictorConditionType = "Saved"
 )
 
 // PredictorCondition describes the state of a prediction at a certain point.

@@ -19,8 +19,8 @@ type PostMortemConditionType string
 
 /// Post Moretem Condition
 const (
-	PostMortemReady    PostMortemConditionType = "Ready"
-	PostMortemArchived PostMortemConditionType = "Archived"
+	PostMortemReady PostMortemConditionType = "Ready"
+	PostMortemSaved PostMortemConditionType = "Saved"
 )
 
 // Post Morem Condition describes the state of a post mortem at a certain point.

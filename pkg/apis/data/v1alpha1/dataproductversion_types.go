@@ -16,8 +16,8 @@ type DataProductVersionConditionType string
 
 /// DataProductVersion Condition
 const (
-	DataProductVersionReady    DataProductVersionConditionType = "Ready"
-	DataProductVersionArchived DataProductVersionConditionType = "Archived"
+	DataProductVersionReady DataProductVersionConditionType = "Ready"
+	DataProductVersionSaved DataProductVersionConditionType = "Saved"
 )
 
 // DataProductVersionCondition describes the state of a DataProductVersion at a certain point.

@@ -43,7 +43,7 @@ type PipelineRunConditionType string
 
 /// ModelPipelineRun Condition
 const (
-	MPRArchived               PipelineRunConditionType = "Archived"
+	MPRSaved                  PipelineRunConditionType = "Saved"
 	MPRDataStageCompleted     PipelineRunConditionType = "DataStageCompleted"
 	MPRTrainingStageCmpleted  PipelineRunConditionType = "TrainingStageCompleted"
 	MPRUATCompleted           PipelineRunConditionType = "UATStageCompleted"

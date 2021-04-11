@@ -119,9 +119,13 @@ func (in *DataPipeline) MarkFailed(err error) {
 	})
 }
 
-func (in *DataPipeline) MarkArchived() {
+func (in *DataPipeline) MarkSaved() {
 	in.CreateOrUpdateCond(DataPipelineCondition{
-		Type:   DataPipelineArchived,
+		Type:   DataPipelineSaved,
 		Status: v1.ConditionTrue,
 	})
+}
+
+func (w *DataPipeline) IsSaved() bool {
+	return w.GetCond(DataPipelineSaved).Status == corev1.ConditionTrue
 }

@@ -166,11 +166,11 @@ func (entity *Entity) MarkReady() {
 
 func (entity *Entity) MarkArchived() {
 	entity.CreateOrUpdateCond(EntityCondition{
-		Type:   EntityArchived,
+		Type:   EntitySaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (entity *Entity) Archived() bool {
-	return entity.GetCond(EntityArchived).Status == v1.ConditionTrue
+	return entity.GetCond(EntitySaved).Status == v1.ConditionTrue
 }

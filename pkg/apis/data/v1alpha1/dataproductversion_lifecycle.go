@@ -102,7 +102,7 @@ func (version *DataProductVersion) ToYamlFile() ([]byte, error) {
 
 func (version *DataProductVersion) MarkArchived() {
 	version.CreateOrUpdateCond(DataProductVersionCondition{
-		Type:   DataProductVersionArchived,
+		Type:   DataProductVersionSaved,
 		Status: v1.ConditionTrue,
 	})
 }
@@ -124,5 +124,5 @@ func (version *DataProductVersion) MarkFailed(err error) {
 }
 
 func (version *DataProductVersion) Archived() bool {
-	return version.GetCond(DataProductVersionArchived).Status == v1.ConditionTrue
+	return version.GetCond(DataProductVersionSaved).Status == v1.ConditionTrue
 }

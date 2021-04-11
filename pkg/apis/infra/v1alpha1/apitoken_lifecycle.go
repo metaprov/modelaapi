@@ -106,7 +106,7 @@ func (notifier *ApiToken) ToYamlFile() ([]byte, error) {
 
 func (token *ApiToken) MarkArchived() {
 	token.CreateOrUpdateCond(ApiTokenCondition{
-		Type:   ApiTokenArchived,
+		Type:   ApiTokenSaved,
 		Status: v1.ConditionTrue,
 	})
 }

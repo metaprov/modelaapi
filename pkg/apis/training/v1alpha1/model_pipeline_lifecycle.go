@@ -145,11 +145,11 @@ func (pl *ModelPipeline) MarkReady() {
 
 func (pl *ModelPipeline) MarkArchived() {
 	pl.CreateOrUpdateCond(ModelPipelineCondition{
-		Type:   ModelPipelineArchived,
+		Type:   ModelPipelineSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (pl *ModelPipeline) Archived() bool {
-	return pl.GetCond(ModelPipelineArchived).Status == v1.ConditionTrue
+	return pl.GetCond(ModelPipelineSaved).Status == v1.ConditionTrue
 }

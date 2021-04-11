@@ -114,11 +114,11 @@ func (vv *VirtualVolume) MarkReady() {
 
 func (vv *VirtualVolume) MarkArchived() {
 	vv.CreateOrUpdateCond(VirtualVolumeCondition{
-		Type:   VirtualVolumeArchived,
+		Type:   VirtualVolumeSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (vv *VirtualVolume) Archived() bool {
-	return vv.GetCond(VirtualVolumeArchived).Status == v1.ConditionTrue
+	return vv.GetCond(VirtualVolumeSaved).Status == v1.ConditionTrue
 }

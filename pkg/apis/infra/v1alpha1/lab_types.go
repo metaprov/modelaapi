@@ -10,8 +10,8 @@ type LabConditionType string
 
 /// TenantRef Condition
 const (
-	LabReady    LabConditionType = "Ready"
-	LabArchived LabConditionType = "Archived"
+	LabReady LabConditionType = "Ready"
+	LabSaved LabConditionType = "Saved"
 )
 
 // LabCondition describes the state of a lab at a certain point.

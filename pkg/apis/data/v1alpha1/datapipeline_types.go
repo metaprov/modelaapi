@@ -16,8 +16,8 @@ type DataPipelineConditionType string
 
 /// DataPipeline Condition
 const (
-	DataPipelineReady    DataPipelineConditionType = "Ready"
-	DataPipelineArchived DataPipelineConditionType = "Archived"
+	DataPipelineReady DataPipelineConditionType = "Ready"
+	DataPipelineSaved DataPipelineConditionType = "Saved"
 )
 
 // DataPipelineCondition describes the state of a wrangler at a certain point.

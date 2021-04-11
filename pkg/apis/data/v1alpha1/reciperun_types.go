@@ -19,7 +19,7 @@ type RecipeRunConditionType string
 /// RecipeName Condition
 const (
 	RecipeRunCompleted RecipeConditionType = "Completed"
-	RecipeRunArchived  RecipeConditionType = "Archived"
+	RecipeRunSaved     RecipeConditionType = "Saved"
 )
 
 // RecipeRunCondition describes the state of a dataset at a certain point.

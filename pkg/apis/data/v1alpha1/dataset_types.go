@@ -33,7 +33,7 @@ const (
 	DatasetValidated DatasetConditionType = "Validated"
 	DatasetProfiled  DatasetConditionType = "Profiled"
 	DatasetIngested  DatasetConditionType = "Ingested"
-	DatasetArchived  DatasetConditionType = "Archived"
+	DatasetSaved     DatasetConditionType = "Saved"
 	DatasetReady     DatasetConditionType = "Ready"
 )
 

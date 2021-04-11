@@ -171,11 +171,11 @@ func (pipeline *FeaturePipeline) MarkReady() {
 
 func (pipeline *FeaturePipeline) MarkArchived() {
 	pipeline.CreateOrUpdateCond(FeaturePipelineCondition{
-		Type:   FeaturePipelineArchived,
+		Type:   FeaturePipelineSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (pipeline *FeaturePipeline) Archived() bool {
-	return pipeline.GetCond(FeaturePipelineArchived).Status == v1.ConditionTrue
+	return pipeline.GetCond(FeaturePipelineSaved).Status == v1.ConditionTrue
 }

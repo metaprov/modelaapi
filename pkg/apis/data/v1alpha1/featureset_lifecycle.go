@@ -160,11 +160,11 @@ func (fset *Featureset) MarkReady() {
 
 func (fset *Featureset) MarkArchived() {
 	fset.CreateOrUpdateCond(FeaturesetCondition{
-		Type:   FeaturesetArchived,
+		Type:   FeaturesetSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (pipeline *Featureset) Archived() bool {
-	return pipeline.GetCond(FeaturesetArchived).Status == v1.ConditionTrue
+	return pipeline.GetCond(FeaturesetSaved).Status == v1.ConditionTrue
 }

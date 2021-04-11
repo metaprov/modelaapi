@@ -152,7 +152,7 @@ func (r *NotebookRun) MarkCompleted() {
 
 func (r *NotebookRun) MarkArchived() {
 	r.CreateOrUpdateCond(NotebookRunCondition{
-		Type:   NotebookRunArchived,
+		Type:   NotebookRunSaved,
 		Status: corev1.ConditionTrue,
 	})
 

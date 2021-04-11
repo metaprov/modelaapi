@@ -235,15 +235,15 @@ func (r *DataProduct) ReportConsumer() *rbacv1.Role {
 	}
 }
 
-func (version *DataProduct) MarkArchived() {
+func (version *DataProduct) MarkSaved() {
 	version.CreateOrUpdateCond(DataProductCondition{
-		Type:   DataProductArchived,
+		Type:   DataProductSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (p *DataProduct) Archived() bool {
-	return p.GetCond(DataProductArchived).Status == v1.ConditionTrue
+func (p *DataProduct) IsSaved() bool {
+	return p.GetCond(DataProductSaved).Status == v1.ConditionTrue
 }
 
 func (p *DataProduct) MarkFailed(err error) {

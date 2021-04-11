@@ -130,9 +130,9 @@ func (r *RecipeRun) MarkCompleted() {
 	})
 }
 
-func (r *RecipeRun) MarkArchived() {
+func (r *RecipeRun) MarkSaved() {
 	r.CreateOrUpdateCond(RecipeCondition{
-		Type:   RecipeArchived,
+		Type:   RecipeSaved,
 		Status: v1.ConditionTrue,
 	})
 }

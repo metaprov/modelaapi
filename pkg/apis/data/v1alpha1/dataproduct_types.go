@@ -17,8 +17,8 @@ type DataProductConditionType string
 
 /// ProductRef Condition
 const (
-	DataProductReady    DataProductConditionType = "Ready"
-	DataProductArchived DataProductConditionType = "Archived"
+	DataProductReady DataProductConditionType = "Ready"
+	DataProductSaved DataProductConditionType = "Saved"
 )
 
 // DeploymentCondition describes the state of a deployment at a certain point.

@@ -18,8 +18,8 @@ type TenantConditionType string
 
 /// Tenant Condition
 const (
-	TenantReady    TenantConditionType = "Ready"
-	TenantArchived TenantConditionType = "Archived"
+	TenantReady TenantConditionType = "Ready"
+	TenantSaved TenantConditionType = "Saved"
 )
 
 // TenantCondition describes the state of a tenant at a certain point.

@@ -169,11 +169,11 @@ func (lp *LabelingPipeline) MarkReady() {
 
 func (lp *LabelingPipeline) MarkArchived() {
 	lp.CreateOrUpdateCond(LabelingPipelineCondition{
-		Type:   LabelPipelineArchived,
+		Type:   LabelPipelineSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (lp *LabelingPipeline) Archived() bool {
-	return lp.GetCond(LabelPipelineArchived).Status == v1.ConditionTrue
+	return lp.GetCond(LabelPipelineSaved).Status == v1.ConditionTrue
 }

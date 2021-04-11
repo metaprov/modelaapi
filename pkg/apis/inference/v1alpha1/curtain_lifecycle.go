@@ -2,10 +2,10 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/metaprov/modeldapi/pkg/apis/inference"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
+	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -84,4 +84,56 @@ func ParseCurtainYaml(content []byte) (*Curtain, error) {
 
 func (cur *Curtain) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(cur)
+}
+
+// Merge or update condition
+// Merge or update condition
+func (cur *Curtain) CreateOrUpdateCond(cond CurtainCondition) {
+	i := cur.GetCondIdx(cond.Type)
+	now := metav1.Now()
+	if i == -1 { // not found
+		cond.LastTransitionTime = &now
+		cur.Status.Conditions = append(cur.Status.Conditions, cond)
+		return
+	}
+	// else we already have the condition, update it
+	current := cur.Status.Conditions[i]
+	current.Message = cond.Message
+	current.Reason = cond.Reason
+	current.LastTransitionTime = &now
+	if current.Status != cond.Status {
+		current.Status = cond.Status
+	}
+	cur.Status.Conditions[i] = current
+}
+
+func (cur *Curtain) GetCondIdx(t CurtainConditionType) int {
+	for i, v := range cur.Status.Conditions {
+		if v.Type == t {
+			return i
+		}
+	}
+	return -1
+}
+
+func (cur *Curtain) GetCond(t CurtainConditionType) CurtainCondition {
+	for _, v := range cur.Status.Conditions {
+		if v.Type == t {
+			return v
+		}
+	}
+	// if we did not find the condition, we return an unknown object
+	return CurtainCondition{
+		Type:    t,
+		Status:  corev1.ConditionUnknown,
+		Reason:  "",
+		Message: "",
+	}
+}
+
+func (cur *Curtain) MarkSaved() {
+	cur.CreateOrUpdateCond(CurtainCondition{
+		Type:   CurtainSaved,
+		Status: corev1.ConditionTrue,
+	})
 }

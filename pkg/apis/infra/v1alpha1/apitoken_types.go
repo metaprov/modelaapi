@@ -10,8 +10,8 @@ type ApiTokenConditionType string
 
 /// ApiToken Condition
 const (
-	ApiTokenReady    ApiTokenConditionType = "Ready"
-	ApiTokenArchived ApiTokenConditionType = "Archived"
+	ApiTokenReady ApiTokenConditionType = "Ready"
+	ApiTokenSaved ApiTokenConditionType = "Saved"
 )
 
 // ApiTokenCondition describes the state of the license at a certain point.

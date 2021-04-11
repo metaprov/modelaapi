@@ -115,11 +115,11 @@ func (pm *PostMortem) MarkReady() {
 
 func (pm *PostMortem) MarkArchived() {
 	pm.CreateOrUpdateCond(PostMortemCondition{
-		Type:   PostMortemArchived,
+		Type:   PostMortemSaved,
 		Status: corev1.ConditionTrue,
 	})
 }
 
 func (pm *PostMortem) Archived() bool {
-	return pm.GetCond(PostMortemArchived).Status == corev1.ConditionTrue
+	return pm.GetCond(PostMortemSaved).Status == corev1.ConditionTrue
 }

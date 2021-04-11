@@ -120,11 +120,11 @@ func (r *Recipe) Deleted() bool {
 
 func (r *Recipe) MarkArchived() {
 	r.CreateOrUpdateCond(RecipeCondition{
-		Type:   RecipeArchived,
+		Type:   RecipeSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (r *Recipe) Archived() bool {
-	return r.GetCond(RecipeArchived).Status == v1.ConditionTrue
+	return r.GetCond(RecipeSaved).Status == v1.ConditionTrue
 }

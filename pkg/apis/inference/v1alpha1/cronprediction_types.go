@@ -12,8 +12,8 @@ type CronPredictionConditionType string
 
 /// PredictionTemplate Condition
 const (
-	CronPredictionReady    CronPredictionConditionType = "Ready"
-	CronPredictionArchived CronPredictionConditionType = "Archived"
+	CronPredictionReady CronPredictionConditionType = "Ready"
+	CronPredictionSaved CronPredictionConditionType = "Saved"
 )
 
 // PredictionCondition describes the state of PredictionTemplate

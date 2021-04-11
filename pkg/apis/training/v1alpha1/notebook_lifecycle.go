@@ -186,11 +186,11 @@ func (notebook *Notebook) MarkReady() {
 
 func (notebook *Notebook) MarkArchived() {
 	notebook.CreateOrUpdateCond(NotebookCondition{
-		Type:   NotebookArchived,
+		Type:   NotebookSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (notebook *Notebook) Archived() bool {
-	return notebook.GetCond(NotebookArchived).Status == v1.ConditionTrue
+	return notebook.GetCond(NotebookSaved).Status == v1.ConditionTrue
 }

@@ -11,8 +11,8 @@ type ConnectionConditionType string
 
 // RegistryConnectionName Condition
 const (
-	ConnectionReady    ConnectionConditionType = "Ready"
-	ConnectionArchived ConnectionConditionType = "Archived"
+	ConnectionReady ConnectionConditionType = "Ready"
+	ConnectionSaved ConnectionConditionType = "Saved"
 )
 
 // ConnectionCondition describes the state of a connection at a certain point.

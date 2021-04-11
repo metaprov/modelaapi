@@ -144,15 +144,15 @@ func (run *CronPrediction) OpName() string {
 	return run.Namespace + "-" + run.Name
 }
 
-func (run *CronPrediction) MarkArchived() {
+func (run *CronPrediction) MarkSaved() {
 	run.CreateOrUpdateCond(CronPredictionCondition{
-		Type:   CronPredictionArchived,
+		Type:   CronPredictionSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (run *CronPrediction) Archived() bool {
-	return run.GetCond(CronPredictionArchived).Status == v1.ConditionTrue
+func (run *CronPrediction) IsSaved() bool {
+	return run.GetCond(CronPredictionSaved).Status == v1.ConditionTrue
 }
 
 func (run *CronPrediction) MarkReady() {

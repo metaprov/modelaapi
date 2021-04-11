@@ -136,11 +136,11 @@ func (tenant *Tenant) MarkReady() {
 
 func (tenant *Tenant) MarkArchived() {
 	tenant.CreateOrUpdateCond(TenantCondition{
-		Type:   TenantArchived,
+		Type:   TenantSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (tenant *Tenant) Archived() bool {
-	return tenant.GetCond(TenantArchived).Status == v1.ConditionTrue
+	return tenant.GetCond(TenantSaved).Status == v1.ConditionTrue
 }

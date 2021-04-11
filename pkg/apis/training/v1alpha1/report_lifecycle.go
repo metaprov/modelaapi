@@ -197,9 +197,9 @@ func (report *Report) MarkRunning() {
 	})
 }
 
-func (report *Report) MarkArchived() {
+func (report *Report) MarkSaved() {
 	report.CreateOrUpdateCond(ReportCondition{
-		Type:   ReportArchived,
+		Type:   ReportSaved,
 		Status: v1.ConditionTrue,
 	})
 }

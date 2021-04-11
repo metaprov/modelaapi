@@ -23,8 +23,8 @@ type LicenseConditionType string
 
 /// License Condition
 const (
-	LicenseReady    LicenseConditionType = "Ready"
-	LicenseArchived LicenseConditionType = "Archived"
+	LicenseReady LicenseConditionType = "Ready"
+	LicenseSaved LicenseConditionType = "Saved"
 )
 
 // LicenseCondition describes the state of the license at a certain point.

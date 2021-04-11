@@ -21,8 +21,8 @@ type CurtainConditionType string
 
 /// Curtain Condition
 const (
-	CurtainReady    CurtainConditionType = "Ready"
-	CurtainArchived CurtainConditionType = "Archived"
+	CurtainReady CurtainConditionType = "Ready"
+	CurtainSaved CurtainConditionType = "Saved"
 )
 
 // CurtainCondition describes the state of a wizard of oz at a certain point.

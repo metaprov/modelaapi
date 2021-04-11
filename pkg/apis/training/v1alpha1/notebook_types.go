@@ -25,7 +25,7 @@ const (
 	NotebookPublished NotebookConditionType = "Published"
 	NotebookIngested  NotebookConditionType = "Ingested"
 	NotebookReady     NotebookConditionType = "Ready"
-	NotebookArchived  NotebookConditionType = "Archived"
+	NotebookSaved     NotebookConditionType = "Saved"
 )
 
 // NotebookCondition describes the state of a notebook at a certain point.

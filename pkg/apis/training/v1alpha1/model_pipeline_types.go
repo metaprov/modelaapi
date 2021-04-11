@@ -10,8 +10,8 @@ import (
 type ModelPipelineConditionType string
 
 const (
-	ModelPipelineReady    ModelPipelineConditionType = "Ready"
-	ModelPipelineArchived ModelPipelineConditionType = "Archived"
+	ModelPipelineReady ModelPipelineConditionType = "Ready"
+	ModelPipelineSaved ModelPipelineConditionType = "Saved"
 )
 
 // ModelPipelineCondition describes the state of a pipeline at a certain point.

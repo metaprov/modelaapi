@@ -132,7 +132,7 @@ func (connection *Connection) MarkReady() {
 
 func (connection *Connection) MarkArchived() {
 	connection.CreateOrUpdateCond(ConnectionCondition{
-		Type:   ConnectionArchived,
+		Type:   ConnectionSaved,
 		Status: corev1.ConditionTrue,
 	})
 }

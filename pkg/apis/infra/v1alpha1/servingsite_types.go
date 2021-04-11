@@ -14,8 +14,8 @@ type ServingSiteConditionType string
 
 /// ServingSite Condition
 const (
-	ServingSiteReady    ServingSiteConditionType = "Ready"
-	ServingSiteArchived ServingSiteConditionType = "Archived"
+	ServingSiteReady ServingSiteConditionType = "Ready"
+	ServingSiteSaved ServingSiteConditionType = "Saved"
 )
 
 // ServingSiteCondition describes the state of a servingsite at a certain point.

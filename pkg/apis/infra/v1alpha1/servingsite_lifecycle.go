@@ -219,11 +219,11 @@ func (r *ServingSite) MarkReady() {
 
 func (r *ServingSite) MarkArchived() {
 	r.CreateOrUpdateCond(ServingSiteCondition{
-		Type:   ServingSiteArchived,
+		Type:   ServingSiteSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (r *ServingSite) Archived() bool {
-	return r.GetCond(ServingSiteArchived).Status == v1.ConditionTrue
+	return r.GetCond(ServingSiteSaved).Status == v1.ConditionTrue
 }

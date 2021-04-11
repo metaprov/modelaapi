@@ -320,13 +320,13 @@ func (dataset *Dataset) MarkReady() {
 
 func (dataset *Dataset) MarkArchived() {
 	dataset.CreateOrUpdateCond(DatasetCondition{
-		Type:   DatasetArchived,
+		Type:   DatasetSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (dataset *Dataset) Archived() bool {
-	return dataset.GetCond(DatasetArchived).Status == v1.ConditionTrue
+	return dataset.GetCond(DatasetSaved).Status == v1.ConditionTrue
 }
 
 func (dataset *Dataset) Deleted() bool {

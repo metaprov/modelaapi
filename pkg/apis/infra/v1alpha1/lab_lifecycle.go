@@ -127,12 +127,12 @@ func (lab *Lab) IsReady() bool {
 }
 
 func (lab *Lab) IsArchived() bool {
-	return lab.GetCond(LabArchived).Status == corev1.ConditionTrue
+	return lab.GetCond(LabSaved).Status == corev1.ConditionTrue
 }
 
 func (lab *Lab) MarkArchived() {
 	lab.CreateOrUpdateCond(LabCondition{
-		Type:   LabArchived,
+		Type:   LabSaved,
 		Status: corev1.ConditionTrue,
 	})
 }

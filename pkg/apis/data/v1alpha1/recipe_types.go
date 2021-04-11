@@ -11,8 +11,8 @@ type RecipeConditionType string
 
 /// RecipeName Condition
 const (
-	RecipeReady    RecipeConditionType = "Ready"
-	RecipeArchived RecipeConditionType = "Archived"
+	RecipeReady RecipeConditionType = "Ready"
+	RecipeSaved RecipeConditionType = "Saved"
 )
 
 // RecipeCondition describes the state of a dataset at a certain point.

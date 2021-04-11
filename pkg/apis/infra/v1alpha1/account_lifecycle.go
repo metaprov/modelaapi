@@ -138,13 +138,13 @@ func (account *Account) Populate(name string) {
 
 func (account *Account) MarkArchived() {
 	account.CreateOrUpdateCond(AccountCondition{
-		Type:   AccountArchived,
+		Type:   AccountSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (account *Account) Archived() bool {
-	return account.GetCond(AccountArchived).Status == v1.ConditionTrue
+	return account.GetCond(AccountSaved).Status == v1.ConditionTrue
 }
 
 func (account *Account) MarkReady() {
