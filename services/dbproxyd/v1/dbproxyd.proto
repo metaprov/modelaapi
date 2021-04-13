@@ -1,7 +1,7 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/archived/v1";
+option go_package = "github.com/metaprov/modeldapi/services/dbproxyd/v1";
 import "google/api/annotations.proto";
-package github.com.metaprov.modeldapi.services.archived.v1;
+package github.com.metaprov.modeldapi.services.dbproxyd.v1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
@@ -1440,9 +1440,7 @@ message DeleteRunbookRequest {
 
 
 
-
-
-service ArchivedService {
+service DatabaseProxyService {
     rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {}
     rpc GetAccount(GetAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) { }
     rpc CreateAccount(CreateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {}

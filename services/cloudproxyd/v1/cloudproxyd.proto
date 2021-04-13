@@ -1,13 +1,13 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/cloudsd/v1";
-package github.com.metaprov.modeldapi.services.cloudsd.v1;
+option go_package = "github.com/metaprov/modeldapi/services/cloudproxyd/v1";
+package github.com.metaprov.modeldapi.services.cloudproxyd.v1;
 
 
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 
-service CloudsService {
+service CloudProxyService {
     rpc Download(FileDownloadRequest)                             returns (FileDownloadResponse)     {}
     rpc Upload  (FileUploadRequest)                               returns (FileUploadResponse)     {}
     rpc KeyExistInVirtualBucket(KeyExistInVirtualBucketRequest)   returns (KeyExistInVirtualBucketResponse)     {}
