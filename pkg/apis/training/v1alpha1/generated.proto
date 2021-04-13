@@ -83,6 +83,10 @@ message CategoricalPipelineSpec {
   optional string encoder = 3;
 }
 
+// ChatbotEstimatorSpec is an spec for chat bot. This is not implemented yet
+message ChatbotEstimatorSpec {
+}
+
 // ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters
 message ClassicalEstimatorSpec {
   // AlgorithmName is a reference to the algorithm in the catalog
@@ -1122,77 +1126,95 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional DeepEstimatorSpec dnn = 10;
 
+  // Dnn is a specification of the DNN estimator specification. Not supported for this release.
+  // +kubebuilder:validation:Optional
+  optional ChatbotEstimatorSpec chatbot = 11;
+
+  // Dnn is a specification of the DNN estimator specification. Not supported for this release.
+  // +kubebuilder:validation:Optional
+  optional TransformerEstimatorSpec transformer = 12;
+
   // If this is an ensemble model, specify the ensemble
   // Default: None
   // +kubebuilder:validation:Optional
-  optional EnsembleSpec ensemble = 11;
+  optional EnsembleSpec ensemble = 13;
 
   // TrainingSpec is the desired training settings
   // +kubebuilder:validation:Optional
-  optional TrainingSpec training = 12;
+  optional TrainingSpec training = 14;
 
   // Tested indicate if this model should be testedActual. Default is false.
   // The study controller will set this to true if a model is the best model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool tested = 13;
+  optional bool tested = 15;
 
   // Aborted indicate the desire to abort the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 14;
+  optional bool aborted = 16;
 
   // Published is set when we want to wrap the model in a docker container
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool published = 15;
+  optional bool published = 17;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pushed = 16;
+  optional bool pushed = 18;
 
   // Reported is set when a report should be created for this model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool reported = 17;
+  optional bool reported = 19;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 18;
+  optional bool paused = 20;
 
   // Profiled is set when we want to create model profile.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool profiled = 19;
+  optional bool profiled = 21;
 
   // Archived is true when the model should be archived
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool archived = 20;
+  optional bool archived = 22;
 
   // Forecasted is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool forecasted = 21;
+  optional bool forecasted = 23;
 
   // Compiled is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool compiled = 22;
+  optional bool compiled = 24;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 23;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 25;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 24;
+  optional ForecastingSpec forecastingSpec = 26;
 
   // The compiler specification
   // +kubebuilder:validation:Optional
-  optional CompilerSpec compiler = 25;
+  optional CompilerSpec compiler = 27;
+
+  // ActiveDeadlineSeconds is the deadline of a job for this model.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 28;
+
+  // ModelType is the type of model for this estimator
+  // +kubebuilder:default:=classical
+  // +kubebuilder:validation:Optional
+  optional string estimatorType = 29;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -1509,6 +1531,11 @@ message NotebookSpec {
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 10;
+
+  // ActiveDeadlineSeconds is the deadline of a job for this notebook.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 11;
 }
 
 // NotebookStatus is the observed state of the notebook resource
@@ -1709,6 +1736,11 @@ message ReportSpec {
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 9;
+
+  // ActiveDeadlineSeconds is the deadline of a job for this report.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 10;
 }
 
 // ReportStatus defines the observed state of the report.
@@ -1894,6 +1926,11 @@ message StudySpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string owner = 22;
+
+  // ActiveDeadlineSeconds is the deadline of a job for this study.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 23;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -2185,6 +2222,10 @@ message TrainingStageSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 5;
+}
+
+// TransformerEstimatorSpec is an transformer. This is not implemented yet.
+message TransformerEstimatorSpec {
 }
 
 // UATStageSpec is the specification of the user acceptance test.

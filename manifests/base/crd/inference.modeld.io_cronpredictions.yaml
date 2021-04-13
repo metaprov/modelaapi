@@ -126,6 +126,12 @@ spec:
                   spec:
                     description: PredictionSpec represent the desired state of Prediction
                     properties:
+                      activeDeadlineSeconds:
+                        default: 600
+                        description: ActiveDeadlineSeconds is the deadline of a job
+                          for this dataset.
+                        format: int32
+                        type: integer
                       datasetName:
                         type: string
                       input:

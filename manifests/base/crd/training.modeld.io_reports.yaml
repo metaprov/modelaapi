@@ -61,6 +61,12 @@ spec:
             description: ReportSpec specifies the desired state of the ReportName
               resource
             properties:
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  report.
+                format: int32
+                type: integer
               description:
                 description: NotifierRef is areference to the notifier that is used
                   to send the report

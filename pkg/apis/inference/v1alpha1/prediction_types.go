@@ -97,6 +97,10 @@ type PredictionSpec struct {
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
+	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

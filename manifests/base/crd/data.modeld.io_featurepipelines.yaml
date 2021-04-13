@@ -49,6 +49,12 @@ spec:
           spec:
             description: FeaturePipelineSpec contain the desired state of a FeaturePipeline
             properties:
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline setup on jobs for
+                  this labeling pipeline.
+                format: int32
+                type: integer
               aggregation:
                 description: Aggregation is the aggregation spec
                 properties:

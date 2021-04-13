@@ -14655,7 +14655,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     labeled: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     origin: (f = msg.getOrigin()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14733,6 +14734,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setActivedeadlineseconds(value);
       break;
     default:
       reader.skipField();
@@ -14832,6 +14837,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
   if (f != null) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeInt32(
+      15,
       f
     );
   }
@@ -15197,6 +15209,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional int32 activeDeadlineSeconds = 15;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getActivedeadlineseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setActivedeadlineseconds = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearActivedeadlineseconds = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasActivedeadlineseconds = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -20887,7 +20935,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.t
     family: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     entityname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20962,6 +21011,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.d
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setActivedeadlineseconds(value);
       break;
     default:
       reader.skipField();
@@ -21056,6 +21109,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
       9,
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeInt32(
+      10,
+      f
     );
   }
 };
@@ -21385,6 +21445,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasSchedule = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional int32 activeDeadlineSeconds = 10;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getActivedeadlineseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setActivedeadlineseconds = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearActivedeadlineseconds = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasActivedeadlineseconds = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -28425,7 +28521,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
     outputlabelset: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -28494,6 +28591,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setActivedeadlineseconds(value);
       break;
     default:
       reader.skipField();
@@ -28578,6 +28679,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
   if (f != null) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeInt32(
+      9,
       f
     );
   }
@@ -28872,6 +28980,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional int32 activeDeadlineSeconds = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.getActivedeadlineseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.setActivedeadlineseconds = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.clearActivedeadlineseconds = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.hasActivedeadlineseconds = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -32779,7 +32923,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.toObject =
     output: (f = msg.getOutput()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeOutputSpec.toObject(includeInstance, f),
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSampleSpec.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32855,6 +33000,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.deserializ
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setActivedeadlineseconds(value);
       break;
     default:
       reader.skipField();
@@ -32949,6 +33098,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.serializeB
   if (f != null) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeInt32(
+      10,
       f
     );
   }
@@ -33281,6 +33437,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional int32 activeDeadlineSeconds = 10;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.getActivedeadlineseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.setActivedeadlineseconds = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.clearActivedeadlineseconds = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.hasActivedeadlineseconds = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

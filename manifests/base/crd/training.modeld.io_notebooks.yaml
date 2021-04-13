@@ -50,6 +50,12 @@ spec:
           spec:
             description: NotebookSpec is the desired state of the notebook resource.
             properties:
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  notebook.
+                format: int32
+                type: integer
               debPackages:
                 description: DebPackages is a list of deb package to install
                 type: string

@@ -692,6 +692,9 @@ export class PredictionSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): PredictionSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -711,6 +714,7 @@ export namespace PredictionSpec {
     resultsList: Array<string>,
     owner: string,
     workloadclassname: string,
+    activedeadlineseconds: number,
   }
 }
 

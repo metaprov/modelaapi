@@ -115,6 +115,20 @@ export namespace CategoricalPipelineSpec {
   }
 }
 
+export class ChatbotEstimatorSpec extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ChatbotEstimatorSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ChatbotEstimatorSpec): ChatbotEstimatorSpec.AsObject;
+  static serializeBinaryToWriter(message: ChatbotEstimatorSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ChatbotEstimatorSpec;
+  static deserializeBinaryFromReader(message: ChatbotEstimatorSpec, reader: jspb.BinaryReader): ChatbotEstimatorSpec;
+}
+
+export namespace ChatbotEstimatorSpec {
+  export type AsObject = {
+  }
+}
+
 export class ClassicalEstimatorSpec extends jspb.Message {
   getAlgorithmname(): string;
   setAlgorithmname(value: string): ClassicalEstimatorSpec;
@@ -1682,6 +1696,16 @@ export class ModelSpec extends jspb.Message {
   hasDnn(): boolean;
   clearDnn(): ModelSpec;
 
+  getChatbot(): ChatbotEstimatorSpec | undefined;
+  setChatbot(value?: ChatbotEstimatorSpec): ModelSpec;
+  hasChatbot(): boolean;
+  clearChatbot(): ModelSpec;
+
+  getTransformer(): TransformerEstimatorSpec | undefined;
+  setTransformer(value?: TransformerEstimatorSpec): ModelSpec;
+  hasTransformer(): boolean;
+  clearTransformer(): ModelSpec;
+
   getEnsemble(): EnsembleSpec | undefined;
   setEnsemble(value?: EnsembleSpec): ModelSpec;
   hasEnsemble(): boolean;
@@ -1737,6 +1761,12 @@ export class ModelSpec extends jspb.Message {
   hasCompiler(): boolean;
   clearCompiler(): ModelSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): ModelSpec;
+
+  getEstimatortype(): string;
+  setEstimatortype(value: string): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -1757,6 +1787,8 @@ export namespace ModelSpec {
     preprocessing?: PreprocessingSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
     dnn?: DeepEstimatorSpec.AsObject,
+    chatbot?: ChatbotEstimatorSpec.AsObject,
+    transformer?: TransformerEstimatorSpec.AsObject,
     ensemble?: EnsembleSpec.AsObject,
     training?: TrainingSpec.AsObject,
     tested: boolean,
@@ -1772,6 +1804,8 @@ export namespace ModelSpec {
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
     compiler?: CompilerSpec.AsObject,
+    activedeadlineseconds: number,
+    estimatortype: string,
   }
 }
 
@@ -2284,6 +2318,9 @@ export class NotebookSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): NotebookSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): NotebookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookSpec): NotebookSpec.AsObject;
@@ -2304,6 +2341,7 @@ export namespace NotebookSpec {
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
     workloadclassname: string,
+    activedeadlineseconds: number,
   }
 }
 
@@ -2644,6 +2682,9 @@ export class ReportSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): ReportSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -2662,6 +2703,7 @@ export namespace ReportSpec {
     description: string,
     owner: string,
     workloadclassname: string,
+    activedeadlineseconds: number,
   }
 }
 
@@ -2904,6 +2946,9 @@ export class StudySpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): StudySpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -2934,6 +2979,7 @@ export namespace StudySpec {
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     hierarchy?: Hierarchy.AsObject,
     owner: string,
+    activedeadlineseconds: number,
   }
 }
 
@@ -3300,6 +3346,20 @@ export namespace TrainingStageSpec {
     studytemplatename: string,
     smoke?: Expectation.AsObject,
     manualapproval: boolean,
+  }
+}
+
+export class TransformerEstimatorSpec extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TransformerEstimatorSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TransformerEstimatorSpec): TransformerEstimatorSpec.AsObject;
+  static serializeBinaryToWriter(message: TransformerEstimatorSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TransformerEstimatorSpec;
+  static deserializeBinaryFromReader(message: TransformerEstimatorSpec, reader: jspb.BinaryReader): TransformerEstimatorSpec;
+}
+
+export namespace TransformerEstimatorSpec {
+  export type AsObject = {
   }
 }
 

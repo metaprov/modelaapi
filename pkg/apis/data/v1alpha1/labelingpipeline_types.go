@@ -84,6 +84,10 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,9,opt,name=activeDeadlineSeconds"`
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.

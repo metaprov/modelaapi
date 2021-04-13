@@ -1370,6 +1370,9 @@ export class DatasetSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): DatasetSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1390,6 +1393,7 @@ export namespace DatasetSpec {
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
     workloadclassname: string,
+    activedeadlineseconds: number,
   }
 }
 
@@ -2069,6 +2073,9 @@ export class FeaturePipelineSpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): FeaturePipelineSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): FeaturePipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineSpec): FeaturePipelineSpec.AsObject;
@@ -2088,6 +2095,7 @@ export namespace FeaturePipelineSpec {
     entityname: string,
     workloadclassname: string,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    activedeadlineseconds: number,
   }
 }
 
@@ -2856,6 +2864,9 @@ export class LabelingPipelineSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): LabelingPipelineSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): LabelingPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelingPipelineSpec): LabelingPipelineSpec.AsObject;
@@ -2874,6 +2885,7 @@ export namespace LabelingPipelineSpec {
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,
+    activedeadlineseconds: number,
   }
 }
 
@@ -3347,6 +3359,9 @@ export class RecipeSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): RecipeSpec;
 
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): RecipeSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeSpec): RecipeSpec.AsObject;
@@ -3366,6 +3381,7 @@ export namespace RecipeSpec {
     sample?: RecipeSampleSpec.AsObject,
     observedgeneration: number,
     workloadclassname: string,
+    activedeadlineseconds: number,
   }
 }
 

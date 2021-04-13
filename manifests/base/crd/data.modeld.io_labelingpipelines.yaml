@@ -47,6 +47,12 @@ spec:
           spec:
             description: LabelingPipelineSpec defines the desired state of a LabelingPipeline
             properties:
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline setup on jobs for
+                  this labeling pipeline.
+                format: int32
+                type: integer
               description:
                 description: User provided description
                 type: string

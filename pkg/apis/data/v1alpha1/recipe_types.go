@@ -83,6 +83,10 @@ type RecipeSpec struct {
 	// WorkloadClassName is the name of the workload used to execute this recipe
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
+	// ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
 }
 
 // RecipeStatus defines the observed state of Recipe

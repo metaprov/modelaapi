@@ -876,6 +876,11 @@ message DatasetSpec {
   // +kubebuilder:default:="default-data-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 14;
+
+  // ActiveDeadlineSeconds is the deadline of a job for this dataset.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 15;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -1232,6 +1237,11 @@ message FeaturePipelineSpec {
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
+
+  // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 10;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1687,6 +1697,11 @@ message LabelingPipelineSpec {
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
+
+  // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 9;
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
@@ -1948,6 +1963,11 @@ message RecipeSpec {
   // WorkloadClassName is the name of the workload used to execute this recipe
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 9;
+
+  // ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 10;
 }
 
 // RecipeStatus defines the observed state of Recipe

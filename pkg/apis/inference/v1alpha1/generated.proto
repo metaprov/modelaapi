@@ -395,6 +395,11 @@ message PredictionSpec {
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 9;
+
+  // ActiveDeadlineSeconds is the deadline of a job for this dataset.
+  // +kubebuilder:default:=600
+  // +kubebuilder:validation:Optional
+  optional int32 activeDeadlineSeconds = 10;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

@@ -340,6 +340,10 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
+	// ActiveDeadlineSeconds is the deadline of a job for this study.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
 }
 
 // StudyStatus defines the observed state of the Study

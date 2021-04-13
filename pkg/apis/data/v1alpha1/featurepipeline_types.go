@@ -93,6 +93,10 @@ type FeaturePipelineSpec struct {
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,9,opt,name=schedule"`
+	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
 }
 
 // FeatureStatus defines the observed state of Feature

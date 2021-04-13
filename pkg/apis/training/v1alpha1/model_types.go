@@ -173,63 +173,78 @@ type ModelSpec struct {
 	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +kubebuilder:validation:Optional
 	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,10,opt,name=dnn"`
+	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
+	// +kubebuilder:validation:Optional
+	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,11,opt,name=chatbot"`
+	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
+	// +kubebuilder:validation:Optional
+	Transformer *TransformerEstimatorSpec `json:"transformer,omitempty" protobuf:"bytes,12,opt,name=transformer"`
+
 	// If this is an ensemble model, specify the ensemble
 	// Default: None
 	// +kubebuilder:validation:Optional
-	Ensemble *EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,11,opt,name=ensemble"`
+	Ensemble *EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,13,opt,name=ensemble"`
 	// TrainingSpec is the desired training settings
 	// +kubebuilder:validation:Optional
-	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,12,opt,name=training"`
+	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,14,opt,name=training"`
 	// Tested indicate if this model should be testedActual. Default is false.
 	// The study controller will set this to true if a model is the best model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Tested *bool `json:"tested,omitempty" protobuf:"bytes,13,opt,name=tested"`
+	Tested *bool `json:"tested,omitempty" protobuf:"bytes,15,opt,name=tested"`
 	// Aborted indicate the desire to abort the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,14,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,16,opt,name=aborted"`
 	// Published is set when we want to wrap the model in a docker container
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Published *bool `json:"published,omitempty" protobuf:"bytes,15,opt,name=published"`
+	Published *bool `json:"published,omitempty" protobuf:"bytes,17,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,16,opt,name=pushed"`
+	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,18,opt,name=pushed"`
 	// Reported is set when a report should be created for this model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"bytes,17,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"bytes,19,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,18,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,20,opt,name=paused"`
 	// Profiled is set when we want to create model profile.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,19,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,21,opt,name=profiled"`
 	// Archived is true when the model should be archived
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Archived *bool `json:"archived,omitempty" protobuf:"bytes,20,opt,name=archived"`
+	Archived *bool `json:"archived,omitempty" protobuf:"bytes,22,opt,name=archived"`
 	// Forecasted is true when the model should perform a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,21,opt,name=forecasted"`
+	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,23,opt,name=forecasted"`
 	// Compiled is true when the model should perform a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Complied *bool `json:"complied,omitempty" protobuf:"bytes,22,opt,name=compiled"`
+	Complied *bool `json:"complied,omitempty" protobuf:"bytes,24,opt,name=compiled"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,23,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,25,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,24,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,26,opt,name=forecastingSpec"`
 	// The compiler specification
 	// +kubebuilder:validation:Optional
-	Compiler *CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,25,opt,name=compiler"`
+	Compiler *CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,27,opt,name=compiler"`
+	// ActiveDeadlineSeconds is the deadline of a job for this model.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,28,opt,name=activeDeadlineSeconds"`
+	// ModelType is the type of model for this estimator
+	// +kubebuilder:default:=classical
+	// +kubebuilder:validation:Optional
+	EstimatorType *ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
 }
 
 type EnsembleSpec struct {
@@ -350,6 +365,14 @@ type ClassicalEstimatorSpec struct {
 	AlgorithmName string `json:"algorithmName,omitempty" protobuf:"bytes,1,opt,name=algorithmName"`
 	// Parameters is a list of the algorithm hyper parameters
 	Parameters []HyperParameterValue `json:"parameters,omitempty" protobuf:"bytes,2,rep,name=parameters,casttype=HyperParameterValue"`
+}
+
+//ChatbotEstimatorSpec is an spec for chat bot. This is not implemented yet
+type ChatbotEstimatorSpec struct {
+}
+
+//TransformerEstimatorSpec is an transformer. This is not implemented yet.
+type TransformerEstimatorSpec struct {
 }
 
 // PreprocessingSpec of the pre processing pipeline
@@ -664,3 +687,15 @@ type CompilerSpec struct {
 	// Set one or more targets
 	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,opt,name=targets"`
 }
+
+// ModelType enamurate the model type
+// +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";
+type ModelType string
+
+const (
+	ModelTypeClassical   ModelType = "classical"
+	ModelTypeDNN         ModelType = "dnn"
+	ModelTypeTransformer ModelType = "transformer"
+	ModelTypeChatbot     ModelType = "chatbot"
+	ModelTypeRL          ModelType = "rl"
+)

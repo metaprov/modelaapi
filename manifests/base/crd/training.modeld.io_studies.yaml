@@ -77,6 +77,12 @@ spec:
                 default: false
                 description: Aborted is set when we want to abort the training
                 type: boolean
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  study.
+                format: int32
+                type: integer
               datasetName:
                 default: ""
                 description: DatasetName refer to the dataset object for which the

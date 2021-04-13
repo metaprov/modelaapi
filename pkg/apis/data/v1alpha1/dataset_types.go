@@ -125,6 +125,10 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="default-data-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,14,opt,name=workloadClassName"`
+	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,15,opt,name=activeDeadlineSeconds"`
 }
 
 // DatasetStatus defines the observed state of Dataset

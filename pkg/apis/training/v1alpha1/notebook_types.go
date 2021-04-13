@@ -102,6 +102,10 @@ type NotebookSpec struct {
 	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
+	// ActiveDeadlineSeconds is the deadline of a job for this notebook.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
 }
 
 // NotebookStatus is the observed state of the notebook resource

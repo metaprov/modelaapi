@@ -85,10 +85,20 @@ spec:
                 default: false
                 description: Aborted indicate the desire to abort the model
                 type: boolean
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  model.
+                format: int32
+                type: integer
               archived:
                 default: false
                 description: Archived is true when the model should be archived
                 type: boolean
+              chatbot:
+                description: Dnn is a specification of the DNN estimator specification.
+                  Not supported for this release.
+                type: object
               compiler:
                 description: The compiler specification
                 properties:
@@ -216,6 +226,16 @@ spec:
                       type: object
                     type: array
                 type: object
+              estimatorType:
+                default: classical
+                description: ModelType is the type of model for this estimator
+                enum:
+                - classical
+                - dnn
+                - transformer
+                - chatbot
+                - rl
+                type: string
               forecasted:
                 default: false
                 description: Forecasted is true when the model should perform a forecast
@@ -949,6 +969,10 @@ spec:
                     description: WorkloadClassName is the name of the workload class
                       used to run this model. This is assigned by the study
                     type: string
+                type: object
+              transformer:
+                description: Dnn is a specification of the DNN estimator specification.
+                  Not supported for this release.
                 type: object
               versionName:
                 default: latest

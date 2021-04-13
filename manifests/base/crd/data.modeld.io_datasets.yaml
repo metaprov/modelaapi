@@ -67,6 +67,12 @@ spec:
           spec:
             description: DatasetSpec defines the desired state of a dataset
             properties:
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  dataset.
+                format: int32
+                type: integer
               datasourceName:
                 description: DataSourceName is the name of the data source which created
                   this dataset. For example flat file
