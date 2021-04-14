@@ -86,7 +86,7 @@ type RecipeSpec struct {
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
 }
 
 // RecipeStatus defines the observed state of Recipe
