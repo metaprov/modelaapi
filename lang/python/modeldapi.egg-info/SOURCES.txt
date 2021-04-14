@@ -60,6 +60,7 @@ github/com/metaprov/modeldapi/services/catalog/__init__.py
 github/com/metaprov/modeldapi/services/catalog/v1/__init__.py
 github/com/metaprov/modeldapi/services/catalog/v1/catalog_pb2.py
 github/com/metaprov/modeldapi/services/catalog/v1/catalog_pb2_grpc.py
+github/com/metaprov/modeldapi/services/cloudproxyd/__init__.py
 github/com/metaprov/modeldapi/services/cloudproxyd/v1/__init__.py
 github/com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd_pb2.py
 github/com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd_pb2_grpc.py
