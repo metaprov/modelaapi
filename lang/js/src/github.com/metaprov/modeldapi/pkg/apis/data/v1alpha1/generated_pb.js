@@ -33002,7 +33002,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.deserializ
       msg.setWorkloadclassname(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -33103,7 +33103,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.serializeB
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 10));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       10,
       f
     );
@@ -33441,7 +33441,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.
 
 
 /**
- * optional int32 activeDeadlineSeconds = 10;
+ * optional int64 activeDeadlineSeconds = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.getActivedeadlineseconds = function() {
