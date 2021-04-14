@@ -87,7 +87,7 @@ type LabelingPipelineSpec struct {
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int32 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,9,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,9,opt,name=activeDeadlineSeconds"`
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.

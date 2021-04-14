@@ -880,7 +880,7 @@ message DatasetSpec {
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 15;
+  optional int64 activeDeadlineSeconds = 15;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -1241,7 +1241,7 @@ message FeaturePipelineSpec {
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 10;
+  optional int64 activeDeadlineSeconds = 10;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1701,7 +1701,7 @@ message LabelingPipelineSpec {
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 9;
+  optional int64 activeDeadlineSeconds = 9;
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.

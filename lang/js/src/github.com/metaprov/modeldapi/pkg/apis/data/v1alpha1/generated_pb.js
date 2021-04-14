@@ -14736,7 +14736,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       msg.setWorkloadclassname(value);
       break;
     case 15:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -14842,7 +14842,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 15));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       15,
       f
     );
@@ -15213,7 +15213,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
 
 
 /**
- * optional int32 activeDeadlineSeconds = 15;
+ * optional int64 activeDeadlineSeconds = 15;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getActivedeadlineseconds = function() {
@@ -21013,7 +21013,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.d
       msg.setSchedule(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -21113,7 +21113,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 10));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       10,
       f
     );
@@ -21449,7 +21449,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
 
 
 /**
- * optional int32 activeDeadlineSeconds = 10;
+ * optional int64 activeDeadlineSeconds = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getActivedeadlineseconds = function() {
@@ -28593,7 +28593,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
       msg.setWorkloadclassname(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -28684,7 +28684,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 9));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       9,
       f
     );
@@ -28984,7 +28984,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
 
 
 /**
- * optional int32 activeDeadlineSeconds = 9;
+ * optional int64 activeDeadlineSeconds = 9;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.getActivedeadlineseconds = function() {

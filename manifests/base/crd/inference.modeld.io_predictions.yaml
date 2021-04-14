@@ -65,7 +65,7 @@ spec:
                 default: 600
                 description: ActiveDeadlineSeconds is the deadline of a job for this
                   dataset.
-                format: int32
+                format: int64
                 type: integer
               datasetName:
                 type: string

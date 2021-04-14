@@ -53,7 +53,7 @@ spec:
                 default: 600
                 description: ActiveDeadlineSeconds is the deadline setup on jobs for
                   this labeling pipeline.
-                format: int32
+                format: int64
                 type: integer
               aggregation:
                 description: Aggregation is the aggregation spec

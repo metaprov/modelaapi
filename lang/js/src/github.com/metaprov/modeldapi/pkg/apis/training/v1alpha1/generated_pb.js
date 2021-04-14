@@ -17464,7 +17464,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       msg.setCompiler(value);
       break;
     case 28:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     case 29:
@@ -17701,7 +17701,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 28));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       28,
       f
     );
@@ -18699,7 +18699,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional int32 activeDeadlineSeconds = 28;
+ * optional int64 activeDeadlineSeconds = 28;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getActivedeadlineseconds = function() {
@@ -23255,7 +23255,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.dese
       msg.setWorkloadclassname(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -23361,7 +23361,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.seri
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 11));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       11,
       f
     );
@@ -23733,7 +23733,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
 
 
 /**
- * optional int32 activeDeadlineSeconds = 11;
+ * optional int64 activeDeadlineSeconds = 11;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getActivedeadlineseconds = function() {
@@ -26597,7 +26597,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
       msg.setWorkloadclassname(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -26689,7 +26689,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.serial
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 10));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       10,
       f
     );
@@ -26988,7 +26988,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.protot
 
 
 /**
- * optional int32 activeDeadlineSeconds = 10;
+ * optional int64 activeDeadlineSeconds = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getActivedeadlineseconds = function() {
@@ -28657,7 +28657,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
       msg.setOwner(value);
       break;
     case 23:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
     default:
@@ -28838,7 +28838,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 23));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       23,
       f
     );
@@ -29574,7 +29574,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 
 
 /**
- * optional int32 activeDeadlineSeconds = 23;
+ * optional int64 activeDeadlineSeconds = 23;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getActivedeadlineseconds = function() {

@@ -634,7 +634,7 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }

@@ -399,7 +399,7 @@ message PredictionSpec {
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 10;
+  optional int64 activeDeadlineSeconds = 10;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

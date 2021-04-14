@@ -1209,7 +1209,7 @@ message ModelSpec {
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 28;
+  optional int64 activeDeadlineSeconds = 28;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
@@ -1535,7 +1535,7 @@ message NotebookSpec {
   // ActiveDeadlineSeconds is the deadline of a job for this notebook.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 11;
+  optional int64 activeDeadlineSeconds = 11;
 }
 
 // NotebookStatus is the observed state of the notebook resource
@@ -1740,7 +1740,7 @@ message ReportSpec {
   // ActiveDeadlineSeconds is the deadline of a job for this report.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 10;
+  optional int64 activeDeadlineSeconds = 10;
 }
 
 // ReportStatus defines the observed state of the report.
@@ -1930,7 +1930,7 @@ message StudySpec {
   // ActiveDeadlineSeconds is the deadline of a job for this study.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int32 activeDeadlineSeconds = 23;
+  optional int64 activeDeadlineSeconds = 23;
 }
 
 // StudyStatus defines the observed state of the Study

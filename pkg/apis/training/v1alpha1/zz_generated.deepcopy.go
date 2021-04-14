@@ -1644,7 +1644,7 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 	if in.EstimatorType != nil {
@@ -2044,7 +2044,7 @@ func (in *NotebookSpec) DeepCopyInto(out *NotebookSpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2377,7 +2377,7 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2620,7 +2620,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }

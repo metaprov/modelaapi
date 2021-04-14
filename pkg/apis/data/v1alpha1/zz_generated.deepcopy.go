@@ -1191,7 +1191,7 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -1767,7 +1767,7 @@ func (in *FeaturePipelineSpec) DeepCopyInto(out *FeaturePipelineSpec) {
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }
@@ -2418,7 +2418,7 @@ func (in *LabelingPipelineSpec) DeepCopyInto(out *LabelingPipelineSpec) {
 	}
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
-		*out = new(int32)
+		*out = new(int64)
 		**out = **in
 	}
 }
