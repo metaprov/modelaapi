@@ -60,20 +60,23 @@ const (
 
 // AlertSpec defines the desired state of Alert
 type AlertSpec struct {
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Subject *string `json:"subject,omitempty" protobuf:"bytes,1,opt,name=subject"`
 	// User provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Message *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
+	Message *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Scopes is the list of scopes for this token.
-	Level *AlertLevel `json:"level,omitempty" protobuf:"bytes,2,opt,name=level"`
+	Level *AlertLevel `json:"level,omitempty" protobuf:"bytes,3,opt,name=level"`
 	// The subject entity
-	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,3,opt,name=entityRef"`
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
 	// +kubebuilder:default:=""
 	// NotifierName is the name of the notifier used to fire the alert.
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
 }
 
 // AlertStatus is the observed state of a Alert

@@ -99,6 +99,9 @@ spec:
               owner:
                 default: ""
                 type: string
+              subject:
+                default: ""
+                type: string
             type: object
           status:
             description: AlertStatus is the observed state of a Alert

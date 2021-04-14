@@ -6,12 +6,9 @@ import (
 	"github.com/metaprov/modeldapi/pkg/apis/inference"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
-	kapps "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
-	nwv1beta1 "k8s.io/api/networking/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
@@ -146,131 +143,6 @@ func (r *Predictor) GreenName() string {
 
 func (r *Predictor) MirrorName() string {
 	return "mirror-" + r.Name
-}
-
-func (r *Predictor) ConstructService(name string) *v1.Service {
-	result := &v1.Service{
-		ObjectMeta: metav1.ObjectMeta{Name: name, Namespace: r.Spec.ServingSiteRef.Name},
-		Spec: v1.ServiceSpec{
-			Selector: map[string]string{"predictor": r.Name},
-			Ports: []v1.ServicePort{
-				{
-					Name: "grpc",
-					Port: *r.Spec.Input.Online.Port,
-					TargetPort: intstr.IntOrString{
-						Type:   0,
-						IntVal: 8080,
-					},
-					NodePort: 0,
-				},
-			},
-		},
-	}
-
-	if *r.Spec.Input.Online.AccessType == ClusterPortAccessType {
-		result.Spec.Type = v1.ServiceTypeClusterIP
-	}
-
-	if *r.Spec.Input.Online.AccessType == NodePortAccessType {
-		result.Spec.Type = v1.ServiceTypeNodePort
-
-	}
-
-	if *r.Spec.Input.Online.AccessType == LoadBalancerAccessType {
-		result.Spec.Type = v1.ServiceTypeLoadBalancer
-	}
-
-	if *r.Spec.Input.Online.AccessType == IngressAccessType {
-		result.Spec.Type = v1.ServiceTypeClusterIP
-	}
-
-	// For mesh we still use cluster ip. Since we would access it from the mesh.
-	if *r.Spec.Input.Online.AccessType == MeshAccessType {
-		result.Spec.Type = v1.ServiceTypeClusterIP
-	}
-
-	if *r.Spec.Input.Online.AccessType == NoneAccessType {
-
-	}
-
-	return result
-
-}
-
-func (r *Predictor) ConstructIngressRule(fdqn string, serviceName string) *nwv1beta1.IngressRule {
-	return &nwv1beta1.IngressRule{
-		Host: fdqn,
-		IngressRuleValue: nwv1beta1.IngressRuleValue{
-			HTTP: &nwv1beta1.HTTPIngressRuleValue{
-				Paths: []nwv1beta1.HTTPIngressPath{
-					{
-						Path: *r.Spec.Input.Online.Path,
-						Backend: nwv1beta1.IngressBackend{
-							ServiceName: serviceName,
-							ServicePort: intstr.IntOrString{
-								IntVal: *r.Spec.Input.Online.Port,
-							},
-						},
-					},
-				},
-			},
-		},
-	}
-}
-
-func (r *Predictor) ConstructDeployment(image string, name string, cachePath string) *kapps.Deployment {
-
-	ns := r.Spec.ServingSiteRef.Name
-
-	return &kapps.Deployment{
-		ObjectMeta: metav1.ObjectMeta{Name: name, Namespace: ns},
-		Spec: kapps.DeploymentSpec{
-			Replicas: util.Int32Ptr(1),
-			Selector: &metav1.LabelSelector{
-				MatchLabels: map[string]string{"predictor": r.Name},
-			},
-			Template: v1.PodTemplateSpec{
-				ObjectMeta: metav1.ObjectMeta{
-					Labels: map[string]string{"predictor": r.Name},
-				},
-				Spec: v1.PodSpec{
-					Volumes: []v1.Volume{
-						{
-							Name:         "data",
-							VolumeSource: v1.VolumeSource{EmptyDir: &v1.EmptyDirVolumeSource{}},
-						},
-					},
-					Containers: []v1.Container{
-						{
-							Name:  "main",
-							Image: image,
-							Ports: []v1.ContainerPort{{ContainerPort: 8080}},
-							VolumeMounts: []v1.VolumeMount{
-								{
-									Name:      "data",
-									MountPath: cachePath,
-								},
-							},
-							ImagePullPolicy: v1.PullIfNotPresent,
-						},
-						{
-							Name:  "clouds",
-							Image: "quay.io/metaprov/modeld-clouds",
-							Ports: []v1.ContainerPort{{ContainerPort: 8090}},
-							VolumeMounts: []v1.VolumeMount{
-								{
-									Name:      "data",
-									MountPath: cachePath,
-								},
-							},
-							ImagePullPolicy: v1.PullIfNotPresent,
-						},
-					},
-				},
-			},
-		},
-	}
-
 }
 
 func (predictor *Predictor) MarkSaved() {

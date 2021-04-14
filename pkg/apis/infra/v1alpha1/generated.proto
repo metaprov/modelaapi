@@ -205,24 +205,28 @@ message AlertList {
 
 // AlertSpec defines the desired state of Alert
 message AlertSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string subject = 1;
+
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 1;
+  optional string description = 2;
 
   // Scopes is the list of scopes for this token.
-  optional string level = 2;
+  optional string level = 3;
 
   // The subject entity
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
 
   // +kubebuilder:default:=""
   // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 4;
+  optional string notifierName = 5;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string owner = 5;
+  optional string owner = 6;
 }
 
 // AlertStatus is the observed state of a Alert

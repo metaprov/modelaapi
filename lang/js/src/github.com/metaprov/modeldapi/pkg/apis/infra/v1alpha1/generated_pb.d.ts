@@ -320,6 +320,9 @@ export namespace AlertList {
 }
 
 export class AlertSpec extends jspb.Message {
+  getSubject(): string;
+  setSubject(value: string): AlertSpec;
+
   getDescription(): string;
   setDescription(value: string): AlertSpec;
 
@@ -347,6 +350,7 @@ export class AlertSpec extends jspb.Message {
 
 export namespace AlertSpec {
   export type AsObject = {
+    subject: string,
     description: string,
     level: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
