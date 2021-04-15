@@ -903,7 +903,7 @@ proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
 proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     region: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     key: jspb.Message.getFieldWithDefault(msg, 3, ""),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
@@ -948,8 +948,9 @@ proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
       msg.setRegion(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setBucket(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1002,11 +1003,12 @@ proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getBucket();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
   f = message.getKey();
@@ -1050,20 +1052,39 @@ proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBuc
 
 
 /**
- * optional string name = 2;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.getBucket = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

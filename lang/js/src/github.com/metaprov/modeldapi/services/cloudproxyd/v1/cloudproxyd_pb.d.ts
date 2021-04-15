@@ -83,8 +83,10 @@ export class KeyExistInVirtualBucketRequest extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): KeyExistInVirtualBucketRequest;
 
-  getName(): string;
-  setName(value: string): KeyExistInVirtualBucketRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): KeyExistInVirtualBucketRequest;
+  hasBucket(): boolean;
+  clearBucket(): KeyExistInVirtualBucketRequest;
 
   getKey(): string;
   setKey(value: string): KeyExistInVirtualBucketRequest;
@@ -108,7 +110,7 @@ export class KeyExistInVirtualBucketRequest extends jspb.Message {
 export namespace KeyExistInVirtualBucketRequest {
   export type AsObject = {
     region: string,
-    name: string,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     key: string,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,

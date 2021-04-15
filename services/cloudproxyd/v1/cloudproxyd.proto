@@ -31,7 +31,7 @@ message VirtualBucketExistResponse {
 
 message KeyExistInVirtualBucketRequest {
     string region = 1;
-    string name   = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
     string key    = 3;
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection    connection = 4;
     map<string,bytes>  secret    = 5;
