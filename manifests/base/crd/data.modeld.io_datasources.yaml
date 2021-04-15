@@ -205,9 +205,10 @@ spec:
                           - file
                           - time
                           - record
+                          - embedding
                           - number-list
                           - categorical-list
-                          - string-list
+                          - text-list
                           - useless
                           type: string
                         description:

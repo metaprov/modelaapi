@@ -816,10 +816,7 @@ const (
 	Auto    DatastoreType = "auto"
 )
 
-// ==================================================
-// DataEnv source
-// ==================================================
-// +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"number-list";"categorical-list";"string-list";"useless";
+// +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"embedding";"number-list";"categorical-list";"text-list";"useless";
 type DataType string
 
 const (
@@ -839,10 +836,11 @@ const (
 	DataTypePath            DataType = "path"
 	DataTypeFile            DataType = "file"
 	DataTypeTime            DataType = "time"
+	DataTypeEmbedding       DataType = "embedding"
 	DataTypeRecord          DataType = "record"
 	DataTypeNumberList      DataType = "number-list"
 	DataTypeCategoricalList DataType = "categorical-list"
-	DataTypeStringList      DataType = "string-list"
+	DataTypeTextList        DataType = "text-list"
 	DataTypeUseless         DataType = "useless"
 )
 
