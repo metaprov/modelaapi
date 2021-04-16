@@ -136,6 +136,8 @@ github/com/metaprov/modeldapi/services/featureset/__init__.py
 github/com/metaprov/modeldapi/services/featureset/v1/__init__.py
 github/com/metaprov/modeldapi/services/featureset/v1/featureset_pb2.py
 github/com/metaprov/modeldapi/services/featureset/v1/featureset_pb2_grpc.py
+github/com/metaprov/modeldapi/services/grpcinferenceservice/v1/grpcinferenceservice_pb2.py
+github/com/metaprov/modeldapi/services/grpcinferenceservice/v1/grpcinferenceservice_pb2_grpc.py
 github/com/metaprov/modeldapi/services/k8score/__init__.py
 github/com/metaprov/modeldapi/services/k8score/v1/__init__.py
 github/com/metaprov/modeldapi/services/k8score/v1/k8score_pb2.py
