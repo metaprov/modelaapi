@@ -5857,7 +5857,7 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.
 proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
     datasetmin: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     datasetmean: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
     datasetstddev: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
@@ -5903,7 +5903,7 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
     case 3:
@@ -5959,8 +5959,8 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.
     );
   }
   f = message.getType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -6015,20 +6015,20 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.
 
 
 /**
- * optional int32 type = 2;
- * @return {number}
+ * optional string type = 2;
+ * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.getType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo} returns this
  */
 proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo.prototype.setType = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

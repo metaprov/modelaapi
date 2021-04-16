@@ -666,8 +666,8 @@ export class ColumnInfo extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnInfo;
 
-  getType(): number;
-  setType(value: number): ColumnInfo;
+  getType(): string;
+  setType(value: string): ColumnInfo;
 
   getDatasetmin(): number;
   setDatasetmin(value: number): ColumnInfo;
@@ -692,7 +692,7 @@ export class ColumnInfo extends jspb.Message {
 export namespace ColumnInfo {
   export type AsObject = {
     name: string,
-    type: number,
+    type: string,
     datasetmin: number,
     datasetmean: number,
     datasetstddev: number,
