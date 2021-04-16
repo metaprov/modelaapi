@@ -49,25 +49,21 @@ message PredictorInfo {
 
 message ModelInfo {
     string name               = 1; // the model name
-    string namespace          = 2; // the model name space
-    string task               = 3; // the model task (binary classification / multi classification / regression)
-    float  rmse               = 4; // for regression models rmse score from training
-    float  auc                = 5; // for classification model the auc score from training
+    string version            = 2; // the model name space
+    string product            = 3; // the model name
+    string trainingMetric     = 4; // the model name space
+    float  trainingScore      = 5; // the model name space
     string status             = 6; // model status
     bool   canary             = 7; // true if this is a canary model
     bool   shadow             = 8; // is this a shadow model
-    int32  traffic            = 9; // how much traffic is allocated to this model (0 -100)
+    float  traffic            = 9; // how much traffic is allocated to this model (0 -100)
     string filter             = 10; // the filter (a boolean expression involving the model)
     int64  rank               = 11; // the model rank when making a prediction.
     string logPath            = 12; // the location of the model prediction log file
-	string imageName          = 13; // The model image name
-	string deploymentName     = 14; // The deployment name that serves this model
-	string serviceName        = 15; // The service name that serves this model
-	string hpaName            = 16; // the name of the horizontal pod autoscaler, if autoscaling is true
-	float  p95                = 17; // The 95 percent latency
-	float  p99                = 18; // The 99 percent latency
-	int64  lastPrediction     = 19; // The last prediction time
-	int32  dailyPredictionAvg = 20;
+	  float  p95                = 13; // The 95 percent latency
+	  float  p99                = 14; // The 99 percent latency
+	  int64  lastPrediction     = 15; // The last prediction time
+	  int32  dailyPredictionAvg = 16;
 }
 
 // Represent the predictor schema. Used for prediction validation
@@ -77,17 +73,13 @@ message SchemaInfo {
 
 // a information about each column
 message ColumnInfo {
-    string name      = 1; // column name
-    int32  type      = 2; // column type
-    int32  min       = 3; // for int column, min value allowed
-    int32  max       = 4; // for int column, max value allowed
-    int32  minLength = 5; // for string column, min length
-    int32  maxLength = 6; // for string column, max length
-    repeated string enum = 7; // list of allowed enum values.
-    bool nullable    = 8;
+    string name          = 1; // column name
+    int32  type          = 2; // column type
+    float  datasetMin    = 3; // training data set min
+    float  datasetMean   = 4; // training dataset mean
+    float  datasetStdDev = 5; // training dataset stddev
+    float  datasetMax    = 6; // trainin dataset max
 }
-
-
 
 /// request / response
 message GetPredictorRequest {
@@ -113,11 +105,11 @@ enum PredictFormat {
 }
 
 message PredictRequest {
-     string                          name             = 1;  // model name
-     bool                            validate         = 2;  // use the schema to validate the request
-     bool                            explain          = 3;  // if true, explain the prediction using shap.
-     PredictFormat                   format           = 5;  // can be csv,json.
-     string                          payload          = 6;  // json or csv array of rows.
+     string             name             = 1;  // model name
+     bool               validate         = 2;  // use the schema to validate the request
+     bool               explain          = 3;  // if true, explain the prediction using shap.
+     PredictFormat      format           = 5;  // can be csv,json.
+     string             payload          = 6;  // json or csv array of rows.
 }
 
 message PredictResponse {
