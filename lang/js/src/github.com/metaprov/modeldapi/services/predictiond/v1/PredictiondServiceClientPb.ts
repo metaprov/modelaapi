@@ -276,28 +276,28 @@ export class PredictionServerClient {
   }
 
   methodInfoGetModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest,
+    github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelResponse,
     (request: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest.deserializeBinary
+    github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelResponse.deserializeBinary
   );
 
   getModel(
     request: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest>;
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelResponse>;
 
   getModel(
     request: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest>;
+               response: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelResponse>;
 
   getModel(
     request: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelRequest) => void) {
+               response: github_com_metaprov_modeldapi_services_predictiond_v1_predictiond_pb.GetModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

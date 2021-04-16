@@ -462,7 +462,7 @@ service PredictionServer {
         };
     }
 
-  rpc GetModel(GetModelRequest) returns (GetModelRequest) {
+  rpc GetModel(GetModelRequest) returns (GetModelResponse) {
         option (google.api.http) = {
               get: "/v1/predictors/{predictor}/models/{name}"
               body: "*"

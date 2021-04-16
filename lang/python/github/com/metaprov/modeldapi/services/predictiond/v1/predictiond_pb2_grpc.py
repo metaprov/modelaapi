@@ -49,7 +49,7 @@ class PredictionServerStub(object):
         self.GetModel = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetModel',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.FromString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelResponse.FromString,
                 )
         self.Predict = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/Predict',
@@ -152,7 +152,7 @@ def add_PredictionServerServicer_to_server(servicer, server):
             'GetModel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.SerializeToString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelResponse.SerializeToString,
             ),
             'Predict': grpc.unary_unary_rpc_method_handler(
                     servicer.Predict,
@@ -286,7 +286,7 @@ class PredictionServer(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictiond.v1.PredictionServer/GetModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelRequest.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictiond_dot_v1_dot_predictiond__pb2.GetModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
