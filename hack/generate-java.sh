@@ -75,7 +75,7 @@ protoc \
     github.com/metaprov/modeldapi/services/prediction/v1/prediction.proto \
     github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto \
     github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
-    github.com/metaprov/modeldapi/services/predictiond/v1/predictiond.proto \
+    github.com/metaprov/modeldapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto \
     github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto \
     github.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto \
     github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto \
