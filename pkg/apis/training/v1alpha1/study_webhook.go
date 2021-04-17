@@ -181,8 +181,12 @@ func (study *Study) Default() {
 	// if we search preprocessor, but we do not have an estimator
 	study.Status.Conditions = make([]StudyCondition, 0)
 
-	// set study labeles
-	study.ObjectMeta.Labels["owner"] = *study.Spec.Owner
+	if model.ObjectMeta.Labels == nil {
+		model.ObjectMeta.Labels = make(map[string]string)
+		if study.Spec.Owner != nil {
+			study.ObjectMeta.Labels["owner"] = *study.Spec.Owner
+		}
+	}
 
 }
 

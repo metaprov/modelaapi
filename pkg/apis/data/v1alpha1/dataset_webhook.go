@@ -45,6 +45,20 @@ func (dataset *Dataset) Default() {
 		dataset.Spec.Origin = &DataLocation{}
 	}
 
+	if dataset.ObjectMeta.Labels == nil {
+		dataset.ObjectMeta.Labels = make(map[string]string)
+		if dataset.Spec.DataSourceName != nil {
+			dataset.ObjectMeta.Labels["source"] = *dataset.Spec.DataSourceName
+		}
+		if dataset.Spec.VersionName != nil {
+			dataset.ObjectMeta.Labels["version"] = *dataset.Spec.VersionName
+		}
+		if dataset.Spec.Owner != nil {
+			dataset.ObjectMeta.Labels["owner"] = *dataset.Spec.Owner
+		}
+
+	}
+
 	dataset.Status.Statistics.Columns = make([]ColumnStatistics, 0)
 
 }

@@ -102,11 +102,24 @@ func (model *Model) Default() {
 
 	// set labels
 	// set study labeles
-	model.ObjectMeta.Labels["version"] = *model.Spec.ModelVersion
-	model.ObjectMeta.Labels["study"] = *model.Spec.StudyName
-	model.ObjectMeta.Labels["alg"] = model.Spec.Estimator.AlgorithmName
-	model.ObjectMeta.Labels["owner"] = *model.Spec.Owner
-	model.ObjectMeta.Labels["dataset"] = *model.Spec.DatasetName
+	if model.ObjectMeta.Labels == nil {
+		model.ObjectMeta.Labels = make(map[string]string)
+		if model.Spec.ModelVersion != nil {
+			model.ObjectMeta.Labels["version"] = *model.Spec.ModelVersion
+		}
+		if model.Spec.StudyName != nil {
+			model.ObjectMeta.Labels["study"] = *model.Spec.StudyName
+		}
+		if model.Spec.Estimator != nil {
+			model.ObjectMeta.Labels["alg"] = model.Spec.Estimator.AlgorithmName
+		}
+		if model.Spec.Owner != nil {
+			model.ObjectMeta.Labels["owner"] = *model.Spec.Owner
+		}
+		if model.Spec.DatasetName != nil {
+			model.ObjectMeta.Labels["dataset"] = *model.Spec.DatasetName
+		}
+	}
 
 }
 
