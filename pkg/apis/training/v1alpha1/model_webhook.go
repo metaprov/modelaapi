@@ -100,6 +100,14 @@ func (model *Model) Default() {
 		model.Spec.Forecasted = util.BoolPtr(false)
 	}
 
+	// set labels
+	// set study labeles
+	model.ObjectMeta.Labels["version"] = *model.Spec.ModelVersion
+	model.ObjectMeta.Labels["study"] = *model.Spec.StudyName
+	model.ObjectMeta.Labels["alg"] = model.Spec.Estimator.AlgorithmName
+	model.ObjectMeta.Labels["owner"] = *model.Spec.Owner
+	model.ObjectMeta.Labels["dataset"] = *model.Spec.DatasetName
+
 }
 
 // validation
