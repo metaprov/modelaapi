@@ -610,7 +610,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -6697,6 +6697,13 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetModelRes
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.repeatedFields_ = [8];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -6732,7 +6739,9 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequ
     validate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     explain: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     format: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    payload: jspb.Message.getFieldWithDefault(msg, 6, "")
+    payload: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    labeled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    metricsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6788,6 +6797,14 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequ
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setPayload(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLabeled(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addMetrics(value);
       break;
     default:
       reader.skipField();
@@ -6850,6 +6867,20 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequ
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getLabeled();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = message.getMetricsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      8,
       f
     );
   }
@@ -6946,6 +6977,61 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequ
 };
 
 
+/**
+ * optional bool labeled = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getLabeled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setLabeled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * repeated string metrics = 8;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getMetricsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setMetricsList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.prototype.addMetrics = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest.prototype.clearMetricsList = function() {
+  return this.setMetricsList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -6986,7 +7072,8 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResp
 proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem.toObject, includeInstance),
+    scoresMap: (f = msg.getScoresMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -7028,6 +7115,12 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResp
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
+    case 2:
+      var value = msg.getScoresMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -7064,6 +7157,10 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResp
       f,
       proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem.serializeBinaryToWriter
     );
+  }
+  f = message.getScoresMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
@@ -7104,6 +7201,28 @@ proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResp
 proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.prototype.clearItemsList = function() {
   return this.setItemsList([]);
 };
+
+
+/**
+ * map<string, float> scores = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.prototype.getScoresMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.prototype.clearScoresMap = function() {
+  this.getScoresMap().clear();
+  return this;};
 
 
 

@@ -796,6 +796,14 @@ export class PredictRequest extends jspb.Message {
   getPayload(): string;
   setPayload(value: string): PredictRequest;
 
+  getLabeled(): boolean;
+  setLabeled(value: boolean): PredictRequest;
+
+  getMetricsList(): Array<string>;
+  setMetricsList(value: Array<string>): PredictRequest;
+  clearMetricsList(): PredictRequest;
+  addMetrics(value: string, index?: number): PredictRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PredictRequest): PredictRequest.AsObject;
@@ -811,6 +819,8 @@ export namespace PredictRequest {
     explain: boolean,
     format: string,
     payload: string,
+    labeled: boolean,
+    metricsList: Array<string>,
   }
 }
 
@@ -819,6 +829,9 @@ export class PredictResponse extends jspb.Message {
   setItemsList(value: Array<PredictResultLineItem>): PredictResponse;
   clearItemsList(): PredictResponse;
   addItems(value?: PredictResultLineItem, index?: number): PredictResultLineItem;
+
+  getScoresMap(): jspb.Map<string, number>;
+  clearScoresMap(): PredictResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictResponse.AsObject;
@@ -831,6 +844,7 @@ export class PredictResponse extends jspb.Message {
 export namespace PredictResponse {
   export type AsObject = {
     itemsList: Array<PredictResultLineItem.AsObject>,
+    scoresMap: Array<[string, number]>,
   }
 }
 
