@@ -2,16 +2,21 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 
 	"github.com/metaprov/modeldapi/pkg/apis/inference"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
+	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"k8s.io/apimachinery/pkg/util/validation/field"
 	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
+	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
 //==============================================================================
@@ -174,4 +179,39 @@ func (run *CronPrediction) IsRunning() bool {
 func (run *CronPrediction) IsFailed() bool {
 	cond := run.GetCond(CronPredictionReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseFailed)
+}
+
+// defaulting
+var _ webhook.Defaulter = &CronPrediction{}
+
+func (pre *CronPrediction) Default() {
+
+}
+
+// validation
+var _ webhook.Validator = &CronPrediction{}
+
+// ValidateCreate implements webhook.Validator so a webhook will be registered for the type
+func (prediction *CronPrediction) ValidateCreate() error {
+	return prediction.validate()
+}
+
+// ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
+func (prediction *CronPrediction) ValidateUpdate(old runtime.Object) error {
+	return prediction.validate()
+}
+
+func (prediction *CronPrediction) validate() error {
+	var allErrs field.ErrorList
+	if len(allErrs) == 0 {
+		return nil
+	}
+
+	return apierrors.NewInvalid(
+		schema.GroupKind{Group: "inference.modeld.io", Kind: "Prediction"},
+		prediction.Name, allErrs)
+}
+
+func (prediction *CronPrediction) ValidateDelete() error {
+	return nil
 }

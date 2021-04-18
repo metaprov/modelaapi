@@ -52,11 +52,3 @@ func (prediction *Prediction) validate() error {
 func (prediction *Prediction) ValidateDelete() error {
 	return nil
 }
-
-// defaulting
-var _ webhook.Defaulter = &Prediction{}
-
-func (run *CronPrediction) Default() {
-	// if no input bucket defined,
-
-}
