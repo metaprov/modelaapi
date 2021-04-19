@@ -23,23 +23,15 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
     - jsonPath: .spec.predictorName
       name: Predictor
       type: string
-    - jsonPath: .spec.datasetName
-      name: Bucket
-      type: string
-    - jsonPath: .spec.datasetName
-      name: File
-      type: string
-    - jsonPath: .spec.datasetName
-      name: Labeled
-      type: string
-    - jsonPath: .status.score
-      name: Score
-      type: string
-    - jsonPath: .status.phase
-      name: Status
+    - jsonPath: .spec.schedule.cron
+      name: Cron
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

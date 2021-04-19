@@ -23,6 +23,10 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
     - jsonPath: .spec.predictorName
       name: Predictor
       type: string
@@ -31,6 +35,14 @@ spec:
       type: string
     - jsonPath: .spec.labeled
       name: Labeled
+      type: string
+    - jsonPath: .spec.output.bucketName
+      name: Bucket
+      priority: 1
+      type: string
+    - jsonPath: .spec.output.path
+      name: Key
+      priority: 1
       type: string
     - jsonPath: .status.score
       name: Score

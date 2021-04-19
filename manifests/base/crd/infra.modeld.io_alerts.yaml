@@ -23,8 +23,17 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.connectionName
-      name: Connection
+    - jsonPath: .spec.level
+      name: Level
+      type: string
+    - jsonPath: .spec.subject
+      name: Subject
+      type: string
+    - jsonPath: .spec.entityRef.Name
+      name: Entity Namespace
+      type: string
+    - jsonPath: .spec.entityRef.Namespace
+      name: Entity Name
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

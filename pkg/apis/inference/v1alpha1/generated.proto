@@ -57,12 +57,9 @@ message ChannelStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="File",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.datasetName"
-// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Cron",type="string",JSONPath=".spec.schedule.cron"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=cronpredictions,singular=cronprediction,categories={inference,modeld}
 // CronPrediction represents a single run of the Prediction Pipeline
@@ -279,9 +276,12 @@ message OnlineFeaturestoreSpec {
 
 // PredictionTemplate represents a prediction object
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
+// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
+// +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
@@ -433,10 +433,10 @@ message PredictionTemplate {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.port",description=""
-// +kubebuilder:printcolumn:name="Production",type="string",JSONPath=".spec.prod.modelName",description=""
-// +kubebuilder:printcolumn:name="Weight",type="string",JSONPath=".spec.prod.weight",description=""
-// +kubebuilder:printcolumn:name="Access",type="string",JSONPath=".spec.accessType",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Serving Site",type="integer",JSONPath=".spec.servingsiteRef.name",description=""
+// +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.input.online.port",description=""
+// +kubebuilder:printcolumn:name="Access",type="integer",JSONPath=".spec.input.online.accessType",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
 message Predictor {

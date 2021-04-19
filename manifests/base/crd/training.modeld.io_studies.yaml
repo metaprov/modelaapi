@@ -25,8 +25,13 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
     - jsonPath: .spec.versionName
       name: Version
+      priority: 1
       type: string
     - jsonPath: .spec.datasetName
       name: Dataset
@@ -43,9 +48,20 @@ spec:
     - jsonPath: .status.bestModel
       name: Best model
       type: string
-    - jsonPath: .status.totalTrainers
-      name: TotalTrainers
-      type: string
+    - jsonPath: .status.trainedModels
+      name: Trained
+      type: number
+    - jsonPath: .status.testedModels
+      name: Tested
+      type: number
+    - jsonPath: .status.testedModels
+      name: StartTime
+      priority: 1
+      type: number
+    - jsonPath: .status.testedModels
+      name: EndTime
+      priority: 1
+      type: number
     - jsonPath: .status.phase
       name: Status
       type: string

@@ -23,18 +23,19 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.port
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
+    - jsonPath: .spec.servingsiteRef.name
+      name: Serving Site
+      type: integer
+    - jsonPath: .spec.input.online.port
       name: Port
       type: integer
-    - jsonPath: .spec.prod.modelName
-      name: Production
-      type: string
-    - jsonPath: .spec.prod.weight
-      name: Weight
-      type: string
-    - jsonPath: .spec.accessType
+    - jsonPath: .spec.input.online.accessType
       name: Access
-      type: string
+      type: integer
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

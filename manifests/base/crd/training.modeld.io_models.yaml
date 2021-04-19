@@ -26,6 +26,10 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
     - jsonPath: .spec.versionName
       name: Version
       type: string
