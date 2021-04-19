@@ -39,10 +39,11 @@ type DataProductCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.dataLocation.bucketName"
 // +kubebuilder:printcolumn:name="Lab",type="string",JSONPath=".spec.labName"
 // +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingSiteName"
-// +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.url"
+// +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.name"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,categories={data,modeld,all}

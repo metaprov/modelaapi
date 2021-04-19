@@ -26,6 +26,9 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
     - jsonPath: .spec.dataLocation.bucketName
       name: Bucket
       type: string
@@ -35,7 +38,7 @@ spec:
     - jsonPath: .spec.servingSiteName
       name: Serving Site
       type: string
-    - jsonPath: .spec.imageLocation.url
+    - jsonPath: .spec.imageLocation.name
       name: Image Repo
       type: string
     - jsonPath: .spec.task

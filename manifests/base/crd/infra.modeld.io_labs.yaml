@@ -24,7 +24,10 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.cluster
+    - jsonPath: .spec.ownerName
+      name: Owner
+      type: string
+    - jsonPath: .spec.clusterName
       name: Cluster
       type: string
     - jsonPath: .metadata.creationTimestamp

@@ -37,6 +37,7 @@ type VirtualClusterCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.ownerName",description="cluster owner account"
 // +kubebuilder:printcolumn:name="Nodes",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Node Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Gpus",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"

@@ -26,6 +26,10 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - description: owner
+      jsonPath: .spec.owner
+      name: Owner
+      type: string
     - description: virtual bucket connections
       jsonPath: .spec.connectionName
       name: Connection

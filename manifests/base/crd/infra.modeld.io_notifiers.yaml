@@ -23,8 +23,17 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
     - jsonPath: .spec.connectionName
       name: Connection
+      type: string
+    - jsonPath: .spec.from
+      name: From
+      type: string
+    - jsonPath: .spec.to
+      name: To
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

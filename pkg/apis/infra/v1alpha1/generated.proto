@@ -698,7 +698,8 @@ message ImageRegistrySpec {
 // Lab is a namespace used for training and data analysis operations.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.cluster"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.ownerName"
+// +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=labs,singular=lab,categories={infra,modeld,all}
 // +kubebuilder:subresource:status
@@ -783,8 +784,13 @@ message LabStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretName",description=""
+// +kubebuilder:printcolumn:name="Trial Start",type="string",JSONPath=".spec.trialStart",description=""
 // +kubebuilder:printcolumn:name="Trial End",type="string",JSONPath=".spec.trialEnd",description=""
+// +kubebuilder:printcolumn:name="Max Trainers",type="string",JSONPath=".spec.maxTrainers",description=""
+// +kubebuilder:printcolumn:name="Max Nodes",type="string",JSONPath=".spec.maxServers",description=""
+// +kubebuilder:printcolumn:name="Max Users",type="string",JSONPath=".spec.maxUsers",description=""
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=licenses,singular=license,categories={infra,modeld}
@@ -1008,7 +1014,10 @@ message MySqlSpec {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
+// +kubebuilder:printcolumn:name="From",type="string",JSONPath=".spec.from",description=""
+// +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modeld}
 message Notifier {
@@ -1455,6 +1464,7 @@ message TenantStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
