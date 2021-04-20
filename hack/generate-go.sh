@@ -46,6 +46,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modeldapi/services/account/v1/account.proto \
          github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto \
          github.com/metaprov/modeldapi/services/alert/v1/alert.proto \
+         github.com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem.proto \
          github.com/metaprov/modeldapi/services/dbproxyd/v1/dbproxyd.proto \
          github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto \
          github.com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd.proto \

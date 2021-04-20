@@ -1,0 +1,148 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/modeldsystem/v1";
+
+package github.com.metaprov.modeldapi.services.modeldsystem.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListModeldSystemsRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListModeldSystemsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystemList items = 1;   
+}
+
+message ModeldSystemResponse {}
+
+message CreateModeldSystemRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystem  item = 1;
+    string password = 2;    
+}
+
+message CreateModeldSystemResponse {
+
+}
+
+message UpdateModeldSystemRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
+}
+
+message UpdateModeldSystemResponse {
+
+}
+
+message GetModeldSystemRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetModeldSystemResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetModeldSystemNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetModeldSystemNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteModeldSystemRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteModeldSystemResponse {}
+
+
+message ModeldSystemCreateResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message ModeldSystemLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message ModeldSystemLoginResponse {
+    string token = 1; // jwt token
+}
+
+
+message ModeldSystemGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message ModeldSystemLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+
+
+
+service ModeldSystemService {
+    rpc ListModeldSystems(ListModeldSystemsRequest) returns (ListModeldSystemsResponse) {
+        option (google.api.http).get = "/v1/modeldsystems";
+    }
+    rpc CreateModeldSystem(CreateModeldSystemRequest) returns (CreateModeldSystemResponse) {
+        option (google.api.http) = {
+			post: "/v1/modeldsystems"
+			body: "modeldsystem"
+		};
+    }
+    rpc GetModeldSystem(GetModeldSystemRequest) returns (GetModeldSystemResponse) {
+        option (google.api.http).get = "/v1/{namespace}/modeldsystems/{name}";
+    }
+    rpc UpdateModeldSystem(UpdateModeldSystemRequest) returns (UpdateModeldSystemResponse) {
+        option (google.api.http) = {
+			put: "/v1/{modeldsystem.metadata.namespace}/modeldsystems//{modeldsystem.metadata.name}"
+			body: "modeldsystem"
+		};
+    }
+
+    rpc DeleteModeldSystem(DeleteModeldSystemRequest) returns (DeleteModeldSystemResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/modeldsystems/{name}";
+    }
+
+}

@@ -18,36 +18,8 @@ const (
 	ReportPhaseFailed  ReportPhase = "IsFailed"
 )
 
-// ReportImageName denote the name of a report image
-type ReportImageName string
-
-const (
-	RocImage                         ReportImageName = "roc.png"
-	FreqForCategoricalAttributeImage ReportImageName = "freq_for_categorical_attribute_image.png"
-	DistForNumericalAttributeImage   ReportImageName = "dist_for_numerical_attribute_image.png"
-	ConfusionMatrixImage             ReportImageName = "confusion_matrix.png"
-	CorrelationImage                 ReportImageName = "correlation.png"
-	FeatureImportanceImage           ReportImageName = "feature_importance.png"
-)
-
-type ReportTableName string
-
-const (
-	SampleTableName               ReportTableName = "sample_table"
-	ShapeTableName                ReportTableName = "shape_table"
-	OverviewTableName             ReportTableName = "overview_table"
-	ColumnTableName               ReportTableName = "columns_table"
-	MissingValuesTableName        ReportTableName = "missing_values_table"
-	RFETableName                  ReportTableName = "rfe_table"
-	ClassificationReportTableName ReportTableName = "classification_report_table"
-	AlgorithmTableName            ReportTableName = "algorithm_table"
-	EvaluationTableName           ReportTableName = "evaluation_table"
-	BootstrapTableName            ReportTableName = "bootstrap_table"
-	TrainingTableName             ReportTableName = "training_table"
-)
-
 // ReportType is the type of report
-// +kubebuilder:validation:Enum="binary-classification-model";"forecast-model";"regression-model";"multi-classification-model";"text-classification-model";"classification-dataset";"forecast-dataset";"text-classification-dataset";"regression-dataset";"study-report";"feature-report";"invalid-report"
+// +kubebuilder:validation:Enum="binary-classification-model";"forecast-model";"regression-model";"multi-classification-model";"text-classification-model";"classification-dataset";"forecast-dataset";"text-classification-dataset";"regression-dataset";"study-report";"feature-report";"invalid-report";"daily-report";"weekly-report";"monthly-report";
 type ReportType string
 
 const (
@@ -61,6 +33,9 @@ const (
 	ForecastDatasetReport           ReportType = "forecast-dataset"
 	TextClassificationDatasetReport ReportType = "text-classification-dataset"
 	RegressionDatasetReport         ReportType = "regression-dataset"
+	DailyReport                     ReportType = "daily-report"
+	WeeklyReport                    ReportType = "weekly-report"
+	MonthlyReport                   ReportType = "monthly-report"
 
 	StudyReport    ReportType = "study-report"
 	ForecastReport ReportType = "forecast-report"
