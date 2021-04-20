@@ -385,7 +385,7 @@ message PredictionSpec {
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
 
   // Tests is the list of metrics that we need to measure if we are running a labeled prediction
-  repeated string results = 7;
+  repeated string tests = 7;
 
   // The owner account name
   // +kubebuilder:validation:Optional

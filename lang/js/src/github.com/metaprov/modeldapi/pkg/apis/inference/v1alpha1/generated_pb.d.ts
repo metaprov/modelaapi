@@ -681,10 +681,10 @@ export class PredictionSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
-  getResultsList(): Array<string>;
-  setResultsList(value: Array<string>): PredictionSpec;
-  clearResultsList(): PredictionSpec;
-  addResults(value: string, index?: number): PredictionSpec;
+  getTestsList(): Array<string>;
+  setTestsList(value: Array<string>): PredictionSpec;
+  clearTestsList(): PredictionSpec;
+  addTests(value: string, index?: number): PredictionSpec;
 
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
@@ -711,7 +711,7 @@ export namespace PredictionSpec {
     datasetname: string,
     input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    resultsList: Array<string>,
+    testsList: Array<string>,
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,

@@ -6560,7 +6560,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     input: (f = msg.getInput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     output: (f = msg.getOutput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    resultsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    testsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
@@ -6628,7 +6628,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.addResults(value);
+      msg.addTests(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -6715,7 +6715,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
-  f = message.getResultsList();
+  f = message.getTestsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       7,
@@ -6965,10 +6965,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * repeated string results = 7;
+ * repeated string tests = 7;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getResultsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getTestsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
 };
 
@@ -6977,7 +6977,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setResultsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setTestsList = function(value) {
   return jspb.Message.setField(this, 7, value || []);
 };
 
@@ -6987,7 +6987,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.addResults = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.addTests = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
@@ -6996,8 +6996,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearTestsList = function() {
+  return this.setTestsList([]);
 };
 
 

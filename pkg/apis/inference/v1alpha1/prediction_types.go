@@ -92,7 +92,7 @@ type PredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
-	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,opt,name=results"`
+	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,opt,name=tests"`
 	// The owner account name
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
