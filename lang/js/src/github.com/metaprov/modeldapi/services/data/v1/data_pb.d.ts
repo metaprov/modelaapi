@@ -1863,6 +1863,48 @@ export namespace CreateStudyReportRequest {
   }
 }
 
+export class CreatePeriodReportRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreatePeriodReportRequest;
+  hasProduct(): boolean;
+  clearProduct(): CreatePeriodReportRequest;
+
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreatePeriodReportRequest;
+  hasBucket(): boolean;
+  clearBucket(): CreatePeriodReportRequest;
+
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreatePeriodReportRequest;
+  hasConnection(): boolean;
+  clearConnection(): CreatePeriodReportRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): CreatePeriodReportRequest;
+
+  getReport(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setReport(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreatePeriodReportRequest;
+  hasReport(): boolean;
+  clearReport(): CreatePeriodReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePeriodReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePeriodReportRequest): CreatePeriodReportRequest.AsObject;
+  static serializeBinaryToWriter(message: CreatePeriodReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePeriodReportRequest;
+  static deserializeBinaryFromReader(message: CreatePeriodReportRequest, reader: jspb.BinaryReader): CreatePeriodReportRequest;
+}
+
+export namespace CreatePeriodReportRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    report?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+  }
+}
+
 export class AskModelRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskModelRequest;

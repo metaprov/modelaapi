@@ -147,6 +147,9 @@ spec:
                 - study-report
                 - feature-report
                 - invalid-report
+                - daily-report
+                - weekly-report
+                - monthly-report
                 type: string
               versionName:
                 default: latest

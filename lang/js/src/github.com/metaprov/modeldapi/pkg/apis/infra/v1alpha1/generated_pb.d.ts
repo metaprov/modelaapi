@@ -1773,6 +1773,138 @@ export namespace MinioSpec {
   }
 }
 
+export class ModeldSystem extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ModeldSystem;
+  hasMetadata(): boolean;
+  clearMetadata(): ModeldSystem;
+
+  getSpec(): ModeldSystemSpec | undefined;
+  setSpec(value?: ModeldSystemSpec): ModeldSystem;
+  hasSpec(): boolean;
+  clearSpec(): ModeldSystem;
+
+  getStatus(): ModeldSystemStatus | undefined;
+  setStatus(value?: ModeldSystemStatus): ModeldSystem;
+  hasStatus(): boolean;
+  clearStatus(): ModeldSystem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModeldSystem.AsObject;
+  static toObject(includeInstance: boolean, msg: ModeldSystem): ModeldSystem.AsObject;
+  static serializeBinaryToWriter(message: ModeldSystem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModeldSystem;
+  static deserializeBinaryFromReader(message: ModeldSystem, reader: jspb.BinaryReader): ModeldSystem;
+}
+
+export namespace ModeldSystem {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ModeldSystemSpec.AsObject,
+    status?: ModeldSystemStatus.AsObject,
+  }
+}
+
+export class ModeldSystemCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ModeldSystemCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ModeldSystemCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModeldSystemCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ModeldSystemCondition;
+
+  getReason(): string;
+  setReason(value: string): ModeldSystemCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ModeldSystemCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModeldSystemCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ModeldSystemCondition): ModeldSystemCondition.AsObject;
+  static serializeBinaryToWriter(message: ModeldSystemCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModeldSystemCondition;
+  static deserializeBinaryFromReader(message: ModeldSystemCondition, reader: jspb.BinaryReader): ModeldSystemCondition;
+}
+
+export namespace ModeldSystemCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ModeldSystemList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModeldSystemList;
+  hasMetadata(): boolean;
+  clearMetadata(): ModeldSystemList;
+
+  getItemsList(): Array<ModeldSystem>;
+  setItemsList(value: Array<ModeldSystem>): ModeldSystemList;
+  clearItemsList(): ModeldSystemList;
+  addItems(value?: ModeldSystem, index?: number): ModeldSystem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModeldSystemList.AsObject;
+  static toObject(includeInstance: boolean, msg: ModeldSystemList): ModeldSystemList.AsObject;
+  static serializeBinaryToWriter(message: ModeldSystemList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModeldSystemList;
+  static deserializeBinaryFromReader(message: ModeldSystemList, reader: jspb.BinaryReader): ModeldSystemList;
+}
+
+export namespace ModeldSystemList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<ModeldSystem.AsObject>,
+  }
+}
+
+export class ModeldSystemSpec extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModeldSystemSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModeldSystemSpec): ModeldSystemSpec.AsObject;
+  static serializeBinaryToWriter(message: ModeldSystemSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModeldSystemSpec;
+  static deserializeBinaryFromReader(message: ModeldSystemSpec, reader: jspb.BinaryReader): ModeldSystemSpec;
+}
+
+export namespace ModeldSystemSpec {
+  export type AsObject = {
+  }
+}
+
+export class ModeldSystemStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModeldSystemStatus;
+
+  getConditionsList(): Array<ModeldSystemCondition>;
+  setConditionsList(value: Array<ModeldSystemCondition>): ModeldSystemStatus;
+  clearConditionsList(): ModeldSystemStatus;
+  addConditions(value?: ModeldSystemCondition, index?: number): ModeldSystemCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModeldSystemStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModeldSystemStatus): ModeldSystemStatus.AsObject;
+  static serializeBinaryToWriter(message: ModeldSystemStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModeldSystemStatus;
+  static deserializeBinaryFromReader(message: ModeldSystemStatus, reader: jspb.BinaryReader): ModeldSystemStatus;
+}
+
+export namespace ModeldSystemStatus {
+  export type AsObject = {
+    observedgeneration: number,
+    conditionsList: Array<ModeldSystemCondition.AsObject>,
+  }
+}
+
 export class MongoDbSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): MongoDbSpec;

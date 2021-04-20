@@ -979,6 +979,63 @@ message MinioSpec {
   optional string host = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=modeldsystems,singular=modeldsystem,categories={infra,modeld}
+message ModeldSystem {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ModeldSystemSpec spec = 2;
+
+  optional ModeldSystemStatus status = 3;
+}
+
+// ModeldSystemCondition describes the state of the license at a certain point.
+message ModeldSystemCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// ModeldSystemList is a list of ModeldSystems
+message ModeldSystemList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ModeldSystem items = 2;
+}
+
+// ModeldSystemSpec defines the desired state of ModeldSystem
+message ModeldSystemSpec {
+}
+
+// ModeldSystemStatus is the observed state of a ModeldSystem
+message ModeldSystemStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
+  // +optional
+  repeated ModeldSystemCondition conditions = 2;
+}
+
 message MongoDbSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
