@@ -168,6 +168,8 @@ github/com/metaprov/modeldapi/services/modelautobuilder/__init__.py
 github/com/metaprov/modeldapi/services/modelautobuilder/v1/__init__.py
 github/com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder_pb2.py
 github/com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder_pb2_grpc.py
+github/com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem_pb2.py
+github/com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem_pb2_grpc.py
 github/com/metaprov/modeldapi/services/notebook/__init__.py
 github/com/metaprov/modeldapi/services/notebook/v1/__init__.py
 github/com/metaprov/modeldapi/services/notebook/v1/notebook_pb2.py
@@ -200,10 +202,6 @@ github/com/metaprov/modeldapi/services/prediction/__init__.py
 github/com/metaprov/modeldapi/services/prediction/v1/__init__.py
 github/com/metaprov/modeldapi/services/prediction/v1/prediction_pb2.py
 github/com/metaprov/modeldapi/services/prediction/v1/prediction_pb2_grpc.py
-github/com/metaprov/modeldapi/services/predictiond/__init__.py
-github/com/metaprov/modeldapi/services/predictiond/v1/__init__.py
-github/com/metaprov/modeldapi/services/predictiond/v1/predictiond_pb2.py
-github/com/metaprov/modeldapi/services/predictiond/v1/predictiond_pb2_grpc.py
 github/com/metaprov/modeldapi/services/predictionstore/__init__.py
 github/com/metaprov/modeldapi/services/predictionstore/v1/__init__.py
 github/com/metaprov/modeldapi/services/predictionstore/v1/predictionstore_pb2.py
