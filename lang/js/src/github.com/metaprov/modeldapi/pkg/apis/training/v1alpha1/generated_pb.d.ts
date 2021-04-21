@@ -56,6 +56,9 @@ export namespace BacktestSpec {
 }
 
 export class CapacityStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): CapacityStageSpec;
+
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
@@ -80,6 +83,7 @@ export class CapacityStageSpec extends jspb.Message {
 
 export namespace CapacityStageSpec {
   export type AsObject = {
+    enabled: boolean,
     servingsitename: string,
     testsList: Array<Expectation.AsObject>,
     manualapproval: boolean,
@@ -220,6 +224,9 @@ export namespace DataSplit {
 }
 
 export class DataStageSpec extends jspb.Message {
+  getSourcetype(): string;
+  setSourcetype(value: string): DataStageSpec;
+
   getLabname(): string;
   setLabname(value: string): DataStageSpec;
 
@@ -240,6 +247,11 @@ export class DataStageSpec extends jspb.Message {
   getSourcedatasetname(): string;
   setSourcedatasetname(value: string): DataStageSpec;
 
+  getDatasetselector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
+  setDatasetselector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): DataStageSpec;
+  hasDatasetselector(): boolean;
+  clearDatasetselector(): DataStageSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataStageSpec): DataStageSpec.AsObject;
@@ -250,12 +262,14 @@ export class DataStageSpec extends jspb.Message {
 
 export namespace DataStageSpec {
   export type AsObject = {
+    sourcetype: string,
     labname: string,
     datapipelinename: string,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     datasourcename: string,
     dockerimage: string,
     sourcedatasetname: string,
+    datasetselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
   }
 }
 
@@ -2522,6 +2536,9 @@ export namespace PreprocessingSpec {
 }
 
 export class ProdStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ProdStageSpec;
+
   getServingsitename(): string;
   setServingsitename(value: string): ProdStageSpec;
 
@@ -2551,6 +2568,7 @@ export class ProdStageSpec extends jspb.Message {
 
 export namespace ProdStageSpec {
   export type AsObject = {
+    enabled: boolean,
     servingsitename: string,
     predictorname: string,
     template?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
@@ -3364,6 +3382,9 @@ export namespace TransformerEstimatorSpec {
 }
 
 export class UATStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): UATStageSpec;
+
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
@@ -3388,6 +3409,7 @@ export class UATStageSpec extends jspb.Message {
 
 export namespace UATStageSpec {
   export type AsObject = {
+    enabled: boolean,
     servingsitename: string,
     testsList: Array<Expectation.AsObject>,
     manualapproval: boolean,

@@ -7,6 +7,15 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+type DataSourceType string
+
+const (
+	DataSourceTypeNotebook     DataSourceType = "notebook"
+	DataSourceTypeDataPipeline DataSourceType = "data-pipeline"
+	DataSourceTypeBucket       DataSourceType = "bucket"
+	DataSourceTypeSelector     DataSourceType = "selector"
+)
+
 type ModelPipelineConditionType string
 
 const (
@@ -113,28 +122,35 @@ type PipelineTrigger struct {
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
+	// SourceType is the source of the data for this pipeline.
+	// +kubebuilder:default ="selector"
+	// +kubebuilder:validation:Optional
+	SourceType *DataSourceType `json:"sourceType,omitempty" protobuf:"bytes,1,opt,name=sourceType"`
 	// LabName is the name of the lab used for data pipeline execution. If empty the system will use the default lab
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"bytes,1,opt,name=labName"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
 	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
+	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
 	// The location of the data to use for this pipeline
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
 	// based on the file in the location.
 	// +kubebuilder:validation:Optional
-	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,4,opt,name=datasourceName"`
+	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,5,opt,name=datasourceName"`
 	// If Not null, run a docker image is used in order to generate the data.
 	// The data must reside in location after the container run
 	// +kubebuilder:validation:Optional
-	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,5,opt,name=dockerImage"`
+	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,6,opt,name=dockerImage"`
 	// If Not null, contain a reference to an existing datasource in the system
 	// +kubebuilder:validation:Optional
-	SourceDatasetName *string `json:"sourceDatasetName,omitempty" protobuf:"bytes,6,opt,name=sourceDatasetName"`
+	SourceDatasetName *string `json:"sourceDatasetName,omitempty" protobuf:"bytes,7,opt,name=sourceDatasetName"`
+	// Dataset selector is used to select dataset for the pipeline.
+	// +kubebuilder:validation:Optional
+	DatasetSelector metav1.LabelSelector `json:"datasetSelector,omitempty" protobuf:"bytes,8,opt,name=datasetSelector"`
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
@@ -165,62 +181,72 @@ type TrainingStageSpec struct {
 
 //UATStageSpec is the specification of the user acceptance test.
 type UATStageSpec struct {
+	// Enabled indicates that the stage is enabled
+	// +kubebuilder:default:=true
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// The serving site (name space) used for running the uat tests. If the serving site is empty, the system
 	// will skip the uat stage
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
 	// Tests defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,opt,name=tests"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
 type CapacityStageSpec struct {
+	// Enabled indicates that the stage is enabled
+	// +kubebuilder:default:=false
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// ServingSiteName is the serving site for the testing during the capacity stage
 	// If the serving site is empty or null, the system will skip the capacity stage unit tests.
 	// +kubebuilder:default =""
-	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,opt,name=tests"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// A reference to the workload class that is used for running the prediction
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
 
 //ProdStageSpec define the testing and relesing the resulting model to production.
 type ProdStageSpec struct {
+	// Enabled indicates that we want to release the model into production
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
 	// +kubebuilder:default =""
-	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,1,opt,name=servingSiteName"`
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
 	// PredictorName is the release predictor. The predictor will be created if it does not exist.
 	// +kubebuilder:validation:Optional
-	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
+	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,3,opt,name=predictorName"`
 	// Template defines the default model deployment for this model
 	// +kubebuilder:validation:Optional
-	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
+	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
 	// By default a user is needed to apporve the release to production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
 	// Tests is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,5,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

@@ -60,6 +60,10 @@ spec:
               capacity:
                 description: Capacity stage for capacity
                 properties:
+                  enabled:
+                    default: false
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
                   manualApproval:
                     default: false
                     description: ManualApproval dentoes if we need manual apporval
@@ -144,6 +148,51 @@ spec:
                     description: If not null, run the data pipeline and create a dataset.
                       else, use the data in the data location
                     type: string
+                  datasetSelector:
+                    description: Dataset selector is used to select dataset for the
+                      pipeline.
+                    properties:
+                      matchExpressions:
+                        description: matchExpressions is a list of label selector
+                          requirements. The requirements are ANDed.
+                        items:
+                          description: A label selector requirement is a selector
+                            that contains values, a key, and an operator that relates
+                            the key and values.
+                          properties:
+                            key:
+                              description: key is the label key that the selector
+                                applies to.
+                              type: string
+                            operator:
+                              description: operator represents a key's relationship
+                                to a set of values. Valid operators are In, NotIn,
+                                Exists and DoesNotExist.
+                              type: string
+                            values:
+                              description: values is an array of string values. If
+                                the operator is In or NotIn, the values array must
+                                be non-empty. If the operator is Exists or DoesNotExist,
+                                the values array must be empty. This array is replaced
+                                during a strategic merge patch.
+                              items:
+                                type: string
+                              type: array
+                          required:
+                          - key
+                          - operator
+                          type: object
+                        type: array
+                      matchLabels:
+                        additionalProperties:
+                          type: string
+                        description: matchLabels is a map of {key,value} pairs. A
+                          single {key,value} in the matchLabels map is equivalent
+                          to an element of matchExpressions, whose key field is "key",
+                          the operator is "In", and the values array contains only
+                          "value". The requirements are ANDed.
+                        type: object
+                    type: object
                   datasourceName:
                     description: The data source name for the data in the location.
                       The data source will be used to create a new dataset for this
@@ -173,6 +222,9 @@ spec:
                   sourceDatasetName:
                     description: If Not null, contain a reference to an existing datasource
                       in the system
+                    type: string
+                  sourceType:
+                    description: SourceType is the source of the data for this pipeline.
                     type: string
                 type: object
               defaultServingSiteName:
@@ -208,6 +260,11 @@ spec:
                 description: ReleaseStage stage define how to place the model into
                   production.
                 properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that we want to release the model
+                      into production
+                    type: boolean
                   manualApproval:
                     default: true
                     description: ManualApproval dentoes if we need manual approval
@@ -485,6 +542,10 @@ spec:
               uat:
                 description: Acceptance stage is used for further testing
                 properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
                   manualApproval:
                     default: true
                     description: ManualApproval dentoes if we need manual apporval
