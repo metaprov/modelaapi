@@ -224,33 +224,17 @@ export namespace DataSplit {
 }
 
 export class DataStageSpec extends jspb.Message {
-  getSourcetype(): string;
-  setSourcetype(value: string): DataStageSpec;
-
   getLabname(): string;
   setLabname(value: string): DataStageSpec;
 
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataStageSpec;
 
-  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DataStageSpec;
-  hasLocation(): boolean;
-  clearLocation(): DataStageSpec;
-
   getDatasourcename(): string;
   setDatasourcename(value: string): DataStageSpec;
 
   getDockerimage(): string;
   setDockerimage(value: string): DataStageSpec;
-
-  getSourcedatasetname(): string;
-  setSourcedatasetname(value: string): DataStageSpec;
-
-  getDatasetselector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
-  setDatasetselector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): DataStageSpec;
-  hasDatasetselector(): boolean;
-  clearDatasetselector(): DataStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataStageSpec.AsObject;
@@ -262,14 +246,10 @@ export class DataStageSpec extends jspb.Message {
 
 export namespace DataStageSpec {
   export type AsObject = {
-    sourcetype: string,
     labname: string,
     datapipelinename: string,
-    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     datasourcename: string,
     dockerimage: string,
-    sourcedatasetname: string,
-    datasetselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
   }
 }
 
@@ -668,6 +648,36 @@ export namespace ImagePipelineSpec {
   export type AsObject = {
     columnsList: Array<string>,
     featurizer: string,
+  }
+}
+
+export class LabelingStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): LabelingStageSpec;
+
+  getSampleprecent(): number;
+  setSampleprecent(value: number): LabelingStageSpec;
+
+  getSamplelabelMap(): jspb.Map<string, string>;
+  clearSamplelabelMap(): LabelingStageSpec;
+
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): LabelingStageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LabelingStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LabelingStageSpec): LabelingStageSpec.AsObject;
+  static serializeBinaryToWriter(message: LabelingStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LabelingStageSpec;
+  static deserializeBinaryFromReader(message: LabelingStageSpec, reader: jspb.BinaryReader): LabelingStageSpec;
+}
+
+export namespace LabelingStageSpec {
+  export type AsObject = {
+    enabled: boolean,
+    sampleprecent: number,
+    samplelabelMap: Array<[string, string]>,
+    workloadclassname: string,
   }
 }
 
@@ -1284,8 +1294,8 @@ export class ModelPipelineRunSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): ModelPipelineRunSpec;
 
-  getTriggername(): string;
-  setTriggername(value: string): ModelPipelineRunSpec;
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelPipelineRunSpec;
 
   getPipelinename(): string;
   setPipelinename(value: string): ModelPipelineRunSpec;
@@ -1305,7 +1315,7 @@ export namespace ModelPipelineRunSpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    triggername: string,
+    datasetname: string,
     pipelinename: string,
     owner: string,
   }
@@ -1409,6 +1419,16 @@ export class ModelPipelineRunStatus extends jspb.Message {
   hasProdstatus(): boolean;
   clearProdstatus(): ModelPipelineRunStatus;
 
+  getMonitoringstatus(): ModelPipelineRunStageStatus | undefined;
+  setMonitoringstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasMonitoringstatus(): boolean;
+  clearMonitoringstatus(): ModelPipelineRunStatus;
+
+  getLabelingstatus(): ModelPipelineRunStageStatus | undefined;
+  setLabelingstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasLabelingstatus(): boolean;
+  clearLabelingstatus(): ModelPipelineRunStatus;
+
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
   hasStarttime(): boolean;
@@ -1450,6 +1470,8 @@ export namespace ModelPipelineRunStatus {
     uatstatus?: ModelPipelineRunStageStatus.AsObject,
     capacitystatus?: ModelPipelineRunStageStatus.AsObject,
     prodstatus?: ModelPipelineRunStageStatus.AsObject,
+    monitoringstatus?: ModelPipelineRunStageStatus.AsObject,
+    labelingstatus?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
@@ -1468,6 +1490,9 @@ export class ModelPipelineSpec extends jspb.Message {
 
   getDescription(): string;
   setDescription(value: string): ModelPipelineSpec;
+
+  getDatasetselectorMap(): jspb.Map<string, string>;
+  clearDatasetselectorMap(): ModelPipelineSpec;
 
   getData(): DataStageSpec | undefined;
   setData(value?: DataStageSpec): ModelPipelineSpec;
@@ -1493,6 +1518,16 @@ export class ModelPipelineSpec extends jspb.Message {
   setProd(value?: ProdStageSpec): ModelPipelineSpec;
   hasProd(): boolean;
   clearProd(): ModelPipelineSpec;
+
+  getMonitoring(): MonitoringStageSpec | undefined;
+  setMonitoring(value?: MonitoringStageSpec): ModelPipelineSpec;
+  hasMonitoring(): boolean;
+  clearMonitoring(): ModelPipelineSpec;
+
+  getLabeling(): LabelingStageSpec | undefined;
+  setLabeling(value?: LabelingStageSpec): ModelPipelineSpec;
+  hasLabeling(): boolean;
+  clearLabeling(): ModelPipelineSpec;
 
   getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
@@ -1529,11 +1564,14 @@ export namespace ModelPipelineSpec {
     versionname: string,
     defaultservingsitename: string,
     description: string,
+    datasetselectorMap: Array<[string, string]>,
     data?: DataStageSpec.AsObject,
     training?: TrainingStageSpec.AsObject,
     uat?: UATStageSpec.AsObject,
     capacity?: CapacityStageSpec.AsObject,
     prod?: ProdStageSpec.AsObject,
+    monitoring?: MonitoringStageSpec.AsObject,
+    labeling?: LabelingStageSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
@@ -2009,6 +2047,42 @@ export namespace ModelTestResult {
   }
 }
 
+export class MonitoringStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): MonitoringStageSpec;
+
+  getTestsList(): Array<Expectation>;
+  setTestsList(value: Array<Expectation>): MonitoringStageSpec;
+  clearTestsList(): MonitoringStageSpec;
+  addTests(value?: Expectation, index?: number): Expectation;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): MonitoringStageSpec;
+
+  getManualapproval(): boolean;
+  setManualapproval(value: boolean): MonitoringStageSpec;
+
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): MonitoringStageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MonitoringStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: MonitoringStageSpec): MonitoringStageSpec.AsObject;
+  static serializeBinaryToWriter(message: MonitoringStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MonitoringStageSpec;
+  static deserializeBinaryFromReader(message: MonitoringStageSpec, reader: jspb.BinaryReader): MonitoringStageSpec;
+}
+
+export namespace MonitoringStageSpec {
+  export type AsObject = {
+    enabled: boolean,
+    testsList: Array<Expectation.AsObject>,
+    notifiername: string,
+    manualapproval: boolean,
+    workloadclassname: string,
+  }
+}
+
 export class NNLayerParameter extends jspb.Message {
   getName(): string;
   setName(value: string): NNLayerParameter;
@@ -2438,32 +2512,6 @@ export namespace NumericPipelineSpec {
     columnsList: Array<string>,
     imputer: string,
     scaler: string,
-  }
-}
-
-export class PipelineTrigger extends jspb.Message {
-  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PipelineTrigger;
-  hasSchedule(): boolean;
-  clearSchedule(): PipelineTrigger;
-
-  getGithubevents(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.GithubEvents | undefined;
-  setGithubevents(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.GithubEvents): PipelineTrigger;
-  hasGithubevents(): boolean;
-  clearGithubevents(): PipelineTrigger;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PipelineTrigger.AsObject;
-  static toObject(includeInstance: boolean, msg: PipelineTrigger): PipelineTrigger.AsObject;
-  static serializeBinaryToWriter(message: PipelineTrigger, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PipelineTrigger;
-  static deserializeBinaryFromReader(message: PipelineTrigger, reader: jspb.BinaryReader): PipelineTrigger;
-}
-
-export namespace PipelineTrigger {
-  export type AsObject = {
-    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    githubevents?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.GithubEvents.AsObject,
   }
 }
 

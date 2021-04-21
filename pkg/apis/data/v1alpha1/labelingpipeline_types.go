@@ -64,9 +64,9 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The datasets objects which are used for this pipeline. Each datafile can be from a bucket
+	// DatasetSelector is used to select unlabeled dataset for labeling
 	// +kubebuilder:validation:Optional
-	InputLabelsets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputLabelsets"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,rep,name=datasetSelector"`
 	// The recipe for this pipeline.
 	// +kubebuilder:validation:Optional
 	RecipeNames []string `json:"recipeNames,omitempty" protobuf:"bytes,4,rep,name=recipeNames"`

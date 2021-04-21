@@ -67,36 +67,39 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// DatasetSelector is used to select datasets to process the features from.
+	// +kubebuilder:validation:Optional
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,2,rep,name=datasetSelector"`
 	// Version name is the the product version for the feature.
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,3,opt,name=versionName"`
 	// Description of the feature pipeline
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
-	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// Aggregation is the aggregation spec
 	// +kubebuilder:validation:Optional
-	Aggregation *AggregationSpec `json:"aggregation,omitempty" protobuf:"bytes,4,opt,name=aggregation"`
+	Aggregation *AggregationSpec `json:"aggregation,omitempty" protobuf:"bytes,5,opt,name=aggregation"`
 	// Materialization
-	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,5,opt,name=materialization"`
+	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,6,opt,name=materialization"`
 	// Family is the feature family
 	// +kubebuilder:validation:Optional
-	Family *string `json:"family,omitempty" protobuf:"bytes,6,opt,name=family"`
+	Family *string `json:"family,omitempty" protobuf:"bytes,7,opt,name=family"`
 	// Reference to the entity name
 	// +kubebuilder:validation:Optional
-	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,7,opt,name=entityName"`
+	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
 	// A reference to the workload class that is used for running the workload class
 	// +kubebuilder:default:="default-data-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,9,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
 }
 
 // FeatureStatus defines the observed state of Feature

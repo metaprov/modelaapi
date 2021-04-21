@@ -49,15 +49,15 @@ spec:
           spec:
             description: DataPipelineSpec defines the desired state of a DataPipeline
             properties:
+              datasetSelector:
+                additionalProperties:
+                  type: string
+                description: DatasetSelector is used to select datasets for processing
+                  in the pipeline
+                type: object
               description:
                 description: Description of the data pipeline
                 type: string
-              inputDatesets:
-                description: InputDatasets is the collection of input dataset names
-                  to the data pipelines
-                items:
-                  type: string
-                type: array
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

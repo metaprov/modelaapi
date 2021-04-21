@@ -65,9 +65,9 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// InputDatasets is the collection of input dataset names to the data pipelines
+	// DatasetSelector is used to select datasets for processing in the pipeline
 	// +kubebuilder:validation:Optional
-	InputDatasets []string `json:"inputDatesets,omitempty" protobuf:"bytes,3,rep,name=inputDatasets"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,rep,name=datasetSelector"`
 	// RecipeOrder defines the list of recipes and the order they need to run
 	// +kubebuilder:validation:Optional
 	RecipeOrder []RecipePartSpec `json:"recipeOrder,omitempty" protobuf:"bytes,4,rep,name=recipeOrder"`

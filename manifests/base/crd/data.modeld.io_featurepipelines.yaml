@@ -79,6 +79,12 @@ spec:
                   slidePeriod:
                     type: string
                 type: object
+              datasetSelector:
+                additionalProperties:
+                  type: string
+                description: DatasetSelector is used to select datasets to process
+                  the features from.
+                type: object
               description:
                 description: Description of the feature pipeline
                 maxLength: 512

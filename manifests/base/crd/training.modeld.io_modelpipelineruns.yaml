@@ -64,23 +64,23 @@ spec:
             description: ModelPipelineRunSpec is the desired state of the ModelPipelineRun
               resource
             properties:
+              datasetName:
+                default: ""
+                description: DatasetName is the name of the dataset that we trained
+                  on.
+                type: string
               description:
                 default: ""
                 description: Description is the user provided description
                 type: string
               owner:
                 default: ""
-                description: The owner account name
+                description: The owner of the ruyn.
                 type: string
               pipelineName:
                 default: ""
                 description: PipelineName is the name of the ModelPipeline for this
                   pipeline
-                type: string
-              triggerName:
-                default: ""
-                description: TriggerName denotes the trigger that fired this pipeline
-                  run
                 type: string
               versionName:
                 default: ""
@@ -332,6 +332,210 @@ spec:
                   the system The folder contains all the pipeline artifacts - metadata,
                   logs
                 type: string
+              labelingStatus:
+                description: Labeling status if the status of the labeling process
+                properties:
+                  approved:
+                    description: Approved indicates that the stage is approved.
+                    type: boolean
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
+                    format: date-time
+                    type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
+                  results:
+                    description: Results is the results of running the test datasets
+                      against the new model
+                    items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
+                      properties:
+                        datasetName:
+                          description: The name of the dataset
+                          type: string
+                        error:
+                          description: Error is a name of any error that occurred
+                            during the test.
+                          type: string
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
+                      type: object
+                    type: array
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
+                    type: string
+                type: object
+              monitoringStatus:
+                description: Monitoring status is the status of the monitor phase.
+                properties:
+                  approved:
+                    description: Approved indicates that the stage is approved.
+                    type: boolean
+                  approvedAt:
+                    description: ApprovedAt indicates the time of approval
+                    format: date-time
+                    type: string
+                  approvedBy:
+                    description: ApprovedBy indicates the account that approve this
+                      model.
+                    type: string
+                  datasetName:
+                    description: the name of the generated dataset
+                    type: string
+                  endTime:
+                    description: End time is the end time of the stage.
+                    format: date-time
+                    type: string
+                  error:
+                    description: Error record error.
+                    type: string
+                  modelName:
+                    description: The name of the best model
+                    type: string
+                  phase:
+                    description: Phase is the phase of the stage
+                    type: string
+                  results:
+                    description: Results is the results of running the test datasets
+                      against the new model
+                    items:
+                      description: Model Test Result holds the results for a single
+                        metric on a single dataset
+                      properties:
+                        datasetName:
+                          description: The name of the dataset
+                          type: string
+                        error:
+                          description: Error is a name of any error that occurred
+                            during the test.
+                          type: string
+                        result:
+                          description: Metric is the name of the metric measured
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        value:
+                          description: Value is the value of the metric
+                          type: number
+                      type: object
+                    type: array
+                  startTime:
+                    description: Start time is the start time of the stage
+                    format: date-time
+                    type: string
+                  studyName:
+                    description: The name of the study
+                    type: string
+                type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

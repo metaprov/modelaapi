@@ -148,51 +148,6 @@ spec:
                     description: If not null, run the data pipeline and create a dataset.
                       else, use the data in the data location
                     type: string
-                  datasetSelector:
-                    description: Dataset selector is used to select dataset for the
-                      pipeline.
-                    properties:
-                      matchExpressions:
-                        description: matchExpressions is a list of label selector
-                          requirements. The requirements are ANDed.
-                        items:
-                          description: A label selector requirement is a selector
-                            that contains values, a key, and an operator that relates
-                            the key and values.
-                          properties:
-                            key:
-                              description: key is the label key that the selector
-                                applies to.
-                              type: string
-                            operator:
-                              description: operator represents a key's relationship
-                                to a set of values. Valid operators are In, NotIn,
-                                Exists and DoesNotExist.
-                              type: string
-                            values:
-                              description: values is an array of string values. If
-                                the operator is In or NotIn, the values array must
-                                be non-empty. If the operator is Exists or DoesNotExist,
-                                the values array must be empty. This array is replaced
-                                during a strategic merge patch.
-                              items:
-                                type: string
-                              type: array
-                          required:
-                          - key
-                          - operator
-                          type: object
-                        type: array
-                      matchLabels:
-                        additionalProperties:
-                          type: string
-                        description: matchLabels is a map of {key,value} pairs. A
-                          single {key,value} in the matchLabels map is equivalent
-                          to an element of matchExpressions, whose key field is "key",
-                          the operator is "In", and the values array contains only
-                          "value". The requirements are ANDed.
-                        type: object
-                    type: object
                   datasourceName:
                     description: The data source name for the data in the location.
                       The data source will be used to create a new dataset for this
@@ -204,28 +159,12 @@ spec:
                       the container run
                     type: string
                   labName:
-                    description: LabName is the name of the lab used for data pipeline
-                      execution. If empty the system will use the default lab
                     type: string
-                  location:
-                    description: The location of the data to use for this pipeline
-                    properties:
-                      bucketName:
-                        type: string
-                      path:
-                        description: Path to the full data file (e.g. csv file).
-                        type: string
-                    required:
-                    - bucketName
-                    - path
-                    type: object
-                  sourceDatasetName:
-                    description: If Not null, contain a reference to an existing datasource
-                      in the system
-                    type: string
-                  sourceType:
-                    description: SourceType is the source of the data for this pipeline.
-                    type: string
+                type: object
+              datasetSelector:
+                additionalProperties:
+                  type: string
+                description: DatasetSelector is used to select dataset for training
                 type: object
               defaultServingSiteName:
                 description: Servingsite name is the default serving site for each
@@ -234,6 +173,31 @@ spec:
               description:
                 description: User provided description
                 type: string
+              labeling:
+                description: Labeling stage define how to sample and label live data
+                  for retraining
+                properties:
+                  enabled:
+                    default: false
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
+                  sampleLabels:
+                    additionalProperties:
+                      type: string
+                    description: SampleLabels indicates the kubernetes labels to set
+                      on the sample dataset
+                    type: object
+                  samplePrecent:
+                    default: 0
+                    description: How many rows to sample from the live data for
+                    format: int32
+                    type: integer
+                  workloadClassName:
+                    default: default-model-workload-class
+                    description: A reference to the workload class that is used for
+                      running the test prediction
+                    type: string
+                type: object
               location:
                 description: Folder for the pipeline and pipeline run artifacts. The
                   folder contains all the study artifacts - metadata, reports, profile,models
@@ -247,6 +211,88 @@ spec:
                 - bucketName
                 - path
                 type: object
+              monitoring:
+                description: Monitoring stage define how to monitor the model in production
+                properties:
+                  enabled:
+                    default: false
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
+                  manualApproval:
+                    default: false
+                    description: AutoRetrain denoted if we autoamtically retrain models.
+                    type: boolean
+                  notifierName:
+                    description: NotifierName dentoes the name of the notifier user
+                      to send alerts
+                    type: string
+                  tests:
+                    description: Tests is the specification of tests to run in this
+                      stage
+                    items:
+                      properties:
+                        datasetName:
+                          description: DatasetName is the name of the test dataset.
+                          type: string
+                        metric:
+                          description: Metric is the name of the metric
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        op:
+                          description: Op is the operator used during comparison
+                          type: string
+                        score:
+                          description: Score is the expected score
+                          type: number
+                      type: object
+                    type: array
+                  workloadClassName:
+                    default: default-model-workload-class
+                    description: A reference to the workload class that is used for
+                      running the test prediction
+                    type: string
+                type: object
               notifierName:
                 description: NotifierName is the name of the notifier to use in case
                   of pipeline failure
@@ -257,8 +303,7 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               prod:
-                description: ReleaseStage stage define how to place the model into
-                  production.
+                description: Prod stage define how to place the model into production.
                 properties:
                   enabled:
                     default: true

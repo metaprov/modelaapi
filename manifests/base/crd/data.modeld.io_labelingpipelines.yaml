@@ -53,15 +53,15 @@ spec:
                   this labeling pipeline.
                 format: int64
                 type: integer
+              datasetSelector:
+                additionalProperties:
+                  type: string
+                description: DatasetSelector is used to select unlabeled dataset for
+                  labeling
+                type: object
               description:
                 description: User provided description
                 type: string
-              inputDatesets:
-                description: The datasets objects which are used for this pipeline.
-                  Each datafile can be from a bucket
-                items:
-                  type: string
-                type: array
               outputLabelset:
                 description: The output file of the pipeline
                 type: string

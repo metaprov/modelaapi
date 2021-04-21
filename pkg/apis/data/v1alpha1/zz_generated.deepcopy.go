@@ -514,10 +514,12 @@ func (in *DataPipelineSpec) DeepCopyInto(out *DataPipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.InputDatasets != nil {
-		in, out := &in.InputDatasets, &out.InputDatasets
-		*out = make([]string, len(*in))
-		copy(*out, *in)
+	if in.DatasetSelector != nil {
+		in, out := &in.DatasetSelector, &out.DatasetSelector
+		*out = make(map[string]string, len(*in))
+		for key, val := range *in {
+			(*out)[key] = val
+		}
 	}
 	if in.RecipeOrder != nil {
 		in, out := &in.RecipeOrder, &out.RecipeOrder
@@ -1734,6 +1736,13 @@ func (in *FeaturePipelineSpec) DeepCopyInto(out *FeaturePipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatasetSelector != nil {
+		in, out := &in.DatasetSelector, &out.DatasetSelector
+		*out = make(map[string]string, len(*in))
+		for key, val := range *in {
+			(*out)[key] = val
+		}
+	}
 	if in.VersionName != nil {
 		in, out := &in.VersionName, &out.VersionName
 		*out = new(string)
@@ -2390,10 +2399,12 @@ func (in *LabelingPipelineSpec) DeepCopyInto(out *LabelingPipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.InputLabelsets != nil {
-		in, out := &in.InputLabelsets, &out.InputLabelsets
-		*out = make([]string, len(*in))
-		copy(*out, *in)
+	if in.DatasetSelector != nil {
+		in, out := &in.DatasetSelector, &out.DatasetSelector
+		*out = make(map[string]string, len(*in))
+		for key, val := range *in {
+			(*out)[key] = val
+		}
 	}
 	if in.RecipeNames != nil {
 		in, out := &in.RecipeNames, &out.RecipeNames

@@ -425,9 +425,9 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // InputDatasets is the collection of input dataset names to the data pipelines
+  // DatasetSelector is used to select datasets for processing in the pipeline
   // +kubebuilder:validation:Optional
-  repeated string inputDatasets = 3;
+  map<string, string> datasetSelector = 3;
 
   // RecipeOrder defines the list of recipes and the order they need to run
   // +kubebuilder:validation:Optional
@@ -1218,44 +1218,48 @@ message FeaturePipelineSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
+  // DatasetSelector is used to select datasets to process the features from.
+  // +kubebuilder:validation:Optional
+  map<string, string> datasetSelector = 2;
+
   // Version name is the the product version for the feature.
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 3;
 
   // Description of the feature pipeline
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
+  optional string description = 4;
 
   // Aggregation is the aggregation spec
   // +kubebuilder:validation:Optional
-  optional AggregationSpec aggregation = 4;
+  optional AggregationSpec aggregation = 5;
 
   // Materialization
-  optional MaterializationSpec materialization = 5;
+  optional MaterializationSpec materialization = 6;
 
   // Family is the feature family
   // +kubebuilder:validation:Optional
-  optional string family = 6;
+  optional string family = 7;
 
   // Reference to the entity name
   // +kubebuilder:validation:Optional
-  optional string entityName = 7;
+  optional string entityName = 8;
 
   // A reference to the workload class that is used for running the workload class
   // +kubebuilder:default:="default-data-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional string workloadClassName = 9;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 9;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 10;
+  optional int64 activeDeadlineSeconds = 11;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1690,9 +1694,9 @@ message LabelingPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // The datasets objects which are used for this pipeline. Each datafile can be from a bucket
+  // DatasetSelector is used to select unlabeled dataset for labeling
   // +kubebuilder:validation:Optional
-  repeated string inputLabelsets = 3;
+  map<string, string> datasetSelector = 3;
 
   // The recipe for this pipeline.
   // +kubebuilder:validation:Optional

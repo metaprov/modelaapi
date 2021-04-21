@@ -7,15 +7,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type DataSourceType string
-
-const (
-	DataSourceTypeNotebook     DataSourceType = "notebook"
-	DataSourceTypeDataPipeline DataSourceType = "data-pipeline"
-	DataSourceTypeBucket       DataSourceType = "bucket"
-	DataSourceTypeSelector     DataSourceType = "selector"
-)
-
 type ModelPipelineConditionType string
 
 const (
@@ -72,6 +63,9 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	// DatasetSelector is used to select dataset for training
+	// +kubebuilder:validation:Optional
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,4,rep,name=datasetSelector"`
 	// Datastage build new dataset from the data sources.
 	// +kubebuilder:validation:Optional
 	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
@@ -84,73 +78,54 @@ type ModelPipelineSpec struct {
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
 	Capacity *CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
-	// ReleaseStage stage define how to place the model into production.
+	// Prod stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
 	Prod *ProdStageSpec `json:"prod,omitempty" protobuf:"bytes,9,opt,name=prod"`
+	// Monitoring stage define how to monitor the model in production
+	// +kubebuilder:validation:Optional
+	Monitoring *MonitoringStageSpec `json:"monitoring,omitempty" protobuf:"bytes,10,opt,name=monitoring"`
+	// Labeling stage define how to sample and label live data for retraining
+	// +kubebuilder:validation:Optional
+	Labeling *LabelingStageSpec `json:"labeling,omitempty" protobuf:"bytes,11,opt,name=labeling"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,10,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,11,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,13,opt,name=schedule"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,12,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,14,opt,name=owner"`
 	// ApproverAccountName is the name of the approver
 	// +kubebuilder:validation:Optional
-	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,13,opt,name=approverAccountName"`
+	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,15,opt,name=approverAccountName"`
 	// NotifierName is the name of the notifier to use in case of pipeline failure
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,14,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,16,opt,name=notifierName"`
 	// BaselineModelName is the name of the model which is used to compare with this pipeline results.
 	// +kubebuilder:validation:Optional
-	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,15,opt,name=baselineModelName"`
-}
-
-type PipelineTrigger struct {
-	// Spec for a schedule in case that the trigger
-	// +kubebuilder:validation:Optional
-	Schedule *catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,1,opt,name=schedule"`
-	// Definition of git hub events
-	// +kubebuilder:validation:Optional
-	GithubEvents *catalog.GithubEvents `json:"githubEvents,omitempty" protobuf:"bytes,2,opt,name=githubEvents"`
+	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,17,opt,name=baselineModelName"`
 }
 
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
-	// SourceType is the source of the data for this pipeline.
-	// +kubebuilder:default ="selector"
-	// +kubebuilder:validation:Optional
-	SourceType *DataSourceType `json:"sourceType,omitempty" protobuf:"bytes,1,opt,name=sourceType"`
-	// LabName is the name of the lab used for data pipeline execution. If empty the system will use the default lab
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,1,opt,name=labName"`
 	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
-	// The location of the data to use for this pipeline
-	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
+	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
 	// The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
 	// based on the file in the location.
 	// +kubebuilder:validation:Optional
-	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,5,opt,name=datasourceName"`
+	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
 	// If Not null, run a docker image is used in order to generate the data.
 	// The data must reside in location after the container run
 	// +kubebuilder:validation:Optional
-	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,6,opt,name=dockerImage"`
-	// If Not null, contain a reference to an existing datasource in the system
-	// +kubebuilder:validation:Optional
-	SourceDatasetName *string `json:"sourceDatasetName,omitempty" protobuf:"bytes,7,opt,name=sourceDatasetName"`
-	// Dataset selector is used to select dataset for the pipeline.
-	// +kubebuilder:validation:Optional
-	DatasetSelector metav1.LabelSelector `json:"datasetSelector,omitempty" protobuf:"bytes,8,opt,name=datasetSelector"`
+	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,4,opt,name=dockerImage"`
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
@@ -247,6 +222,44 @@ type ProdStageSpec struct {
 	// Tests is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
 	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+}
+
+// MonitoringStageSpec specify how the models are monitored in production
+type MonitoringStageSpec struct {
+	// Enabled indicates that the stage is enabled
+	// +kubebuilder:default:=false
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// Tests is the specification of tests to run in this stage
+	// +kubebuilder:validation:Optional
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	// NotifierName dentoes the name of the notifier user to send alerts
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
+	// AutoRetrain denoted if we autoamtically retrain models.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	AutoRetrain *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
+	// A reference to the workload class that is used for running the test prediction
+	// +kubebuilder:default:="default-model-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
+}
+
+// Labeling Stage spec is used to define how to label live data for retrainined.
+type LabelingStageSpec struct {
+	// Enabled indicates that the stage is enabled
+	// +kubebuilder:default:=false
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// How many rows to sample from the live data for
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"bytes,2,opt,name=samplePrecent"`
+	// SampleLabels indicates the kubernetes labels to set on the sample dataset
+	// +kubebuilder:validation:Required
+	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,3,opt,name=sampleLabel"`
+	// A reference to the workload class that is used for running the test prediction
+	// +kubebuilder:default:="default-model-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

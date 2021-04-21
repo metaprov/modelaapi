@@ -634,10 +634,8 @@ export class DataPipelineSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DataPipelineSpec;
 
-  getInputdatasetsList(): Array<string>;
-  setInputdatasetsList(value: Array<string>): DataPipelineSpec;
-  clearInputdatasetsList(): DataPipelineSpec;
-  addInputdatasets(value: string, index?: number): DataPipelineSpec;
+  getDatasetselectorMap(): jspb.Map<string, string>;
+  clearDatasetselectorMap(): DataPipelineSpec;
 
   getRecipeorderList(): Array<RecipePartSpec>;
   setRecipeorderList(value: Array<RecipePartSpec>): DataPipelineSpec;
@@ -675,7 +673,7 @@ export namespace DataPipelineSpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    inputdatasetsList: Array<string>,
+    datasetselectorMap: Array<[string, string]>,
     recipeorderList: Array<RecipePartSpec.AsObject>,
     output?: DataOutputSpec.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
@@ -2047,6 +2045,9 @@ export class FeaturePipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): FeaturePipelineSpec;
 
+  getDatasetselectorMap(): jspb.Map<string, string>;
+  clearDatasetselectorMap(): FeaturePipelineSpec;
+
   getVersionname(): string;
   setVersionname(value: string): FeaturePipelineSpec;
 
@@ -2091,6 +2092,7 @@ export class FeaturePipelineSpec extends jspb.Message {
 export namespace FeaturePipelineSpec {
   export type AsObject = {
     owner: string,
+    datasetselectorMap: Array<[string, string]>,
     versionname: string,
     description: string,
     aggregation?: AggregationSpec.AsObject,
@@ -2844,10 +2846,8 @@ export class LabelingPipelineSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): LabelingPipelineSpec;
 
-  getInputlabelsetsList(): Array<string>;
-  setInputlabelsetsList(value: Array<string>): LabelingPipelineSpec;
-  clearInputlabelsetsList(): LabelingPipelineSpec;
-  addInputlabelsets(value: string, index?: number): LabelingPipelineSpec;
+  getDatasetselectorMap(): jspb.Map<string, string>;
+  clearDatasetselectorMap(): LabelingPipelineSpec;
 
   getRecipenamesList(): Array<string>;
   setRecipenamesList(value: Array<string>): LabelingPipelineSpec;
@@ -2883,7 +2883,7 @@ export namespace LabelingPipelineSpec {
   export type AsObject = {
     versionname: string,
     description: string,
-    inputlabelsetsList: Array<string>,
+    datasetselectorMap: Array<[string, string]>,
     recipenamesList: Array<string>,
     outputlabelset: string,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,

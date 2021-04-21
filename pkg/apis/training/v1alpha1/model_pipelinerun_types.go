@@ -13,18 +13,21 @@ const (
 	PipelinePhaseWaitingForApproval PipelinePhase = "WaitingForApproval"
 	PipelinePhaseFailed             PipelinePhase = "Failed"
 	PipelinePhaseAborted            PipelinePhase = "Aborted"
-	PipelinePhaseCompleted          PipelinePhase = "Completed"
+	PipelinePhaseMonitoring         PipelinePhase = "Monitoring"
+	PipelinePhaseNeedRetraining     PipelinePhase = "NeedRetraining"
 )
 
 type ModelPipelineStage string
 
 const (
-	ModelPipelineStageInitial  ModelPipelineStage = "initial"
-	ModelPipelineStageData     ModelPipelineStage = "data"
-	ModelPipelineStageTraining ModelPipelineStage = "training"
-	ModelPipelineStageUAT      ModelPipelineStage = "uat"
-	ModelPipelineStageCapacity ModelPipelineStage = "capacity"
-	ModelPipelineStageProd     ModelPipelineStage = "prod"
+	ModelPipelineStageInitial    ModelPipelineStage = "initial"
+	ModelPipelineStageData       ModelPipelineStage = "data"
+	ModelPipelineStageTraining   ModelPipelineStage = "training"
+	ModelPipelineStageUAT        ModelPipelineStage = "uat"
+	ModelPipelineStageCapacity   ModelPipelineStage = "capacity"
+	ModelPipelineStageProd       ModelPipelineStage = "prod"
+	ModelPipelineStageMonitoring ModelPipelineStage = "monitoring"
+	ModelPipelineStageLabeling   ModelPipelineStage = "labeling"
 )
 
 // +kubebuilder:validation:Enum="data";"train";"uat";"capacity";"prod";
@@ -50,6 +53,8 @@ const (
 	MPRCapacityStageCompleted PipelineRunConditionType = "CapacityStageCompleted"
 	MPRModelDeployed          PipelineRunConditionType = "ModelDeployed"
 	MPRModelReleased          PipelineRunConditionType = "ModelReleased"
+	MPRModelMonitored         PipelineRunConditionType = "Monitored"
+	MPRRetraing               PipelineRunConditionType = "Retrained"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
@@ -101,15 +106,15 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// TriggerName denotes the trigger that fired this pipeline run
+	// DatasetName is the name of the dataset that we trained on.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TriggerName *string `json:"triggerName,omitempty" protobuf:"bytes,3,opt,name=triggerName"`
+	Dataset *string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
 	// PipelineName is the name of the ModelPipeline for this pipeline
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	PipelineName *string `json:"pipelineName,omitempty" protobuf:"bytes,4,opt,name=pipelineName"`
-	// The owner account name
+	// The owner of the ruyn.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
@@ -181,28 +186,29 @@ type ModelPipelineRunStatus struct {
 	// +kubebuilder:validation:Optional
 	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStatus,omitempty" protobuf:"bytes,4,opt,name=trainingStatus"`
 	// UATStatus is the status of the uat stage
-	// +kubebuilder:validation:Optional
 	UATStatus ModelPipelineRunStageStatus `json:"uatStatus,omitempty" protobuf:"bytes,5,rep,name=uatStatus"`
 	// CapacityStatus is the status for the capacity stage.
-	// +kubebuilder:validation:Optional
 	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStatus,omitempty" protobuf:"bytes,6,rep,name=capacityStatus"`
 	// ProdStatus is the status for the prod stage
-	// +kubebuilder:validation:Optional
 	ProdStatus ModelPipelineRunStageStatus `json:"prodStatus,omitempty" protobuf:"bytes,7,rep,name=prodStatus"`
+	// Monitoring status is the status of the monitor phase.
+	MonitoringStatus ModelPipelineRunStageStatus `json:"monitoringStatus,omitempty" protobuf:"bytes,8,rep,name=monitoringStatus"`
+	// Labeling status if the status of the labeling process
+	LabelingStatus ModelPipelineRunStageStatus `json:"labelingStatus,omitempty" protobuf:"bytes,9,rep,name=labelingStatus"`
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,8,opt,name=startTime"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,10,opt,name=startTime"`
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,9,opt,name=completionTime"`
+	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,11,opt,name=completionTime"`
 	// The phase of the pipeline run
 	// +kubebuilder:validation:Optional
-	Phase PipelinePhase `json:"phase" protobuf:"bytes,10,opt,name=phase"`
+	Phase PipelinePhase `json:"phase" protobuf:"bytes,12,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,11,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,13,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,14,rep,name=conditions"`
 	// Folder for pipeline run artifacts. This is assigned by the system
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
-	Folder string `json:"folder,omitempty" protobuf:"bytes,13,opt,name=evalMetrics"`
+	Folder string `json:"folder,omitempty" protobuf:"bytes,15,opt,name=evalMetrics"`
 }

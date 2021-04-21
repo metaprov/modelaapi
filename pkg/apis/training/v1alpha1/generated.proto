@@ -159,42 +159,22 @@ message DataSplit {
 // DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 // Data preprocessing will be done via
 message DataStageSpec {
-  // SourceType is the source of the data for this pipeline.
-  // +kubebuilder:default ="selector"
-  // +kubebuilder:validation:Optional
-  optional string sourceType = 1;
-
-  // LabName is the name of the lab used for data pipeline execution. If empty the system will use the default lab
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string labName = 2;
+  optional string labName = 1;
 
   // If not null, run the data pipeline and create a dataset. else, use the data in the data location
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string datapipelineName = 3;
-
-  // The location of the data to use for this pipeline
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
+  optional string datapipelineName = 2;
 
   // The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
   // based on the file in the location.
   // +kubebuilder:validation:Optional
-  optional string datasourceName = 5;
+  optional string datasourceName = 3;
 
   // If Not null, run a docker image is used in order to generate the data.
   // The data must reside in location after the container run
   // +kubebuilder:validation:Optional
-  optional string dockerImage = 6;
-
-  // If Not null, contain a reference to an existing datasource in the system
-  // +kubebuilder:validation:Optional
-  optional string sourceDatasetName = 7;
-
-  // Dataset selector is used to select dataset for the pipeline.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector datasetSelector = 8;
+  optional string dockerImage = 4;
 }
 
 // DateTimePipelineSpec is the specification for preprocessing datetime features
@@ -409,6 +389,27 @@ message ImagePipelineSpec {
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
   optional string featurizer = 2;
+}
+
+// Labeling Stage spec is used to define how to label live data for retrainined.
+message LabelingStageSpec {
+  // Enabled indicates that the stage is enabled
+  // +kubebuilder:default:=false
+  optional bool enabled = 1;
+
+  // How many rows to sample from the live data for
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 samplePrecent = 2;
+
+  // SampleLabels indicates the kubernetes labels to set on the sample dataset
+  // +kubebuilder:validation:Required
+  map<string, string> sampleLabel = 3;
+
+  // A reference to the workload class that is used for running the test prediction
+  // +kubebuilder:default:="default-model-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 4;
 }
 
 message Level {
@@ -803,17 +804,17 @@ message ModelPipelineRunSpec {
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // TriggerName denotes the trigger that fired this pipeline run
+  // DatasetName is the name of the dataset that we trained on.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string triggerName = 3;
+  optional string datasetName = 3;
 
   // PipelineName is the name of the ModelPipeline for this pipeline
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string pipelineName = 4;
 
-  // The owner account name
+  // The owner of the ruyn.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string owner = 5;
@@ -879,38 +880,41 @@ message ModelPipelineRunStatus {
   optional ModelPipelineRunStageStatus trainingStatus = 4;
 
   // UATStatus is the status of the uat stage
-  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus uatStatus = 5;
 
   // CapacityStatus is the status for the capacity stage.
-  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus capacityStatus = 6;
 
   // ProdStatus is the status for the prod stage
-  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus prodStatus = 7;
 
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 8;
+  // Monitoring status is the status of the monitor phase.
+  optional ModelPipelineRunStageStatus monitoringStatus = 8;
+
+  // Labeling status if the status of the labeling process
+  optional ModelPipelineRunStageStatus labelingStatus = 9;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 9;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 10;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 11;
 
   // The phase of the pipeline run
   // +kubebuilder:validation:Optional
-  optional string phase = 10;
+  optional string phase = 12;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 11;
+  optional int64 observedGeneration = 13;
 
   // +optional
-  repeated ModelPipelineRunCondition conditions = 12;
+  repeated ModelPipelineRunCondition conditions = 14;
 
   // Folder for pipeline run artifacts. This is assigned by the system
   // The folder contains all the pipeline artifacts - metadata, logs
   // +kubebuilder:validation:Optional
-  optional string evalMetrics = 13;
+  optional string evalMetrics = 15;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -930,6 +934,10 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
+  // DatasetSelector is used to select dataset for training
+  // +kubebuilder:validation:Optional
+  map<string, string> datasetSelector = 4;
+
   // Datastage build new dataset from the data sources.
   // +kubebuilder:validation:Optional
   optional DataStageSpec data = 5;
@@ -946,36 +954,44 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional CapacityStageSpec capacity = 8;
 
-  // ReleaseStage stage define how to place the model into production.
+  // Prod stage define how to place the model into production.
   // +kubebuilder:validation:Optional
   optional ProdStageSpec prod = 9;
+
+  // Monitoring stage define how to monitor the model in production
+  // +kubebuilder:validation:Optional
+  optional MonitoringStageSpec monitoring = 10;
+
+  // Labeling stage define how to sample and label live data for retraining
+  // +kubebuilder:validation:Optional
+  optional LabelingStageSpec labeling = 11;
 
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 10;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 12;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 11;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 13;
 
   // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 12;
+  optional string owner = 14;
 
   // ApproverAccountName is the name of the approver
   // +kubebuilder:validation:Optional
-  optional string approverAccountName = 13;
+  optional string approverAccountName = 15;
 
   // NotifierName is the name of the notifier to use in case of pipeline failure
   // +kubebuilder:validation:Optional
-  optional string notifierName = 14;
+  optional string notifierName = 16;
 
   // BaselineModelName is the name of the model which is used to compare with this pipeline results.
   // +kubebuilder:validation:Optional
-  optional string baselineModelName = 15;
+  optional string baselineModelName = 17;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -1365,6 +1381,30 @@ message ModelTestResult {
   optional string error = 5;
 }
 
+// MonitoringStageSpec specify how the models are monitored in production
+message MonitoringStageSpec {
+  // Enabled indicates that the stage is enabled
+  // +kubebuilder:default:=false
+  optional bool enabled = 1;
+
+  // Tests is the specification of tests to run in this stage
+  // +kubebuilder:validation:Optional
+  repeated Expectation tests = 2;
+
+  // NotifierName dentoes the name of the notifier user to send alerts
+  optional string notifierName = 3;
+
+  // AutoRetrain denoted if we autoamtically retrain models.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool manualApproval = 4;
+
+  // A reference to the workload class that is used for running the test prediction
+  // +kubebuilder:default:="default-model-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 5;
+}
+
 message NNLayerParameter {
   optional string name = 1;
 
@@ -1595,16 +1635,6 @@ message NumericPipelineSpec {
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string scaler = 3;
-}
-
-message PipelineTrigger {
-  // Spec for a schedule in case that the trigger
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 1;
-
-  // Definition of git hub events
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.GithubEvents githubEvents = 2;
 }
 
 // PreprocessingSpec of the pre processing pipeline
