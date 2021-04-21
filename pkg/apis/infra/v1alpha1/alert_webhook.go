@@ -78,9 +78,9 @@ func (notifier *Alert) ValidateDelete() error {
 	return nil
 }
 
-func (notifier *Alert) MarkReady() {
+func (notifier *Alert) MarkSent() {
 	notifier.CreateOrUpdateCond(AlertCondition{
-		Type:   AlertReady,
+		Type:   AlertSent,
 		Status: corev1.ConditionTrue,
 	})
 }

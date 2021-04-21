@@ -90,8 +90,8 @@ func (license *License) GetCond(t LicenseConditionType) LicenseCondition {
 
 }
 
-func (license *License) IsReady() bool {
-	return license.GetCond(LicenseReady).Status == v1.ConditionTrue
+func (license *License) IsValid() bool {
+	return license.GetCond(LicenseValid).Status == v1.ConditionTrue
 }
 
 func (license *License) RootUri() string {
@@ -116,9 +116,9 @@ func (license *License) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(license)
 }
 
-func (license *License) MarkReady() {
+func (license *License) MarkValid() {
 	license.CreateOrUpdateCond(LicenseCondition{
-		Type:   LicenseReady,
+		Type:   LicenseValid,
 		Status: v1.ConditionTrue,
 	})
 }

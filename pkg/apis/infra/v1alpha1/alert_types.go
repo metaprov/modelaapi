@@ -19,7 +19,8 @@ type AlertConditionType string
 
 /// Alert Condition
 const (
-	AlertSent AlertConditionType = "Sent"
+	AlertSent  AlertConditionType = "Sent"
+	AlertSaved AlertConditionType = "Saved"
 )
 
 // AlertCondition describes the state of the license at a certain point.

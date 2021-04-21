@@ -84,7 +84,7 @@ func (notifier *Alert) GetCond(t AlertConditionType) AlertCondition {
 }
 
 func (notifier *Alert) IsReady() bool {
-	return notifier.GetCond(AlertReady).Status == v1.ConditionTrue
+	return notifier.GetCond(AlertSent).Status == v1.ConditionTrue
 }
 
 func (notifier *Alert) RootUri() string {
