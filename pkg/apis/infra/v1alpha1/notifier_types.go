@@ -33,6 +33,7 @@ type NotifierCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
+// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".status.provider",description=""
 // +kubebuilder:printcolumn:name="From",type="string",JSONPath=".spec.from",description=""
 // +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -80,9 +81,11 @@ type NotifierSpec struct {
 
 // NotifierStatus is the observed state of a Notifier
 type NotifierStatus struct {
+	// provider is the name of the notifier provider. The name is derived from the connection
+	Provider string `json:"provider,omitempty" protobuf:"bytes,1,opt,name=provider"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	//+optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []NotifierCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }

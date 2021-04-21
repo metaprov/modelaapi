@@ -5459,7 +5459,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.repeatedFields_ = [4];
 
 
 
@@ -5492,7 +5492,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition.toObject, includeInstance)
   };
@@ -5532,10 +5534,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.deserial
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhase(value);
+      break;
+    case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setAt(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 2:
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -5569,17 +5580,32 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getAt();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeInt64(
-      1,
+      3,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition.serializeBinaryToWriter
     );
@@ -5588,19 +5614,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.serializ
 
 
 /**
- * optional int64 observedGeneration = 1;
- * @return {number}
+ * optional string phase = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getPhase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setObservedgeneration = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setPhase = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -5609,7 +5635,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearPhase = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -5618,18 +5644,91 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasPhase = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated AlertCondition conditions = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getAt = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setAt = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearAt = function() {
+  return this.setAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasAt = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int64 observedGeneration = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated AlertCondition conditions = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition, 4));
 };
 
 
@@ -5638,7 +5737,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -5648,7 +5747,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertCondition, opt_index);
 };
 
 
@@ -21211,7 +21310,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierSpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.repeatedFields_ = [3];
 
 
 
@@ -21244,7 +21343,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    provider: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition.toObject, includeInstance)
   };
@@ -21284,10 +21384,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProvider(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 2:
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -21321,17 +21425,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt64(
-      1,
+      2,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition.serializeBinaryToWriter
     );
@@ -21340,19 +21451,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.seria
 
 
 /**
- * optional int64 observedGeneration = 1;
- * @return {number}
+ * optional string provider = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getProvider = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setObservedgeneration = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setProvider = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -21361,7 +21472,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearProvider = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -21370,18 +21481,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasProvider = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated NotifierCondition conditions = 2;
+ * optional int64 observedGeneration = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated NotifierCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition, 3));
 };
 
 
@@ -21390,7 +21537,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -21400,7 +21547,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierCondition, opt_index);
 };
 
 
@@ -29193,7 +29340,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.repeatedFields_ = [3];
 
 
 
@@ -29226,7 +29373,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    provider: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.toObject, includeInstance)
   };
@@ -29266,10 +29414,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProvider(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 2:
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -29303,17 +29455,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt64(
-      1,
+      2,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition.serializeBinaryToWriter
     );
@@ -29322,19 +29481,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
 
 
 /**
- * optional int64 observedGeneration = 1;
- * @return {number}
+ * optional string provider = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getProvider = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setObservedgeneration = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setProvider = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -29343,7 +29502,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.clearObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.clearProvider = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -29352,18 +29511,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasProvider = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated VirtualBucketCondition conditions = 2;
+ * optional int64 observedGeneration = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated VirtualBucketCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, 3));
 };
 
 
@@ -29372,7 +29567,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -29382,7 +29577,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition, opt_index);
 };
 
 

@@ -1218,6 +1218,9 @@ export namespace DataSourceSpec {
 }
 
 export class DataSourceStatus extends jspb.Message {
+  getCols(): number;
+  setCols(value: number): DataSourceStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataSourceStatus;
 
@@ -1236,6 +1239,7 @@ export class DataSourceStatus extends jspb.Message {
 
 export namespace DataSourceStatus {
   export type AsObject = {
+    cols: number,
     observedgeneration: number,
     conditionsList: Array<DataSourceCondition.AsObject>,
   }
@@ -2770,8 +2774,8 @@ export class LabelingPipelineRunSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): LabelingPipelineRunSpec;
 
-  getFeaturepipelinename(): string;
-  setFeaturepipelinename(value: string): LabelingPipelineRunSpec;
+  getLabelpipelinename(): string;
+  setLabelpipelinename(value: string): LabelingPipelineRunSpec;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): LabelingPipelineRunSpec;
@@ -2788,7 +2792,7 @@ export namespace LabelingPipelineRunSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
-    featurepipelinename: string,
+    labelpipelinename: string,
     workloadclassname: string,
   }
 }

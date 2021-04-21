@@ -32,6 +32,7 @@ type VirtualBucketCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".status.provider",description="cloud provider"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
 // VirtualBucket represent a object storage location in the cloud or on-prem
@@ -76,9 +77,11 @@ type VirtualBucketSpec struct {
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
 type VirtualBucketStatus struct {
+	// Provider is the name of the notifier provider. The name is derived from the connection
+	Provider string `json:"provider,omitempty" protobuf:"bytes,1,opt,name=provider"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	//+optional
-	Conditions []VirtualBucketCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []VirtualBucketCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }

@@ -21,8 +21,8 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
       type: string
     - jsonPath: .spec.owner
       name: Owner
@@ -34,9 +34,12 @@ spec:
     - jsonPath: .spec.reportType
       name: Type
       type: string
-    - jsonPath: .status.phase
-      name: Status
-      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

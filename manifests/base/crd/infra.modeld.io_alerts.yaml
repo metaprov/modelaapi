@@ -20,8 +20,8 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
       type: string
     - jsonPath: .spec.level
       name: Level
@@ -35,6 +35,9 @@ spec:
     - jsonPath: .spec.entityRef.Namespace
       name: Entity Name
       type: string
+    - jsonPath: .status.at
+      name: At
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -115,6 +118,10 @@ spec:
           status:
             description: AlertStatus is the observed state of a Alert
             properties:
+              at:
+                description: The time when the alert was fired
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: AlertCondition describes the state of the license at
@@ -148,6 +155,9 @@ spec:
                   on
                 format: int64
                 type: integer
+              phase:
+                description: Phase is the phase of the model
+                type: string
             type: object
         required:
         - spec

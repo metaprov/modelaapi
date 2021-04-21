@@ -23,9 +23,12 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
       type: string
+    - jsonPath: .status.best
+      name: Best
+      type: boolean
     - jsonPath: .spec.owner
       name: Owner
       priority: 1
@@ -54,12 +57,6 @@ spec:
     - jsonPath: .status.testScore
       name: Test Score
       type: number
-    - jsonPath: .status.best
-      name: Best
-      type: boolean
-    - jsonPath: .status.phase
-      name: Status
-      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

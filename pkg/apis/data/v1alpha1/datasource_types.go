@@ -346,11 +346,14 @@ type DataSourceSpec struct {
 
 // FlatFileStatus defines the observed state of FlatFileSpec
 type DataSourceStatus struct {
+	// number of columns in the data source
+	// +kubebuilder:validation:Optional
+	Cols int32 `json:"cols,omitempty" protobuf:"varint,1,opt,name=cols"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	//+optional
-	Conditions []DataSourceCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []DataSourceCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

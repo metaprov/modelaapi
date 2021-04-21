@@ -23,17 +23,23 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
       type: string
+    - jsonPath: .spec.datapipelineName
+      name: Pipeline
+      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    - description: Human readable message describing the failure
-      jsonPath: .status.conditions[?(@.type=="IsFailed")].message
-      name: Failure
-      priority: 5
-      type: string
     name: v1alpha1
     schema:
       openAPIV3Schema:

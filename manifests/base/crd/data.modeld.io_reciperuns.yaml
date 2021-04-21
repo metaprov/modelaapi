@@ -23,15 +23,26 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
       type: string
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .status.phase
-      name: Status
+    - jsonPath: .spec.recipeName
+      name: Recipe
       type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:

@@ -34,6 +34,10 @@ spec:
       jsonPath: .spec.connectionName
       name: Connection
       type: string
+    - description: cloud provider
+      jsonPath: .status.provider
+      name: Provider
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -146,6 +150,10 @@ spec:
                   on
                 format: int64
                 type: integer
+              provider:
+                description: Provider is the name of the notifier provider. The name
+                  is derived from the connection
+                type: string
             type: object
         required:
         - spec

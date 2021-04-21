@@ -20,12 +20,26 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
       type: string
     - jsonPath: .spec.versionName
       name: Version
       type: string
+    - jsonPath: .spec.labelPipelineName
+      name: Pipeline
+      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -50,7 +64,7 @@ spec:
           spec:
             description: LabelSpec contain the desired state of a Label
             properties:
-              featurePipelineName:
+              labelPipelineName:
                 description: LabelPipelineName specifies the name of LabelingPipeline
                 maxLength: 64
                 minLength: 1
@@ -68,7 +82,7 @@ spec:
                   to run this pipeline.
                 type: string
             required:
-            - featurePipelineName
+            - labelPipelineName
             - owner
             type: object
           status:

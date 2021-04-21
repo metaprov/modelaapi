@@ -96,7 +96,7 @@ type StudyCondition struct {
 
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
@@ -106,9 +106,8 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
 // +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.trainedModels"
 // +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.testedModels"
-// +kubebuilder:printcolumn:name="StartTime",type="number",JSONPath=".status.testedModels",priority=1
-// +kubebuilder:printcolumn:name="EndTime",type="number",JSONPath=".status.testedModels",priority=1
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
 // Study represent a search for the best machine learning model using automl.

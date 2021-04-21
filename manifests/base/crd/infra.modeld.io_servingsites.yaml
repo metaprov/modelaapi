@@ -23,12 +23,19 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - description: owner
+      jsonPath: .spec.owner
+      name: Owner
+      type: string
     - jsonPath: .spec.fdqn
       name: FDQN
       type: string
     - jsonPath: .spec.ingressName
       name: Ingress
       type: string
+    - jsonPath: .status.activePredictors
+      name: Predictors
+      type: number
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

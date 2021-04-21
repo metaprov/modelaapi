@@ -23,7 +23,7 @@ type LicenseConditionType string
 
 /// License Condition
 const (
-	LicenseReady LicenseConditionType = "Ready"
+	LicenseValid LicenseConditionType = "Valid"
 	LicenseSaved LicenseConditionType = "Saved"
 )
 

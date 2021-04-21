@@ -25,8 +25,14 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
+    - jsonPath: .spec.type
+      name: Type
+      type: string
     - jsonPath: .spec.userName
       name: Username
+      type: string
+    - jsonPath: .spec.groupName
+      name: Groupname
       type: string
     - jsonPath: .spec.phone
       name: Phone

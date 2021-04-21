@@ -23,18 +23,23 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
-      type: string
     - jsonPath: .status.phase
       name: Status
       type: string
     - jsonPath: .status.pipelineName
-      name: ModelPipeline
+      name: Pipeline
       type: string
     - jsonPath: .status.versionName
       name: Version
       type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      priority: 1
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      priority: 1
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

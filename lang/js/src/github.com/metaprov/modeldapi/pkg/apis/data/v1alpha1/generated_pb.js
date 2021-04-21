@@ -13605,7 +13605,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.repeatedFields_ = [3];
 
 
 
@@ -13638,7 +13638,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    cols: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition.toObject, includeInstance)
   };
@@ -13678,10 +13679,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCols(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 2:
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -13717,15 +13722,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.seri
   var f = undefined;
   f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeInt32(
       1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt64(
+      2,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition.serializeBinaryToWriter
     );
@@ -13734,10 +13746,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.seri
 
 
 /**
- * optional int64 observedGeneration = 1;
+ * optional int32 cols = 1;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.getObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.getCols = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -13746,7 +13758,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.setObservedgeneration = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.setCols = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -13755,7 +13767,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.clearObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.clearCols = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -13764,18 +13776,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.hasObservedgeneration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.hasCols = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated DataSourceCondition conditions = 2;
+ * optional int64 observedGeneration = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated DataSourceCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition, 3));
 };
 
 
@@ -13784,7 +13832,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -13794,7 +13842,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceCondition, opt_index);
 };
 
 
@@ -27859,7 +27907,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    featurepipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    labelpipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
@@ -27907,7 +27955,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFeaturepipelinename(value);
+      msg.setLabelpipelinename(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -28046,10 +28094,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
 
 
 /**
- * optional string featurePipelineName = 3;
+ * optional string labelPipelineName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.getFeaturepipelinename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.getLabelpipelinename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -28058,7 +28106,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.setFeaturepipelinename = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.setLabelpipelinename = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -28067,7 +28115,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.clearFeaturepipelinename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.clearLabelpipelinename = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -28076,7 +28124,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.hasFeaturepipelinename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.hasLabelpipelinename = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

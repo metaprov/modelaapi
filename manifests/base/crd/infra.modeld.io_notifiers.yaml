@@ -29,6 +29,9 @@ spec:
     - jsonPath: .spec.connectionName
       name: Connection
       type: string
+    - jsonPath: .status.provider
+      name: Provider
+      type: string
     - jsonPath: .spec.from
       name: From
       type: string
@@ -151,6 +154,10 @@ spec:
                   on
                 format: int64
                 type: integer
+              provider:
+                description: provider is the name of the notifier provider. The name
+                  is derived from the connection
+                type: string
             type: object
         required:
         - spec

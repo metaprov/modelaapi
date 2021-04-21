@@ -8,6 +8,7 @@ import (
 type RecipeRunPhase string
 
 const (
+	RecipeRunPhasePending RecipeRunPhase = "Pending"
 	RecipeRunPhaseRunning RecipeRunPhase = "Running"
 	RecipeRunPhaseSucceed RecipeRunPhase = "IsCompleted"
 	RecipeRunPhaseFailed  RecipeRunPhase = "IsFailed"
@@ -39,9 +40,12 @@ type RecipeRunCondition struct {
 }
 
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Recipe",type="string",JSONPath=".spec.recipeName"
+// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reciperuns,shortName=rr,singular=reciperun,categories={data,modeld,all}
 // Recipe run represent one execution of the recipe.

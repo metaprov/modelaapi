@@ -22,7 +22,9 @@ option go_package = "v1alpha1";
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
+// +kubebuilder:printcolumn:name="Groupname",type="string",JSONPath=".spec.groupName",description=""
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -165,11 +167,12 @@ message AccountStatus {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
 // +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
 message Alert {
@@ -234,12 +237,20 @@ message AlertSpec {
 
 // AlertStatus is the observed state of a Alert
 message AlertStatus {
+  // Phase is the phase of the model
+  // +kubebuilder:validation:Optional
+  optional string phase = 1;
+
+  // The time when the alert was fired
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 3;
 
   // +optional
-  repeated AlertCondition conditions = 2;
+  repeated AlertCondition conditions = 4;
 }
 
 message AliCloudSpec {
@@ -1075,6 +1086,7 @@ message MySqlSpec {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
+// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".status.provider",description=""
 // +kubebuilder:printcolumn:name="From",type="string",JSONPath=".spec.from",description=""
 // +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -1146,12 +1158,15 @@ message NotifierSpec {
 
 // NotifierStatus is the observed state of a Notifier
 message NotifierStatus {
+  // provider is the name of the notifier provider. The name is derived from the connection
+  optional string provider = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
   // +optional
-  repeated NotifierCondition conditions = 2;
+  repeated NotifierCondition conditions = 3;
 }
 
 message OdbcSpec {
@@ -1279,8 +1294,10 @@ message Scope {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="FDQN",type="string",JSONPath=".spec.fdqn",description=""
 // +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
+// +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modeld}
 message ServingSite {
@@ -1525,6 +1542,7 @@ message TenantStatus {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".status.provider",description="cloud provider"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
 // VirtualBucket represent a object storage location in the cloud or on-prem
@@ -1590,12 +1608,15 @@ message VirtualBucketSpec {
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
 message VirtualBucketStatus {
+  // Provider is the name of the notifier provider. The name is derived from the connection
+  optional string provider = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
   // +optional
-  repeated VirtualBucketCondition conditions = 2;
+  repeated VirtualBucketCondition conditions = 3;
 }
 
 message VirtualCluster {

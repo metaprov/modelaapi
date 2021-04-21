@@ -98,7 +98,8 @@ type ModelCondition struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Best",type="boolean",JSONPath=".status.best"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Study",type="string",JSONPath=".spec.studyName"
@@ -108,8 +109,6 @@ type ModelCondition struct {
 // +kubebuilder:printcolumn:name="CV Score",type="number",JSONPath=".status.cvScore"
 // +kubebuilder:printcolumn:name="Train Score",type="number",JSONPath=".status.trainScore"
 // +kubebuilder:printcolumn:name="Test Score",type="number",JSONPath=".status.testScore"
-// +kubebuilder:printcolumn:name="Best",type="boolean",JSONPath=".status.best"
-// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=models,singular=model,shortName=md,categories={training,modeld,all}
 // Model represent a machine learning model.

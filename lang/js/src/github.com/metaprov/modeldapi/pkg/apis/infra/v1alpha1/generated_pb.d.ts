@@ -360,6 +360,14 @@ export namespace AlertSpec {
 }
 
 export class AlertStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): AlertStatus;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
+  hasAt(): boolean;
+  clearAt(): AlertStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AlertStatus;
 
@@ -378,6 +386,8 @@ export class AlertStatus extends jspb.Message {
 
 export namespace AlertStatus {
   export type AsObject = {
+    phase: string,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<AlertCondition.AsObject>,
   }
@@ -2108,6 +2118,9 @@ export namespace NotifierSpec {
 }
 
 export class NotifierStatus extends jspb.Message {
+  getProvider(): string;
+  setProvider(value: string): NotifierStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotifierStatus;
 
@@ -2126,6 +2139,7 @@ export class NotifierStatus extends jspb.Message {
 
 export namespace NotifierStatus {
   export type AsObject = {
+    provider: string,
     observedgeneration: number,
     conditionsList: Array<NotifierCondition.AsObject>,
   }
@@ -2972,6 +2986,9 @@ export namespace VirtualBucketSpec {
 }
 
 export class VirtualBucketStatus extends jspb.Message {
+  getProvider(): string;
+  setProvider(value: string): VirtualBucketStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): VirtualBucketStatus;
 
@@ -2990,6 +3007,7 @@ export class VirtualBucketStatus extends jspb.Message {
 
 export namespace VirtualBucketStatus {
   export type AsObject = {
+    provider: string,
     observedgeneration: number,
     conditionsList: Array<VirtualBucketCondition.AsObject>,
   }

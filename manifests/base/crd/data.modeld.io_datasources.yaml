@@ -494,6 +494,10 @@ spec:
           status:
             description: FlatFileStatus defines the observed state of FlatFileSpec
             properties:
+              cols:
+                description: number of columns in the data source
+                format: int32
+                type: integer
               conditions:
                 items:
                   description: DataSourceCondition describes the state of a datasource

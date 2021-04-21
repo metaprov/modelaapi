@@ -5,13 +5,21 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// ModelPhase is the current phase of a model
+type AlertPhase string
+
+const (
+	AlertPhasePending AlertPhase = "Pending"
+	AlertPhaseSending AlertPhase = "Sending"
+	AlertPhaseSent    AlertPhase = "Sent"
+)
+
 // Alert condition
 type AlertConditionType string
 
 /// Alert Condition
 const (
-	AlertReady AlertConditionType = "Ready"
-	AlertSaved AlertConditionType = "Saved"
+	AlertSent AlertConditionType = "Sent"
 )
 
 // AlertCondition describes the state of the license at a certain point.
@@ -30,11 +38,12 @@ type AlertCondition struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
 // +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
 type Alert struct {
@@ -84,9 +93,15 @@ type AlertSpec struct {
 
 // AlertStatus is the observed state of a Alert
 type AlertStatus struct {
+	// Phase is the phase of the model
+	// +kubebuilder:validation:Optional
+	Phase AlertPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
+	// The time when the alert was fired
+	// +kubebuilder:validation:Optional
+	At metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	//+optional
-	Conditions []AlertCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []AlertCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }
