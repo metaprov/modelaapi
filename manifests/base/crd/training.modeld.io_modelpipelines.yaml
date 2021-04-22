@@ -220,13 +220,13 @@ spec:
               monitoring:
                 description: Monitoring stage define how to monitor the model in production
                 properties:
+                  autoRetrain:
+                    default: false
+                    description: AutoRetrain denoted if we autoamtically retrain models.
+                    type: boolean
                   enabled:
                     default: false
                     description: Enabled indicates that the stage is enabled
-                    type: boolean
-                  manualApproval:
-                    default: false
-                    description: AutoRetrain denoted if we autoamtically retrain models.
                     type: boolean
                   notifierName:
                     description: NotifierName dentoes the name of the notifier user

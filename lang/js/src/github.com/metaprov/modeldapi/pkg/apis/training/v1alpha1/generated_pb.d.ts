@@ -2063,8 +2063,8 @@ export class MonitoringStageSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): MonitoringStageSpec;
 
-  getManualapproval(): boolean;
-  setManualapproval(value: boolean): MonitoringStageSpec;
+  getAutoretrain(): boolean;
+  setAutoretrain(value: boolean): MonitoringStageSpec;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): MonitoringStageSpec;
@@ -2082,7 +2082,7 @@ export namespace MonitoringStageSpec {
     enabled: boolean,
     testsList: Array<Expectation.AsObject>,
     notifiername: string,
-    manualapproval: boolean,
+    autoretrain: boolean,
     workloadclassname: string,
   }
 }

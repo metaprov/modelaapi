@@ -1412,7 +1412,7 @@ message MonitoringStageSpec {
   // AutoRetrain denoted if we autoamtically retrain models.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool manualApproval = 4;
+  optional bool autoRetrain = 4;
 
   // A reference to the workload class that is used for running the test prediction
   // +kubebuilder:default:="default-model-workload-class"
