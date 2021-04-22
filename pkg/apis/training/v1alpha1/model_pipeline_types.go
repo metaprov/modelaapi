@@ -245,7 +245,7 @@ type MonitoringStageSpec struct {
 	// AutoRetrain denoted if we autoamtically retrain models.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	AutoRetrain *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
+	AutoRetrain *bool `json:"autoRetrain,omitempty" protobuf:"bytes,4,opt,name=autoRetrain"`
 	// A reference to the workload class that is used for running the test prediction
 	// +kubebuilder:default:="default-model-workload-class"
 	// +kubebuilder:validation:Optional
