@@ -113,6 +113,11 @@ type ModelPipelineSpec struct {
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
+	// Enabled indicates that the stage is enabled
+	// +kubebuilder:default:=true
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// LabName is the lab that execute processing of the data pipeline
+	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,1,opt,name=labName"`
 	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
 	// +kubebuilder:default =""
@@ -130,28 +135,31 @@ type DataStageSpec struct {
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
 type TrainingStageSpec struct {
+	// Enabled indicates that the stage is enabled
+	// +kubebuilder:default:=true
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// NotebookName specify the notebook to run before training.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,1,opt,name=notebookName"`
+	NotebookName *string `json:"notebookName,omitempty" protobuf:"bytes,2,opt,name=notebookName"`
 	// LabName is the name of the lab used for training. If empty, the system will use the default lab assigned to the data product
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,3,opt,name=labName"`
 	// StudyName is the name of a study template. The actual study will clone the study template and will
 	// use the dataset created in the data stage.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Required
-	StudyTemplateName *string `json:"studyTemplateName,omitempty" protobuf:"bytes,3,opt,name=studyTemplateName"`
+	StudyTemplateName *string `json:"studyTemplateName,omitempty" protobuf:"bytes,4,opt,name=studyTemplateName"`
 	// Smoke is the expectation on the result from testing the model during training.
 	// If the model cannot pass this smoke test, the system will fail the pipeline
 	// If the smoke is empty, the system does not perform the test
 	// +kubebuilder:validation:Optional
-	Smoke *Expectation `json:"smoke,omitempty" protobuf:"bytes,4,opt,name=smoke"`
+	Smoke *Expectation `json:"smoke,omitempty" protobuf:"bytes,5,opt,name=smoke"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,6,opt,name=manualApproval"`
 }
 
 //UATStageSpec is the specification of the user acceptance test.
