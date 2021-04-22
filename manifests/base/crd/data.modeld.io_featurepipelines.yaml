@@ -99,11 +99,13 @@ spec:
                 description: Materialization
                 properties:
                   backfill:
+                    default: 21
                     description: Number of days to store information from the past
                       in the feature store.
                     format: int32
                     type: integer
                   offline:
+                    default: false
                     description: If true update the offline store.
                     type: boolean
                   online:
@@ -115,6 +117,7 @@ spec:
                     format: date-time
                     type: string
                   ttl:
+                    default: 0
                     format: int32
                     type: integer
                 type: object

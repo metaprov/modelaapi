@@ -81,7 +81,7 @@ spec:
                 - path
                 type: object
               defaultWorkloadClassName:
-                default: default-workload-class
+                default: default-data-workload-class
                 description: DefaultWorkloadClassName is reference to the workload
                   class used for running product tasks.
                 type: string
@@ -94,6 +94,7 @@ spec:
                   for this product
                 properties:
                   branch:
+                    default: ""
                     description: Branch in git repo
                     maxLength: 256
                     type: string
@@ -104,6 +105,7 @@ spec:
                     description: Private is True if the repository is private.
                     type: boolean
                   url:
+                    default: ""
                     description: URL of the stakeholder
                     maxLength: 256
                     type: string
@@ -113,11 +115,13 @@ spec:
                   models images for the product versions
                 properties:
                   name:
+                    default: ""
                     description: The canonical name of the image repo. The default
                       value is docker/productname optional
                     maxLength: 256
                     type: string
                   registryConnectionName:
+                    default: ""
                     description: The connection of the docker registry provider If
                       the value is empty, the system will not push images. optional
                     type: string

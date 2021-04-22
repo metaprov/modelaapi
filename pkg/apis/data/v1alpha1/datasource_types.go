@@ -32,9 +32,11 @@ type DataSourceCondition struct {
 
 type TableSpec struct {
 	// The actual query. this is required.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Query *string `json:"query,omitempty" protobuf:"bytes,1,opt,name=query"`
 	// TableName refer to whole table
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TableName *string `json:"tableName,omitempty" protobuf:"bytes,2,opt,name=tableName"`
 	// Connection refer to a connection object that point to secret
@@ -44,6 +46,7 @@ type TableSpec struct {
 
 type StreamSpec struct {
 	// Topic is the stream topic
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Topic *string `json:"topic,omitempty" protobuf:"bytes,1,opt,name=topic"`
 	// Connection refer to a connection object that point to secret
@@ -53,6 +56,7 @@ type StreamSpec struct {
 
 type ApiSpec struct {
 	// URI is the uri of the api
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	URI *string `json:"topic,omitempty" protobuf:"bytes,1,opt,name=topic"`
 	// Connection refer to a connection object that point to secret
@@ -135,6 +139,7 @@ const (
 type FlatFileSpec struct {
 	// The text file type
 	// Default: csv
+	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
 	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,4,opt,name=fileType"`
 	// Refers to the character used to separate fields.
@@ -151,21 +156,25 @@ type FlatFileSpec struct {
 	// +kubebuilder:validation:Optional
 	CommentChars string `json:"commentChars,omitempty" protobuf:"bytes,8,opt,name=commentChars"`
 	//Check if there is an header
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Header *bool `json:"header,omitempty" protobuf:"bytes,9,opt,name=header"`
 	//The number of rows to skip
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	SkipRows *int32 `json:"skipRows,omitempty" protobuf:"varint,10,opt,name=skipRows"`
-	//NullValue	is a sequence of values to replace with NA.
+	// NullValue is a sequence of values to replace with NA.
 	// +kubebuilder:validation:Optional
 	NullValues *string `json:"nullValues,omitempty" protobuf:"bytes,11,opt,name=nullValues"`
 	//Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
+	// +kubebuilder:default:="utf-8"
 	// +kubebuilder:validation:Optional
 	Encoding *catalog.FileEncoding `json:"encoding,omitempty" protobuf:"bytes,12,opt,name=encoding"`
 	//The maximum number of rows to read.
 	// +kubebuilder:validation:Optional
 	MaxRows *int32 `json:"maxRows,omitempty" protobuf:"varint,13,opt,name=maxRows"`
 	//If true, the import will fail if there is an error
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Strict *bool `json:"strict,omitempty" protobuf:"bytes,14,opt,name=strict"`
 }
@@ -211,55 +220,69 @@ type Column struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,5,opt,name=description"`
 	// Ignore specify if the attribute should be ignored when building the model
 	// default is false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Ignore *bool `json:"ignore,omitempty" protobuf:"bytes,6,opt,name=ignore"`
 	// Label should be true if this attribute is the predictable target
 	// Default is false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Label *bool `json:"label,omitempty" protobuf:"bytes,7,opt,name=label"`
 	// Nullable indicates if a column can contain string
 	// Default is false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Nullable *bool `json:"nullable,omitempty" protobuf:"bytes,8,opt,name=nullable"`
 	// PrimaryKey denotes if this column is part of the file key.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	PK *bool `json:"pk,omitempty" protobuf:"bytes,9,opt,name=pk"`
 	// MultipleOf
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,10,opt,name=multipleOf"`
 	// MaximumFloat
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,11,opt,name=maximum"`
 	// ExclusiveMaximum
 	// +kubebuilder:validation:Optional
 	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"bytes,12,opt,name=exclusiveMaximum"`
 	// MinimumFloat
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,13,opt,name=minimum"`
 	// ExclusiveMinimum
 	// +kubebuilder:validation:Optional
 	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"bytes,14,opt,name=exclusiveMinimum"`
 	// MaxLength
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MaxLength *int32 `json:"maxLength,omitempty" protobuf:"varint,15,opt,name=maxLength"`
 	// MinLength
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MinLength *int32 `json:"minLength,omitempty" protobuf:"varint,16,opt,name=minLength"`
 	// Pattern
 	// Default is empty
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Pattern *string `json:"pattern,omitempty" protobuf:"bytes,17,opt,name=pattern"`
 	// Required
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Required *bool `json:"required,omitempty" protobuf:"bytes,18,opt,name=required"`
 	// Title
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	Title *string `json:"title,omitempty" protobuf:"bytes,19,opt,name=title"`
 	// Example
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Example *string `json:"example,omitempty" protobuf:"bytes,20,opt,name=example"`
 	// External Docs
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ExternalDocs *string `json:"externalDocs,omitempty" protobuf:"bytes,21,opt,name=externalDocs"`
 	// Enum
@@ -267,21 +290,28 @@ type Column struct {
 	Enum []string `json:"enum,omitempty" protobuf:"bytes,22,rep,name=enum"`
 	// Preprocessor hint constrain the transformer
 	// Default is empty
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TransformerHint *string `json:"transformerHint,omitempty" protobuf:"bytes,23,opt,name=transformerHint"`
 	// Max Items in the data in case of a list
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MaxItems *int32 `json:"maxItems,omitempty" protobuf:"varint,24,opt,name=maxItems"`
 	// Min Items in the data in case of a list.
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	MinItems *int32 `json:"minItems,omitempty" protobuf:"varint,25,opt,name=minItems"`
 	// Enforce that all the items in the list are unique
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"bytes,26,opt,name=uniqueItems"`
 	// TimeColumn is true if this column is used as the time axis in time series foreacst
 	// Default is false.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"bytes,27,opt,name=timeColumn"`
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	// PreservePrivacy is true if the column content should not be exposed due to privacy concerns
 	PreservePrivacy *bool `json:"preservePrivacy,omitempty" protobuf:"bytes,28,opt,name=preservePrivacy"`
 }

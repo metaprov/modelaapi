@@ -89,11 +89,13 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the dataset
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// required.
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// DataSourceName is the name of the data source which created this dataset. For example flat file
 	// +kubebuilder:validation:Required
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`

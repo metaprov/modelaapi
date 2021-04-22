@@ -85,7 +85,7 @@ spec:
                 description: The data product version of the run
                 type: string
               workloadClassName:
-                default: default-workload-class
+                default: default-data-workload-class
                 description: WorkloadClassName is the name of the workload class used
                   to run this pip0eline. This is assigned by the datapipelineeun
                 type: string

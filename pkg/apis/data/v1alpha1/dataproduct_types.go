@@ -67,9 +67,11 @@ type GitLocation struct {
 	// GitConnectionName
 	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
 	// URL of the stakeholder
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	URL *string `json:"url,omitempty" protobuf:"bytes,2,opt,name=url"`
 	// Branch in git repo
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
 	// Private is True if the repository is private.
@@ -79,10 +81,12 @@ type GitLocation struct {
 type ImageLocation struct {
 	// The canonical name of the image repo.
 	// The default value is docker/productname
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=256
 	// optional
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The connection of the docker registry provider
+	// +kubebuilder:default:=""
 	// If the value is empty, the system will not push images.
 	// optional
 	RegistryConnectionName *string `json:"registryConnectionName,omitempty" protobuf:"bytes,2,opt,name=registryConnectionName"`
@@ -137,7 +141,7 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,12,opt,name=notifierName"`
 	// DefaultWorkloadClassName is reference to the workload class used for running product tasks.
-	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:default:="default-data-workload-class"
 	// +kubebuilder:validation:Optional
 	DefaultWorkloadClassName *string `json:"defaultWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=defaultWorkloadClassName"`
 	// Denote how many time a job is retry after failure

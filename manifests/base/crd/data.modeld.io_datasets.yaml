@@ -74,6 +74,7 @@ spec:
                 format: int64
                 type: integer
               datasourceName:
+                default: ""
                 description: DataSourceName is the name of the data source which created
                   this dataset. For example flat file
                 maxLength: 63
@@ -126,6 +127,7 @@ spec:
                 description: If true, we should validate the dataset
                 type: boolean
               versionName:
+                default: ""
                 description: VersionName is the data product version of the dataset
                   required.
                 maxLength: 63

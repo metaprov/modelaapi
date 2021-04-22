@@ -75,6 +75,7 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,3,opt,name=versionName"`
 	// Description of the feature pipeline
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
@@ -84,9 +85,11 @@ type FeaturePipelineSpec struct {
 	// Materialization
 	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,6,opt,name=materialization"`
 	// Family is the feature family
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	Family *string `json:"family,omitempty" protobuf:"bytes,7,opt,name=family"`
 	// Reference to the entity name
+	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
 	// A reference to the workload class that is used for running the workload class
@@ -115,9 +118,11 @@ type FeaturePipelineStatus struct {
 
 type MaterializationSpec struct {
 	// If true, update the online store
+	// +kubebuilder:default =false
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
 	// If true update the offline store.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Offline *bool `json:"offline,omitempty" protobuf:"bytes,2,opt,name=offline"`
 	// +kubebuilder:validation:Optional
@@ -125,8 +130,10 @@ type MaterializationSpec struct {
 	// +kubebuilder:validation:Optional
 	ScheduleInterval *string `json:"scheduleInterval,omitempty" protobuf:"bytes,4,opt,name=scheduleInterval"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=0
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,5,opt,name=ttl"`
 	// Number of days to store information from the past in the feature store.
+	// +kubebuilder:default:=21
 	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,6,opt,name=backfill"`
 }
 

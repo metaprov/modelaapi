@@ -154,6 +154,7 @@ spec:
                             type: string
                         type: object
                       topic:
+                        default: ""
                         description: URI is the uri of the api
                         type: string
                     type: object
@@ -183,6 +184,7 @@ spec:
                         - pipe
                         type: string
                       encoding:
+                        default: utf-8
                         description: Encoding for Unicode (e.g., 'utf-8' for UTF-8
                           encoded text).
                         type: string
@@ -190,6 +192,7 @@ spec:
                         description: the char used to escape the delimiter when quoting
                         type: string
                       fileType:
+                        default: csv
                         description: 'The text file type Default: csv'
                         enum:
                         - csv
@@ -205,6 +208,7 @@ spec:
                         - feather
                         type: string
                       header:
+                        default: true
                         description: Check if there is an header
                         type: boolean
                       maxRows:
@@ -212,8 +216,8 @@ spec:
                         format: int32
                         type: integer
                       nullValues:
-                        description: "NullValue\tis a sequence of values to replace
-                          with NA."
+                        description: NullValue is a sequence of values to replace
+                          with NA.
                         type: string
                       quote:
                         description: The quata char.
@@ -222,10 +226,12 @@ spec:
                         - single-quote
                         type: string
                       skipRows:
+                        default: 0
                         description: The number of rows to skip
                         format: int32
                         type: integer
                       strict:
+                        default: true
                         description: If true, the import will fail if there is an
                           error
                         type: boolean
@@ -282,6 +288,7 @@ spec:
                                 type: string
                               type: array
                             example:
+                              default: ""
                               description: Example
                               type: string
                             exclusiveMaximum:
@@ -291,6 +298,7 @@ spec:
                               description: ExclusiveMinimum
                               type: boolean
                             externalDocs:
+                              default: ""
                               description: External Docs
                               type: string
                             featureName:
@@ -327,36 +335,45 @@ spec:
                               - unknown
                               type: string
                             ignore:
+                              default: false
                               description: Ignore specify if the attribute should
                                 be ignored when building the model default is false
                               type: boolean
                             label:
+                              default: false
                               description: Label should be true if this attribute
                                 is the predictable target Default is false
                               type: boolean
                             maxItems:
+                              default: 0
                               description: Max Items in the data in case of a list
                               format: int32
                               type: integer
                             maxLength:
+                              default: 0
                               description: MaxLength
                               format: int32
                               type: integer
                             maximum:
+                              default: 0
                               description: MaximumFloat
                               type: number
                             minItems:
+                              default: 0
                               description: Min Items in the data in case of a list.
                               format: int32
                               type: integer
                             minLength:
+                              default: 0
                               description: MinLength
                               format: int32
                               type: integer
                             minimum:
+                              default: 0
                               description: MinimumFloat
                               type: number
                             multipleOf:
+                              default: 0
                               description: MultipleOf
                               format: int32
                               type: integer
@@ -367,37 +384,46 @@ spec:
                               minLength: 1
                               type: string
                             nullable:
+                              default: false
                               description: Nullable indicates if a column can contain
                                 string Default is false
                               type: boolean
                             pattern:
+                              default: ""
                               description: Pattern Default is empty
                               type: string
                             pk:
+                              default: false
                               description: PrimaryKey denotes if this column is part
                                 of the file key.
                               type: boolean
                             preservePrivacy:
+                              default: false
                               description: PreservePrivacy is true if the column content
                                 should not be exposed due to privacy concerns
                               type: boolean
                             required:
+                              default: false
                               description: Required
                               type: boolean
                             timeColumn:
+                              default: false
                               description: TimeColumn is true if this column is used
                                 as the time axis in time series foreacst Default is
                                 false.
                               type: boolean
                             title:
+                              default: ""
                               description: Title
                               maxLength: 63
                               type: string
                             transformerHint:
+                              default: ""
                               description: Preprocessor hint constrain the transformer
                                 Default is empty
                               type: string
                             uniqueItems:
+                              default: false
                               description: Enforce that all the items in the list
                                 are unique
                               type: boolean
@@ -488,6 +514,7 @@ spec:
                             type: string
                         type: object
                       topic:
+                        default: ""
                         description: Topic is the stream topic
                         type: string
                     type: object
@@ -534,9 +561,11 @@ spec:
                             type: string
                         type: object
                       query:
+                        default: ""
                         description: The actual query. this is required.
                         type: string
                       tableName:
+                        default: ""
                         description: TableName refer to whole table
                         type: string
                     type: object

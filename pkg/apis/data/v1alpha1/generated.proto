@@ -27,6 +27,7 @@ message AggregationSpec {
 
 message ApiSpec {
   // URI is the uri of the api
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string topic = 1;
 
@@ -63,28 +64,34 @@ message Column {
 
   // Ignore specify if the attribute should be ignored when building the model
   // default is false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool ignore = 6;
 
   // Label should be true if this attribute is the predictable target
   // Default is false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool label = 7;
 
   // Nullable indicates if a column can contain string
   // Default is false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool nullable = 8;
 
   // PrimaryKey denotes if this column is part of the file key.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pk = 9;
 
   // MultipleOf
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 multipleOf = 10;
 
   // MaximumFloat
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double maximum = 11;
 
@@ -93,6 +100,7 @@ message Column {
   optional bool exclusiveMaximum = 12;
 
   // MinimumFloat
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double minimum = 13;
 
@@ -101,32 +109,39 @@ message Column {
   optional bool exclusiveMinimum = 14;
 
   // MaxLength
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 maxLength = 15;
 
   // MinLength
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 minLength = 16;
 
   // Pattern
   // Default is empty
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string pattern = 17;
 
   // Required
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool required = 18;
 
   // Title
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string title = 19;
 
   // Example
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string example = 20;
 
   // External Docs
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string externalDocs = 21;
 
@@ -136,26 +151,33 @@ message Column {
 
   // Preprocessor hint constrain the transformer
   // Default is empty
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string transformerHint = 23;
 
   // Max Items in the data in case of a list
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 maxItems = 24;
 
   // Min Items in the data in case of a list.
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 minItems = 25;
 
   // Enforce that all the items in the list are unique
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool uniqueItems = 26;
 
   // TimeColumn is true if this column is used as the time axis in time series foreacst
   // Default is false.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool timeColumn = 27;
 
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   // PreservePrivacy is true if the column content should not be exposed due to privacy concerns
   optional bool preservePrivacy = 28;
 }
@@ -381,7 +403,7 @@ message DataPipelineRunSpec {
   optional string owner = 4;
 
   // WorkloadClassName is the name of the workload class used to run this pip0eline. This is assigned by the datapipelineeun
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="default-data-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -570,7 +592,7 @@ message DataProductSpec {
   optional string notifierName = 12;
 
   // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="default-data-workload-class"
   // +kubebuilder:validation:Optional
   optional string defaultWorkloadClassName = 13;
 
@@ -841,12 +863,14 @@ message DatasetSpec {
   optional string owner = 1;
 
   // VersionName is the data product version of the dataset
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // required.
   optional string versionName = 2;
 
   // DataSourceName is the name of the data source which created this dataset. For example flat file
   // +kubebuilder:validation:Required
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string datasourceName = 3;
@@ -1228,6 +1252,7 @@ message FeaturePipelineSpec {
   optional string versionName = 3;
 
   // Description of the feature pipeline
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 4;
@@ -1240,10 +1265,12 @@ message FeaturePipelineSpec {
   optional MaterializationSpec materialization = 6;
 
   // Family is the feature family
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string family = 7;
 
   // Reference to the entity name
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string entityName = 8;
 
@@ -1278,6 +1305,7 @@ message FeaturePipelineStatus {
 // FeatureSpec contain the desired state of a Feature
 message FeatureSpec {
   // The feature owner
+  // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
   optional string owner = 1;
 
@@ -1293,22 +1321,27 @@ message FeatureSpec {
   optional string description = 3;
 
   // Type name of the column key, this column is the key column in the entity.
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string keyColumn = 5;
 
   // The name of the time stamp column
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string timestampColumn = 6;
 
   // The name of the feature column
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string featureColumn = 7;
 
   // The name of the entity containing this feature
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string entityName = 8;
 
   // The name of the feature pipeline that is producing this feature
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string featurePipelineName = 9;
 }
@@ -1477,6 +1510,7 @@ message FeaturesetStatus {
 message FlatFileSpec {
   // The text file type
   // Default: csv
+  // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
   optional string fileType = 4;
 
@@ -1498,18 +1532,21 @@ message FlatFileSpec {
   optional string commentChars = 8;
 
   // Check if there is an header
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool header = 9;
 
   // The number of rows to skip
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 skipRows = 10;
 
-  // NullValue	is a sequence of values to replace with NA.
+  // NullValue is a sequence of values to replace with NA.
   // +kubebuilder:validation:Optional
   optional string nullValues = 11;
 
   // Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
+  // +kubebuilder:default:="utf-8"
   // +kubebuilder:validation:Optional
   optional string encoding = 12;
 
@@ -1518,6 +1555,7 @@ message FlatFileSpec {
   optional int32 maxRows = 13;
 
   // If true, the import will fail if there is an error
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool strict = 14;
 }
@@ -1527,10 +1565,12 @@ message GitLocation {
   optional string gitConnectionName = 1;
 
   // URL of the stakeholder
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   optional string url = 2;
 
   // Branch in git repo
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   optional string branch = 3;
 
@@ -1541,11 +1581,13 @@ message GitLocation {
 message ImageLocation {
   // The canonical name of the image repo.
   // The default value is docker/productname
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   // optional
   optional string name = 1;
 
   // The connection of the docker registry provider
+  // +kubebuilder:default:=""
   // If the value is empty, the system will not push images.
   // optional
   optional string registryConnectionName = 2;
@@ -1738,10 +1780,12 @@ message LabelingPipelineStatus {
 
 message MaterializationSpec {
   // If true, update the online store
+  // +kubebuilder:default =false
   // +kubebuilder:validation:Optional
   optional bool online = 1;
 
   // If true update the offline store.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool offline = 2;
 
@@ -1752,9 +1796,11 @@ message MaterializationSpec {
   optional string scheduleInterval = 4;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=0
   optional int32 ttl = 5;
 
   // Number of days to store information from the past in the feature store.
+  // +kubebuilder:default:=21
   optional int32 backfill = 6;
 }
 
@@ -2058,6 +2104,7 @@ message StakeHolder {
 
 message StreamSpec {
   // Topic is the stream topic
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string topic = 1;
 
@@ -2068,10 +2115,12 @@ message StreamSpec {
 
 message TableSpec {
   // The actual query. this is required.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string query = 1;
 
   // TableName refer to whole table
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string tableName = 2;
 
