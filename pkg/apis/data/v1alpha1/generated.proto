@@ -871,12 +871,11 @@ message DatasetSpec {
   // VersionName is the data product version of the dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
-  // required.
+  // +kubebuilder:validation:Required
   optional string versionName = 2;
 
   // DataSourceName is the name of the data source which created this dataset. For example flat file
   // +kubebuilder:validation:Required
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string datasourceName = 3;
@@ -908,7 +907,7 @@ message DatasetSpec {
   optional DataLocation origin = 12;
 
   // Folder of the actual data resides.
-  // +required.
+  // +kubebuilder:validation:Required
   optional DataLocation location = 13;
 
   // A reference to the workload class this is used to analyze the workload

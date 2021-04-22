@@ -91,11 +91,10 @@ type DatasetSpec struct {
 	// VersionName is the data product version of the dataset
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
-	// required.
+	// +kubebuilder:validation:Required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// DataSourceName is the name of the data source which created this dataset. For example flat file
 	// +kubebuilder:validation:Required
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
@@ -121,7 +120,7 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Origin *DataLocation `json:"origin,omitempty" protobuf:"bytes,12,opt,name=origin"`
 	// Folder of the actual data resides.
-	// +required.
+	// +kubebuilder:validation:Required
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// A reference to the workload class this is used to analyze the workload
 	// +kubebuilder:default:="default-data-workload-class"
