@@ -118,19 +118,19 @@ type DataStageSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// LabName is the lab that execute processing of the data pipeline
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"bytes,1,opt,name=labName"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
 	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
+	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
 	// The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
 	// based on the file in the location.
 	// +kubebuilder:validation:Optional
-	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
+	DatasourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,4,opt,name=datasourceName"`
 	// If Not null, run a docker image is used in order to generate the data.
 	// The data must reside in location after the container run
 	// +kubebuilder:validation:Optional
-	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,4,opt,name=dockerImage"`
+	DockerImage *string `json:"dockerImage,omitempty" protobuf:"bytes,5,opt,name=dockerImage"`
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

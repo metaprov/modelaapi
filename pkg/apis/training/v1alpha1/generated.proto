@@ -35,11 +35,13 @@ message AudioPipelineSpec {
 message BacktestSpec {
   // The initial number of data points, default to 80% of rows.
   // +kubebuilder:default:=80
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 initial = 1;
 
   // The number of backtesting windows. Default to 3. can be from 1 to 5.
   // +kubebuilder:default:=3
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 windows = 2;
 }
@@ -159,22 +161,28 @@ message DataSplit {
 // DataStageSpec is the desired state of the data preprocesing step of the pipeline.
 // Data preprocessing will be done via
 message DataStageSpec {
-  optional string labName = 1;
+  // Enabled indicates that the stage is enabled
+  // +kubebuilder:default:=true
+  optional bool enabled = 1;
+
+  // LabName is the lab that execute processing of the data pipeline
+  // +kubebuilder:validation:Optional
+  optional string labName = 2;
 
   // If not null, run the data pipeline and create a dataset. else, use the data in the data location
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string datapipelineName = 2;
+  optional string datapipelineName = 3;
 
   // The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
   // based on the file in the location.
   // +kubebuilder:validation:Optional
-  optional string datasourceName = 3;
+  optional string datasourceName = 4;
 
   // If Not null, run a docker image is used in order to generate the data.
   // The data must reside in location after the container run
   // +kubebuilder:validation:Optional
-  optional string dockerImage = 4;
+  optional string dockerImage = 5;
 }
 
 // DateTimePipelineSpec is the specification for preprocessing datetime features
@@ -216,14 +224,17 @@ message DeepEstimatorSpec {
   optional string type = 2;
 
   // Batch size specify about
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 batchSize = 3;
 
   // Budget size specify about
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 epochs = 4;
 
   // ValidationSplit specify about
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 validationSplit = 5;
 
@@ -232,6 +243,7 @@ message DeepEstimatorSpec {
   optional bool isSeq = 6;
 
   // Gpus denote of gpu for trainer, any number more than 1 denote distribute training
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 gpus = 7;
 
@@ -314,10 +326,12 @@ message ForecastingSpec {
 
   // Horizon is the number of data points to predict in the future.
   // Required.
+  // +kubebuilder:validation:Minimum=0
   optional int32 horizon = 7;
 
   // The confidence levels for the forecast, each level must be between 1-100.
   // +optional
+  // +kubebuilder:validation:Minimum=0
   optional int32 confidenceInterval = 8;
 
   // Set an holiday schedule for a country.
@@ -347,6 +361,7 @@ message ForecastingSpec {
 message FreqSpec {
   // Default to 1.
   // +kubebuilder:default:=1
+  // +kubebuilder:validation:Minimum=0
   // optional
   optional int32 interval = 1;
 
@@ -2075,21 +2090,23 @@ message SuccessiveHalvingOptions {
   // The maximum budget allocated to each model during SH search.
   // The default max budget is 81
   // +kubebuilder:default:=81
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxBudget = 6;
+  optional int32 maxBudget = 1;
 
   // The rate of elimination during SH search, such that only 1/rate of models are promoted to the
   // next half
   // +kubebuilder:default:=3
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 eliminationRate = 7;
+  optional int32 eliminationRate = 2;
 
   // The modality type. The default modality is based on the type of models
   // For deep models - we use epocs.
   // For classical models - we use data
   // +kubebuilder:default:=epochs
   // +kubebuilder:validation:Optional
-  optional string modality = 8;
+  optional string modality = 3;
 }
 
 message SuccessiveHalvingSpec {
@@ -2253,32 +2270,36 @@ message TrainingSpec {
 
 // TrainingStageSpec is the desired state of the training step of the pipeline
 message TrainingStageSpec {
+  // Enabled indicates that the stage is enabled
+  // +kubebuilder:default:=true
+  optional bool enabled = 1;
+
   // NotebookName specify the notebook to run before training.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string notebookName = 1;
+  optional string notebookName = 2;
 
   // LabName is the name of the lab used for training. If empty, the system will use the default lab assigned to the data product
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string labName = 2;
+  optional string labName = 3;
 
   // StudyName is the name of a study template. The actual study will clone the study template and will
   // use the dataset created in the data stage.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Required
-  optional string studyTemplateName = 3;
+  optional string studyTemplateName = 4;
 
   // Smoke is the expectation on the result from testing the model during training.
   // If the model cannot pass this smoke test, the system will fail the pipeline
   // If the smoke is empty, the system does not perform the test
   // +kubebuilder:validation:Optional
-  optional Expectation smoke = 4;
+  optional Expectation smoke = 5;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool manualApproval = 5;
+  optional bool manualApproval = 6;
 }
 
 // TransformerEstimatorSpec is an transformer. This is not implemented yet.

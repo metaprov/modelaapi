@@ -248,6 +248,7 @@ message OnlineChannelSpec {
   // Service port specify the predictor port.
   // Default: 8080
   // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 5;
 
   // This is the path relative to the ingress path

@@ -704,12 +704,14 @@ spec:
                         description: The rate of elimination during SH search, such
                           that only 1/rate of models are promoted to the next half
                         format: int32
+                        minimum: 0
                         type: integer
                       maxBudget:
                         default: 81
                         description: The maximum budget allocated to each model during
                           SH search. The default max budget is 81
                         format: int32
+                        minimum: 0
                         type: integer
                       modality:
                         default: epochs
@@ -915,18 +917,21 @@ spec:
                             description: The initial number of data points, default
                               to 80% of rows.
                             format: int32
+                            minimum: 0
                             type: integer
                           windows:
                             default: 3
                             description: The number of backtesting windows. Default
                               to 3. can be from 1 to 5.
                             format: int32
+                            minimum: 0
                             type: integer
                         type: object
                       confidenceIntervals:
                         description: The confidence levels for the forecast, each
                           level must be between 1-100.
                         format: int32
+                        minimum: 0
                         type: integer
                       countryForHoliday:
                         description: Set an holiday schedule for a country.
@@ -989,6 +994,7 @@ spec:
                             default: 1
                             description: Default to 1. optional
                             format: int32
+                            minimum: 0
                             type: integer
                           unit:
                             description: required
@@ -1007,6 +1013,7 @@ spec:
                         description: Horizon is the number of data points to predict
                           in the future. Required.
                         format: int32
+                        minimum: 0
                         type: integer
                       repressors:
                         description: List of other columns to take into consideration

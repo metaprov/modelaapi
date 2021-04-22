@@ -157,6 +157,8 @@ spec:
                 default: 3
                 description: Denote how many time a job is retry after failure
                 format: int32
+                maximum: 10
+                minimum: 0
                 type: integer
               servingSiteName:
                 description: ServingSiteName is the serving site where predictors

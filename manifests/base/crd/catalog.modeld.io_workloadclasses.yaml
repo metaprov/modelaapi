@@ -68,6 +68,7 @@ spec:
               gpu:
                 description: Number of gpus of this workload
                 format: int32
+                minimum: 0
                 type: integer
               libs:
                 description: Libs is the list of python library supported by the data

@@ -224,6 +224,9 @@ export namespace DataSplit {
 }
 
 export class DataStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): DataStageSpec;
+
   getLabname(): string;
   setLabname(value: string): DataStageSpec;
 
@@ -246,6 +249,7 @@ export class DataStageSpec extends jspb.Message {
 
 export namespace DataStageSpec {
   export type AsObject = {
+    enabled: boolean,
     labname: string,
     datapipelinename: string,
     datasourcename: string,
@@ -3380,6 +3384,9 @@ export namespace TrainingSpec {
 }
 
 export class TrainingStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): TrainingStageSpec;
+
   getNotebookname(): string;
   setNotebookname(value: string): TrainingStageSpec;
 
@@ -3407,6 +3414,7 @@ export class TrainingStageSpec extends jspb.Message {
 
 export namespace TrainingStageSpec {
   export type AsObject = {
+    enabled: boolean,
     notebookname: string,
     labname: string,
     studytemplatename: string,

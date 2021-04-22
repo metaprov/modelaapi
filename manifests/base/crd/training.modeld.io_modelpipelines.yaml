@@ -158,7 +158,13 @@ spec:
                       to generate the data. The data must reside in location after
                       the container run
                     type: string
+                  enabled:
+                    default: true
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
                   labName:
+                    description: LabName is the lab that execute processing of the
+                      data pipeline
                     type: string
                 type: object
               datasetSelector:
@@ -504,6 +510,10 @@ spec:
               training:
                 description: TrainingSpec stage
                 properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
                   labName:
                     description: LabName is the name of the lab used for training.
                       If empty, the system will use the default lab assigned to the

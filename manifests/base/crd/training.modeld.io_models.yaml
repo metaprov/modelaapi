@@ -128,15 +128,18 @@ spec:
                   batchSize:
                     description: Batch size specify about
                     format: int32
+                    minimum: 0
                     type: integer
                   epochs:
                     description: Budget size specify about
                     format: int32
+                    minimum: 0
                     type: integer
                   gpus:
                     description: Gpus denote of gpu for trainer, any number more than
                       1 denote distribute training
                     format: int32
+                    minimum: 0
                     type: integer
                   isSeq:
                     description: Is this a seq model
@@ -186,6 +189,7 @@ spec:
                   validationSplit:
                     description: ValidationSplit specify about
                     format: int32
+                    minimum: 0
                     type: integer
                 type: object
               ensemble:
@@ -254,18 +258,21 @@ spec:
                         description: The initial number of data points, default to
                           80% of rows.
                         format: int32
+                        minimum: 0
                         type: integer
                       windows:
                         default: 3
                         description: The number of backtesting windows. Default to
                           3. can be from 1 to 5.
                         format: int32
+                        minimum: 0
                         type: integer
                     type: object
                   confidenceIntervals:
                     description: The confidence levels for the forecast, each level
                       must be between 1-100.
                     format: int32
+                    minimum: 0
                     type: integer
                   countryForHoliday:
                     description: Set an holiday schedule for a country.
@@ -328,6 +335,7 @@ spec:
                         default: 1
                         description: Default to 1. optional
                         format: int32
+                        minimum: 0
                         type: integer
                       unit:
                         description: required
@@ -346,6 +354,7 @@ spec:
                     description: Horizon is the number of data points to predict in
                       the future. Required.
                     format: int32
+                    minimum: 0
                     type: integer
                   repressors:
                     description: List of other columns to take into consideration
@@ -796,18 +805,21 @@ spec:
                             description: The initial number of data points, default
                               to 80% of rows.
                             format: int32
+                            minimum: 0
                             type: integer
                           windows:
                             default: 3
                             description: The number of backtesting windows. Default
                               to 3. can be from 1 to 5.
                             format: int32
+                            minimum: 0
                             type: integer
                         type: object
                       confidenceIntervals:
                         description: The confidence levels for the forecast, each
                           level must be between 1-100.
                         format: int32
+                        minimum: 0
                         type: integer
                       countryForHoliday:
                         description: Set an holiday schedule for a country.
@@ -870,6 +882,7 @@ spec:
                             default: 1
                             description: Default to 1. optional
                             format: int32
+                            minimum: 0
                             type: integer
                           unit:
                             description: required
@@ -888,6 +901,7 @@ spec:
                         description: Horizon is the number of data points to predict
                           in the future. Required.
                         format: int32
+                        minimum: 0
                         type: integer
                       repressors:
                         description: List of other columns to take into consideration

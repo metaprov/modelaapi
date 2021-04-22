@@ -157,6 +157,7 @@ spec:
                   maxRows:
                     description: The maximum number of rows to read.
                     format: int32
+                    minimum: 0
                     type: integer
                   nullValues:
                     description: NullValue is a sequence of values to replace with
@@ -172,6 +173,7 @@ spec:
                     default: 0
                     description: The number of rows to skip
                     format: int32
+                    minimum: 0
                     type: integer
                   strict:
                     default: true
@@ -237,6 +239,7 @@ spec:
                           description: ExclusiveMaximum
                           type: boolean
                         exclusiveMinimum:
+                          default: false
                           description: ExclusiveMinimum
                           type: boolean
                         externalDocs:
@@ -295,6 +298,7 @@ spec:
                           default: 0
                           description: MaxLength
                           format: int32
+                          minimum: 0
                           type: integer
                         maximum:
                           default: 0
@@ -309,6 +313,7 @@ spec:
                           default: 0
                           description: MinLength
                           format: int32
+                          minimum: 0
                           type: integer
                         minimum:
                           default: 0
@@ -318,6 +323,7 @@ spec:
                           default: 0
                           description: MultipleOf
                           format: int32
+                          minimum: 0
                           type: integer
                         name:
                           description: FileName specify the name of the attribute

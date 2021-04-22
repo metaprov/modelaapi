@@ -87,21 +87,26 @@ spec:
               maxDataPlanes:
                 description: max data planes
                 format: int32
+                minimum: 0
                 type: integer
               maxProducts:
                 format: int32
+                minimum: 0
                 type: integer
               maxServers:
                 description: MaxServers is the max number of worker nodes
                 format: int32
+                minimum: 0
                 type: integer
               maxTrainers:
                 description: MaxTrainers is max number of trainers
                 format: int32
+                minimum: 0
                 type: integer
               maxUsers:
                 description: MaxUsers is the max number of active accounts
                 format: int32
+                minimum: 0
                 type: integer
               nlp:
                 description: NLP is nlp feature supported

@@ -152,6 +152,7 @@ spec:
                   port:
                     default: 9042
                     format: int32
+                    minimum: 0
                     type: integer
                   username:
                     default: ""
@@ -309,6 +310,7 @@ spec:
                   port:
                     default: 27017
                     format: int32
+                    minimum: 0
                     type: integer
                   username:
                     default: ""
@@ -331,6 +333,7 @@ spec:
                   port:
                     default: 1433
                     format: int32
+                    minimum: 0
                     type: integer
                   username:
                     default: ""
@@ -356,6 +359,7 @@ spec:
                   port:
                     default: 3306
                     format: int32
+                    minimum: 0
                     type: integer
                   username:
                     default: ""
@@ -399,6 +403,7 @@ spec:
                   port:
                     default: 1521
                     format: int32
+                    minimum: 0
                     type: integer
                   role:
                     default: ""
@@ -441,6 +446,7 @@ spec:
                   port:
                     default: 5432
                     format: int32
+                    minimum: 0
                     type: integer
                   username:
                     default: ""
@@ -460,6 +466,7 @@ spec:
                   port:
                     default: 8080
                     format: int32
+                    minimum: 0
                     type: integer
                   schema:
                     default: ""
@@ -529,6 +536,7 @@ spec:
                   port:
                     default: 5439
                     format: int32
+                    minimum: 0
                     type: integer
                   username:
                     default: ""
@@ -564,6 +572,7 @@ spec:
                   port:
                     default: 25
                     format: int32
+                    minimum: 0
                     type: integer
                   userName:
                     default: ""

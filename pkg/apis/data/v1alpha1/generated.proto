@@ -87,6 +87,7 @@ message Column {
 
   // MultipleOf
   // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 multipleOf = 10;
 
@@ -105,16 +106,19 @@ message Column {
   optional double minimum = 13;
 
   // ExclusiveMinimum
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool exclusiveMinimum = 14;
 
   // MaxLength
   // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxLength = 15;
 
   // MinLength
   // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 minLength = 16;
 
@@ -598,6 +602,8 @@ message DataProductSpec {
 
   // Denote how many time a job is retry after failure
   // +kubebuilder:default:=3
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
   optional int32 retriesOnFailure = 14;
 
@@ -1538,6 +1544,7 @@ message FlatFileSpec {
 
   // The number of rows to skip
   // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 skipRows = 10;
 
@@ -1551,6 +1558,7 @@ message FlatFileSpec {
   optional string encoding = 12;
 
   // The maximum number of rows to read.
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxRows = 13;
 
@@ -1796,11 +1804,14 @@ message MaterializationSpec {
   optional string scheduleInterval = 4;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:default:=0
   optional int32 ttl = 5;
 
   // Number of days to store information from the past in the feature store.
+  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=21
+  // +kubebuilder:validation:Minimum=0
   optional int32 backfill = 6;
 }
 
@@ -1988,6 +1999,7 @@ message RecipeSampleSpec {
 
   // Rows is the number of rows. Default is 500
   // +kubebuilder:default:=500
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 rows = 2;
 

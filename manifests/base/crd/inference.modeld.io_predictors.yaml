@@ -164,6 +164,7 @@ spec:
                         description: 'Service port specify the predictor port. Default:
                           8080'
                         format: int32
+                        minimum: 0
                         type: integer
                     type: object
                   streaming:
@@ -330,6 +331,7 @@ spec:
                         description: 'Service port specify the predictor port. Default:
                           8080'
                         format: int32
+                        minimum: 0
                         type: integer
                     type: object
                   streaming:

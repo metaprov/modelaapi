@@ -103,6 +103,7 @@ spec:
                     description: Number of days to store information from the past
                       in the feature store.
                     format: int32
+                    minimum: 0
                     type: integer
                   offline:
                     default: false
@@ -119,6 +120,7 @@ spec:
                   ttl:
                     default: 0
                     format: int32
+                    minimum: 0
                     type: integer
                 type: object
               owner:

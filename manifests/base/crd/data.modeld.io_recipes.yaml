@@ -144,6 +144,7 @@ spec:
                     default: 500
                     description: Rows is the number of rows. Default is 500
                     format: int32
+                    minimum: 0
                     type: integer
                   string:
                     default: ""

@@ -3862,10 +3862,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    datapipelinename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    datasourcename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    dockerimage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    labname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    datapipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    datasourcename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    dockerimage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3903,18 +3904,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLabname(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatapipelinename(value);
+      msg.setLabname(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatasourcename(value);
+      msg.setDatapipelinename(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasourcename(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDockerimage(value);
       break;
@@ -3947,9 +3952,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       1,
       f
     );
@@ -3975,23 +3980,30 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.ser
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string labName = 1;
- * @return {string}
+ * optional bool enabled = 1;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getLabname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setLabname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -4000,7 +4012,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearLabname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -4009,16 +4021,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasLabname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string datapipelineName = 2;
+ * optional string labName = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDatapipelinename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getLabname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -4027,7 +4039,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDatapipelinename = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setLabname = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -4036,7 +4048,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDatapipelinename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearLabname = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -4045,16 +4057,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDatapipelinename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasLabname = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string datasourceName = 3;
+ * optional string datapipelineName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDatasourcename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDatapipelinename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -4063,7 +4075,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDatasourcename = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDatapipelinename = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -4072,7 +4084,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDatasourcename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDatapipelinename = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -4081,16 +4093,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDatasourcename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDatapipelinename = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string dockerImage = 4;
+ * optional string datasourceName = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDockerimage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDatasourcename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -4099,7 +4111,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDockerimage = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDatasourcename = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -4108,7 +4120,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDockerimage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDatasourcename = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -4117,8 +4129,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDockerimage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDatasourcename = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string dockerImage = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.getDockerimage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.setDockerimage = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.clearDockerimage = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.prototype.hasDockerimage = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -31654,9 +31702,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    maxbudget: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    eliminationrate: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    modality: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    maxbudget: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    eliminationrate: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    modality: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -31693,15 +31741,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 6:
+    case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaxbudget(value);
       break;
-    case 7:
+    case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setEliminationrate(value);
       break;
-    case 8:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setModality(value);
       break;
@@ -31734,24 +31782,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeInt32(
-      6,
+      1,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt32(
-      7,
+      2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
-      8,
+      3,
       f
     );
   }
@@ -31759,11 +31807,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
 
 
 /**
- * optional int32 maxBudget = 6;
+ * optional int32 maxBudget = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.getMaxbudget = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -31772,7 +31820,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.setMaxbudget = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -31781,7 +31829,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.clearMaxbudget = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -31790,16 +31838,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.hasMaxbudget = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 eliminationRate = 7;
+ * optional int32 eliminationRate = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.getEliminationrate = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -31808,7 +31856,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.setEliminationrate = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -31817,7 +31865,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.clearEliminationrate = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -31826,16 +31874,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.hasEliminationrate = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string modality = 8;
+ * optional string modality = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.getModality = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -31844,7 +31892,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.setModality = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -31853,7 +31901,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.clearModality = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -31862,7 +31910,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalving
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.prototype.hasModality = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -33664,11 +33712,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notebookname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    labname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    studytemplatename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    notebookname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    labname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    studytemplatename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     smoke: (f = msg.getSmoke()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.toObject(includeInstance, f),
-    manualapproval: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
+    manualapproval: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -33706,23 +33755,27 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNotebookname(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLabname(value);
+      msg.setNotebookname(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setStudytemplatename(value);
+      msg.setLabname(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStudytemplatename(value);
+      break;
+    case 5:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.deserializeBinaryFromReader);
       msg.setSmoke(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setManualapproval(value);
       break;
@@ -33755,9 +33808,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       1,
       f
     );
@@ -33776,18 +33829,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getSmoke();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeBool(
-      5,
+      6,
       f
     );
   }
@@ -33795,19 +33855,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
 
 
 /**
- * optional string notebookName = 1;
- * @return {string}
+ * optional bool enabled = 1;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getNotebookname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setNotebookname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -33816,7 +33876,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearNotebookname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -33825,16 +33885,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasNotebookname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string labName = 2;
+ * optional string notebookName = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getLabname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getNotebookname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -33843,7 +33903,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setLabname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setNotebookname = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -33852,7 +33912,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearLabname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearNotebookname = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -33861,16 +33921,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasLabname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasNotebookname = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string studyTemplateName = 3;
+ * optional string labName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getStudytemplatename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getLabname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -33879,7 +33939,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setStudytemplatename = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setLabname = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -33888,7 +33948,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearStudytemplatename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearLabname = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -33897,18 +33957,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasStudytemplatename = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasLabname = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional Expectation smoke = 4;
+ * optional string studyTemplateName = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getStudytemplatename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setStudytemplatename = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearStudytemplatename = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasStudytemplatename = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional Expectation smoke = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getSmoke = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation, 4));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation, 5));
 };
 
 
@@ -33917,7 +34013,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setSmoke = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -33935,16 +34031,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasSmoke = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional bool manualApproval = 5;
+ * optional bool manualApproval = 6;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.getManualapproval = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -33953,7 +34049,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.setManualapproval = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -33962,7 +34058,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.clearManualapproval = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -33971,7 +34067,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingStageSpec.prototype.hasManualapproval = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -396,6 +396,7 @@ message CassandraSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -873,22 +874,27 @@ message LicenseSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6;
 
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxProducts = 7;
 
   // MaxTrainers is max number of trainers
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxTrainers = 8;
 
   // MaxServers is the max number of worker nodes
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxServers = 9;
 
   // MaxUsers is the max number of active accounts
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxUsers = 10;
 
   // max data planes
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxDataPlanes = 11;
 
@@ -945,6 +951,7 @@ message MSSqlServerSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=1433
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1052,6 +1059,7 @@ message MongoDbSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=27017
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1069,6 +1077,7 @@ message MySqlSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=3306
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1196,6 +1205,7 @@ message OracleSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=1521
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1233,6 +1243,7 @@ message PostgresSQLSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5432
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1250,6 +1261,7 @@ message PrestoSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=8080
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1270,6 +1282,7 @@ message RedShiftSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5439
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1431,6 +1444,7 @@ message SmtpSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=25
+  // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1717,10 +1731,12 @@ message VirtualClusterStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // +kubebuilder:validation:Minimum=0
   // +optional
   optional int32 availableNodes = 2;
 
   // Number of available Gpus
+  // +kubebuilder:validation:Minimum=0
   // +optional
   optional int32 availableGpus = 3;
 

@@ -309,6 +309,7 @@ message MachineClass {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 3;
 
   // Vcpu is the number of virtual cpus on this machine
+  // +kubebuilder:validation:Minimum=0
   // +optional
   optional int32 vcpu = 4;
 
@@ -615,6 +616,7 @@ message WorkloadClassSpec {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 6;
 
   // Number of gpus of this workload
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 gpu = 7;
 

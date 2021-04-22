@@ -246,7 +246,6 @@ type Column struct {
 	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,10,opt,name=multipleOf"`
 	// MaximumFloat
 	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,11,opt,name=maximum"`
 	// ExclusiveMaximum
@@ -254,7 +253,6 @@ type Column struct {
 	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"bytes,12,opt,name=exclusiveMaximum"`
 	// MinimumFloat
 	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,13,opt,name=minimum"`
 	// ExclusiveMinimum

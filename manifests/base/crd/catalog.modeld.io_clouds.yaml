@@ -108,6 +108,7 @@ spec:
                     vcpu:
                       description: Vcpu is the number of virtual cpus on this machine
                       format: int32
+                      minimum: 0
                       type: integer
                   required:
                   - code
