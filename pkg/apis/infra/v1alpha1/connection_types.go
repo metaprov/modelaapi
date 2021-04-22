@@ -209,6 +209,7 @@ type CassandraSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -222,6 +223,7 @@ type MongoDbSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=27017
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -235,6 +237,7 @@ type MySqlSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=3306
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -253,6 +256,7 @@ type OracleSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=1521
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -270,6 +274,7 @@ type PostgresSQLSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=5432
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -283,6 +288,7 @@ type PrestoSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=8080
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Catalog *string `json:"catalog,omitempty" protobuf:"bytes,3,opt,name=catalog"`
@@ -298,6 +304,7 @@ type RedShiftSpec struct {
 	// +kubebuilder:default:=""
 	Hostname *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=5439
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -324,6 +331,7 @@ type MSSqlServerSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=1433
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
@@ -425,6 +433,7 @@ type SmtpSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=25
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Username *string `json:"userName,omitempty" protobuf:"bytes,3,opt,name=userName"`

@@ -205,18 +205,22 @@ type DeepEstimatorSpec struct {
 	// +kubebuilder:validation:Optional
 	Type *DNNTypeName `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Batch size specify about
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	BatchSize *int32 `json:"batchSize,omitempty" protobuf:"varint,3,opt,name=batchSize"`
 	// Budget size specify about
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Epochs *int32 `json:"epochs,omitempty" protobuf:"varint,4,opt,name=epochs"`
 	// ValidationSplit specify about
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ValidationSplit *int32 `json:"validationSplit,omitempty" protobuf:"varint,5,opt,name=validationSplit"`
 	// Is this a seq model
 	// +kubebuilder:validation:Optional
 	Seq *bool `json:"isSeq,omitempty" protobuf:"bytes,6,opt,name=isSeq"`
 	// Gpus denote of gpu for trainer, any number more than 1 denote distribute training
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Gpus *int32 `json:"gpus,omitempty" protobuf:"varint,7,opt,name=gpus"`
 	// compile

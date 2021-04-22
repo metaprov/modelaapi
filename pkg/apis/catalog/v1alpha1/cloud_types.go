@@ -62,6 +62,7 @@ type MachineClass struct {
 	//+optional
 	Mem *resource.Quantity `json:"mem" protobuf:"bytes,3,opt,name=mem"`
 	//Vcpu is the number of virtual cpus on this machine
+	// +kubebuilder:validation:Minimum=0
 	//+optional
 	Vcpu *int32 `json:"vcpu" protobuf:"varint,4,opt,name=vcpu"`
 	//Storage is the amount of storage on this machine class

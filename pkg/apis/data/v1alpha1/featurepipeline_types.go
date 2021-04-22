@@ -130,10 +130,13 @@ type MaterializationSpec struct {
 	// +kubebuilder:validation:Optional
 	ScheduleInterval *string `json:"scheduleInterval,omitempty" protobuf:"bytes,4,opt,name=scheduleInterval"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:default:=0
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,5,opt,name=ttl"`
 	// Number of days to store information from the past in the feature store.
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=21
+	// +kubebuilder:validation:Minimum=0
 	Backfill *int32 `json:"backfill,omitempty" protobuf:"varint,6,opt,name=backfill"`
 }
 

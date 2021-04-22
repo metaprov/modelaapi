@@ -96,18 +96,23 @@ type LicenseSpec struct {
 	// TrialEnd when free trial end
 	// +kubebuilder:validation:Optional
 	TrialEnd *metav1.Time `json:"trialEnd,omitempty" protobuf:"bytes,6,opt,name=trialEnd"`
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxProducts *int32 `json:"maxProducts,omitempty" protobuf:"varint,7,opt,name=maxProducts"`
 	// MaxTrainers is max number of trainers
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,8,opt,name=maxTrainers"`
 	// MaxServers is the max number of worker nodes
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxServers *int32 `json:"maxServers,omitempty" protobuf:"varint,9,opt,name=maxServers"`
 	// MaxUsers is the max number of active accounts
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxUsers *int32 `json:"maxUsers,omitempty" protobuf:"varint,10,opt,name=maxUsers"`
 	// max data planes
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxDataPlanes *int32 `json:"maxDataPlanes,omitempty" protobuf:"varint,11,opt,name=maxDataPlanes"`
 	// Forcast denote if forecast feature supported

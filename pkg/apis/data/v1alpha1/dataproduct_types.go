@@ -146,6 +146,8 @@ type DataProductSpec struct {
 	DefaultWorkloadClassName *string `json:"defaultWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=defaultWorkloadClassName"`
 	// Denote how many time a job is retry after failure
 	// +kubebuilder:default:=3
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Optional
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,14,opt,name=retriesOnFailure"`
 	// KPIs is the product kpi. This is for information porpose

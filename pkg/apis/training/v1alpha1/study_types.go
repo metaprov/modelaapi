@@ -185,19 +185,21 @@ type SuccessiveHalvingOptions struct {
 	// The maximum budget allocated to each model during SH search.
 	// The default max budget is 81
 	// +kubebuilder:default:=81
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	MaxBudget *int32 `json:"maxBudget,omitempty" protobuf:"varint,6,opt,name=maxBudget"`
+	MaxBudget *int32 `json:"maxBudget,omitempty" protobuf:"varint,1,opt,name=maxBudget"`
 	// The rate of elimination during SH search, such that only 1/rate of models are promoted to the
 	// next half
 	// +kubebuilder:default:=3
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,7,opt,name=eliminationRate"`
+	EliminationRate *int32 `json:"eliminationRate,omitempty" protobuf:"varint,2,opt,name=eliminationRate"`
 	// The modality type. The default modality is based on the type of models
 	// For deep models - we use epocs.
 	// For classical models - we use data
 	// +kubebuilder:default:=epochs
 	// +kubebuilder:validation:Optional
-	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,8,opt,name=modality"`
+	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,3,opt,name=modality"`
 }
 
 // ModelSearchSpec the constraint on the training process.

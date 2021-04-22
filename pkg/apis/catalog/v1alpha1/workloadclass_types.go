@@ -40,8 +40,9 @@ type WorkloadClassSpec struct {
 	// +kubebuilder:validation:Optional
 	Mem *resource.Quantity `json:"mem" protobuf:"bytes,6,opt,name=mem"`
 	// Number of gpus of this workload
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	Gpu *int32 `json:"gpu" protobuf:"bytes,7,opt,name=gpu"`
+	Gpu *int32 `json:"gpu" protobuf:"varint,7,opt,name=gpu"`
 	// Template is the Pod specification for new trainers from this workload class.
 	// +kubebuilder:validation:Required
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,8,opt,name=podTemplate"`

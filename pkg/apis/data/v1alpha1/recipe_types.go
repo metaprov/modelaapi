@@ -408,6 +408,7 @@ type RecipeSampleSpec struct {
 	Type SamplingType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Rows is the number of rows. Default is 500
 	// +kubebuilder:default:=500
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,2,opt,name=rows"`
 	// Filter formula. Valid only if the sample is a filter.

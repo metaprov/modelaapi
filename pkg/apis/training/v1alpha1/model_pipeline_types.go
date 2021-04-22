@@ -252,7 +252,7 @@ type LabelingStageSpec struct {
 	// How many rows to sample from the live data for
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"bytes,2,opt,name=samplePrecent"`
+	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,2,opt,name=samplePrecent"`
 	// SampleLabels indicates the kubernetes labels to set on the sample dataset
 	// +kubebuilder:validation:Required
 	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,3,opt,name=sampleLabel"`

@@ -109,9 +109,11 @@ type VirtualClusterStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	// +kubebuilder:validation:Minimum=0
 	//+optional
 	AvailableNodes *int32 `json:"availableNodes" protobuf:"varint,2,opt,name=availableNodes"`
 	// Number of available Gpus
+	// +kubebuilder:validation:Minimum=0
 	//+optional
 	AvailableGpus *int32 `json:"availableGpus" protobuf:"varint,3,opt,name=availableGpus"`
 	//+optional

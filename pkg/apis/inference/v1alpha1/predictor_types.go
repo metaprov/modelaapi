@@ -267,6 +267,7 @@ type OnlineChannelSpec struct {
 	// Service port specify the predictor port.
 	// Default: 8080
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,5,opt,name=port"`
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256

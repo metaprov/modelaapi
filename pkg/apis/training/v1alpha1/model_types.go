@@ -628,9 +628,11 @@ type ForecastingSpec struct {
 	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,6,opt,name=freqSpec"`
 	// Horizon is the number of data points to predict in the future.
 	// Required.
+	// +kubebuilder:validation:Minimum=0
 	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,7,opt,name=horizon"`
 	// The confidence levels for the forecast, each level must be between 1-100.
 	//+optional
+	// +kubebuilder:validation:Minimum=0
 	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,8,opt,name=confidenceInterval"`
 	// Set an holiday schedule for a country.
 	//+optional
@@ -655,6 +657,7 @@ type ForecastingSpec struct {
 type FreqSpec struct {
 	// Default to 1.
 	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Minimum=0
 	// optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"varint,1,opt,name=interval"`
 	// required
@@ -665,10 +668,12 @@ type FreqSpec struct {
 type BacktestSpec struct {
 	// The initial number of data points, default to 80% of rows.
 	// +kubebuilder:default:=80
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Initial *int32 `json:"initial,omitempty" protobuf:"varint,1,opt,name=initial"`
 	// The number of backtesting windows. Default to 3. can be from 1 to 5.
 	// +kubebuilder:default:=3
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Windows *int32 `json:"windows,omitempty" protobuf:"varint,2,opt,name=windows"`
 }

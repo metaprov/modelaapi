@@ -161,6 +161,7 @@ type FlatFileSpec struct {
 	Header *bool `json:"header,omitempty" protobuf:"bytes,9,opt,name=header"`
 	//The number of rows to skip
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	SkipRows *int32 `json:"skipRows,omitempty" protobuf:"varint,10,opt,name=skipRows"`
 	// NullValue is a sequence of values to replace with NA.
@@ -171,6 +172,7 @@ type FlatFileSpec struct {
 	// +kubebuilder:validation:Optional
 	Encoding *catalog.FileEncoding `json:"encoding,omitempty" protobuf:"bytes,12,opt,name=encoding"`
 	//The maximum number of rows to read.
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxRows *int32 `json:"maxRows,omitempty" protobuf:"varint,13,opt,name=maxRows"`
 	//If true, the import will fail if there is an error
@@ -239,10 +241,12 @@ type Column struct {
 	PK *bool `json:"pk,omitempty" protobuf:"bytes,9,opt,name=pk"`
 	// MultipleOf
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,10,opt,name=multipleOf"`
 	// MaximumFloat
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,11,opt,name=maximum"`
 	// ExclusiveMaximum
@@ -250,17 +254,21 @@ type Column struct {
 	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"bytes,12,opt,name=exclusiveMaximum"`
 	// MinimumFloat
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,13,opt,name=minimum"`
 	// ExclusiveMinimum
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"bytes,14,opt,name=exclusiveMinimum"`
 	// MaxLength
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxLength *int32 `json:"maxLength,omitempty" protobuf:"varint,15,opt,name=maxLength"`
 	// MinLength
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MinLength *int32 `json:"minLength,omitempty" protobuf:"varint,16,opt,name=minLength"`
 	// Pattern
