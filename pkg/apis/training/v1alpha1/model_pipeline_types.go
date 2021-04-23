@@ -55,10 +55,6 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default ="latest"
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
-	// Servingsite name is the default serving site for each stage.
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	DefaultServingSiteName *string `json:"defaultServingSiteName,omitempty" protobuf:"bytes,2,opt,name=defaultServingSiteName"`
 	// User provided description
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
@@ -99,7 +95,7 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,14,opt,name=owner"`
-	// ApproverAccountName is the name of the approver
+	// ApproverAccountName is the name of the approver for stages that need approvals.
 	// +kubebuilder:validation:Optional
 	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,15,opt,name=approverAccountName"`
 	// NotifierName is the name of the notifier to use in case of pipeline failure
@@ -240,8 +236,6 @@ type MonitoringStageSpec struct {
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
 	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
-	// NotifierName dentoes the name of the notifier user to send alerts
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
 	// AutoRetrain denoted if we autoamtically retrain models.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

@@ -1489,9 +1489,6 @@ export class ModelPipelineSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ModelPipelineSpec;
 
-  getDefaultservingsitename(): string;
-  setDefaultservingsitename(value: string): ModelPipelineSpec;
-
   getDescription(): string;
   setDescription(value: string): ModelPipelineSpec;
 
@@ -1566,7 +1563,6 @@ export class ModelPipelineSpec extends jspb.Message {
 export namespace ModelPipelineSpec {
   export type AsObject = {
     versionname: string,
-    defaultservingsitename: string,
     description: string,
     datasetselectorMap: Array<[string, string]>,
     data?: DataStageSpec.AsObject,
@@ -2060,9 +2056,6 @@ export class MonitoringStageSpec extends jspb.Message {
   clearTestsList(): MonitoringStageSpec;
   addTests(value?: Expectation, index?: number): Expectation;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): MonitoringStageSpec;
-
   getAutoretrain(): boolean;
   setAutoretrain(value: boolean): MonitoringStageSpec;
 
@@ -2081,7 +2074,6 @@ export namespace MonitoringStageSpec {
   export type AsObject = {
     enabled: boolean,
     testsList: Array<Expectation.AsObject>,
-    notifiername: string,
     autoretrain: boolean,
     workloadclassname: string,
   }

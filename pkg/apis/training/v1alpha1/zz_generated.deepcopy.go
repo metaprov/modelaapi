@@ -1338,11 +1338,6 @@ func (in *ModelPipelineSpec) DeepCopyInto(out *ModelPipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.DefaultServingSiteName != nil {
-		in, out := &in.DefaultServingSiteName, &out.DefaultServingSiteName
-		*out = new(string)
-		**out = **in
-	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -1818,11 +1813,6 @@ func (in *MonitoringStageSpec) DeepCopyInto(out *MonitoringStageSpec) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.NotifierName != nil {
-		in, out := &in.NotifierName, &out.NotifierName
-		*out = new(string)
-		**out = **in
 	}
 	if in.AutoRetrain != nil {
 		in, out := &in.AutoRetrain, &out.AutoRetrain

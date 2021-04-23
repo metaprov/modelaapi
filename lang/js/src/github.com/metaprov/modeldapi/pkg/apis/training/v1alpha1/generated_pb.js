@@ -15600,7 +15600,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    defaultservingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     datasetselectorMap: (f = msg.getDatasetselectorMap()) ? f.toObject(includeInstance, undefined) : [],
     data: (f = msg.getData()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataStageSpec.toObject(includeInstance, f),
@@ -15655,10 +15654,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersionname(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDefaultservingsitename(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -15764,13 +15759,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   if (f != null) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
       f
     );
   }
@@ -15921,42 +15909,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasVersionname = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string defaultServingSiteName = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getDefaultservingsitename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setDefaultservingsitename = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearDefaultservingsitename = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasDefaultservingsitename = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -21181,7 +21133,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSp
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.toObject, includeInstance),
-    notifiername: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     autoretrain: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
@@ -21228,10 +21179,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSp
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.deserializeBinaryFromReader);
       msg.addTests(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNotifiername(value);
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -21283,13 +21230,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSp
       2,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
@@ -21380,42 +21320,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec.prototype.clearTestsList = function() {
   return this.setTestsList([]);
-};
-
-
-/**
- * optional string notifierName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.MonitoringStageSpec.prototype.hasNotifiername = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

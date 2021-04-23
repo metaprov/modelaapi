@@ -51,7 +51,8 @@ spec:
               resource.
             properties:
               approverAccountName:
-                description: ApproverAccountName is the name of the approver
+                description: ApproverAccountName is the name of the approver for stages
+                  that need approvals.
                 type: string
               baselineModelName:
                 description: BaselineModelName is the name of the model which is used
@@ -172,10 +173,6 @@ spec:
                   type: string
                 description: DatasetSelector is used to select dataset for training
                 type: object
-              defaultServingSiteName:
-                description: Servingsite name is the default serving site for each
-                  stage.
-                type: string
               description:
                 description: User provided description
                 type: string
@@ -228,10 +225,6 @@ spec:
                     default: false
                     description: Enabled indicates that the stage is enabled
                     type: boolean
-                  notifierName:
-                    description: NotifierName dentoes the name of the notifier user
-                      to send alerts
-                    type: string
                   tests:
                     description: Tests is the specification of tests to run in this
                       stage

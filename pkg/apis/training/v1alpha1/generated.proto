@@ -939,11 +939,6 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // Servingsite name is the default serving site for each stage.
-  // +kubebuilder:default =""
-  // +kubebuilder:validation:Optional
-  optional string defaultServingSiteName = 2;
-
   // User provided description
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
@@ -996,7 +991,7 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 14;
 
-  // ApproverAccountName is the name of the approver
+  // ApproverAccountName is the name of the approver for stages that need approvals.
   // +kubebuilder:validation:Optional
   optional string approverAccountName = 15;
 
@@ -1405,9 +1400,6 @@ message MonitoringStageSpec {
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
   repeated Expectation tests = 2;
-
-  // NotifierName dentoes the name of the notifier user to send alerts
-  optional string notifierName = 3;
 
   // AutoRetrain denoted if we autoamtically retrain models.
   // +kubebuilder:default:=false
