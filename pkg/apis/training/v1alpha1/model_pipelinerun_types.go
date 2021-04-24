@@ -9,8 +9,14 @@ import (
 type PipelinePhase string
 
 const (
-	PipelinePhaseRunning            PipelinePhase = "Running"
+	PipelinePhaseTraining           PipelinePhase = "Training"
+	PipelinePhasePublishing         PipelinePhase = "Publishing"
+	PipelinePhaseSmokeTest          PipelinePhase = "SmokeTest"
+	PipelinePhasePredictorSetup     PipelinePhase = "PredictorSetup"
+	PipelinePhaseTesting            PipelinePhase = "Testing"
 	PipelinePhaseWaitingForApproval PipelinePhase = "WaitingForApproval"
+	PipelinePhaseApproved           PipelinePhase = "Approved"
+	PipelinePhaseRunning            PipelinePhase = "Running"
 	PipelinePhaseFailed             PipelinePhase = "Failed"
 	PipelinePhaseAborted            PipelinePhase = "Aborted"
 	PipelinePhaseMonitoring         PipelinePhase = "Monitoring"
