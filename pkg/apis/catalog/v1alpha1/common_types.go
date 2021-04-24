@@ -407,12 +407,13 @@ const (
 	VMeasureScore             Metric = "v-measure-score"
 
 	// Infra metrics
-	AvgLatency Metric = "average-latency"
-	P95Latency Metric = "p95-latency"
-	P99Latency Metric = "p99-latency"
-	Cpu        Metric = "cpu"
-	Mem        Metric = "mem"
-	ReqSec     Metric = "req-per-sec"
+	AvgLatency               Metric = "average-latency"
+	P95Latency               Metric = "p95-latency"
+	P99Latency               Metric = "p99-latency"
+	Cpu                      Metric = "cpu"
+	Mem                      Metric = "mem"
+	ReqSec                   Metric = "req-per-sec"
+	UncrainPredictionPercent Metric = "uncertain-prediction-percent"
 
 	UnknownMetric Metric = "unknown"
 )
