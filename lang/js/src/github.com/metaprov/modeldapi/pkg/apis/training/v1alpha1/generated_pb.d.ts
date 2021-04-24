@@ -2024,6 +2024,9 @@ export class ModelTestResult extends jspb.Message {
   getMetric(): string;
   setMetric(value: string): ModelTestResult;
 
+  getExpected(): number;
+  setExpected(value: number): ModelTestResult;
+
   getValue(): number;
   setValue(value: number): ModelTestResult;
 
@@ -2042,6 +2045,7 @@ export namespace ModelTestResult {
   export type AsObject = {
     datasetname: string,
     metric: string,
+    expected: number,
     value: number,
     error: string,
   }

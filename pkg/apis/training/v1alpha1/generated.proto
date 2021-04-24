@@ -1384,6 +1384,9 @@ message ModelTestResult {
   // Metric is the name of the metric measured
   optional string metric = 2;
 
+  // Expected is the expected value for this expecation as defined by the test
+  optional double expected = 3;
+
   // Value is the value of the metric
   optional double value = 4;
 

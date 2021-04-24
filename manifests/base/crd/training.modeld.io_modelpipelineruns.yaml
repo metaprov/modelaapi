@@ -135,6 +135,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -269,6 +273,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -376,6 +384,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -478,6 +490,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -588,6 +604,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -699,6 +719,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -801,6 +825,10 @@ spec:
                           description: Error is a name of any error that occurred
                             during the test.
                           type: string
+                        expected:
+                          description: Expected is the expected value for this expecation
+                            as defined by the test
+                          type: number
                         result:
                           description: Metric is the name of the metric measured
                           enum:

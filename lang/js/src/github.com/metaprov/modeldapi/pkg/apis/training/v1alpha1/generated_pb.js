@@ -20833,6 +20833,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.t
   var f, obj = {
     datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     metric: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    expected: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
     value: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     error: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
@@ -20878,6 +20879,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.d
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setMetric(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setExpected(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readDouble());
@@ -20927,6 +20932,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.s
   if (f != null) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeDouble(
+      3,
       f
     );
   }
@@ -21016,6 +21028,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.hasMetric = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional double expected = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.getExpected = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.setExpected = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.clearExpected = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult.prototype.hasExpected = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

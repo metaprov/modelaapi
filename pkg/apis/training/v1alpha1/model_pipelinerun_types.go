@@ -134,6 +134,8 @@ type ModelTestResult struct {
 	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// Metric is the name of the metric measured
 	Metric catalog.Metric `json:"result,omitempty" protobuf:"bytes,2,opt,name=metric"`
+	// Expected is the expected value for this expecation as defined by the test
+	Expected float64 `json:"expected,omitempty" protobuf:"bytes,3,opt,name=expected"`
 	// Value is the value of the metric
 	Value float64 `json:"value,omitempty" protobuf:"bytes,4,opt,name=value"`
 	// Error is a name of any error that occurred during the test.
