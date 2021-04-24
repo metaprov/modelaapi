@@ -867,15 +867,6 @@ message ModelPipelineRunStageStatus {
 
   // Error record error.
   optional string error = 10;
-
-  // the name of the generated dataset
-  optional string datasetName = 11;
-
-  // The name of the best model
-  optional string modelName = 12;
-
-  // The name of the study
-  optional string studyName = 13;
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
@@ -883,53 +874,59 @@ message ModelPipelineRunStatus {
   // The current stage of the pipeline
   optional string stage = 1;
 
-  // The current name of the study
-  optional string studyName = 2;
+  // The name of the dataset that was captured by the label filter.
+  optional string datasetName = 2;
+
+  // The name of the study generated.
+  optional string studyName = 3;
+
+  // The name of the best model
+  optional string modelName = 4;
 
   // DataStatus is the status of the data stage
   // data is the status for the data stage.
-  optional ModelPipelineRunStageStatus dataStatus = 3;
+  optional ModelPipelineRunStageStatus dataStatus = 5;
 
   // TrainingStatus is the status for the training stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus trainingStatus = 4;
+  optional ModelPipelineRunStageStatus trainingStatus = 6;
 
   // UATStatus is the status of the uat stage
-  optional ModelPipelineRunStageStatus uatStatus = 5;
+  optional ModelPipelineRunStageStatus uatStatus = 7;
 
   // CapacityStatus is the status for the capacity stage.
-  optional ModelPipelineRunStageStatus capacityStatus = 6;
+  optional ModelPipelineRunStageStatus capacityStatus = 8;
 
   // ProdStatus is the status for the prod stage
-  optional ModelPipelineRunStageStatus prodStatus = 7;
+  optional ModelPipelineRunStageStatus prodStatus = 9;
 
   // Monitoring status is the status of the monitor phase.
-  optional ModelPipelineRunStageStatus monitoringStatus = 8;
+  optional ModelPipelineRunStageStatus monitoringStatus = 10;
 
   // Labeling status if the status of the labeling process
-  optional ModelPipelineRunStageStatus labelingStatus = 9;
+  optional ModelPipelineRunStageStatus labelingStatus = 11;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 12;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 11;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 13;
 
   // The phase of the pipeline run
   // +kubebuilder:validation:Optional
-  optional string phase = 12;
+  optional string phase = 14;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 13;
+  optional int64 observedGeneration = 15;
 
   // +optional
-  repeated ModelPipelineRunCondition conditions = 14;
+  repeated ModelPipelineRunCondition conditions = 16;
 
   // Folder for pipeline run artifacts. This is assigned by the system
   // The folder contains all the pipeline artifacts - metadata, logs
   // +kubebuilder:validation:Optional
-  optional string evalMetrics = 15;
+  optional string evalMetrics = 17;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.

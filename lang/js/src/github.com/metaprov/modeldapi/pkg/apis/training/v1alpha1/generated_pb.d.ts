@@ -1358,15 +1358,6 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
 
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelPipelineRunStageStatus;
-
-  getModelname(): string;
-  setModelname(value: string): ModelPipelineRunStageStatus;
-
-  getStudyname(): string;
-  setStudyname(value: string): ModelPipelineRunStageStatus;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStageStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunStageStatus): ModelPipelineRunStageStatus.AsObject;
@@ -1385,9 +1376,6 @@ export namespace ModelPipelineRunStageStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     resultsList: Array<ModelTestResult.AsObject>,
     error: string,
-    datasetname: string,
-    modelname: string,
-    studyname: string,
   }
 }
 
@@ -1395,8 +1383,14 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getStage(): string;
   setStage(value: string): ModelPipelineRunStatus;
 
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelPipelineRunStatus;
+
   getStudyname(): string;
   setStudyname(value: string): ModelPipelineRunStatus;
+
+  getModelname(): string;
+  setModelname(value: string): ModelPipelineRunStatus;
 
   getDatastatus(): ModelPipelineRunStageStatus | undefined;
   setDatastatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
@@ -1468,7 +1462,9 @@ export class ModelPipelineRunStatus extends jspb.Message {
 export namespace ModelPipelineRunStatus {
   export type AsObject = {
     stage: string,
+    datasetname: string,
     studyname: string,
+    modelname: string,
     datastatus?: ModelPipelineRunStageStatus.AsObject,
     trainingstatus?: ModelPipelineRunStageStatus.AsObject,
     uatstatus?: ModelPipelineRunStageStatus.AsObject,
