@@ -45,6 +45,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&ApiTokenList{},
 		&Alert{},
 		&AlertList{},
+		&Commit{},
+		&CommitList{},
 		&ServingSite{},
 		&ServingSiteList{},
 		&Lab{},
