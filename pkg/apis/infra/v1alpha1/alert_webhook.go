@@ -19,7 +19,7 @@ import (
 // validation
 var _ webhook.Defaulter = &Alert{}
 
-func (notifier *Alert) Default() {
+func (alert *Alert) Default() {
 
 }
 
@@ -27,42 +27,42 @@ func (notifier *Alert) Default() {
 var _ webhook.Validator = &Alert{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *Alert) ValidateCreate() error {
-	return notifier.validate()
+func (alert *Alert) ValidateCreate() error {
+	return alert.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *Alert) ValidateUpdate(old runtime.Object) error {
-	return notifier.validate()
+func (alert *Alert) ValidateUpdate(old runtime.Object) error {
+	return alert.validate()
 }
 
-func (notifier *Alert) validate() error {
+func (alert *Alert) validate() error {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
-	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
+	allErrs = append(allErrs, alert.validateMeta(field.NewPath("metadata"))...)
+	allErrs = append(allErrs, alert.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modeld.io", Kind: "Alert"}, notifier.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modeld.io", Kind: "Alert"}, alert.Name, allErrs)
 }
 
-func (notifier *Alert) validateMeta(fldPath *field.Path) field.ErrorList {
+func (alert *Alert) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, notifier.validateName(fldPath.Child("name"))...)
+	allErrs = append(allErrs, alert.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (notifier *Alert) validateName(fldPath *field.Path) field.ErrorList {
+func (alert *Alert) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(notifier.Name)
+	err := common.ValidateResourceName(alert.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), notifier.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), alert.Name, err.Error()))
 	}
 	return allErrs
 }
 
-func (notifier *Alert) validateSpec(fldPath *field.Path) field.ErrorList {
+func (alert *Alert) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,12 +74,12 @@ func (notifier *Alert) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (notifier *Alert) ValidateDelete() error {
+func (alert *Alert) ValidateDelete() error {
 	return nil
 }
 
-func (notifier *Alert) MarkSent() {
-	notifier.CreateOrUpdateCond(AlertCondition{
+func (alert *Alert) MarkSent() {
+	alert.CreateOrUpdateCond(AlertCondition{
 		Type:   AlertSent,
 		Status: corev1.ConditionTrue,
 	})

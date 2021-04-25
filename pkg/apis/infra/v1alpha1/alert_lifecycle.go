@@ -18,9 +18,9 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (notifier *Alert) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (alert *Alert) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(notifier).
+		For(alert).
 		Complete()
 }
 
@@ -32,34 +32,34 @@ func (notifier *Alert) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (notifier *Alert) HasFinalizer() bool {
-	return util.HasFin(&notifier.ObjectMeta, metav1.GroupName)
+func (alert *Alert) HasFinalizer() bool {
+	return util.HasFin(&alert.ObjectMeta, metav1.GroupName)
 }
-func (notifier *Alert) AddFinalizer()    { util.AddFin(&notifier.ObjectMeta, metav1.GroupName) }
-func (notifier *Alert) RemoveFinalizer() { util.RemoveFin(&notifier.ObjectMeta, metav1.GroupName) }
+func (alert *Alert) AddFinalizer()    { util.AddFin(&alert.ObjectMeta, metav1.GroupName) }
+func (alert *Alert) RemoveFinalizer() { util.RemoveFin(&alert.ObjectMeta, metav1.GroupName) }
 
 // Merge or update condition
-func (notifier *Alert) CreateOrUpdateCond(cond AlertCondition) {
-	i := notifier.GetCondIdx(cond.Type)
+func (alert *Alert) CreateOrUpdateCond(cond AlertCondition) {
+	i := alert.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		notifier.Status.Conditions = append(notifier.Status.Conditions, cond)
+		alert.Status.Conditions = append(alert.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := notifier.Status.Conditions[i]
+	current := alert.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	notifier.Status.Conditions[i] = current
+	alert.Status.Conditions[i] = current
 }
 
-func (notifier *Alert) GetCondIdx(t AlertConditionType) int {
-	for i, v := range notifier.Status.Conditions {
+func (alert *Alert) GetCondIdx(t AlertConditionType) int {
+	for i, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -67,8 +67,8 @@ func (notifier *Alert) GetCondIdx(t AlertConditionType) int {
 	return -1
 }
 
-func (notifier *Alert) GetCond(t AlertConditionType) AlertCondition {
-	for _, v := range notifier.Status.Conditions {
+func (alert *Alert) GetCond(t AlertConditionType) AlertCondition {
+	for _, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -83,16 +83,16 @@ func (notifier *Alert) GetCond(t AlertConditionType) AlertCondition {
 
 }
 
-func (notifier *Alert) IsReady() bool {
-	return notifier.GetCond(AlertSent).Status == v1.ConditionTrue
+func (alert *Alert) IsReady() bool {
+	return alert.GetCond(AlertSent).Status == v1.ConditionTrue
 }
 
-func (notifier *Alert) RootUri() string {
-	return fmt.Sprintf("tenant/%s/apitokens/%s", notifier.Namespace, notifier.Name)
+func (alert *Alert) RootUri() string {
+	return fmt.Sprintf("tenant/%s/apitokens/%s", alert.Namespace, alert.Name)
 }
 
-func (notifier *Alert) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-apitoken.yaml", notifier.RootUri(), notifier.Name)
+func (alert *Alert) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
 }
 
 func ParseAlertYaml(content []byte) (*Alert, error) {
@@ -104,8 +104,8 @@ func ParseAlertYaml(content []byte) (*Alert, error) {
 	return r, nil
 }
 
-func (notifier *Alert) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(notifier)
+func (alert *Alert) ToYamlFile() ([]byte, error) {
+	return yaml.Marshal(alert)
 }
 
 func (alert *Alert) MarkArchived() {
