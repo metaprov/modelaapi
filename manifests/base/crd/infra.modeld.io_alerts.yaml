@@ -13,8 +13,8 @@ spec:
     categories:
     - infra
     - modeld
-    kind: Alert
-    listKind: AlertList
+    kind: Commit
+    listKind: CommitList
     plural: alerts
     singular: alert
   scope: Namespaced
@@ -58,7 +58,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: AlertSpec defines the desired state of Alert
+            description: CommitSpec defines the desired state of Commit
             properties:
               description:
                 default: ""
@@ -100,9 +100,6 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              level:
-                description: Scopes is the list of scopes for this token.
-                type: string
               notifierName:
                 default: ""
                 description: NotifierName is the name of the notifier used to fire
@@ -116,7 +113,7 @@ spec:
                 type: string
             type: object
           status:
-            description: AlertStatus is the observed state of a Alert
+            description: CommitStatus is the observed state of a Commit
             properties:
               at:
                 description: The time when the alert was fired
@@ -124,8 +121,8 @@ spec:
                 type: string
               conditions:
                 items:
-                  description: AlertCondition describes the state of the license at
-                    a certain point.
+                  description: CommitCondition describes the state of the license
+                    at a certain point.
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status

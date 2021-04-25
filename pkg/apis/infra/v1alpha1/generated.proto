@@ -409,6 +409,91 @@ message CassandraSpec {
   optional string password = 5;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
+message Commit {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional CommitSpec spec = 2;
+
+  optional CommitStatus status = 3;
+}
+
+// CommitCondition describes the state of the license at a certain point.
+message CommitCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// CommitList is a list of Commits
+message CommitList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Commit items = 2;
+}
+
+// CommitSpec defines the desired state of Commit
+message CommitSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string subject = 1;
+
+  // User provided description
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // The subject entity
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+
+  // +kubebuilder:default:=""
+  // NotifierName is the name of the notifier used to fire the alert.
+  optional string notifierName = 5;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string owner = 6;
+}
+
+// CommitStatus is the observed state of a Commit
+message CommitStatus {
+  // Phase is the phase of the model
+  // +kubebuilder:validation:Optional
+  optional string phase = 1;
+
+  // The time when the alert was fired
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
+  // +optional
+  repeated CommitCondition conditions = 4;
+}
+
 // Connection define a connection to an external system (e.g. database, public cloud)
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status

@@ -725,6 +725,170 @@ export namespace CassandraSpec {
   }
 }
 
+export class Commit extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Commit;
+  hasMetadata(): boolean;
+  clearMetadata(): Commit;
+
+  getSpec(): CommitSpec | undefined;
+  setSpec(value?: CommitSpec): Commit;
+  hasSpec(): boolean;
+  clearSpec(): Commit;
+
+  getStatus(): CommitStatus | undefined;
+  setStatus(value?: CommitStatus): Commit;
+  hasStatus(): boolean;
+  clearStatus(): Commit;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Commit.AsObject;
+  static toObject(includeInstance: boolean, msg: Commit): Commit.AsObject;
+  static serializeBinaryToWriter(message: Commit, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Commit;
+  static deserializeBinaryFromReader(message: Commit, reader: jspb.BinaryReader): Commit;
+}
+
+export namespace Commit {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: CommitSpec.AsObject,
+    status?: CommitStatus.AsObject,
+  }
+}
+
+export class CommitCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): CommitCondition;
+
+  getStatus(): string;
+  setStatus(value: string): CommitCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CommitCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): CommitCondition;
+
+  getReason(): string;
+  setReason(value: string): CommitCondition;
+
+  getMessage(): string;
+  setMessage(value: string): CommitCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitCondition): CommitCondition.AsObject;
+  static serializeBinaryToWriter(message: CommitCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitCondition;
+  static deserializeBinaryFromReader(message: CommitCondition, reader: jspb.BinaryReader): CommitCondition;
+}
+
+export namespace CommitCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class CommitList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): CommitList;
+  hasMetadata(): boolean;
+  clearMetadata(): CommitList;
+
+  getItemsList(): Array<Commit>;
+  setItemsList(value: Array<Commit>): CommitList;
+  clearItemsList(): CommitList;
+  addItems(value?: Commit, index?: number): Commit;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitList.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitList): CommitList.AsObject;
+  static serializeBinaryToWriter(message: CommitList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitList;
+  static deserializeBinaryFromReader(message: CommitList, reader: jspb.BinaryReader): CommitList;
+}
+
+export namespace CommitList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Commit.AsObject>,
+  }
+}
+
+export class CommitSpec extends jspb.Message {
+  getSubject(): string;
+  setSubject(value: string): CommitSpec;
+
+  getDescription(): string;
+  setDescription(value: string): CommitSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): CommitSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): CommitSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): CommitSpec;
+
+  getOwner(): string;
+  setOwner(value: string): CommitSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitSpec): CommitSpec.AsObject;
+  static serializeBinaryToWriter(message: CommitSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitSpec;
+  static deserializeBinaryFromReader(message: CommitSpec, reader: jspb.BinaryReader): CommitSpec;
+}
+
+export namespace CommitSpec {
+  export type AsObject = {
+    subject: string,
+    description: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifiername: string,
+    owner: string,
+  }
+}
+
+export class CommitStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): CommitStatus;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CommitStatus;
+  hasAt(): boolean;
+  clearAt(): CommitStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): CommitStatus;
+
+  getConditionsList(): Array<CommitCondition>;
+  setConditionsList(value: Array<CommitCondition>): CommitStatus;
+  clearConditionsList(): CommitStatus;
+  addConditions(value?: CommitCondition, index?: number): CommitCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitStatus): CommitStatus.AsObject;
+  static serializeBinaryToWriter(message: CommitStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitStatus;
+  static deserializeBinaryFromReader(message: CommitStatus, reader: jspb.BinaryReader): CommitStatus;
+}
+
+export namespace CommitStatus {
+  export type AsObject = {
+    phase: string,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
+    conditionsList: Array<CommitCondition.AsObject>,
+  }
+}
+
 export class Connection extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Connection;
