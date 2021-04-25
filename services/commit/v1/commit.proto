@@ -1,0 +1,99 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/commit/v1";
+
+package github.com.metaprov.modeldapi.services.commit.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListCommitsRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListCommitsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitList items = 1;   
+}
+
+message CommitResponse {}
+
+message CreateCommitRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit  item = 1;
+    string password = 2;    
+}
+
+message CreateCommitResponse {
+
+}
+
+message UpdateCommitRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit item = 1;
+}
+
+message UpdateCommitResponse {
+
+}
+
+message GetCommitRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetCommitResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetCommitNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetCommitNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteCommitRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteCommitResponse {}
+
+
+message CommitCreateResponse {}
+
+
+
+service CommitService {
+    rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {
+        option (google.api.http).get = "/v1/commits";
+    }
+    rpc CreateCommit(CreateCommitRequest) returns (CreateCommitResponse) {
+        option (google.api.http) = {
+			post: "/v1/commits"
+			body: "commit"
+		};
+    }
+    rpc GetCommit(GetCommitRequest) returns (GetCommitResponse) {
+        option (google.api.http).get = "/v1/{namespace}/commits/{name}";
+    }
+    rpc UpdateCommit(UpdateCommitRequest) returns (UpdateCommitResponse) {
+        option (google.api.http) = {
+			put: "/v1/{commit.metadata.namespace}/commits//{commit.metadata.name}"
+			body: "commit"
+		};
+    }
+
+    rpc DeleteCommit(DeleteCommitRequest) returns (DeleteCommitResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/commits/{name}";
+    }
+
+}

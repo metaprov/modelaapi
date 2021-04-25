@@ -35,6 +35,7 @@ protoc \
     github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto \
     github.com/metaprov/modeldapi/services/account/v1/account.proto \
+    github.com/metaprov/modeldapi/services/commit/v1/commit.proto \
     github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto \
     github.com/metaprov/modeldapi/services/alert/v1/alert.proto \
     github.com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem.proto \
