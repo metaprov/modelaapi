@@ -1756,6 +1756,13 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Importance != nil {
+		in, out := &in.Importance, &out.Importance
+		*out = make(map[string]float32, len(*in))
+		for key, val := range *in {
+			(*out)[key] = val
+		}
+	}
 	out.TrainDatasetLocation = in.TrainDatasetLocation
 	out.TestDatasetLocation = in.TestDatasetLocation
 	out.ValidationDataset = in.ValidationDataset

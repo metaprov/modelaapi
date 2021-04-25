@@ -1347,30 +1347,33 @@ message ModelStatus {
   // ImageName is the image name of the model
   optional string imageName = 22;
 
+  // Importance is the feature importance.
+  map<string, float> importance = 23;
+
   // ForecastUri is the uri of the forecast
   // +kubebuilder:validation:Optional
-  optional string forecastUri = 23;
+  optional string forecastUri = 24;
 
   // TrainDatasetLocation is the location of the train dataset
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 24;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 25;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 25;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 26;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 26;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 27;
 
   // ResourceConsumed is the avg resource consumed during the training of the model
-  optional ResourceConsumption resourceConsumed = 27;
+  optional ResourceConsumption resourceConsumed = 28;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 28;
+  optional int64 observedGeneration = 29;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 29;
+  repeated ModelCondition conditions = 30;
 }
 
 // Model Test Result holds the results for a single metric on a single dataset

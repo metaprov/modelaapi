@@ -1054,6 +1054,11 @@ spec:
               imageName:
                 description: ImageName is the image name of the model
                 type: string
+              importance:
+                additionalProperties:
+                  type: number
+                description: Importance is the feature importance.
+                type: object
               labelsEncoderUri:
                 description: LabelEncoderUri is the URI of the label encoder binary
                   file, if there is one.
@@ -1294,6 +1299,7 @@ spec:
                 type: string
             required:
             - imageName
+            - importance
             - misclassUri
             type: object
         required:

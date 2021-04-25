@@ -329,24 +329,26 @@ type ModelStatus struct {
 	MisclassUri string `json:"misclassUri" protobuf:"bytes,21,opt,name=misclassUri"`
 	// ImageName is the image name of the model
 	ImageName string `json:"imageName" protobuf:"bytes,22,opt,name=imageName"`
+	// Importance is the feature importance.
+	Importance map[string]float32 `json:"importance" protobuf:"bytes,23,opt,name=importance"`
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
-	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,23,opt,name=forecastUri"`
+	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
 	// TrainDatasetLocation is the location of the train dataset
-	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,24,opt,name=trainDataset"`
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,25,opt,name=trainDataset"`
 	// TestDatasetLocation is the location of the test dataset used to test this model
-	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,25,opt,name=testDataset"`
+	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,26,opt,name=testDataset"`
 	// ValidationDatasetLocation is the location of the dataset used for validation
-	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,26,opt,name=validationDataset"`
+	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,27,opt,name=validationDataset"`
 	//ResourceConsumed is the avg resource consumed during the training of the model
-	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,27,opt,name=resourceConsumed"`
+	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,28,opt,name=resourceConsumed"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,28,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,29,opt,name=observedGeneration"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,29,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,30,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

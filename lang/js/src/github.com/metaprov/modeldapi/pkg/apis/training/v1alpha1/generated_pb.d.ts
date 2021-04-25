@@ -1940,6 +1940,9 @@ export class ModelStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): ModelStatus;
 
+  getImportanceMap(): jspb.Map<string, number>;
+  clearImportanceMap(): ModelStatus;
+
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
 
@@ -2003,6 +2006,7 @@ export namespace ModelStatus {
     profileuri: string,
     misclassuri: string,
     imagename: string,
+    importanceMap: Array<[string, number]>,
     forecasturi: string,
     traindataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
