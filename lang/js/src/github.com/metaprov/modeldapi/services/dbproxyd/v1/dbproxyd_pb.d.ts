@@ -277,6 +277,140 @@ export namespace DeleteAlertRequest {
   }
 }
 
+export class ListCommitsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListCommitsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListCommitsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListCommitsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCommitsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCommitsRequest): ListCommitsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListCommitsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCommitsRequest;
+  static deserializeBinaryFromReader(message: ListCommitsRequest, reader: jspb.BinaryReader): ListCommitsRequest;
+}
+
+export namespace ListCommitsRequest {
+  export type AsObject = {
+    namespace: string,
+    pageSize: number,
+    pageToken: string,
+  }
+}
+
+export class ListCommitsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>): ListCommitsResponse;
+  clearItemsList(): ListCommitsResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit, index?: number): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListCommitsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCommitsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCommitsResponse): ListCommitsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListCommitsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCommitsResponse;
+  static deserializeBinaryFromReader(message: ListCommitsResponse, reader: jspb.BinaryReader): ListCommitsResponse;
+}
+
+export namespace ListCommitsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class GetCommitRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetCommitRequest;
+
+  getName(): string;
+  setName(value: string): GetCommitRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetCommitRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCommitRequest): GetCommitRequest.AsObject;
+  static serializeBinaryToWriter(message: GetCommitRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCommitRequest;
+  static deserializeBinaryFromReader(message: GetCommitRequest, reader: jspb.BinaryReader): GetCommitRequest;
+}
+
+export namespace GetCommitRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CreateCommitRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): CreateCommitRequest;
+  hasItem(): boolean;
+  clearItem(): CreateCommitRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCommitRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCommitRequest): CreateCommitRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateCommitRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCommitRequest;
+  static deserializeBinaryFromReader(message: CreateCommitRequest, reader: jspb.BinaryReader): CreateCommitRequest;
+}
+
+export namespace CreateCommitRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
+  }
+}
+
+export class UpdateCommitRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): UpdateCommitRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateCommitRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateCommitRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateCommitRequest): UpdateCommitRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateCommitRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateCommitRequest;
+  static deserializeBinaryFromReader(message: UpdateCommitRequest, reader: jspb.BinaryReader): UpdateCommitRequest;
+}
+
+export namespace UpdateCommitRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
+  }
+}
+
+export class DeleteCommitRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteCommitRequest;
+
+  getName(): string;
+  setName(value: string): DeleteCommitRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteCommitRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteCommitRequest): DeleteCommitRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteCommitRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteCommitRequest;
+  static deserializeBinaryFromReader(message: DeleteCommitRequest, reader: jspb.BinaryReader): DeleteCommitRequest;
+}
+
+export namespace DeleteCommitRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
 export class ListApiTokensRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListApiTokensRequest;

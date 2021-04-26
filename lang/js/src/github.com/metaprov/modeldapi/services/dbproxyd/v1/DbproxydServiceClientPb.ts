@@ -441,6 +441,206 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteAlert);
   }
 
+  methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse.deserializeBinary
+  );
+
+  listCommits(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse>;
+
+  listCommits(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse>;
+
+  listCommits(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
+        request,
+        metadata || {},
+        this.methodInfoListCommits,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
+    request,
+    metadata || {},
+    this.methodInfoListCommits);
+  }
+
+  methodInfoGetCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.deserializeBinary
+  );
+
+  getCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+
+  getCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+
+  getCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
+        request,
+        metadata || {},
+        this.methodInfoGetCommit,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
+    request,
+    metadata || {},
+    this.methodInfoGetCommit);
+  }
+
+  methodInfoCreateCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.deserializeBinary
+  );
+
+  createCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+
+  createCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+
+  createCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
+        request,
+        metadata || {},
+        this.methodInfoCreateCommit,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
+    request,
+    metadata || {},
+    this.methodInfoCreateCommit);
+  }
+
+  methodInfoUpdateCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.deserializeBinary
+  );
+
+  updateCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+
+  updateCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
+
+  updateCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
+        request,
+        metadata || {},
+        this.methodInfoUpdateCommit,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
+    request,
+    metadata || {},
+    this.methodInfoUpdateCommit);
+  }
+
+  methodInfoDeleteCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteCommit(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
+        request,
+        metadata || {},
+        this.methodInfoDeleteCommit,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
+    request,
+    metadata || {},
+    this.methodInfoDeleteCommit);
+  }
+
   methodInfoListApiTokens = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensResponse,
     (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensRequest) => {
