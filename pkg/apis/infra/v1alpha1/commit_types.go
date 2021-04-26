@@ -40,13 +40,12 @@ type CommitCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
-// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
+// +kubebuilder:resource:path=commits,singular=commit,categories={infra,modeld}
 type Commit struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
