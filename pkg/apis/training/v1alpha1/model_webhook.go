@@ -121,10 +121,6 @@ func (model *Model) Default() {
 		}
 	}
 
-	if model.Status.Importance == nil {
-		model.Status.Importance = make(map[string]float32)
-	}
-
 }
 
 // validation

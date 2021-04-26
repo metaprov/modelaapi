@@ -293,6 +293,12 @@ message Expectation {
   optional double score = 4;
 }
 
+message FeatureImportance {
+  optional string feature = 1;
+
+  optional float importance = 2;
+}
+
 // A definition for a single forecast
 // A single forecast knows its forecast key and the index to its level
 message ForecastObj {
@@ -1354,8 +1360,8 @@ message ModelStatus {
   // ImageName is the image name of the model
   optional string imageName = 22;
 
-  // Importance is the feature importance.
-  map<string, float> importance = 23;
+  // Importance is list of feature importance based on the alg of this model, sorted by importance
+  repeated FeatureImportance importance = 23;
 
   // ForecastUri is the uri of the forecast
   // +kubebuilder:validation:Optional

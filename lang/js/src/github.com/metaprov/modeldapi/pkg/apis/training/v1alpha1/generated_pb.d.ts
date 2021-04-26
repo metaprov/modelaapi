@@ -453,6 +453,28 @@ export namespace Expectation {
   }
 }
 
+export class FeatureImportance extends jspb.Message {
+  getFeature(): string;
+  setFeature(value: string): FeatureImportance;
+
+  getImportance(): number;
+  setImportance(value: number): FeatureImportance;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureImportance.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureImportance): FeatureImportance.AsObject;
+  static serializeBinaryToWriter(message: FeatureImportance, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureImportance;
+  static deserializeBinaryFromReader(message: FeatureImportance, reader: jspb.BinaryReader): FeatureImportance;
+}
+
+export namespace FeatureImportance {
+  export type AsObject = {
+    feature: string,
+    importance: number,
+  }
+}
+
 export class ForecastObj extends jspb.Message {
   getKey(): string;
   setKey(value: string): ForecastObj;
@@ -1940,8 +1962,10 @@ export class ModelStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): ModelStatus;
 
-  getImportanceMap(): jspb.Map<string, number>;
-  clearImportanceMap(): ModelStatus;
+  getImportanceList(): Array<FeatureImportance>;
+  setImportanceList(value: Array<FeatureImportance>): ModelStatus;
+  clearImportanceList(): ModelStatus;
+  addImportance(value?: FeatureImportance, index?: number): FeatureImportance;
 
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
@@ -2006,7 +2030,7 @@ export namespace ModelStatus {
     profileuri: string,
     misclassuri: string,
     imagename: string,
-    importanceMap: Array<[string, number]>,
+    importanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,
     traindataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,

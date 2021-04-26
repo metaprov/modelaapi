@@ -329,8 +329,8 @@ type ModelStatus struct {
 	MisclassUri string `json:"misclassUri" protobuf:"bytes,21,opt,name=misclassUri"`
 	// ImageName is the image name of the model
 	ImageName string `json:"imageName" protobuf:"bytes,22,opt,name=imageName"`
-	// Importance is the feature importance.
-	Importance map[string]float32 `json:"importance" protobuf:"bytes,23,opt,name=importance"`
+	// Importance is list of feature importance based on the alg of this model, sorted by importance
+	Importance []FeatureImportance `json:"importance" protobuf:"bytes,23,opt,name=importance"`
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
@@ -408,6 +408,11 @@ type PreprocessingSpec struct {
 	// Imbalance flag instruct the designer to create an imbalanced pipeline. Default is false
 	// +kubebuilder:validation:Optional
 	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,10,opt,name=imbalanced"`
+}
+
+type FeatureImportance struct {
+	Feature    string  `json:"feature,omitempty" protobuf:"bytes,1,opt,name=feature"`
+	Importance float32 `json:"importance,omitempty" protobuf:"bytes,2,opt,name=importance"`
 }
 
 type SuccessiveHalvingSpec struct {
