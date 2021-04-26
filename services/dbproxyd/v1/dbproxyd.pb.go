@@ -21878,7 +21878,7 @@ type DatabaseProxyServiceClient interface {
 	CreateAlert(ctx context.Context, in *CreateAlertRequest, opts ...grpc.CallOption) (*v1alpha1.Alert, error)
 	UpdateAlert(ctx context.Context, in *UpdateAlertRequest, opts ...grpc.CallOption) (*v1alpha1.Alert, error)
 	DeleteAlert(ctx context.Context, in *DeleteAlertRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// alerts
+	// commits
 	ListCommits(ctx context.Context, in *ListCommitsRequest, opts ...grpc.CallOption) (*ListCommitsResponse, error)
 	GetCommit(ctx context.Context, in *GetCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error)
 	CreateCommit(ctx context.Context, in *CreateCommitRequest, opts ...grpc.CallOption) (*v1alpha1.Commit, error)
@@ -24055,7 +24055,7 @@ type DatabaseProxyServiceServer interface {
 	CreateAlert(context.Context, *CreateAlertRequest) (*v1alpha1.Alert, error)
 	UpdateAlert(context.Context, *UpdateAlertRequest) (*v1alpha1.Alert, error)
 	DeleteAlert(context.Context, *DeleteAlertRequest) (*empty.Empty, error)
-	// alerts
+	// commits
 	ListCommits(context.Context, *ListCommitsRequest) (*ListCommitsResponse, error)
 	GetCommit(context.Context, *GetCommitRequest) (*v1alpha1.Commit, error)
 	CreateCommit(context.Context, *CreateCommitRequest) (*v1alpha1.Commit, error)

@@ -1490,7 +1490,7 @@ service DatabaseProxyService {
     rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {}
 
 
-    // alerts
+    // commits
     rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {}
     rpc GetCommit(GetCommitRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit) {}
     rpc CreateCommit(CreateCommitRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit) { }

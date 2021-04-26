@@ -1162,7 +1162,7 @@ class DatabaseProxyServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCommits(self, request, context):
-        """alerts
+        """commits
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -55,6 +55,7 @@ message CapacityStageSpec {
   // ServingSiteName is the serving site for the testing during the capacity stage
   // If the serving site is empty or null, the system will skip the capacity stage unit tests.
   // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
   optional string servingSiteName = 2;
 
   // Tests is the specification of tests to run in this stage
@@ -67,7 +68,7 @@ message CapacityStageSpec {
   optional bool manualApproval = 4;
 
   // A reference to the workload class that is used for running the prediction
-  // +kubebuilder:default:="default-prediction-workload-class"
+  // +kubebuilder:default:="default-model-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -166,6 +167,7 @@ message DataStageSpec {
   optional bool enabled = 1;
 
   // LabName is the lab that execute processing of the data pipeline
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string labName = 2;
 
@@ -176,11 +178,13 @@ message DataStageSpec {
 
   // The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
   // based on the file in the location.
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string datasourceName = 4;
 
   // If Not null, run a docker image is used in order to generate the data.
   // The data must reside in location after the container run
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string dockerImage = 5;
 }
@@ -989,14 +993,17 @@ message ModelPipelineSpec {
   optional string owner = 14;
 
   // ApproverAccountName is the name of the approver for stages that need approvals.
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string approverAccountName = 15;
 
   // NotifierName is the name of the notifier to use in case of pipeline failure
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string notifierName = 16;
 
   // BaselineModelName is the name of the model which is used to compare with this pipeline results.
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string baselineModelName = 17;
 }
@@ -1698,9 +1705,11 @@ message ProdStageSpec {
 
   // ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
   // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
   optional string servingSiteName = 2;
 
   // PredictorName is the release predictor. The predictor will be created if it does not exist.
+  // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string predictorName = 3;
 
@@ -2267,6 +2276,7 @@ message TrainingSpec {
 message TrainingStageSpec {
   // Enabled indicates that the stage is enabled
   // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
   // NotebookName specify the notebook to run before training.
@@ -2304,7 +2314,8 @@ message TransformerEstimatorSpec {
 // UATStageSpec is the specification of the user acceptance test.
 message UATStageSpec {
   // Enabled indicates that the stage is enabled
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
   // The serving site (name space) used for running the uat tests. If the serving site is empty, the system
@@ -2323,7 +2334,7 @@ message UATStageSpec {
   optional bool manualApproval = 4;
 
   // WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
-  // +kubebuilder:default:="default-prediction-workload-class"
+  // +kubebuilder:default:="default-model-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
