@@ -120,6 +120,10 @@ func (model *Model) Default() {
 			model.ObjectMeta.Labels["dataset"] = *model.Spec.DatasetName
 		}
 	}
+	// update the status. this might be moved to the crd itself.
+	if model.Status.Importance == nil {
+		model.Status.Importance = make([]FeatureImportance, 0)
+	}
 
 }
 
