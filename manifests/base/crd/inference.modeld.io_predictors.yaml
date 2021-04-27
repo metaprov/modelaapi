@@ -203,6 +203,7 @@ spec:
                 description: Max num of replicates. Used during auto scaling
                 format: int32
                 maximum: 10
+                minimum: 1
                 type: integer
               minReplicas:
                 default: 1

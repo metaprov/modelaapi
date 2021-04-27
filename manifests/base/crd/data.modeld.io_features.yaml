@@ -142,6 +142,7 @@ spec:
               invalid:
                 description: The number of invalid values
                 format: int32
+                minimum: 0
                 type: integer
               kurtosis:
                 description: Kurtosis is the standard deviation value of the attribute
@@ -158,6 +159,7 @@ spec:
               missing:
                 description: The number of missing values
                 format: int32
+                minimum: 0
                 type: integer
               mostFreqValuesRatio:
                 description: The ratio between most freq value to total

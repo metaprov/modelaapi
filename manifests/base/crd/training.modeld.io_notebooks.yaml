@@ -55,6 +55,7 @@ spec:
                 description: ActiveDeadlineSeconds is the deadline of a job for this
                   notebook.
                 format: int64
+                minimum: 0
                 type: integer
               debPackages:
                 description: DebPackages is a list of deb package to install

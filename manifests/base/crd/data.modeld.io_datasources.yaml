@@ -293,6 +293,7 @@ spec:
                           default: 0
                           description: Max Items in the data in case of a list
                           format: int32
+                          minimum: 0
                           type: integer
                         maxLength:
                           default: 0
@@ -308,6 +309,7 @@ spec:
                           default: 0
                           description: Min Items in the data in case of a list.
                           format: int32
+                          minimum: 0
                           type: integer
                         minLength:
                           default: 0
@@ -532,6 +534,7 @@ spec:
               cols:
                 description: number of columns in the data source
                 format: int32
+                minimum: 0
                 type: integer
               conditions:
                 items:

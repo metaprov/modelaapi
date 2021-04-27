@@ -1635,6 +1635,7 @@ message NotebookSpec {
 
   // ActiveDeadlineSeconds is the deadline of a job for this notebook.
   // +kubebuilder:default:=600
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 11;
 }

@@ -161,11 +161,13 @@ message Column {
 
   // Max Items in the data in case of a list
   // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 maxItems = 24;
 
   // Min Items in the data in case of a list.
   // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 minItems = 25;
 
@@ -805,6 +807,7 @@ message DataSourceSpec {
 // FlatFileStatus defines the observed state of FlatFileSpec
 message DataSourceStatus {
   // number of columns in the data source
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 cols = 1;
 
@@ -1391,9 +1394,11 @@ message FeatureStatus {
   optional double p75 = 12;
 
   // The number of missing values
+  // +kubebuilder:validation:Minimum=0
   optional int32 missing = 14;
 
   // The number of invalid values
+  // +kubebuilder:validation:Minimum=0
   optional int32 invalid = 15;
 
   // Is this the target attribute, the value is derived from the schema

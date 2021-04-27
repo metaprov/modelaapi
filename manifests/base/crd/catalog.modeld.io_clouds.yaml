@@ -75,6 +75,7 @@ spec:
                     vcpu:
                       description: Vcpu is the number of cores
                       format: int32
+                      minimum: 0
                       type: integer
                   required:
                   - code
