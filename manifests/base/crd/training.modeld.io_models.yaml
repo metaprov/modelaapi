@@ -333,7 +333,7 @@ spec:
                     properties:
                       interval:
                         default: 1
-                        description: Default to 1. optional
+                        description: Default to 1.
                         format: int32
                         minimum: 0
                         type: integer
@@ -352,7 +352,7 @@ spec:
                     type: object
                   horizon:
                     description: Horizon is the number of data points to predict in
-                      the future. Required.
+                      the future.
                     format: int32
                     minimum: 0
                     type: integer
@@ -367,7 +367,7 @@ spec:
                       this is the target column from the dataset.
                     type: string
                   timeColumn:
-                    description: The name of the time column Required.
+                    description: The name of the time column
                     type: string
                 type: object
               location:
@@ -880,7 +880,7 @@ spec:
                         properties:
                           interval:
                             default: 1
-                            description: Default to 1. optional
+                            description: Default to 1.
                             format: int32
                             minimum: 0
                             type: integer
@@ -899,7 +899,7 @@ spec:
                         type: object
                       horizon:
                         description: Horizon is the number of data points to predict
-                          in the future. Required.
+                          in the future.
                         format: int32
                         minimum: 0
                         type: integer
@@ -914,7 +914,7 @@ spec:
                           default this is the target column from the dataset.
                         type: string
                       timeColumn:
-                        description: The name of the time column Required.
+                        description: The name of the time column
                         type: string
                     type: object
                   priority:
@@ -1303,10 +1303,6 @@ spec:
               weightsUri:
                 description: WeightsUri is the URI of the model binary file.
                 type: string
-            required:
-            - imageName
-            - importance
-            - misclassUri
             type: object
         required:
         - spec

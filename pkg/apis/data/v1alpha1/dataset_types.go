@@ -147,14 +147,16 @@ type DatasetStatus struct {
 	// +kubebuilder:validation:Optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,4,opt,name=profileUri"`
 	// Based on the actual data, treat this dataset as imbalanced.
+	//+kubebuilder:validation:Optional
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,5,opt,name=imbalanced"`
 	// Sha256 sig of the files
+	//+kubebuilder:validation:Optional
 	Sigs Signatures `json:"sigs,omitempty" protobuf:"bytes,6,opt,name=sigs"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
 	// Represents the latest available observations of a dataset state.
-	//+optional
+	//+kubebuilder:validation:Optional
 	Conditions []DatasetCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
 }
 

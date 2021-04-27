@@ -50,6 +50,7 @@ message BacktestSpec {
 message CapacityStageSpec {
   // Enabled indicates that the stage is enabled
   // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
   // ServingSiteName is the serving site for the testing during the capacity stage
@@ -81,12 +82,12 @@ message CategoricalPipelineSpec {
 
   // Categorical varaible imputer
   // +kubebuilder:default:=auto
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string imputer = 2;
 
   // CatEncoder
   // +kubebuilder:default:=auto
-  // +optional
+  // +kubebuilder:validation:Optional
   optional string encoder = 3;
 }
 
@@ -310,7 +311,7 @@ message ForecastObj {
 // ForecastingSpec
 message ForecastingSpec {
   // The name of the time column
-  // Required.
+  // +kubebuilder:validation:Required
   optional string timeColumn = 1;
 
   // The name of the column holding the value.
@@ -328,19 +329,20 @@ message ForecastingSpec {
 
   // List of other columns to take into consideration
   // Default None
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated string repressors = 5;
 
   // Required, the freq of the time series (daily,weekly)
+  // +kubebuilder:validation:Optional
   optional FreqSpec freqSpec = 6;
 
   // Horizon is the number of data points to predict in the future.
-  // Required.
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
   optional int32 horizon = 7;
 
   // The confidence levels for the forecast, each level must be between 1-100.
-  // +optional
+  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
   optional int32 confidenceInterval = 8;
 
@@ -353,6 +355,7 @@ message ForecastingSpec {
   repeated DimensionValue dimensionValues = 10;
 
   // The backtest specification, the system supports back testing with expanding windows.
+  // +kubebuilder:validation:Optional
   optional BacktestSpec backtest = 11;
 
   // The name of the connection for a database the result of the forecast
@@ -372,7 +375,7 @@ message FreqSpec {
   // Default to 1.
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Minimum=0
-  // optional
+  // +kubebuilder:validation:Optional
   optional int32 interval = 1;
 
   // required
@@ -876,25 +879,31 @@ message ModelPipelineRunStageStatus {
   repeated ModelTestResult results = 9;
 
   // Error record error.
+  // +kubebuilder:validation:Optional
   optional string error = 10;
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
 message ModelPipelineRunStatus {
   // The current stage of the pipeline
+  // +kubebuilder:validation:Optional
   optional string stage = 1;
 
   // The name of the dataset that was captured by the label filter.
+  // +kubebuilder:validation:Optional
   optional string datasetName = 2;
 
   // The name of the study generated.
+  // +kubebuilder:validation:Optional
   optional string studyName = 3;
 
   // The name of the best model
+  // +kubebuilder:validation:Optional
   optional string modelName = 4;
 
   // DataStatus is the status of the data stage
   // data is the status for the data stage.
+  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus dataStatus = 5;
 
   // TrainingStatus is the status for the training stage
@@ -902,18 +911,23 @@ message ModelPipelineRunStatus {
   optional ModelPipelineRunStageStatus trainingStatus = 6;
 
   // UATStatus is the status of the uat stage
+  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus uatStatus = 7;
 
   // CapacityStatus is the status for the capacity stage.
+  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus capacityStatus = 8;
 
   // ProdStatus is the status for the prod stage
+  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus prodStatus = 9;
 
   // Monitoring status is the status of the monitor phase.
+  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus monitoringStatus = 10;
 
   // Labeling status if the status of the labeling process
+  // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus labelingStatus = 11;
 
   // +kubebuilder:validation:Optional
@@ -930,7 +944,7 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 15;
 
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated ModelPipelineRunCondition conditions = 16;
 
   // Folder for pipeline run artifacts. This is assigned by the system
@@ -1355,11 +1369,14 @@ message ModelStatus {
   optional string profileUri = 20;
 
   // MisclassUri is a reference to the mis-classification file which were produce during processing
+  // +kubebuilder:validation:Optional
   optional string misclassUri = 21;
 
   // ImageName is the image name of the model
+  // +kubebuilder:validation:Optional
   optional string imageName = 22;
 
+  // +kubebuilder:validation:Optional
   // Importance is list of feature importance based on the alg of this model, sorted by importance
   repeated FeatureImportance importance = 23;
 
@@ -1368,15 +1385,19 @@ message ModelStatus {
   optional string forecastUri = 24;
 
   // TrainDatasetLocation is the location of the train dataset
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 25;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 26;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
+  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 27;
 
   // ResourceConsumed is the avg resource consumed during the training of the model
+  // +kubebuilder:validation:Optional
   optional ResourceConsumption resourceConsumed = 28;
 
   // ObservedGeneration is the Last generation that was acted on
@@ -1409,8 +1430,6 @@ message ModelTestResult {
 
 // MonitoringStageSpec specify how the models are monitored in production
 message MonitoringStageSpec {
-  // Enabled indicates that the stage is enabled
-  // +kubebuilder:default:=false
   optional bool enabled = 1;
 
   // Tests is the specification of tests to run in this stage
@@ -1663,6 +1682,7 @@ message NumericPipelineSpec {
 // PreprocessingSpec of the pre processing pipeline
 message PreprocessingSpec {
   // One or more categorical pipelines.
+  // +kubebuilder:validation:Optional
   optional CategoricalPipelineSpec categorical = 1;
 
   // Numeric specify the column transformation for numeric columns
@@ -1795,6 +1815,7 @@ message ReportSpec {
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
 
   // ReportType specify the report type (e.g. classification / regression)
+  // +kubebuilder:validation:Required
   optional string reportType = 5;
 
   // Format specify the report format. default is pdf
@@ -1848,7 +1869,7 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 6;
 
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated ReportCondition conditions = 7;
 }
 
@@ -1922,17 +1943,20 @@ message StudySpec {
   // VersionName is the data product version of the study
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
+  // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
   // ModelVersion is the semver version of the resulting model.
   // Note that multiplie models can have the same version
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
+  // +kubebuilder:validation:Optional
   optional string modelVersion = 2;
 
   // Description is user provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
+  // +kubebuilder:validation:Optional
   optional string description = 3;
 
   // LabRef is a reference to the lab where the trainers for this study run.
@@ -1942,12 +1966,12 @@ message StudySpec {
 
   // DatasetName refer to the dataset object for which the study is for.
   // +kubebuilder:default:=""
-  // Required.
+  // +kubebuilder:validation:Required
   optional string datasetName = 5;
 
   // Task specify the machine learning task (e.g classification).
   // This must match the task of the data product.
-  // Required.
+  // +kubebuilder:validation:Required
   optional string task = 6;
 
   // Objective is the objective defined how the study controller will compare model performance.
@@ -1973,26 +1997,32 @@ message StudySpec {
 
   // Aborted is set when we want to abort the training
   // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool aborted = 13;
 
   // Reported is set when we want to create model report
   // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
   optional bool reported = 14;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool paused = 15;
 
   // Profiled is set when we want to create model profile and study profile.
   // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
   optional bool profiled = 16;
 
   // Set to true if you want the system to create a docker model image, at the end of training.
   // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool modelPublished = 17;
 
   // Set to true if you want the system to push model image to remote docker registry
   // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
   optional bool modelImagePushed = 18;
 
   // The location of the study artifacts
@@ -2018,72 +2048,95 @@ message StudySpec {
 // StudyStatus defines the observed state of the Study
 message StudyStatus {
   // Total models created for the study
+  // +kubebuilder:validation:Optional
   optional int32 models = 1;
 
   // models waiting for a trainer
+  // +kubebuilder:validation:Optional
   optional int32 waitingToTrain = 2;
 
   // models which are currently training or testing.
+  // +kubebuilder:validation:Optional
   optional int32 trainingModels = 3;
 
   // models that failed during training.
+  // +kubebuilder:validation:Optional
   optional int32 failedTrainingModels = 4;
 
   // models that were successful during training
+  // +kubebuilder:validation:Optional
   optional int32 trainedModels = 5;
 
   // models waiting testing
+  // +kubebuilder:validation:Optional
   optional int32 waitingToTestModels = 6;
 
   // models in testing
+  // +kubebuilder:validation:Optional
   optional int32 testingModels = 7;
 
   // models failed testing.
+  // +kubebuilder:validation:Optional
   optional int32 failedTestingModels = 8;
 
   // Tested models
+  // +kubebuilder:validation:Optional
   optional int32 testedModels = 9;
 
   // Total number of trainers in this study
+  // +kubebuilder:validation:Optional
   optional int32 trainers = 10;
 
   // Free trainers
+  // +kubebuilder:validation:Optional
   optional int32 freeTrainers = 11;
 
   // TotalTrainers training
+  // +kubebuilder:validation:Optional
   optional int32 budyTrainers = 12;
 
   // Study start time
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
 
   // Start of the training phase
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 14;
 
   // End of the training phase.
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingCompletionTime = 15;
 
   // Start of the testing phase
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStarted = 16;
 
   // Represents time when the study reached a successful complete or failure phase. It is not guaranteed to
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingCompletionTime = 17;
 
   // The study end time.
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 18;
 
   // The Best model name.
+  // +kubebuilder:validation:Optional
   optional string bestModel = 20;
 
   // The Best model score, so far.
+  // +kubebuilder:validation:Optional
   optional double bestModelScore = 21;
 
   // A reference to the profile uri which were produce during processing
+  // +kubebuilder:validation:Optional
   optional string profileUri = 22;
 
   // The study report name
+  // +kubebuilder:validation:Optional
   optional string reportName = 23;
 
   // The phase of the study
+  // +kubebuilder:validation:Optional
   optional string phase = 24;
 
   // ObservedGeneration is the Last generation that was acted on

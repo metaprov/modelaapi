@@ -415,12 +415,15 @@ message DataPipelineRunSpec {
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
 message DataPipelineRunStatus {
   // RecipeRuns is the names of the recipe runs that occur during running of the pipeline.
+  // +kubebuilder:validation:Optional
   repeated string recipeRuns = 1;
 
   // the resulting dataset from the flow
+  // +kubebuilder:validation:Optional
   optional DataLocation output = 2;
 
   // the phase of the run
+  // +kubebuilder:validation:Optional
   optional string phase = 3;
 
   // StartTime is the start time of the pipeline
@@ -435,7 +438,7 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 8;
 
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated DataPipelineRunCondition conditions = 7;
 }
 
@@ -608,6 +611,7 @@ message DataProductSpec {
   optional int32 retriesOnFailure = 14;
 
   // KPIs is the product kpi. This is for information porpose
+  // +kubebuilder:validation:Optional
   repeated KPI kpis = 15;
 }
 
@@ -704,7 +708,7 @@ message DataProductVersionStatus {
   optional int64 observedGeneration = 3;
 
   // Represents the latest available observations of a dataset state.
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated DataProductVersionCondition conditions = 2;
 }
 
@@ -959,9 +963,11 @@ message DatasetStatus {
   optional string profileUri = 4;
 
   // Based on the actual data, treat this dataset as imbalanced.
+  // +kubebuilder:validation:Optional
   optional bool imbalanced = 5;
 
   // Sha256 sig of the files
+  // +kubebuilder:validation:Optional
   optional Signatures sigs = 6;
 
   // ObservedGeneration is the Last generation that was acted on
@@ -969,7 +975,7 @@ message DatasetStatus {
   optional int64 observedGeneration = 9;
 
   // Represents the latest available observations of a dataset state.
-  // +optional
+  // +kubebuilder:validation:Optional
   repeated DatasetCondition conditions = 8;
 }
 

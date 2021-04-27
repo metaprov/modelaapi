@@ -151,6 +151,7 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,14,opt,name=retriesOnFailure"`
 	// KPIs is the product kpi. This is for information porpose
+	//+kubebuilder:validation:Optional
 	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,opt,name=kpis"`
 }
 

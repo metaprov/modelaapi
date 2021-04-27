@@ -94,10 +94,13 @@ type DataPipelineRunSpec struct {
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
 type DataPipelineRunStatus struct {
 	// RecipeRuns is the names of the recipe runs that occur during running of the pipeline.
+	//+kubebuilder:validation:Optional
 	RecipeRuns []string `json:"recipeRuns" protobuf:"bytes,1,rep,name=recipeRuns"`
 	// the resulting dataset from the flow
+	//+kubebuilder:validation:Optional
 	Output DataLocation `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
+	//+kubebuilder:validation:Optional
 	Phase DataPipelineRunPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// StartTime is the start time of the pipeline
 	// +kubebuilder:validation:Optional
@@ -108,6 +111,6 @@ type DataPipelineRunStatus struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
-	//+optional
+	//+kubebuilder:validation:Optional
 	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
 }

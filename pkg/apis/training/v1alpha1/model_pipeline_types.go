@@ -193,6 +193,7 @@ type UATStageSpec struct {
 type CapacityStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=false
+	//+kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// ServingSiteName is the serving site for the testing during the capacity stage
 	// If the serving site is empty or null, the system will skip the capacity stage unit tests.
@@ -243,6 +244,7 @@ type ProdStageSpec struct {
 type MonitoringStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=false
+
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional

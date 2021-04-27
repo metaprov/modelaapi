@@ -172,34 +172,45 @@ type ModelPipelineRunStageStatus struct {
 	// +kubebuilder:validation:Optional
 	Results []ModelTestResult `json:"results,omitempty" protobuf:"bytes,9,opt,name=results"`
 	// Error record error.
+	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
 }
 
 // ModelPipelineRunStatus is the observed state of the ModelPipelineRun resource .
 type ModelPipelineRunStatus struct {
 	// The current stage of the pipeline
+	//+kubebuilder:validation:Optional
 	Stage ModelPipelineStage `json:"stage,omitempty" protobuf:"bytes,1,opt,name=stage"`
 	// The name of the dataset that was captured by the label filter.
+	//+kubebuilder:validation:Optional
 	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
 	// The name of the study generated.
+	//+kubebuilder:validation:Optional
 	StudyName string `json:"studyName,omitempty" protobuf:"bytes,3,opt,name=studyName"`
 	// The name of the best model
+	//+kubebuilder:validation:Optional
 	ModelName string `json:"modelName,omitempty" protobuf:"bytes,4,opt,name=modelName"`
 	// DataStatus is the status of the data stage
 	// data is the status for the data stage.
+	//+kubebuilder:validation:Optional
 	DataStatus ModelPipelineRunStageStatus `json:"dataStatus,omitempty" protobuf:"bytes,5,opt,name=dataStatus"`
 	// TrainingStatus is the status for the training stage
 	// +kubebuilder:validation:Optional
 	TrainingStatus ModelPipelineRunStageStatus `json:"trainingStatus,omitempty" protobuf:"bytes,6,opt,name=trainingStatus"`
 	// UATStatus is the status of the uat stage
+	//+kubebuilder:validation:Optional
 	UATStatus ModelPipelineRunStageStatus `json:"uatStatus,omitempty" protobuf:"bytes,7,rep,name=uatStatus"`
 	// CapacityStatus is the status for the capacity stage.
+	//+kubebuilder:validation:Optional
 	CapacityStatus ModelPipelineRunStageStatus `json:"capacityStatus,omitempty" protobuf:"bytes,8,rep,name=capacityStatus"`
 	// ProdStatus is the status for the prod stage
+	//+kubebuilder:validation:Optional
 	ProdStatus ModelPipelineRunStageStatus `json:"prodStatus,omitempty" protobuf:"bytes,9,rep,name=prodStatus"`
 	// Monitoring status is the status of the monitor phase.
+	//+kubebuilder:validation:Optional
 	MonitoringStatus ModelPipelineRunStageStatus `json:"monitoringStatus,omitempty" protobuf:"bytes,10,rep,name=monitoringStatus"`
 	// Labeling status if the status of the labeling process
+	//+kubebuilder:validation:Optional
 	LabelingStatus ModelPipelineRunStageStatus `json:"labelingStatus,omitempty" protobuf:"bytes,11,rep,name=labelingStatus"`
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,12,opt,name=startTime"`
@@ -211,7 +222,7 @@ type ModelPipelineRunStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,15,opt,name=observedGeneration"`
-	//+optional
+	//+kubebuilder:validation:Optional
 	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,16,rep,name=conditions"`
 	// Folder for pipeline run artifacts. This is assigned by the system
 	// The folder contains all the pipeline artifacts - metadata, logs

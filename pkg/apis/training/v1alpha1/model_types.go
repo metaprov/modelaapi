@@ -326,21 +326,28 @@ type ModelStatus struct {
 	// +kubebuilder:validation:Optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,20,opt,name=profileUri"`
 	// MisclassUri is a reference to the mis-classification file which were produce during processing
+	// +kubebuilder:validation:Optional
 	MisclassUri string `json:"misclassUri" protobuf:"bytes,21,opt,name=misclassUri"`
 	// ImageName is the image name of the model
+	// +kubebuilder:validation:Optional
 	ImageName string `json:"imageName" protobuf:"bytes,22,opt,name=imageName"`
+	// +kubebuilder:validation:Optional
 	// Importance is list of feature importance based on the alg of this model, sorted by importance
-	Importance []FeatureImportance `json:"importance" protobuf:"bytes,23,opt,name=importance"`
+	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,23,opt,name=importance"`
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
 	// TrainDatasetLocation is the location of the train dataset
+	// +kubebuilder:validation:Optional
 	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,25,opt,name=trainDataset"`
 	// TestDatasetLocation is the location of the test dataset used to test this model
+	// +kubebuilder:validation:Optional
 	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,26,opt,name=testDataset"`
 	// ValidationDatasetLocation is the location of the dataset used for validation
+	// +kubebuilder:validation:Optional
 	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,27,opt,name=validationDataset"`
 	//ResourceConsumed is the avg resource consumed during the training of the model
+	// +kubebuilder:validation:Optional
 	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,28,opt,name=resourceConsumed"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
@@ -380,6 +387,7 @@ type TransformerEstimatorSpec struct {
 // PreprocessingSpec of the pre processing pipeline
 type PreprocessingSpec struct {
 	// One or more categorical pipelines.
+	// +kubebuilder:validation:Optional
 	Categorical *CategoricalPipelineSpec `json:"categorical,omitempty" protobuf:"bytes,1,opt,name=categorical"`
 	// Numeric specify the column transformation for numeric columns
 	// +kubebuilder:validation:Optional
@@ -509,11 +517,11 @@ type CategoricalPipelineSpec struct {
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
 	// Categorical varaible imputer
 	// +kubebuilder:default:=auto
-	//+optional
+	// +kubebuilder:validation:Optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
 	// CatEncoder
 	// +kubebuilder:default:=auto
-	//+optional
+	// +kubebuilder:validation:Optional
 	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,3,opt,name=encoder"`
 }
 
@@ -615,7 +623,7 @@ type ResourceConsumption struct {
 // ForecastingSpec
 type ForecastingSpec struct {
 	// The name of the time column
-	// Required.
+	// +kubebuilder:validation:Required
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,1,opt,name=timeColumn"`
 	// The name of the column holding the value.
 	// By default this is the target column from the dataset.
@@ -629,16 +637,17 @@ type ForecastingSpec struct {
 	Dimensions []string `json:"dimensions,omitempty" protobuf:"bytes,4,opt,name=dimensions"`
 	// List of other columns to take into consideration
 	// Default None
-	//+optional
+	// +kubebuilder:validation:Optional
 	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,5,opt,name=repressors"`
 	// Required, the freq of the time series (daily,weekly)
+	// +kubebuilder:validation:Optional
 	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,6,opt,name=freqSpec"`
 	// Horizon is the number of data points to predict in the future.
-	// Required.
 	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Optional
 	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,7,opt,name=horizon"`
 	// The confidence levels for the forecast, each level must be between 1-100.
-	//+optional
+	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
 	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,8,opt,name=confidenceInterval"`
 	// Set an holiday schedule for a country.
@@ -648,6 +657,7 @@ type ForecastingSpec struct {
 	// +kubebuilder:validation:Optional
 	DimensionValues []DimensionValue `json:"dimensionValues,omitempty" protobuf:"bytes,10,opt,name=dimensionValues"`
 	// The backtest specification, the system supports back testing with expanding windows.
+	// +kubebuilder:validation:Optional
 	Backtest *BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,11,opt,name=backtest"`
 	// The name of the connection for a database the result of the forecast
 	// If null, the system will insert the forecast in the database.
@@ -665,7 +675,7 @@ type FreqSpec struct {
 	// Default to 1.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Minimum=0
-	// optional
+	// +kubebuilder:validation:Optional
 	Interval *int32 `json:"interval,omitempty" protobuf:"varint,1,opt,name=interval"`
 	// required
 	Units *catalog.Freq `json:"unit,omitempty" protobuf:"bytes,2,opt,name=unit"`

@@ -155,10 +155,6 @@ spec:
                 description: StartTime is the start time of the pipeline
                 format: date-time
                 type: string
-            required:
-            - output
-            - phase
-            - recipeRuns
             type: object
         required:
         - metadata

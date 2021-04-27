@@ -223,7 +223,6 @@ spec:
                     type: boolean
                   enabled:
                     default: false
-                    description: Enabled indicates that the stage is enabled
                     type: boolean
                   tests:
                     description: Tests is the specification of tests to run in this

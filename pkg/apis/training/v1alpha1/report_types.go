@@ -145,6 +145,7 @@ type ReportSpec struct {
 	// +kubebuilder:validation:Optional
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// ReportType specify the report type (e.g. classification / regression)
+	// +kubebuilder:validation:Required
 	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
 	// Format specify the report format. default is pdf
 	// +kubebuilder:default:=pdf
@@ -188,6 +189,6 @@ type ReportStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
-	//+optional
+	//+kubebuilder:validation:Optional
 	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
 }

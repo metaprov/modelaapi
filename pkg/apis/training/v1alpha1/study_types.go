@@ -278,15 +278,18 @@ type StudySpec struct {
 	// VersionName is the data product version of the study
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// ModelVersion is the semver version of the resulting model.
 	// Note that multiplie models can have the same version
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:validation:Optional
 	ModelVersion *string `json:"modelVersion" protobuf:"bytes,2,opt,name=modelVersion"`
 	// Description is user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
@@ -294,11 +297,11 @@ type StudySpec struct {
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,4,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:default:=""
-	// Required.
+	// +kubebuilder:validation:Required
 	DatasetName *string `json:"datasetName" protobuf:"bytes,5,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
 	// This must match the task of the data product.
-	// Required.
+	// +kubebuilder:validation:Required
 	Task *catalog.MLTask `json:"task" protobuf:"bytes,6,opt,name=task"`
 	// Objective is the objective defined how the study controller will compare model performance.
 	// +kubebuilder:validation:Optional
@@ -318,21 +321,27 @@ type StudySpec struct {
 	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
 	Reported *bool `json:"reported,omitempty" protobuf:"bytes,14,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,15,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
 	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,16,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
 	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"bytes,17,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"bytes,18,opt,name=modelImagePushed"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
@@ -354,50 +363,73 @@ type StudySpec struct {
 // StudyStatus defines the observed state of the Study
 type StudyStatus struct {
 	// Total models created for the study
+	// +kubebuilder:validation:Optional
 	Models int32 `json:"models,omitempty" protobuf:"varint,1,opt,name=models"`
 	// models waiting for a trainer
+	// +kubebuilder:validation:Optional
 	WaitingToTrainModels int32 `json:"waitingToTrain,omitempty" protobuf:"varint,2,opt,name=waitingToTrain"`
 	// models which are currently training or testing.
+	// +kubebuilder:validation:Optional
 	TrainingModels int32 `json:"trainingModels,omitempty" protobuf:"varint,3,opt,name=trainingModels"`
 	// models that failed during training.
+	// +kubebuilder:validation:Optional
 	ModelsFailedTraining int32 `json:"failedTrainingModels,omitempty" protobuf:"varint,4,opt,name=failedTrainingModels"`
 	// models that were successful during training
+	// +kubebuilder:validation:Optional
 	TrainedModels int32 `json:"trainedModels,omitempty" protobuf:"varint,5,opt,name=trainedModels"`
 	// models waiting testing
+	// +kubebuilder:validation:Optional
 	WaitingToTestModels int32 `json:"waitingToTestModels,omitempty" protobuf:"varint,6,opt,name=waitingToTestModels"`
 	// models in testing
+	// +kubebuilder:validation:Optional
 	TestingModels int32 `json:"testingModels,omitempty" protobuf:"varint,7,opt,name=testingModels"`
 	// models failed testing.
+	// +kubebuilder:validation:Optional
 	ModelsFailedTesting int32 `json:"failedTestingModels,omitempty" protobuf:"varint,8,opt,name=failedTestingModels"`
 	// Tested models
+	// +kubebuilder:validation:Optional
 	TestedModels int32 `json:"testedModels,omitempty" protobuf:"varint,9,opt,name=testedModels"`
 	// Total number of trainers in this study
+	// +kubebuilder:validation:Optional
 	Trainers int32 `json:"trainers,omitempty" protobuf:"varint,10,opt,name=trainers"`
 	// Free trainers
+	// +kubebuilder:validation:Optional
 	FreeTrainers int32 `json:"freeTrainers,omitempty" protobuf:"varint,11,opt,name=freeTrainers"`
 	// TotalTrainers training
+	// +kubebuilder:validation:Optional
 	BusyTrainers int32 `json:"busyTrainers,omitempty" protobuf:"varint,12,opt,name=budyTrainers"`
 	// Study start time
+	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`
 	// Start of the training phase
+	// +kubebuilder:validation:Optional
 	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,14,opt,name=trainingStartTime"`
 	// End of the training phase.
+	// +kubebuilder:validation:Optional
 	TrainingCompletionTime *metav1.Time `json:"trainingCompletionTime,omitempty" protobuf:"bytes,15,opt,name=trainingCompletionTime"`
 	// Start of the testing phase
+	// +kubebuilder:validation:Optional
 	TestingStartTime *metav1.Time `json:"testingStarted,omitempty" protobuf:"bytes,16,opt,name=testingStarted"`
 	// Represents time when the study reached a successful complete or failure phase. It is not guaranteed to
+	// +kubebuilder:validation:Optional
 	TestingCompletionTime *metav1.Time `json:"testingCompletionTime,omitempty" protobuf:"bytes,17,opt,name=testingCompletionTime"`
 	// The study end time.
+	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,18,opt,name=completionTime"`
 	// The Best model name.
+	// +kubebuilder:validation:Optional
 	BestModel string `json:"bestModel,omitempty" protobuf:"bytes,20,opt,name=bestModel"`
 	// The Best model score, so far.
+	// +kubebuilder:validation:Optional
 	BestModelScore float64 `json:"bestModelScore,omitempty" protobuf:"bytes,21,opt,name=bestModelScore"`
 	// A reference to the profile uri which were produce during processing
+	// +kubebuilder:validation:Optional
 	ProfileUri string `json:"profileUri" protobuf:"bytes,22,opt,name=profileUri"`
 	// The study report name
+	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,23,opt,name=reportName"`
 	// The phase of the study
+	// +kubebuilder:validation:Optional
 	Phase StudyPhase `json:"phase" protobuf:"bytes,24,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
