@@ -238,6 +238,7 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=50
+	// +kubebuilder:validation:Minimum=0
 	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,6,opt,name=trainers"`
 	// SHOptions is the desired options for successive halving search.
 	// All other models are saved into an archive.
@@ -356,6 +357,7 @@ type StudySpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
 	// ActiveDeadlineSeconds is the deadline of a job for this study.
 	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
 }

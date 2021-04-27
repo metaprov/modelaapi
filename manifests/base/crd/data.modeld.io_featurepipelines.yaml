@@ -54,6 +54,7 @@ spec:
                 description: ActiveDeadlineSeconds is the deadline setup on jobs for
                   this labeling pipeline.
                 format: int64
+                minimum: 0
                 type: integer
               aggregation:
                 description: Aggregation is the aggregation spec

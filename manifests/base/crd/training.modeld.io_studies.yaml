@@ -95,6 +95,7 @@ spec:
                 description: ActiveDeadlineSeconds is the deadline of a job for this
                   study.
                 format: int64
+                minimum: 0
                 type: integer
               datasetName:
                 default: ""
@@ -741,6 +742,7 @@ spec:
                     description: The desired number of trainers running during search.
                     format: int32
                     maximum: 50
+                    minimum: 0
                     type: integer
                   type:
                     default: random

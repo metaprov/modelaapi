@@ -1095,6 +1095,7 @@ message ModelSearchSpec {
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=50
+  // +kubebuilder:validation:Minimum=0
   optional int32 trainers = 6;
 
   // SHOptions is the desired options for successive halving search.
@@ -2041,6 +2042,7 @@ message StudySpec {
 
   // ActiveDeadlineSeconds is the deadline of a job for this study.
   // +kubebuilder:default:=600
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 23;
 }
