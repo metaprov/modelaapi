@@ -164,6 +164,7 @@ type PredictorSpec struct {
 	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,18,opt,name=autoscale"`
 	// Max num of replicates. Used during auto scaling
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:default:=1
 	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,19,opt,name=maxReplicas"`

@@ -301,10 +301,12 @@ type Column struct {
 	TransformerHint *string `json:"transformerHint,omitempty" protobuf:"bytes,23,opt,name=transformerHint"`
 	// Max Items in the data in case of a list
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MaxItems *int32 `json:"maxItems,omitempty" protobuf:"varint,24,opt,name=maxItems"`
 	// Min Items in the data in case of a list.
 	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	MinItems *int32 `json:"minItems,omitempty" protobuf:"varint,25,opt,name=minItems"`
 	// Enforce that all the items in the list are unique
@@ -383,6 +385,7 @@ type DataSourceSpec struct {
 // FlatFileStatus defines the observed state of FlatFileSpec
 type DataSourceStatus struct {
 	// number of columns in the data source
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Cols int32 `json:"cols,omitempty" protobuf:"varint,1,opt,name=cols"`
 	// ObservedGeneration is the Last generation that was acted on

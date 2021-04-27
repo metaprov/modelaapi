@@ -118,8 +118,10 @@ type FeatureStatus struct {
 	// Pct75 is the 75% point
 	P75 float64 `json:"p75,omitempty" protobuf:"bytes,12,opt,name=p75"`
 	// The number of missing values
+	// +kubebuilder:validation:Minimum=0
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,14,opt,name=missing"`
 	// The number of invalid values
+	// +kubebuilder:validation:Minimum=0
 	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,15,opt,name=invalid"`
 	// Is this the target attribute, the value is derived from the schema
 	Target bool `json:"target,omitempty" protobuf:"bytes,16,opt,name=target"`

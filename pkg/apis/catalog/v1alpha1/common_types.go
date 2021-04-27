@@ -1221,28 +1221,39 @@ type ModelDeploymentSpec struct {
 
 type ModelDeploymentStatus struct {
 	// The model image name
+	// +kubebuilder:validation:Optional
 	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
 	// The deployment name that serves this model
+	// +kubebuilder:validation:Optional
 	DeploymentName string `json:"deploymentName,omitempty" protobuf:"bytes,2,opt,name=deploymentName"`
 	// The service name that serves this model
+	// +kubebuilder:validation:Optional
 	ServiceName string `json:"serviceName,omitempty" protobuf:"bytes,3,opt,name=serviceName"`
 	// the name of the horizonal pod autoscaler, if autoscaling is true
+	// +kubebuilder:validation:Optional
 	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`
 	// P95 latency
+	// +kubebuilder:validation:Optional
 	P95 float64 `json:"p95,omitempty" protobuf:"bytes,5,opt,name=current95"`
 	// P99 is the 99% latency of the model
+	// +kubebuilder:validation:Optional
 	P99 float64 `json:"p99,omitempty" protobuf:"bytes,6,opt,name=current99"`
 	// Last prediction time is the time of the last prediction
+	// +kubebuilder:validation:Optional
 	LastPredictionTime *metav1.Time `json:"lastPredictionTime,omitempty" protobuf:"bytes,7,opt,name=lastPredictionTime"`
-
+	// +kubebuilder:validation:Optional
 	DailyPredictionAvg int32 `json:"dailyPredictionAvg,omitempty" protobuf:"varint,8,opt,name=dailyPredictionAvg"`
 	// LastFailure is the last faiure that occur with the model
+	// +kubebuilder:validation:Optional
 	LastFailure string `json:"lastFailure,omitempty" protobuf:"bytes,9,opt,name=lastFailure"`
 	// Phase is the current phase of this model deployment
+	// +kubebuilder:validation:Optional
 	Phase ModelDeploymentPhase `json:"phase,omitempty" protobuf:"bytes,10,opt,name=phase"`
 	// DeployedAt is the last time that this model was deployed
+	// +kubebuilder:validation:Optional
 	DeployedAt *metav1.Time `json:"deployedAt,omitempty" protobuf:"bytes,11,opt,name=deployedAt"`
 	// ReleasedAt is the time that this model was released
+	// +kubebuilder:validation:Optional
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,12,opt,name=releasedAt"`
 }
 

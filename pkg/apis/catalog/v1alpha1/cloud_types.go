@@ -77,6 +77,7 @@ type GpuClass struct {
 
 	RegionName string `json:"regionName" protobuf:"bytes,2,opt,name=regionName"`
 	//Vcpu is the number of cores
+	// +kubebuilder:validation:Minimum=0
 	Vcpu int32 `json:"vcpu,omitempty" protobuf:"varint,3,opt,name=vcpu"`
 	//Gpumem is the amount of memory on the gpu
 	Gpumem *resource.Quantity `json:"gpumem,omitempty" protobuf:"bytes,4,opt,name=gpumem"`
