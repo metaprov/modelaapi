@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"fmt"
-
 	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modeldapi/pkg/apis/training"
 	"github.com/metaprov/modeldapi/pkg/util"
@@ -100,7 +99,7 @@ func (run *NotebookRun) GetCondIdx(t NotebookRunConditionType) int {
 			return i
 		}
 	}
-	panic("condition not found")
+	return -1
 }
 
 func (run *NotebookRun) GetCond(t NotebookRunConditionType) NotebookRunCondition {
@@ -109,7 +108,14 @@ func (run *NotebookRun) GetCond(t NotebookRunConditionType) NotebookRunCondition
 			return v
 		}
 	}
-	panic("condition not found")
+	// if we did not find the condition, we return an unknown object
+	return NotebookRunCondition{
+		Type:    t,
+		Status:  corev1.ConditionUnknown,
+		Reason:  "",
+		Message: "",
+	}
+
 }
 
 func (run *NotebookRun) StatusString() string {
