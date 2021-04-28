@@ -66,15 +66,12 @@ type IntParameter struct {
 	// +kubebuilder:validation:Optional
 	Type DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Min is the minimum value of the hyper parameter range
-	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Min int32 `json:"min,omitempty" protobuf:"varint,3,opt,name=min"`
 	// Max is the maximum value of the hyper parameter range
-	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	Max int32 `json:"max,omitempty" protobuf:"varint,4,opt,name=max"`
 	// DefaultValue is the default value of the parameter
-	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	DefaultValue int32 `json:"defaultValue,omitempty" protobuf:"varint,6,opt,name=defaultValue"`
 }

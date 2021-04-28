@@ -240,17 +240,14 @@ message IntParameter {
   optional string type = 2;
 
   // Min is the minimum value of the hyper parameter range
-  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 min = 3;
 
   // Max is the maximum value of the hyper parameter range
-  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 max = 4;
 
   // DefaultValue is the default value of the parameter
-  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 defaultValue = 6;
 }

@@ -117,19 +117,16 @@ spec:
                     defaultValue:
                       description: DefaultValue is the default value of the parameter
                       format: int32
-                      minimum: 0
                       type: integer
                     max:
                       description: Max is the maximum value of the hyper parameter
                         range
                       format: int32
-                      minimum: 0
                       type: integer
                     min:
                       description: Min is the minimum value of the hyper parameter
                         range
                       format: int32
-                      minimum: 0
                       type: integer
                     name:
                       description: Name is the name of the hyper parameter
