@@ -308,4 +308,8 @@ const (
 	LT Op = "lt"
 	EQ Op = "eq"
 	GT Op = "gt"
+	NE Op = "ne" // not equal
+	LE Op = "le" // less or equal
+	GE Op = "ge" // greater or equal
+
 )
