@@ -78,13 +78,14 @@ type ModelPipelineRunCondition struct {
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".status.pipelineName"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.versionName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelpipelineruns,shortName=pr,singular=modelpipelinerun,categories={train,modeld,all}
+// +kubebuilder:resource:path=modelpipelineruns,shortName=mpr,singular=modelpipelinerun,categories={train,modeld,all}
 // ModelPipelineRun represent a execution of a pipeline
 type ModelPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`
