@@ -3039,6 +3039,9 @@ export class StudySpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): StudySpec;
 
+  getTemplate(): boolean;
+  setTemplate(value: boolean): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -3070,6 +3073,7 @@ export namespace StudySpec {
     hierarchy?: Hierarchy.AsObject,
     owner: string,
     activedeadlineseconds: number,
+    template: boolean,
   }
 }
 

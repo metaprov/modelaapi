@@ -360,6 +360,10 @@ type StudySpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
+	// Set to true if this study is a template
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Template *bool `json:"template,omitempty" protobuf:"bytes,24,opt,name=template"`
 }
 
 // StudyStatus defines the observed state of the Study

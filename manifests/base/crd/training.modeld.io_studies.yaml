@@ -826,6 +826,10 @@ spec:
                 - auto
                 - unknown
                 type: string
+              template:
+                default: false
+                description: Set to true if this study is a template
+                type: boolean
               training:
                 description: Training template contain the desired training parameter
                   for the models.
