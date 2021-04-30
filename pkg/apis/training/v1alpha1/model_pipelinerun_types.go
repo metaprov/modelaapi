@@ -131,6 +131,7 @@ type StageStatusPhase string
 
 const (
 	StageStatusPhaseRunning   StageStatusPhase = "Running"
+	StageStatusPhaseTested    StageStatusPhase = "Tested"
 	StageStatusPhaseCompleted StageStatusPhase = "Completed"
 	StageStatusPhaseFailed    StageStatusPhase = "Failed"
 )
@@ -143,10 +144,14 @@ type ModelTestResult struct {
 	Metric catalog.Metric `json:"result,omitempty" protobuf:"bytes,2,opt,name=metric"`
 	// Expected is the expected value for this expecation as defined by the test
 	Expected float64 `json:"expected,omitempty" protobuf:"bytes,3,opt,name=expected"`
+	// The operation
+	Op *Op `json:"op,omitempty" protobuf:"bytes,4,opt,name=op"`
 	// Value is the value of the metric
-	Value float64 `json:"value,omitempty" protobuf:"bytes,4,opt,name=value"`
+	Value float64 `json:"value,omitempty" protobuf:"bytes,5,opt,name=value"`
 	// Error is a name of any error that occurred during the test.
-	Error *string `json:"error,omitempty" protobuf:"bytes,5,opt,name=error"`
+	Error *string `json:"error,omitempty" protobuf:"bytes,6,opt,name=error"`
+	// Duration is the time that it took to run the test
+	Duration *metav1.Duration `json:"duration,omitempty" protobuf:"bytes,7,opt,name=duration"`
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.

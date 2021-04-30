@@ -1423,11 +1423,17 @@ message ModelTestResult {
   // Expected is the expected value for this expecation as defined by the test
   optional double expected = 3;
 
+  // The operation
+  optional string op = 4;
+
   // Value is the value of the metric
-  optional double value = 4;
+  optional double value = 5;
 
   // Error is a name of any error that occurred during the test.
-  optional string error = 5;
+  optional string error = 6;
+
+  // Duration is the time that it took to run the test
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Duration duration = 7;
 }
 
 // MonitoringStageSpec specify how the models are monitored in production

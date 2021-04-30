@@ -116,24 +116,12 @@ func (pl *ModelPipeline) HasDataStage() bool {
 	return pl.Spec.Data != nil && pl.Spec.Data.DataPipelineName != nil && *pl.Spec.Data.DataPipelineName != ""
 }
 
-func (pl *ModelPipeline) HasProdStage() bool {
-	return pl.Spec.Prod != nil && pl.Spec.Prod.PredictorName != nil
-}
-
-func (pl *ModelPipeline) HasUatStage() bool {
-	return pl.Spec.Capacity != nil && len(pl.Spec.Capacity.Tests) > 0
-}
-
 func (pl *ModelPipeline) HasTrainingNotebook() bool {
 	return pl.Spec.Training != nil && pl.Spec.Training.NotebookName != nil && *pl.Spec.Training.NotebookName != ""
 }
 
 func (pl *ModelPipeline) HasTrainingStudy() bool {
 	return pl.Spec.Training != nil && pl.Spec.Training.StudyTemplateName != nil && *pl.Spec.Training.StudyTemplateName != ""
-}
-
-func (pl *ModelPipeline) HasCapacityStage() bool {
-	return pl.Spec.Capacity != nil && len(pl.Spec.Capacity.Tests) > 0
 }
 
 func (pl *ModelPipeline) MarkReady() {

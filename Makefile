@@ -131,3 +131,7 @@ install-protoc:
 	 unzip /tmp/protoc-3.15.5-linux-x86_64.zip -d $(HOME)/.local
 	 export PATH="$PATH:$HOME/.local/bin"
 
+
+.PHONY: set-default
+set-default:
+	kubectl config set-context --current --namespace=iris-product

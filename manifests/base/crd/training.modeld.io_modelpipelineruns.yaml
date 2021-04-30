@@ -125,6 +125,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -133,6 +137,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -254,6 +261,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -262,6 +273,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -360,6 +374,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -368,6 +386,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -460,6 +481,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -468,6 +493,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -565,6 +593,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -573,6 +605,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -671,6 +706,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -679,6 +718,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:
@@ -768,6 +810,10 @@ spec:
                         datasetName:
                           description: The name of the dataset
                           type: string
+                        duration:
+                          description: Duration is the time that it took to run the
+                            test
+                          type: string
                         error:
                           description: Error is a name of any error that occurred
                             during the test.
@@ -776,6 +822,9 @@ spec:
                           description: Expected is the expected value for this expecation
                             as defined by the test
                           type: number
+                        op:
+                          description: The operation
+                          type: string
                         result:
                           description: Metric is the name of the metric measured
                           enum:

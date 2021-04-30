@@ -2051,11 +2051,19 @@ export class ModelTestResult extends jspb.Message {
   getExpected(): number;
   setExpected(value: number): ModelTestResult;
 
+  getOp(): string;
+  setOp(value: string): ModelTestResult;
+
   getValue(): number;
   setValue(value: number): ModelTestResult;
 
   getError(): string;
   setError(value: string): ModelTestResult;
+
+  getDuration(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration | undefined;
+  setDuration(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration): ModelTestResult;
+  hasDuration(): boolean;
+  clearDuration(): ModelTestResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTestResult.AsObject;
@@ -2070,8 +2078,10 @@ export namespace ModelTestResult {
     datasetname: string,
     metric: string,
     expected: number,
+    op: string,
     value: number,
     error: string,
+    duration?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration.AsObject,
   }
 }
 
