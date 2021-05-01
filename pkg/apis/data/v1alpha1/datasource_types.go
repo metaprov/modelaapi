@@ -322,6 +322,21 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	// PreservePrivacy is true if the column content should not be exposed due to privacy concerns
 	PreservePrivacy *bool `json:"preservePrivacy,omitempty" protobuf:"bytes,28,opt,name=preservePrivacy"`
+	// The following attribute concern with syntatic data and validation
+	// DefaultValueNum is the default value for numbers
+	DefaultValueNum *float64 `json:"DefaultValueNum,omitempty" protobuf:"bytes,29,opt,name=defaultValueNum"`
+	// Log if true, values from this column will be sampled on logaritmic scale
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Log *bool `json:"log,omitempty" protobuf:"bytes,30,opt,name=log"`
+	// Mu is the mean of the normal distribution
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Mu *float64 `json:"mu,omitempty" protobuf:"bytes,31,opt,name=mu"`
+	// Sigma is the standard deviation of the distribution
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,32,opt,name=sigma"`
 }
 
 func (in *Column) Validate() (bool, []metav1.StatusCause) {

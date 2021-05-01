@@ -114,22 +114,30 @@ type DatasetSpec struct {
 	// Labeled indicates if this dataset is labeled or not.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Labeled *bool `json:"labeled" protobuf:"bytes,10,opt,name=labeled"`
+	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,10,opt,name=labeled"`
+	// Syntactic indicates if we want to generate this dataset based on the data source
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Syntactic *bool `json:"syntatic,omitempty" protobuf:"bytes,11,opt,name=syntatic"`
+	// If syntactic is true, indicates how many rows to generate
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	SyntacticRows *int32 `json:"syntacticRows" protobuf:"varint,12,opt,name=syntacticRows"`
 	// Define the data location. The operator will copy the data from this location into the live location.
 	// The datafiles are initially uploaded to this location.
 	// +kubebuilder:validation:Optional
-	Origin *DataLocation `json:"origin,omitempty" protobuf:"bytes,12,opt,name=origin"`
+	Origin *DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
 	// Folder of the actual data resides.
 	// +kubebuilder:validation:Required
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
+	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
 	// A reference to the workload class this is used to analyze the workload
 	// +kubebuilder:default:="default-data-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,14,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,15,opt,name=workloadClassName"`
 	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,15,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,16,opt,name=activeDeadlineSeconds"`
 }
 
 // DatasetStatus defines the observed state of Dataset

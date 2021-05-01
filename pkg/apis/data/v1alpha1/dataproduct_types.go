@@ -153,6 +153,9 @@ type DataProductSpec struct {
 	// KPIs is the product kpi. This is for information porpose
 	//+kubebuilder:validation:Optional
 	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,opt,name=kpis"`
+	// Current Model Version is used
+	//+kubebuilder:validation:Optional
+	CurrentModelVersion SemVer `json:"currentModelVersion,omitempty" protobuf:"bytes,16,opt,name=currentModelVersion"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -178,4 +181,11 @@ type KPI struct {
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Value is the desired value
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
+}
+
+// Semver is used when generating model version
+type SemVer struct {
+	Major *int32 `json:"major,omitempty" protobuf:"bytes,1,opt,name=major"`
+	Minor *int32 `json:"minor,omitempty" protobuf:"bytes,1,opt,name=minor"`
+	Patch *int32 `json:"patch,omitempty" protobuf:"bytes,1,opt,name=patch"`
 }
