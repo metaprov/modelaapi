@@ -142,6 +142,18 @@ export class Column extends jspb.Message {
   getPreserveprivacy(): boolean;
   setPreserveprivacy(value: boolean): Column;
 
+  getDefaultvaluenum(): number;
+  setDefaultvaluenum(value: number): Column;
+
+  getLog(): boolean;
+  setLog(value: boolean): Column;
+
+  getMu(): number;
+  setMu(value: number): Column;
+
+  getSigma(): number;
+  setSigma(value: number): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -180,6 +192,10 @@ export namespace Column {
     uniqueitems: boolean,
     timecolumn: boolean,
     preserveprivacy: boolean,
+    defaultvaluenum: number,
+    log: boolean,
+    mu: number,
+    sigma: number,
   }
 }
 
@@ -852,6 +868,11 @@ export class DataProductSpec extends jspb.Message {
   clearKpisList(): DataProductSpec;
   addKpis(value?: KPI, index?: number): KPI;
 
+  getCurrentmodelversion(): SemVer | undefined;
+  setCurrentmodelversion(value?: SemVer): DataProductSpec;
+  hasCurrentmodelversion(): boolean;
+  clearCurrentmodelversion(): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -876,6 +897,7 @@ export namespace DataProductSpec {
     defaultworkloadclassname: string,
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
+    currentmodelversion?: SemVer.AsObject,
   }
 }
 
@@ -1359,6 +1381,12 @@ export class DatasetSpec extends jspb.Message {
   getLabeled(): boolean;
   setLabeled(value: boolean): DatasetSpec;
 
+  getSyntatic(): boolean;
+  setSyntatic(value: boolean): DatasetSpec;
+
+  getSyntacticrows(): number;
+  setSyntacticrows(value: number): DatasetSpec;
+
   getOrigin(): DataLocation | undefined;
   setOrigin(value?: DataLocation): DatasetSpec;
   hasOrigin(): boolean;
@@ -1392,6 +1420,8 @@ export namespace DatasetSpec {
     report: boolean,
     validate: boolean,
     labeled: boolean,
+    syntatic: boolean,
+    syntacticrows: number,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
     workloadclassname: string,
@@ -3478,6 +3508,32 @@ export namespace Schema {
   export type AsObject = {
     tsschema?: TimeSeriesSchema.AsObject,
     columnsList: Array<Column.AsObject>,
+  }
+}
+
+export class SemVer extends jspb.Message {
+  getMajor(): number;
+  setMajor(value: number): SemVer;
+
+  getMinor(): number;
+  setMinor(value: number): SemVer;
+
+  getPatch(): number;
+  setPatch(value: number): SemVer;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SemVer.AsObject;
+  static toObject(includeInstance: boolean, msg: SemVer): SemVer.AsObject;
+  static serializeBinaryToWriter(message: SemVer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SemVer;
+  static deserializeBinaryFromReader(message: SemVer, reader: jspb.BinaryReader): SemVer;
+}
+
+export namespace SemVer {
+  export type AsObject = {
+    major: number,
+    minor: number,
+    patch: number,
   }
 }
 

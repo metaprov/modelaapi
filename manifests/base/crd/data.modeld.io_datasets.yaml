@@ -121,6 +121,16 @@ spec:
                 description: If true, a dataset report should be generated for this
                   dataset.
                 type: boolean
+              syntacticRows:
+                default: 0
+                description: If syntactic is true, indicates how many rows to generate
+                format: int32
+                type: integer
+              syntatic:
+                default: false
+                description: Syntactic indicates if we want to generate this dataset
+                  based on the data source
+                type: boolean
               validate:
                 default: true
                 description: If true, we should validate the dataset

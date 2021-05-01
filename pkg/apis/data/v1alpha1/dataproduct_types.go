@@ -185,7 +185,7 @@ type KPI struct {
 
 // Semver is used when generating model version
 type SemVer struct {
-	Major *int32 `json:"major,omitempty" protobuf:"bytes,1,opt,name=major"`
-	Minor *int32 `json:"minor,omitempty" protobuf:"bytes,1,opt,name=minor"`
-	Patch *int32 `json:"patch,omitempty" protobuf:"bytes,1,opt,name=patch"`
+	Major *int32 `json:"major,omitempty" protobuf:"varint,1,opt,name=major"`
+	Minor *int32 `json:"minor,omitempty" protobuf:"varint,2,opt,name=minor"`
+	Patch *int32 `json:"patch,omitempty" protobuf:"varint,3,opt,name=patch"`
 }

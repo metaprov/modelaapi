@@ -253,6 +253,11 @@ spec:
                         description: Columns
                         items:
                           properties:
+                            DefaultValueNum:
+                              description: The following attribute concern with syntatic
+                                data and validation DefaultValueNum is the default
+                                value for numbers
+                              type: number
                             datatype:
                               description: Type specify the data type of the attribute
                                 required
@@ -347,6 +352,11 @@ spec:
                               description: Label should be true if this attribute
                                 is the predictable target Default is false
                               type: boolean
+                            log:
+                              default: false
+                              description: Log if true, values from this column will
+                                be sampled on logaritmic scale
+                              type: boolean
                             maxItems:
                               default: 0
                               description: Max Items in the data in case of a list
@@ -378,6 +388,10 @@ spec:
                             minimum:
                               default: 0
                               description: MinimumFloat
+                              type: number
+                            mu:
+                              default: 0
+                              description: Mu is the mean of the normal distribution
                               type: number
                             multipleOf:
                               default: 0
@@ -414,6 +428,11 @@ spec:
                               default: false
                               description: Required
                               type: boolean
+                            sigma:
+                              default: 0
+                              description: Sigma is the standard deviation of the
+                                distribution
+                              type: number
                             timeColumn:
                               default: false
                               description: TimeColumn is true if this column is used

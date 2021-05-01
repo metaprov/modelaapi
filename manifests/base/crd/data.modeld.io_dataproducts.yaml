@@ -67,6 +67,19 @@ spec:
           spec:
             description: DataProductSpec defines the desired state of a data product
             properties:
+              currentModelVersion:
+                description: Current Model Version is used
+                properties:
+                  major:
+                    format: int32
+                    type: integer
+                  minor:
+                    format: int32
+                    type: integer
+                  patch:
+                    format: int32
+                    type: integer
+                type: object
               dataLocation:
                 description: This folder contain the root location for all the artifacts
                   from the product.

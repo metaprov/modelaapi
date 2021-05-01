@@ -186,6 +186,25 @@ message Column {
   // +kubebuilder:validation:Optional
   // PreservePrivacy is true if the column content should not be exposed due to privacy concerns
   optional bool preservePrivacy = 28;
+
+  // The following attribute concern with syntatic data and validation
+  // DefaultValueNum is the default value for numbers
+  optional double defaultValueNum = 29;
+
+  // Log if true, values from this column will be sampled on logaritmic scale
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool log = 30;
+
+  // Mu is the mean of the normal distribution
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double mu = 31;
+
+  // Sigma is the standard deviation of the distribution
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double sigma = 32;
 }
 
 // Hold the statistical parameters about a single attribute
@@ -615,6 +634,10 @@ message DataProductSpec {
   // KPIs is the product kpi. This is for information porpose
   // +kubebuilder:validation:Optional
   repeated KPI kpis = 15;
+
+  // Current Model Version is used
+  // +kubebuilder:validation:Optional
+  optional SemVer currentModelVersion = 16;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -908,24 +931,34 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool labeled = 10;
 
+  // Syntactic indicates if we want to generate this dataset based on the data source
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool syntatic = 11;
+
+  // If syntactic is true, indicates how many rows to generate
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 syntacticRows = 12;
+
   // Define the data location. The operator will copy the data from this location into the live location.
   // The datafiles are initially uploaded to this location.
   // +kubebuilder:validation:Optional
-  optional DataLocation origin = 12;
+  optional DataLocation origin = 13;
 
   // Folder of the actual data resides.
   // +kubebuilder:validation:Required
-  optional DataLocation location = 13;
+  optional DataLocation location = 14;
 
   // A reference to the workload class this is used to analyze the workload
   // +kubebuilder:default:="default-data-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 14;
+  optional string workloadClassName = 15;
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 15;
+  optional int64 activeDeadlineSeconds = 16;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -2093,6 +2126,15 @@ message Schema {
 
   // Columns
   repeated Column columns = 2;
+}
+
+// Semver is used when generating model version
+message SemVer {
+  optional int32 major = 1;
+
+  optional int32 minor = 2;
+
+  optional int32 patch = 3;
 }
 
 // Signatures contains the sha256 signatures of the datasets
