@@ -74,39 +74,42 @@ type ModelPipelineSpec struct {
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
 	Capacity *CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
-	// Prod stage define how to place the model into production.
+	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
-	Prod *ProdStageSpec `json:"prod,omitempty" protobuf:"bytes,9,opt,name=prod"`
+	Deployment *DeploymentStageSpec `json:"deployment,omitempty" protobuf:"bytes,9,opt,name=deployment"`
+	// Deployment stage define how to place the model into production.
+	// +kubebuilder:validation:Optional
+	Release *ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,10,opt,name=release"`
 	// Monitoring stage define how to monitor the model in production
 	// +kubebuilder:validation:Optional
-	Monitoring *MonitoringStageSpec `json:"monitoring,omitempty" protobuf:"bytes,10,opt,name=monitoring"`
+	Monitoring *MonitoringStageSpec `json:"monitoring,omitempty" protobuf:"bytes,11,opt,name=monitoring"`
 	// Labeling stage define how to sample and label live data for retraining
 	// +kubebuilder:validation:Optional
-	Labeling *LabelingStageSpec `json:"labeling,omitempty" protobuf:"bytes,11,opt,name=labeling"`
+	Labeling *LabelingStageSpec `json:"labeling,omitempty" protobuf:"bytes,12,opt,name=labeling"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,12,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,13,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,14,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,15,opt,name=owner"`
 	// ApproverAccountName is the name of the approver for stages that need approvals.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,15,opt,name=approverAccountName"`
+	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,16,opt,name=approverAccountName"`
 	// NotifierName is the name of the notifier to use in case of pipeline failure
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,16,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,17,opt,name=notifierName"`
 	// BaselineModelName is the name of the model which is used to compare with this pipeline results.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,17,opt,name=baselineModelName"`
+	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,18,opt,name=baselineModelName"`
 }
 
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.
@@ -213,8 +216,27 @@ type CapacityStageSpec struct {
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
 
-//ProdStageSpec define the testing and relesing the resulting model to production.
-type ProdStageSpec struct {
+//DeploymentStageSpec define the testing and relesing the resulting model to production.
+type DeploymentStageSpec struct {
+	// Enabled indicates that we want to release the model into production
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
+	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
+	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
+	// By default a user is needed to apporve the release to production
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
+	// Tests is the specification of tests to run in this stage
+	// +kubebuilder:validation:Optional
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+}
+
+type ReleaseStageSpec struct {
 	// Enabled indicates that we want to release the model into production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

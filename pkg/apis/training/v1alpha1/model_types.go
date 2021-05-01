@@ -33,7 +33,7 @@ const (
 	ModelPhaseForecasted      ModelPhase = "Forecasted"
 	ModelPhaseFailedForecast  ModelPhase = "FailedForecast"
 	ModelPhaseUat             ModelPhase = "UAT"
-	ModelPhaseProd            ModelPhase = "Prod"
+	ModelPhaseProd            ModelPhase = "Deployment"
 	ModelPhaseStale           ModelPhase = "Stale"
 	ModelPhaseMaintaince      ModelPhase = "Maintainance"
 	ModelPhaseRetired         ModelPhase = "Retired"
@@ -73,7 +73,7 @@ const (
 	// The model is under testing
 	ModelUat ModelConditionType = "UAT"
 	// The model is in production
-	ModelProd ModelConditionType = "Prod"
+	ModelProd ModelConditionType = "Deployment"
 	// The model is stale
 	ModelStale ModelConditionType = "Stale"
 	// The model is in maintance
