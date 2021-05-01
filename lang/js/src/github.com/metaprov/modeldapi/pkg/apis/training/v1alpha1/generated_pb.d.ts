@@ -367,6 +367,38 @@ export namespace DeepEstimatorSpec {
   }
 }
 
+export class DeploymentStageSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): DeploymentStageSpec;
+
+  getServingsitename(): string;
+  setServingsitename(value: string): DeploymentStageSpec;
+
+  getManualapproval(): boolean;
+  setManualapproval(value: boolean): DeploymentStageSpec;
+
+  getTestsList(): Array<Expectation>;
+  setTestsList(value: Array<Expectation>): DeploymentStageSpec;
+  clearTestsList(): DeploymentStageSpec;
+  addTests(value?: Expectation, index?: number): Expectation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeploymentStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DeploymentStageSpec): DeploymentStageSpec.AsObject;
+  static serializeBinaryToWriter(message: DeploymentStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeploymentStageSpec;
+  static deserializeBinaryFromReader(message: DeploymentStageSpec, reader: jspb.BinaryReader): DeploymentStageSpec;
+}
+
+export namespace DeploymentStageSpec {
+  export type AsObject = {
+    enabled: boolean,
+    servingsitename: string,
+    manualapproval: boolean,
+    testsList: Array<Expectation.AsObject>,
+  }
+}
+
 export class DimensionValue extends jspb.Message {
   getKey(): string;
   setKey(value: string): DimensionValue;
@@ -1434,10 +1466,15 @@ export class ModelPipelineRunStatus extends jspb.Message {
   hasCapacitystatus(): boolean;
   clearCapacitystatus(): ModelPipelineRunStatus;
 
-  getProdstatus(): ModelPipelineRunStageStatus | undefined;
-  setProdstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
-  hasProdstatus(): boolean;
-  clearProdstatus(): ModelPipelineRunStatus;
+  getDeploymentstatus(): ModelPipelineRunStageStatus | undefined;
+  setDeploymentstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasDeploymentstatus(): boolean;
+  clearDeploymentstatus(): ModelPipelineRunStatus;
+
+  getReleasestatus(): ModelPipelineRunStageStatus | undefined;
+  setReleasestatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
+  hasReleasestatus(): boolean;
+  clearReleasestatus(): ModelPipelineRunStatus;
 
   getMonitoringstatus(): ModelPipelineRunStageStatus | undefined;
   setMonitoringstatus(value?: ModelPipelineRunStageStatus): ModelPipelineRunStatus;
@@ -1491,7 +1528,8 @@ export namespace ModelPipelineRunStatus {
     trainingstatus?: ModelPipelineRunStageStatus.AsObject,
     uatstatus?: ModelPipelineRunStageStatus.AsObject,
     capacitystatus?: ModelPipelineRunStageStatus.AsObject,
-    prodstatus?: ModelPipelineRunStageStatus.AsObject,
+    deploymentstatus?: ModelPipelineRunStageStatus.AsObject,
+    releasestatus?: ModelPipelineRunStageStatus.AsObject,
     monitoringstatus?: ModelPipelineRunStageStatus.AsObject,
     labelingstatus?: ModelPipelineRunStageStatus.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -1533,10 +1571,15 @@ export class ModelPipelineSpec extends jspb.Message {
   hasCapacity(): boolean;
   clearCapacity(): ModelPipelineSpec;
 
-  getProd(): ProdStageSpec | undefined;
-  setProd(value?: ProdStageSpec): ModelPipelineSpec;
-  hasProd(): boolean;
-  clearProd(): ModelPipelineSpec;
+  getDeployment(): DeploymentStageSpec | undefined;
+  setDeployment(value?: DeploymentStageSpec): ModelPipelineSpec;
+  hasDeployment(): boolean;
+  clearDeployment(): ModelPipelineSpec;
+
+  getRelease(): ReleaseStageSpec | undefined;
+  setRelease(value?: ReleaseStageSpec): ModelPipelineSpec;
+  hasRelease(): boolean;
+  clearRelease(): ModelPipelineSpec;
 
   getMonitoring(): MonitoringStageSpec | undefined;
   setMonitoring(value?: MonitoringStageSpec): ModelPipelineSpec;
@@ -1587,7 +1630,8 @@ export namespace ModelPipelineSpec {
     training?: TrainingStageSpec.AsObject,
     uat?: UATStageSpec.AsObject,
     capacity?: CapacityStageSpec.AsObject,
-    prod?: ProdStageSpec.AsObject,
+    deployment?: DeploymentStageSpec.AsObject,
+    release?: ReleaseStageSpec.AsObject,
     monitoring?: MonitoringStageSpec.AsObject,
     labeling?: LabelingStageSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -2617,38 +2661,38 @@ export namespace PreprocessingSpec {
   }
 }
 
-export class ProdStageSpec extends jspb.Message {
+export class ReleaseStageSpec extends jspb.Message {
   getEnabled(): boolean;
-  setEnabled(value: boolean): ProdStageSpec;
+  setEnabled(value: boolean): ReleaseStageSpec;
 
   getServingsitename(): string;
-  setServingsitename(value: string): ProdStageSpec;
+  setServingsitename(value: string): ReleaseStageSpec;
 
   getPredictorname(): string;
-  setPredictorname(value: string): ProdStageSpec;
+  setPredictorname(value: string): ReleaseStageSpec;
 
   getTemplate(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec | undefined;
-  setTemplate(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec): ProdStageSpec;
+  setTemplate(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec): ReleaseStageSpec;
   hasTemplate(): boolean;
-  clearTemplate(): ProdStageSpec;
+  clearTemplate(): ReleaseStageSpec;
 
   getManualapproval(): boolean;
-  setManualapproval(value: boolean): ProdStageSpec;
+  setManualapproval(value: boolean): ReleaseStageSpec;
 
   getTestsList(): Array<Expectation>;
-  setTestsList(value: Array<Expectation>): ProdStageSpec;
-  clearTestsList(): ProdStageSpec;
+  setTestsList(value: Array<Expectation>): ReleaseStageSpec;
+  clearTestsList(): ReleaseStageSpec;
   addTests(value?: Expectation, index?: number): Expectation;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProdStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ProdStageSpec): ProdStageSpec.AsObject;
-  static serializeBinaryToWriter(message: ProdStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProdStageSpec;
-  static deserializeBinaryFromReader(message: ProdStageSpec, reader: jspb.BinaryReader): ProdStageSpec;
+  toObject(includeInstance?: boolean): ReleaseStageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ReleaseStageSpec): ReleaseStageSpec.AsObject;
+  static serializeBinaryToWriter(message: ReleaseStageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReleaseStageSpec;
+  static deserializeBinaryFromReader(message: ReleaseStageSpec, reader: jspb.BinaryReader): ReleaseStageSpec;
 }
 
-export namespace ProdStageSpec {
+export namespace ReleaseStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,

@@ -257,6 +257,29 @@ message DeepEstimatorSpec {
   optional string loss = 8;
 }
 
+// DeploymentStageSpec define the testing and relesing the resulting model to production.
+message DeploymentStageSpec {
+  // Enabled indicates that we want to release the model into production
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
+  optional string servingSiteName = 2;
+
+  // ManualApproval dentoes if we need manual approval before advancing from deployed to released
+  // By default a user is needed to apporve the release to production
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool manualApproval = 3;
+
+  // Tests is the specification of tests to run in this stage
+  // +kubebuilder:validation:Optional
+  repeated Expectation tests = 4;
+}
+
 // DimensionValue specify the partition key values are used for the partition
 message DimensionValue {
   // Key is the partition key
@@ -919,39 +942,43 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional ModelPipelineRunStageStatus capacityStatus = 8;
 
-  // ProdStatus is the status for the prod stage
+  // DeploymentStatus is the status for the prod stage
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus prodStatus = 9;
+  optional ModelPipelineRunStageStatus deploymentStatus = 9;
+
+  // DeploymentStatus is the status for the prod stage
+  // +kubebuilder:validation:Optional
+  optional ModelPipelineRunStageStatus releaseStatus = 10;
 
   // Monitoring status is the status of the monitor phase.
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus monitoringStatus = 10;
+  optional ModelPipelineRunStageStatus monitoringStatus = 11;
 
   // Labeling status if the status of the labeling process
   // +kubebuilder:validation:Optional
-  optional ModelPipelineRunStageStatus labelingStatus = 11;
+  optional ModelPipelineRunStageStatus labelingStatus = 12;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 12;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 13;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 14;
 
   // The phase of the pipeline run
   // +kubebuilder:validation:Optional
-  optional string phase = 14;
+  optional string phase = 15;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 15;
+  optional int64 observedGeneration = 16;
 
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 16;
+  repeated ModelPipelineRunCondition conditions = 17;
 
   // Folder for pipeline run artifacts. This is assigned by the system
   // The folder contains all the pipeline artifacts - metadata, logs
   // +kubebuilder:validation:Optional
-  optional string evalMetrics = 17;
+  optional string evalMetrics = 18;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -986,47 +1013,51 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional CapacityStageSpec capacity = 8;
 
-  // Prod stage define how to place the model into production.
+  // Deployment stage define how to place the model into production.
   // +kubebuilder:validation:Optional
-  optional ProdStageSpec prod = 9;
+  optional DeploymentStageSpec deployment = 9;
+
+  // Deployment stage define how to place the model into production.
+  // +kubebuilder:validation:Optional
+  optional ReleaseStageSpec release = 10;
 
   // Monitoring stage define how to monitor the model in production
   // +kubebuilder:validation:Optional
-  optional MonitoringStageSpec monitoring = 10;
+  optional MonitoringStageSpec monitoring = 11;
 
   // Labeling stage define how to sample and label live data for retraining
   // +kubebuilder:validation:Optional
-  optional LabelingStageSpec labeling = 11;
+  optional LabelingStageSpec labeling = 12;
 
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 12;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 13;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 13;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 14;
 
   // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 14;
+  optional string owner = 15;
 
   // ApproverAccountName is the name of the approver for stages that need approvals.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string approverAccountName = 15;
+  optional string approverAccountName = 16;
 
   // NotifierName is the name of the notifier to use in case of pipeline failure
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 16;
+  optional string notifierName = 17;
 
   // BaselineModelName is the name of the model which is used to compare with this pipeline results.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
-  optional string baselineModelName = 17;
+  optional string baselineModelName = 18;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -1731,8 +1762,7 @@ message PreprocessingSpec {
   optional bool imbalanced = 10;
 }
 
-// ProdStageSpec define the testing and relesing the resulting model to production.
-message ProdStageSpec {
+message ReleaseStageSpec {
   // Enabled indicates that we want to release the model into production
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional

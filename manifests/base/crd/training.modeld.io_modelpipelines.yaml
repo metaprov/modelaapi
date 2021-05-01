@@ -173,6 +173,86 @@ spec:
                   type: string
                 description: DatasetSelector is used to select dataset for training
                 type: object
+              deployment:
+                description: Deployment stage define how to place the model into production.
+                properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that we want to release the model
+                      into production
+                    type: boolean
+                  manualApproval:
+                    default: true
+                    description: ManualApproval dentoes if we need manual approval
+                      before advancing from deployed to released By default a user
+                      is needed to apporve the release to production
+                    type: boolean
+                  servingSiteName:
+                    description: ServingSiteName is the serving site for the release,
+                      if empty, the system will use the default serving site name
+                    type: string
+                  tests:
+                    description: Tests is the specification of tests to run in this
+                      stage
+                    items:
+                      properties:
+                        datasetName:
+                          description: DatasetName is the name of the test dataset.
+                          type: string
+                        metric:
+                          description: Metric is the name of the metric
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        op:
+                          description: Op is the operator used during comparison
+                          type: string
+                        score:
+                          description: Score is the expected score
+                          type: number
+                      type: object
+                    type: array
+                type: object
               description:
                 description: User provided description
                 type: string
@@ -300,8 +380,8 @@ spec:
                 description: The owner of the run, set to the owner of the pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-              prod:
-                description: Prod stage define how to place the model into production.
+              release:
+                description: Deployment stage define how to place the model into production.
                 properties:
                   enabled:
                     default: true
