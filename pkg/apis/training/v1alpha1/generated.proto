@@ -278,6 +278,11 @@ message DeploymentStageSpec {
   // Tests is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
   repeated Expectation tests = 4;
+
+  // A reference to the workload class that is used for running the test prediction
+  // +kubebuilder:default:="default-inference-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 5;
 }
 
 // DimensionValue specify the partition key values are used for the partition
@@ -1791,6 +1796,11 @@ message ReleaseStageSpec {
   // Tests is the List of expectation run against the deployed model before moving production traffic to the model
   // +kubebuilder:validation:Optional
   repeated Expectation tests = 6;
+
+  // A reference to the workload class that is used for running the release
+  // +kubebuilder:default:="default-inference-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 7;
 }
 
 // +kubebuilder:object:root=true

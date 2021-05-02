@@ -9976,7 +9976,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     health: (f = msg.getHealth()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorHealth.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     statusesList: jspb.Message.toObjectList(msg.getStatusesList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus.toObject, includeInstance),
+    prevmodel: (f = msg.getPrevmodel()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10049,6 +10050,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus.deserializeBinaryFromReader);
       msg.addStatuses(value);
+      break;
+    case 9:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.deserializeBinaryFromReader);
+      msg.setPrevmodel(value);
       break;
     default:
       reader.skipField();
@@ -10138,6 +10144,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       8,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getPrevmodel();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.serializeBinaryToWriter
     );
   }
 };
@@ -10436,6 +10450,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearStatusesList = function() {
   return this.setStatusesList([]);
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec prevModel = 9;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getPrevmodel = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setPrevmodel = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearPrevmodel = function() {
+  return this.setPrevmodel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasPrevmodel = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

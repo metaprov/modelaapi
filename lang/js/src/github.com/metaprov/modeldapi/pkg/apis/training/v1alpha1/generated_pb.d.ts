@@ -382,6 +382,9 @@ export class DeploymentStageSpec extends jspb.Message {
   clearTestsList(): DeploymentStageSpec;
   addTests(value?: Expectation, index?: number): Expectation;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): DeploymentStageSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DeploymentStageSpec): DeploymentStageSpec.AsObject;
@@ -396,6 +399,7 @@ export namespace DeploymentStageSpec {
     servingsitename: string,
     manualapproval: boolean,
     testsList: Array<Expectation.AsObject>,
+    workloadclassname: string,
   }
 }
 
@@ -2684,6 +2688,9 @@ export class ReleaseStageSpec extends jspb.Message {
   clearTestsList(): ReleaseStageSpec;
   addTests(value?: Expectation, index?: number): Expectation;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): ReleaseStageSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReleaseStageSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReleaseStageSpec): ReleaseStageSpec.AsObject;
@@ -2700,6 +2707,7 @@ export namespace ReleaseStageSpec {
     template?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
     testsList: Array<Expectation.AsObject>,
+    workloadclassname: string,
   }
 }
 

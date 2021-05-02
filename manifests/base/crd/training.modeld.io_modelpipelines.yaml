@@ -252,6 +252,11 @@ spec:
                           type: number
                       type: object
                     type: array
+                  workloadClassName:
+                    default: default-inference-workload-class
+                    description: A reference to the workload class that is used for
+                      running the test prediction
+                    type: string
                 type: object
               description:
                 description: User provided description
@@ -526,6 +531,11 @@ spec:
                           type: number
                       type: object
                     type: array
+                  workloadClassName:
+                    default: default-inference-workload-class
+                    description: A reference to the workload class that is used for
+                      running the release
+                    type: string
                 type: object
               schedule:
                 description: Schedule for running the pipeline

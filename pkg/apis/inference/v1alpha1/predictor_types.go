@@ -234,6 +234,9 @@ type PredictorStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
 	// The channels
 	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,8,opt,name=statuses"`
+	// Prev model spec stores the prev working model, The field is used in case of a roll back
+	//+kubebuilder:validation:Optional
+	PrevModelSpec *catalog.ModelDeploymentSpec `json:"prevModel,omitempty" protobuf:"bytes,9,opt,name=prevModel"`
 }
 
 type PredictorHealth struct {

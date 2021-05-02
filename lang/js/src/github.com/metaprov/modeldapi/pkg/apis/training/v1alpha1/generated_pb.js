@@ -5310,7 +5310,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSp
     servingsitename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     manualapproval: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.toObject, includeInstance),
+    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5363,6 +5364,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSp
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.deserializeBinaryFromReader);
       msg.addTests(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -5420,6 +5425,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSp
       4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -5568,6 +5580,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.clearTestsList = function() {
   return this.setTestsList([]);
+};
+
+
+/**
+ * optional string workloadClassName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -26753,7 +26801,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
     template: (f = msg.getTemplate()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f),
     manualapproval: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     testsList: jspb.Message.toObjectList(msg.getTestsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.toObject, includeInstance),
+    workloadclassname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -26815,6 +26864,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.deserializeBinaryFromReader);
       msg.addTests(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -26887,6 +26940,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
       6,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -27108,6 +27168,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.clearTestsList = function() {
   return this.setTestsList([]);
+};
+
+
+/**
+ * optional string workloadClassName = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

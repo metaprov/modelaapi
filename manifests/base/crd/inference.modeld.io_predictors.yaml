@@ -7208,6 +7208,67 @@ spec:
                   on
                 format: int64
                 type: integer
+              prevModel:
+                description: Prev model spec stores the prev working model, The field
+                  is used in case of a roll back
+                properties:
+                  canary:
+                    description: 'Canary denotes if this deployment is staged release.
+                      A staged release will serve traffic in incerements Default:
+                      false'
+                    type: boolean
+                  canaryMetrics:
+                    description: 'If the deployment is canary, the metric define how
+                      to evaluate the canary. Default: none'
+                    items:
+                      description: CanaryMetric is used when testing the canary
+                      enum:
+                      - cpu
+                      - mem
+                      - latency
+                      - crash
+                      type: string
+                    type: array
+                  deployed:
+                    description: 'a deployed model is a model whose containers are
+                      up, but does not serve production traffic. Default: false'
+                    type: boolean
+                  maxTraffic:
+                    description: 'How much traffic this deployment model should serve.
+                      Default: 100.'
+                    format: int32
+                    maximum: 100
+                    minimum: 0
+                    type: integer
+                  modelName:
+                    description: ModelName is the name of the model. The name must
+                      be unique within
+                    type: string
+                  modelVersion:
+                    description: The version of the model. Note that a single predictor
+                      might serve different models
+                    type: string
+                  released:
+                    description: 'A released model is a model that should serve production
+                      traffic. Default: false'
+                    type: boolean
+                  shadow:
+                    description: 'Shadow denotes if the model is running in shadow
+                      mode. a shadow model face the production traffic, however, the
+                      predictions are not served back to the client Default: false'
+                    type: boolean
+                  traffic:
+                    description: 'Traffic is the current amount of production traffic
+                      served by this model. Default: 100.'
+                    format: int32
+                    maximum: 100
+                    minimum: 0
+                    type: integer
+                  trafficSelector:
+                    description: TrafficSelector is a filter on the traffic to this
+                      model
+                    type: string
+                type: object
               statuses:
                 description: The channels
                 items:

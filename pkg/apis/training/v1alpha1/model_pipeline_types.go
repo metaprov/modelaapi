@@ -234,6 +234,10 @@ type DeploymentStageSpec struct {
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
 	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	// A reference to the workload class that is used for running the test prediction
+	// +kubebuilder:default:="default-inference-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
 
 type ReleaseStageSpec struct {
@@ -260,6 +264,10 @@ type ReleaseStageSpec struct {
 	// Tests is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
 	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+	// A reference to the workload class that is used for running the release
+	// +kubebuilder:default:="default-inference-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,7,opt,name=workloadClassName"`
 }
 
 // MonitoringStageSpec specify how the models are monitored in production

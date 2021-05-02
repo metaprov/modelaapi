@@ -1063,6 +1063,11 @@ export class PredictorStatus extends jspb.Message {
   clearStatusesList(): PredictorStatus;
   addStatuses(value?: ChannelStatus, index?: number): ChannelStatus;
 
+  getPrevmodel(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec | undefined;
+  setPrevmodel(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec): PredictorStatus;
+  hasPrevmodel(): boolean;
+  clearPrevmodel(): PredictorStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorStatus): PredictorStatus.AsObject;
@@ -1081,6 +1086,7 @@ export namespace PredictorStatus {
     health?: PredictorHealth.AsObject,
     observedgeneration: number,
     statusesList: Array<ChannelStatus.AsObject>,
+    prevmodel?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
   }
 }
 
