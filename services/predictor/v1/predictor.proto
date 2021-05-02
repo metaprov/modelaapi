@@ -52,6 +52,16 @@ message DeletePredictorResponse {
 
 }
 
+message RollbackRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message RollbackResponse {
+
+}
+
+
 message PredictOneRequest {
     string namespace = 1;
     string name      = 2;
@@ -90,6 +100,14 @@ service PredictorService {
 			body: "*"
 		};
     }
+
+    rpc RollBack(RollbackRequest) returns (RollbackResponse) {
+        option (google.api.http) = {
+			post: "/v1/predictors/{predictor.metadata.name}:rollback"
+			body: "*"
+		};
+    }
+
 
     rpc DeletePredictor(DeletePredictorRequest) returns (DeletePredictorResponse) {
         option (google.api.http).delete = "/v1/predictors/{name}";

@@ -195,6 +195,46 @@ export class PredictorServiceClient {
     this.methodInfoUpdatePredictor);
   }
 
+  methodInfoRollBack = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackResponse,
+    (request: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackResponse.deserializeBinary
+  );
+
+  rollBack(
+    request: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackResponse>;
+
+  rollBack(
+    request: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackResponse>;
+
+  rollBack(
+    request: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.RollbackResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack',
+        request,
+        metadata || {},
+        this.methodInfoRollBack,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack',
+    request,
+    metadata || {},
+    this.methodInfoRollBack);
+  }
+
   methodInfoDeletePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.DeletePredictorResponse,
     (request: github_com_metaprov_modeldapi_services_predictor_v1_predictor_pb.DeletePredictorRequest) => {

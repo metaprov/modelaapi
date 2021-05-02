@@ -196,6 +196,42 @@ export namespace DeletePredictorResponse {
   }
 }
 
+export class RollbackRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): RollbackRequest;
+
+  getName(): string;
+  setName(value: string): RollbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RollbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RollbackRequest): RollbackRequest.AsObject;
+  static serializeBinaryToWriter(message: RollbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RollbackRequest;
+  static deserializeBinaryFromReader(message: RollbackRequest, reader: jspb.BinaryReader): RollbackRequest;
+}
+
+export namespace RollbackRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class RollbackResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RollbackResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RollbackResponse): RollbackResponse.AsObject;
+  static serializeBinaryToWriter(message: RollbackResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RollbackResponse;
+  static deserializeBinaryFromReader(message: RollbackResponse, reader: jspb.BinaryReader): RollbackResponse;
+}
+
+export namespace RollbackResponse {
+  export type AsObject = {
+  }
+}
+
 export class PredictOneRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): PredictOneRequest;

@@ -34,6 +34,11 @@ class PredictorServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.FromString,
                 )
+        self.RollBack = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.FromString,
+                )
         self.DeletePredictor = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.SerializeToString,
@@ -73,6 +78,12 @@ class PredictorServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RollBack(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeletePredictor(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -107,6 +118,11 @@ def add_PredictorServiceServicer_to_server(servicer, server):
                     servicer.UpdatePredictor,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.SerializeToString,
+            ),
+            'RollBack': grpc.unary_unary_rpc_method_handler(
+                    servicer.RollBack,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.SerializeToString,
             ),
             'DeletePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePredictor,
@@ -193,6 +209,23 @@ class PredictorService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RollBack(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
