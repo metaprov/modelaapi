@@ -196,10 +196,9 @@ type SemVer struct {
 	Patch *int32 `json:"patch,omitempty" protobuf:"varint,3,opt,name=patch"`
 }
 
-
-type Attachment string {
+type Attachment struct {
 	// Name is the name of the attachment.
-	Name string  `json:"name,omitempty" protobuf:"varint,1,opt,name=major"`
+	Name string `json:"name,omitempty" protobuf:"varint,1,opt,name=major"`
 	// Description is the description of the attachment
 	Description *string `json:"description,omitempty" protobuf:"varint,2,opt,name=description"`
 	// Location is the location of the attachment
