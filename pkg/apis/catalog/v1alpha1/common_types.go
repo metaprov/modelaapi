@@ -59,6 +59,8 @@ const (
 	MergeForecastTask     TaskName = "merge-forecast"
 	PartitionForecastTask TaskName = "partition-forecast"
 	SplitDatasetToRungs   TaskName = "split-dataset-to-rungs"
+	CompileTask           TaskName = "compile-model"
+	GenerateDataset       TaskName = "generate-dataset"
 )
 
 // ApiKeyName is the secret or in env variable
