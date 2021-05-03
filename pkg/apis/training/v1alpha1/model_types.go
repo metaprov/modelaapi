@@ -337,6 +337,12 @@ type ModelStatus struct {
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
+	// Python version is the result of python vewrsion call.
+	// +kubebuilder:validation:Optional
+	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,24,opt,name=pythonVersion"`
+	// Python packages is the result of running pip freeze
+	// +kubebuilder:validation:Optional
+	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,25,opt,name=pythonPackages"`
 	// TrainDatasetLocation is the location of the train dataset
 	// +kubebuilder:validation:Optional
 	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,25,opt,name=trainDataset"`
