@@ -1422,30 +1422,38 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string forecastUri = 24;
 
+  // Python version is the result of python vewrsion call.
+  // +kubebuilder:validation:Optional
+  optional string pythonVersion = 25;
+
+  // Python packages is the result of running pip freeze
+  // +kubebuilder:validation:Optional
+  map<string, string> pythonPackages = 26;
+
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 25;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 27;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 26;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 28;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 27;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 29;
 
   // ResourceConsumed is the avg resource consumed during the training of the model
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption resourceConsumed = 28;
+  optional ResourceConsumption resourceConsumed = 30;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 29;
+  optional int64 observedGeneration = 31;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 30;
+  repeated ModelCondition conditions = 32;
 }
 
 // Model Test Result holds the results for a single metric on a single dataset

@@ -67,8 +67,24 @@ spec:
           spec:
             description: DataProductSpec defines the desired state of a data product
             properties:
+              attachments:
+                description: List of documents attached to the this data product
+                items:
+                  description: data reference contain pointers to the actual data
+                    objects
+                  properties:
+                    bucketName:
+                      type: string
+                    path:
+                      description: Path to the full data file (e.g. csv file).
+                      type: string
+                  required:
+                  - bucketName
+                  - path
+                  type: object
+                type: array
               currentModelVersion:
-                description: Current Model Version is used
+                description: Semver counter that is used when generating new models
                 properties:
                   major:
                     format: int32
@@ -162,6 +178,9 @@ spec:
                 default: ""
                 description: the notifier selector select the notifier for events
                   that occur in the product life cycle.
+                type: string
+              onCallAccountName:
+                description: OnCallAccountName is the name of the account on call.
                 type: string
               owner:
                 description: The data product owner

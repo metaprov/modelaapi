@@ -1092,6 +1092,14 @@ spec:
                 description: ProfileUri is a reference to the visualization uri which
                   were produce during processing
                 type: string
+              pythonPackages:
+                additionalProperties:
+                  type: string
+                description: Python packages is the result of running pip freeze
+                type: object
+              pythonVersion:
+                description: Python version is the result of python vewrsion call.
+                type: string
               reportName:
                 description: ReportName is a reference to the model report
                 type: string

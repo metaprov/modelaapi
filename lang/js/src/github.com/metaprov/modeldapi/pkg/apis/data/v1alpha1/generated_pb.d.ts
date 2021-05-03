@@ -55,6 +55,34 @@ export namespace ApiSpec {
   }
 }
 
+export class Attachment extends jspb.Message {
+  getMajor(): string;
+  setMajor(value: string): Attachment;
+
+  getDescription(): string;
+  setDescription(value: string): Attachment;
+
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): Attachment;
+  hasLocation(): boolean;
+  clearLocation(): Attachment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Attachment.AsObject;
+  static toObject(includeInstance: boolean, msg: Attachment): Attachment.AsObject;
+  static serializeBinaryToWriter(message: Attachment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Attachment;
+  static deserializeBinaryFromReader(message: Attachment, reader: jspb.BinaryReader): Attachment;
+}
+
+export namespace Attachment {
+  export type AsObject = {
+    major: string,
+    description: string,
+    location?: DataLocation.AsObject,
+  }
+}
+
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -873,6 +901,14 @@ export class DataProductSpec extends jspb.Message {
   hasCurrentmodelversion(): boolean;
   clearCurrentmodelversion(): DataProductSpec;
 
+  getOncallaccountname(): string;
+  setOncallaccountname(value: string): DataProductSpec;
+
+  getAttachmentsList(): Array<DataLocation>;
+  setAttachmentsList(value: Array<DataLocation>): DataProductSpec;
+  clearAttachmentsList(): DataProductSpec;
+  addAttachments(value?: DataLocation, index?: number): DataLocation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -898,6 +934,8 @@ export namespace DataProductSpec {
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
     currentmodelversion?: SemVer.AsObject,
+    oncallaccountname: string,
+    attachmentsList: Array<DataLocation.AsObject>,
   }
 }
 

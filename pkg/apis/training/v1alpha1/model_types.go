@@ -339,29 +339,29 @@ type ModelStatus struct {
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
 	// Python version is the result of python vewrsion call.
 	// +kubebuilder:validation:Optional
-	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,24,opt,name=pythonVersion"`
+	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,25,opt,name=pythonVersion"`
 	// Python packages is the result of running pip freeze
 	// +kubebuilder:validation:Optional
-	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,25,opt,name=pythonPackages"`
+	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,26,opt,name=pythonPackages"`
 	// TrainDatasetLocation is the location of the train dataset
 	// +kubebuilder:validation:Optional
-	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,25,opt,name=trainDataset"`
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,27,opt,name=trainDataset"`
 	// TestDatasetLocation is the location of the test dataset used to test this model
 	// +kubebuilder:validation:Optional
-	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,26,opt,name=testDataset"`
+	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,28,opt,name=testDataset"`
 	// ValidationDatasetLocation is the location of the dataset used for validation
 	// +kubebuilder:validation:Optional
-	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,27,opt,name=validationDataset"`
+	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,29,opt,name=validationDataset"`
 	//ResourceConsumed is the avg resource consumed during the training of the model
 	// +kubebuilder:validation:Optional
-	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,28,opt,name=resourceConsumed"`
+	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,30,opt,name=resourceConsumed"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,29,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,31,opt,name=observedGeneration"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,30,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

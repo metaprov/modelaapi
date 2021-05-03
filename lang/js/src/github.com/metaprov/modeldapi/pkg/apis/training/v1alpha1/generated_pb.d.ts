@@ -2018,6 +2018,12 @@ export class ModelStatus extends jspb.Message {
   getForecasturi(): string;
   setForecasturi(value: string): ModelStatus;
 
+  getPythonversion(): string;
+  setPythonversion(value: string): ModelStatus;
+
+  getPythonpackagesMap(): jspb.Map<string, string>;
+  clearPythonpackagesMap(): ModelStatus;
+
   getTraindataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setTraindataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelStatus;
   hasTraindataset(): boolean;
@@ -2080,6 +2086,8 @@ export namespace ModelStatus {
     imagename: string,
     importanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,
+    pythonversion: string,
+    pythonpackagesMap: Array<[string, string]>,
     traindataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
