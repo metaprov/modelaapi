@@ -153,9 +153,15 @@ type DataProductSpec struct {
 	// KPIs is the product kpi. This is for information porpose
 	//+kubebuilder:validation:Optional
 	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,opt,name=kpis"`
-	// Current Model Version is used
+	// Semver counter that is used when generating new models
 	//+kubebuilder:validation:Optional
 	CurrentModelVersion SemVer `json:"currentModelVersion,omitempty" protobuf:"bytes,16,opt,name=currentModelVersion"`
+	// OnCallAccountName is the name of the account on call.
+	//+kubebuilder:validation:Optional
+	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
+	// List of documents attached to the this data product
+	//+kubebuilder:validation:Optional
+	Attachments []DataLocation `json:"attachments,omitempty" protobuf:"bytes,18,opt,name=attachments"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -188,4 +194,14 @@ type SemVer struct {
 	Major *int32 `json:"major,omitempty" protobuf:"varint,1,opt,name=major"`
 	Minor *int32 `json:"minor,omitempty" protobuf:"varint,2,opt,name=minor"`
 	Patch *int32 `json:"patch,omitempty" protobuf:"varint,3,opt,name=patch"`
+}
+
+
+type Attachment string {
+	// Name is the name of the attachment.
+	Name string  `json:"name,omitempty" protobuf:"varint,1,opt,name=major"`
+	// Description is the description of the attachment
+	Description *string `json:"description,omitempty" protobuf:"varint,2,opt,name=description"`
+	// Location is the location of the attachment
+	Location DataLocation `json:"location,omitempty" protobuf:"varint,3,opt,name=location"`
 }
