@@ -183,6 +183,10 @@ func (dataset *Dataset) Reported() bool {
 	return dataset.GetCond(DatasetReported).Status == v1.ConditionTrue
 }
 
+func (dataset *Dataset) Generated() bool {
+	return dataset.GetCond(DatasetGenerated).Status == v1.ConditionTrue
+}
+
 // ----------------------------- Validation --------------------
 
 func (dataset *Dataset) MarkValidationFailed(msg string) {
@@ -242,6 +246,37 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 		Message: msg,
 	})
 	dataset.Status.Phase = DatasetPhaseIngestFailed
+}
+
+// -------------------- generating
+
+func (dataset *Dataset) MarkGenerting() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetGenerated,
+		Status: v1.ConditionFalse,
+		Reason: string(DatasetPhaseGenerating),
+	})
+	dataset.Status.Phase = DatasetPhaseGenerating
+
+}
+
+func (dataset *Dataset) MarkGenerated() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetGenerated,
+		Status: v1.ConditionTrue,
+	})
+	dataset.Status.Phase = DatasetPhaseGenSuccess
+
+}
+
+func (dataset *Dataset) MarkGeneratedFailed(msg string) {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:    DatasetGenerated,
+		Status:  v1.ConditionFalse,
+		Reason:  string(DatasetPhaseGenFailed),
+		Message: msg,
+	})
+	dataset.Status.Phase = DatasetPhaseGenFailed
 }
 
 // ------------------------- report

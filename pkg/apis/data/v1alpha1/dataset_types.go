@@ -8,6 +8,9 @@ import (
 type DatasetPhase string
 
 const (
+	DatasetPhaseGenerating        DatasetPhase = "Generating" // when generating
+	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when syntatic gen success
+	DatasetPhaseGenFailed         DatasetPhase = "GenFailed"  // when syntatic gen failed
 	DatasetPhaseIngestRunning     DatasetPhase = "IngestRunning"
 	DatasetPhaseIngestSuccess     DatasetPhase = "IngestSuccess"
 	DatasetPhaseIngestFailed      DatasetPhase = "IngestFailed"
@@ -33,6 +36,7 @@ const (
 	DatasetValidated DatasetConditionType = "Validated"
 	DatasetProfiled  DatasetConditionType = "Profiled"
 	DatasetIngested  DatasetConditionType = "Ingested"
+	DatasetGenerated DatasetConditionType = "Generated"
 	DatasetSaved     DatasetConditionType = "Saved"
 	DatasetArchived  DatasetConditionType = "Archived"
 	DatasetReady     DatasetConditionType = "Ready"
