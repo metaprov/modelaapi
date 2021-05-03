@@ -15,6 +15,7 @@ service TrainerdService {
     rpc Train (TrainRequest) returns (TrainResponse) {}
     rpc Forecast (ForecastRequest) returns (ForecastResponse) {}
     rpc Test (TestRequest) returns (TestResponse) {}
+    rpc Compile (CompileRequest) returns (CompileResponse) {}
     rpc TrainEnsemble (TrainEnsembleRequest) returns (TrainResponse) {}
     rpc TestEnsemble (TestEnsembleRequest) returns (TestResponse) {}
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
@@ -48,6 +49,29 @@ message TrainResponse {
     string labelEncoder = 5;
 
 }
+
+
+/////////////////////// compile model
+
+message CompileRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct        product   = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version   = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket        = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model          model   = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study          study   = 6;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource         datasource  = 7;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset            dataset = 8;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection    = 9;
+    map<string,bytes> secret = 10;
+}
+
+message CompileResponse {
+    // The location in the bucket of the trained bin model
+    string compiledModelUri = 1;  
+
+}
+
+
 
 
 //////////////////////////////////// Train

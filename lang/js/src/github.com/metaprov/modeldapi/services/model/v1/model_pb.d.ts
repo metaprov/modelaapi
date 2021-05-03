@@ -407,6 +407,52 @@ export namespace CompareModelsResponse {
   }
 }
 
+export class CompileModelRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): CompileModelRequest;
+
+  getNamesList(): Array<string>;
+  setNamesList(value: Array<string>): CompileModelRequest;
+  clearNamesList(): CompileModelRequest;
+  addNames(value: string, index?: number): CompileModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompileModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CompileModelRequest): CompileModelRequest.AsObject;
+  static serializeBinaryToWriter(message: CompileModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompileModelRequest;
+  static deserializeBinaryFromReader(message: CompileModelRequest, reader: jspb.BinaryReader): CompileModelRequest;
+}
+
+export namespace CompileModelRequest {
+  export type AsObject = {
+    namespace: string,
+    namesList: Array<string>,
+  }
+}
+
+export class CompileModelResponse extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): CompileModelResponse;
+
+  getNames(): string;
+  setNames(value: string): CompileModelResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompileModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CompileModelResponse): CompileModelResponse.AsObject;
+  static serializeBinaryToWriter(message: CompileModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompileModelResponse;
+  static deserializeBinaryFromReader(message: CompileModelResponse, reader: jspb.BinaryReader): CompileModelResponse;
+}
+
+export namespace CompileModelResponse {
+  export type AsObject = {
+    namespace: string,
+    names: string,
+  }
+}
+
 export class DeployModelRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeployModelRequest;

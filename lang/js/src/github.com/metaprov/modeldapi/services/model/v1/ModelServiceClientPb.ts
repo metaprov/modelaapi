@@ -635,5 +635,45 @@ export class ModelServiceClient {
     this.methodInfoCompareModels);
   }
 
+  methodInfoCompileModel = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse,
+    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse.deserializeBinary
+  );
+
+  compileModel(
+    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse>;
+
+  compileModel(
+    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse>;
+
+  compileModel(
+    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel',
+        request,
+        metadata || {},
+        this.methodInfoCompileModel,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel',
+    request,
+    metadata || {},
+    this.methodInfoCompileModel);
+  }
+
 }
 

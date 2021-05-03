@@ -99,6 +99,17 @@ message CompareModelsResponse {
     repeated github.com.metaprov.modeldapi.services.common.v1.ModelProfile profiles = 3;
 }
 
+message CompileModelRequest {
+    string namespace       = 1;
+    repeated string names  = 2;
+}
+
+message CompileModelResponse {
+    string namespace       = 1;
+    string names  = 2;    
+}
+
+
 
 
 message DeployModelRequest {
@@ -233,5 +244,9 @@ service ModelService {
 
     rpc CompareModels(CompareModelsRequest) returns (CompareModelsResponse) {
         option (google.api.http).post = "/api/v1/models/{model.metadata.name}:compare";
+    }
+
+    rpc CompileModel(CompileModelRequest) returns (CompileModelResponse) {
+        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:compile";
     }
 }

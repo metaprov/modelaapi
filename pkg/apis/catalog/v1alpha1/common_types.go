@@ -1149,7 +1149,9 @@ const (
 type CompilerName string
 
 const (
-	CompilerNameTVM CompilerName = "tvm"
+	CompilerNameTVM  CompilerName = "tvm"
+	CompilerNameOnyx CompilerName = "onyx"
+	CompilerNameXla  CompilerName = "xla"
 )
 
 // Measurement is a value for a specific metric
