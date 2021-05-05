@@ -198,9 +198,9 @@ type SemVer struct {
 
 type Attachment struct {
 	// Name is the name of the attachment.
-	Name string `json:"name,omitempty" protobuf:"varint,1,opt,name=major"`
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Description is the description of the attachment
-	Description *string `json:"description,omitempty" protobuf:"varint,2,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Location is the location of the attachment
-	Location DataLocation `json:"location,omitempty" protobuf:"varint,3,opt,name=location"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }

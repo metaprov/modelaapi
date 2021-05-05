@@ -56,8 +56,8 @@ export namespace ApiSpec {
 }
 
 export class Attachment extends jspb.Message {
-  getMajor(): string;
-  setMajor(value: string): Attachment;
+  getName(): string;
+  setName(value: string): Attachment;
 
   getDescription(): string;
   setDescription(value: string): Attachment;
@@ -77,7 +77,7 @@ export class Attachment extends jspb.Message {
 
 export namespace Attachment {
   export type AsObject = {
-    major: string,
+    name: string,
     description: string,
     location?: DataLocation.AsObject,
   }

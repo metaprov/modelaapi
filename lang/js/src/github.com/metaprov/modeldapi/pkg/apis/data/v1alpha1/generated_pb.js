@@ -2730,7 +2730,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    major: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f)
   };
@@ -2771,7 +2771,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.deserializ
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMajor(value);
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2837,10 +2837,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.serializeB
 
 
 /**
- * optional string major = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.getMajor = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2849,7 +2849,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.setMajor = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.setName = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -2858,7 +2858,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.clearMajor = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.clearName = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -2867,7 +2867,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.hasMajor = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.prototype.hasName = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

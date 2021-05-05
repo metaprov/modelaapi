@@ -38,7 +38,7 @@ message ApiSpec {
 
 message Attachment {
   // Name is the name of the attachment.
-  optional string major = 1;
+  optional string name = 1;
 
   // Description is the description of the attachment
   optional string description = 2;
