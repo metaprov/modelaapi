@@ -486,7 +486,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3747,13 +3747,6 @@ proto.github.com.metaprov.modeldapi.services.model.v1.CompareModelsResponse.prot
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3786,7 +3779,9 @@ proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.protot
 proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    namesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    target: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    compiler: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -3829,7 +3824,15 @@ proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.deseri
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addNames(value);
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTarget(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCompiler(value);
       break;
     default:
       reader.skipField();
@@ -3867,10 +3870,24 @@ proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.serial
       f
     );
   }
-  f = message.getNamesList();
+  f = message.getName();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getTarget();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCompiler();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -3896,39 +3913,56 @@ proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.protot
 
 
 /**
- * repeated string names = 2;
- * @return {!Array<string>}
+ * optional string name = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.getNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.setNamesList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.addNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
+ * optional string target = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.getTarget = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.clearNamesList = function() {
-  return this.setNamesList([]);
+proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.setTarget = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string compiler = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.getCompiler = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest.prototype.setCompiler = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

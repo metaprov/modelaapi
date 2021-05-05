@@ -411,10 +411,14 @@ export class CompileModelRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): CompileModelRequest;
 
-  getNamesList(): Array<string>;
-  setNamesList(value: Array<string>): CompileModelRequest;
-  clearNamesList(): CompileModelRequest;
-  addNames(value: string, index?: number): CompileModelRequest;
+  getName(): string;
+  setName(value: string): CompileModelRequest;
+
+  getTarget(): string;
+  setTarget(value: string): CompileModelRequest;
+
+  getCompiler(): string;
+  setCompiler(value: string): CompileModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CompileModelRequest.AsObject;
@@ -427,7 +431,9 @@ export class CompileModelRequest extends jspb.Message {
 export namespace CompileModelRequest {
   export type AsObject = {
     namespace: string,
-    namesList: Array<string>,
+    name: string,
+    target: string,
+    compiler: string,
   }
 }
 
