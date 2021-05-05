@@ -656,7 +656,7 @@ message DataProductSpec {
 
   // List of documents attached to the this data product
   // +kubebuilder:validation:Optional
-  repeated DataLocation attachments = 18;
+  repeated Attachment attachments = 18;
 }
 
 // DataProductStatus defines the observed state of DataProduct

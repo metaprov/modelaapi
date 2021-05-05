@@ -904,10 +904,10 @@ export class DataProductSpec extends jspb.Message {
   getOncallaccountname(): string;
   setOncallaccountname(value: string): DataProductSpec;
 
-  getAttachmentsList(): Array<DataLocation>;
-  setAttachmentsList(value: Array<DataLocation>): DataProductSpec;
+  getAttachmentsList(): Array<Attachment>;
+  setAttachmentsList(value: Array<Attachment>): DataProductSpec;
   clearAttachmentsList(): DataProductSpec;
-  addAttachments(value?: DataLocation, index?: number): DataLocation;
+  addAttachments(value?: Attachment, index?: number): Attachment;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
@@ -935,7 +935,7 @@ export namespace DataProductSpec {
     kpisList: Array<KPI.AsObject>,
     currentmodelversion?: SemVer.AsObject,
     oncallaccountname: string,
-    attachmentsList: Array<DataLocation.AsObject>,
+    attachmentsList: Array<Attachment.AsObject>,
   }
 }
 

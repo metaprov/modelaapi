@@ -161,7 +161,7 @@ type DataProductSpec struct {
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
-	Attachments []DataLocation `json:"attachments,omitempty" protobuf:"bytes,18,opt,name=attachments"`
+	Attachments []Attachment `json:"attachments,omitempty" protobuf:"bytes,18,opt,name=attachments"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

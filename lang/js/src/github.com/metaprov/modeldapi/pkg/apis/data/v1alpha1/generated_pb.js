@@ -10355,7 +10355,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     currentmodelversion: (f = msg.getCurrentmodelversion()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SemVer.toObject(includeInstance, f),
     oncallaccountname: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -10464,8 +10464,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       msg.setOncallaccountname(value);
       break;
     case 18:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.deserializeBinaryFromReader);
       msg.addAttachments(value);
       break;
     default:
@@ -10621,7 +10621,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
     writer.writeRepeatedMessage(
       18,
       f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.serializeBinaryToWriter
     );
   }
 };
@@ -11213,17 +11213,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * repeated DataLocation attachments = 18;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation>}
+ * repeated Attachment attachments = 18;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getAttachmentsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, 18));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment, 18));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setAttachmentsList = function(value) {
@@ -11232,12 +11232,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.addAttachments = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 18, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 18, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment, opt_index);
 };
 
 

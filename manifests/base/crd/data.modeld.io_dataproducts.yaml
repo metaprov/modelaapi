@@ -70,17 +70,25 @@ spec:
               attachments:
                 description: List of documents attached to the this data product
                 items:
-                  description: data reference contain pointers to the actual data
-                    objects
                   properties:
-                    bucketName:
+                    description:
+                      description: Description is the description of the attachment
                       type: string
-                    path:
-                      description: Path to the full data file (e.g. csv file).
+                    location:
+                      description: Location is the location of the attachment
+                      properties:
+                        bucketName:
+                          type: string
+                        path:
+                          description: Path to the full data file (e.g. csv file).
+                          type: string
+                      required:
+                      - bucketName
+                      - path
+                      type: object
+                    name:
+                      description: Name is the name of the attachment.
                       type: string
-                  required:
-                  - bucketName
-                  - path
                   type: object
                 type: array
               currentModelVersion:

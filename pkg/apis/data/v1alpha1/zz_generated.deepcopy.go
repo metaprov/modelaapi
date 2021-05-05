@@ -769,8 +769,10 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 	in.CurrentModelVersion.DeepCopyInto(&out.CurrentModelVersion)
 	if in.Attachments != nil {
 		in, out := &in.Attachments, &out.Attachments
-		*out = make([]DataLocation, len(*in))
-		copy(*out, *in)
+		*out = make([]Attachment, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 }
 
