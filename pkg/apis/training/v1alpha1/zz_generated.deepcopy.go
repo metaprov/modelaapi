@@ -522,6 +522,16 @@ func (in *Expectation) DeepCopyInto(out *Expectation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Metric != nil {
+		in, out := &in.Metric, &out.Metric
+		*out = new(catalogv1alpha1.Metric)
+		**out = **in
+	}
+	if in.Op != nil {
+		in, out := &in.Op, &out.Op
+		*out = new(Op)
+		**out = **in
+	}
 	if in.Score != nil {
 		in, out := &in.Score, &out.Score
 		*out = new(float64)

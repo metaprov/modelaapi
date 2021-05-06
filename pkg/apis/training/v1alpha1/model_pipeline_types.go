@@ -323,10 +323,10 @@ type Expectation struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// Metric is the name of the metric
 	// +kubebuilder:validation:Required
-	Metric catalog.Metric `json:"metric,omitempty" protobuf:"bytes,2,opt,name=metric"`
+	Metric *catalog.Metric `json:"metric,omitempty" protobuf:"bytes,2,opt,name=metric"`
 	// Op is the operator used during comparison
 	// +kubebuilder:validation:Required
-	Op Op `json:"op,omitempty" protobuf:"bytes,3,opt,name=op"`
+	Op *Op `json:"op,omitempty" protobuf:"bytes,3,opt,name=op"`
 	// Score is the expected score
 	// +kubebuilder:validation:Required
 	Score *float64 `json:"score,omitempty" protobuf:"bytes,4,opt,name=score"`
