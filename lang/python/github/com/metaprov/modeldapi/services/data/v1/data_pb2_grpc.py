@@ -124,9 +124,9 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateForecastReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateReportResponse.FromString,
                 )
-        self.CreatePreiodReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreatePreiodReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreatePeriodReportRequest.SerializeToString,
+        self.CreateSummaryReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateSummaryReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateSummaryReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateReportResponse.FromString,
                 )
         self.AskModel = channel.unary_unary(
@@ -309,7 +309,7 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreatePreiodReport(self, request, context):
+    def CreateSummaryReport(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -462,9 +462,9 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateForecastReportRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateReportResponse.SerializeToString,
             ),
-            'CreatePreiodReport': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreatePreiodReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreatePeriodReportRequest.FromString,
+            'CreateSummaryReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateSummaryReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateSummaryReportRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateReportResponse.SerializeToString,
             ),
             'AskModel': grpc.unary_unary_rpc_method_handler(
@@ -877,7 +877,7 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreatePreiodReport(request,
+    def CreateSummaryReport(request,
             target,
             options=(),
             channel_credentials=None,
@@ -887,8 +887,8 @@ class DataService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreatePreiodReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreatePeriodReportRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateSummaryReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateSummaryReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CreateReportResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

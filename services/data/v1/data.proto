@@ -373,6 +373,16 @@ message CreateForecastReportRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
 }
 
+message CreateSummaryReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct            product = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection            = 7;
+    map<string,bytes>     secret     = 8;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket          = 9;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
+}
+
+
 message CreateReportResponse {
     bytes pdf = 1;
 }
@@ -401,15 +411,6 @@ message CreateStudyReportRequest {
     map<string,bytes>     secret     = 9;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
 }
-
-message CreatePeriodReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct            product  = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket   = 2;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection          = 3;
-    map<string,bytes>     secret     = 9;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report              report = 10;
-}
-
 
 
 message AskModelRequest {
@@ -483,7 +484,7 @@ service DataService {
     rpc CreateStudyReport(CreateStudyReportRequest) returns (CreateReportResponse) {}
     rpc CreateDatasetReport(CreateDatasetReportRequest) returns (CreateReportResponse) {}
     rpc CreateForecastReport(CreateForecastReportRequest) returns (CreateReportResponse) {}
-    rpc CreatePreiodReport(CreatePeriodReportRequest) returns (CreateReportResponse) {}
+    rpc CreateSummaryReport(CreateSummaryReportRequest) returns (CreateReportResponse) {}
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
     // for bayaisn optimization, we tell the planner the result of the model evaluation

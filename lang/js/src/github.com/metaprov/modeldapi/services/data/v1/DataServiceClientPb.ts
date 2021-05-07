@@ -915,44 +915,44 @@ export class DataServiceClient {
     this.methodInfoCreateForecastReport);
   }
 
-  methodInfoCreatePreiodReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateSummaryReport = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateReportResponse,
-    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreatePeriodReportRequest) => {
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateSummaryReportRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateReportResponse.deserializeBinary
   );
 
-  createPreiodReport(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreatePeriodReportRequest,
+  createSummaryReport(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateSummaryReportRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateReportResponse>;
 
-  createPreiodReport(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreatePeriodReportRequest,
+  createSummaryReport(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateSummaryReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateReportResponse>;
 
-  createPreiodReport(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreatePeriodReportRequest,
+  createSummaryReport(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateSummaryReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modeldapi_services_data_v1_data_pb.CreateReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreatePreiodReport',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateSummaryReport',
         request,
         metadata || {},
-        this.methodInfoCreatePreiodReport,
+        this.methodInfoCreateSummaryReport,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreatePreiodReport',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateSummaryReport',
     request,
     metadata || {},
-    this.methodInfoCreatePreiodReport);
+    this.methodInfoCreateSummaryReport);
   }
 
   methodInfoAskModel = new grpcWeb.AbstractClientBase.MethodInfo(
