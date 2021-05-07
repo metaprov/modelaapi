@@ -1898,6 +1898,14 @@ message ReportSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 10;
+
+  // From is the start time of the report. Used only for summary report
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time from = 11;
+
+  // To is the end time of the report . Use only for summary report. If empty, the system will use the current time.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 12;
 }
 
 // ReportStatus defines the observed state of the report.

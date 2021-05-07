@@ -28135,7 +28135,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
     description: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    from: (f = msg.getFrom()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    to: (f = msg.getTo()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -28209,6 +28211,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
     case 10:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
+      break;
+    case 11:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setFrom(value);
+      break;
+    case 12:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setTo(value);
       break;
     default:
       reader.skipField();
@@ -28302,6 +28314,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.serial
     writer.writeInt64(
       10,
       f
+    );
+  }
+  f = message.getFrom();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getTo();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
@@ -28630,6 +28658,80 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasActivedeadlineseconds = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time from = 11;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getFrom = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 11));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setFrom = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearFrom = function() {
+  return this.setFrom(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasFrom = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 12;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getTo = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 12));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setTo = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearTo = function() {
+  return this.setTo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasTo = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

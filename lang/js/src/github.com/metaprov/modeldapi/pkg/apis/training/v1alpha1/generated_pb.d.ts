@@ -2845,6 +2845,16 @@ export class ReportSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ReportSpec;
 
+  getFrom(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFrom(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportSpec;
+  hasFrom(): boolean;
+  clearFrom(): ReportSpec;
+
+  getTo(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTo(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportSpec;
+  hasTo(): boolean;
+  clearTo(): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -2864,6 +2874,8 @@ export namespace ReportSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
+    from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

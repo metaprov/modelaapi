@@ -118,6 +118,11 @@ spec:
                 enum:
                 - pdf
                 type: string
+              from:
+                description: From is the start time of the report. Used only for summary
+                  report
+                format: date-time
+                type: string
               location:
                 description: Location is the report location in storage.
                 properties:
@@ -153,6 +158,11 @@ spec:
                 - daily-report
                 - weekly-report
                 - monthly-report
+                type: string
+              to:
+                description: To is the end time of the report . Use only for summary
+                  report. If empty, the system will use the current time.
+                format: date-time
                 type: string
               versionName:
                 default: latest
