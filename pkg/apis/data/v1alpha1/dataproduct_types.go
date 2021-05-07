@@ -162,6 +162,9 @@ type DataProductSpec struct {
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
 	Attachments []Attachment `json:"attachments,omitempty" protobuf:"bytes,18,opt,name=attachments"`
+	// List of documents attached to the this data product
+	//+kubebuilder:validation:Optional
+	Compiler *CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,19,opt,name=compiler"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -203,4 +206,13 @@ type Attachment struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Location is the location of the attachment
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+}
+
+type CompilerSpec struct {
+	// Compiler is the name of the compiler
+	//+kubebuilder:validation:Optional
+	Compiler *catalog.CompilerName `json:"compiler,omitempty" protobuf:"bytes,1,opt,name=compiler"`
+	// Targets is the list of targets
+	//+kubebuilder:validation:Optional
+	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,opt,name=targets"`
 }

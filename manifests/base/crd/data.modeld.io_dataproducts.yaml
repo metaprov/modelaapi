@@ -91,6 +91,18 @@ spec:
                       type: string
                   type: object
                 type: array
+              compiler:
+                description: List of documents attached to the this data product
+                properties:
+                  compiler:
+                    description: Compiler is the name of the compiler
+                    type: string
+                  targets:
+                    description: Targets is the list of targets
+                    items:
+                      type: string
+                    type: array
+                type: object
               currentModelVersion:
                 description: Semver counter that is used when generating new models
                 properties:

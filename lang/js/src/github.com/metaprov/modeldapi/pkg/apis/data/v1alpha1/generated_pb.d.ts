@@ -341,6 +341,30 @@ export namespace ColumnStatistics {
   }
 }
 
+export class CompilerSpec extends jspb.Message {
+  getCompiler(): string;
+  setCompiler(value: string): CompilerSpec;
+
+  getTargetsList(): Array<string>;
+  setTargetsList(value: Array<string>): CompilerSpec;
+  clearTargetsList(): CompilerSpec;
+  addTargets(value: string, index?: number): CompilerSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompilerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CompilerSpec): CompilerSpec.AsObject;
+  static serializeBinaryToWriter(message: CompilerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompilerSpec;
+  static deserializeBinaryFromReader(message: CompilerSpec, reader: jspb.BinaryReader): CompilerSpec;
+}
+
+export namespace CompilerSpec {
+  export type AsObject = {
+    compiler: string,
+    targetsList: Array<string>,
+  }
+}
+
 export class DataLocation extends jspb.Message {
   getBucketname(): string;
   setBucketname(value: string): DataLocation;
@@ -909,6 +933,11 @@ export class DataProductSpec extends jspb.Message {
   clearAttachmentsList(): DataProductSpec;
   addAttachments(value?: Attachment, index?: number): Attachment;
 
+  getCompiler(): CompilerSpec | undefined;
+  setCompiler(value?: CompilerSpec): DataProductSpec;
+  hasCompiler(): boolean;
+  clearCompiler(): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -936,6 +965,7 @@ export namespace DataProductSpec {
     currentmodelversion?: SemVer.AsObject,
     oncallaccountname: string,
     attachmentsList: Array<Attachment.AsObject>,
+    compiler?: CompilerSpec.AsObject,
   }
 }
 

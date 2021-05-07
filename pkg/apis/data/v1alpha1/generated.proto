@@ -302,6 +302,16 @@ message ColumnStatistics {
   optional double indexOfPeculiarity = 27;
 }
 
+message CompilerSpec {
+  // Compiler is the name of the compiler
+  // +kubebuilder:validation:Optional
+  optional string compiler = 1;
+
+  // Targets is the list of targets
+  // +kubebuilder:validation:Optional
+  repeated string targets = 2;
+}
+
 // data reference contain pointers to the actual data objects
 message DataLocation {
   optional string bucketName = 1;
@@ -657,6 +667,10 @@ message DataProductSpec {
   // List of documents attached to the this data product
   // +kubebuilder:validation:Optional
   repeated Attachment attachments = 18;
+
+  // List of documents attached to the this data product
+  // +kubebuilder:validation:Optional
+  optional CompilerSpec compiler = 19;
 }
 
 // DataProductStatus defines the observed state of DataProduct
