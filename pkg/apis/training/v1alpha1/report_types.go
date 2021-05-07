@@ -33,14 +33,11 @@ const (
 	ForecastDatasetReport           ReportType = "forecast-dataset"
 	TextClassificationDatasetReport ReportType = "text-classification-dataset"
 	RegressionDatasetReport         ReportType = "regression-dataset"
-	DailyReport                     ReportType = "daily-report"
-	WeeklyReport                    ReportType = "weekly-report"
-	MonthlyReport                   ReportType = "monthly-report"
+	SummaryReport                   ReportType = "summary-report"
 
 	StudyReport    ReportType = "study-report"
 	ForecastReport ReportType = "forecast-report"
 	FeatureReport  ReportType = "feature-report"
-	SummaryReport  ReportType = "summary-report"
 	InvalidReport  ReportType = "invalid-report"
 )
 
