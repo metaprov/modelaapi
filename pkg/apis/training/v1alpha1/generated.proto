@@ -2099,7 +2099,7 @@ message StudySpec {
 
   // This is the compiler spec for models. This spec will act as a template for the models created by the study
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilerSpec = 24;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 24;
 
   // Set to true if this study is a template
   // +kubebuilder:default:=false

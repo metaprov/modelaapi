@@ -29971,7 +29971,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     hierarchy: (f = msg.getHierarchy()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Hierarchy.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
-    compilerspec: (f = msg.getCompilerspec()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
+    compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
     template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f
   };
 
@@ -30103,7 +30103,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 24:
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.deserializeBinaryFromReader);
-      msg.setCompilerspec(value);
+      msg.setCompilation(value);
       break;
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -30292,7 +30292,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       f
     );
   }
-  f = message.getCompilerspec();
+  f = message.getCompilation();
   if (f != null) {
     writer.writeMessage(
       24,
@@ -31074,10 +31074,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilerSpec = 24;
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 24;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getCompilerspec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getCompilation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec, 24));
 };
@@ -31087,7 +31087,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setCompilerspec = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setCompilation = function(value) {
   return jspb.Message.setWrapperField(this, 24, value);
 };
 
@@ -31096,8 +31096,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearCompilerspec = function() {
-  return this.setCompilerspec(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearCompilation = function() {
+  return this.setCompilation(undefined);
 };
 
 
@@ -31105,7 +31105,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasCompilerspec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasCompilation = function() {
   return jspb.Message.getField(this, 24) != null;
 };
 

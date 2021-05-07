@@ -91,7 +91,7 @@ spec:
                       type: string
                   type: object
                 type: array
-              compliation:
+              compilation:
                 description: List of documents attached to the this data product
                 properties:
                   compiler:

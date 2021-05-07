@@ -3093,10 +3093,10 @@ export class StudySpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): StudySpec;
 
-  getCompilerspec(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setCompilerspec(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): StudySpec;
-  hasCompilerspec(): boolean;
-  clearCompilerspec(): StudySpec;
+  getCompilation(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
+  setCompilation(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): StudySpec;
+  hasCompilation(): boolean;
+  clearCompilation(): StudySpec;
 
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
@@ -3132,7 +3132,7 @@ export namespace StudySpec {
     hierarchy?: Hierarchy.AsObject,
     owner: string,
     activedeadlineseconds: number,
-    compilerspec?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
+    compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
   }
 }
