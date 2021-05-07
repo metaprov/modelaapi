@@ -46,6 +46,7 @@ const (
 	ProfileStudyTask      TaskName = "profile-study"
 	ProfileModelTask      TaskName = "profile-model"
 	PublishModelTask      TaskName = "publish-model"
+	RunRecipeTask         TaskName = "run-recipe"
 	ReportDatasetTask     TaskName = "report-dataset"
 	ReportModelTask       TaskName = "report-model"
 	ReportStudyTask       TaskName = "report-study"
