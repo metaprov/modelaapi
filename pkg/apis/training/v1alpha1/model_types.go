@@ -224,27 +224,23 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,23,opt,name=forecasted"`
-	// Compiled is true when the model should perform a forecast
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Complied *bool `json:"complied,omitempty" protobuf:"bytes,24,opt,name=compiled"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,25,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,24,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,26,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,25,opt,name=forecastingSpec"`
 	// The compiler specification
 	// +kubebuilder:validation:Optional
-	Compiler *CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,27,opt,name=compiler"`
+	Compiler *catalog.CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,26,opt,name=compiler"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,28,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,27,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
+	EstimatorType *ModelType `json:"estimatorType,omitempty" protobuf:"bytes,28,opt,name=estimatorType"`
 }
 
 type EnsembleSpec struct {
@@ -710,11 +706,6 @@ type DimensionValue struct {
 }
 
 // List compiler spec
-type CompilerSpec struct {
-	Compiler *catalog.CompilerName `json:"compiler,omitempty" protobuf:"bytes,1,opt,name=compiler"`
-	// Set one or more targets
-	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,opt,name=targets"`
-}
 
 // ModelType enamurate the model type
 // +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";

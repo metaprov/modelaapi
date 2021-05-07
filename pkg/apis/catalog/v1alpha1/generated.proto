@@ -149,6 +149,18 @@ message CloudStatus {
   repeated GpuClassCost gpuCosts = 2;
 }
 
+// Compiler spec is used when there is a specification for model compilation
+message CompilerSpec {
+  // Enable set the enable to
+  optional bool enable = 1;
+
+  // Set one or more targets
+  optional string compiler = 2;
+
+  // Set one or more targets for the compiler
+  repeated string targets = 3;
+}
+
 // Datacenter contains the attribute of a specific data center
 message DataCenter {
   // Name is the name of the datacenter

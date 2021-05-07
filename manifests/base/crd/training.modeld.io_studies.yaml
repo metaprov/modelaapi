@@ -97,6 +97,22 @@ spec:
                 format: int64
                 minimum: 0
                 type: integer
+              compilerSpec:
+                description: This is the compiler spec for models. This spec will
+                  act as a template for the models created by the study
+                properties:
+                  compiler:
+                    description: Set one or more targets
+                    type: string
+                  enable:
+                    description: Enable set the enable to
+                    type: boolean
+                  targets:
+                    description: Set one or more targets for the compiler
+                    items:
+                      type: string
+                    type: array
+                type: object
               datasetName:
                 default: ""
                 description: DatasetName refer to the dataset object for which the

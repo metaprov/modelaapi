@@ -90,6 +90,9 @@ type DataPipelineSpec struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
+	// This is the default compiler spec
+	//+kubebuilder:validation:Optional
+	DefaultCompilerSpec *catalog.CompilerSpec `json:"defaultCompilerSpec,omitempty" protobuf:"bytes,10,opt,name=defaultCompilerSpec"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

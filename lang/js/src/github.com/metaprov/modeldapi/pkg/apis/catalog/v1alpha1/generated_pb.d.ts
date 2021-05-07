@@ -268,6 +268,34 @@ export namespace CloudStatus {
   }
 }
 
+export class CompilerSpec extends jspb.Message {
+  getEnable(): boolean;
+  setEnable(value: boolean): CompilerSpec;
+
+  getCompiler(): string;
+  setCompiler(value: string): CompilerSpec;
+
+  getTargetsList(): Array<string>;
+  setTargetsList(value: Array<string>): CompilerSpec;
+  clearTargetsList(): CompilerSpec;
+  addTargets(value: string, index?: number): CompilerSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompilerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CompilerSpec): CompilerSpec.AsObject;
+  static serializeBinaryToWriter(message: CompilerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompilerSpec;
+  static deserializeBinaryFromReader(message: CompilerSpec, reader: jspb.BinaryReader): CompilerSpec;
+}
+
+export namespace CompilerSpec {
+  export type AsObject = {
+    enable: boolean,
+    compiler: string,
+    targetsList: Array<string>,
+  }
+}
+
 export class DataCenter extends jspb.Message {
   getName(): string;
   setName(value: string): DataCenter;

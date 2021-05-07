@@ -527,6 +527,10 @@ message DataPipelineSpec {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 9;
+
+  // This is the default compiler spec
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec defaultCompilerSpec = 10;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

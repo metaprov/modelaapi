@@ -104,14 +104,6 @@ message ClassicalEstimatorSpec {
   repeated HyperParameterValue parameters = 2;
 }
 
-// List compiler spec
-message CompilerSpec {
-  optional string compiler = 1;
-
-  // Set one or more targets
-  repeated string targets = 2;
-}
-
 message DataSplit {
   // Indicate that this is an automatic split.
   // +kubebuilder:default:=true
@@ -1292,32 +1284,27 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool forecasted = 23;
 
-  // Compiled is true when the model should perform a forecast
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool compiled = 24;
-
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 25;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 24;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 26;
+  optional ForecastingSpec forecastingSpec = 25;
 
   // The compiler specification
   // +kubebuilder:validation:Optional
-  optional CompilerSpec compiler = 27;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compiler = 26;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 28;
+  optional int64 activeDeadlineSeconds = 27;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 29;
+  optional string estimatorType = 28;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2110,10 +2097,14 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 23;
 
+  // This is the compiler spec for models. This spec will act as a template for the models created by the study
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilerSpec = 24;
+
   // Set to true if this study is a template
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool template = 24;
+  optional bool template = 25;
 }
 
 // StudyStatus defines the observed state of the Study

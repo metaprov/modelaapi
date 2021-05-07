@@ -33,6 +33,16 @@ const (
 	ServingSiteJobRunnerRoleBinding string = "servingsite-job-runner-binding"
 )
 
+// Compiler spec is used when there is a specification for model compilation
+type CompilerSpec struct {
+	// Enable set the enable to
+	Enable *bool `json:"enable,omitempty" protobuf:"bytes,1,opt,name=enable"`
+	// Set one or more targets
+	Compiler *CompilerName `json:"compiler,omitempty" protobuf:"bytes,2,opt,name=compiler"`
+	// Set one or more targets for the compiler
+	Targets []HardwareTarget `json:"targets,omitempty" protobuf:"bytes,3,opt,name=targets"`
+}
+
 //============================================================
 // Task name
 //============================================================

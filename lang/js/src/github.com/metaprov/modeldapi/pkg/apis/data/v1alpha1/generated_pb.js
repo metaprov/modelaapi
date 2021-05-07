@@ -9069,7 +9069,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    observedgeneration: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    observedgeneration: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    defaultcompilerspec: (f = msg.getDefaultcompilerspec()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9146,6 +9147,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
     case 9:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
+      break;
+    case 10:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.deserializeBinaryFromReader);
+      msg.setDefaultcompilerspec(value);
       break;
     default:
       reader.skipField();
@@ -9237,6 +9243,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.seri
     writer.writeInt64(
       9,
       f
+    );
+  }
+  f = message.getDefaultcompilerspec();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.serializeBinaryToWriter
     );
   }
 };
@@ -9553,6 +9567,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasObservedgeneration = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec defaultCompilerSpec = 10;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getDefaultcompilerspec = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setDefaultcompilerspec = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearDefaultcompilerspec = function() {
+  return this.setDefaultcompilerspec(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasDefaultcompilerspec = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

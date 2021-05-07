@@ -55,6 +55,21 @@ spec:
                 description: DatasetSelector is used to select datasets for processing
                   in the pipeline
                 type: object
+              defaultCompilerSpec:
+                description: This is the default compiler spec
+                properties:
+                  compiler:
+                    description: Set one or more targets
+                    type: string
+                  enable:
+                    description: Enable set the enable to
+                    type: boolean
+                  targets:
+                    description: Set one or more targets for the compiler
+                    items:
+                      type: string
+                    type: array
+                type: object
               description:
                 description: Description of the data pipeline
                 type: string

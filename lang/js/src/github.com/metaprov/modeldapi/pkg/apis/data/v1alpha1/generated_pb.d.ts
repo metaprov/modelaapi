@@ -729,6 +729,11 @@ export class DataPipelineSpec extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataPipelineSpec;
 
+  getDefaultcompilerspec(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
+  setDefaultcompilerspec(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataPipelineSpec;
+  hasDefaultcompilerspec(): boolean;
+  clearDefaultcompilerspec(): DataPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineSpec): DataPipelineSpec.AsObject;
@@ -748,6 +753,7 @@ export namespace DataPipelineSpec {
     owner: string,
     workloadclassname: string,
     observedgeneration: number,
+    defaultcompilerspec?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
   }
 }
 
