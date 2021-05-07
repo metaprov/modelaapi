@@ -1732,8 +1732,8 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(ForecastingSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Compiler != nil {
-		in, out := &in.Compiler, &out.Compiler
+	if in.Compilation != nil {
+		in, out := &in.Compilation, &out.Compilation
 		*out = new(catalogv1alpha1.CompilerSpec)
 		(*in).DeepCopyInto(*out)
 	}
@@ -2770,8 +2770,8 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(int64)
 		**out = **in
 	}
-	if in.CompilerSpec != nil {
-		in, out := &in.CompilerSpec, &out.CompilerSpec
+	if in.Compilation != nil {
+		in, out := &in.Compilation, &out.Compilation
 		*out = new(catalogv1alpha1.CompilerSpec)
 		(*in).DeepCopyInto(*out)
 	}

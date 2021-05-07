@@ -97,7 +97,7 @@ spec:
                 format: int64
                 minimum: 0
                 type: integer
-              compilerSpec:
+              compliation:
                 description: This is the compiler spec for models. This spec will
                   act as a template for the models created by the study
                 properties:

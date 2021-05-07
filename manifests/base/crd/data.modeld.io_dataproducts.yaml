@@ -91,14 +91,17 @@ spec:
                       type: string
                   type: object
                 type: array
-              compiler:
+              compliation:
                 description: List of documents attached to the this data product
                 properties:
                   compiler:
-                    description: Compiler is the name of the compiler
+                    description: Set one or more targets
                     type: string
+                  enable:
+                    description: Enable set the enable to
+                    type: boolean
                   targets:
-                    description: Targets is the list of targets
+                    description: Set one or more targets for the compiler
                     items:
                       type: string
                     type: array

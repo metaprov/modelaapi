@@ -230,9 +230,9 @@ type ModelSpec struct {
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
 	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,25,opt,name=forecastingSpec"`
-	// The compiler specification
+	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
-	Compiler *catalog.CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,26,opt,name=compiler"`
+	Compilation *catalog.CompilerSpec `json:"compliation,omitempty" protobuf:"bytes,26,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional

@@ -164,7 +164,7 @@ type DataProductSpec struct {
 	Attachments []Attachment `json:"attachments,omitempty" protobuf:"bytes,18,opt,name=attachments"`
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
-	Compiler *CompilerSpec `json:"compiler,omitempty" protobuf:"bytes,19,opt,name=compiler"`
+	Compilation *catalog.CompilerSpec `json:"compliation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

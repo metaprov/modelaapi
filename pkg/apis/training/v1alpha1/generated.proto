@@ -1292,9 +1292,9 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional ForecastingSpec forecastingSpec = 25;
 
-  // The compiler specification
+  // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compiler = 26;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 26;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600

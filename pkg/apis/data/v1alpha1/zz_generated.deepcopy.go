@@ -804,9 +804,9 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Compiler != nil {
-		in, out := &in.Compiler, &out.Compiler
-		*out = new(CompilerSpec)
+	if in.Compilation != nil {
+		in, out := &in.Compilation, &out.Compilation
+		*out = new(catalogv1alpha1.CompilerSpec)
 		(*in).DeepCopyInto(*out)
 	}
 }

@@ -100,8 +100,8 @@ spec:
                 description: Dnn is a specification of the DNN estimator specification.
                   Not supported for this release.
                 type: object
-              compiler:
-                description: The compiler specification
+              compliation:
+                description: Compilation denotes how to compile the model.
                 properties:
                   compiler:
                     description: Set one or more targets

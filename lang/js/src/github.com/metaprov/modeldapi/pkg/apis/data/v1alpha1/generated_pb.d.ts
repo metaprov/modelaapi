@@ -939,10 +939,10 @@ export class DataProductSpec extends jspb.Message {
   clearAttachmentsList(): DataProductSpec;
   addAttachments(value?: Attachment, index?: number): Attachment;
 
-  getCompiler(): CompilerSpec | undefined;
-  setCompiler(value?: CompilerSpec): DataProductSpec;
-  hasCompiler(): boolean;
-  clearCompiler(): DataProductSpec;
+  getCompilation(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
+  setCompilation(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataProductSpec;
+  hasCompilation(): boolean;
+  clearCompilation(): DataProductSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
@@ -971,7 +971,7 @@ export namespace DataProductSpec {
     currentmodelversion?: SemVer.AsObject,
     oncallaccountname: string,
     attachmentsList: Array<Attachment.AsObject>,
-    compiler?: CompilerSpec.AsObject,
+    compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
   }
 }
 

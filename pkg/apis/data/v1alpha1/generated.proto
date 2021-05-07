@@ -674,7 +674,7 @@ message DataProductSpec {
 
   // List of documents attached to the this data product
   // +kubebuilder:validation:Optional
-  optional CompilerSpec compiler = 19;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19;
 }
 
 // DataProductStatus defines the observed state of DataProduct

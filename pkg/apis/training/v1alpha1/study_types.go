@@ -362,7 +362,7 @@ type StudySpec struct {
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
 	// This is the compiler spec for models. This spec will act as a template for the models created by the study
 	//+kubebuilder:validation:Optional
-	CompilerSpec *catalog.CompilerSpec `json:"compilerSpec,omitempty" protobuf:"bytes,24,opt,name=compilerSpec"`
+	Compilation *catalog.CompilerSpec `json:"compliation,omitempty" protobuf:"bytes,24,opt,name=compilerSpec"`
 	// Set to true if this study is a template
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

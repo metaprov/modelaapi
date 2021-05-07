@@ -1847,10 +1847,10 @@ export class ModelSpec extends jspb.Message {
   hasForecastingspec(): boolean;
   clearForecastingspec(): ModelSpec;
 
-  getCompiler(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setCompiler(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): ModelSpec;
-  hasCompiler(): boolean;
-  clearCompiler(): ModelSpec;
+  getCompilation(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
+  setCompilation(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): ModelSpec;
+  hasCompilation(): boolean;
+  clearCompilation(): ModelSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ModelSpec;
@@ -1893,7 +1893,7 @@ export namespace ModelSpec {
     forecasted: boolean,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
-    compiler?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
+    compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds: number,
     estimatortype: string,
   }
