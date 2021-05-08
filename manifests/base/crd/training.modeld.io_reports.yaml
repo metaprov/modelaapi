@@ -158,6 +158,7 @@ spec:
                 - daily-report
                 - weekly-report
                 - monthly-report
+                - summary-report
                 type: string
               to:
                 description: To is the end time of the report . Use only for summary
