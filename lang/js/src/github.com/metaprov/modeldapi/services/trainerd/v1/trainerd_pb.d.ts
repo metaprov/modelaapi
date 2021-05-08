@@ -91,6 +91,15 @@ export class TrainResponse extends jspb.Message {
   getLabelencoder(): string;
   setLabelencoder(value: string): TrainResponse;
 
+  getPythonversioninfo(): string;
+  setPythonversioninfo(value: string): TrainResponse;
+
+  getPipfreezeMap(): jspb.Map<string, string>;
+  clearPipfreezeMap(): TrainResponse;
+
+  getFeaturesimportanceMap(): jspb.Map<string, number>;
+  clearFeaturesimportanceMap(): TrainResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TrainResponse): TrainResponse.AsObject;
@@ -106,6 +115,9 @@ export namespace TrainResponse {
     manifestclouduri: string,
     logsclouduri: string,
     labelencoder: string,
+    pythonversioninfo: string,
+    pipfreezeMap: Array<[string, string]>,
+    featuresimportanceMap: Array<[string, number]>,
   }
 }
 
@@ -294,6 +306,15 @@ export class TestResponse extends jspb.Message {
   getMisclassuri(): string;
   setMisclassuri(value: string): TestResponse;
 
+  getPythonversioninfo(): string;
+  setPythonversioninfo(value: string): TestResponse;
+
+  getPipfreezeMap(): jspb.Map<string, string>;
+  clearPipfreezeMap(): TestResponse;
+
+  getFeaturesimportanceMap(): jspb.Map<string, number>;
+  clearFeaturesimportanceMap(): TestResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TestResponse): TestResponse.AsObject;
@@ -314,6 +335,9 @@ export namespace TestResponse {
     prelogsclouduri: string,
     labelencoder: string,
     misclassuri: string,
+    pythonversioninfo: string,
+    pipfreezeMap: Array<[string, string]>,
+    featuresimportanceMap: Array<[string, number]>,
   }
 }
 
