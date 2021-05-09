@@ -47,6 +47,12 @@ message TrainResponse {
     string logsCloudUri = 4;
     // The uri for the label encoder, in case of a categorical class.
     string labelEncoder = 5;
+    // python version info
+    string pythonVersionInfo = 6;
+    // pip freeze string
+    map<string,string> pipFreeze = 7;
+    // feature importance
+    map<string,float> featuresImportance = 8;
 
 }
 
@@ -111,6 +117,16 @@ message TestResponse {
     string labelEncoder = 9;
     // Misclassfied uri
     string misclassUri = 10;
+    // python version info
+    string pythonVersionInfo = 11;
+    // pip freeze string
+    map<string,string> pipFreeze = 12;
+    // feature importance
+    map<string,float> featuresImportance = 13;
+
+
+
+
 
 }
 // used for ensable training
