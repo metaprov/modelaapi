@@ -16,6 +16,8 @@ spec:
     kind: LabelingPipelineRun
     listKind: LabelingPipelineRunList
     plural: labelingpipelineruns
+    shortNames:
+    - lpr
     singular: labelingpipelinerun
   scope: Namespaced
   versions:

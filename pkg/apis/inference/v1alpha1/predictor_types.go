@@ -71,7 +71,7 @@ type PredictorCondition struct {
 // +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.input.online.port",description=""
 // +kubebuilder:printcolumn:name="Access",type="integer",JSONPath=".spec.input.online.accessType",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
+// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modeld}
 type Predictor struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

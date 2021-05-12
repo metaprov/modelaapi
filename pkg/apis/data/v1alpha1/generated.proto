@@ -347,7 +347,7 @@ message DataOutputSpec {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dp",categories={data,modeld}
+// +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modeld}
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 message DataPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -550,7 +550,7 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Image Repo",type="string",JSONPath=".spec.imageLocation.name"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,categories={data,modeld,all}
+// +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modeld,all}
 message DataProduct {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -782,7 +782,7 @@ message DataProductVersionStatus {
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=datasources,singular=datasource,categories={data,modeld,all}
+// +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modeld,all}
 message DataSource {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -889,7 +889,7 @@ message DataSourceStatus {
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=datasets,shortName=ds,singular=dataset,categories={data,modeld,all}
+// +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modeld,all}
 // Dataset represents a single batch of data
 message Dataset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1189,7 +1189,7 @@ message FeatureList {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,categories={data,modeld}
+// +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modeld}
 // +kubebuilder:subresource:status
 message FeaturePipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1234,7 +1234,7 @@ message FeaturePipelineList {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurepipelineruns,singular=featurepipelinerun,categories={data,modeld}
+// +kubebuilder:resource:path=featurepipelineruns,shortName=fpr,singular=featurepipelinerun,categories={data,modeld}
 // +kubebuilder:subresource:status
 message FeaturePipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1526,7 +1526,7 @@ message FeatureStatus {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featuresets,singular=featureset,categories={data,modeld}
+// +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modeld}
 // +kubebuilder:subresource:status
 message Featureset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1695,7 +1695,7 @@ message KPI {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,categories={data,modeld}
+// +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,shortName=lp,categories={data,modeld}
 message LabelingPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1740,7 +1740,7 @@ message LabelingPipelineList {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=labelingpipelineruns,singular=labelingpipelinerun,categories={data,modeld}
+// +kubebuilder:resource:path=labelingpipelineruns,singular=labelingpipelinerun,shortName=lpr,categories={data,modeld}
 // +kubebuilder:subresource:status
 message LabelingPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1987,7 +1987,7 @@ message RecipePartSpec {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=reciperuns,shortName=rr,singular=reciperun,categories={data,modeld,all}
+// +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modeld,all}
 // Recipe run represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 message RecipeRun {

@@ -16,6 +16,8 @@ spec:
     kind: FeaturePipelineRun
     listKind: FeaturePipelineRunList
     plural: featurepipelineruns
+    shortNames:
+    - fpr
     singular: featurepipelinerun
   scope: Namespaced
   versions:

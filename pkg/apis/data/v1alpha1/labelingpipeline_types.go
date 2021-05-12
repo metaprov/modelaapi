@@ -39,7 +39,7 @@ type LabelingPipelineCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,categories={data,modeld}
+// +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,shortName=lp,categories={data,modeld}
 type LabelingPipeline struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

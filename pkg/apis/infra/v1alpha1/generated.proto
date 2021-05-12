@@ -28,7 +28,7 @@ option go_package = "v1alpha1";
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=accounts,shortName=act,singular=account,categories={infra,modeld}
+// +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modeld}
 message Account {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -501,7 +501,7 @@ message CommitStatus {
 // +kubebuilder:printcolumn:name="Category",type="string",JSONPath=".spec.category",description=""
 // +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=connections,shortName=cred,singular=connection,categories={infra,modeld}
+// +kubebuilder:resource:path=connections,shortName=conn,singular=connection,categories={infra,modeld}
 message Connection {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

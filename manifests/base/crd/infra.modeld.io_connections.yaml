@@ -17,7 +17,7 @@ spec:
     listKind: ConnectionList
     plural: connections
     shortNames:
-    - cred
+    - conn
     singular: connection
   scope: Namespaced
   versions:

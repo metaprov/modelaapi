@@ -54,7 +54,7 @@ type PredictionCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=predictions,singular=prediction,categories={inference,modeld}
+// +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modeld}
 type Prediction struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

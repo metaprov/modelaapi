@@ -16,6 +16,8 @@ spec:
     kind: Entity
     listKind: EntityList
     plural: entities
+    shortNames:
+    - et
     singular: entity
   scope: Namespaced
   versions:

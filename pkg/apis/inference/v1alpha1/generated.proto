@@ -61,7 +61,7 @@ message ChannelStatus {
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
 // +kubebuilder:printcolumn:name="Cron",type="string",JSONPath=".spec.schedule.cron"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=cronpredictions,singular=cronprediction,categories={inference,modeld}
+// +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modeld}
 // CronPrediction represents a single run of the Prediction Pipeline
 message CronPrediction {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -288,7 +288,7 @@ message OnlineFeaturestoreSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=predictions,singular=prediction,categories={inference,modeld}
+// +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modeld}
 message Prediction {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -440,7 +440,7 @@ message PredictionTemplate {
 // +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.input.online.port",description=""
 // +kubebuilder:printcolumn:name="Access",type="integer",JSONPath=".spec.input.online.accessType",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictors,singular=predictor,categories={inference,modeld}
+// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modeld}
 message Predictor {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

@@ -46,7 +46,7 @@ type EntityCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=entities,singular=entity,categories={data,modeld}
+// +kubebuilder:resource:path=entities,singular=entity,shortName=et,categories={data,modeld}
 
 type Entity struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -16,6 +16,8 @@ spec:
     kind: LabelingPipeline
     listKind: LabelingPipelineList
     plural: labelingpipelines
+    shortNames:
+    - lp
     singular: labelingpipeline
   scope: Namespaced
   versions:

@@ -51,7 +51,7 @@ type FeaturePipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurepipelineruns,singular=featurepipelinerun,categories={data,modeld}
+// +kubebuilder:resource:path=featurepipelineruns,shortName=fpr,singular=featurepipelinerun,categories={data,modeld}
 // +kubebuilder:subresource:status
 type FeaturePipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`

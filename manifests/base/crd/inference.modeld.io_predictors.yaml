@@ -16,6 +16,8 @@ spec:
     kind: Predictor
     listKind: PredictorList
     plural: predictors
+    shortNames:
+    - pdr
     singular: predictor
   scope: Namespaced
   versions:

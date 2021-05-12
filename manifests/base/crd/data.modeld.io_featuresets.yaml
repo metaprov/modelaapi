@@ -16,6 +16,8 @@ spec:
     kind: Featureset
     listKind: FeaturesetList
     plural: featuresets
+    shortNames:
+    - fset
     singular: featureset
   scope: Namespaced
   versions:

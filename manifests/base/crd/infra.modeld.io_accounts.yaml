@@ -17,7 +17,7 @@ spec:
     listKind: AccountList
     plural: accounts
     shortNames:
-    - act
+    - acct
     singular: account
   scope: Namespaced
   versions:

@@ -44,7 +44,7 @@ type FeaturesetCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featuresets,singular=featureset,categories={data,modeld}
+// +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modeld}
 // +kubebuilder:subresource:status
 type Featureset struct {
 	metav1.TypeMeta   `json:",inline"`

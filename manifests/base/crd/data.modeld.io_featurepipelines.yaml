@@ -16,6 +16,8 @@ spec:
     kind: FeaturePipeline
     listKind: FeaturePipelineList
     plural: featurepipelines
+    shortNames:
+    - fp
     singular: featurepipeline
   scope: Namespaced
   versions:

@@ -16,6 +16,8 @@ spec:
     kind: Prediction
     listKind: PredictionList
     plural: predictions
+    shortNames:
+    - pred
     singular: prediction
   scope: Namespaced
   versions:

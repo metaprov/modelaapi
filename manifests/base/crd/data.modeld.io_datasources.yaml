@@ -17,6 +17,8 @@ spec:
     kind: DataSource
     listKind: DataSourceList
     plural: datasources
+    shortNames:
+    - dsrc
     singular: datasource
   scope: Namespaced
   versions:

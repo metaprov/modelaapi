@@ -16,6 +16,8 @@ spec:
     kind: CronPrediction
     listKind: CronPredictionList
     plural: cronpredictions
+    shortNames:
+    - cpred
     singular: cronprediction
   scope: Namespaced
   versions:
