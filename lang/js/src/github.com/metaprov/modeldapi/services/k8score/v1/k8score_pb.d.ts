@@ -448,6 +448,9 @@ export class ListEventsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListEventsRequest;
 
+  getName(): string;
+  setName(value: string): ListEventsRequest;
+
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListEventsRequest;
 
@@ -462,6 +465,7 @@ export class ListEventsRequest extends jspb.Message {
 export namespace ListEventsRequest {
   export type AsObject = {
     namespace: string,
+    name: string,
     labelsMap: Array<[string, string]>,
   }
 }

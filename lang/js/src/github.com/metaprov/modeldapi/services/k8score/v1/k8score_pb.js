@@ -3981,6 +3981,7 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.protot
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -4021,6 +4022,10 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.deseri
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 3:
       var value = msg.getLabelsMap();
@@ -4064,6 +4069,13 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.serial
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
@@ -4086,6 +4098,24 @@ proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.protot
  */
 proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
