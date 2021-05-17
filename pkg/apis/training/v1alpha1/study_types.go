@@ -443,9 +443,18 @@ type StudyStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,25,opt,name=observedGeneration"`
+	// TrainDatasetLocation is the location of the train dataset
+	// +kubebuilder:validation:Optional
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,26,opt,name=trainDataset"`
+	// TestDatasetLocation is the location of the test dataset used to test this model
+	// +kubebuilder:validation:Optional
+	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,27,opt,name=testDataset"`
+	// ValidationDatasetLocation is the location of the dataset used for validation
+	// +kubebuilder:validation:Optional
+	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,28,opt,name=validationDataset"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
-	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,26,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,29,rep,name=conditions"`
 }
 
 // model cv results
