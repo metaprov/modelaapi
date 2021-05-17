@@ -172,6 +172,18 @@ message GetMisclassResponse {
     github.com.metaprov.modeldapi.services.common.v1.TableView   table   =1;
 }
 
+message DownloadModelRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message DownloadModelResponse {
+    bytes raw = 1;
+
+}
+
+
 
 
 
@@ -250,5 +262,9 @@ service ModelService {
 
     rpc CompileModel(CompileModelRequest) returns (CompileModelResponse) {
         option (google.api.http).post = "/api/v1/models/{model.metadata.name}:compile";
+    }
+
+    rpc DownloadModel(DownloadModelRequest) returns (DownloadModelResponse) {
+        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:download";
     }
 }

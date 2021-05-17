@@ -156,6 +156,18 @@ message ValidateDatasetResponse {
 }
 
 
+message DownloadDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message DownloadDatasetResponse {
+    bytes raw = 1;
+}
+
+
+
 service DatasetService {
     // Datasets
     rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse) {
@@ -213,6 +225,10 @@ service DatasetService {
 
     rpc UploadChunk(UploadChunkRequest) returns (UploadChunkResponse) {
         option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate";
+    }
+
+    rpc DownloadDataset(DownloadDatasetRequest) returns (DownloadDatasetResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:download";
     }
 
 }
