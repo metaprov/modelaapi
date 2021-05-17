@@ -3222,6 +3222,21 @@ export class StudyStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): StudyStatus;
 
+  getTraindataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTraindataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
+  hasTraindataset(): boolean;
+  clearTraindataset(): StudyStatus;
+
+  getTestdataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setTestdataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
+  hasTestdataset(): boolean;
+  clearTestdataset(): StudyStatus;
+
+  getValidationdataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setValidationdataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudyStatus;
+  hasValidationdataset(): boolean;
+  clearValidationdataset(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3261,6 +3276,9 @@ export namespace StudyStatus {
     reportname: string,
     phase: string,
     observedgeneration: number,
+    traindataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

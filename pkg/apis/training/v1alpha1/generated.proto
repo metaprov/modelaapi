@@ -2205,9 +2205,21 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 25;
 
+  // TrainDatasetLocation is the location of the train dataset
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 26;
+
+  // TestDatasetLocation is the location of the test dataset used to test this model
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 27;
+
+  // ValidationDatasetLocation is the location of the dataset used for validation
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 28;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
-  repeated StudyCondition conditions = 26;
+  repeated StudyCondition conditions = 29;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

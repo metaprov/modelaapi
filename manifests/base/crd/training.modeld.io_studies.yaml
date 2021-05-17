@@ -1206,6 +1206,19 @@ spec:
                 description: Study start time
                 format: date-time
                 type: string
+              testDataset:
+                description: TestDatasetLocation is the location of the test dataset
+                  used to test this model
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               testedModels:
                 description: Tested models
                 format: int32
@@ -1223,6 +1236,18 @@ spec:
                 description: Start of the testing phase
                 format: date-time
                 type: string
+              trainDataset:
+                description: TrainDatasetLocation is the location of the train dataset
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               trainedModels:
                 description: models that were successful during training
                 format: int32
@@ -1243,6 +1268,19 @@ spec:
                 description: Start of the training phase
                 format: date-time
                 type: string
+              validationDataset:
+                description: ValidationDatasetLocation is the location of the dataset
+                  used for validation
+                properties:
+                  bucketName:
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                required:
+                - bucketName
+                - path
+                type: object
               waitingToTestModels:
                 description: models waiting testing
                 format: int32

@@ -2819,6 +2819,9 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		in, out := &in.CompletionTime, &out.CompletionTime
 		*out = (*in).DeepCopy()
 	}
+	out.TrainDatasetLocation = in.TrainDatasetLocation
+	out.TestDatasetLocation = in.TestDatasetLocation
+	out.ValidationDataset = in.ValidationDataset
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))
