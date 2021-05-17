@@ -675,5 +675,45 @@ export class ModelServiceClient {
     this.methodInfoCompileModel);
   }
 
+  methodInfoDownloadModel = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse,
+    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse.deserializeBinary
+  );
+
+  downloadModel(
+    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse>;
+
+  downloadModel(
+    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse>;
+
+  downloadModel(
+    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel',
+        request,
+        metadata || {},
+        this.methodInfoDownloadModel,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel',
+    request,
+    metadata || {},
+    this.methodInfoDownloadModel);
+  }
+
 }
 

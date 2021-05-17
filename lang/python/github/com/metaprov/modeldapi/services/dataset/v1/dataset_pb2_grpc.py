@@ -74,6 +74,11 @@ class DatasetServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkResponse.FromString,
                 )
+        self.DownloadDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.FromString,
+                )
 
 
 class DatasetServiceServicer(object):
@@ -155,6 +160,12 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DownloadDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DatasetServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -217,6 +228,11 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     servicer.UploadChunk,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkResponse.SerializeToString,
+            ),
+            'DownloadDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -429,5 +445,22 @@ class DatasetService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UploadChunk',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.UploadChunkResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DownloadDataset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

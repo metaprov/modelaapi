@@ -515,5 +515,45 @@ export class DatasetServiceClient {
     this.methodInfoUploadChunk);
   }
 
+  methodInfoDownloadDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse,
+    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse.deserializeBinary
+  );
+
+  downloadDataset(
+    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
+
+  downloadDataset(
+    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
+
+  downloadDataset(
+    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
+        request,
+        metadata || {},
+        this.methodInfoDownloadDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
+    request,
+    metadata || {},
+    this.methodInfoDownloadDataset);
+  }
+
 }
 

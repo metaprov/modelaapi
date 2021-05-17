@@ -579,3 +579,45 @@ export namespace ValidateDatasetResponse {
   }
 }
 
+export class DownloadDatasetRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DownloadDatasetRequest;
+
+  getName(): string;
+  setName(value: string): DownloadDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadDatasetRequest): DownloadDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: DownloadDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadDatasetRequest;
+  static deserializeBinaryFromReader(message: DownloadDatasetRequest, reader: jspb.BinaryReader): DownloadDatasetRequest;
+}
+
+export namespace DownloadDatasetRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class DownloadDatasetResponse extends jspb.Message {
+  getRaw(): Uint8Array | string;
+  getRaw_asU8(): Uint8Array;
+  getRaw_asB64(): string;
+  setRaw(value: Uint8Array | string): DownloadDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadDatasetResponse): DownloadDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: DownloadDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadDatasetResponse;
+  static deserializeBinaryFromReader(message: DownloadDatasetResponse, reader: jspb.BinaryReader): DownloadDatasetResponse;
+}
+
+export namespace DownloadDatasetResponse {
+  export type AsObject = {
+    raw: Uint8Array | string,
+  }
+}
+

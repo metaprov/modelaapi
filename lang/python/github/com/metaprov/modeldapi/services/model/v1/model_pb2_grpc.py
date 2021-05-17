@@ -94,6 +94,11 @@ class ModelServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompileModelRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompileModelResponse.FromString,
                 )
+        self.DownloadModel = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelResponse.FromString,
+                )
 
 
 class ModelServiceServicer(object):
@@ -195,6 +200,12 @@ class ModelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DownloadModel(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ModelServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -277,6 +288,11 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     servicer.CompileModel,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompileModelRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompileModelResponse.SerializeToString,
+            ),
+            'DownloadModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -557,5 +573,22 @@ class ModelService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompileModelRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.CompileModelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DownloadModel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_model_dot_v1_dot_model__pb2.DownloadModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

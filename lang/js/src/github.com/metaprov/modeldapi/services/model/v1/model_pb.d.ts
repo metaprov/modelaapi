@@ -703,3 +703,45 @@ export namespace GetMisclassResponse {
   }
 }
 
+export class DownloadModelRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DownloadModelRequest;
+
+  getName(): string;
+  setName(value: string): DownloadModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadModelRequest): DownloadModelRequest.AsObject;
+  static serializeBinaryToWriter(message: DownloadModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadModelRequest;
+  static deserializeBinaryFromReader(message: DownloadModelRequest, reader: jspb.BinaryReader): DownloadModelRequest;
+}
+
+export namespace DownloadModelRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class DownloadModelResponse extends jspb.Message {
+  getRaw(): Uint8Array | string;
+  getRaw_asU8(): Uint8Array;
+  getRaw_asB64(): string;
+  setRaw(value: Uint8Array | string): DownloadModelResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadModelResponse): DownloadModelResponse.AsObject;
+  static serializeBinaryToWriter(message: DownloadModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadModelResponse;
+  static deserializeBinaryFromReader(message: DownloadModelResponse, reader: jspb.BinaryReader): DownloadModelResponse;
+}
+
+export namespace DownloadModelResponse {
+  export type AsObject = {
+    raw: Uint8Array | string,
+  }
+}
+
