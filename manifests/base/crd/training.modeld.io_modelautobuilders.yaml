@@ -158,6 +158,15 @@ spec:
                         description: URI is the uri of the api
                         type: string
                     type: object
+                  datasetType:
+                    default: tabular
+                    description: Type is the dataset type
+                    enum:
+                    - tabular
+                    - image
+                    - text
+                    - video
+                    type: string
                   description:
                     description: User provided description of the data source
                     maxLength: 512
@@ -757,6 +766,7 @@ spec:
                 description: Task is the machine learning task (regression/classification)
                   required
                 enum:
+                - forecasting
                 - binary-classification
                 - multi-classification
                 - multi-label-classification
@@ -770,6 +780,17 @@ spec:
                 - topic-modeling
                 - auto
                 - unknown
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - text-classification
+                - text-multi-label-classification
+                - text-entity-extraction
+                - text-sentiment-analysis
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
                 type: string
               trainers:
                 default: 1

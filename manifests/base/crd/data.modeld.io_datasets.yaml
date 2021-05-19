@@ -35,6 +35,9 @@ spec:
     - jsonPath: .spec.datasourceName
       name: Data Source
       type: string
+    - jsonPath: .spec.type
+      name: Type
+      type: string
     - jsonPath: .status.statistics.rows
       name: Rows
       type: integer
@@ -131,6 +134,15 @@ spec:
                 description: Syntactic indicates if we want to generate this dataset
                   based on the data source
                 type: boolean
+              type:
+                default: tabular
+                description: DatasetType is the type of dataset
+                enum:
+                - tabular
+                - image
+                - text
+                - video
+                type: string
               validate:
                 default: true
                 description: If true, we should validate the dataset

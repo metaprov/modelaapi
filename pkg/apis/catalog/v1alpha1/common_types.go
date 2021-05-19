@@ -98,22 +98,34 @@ func (ak ApiKeyName) AsCliOption() string {
 }
 
 // MLTask is the machine learning task name
-// +kubebuilder:validation:Enum="binary-classification";"multi-classification";"multi-label-classification";"text-classification";"regression";"forecasting";"clustering";"recommendation";"outlier-detection";"novelty-detection";"topic-modeling";"auto";"unknown";
+// +kubebuilder:validation:Enum="forecasting";"binary-classification";"multi-classification";"multi-label-classification";"text-classification";"regression";"forecasting";"clustering";"recommendation";"outlier-detection";"novelty-detection";"topic-modeling";"auto";"unknown";"video-action-recognition";"video-classification";"video-object-tracking";"text-classification";"text-multi-label-classification";"text-entity-extraction";"text-sentiment-analysis";"image-classification";"image-multi-classification";"image-object-detection";"image-segmentation"
 type MLTask string
 
 const (
-	BinaryClassification     MLTask = "binary-classification"
-	MultiClassification      MLTask = "multi-classification"
-	MultiLabelClassification MLTask = "multi-label-classification"
-	Regression               MLTask = "regression"
-	Forcasting               MLTask = "forecasting"
-	Clustering               MLTask = "clustering"
-	Recommendation           MLTask = "recommendation"
-	OutlierDetection         MLTask = "outlier-detection"
-	NovelityDetection        MLTask = "novelty-detection"
-	TopicModeling            MLTask = "topic-modeling"
-	AutoDetectTask           MLTask = "auto"
-	UnknownTask              MLTask = "unknown"
+	BinaryClassification          MLTask = "binary-classification"
+	MultiClassification           MLTask = "multi-classification"
+	MultiLabelClassification      MLTask = "multi-label-classification"
+	Forecasting                   MLTask = "forecasting"
+	Regression                    MLTask = "regression"
+	Forcasting                    MLTask = "forecasting"
+	Clustering                    MLTask = "clustering"
+	Recommendation                MLTask = "recommendation"
+	OutlierDetection              MLTask = "outlier-detection"
+	NovelityDetection             MLTask = "novelty-detection"
+	TopicModeling                 MLTask = "topic-modeling"
+	VideoActionRecognition        MLTask = "video-action-recognition"
+	VideoClassification           MLTask = "video-classification"
+	VideoObjectTracking           MLTask = "video-object-tracking"
+	TextClassification            MLTask = "text-classification"
+	TextMultiLabelClassification  MLTask = "text-multi-label-classification"
+	TextEntityExtraction          MLTask = "text-entity-extraction"
+	TextSentimentAnalysis         MLTask = "text-sentiment-analysis"
+	ImageClassification           MLTask = "image-classification"
+	ImageMultiLabelClassification MLTask = "image-multi-classification"
+	ImageObjectDetection          MLTask = "image-object-detection"
+	ImageSegmentation             MLTask = "image-segmentation"
+	AutoDetectTask                MLTask = "auto"
+	UnknownTask                   MLTask = "unknown"
 )
 
 // +kubebuilder:validation:Enum="alicloud";"athena";"azure";"big-query";"bitbucket";"cassandra";"digitalocean";"smtp";"gcp";"github";"hetzner";"linode";"mysql";"minio";"mongo-db";"ms-sql-server";"odbc";"oracle";"ovh";"postgres";"presto";"redshift";"aws";"slack";"snowflake";"sqlite";"image-registry";"license";"gitlab";"lm";"openstack";"hipchat";"pagerduty";"pushover";"opengenie";"webook";"victorops";"wechat";"flock";"msteam";"mattermost";"docker-hub";"unknown";
@@ -1282,4 +1294,14 @@ const (
 	ModelDeploymentPhaseReleasing ModelDeploymentPhase = "Releasing"
 	ModelDeploymentPhaseReleased  ModelDeploymentPhase = "Released"
 	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
+)
+
+// +kubebuilder:validation:Enum="tabular";"image";"text";"video"
+type DatasetType string
+
+const (
+	DatasetTypeTabular DatasetType = "tabular"
+	DatasetTypeImage   DatasetType = "image"
+	DatasetTypeText    DatasetType = "text"
+	DatasetTypeVideo   DatasetType = "video"
 )

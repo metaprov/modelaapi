@@ -693,6 +693,7 @@ spec:
                 description: Task is the machine learning task (regression, classification).
                   The task is generated from the study task
                 enum:
+                - forecasting
                 - binary-classification
                 - multi-classification
                 - multi-label-classification
@@ -706,6 +707,17 @@ spec:
                 - topic-modeling
                 - auto
                 - unknown
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - text-classification
+                - text-multi-label-classification
+                - text-entity-extraction
+                - text-sentiment-analysis
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
                 type: string
               tested:
                 default: false

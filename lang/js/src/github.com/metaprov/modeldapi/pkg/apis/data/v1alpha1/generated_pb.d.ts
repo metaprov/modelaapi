@@ -1288,6 +1288,9 @@ export class DataSourceSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataSourceSpec;
 
+  getDatasettype(): string;
+  setDatasettype(value: string): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1308,6 +1311,7 @@ export namespace DataSourceSpec {
     stream?: StreamSpec.AsObject,
     api?: ApiSpec.AsObject,
     owner: string,
+    datasettype: string,
   }
 }
 
@@ -1477,6 +1481,9 @@ export class DatasetSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): DatasetSpec;
 
+  getType(): string;
+  setType(value: string): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1500,6 +1507,7 @@ export namespace DatasetSpec {
     location?: DataLocation.AsObject,
     workloadclassname: string,
     activedeadlineseconds: number,
+    type: string,
   }
 }
 

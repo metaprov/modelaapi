@@ -395,6 +395,10 @@ type DataSourceSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,10,opt,name=owner"`
+	// Type is the dataset type
+	// +kubebuilder:default:="tabular"
+	// +kubebuilder:validation:Optional
+	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,17,opt,name=datasetType"`
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

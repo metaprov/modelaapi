@@ -254,6 +254,7 @@ spec:
                 description: Task denote the machine learning task of the product
                   (classification/regression,etc.)
                 enum:
+                - forecasting
                 - binary-classification
                 - multi-classification
                 - multi-label-classification
@@ -267,6 +268,17 @@ spec:
                 - topic-modeling
                 - auto
                 - unknown
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - text-classification
+                - text-multi-label-classification
+                - text-entity-extraction
+                - text-sentiment-analysis
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
                 type: string
               tenantRef:
                 description: The tenant that own the data product. Default to default

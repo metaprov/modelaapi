@@ -862,6 +862,11 @@ message DataSourceSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 10;
+
+  // Type is the dataset type
+  // +kubebuilder:default:="tabular"
+  // +kubebuilder:validation:Optional
+  optional string datasetType = 17;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec
@@ -885,6 +890,7 @@ message DataSourceStatus {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Data Source",type="string",JSONPath=".spec.datasourceName"
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
 // +kubebuilder:printcolumn:name="Rows",type="integer",JSONPath=".status.statistics.rows"
 // +kubebuilder:printcolumn:name="Columns",type="integer",JSONPath=".status.statistics.cols"
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
@@ -996,6 +1002,11 @@ message DatasetSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 16;
+
+  // DatasetType is the type of dataset
+  // +kubebuilder:default:="tabular"
+  // +kubebuilder:validation:Optional
+  optional string type = 17;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

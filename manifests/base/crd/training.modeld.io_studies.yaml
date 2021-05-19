@@ -828,6 +828,7 @@ spec:
                 description: Task specify the machine learning task (e.g classification).
                   This must match the task of the data product.
                 enum:
+                - forecasting
                 - binary-classification
                 - multi-classification
                 - multi-label-classification
@@ -841,6 +842,17 @@ spec:
                 - topic-modeling
                 - auto
                 - unknown
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - text-classification
+                - text-multi-label-classification
+                - text-entity-extraction
+                - text-sentiment-analysis
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
                 type: string
               template:
                 default: false

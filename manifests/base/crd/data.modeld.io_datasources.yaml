@@ -103,6 +103,15 @@ spec:
                     description: URI is the uri of the api
                     type: string
                 type: object
+              datasetType:
+                default: tabular
+                description: Type is the dataset type
+                enum:
+                - tabular
+                - image
+                - text
+                - video
+                type: string
               description:
                 description: User provided description of the data source
                 maxLength: 512

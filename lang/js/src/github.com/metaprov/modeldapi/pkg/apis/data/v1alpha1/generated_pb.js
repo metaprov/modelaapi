@@ -13992,7 +13992,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     table: (f = msg.getTable()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec.toObject(includeInstance, f),
     stream: (f = msg.getStream()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.StreamSpec.toObject(includeInstance, f),
     api: (f = msg.getApi()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    datasettype: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14073,6 +14074,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasettype(value);
       break;
     default:
       reader.skipField();
@@ -14175,6 +14180,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
   if (f != null) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -14543,6 +14555,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string datasetType = 17;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getDatasettype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setDatasettype = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearDatasettype = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasDatasettype = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -15653,7 +15701,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     origin: (f = msg.getOrigin()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     workloadclassname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    activedeadlineseconds: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    type: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15743,6 +15792,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
     case 16:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -15863,6 +15916,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
   if (f != null) {
     writer.writeInt64(
       16,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -16336,6 +16396,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasActivedeadlineseconds = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional string type = 17;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearType = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasType = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
