@@ -86,6 +86,7 @@ type NotebookRunSpec struct {
 	// +kubebuilder:validation:Optional
 	Values []NotebookVarValue `json:"values,omitempty" protobuf:"bytes,3,rep,name=values"`
 	// Owner account name
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 	// WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study

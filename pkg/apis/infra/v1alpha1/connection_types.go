@@ -69,109 +69,109 @@ type ConnectionSpec struct {
 	// SecretName is a reference to a secret which holds the connection credentials
 	// +kubebuilder:validation:Required
 	SecretName *string `json:"secretName,omitempty" protobuf:"bytes,4,opt,name=secretName"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Athena *AthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	AzureStorage *AzureStorageSpec `json:"azureStorage,omitempty" protobuf:"bytes,6,opt,name=azureStorage"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	AliCloud *AliCloudSpec `json:"aliCloud,omitempty" protobuf:"bytes,7,opt,name=aliCloud"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	BigQuery *BigQuerySpec `json:"bigQuery,omitempty" protobuf:"bytes,8,opt,name=bigQuery"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Bitbucket *BitbucketSpec `json:"bitbuckt,omitempty" protobuf:"bytes,9,opt,name=bitbucket"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Cassandra *CassandraSpec `json:"cassandra,omitempty" protobuf:"bytes,10,opt,name=cassandra"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	DigitalOcean *DigitalOceanSpec `json:"digitalocean,omitempty" protobuf:"bytes,11,opt,name=digitalocean"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Smtp *SmtpSpec `json:"smtp,omitempty" protobuf:"bytes,12,opt,name=smtp"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Hetzner *HetznerSpec `json:"hetzner,omitempty" protobuf:"bytes,13,opt,name=hetzner"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	ImageRegistry *ImageRegistrySpec `json:"imageRegistry,omitempty" protobuf:"bytes,14,opt,name=imageRegistry"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Github *GithubSpec `json:"github,omitempty" protobuf:"bytes,15,opt,name=github"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Gitlab *GitlabSpec `json:"gitlab,omitempty" protobuf:"bytes,16,opt,name=gitlab"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	GcpStorage *GcpStorageSpec `json:"gcpstorage,omitempty" protobuf:"bytes,17,opt,name=gcpstorage"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Linode *LinodeSpec `json:"linode,omitempty" protobuf:"bytes,18,opt,name=linode"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	MongoDb *MongoDbSpec `json:"mongodb,omitempty" protobuf:"bytes,19,opt,name=mongodb"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	MySql *MySqlSpec `json:"mysql,omitempty" protobuf:"bytes,20,opt,name=mysql"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Minio *MinioSpec `json:"minio,omitempty" protobuf:"bytes,21,opt,name=minio"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	MSSqlServer *MSSqlServerSpec `json:"mssqlserver,omitempty" protobuf:"bytes,22,opt,name=mssqlserver"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Odbc *OdbcSpec `json:"odbc,omitempty" protobuf:"bytes,23,opt,name=odbc"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Oracle *OracleSpec `json:"oracle,omitempty" protobuf:"bytes,24,opt,name=oracle"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Openstack *OpenstackSpec `json:"openstack,omitempty" protobuf:"bytes,25,opt,name=openstack"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Ovh *OvhSpec `json:"ovh,omitempty" protobuf:"bytes,26,opt,name=ovh"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	PostgresSQL *PostgresSQLSpec `json:"postgres,omitempty" protobuf:"bytes,27,opt,name=postgres"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Presto *PrestoSpec `json:"presto,omitempty" protobuf:"bytes,28,opt,name=presto"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	RedShift *RedShiftSpec `json:"redshift,omitempty" protobuf:"bytes,29,opt,name=redshift"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	SnowFlake *SnowFlakeSpec `json:"snowflake,omitempty" protobuf:"bytes,30,opt,name=snowflake"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	SqlLight *SqlLightSpec `json:"sqlLight,omitempty" protobuf:"bytes,31,opt,name=sqlLight"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Aws *AwsSpec `json:"aws,omitempty" protobuf:"bytes,32,opt,name=aws"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Slack *SlackSpec `json:"slack,omitempty" protobuf:"bytes,33,opt,name=slack"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Flock *FlockSpec `json:"flock,omitempty" protobuf:"bytes,34,opt,name=flock"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	MSTeam *MSTeamSpec `json:"msteam,omitempty" protobuf:"bytes,35,opt,name=msteam"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	MatterMost *MattermostSpec `json:"matterMost,omitempty" protobuf:"bytes,36,opt,name=matterMost"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Hipchat *HipchatSpec `json:"hipchat,omitempty" protobuf:"bytes,37,opt,name=hipchat"`
-	// +kubebuilder:validation:Optional
+
 	// +kubebuilder:validation:Optional
 	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,38,opt,name=webhook"`
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,39,opt,name=owner"`
 }

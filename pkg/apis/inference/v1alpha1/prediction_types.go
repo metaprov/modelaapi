@@ -94,6 +94,7 @@ type PredictionSpec struct {
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
 	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,opt,name=tests"`
 	// The owner account name
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 	// A reference to the workload class that is used for training

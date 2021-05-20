@@ -352,7 +352,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,21,opt,name=hierarchy"`
 	// The owner account name
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
 	// ActiveDeadlineSeconds is the deadline of a job for this study.

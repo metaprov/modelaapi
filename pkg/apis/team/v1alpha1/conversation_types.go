@@ -77,7 +77,7 @@ type ConversationSpec struct {
 	// Messages are the messages of the conversation.
 	Messages []Comment `json:"messages" protobuf:"bytes,2,rep,name=messages"`
 	// The owner account name
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }

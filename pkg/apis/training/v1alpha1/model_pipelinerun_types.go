@@ -125,7 +125,7 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:validation:Optional
 	PipelineName *string `json:"pipelineName,omitempty" protobuf:"bytes,4,opt,name=pipelineName"`
 	// The owner of the ruyn.
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }

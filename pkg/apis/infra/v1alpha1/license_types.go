@@ -85,7 +85,7 @@ type LicenseSpec struct {
 	SecretName *string `json:"secretName" protobuf:"bytes,2,opt,name=secretName"`
 	// Owner is the account owning this license
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""

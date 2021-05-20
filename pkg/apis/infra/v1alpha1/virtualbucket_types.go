@@ -70,7 +70,7 @@ type VirtualBucketSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Owner of the bucket
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }

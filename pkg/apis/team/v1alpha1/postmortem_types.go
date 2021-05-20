@@ -102,7 +102,7 @@ type PostMortemSpec struct {
 	// +kubebuilder:validation:Optional
 	Summary *string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
 	// The owner account name
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 }

@@ -100,7 +100,7 @@ type VirtualClusterSpec struct {
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
 	// +kubebuilder:validation:Optional
 	// Owner is the account name of the owner of this cluster
-	//+kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 }

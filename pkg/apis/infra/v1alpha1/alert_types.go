@@ -87,7 +87,7 @@ type AlertSpec struct {
 	// +kubebuilder:default:=""
 	// NotifierName is the name of the notifier used to fire the alert.
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
 }

@@ -66,7 +66,7 @@ type RunBookSpec struct {
 	// The author of the comment
 	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,2,opt,name=authorRef"`
 	// The owner account name
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }
