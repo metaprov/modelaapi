@@ -74,7 +74,7 @@ spec:
                 description: Description is the user provided description
                 type: string
               owner:
-                default: ""
+                default: no-one
                 description: The owner of the ruyn.
                 type: string
               pipelineName:

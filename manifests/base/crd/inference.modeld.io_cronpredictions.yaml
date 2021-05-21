@@ -160,6 +160,7 @@ spec:
                         - path
                         type: object
                       owner:
+                        default: no-one
                         description: The owner account name
                         type: string
                       predictorName:

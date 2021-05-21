@@ -103,7 +103,7 @@ spec:
                   the alert.
                 type: string
               owner:
-                default: ""
+                default: no-one
                 type: string
               subject:
                 default: ""

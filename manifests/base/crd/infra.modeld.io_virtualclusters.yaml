@@ -96,7 +96,7 @@ spec:
                 minimum: 1
                 type: integer
               owner:
-                default: ""
+                default: no-one
                 description: Owner is the account name of the owner of this cluster
                 type: string
               spot:

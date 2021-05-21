@@ -116,7 +116,7 @@ spec:
                   the license expiration notification
                 type: string
               owner:
-                default: ""
+                default: no-one
                 description: Owner is the account owning this license
                 type: string
               priceName:

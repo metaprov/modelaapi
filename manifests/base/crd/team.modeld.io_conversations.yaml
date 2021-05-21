@@ -144,7 +144,7 @@ spec:
                   type: object
                 type: array
               owner:
-                default: ""
+                default: no-one
                 description: The owner account name
                 type: string
             required:

@@ -130,7 +130,7 @@ spec:
                 maxLength: 512
                 type: string
               owner:
-                default: ""
+                default: no-one
                 description: Owner is the owner account name
                 type: string
             type: object

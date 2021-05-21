@@ -389,6 +389,7 @@ message PredictionSpec {
   repeated string tests = 7;
 
   // The owner account name
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 8;
 

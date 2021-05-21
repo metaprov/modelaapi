@@ -864,7 +864,7 @@ message ModelPipelineRunSpec {
   optional string pipelineName = 4;
 
   // The owner of the ruyn.
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
 }
@@ -1591,6 +1591,7 @@ message NotebookRunSpec {
   repeated NotebookVarValue values = 3;
 
   // Owner account name
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
@@ -2087,7 +2088,7 @@ message StudySpec {
   optional Hierarchy hierarchy = 21;
 
   // The owner account name
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 22;
 

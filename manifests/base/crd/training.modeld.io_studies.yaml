@@ -328,7 +328,7 @@ spec:
                 - mdape
                 type: string
               owner:
-                default: ""
+                default: no-one
                 description: The owner account name
                 type: string
               paused:

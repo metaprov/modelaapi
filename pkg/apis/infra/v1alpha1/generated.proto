@@ -230,7 +230,7 @@ message AlertSpec {
   // NotifierName is the name of the notifier used to fire the alert.
   optional string notifierName = 5;
 
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 6;
 }
@@ -316,7 +316,7 @@ message ApiTokenSpec {
   // Scopes is the list of scopes for this token.
   repeated Scope scopes = 2;
 
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 3;
 }
@@ -470,7 +470,7 @@ message CommitSpec {
   // NotifierName is the name of the notifier used to fire the alert.
   optional string notifierName = 5;
 
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 6;
 }
@@ -557,142 +557,108 @@ message ConnectionSpec {
   optional string secretName = 4;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional AthenaSpec athena = 5;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional AzureStorageSpec azureStorage = 6;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional AliCloudSpec aliCloud = 7;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional BigQuerySpec bigQuery = 8;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional BitbucketSpec bitbucket = 9;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional CassandraSpec cassandra = 10;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional DigitalOceanSpec digitalocean = 11;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional SmtpSpec smtp = 12;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional HetznerSpec hetzner = 13;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional ImageRegistrySpec imageRegistry = 14;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional GithubSpec github = 15;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional GitlabSpec gitlab = 16;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional GcpStorageSpec gcpstorage = 17;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional LinodeSpec linode = 18;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional MongoDbSpec mongodb = 19;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional MySqlSpec mysql = 20;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional MinioSpec minio = 21;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional MSSqlServerSpec mssqlserver = 22;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional OdbcSpec odbc = 23;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional OracleSpec oracle = 24;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional OpenstackSpec openstack = 25;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional OvhSpec ovh = 26;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional PostgresSQLSpec postgres = 27;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional PrestoSpec presto = 28;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional RedShiftSpec redshift = 29;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional SnowFlakeSpec snowflake = 30;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional SqlLightSpec sqlLight = 31;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional AwsSpec aws = 32;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional SlackSpec slack = 33;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional FlockSpec flock = 34;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional MSTeamSpec msteam = 35;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional MattermostSpec matterMost = 36;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional HipchatSpec hipchat = 37;
 
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional WebhookSpec webhook = 38;
 
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 39;
 }
@@ -943,7 +909,7 @@ message LicenseSpec {
 
   // Owner is the account owning this license
   // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   optional string owner = 3;
 
   // +kubebuilder:validation:Optional
@@ -1619,7 +1585,7 @@ message TenantSpec {
   optional string description = 3;
 
   // Owner is the owner account name
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional string owner = 4;
@@ -1699,7 +1665,7 @@ message VirtualBucketSpec {
 
   // Owner of the bucket
   // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 }
@@ -1805,7 +1771,7 @@ message VirtualClusterSpec {
 
   // +kubebuilder:validation:Optional
   // Owner is the account name of the owner of this cluster
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 9;
 }

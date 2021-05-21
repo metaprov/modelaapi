@@ -70,6 +70,7 @@ spec:
                 description: NotebookName of the notebook for this run
                 type: string
               owner:
+                default: no-one
                 description: Owner account name
                 type: string
               values:

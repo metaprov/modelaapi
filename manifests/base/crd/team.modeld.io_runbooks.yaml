@@ -121,7 +121,7 @@ spec:
                     type: string
                 type: object
               owner:
-                default: ""
+                default: no-one
                 description: The owner account name
                 type: string
             type: object

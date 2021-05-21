@@ -85,7 +85,7 @@ message ConversationSpec {
   repeated Comment messages = 2;
 
   // The owner account name
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 3;
 }
@@ -173,7 +173,7 @@ message PostMortemSpec {
   optional string summary = 7;
 
   // The owner account name
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 8;
 }
@@ -250,7 +250,7 @@ message RunBookSpec {
   optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
 
   // The owner account name
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 3;
 }
