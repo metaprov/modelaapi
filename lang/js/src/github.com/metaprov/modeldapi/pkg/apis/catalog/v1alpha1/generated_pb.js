@@ -9229,11 +9229,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    image: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    task: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    id: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    externalname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    dataurl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    url: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    decription: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    task: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    openmlid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    dataurl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    citation: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    rows: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    columns: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    filesize: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    targetcolumn: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    imbalanced: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9272,23 +9278,47 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImage(value);
+      msg.setUrl(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTask(value);
+      msg.setDecription(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setTask(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setExternalname(value);
+      msg.setOpenmlid(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDataurl(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCitation(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRows(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setColumns(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFilesize(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTargetcolumn(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setImbalanced(value);
       break;
     default:
       reader.skipField();
@@ -9354,14 +9384,56 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeBool(
+      11,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string image = 1;
+ * optional string url = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getImage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -9370,7 +9442,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setImage = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setUrl = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -9379,7 +9451,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearImage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearUrl = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -9388,16 +9460,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasImage = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasUrl = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string task = 2;
+ * optional string decription = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getTask = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDecription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -9406,7 +9478,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setTask = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDecription = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -9415,7 +9487,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearTask = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDecription = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -9424,16 +9496,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasTask = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDecription = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string id = 3;
+ * optional string task = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getId = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getTask = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -9442,7 +9514,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setId = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setTask = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -9451,7 +9523,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearId = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearTask = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -9460,16 +9532,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasId = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasTask = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string externalName = 4;
+ * optional string openmlID = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getExternalname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getOpenmlid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -9478,7 +9550,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setExternalname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setOpenmlid = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -9487,7 +9559,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearExternalname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearOpenmlid = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -9496,7 +9568,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasExternalname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasOpenmlid = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -9534,6 +9606,222 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDataurl = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string citation = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getCitation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setCitation = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearCitation = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasCitation = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int32 rows = 7;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setRows = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearRows = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasRows = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 columns = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getColumns = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setColumns = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearColumns = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasColumns = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional int32 fileSize = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getFilesize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setFilesize = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearFilesize = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasFilesize = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string targetColumn = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getTargetcolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setTargetcolumn = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearTargetcolumn = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasTargetcolumn = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool imbalanced = 11;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getImbalanced = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setImbalanced = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearImbalanced = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasImbalanced = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

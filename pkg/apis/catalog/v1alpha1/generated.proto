@@ -502,21 +502,38 @@ message PublicDatasetList {
 }
 
 message PublicDatasetSpec {
-  // +kubebuilder:validation:Optional
-  optional string image = 1;
+  optional string url = 1;
+
+  // Dataset description
+  optional string decription = 2;
 
   // Task is the machine learning task of the public dataset
-  // +kubebuilder:validation:Optional
-  optional string task = 2;
+  optional string task = 3;
 
+  // The open ml id of the dataset
   // +kubebuilder:validation:Optional
-  optional string id = 3;
+  optional string openmlID = 4;
 
-  // +kubebuilder:validation:Optional
-  optional string externalName = 4;
-
-  // +kubebuilder:validation:Optional
+  // The URL to the actual data file or folder
   optional string dataUrl = 5;
+
+  // Dataset citation
+  optional string citation = 6;
+
+  // Number of rows in the dataset
+  optional int32 rows = 7;
+
+  // Number of columns in the dataset
+  optional int32 columns = 8;
+
+  // The size of the dataset in bytes
+  optional int32 fileSize = 9;
+
+  // The target column name
+  optional string targetColumn = 10;
+
+  // indicates w
+  optional bool imbalanced = 11;
 }
 
 // Region defines a region within the data provider

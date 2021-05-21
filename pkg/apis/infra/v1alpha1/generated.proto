@@ -95,7 +95,6 @@ message AccountSpec {
   optional string username = 4;
 
   // First FileName is the user first name
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
@@ -103,7 +102,6 @@ message AccountSpec {
 
   // LastName is the user last name
   // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Optional
   optional string lastName = 6;
@@ -123,33 +121,27 @@ message AccountSpec {
   // User is admin. Admin have full control on other accounts.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional bool admin = 9;
 
   // Email account creation event to user (using the user email)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional bool emailPassword = 10;
 
   // User need to reset password upon login
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool resetPassword = 11;
 
   // ProductBinding is the premission that the user have for each product
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   repeated AccountRoleBinding productBindings = 12;
 
   // LabBinding is the RBAC roles that the user have within each lab
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   repeated AccountRoleBinding labBindings = 13;
 
   // SiteBindings is the RBAC roles that the user have within each serving site.
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   repeated AccountRoleBinding siteBindings = 14;
 }
@@ -816,10 +808,8 @@ message LabSpec {
 
   // QuotaSpec is quoute specification for the lab namespace.
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
 
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.LimitRangeSpec limitRangeSpec = 4;
 
@@ -830,7 +820,6 @@ message LabSpec {
 
   // The owner account name
   // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional string owner = 6;
 }
@@ -1399,7 +1388,6 @@ message ServingSiteList {
 
 message ServingSiteSpec {
   // Description is user provided description
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 1;
@@ -1407,42 +1395,35 @@ message ServingSiteSpec {
   // Reference to the tenant owning this serving site.
   // Default to default tenant.
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
   // QuotaSpec is  resource quota for the serving site
   // By default, not quota is applied
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
 
   // LimitRangeSpec limit range for the serving site
   // By default, no limit range apply
-  // +kubebuilder:validation:Optional.
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.LimitRangeSpec limitRangeSpec = 4;
 
   // IngressName denote the name of the ingress object where the serving site
   // places the external points used to access the predictors
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string ingressName = 5;
 
   // The FDQN for this site. This will register with ingress.
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string fdqn = 6;
 
   // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string clusterName = 7;
 
   // Owner is the owner account name
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 8;
@@ -1587,7 +1568,6 @@ message TenantSpec {
   // Owner is the owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Optional
   optional string owner = 4;
 }
 
@@ -1657,14 +1637,12 @@ message VirtualBucketSpec {
   optional string connectionName = 2;
 
   // User provided description
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
   // Owner of the bucket
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
@@ -1724,7 +1702,6 @@ message VirtualClusterSpec {
   optional string description = 1;
 
   // Nodes is the desired number of nodes
-  // +kubebuilder:validation:Optional
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
@@ -1769,7 +1746,6 @@ message VirtualClusterSpec {
   // +kubebuilder:default:=""
   optional string connectionName = 8;
 
-  // +kubebuilder:validation:Optional
   // Owner is the account name of the owner of this cluster
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional

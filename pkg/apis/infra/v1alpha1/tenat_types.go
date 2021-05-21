@@ -77,7 +77,6 @@ type TenantSpec struct {
 	// Owner is the owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 

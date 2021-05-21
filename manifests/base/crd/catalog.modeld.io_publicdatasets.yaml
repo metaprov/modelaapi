@@ -43,11 +43,35 @@ spec:
             type: object
           spec:
             properties:
+              citation:
+                description: Dataset citation
+                type: string
+              columns:
+                description: Number of columns in the dataset
+                format: int32
+                type: integer
               dataUrl:
+                description: The URL to the actual data file or folder
                 type: string
-              externalName:
+              decription:
+                description: Dataset description
                 type: string
-              id:
+              fileSize:
+                description: The size of the dataset in bytes
+                format: int32
+                type: integer
+              imbalanced:
+                description: indicates w
+                type: boolean
+              openmlID:
+                description: The open ml id of the dataset
+                type: string
+              rows:
+                description: Number of rows in the dataset
+                format: int32
+                type: integer
+              targetColumn:
+                description: The target column name
                 type: string
               task:
                 description: Task is the machine learning task of the public dataset
@@ -80,6 +104,8 @@ spec:
                 type: string
               url:
                 type: string
+            required:
+            - task
             type: object
         required:
         - spec

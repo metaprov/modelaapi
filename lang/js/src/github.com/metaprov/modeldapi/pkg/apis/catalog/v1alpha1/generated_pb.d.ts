@@ -931,20 +931,38 @@ export namespace PublicDatasetList {
 }
 
 export class PublicDatasetSpec extends jspb.Message {
-  getImage(): string;
-  setImage(value: string): PublicDatasetSpec;
+  getUrl(): string;
+  setUrl(value: string): PublicDatasetSpec;
+
+  getDecription(): string;
+  setDecription(value: string): PublicDatasetSpec;
 
   getTask(): string;
   setTask(value: string): PublicDatasetSpec;
 
-  getId(): string;
-  setId(value: string): PublicDatasetSpec;
-
-  getExternalname(): string;
-  setExternalname(value: string): PublicDatasetSpec;
+  getOpenmlid(): string;
+  setOpenmlid(value: string): PublicDatasetSpec;
 
   getDataurl(): string;
   setDataurl(value: string): PublicDatasetSpec;
+
+  getCitation(): string;
+  setCitation(value: string): PublicDatasetSpec;
+
+  getRows(): number;
+  setRows(value: number): PublicDatasetSpec;
+
+  getColumns(): number;
+  setColumns(value: number): PublicDatasetSpec;
+
+  getFilesize(): number;
+  setFilesize(value: number): PublicDatasetSpec;
+
+  getTargetcolumn(): string;
+  setTargetcolumn(value: string): PublicDatasetSpec;
+
+  getImbalanced(): boolean;
+  setImbalanced(value: boolean): PublicDatasetSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublicDatasetSpec.AsObject;
@@ -956,11 +974,17 @@ export class PublicDatasetSpec extends jspb.Message {
 
 export namespace PublicDatasetSpec {
   export type AsObject = {
-    image: string,
+    url: string,
+    decription: string,
     task: string,
-    id: string,
-    externalname: string,
+    openmlid: string,
     dataurl: string,
+    citation: string,
+    rows: number,
+    columns: number,
+    filesize: number,
+    targetcolumn: string,
+    imbalanced: boolean,
   }
 }
 

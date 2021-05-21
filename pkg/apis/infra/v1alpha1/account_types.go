@@ -94,14 +94,12 @@ type AccountSpec struct {
 	// +kubebuilder:validation:Required
 	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	FirstName *string `json:"firstName,omitempty" protobuf:"bytes,5,opt,name=firstName"`
 	// LastName is the user last name
 	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Optional
 	LastName *string `json:"lastName,omitempty" protobuf:"bytes,6,opt,name=lastName"`
@@ -118,28 +116,22 @@ type AccountSpec struct {
 	// User is admin. Admin have full control on other accounts.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Optional
 	Admin *bool `json:"admin,omitempty" protobuf:"bytes,9,opt,name=admin"`
 	// Email account creation event to user (using the user email)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Optional
 	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,10,opt,name=emailPassword"`
 	// User need to reset password upon login
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,11,opt,name=resetPassword"`
 	// ProductBinding is the premission that the user have for each product
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Optional
 	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,12,rep,name=productBindings"`
 	// LabBinding is the RBAC roles that the user have within each lab
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Optional
 	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,13,rep,name=labBindings"`
 	// SiteBindings is the RBAC roles that the user have within each serving site.
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Optional
 	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,14,rep,name=siteBindings"`
 }

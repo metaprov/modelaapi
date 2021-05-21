@@ -56,9 +56,7 @@ type LabSpec struct {
 	TenantRef *corev1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
 	// QuotaSpec is quoute specification for the lab namespace.
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Optional
 	QuotaSpec *corev1.ResourceQuotaSpec `json:"quotaSpec,omitempty" protobuf:"bytes,3,opt,name=quotaSpec"`
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Optional
 	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRangeSpec,omitempty" protobuf:"bytes,4,opt,name=limitRangeSpec"`
 	// ClusterName is the name of a remote cluster that is used to execute jobs for this lab
@@ -67,7 +65,6 @@ type LabSpec struct {
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,5,opt,name=clusterName"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
 }

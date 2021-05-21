@@ -21,17 +21,28 @@ type PublicDataset struct {
 }
 
 type PublicDatasetSpec struct {
-	// +kubebuilder:validation:Optional
-	Url string `json:"url" protobuf:"bytes,1,opt,name=image"`
+	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	// Dataset description
+	Description *string `json:"decription,omitempty" protobuf:"bytes,2,opt,name=decription"`
 	// Task is the machine learning task of the public dataset
+	Task *MLTask `json:"task" protobuf:"bytes,3,rep,name=task"`
+	// The open ml id of the dataset
 	// +kubebuilder:validation:Optional
-	Task MLTask `json:"task" protobuf:"bytes,2,rep,name=task,casttype=MLTask"`
-	// +kubebuilder:validation:Optional
-	ID string `json:"id" protobuf:"bytes,3,rep,name=id"`
-	// +kubebuilder:validation:Optional
-	ExternalName string `json:"externalName" protobuf:"bytes,4,opt,name=externalName"`
-	// +kubebuilder:validation:Optional
-	DataUrl string `json:"dataUrl" protobuf:"bytes,5,opt,name=dataUrl"`
+	OpenMLID *string `json:"openmlID,omitempty" protobuf:"bytes,4,rep,name=openmlID"`
+	// The URL to the actual data file or folder
+	DataUrl *string `json:"dataUrl,omitempty" protobuf:"bytes,5,opt,name=dataUrl"`
+	// Dataset citation
+	Citation *string `json:"citation,omitempty" protobuf:"bytes,6,opt,name=citation"`
+	// Number of rows in the dataset
+	Rows *int32 `json:"rows,omitempty" protobuf:"varint,7,opt,name=rows"`
+	// Number of columns in the dataset
+	Columns *int32 `json:"columns,omitempty" protobuf:"varint,8,opt,name=columns"`
+	// The size of the dataset in bytes
+	FileSize *int32 `json:"fileSize,omitempty" protobuf:"varint,9,opt,name=fileSize"`
+	// The target column name
+	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,10,opt,name=targetColumn"`
+	// indicates w
+	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,11,opt,name=imbalanced"`
 }
 
 //==============================================================================

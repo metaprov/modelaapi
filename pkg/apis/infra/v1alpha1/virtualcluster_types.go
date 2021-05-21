@@ -60,7 +60,6 @@ type VirtualClusterSpec struct {
 	//+optional
 	Description *string `json:"description.omitempty" protobuf:"bytes,1,opt,name=description"`
 	// Nodes is the desired number of nodes
-	// +kubebuilder:validation:Optional
 	//+kubebuilder:default:=1
 	//+kubebuilder:validation:Minimum=1
 	//+kubebuilder:validation:Maximum=10
@@ -98,7 +97,6 @@ type VirtualClusterSpec struct {
 	// ConnectionName refer to the name of the provider connection
 	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
-	// +kubebuilder:validation:Optional
 	// Owner is the account name of the owner of this cluster
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
