@@ -47,9 +47,9 @@ type WorkloadClassSpec struct {
 	// +kubebuilder:validation:Required
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,8,opt,name=podTemplate"`
 	// List of ml frameworks supported by the data container
-	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,9,opt,name=frameworks"`
+	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,9,rep,name=frameworks"`
 	// Libs is the list of python library supported by the data container
-	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,10,opt,name=libs"`
+	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,10,rep,name=libs"`
 	// OS is the name of the os
 	OS string `json:"os,omitempty" protobuf:"bytes,11,opt,name=os"`
 	// OSVersion is the version of the os

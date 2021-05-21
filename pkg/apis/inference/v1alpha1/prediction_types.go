@@ -92,7 +92,7 @@ type PredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
-	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,opt,name=tests"`
+	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,rep,name=tests"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -118,7 +118,7 @@ type PredictionStatus struct {
 	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
 	// Results is the results of running the prediction with a labeled dataset
 	// +kubebuilder:validation:Optional
-	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,opt,name=results"`
+	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,rep,name=results"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,5,opt,name=observedGeneration"`

@@ -181,7 +181,7 @@ type UATStageSpec struct {
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
 	// Tests defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,rep,name=tests"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -205,7 +205,7 @@ type CapacityStageSpec struct {
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,rep,name=tests"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -233,7 +233,7 @@ type DeploymentStageSpec struct {
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,4,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,4,rep,name=tests"`
 	// A reference to the workload class that is used for running the test prediction
 	// +kubebuilder:default:="default-inference-workload-class"
 	// +kubebuilder:validation:Optional
@@ -263,7 +263,7 @@ type ReleaseStageSpec struct {
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
 	// Tests is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,rep,name=tests"`
 	// A reference to the workload class that is used for running the release
 	// +kubebuilder:default:="default-inference-workload-class"
 	// +kubebuilder:validation:Optional
@@ -278,7 +278,7 @@ type MonitoringStageSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// Tests is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,opt,name=tests"`
+	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,rep,name=tests"`
 	// AutoRetrain denoted if we autoamtically retrain models.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

@@ -50,7 +50,7 @@ type Connection struct {
 type ConnectionList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []Connection `json:"items" protobuf:"bytes,2,opt,name=items"`
+	Items           []Connection `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 // ConnectionSpec defines the desired state of Connection
@@ -182,7 +182,7 @@ type ConnectionStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ConnectionCondition `json:"conditions,omitempty" protobuf:"bytes,2,opt,name=conditions"`
+	Conditions []ConnectionCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
 // =================== Definitions of spec files for each type

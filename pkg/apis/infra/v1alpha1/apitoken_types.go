@@ -55,7 +55,7 @@ type ApiTokenSpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// Scopes is the list of scopes for this token.
-	Scopes []Scope `json:"scopes,omitempty" protobuf:"bytes,2,opt,name=scopes"`
+	Scopes []Scope `json:"scopes,omitempty" protobuf:"bytes,2,rep,name=scopes"`
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
@@ -74,7 +74,7 @@ type Scope struct {
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// +kubebuilder:validation:Optional
-	Actions []ScopeVerb `json:"actions,omitempty" protobuf:"bytes,2,opt,name=actions"`
+	Actions []ScopeVerb `json:"actions,omitempty" protobuf:"bytes,2,rep,name=actions"`
 }
 
 type ScopeVerb string

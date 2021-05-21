@@ -152,7 +152,7 @@ type DataProductSpec struct {
 	RetriesOnFailure *int32 `json:"retriesOnFailure,omitempty" protobuf:"varint,14,opt,name=retriesOnFailure"`
 	// KPIs is the product kpi. This is for information porpose
 	//+kubebuilder:validation:Optional
-	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,opt,name=kpis"`
+	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,rep,name=kpis"`
 	// Semver counter that is used when generating new models
 	//+kubebuilder:validation:Optional
 	CurrentModelVersion SemVer `json:"currentModelVersion,omitempty" protobuf:"bytes,16,opt,name=currentModelVersion"`
@@ -161,7 +161,7 @@ type DataProductSpec struct {
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
-	Attachments []Attachment `json:"attachments,omitempty" protobuf:"bytes,18,opt,name=attachments"`
+	Attachments []Attachment `json:"attachments,omitempty" protobuf:"bytes,18,rep,name=attachments"`
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
@@ -214,5 +214,5 @@ type CompilerSpec struct {
 	Compiler *catalog.CompilerName `json:"compiler,omitempty" protobuf:"bytes,1,opt,name=compiler"`
 	// Targets is the list of targets
 	//+kubebuilder:validation:Optional
-	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,opt,name=targets"`
+	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,rep,name=targets"`
 }

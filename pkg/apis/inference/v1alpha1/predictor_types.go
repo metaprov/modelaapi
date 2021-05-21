@@ -115,7 +115,7 @@ type ProgressiveSpec struct {
 	TrafficIncrement *int32 `json:"trafficIncrement,omitempty" protobuf:"varint,2,opt,name=trafficIncrement"`
 	// What metric to use when comparing the candidate to the current
 	// +kubebuilder:validation:Optional
-	CanaryMetrics []catalog.CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,opt,name=canaryMetrics"`
+	CanaryMetrics []catalog.CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,3,rep,name=canaryMetrics"`
 }
 
 // PredictorSpec define the desired state of the predictor
@@ -134,7 +134,7 @@ type PredictorSpec struct {
 	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// Models is the list of models
 	// +kubebuilder:validation:Optional
-	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,5,opt,name=models"`
+	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,5,rep,name=models"`
 	// How much do we increment the warm up traffic
 	// +kubebuilder:validation:Optional
 	DriftCheck *DriftCheckSpec `json:"driftCheck,omitempty" protobuf:"bytes,12,opt,name=driftCheck"`
@@ -218,7 +218,7 @@ type OnlineFeaturestoreSpec struct {
 type PredictorStatus struct {
 	// Model one status
 	// +kubebuilder:validation:Optional
-	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,opt,name=modelStatus"`
+	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,rep,name=modelStatus"`
 
 	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 	// When was the last check attempt
@@ -233,7 +233,7 @@ type PredictorStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
 	// The channels
-	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,8,opt,name=statuses"`
+	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,8,rep,name=statuses"`
 	// Prev model spec stores the prev working model, The field is used in case of a roll back
 	//+kubebuilder:validation:Optional
 	PrevModelSpec *catalog.ModelDeploymentSpec `json:"prevModel,omitempty" protobuf:"bytes,9,opt,name=prevModel"`

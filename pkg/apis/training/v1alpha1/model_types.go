@@ -246,7 +246,7 @@ type ModelSpec struct {
 type EnsembleSpec struct {
 	// A list of base model to ensemble. The ensemble method is represented as the algorithm name.
 	// +kubebuilder:validation:Optional
-	Base []string `json:"base,omitempty" protobuf:"bytes,2,opt,name=base"`
+	Base []string `json:"base,omitempty" protobuf:"bytes,2,rep,name=base"`
 }
 
 // ModelStatus defines the observed state of the Model
@@ -329,7 +329,7 @@ type ModelStatus struct {
 	ImageName string `json:"imageName" protobuf:"bytes,22,opt,name=imageName"`
 	// +kubebuilder:validation:Optional
 	// Importance is list of feature importance based on the alg of this model, sorted by importance
-	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,23,opt,name=importance"`
+	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,23,rep,name=importance"`
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
@@ -516,7 +516,7 @@ type TrainingSpec struct {
 type CategoricalPipelineSpec struct {
 	// The columns for this pipeline. Use * to denotes all the columns.
 	// Must have at least on value.
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// Categorical varaible imputer
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
@@ -529,7 +529,7 @@ type CategoricalPipelineSpec struct {
 
 // NumericPipelineSpec is the specification for preprocessing numerical columns
 type NumericPipelineSpec struct {
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// Numerical var imputer
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
@@ -543,7 +543,7 @@ type NumericPipelineSpec struct {
 // TextPipelineSpec is the specification for preprocessing of text columns
 type TextPipelineSpec struct {
 	// The list of test columns
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// The text encoder (e.g. tfidf)
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
@@ -588,7 +588,7 @@ type DateTimePipelineSpec struct {
 // ImagePipelineSpec is the specification for preprocessing image data
 type ImagePipelineSpec struct {
 	// Name of the datetime columns
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// The date time imputer.
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
@@ -598,7 +598,7 @@ type ImagePipelineSpec struct {
 // VideoPipelineSpec is the specification for preprocessing video data
 type VideoPipelineSpec struct {
 	// Name of the datetime columns
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// The date time imputer.
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
@@ -608,7 +608,7 @@ type VideoPipelineSpec struct {
 // AudioPipelineSpec is the specification for preprocessing audio data
 type AudioPipelineSpec struct {
 	// Name of the datetime columns
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,opt,name=columns"`
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
 	// The date time imputer.
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
@@ -636,11 +636,11 @@ type ForecastingSpec struct {
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
 	// The list of the dimension columns. If non, the system will treat the whole time series as one.
 	// +kubebuilder:validation:Optional
-	Dimensions []string `json:"dimensions,omitempty" protobuf:"bytes,4,opt,name=dimensions"`
+	Dimensions []string `json:"dimensions,omitempty" protobuf:"bytes,4,rep,name=dimensions"`
 	// List of other columns to take into consideration
 	// Default None
 	// +kubebuilder:validation:Optional
-	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,5,opt,name=repressors"`
+	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,5,rep,name=repressors"`
 	// Required, the freq of the time series (daily,weekly)
 	// +kubebuilder:validation:Optional
 	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,6,opt,name=freqSpec"`
@@ -657,7 +657,7 @@ type ForecastingSpec struct {
 	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,9,opt,name=countryForHoliday"`
 	// a set of value for each partition key
 	// +kubebuilder:validation:Optional
-	DimensionValues []DimensionValue `json:"dimensionValues,omitempty" protobuf:"bytes,10,opt,name=dimensionValues"`
+	DimensionValues []DimensionValue `json:"dimensionValues,omitempty" protobuf:"bytes,10,rep,name=dimensionValues"`
 	// The backtest specification, the system supports back testing with expanding windows.
 	// +kubebuilder:validation:Optional
 	Backtest *BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,11,opt,name=backtest"`

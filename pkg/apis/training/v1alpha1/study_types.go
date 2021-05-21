@@ -534,7 +534,7 @@ type Level struct {
 	// The aggregate function used to roll up the lower level
 	Aggregate *catalog.Aggregate `json:"aggregate,omitempty" protobuf:"bytes,4,opt,name=aggregate"`
 	// The distinct values of the column for this level
-	Values []string `json:"distinc,omitempty" protobuf:"bytes,5,opt,name=distinc"`
+	Values []string `json:"distinc,omitempty" protobuf:"bytes,5,rep,name=distinc"`
 }
 
 type Hierarchy struct {

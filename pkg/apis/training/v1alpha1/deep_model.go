@@ -192,9 +192,9 @@ type DeepEstimatorLayer struct {
 	// Type is the type of the layers
 	Type NNLayerName `json:"type" protobuf:"bytes,2,opt,name=type"`
 	// Parameters are the hyper parameters of this layer
-	Parameters []NNLayerParameter `json:"parameters" protobuf:"bytes,3,opt,name=parameters"`
+	Parameters []NNLayerParameter `json:"parameters" protobuf:"bytes,3,rep,name=parameters"`
 	// InputLayers are the layer input to this layer
-	InputLayers []string `json:"inputLayers" protobuf:"bytes,4,opt,name=inputLayers"`
+	InputLayers []string `json:"inputLayers" protobuf:"bytes,4,rep,name=inputLayers"`
 }
 
 type DeepEstimatorSpec struct {
