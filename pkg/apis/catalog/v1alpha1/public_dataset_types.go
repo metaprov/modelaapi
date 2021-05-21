@@ -23,7 +23,7 @@ type PublicDataset struct {
 type PublicDatasetSpec struct {
 	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 	// Dataset description
-	Description *string `json:"decription,omitempty" protobuf:"bytes,2,opt,name=decription"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Task is the machine learning task of the public dataset
 	Task *MLTask `json:"task" protobuf:"bytes,3,rep,name=task"`
 	// The open ml id of the dataset

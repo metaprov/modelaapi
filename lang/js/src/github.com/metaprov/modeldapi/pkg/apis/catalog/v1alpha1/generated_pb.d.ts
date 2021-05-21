@@ -934,8 +934,8 @@ export class PublicDatasetSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): PublicDatasetSpec;
 
-  getDecription(): string;
-  setDecription(value: string): PublicDatasetSpec;
+  getDescription(): string;
+  setDescription(value: string): PublicDatasetSpec;
 
   getTask(): string;
   setTask(value: string): PublicDatasetSpec;
@@ -975,7 +975,7 @@ export class PublicDatasetSpec extends jspb.Message {
 export namespace PublicDatasetSpec {
   export type AsObject = {
     url: string,
-    decription: string,
+    description: string,
     task: string,
     openmlid: string,
     dataurl: string,

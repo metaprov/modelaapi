@@ -9230,7 +9230,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     url: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    decription: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     task: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     openmlid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     dataurl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -9282,7 +9282,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDecription(value);
+      msg.setDescription(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -9466,10 +9466,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
 
 
 /**
- * optional string decription = 2;
+ * optional string description = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDecription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -9478,7 +9478,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDecription = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDescription = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -9487,7 +9487,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDecription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDescription = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -9496,7 +9496,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDecription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

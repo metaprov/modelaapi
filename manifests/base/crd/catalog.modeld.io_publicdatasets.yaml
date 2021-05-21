@@ -53,7 +53,7 @@ spec:
               dataUrl:
                 description: The URL to the actual data file or folder
                 type: string
-              decription:
+              description:
                 description: Dataset description
                 type: string
               fileSize:
