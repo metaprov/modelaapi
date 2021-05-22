@@ -493,7 +493,7 @@ message PretrainedModelSpec {
 // +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
 // +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
-// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,shortName="alg",categories={catalog,modeld,all}
+// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modeld,all}
 message PublicDataset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -512,6 +512,8 @@ message PublicDatasetSpec {
   optional string url = 1;
 
   // Dataset description
+  // +kubebuilder:default =""
+  // +kubebuilder:validation:Optional
   optional string description = 2;
 
   // Task is the machine learning task of the public dataset
@@ -519,39 +521,55 @@ message PublicDatasetSpec {
 
   // The open ml id of the dataset
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default =""
   optional string openmlID = 4;
 
   // The URL to the actual data file or folder
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default =""
   optional string dataUrl = 5;
 
   // Dataset citation
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default =""
   optional string citation = 6;
 
   // Number of rows in the dataset
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default := 0
   optional int32 rows = 7;
 
   // Number of columns in the dataset
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default := 0
   optional int32 columns = 8;
 
+  // +kubebuilder:validation:Optional
   // The size of the dataset in bytes
+  // +kubebuilder:default := 0
   optional int32 fileSize = 9;
 
   // The target column name
+  // +kubebuilder:default =""
   optional string targetColumn = 10;
 
-  // indicates w
+  // +kubebuilder:default = false
   optional bool imbalanced = 11;
 
   // URI of the datasource CR for this public dataset
+  // +kubebuilder:default =""
   optional string datasourceCR = 12;
 
   // URI of the dataset CR for this public dataset
+  // +kubebuilder:default =""
   optional string datasetCR = 13;
 
   // URI of the study CR for this public dataset
+  // +kubebuilder:default =""
   optional string studyCR = 14;
 
   // URI of the data product CR
+  // +kubebuilder:default =""
   optional string dataProductCR = 15;
 }
 

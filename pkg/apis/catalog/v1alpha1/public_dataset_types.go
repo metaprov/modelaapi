@@ -20,7 +20,7 @@ import (
 // +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
 // +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
-// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,shortName="alg",categories={catalog,modeld,all}
+// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modeld,all}
 type PublicDataset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -30,33 +30,51 @@ type PublicDataset struct {
 type PublicDatasetSpec struct {
 	Url string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
 	// Dataset description
+	// +kubebuilder:default =""
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Task is the machine learning task of the public dataset
 	Task *MLTask `json:"task" protobuf:"bytes,3,rep,name=task"`
 	// The open ml id of the dataset
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default =""
 	OpenMLID *string `json:"openmlID,omitempty" protobuf:"bytes,4,rep,name=openmlID"`
 	// The URL to the actual data file or folder
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default =""
 	DataUrl *string `json:"dataUrl,omitempty" protobuf:"bytes,5,opt,name=dataUrl"`
 	// Dataset citation
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default =""
 	Citation *string `json:"citation,omitempty" protobuf:"bytes,6,opt,name=citation"`
 	// Number of rows in the dataset
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default := 0
 	Rows *int32 `json:"rows,omitempty" protobuf:"varint,7,opt,name=rows"`
 	// Number of columns in the dataset
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default := 0
 	Columns *int32 `json:"columns,omitempty" protobuf:"varint,8,opt,name=columns"`
+	// +kubebuilder:validation:Optional
 	// The size of the dataset in bytes
+	// +kubebuilder:default := 0
 	FileSize *int32 `json:"fileSize,omitempty" protobuf:"varint,9,opt,name=fileSize"`
 	// The target column name
+	// +kubebuilder:default =""
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,10,opt,name=targetColumn"`
-	// indicates w
+	// +kubebuilder:default = false
 	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,11,opt,name=imbalanced"`
 	// URI of the datasource CR for this public dataset
+	// +kubebuilder:default =""
 	DatasourceCR *string `json:"datasourceCR,omitempty" protobuf:"bytes,12,opt,name=datasourceCR"`
 	// URI of the dataset CR for this public dataset
+	// +kubebuilder:default =""
 	DatasetCR *string `json:"datasetCR,omitempty" protobuf:"bytes,13,opt,name=datasetCR"`
 	// URI of the study CR for this public dataset
+	// +kubebuilder:default =""
 	StudyCR *string `json:"studyCR,omitempty" protobuf:"bytes,14,opt,name=studyCR"`
 	// URI of the data product CR
+	// +kubebuilder:default =""
 	DataProductCR *string `json:"dataProductCR,omitempty" protobuf:"bytes,15,opt,name=dataProductCR"`
 }
 
