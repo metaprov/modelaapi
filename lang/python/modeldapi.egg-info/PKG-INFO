@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: modeldapi
-Version: 0.3.298
+Version: 0.3.300
 Summary: A suite of automatic machine learning for kubernetes
 Home-page: http://www.modeld.io
 Author: The modeldapi developers
@@ -8,9 +8,9 @@ Author-email: info@modeld.io
 Maintainer: The modeld developers
 Maintainer-email: info@modeld.io
 License: Apache 2
-Download-URL: https://github.com/metaptov/modeldapi/tarball/v0.3.298
+Download-URL: https://github.com/metaptov/modeldapi/tarball/v0.3.300
 Project-URL: Documentation, http://www.modeld.io
-Project-URL: Download, https://github.com/metaptov/modeldapi/tarball/v0.3.298
+Project-URL: Download, https://github.com/metaptov/modeldapi/tarball/v0.3.300
 Project-URL: Source, https://github.com/metaptov/modeldapi
 Project-URL: Tracker, https://github.com/metaptov/modeldapi/issues
 Description: UNKNOWN
