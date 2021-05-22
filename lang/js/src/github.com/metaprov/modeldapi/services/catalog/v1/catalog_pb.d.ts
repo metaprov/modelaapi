@@ -340,6 +340,136 @@ export namespace GetPublicDatasetResponse {
   }
 }
 
+export class DownloadPublicDatasetRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DownloadPublicDatasetRequest;
+
+  getName(): string;
+  setName(value: string): DownloadPublicDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadPublicDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadPublicDatasetRequest): DownloadPublicDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: DownloadPublicDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadPublicDatasetRequest;
+  static deserializeBinaryFromReader(message: DownloadPublicDatasetRequest, reader: jspb.BinaryReader): DownloadPublicDatasetRequest;
+}
+
+export namespace DownloadPublicDatasetRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class DownloadPublicDatasetResponse extends jspb.Message {
+  getRaw(): Uint8Array | string;
+  getRaw_asU8(): Uint8Array;
+  getRaw_asB64(): string;
+  setRaw(value: Uint8Array | string): DownloadPublicDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadPublicDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadPublicDatasetResponse): DownloadPublicDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: DownloadPublicDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadPublicDatasetResponse;
+  static deserializeBinaryFromReader(message: DownloadPublicDatasetResponse, reader: jspb.BinaryReader): DownloadPublicDatasetResponse;
+}
+
+export namespace DownloadPublicDatasetResponse {
+  export type AsObject = {
+    raw: Uint8Array | string,
+  }
+}
+
+export class PreviewPublicDatasetRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PreviewPublicDatasetRequest;
+
+  getName(): string;
+  setName(value: string): PreviewPublicDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PreviewPublicDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PreviewPublicDatasetRequest): PreviewPublicDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: PreviewPublicDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PreviewPublicDatasetRequest;
+  static deserializeBinaryFromReader(message: PreviewPublicDatasetRequest, reader: jspb.BinaryReader): PreviewPublicDatasetRequest;
+}
+
+export namespace PreviewPublicDatasetRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class PreviewPublicDatasetResponse extends jspb.Message {
+  getRaw(): Uint8Array | string;
+  getRaw_asU8(): Uint8Array;
+  getRaw_asB64(): string;
+  setRaw(value: Uint8Array | string): PreviewPublicDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PreviewPublicDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PreviewPublicDatasetResponse): PreviewPublicDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: PreviewPublicDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PreviewPublicDatasetResponse;
+  static deserializeBinaryFromReader(message: PreviewPublicDatasetResponse, reader: jspb.BinaryReader): PreviewPublicDatasetResponse;
+}
+
+export namespace PreviewPublicDatasetResponse {
+  export type AsObject = {
+    raw: Uint8Array | string,
+  }
+}
+
+export class ApplyPublicDatasetCRRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ApplyPublicDatasetCRRequest;
+
+  getName(): string;
+  setName(value: string): ApplyPublicDatasetCRRequest;
+
+  getCrname(): string;
+  setCrname(value: string): ApplyPublicDatasetCRRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApplyPublicDatasetCRRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ApplyPublicDatasetCRRequest): ApplyPublicDatasetCRRequest.AsObject;
+  static serializeBinaryToWriter(message: ApplyPublicDatasetCRRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApplyPublicDatasetCRRequest;
+  static deserializeBinaryFromReader(message: ApplyPublicDatasetCRRequest, reader: jspb.BinaryReader): ApplyPublicDatasetCRRequest;
+}
+
+export namespace ApplyPublicDatasetCRRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    crname: string,
+  }
+}
+
+export class ApplyPublicDatasetCRResponse extends jspb.Message {
+  getRaw(): Uint8Array | string;
+  getRaw_asU8(): Uint8Array;
+  getRaw_asB64(): string;
+  setRaw(value: Uint8Array | string): ApplyPublicDatasetCRResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApplyPublicDatasetCRResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ApplyPublicDatasetCRResponse): ApplyPublicDatasetCRResponse.AsObject;
+  static serializeBinaryToWriter(message: ApplyPublicDatasetCRResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApplyPublicDatasetCRResponse;
+  static deserializeBinaryFromReader(message: ApplyPublicDatasetCRResponse, reader: jspb.BinaryReader): ApplyPublicDatasetCRResponse;
+}
+
+export namespace ApplyPublicDatasetCRResponse {
+  export type AsObject = {
+    raw: Uint8Array | string,
+  }
+}
+
 export class ListPretrainedModelsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListPretrainedModelsRequest;

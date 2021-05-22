@@ -12,8 +12,15 @@ import (
 
 // PublicDataset represent the metadata about a public dataset
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
-// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modeld,all}
+// +kubebuilder:resource:scope=Namespaced
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description=""
+// +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""
+// +kubebuilder:printcolumn:name="Columns",type="number",JSONPath=".spec.columns",description=""
+// +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
+// +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
+// +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
+// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,shortName="alg",categories={catalog,modeld,all}
 type PublicDataset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -43,6 +50,12 @@ type PublicDatasetSpec struct {
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,10,opt,name=targetColumn"`
 	// indicates w
 	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,11,opt,name=imbalanced"`
+	// URI of the datasource CR for this public dataset
+	DatasourceCR *string `json:"datasourceCR,omitempty" protobuf:"bytes,12,opt,name=datasourceCR"`
+	// URI of the dataset CR for this public dataset
+	DatasetCR *string `json:"datasetCR,omitempty" protobuf:"bytes,13,opt,name=datasetCR"`
+	// URI of the study CR for this public dataset
+	StudyCR *string `json:"studyCR,omitempty" protobuf:"bytes,14,opt,name=studyCR"`
 }
 
 //==============================================================================

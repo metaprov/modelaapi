@@ -515,5 +515,125 @@ export class CatalogServiceClient {
     this.methodInfoGetPublicDataset);
   }
 
+  methodInfoDownloadPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse.deserializeBinary
+  );
+
+  downloadPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse>;
+
+  downloadPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse>;
+
+  downloadPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/DownloadPublicDataset',
+        request,
+        metadata || {},
+        this.methodInfoDownloadPublicDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/DownloadPublicDataset',
+    request,
+    metadata || {},
+    this.methodInfoDownloadPublicDataset);
+  }
+
+  methodInfoPreviewPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse.deserializeBinary
+  );
+
+  previewPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse>;
+
+  previewPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse>;
+
+  previewPublicDataset(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/PreviewPublicDataset',
+        request,
+        metadata || {},
+        this.methodInfoPreviewPublicDataset,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/PreviewPublicDataset',
+    request,
+    metadata || {},
+    this.methodInfoPreviewPublicDataset);
+  }
+
+  methodInfoApplyPublicDatasetCR = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse,
+    (request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse.deserializeBinary
+  );
+
+  applyPublicDatasetCR(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse>;
+
+  applyPublicDatasetCR(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse>;
+
+  applyPublicDatasetCR(
+    request: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR',
+        request,
+        metadata || {},
+        this.methodInfoApplyPublicDatasetCR,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR',
+    request,
+    metadata || {},
+    this.methodInfoApplyPublicDatasetCR);
+  }
+
 }
 

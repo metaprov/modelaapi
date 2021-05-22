@@ -485,8 +485,15 @@ message PretrainedModelSpec {
 
 // PublicDataset represent the metadata about a public dataset
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
-// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modeld,all}
+// +kubebuilder:resource:scope=Namespaced
+// +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description=""
+// +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""
+// +kubebuilder:printcolumn:name="Columns",type="number",JSONPath=".spec.columns",description=""
+// +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
+// +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
+// +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
+// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,shortName="alg",categories={catalog,modeld,all}
 message PublicDataset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -534,6 +541,15 @@ message PublicDatasetSpec {
 
   // indicates w
   optional bool imbalanced = 11;
+
+  // URI of the datasource CR for this public dataset
+  optional string datasourceCR = 12;
+
+  // URI of the dataset CR for this public dataset
+  optional string datasetCR = 13;
+
+  // URI of the study CR for this public dataset
+  optional string studyCR = 14;
 }
 
 // Region defines a region within the data provider

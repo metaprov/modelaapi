@@ -76,6 +76,21 @@ class CatalogServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetResponse.FromString,
                 )
+        self.DownloadPublicDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/DownloadPublicDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.DownloadPublicDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.DownloadPublicDatasetResponse.FromString,
+                )
+        self.PreviewPublicDataset = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/PreviewPublicDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.PreviewPublicDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.PreviewPublicDatasetResponse.FromString,
+                )
+        self.ApplyPublicDatasetCR = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ApplyPublicDatasetCRRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ApplyPublicDatasetCRResponse.FromString,
+                )
 
 
 class CatalogServiceServicer(object):
@@ -155,6 +170,24 @@ class CatalogServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DownloadPublicDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PreviewPublicDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ApplyPublicDatasetCR(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CatalogServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -217,6 +250,21 @@ def add_CatalogServiceServicer_to_server(servicer, server):
                     servicer.GetPublicDataset,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetResponse.SerializeToString,
+            ),
+            'DownloadPublicDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadPublicDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.DownloadPublicDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.DownloadPublicDatasetResponse.SerializeToString,
+            ),
+            'PreviewPublicDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.PreviewPublicDataset,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.PreviewPublicDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.PreviewPublicDatasetResponse.SerializeToString,
+            ),
+            'ApplyPublicDatasetCR': grpc.unary_unary_rpc_method_handler(
+                    servicer.ApplyPublicDatasetCR,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ApplyPublicDatasetCRRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ApplyPublicDatasetCRResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -431,5 +479,56 @@ class CatalogService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetPublicDatasetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DownloadPublicDataset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/DownloadPublicDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.DownloadPublicDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.DownloadPublicDatasetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PreviewPublicDataset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/PreviewPublicDataset',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.PreviewPublicDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.PreviewPublicDatasetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ApplyPublicDatasetCR(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ApplyPublicDatasetCRRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ApplyPublicDatasetCRResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

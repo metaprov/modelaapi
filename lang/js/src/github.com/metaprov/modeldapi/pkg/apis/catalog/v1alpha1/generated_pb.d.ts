@@ -964,6 +964,15 @@ export class PublicDatasetSpec extends jspb.Message {
   getImbalanced(): boolean;
   setImbalanced(value: boolean): PublicDatasetSpec;
 
+  getDatasourcecr(): string;
+  setDatasourcecr(value: string): PublicDatasetSpec;
+
+  getDatasetcr(): string;
+  setDatasetcr(value: string): PublicDatasetSpec;
+
+  getStudycr(): string;
+  setStudycr(value: string): PublicDatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublicDatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PublicDatasetSpec): PublicDatasetSpec.AsObject;
@@ -985,6 +994,9 @@ export namespace PublicDatasetSpec {
     filesize: number,
     targetcolumn: string,
     imbalanced: boolean,
+    datasourcecr: string,
+    datasetcr: string,
+    studycr: string,
   }
 }
 

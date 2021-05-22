@@ -17,13 +17,34 @@ spec:
     kind: PublicDataset
     listKind: PublicDatasetList
     plural: publicdatasets
+    shortNames:
+    - alg
     singular: publicdataset
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .spec.image
-      name: Image
+    - description: ML task name
+      jsonPath: .spec.task
+      name: Task
       type: string
+    - jsonPath: .spec.url
+      name: URL
+      type: string
+    - jsonPath: .spec.rows
+      name: Rows
+      type: number
+    - jsonPath: .spec.columns
+      name: Columns
+      type: number
+    - jsonPath: .spec.targetColumn
+      name: Target Column
+      type: string
+    - jsonPath: .spec.imbalanced
+      name: Imbalanced
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:
@@ -53,6 +74,12 @@ spec:
               dataUrl:
                 description: The URL to the actual data file or folder
                 type: string
+              datasetCR:
+                description: URI of the dataset CR for this public dataset
+                type: string
+              datasourceCR:
+                description: URI of the datasource CR for this public dataset
+                type: string
               description:
                 description: Dataset description
                 type: string
@@ -70,6 +97,9 @@ spec:
                 description: Number of rows in the dataset
                 format: int32
                 type: integer
+              studyCR:
+                description: URI of the study CR for this public dataset
+                type: string
               targetColumn:
                 description: The target column name
                 type: string

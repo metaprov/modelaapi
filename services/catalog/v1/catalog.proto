@@ -90,6 +90,40 @@ message GetPublicDatasetResponse {
 }
 
 
+message DownloadPublicDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message DownloadPublicDatasetResponse {
+    bytes raw = 1;
+}
+
+message PreviewPublicDatasetRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message PreviewPublicDatasetResponse {
+    bytes raw = 1;
+}
+
+message ApplyPublicDatasetCRRequest {
+    string namespace = 1;
+    string name      = 2;
+    string crname    = 3;
+}
+
+// Answer the report in base 64
+message ApplyPublicDatasetCRResponse {
+    bytes raw = 1;
+}
+
+
+
+
 
 
 
@@ -205,6 +239,21 @@ service CatalogService {
     rpc GetPublicDataset(GetPublicDatasetRequest) returns (GetPublicDatasetResponse) {
         option (google.api.http).get = "/v1/publicdatasets/{name}";
     }
+
+    rpc DownloadPublicDataset(DownloadPublicDatasetRequest) returns (DownloadPublicDatasetResponse) {
+        option (google.api.http).get = "/v1/publicdatasets/{name}:download";
+    }
+
+    rpc PreviewPublicDataset(PreviewPublicDatasetRequest) returns (PreviewPublicDatasetResponse) {
+        option (google.api.http).get = "/v1/publicdatasets/{name}:preview";
+    }
+
+    rpc ApplyPublicDatasetCR(ApplyPublicDatasetCRRequest) returns (ApplyPublicDatasetCRResponse) {
+        option (google.api.http).get = "/v1/publicdatasets/{name}:apply";
+    }
+
+
+
 
 
 }
