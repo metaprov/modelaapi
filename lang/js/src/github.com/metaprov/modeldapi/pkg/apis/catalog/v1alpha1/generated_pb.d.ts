@@ -973,6 +973,9 @@ export class PublicDatasetSpec extends jspb.Message {
   getStudycr(): string;
   setStudycr(value: string): PublicDatasetSpec;
 
+  getDataproductcr(): string;
+  setDataproductcr(value: string): PublicDatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublicDatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PublicDatasetSpec): PublicDatasetSpec.AsObject;
@@ -997,6 +1000,7 @@ export namespace PublicDatasetSpec {
     datasourcecr: string,
     datasetcr: string,
     studycr: string,
+    dataproductcr: string,
   }
 }
 

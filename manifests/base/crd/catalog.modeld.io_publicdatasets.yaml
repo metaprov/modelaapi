@@ -71,6 +71,9 @@ spec:
                 description: Number of columns in the dataset
                 format: int32
                 type: integer
+              dataProductCR:
+                description: URI of the data product CR
+                type: string
               dataUrl:
                 description: The URL to the actual data file or folder
                 type: string

@@ -550,6 +550,9 @@ message PublicDatasetSpec {
 
   // URI of the study CR for this public dataset
   optional string studyCR = 14;
+
+  // URI of the data product CR
+  optional string dataProductCR = 15;
 }
 
 // Region defines a region within the data provider

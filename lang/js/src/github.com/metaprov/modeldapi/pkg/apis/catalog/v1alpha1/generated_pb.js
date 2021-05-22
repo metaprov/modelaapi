@@ -9242,7 +9242,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
     imbalanced: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     datasourcecr: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     datasetcr: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    studycr: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
+    studycr: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    dataproductcr: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9334,6 +9335,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setStudycr(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDataproductcr(value);
       break;
     default:
       reader.skipField();
@@ -9459,6 +9464,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
   if (f != null) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -9966,6 +9978,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasStudycr = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional string dataProductCR = 15;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDataproductcr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDataproductcr = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDataproductcr = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDataproductcr = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 

@@ -56,6 +56,8 @@ type PublicDatasetSpec struct {
 	DatasetCR *string `json:"datasetCR,omitempty" protobuf:"bytes,13,opt,name=datasetCR"`
 	// URI of the study CR for this public dataset
 	StudyCR *string `json:"studyCR,omitempty" protobuf:"bytes,14,opt,name=studyCR"`
+	// URI of the data product CR
+	DataProductCR *string `json:"dataProductCR,omitempty" protobuf:"bytes,15,opt,name=dataProductCR"`
 }
 
 //==============================================================================
