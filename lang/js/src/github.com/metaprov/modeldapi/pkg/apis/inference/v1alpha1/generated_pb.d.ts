@@ -450,6 +450,44 @@ export namespace DriftCheckSpec {
   }
 }
 
+export class MonitorSpec extends jspb.Message {
+  getSkew(): boolean;
+  setSkew(value: boolean): MonitorSpec;
+
+  getDrift(): boolean;
+  setDrift(value: boolean): MonitorSpec;
+
+  getSampleprecent(): number;
+  setSampleprecent(value: number): MonitorSpec;
+
+  getSamplelabelMap(): jspb.Map<string, string>;
+  clearSamplelabelMap(): MonitorSpec;
+
+  getSchedule(): string;
+  setSchedule(value: string): MonitorSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): MonitorSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MonitorSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: MonitorSpec): MonitorSpec.AsObject;
+  static serializeBinaryToWriter(message: MonitorSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MonitorSpec;
+  static deserializeBinaryFromReader(message: MonitorSpec, reader: jspb.BinaryReader): MonitorSpec;
+}
+
+export namespace MonitorSpec {
+  export type AsObject = {
+    skew: boolean,
+    drift: boolean,
+    sampleprecent: number,
+    samplelabelMap: Array<[string, string]>,
+    schedule: string,
+    notifiername: string,
+  }
+}
+
 export class OnlineChannelSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): OnlineChannelSpec;
@@ -995,6 +1033,11 @@ export class PredictorSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PredictorSpec;
 
+  getMonitor(): MonitorSpec | undefined;
+  setMonitor(value?: MonitorSpec): PredictorSpec;
+  hasMonitor(): boolean;
+  clearMonitor(): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1025,6 +1068,7 @@ export namespace PredictorSpec {
     forewardcurtain: string,
     backwardcurtain: string,
     type: string,
+    monitor?: MonitorSpec.AsObject,
   }
 }
 

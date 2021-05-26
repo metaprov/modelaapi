@@ -689,36 +689,6 @@ export namespace ImagePipelineSpec {
   }
 }
 
-export class LabelingStageSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): LabelingStageSpec;
-
-  getSampleprecent(): number;
-  setSampleprecent(value: number): LabelingStageSpec;
-
-  getSamplelabelMap(): jspb.Map<string, string>;
-  clearSamplelabelMap(): LabelingStageSpec;
-
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): LabelingStageSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LabelingStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: LabelingStageSpec): LabelingStageSpec.AsObject;
-  static serializeBinaryToWriter(message: LabelingStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LabelingStageSpec;
-  static deserializeBinaryFromReader(message: LabelingStageSpec, reader: jspb.BinaryReader): LabelingStageSpec;
-}
-
-export namespace LabelingStageSpec {
-  export type AsObject = {
-    enabled: boolean,
-    sampleprecent: number,
-    samplelabelMap: Array<[string, string]>,
-    workloadclassname: string,
-  }
-}
-
 export class Level extends jspb.Message {
   getString(): string;
   setString(value: string): Level;
@@ -1561,16 +1531,6 @@ export class ModelPipelineSpec extends jspb.Message {
   hasRelease(): boolean;
   clearRelease(): ModelPipelineSpec;
 
-  getMonitoring(): MonitoringStageSpec | undefined;
-  setMonitoring(value?: MonitoringStageSpec): ModelPipelineSpec;
-  hasMonitoring(): boolean;
-  clearMonitoring(): ModelPipelineSpec;
-
-  getLabeling(): LabelingStageSpec | undefined;
-  setLabeling(value?: LabelingStageSpec): ModelPipelineSpec;
-  hasLabeling(): boolean;
-  clearLabeling(): ModelPipelineSpec;
-
   getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelPipelineSpec;
   hasLocation(): boolean;
@@ -1612,8 +1572,6 @@ export namespace ModelPipelineSpec {
     capacity?: CapacityStageSpec.AsObject,
     deployment?: DeploymentStageSpec.AsObject,
     release?: ReleaseStageSpec.AsObject,
-    monitoring?: MonitoringStageSpec.AsObject,
-    labeling?: LabelingStageSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
@@ -2110,38 +2068,6 @@ export namespace ModelTestResult {
     value: number,
     error: string,
     duration?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration.AsObject,
-  }
-}
-
-export class MonitoringStageSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): MonitoringStageSpec;
-
-  getTestsList(): Array<Expectation>;
-  setTestsList(value: Array<Expectation>): MonitoringStageSpec;
-  clearTestsList(): MonitoringStageSpec;
-  addTests(value?: Expectation, index?: number): Expectation;
-
-  getAutoretrain(): boolean;
-  setAutoretrain(value: boolean): MonitoringStageSpec;
-
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): MonitoringStageSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MonitoringStageSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: MonitoringStageSpec): MonitoringStageSpec.AsObject;
-  static serializeBinaryToWriter(message: MonitoringStageSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MonitoringStageSpec;
-  static deserializeBinaryFromReader(message: MonitoringStageSpec, reader: jspb.BinaryReader): MonitoringStageSpec;
-}
-
-export namespace MonitoringStageSpec {
-  export type AsObject = {
-    enabled: boolean,
-    testsList: Array<Expectation.AsObject>,
-    autoretrain: boolean,
-    workloadclassname: string,
   }
 }
 

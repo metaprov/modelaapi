@@ -244,6 +244,36 @@ message DriftCheckSpec {
   optional string testDataset = 4;
 }
 
+// Specify the model monitor.
+message MonitorSpec {
+  // Skew specify if we shold skew
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool skew = 1;
+
+  // Skew specify if we shold monitor drift
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool drift = 2;
+
+  // How many rows to sample from the live data for
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 samplePrecent = 3;
+
+  // SampleLabels indicates the kubernetes labels to set on the sample dataset
+  // +kubebuilder:validation:Optional
+  map<string, string> sampleLabel = 4;
+
+  // Schedule is a cron schedule to run the monitor. By default the monitor run daily.
+  // +kubebuilder:validation:Optional
+  optional string schedule = 5;
+
+  // NotifierName is the name of notifer to alert in case of
+  // +kubebuilder:validation:Optional
+  optional string notifierName = 6;
+}
+
 message OnlineChannelSpec {
   // Service port specify the predictor port.
   // Default: 8080
@@ -581,6 +611,9 @@ message PredictorSpec {
   // +kubebuilder:default:="online"
   // +kubebuilder:validation:Optional
   optional string type = 26;
+
+  // Monitor spec specify the monitor for this predictor.
+  optional MonitorSpec monitor = 27;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

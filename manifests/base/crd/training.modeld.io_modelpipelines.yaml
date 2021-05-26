@@ -261,31 +261,6 @@ spec:
               description:
                 description: User provided description
                 type: string
-              labeling:
-                description: Labeling stage define how to sample and label live data
-                  for retraining
-                properties:
-                  enabled:
-                    default: false
-                    description: Enabled indicates that the stage is enabled
-                    type: boolean
-                  sampleLabels:
-                    additionalProperties:
-                      type: string
-                    description: SampleLabels indicates the kubernetes labels to set
-                      on the sample dataset
-                    type: object
-                  samplePrecent:
-                    default: 0
-                    description: How many rows to sample from the live data for
-                    format: int32
-                    type: integer
-                  workloadClassName:
-                    default: default-model-workload-class
-                    description: A reference to the workload class that is used for
-                      running the test prediction
-                    type: string
-                type: object
               location:
                 description: Folder for the pipeline and pipeline run artifacts. The
                   folder contains all the study artifacts - metadata, reports, profile,models
@@ -298,83 +273,6 @@ spec:
                 required:
                 - bucketName
                 - path
-                type: object
-              monitoring:
-                description: Monitoring stage define how to monitor the model in production
-                properties:
-                  autoRetrain:
-                    default: false
-                    description: AutoRetrain denoted if we autoamtically retrain models.
-                    type: boolean
-                  enabled:
-                    default: false
-                    type: boolean
-                  tests:
-                    description: Tests is the specification of tests to run in this
-                      stage
-                    items:
-                      properties:
-                        datasetName:
-                          description: DatasetName is the name of the test dataset.
-                          type: string
-                        metric:
-                          description: Metric is the name of the metric
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
-                          type: string
-                        op:
-                          description: Op is the operator used during comparison
-                          type: string
-                        score:
-                          description: Score is the expected score
-                          type: number
-                      type: object
-                    type: array
-                  workloadClassName:
-                    default: default-model-workload-class
-                    description: A reference to the workload class that is used for
-                      running the test prediction
-                    type: string
                 type: object
               notifierName:
                 description: NotifierName is the name of the notifier to use in case

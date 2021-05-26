@@ -277,6 +277,37 @@ spec:
                       type: string
                   type: object
                 type: array
+              monitor:
+                description: Monitor spec specify the monitor for this predictor.
+                properties:
+                  drift:
+                    default: true
+                    description: Skew specify if we shold monitor drift
+                    type: boolean
+                  notifierName:
+                    description: NotifierName is the name of notifer to alert in case
+                      of
+                    type: string
+                  sampleLabels:
+                    additionalProperties:
+                      type: string
+                    description: SampleLabels indicates the kubernetes labels to set
+                      on the sample dataset
+                    type: object
+                  samplePrecent:
+                    default: 0
+                    description: How many rows to sample from the live data for
+                    format: int32
+                    type: integer
+                  schedule:
+                    description: Schedule is a cron schedule to run the monitor. By
+                      default the monitor run daily.
+                    type: string
+                  skew:
+                    default: true
+                    description: Skew specify if we shold skew
+                    type: boolean
+                type: object
               output:
                 description: set of output channels, the predictor will output the
                   result on any channel that is active in the output

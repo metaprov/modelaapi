@@ -439,27 +439,6 @@ message ImagePipelineSpec {
   optional string featurizer = 2;
 }
 
-// Labeling Stage spec is used to define how to label live data for retrainined.
-message LabelingStageSpec {
-  // Enabled indicates that the stage is enabled
-  // +kubebuilder:default:=false
-  optional bool enabled = 1;
-
-  // How many rows to sample from the live data for
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 samplePrecent = 2;
-
-  // SampleLabels indicates the kubernetes labels to set on the sample dataset
-  // +kubebuilder:validation:Required
-  map<string, string> sampleLabel = 3;
-
-  // A reference to the workload class that is used for running the test prediction
-  // +kubebuilder:default:="default-model-workload-class"
-  // +kubebuilder:validation:Optional
-  optional string workloadClassName = 4;
-}
-
 message Level {
   // The name of the level - the column name
   optional string string = 1;
@@ -1018,14 +997,6 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional ReleaseStageSpec release = 10;
 
-  // Monitoring stage define how to monitor the model in production
-  // +kubebuilder:validation:Optional
-  optional MonitoringStageSpec monitoring = 11;
-
-  // Labeling stage define how to sample and label live data for retraining
-  // +kubebuilder:validation:Optional
-  optional LabelingStageSpec labeling = 12;
-
   // Folder for the pipeline and pipeline run artifacts.
   // The folder contains all the study artifacts - metadata, reports, profile,models
   // +kubebuilder:validation:Optional
@@ -1465,25 +1436,6 @@ message ModelTestResult {
 
   // Duration is the time that it took to run the test
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Duration duration = 7;
-}
-
-// MonitoringStageSpec specify how the models are monitored in production
-message MonitoringStageSpec {
-  optional bool enabled = 1;
-
-  // Tests is the specification of tests to run in this stage
-  // +kubebuilder:validation:Optional
-  repeated Expectation tests = 2;
-
-  // AutoRetrain denoted if we autoamtically retrain models.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool autoRetrain = 4;
-
-  // A reference to the workload class that is used for running the test prediction
-  // +kubebuilder:default:="default-model-workload-class"
-  // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
 }
 
 message NNLayerParameter {
