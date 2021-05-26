@@ -191,6 +191,8 @@ type PredictorSpec struct {
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
 	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,26,opt,name=type"`
+	// Monitor spec specify the monitor for this predictor.
+	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,27,opt,name=monitor"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
@@ -302,7 +304,7 @@ type TableChannelSpec struct {
 	// Default to the predictor name
 	TableName *string `json:"tableName,omitempty" protobuf:"bytes,3,opt,name=tableName"`
 	// In seconds, the interval.
-	ScanInterval int32 `json:"scanInterval,omitempty" protobuf:"varint,4,opt,name=scanInterval"`
+	ScanInterval *int32 `json:"scanInterval,omitempty" protobuf:"varint,4,opt,name=scanInterval"`
 }
 
 type BotChannelSpec struct {
@@ -333,4 +335,29 @@ type BucketChannelSpec struct {
 type ChannelStatus struct {
 	Name  string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	Error string `json:"error,omitempty" protobuf:"bytes,2,opt,name=error"`
+}
+
+// Specify the model monitor.
+type MonitorSpec struct {
+	// Skew specify if we shold skew
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Skew *bool `json:"skew,omitempty" protobuf:"bytes,1,opt,name=skew"`
+	// Skew specify if we shold monitor drift
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Drift *bool `json:"drift,omitempty" protobuf:"bytes,2,opt,name=drift"`
+	// How many rows to sample from the live data for
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,3,opt,name=samplePrecent"`
+	// SampleLabels indicates the kubernetes labels to set on the sample dataset
+	// +kubebuilder:validation:Optional
+	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,4,opt,name=sampleLabel"`
+	// Schedule is a cron schedule to run the monitor. By default the monitor run daily.
+	// +kubebuilder:validation:Optional
+	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
+	// NotifierName is the name of notifer to alert in case of
+	// +kubebuilder:validation:Optional
+	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,6,opt,name=notifierName"`
 }

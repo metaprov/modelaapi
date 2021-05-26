@@ -80,12 +80,6 @@ type ModelPipelineSpec struct {
 	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
 	Release *ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,10,opt,name=release"`
-	// Monitoring stage define how to monitor the model in production
-	// +kubebuilder:validation:Optional
-	Monitoring *MonitoringStageSpec `json:"monitoring,omitempty" protobuf:"bytes,11,opt,name=monitoring"`
-	// Labeling stage define how to sample and label live data for retraining
-	// +kubebuilder:validation:Optional
-	Labeling *LabelingStageSpec `json:"labeling,omitempty" protobuf:"bytes,12,opt,name=labeling"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
@@ -268,43 +262,6 @@ type ReleaseStageSpec struct {
 	// +kubebuilder:default:="default-inference-workload-class"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,7,opt,name=workloadClassName"`
-}
-
-// MonitoringStageSpec specify how the models are monitored in production
-type MonitoringStageSpec struct {
-	// Enabled indicates that the stage is enabled
-	// +kubebuilder:default:=false
-
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
-	// Tests is the specification of tests to run in this stage
-	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,2,rep,name=tests"`
-	// AutoRetrain denoted if we autoamtically retrain models.
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	AutoRetrain *bool `json:"autoRetrain,omitempty" protobuf:"bytes,4,opt,name=autoRetrain"`
-	// A reference to the workload class that is used for running the test prediction
-	// +kubebuilder:default:="default-model-workload-class"
-	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
-}
-
-// Labeling Stage spec is used to define how to label live data for retrainined.
-type LabelingStageSpec struct {
-	// Enabled indicates that the stage is enabled
-	// +kubebuilder:default:=false
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
-	// How many rows to sample from the live data for
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,2,opt,name=samplePrecent"`
-	// SampleLabels indicates the kubernetes labels to set on the sample dataset
-	// +kubebuilder:validation:Required
-	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,3,opt,name=sampleLabel"`
-	// A reference to the workload class that is used for running the test prediction
-	// +kubebuilder:default:="default-model-workload-class"
-	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
