@@ -339,25 +339,27 @@ type ChannelStatus struct {
 
 // Specify the model monitor.
 type MonitorSpec struct {
+	// If true monitoring is enabled.
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// Skew specify if we shold skew
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Skew *bool `json:"skew,omitempty" protobuf:"bytes,1,opt,name=skew"`
+	Skew *bool `json:"skew,omitempty" protobuf:"bytes,2,opt,name=skew"`
 	// Skew specify if we shold monitor drift
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Drift *bool `json:"drift,omitempty" protobuf:"bytes,2,opt,name=drift"`
+	Drift *bool `json:"drift,omitempty" protobuf:"bytes,3,opt,name=drift"`
 	// How many rows to sample from the live data for
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,3,opt,name=samplePrecent"`
+	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,4,opt,name=samplePrecent"`
 	// SampleLabels indicates the kubernetes labels to set on the sample dataset
 	// +kubebuilder:validation:Optional
-	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,4,opt,name=sampleLabel"`
+	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,5,opt,name=sampleLabel"`
 	// Schedule is a cron schedule to run the monitor. By default the monitor run daily.
 	// +kubebuilder:validation:Optional
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
+	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// NotifierName is the name of notifer to alert in case of
 	// +kubebuilder:validation:Optional
-	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,6,opt,name=notifierName"`
+	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,7,opt,name=notifierName"`
 }

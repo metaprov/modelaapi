@@ -284,6 +284,9 @@ spec:
                     default: true
                     description: Skew specify if we shold monitor drift
                     type: boolean
+                  enabled:
+                    description: If true monitoring is enabled.
+                    type: boolean
                   notifierName:
                     description: NotifierName is the name of notifer to alert in case
                       of

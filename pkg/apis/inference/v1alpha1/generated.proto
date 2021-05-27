@@ -246,32 +246,35 @@ message DriftCheckSpec {
 
 // Specify the model monitor.
 message MonitorSpec {
+  // If true monitoring is enabled.
+  optional bool enabled = 1;
+
   // Skew specify if we shold skew
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool skew = 1;
+  optional bool skew = 2;
 
   // Skew specify if we shold monitor drift
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool drift = 2;
+  optional bool drift = 3;
 
   // How many rows to sample from the live data for
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 samplePrecent = 3;
+  optional int32 samplePrecent = 4;
 
   // SampleLabels indicates the kubernetes labels to set on the sample dataset
   // +kubebuilder:validation:Optional
-  map<string, string> sampleLabel = 4;
+  map<string, string> sampleLabel = 5;
 
   // Schedule is a cron schedule to run the monitor. By default the monitor run daily.
   // +kubebuilder:validation:Optional
-  optional string schedule = 5;
+  optional string schedule = 6;
 
   // NotifierName is the name of notifer to alert in case of
   // +kubebuilder:validation:Optional
-  optional string notifierName = 6;
+  optional string notifierName = 7;
 }
 
 message OnlineChannelSpec {

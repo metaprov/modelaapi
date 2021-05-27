@@ -451,6 +451,9 @@ export namespace DriftCheckSpec {
 }
 
 export class MonitorSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): MonitorSpec;
+
   getSkew(): boolean;
   setSkew(value: boolean): MonitorSpec;
 
@@ -479,6 +482,7 @@ export class MonitorSpec extends jspb.Message {
 
 export namespace MonitorSpec {
   export type AsObject = {
+    enabled: boolean,
     skew: boolean,
     drift: boolean,
     sampleprecent: number,
