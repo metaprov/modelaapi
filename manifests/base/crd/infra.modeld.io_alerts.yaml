@@ -29,11 +29,14 @@ spec:
     - jsonPath: .spec.subject
       name: Subject
       type: string
-    - jsonPath: .spec.entityRef.Name
+    - jsonPath: .spec.entityRef.name
       name: Entity Namespace
       type: string
-    - jsonPath: .spec.entityRef.Namespace
+    - jsonPath: .spec.entityRef.namespace
       name: Entity Name
+      type: string
+    - jsonPath: .spec.notifierName
+      name: Notifier
       type: string
     - jsonPath: .status.at
       name: At
