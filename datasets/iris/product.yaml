@@ -1,0 +1,27 @@
+apiVersion: data.modeld.io/v1alpha1
+kind: DataProduct
+metadata:
+  name: iris-product
+  namespace: default-tenant
+spec:
+  currentModelVersion: {}
+  dataLocation:
+    bucketName: default-digitalocean-bucket
+    path: modeld/live/dataproducts/iris
+  defaultWorkloadClassName: model-workload-class
+  gitLocation:
+    branch: ""
+    gitConnectionName: default-git-repository
+    url: ""
+  imageLocation:
+    name: modeld/iris-product
+    registryConnectionName: default-dockerhub-connection
+  labName: default-lab
+  notifierName: ""
+  owner: admin
+  retriesOnFailure: 3
+  servingSiteName: default-serving-site
+  task: binary-classification
+  tenantRef:
+    name: default-tenant
+    namespace: modeld-system
