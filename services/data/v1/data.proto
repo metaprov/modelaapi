@@ -487,8 +487,6 @@ service DataService {
     rpc CreateSummaryReport(CreateSummaryReportRequest) returns (CreateReportResponse) {}
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
-    rpc AskModelOptuna (AskModelRequest) returns (AskModelResponse) {}
-
     // for bayaisn optimization, we tell the planner the result of the model evaluation
     rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
     // Partition the class
