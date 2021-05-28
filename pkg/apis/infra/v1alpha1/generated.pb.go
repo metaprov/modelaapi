@@ -2388,15 +2388,15 @@ func (m *SnowFlakeSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_SnowFlakeSpec proto.InternalMessageInfo
 
-func (m *SqlLightSpec) Reset()      { *m = SqlLightSpec{} }
-func (*SqlLightSpec) ProtoMessage() {}
-func (*SqlLightSpec) Descriptor() ([]byte, []int) {
+func (m *SqliteSpec) Reset()      { *m = SqliteSpec{} }
+func (*SqliteSpec) ProtoMessage() {}
+func (*SqliteSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0ddea235ac8237ad, []int{84}
 }
-func (m *SqlLightSpec) XXX_Unmarshal(b []byte) error {
+func (m *SqliteSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *SqlLightSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *SqliteSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -2404,13 +2404,13 @@ func (m *SqlLightSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 	}
 	return b[:n], nil
 }
-func (m *SqlLightSpec) XXX_Merge(src proto.Message) {
+func (m *SqliteSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SqlLightSpec.Merge(m, src)
 }
-func (m *SqlLightSpec) XXX_Size() int {
+func (m *SqliteSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *SqlLightSpec) XXX_DiscardUnknown() {
+func (m *SqliteSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_SqlLightSpec.DiscardUnknown(m)
 }
 
@@ -3089,7 +3089,7 @@ func init() {
 	proto.RegisterType((*SlackSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec")
 	proto.RegisterType((*SmtpSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec")
 	proto.RegisterType((*SnowFlakeSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowFlakeSpec")
-	proto.RegisterType((*SqlLightSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqlLightSpec")
+	proto.RegisterType((*SqliteSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec")
 	proto.RegisterType((*Tenant)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant")
 	proto.RegisterType((*TenantCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantCondition")
 	proto.RegisterType((*TenantList)(nil), "github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList")
@@ -5229,9 +5229,9 @@ func (m *ConnectionSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x82
 	}
-	if m.SqlLight != nil {
+	if m.SqlLite != nil {
 		{
-			size, err := m.SqlLight.MarshalToSizedBuffer(dAtA[:i])
+			size, err := m.SqlLite.MarshalToSizedBuffer(dAtA[:i])
 			if err != nil {
 				return 0, err
 			}
@@ -8351,7 +8351,7 @@ func (m *SnowFlakeSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *SqlLightSpec) Marshal() (dAtA []byte, err error) {
+func (m *SqliteSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -8361,12 +8361,12 @@ func (m *SqlLightSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *SqlLightSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *SqliteSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *SqlLightSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *SqliteSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -10248,8 +10248,8 @@ func (m *ConnectionSpec) Size() (n int) {
 		l = m.SnowFlake.Size()
 		n += 2 + l + sovGenerated(uint64(l))
 	}
-	if m.SqlLight != nil {
-		l = m.SqlLight.Size()
+	if m.SqlLite != nil {
+		l = m.SqlLite.Size()
 		n += 2 + l + sovGenerated(uint64(l))
 	}
 	if m.Aws != nil {
@@ -11452,7 +11452,7 @@ func (m *SnowFlakeSpec) Size() (n int) {
 	return n
 }
 
-func (m *SqlLightSpec) Size() (n int) {
+func (m *SqliteSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -12377,7 +12377,7 @@ func (this *ConnectionSpec) String() string {
 		`Presto:` + strings.Replace(this.Presto.String(), "PrestoSpec", "PrestoSpec", 1) + `,`,
 		`RedShift:` + strings.Replace(this.RedShift.String(), "RedShiftSpec", "RedShiftSpec", 1) + `,`,
 		`SnowFlake:` + strings.Replace(this.SnowFlake.String(), "SnowFlakeSpec", "SnowFlakeSpec", 1) + `,`,
-		`SqlLight:` + strings.Replace(this.SqlLight.String(), "SqlLightSpec", "SqlLightSpec", 1) + `,`,
+		`SqlLite:` + strings.Replace(this.SqlLite.String(), "SqliteSpec", "SqliteSpec", 1) + `,`,
 		`Aws:` + strings.Replace(this.Aws.String(), "AwsSpec", "AwsSpec", 1) + `,`,
 		`Slack:` + strings.Replace(this.Slack.String(), "SlackSpec", "SlackSpec", 1) + `,`,
 		`Flock:` + strings.Replace(this.Flock.String(), "FlockSpec", "FlockSpec", 1) + `,`,
@@ -13114,11 +13114,11 @@ func (this *SnowFlakeSpec) String() string {
 	}, "")
 	return s
 }
-func (this *SqlLightSpec) String() string {
+func (this *SqliteSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&SqlLightSpec{`,
+	s := strings.Join([]string{`&SqliteSpec{`,
 		`Filename:` + valueToStringGenerated(this.Filename) + `,`,
 		`}`,
 	}, "")
@@ -19843,7 +19843,7 @@ func (m *ConnectionSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 31:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SqlLight", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field SqlLite", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -19870,10 +19870,10 @@ func (m *ConnectionSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.SqlLight == nil {
-				m.SqlLight = &SqlLightSpec{}
+			if m.SqlLite == nil {
+				m.SqlLite = &SqliteSpec{}
 			}
-			if err := m.SqlLight.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.SqlLite.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -29284,7 +29284,7 @@ func (m *SnowFlakeSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *SqlLightSpec) Unmarshal(dAtA []byte) error {
+func (m *SqliteSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -29307,10 +29307,10 @@ func (m *SqlLightSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: SqlLightSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: SqliteSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SqlLightSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: SqliteSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:

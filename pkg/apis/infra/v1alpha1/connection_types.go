@@ -149,7 +149,7 @@ type ConnectionSpec struct {
 	SnowFlake *SnowFlakeSpec `json:"snowflake,omitempty" protobuf:"bytes,30,opt,name=snowflake"`
 
 	// +kubebuilder:validation:Optional
-	SqlLight *SqlLightSpec `json:"sqlLight,omitempty" protobuf:"bytes,31,opt,name=sqlLight"`
+	SqlLite *SqliteSpec `json:"sqlite,omitempty" protobuf:"bytes,31,opt,name=sqlite"`
 
 	// +kubebuilder:validation:Optional
 	Aws *AwsSpec `json:"aws,omitempty" protobuf:"bytes,32,opt,name=aws"`
@@ -343,7 +343,7 @@ type MSSqlServerSpec struct {
 	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
 }
 
-type SqlLightSpec struct {
+type SqliteSpec struct {
 	Filename *string `json:"fileName,omitempty" protobuf:"bytes,1,opt,name=fileName"`
 }
 
