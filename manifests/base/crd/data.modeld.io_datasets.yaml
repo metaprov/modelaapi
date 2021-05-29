@@ -155,7 +155,7 @@ spec:
                 maxLength: 63
                 type: string
               workloadClassName:
-                default: default-data-workload-class
+                default: nano-cpu-250m-mem-256mi
                 description: A reference to the workload class this is used to analyze
                   the workload
                 type: string

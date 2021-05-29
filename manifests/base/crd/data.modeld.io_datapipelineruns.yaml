@@ -87,7 +87,7 @@ spec:
                 description: The data product version of the run
                 type: string
               workloadClassName:
-                default: default-data-workload-class
+                default: nano-cpu-250m-mem-256mi
                 description: WorkloadClassName is the name of the workload class used
                   to run this pip0eline. This is assigned by the datapipelineeun
                 type: string

@@ -99,7 +99,7 @@ type NotebookSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 	// WorkloadClassName is the name of the workload class used to run this pipeline.
-	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
 	// ActiveDeadlineSeconds is the deadline of a job for this notebook.

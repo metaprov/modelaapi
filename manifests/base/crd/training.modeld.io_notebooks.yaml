@@ -137,7 +137,7 @@ spec:
                 description: The version of the notebook
                 type: string
               workloadClassName:
-                default: default-workload-class
+                default: nano-cpu-250m-mem-256mi
                 description: WorkloadClassName is the name of the workload class used
                   to run this pipeline.
                 type: string

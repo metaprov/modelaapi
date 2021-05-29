@@ -84,7 +84,7 @@ type DataPipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 	// WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipeline
-	// +kubebuilder:default:="default-workload-class"
+	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 	//ObservedGeneration is the Last generation that was acted on

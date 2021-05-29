@@ -181,7 +181,7 @@ type UATStageSpec struct {
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
-	// +kubebuilder:default:="default-model-workload-class"
+	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
@@ -205,7 +205,7 @@ type CapacityStageSpec struct {
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// A reference to the workload class that is used for running the prediction
-	// +kubebuilder:default:="default-model-workload-class"
+	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
@@ -229,7 +229,7 @@ type DeploymentStageSpec struct {
 	// +kubebuilder:validation:Optional
 	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,4,rep,name=tests"`
 	// A reference to the workload class that is used for running the test prediction
-	// +kubebuilder:default:="default-inference-workload-class"
+	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
@@ -259,7 +259,7 @@ type ReleaseStageSpec struct {
 	// +kubebuilder:validation:Optional
 	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,rep,name=tests"`
 	// A reference to the workload class that is used for running the release
-	// +kubebuilder:default:="default-inference-workload-class"
+	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,7,opt,name=workloadClassName"`
 }

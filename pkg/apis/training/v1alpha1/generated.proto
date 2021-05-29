@@ -69,7 +69,7 @@ message CapacityStageSpec {
   optional bool manualApproval = 4;
 
   // A reference to the workload class that is used for running the prediction
-  // +kubebuilder:default:="default-model-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -272,7 +272,7 @@ message DeploymentStageSpec {
   repeated Expectation tests = 4;
 
   // A reference to the workload class that is used for running the test prediction
-  // +kubebuilder:default:="default-inference-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -630,7 +630,7 @@ message ModelAutobuilderSpec {
   optional string owner = 17;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 18;
 
@@ -1548,7 +1548,7 @@ message NotebookRunSpec {
   optional string owner = 4;
 
   // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -1620,7 +1620,7 @@ message NotebookSpec {
   optional string owner = 9;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 10;
 
@@ -1746,7 +1746,7 @@ message ReleaseStageSpec {
   repeated Expectation tests = 6;
 
   // A reference to the workload class that is used for running the release
-  // +kubebuilder:default:="default-inference-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 7;
 }
@@ -1830,7 +1830,7 @@ message ReportSpec {
   optional string owner = 8;
 
   // WorkloadClassName is the name of the workload class used to run this report
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 9;
 
@@ -2353,7 +2353,7 @@ message TrainingSpec {
   optional double seed = 13;
 
   // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 14;
 }
@@ -2420,7 +2420,7 @@ message UATStageSpec {
   optional bool manualApproval = 4;
 
   // WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
-  // +kubebuilder:default:="default-model-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }

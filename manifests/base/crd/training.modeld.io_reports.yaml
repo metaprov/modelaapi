@@ -171,7 +171,7 @@ spec:
                   report.
                 type: string
               workloadClassName:
-                default: default-workload-class
+                default: nano-cpu-250m-mem-256mi
                 description: WorkloadClassName is the name of the workload class used
                   to run this report
                 type: string

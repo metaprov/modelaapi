@@ -200,7 +200,7 @@ spec:
                 description: VersionName is the data product version of the data pipeline
                 type: string
               workloadClassName:
-                default: default-workload-class
+                default: nano-cpu-250m-mem-256mi
                 description: WorkloadClassName is the name of the workload class used
                   to run this pipeline. This is assigned by the datapipeline
                 type: string

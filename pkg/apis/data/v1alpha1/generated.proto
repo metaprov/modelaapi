@@ -452,7 +452,7 @@ message DataPipelineRunSpec {
   optional string owner = 4;
 
   // WorkloadClassName is the name of the workload class used to run this pip0eline. This is assigned by the datapipelineeun
-  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -523,7 +523,7 @@ message DataPipelineSpec {
   optional string owner = 7;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipeline
-  // +kubebuilder:default:="default-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
 
@@ -648,7 +648,7 @@ message DataProductSpec {
   optional string notifierName = 12;
 
   // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
-  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string defaultWorkloadClassName = 13;
 
@@ -997,7 +997,7 @@ message DatasetSpec {
   optional DataLocation location = 14;
 
   // A reference to the workload class this is used to analyze the workload
-  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 15;
 
@@ -1305,7 +1305,7 @@ message FeaturePipelineRunSpec {
   optional string featurePipelineName = 3;
 
   // A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
-  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 4;
 }
@@ -1374,7 +1374,7 @@ message FeaturePipelineSpec {
   optional string entityName = 8;
 
   // A reference to the workload class that is used for running the workload class
-  // +kubebuilder:default:="default-data-workload-class"
+  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 9;
 

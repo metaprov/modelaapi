@@ -134,7 +134,7 @@ spec:
                 - path
                 type: object
               defaultWorkloadClassName:
-                default: default-data-workload-class
+                default: nano-cpu-250m-mem-256mi
                 description: DefaultWorkloadClassName is reference to the workload
                   class used for running product tasks.
                 type: string
