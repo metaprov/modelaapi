@@ -289,7 +289,6 @@ message OnlineChannelSpec {
 
   // This is the path relative to the ingress path
   // +kubebuilder:validation:MaxLength=256
-  // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   optional string path = 6;

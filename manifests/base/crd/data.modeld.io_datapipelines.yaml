@@ -143,7 +143,6 @@ spec:
                   type: object
                 type: array
               schedule:
-                default: ""
                 description: Schedule is a cron field to schedule the data pipeline.
                 properties:
                   cron:

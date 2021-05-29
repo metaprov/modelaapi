@@ -191,7 +191,6 @@ spec:
               versionName:
                 default: ""
                 description: Version name is the the product version for the feature.
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               workloadClassName:
                 default: nano-cpu-250m-mem-256mi

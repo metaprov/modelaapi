@@ -283,7 +283,6 @@ type OnlineChannelSpec struct {
 	Port *int32 `json:"port,omitempty" protobuf:"varint,5,opt,name=port"`
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256
-	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`

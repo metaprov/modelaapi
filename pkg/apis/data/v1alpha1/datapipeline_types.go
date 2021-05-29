@@ -75,7 +75,6 @@ type DataPipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,5,opt,name=output"`
 	// Schedule is a cron field to schedule the data pipeline.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// Owner of this data pipeline

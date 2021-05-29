@@ -165,7 +165,6 @@ spec:
                         default: ""
                         description: This is the path relative to the ingress path
                         maxLength: 256
-                        minLength: 1
                         type: string
                       port:
                         description: 'Service port specify the predictor port. Default:
@@ -372,7 +371,6 @@ spec:
                         default: ""
                         description: This is the path relative to the ingress path
                         maxLength: 256
-                        minLength: 1
                         type: string
                       port:
                         description: 'Service port specify the predictor port. Default:

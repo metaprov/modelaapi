@@ -72,7 +72,6 @@ type FeaturePipelineSpec struct {
 	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,2,rep,name=datasetSelector"`
 	// Version name is the the product version for the feature.
 	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,3,opt,name=versionName"`
 	// Description of the feature pipeline

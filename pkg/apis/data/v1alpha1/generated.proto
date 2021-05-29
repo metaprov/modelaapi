@@ -511,7 +511,6 @@ message DataPipelineSpec {
   optional DataOutputSpec output = 5;
 
   // Schedule is a cron field to schedule the data pipeline.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
 
@@ -613,13 +612,11 @@ message DataProductSpec {
 
   // LabName is the Lab where models of this products are trained
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string labName = 7;
 
   // ServingSiteName is the serving site where predictors of this product are deployed
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
@@ -1342,7 +1339,6 @@ message FeaturePipelineSpec {
 
   // Version name is the the product version for the feature.
   // +kubebuilder:default:=""
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string versionName = 3;
 
