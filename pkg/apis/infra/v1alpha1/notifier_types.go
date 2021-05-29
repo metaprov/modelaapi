@@ -72,6 +72,7 @@ type NotifierSpec struct {
 	// +kubebuilder:validation:Optional
 	From *string `json:"from,omitempty" protobuf:"bytes,4,opt,name=from"`
 	// +kubebuilder:validation:Required
+	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,5,opt,name=connectionName"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"

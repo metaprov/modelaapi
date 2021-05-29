@@ -73,18 +73,21 @@ type PredictionList struct {
 // PredictionSpec represent the desired state of Prediction
 type PredictionSpec struct {
 	// VersionName is the data product version of the data pipeline
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// PredictorName refer to the predictor which would predict the dataset of this prediction.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:validation:Required
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
 	// Labeled , true if this is labeled prediction request.
 	// +kubebuilder:default:=false
 	// Used usally for unit testing
 	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,3,opt,name=labeled"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Input is the location of the input file if not using a dataset
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`

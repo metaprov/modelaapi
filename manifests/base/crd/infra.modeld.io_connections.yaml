@@ -597,9 +597,10 @@ spec:
                     default: ""
                     type: string
                 type: object
-              sqlLight:
+              sqlite:
                 properties:
                   fileName:
+                    default: general
                     type: string
                 type: object
               tenantRef:

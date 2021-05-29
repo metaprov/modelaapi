@@ -58,6 +58,8 @@ type DataProduct struct {
 // Each stake holder can hove one or more roles.
 type StakeHolder struct {
 	// The account name of the stake holder
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
 	AccountName *string `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
 	// The roles assigned to the stake holder
 	Roles []catalog.RoleName `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
@@ -65,6 +67,8 @@ type StakeHolder struct {
 
 type GitLocation struct {
 	// GitConnectionName
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	GitConnectionName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
 	// URL of the stakeholder
 	// +kubebuilder:default:=""
@@ -95,7 +99,7 @@ type ImageLocation struct {
 //DataProductSpec defines the desired state of a data product
 type DataProductSpec struct {
 	// The data product owner
-	// +kubebuilder:default ="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The tenant that own the data product.
@@ -113,13 +117,13 @@ type DataProductSpec struct {
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
 	// LabName is the Lab where models of this products are trained
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName" protobuf:"bytes,7,opt,name=labName"`
 	// ServingSiteName is the serving site where predictors of this product are deployed
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -129,7 +133,7 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 	// User provided description
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,10,opt,name=description"`
@@ -187,6 +191,8 @@ type DataProductList struct {
 
 type KPI struct {
 	// Name is the name of the kpi
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Value is the desired value
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
@@ -203,6 +209,8 @@ type Attachment struct {
 	// Name is the name of the attachment.
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Description is the description of the attachment
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Location is the location of the attachment
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`

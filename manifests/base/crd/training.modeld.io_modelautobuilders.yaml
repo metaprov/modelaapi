@@ -168,6 +168,7 @@ spec:
                     - video
                     type: string
                   description:
+                    default: ""
                     description: User provided description of the data source
                     maxLength: 512
                     type: string
@@ -226,6 +227,7 @@ spec:
                         minimum: 0
                         type: integer
                       nullValues:
+                        default: ""
                         description: NullValue is a sequence of values to replace
                           with NA.
                         type: string
@@ -295,6 +297,7 @@ spec:
                               - useless
                               type: string
                             description:
+                              default: ""
                               description: Description is a description of the feature
                               maxLength: 63
                               type: string
@@ -319,6 +322,7 @@ spec:
                               description: External Docs
                               type: string
                             featureName:
+                              default: ""
                               description: FileName specify the name of the feature,
                                 if this attribute comes from a feature
                               maxLength: 63

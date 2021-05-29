@@ -62,6 +62,7 @@ spec:
                 format: int64
                 type: integer
               description:
+                default: ""
                 description: Description is the user provided description
                 maxLength: 512
                 type: string
@@ -115,6 +116,7 @@ spec:
                       the recipe is done.
                     type: boolean
                   datasetName:
+                    default: ""
                     description: DatasetName is the name of the dataset output to
                       the recipe
                     type: string
@@ -178,11 +180,13 @@ spec:
                   type: object
                 type: array
               versionName:
+                default: ""
                 description: VersionName is the data product version of the recipe
                   required.
                 maxLength: 63
                 type: string
               workloadClassName:
+                default: ""
                 description: WorkloadClassName is the name of the workload used to
                   execute this recipe
                 type: string

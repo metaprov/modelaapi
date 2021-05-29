@@ -100,12 +100,12 @@ message CronPredictionList {
 // CronPredictionSpec represent the desired state of CronPrediction
 message CronPredictionSpec {
   // VersionName is the data product version of the data pipeline
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
   // The owner account name
-  // +kubebuilder:default ="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 2;
 
@@ -238,6 +238,7 @@ message DriftCheckSpec {
   optional double treshold = 2;
 
   // The notifier to invoke in case of
+  // +kubebuilder:default:=""
   optional string notifierName = 3;
 
   // Tested dataset
@@ -269,10 +270,12 @@ message MonitorSpec {
   map<string, string> sampleLabel = 5;
 
   // Schedule is a cron schedule to run the monitor. By default the monitor run daily.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string schedule = 6;
 
   // NotifierName is the name of notifer to alert in case of
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string notifierName = 7;
 }
@@ -287,8 +290,8 @@ message OnlineChannelSpec {
   // This is the path relative to the ingress path
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:validation:MinLength=1
-  // Default: /predict
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
   optional string path = 6;
 
   // The access method specified how external clients will access the predictor
@@ -305,6 +308,7 @@ message OnlineFeaturestoreSpec {
   optional bool active = 1;
 
   // the name of the cache service
+  // +kubebuilder:default:=""
   optional string serviceName = 2;
 }
 
@@ -339,6 +343,7 @@ message PredictionCacheSpec {
   optional bool active = 1;
 
   // the name of the cache service
+  // +kubebuilder:default:=""
   optional string serviceName = 2;
 }
 
@@ -394,13 +399,15 @@ message PredictionList {
 // PredictionSpec represent the desired state of Prediction
 message PredictionSpec {
   // VersionName is the data product version of the data pipeline
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
   // PredictorName refer to the predictor which would predict the dataset of this prediction.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
+  // +kubebuilder:validation:Required
   optional string predictorName = 2;
 
   // Labeled , true if this is labeled prediction request.
@@ -409,6 +416,7 @@ message PredictionSpec {
   optional bool labeled = 3;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
   optional string datasetName = 4;
 
   // Input is the location of the input file if not using a dataset
@@ -526,7 +534,7 @@ message PredictorList {
 message PredictorSpec {
   // User provided description
   // +kubebuilder:validation:MaxLength=256
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   optional string description = 1;
 
   // The product that this predictor serve.
@@ -554,6 +562,7 @@ message PredictorSpec {
   optional ProgressiveSpec progressive = 13;
 
   // The key in the bucket for storing all the predictor artifacts.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Optional
@@ -591,6 +600,7 @@ message PredictorSpec {
   optional string owner = 20;
 
   // A reference to the workload class for this predictor deployment
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 21;
 
@@ -603,10 +613,12 @@ message PredictorSpec {
   optional OnlineFeaturestoreSpec store = 23;
 
   // The forward curtain recieve the prediction request before the prediction.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string forewardCurtain = 24;
 
   // The backward curtain recieve the curtain after the prediction.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string backwardCurtain = 25;
 
@@ -676,6 +688,7 @@ message StreamingChannelSpec {
   optional string connectionName = 1;
 
   // the streaming topic (input or output)
+  // +kubebuilder:default:=""
   optional string inputKey = 2;
 }
 
@@ -685,10 +698,12 @@ message TableChannelSpec {
   optional string connectionName = 1;
 
   // Options, this is the datasource containing the table schema
+  // +kubebuilder:default:=""
   optional string datasourceName = 2;
 
   // The table name. Optional
   // Default to the predictor name
+  // +kubebuilder:default:=""
   optional string tableName = 3;
 
   // In seconds, the interval.

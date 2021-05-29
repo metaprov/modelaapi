@@ -95,6 +95,7 @@ type DriftCheckSpec struct {
 	// +kubebuilder:validation:Optional
 	Threshold *float64 `json:"threshold,omitempty" protobuf:"bytes,2,opt,name=treshold"`
 	// The notifier to invoke in case of
+	// +kubebuilder:default:=""
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
 	// Tested dataset
 	TestDatasetName string `json:"testDataset,omitempty" protobuf:"bytes,4,opt,name=testDataset"`
@@ -122,7 +123,7 @@ type ProgressiveSpec struct {
 type PredictorSpec struct {
 	// User provided description
 	// +kubebuilder:validation:MaxLength=256
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// The product that this predictor serve.
 	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,2,opt,name=productRef"`
@@ -143,6 +144,7 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,13,opt,name=progressive"`
 	// The key in the bucket for storing all the predictor artifacts.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Optional
@@ -173,6 +175,7 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,20,opt,name=owner"`
 	// A reference to the workload class for this predictor deployment
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,21,opt,name=workloadClassName"`
 	// Cache is the specification of prediction cache
@@ -182,9 +185,11 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,23,opt,name=store"`
 	// The forward curtain recieve the prediction request before the prediction.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ForewardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,24,opt,name=forewardCurtain"`
 	// The backward curtain recieve the curtain after the prediction.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,25,opt,name=backwardCurtain"`
 	// Type is the type of predictor
@@ -203,6 +208,7 @@ type PredictionCacheSpec struct {
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active,omitempty" protobuf:"bytes,1,opt,name=active"`
 	// the name of the cache service
+	// +kubebuilder:default:=""
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
 }
 
@@ -213,6 +219,7 @@ type OnlineFeaturestoreSpec struct {
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active,omitempty" protobuf:"bytes,1,opt,name=active"`
 	// the name of the cache service
+	// +kubebuilder:default:=""
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
 }
 
@@ -278,8 +285,8 @@ type OnlineChannelSpec struct {
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:validation:MinLength=1
-	// Default: /predict
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
 	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
@@ -291,6 +298,7 @@ type StreamingChannelSpec struct {
 	// StorageConnection name to the streaming provider
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// the streaming topic (input or output)
+	// +kubebuilder:default:=""
 	Topic *string `json:"inputKey,omitempty" protobuf:"bytes,2,opt,name=inputKey"`
 }
 
@@ -299,9 +307,11 @@ type TableChannelSpec struct {
 	// connection to the database provider
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// Options, this is the datasource containing the table schema
+	// +kubebuilder:default:=""
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,2,opt,name=datasourceName"`
 	// The table name. Optional
 	// Default to the predictor name
+	// +kubebuilder:default:=""
 	TableName *string `json:"tableName,omitempty" protobuf:"bytes,3,opt,name=tableName"`
 	// In seconds, the interval.
 	ScanInterval *int32 `json:"scanInterval,omitempty" protobuf:"varint,4,opt,name=scanInterval"`
@@ -357,9 +367,11 @@ type MonitorSpec struct {
 	// +kubebuilder:validation:Optional
 	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,5,opt,name=sampleLabel"`
 	// Schedule is a cron schedule to run the monitor. By default the monitor run daily.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// NotifierName is the name of notifer to alert in case of
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,7,opt,name=notifierName"`
 }

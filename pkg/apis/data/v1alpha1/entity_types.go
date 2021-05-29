@@ -59,10 +59,10 @@ type Entity struct {
 // EntitySpec contain the desired state of a Entity.
 type EntitySpec struct {
 	// The product version of the entity
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// Description of the entity
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`

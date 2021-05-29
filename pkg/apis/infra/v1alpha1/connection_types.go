@@ -344,6 +344,7 @@ type MSSqlServerSpec struct {
 }
 
 type SqliteSpec struct {
+	// +kubebuilder:default:="general"
 	Filename *string `json:"fileName,omitempty" protobuf:"bytes,1,opt,name=fileName"`
 }
 

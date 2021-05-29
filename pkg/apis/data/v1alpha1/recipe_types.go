@@ -61,12 +61,13 @@ type RecipeSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the recipe
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// required.
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Description is the user provided description
 	// +kubebuilder:validation:MaxLength=512
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Input is the input recipe spec
@@ -82,6 +83,7 @@ type RecipeSpec struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	// WorkloadClassName is the name of the workload used to execute this recipe
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
@@ -437,6 +439,7 @@ type RecipeOutputSpec struct {
 	// +kubebuilder:validation:Optional
 	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,1,opt,name=createDataset"`
 	// DatasetName is the name of the dataset output to the recipe
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
 	// Location is the data location folder of the actual data resides.

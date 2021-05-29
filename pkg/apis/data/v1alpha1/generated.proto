@@ -41,6 +41,8 @@ message Attachment {
   optional string name = 1;
 
   // Description is the description of the attachment
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string description = 2;
 
   // Location is the location of the attachment
@@ -55,6 +57,7 @@ message Column {
   optional string name = 1;
 
   // FileName specify the name of the feature, if this attribute comes from a feature
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string featureName = 2;
@@ -68,7 +71,7 @@ message Column {
   optional string format = 4;
 
   // Description is a description of the feature
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
   optional string description = 5;
@@ -429,12 +432,12 @@ message DataPipelineRunList {
 // DataPipelineRunSpec defines the desired state of a schema
 message DataPipelineRunSpec {
   // The data product version of the run
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
   // The data product
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string datapipelineName = 2;
 
@@ -487,12 +490,12 @@ message DataPipelineRunStatus {
 // DataPipelineSpec defines the desired state of a DataPipeline
 message DataPipelineSpec {
   // VersionName is the data product version of the data pipeline
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
   // Description of the data pipeline
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
@@ -509,7 +512,7 @@ message DataPipelineSpec {
   optional DataOutputSpec output = 5;
 
   // Schedule is a cron field to schedule the data pipeline.
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
 
@@ -588,7 +591,7 @@ message DataProductList {
 // DataProductSpec defines the desired state of a data product
 message DataProductSpec {
   // The data product owner
-  // +kubebuilder:default ="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
@@ -611,14 +614,14 @@ message DataProductSpec {
 
   // LabName is the Lab where models of this products are trained
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Optional
   optional string labName = 7;
 
   // ServingSiteName is the serving site where predictors of this product are deployed
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -630,7 +633,7 @@ message DataProductSpec {
   optional string task = 9;
 
   // User provided description
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 10;
@@ -831,7 +834,7 @@ message DataSourceSpec {
   optional string versionName = 2;
 
   // User provided description of the data source
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
   optional string description = 3;
@@ -937,7 +940,7 @@ message DatasetList {
 // DatasetSpec defines the desired state of a dataset
 message DatasetSpec {
   // The account name of the owner of this dataset
-  // +kubebuilder:default ="no-one"
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
@@ -955,7 +958,7 @@ message DatasetSpec {
 
   // User provided description
   // +kubebuilder:validation:MaxLength=512
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 4;
 
@@ -1111,11 +1114,11 @@ message EntityList {
 // EntitySpec contain the desired state of a Entity.
 message EntitySpec {
   // The product version of the entity
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   optional string versionName = 1;
 
   // Description of the entity
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 2;
@@ -1342,12 +1345,13 @@ message FeaturePipelineSpec {
   map<string, string> datasetSelector = 2;
 
   // Version name is the the product version for the feature.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string versionName = 3;
 
   // Description of the feature pipeline
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   optional string description = 4;
@@ -1360,12 +1364,12 @@ message FeaturePipelineSpec {
   optional MaterializationSpec materialization = 6;
 
   // Family is the feature family
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string family = 7;
 
   // Reference to the entity name
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string entityName = 8;
 
@@ -1406,38 +1410,38 @@ message FeatureSpec {
   optional string owner = 1;
 
   // The product version for the feature.
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
   // Comments is a description of the feature
   // +kubebuilder:validation:Optional
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   optional string description = 3;
 
   // Type name of the column key, this column is the key column in the entity.
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string keyColumn = 5;
 
   // The name of the time stamp column
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string timestampColumn = 6;
 
   // The name of the feature column
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string featureColumn = 7;
 
   // The name of the entity containing this feature
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string entityName = 8;
 
   // The name of the feature pipeline that is producing this feature
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string featurePipelineName = 9;
 }
@@ -1641,6 +1645,7 @@ message FlatFileSpec {
   optional int32 skipRows = 10;
 
   // NullValue is a sequence of values to replace with NA.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string nullValues = 11;
 
@@ -1662,6 +1667,8 @@ message FlatFileSpec {
 
 message GitLocation {
   // GitConnectionName
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string gitConnectionName = 1;
 
   // URL of the stakeholder
@@ -1695,6 +1702,8 @@ message ImageLocation {
 
 message KPI {
   // Name is the name of the kpi
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string name = 1;
 
   // Value is the desired value
@@ -1832,7 +1841,7 @@ message LabelingPipelineSpec {
   optional string versionName = 1;
 
   // User provided description
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
@@ -1880,7 +1889,7 @@ message LabelingPipelineStatus {
 
 message MaterializationSpec {
   // If true, update the online store
-  // +kubebuilder:default =false
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool online = 1;
 
@@ -1893,6 +1902,7 @@ message MaterializationSpec {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDate = 3;
 
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
   optional string scheduleInterval = 4;
 
   // +kubebuilder:validation:Optional
@@ -1974,6 +1984,7 @@ message RecipeOutputSpec {
   optional bool createDataset = 1;
 
   // DatasetName is the name of the dataset output to the recipe
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string datasetName = 2;
 
@@ -1984,6 +1995,8 @@ message RecipeOutputSpec {
 
 message RecipePartSpec {
   // RecipeName is the name of the recipe to run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string recipeName = 1;
 
   // Dependents is the list of recipe that need to run after this recipe.
@@ -2040,13 +2053,17 @@ message RecipeRunList {
 
 // RecipeSpec defines the desired state of a dataset
 message RecipeRunSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
   // The name of the recipe that execute this run
-  // +required.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string recipeName = 2;
 
   // The execution env of this recipes
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string labName = 3;
 
@@ -2056,6 +2073,7 @@ message RecipeRunSpec {
 
   // WorkloadClassName is the name of the workload used to execute this recipe run,
   // The value is set from the Recipe definition.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
 }
@@ -2109,13 +2127,14 @@ message RecipeSpec {
   optional string owner = 1;
 
   // VersionName is the data product version of the recipe
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // required.
   optional string versionName = 2;
 
   // Description is the user provided description
   // +kubebuilder:validation:MaxLength=512
-  // +kubebuilder:default =""
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
@@ -2137,6 +2156,7 @@ message RecipeSpec {
   optional int64 observedGeneration = 8;
 
   // WorkloadClassName is the name of the workload used to execute this recipe
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 9;
 
@@ -2209,6 +2229,8 @@ message Signatures {
 // Each stake holder can hove one or more roles.
 message StakeHolder {
   // The account name of the stake holder
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
   optional string accountName = 1;
 
   // The roles assigned to the stake holder

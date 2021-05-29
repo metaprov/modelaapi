@@ -65,32 +65,32 @@ type FeatureSpec struct {
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The product version for the feature.
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// Comments is a description of the feature
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// Type name of the column key, this column is the key column in the entity.
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	KeyColumn *string `json:"keyColumn,omitempty" protobuf:"bytes,5,opt,name=keyColumn"`
 	// The name of the time stamp column
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TimestampColumn *string `json:"timestampColumn,omitempty" protobuf:"bytes,6,opt,name=timestampColumn"`
 	// The name of the feature column
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	FeatureColumn *string `json:"featureColumn,omitempty" protobuf:"bytes,7,opt,name=featureColumn"`
 	// The name of the entity containing this feature
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
 	// The name of the feature pipeline that is producing this feature
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	FeaturePipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,9,opt,name=featurePipelineName"`
 }

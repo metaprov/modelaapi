@@ -70,11 +70,11 @@ type DataPipelineRunList struct {
 //DataPipelineRunSpec defines the desired state of a schema
 type DataPipelineRunSpec struct {
 	// The data product version of the run
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The data product
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
 	// The location of data artifacts that are generated during the run

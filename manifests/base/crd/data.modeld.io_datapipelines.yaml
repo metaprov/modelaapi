@@ -71,6 +71,7 @@ spec:
                     type: array
                 type: object
               description:
+                default: ""
                 description: Description of the data pipeline
                 type: string
               observedGeneration:
@@ -136,11 +137,13 @@ spec:
                         type: string
                       type: array
                     recipeName:
+                      default: ""
                       description: RecipeName is the name of the recipe to run
                       type: string
                   type: object
                 type: array
               schedule:
+                default: ""
                 description: Schedule is a cron field to schedule the data pipeline.
                 properties:
                   cron:
@@ -193,6 +196,7 @@ spec:
                     type: string
                 type: object
               versionName:
+                default: ""
                 description: VersionName is the data product version of the data pipeline
                 type: string
               workloadClassName:

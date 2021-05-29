@@ -73,6 +73,7 @@ type CommitSpec struct {
 	// The subject entity
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
 	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	// NotifierName is the name of the notifier used to fire the alert.
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
 	// +kubebuilder:default:="no-one"

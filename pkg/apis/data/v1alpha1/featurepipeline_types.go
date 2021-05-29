@@ -71,11 +71,12 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,2,rep,name=datasetSelector"`
 	// Version name is the the product version for the feature.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,3,opt,name=versionName"`
 	// Description of the feature pipeline
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=512
 	Description string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
@@ -85,11 +86,11 @@ type FeaturePipelineSpec struct {
 	// Materialization
 	Materialization *MaterializationSpec `json:"materialization,omitempty" protobuf:"bytes,6,opt,name=materialization"`
 	// Family is the feature family
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Family *string `json:"family,omitempty" protobuf:"bytes,7,opt,name=family"`
 	// Reference to the entity name
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
 	// A reference to the workload class that is used for running the workload class
@@ -119,7 +120,7 @@ type FeaturePipelineStatus struct {
 
 type MaterializationSpec struct {
 	// If true, update the online store
-	// +kubebuilder:default =false
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Online *bool `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
 	// If true update the offline store.
@@ -129,6 +130,7 @@ type MaterializationSpec struct {
 	// +kubebuilder:validation:Optional
 	StartDate *metav1.Time `json:"startDate,omitempty" protobuf:"bytes,3,opt,name=startDate"`
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
 	ScheduleInterval *string `json:"scheduleInterval,omitempty" protobuf:"bytes,4,opt,name=scheduleInterval"`
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0

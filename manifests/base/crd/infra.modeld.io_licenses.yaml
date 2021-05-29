@@ -123,9 +123,11 @@ spec:
                 description: The price name
                 type: string
               productName:
+                default: ""
                 description: The product name
                 type: string
               secretName:
+                default: ""
                 description: The secret containing the license token
                 maxLength: 63
                 minLength: 1

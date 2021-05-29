@@ -83,6 +83,7 @@ spec:
                 maxLength: 64
                 type: string
               groupName:
+                default: ""
                 description: GroupName is a reference to the group account
                 type: string
               labBindings:

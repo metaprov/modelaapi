@@ -78,13 +78,12 @@ message AccountSpec {
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // GroupName is a reference to the group account
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string groupName = 2;
 
   // Type is the type of account - user, group. default is user
   // +kubebuilder:default:=user
-  // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Optional
   optional string type = 3;
 
@@ -220,6 +219,7 @@ message AlertSpec {
   optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
 
   // +kubebuilder:default:=""
+  // +kubebuilder:validation:Required
   // NotifierName is the name of the notifier used to fire the alert.
   optional string notifierName = 5;
 
@@ -460,6 +460,7 @@ message CommitSpec {
   optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
 
   // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   // NotifierName is the name of the notifier used to fire the alert.
   optional string notifierName = 5;
 
@@ -628,7 +629,7 @@ message ConnectionSpec {
   optional SnowFlakeSpec snowflake = 30;
 
   // +kubebuilder:validation:Optional
-  optional SqlLightSpec sqlLight = 31;
+  optional SqliteSpec sqlite = 31;
 
   // +kubebuilder:validation:Optional
   optional AwsSpec aws = 32;
@@ -892,6 +893,7 @@ message LicenseSpec {
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // The secret containing the license token
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
@@ -954,6 +956,7 @@ message LicenseSpec {
   optional bool chatbot = 15;
 
   // The product name
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string productName = 16;
 
@@ -1197,6 +1200,7 @@ message NotifierSpec {
   optional string from = 4;
 
   // +kubebuilder:validation:Required
+  // +kubebuilder:default:=""
   optional string connectionName = 5;
 
   // The owner account name
@@ -1503,7 +1507,8 @@ message SnowFlakeSpec {
   optional string password = 5;
 }
 
-message SqlLightSpec {
+message SqliteSpec {
+  // +kubebuilder:default:="general"
   optional string fileName = 1;
 }
 

@@ -58,11 +58,11 @@ type DataPipelineList struct {
 //DataPipelineSpec defines the desired state of a DataPipeline
 type DataPipelineSpec struct {
 	// VersionName is the data product version of the data pipeline
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// Description of the data pipeline
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// DatasetSelector is used to select datasets for processing in the pipeline
@@ -75,7 +75,7 @@ type DataPipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,5,opt,name=output"`
 	// Schedule is a cron field to schedule the data pipeline.
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
 	// Owner of this data pipeline
@@ -122,6 +122,8 @@ type DataOutputSpec struct {
 
 type RecipePartSpec struct {
 	// RecipeName is the name of the recipe to run
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,1,rep,name=recipeName"`
 	// Dependents is the list of recipe that need to run after this recipe.
 	Dependents []string `json:"Dependents,omitempty" protobuf:"bytes,2,rep,name=Dependents"`

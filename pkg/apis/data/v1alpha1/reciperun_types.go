@@ -68,11 +68,15 @@ type RecipeRunList struct {
 
 //RecipeSpec defines the desired state of a dataset
 type RecipeRunSpec struct {
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The name of the recipe that execute this run
-	// +required.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,2,opt,name=recipeName"`
 	// The execution env of this recipes
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName,omitempty" protobuf:"bytes,3,opt,name=labName"`
 	// The location of the data output.
@@ -80,6 +84,7 @@ type RecipeRunSpec struct {
 	Output DataLocation `json:"output,omitempty" protobuf:"bytes,4,opt,name=output"`
 	// WorkloadClassName is the name of the workload used to execute this recipe run,
 	// The value is set from the Recipe definition.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }

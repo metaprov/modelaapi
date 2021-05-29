@@ -80,12 +80,11 @@ type AccountSpec struct {
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// GroupName is a reference to the group account
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
 	// Type is the type of account - user, group. default is user
 	// +kubebuilder:default:=user
-	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Optional
 	Type *AccountType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type,casttype=AccountType"`
 	// UserName specifies the name of the account

@@ -61,11 +61,11 @@ type PredictionTemplate struct {
 // CronPredictionSpec represent the desired state of CronPrediction
 type CronPredictionSpec struct {
 	// VersionName is the data product version of the data pipeline
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// The owner account name
-	// +kubebuilder:default ="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
 	// Schedule is the cron schedule

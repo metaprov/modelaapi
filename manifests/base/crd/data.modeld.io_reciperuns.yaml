@@ -65,6 +65,7 @@ spec:
             description: RecipeSpec defines the desired state of a dataset
             properties:
               labName:
+                default: ""
                 description: The execution env of this recipes
                 type: string
               output:
@@ -80,11 +81,14 @@ spec:
                 - path
                 type: object
               recipeName:
+                default: ""
                 description: The name of the recipe that execute this run
                 type: string
               versionName:
+                default: ""
                 type: string
               workloadClassName:
+                default: ""
                 description: WorkloadClassName is the name of the workload used to
                   execute this recipe run, The value is set from the Recipe definition.
                 type: string

@@ -83,6 +83,7 @@ spec:
                 minLength: 1
                 type: string
               description:
+                default: ""
                 description: User provided description
                 maxLength: 512
                 type: string
@@ -117,6 +118,7 @@ spec:
                 - path
                 type: object
               owner:
+                default: no-one
                 description: The account name of the owner of this dataset
                 type: string
               report:

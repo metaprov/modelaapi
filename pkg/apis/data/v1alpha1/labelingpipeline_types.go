@@ -61,7 +61,7 @@ type LabelingPipelineSpec struct {
 	// The product of the rejoiner
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// DatasetSelector is used to select unlabeled dataset for labeling

@@ -79,6 +79,7 @@ type LicenseSpec struct {
 	// Default to default tenant.
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// The secret containing the license token
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
@@ -127,6 +128,7 @@ type LicenseSpec struct {
 	// Is chatbot feature supported
 	Chatbot *bool `json:"chatbot,omitempty" protobuf:"bytes,15,opt,name=chatbot"`
 	// The product name
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ProductName *string `json:"productName,omitempty" protobuf:"bytes,16,opt,name=productName"`
 	// The price name

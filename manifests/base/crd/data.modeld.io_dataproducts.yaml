@@ -72,6 +72,7 @@ spec:
                 items:
                   properties:
                     description:
+                      default: ""
                       description: Description is the description of the attachment
                       type: string
                     location:
@@ -138,6 +139,7 @@ spec:
                   class used for running product tasks.
                 type: string
               description:
+                default: ""
                 description: User provided description
                 maxLength: 512
                 type: string
@@ -151,6 +153,7 @@ spec:
                     maxLength: 256
                     type: string
                   gitConnectionName:
+                    default: ""
                     description: GitConnectionName
                     type: string
                   private:
@@ -183,6 +186,7 @@ spec:
                 items:
                   properties:
                     name:
+                      default: ""
                       description: Name is the name of the kpi
                       type: string
                     value:
@@ -191,6 +195,7 @@ spec:
                   type: object
                 type: array
               labName:
+                default: ""
                 description: LabName is the Lab where models of this products are
                   trained
                 maxLength: 63
@@ -206,6 +211,7 @@ spec:
                 description: OnCallAccountName is the name of the account on call.
                 type: string
               owner:
+                default: no-one
                 description: The data product owner
                 type: string
               retriesOnFailure:
@@ -216,6 +222,7 @@ spec:
                 minimum: 0
                 type: integer
               servingSiteName:
+                default: ""
                 description: ServingSiteName is the serving site where predictors
                   of this product are deployed
                 maxLength: 63
@@ -230,6 +237,7 @@ spec:
                     holder can hove one or more roles.
                   properties:
                     accountName:
+                      default: no-one
                       description: The account name of the stake holder
                       type: string
                     roles:

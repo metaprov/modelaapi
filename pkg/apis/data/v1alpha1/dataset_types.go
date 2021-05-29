@@ -91,7 +91,7 @@ type DatasetList struct {
 //DatasetSpec defines the desired state of a dataset
 type DatasetSpec struct {
 	// The account name of the owner of this dataset
-	// +kubebuilder:default ="no-one"
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// VersionName is the data product version of the dataset
@@ -106,7 +106,7 @@ type DatasetSpec struct {
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
 	// If true, a dataset report should be generated for this dataset.

@@ -1128,10 +1128,10 @@ export class ConnectionSpec extends jspb.Message {
   hasSnowflake(): boolean;
   clearSnowflake(): ConnectionSpec;
 
-  getSqllight(): SqlLightSpec | undefined;
-  setSqllight(value?: SqlLightSpec): ConnectionSpec;
-  hasSqllight(): boolean;
-  clearSqllight(): ConnectionSpec;
+  getSqlite(): SqliteSpec | undefined;
+  setSqlite(value?: SqliteSpec): ConnectionSpec;
+  hasSqlite(): boolean;
+  clearSqlite(): ConnectionSpec;
 
   getAws(): AwsSpec | undefined;
   setAws(value?: AwsSpec): ConnectionSpec;
@@ -1211,7 +1211,7 @@ export namespace ConnectionSpec {
     presto?: PrestoSpec.AsObject,
     redshift?: RedShiftSpec.AsObject,
     snowflake?: SnowFlakeSpec.AsObject,
-    sqllight?: SqlLightSpec.AsObject,
+    sqlite?: SqliteSpec.AsObject,
     aws?: AwsSpec.AsObject,
     slack?: SlackSpec.AsObject,
     flock?: FlockSpec.AsObject,
@@ -2853,19 +2853,19 @@ export namespace SnowFlakeSpec {
   }
 }
 
-export class SqlLightSpec extends jspb.Message {
+export class SqliteSpec extends jspb.Message {
   getFilename(): string;
-  setFilename(value: string): SqlLightSpec;
+  setFilename(value: string): SqliteSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SqlLightSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: SqlLightSpec): SqlLightSpec.AsObject;
-  static serializeBinaryToWriter(message: SqlLightSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SqlLightSpec;
-  static deserializeBinaryFromReader(message: SqlLightSpec, reader: jspb.BinaryReader): SqlLightSpec;
+  toObject(includeInstance?: boolean): SqliteSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SqliteSpec): SqliteSpec.AsObject;
+  static serializeBinaryToWriter(message: SqliteSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SqliteSpec;
+  static deserializeBinaryFromReader(message: SqliteSpec, reader: jspb.BinaryReader): SqliteSpec;
 }
 
-export namespace SqlLightSpec {
+export namespace SqliteSpec {
   export type AsObject = {
     filename: string,
   }

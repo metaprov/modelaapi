@@ -61,6 +61,7 @@ spec:
             description: NotifierSpec defines the desired state of Notifier
             properties:
               connectionName:
+                default: ""
                 type: string
               description:
                 default: ""

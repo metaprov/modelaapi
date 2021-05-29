@@ -59,6 +59,7 @@ spec:
             description: CronPredictionSpec represent the desired state of CronPrediction
             properties:
               owner:
+                default: no-one
                 description: The owner account name
                 type: string
               schedule:
@@ -128,6 +129,7 @@ spec:
                         minimum: 0
                         type: integer
                       datasetName:
+                        default: ""
                         type: string
                       input:
                         description: Input is the location of the input file if not
@@ -164,6 +166,7 @@ spec:
                         description: The owner account name
                         type: string
                       predictorName:
+                        default: ""
                         description: PredictorName refer to the predictor which would
                           predict the dataset of this prediction.
                         maxLength: 63
@@ -220,6 +223,7 @@ spec:
                           type: string
                         type: array
                       versionName:
+                        default: ""
                         description: VersionName is the data product version of the
                           data pipeline
                         type: string
@@ -233,6 +237,7 @@ spec:
                 - spec
                 type: object
               versionName:
+                default: ""
                 description: VersionName is the data product version of the data pipeline
                 type: string
             required:

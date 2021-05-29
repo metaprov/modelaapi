@@ -62,6 +62,7 @@ spec:
                   labeling
                 type: object
               description:
+                default: ""
                 description: User provided description
                 type: string
               outputLabelset:

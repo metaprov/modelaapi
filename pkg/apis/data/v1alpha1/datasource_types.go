@@ -165,6 +165,7 @@ type FlatFileSpec struct {
 	// +kubebuilder:validation:Optional
 	SkipRows *int32 `json:"skipRows,omitempty" protobuf:"varint,10,opt,name=skipRows"`
 	// NullValue is a sequence of values to replace with NA.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	NullValues *string `json:"nullValues,omitempty" protobuf:"bytes,11,opt,name=nullValues"`
 	//Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
@@ -206,6 +207,7 @@ type Column struct {
 	// required
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// FileName specify the name of the feature, if this attribute comes from a feature
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	FeatureName *string `json:"featureName,omitempty" protobuf:"bytes,2,opt,name=featureName"`
@@ -216,7 +218,7 @@ type Column struct {
 	// +kubebuilder:validation:Optional
 	Format *catalog.DataFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// Description is a description of the feature
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,5,opt,name=description"`
@@ -371,7 +373,7 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// User provided description of the data source
-	// +kubebuilder:default =""
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
